@@ -7,6 +7,7 @@ export const defaultLang: Lang = 'es';
 export const nav = [
   { href: '/resumen', id: 'resumen' },
   { href: '/foresights', id: 'foresights' },
+  { href: '/gemelo', id: 'gemelo' },
   { href: '/crecimiento', id: 'crecimiento' },
   { href: '/studio', id: 'studio' },
   { href: '/inicio', id: 'home' },
@@ -94,6 +95,7 @@ export const navGroups: NavGroup[] = [
   {
     id: 'navFuturo',
     items: [
+      { href: '/gemelo', id: 'gemelo' },
       { href: '/foresights', id: 'foresights' },
       { href: '/preguntas', id: 'preguntas' },
       { href: '/crecimiento', id: 'crecimiento' },
@@ -155,6 +157,7 @@ export const ui = {
     resumen: 'Resumen y cifras clave',
     foresights: 'Prospectiva',
     crecimiento: 'Crecimiento: demanda y oferta',
+    gemelo: 'Gemelo territorial',
     studio: 'Municipios',
     lugares: 'Municipios',
     preguntas: 'Preguntas',
@@ -370,6 +373,7 @@ export const ui = {
     resumen: 'Summary',
     foresights: 'Foresights',
     crecimiento: 'Growth',
+    gemelo: 'Territorial twin',
     studio: 'Places',
     lugares: 'Places',
     preguntas: 'Questions',

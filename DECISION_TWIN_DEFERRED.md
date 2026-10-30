@@ -1,6 +1,8 @@
 # Decision twin — public surface deferred
 
-**Status:** Public Decision twin UI removed from the BCS intel portal (2026-09-16).
+**Status update (2026-10-30):** Phase 1 of the territorial twin is public at `/gemelo` (alias `/cdt`). `/decision` and `/decision-twin` redirect there. It is decision support from data already in the portal (five themes, municipal comparison, scenarios, rule-based recommendations). It is not a parcel model and not a morphometric twin. The 2026-09-16 note below records why the earlier page was taken down; demand–supply of growth is now the evidence layer under `/gemelo`.
+
+**Status (2026-09-16):** Public Decision twin UI removed from the BCS intel portal.
 
 ## Why
 Scenarios are useful later, but premature as a product surface. Next step is to **analyze demand and supply of growth** (water, energy, land, infrastructure, and related constraints) on the backend — only then assume and present scenarios.

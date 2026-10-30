@@ -1618,18 +1618,20 @@ def main():
             "Columna vertebral geográfica = vocaciones de lugar (Los Cabos motor turístico; East Cape/San José del Este; "
             "Todos Santos–El Pescadero; La Paz capital; Loreto turismo–conservación; Constitución/Comondú agro; "
             "norte/Mulegé energía remota). La suma de vocaciones = estrategia coherente — no un futuro uniforme. "
-            "Señales + lentes de rol + semillas de consenso + watchlist. Inteligencia interna / borrador; no plan oficial; "
-            "sin gemelo de decisión público ni fichas personales F+P. Ver también Noticias, Catálogo, Ontología, Actores, Mapas. "
-            "[foresights prospectiva vocaciones lugares BCS 2050 signals consensus]"
+            "Señales + lentes de rol + semillas de consenso + watchlist. Inteligencia interna / borrador; no plan oficial. "
+            "El gemelo territorial fase 1 está en /gemelo (también /cdt): mapas, cifras y escenarios, sin modelo de predios. "
+            "Ver también Noticias, Catálogo, Ontología, Actores, Mapas. "
+            "[foresights prospectiva vocaciones lugares BCS 2050 signals consensus gemelo territorial]"
         ),
         "sum_en": (
             "Page /foresights (also /prospectiva): weekly BCS 2050 foresight. "
             "Geographic backbone = place vocations (Los Cabos tourism engine; East Cape/San José del Este; "
             "Todos Santos–El Pescadero; La Paz capital; Loreto tourism–conservation; Constitución/Comondú agri; "
             "north/Mulegé remote energy). Sum of vocations = coherent strategy — not one uniform future. "
-            "Signals + role lenses + consensus seeds + watchlist. Internal draft intelligence; not an official plan; "
-            "no public decision twin and no F+P personal fichas. See also News, Catalog, Ontology, Stakeholders, Maps. "
-            "[foresights prospectiva place vocations BCS 2050 signals consensus]"
+            "Signals + role lenses + consensus seeds + watchlist. Internal draft intelligence; not an official plan. "
+            "Phase-1 territorial twin is at /gemelo (also /cdt): maps, figures and scenarios, with no parcel model. "
+            "See also News, Catalog, Ontology, Stakeholders, Maps. "
+            "[foresights prospectiva place vocations BCS 2050 signals consensus territorial twin]"
         ),
         "drive_url": None,
         "type": "guide",
@@ -1648,44 +1650,61 @@ def main():
             "Constitución/Comondú, norte/Mulegé). Demanda = turismo/vuelos/asentamiento/economía desde datos "
             "reales del portal; oferta = agua DMA, energía SIBCS, PDU/POEL/PMD, ANPs. Celdas sin cifra: "
             "status gap. Roll-up estatal: qué debe ser verdad para que las vocaciones sumen a un 2050 coherente. "
-            "Prerequisite de Ivan antes de escenarios; gemelo de decisión público diferido. Ver Prospectiva, "
-            "Resumen, Agua, Energía, Vuelos. "
-            "[crecimiento demand supply demanda oferta vocaciones capacidad DMA SIBCS carrying capacity gaps]"
+            "El gemelo territorial fase 1 (/gemelo) usa esta capa junto con escenarios y el mapa. "
+            "Ver Prospectiva, Resumen, Agua, Energía, Vuelos. "
+            "[crecimiento demand supply demanda oferta vocaciones capacidad DMA SIBCS carrying capacity gaps gemelo]"
         ),
         "sum_en": (
             "Page /crecimiento (also /demand-supply, /oferta-demanda): demand vs supply growth scorecard "
             "by place vocation (Los Cabos, East Cape, Todos Santos, La Paz, Loreto, Constitución/Comondú, "
             "north/Mulegé). Demand = tourism/flights/settlement/economy from real portal data; supply = DMA water, "
             "SIBCS energy, PDU/POEL/PMD, ANPs. Cells without numbers: status gap. State roll-up: what must be true "
-            "for vocations to sum to a coherent 2050. Ivan’s prerequisite before scenarios; public decision twin "
-            "deferred. See Foresights, Summary, Water, Energy, Flights. "
-            "[crecimiento demand supply vocations capacity DMA SIBCS carrying capacity gaps]"
+            "for vocations to sum to a coherent 2050. The phase-1 territorial twin (/gemelo) uses this layer "
+            "together with scenarios and the map. See Foresights, Summary, Water, Energy, Flights. "
+            "[crecimiento demand supply vocations capacity DMA SIBCS carrying capacity gaps territorial twin]"
         ),
         "drive_url": None,
         "type": "guide",
     })
 
-    # Focus places (deferred public decision twin) — soft corpus note, no /decision pitch
+    # Territorial twin phase 1 — five CDT themes on portal data, not a parcel model
     chunks.append({
-        "id": "portal:focus-places-deferred",
-        "title": "Lugares de foco BCS / Focus places (análisis previo a escenarios)",
-        "path": "portal/mapas",
+        "id": "portal:gemelo-territorial-p1",
+        "title": "Gemelo territorial BCS / Territorial twin phase 1",
+        "path": "portal/gemelo",
         "theme": "planeacion",
         "sum_es": (
-            "El gemelo de decisión público está diferido: primero ver /crecimiento (demanda–oferta por vocación); se analiza demanda y oferta de crecimiento "
-            "(agua, energía, suelo, infraestructura) antes de asumir escenarios. Mientras tanto, en Mapas hay "
-            "capas «Lugares de foco» (off por defecto): corredor Cabos–Todos Santos–La Paz, East Cape / Cabo "
-            "del Este, acuíferos DMA en déficit, puertos/aeropuertos, Loreto y Ciudad Constitución. Ver "
-            "Resumen y Ontología para hechos citables; no hay página pública de escenarios. "
-            "[foco lugares corredor East Cape agua DMA puertos Loreto Constitución demanda oferta]"
+            "Página /gemelo (alias /cdt; /decision y /decision-twin redirigen aquí): Gemelo territorial fase 1 "
+            "de Baja California Sur. Apoyo a la decisión para técnicos, con etiquetas en español claro. "
+            "Cinco temas: diseño urbano (asentamiento, localidades y ordenamiento; no hay AGEB ni dimensión fractal "
+            "ni centralidad de intermediación), desarrollo económico (ingresos municipales donde hay cifra, proyectos "
+            "federales, lectura demanda–oferta), innovación e investigación (mapa de relaciones, preguntas estratégicas, "
+            "prospectiva y brechas; no hay red de colaboración entre escuelas), movilidad y logística (pasajeros aéreos, "
+            "destinos sin escalas, cruceros DataTur, carreteras) y vivienda y nivel de vida (rezago CONAVI, registro "
+            "SNIIV por municipio, pobreza CONEVAL 2020). Cada tema muestra capas del mapa, fichas con cifras ya "
+            "publicadas y un diagnóstico corto. Escenarios: trayectoria actual, intensificar corredor Cabos–La Paz, "
+            "agua primero, puertos y aeropuertos como anclas. Enlace al mapa: /mapas?scenario= y capas del tema. "
+            "Comparación de los cinco municipios (población 2020, registro de vivienda 2025, pobreza 2020). "
+            "East Cape se lee dentro de Los Cabos y Todos Santos dentro de La Paz. Recomendaciones por reglas de "
+            "demanda–oferta de crecimiento: no son puntuaciones por predio ni modelo catastral. Ver /crecimiento, "
+            "/mapas, /ontologia, /inmobiliario, /puertos. "
+            "[gemelo territorial city digital twin cdt temas diseño urbano economía innovación movilidad vivienda escenarios comparar municipios]"
         ),
         "sum_en": (
-            "The public decision twin is deferred: see /crecimiento (demand–supply by vocation) first; demand and supply of growth (water, energy, land, "
-            "infrastructure) must be analyzed before assuming scenarios. Meanwhile Maps has «Focus places» "
-            "layers (off by default): Cabos–Todos Santos–La Paz corridor, East Cape, DMA-deficit aquifers, "
-            "ports/airports, Loreto and Ciudad Constitución. See Summary and Ontology for citable facts; "
-            "no public scenarios page. [focus places corridor East Cape water DMA ports Loreto Constitución "
-            "demand supply]"
+            "Page /gemelo (alias /cdt; /decision and /decision-twin redirect here): phase-1 territorial twin "
+            "for Baja California Sur. Decision support for technical readers, with plain labels. "
+            "Five themes: urban design (settlement, localities and zoning; no AGEB, fractal dimension or betweenness), "
+            "economic development (municipal revenue where a figure exists, federal projects, demand–supply read), "
+            "innovation and research (relationship map, strategic questions, foresight and gaps; no university "
+            "collaboration network), mobility and logistics (air passengers, non-stop destinations, DataTur cruises, "
+            "highways) and housing and living standard (CONAVI backlog, SNIIV registry by municipality, CONEVAL 2020 "
+            "poverty). Each theme shows map layers, cards with figures already published, and a short diagnostic. "
+            "Scenarios: current trajectory, intensify Cabos–La Paz corridor, water first, ports and airports as anchors. "
+            "Map link: /mapas?scenario= plus the theme layers. Comparison of the five municipalities (2020 population, "
+            "2025 housing registry, 2020 poverty). East Cape is read inside Los Cabos and Todos Santos inside La Paz. "
+            "Recommendations are rules from growth demand and supply: not parcel scores and not a cadastre model. "
+            "See /crecimiento, /mapas, /ontologia, /inmobiliario, /puertos. "
+            "[gemelo territorial city digital twin cdt themes urban design economy innovation mobility housing scenarios compare municipalities]"
         ),
         "drive_url": None,
         "type": "guide",
