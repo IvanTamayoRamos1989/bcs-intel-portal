@@ -1,0 +1,1380 @@
+{
+  "type": "FeatureCollection",
+  "name": "federal_projects_bcs",
+  "crs_note": "WGS84; positions are approximate municipal centroids unless otherwise sourced",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-001",
+        "name": "Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+        "sexenio": "AMLO",
+        "sector": "energy",
+        "dependencia": "CFE",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "127800000",
+        "alcance": "~74 MW brutos (2 unidades rehabilitadas)",
+        "fuente": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=2119",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_ene_001",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-002",
+        "name": "Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+        "sexenio": "AMLO",
+        "sector": "energy",
+        "dependencia": "CFE",
+        "municipios_raw": "BCS (sitio no definitivo público)",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "cancelado",
+        "monto_MXN": "9840000000",
+        "alcance": "327 MW anunciados; no construida en sexenio AMLO",
+        "fuente": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=2119",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_ene_002",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-003",
+        "name": "Programa CFE reforzamiento generación SIBCS (gas / modernización Punta Prieta y CI BCS)",
+        "sexenio": "AMLO",
+        "sector": "energy",
+        "dependencia": "CFE",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Anuncio +514 MW / 11,373 MDP programa integral (incluye CC no ejecutado)",
+        "fuente": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=2119",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_ene_003",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-004",
+        "name": "Refuerzo transmisión La Paz–Los Cabos (P23-BS1 / LT Olas Altas–TG Los Cabos 230 kV)",
+        "sexenio": "ambos",
+        "sector": "energy",
+        "dependencia": "CFE Transmisión / CENACE",
+        "municipios_raw": "La Paz; Los Cabos",
+        "municipios": [
+          "los_cabos",
+          "la_paz"
+        ],
+        "estado": "en licitación",
+        "monto_MXN": "",
+        "alcance": "LT 230 kV ~140 km-c; factible dic-2028; En Análisis 0% (PAMRNT)",
+        "fuente": "https://www.cenace.gob.mx/Docs/10_PLANEACION/ProgramasAyM/Programas%20de%20Ampliaci%C3%B3n%20y%20Modernizaci%C3%B3n%20de%20la%20RNT%20y%20RGD%20del%20MEM%202025%20%E2%80%93%202039.pdf",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_ene_004",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-005",
+        "name": "Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030",
+        "sexenio": "Sheinbaum",
+        "sector": "energy",
+        "dependencia": "CFE / SENER",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "240 MW; inversión estimada ~370–474 MDD; COD estimado ~2028",
+        "fuente": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_ene_005",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-006",
+        "name": "Dos centrales termosolares (torre central + almacenamiento térmico) CFE en BCS",
+        "sexenio": "Sheinbaum",
+        "sector": "energy",
+        "dependencia": "CFE / SENER",
+        "municipios_raw": "BCS (sitios por definir públicamente)",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "100 MW primera etapa conjunta; ~11 h operación; 800 MDD; construcción 36–48 meses",
+        "fuente": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10321",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_ene_006",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-007",
+        "name": "Subestación Buenavista y ampliación Cabo Falso",
+        "sexenio": "Sheinbaum",
+        "sector": "energy",
+        "dependencia": "CFE",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "+50 MVA a la red local",
+        "fuente": "https://nbcs.mx/?p=170686",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_ene_007",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-008",
+        "name": "Modernización/ampliación red eléctrica BCS CFE 2026-2028 (+70 MVA)",
+        "sexenio": "Sheinbaum",
+        "sector": "energy",
+        "dependencia": "CFE",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "536000000",
+        "alcance": "+70 MVA; 134 MDP (2026) + 402 MDP (2027-28); electrificación adicional citada",
+        "fuente": "https://nbcs.mx/?p=170686",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_ene_008",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-009",
+        "name": "Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+        "sexenio": "ambos",
+        "sector": "energy",
+        "dependencia": "CENACE / CFE / SENER",
+        "municipios_raw": "SIBCS",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "PAMRNT SAE SIBCS; lectura lake ~63 MW SAE GCR-07 2025-30; Aura III BESS 10.5 MW privado histórico",
+        "fuente": "https://www.cenace.gob.mx/Docs/10_PLANEACION/ProgramasAyM/Programas%20de%20Ampliaci%C3%B3n%20y%20Modernizaci%C3%B3n%20de%20la%20RNT%20y%20RGD%20del%20MEM%202025%20%E2%80%93%202039.pdf",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_ene_009",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-ENE-010",
+        "name": "PRODESEN / PLADESE planeación SIBCS (interconexión SIN-BCS pausada)",
+        "sexenio": "ambos",
+        "sector": "energy",
+        "dependencia": "SENER / CENACE",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Instrumentos de planeación; SIN–BCS Pausado/En revisión",
+        "fuente": "https://base.energia.gob.mx/PRODESEN2024/prodesen24-38cap3.PDF",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_ene_010",
+        "dossier_theme": "energia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-001",
+        "name": "Planta Desalinizadora Los Cabos No. 2 (250 l/s) — APP / Plan Nacional Hídrico",
+        "sexenio": "ambos",
+        "sector": "water",
+        "dependencia": "CONAGUA / OOMSAPAS Los Cabos",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "",
+        "alcance": "250 l/s; operación proyectada inicios 2027 (>60% avance ene 2026)",
+        "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5603930&fecha=27/10/2020",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_agu_001",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-002",
+        "name": "Desalinizadora La Paz (compromiso AMLO)",
+        "sexenio": "AMLO",
+        "sector": "water",
+        "dependencia": "CONAGUA / Presidencia",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Anunciada; sin evidencia pública de COD en sexenio AMLO",
+        "fuente": "https://www.bcsnoticias.mx/si-habra-planta-de-ciclo-combinado-para-bcs-y-tambien-desaladora-amlo-1/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_agu_002",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-003",
+        "name": "Presa El Novillo (sistema integral agua La Paz)",
+        "sexenio": "Sheinbaum",
+        "sector": "water",
+        "dependencia": "CONAGUA",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "800000000",
+        "alcance": "Presa + sistema (potabilizadora/sectorización asociadas)",
+        "fuente": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_agu_003",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-004",
+        "name": "Sectorización agua potable y planta potabilizadora La Paz",
+        "sexenio": "Sheinbaum",
+        "sector": "water",
+        "dependencia": "CONAGUA",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Parte del sistema integral con Presa El Novillo",
+        "fuente": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_agu_004",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.349,
+          26.012
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-005",
+        "name": "PTAR Loreto (rehabilitación/construcción)",
+        "sexenio": "Sheinbaum",
+        "sector": "water",
+        "dependencia": "CONAGUA",
+        "municipios_raw": "Loreto",
+        "municipios": [
+          "loreto"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "75000000",
+        "alcance": ">18 mil habitantes; conclusión anunciada ~2026",
+        "fuente": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/loreto/",
+        "ontology_id": "proj_fed_agu_005",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-006",
+        "name": "PTAR La Sonoreña I (rehab) y Sonoreña II (construcción) Los Cabos",
+        "sexenio": "Sheinbaum",
+        "sector": "water",
+        "dependencia": "CONAGUA",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "",
+        "alcance": "Rehabilitación + ampliación/redes",
+        "fuente": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_agu_006",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-007",
+        "name": "Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+        "sexenio": "Sheinbaum",
+        "sector": "water",
+        "dependencia": "CONAGUA",
+        "municipios_raw": "Estatal (5 municipios)",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "1400000000",
+        "alcance": "95 acciones 2025; ~2,800 MDP proyectados en sexenio",
+        "fuente": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_agu_007",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-AGU-008",
+        "name": "Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+        "sexenio": "AMLO",
+        "sector": "water",
+        "dependencia": "CONAGUA / SEMARNAT",
+        "municipios_raw": "La Paz; Los Cabos; otros",
+        "municipios": [
+          "los_cabos",
+          "la_paz"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Acuerdos DOF DMA (p.ej. La Paz 0324) — instrumento regulatorio",
+        "fuente": "https://www.dof.gob.mx",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_agu_008",
+        "dossier_theme": "agua"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-CAR-001",
+        "name": "Ampliación carretera acceso puerto / libramientos La Paz (entrega AMLO)",
+        "sexenio": "AMLO",
+        "sector": "roads",
+        "dependencia": "SICT",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Ampliación conectando ~70% carga puerto con libramientos y ciudad",
+        "fuente": "https://heraldodemexico.com.mx/nacional/2021/2/21/entrega-amlo-obras-de-infraestructura-carretera-energetica-en-baja-california-sur-260601.html",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_car_001",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-CAR-002",
+        "name": "Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+        "sexenio": "Sheinbaum",
+        "sector": "roads",
+        "dependencia": "SICT",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "",
+        "alcance": "~780 m, 4 carriles, ciclovía ~840 m, 17 cruces peatonales; meta jun 2026",
+        "fuente": "https://www.bcs.gob.mx/presidenta-claudia-sheinbaum-da-banderazo-de-inicio-a-la-construccion-del-nuevo-hospital-general-regional-del-imss-en-los-cabos/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_car_002",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-CAR-003",
+        "name": "Repavimentación / conservación Carretera Transpeninsular BCS",
+        "sexenio": "Sheinbaum",
+        "sector": "roads",
+        "dependencia": "SICT",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "",
+        "alcance": "Programa conservación/reencarpetado anunciado en gira",
+        "fuente": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_car_003",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-CAR-004",
+        "name": "Programa SICT atención carreteras BCS (~350 MDP)",
+        "sexenio": "Sheinbaum",
+        "sector": "roads",
+        "dependencia": "SICT",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "350000000",
+        "alcance": "Conservación, señalamiento, modernización de puentes",
+        "fuente": "https://www.diarioelindependiente.mx/2025/04/anuncia-sict-inversion-de-350-mdp-para-atender-carreteras-en-bcs",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_car_004",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-PUE-001",
+        "name": "ASIPONA Cabo San Lucas — transferencia a SEMAR (fin régimen FONATUR)",
+        "sexenio": "AMLO",
+        "sector": "ports",
+        "dependencia": "SEMAR / ASIPONA",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Título concesión DOF recinto CSL a ASIPONA Cabo San Lucas",
+        "fuente": "https://www.jornada.com.mx/2022/06/22/politica/009n1pol",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_pue_001",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-PUE-002",
+        "name": "API BCS — vigencia/addendum concesión federal (Pichilingue y otros)",
+        "sexenio": "AMLO",
+        "sector": "ports",
+        "dependencia": "SICT / API BCS",
+        "municipios_raw": "La Paz; Loreto; Mulegé; Comondú",
+        "municipios": [
+          "la_paz",
+          "loreto",
+          "comondu",
+          "mulege"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Concesión federal API BCS (vigencia citada hasta 2047)",
+        "fuente": "https://apibcs.com.mx/antecedentes/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_pue_002",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-AER-001",
+        "name": "Marco AFAC aeropuertos SJD / LAP / LTO (sin megaproyecto nuevo catalogado)",
+        "sexenio": "ambos",
+        "sector": "airports",
+        "dependencia": "AFAC / SICT",
+        "municipios_raw": "Los Cabos; La Paz; Loreto",
+        "municipios": [
+          "los_cabos",
+          "la_paz",
+          "loreto"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Regulación federal continua",
+        "fuente": "https://www.gob.mx/afac",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_aer_001",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-VIV-001",
+        "name": "Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+        "sexenio": "Sheinbaum",
+        "sector": "housing",
+        "dependencia": "CONAVI / INFONAVIT / SEDATU",
+        "municipios_raw": "Estatal (prioridad Los Cabos)",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "",
+        "alcance": "Convenio ~37,500 acciones; gira posterior cita 55 mil viviendas + regularizaciones; ~50 mil familias reducción créditos",
+        "fuente": "https://www.bcs.gob.mx/firma-claudia-sheinbaum-y-gobernador-vcc-convenio-para-iniciar-el-programa-vivienda-para-el-bienestar-en-baja-california-sur/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_viv_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-SAL-001",
+        "name": "Hospital General Regional IMSS Los Cabos (nuevo)",
+        "sexenio": "Sheinbaum",
+        "sector": "health",
+        "dependencia": "IMSS",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "",
+        "alcance": "41,000 m²; 260 camas; 46 especialidades; modelo IMSS universal",
+        "fuente": "https://www.bcs.gob.mx/presidenta-claudia-sheinbaum-da-banderazo-de-inicio-a-la-construccion-del-nuevo-hospital-general-regional-del-imss-en-los-cabos/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_sal_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.267,
+          27.339
+        ]
+      },
+      "properties": {
+        "id": "FED-SAL-002",
+        "name": "Hospital General Santa Rosalía (IMSS-Bienestar) — inauguración",
+        "sexenio": "ambos",
+        "sector": "health",
+        "dependencia": "IMSS-Bienestar",
+        "municipios_raw": "Mulegé",
+        "municipios": [
+          "mulege"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "390000000",
+        "alcance": "30 camas; 8 especialidades; atención universal citada",
+        "fuente": "https://www.gob.mx/presidencia/articulos/version-estenografica-inauguracion-del-hospital-general-santa-rosalia",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/mulege/",
+        "ontology_id": "proj_fed_sal_002",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-EDU-001",
+        "name": "500 plazas docentes nuevas BCS",
+        "sexenio": "Sheinbaum",
+        "sector": "education",
+        "dependencia": "SEP / USICAMM",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "500 plazas",
+        "fuente": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_edu_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-EDU-002",
+        "name": "Campus Universidad Nacional Rosario Castellanos en La Paz",
+        "sexenio": "Sheinbaum",
+        "sector": "education",
+        "dependencia": "Gobierno de México / UNRC",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Educación superior pública anunciada en gira",
+        "fuente": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_edu_002",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.349,
+          26.012
+        ]
+      },
+      "properties": {
+        "id": "FED-TUR-001",
+        "name": "Pueblos Mágicos (programa federal) — localidades BCS",
+        "sexenio": "ambos",
+        "sector": "tourism",
+        "dependencia": "SECTUR",
+        "municipios_raw": "Loreto; Todos Santos; Mulegé; otros",
+        "municipios": [
+          "loreto",
+          "mulege",
+          "la_paz"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Programa continuo de denominación y apoyos",
+        "fuente": "https://www.gob.mx/sectur",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/loreto/",
+        "ontology_id": "proj_fed_tur_001",
+        "dossier_theme": "turismo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "FED-TUR-002",
+        "name": "Renombre Glorieta Fonatur → Glorieta de las Mujeres Libres de BCS",
+        "sexenio": "Sheinbaum",
+        "sector": "tourism",
+        "dependencia": "Presidencia / municipio",
+        "municipios_raw": "Los Cabos",
+        "municipios": [
+          "los_cabos"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Propuesta simbólica ligada a FED-CAR-002",
+        "fuente": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/los_cabos/",
+        "ontology_id": "proj_fed_tur_002",
+        "dossier_theme": "turismo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-MIN-001",
+        "name": "Mina Los Cardones — rechazo AMLO y anulación autorización SEMARNAT",
+        "sexenio": "ambos",
+        "sector": "mining",
+        "dependencia": "SEMARNAT",
+        "municipios_raw": "La Paz (Sierra La Laguna)",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "cancelado",
+        "monto_MXN": "",
+        "alcance": "Oro a cielo abierto; no en operación; litigio residual reportado",
+        "fuente": "https://www.jornada.com.mx/2019/03/04/politica/003n1pol",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_min_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.67,
+          25.032
+        ]
+      },
+      "properties": {
+        "id": "FED-MIN-002",
+        "name": "Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+        "sexenio": "ambos",
+        "sector": "mining",
+        "dependencia": "SEMARNAT / Economía",
+        "municipios_raw": "Comondú / Golfo de Ulloa",
+        "municipios": [
+          "comondu"
+        ],
+        "estado": "cancelado",
+        "monto_MXN": "",
+        "alcance": "MIA rechazada; concesiones canceladas 2024; laudo ICSID ~37.1 MDD (sep 2024)",
+        "fuente": "https://elpais.com/mexico/economia/2024-09-20/mexico-pierde-el-caso-contra-la-minera-submarina-odyssey-marine-y-debera-pagarle-mas-de-37-millones-de-dolares.html",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/comondu/",
+        "ontology_id": "proj_fed_min_002",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.267,
+          27.339
+        ]
+      },
+      "properties": {
+        "id": "FED-MIN-003",
+        "name": "Exportadora de Sal (ESSA) Guerrero Negro — nacionalización (compra 49% Mitsubishi)",
+        "sexenio": "AMLO",
+        "sector": "mining",
+        "dependencia": "Gobierno de México / ESSA",
+        "municipios_raw": "Mulegé (Guerrero Negro)",
+        "municipios": [
+          "mulege"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "1500000000",
+        "alcance": "Control 100% estatal; concesión ~40,000 ha",
+        "fuente": "https://amlo.presidente.gob.mx/presidente-nacionaliza-empresa-exportadora-de-sal/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/mulege/",
+        "ontology_id": "proj_fed_min_003",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-AMB-001",
+        "name": "ANP / decretos ambientales federales con efecto en BCS (marco)",
+        "sexenio": "ambos",
+        "sector": "environment",
+        "dependencia": "SEMARNAT / CONANP",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Gestión continua ANP (Sierra La Laguna, Cabo Pulmo, Vizcaíno, etc.)",
+        "fuente": "https://www.gob.mx/conanp",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_amb_001",
+        "dossier_theme": "ambiente"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-SOC-001",
+        "name": "Programas para el Bienestar — inversión territorial BCS 2025",
+        "sexenio": "Sheinbaum",
+        "sector": "social",
+        "dependencia": "Bienestar / Presidencia",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "en obra",
+        "monto_MXN": "6766000000",
+        "alcance": "~179–220 mil beneficiarios según fuente; pensión y becas",
+        "fuente": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_soc_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-SOC-002",
+        "name": "Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+        "sexenio": "ambos",
+        "sector": "social",
+        "dependencia": "Bienestar / SEDATU",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Programas nacionales; obras locales no inventariadas aquí",
+        "fuente": "https://www.gob.mx/bienestar",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_soc_002",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.67,
+          25.032
+        ]
+      },
+      "properties": {
+        "id": "FED-INT-001",
+        "name": "Conectividad satelital Aldeas Inteligentes — Isla Santa Margarita",
+        "sexenio": "AMLO",
+        "sector": "internet",
+        "dependencia": "SICT",
+        "municipios_raw": "Comondú (Isla Santa Margarita)",
+        "municipios": [
+          "comondu"
+        ],
+        "estado": "concluido",
+        "monto_MXN": "",
+        "alcance": "Conexión satelital comunitaria reportada",
+        "fuente": "https://www.notimx.mx/2024/01/conectan-via-satelital-isla-santa.html",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/comondu/",
+        "ontology_id": "proj_fed_int_001",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-INT-002",
+        "name": "CFE TEIT / Internet para el Bienestar — despliegue BCS",
+        "sexenio": "ambos",
+        "sector": "internet",
+        "dependencia": "CFE TEIT",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Programa nacional; cobertura BCS por confirmar",
+        "fuente": "https://www.cfe.mx",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_int_002",
+        "dossier_theme": "conectividad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-SEG-001",
+        "name": "Infraestructura Guardia Nacional en BCS",
+        "sexenio": "ambos",
+        "sector": "security",
+        "dependencia": "Guardia Nacional / SEDENA / SEMAR",
+        "municipios_raw": "Estatal",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Despliegue nacional; cuarteles BCS no listados con fuente primaria aquí",
+        "fuente": "https://www.gob.mx/guardianacional",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_seg_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-PES-001",
+        "name": "Programas CONAPESCA / apoyo pesca-acuacultura BCS (marco)",
+        "sexenio": "ambos",
+        "sector": "fisheries",
+        "dependencia": "CONAPESCA",
+        "municipios_raw": "Estatal (costero)",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Programas recurrentes; sin megaproyecto único documentado aquí",
+        "fuente": "https://www.gob.mx/conapesca",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_pes_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "FED-OTR-001",
+        "name": "Modernización transporte público La Paz (autobuses anunciados 2026)",
+        "sexenio": "Sheinbaum",
+        "sector": "other",
+        "dependencia": "Gobierno federal / estatal",
+        "municipios_raw": "La Paz",
+        "municipios": [
+          "la_paz"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Nuevas unidades ~marzo 2026 (anuncio gira)",
+        "fuente": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/la_paz/",
+        "ontology_id": "proj_fed_otr_001",
+        "dossier_theme": "economia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "FED-OTR-002",
+        "name": "Centros LIBRE (mujeres) — uno por municipio",
+        "sexenio": "Sheinbaum",
+        "sector": "other",
+        "dependencia": "INMUJERES / Bienestar",
+        "municipios_raw": "Estatal (5 municipios)",
+        "municipios": [
+          "bcs"
+        ],
+        "estado": "anunciado",
+        "monto_MXN": "",
+        "alcance": "Anunciados en cobertura de gira",
+        "fuente": "https://www.periodicoenfoque.com.mx/politica/claudia-sheinbaum-anuncia-obras-y-apoyos-historicos-en-baja-california-sur",
+        "precision": "municipality_centroid_approximate",
+        "precision_es": "Aprox. centroide de cabecera/municipio — no es coordenada de obra",
+        "precision_en": "Approx. municipality/cabecera centroid — not a worksite coordinate",
+        "studio_href": "/studio/bcs/",
+        "ontology_id": "proj_fed_otr_002",
+        "dossier_theme": "economia"
+      }
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "ambiente": [
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-14-SANEAMIENTO-AMBIENTAL.pdf",
+      "theme": "environmental sanitation",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-14"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/500 - Medio Ambiente.zip|PDU2040-ET-501 - Protección e Integración Ambiental.pdf",
+      "theme": "environment / ANP integration",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 500; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "06_environment/2025-04-22_CONANP-CONABIO_ANP_federales_BCS.zip",
+      "theme": "ANP federales",
+      "geography": "BCS (federal ANPs)",
+      "format": "ZIP",
+      "year": "2025",
+      "notes": "CONANP/CONABIO extract"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/maps_listings/anp_federales/anp_federales_BCS_2025.shp",
+      "theme": "ANP federales polygons",
+      "geography": "BCS",
+      "format": "SHP",
+      "year": "2025",
+      "notes": "ogrinfo: 10 features WGS84; includes Balandra, El Vizcaíno, Sierra La Laguna, Cabo Pulmo, Bahía de Loreto + others"
+    },
+    {
+      "path": "06_environment/2004-01-01_CONABIO_Regiones_terrestres_prioritarias_BCS.zip",
+      "theme": "RTP CONABIO",
+      "geography": "BCS",
+      "format": "ZIP",
+      "year": "2004",
+      "notes": "Regiones Terrestres Prioritarias"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/maps_listings/rtp_conabio/rtp_BCS.shp",
+      "theme": "RTP polygons",
+      "geography": "BCS",
+      "format": "SHP",
+      "year": "2004",
+      "notes": "ogrinfo: 5 features — Sierra de La Laguna, Sierra El Mechudo, Planicies de Magdalena, Sierra La Giganta, El Vizcaíno-El Barril"
+    }
+  ],
+  "movilidad": [
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-12-ESTRUCTURA-VIAL.pdf",
+      "theme": "mobility / road structure",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-12"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Vial.pdf",
+      "theme": "mobility",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Road map sheet"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/800 - Movilidad.zip|PDU2040-ET-801 - Estructura Vial Primaria.pdf",
+      "theme": "mobility / roads",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 800; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/800 - Movilidad.zip|PDU2040-ET-804 - Infraestructura Vial.pdf",
+      "theme": "mobility / road infra",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 800; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    }
+  ],
+  "otros": [
+    {
+      "path": "13_territorial_intelligence/_raw/ssn_cenapred/2024-04-18_SSN_Reporte-Especial-Secuencia-Loreto-BCS-M56.pdf",
+      "theme": "seismicity special report",
+      "geography": "Loreto / Golfo de California",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "SSN UNAM; M5.6 sequence Apr 2024; epicenter maps"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/ssn_cenapred/2025-10-08_SSN_Reporte-Especial-Secuencia-SJD-BCS-M46.pdf",
+      "theme": "seismicity special report",
+      "geography": "San José del Cabo / Los Cabos",
+      "format": "PDF",
+      "year": "2025",
+      "notes": "SSN UNAM; swarm Jul 2024–Oct 2025; 10340 events; San José del Cabo fault"
+    }
+  ],
+  "poer_ordenamiento": [
+    {
+      "path": "01_planning/2026-06-09_SEPUIMM_POERBCS-Carpeta-anexos-shapefiles.zip",
+      "theme": "ecological ordinance UGAs",
+      "geography": "BCS statewide",
+      "format": "ZIP",
+      "year": "2026",
+      "notes": "Anexos shapefiles MOE56; two UGA layers + metadatos + fichas"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/maps_listings/poerbcs_shapes/CARPETA POERBCS CCL/CARPETA POERBCS CCL/SHAPES/ccl/BCS_POER_MOE56UGAs_01.shp",
+      "theme": "POER UGAs (layer 01)",
+      "geography": "BCS statewide",
+      "format": "SHP",
+      "year": "2025",
+      "notes": "ogrinfo: 69 features; fields CLAVE_UGA,NOMBRE_UGA,SUPER_m2,sup_Ha,CLASIFICAC,CODE_PA; LCC Mexico"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/maps_listings/poerbcs_shapes/CARPETA POERBCS CCL/CARPETA POERBCS CCL/SHAPES/ccl/BCS_POER_MOE56UGAs_02_.shp",
+      "theme": "POER UGAs (layer 02)",
+      "geography": "BCS statewide",
+      "format": "SHP",
+      "year": "2026",
+      "notes": "ogrinfo: 189 features; same schema as 01; updated 2026-02-11"
+    },
+    {
+      "path": "01_planning/2025-11-13_SEPUIMM_POERBCS-Ficha-tecnica-MOE56-01.pdf",
+      "theme": "POER metadata",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2025",
+      "notes": "Ficha técnica UGA layer 01"
+    },
+    {
+      "path": "01_planning/2025-11-13_SEPUIMM_POERBCS-Ficha-tecnica-MOE56-02.pdf",
+      "theme": "POER metadata",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2025",
+      "notes": "Ficha técnica UGA layer 02"
+    },
+    {
+      "path": "01_planning/2025-11-13_SEPUIMM_POERBCS-Metadatos-UGAs-MOE-01.pdf",
+      "theme": "POER metadata",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2025",
+      "notes": "Metadatos UGA MOE 01"
+    },
+    {
+      "path": "01_planning/2025-11-13_SEPUIMM_POERBCS-Metadatos-UGAs-MOE-02.pdf",
+      "theme": "POER metadata",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2025",
+      "notes": "Metadatos UGA MOE 02"
+    }
+  ],
+  "riesgos": [
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-15-RIESGOS-Y-VULNERABILIDAD.pdf",
+      "theme": "hazards / risk & vulnerability",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-15; primary on-disk risk layer for East Cape PSDU"
+    },
+    {
+      "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+      "theme": "PDUCP (cites Atlas Riesgos La Paz 2012; tenencia tables)",
+      "geography": "La Paz centro de población",
+      "format": "PDF",
+      "year": "2018",
+      "notes": "Cites Atlas de Riesgos y Peligros Naturales del Municipio de La Paz 2012 (PDF of atlas itself GAP); Tabla 71 tenencia producción 2007"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/2024_Gobierno-BCS-UABCS_Atlas-Estatal-de-Riesgo-BCS.pdf",
+      "theme": "state risk atlas (document)",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Gobierno BCS / UABCS Atlas Estatal de Riesgo 2024 (210 p); Protección Civil + UABCS"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_FALLAS_Y_SISMICIDAD.pdf",
+      "theme": "hazards — faults & seismicity",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Downloaded from atlasriesgo.uabcs.mx mapas-pdf"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_TSUNAMIS.pdf",
+      "theme": "hazards — tsunami",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Downloaded from atlasriesgo.uabcs.mx mapas-pdf"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_SUSCEPTIBILIDAD_DE_LADERAS.pdf",
+      "theme": "hazards — landslide susceptibility",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Downloaded from atlasriesgo.uabcs.mx mapas-pdf"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_INUNDACIONES.pdf",
+      "theme": "hazards — flood",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Downloaded from atlasriesgo.uabcs.mx mapas-pdf"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_CICLONES_TROPICALES.pdf",
+      "theme": "hazards — tropical cyclones",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Downloaded from atlasriesgo.uabcs.mx mapas-pdf"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_ESTATAL_DE_RIESGO_Y_PUNTOS_CRITICOS.pdf",
+      "theme": "hazards — risk & critical points",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Downloaded from atlasriesgo.uabcs.mx mapas-pdf"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_ESTATAL_DE_VULNERABILIDAD.pdf",
+      "theme": "hazards — vulnerability",
+      "geography": "BCS statewide",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Downloaded from atlasriesgo.uabcs.mx mapas-pdf"
+    }
+  ],
+  "tenencia": [
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-10-TENENCIA-DE-LA-TIERRA.pdf",
+      "theme": "land tenure",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-10 TENENCIA; little OCR text — map sheet only"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/800 - Movilidad.zip|PDU2040-ET-802 - Transporte Público Urbano.pdf",
+      "theme": "mobility / transit",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 800; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/800 - Movilidad.zip|PDU2040-ET-803 - Transporte No Motorizado.pdf",
+      "theme": "mobility / NMT",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 800; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf",
+      "theme": "PSDU memoria (includes risk/tenure narrative + figures)",
+      "geography": "Loreto municipio",
+      "format": "PDF",
+      "year": "2024",
+      "notes": "Memoria técnica consulta pública; §2.5 Riesgos y Vulnerabilidad; ejido legal framework; not a standalone map sheet set"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/ran/ran_da_dgcat_poligonos_nucleos_agrarios_bcs.kml",
+      "theme": "land tenure — núcleos agrarios perimeters",
+      "geography": "BCS statewide",
+      "format": "KML",
+      "year": "2020",
+      "notes": "RAN datos abiertos DGCAT; 96 ejido polygons (tipo=Ejido); PROGRAMA=Procede; SHAPE zip 404"
+    },
+    {
+      "path": "13_territorial_intelligence/_raw/ran/nucleos_agrarios_bcs_from_kml.csv",
+      "theme": "land tenure — núcleos agrarios attribute table",
+      "geography": "BCS statewide",
+      "format": "CSV",
+      "year": "2020",
+      "notes": "Parsed from KML SimpleData; not geometries"
+    }
+  ],
+  "uso_suelo_planeacion": [
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-0-PLANO-BASE.pdf",
+      "theme": "base map / plano base",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-0; scanned"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-1-AREA-DE-ESTUDIO.pdf",
+      "theme": "study area",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-1"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-2-AMBITO-REGIONAL.pdf",
+      "theme": "regional context",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-2"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-9-MODELO.pdf",
+      "theme": "modelo de ordenamiento",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-9"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-13-DESARROLLO-TURISTICO.pdf",
+      "theme": "tourism development",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "CAD plot d-13"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-El-Cardonal.pdf",
+      "theme": "zoning / locality map",
+      "geography": "El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Locality map sheet"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Los-Barriles.pdf",
+      "theme": "zoning / locality map",
+      "geography": "Los Barriles (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Locality map sheet"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Regional.pdf",
+      "theme": "regional map",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Regional map sheet"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-Uso-suelo-vegetacion.pdf",
+      "theme": "land use / vegetation",
+      "geography": "Los Barriles–El Cardonal (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Uso de suelo y vegetación"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-Zonificacion.pdf",
+      "theme": "zoning",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Zonificación"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-Zonificacion-Normatividad.pdf",
+      "theme": "zoning / norms",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Zonificación + normatividad"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e1-estrategia.pdf",
+      "theme": "strategy map",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Estrategia e1"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e2.pdf",
+      "theme": "strategy map",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Plano e2"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e3.pdf",
+      "theme": "strategy map",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Plano e3"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e-6.pdf",
+      "theme": "strategy map",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Plano e-6"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e-7.pdf",
+      "theme": "strategy map",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Plano e-7"
+    },
+    {
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e-8.pdf",
+      "theme": "strategy map",
+      "geography": "Todos Santos–El Pescadero (La Paz)",
+      "format": "PDF",
+      "year": "2012",
+      "notes": "Plano e-8"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-Carta-Sintesis.pdf",
+      "theme": "synthesis map",
+      "geography": "Los Cabos municipio",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Carta síntesis PDU 2040"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip",
+      "theme": "cartography package (nested PDFs)",
+      "geography": "Los Cabos municipio",
+      "format": "ZIP",
+      "year": "2013",
+      "notes": "Outer zip; contains series 400–800 nested zips of PDF map sheets — listed individually below"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/400 - Estructura Urbana y Suelo.zip|PDU2040-ET-401 - Zonificación Primaria.pdf",
+      "theme": "zoning primary",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 400; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/400 - Estructura Urbana y Suelo.zip|PDU2040-ET-402 - Estructura Urbana.pdf",
+      "theme": "urban structure",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 400; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/400 - Estructura Urbana y Suelo.zip|PDU2040-ET-403 - Zonificación Secundaria.pdf",
+      "theme": "zoning secondary",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 400; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/500 - Medio Ambiente.zip|PDU2040-ET-502 - Accesos a Playas y Andadores.pdf",
+      "theme": "beach access / public space",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 500; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/600 - Infraestructura Urbana.zip|PDU2040-ET-601 - Manejo de Agua Potable y Agua Tratada.pdf",
+      "theme": "water infrastructure",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 600; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    },
+    {
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::CARTOGRAFIA/700 - Equipamiento Urbano y Espacio Público.zip|PDU2040-ET-701 - Macro Proyectos de Jerarquía Urbana.pdf",
+      "theme": "urban equipment / megaprojects",
+      "geography": "Los Cabos",
+      "format": "PDF",
+      "year": "2013",
+      "notes": "Inside PDU CARTOGRAFIA zip → 700; contents verified via unzip -l (not extracted to workspace as loose PDFs)"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+  directory = "netlify/functions"
+
+[functions.chat]
+  included_files = ["netlify/functions/chat_corpus.json", "netlify/functions/ontology_graph.json", "netlify/functions/stakeholders_seed.json", "netlify/functions/foresights.json", "netlify/functions/growth_demand_supply.json", "netlify/functions/strategic_questions.json", "netlify/functions/chat_media.json"]
+  external_node_modules = ["@netlify/blobs"]
+
+[functions.chat-memory]
+  external_node_modules = ["@netlify/blobs"]
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-Robots-Tag = "noindex, nofollow"
+
+[[edge_functions]]
+  function = "auth-gate"
+  path = "/*"
+
+[[redirects]]
+  from = "/api/auth"
+  to = "/.netlify/functions/auth"
+  status = 200
+
+[[redirects]]
+  from = "/api/logout"
+  to = "/.netlify/functions/logout"
+  status = 200
+
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+[[redirects]]
+  from = "/api/chat-memory"
+  to = "/.netlify/functions/chat-memory"
+  status = 200
+
+[[redirects]]
+  from = "/api/voice-token"
+  to = "/.netlify/functions/voice-token"
+  status = 200
+
+[[redirects]]
+  from = "/api/stakeholders"
+  to = "/.netlify/functions/stakeholders-api"
+  status = 200
+
+[functions.stakeholders-api]
+  included_files = ["netlify/functions/stakeholders_seed.json"]
+  external_node_modules = ["@netlify/blobs"]
+
+[[redirects]]
+  from = "/capacidad"
+  to = "/agua/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/capacidad/"
+  to = "/agua/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/demanda"
+  to = "/turismo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/demanda/"
+  to = "/turismo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/limitaciones"
+  to = "/riesgos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/limitaciones/"
+  to = "/riesgos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/actores"
+  to = "/ontologia/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/actores/"
+  to = "/ontologia/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/planes"
+  to = "/planeacion/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/planes/"
+  to = "/planeacion/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/archivos"
+  to = "/catalogo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/archivos/"
+  to = "/catalogo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/archivos/*"
+  to = "/catalogo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gis-atlas"
+  to = "/mapas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gis-atlas/"
+  to = "/mapas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gis-atlas/*"
+  to = "/mapas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fuentes"
+  to = "/catalogo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fuentes/"
+  to = "/catalogo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/news"
+  to = "/noticias/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/news/"
+  to = "/noticias/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/summary"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/summary/"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gemelo"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gemelo/"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/decision-twin"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/decision-twin/"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/decision"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/decision/"
+  to = "/resumen/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/air-connectivity"
+  to = "/vuelos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/air-connectivity/"
+  to = "/vuelos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/conectividad-aerea"
+  to = "/vuelos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/conectividad-aerea/"
+  to = "/vuelos/"
+  status = 301
+  force = true
+
+
+
+[[redirects]]
+  from = "/questions"
+  to = "/preguntas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/questions/"
+  to = "/preguntas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/questions/:id"
+  to = "/preguntas/:id/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/strategy-session"
+  to = "/sesion/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/strategy-session/"
+  to = "/sesion/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/places"
+  to = "/studio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/places/"
+  to = "/studio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lugar"
+  to = "/studio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lugar/"
+  to = "/studio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prospectiva"
+  to = "/foresights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prospectiva/"
+  to = "/foresights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/foresight"
+  to = "/foresights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/foresight/"
+  to = "/foresights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/demand-supply"
+  to = "/crecimiento/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/demand-supply/"
+  to = "/crecimiento/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oferta-demanda"
+  to = "/crecimiento/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oferta-demanda/"
+  to = "/crecimiento/"
+  status = 301
+  force = true
+
+

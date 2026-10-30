@@ -1,0 +1,1590 @@
+---
+import { ui } from '../i18n/ui';
+import PlaceStrip from './PlaceStrip.astro';
+const { home = false } = Astro.props;
+---
+<aside id="bcs-chat" class="bcs-chat" data-open="false" aria-label={ui.es.chatTitle}>
+  <div class="bcs-chat-backdrop" id="bcs-chat-backdrop" hidden></div>
+  <button type="button" class="bcs-chat-tab" id="bcs-chat-open" aria-expanded="false" aria-controls="bcs-chat-panel">
+    <span class="bcs-chat-tab-label" data-i18n="chatOpen">{ui.es.chatOpen}</span>
+  </button>
+
+  <div class="bcs-chat-panel" id="bcs-chat-panel" role="complementary" aria-label={ui.es.chatTitle}>
+    <header class="bcs-chat-head">
+      <div class="bcs-chat-head-text">
+        <strong data-i18n="chatTitle">{ui.es.chatTitle}</strong>
+        <span class="bcs-chat-sub" data-i18n="chatSubtitle">{ui.es.chatSubtitle}</span>
+      </div>
+      {home && (
+        <div class="bcs-chat-home-tools">
+          <button type="button" class="bcs-chat-home-btn" id="bcs-chat-home-lang"><span data-lang-es>English</span><span data-lang-en hidden>Español</span></button>
+          <a class="bcs-chat-home-btn" href="/portal"><span data-lang-es>Resto del portal →</span><span data-lang-en hidden>Rest of the portal →</span></a>
+        </div>
+      )}
+      <div class="bcs-chat-head-actions">
+        <div class="bcs-chat-sheet-controls" id="bcs-chat-sheet-controls" hidden>
+          <button type="button" class="bcs-chat-sheet-btn" data-sheet="partial" aria-pressed="true" title="Vista parcial">
+            <span aria-hidden="true">▭</span>
+            <span class="sr-only">Vista parcial</span>
+          </button>
+          <button type="button" class="bcs-chat-sheet-btn" data-sheet="full" aria-pressed="false" title="Pantalla completa">
+            <span aria-hidden="true">▣</span>
+            <span class="sr-only">Pantalla completa</span>
+          </button>
+        </div>
+        <button type="button" class="bcs-chat-x" id="bcs-chat-close" aria-label={ui.es.chatClose}>
+          <span data-i18n="chatClose">{ui.es.chatClose}</span>
+        </button>
+      </div>
+    </header>
+    <PlaceStrip compact={true} class="bcs-chat-place-strip" />
+    <div class="bcs-chat-msgs" id="bcs-chat-msgs" aria-live="polite">
+      {home && (
+        <div class="bcs-chat-welcome">
+          <h1 class="bcs-chat-welcome-t">BCS 2050</h1>
+          <p class="bcs-chat-welcome-p"><span data-lang-es>Conversa con los datos públicos del estado.</span><span data-lang-en hidden>Talk with the state's public data.</span></p>
+          <ul class="bcs-fx-stats" aria-label="Contenido del portal">
+            <li><span data-lang-es>municipios</span><span data-lang-en hidden>municipalities</span></li>
+            <li><span data-lang-es>mapas oficiales</span><span data-lang-en hidden>official maps</span></li>
+            <li><span data-lang-es>fotos aéreas</span><span data-lang-en hidden>aerial photos</span></li>
+          </ul>
+        </div>
+      )}
+      <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
+      <div class="bcs-chat-sugg" id="bcs-chat-sugg" aria-label="Preguntas sugeridas">
+        <p class="bcs-chat-sugg-title"><span data-lang-es>Empieza a explorar</span><span data-lang-en hidden>Start exploring</span></p>
+        <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Cuánta agua hay disponible en mi municipio?" data-q-en="How much water is available in my municipality?"><img class="bcs-sugg-th" src="/maps/dma-la-paz-localizacion.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Cuánta agua hay disponible en mi municipio?</span><span data-lang-en hidden>How much water is available in my municipality?</span></span></button>
+        <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué áreas naturales protegidas hay en Baja California Sur?" data-q-en="Which protected natural areas are in Baja California Sur?"><img class="bcs-sugg-th" src="/maps/poer-ugas-56.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Medio ambiente</span><span data-lang-en hidden>Environment</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué áreas naturales protegidas hay en Baja California Sur?</span><span data-lang-en hidden>Which protected natural areas are in Baja California Sur?</span></span></button>
+        <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué proyectos federales hay en Los Cabos?" data-q-en="Which federal projects are in Los Cabos?"><img class="bcs-sugg-th" src="/stills/batch_01/thumbs/S0005_san_jose_del_cabo.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Inversión</span><span data-lang-en hidden>Investment</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué proyectos federales hay en Los Cabos?</span><span data-lang-en hidden>Which federal projects are in Los Cabos?</span></span></button>
+        <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿De dónde viene la electricidad del estado?" data-q-en="Where does the state's electricity come from?"><img class="bcs-sugg-th" src="/maps/cenace-red-troncal-transmision.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Energía</span><span data-lang-en hidden>Energy</span></span><span class="bcs-sugg-q"><span data-lang-es>¿De dónde viene la electricidad del estado?</span><span data-lang-en hidden>Where does the state's electricity come from?</span></span></button>
+        <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué plan urbano aplica en La Paz?" data-q-en="Which urban plan applies in La Paz?"><img class="bcs-sugg-th" src="/maps/psdu-todos-santos-zonificacion.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Ciudad</span><span data-lang-en hidden>City</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué plan urbano aplica en La Paz?</span><span data-lang-en hidden>Which urban plan applies in La Paz?</span></span></button>
+        <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Cuántas personas viven en cada municipio?" data-q-en="How many people live in each municipality?"><img class="bcs-sugg-th" src="/stills/batch_01/thumbs/S0004_la_paz.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Población</span><span data-lang-en hidden>Population</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Cuántas personas viven en cada municipio?</span><span data-lang-en hidden>How many people live in each municipality?</span></span></button>
+      </div>
+    </div>
+    <form class="bcs-chat-form" id="bcs-chat-form">
+      <label class="sr-only" for="bcs-chat-input" data-i18n="chatPlaceholder">{ui.es.chatPlaceholder}</label>
+      <textarea id="bcs-chat-input" rows="2" data-i18n-placeholder="chatPlaceholder" placeholder={ui.es.chatPlaceholder} maxlength="2000" required></textarea>
+      <div class="bcs-chat-controls">
+        <button type="button" class="bcs-chat-mic" id="bcs-chat-mic" data-i18n-aria="chatMic" aria-label={ui.es.chatMic} aria-pressed="false" title={ui.es.chatMic}>
+          <span class="bcs-chat-mic-icon" aria-hidden="true">🎤</span>
+          <span class="bcs-chat-mic-label" data-i18n="chatMic">{ui.es.chatMic}</span>
+        </button>
+        <button type="button" class="bcs-chat-speak" id="bcs-chat-speak" data-i18n-aria="chatSpeak" aria-label={ui.es.chatSpeak} aria-pressed="false" title={ui.es.chatSpeak} disabled>
+          <span class="bcs-chat-speak-icon" aria-hidden="true">🔊</span>
+          <span class="bcs-chat-speak-label" data-i18n="chatSpeak">{ui.es.chatSpeak}</span>
+        </button>
+        <button type="submit" class="bcs-chat-send" data-i18n="chatSend">{ui.es.chatSend}</button>
+      </div>
+      <p class="bcs-chat-voice-hint" data-i18n="chatVoiceHint">{ui.es.chatVoiceHint}</p>
+      <p class="bcs-chat-voice-status" id="bcs-chat-voice-status" hidden aria-live="polite"></p>
+    </form>
+  </div>
+</aside>
+
+<script is:inline>
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest && e.target.closest('.bcs-chat-sugg-btn');
+    if (!b) return;
+    var en = (document.documentElement.getAttribute('data-lang') || document.documentElement.lang) === 'en';
+    var input = document.getElementById('bcs-chat-input');
+    var form = document.getElementById('bcs-chat-form');
+    if (!input || !form) return;
+    input.value = en ? b.getAttribute('data-q-en') : b.getAttribute('data-q-es');
+    var box = document.getElementById('bcs-chat-sugg'); if (box) box.hidden = true;
+    if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+  });
+</script>
+
+<style is:global>
+  .bcs-chat-sugg { display: flex; flex-direction: column; gap: 6px; margin: 4px 0 10px; }
+  .bcs-chat-sugg-title { margin: 0 0 2px; font-size: .8rem; color: #5c6e7b; }
+  .bcs-chat-sugg-btn { text-align: left; font: inherit; font-size: .84rem; line-height: 1.35; padding: 7px 10px; border-radius: 10px; border: 1px solid #e2dccf; background: #fbf8f1; color: #23374a; cursor: pointer; }
+  .bcs-chat-sugg-btn:hover, .bcs-chat-sugg-btn:focus-visible { border-color: #34607d; background: #eef3f6; }
+  .bcs-chat {
+    --bcs-chat-w: 440px;
+    position: fixed;
+    z-index: 80;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--bcs-chat-w);
+    font-family: var(--font);
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+  }
+  .bcs-chat > * { pointer-events: auto; }
+
+  .bcs-chat-tab {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 81;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    background: var(--fp-blue);
+    color: #fbf8f1;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    padding: 0.85rem 0.45rem;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    box-shadow: -2px 4px 14px rgba(0, 128, 192, 0.28);
+    letter-spacing: 0.04em;
+  }
+  .bcs-chat-tab:hover { background: var(--fp-blue-dark); }
+
+  .bcs-chat-panel {
+    width: 100%;
+    height: 100%;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    box-shadow: -4px 0 24px rgba(35, 55, 74,0.06);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .bcs-chat-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.85rem 0.9rem 0.55rem;
+    background: var(--ios-surface, var(--surface, #fbf8f1));
+    color: var(--ios-text, var(--text, #23374a));
+    border-bottom: 1px solid var(--ios-separator, rgba(60,60,67,0.12));
+    flex-shrink: 0;
+  }
+  .bcs-chat-head strong { color: var(--ios-text, #23374a); }
+  .bcs-chat-sub { color: var(--ios-secondary, #5c6e7b) !important; opacity: 1 !important; }
+  /* iOS chat scope strip */
+  .bcs-chat-place-strip.bcs-place-strip,
+  .bcs-chat .bcs-place-strip--compact {
+    background: var(--ios-surface, #fbf8f1) !important;
+    border-bottom: 1px solid var(--ios-separator, rgba(60,60,67,0.12)) !important;
+  }
+  .bcs-chat .bcs-ps-label { color: var(--ios-secondary, #5c6e7b) !important; }
+
+  .bcs-chat-x {
+    color: var(--ios-accent, #34607d) !important;
+    background: var(--ios-fill, rgba(120,120,128,0.12)) !important;
+    border: 0 !important;
+    border-radius: 980px !important;
+    min-height: 32px;
+    padding: 0.25rem 0.7rem !important;
+    font-weight: 600;
+  }
+  .bcs-chat-head-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+  /* iOS chat head text fix */
+  .bcs-chat-head,
+  .bcs-chat-head strong,
+  .bcs-chat-head-text {
+    color: var(--ios-text, #23374a);
+  }
+  .bcs-chat-sub {
+    color: var(--ios-secondary, #5c6e7b) !important;
+    opacity: 1 !important;
+  }
+
+  .bcs-chat-head strong {
+    font-size: 0.98rem;
+    line-height: 1.25;
+  }
+  .bcs-chat-sub {
+    font-size: 0.72rem;
+    opacity: 0.88;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+  .bcs-chat-x {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.45);
+    color: #fbf8f1;
+    border-radius: 8px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.72rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: none; /* desktop always open */
+  }
+  .bcs-chat-msgs {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.85rem;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    min-height: 0;
+  }
+  .bcs-chat-hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+  .bcs-chat-bubble {
+    max-width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+  .bcs-chat-bubble.user {
+    align-self: flex-end;
+    background: var(--fp-blue-soft);
+    color: var(--text);
+  }
+  .bcs-chat-bubble.bot {
+    align-self: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .bcs-chat-bubble.thinking { color: var(--muted); font-style: italic; }
+  .bcs-chat-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.45rem;
+  }
+  .bcs-chat-chip {
+    display: inline-block;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    padding: 0.22rem 0.45rem;
+    border-radius: 999px;
+    background: #dfe8ee;
+    color: var(--fp-blue-dark);
+    text-decoration: none;
+    border: 1px solid var(--fp-blue-soft);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .bcs-chat-chip:hover { background: var(--fp-blue); color: #fbf8f1; }
+  .bcs-chat-chip--news {
+    background: #fff8e6;
+    color: #6b4e00;
+    border-color: #f0d48a;
+    border-radius: 8px;
+    max-width: 100%;
+  }
+  .bcs-chat-chip--news:hover { background: #fdecc0; color: #4a3600; }
+  .bcs-chat-news-badge {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.62rem;
+    margin-right: 0.15rem;
+  }
+  .bcs-chat-links {
+    margin-top: 0.55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    border-top: 1px solid var(--border);
+    padding-top: 0.5rem;
+  }
+  .bcs-chat-link-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .bcs-chat-link-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .bcs-chat-link-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    align-items: center;
+  }
+  .bcs-chat-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    padding: 0.28rem 0.55rem;
+    border-radius: 8px;
+    background: var(--fp-blue);
+    color: #fbf8f1;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    max-width: 100%;
+  }
+  .bcs-chat-btn.secondary {
+    background: #dfe8ee;
+    color: var(--fp-blue-dark);
+    border: 1px solid var(--fp-blue-soft);
+  }
+  .bcs-chat-btn:hover { filter: brightness(0.95); }
+  .bcs-chat-file-title {
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 1.35;
+    word-break: break-word;
+  }
+  .bcs-chat-muted {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .bcs-chat-contact-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .bcs-chat-contact-desc {
+    font-size: 0.7rem;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .bcs-chat-onto-why {
+    font-size: 0.65rem;
+    color: var(--muted);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .bcs-chat-sources-deemph {
+    opacity: 0.75;
+    margin-top: 0.35rem;
+  }
+  .bcs-chat-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    padding: 0.65rem;
+    padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--rule);
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+  .bcs-chat-form textarea {
+    resize: none;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.5rem 0.6rem;
+    font: inherit;
+    font-size: 0.86rem;
+    min-height: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    grid-column: 1 / -1;
+  }
+  .bcs-chat-controls {
+    display: flex;
+    align-items: stretch;
+    gap: 0.35rem;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-width: 0;
+  }
+  .bcs-chat-mic,
+  .bcs-chat-speak {
+    flex: 0 1 auto;
+    min-width: 44px;
+    min-height: 44px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.28rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.15;
+    padding: 0.35rem 0.45rem;
+    transition: background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    white-space: nowrap;
+    max-width: 42%;
+  }
+  .bcs-chat-mic-icon,
+  .bcs-chat-speak-icon {
+    font-size: 1.05rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .bcs-chat-mic-label,
+  .bcs-chat-speak-label {
+    display: inline;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Stronger voice affordance — stand out from Enviar */
+  .bcs-chat-mic {
+    border: 2px solid var(--fp-blue);
+    background: #dfe8ee;
+    color: var(--fp-blue-dark);
+    box-shadow: 0 0 0 1px rgba(0, 128, 192, 0.12);
+  }
+  .bcs-chat-mic::after {
+    content: none;
+  }
+  .bcs-chat-mic:hover:not(:disabled),
+  .bcs-chat-speak:hover:not(:disabled) {
+    background: #d6eef8;
+    border-color: var(--fp-blue);
+  }
+  .bcs-chat-speak:hover:not(:disabled) {
+    background: #dfe8ee;
+    border-color: var(--fp-blue-soft);
+  }
+  .bcs-chat-mic:disabled,
+  .bcs-chat-speak:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .bcs-chat-mic[aria-pressed="true"],
+  .bcs-chat[data-voice="listening"] .bcs-chat-mic {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #a8543f;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45);
+    animation: bcs-mic-pulse 1.2s ease-out infinite;
+  }
+  .bcs-chat[data-voice="processing"] .bcs-chat-mic {
+    background: #f3e6cc;
+    border-color: #f59e0b;
+    animation: none;
+  }
+  .bcs-chat[data-voice="speaking"] .bcs-chat-speak,
+  .bcs-chat-speak[aria-pressed="true"] {
+    background: var(--fp-blue);
+    border-color: var(--fp-blue);
+    color: #fbf8f1;
+  }
+  @keyframes bcs-mic-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  }
+  .bcs-chat-voice-hint {
+    margin: 0;
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  .bcs-chat-voice-status {
+    margin: 0;
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.3;
+    min-height: 1em;
+  }
+  .bcs-chat-voice-status[hidden] { display: none !important; }
+  .bcs-chat-send {
+    flex: 1 1 auto;
+    min-width: 4.5rem;
+    align-self: stretch;
+    background: var(--fp-blue);
+    color: #fbf8f1;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 0.65rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.84rem;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  .bcs-chat-send:disabled { opacity: 0.6; cursor: wait; }
+  .bcs-chat-send:hover:not(:disabled) { background: var(--fp-blue-dark); }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* Mobile / narrow: bottom sheet — collapsed dock, expanded ~60vh full width */
+  @media (max-width: 900px) {
+    .bcs-chat {
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      flex-direction: column;
+      box-shadow: none;
+      pointer-events: none;
+    }
+    .bcs-chat > * { pointer-events: auto; }
+
+    .bcs-chat-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 79;
+      background: rgba(35, 55, 74, 0.35);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+    .bcs-chat[data-open="false"] .bcs-chat-backdrop,
+    .bcs-chat-backdrop[hidden] {
+      display: none !important;
+    }
+
+    .bcs-chat-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      left: 50%;
+      right: auto;
+      top: auto;
+      bottom: calc(64px + env(safe-area-inset-bottom, 0px) + 0.85rem) !important;
+      transform: translateX(-50%);
+      z-index: 81;
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      border-radius: 999px;
+      padding: 0.7rem 1.35rem;
+      min-height: 48px;
+      min-width: 7.5rem;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      box-shadow: 0 6px 20px rgba(0, 128, 192, 0.35);
+    }
+    .bcs-chat[data-open="true"] .bcs-chat-tab {
+      display: none;
+    }
+    .bcs-chat[data-open="false"] .bcs-chat-tab {
+      display: flex;
+      pointer-events: auto;
+    }
+
+    .bcs-chat-x { display: inline-block; }
+
+    .bcs-chat-head-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+    .bcs-chat-sheet-controls {
+      display: flex;
+      gap: 0.25rem;
+    }
+    .bcs-chat-sheet-btn {
+      background: var(--ios-fill, rgba(120,120,128,0.12));
+      border: 1px solid var(--ios-separator, rgba(60,60,67,0.2));
+      color: var(--ios-text, #23374a);
+      border-radius: 8px;
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+    .bcs-chat-sheet-btn[aria-pressed="true"] {
+      background: var(--ios-accent, #34607d);
+      color: #fbf8f1;
+      border-color: var(--ios-accent, #34607d);
+    }
+    .bcs-chat-panel {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: min(48vh, 420px);
+      max-height: calc(100vh - env(safe-area-inset-top, 0px) - 0.5rem);
+      border-left: none;
+      border-top: 1px solid var(--border);
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -8px 28px rgba(35, 55, 74,0.18);
+      transform: translateY(110%);
+      transition: transform 0.28s ease, height 0.28s ease;
+      z-index: 82;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .bcs-chat[data-open="true"] .bcs-chat-panel {
+      transform: translateY(0);
+      display: flex;
+    }
+    .bcs-chat[data-open="false"] .bcs-chat-panel,
+    .bcs-chat[data-sheet="collapsed"] .bcs-chat-panel {
+      transform: translateY(110%);
+      pointer-events: none;
+    }
+    .bcs-chat[data-sheet="partial"][data-open="true"] .bcs-chat-panel {
+      height: min(48vh, 420px);
+    }
+    .bcs-chat[data-sheet="full"][data-open="true"] .bcs-chat-panel {
+      height: calc(100vh - env(safe-area-inset-top, 0px) - 0.25rem);
+      max-height: calc(100vh - env(safe-area-inset-top, 0px) - 0.25rem);
+      border-radius: 12px 12px 0 0;
+    }
+    .bcs-chat[data-open="true"] .bcs-chat-sheet-controls {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 901px) {
+    .bcs-chat-backdrop { display: none !important; }
+    .bcs-chat-tab { display: none !important; }
+    .bcs-chat-x { display: none !important; }
+    .bcs-chat-panel {
+      display: flex !important;
+      transform: none !important;
+      height: 100% !important;
+      max-height: none !important;
+      border-radius: 0 !important;
+      position: relative !important;
+    }
+  }
+
+  /* FAB_ABOVE_TABBAR_V3 */
+  @media (max-width: 900px) {
+    body.ios-shell .bcs-chat-tab,
+    .bcs-chat .bcs-chat-tab,
+    #bcs-chat-open.bcs-chat-tab {
+      bottom: calc(64px + env(safe-area-inset-bottom, 0px) + 0.9rem) !important;
+      z-index: 95 !important;
+    }
+  }
+
+  /* PASS3_CHAT_AMBITO */
+  .bcs-chat .bcs-place-strip--compact,
+  .bcs-chat-place-strip.bcs-place-strip {
+    overflow: visible;
+  }
+  .bcs-chat .bcs-ps-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+  .bcs-chat .bcs-ps-label {
+    flex: 0 0 auto;
+    font-size: 0.65rem !important;
+  }
+  .bcs-chat .bcs-ps-seg {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap !important;
+  }
+  .bcs-chat .bcs-ps-chip {
+    flex: 0 0 auto !important;
+    white-space: nowrap;
+    font-size: 0.68rem !important;
+    padding: 0.2rem 0.45rem !important;
+  }
+
+  /* PASS3_CHAT_AMBITO_V2 */
+  .bcs-chat .bcs-place-strip--compact .bcs-ps-label { display: none !important; }
+  .bcs-chat .bcs-ps-seg {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    max-width: 100%;
+  }
+  .bcs-chat .bcs-ps-chip {
+    flex: 0 0 auto !important;
+    font-size: 0.62rem !important;
+    padding: 0.18rem 0.4rem !important;
+  }
+
+  /* PASS4_CHAT_AMBITO_WRAP */
+  .bcs-chat .bcs-place-strip--compact .bcs-ps-seg {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    gap: 0.28rem !important;
+    max-width: 100%;
+  }
+  .bcs-chat .bcs-place-strip--compact .bcs-ps-chip {
+    font-size: 0.6rem !important;
+    padding: 0.16rem 0.38rem !important;
+    line-height: 1.15;
+  }
+  .bcs-chat .bcs-place-strip--compact .bcs-ps-label { display: none !important; }
+  /* RICH_CHAT_2026_10_26 */
+  .bcs-chat-bubble.rich { white-space: normal; }
+  .bcs-chat-bubble.bot.rich { width: 100%; box-sizing: border-box; }
+  .bcs-rt p { margin: 0 0 .5rem; }
+  .bcs-rt p:last-child { margin-bottom: 0; }
+  .bcs-rt ul, .bcs-rt ol { margin: .2rem 0 .55rem; padding-left: 1.15rem; }
+  .bcs-rt li { margin: .12rem 0; }
+  .bcs-rt-h { font-weight: 700; color: var(--fp-blue-dark, #23374a); margin-top: .35rem !important; }
+  .bcs-rt code { font-size: .8em; background: rgba(120,120,128,.12); border-radius: 4px; padding: 0 .25em; }
+  .bcs-rt-pre { white-space: pre-wrap; font-size: .78rem; background: rgba(120,120,128,.08); padding: .5rem; border-radius: 8px; }
+  .bcs-rt-link { color: var(--fp-blue, #34607d); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
+  .bcs-rt-gap { background: #fff8e6; border: 1px solid #f0d48a; border-radius: 8px; padding: .4rem .55rem; font-size: .8rem; color: #5a4300; }
+  .bcs-rt-table-wrap { margin: .45rem 0 .6rem; overflow-x: auto; border: 1px solid var(--border, #e2dccf); border-radius: 10px; background: #fff; }
+  .bcs-rt-table-title { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted, #5c6e7b); padding: .45rem .6rem .1rem; }
+  .bcs-rt-table { border-collapse: collapse; width: 100%; font-size: .8rem; }
+  .bcs-rt-table th { text-align: left; background: #eef3f6; color: #23374a; font-weight: 700; padding: .38rem .55rem; border-bottom: 1px solid #d6e0e7; white-space: nowrap; }
+  .bcs-rt-table td { padding: .34rem .55rem; border-bottom: 1px solid #f0ebe0; vertical-align: top; }
+  .bcs-rt-table tr:last-child td { border-bottom: 0; }
+  .bcs-rt-table td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bcs-rb { margin-top: .55rem; display: flex; flex-direction: column; gap: .5rem; }
+  .bcs-rb-media { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .5rem; }
+  .bcs-rb-card { margin: 0; border: 1px solid var(--border, #e2dccf); border-radius: 10px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+  .bcs-rb-img { display: block; aspect-ratio: 4 / 3; background: #eef3f6; overflow: hidden; }
+  .bcs-rb-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .2s; }
+  .bcs-rb-img:hover img { transform: scale(1.03); }
+  .bcs-rb-card figcaption { padding: .4rem .5rem .5rem; display: flex; flex-direction: column; gap: .15rem; font-size: .74rem; line-height: 1.3; }
+  .bcs-rb-kind { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--fp-blue, #34607d); }
+  .bcs-rb-cap { color: var(--muted, #5c6e7b); font-size: .68rem; }
+  .bcs-rb-acts { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .15rem; }
+  .bcs-rb-acts .bcs-rt-link { font-size: .7rem; text-decoration: none; }
+  .bcs-rb-links { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .bcs-rb-pill { display: inline-flex; align-items: center; gap: .2rem; font-size: .76rem; font-weight: 600; padding: .35rem .65rem; border-radius: 999px; background: #eef3f6; border: 1px solid #c9d7e1; color: #23374a; text-decoration: none; max-width: 100%; }
+  .bcs-rb-pill:hover { background: var(--fp-blue, #34607d); color: #fbf8f1; }
+  .bcs-chat-links { border-top: 0 !important; padding-top: .15rem !important; }
+  /* CHAT_HOME_2026_10_26: Grok-like full-viewport landing */
+  .bcs-chat-home-tools { display: none; }
+  body.chat-home { padding: 0 !important; overflow: hidden; }
+  body.chat-home .site-header, body.chat-home .pt-sub, body.chat-home main, body.chat-home .site-footer,
+  body.chat-home .pt-drawer, body.chat-home .pt-tabbar, body.chat-home .ios-tabbar, body.chat-home nav.tabbar { display: none !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat.bcs-chat { display: flex !important; position: fixed !important; inset: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important; max-height: none !important; z-index: 90; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-tab, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-backdrop, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-x, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sheet-controls { display: none !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-panel { position: relative !important; inset: auto !important; transform: none !important; height: 100% !important; max-height: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; background: var(--paper, #fbf8f1) !important; pointer-events: auto !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head { justify-content: space-between; align-items: center; padding: .7rem 1.2rem !important; background: transparent !important; border-bottom: 0 !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text strong { font-size: 1.02rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-home-tools { display: flex; gap: .4rem; margin-left: auto; }
+  .bcs-chat-home-btn { font: inherit; font-size: .8rem; font-weight: 600; padding: .38rem .75rem; border-radius: 999px; border: 1px solid var(--border, #e2dccf); background: #fff; color: #23374a; text-decoration: none; cursor: pointer; white-space: nowrap; }
+  .bcs-chat-home-btn:hover { border-color: #34607d; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-place-strip { max-width: 820px; width: 100%; margin: 0 auto; background: transparent !important; border: 0 !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-msgs { background: transparent !important; padding: 1rem max(1rem, calc((100% - 820px) / 2)) 1.5rem; gap: 1rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-bubble { font-size: .98rem; line-height: 1.6; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-bubble.user { max-width: 80%; border-radius: 18px; padding: .65rem 1rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-bubble.bot { border: 0; background: transparent; padding: .2rem 0; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-rt-table { font-size: .9rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-rb-media { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  body.chat-home.has-chat-sidebar #bcs-chat:not(.has-msgs) .bcs-chat-msgs { justify-content: safe center; }
+  .bcs-chat-welcome { text-align: center; margin-bottom: .6rem; }
+  .bcs-chat-welcome-t { font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.1; margin: 0 0 .5rem; color: #23374a; letter-spacing: -.01em; }
+  .bcs-chat-welcome-p { margin: 0 auto; max-width: 56ch; color: #5c6e7b; font-size: 1rem; line-height: 1.5; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-hint { display: none; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; margin-top: 1rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-title { grid-column: 1 / -1; text-align: center; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { font-size: .92rem; padding: .75rem .9rem; border-radius: 14px; background: #fff; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-form { max-width: 820px; width: 100%; margin: 0 auto .9rem; box-sizing: border-box; border: 1px solid var(--border, #e2dccf) !important; border-radius: 22px; box-shadow: 0 6px 24px rgba(35,55,74,.08); background: #fff; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-form textarea { border: 0; font-size: 1rem; min-height: 3rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-form textarea:focus { outline: none; }
+  @media (max-width: 640px) {
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { grid-template-columns: 1fr; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-form { margin: 0; border-radius: 18px 18px 0 0; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text { visibility: hidden; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text::before { content: 'BCS 2050'; visibility: visible; font-weight: 700; }
+    .bcs-chat-welcome-t { font-size: 1.6rem; }
+    .bcs-chat-welcome-p { font-size: .9rem; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head { padding: .55rem .7rem !important; }
+  }
+
+  /* ===== Landing (2026-10-26): portal design system (paper/navy), scoped to body.chat-home ===== */
+  .bcs-fx-kicker, .bcs-fx-stats, .bcs-sugg-th, .bcs-sugg-k { display: none; }
+  body.chat-home { background: var(--paper, #fbf8f1); }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-place-strip { display: none !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head { border-bottom: 1px solid var(--border, rgba(60,60,67,.12)) !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text strong { color: var(--text, #23374a); }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sub { color: var(--muted, #5c6e7b); }
+  body.chat-home .bcs-chat-welcome { text-align: center; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text > * { display: none !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text::before { content: 'BCS 2050'; font-weight: 700; font-size: 1.02rem; color: var(--text, #23374a); }
+  body.chat-home .bcs-chat-welcome-t { color: var(--text, #23374a); font-weight: 700; letter-spacing: -.01em; font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 .4rem; }
+  body.chat-home .bcs-chat-welcome-p { color: var(--muted, #5c6e7b); font-size: 1.05rem; margin: 0; }
+  body.chat-home .bcs-fx-stats { display: flex; justify-content: center; gap: 2rem; list-style: none; padding: 0; margin: 1.2rem 0 0; }
+  body.chat-home .bcs-fx-stats li { color: var(--muted, #5c6e7b); font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-title { color: var(--muted, #5c6e7b); text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { display: flex; flex-direction: column; gap: .35rem; padding: 0 0 .8rem; overflow: hidden; border-radius: var(--ios-radius, 16px); border: 1px solid var(--border, rgba(60,60,67,.12)); background: #fff; color: var(--text, #23374a); box-shadow: var(--ios-shadow); text-align: left; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:hover, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:focus-visible { border-color: var(--ios-accent, #34607d); }
+  body.chat-home .bcs-sugg-th { display: block; width: 100%; height: 64px; object-fit: cover; }
+  body.chat-home .bcs-sugg-k { display: block; padding: 0 .9rem; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--ios-accent, #34607d); }
+  body.chat-home .bcs-sugg-q { display: block; padding: 0 .9rem; font-size: .9rem; line-height: 1.35; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-send { background: var(--ios-accent, #34607d) !important; color: #fff !important; }
+  @keyframes bcsRise { from { opacity: 0; transform: translateY(8px); } }
+  /* charts */
+  .bcs-rb-chart { margin: .7rem 0; padding: .75rem .85rem; border-radius: 12px; background: #fff; color: #23374a; border: 1px solid var(--border, rgba(60,60,67,.12)); }
+  .bcs-rb-chart-t { font-weight: 700; font-size: .86rem; margin-bottom: .55rem; color: #23374a; }
+  .bcs-rb-bar { display: grid; grid-template-columns: minmax(90px, 34%) 1fr auto; align-items: center; gap: .6rem; font-size: .8rem; margin: .3rem 0; }
+  .bcs-rb-bar-l { color: #5c6e7b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bcs-rb-bar-track { height: 10px; border-radius: 999px; background: rgba(120,120,128,.16); overflow: hidden; }
+  .bcs-rb-bar-fill { display: block; height: 100%; width: var(--w); border-radius: 999px; background: #34607d; animation: bcsGrow .9s cubic-bezier(.2,.8,.2,1) both; }
+  .bcs-rb-bar.neg .bcs-rb-bar-fill { background: linear-gradient(90deg, #ff8a65, #e0525a); box-shadow: 0 0 12px rgba(224,82,90,.4); }
+  @keyframes bcsGrow { from { width: 0; } }
+  .bcs-rb-bar-v { font-variant-numeric: tabular-nums; font-weight: 700; color: #23374a; }
+  .bcs-rb-chart-src { display: block; margin-top: .45rem; font-size: .7rem; color: #8796a0; }
+  /* follow-up question + chips */
+  .bcs-rt-next { margin: .8rem 0 0; padding: .6rem .8rem; border-left: 3px solid #1fa5a0; background: #eef8f7; border-radius: 0 10px 10px 0; font-weight: 600; color: #134e57; }
+  .bcs-fu { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .7rem; align-items: center; }
+  .bcs-fu-label { width: 100%; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #1b7f8a; }
+  .bcs-fu-chip { font: inherit; font-size: .82rem; line-height: 1.3; text-align: left; padding: .45rem .8rem; border-radius: 999px; border: 1px solid #9fd8d2; background: #fff; color: #134e57; cursor: pointer; transition: background .15s, border-color .15s, transform .15s; }
+  .bcs-fu-chip::before { content: '→ '; color: #1fa5a0; font-weight: 700; }
+  .bcs-fu-chip:hover, .bcs-fu-chip:focus-visible { background: #e3f6f3; border-color: #1fa5a0; transform: translateY(-1px); }
+  .bcs-fu-old { opacity: .55; }
+  @media (prefers-reduced-motion: reduce) { .bcs-rb-bar-fill, .bcs-fx-dot, body.chat-home #bcs-chat .bcs-chat-bubble.bot.rich { animation: none !important; } }
+  @media (max-width: 900px) { body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) {
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head { flex-wrap: nowrap !important; gap: .4rem; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text { flex: 0 0 auto; width: 5.6rem; overflow: hidden; white-space: nowrap; height: 1.3rem; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-actions { display: none; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-home-tools { flex-wrap: nowrap; }
+    body.chat-home .bcs-chat-home-btn { font-size: .72rem; padding: .3rem .55rem; }
+    body.chat-home .bcs-fx-kicker { font-size: .62rem; letter-spacing: .05em; }
+    body.chat-home .bcs-chat-welcome-t { font-size: 1.9rem; }
+    body.chat-home .bcs-fx-stats { gap: 1.2rem; margin-top: 1rem; }
+    body.chat-home .bcs-fx-stats strong { font-size: 1.25rem; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+    body.chat-home .bcs-sugg-th { height: 56px; }
+    body.chat-home .bcs-sugg-q { font-size: .8rem; padding: 0 .6rem; }
+    body.chat-home .bcs-sugg-k { padding: 0 .6rem; }
+  }
+  /* ===== Landing F+P blue (2026-10-27): #0083C4 field + white type, scoped to body.chat-home ===== */
+  html:has(body.chat-home), body.chat-home { background: #0083C4 !important; color: #fff; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-panel { background: #0083C4 !important; color: #fff; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head { border-bottom: 1px solid rgba(255,255,255,.28) !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text::before, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-head-text strong { color: #fff !important; }
+  body.chat-home .bcs-chat-home-btn { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+  body.chat-home .bcs-chat-home-btn:hover { background: #fff; color: #0083C4; border-color: #fff; }
+  body.chat-home .bcs-chat-welcome-t { color: #fff !important; font-weight: 700; letter-spacing: -.015em; }
+  body.chat-home .bcs-chat-welcome-p { color: rgba(255,255,255,.92) !important; }
+  body.chat-home .bcs-fx-stats li, body.chat-home .bcs-fx-stats a, body.chat-home .bcs-fx-stats strong { color: #fff !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-title { color: rgba(255,255,255,.88) !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { background: #fff; border-color: transparent; color: #1a2b38; box-shadow: 0 6px 20px rgba(0,40,70,.18); }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:hover, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:focus-visible { border-color: #fff; outline: 2px solid #fff; outline-offset: 2px; }
+  body.chat-home .bcs-sugg-k { color: #0083C4 !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-form { border-color: transparent !important; box-shadow: 0 8px 28px rgba(0,40,70,.22); }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-send { background: #0083C4 !important; color: #fff !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-voice-hint { color: #4a5a66; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-bubble.user { background: #fff !important; color: #1a2b38 !important; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-bubble.bot { background: #fff !important; color: #1a2b38 !important; border-radius: 16px; padding: .8rem 1rem !important; }
+  /* ===== Landing cards UX (2026-10-27): balanced explore cards + no composer overlap ===== */
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-msgs > * { flex-shrink: 0; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-form { flex-shrink: 0; position: relative; z-index: 2; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; margin-top: 1.25rem; grid-auto-rows: auto; align-items: stretch; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-title { margin-bottom: .1rem; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { display: grid; grid-template-rows: auto auto 1fr; gap: 0; padding: 0; border-radius: 14px; border: 1px solid rgba(255,255,255,.55); box-shadow: 0 2px 10px rgba(0,40,70,.14); transition: transform .15s ease, box-shadow .15s ease; cursor: pointer; }
+  body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,40,70,.22); }
+  body.chat-home .bcs-sugg-th { width: 100%; height: auto !important; aspect-ratio: 16 / 7; object-fit: cover; background: #e8f1f7; border-bottom: 1px solid rgba(0,0,0,.06); }
+  body.chat-home .bcs-sugg-k { padding: .6rem .9rem 0 !important; font-size: .64rem; }
+  body.chat-home .bcs-sugg-q { padding: .25rem .9rem .75rem !important; font-size: .9rem; line-height: 1.35; font-weight: 500; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  /* Desktop/tablet: horizontal tiles (thumb left, label+question right) so 3x2 fits above composer */
+  @media (min-width: 561px) {
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { grid-template-columns: 88px minmax(0,1fr); grid-template-rows: auto 1fr; min-height: 92px; }
+    body.chat-home .bcs-sugg-th { grid-row: 1 / 3; grid-column: 1; aspect-ratio: auto; height: 0 !important; min-height: 100%; border-bottom: 0; border-right: 1px solid rgba(0,0,0,.06); }
+    body.chat-home .bcs-sugg-k { grid-column: 2; padding: .7rem .85rem 0 !important; }
+    body.chat-home .bcs-sugg-q { grid-column: 2; padding: .2rem .85rem .7rem !important; display: block; -webkit-line-clamp: unset; overflow: visible; font-size: .88rem; }
+  }
+  @media (max-height: 760px) and (min-width: 901px) {
+    body.chat-home .bcs-chat-welcome-t { font-size: 2.3rem !important; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { gap: .65rem; margin-top: .8rem; }
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { min-height: 80px; }
+  }
+  @media (max-width: 900px) { body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) {
+    body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg { gap: .5rem; }
+    body.chat-home .bcs-sugg-th { aspect-ratio: 16 / 7; }
+    body.chat-home .bcs-sugg-k { padding: .45rem .6rem 0 !important; }
+    body.chat-home .bcs-sugg-q { padding: .2rem .6rem .6rem !important; font-size: .8rem; -webkit-line-clamp: 3; }
+  }
+</style>
+
+<script is:inline src="/js/bcs-chat-render.js"></script>
+<script is:inline src="/js/bcs-grok-voice.js"></script>
+<script is:inline>
+(function () {
+  var root = document.getElementById('bcs-chat');
+  if (!root) return;
+  var panel = document.getElementById('bcs-chat-panel');
+  var openBtn = document.getElementById('bcs-chat-open');
+  var closeBtn = document.getElementById('bcs-chat-close');
+  var form = document.getElementById('bcs-chat-form');
+  var input = document.getElementById('bcs-chat-input');
+  var msgs = document.getElementById('bcs-chat-msgs');
+  var history = [];
+  var CHAT_HOME = document.body.classList.contains('chat-home');
+  var MQ = CHAT_HOME ? { matches: false, addEventListener: function () {} } : window.matchMedia('(max-width: 900px)');
+  var SESSION_KEY = 'bcs_chat_sid';
+  function chatSessionId() {
+    try {
+      var sid = sessionStorage.getItem(SESSION_KEY);
+      if (sid && sid.length >= 8) return sid;
+      sid = (crypto.randomUUID && crypto.randomUUID()) ||
+        ('s' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
+      sessionStorage.setItem(SESSION_KEY, sid);
+      return sid;
+    } catch (e) {
+      return null;
+    }
+  }
+
+
+  function t(key) {
+    var ui = window.__BCS_UI__ || {};
+    var lang = (document.documentElement.getAttribute('data-lang') || 'es');
+    var bag = ui[lang] || ui.es || {};
+    return bag[key] || key;
+  }
+
+  function syncPlaceholders() {
+    var ph = t('chatPlaceholder');
+    if (input) input.setAttribute('placeholder', ph);
+  }
+
+  var backdrop = document.getElementById('bcs-chat-backdrop');
+
+  var sheetControls = document.getElementById('bcs-chat-sheet-controls');
+  var SHEET_KEY = 'bcs_chat_sheet';
+
+  function getSheet() {
+    try {
+      var s = localStorage.getItem(SHEET_KEY);
+      if (s === 'full' || s === 'partial') return s;
+    } catch (e) {}
+    return 'partial';
+  }
+
+  function setSheet(mode) {
+    if (mode !== 'full' && mode !== 'partial' && mode !== 'collapsed') mode = 'partial';
+    root.setAttribute('data-sheet', mode);
+    try {
+      if (mode === 'collapsed') { /* don't persist collapsed as preferred open size */ }
+      else localStorage.setItem(SHEET_KEY, mode);
+    } catch (e) {}
+    if (sheetControls) {
+      sheetControls.hidden = !MQ.matches || root.getAttribute('data-open') !== 'true';
+      sheetControls.querySelectorAll('.bcs-chat-sheet-btn').forEach(function (btn) {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-sheet') === mode ? 'true' : 'false');
+      });
+    }
+    // Preserve place strip context — do not clear BCSPlace
+  }
+
+  // Portal pages (BaseLayout, body.has-chat-sidebar): on desktop the assistant is a docked panel that
+  // "Preguntar" opens and "Cerrar" hides, remembered per browser (like the atlas). Other hosts keep the
+  // previous always-open desktop sidebar.
+  var DOCKABLE = document.body.classList.contains('has-chat-sidebar') && !CHAT_HOME;
+  var DOCK_KEY = 'bcs_chat_docked';
+  function dockPref() {
+    try {
+      var v = localStorage.getItem(DOCK_KEY);
+      if (v === '1') return true;
+      if (v === '0') return false;
+    } catch (e) {}
+    return window.innerWidth >= 1100 || /^\/(inicio|chat)\/?$/.test(location.pathname);
+  }
+  function rememberDock(open) {
+    if (!DOCKABLE || MQ.matches) return;
+    try { localStorage.setItem(DOCK_KEY, open ? '1' : '0'); } catch (e) {}
+  }
+  function setOpen(open, sheetMode) {
+    // Desktop: docked sidebar; mobile: 3-state sheet
+    if (!MQ.matches) {
+      if (!DOCKABLE) open = true;
+      root.setAttribute('data-sheet', 'desktop');
+    } else {
+      if (open) {
+        var mode = sheetMode || getSheet() || 'partial';
+        if (mode === 'collapsed') mode = 'partial';
+        setSheet(mode);
+      } else {
+        setSheet('collapsed');
+      }
+    }
+    root.setAttribute('data-open', open ? 'true' : 'false');
+    if (openBtn) openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('chat-drawer-open', MQ.matches && open);
+    if (DOCKABLE) document.body.classList.toggle('chat-docked', !MQ.matches && open);
+    document.body.classList.toggle('chat-sheet-full', MQ.matches && open && root.getAttribute('data-sheet') === 'full');
+    if (backdrop) {
+      if (MQ.matches && open) backdrop.removeAttribute('hidden');
+      else backdrop.setAttribute('hidden', '');
+    }
+    if (panel) {
+      var hidePanel = MQ.matches && !open;
+      panel.setAttribute('aria-hidden', hidePanel ? 'true' : 'false');
+      if (hidePanel) panel.setAttribute('inert', '');
+      else panel.removeAttribute('inert');
+    }
+    if (sheetControls) sheetControls.hidden = !MQ.matches || !open;
+    if (open && input && MQ.matches) {
+      setTimeout(function () { input.focus(); }, 280);
+    }
+    syncPlaceholders();
+  }
+
+  // Desktop: open unless the reader closed it (portal pages); mobile collapsed so pages stay full width
+  setOpen(!MQ.matches && (!DOCKABLE || dockPref()));
+
+  openBtn && openBtn.addEventListener('click', function () { setOpen(true, getSheet()); });
+  closeBtn && closeBtn.addEventListener('click', function () { setOpen(false); rememberDock(false); });
+  backdrop && backdrop.addEventListener('click', function () { setOpen(false); });
+  sheetControls && sheetControls.addEventListener('click', function (e) {
+    var btn = e.target.closest('.bcs-chat-sheet-btn');
+    if (!btn) return;
+    var mode = btn.getAttribute('data-sheet');
+    if (mode) setOpen(true, mode);
+  });
+  // Swipe-down on head to collapse (light)
+  var head = root.querySelector('.bcs-chat-head');
+  if (head) {
+    var touchY = null;
+    head.addEventListener('touchstart', function (e) {
+      if (!MQ.matches) return;
+      touchY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    head.addEventListener('touchend', function (e) {
+      if (!MQ.matches || touchY == null) return;
+      var dy = e.changedTouches[0].clientY - touchY;
+      touchY = null;
+      if (dy > 60) {
+        var cur = root.getAttribute('data-sheet');
+        if (cur === 'full') setOpen(true, 'partial');
+        else setOpen(false);
+      } else if (dy < -40 && root.getAttribute('data-open') === 'true') {
+        setOpen(true, 'full');
+      }
+    }, { passive: true });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && MQ.matches && root.getAttribute('data-open') === 'true') {
+      var cur = root.getAttribute('data-sheet');
+      if (cur === 'full') setOpen(true, 'partial');
+      else setOpen(false);
+    }
+  });
+  MQ.addEventListener && MQ.addEventListener('change', function () {
+    setOpen(!MQ.matches && (!DOCKABLE || dockPref()));
+  });
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function appendChainLinks(div, payload) {
+    var lang = document.documentElement.getAttribute('data-lang') || 'es';
+    var links = el('div', 'bcs-chat-links');
+    var chainLabel = el('div', 'bcs-chat-link-label bcs-chat-chain-title');
+    chainLabel.textContent = lang === 'en' ? 'Evidence chain' : 'Cadena de evidencia';
+    links.appendChild(chainLabel);
+    var row = el('div', 'bcs-chat-chain-row');
+    var any = false;
+
+    function addChip(label, href, title, external) {
+      if (!href && !label) return;
+      any = true;
+      var a = el('a', 'bcs-chat-chip bcs-chat-chain-chip');
+      a.textContent = label;
+      if (title) a.title = title;
+      if (href) {
+        a.href = href;
+        if (external) {
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+        }
+      } else {
+        a.href = '#';
+        a.addEventListener('click', function (e) { e.preventDefault(); });
+        a.classList.add('bcs-chat-chip--static');
+      }
+      row.appendChild(a);
+    }
+
+    // 1) Primary file
+    var pf = payload && payload.primary_file;
+    if (pf && (pf.view_url || pf.catalog_url || pf.path || pf.title)) {
+      var pft = safeCardTitle(pf);
+      var flab = (lang === 'en' ? 'Document: ' : 'Documento: ') + pft;
+      if (flab.length > 42) flab = flab.slice(0, 40) + '…';
+      addChip(flab, pf.view_url || pf.catalog_url || ('/catalogo?q=' + catalogQuery(pf)), pft, !!pf.view_url);
+    }
+
+    // 2) Ontology (first 2)
+    var onto = (payload && payload.ontology) || [];
+    onto.slice(0, 2).forEach(function (n) {
+      var lab = (lang === 'es' && n.label_es) ? n.label_es : (n.label || n.id);
+      addChip((lang === 'en' ? 'Onto: ' : 'Onto: ') + lab, n.href || ('/ontologia#' + encodeURIComponent(n.id || '')), n.why || lab, false);
+    });
+
+    // 3) Stakeholder
+    var st = payload && payload.stakeholder;
+    if (st && st.name) {
+      addChip((lang === 'en' ? 'Actor: ' : 'Actor: ') + st.name, st.href || ('/stakeholders?q=' + encodeURIComponent(st.name)), st.description || st.name, false);
+    }
+
+    // 4) Place vocation
+    var place = payload && payload.place;
+    var placeId = null;
+    var placeLab = null;
+    if (place && typeof place === 'object') {
+      placeId = place.id;
+      placeLab = (lang === 'en' ? (place.label_en || place.label_es) : (place.label_es || place.label_en)) || placeId;
+    } else if (typeof place === 'string' && place) {
+      placeId = place;
+      placeLab = place.replace(/_/g, ' ');
+    }
+    if (!placeId && window.BCSPlace && window.BCSPlace.get) placeId = window.BCSPlace.get() || null;
+    if (placeId) {
+      if (!placeLab) placeLab = placeId.replace(/_/g, ' ');
+      addChip((lang === 'en' ? 'Place: ' : 'Lugar: ') + placeLab, '/crecimiento/?place=' + encodeURIComponent(placeId) + '#' + encodeURIComponent(placeId), placeId, false);
+    }
+
+    // 5) Foresight signal(s)
+    var signals = [];
+    if (payload && Array.isArray(payload.foresight_signals)) signals = payload.foresight_signals;
+    else if (payload && payload.foresight_signal) signals = [payload.foresight_signal];
+    signals.slice(0, 3).forEach(function (sig) {
+      if (!sig) return;
+      var sid = sig.id || '';
+      var stitle = (lang === 'en' ? (sig.title_en || sig.title_es) : (sig.title_es || sig.title_en)) || sid;
+      if (stitle.length > 36) stitle = stitle.slice(0, 34) + '…';
+      var href = '/foresights/';
+      if (placeId) href += '?place=' + encodeURIComponent(placeId);
+      if (sid) href += (href.indexOf('?') >= 0 ? '&' : '?') + 'signal=' + encodeURIComponent(sid);
+      href += '#signal-' + encodeURIComponent(sid || 'signals');
+      addChip((lang === 'en' ? 'Signal: ' : 'Señal: ') + (sid || stitle), href, stitle, false);
+    });
+
+    var sqs = (payload && payload.strategic_questions) || [];
+    sqs.slice(0, 2).forEach(function (sq) {
+      if (!sq) return;
+      var lab = (lang === 'en' ? (sq.question_en || sq.question_es) : (sq.question_es || sq.question_en)) || sq.id;
+      if (lab.length > 40) lab = lab.slice(0, 38) + '…';
+      addChip((lang === 'en' ? 'Q: ' : 'P: ') + (sq.id || lab), sq.href || ('/preguntas/' + encodeURIComponent(sq.id || '') + '/'), lab, false);
+    });
+
+    if (any) {
+      links.appendChild(row);
+      div.appendChild(links);
+    }
+  }
+
+  // Card titles (2026-10-08): never render a raw file name; the server sends human titles, this is the guard.
+  var CARD_FILE_RE = /\.(pdf|md|csv|tsv|xlsx?|json|geojson|zip|kml|kmz|docx?|pptx?|txt|py|mjs|ya?ml|shp|dbf|prj|esp|html?|jpe?g|png|webp)\b|_|^\d{4}(-\d{2}){0,2}[ _-]?_/i;
+  function safeCardTitle(s) {
+    var t = String((s && s.title) || '').replace(/\s+/g, ' ').trim();
+    if (s && s.type === 'news') return t;
+    if (!t || CARD_FILE_RE.test(t)) t = 'Documento del acervo BCS 2050 — ' + ((s && s.theme_label) || 'acervo de datos');
+    return t;
+  }
+  function catalogQuery(s) {
+    return encodeURIComponent(((s && s.path) || '').split('/').pop() || safeCardTitle(s));
+  }
+
+  function appendSourcesDeemph(div, sources) {
+    if (!sources || !sources.length) return;
+    var wrap = el('div', 'bcs-chat-sources bcs-chat-sources-deemph');
+    var seen = {};
+    var unique = [];
+    var ordered = sources.filter(function (s) { return s && s.drive_url; })
+      .concat(sources.filter(function (s) { return s && !s.drive_url; }));
+    ordered.forEach(function (s) {
+      var title = safeCardTitle(s);
+      var key = title.toLowerCase();
+      var base = ((s.path || title).split('/').pop() || '').toLowerCase();
+      if (/08_fp_team_research/i.test(s.path || '') || /08_fp_team_research/i.test(s.drive_url || '')) return;
+      if (seen[key] || seen[base]) return;
+      seen[key] = true;
+      if (base) seen[base] = true;
+      unique.push(s);
+    });
+    unique.slice(0, 4).forEach(function (s) {
+      var a = el('a', 'bcs-chat-chip');
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = safeCardTitle(s);
+      if (s.type === 'news') {
+        // Press source card: "Noticia · outlet · date — headline" (never presented as official data)
+        var en = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
+        a.className = 'bcs-chat-chip bcs-chat-chip--news';
+        a.textContent = '';
+        var badge = el('span', 'bcs-chat-news-badge', en ? (s.label_en || 'News') : (s.label || 'Noticia'));
+        var meta = [s.outlet, en ? (s.date_label_en || s.date) : (s.date_label_es || s.date)].filter(Boolean).join(' · ');
+        var head = String(s.title || '').replace(/^Noticia(\s+sin\s+resumen)?\s*\([^)]*\):\s*/, '');
+        a.appendChild(badge);
+        a.appendChild(document.createTextNode(' ' + meta + (head ? ' — ' + head : '')));
+        a.title = (en ? 'Press report (not official data): ' : 'Nota de prensa (no es dato oficial): ') + meta + (head ? ' — ' + head : '');
+        if (s.url || (s.href && /^https?:\/\//.test(s.href))) a.href = s.url || s.href;
+        wrap.appendChild(a);
+        return;
+      }
+      if (s.drive_url) {
+        a.href = s.drive_url;
+      } else if (s.href && (/^https?:\/\//.test(s.href) || s.href.charAt(0) === '/')) {
+        a.href = s.href;
+      } else {
+        a.href = '/catalogo?q=' + catalogQuery(s);
+      }
+      wrap.appendChild(a);
+    });
+    if (wrap.childNodes.length) div.appendChild(wrap);
+  }
+
+  function addBubble(role, text, payload) {
+    var hint = msgs.querySelector('.bcs-chat-hint');
+    if (hint) hint.remove();
+    var sugg = msgs.querySelector('.bcs-chat-sugg');
+    if (sugg) sugg.remove();
+    var wel = msgs.querySelector('.bcs-chat-welcome');
+    if (wel) wel.remove();
+    root.classList.add('has-msgs');
+    var isRich = role.indexOf('bot') === 0 && role.indexOf('thinking') < 0 && window.BCSChatRender;
+    var div = el('div', 'bcs-chat-bubble ' + role, isRich ? null : text);
+    if (isRich) {
+      div.classList.add('rich');
+      try { div.appendChild(window.BCSChatRender.renderMarkdown(text)); } catch (e) { div.textContent = text; }
+      try {
+        var rb = payload && payload.blocks && window.BCSChatRender.renderBlocks(payload.blocks, document.documentElement.getAttribute('data-lang') || 'es');
+        if (rb) div.appendChild(rb);
+      } catch (e) {}
+      try {
+        var fus = payload && Array.isArray(payload.followUps) ? payload.followUps.slice(0, 3) : [];
+        if (fus.length) {
+          msgs.querySelectorAll('.bcs-fu').forEach(function (n) { n.classList.add('bcs-fu-old'); });
+          var fu = el('div', 'bcs-fu');
+          var enL = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
+          fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Keep exploring' : 'Sigue explorando'));
+          fus.forEach(function (q) {
+            var b = el('button', 'bcs-fu-chip', String(q));
+            b.type = 'button';
+            b.addEventListener('click', function () { if (!input || !form) return; input.value = String(q).slice(0, 2000); if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true })); });
+            fu.appendChild(b);
+          });
+          div.appendChild(fu);
+        }
+      } catch (e) {}
+    }
+    if (role.indexOf('bot') === 0 && role.indexOf('thinking') < 0 && payload && !Array.isArray(payload)) {
+      appendChainLinks(div, payload);
+      appendSourcesDeemph(div, payload.sources);
+    } else if (role.indexOf('bot') === 0 && role.indexOf('thinking') < 0 && Array.isArray(payload)) {
+      // legacy: sources array only
+      appendChainLinks(div, { primary_file: null, ontology: [], stakeholder: null, place: null, foresight_signals: [] });
+      appendSourcesDeemph(div, payload);
+    }
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  /* —— Voice conversation (xAI Grok realtime) —— */
+  var micBtn = document.getElementById('bcs-chat-mic');
+  var speakBtn = document.getElementById('bcs-chat-speak');
+  var voiceStatus = document.getElementById('bcs-chat-voice-status');
+  var grokVoice = null;
+  var conversationMode = false;
+  var lastSpokenText = '';
+  var voiceSupported = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.WebSocket && (window.AudioContext || window.webkitAudioContext));
+
+  function setVoiceState(state) {
+    root.setAttribute('data-voice', state || '');
+    if (!voiceStatus) return;
+    if (!state) {
+      voiceStatus.hidden = true;
+      voiceStatus.textContent = '';
+      return;
+    }
+    var map = {
+      connecting: 'chatVoiceConnecting',
+      listening: 'chatVoiceListening',
+      speaking: 'chatVoiceSpeaking',
+      processing: 'chatMicProcessing',
+      error: 'chatVoiceError',
+      unsupported: 'chatMicUnsupported'
+    };
+    var key = map[state] || '';
+    voiceStatus.textContent = key ? t(key) : '';
+    voiceStatus.hidden = !voiceStatus.textContent;
+  }
+
+  function syncVoiceChrome() {
+    if (micBtn) {
+      var mKey = conversationMode ? 'chatMicStop' : 'chatMic';
+      micBtn.setAttribute('aria-label', t(mKey));
+      micBtn.setAttribute('title', t(mKey));
+      micBtn.setAttribute('aria-pressed', conversationMode ? 'true' : 'false');
+      var ml = micBtn.querySelector('.bcs-chat-mic-label');
+      if (ml) ml.textContent = t(mKey);
+    }
+    if (speakBtn) {
+      /* Grok plays audio natively; keep Escuchar as replay of last assistant text via browser TTS only if available */
+      var speaking = root.getAttribute('data-voice') === 'speaking';
+      var sKey = speaking ? 'chatSpeakStop' : 'chatSpeak';
+      speakBtn.setAttribute('aria-label', t(sKey));
+      speakBtn.setAttribute('title', t(sKey));
+      speakBtn.setAttribute('aria-pressed', speaking ? 'true' : 'false');
+      var sl = speakBtn.querySelector('.bcs-chat-speak-label');
+      if (sl) sl.textContent = t(sKey);
+      speakBtn.disabled = !lastSpokenText && !speaking;
+    }
+  }
+
+  function showVoiceError(code) {
+    var key = 'chatVoiceError';
+    if (code === 'voice_not_configured') key = 'chatVoiceNotConfigured';
+    else if (code === 'voice_unauthorized') key = 'chatVoiceUnauthorized';
+    if (voiceStatus) {
+      voiceStatus.textContent = t(key);
+      voiceStatus.hidden = false;
+    }
+    root.setAttribute('data-voice', 'error');
+    syncVoiceChrome();
+  }
+
+  function stopConversation() {
+    conversationMode = false;
+    if (grokVoice) {
+      try { grokVoice.stop(); } catch (e) {}
+    }
+    setVoiceState('');
+    if (micBtn) micBtn.setAttribute('aria-pressed', 'false');
+    syncVoiceChrome();
+  }
+
+  function ensureGrok() {
+    if (grokVoice) return grokVoice;
+    if (!window.BcsGrokVoice) return null;
+    grokVoice = new window.BcsGrokVoice({
+      onState: function (state) {
+        if (!conversationMode && state) return;
+        setVoiceState(state || '');
+        syncVoiceChrome();
+      },
+      onTranscript: function (role, text) {
+        var clean = String(text || '').trim();
+        if (!clean) return;
+        if (role === 'user') {
+          addBubble('user', clean);
+          history.push({ role: 'user', content: clean });
+        } else {
+          addBubble('bot', clean, {
+            primary_file: null,
+            ontology: [],
+            stakeholder: null,
+            sources: [],
+            place: (window.BCSPlace && window.BCSPlace.get && window.BCSPlace.get()) ? { id: window.BCSPlace.get() } : null,
+            foresight_signals: [],
+            strategic_questions: []
+          });
+          history.push({ role: 'assistant', content: clean });
+          lastSpokenText = clean;
+          syncVoiceChrome();
+        }
+      },
+      onError: function (code) {
+        showVoiceError(code);
+      }
+    });
+    return grokVoice;
+  }
+
+  async function startConversation() {
+    if (!voiceSupported || !window.BcsGrokVoice) {
+      setVoiceState('unsupported');
+      syncVoiceChrome();
+      return;
+    }
+    conversationMode = true;
+    syncVoiceChrome();
+    setVoiceState('connecting');
+    var gv = ensureGrok();
+    try {
+      await gv.start();
+    } catch (e) {
+      conversationMode = false;
+      var code = (e && e.message) || 'voice_token_failed';
+      showVoiceError(code);
+      syncVoiceChrome();
+    }
+  }
+
+  function toggleConversation() {
+    if (conversationMode) stopConversation();
+    else startConversation();
+  }
+
+  if (micBtn) {
+    if (!voiceSupported) {
+      micBtn.disabled = true;
+      micBtn.setAttribute('title', t('chatMicUnsupported'));
+      micBtn.setAttribute('aria-label', t('chatMicUnsupported'));
+      setVoiceState('unsupported');
+    } else {
+      micBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleConversation();
+      });
+    }
+  }
+
+  if (speakBtn) {
+    /* Optional: stop Grok playback barge by stopping session audio only via Parar; mute button stops conversation audio by stopping voice */
+    speakBtn.addEventListener('click', function () {
+      if (root.getAttribute('data-voice') === 'speaking' && conversationMode) {
+        /* cannot surgically mute Grok stream easily — user should tap Parar */
+        return;
+      }
+      if (!lastSpokenText || !window.speechSynthesis) return;
+      try {
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance(lastSpokenText);
+        u.lang = (document.documentElement.getAttribute('data-lang') || 'es') === 'en' ? 'en-US' : 'es-MX';
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    });
+  }
+
+  document.addEventListener('bcs:lang', function () {
+    syncVoiceChrome();
+    if (conversationMode && root.getAttribute('data-voice') === 'listening') {
+      setVoiceState('listening');
+    }
+  });
+
+  form && form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var message = (input.value || '').trim();
+    if (!message) return;
+    /* Typed chat stays independent of Grok voice session */
+    input.value = '';
+    addBubble('user', message);
+    history.push({ role: 'user', content: message });
+    var thinking = addBubble('bot thinking', t('chatThinking'));
+    var sendBtn = form.querySelector('.bcs-chat-send');
+    if (sendBtn) sendBtn.disabled = true;
+
+    var lang = document.documentElement.getAttribute('data-lang') || 'es';
+    fetch('/api/chat', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: message,
+        lang: lang,
+        history: history.slice(-6),
+        place: (window.BCSPlace && window.BCSPlace.get && window.BCSPlace.get()) || null,
+        session: chatSessionId()
+      })
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        thinking.remove();
+        var j = res.j || {};
+        var answer = j.answer || t('chatError');
+        var bubble = addBubble('bot', answer, {
+          primary_file: j.primary_file || null,
+          ontology: j.ontology || [],
+          stakeholder: j.stakeholder || null,
+          sources: j.sources || [],
+          place: j.place || ((window.BCSPlace && window.BCSPlace.get && window.BCSPlace.get()) ? { id: window.BCSPlace.get() } : null),
+          foresight_signals: j.foresight_signals || (j.foresight_signal ? [j.foresight_signal] : []),
+          strategic_questions: j.strategic_questions || [],
+          blocks: Array.isArray(j.blocks) ? j.blocks : [],
+          followUps: Array.isArray(j.followUps) && j.followUps.length ? j.followUps : (lang === 'en'
+            ? ['How many people live in each municipality?', 'Which protected natural areas are in Baja California Sur?']
+            : ['¿Cuántas personas viven en cada municipio?', '¿Qué áreas naturales protegidas hay en Baja California Sur?'])
+        });
+        try {
+          var acts = j.actions || {};
+          if (bubble && acts) {
+            var wrap = el('div', 'bcs-chat-actions');
+            wrap.appendChild(el('div', 'bcs-chat-link-label', lang === 'en' ? 'Actions' : 'Acciones'));
+            var row = el('div', 'bcs-chat-link-row');
+            function act(label, href) {
+              if (!href) return;
+              var a = el('a', 'bcs-chat-chip', label);
+              a.href = href;
+              row.appendChild(a);
+            }
+            act(lang === 'en' ? 'Studio' : 'Studio', acts.open_lugares);
+            act(lang === 'en' ? 'Growth' : 'Crecimiento', acts.open_crecimiento);
+            act(lang === 'en' ? 'Map' : 'Mapa', acts.open_map);
+            act(lang === 'en' ? 'Compare places' : 'Comparar lugares', acts.compare_places);
+            act(lang === 'en' ? 'Strategic Q' : 'Pregunta', acts.create_strategic_question);
+            act(lang === 'en' ? 'Missing evidence' : 'Evidencia faltante', acts.request_missing_evidence);
+            act(lang === 'en' ? 'Session' : 'Sesión', acts.strategy_session);
+            wrap.appendChild(row);
+            bubble.appendChild(wrap);
+          }
+        } catch (e) {}
+        try {
+          // Hook for pages that extend the chat (e.g. /explorar adds map "Localizar" chips). No effect elsewhere.
+          document.dispatchEvent(new CustomEvent('bcs:chat-answer', { detail: { answer: answer, bubble: bubble, sources: j.sources || [], grounded: j.grounded, question: message } }));
+        } catch (e) {}
+        history.push({ role: 'assistant', content: answer });
+        lastSpokenText = String(answer || '').replace(/\s+/g, ' ').trim().slice(0, 1200);
+        syncVoiceChrome();
+      })
+      .catch(function () {
+        thinking.remove();
+        addBubble('bot', t('chatError'), {
+          primary_file: null,
+          ontology: [],
+          stakeholder: null,
+          sources: []
+        });
+      })
+      .finally(function () {
+        if (sendBtn) sendBtn.disabled = false;
+      });
+  });
+
+  // Small public API so a page can dock the chat and prefill a question (used by /explorar).
+  window.BCSChat = {
+    root: root,
+    open: function () { setOpen(true, getSheet()); rememberDock(true); },
+    close: function () { setOpen(false); rememberDock(false); },
+    prefill: function (text) { if (input) { input.value = String(text || '').slice(0, 2000); try { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } catch (e) {} } },
+    send: function (text) { if (!input || !form) return; input.value = String(text || '').slice(0, 2000); form.requestSubmit(); }
+  };
+
+  input && input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  document.getElementById('lang-toggle') && document.getElementById('lang-toggle').addEventListener('click', function () {
+    setTimeout(function () {
+      syncPlaceholders();
+      syncVoiceChrome();
+    }, 50);
+  });
+
+  var hl = document.getElementById('bcs-chat-home-lang');
+  hl && hl.addEventListener('click', function () { var lt = document.getElementById('lang-toggle'); if (lt) lt.click(); });
+  if (CHAT_HOME && input) setTimeout(function () { try { input.focus(); } catch (e) {} }, 100);
+
+  syncVoiceChrome();
+})();
+</script>

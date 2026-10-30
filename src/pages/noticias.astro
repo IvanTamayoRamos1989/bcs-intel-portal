@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import news from '../data/news.json';
+import foresights from '../data/foresights.json';
+import { PLACE_BY_ID } from '../lib/places';
+
+const topicLabel: Record<string, { es: string; en: string }> = {
+  water: { es: 'Agua', en: 'Water' },
+  energy: { es: 'Energía', en: 'Energy' },
+  land_use: { es: 'Uso de suelo', en: 'Land use' },
+  tourism: { es: 'Turismo', en: 'Tourism' },
+  environment: { es: 'Ambiente', en: 'Environment' },
+  planning: { es: 'Planeación', en: 'Planning' },
+  connectivity: { es: 'Conectividad', en: 'Connectivity' },
+};
+
+const signalById: Record<string, any> = Object.fromEntries(
+  ((foresights as any).signals || []).map((s: any) => [s.id, s])
+);
+
+// Page shows the latest NEWS_PAGE_MAX items; the chat corpus keeps every item (feed + archive).
+const NEWS_PAGE_MAX = 90;
+const allItems = [...(news.items || [])].sort((a: any, b: any) =>
+  String(b.date).localeCompare(String(a.date))
+);
+const items = allItems.slice(0, NEWS_PAGE_MAX);
+
+function placeShort(id: string, lang: 'es' | 'en') {
+  const p = PLACE_BY_ID[id];
+  if (!p) return id;
+  return lang === 'en' ? p.short_en : p.short_es;
+}
+---
+<BaseLayout
+  title="Noticias BCS"
+  titleEn="BCS News"
+  description="Noticias relevantes de Baja California Sur: agua, energía, turismo, ambiente y planeación"
+  descriptionEn="Relevant Baja California Sur news: water, energy, tourism, environment and planning"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Selección de notas de medios y comunicados oficiales sobre agua, energía, uso de suelo, turismo, ambiente y planeación en BCS.
+      Enlaces externos · actualizado {news.updated}. Cada nota indica con qué <strong>tema de prospectiva</strong> o <strong>lugar</strong> se relaciona.
+    </span>
+    <span data-lang-en hidden>
+      Curated outlet and official releases on water, energy, land use, tourism, environment and planning in BCS.
+      External links · updated {news.updated}. Each item shows which <strong>foresight signal</strong> or <strong>place</strong> it feeds.
+    </span>
+  </p>
+
+  <div class="news-grid">
+    {items.map((it: any) => (
+      <article class="news-card" data-news-id={it.id}>
+        <div class="news-meta">
+          <span class="news-source">{it.source}</span>
+          <time datetime={it.date}>{it.date}</time>
+        </div>
+        <h3>
+          <a href={it.url} target="_blank" rel="noopener noreferrer">
+            <span data-lang-es>{it.title_es}</span>
+            <span data-lang-en hidden>{it.title_en}</span>
+          </a>
+        </h3>
+        <p>
+          <span data-lang-es>{it.blurb_es}</span>
+          <span data-lang-en hidden>{it.blurb_en}</span>
+        </p>
+        <div class="news-topics">
+          {(it.topics || []).map((t: string) => (
+            <span class="topic-chip">
+              <span data-lang-es>{topicLabel[t]?.es || t}</span>
+              <span data-lang-en hidden>{topicLabel[t]?.en || t}</span>
+            </span>
+          ))}
+        </div>
+        {((it.feeds_into && it.feeds_into.length) || (it.place_ids && it.place_ids.length)) && (
+          <div class="news-feeds">
+            <span class="news-feeds-k">
+              <span data-lang-es>Relacionada con</span>
+              <span data-lang-en hidden>Related to</span>
+            </span>
+            <div class="news-feed-chips">
+              {(it.feeds_into || []).map((f: any) => {
+                if (f.type === 'signal') {
+                  const sig = signalById[f.id];
+                  const labelEs = sig && sig.title_es ? String(sig.title_es).split(':')[0] : f.id;
+                  const labelEn = sig && sig.title_en ? String(sig.title_en).split(':')[0] : labelEs;
+                  return (
+                    <a class="news-feed-chip" href={`/foresights/?signal=${f.id}#signal-${f.id}`} title={f.id}>
+                      <span data-lang-es>Prospectiva: {labelEs}</span>
+                      <span data-lang-en hidden>Foresight: {labelEn}</span>
+                    </a>
+                  );
+                }
+                if (f.type === 'place') {
+                  return (
+                    <a class="news-feed-chip news-feed-chip--place" href={`/foresights/?place=${f.id}#${f.id}`}>
+                      <span data-lang-es>{placeShort(f.id, 'es')}</span>
+                      <span data-lang-en hidden>{placeShort(f.id, 'en')}</span>
+                    </a>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          </div>
+        )}
+        <a class="news-out" href={it.url} target="_blank" rel="noopener noreferrer">
+          <span data-lang-es>Abrir nota →</span>
+          <span data-lang-en hidden>Open article →</span>
+        </a>
+      </article>
+    ))}
+  </div>
+
+  <p class="meta" style="margin-top:1.5rem">
+    <span data-lang-es>Se muestran las {items.length} noticias más recientes. Las noticias anteriores siguen disponibles para consulta en el chat del portal.</span>
+    <span data-lang-en hidden>Showing the {items.length} most recent news items. Older news remains searchable in the portal chat.</span>
+  </p>
+
+  <style is:global>
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .news-card {
+      border: 1px solid #e2dccf;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      background: #fbf8f1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: #5c6e7b;
+    }
+    .news-card h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
+    .news-card h3 a { color: #23374a; text-decoration: none; }
+    .news-card h3 a:hover { color: #34607d; }
+    .news-card p { margin: 0; font-size: 0.88rem; color: #23374a; flex: 1; }
+    .news-topics { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .news-feeds {
+      margin-top: 0.15rem;
+      padding-top: 0.45rem;
+      border-top: 1px dashed #e2dccf;
+    }
+    .news-feeds-k {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #34607d;
+    }
+    .news-feed-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.3rem; }
+    .news-feed-chip {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: #dfe8ee;
+      color: #34607d;
+      text-decoration: none;
+    }
+    .news-feed-chip--place { background: #e3eadc; color: #4f6e4b; }
+    .news-feed-chip:hover { filter: brightness(0.96); }
+    .news-out {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #34607d;
+      text-decoration: none;
+    }
+  </style>
+</BaseLayout>

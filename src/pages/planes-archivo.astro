@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lakePath } from '../lib/paths';
+import plans from '../data/plans_archive.json';
+import driveLinks from '../data/plans_drive_links.json';
+
+const rows = (plans.plans || []) as any[];
+const linkById: Record<string, any> = {};
+for (const L of (driveLinks.links || []) as any[]) {
+  linkById[L.id] = L;
+}
+
+const statusMap: Record<string, { es: string; en: string }> = {
+  vigente: { es: 'vigente', en: 'in force' },
+  abrogado: { es: 'abrogado', en: 'repealed' },
+  supersedido: { es: 'supersedido', en: 'superseded' },
+  histórico: { es: 'histórico', en: 'historical' },
+  historico: { es: 'histórico', en: 'historical' },
+  propuesto: { es: 'propuesto', en: 'proposed' },
+  borrador: { es: 'borrador', en: 'draft' },
+};
+
+const geoMap: Record<string, { es: string; en: string }> = {
+  estado: { es: 'estado', en: 'state' },
+  municipio: { es: 'municipio', en: 'municipality' },
+  regional: { es: 'regional', en: 'regional' },
+  local: { es: 'local', en: 'local' },
+};
+
+function cellStatus(v: string) {
+  const k = String(v || '').toLowerCase().trim();
+  return statusMap[k] || { es: v, en: v };
+}
+function cellGeo(v: string) {
+  const k = String(v || '').toLowerCase().trim();
+  return geoMap[k] || { es: v, en: v };
+}
+---
+<BaseLayout
+  title="Archivo de planes"
+  titleEn="Plans archive"
+  description="Inventario histórico de instrumentos de planeación BCS"
+  descriptionEn="Historical inventory of BCS planning instruments"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      {plans.count} registros en la Base de datos BCS 2050 — archivo de planes; incluye instrumentos vigentes y supersedidos
+      (1980/1995/1999/2007…). Lectura operativa actual en <a href="/planeacion">/planeacion</a>.
+      Enlaces Ver/Descargar cuando hay coincidencia en Drive; si no, busca en el catálogo.
+    </span>
+    <span data-lang-en hidden>
+      {plans.count} rows in the BCS 2050 database — plans archive; includes instruments in force and superseded
+      (1980/1995/1999/2007…). Current operative reading on <a href="/planeacion">/planeacion</a>.
+      View/Download links when a Drive match exists; otherwise search the catalog.
+    </span>
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Título</span><span data-lang-en hidden>Title</span></th>
+          <th><span data-lang-es>Tipo</span><span data-lang-en hidden>Type</span></th>
+          <th><span data-lang-es>Autoridad</span><span data-lang-en hidden>Authority</span></th>
+          <th><span data-lang-es>Geografía</span><span data-lang-en hidden>Geography</span></th>
+          <th><span data-lang-es>Año</span><span data-lang-en hidden>Year</span></th>
+          <th><span data-lang-es>Status</span><span data-lang-en hidden>Status</span></th>
+          <th><span data-lang-es>Documento</span><span data-lang-en hidden>Document</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.slice(0, 60).map((r) => {
+          const st = cellStatus(r.status);
+          const geo = cellGeo(r.geography);
+          const L = linkById[r.id] || {};
+          const q = encodeURIComponent(L.q || r.title || r.id);
+          return (
+            <tr>
+              <td>{String(r.title ?? '').slice(0, 100)}</td>
+              <td>{r.instrument_type}</td>
+              <td>{String(r.authority ?? '').slice(0, 40)}</td>
+              <td>
+                <span data-lang-es>{geo.es}</span>
+                <span data-lang-en hidden>{geo.en}</span>
+              </td>
+              <td>{r.year_adopted || r.year_gazette || '—'}</td>
+              <td>
+                <span data-lang-es>{st.es}</span>
+                <span data-lang-en hidden>{st.en}</span>
+              </td>
+              <td class="drive-links">
+                {L.gid && L.dv ? (
+                  <>
+                    <a href={L.dv} target="_blank" rel="noopener">
+                      <span data-lang-es>Ver</span><span data-lang-en hidden>View</span>
+                    </a>
+                    {L.dd && (
+                      <a href={L.dd} target="_blank" rel="noopener">
+                        <span data-lang-es>Descargar</span><span data-lang-en hidden>Download</span>
+                      </a>
+                    )}
+                  </>
+                ) : r.on_disk === 'yes' || r.path_or_url ? (
+                  <a href={`/catalogo?q=${q}`}>
+                    <span data-lang-es>Buscar en catálogo</span>
+                    <span data-lang-en hidden>Search catalog</span>
+                  </a>
+                ) : (
+                  <span>—</span>
+                )}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span data-lang-es>Datos</span><span data-lang-en hidden>Data</span></h2>
+  <ul>
+    {[...new Set(plans.files.map((f: string) => lakePath(plans.desktop + '/' + f)))].map((lab) => (
+      <li>{lab}</li>
+    ))}
+  </ul>
+  <p class="cta-row">
+    <a class="btn" href="/planeacion"><span data-lang-es>Planeación</span><span data-lang-en hidden>Planning</span></a>
+    <a class="btn secondary" href="/catalogo?q=plans_archive"><span data-lang-es>Catálogo</span><span data-lang-en hidden>Catalog</span></a>
+  </p>
+  <style is:global>
+    .drive-links a { margin-right: 0.55rem; white-space: nowrap; }
+  </style>
+</BaseLayout>

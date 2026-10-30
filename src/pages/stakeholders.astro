@@ -1,0 +1,423 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ui } from '../i18n/ui';
+import seed from '../data/stakeholders.json';
+
+const seedItems = Array.isArray(seed) ? seed : (seed.items || []);
+---
+<BaseLayout
+  title="Actores"
+  titleEn="Stakeholders"
+  description="Directorio interno de instituciones, empresas y contactos del engagement BCS"
+  descriptionEn="Internal directory of BCS engagement institutions, businesses and contacts"
+  wide={true}
+>
+  <p class="lead" data-i18n="stLead">{ui.es.stLead}</p>
+
+  <div id="st-app" class="st-app" data-seed={JSON.stringify(seedItems)}>
+    <div class="st-toolbar">
+      <input type="search" id="st-q" class="st-q" data-i18n-placeholder="stSearch" placeholder={ui.es.stSearch} />
+      <label class="st-lab">
+        <span data-i18n="stFilterGroup">{ui.es.stFilterGroup}</span>
+        <select id="st-group"><option value="" data-i18n="stAll">{ui.es.stAll}</option></select>
+      </label>
+      <label class="st-lab">
+        <span data-i18n="stFilterSubgroup">{ui.es.stFilterSubgroup}</span>
+        <select id="st-sub"><option value="" data-i18n="stAll">{ui.es.stAll}</option></select>
+      </label>
+      <label class="st-lab">
+        <span data-i18n="stFilterType">{ui.es.stFilterType}</span>
+        <select id="st-type">
+          <option value="" data-i18n="stAll">{ui.es.stAll}</option>
+          <option value="person" data-i18n="stTypePerson">{ui.es.stTypePerson}</option>
+          <option value="institution" data-i18n="stTypeInstitution">{ui.es.stTypeInstitution}</option>
+          <option value="business" data-i18n="stTypeBusiness">{ui.es.stTypeBusiness}</option>
+        </select>
+      </label>
+      <div class="st-actions">
+        <button type="button" class="btn" id="st-add" data-i18n="stAdd">{ui.es.stAdd}</button>
+        <button type="button" class="btn secondary" id="st-export" data-i18n="stExport">{ui.es.stExport}</button>
+      </div>
+    </div>
+    <p class="st-meta" id="st-meta"></p>
+    <div class="st-table-wrap">
+      <table class="st-table" id="st-table">
+        <thead>
+          <tr>
+            <th data-i18n="stName">{ui.es.stName}</th>
+            <th data-i18n="stOrg">{ui.es.stOrg}</th>
+            <th data-i18n="stType">{ui.es.stType}</th>
+            <th data-i18n="stDesc">{ui.es.stDesc}</th>
+            <th data-i18n="stContact">{ui.es.stContact}</th>
+            <th data-i18n="stGroup">{ui.es.stGroup}</th>
+            <th data-i18n="stSubgroup">{ui.es.stSubgroup}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="st-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <dialog id="st-dialog" class="st-dialog">
+    <form method="dialog" id="st-form" class="st-form">
+      <h2 id="st-dialog-title" data-i18n="stAdd">{ui.es.stAdd}</h2>
+      <input type="hidden" id="st-id" />
+      <label><span data-i18n="stName">{ui.es.stName}</span><input id="f-name" required maxlength="200" /></label>
+      <label><span data-i18n="stOrg">{ui.es.stOrg}</span><input id="f-org" maxlength="200" /></label>
+      <label><span data-i18n="stType">{ui.es.stType}</span>
+        <select id="f-type">
+          <option value="person" data-i18n="stTypePerson">{ui.es.stTypePerson}</option>
+          <option value="institution" data-i18n="stTypeInstitution">{ui.es.stTypeInstitution}</option>
+          <option value="business" data-i18n="stTypeBusiness">{ui.es.stTypeBusiness}</option>
+        </select>
+      </label>
+      <label><span data-i18n="stDesc">{ui.es.stDesc}</span><textarea id="f-desc" rows="3" maxlength="2000"></textarea></label>
+      <label><span data-i18n="stContact">{ui.es.stContact}</span><input id="f-contact" maxlength="500" /></label>
+      <label><span data-i18n="stGroup">{ui.es.stGroup}</span><input id="f-group" maxlength="120" list="st-group-list" /></label>
+      <label><span data-i18n="stSubgroup">{ui.es.stSubgroup}</span><input id="f-sub" maxlength="120" list="st-sub-list" /></label>
+      <datalist id="st-group-list"></datalist>
+      <datalist id="st-sub-list"></datalist>
+      <div class="st-form-actions">
+        <button type="submit" class="btn" value="save" data-i18n="stSave">{ui.es.stSave}</button>
+        <button type="button" class="btn secondary" id="st-cancel" data-i18n="stCancel">{ui.es.stCancel}</button>
+      </div>
+      <p class="st-form-err" id="st-form-err" hidden></p>
+    </form>
+  </dialog>
+
+  <style is:global>
+    .st-app { margin-top: 0.5rem; }
+    .st-toolbar {
+      display: flex; flex-wrap: wrap; gap: 0.65rem 0.75rem; align-items: flex-end;
+      margin-bottom: 0.75rem;
+    }
+    .st-q {
+      flex: 1 1 220px; min-width: 180px;
+      padding: 0.5rem 0.7rem; border: 1px solid var(--border); border-radius: 8px; font: inherit;
+    }
+    .st-lab { display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.78rem; color: var(--muted); }
+    .st-lab select {
+      font: inherit; padding: 0.45rem 0.55rem; border: 1px solid var(--border); border-radius: 8px; min-width: 140px;
+    }
+    .st-actions { display: flex; gap: 0.5rem; margin-left: auto; }
+    .st-meta { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--muted); }
+    .st-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: #fbf8f1; }
+    .st-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .st-table th, .st-table td {
+      text-align: left; padding: 0.55rem 0.65rem; border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    .st-table th { background: #dfe8ee; color: var(--fp-blue-dark); font-weight: 600; white-space: nowrap; }
+    .st-table tr:last-child td { border-bottom: none; }
+    .st-table tr:hover td { background: #f8fbfd; }
+    .st-name { font-weight: 600; color: #23374a; }
+    .st-desc { color: #23374a; max-width: 28rem; }
+    .st-chip {
+      display: inline-block; font-size: 0.72rem; padding: 0.12rem 0.4rem; border-radius: 999px;
+      background: #dfe8ee; color: var(--fp-blue-dark); border: 1px solid var(--fp-blue-soft);
+    }
+    .st-row-actions { display: flex; gap: 0.35rem; white-space: nowrap; }
+    .st-row-actions button {
+      font: inherit; font-size: 0.78rem; padding: 0.25rem 0.45rem; border-radius: 6px; cursor: pointer;
+      border: 1px solid var(--border); background: #fbf8f1;
+    }
+    .st-row-actions button.danger { color: #a8543f; border-color: #fecaca; }
+    .st-dialog {
+      border: 1px solid var(--border); border-radius: 14px; padding: 0; max-width: 520px; width: calc(100% - 2rem);
+      box-shadow: 0 16px 48px rgba(35, 55, 74,0.18);
+    }
+    .st-dialog::backdrop { background: rgba(15, 23, 42, 0.35); }
+    .st-form { display: flex; flex-direction: column; gap: 0.65rem; padding: 1.1rem 1.2rem 1.2rem; }
+    .st-form h2 { margin: 0 0 0.25rem; font-size: 1.15rem; color: var(--fp-blue); }
+    .st-form label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.82rem; color: var(--muted); }
+    .st-form input, .st-form textarea, .st-form select {
+      font: inherit; font-size: 0.92rem; padding: 0.45rem 0.55rem; border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+    }
+    .st-form-actions { display: flex; gap: 0.5rem; margin-top: 0.35rem; }
+    .st-form-err { color: #a8543f; margin: 0; font-size: 0.85rem; }
+    @media (max-width: 700px) {
+      .st-actions { margin-left: 0; width: 100%; }
+    }
+  </style>
+
+  <script is:inline>
+  (function () {
+    var app = document.getElementById('st-app');
+    if (!app) return;
+    var items = [];
+    var updated = '';
+    try { items = JSON.parse(app.getAttribute('data-seed') || '[]'); } catch (e) { items = []; }
+
+    var qEl = document.getElementById('st-q');
+    var gEl = document.getElementById('st-group');
+    var sEl = document.getElementById('st-sub');
+    var tEl = document.getElementById('st-type');
+    var body = document.getElementById('st-body');
+    var meta = document.getElementById('st-meta');
+    var dialog = document.getElementById('st-dialog');
+    var form = document.getElementById('st-form');
+    var formErr = document.getElementById('st-form-err');
+    var editingId = null;
+
+    function t(key) {
+      var ui = window.__BCS_UI__ || {};
+      var lang = document.documentElement.getAttribute('data-lang') || 'es';
+      var bag = ui[lang] || ui.es || {};
+      return bag[key] || key;
+    }
+    function typeLabel(ty) {
+      if (ty === 'institution') return t('stTypeInstitution');
+      if (ty === 'business') return t('stTypeBusiness');
+      return t('stTypePerson');
+    }
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function isUrl(s) { return /^https?:\/\//i.test(s || ''); }
+    function contactHtml(c) {
+      if (!c) return '—';
+      if (isUrl(c)) {
+        var label = c.replace(/^https?:\/\/(www\.)?/i, '').split('/')[0];
+        if (/linkedin/i.test(c)) label = 'LinkedIn';
+        return '<a href="' + esc(c) + '" target="_blank" rel="noopener noreferrer">' + esc(label) + '</a>';
+      }
+      if (/@/.test(c)) return '<a href="mailto:' + esc(c) + '">' + esc(c) + '</a>';
+      return esc(c);
+    }
+
+    function unique(field) {
+      var set = {};
+      items.forEach(function (it) { if (it[field]) set[it[field]] = true; });
+      return Object.keys(set).sort();
+    }
+
+    function fillSelect(sel, values, keepAll) {
+      var cur = sel.value;
+      var allLabel = t('stAll');
+      sel.innerHTML = '';
+      var o0 = document.createElement('option');
+      o0.value = ''; o0.textContent = allLabel; o0.setAttribute('data-i18n', 'stAll');
+      sel.appendChild(o0);
+      values.forEach(function (v) {
+        var o = document.createElement('option');
+        o.value = v; o.textContent = v;
+        sel.appendChild(o);
+      });
+      if (values.indexOf(cur) >= 0 || cur === '') sel.value = cur;
+    }
+
+    function fillDatalists() {
+      var gl = document.getElementById('st-group-list');
+      var sl = document.getElementById('st-sub-list');
+      gl.innerHTML = unique('group').map(function (v) { return '<option value="' + esc(v) + '">'; }).join('');
+      sl.innerHTML = unique('subgroup').map(function (v) { return '<option value="' + esc(v) + '">'; }).join('');
+    }
+
+    function filtered() {
+      var q = (qEl.value || '').toLowerCase().trim();
+      var g = gEl.value;
+      var s = sEl.value;
+      var ty = tEl.value;
+      return items.filter(function (it) {
+        if (g && it.group !== g) return false;
+        if (s && it.subgroup !== s) return false;
+        if (ty && it.type !== ty) return false;
+        if (!q) return true;
+        var blob = [it.name, it.org, it.description, it.contact, it.group, it.subgroup].join(' ').toLowerCase();
+        return blob.indexOf(q) >= 0;
+      });
+    }
+
+    function render() {
+      fillSelect(gEl, unique('group'));
+      // subgroup options depend on group filter
+      var subs = {};
+      items.forEach(function (it) {
+        if (gEl.value && it.group !== gEl.value) return;
+        if (it.subgroup) subs[it.subgroup] = true;
+      });
+      fillSelect(sEl, Object.keys(subs).sort());
+      fillDatalists();
+
+      var rows = filtered();
+      meta.textContent = rows.length + ' / ' + items.length + (updated ? ' · ' + updated : '');
+      if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="8">' + esc(t('stEmpty')) + '</td></tr>';
+        return;
+      }
+      body.innerHTML = rows.map(function (it) {
+        return '<tr data-id="' + esc(it.id) + '">' +
+          '<td class="st-name">' + esc(it.name) + '</td>' +
+          '<td>' + esc(it.org || '—') + '</td>' +
+          '<td><span class="st-chip">' + esc(typeLabel(it.type || 'person')) + '</span></td>' +
+          '<td class="st-desc">' + esc(it.description || '') + '</td>' +
+          '<td>' + contactHtml(it.contact) + '</td>' +
+          '<td>' + esc(it.group || '') + '</td>' +
+          '<td>' + esc(it.subgroup || '') + '</td>' +
+          '<td class="st-row-actions">' +
+            '<button type="button" data-act="edit">' + esc(t('stEdit')) + '</button>' +
+            '<button type="button" class="danger" data-act="del">' + esc(t('stDelete')) + '</button>' +
+          '</td></tr>';
+      }).join('');
+    }
+
+    function openForm(row) {
+      editingId = row ? row.id : null;
+      document.getElementById('st-dialog-title').textContent = row ? t('stEdit') : t('stAdd');
+      document.getElementById('st-id').value = row ? row.id : '';
+      document.getElementById('f-name').value = row ? (row.name || '') : '';
+      document.getElementById('f-org').value = row && row.org ? row.org : '';
+      document.getElementById('f-type').value = (row && row.type) || 'person';
+      document.getElementById('f-desc').value = row ? (row.description || '') : '';
+      document.getElementById('f-contact').value = row ? (row.contact || '') : '';
+      document.getElementById('f-group').value = row ? (row.group || '') : '';
+      document.getElementById('f-sub').value = row ? (row.subgroup || '') : '';
+      formErr.hidden = true;
+      if (dialog.showModal) dialog.showModal();
+      else dialog.setAttribute('open', '');
+    }
+
+    function closeForm() {
+      if (dialog.close) dialog.close();
+      else dialog.removeAttribute('open');
+    }
+
+    async function api(method, payload) {
+      var opts = {
+        method: method,
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+      };
+      if (payload) opts.body = JSON.stringify(payload);
+      var r = await fetch('/api/stakeholders', opts);
+      var j = await r.json().catch(function () { return {}; });
+      if (!r.ok) throw new Error(j.error || ('HTTP ' + r.status));
+      return j;
+    }
+
+    async function refreshFromServer() {
+      try {
+        var j = await api('GET');
+        if (j && Array.isArray(j.items)) {
+          items = j.items;
+          updated = j.updated || '';
+          render();
+        }
+      } catch (e) {
+        // offline / first paint uses seed
+        render();
+      }
+    }
+
+    // Deep-link from chat: /stakeholders?q=Name
+    try {
+      var params = new URLSearchParams(window.location.search || '');
+      var qParam = params.get('q');
+      if (qParam) qEl.value = qParam;
+      var highlight = params.get('id');
+      if (highlight) {
+        // store for post-render scroll/highlight
+        window.__ST_HIGHLIGHT__ = highlight;
+      }
+    } catch (e) {}
+
+    var _origRender = render;
+    render = function () {
+      _origRender();
+      var hid = window.__ST_HIGHLIGHT__;
+      if (!hid) return;
+      var tr = body.querySelector('tr[data-id="' + hid + '"]');
+      if (tr) {
+        tr.style.outline = '2px solid var(--fp-blue)';
+        tr.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        window.__ST_HIGHLIGHT__ = null;
+      }
+    };
+
+    qEl.addEventListener('input', render);
+    gEl.addEventListener('change', function () { sEl.value = ''; render(); });
+    sEl.addEventListener('change', render);
+    tEl.addEventListener('change', render);
+
+    document.getElementById('st-add').addEventListener('click', function () { openForm(null); });
+    document.getElementById('st-cancel').addEventListener('click', closeForm);
+
+    body.addEventListener('click', async function (e) {
+      var btn = e.target.closest('button[data-act]');
+      if (!btn) return;
+      var tr = btn.closest('tr');
+      var id = tr && tr.getAttribute('data-id');
+      var row = items.find(function (x) { return x.id === id; });
+      if (!row) return;
+      if (btn.getAttribute('data-act') === 'edit') {
+        openForm(row);
+        return;
+      }
+      if (btn.getAttribute('data-act') === 'del') {
+        if (!confirm(t('stConfirmDelete'))) return;
+        try {
+          var j = await api('DELETE', { id: id });
+          items = j.items || items.filter(function (x) { return x.id !== id; });
+          updated = j.updated || updated;
+          render();
+        } catch (err) {
+          alert(t('stError') + ': ' + err.message);
+        }
+      }
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var payload = {
+        id: editingId || undefined,
+        name: document.getElementById('f-name').value.trim(),
+        org: document.getElementById('f-org').value.trim() || null,
+        type: document.getElementById('f-type').value,
+        description: document.getElementById('f-desc').value.trim(),
+        contact: document.getElementById('f-contact').value.trim(),
+        group: document.getElementById('f-group').value.trim(),
+        subgroup: document.getElementById('f-sub').value.trim(),
+      };
+      formErr.hidden = true;
+      try {
+        var j = editingId ? await api('PUT', payload) : await api('POST', payload);
+        items = j.items || items;
+        updated = j.updated || updated;
+        closeForm();
+        render();
+      } catch (err) {
+        formErr.textContent = t('stError') + ': ' + err.message;
+        formErr.hidden = false;
+      }
+    });
+
+    document.getElementById('st-export').addEventListener('click', function () {
+      var rows = filtered();
+      var cols = ['id','name','org','type','description','contact','group','subgroup'];
+      function csvEsc(v) {
+        var s = v == null ? '' : String(v);
+        if (/[",\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+        return s;
+      }
+      var lines = [cols.join(',')].concat(rows.map(function (r) {
+        return cols.map(function (c) { return csvEsc(r[c]); }).join(',');
+      }));
+      var blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'bcs_stakeholders.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    // refresh i18n on lang toggle for dynamic bits
+    document.getElementById('lang-toggle') && document.getElementById('lang-toggle').addEventListener('click', function () {
+      setTimeout(render, 60);
+    });
+
+    refreshFromServer();
+  })();
+  </script>
+</BaseLayout>

@@ -1,0 +1,832 @@
+{
+ "meta": {
+  "titulo": "Organigrama General H. XV Ayuntamiento de Los Cabos, B.C.S. (2024–2027)",
+  "fuente": "Organigrama General H. XV Ayuntamiento de Los Cabos (BOGE #14, 29 feb 2024)",
+  "encabezado": "Actualizado conforme al Reglamento de la Administración Pública Municipal de Los Cabos, B.C.S., B.O.G.E. #14 del 29 de febrero de 2024",
+  "imagen": "los_cabos_organigrama_2024_2027.png",
+  "transcrito": "2026-09-30",
+  "notas": [
+   "La imagen muestra 11 regidurías (Primera a Décimo Primera), no 14.",
+   "Nombres transcritos de una imagen de 1920x1080; acentos normalizados al español cuando el organigrama usa mayúsculas sin tilde.",
+   "Recuadros con '[Nombre del titular]' o vacíos se registran como tal; no se infiere ningún nombre."
+  ]
+ },
+ "unidades": [
+  {
+   "nivel": 0,
+   "area": "H. XV Ayuntamiento de Los Cabos",
+   "titular": "",
+   "depende_de": "",
+   "tipo": "órgano de gobierno",
+   "nota": ""
+  },
+  {
+   "nivel": 1,
+   "area": "Cabildo",
+   "titular": "",
+   "depende_de": "H. XV Ayuntamiento de Los Cabos",
+   "tipo": "órgano colegiado",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Presidencia Municipal",
+   "titular": "Arq. Christian Agúndez Gómez",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Sindicatura Municipal",
+   "titular": "Nélida Dolores de Martina Alfaro Rosas",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": "Prefijo aparece como 'Lic.' en el bloque del Cabildo e 'Ing.' en el recuadro inferior de Sindicatura"
+  },
+  {
+   "nivel": 2,
+   "area": "Primera Regiduría",
+   "titular": "C. José Manuel Larumbe Pineda",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Segunda Regiduría",
+   "titular": "C. María Petra Juárez Maceda",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Tercera Regiduría",
+   "titular": "Lic. Andrés Liceaga Gómez",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Cuarta Regiduría",
+   "titular": "C. Luz Adriana Cosío Urbina",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Quinta Regiduría",
+   "titular": "C. Jesús Alberto Alvarado Obregón",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Sexta Regiduría",
+   "titular": "Lic. Marisela Montaño Peralta",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Séptima Regiduría",
+   "titular": "Prof. Alí Flores Ramírez",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Octava Regiduría",
+   "titular": "C. Celestino Aurelio Atienzo Beltrán",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Novena Regiduría",
+   "titular": "C. Marbella González Díaz",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Décima Regiduría",
+   "titular": "Lic. Fernando Villegas González",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 2,
+   "area": "Décimo Primera Regiduría",
+   "titular": "C. Valerie Donají Olmos Domínguez",
+   "depende_de": "Cabildo",
+   "tipo": "cabildo",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Organismo Operador Municipal del Sistema de Agua Potable, Alcantarillado y Saneamiento de Los Cabos (OOMSAPAS Los Cabos)",
+   "titular": "Ing. Ramón Edgardo Rubio Apodaca",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "organismo descentralizado",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Instituto Municipal de Planeación (IMPLAN Los Cabos)",
+   "titular": "Arq. Beatriz González Gilbert",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "organismo descentralizado",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Instituto de las Mujeres del Municipio de Los Cabos",
+   "titular": "C. María de Jesús Cruz Medina",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "instituto municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección Municipal de Desarrollo Sostenible",
+   "titular": "C. Flavio Olachea Montaño",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Instituto de la Juventud del Municipio de Los Cabos",
+   "titular": "C. José Luis Gutiérrez Crespo",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "instituto municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Instituto de la Cultura y las Artes del Municipio de Los Cabos",
+   "titular": "C. Tanya Covarrubias Martínez",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "instituto municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Instituto del Deporte del Municipio de Los Cabos",
+   "titular": "C. Elton Manuel Olachea Arce",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "instituto municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Instituto Municipal para el Desarrollo e Inclusión de Personas con Discapacidad",
+   "titular": "C. Fernando Ulises Altamirano Valdez",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "instituto municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Instituto Municipal de Asuntos Indígenas y Afromexicanos de Los Cabos",
+   "titular": "C. Leonardo Jiménez Castrejón",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "instituto municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Sistema Municipal para el Desarrollo Integral de las Familias de Los Cabos (DIF Los Cabos, OPD)",
+   "titular": "C. Linda Monserrat Montaño Agúndez",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "organismo descentralizado",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Jefatura de Gabinete",
+   "titular": "(sin nombre en el organigrama)",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": "Recuadro de titular vacío en el organigrama"
+  },
+  {
+   "nivel": 3,
+   "area": "Secretaría Particular",
+   "titular": "C. José Manuel Guerrero Avilés",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección Municipal de Relaciones Públicas",
+   "titular": "C. Víctor Manuel Montaño Gaytán",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección Municipal de Comunicación Social (encargada de despacho)",
+   "titular": "C. Ana Gabriela Cerón García",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección Municipal de Informática y Sistemas",
+   "titular": "C. Rafael Terrero Mariano",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección Municipal de Turismo",
+   "titular": "C. Ana Gabriela Navarro González",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección de Planeación para el Desarrollo Municipal",
+   "titular": "Lic. María Guadalupe Ceseña Torres",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección Municipal de Innovación Gubernamental",
+   "titular": "Lic. Milagros Michelle del Rocío Vázquez Uribe",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": "Texto muy pequeño en la imagen; lectura del segundo apellido con baja resolución"
+  },
+  {
+   "nivel": 3,
+   "area": "Coordinación Municipal de Derechos Humanos",
+   "titular": "Lic. Claudia Milagros Armenta López",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección de Proyectos Estratégicos",
+   "titular": "Ing. Arturo Sandoval Montaño",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Coordinación de Asesores",
+   "titular": "C. Enrique Mayorquín Alfaro",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Coordinación de Giras, Eventos y Logística",
+   "titular": "C. César Uscanga González",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Secretaría Privada",
+   "titular": "C. Juan Carlos Gutiérrez Sánchez",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Secretaría Técnica",
+   "titular": "C. Salvador Castellanos Espinoza",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "unidad de apoyo de Presidencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Secretaría General",
+   "titular": "Lic. Arnoldo Alberto Rentería Santana",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dependencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Tesorería Municipal",
+   "titular": "C. Rigoberto Arce Martínez",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dependencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Contraloría Municipal",
+   "titular": "C. Mario Alejandro Fernández Briseño",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dependencia",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Oficialía Mayor",
+   "titular": "Ing. Carlos Alberto Beltrán Olmeda",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dependencia",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Asuntos Jurídicos, Legislativos y Reglamentarios",
+   "titular": "Lic. Samuel Lozano Sotres",
+   "depende_de": "Secretaría General",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Protección Civil",
+   "titular": "C. Francisco Cota Márquez",
+   "depende_de": "Secretaría General",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Gobierno",
+   "titular": "C. Amado Ruiz Espinoza",
+   "depende_de": "Secretaría General",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Coordinación Municipal de Subdelegados",
+   "titular": "C. Florentino Mendoza Marrufo",
+   "depende_de": "Secretaría General",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección General del Sistema Interinstitucional de Archivos",
+   "titular": "(organigrama indica '[Nombre del titular]')",
+   "depende_de": "Secretaría General",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Ingresos",
+   "titular": "C. Luz María Otañez Barrón",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Egresos y Recursos Financieros",
+   "titular": "C. José Manuel Araiza Araiza",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Contabilidad",
+   "titular": "C. Manuel Salvador Castro Ceseña",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Catastro",
+   "titular": "C. Judith Díaz Espíndola",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Coordinación Municipal de la Zona Federal Marítimo Terrestre (ZOFEMAT)",
+   "titular": "C. Rafael Guillermo Álvarez Munguía",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Administrativa de Rastro TIF",
+   "titular": "C. Manuel Salvador Lucero Romero",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": "Recuadro ubicado bajo Contraloría pero conectado a la línea de Tesorería (Dirección de Contabilidad)"
+  },
+  {
+   "nivel": 4,
+   "area": "Jefatura del Departamento de Inspección Fiscal",
+   "titular": "Lic. Manuel Barajas Gerardo",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": "Recuadro ubicado bajo Contraloría pero conectado a la línea de Tesorería (Dirección de Contabilidad)"
+  },
+  {
+   "nivel": 4,
+   "area": "Jefatura del Departamento de Ejecución Fiscal",
+   "titular": "C. Alejandro Castro Cota",
+   "depende_de": "Tesorería Municipal",
+   "tipo": "dirección municipal",
+   "nota": "Recuadro ubicado bajo Contraloría pero conectado a la línea de Tesorería (Dirección de Contabilidad)"
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Visitaduría Interna",
+   "titular": "C. Luzma Elizabeth Villalobos Ruiz",
+   "depende_de": "Contraloría Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Transparencia y Acceso a la Información Pública",
+   "titular": "(sin recuadro de titular)",
+   "depende_de": "Contraloría Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Recursos Humanos",
+   "titular": "Lic. Silvia Fernanda Collins Agúndez",
+   "depende_de": "Oficialía Mayor",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Administración",
+   "titular": "C. María Verónica Olvera Guevara",
+   "depende_de": "Oficialía Mayor",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Atención Ciudadana",
+   "titular": "C. Brenda Guadalupe Gálvez Rivas",
+   "depende_de": "Oficialía Mayor",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección General de Ecología y Medio Ambiente",
+   "titular": "C. Rosa Esther Natali Cruz Ocampo",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección general",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Educación, Divulgación y Promoción Ambiental",
+   "titular": "C. Cristina Núñez Cosío",
+   "depende_de": "Dirección General de Ecología y Medio Ambiente",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Recursos Naturales y Vida Silvestre",
+   "titular": "C. Jorge Armando López Espinoza",
+   "depende_de": "Dirección General de Ecología y Medio Ambiente",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Gestión y Normatividad Ambiental",
+   "titular": "C. Gustavo Castro Zumaya",
+   "depende_de": "Dirección General de Ecología y Medio Ambiente",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección General de Desarrollo Social",
+   "titular": "C. Carlos Castro Ceseña",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección general",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Educación",
+   "titular": "C. Juana Ortiz Cruz",
+   "depende_de": "Dirección General de Desarrollo Social",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Salud",
+   "titular": "Dr. Juan Carlos Costich Pérez",
+   "depende_de": "Dirección General de Desarrollo Social",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Organización y Participación Ciudadana",
+   "titular": "C. Judith Pérez Herrera",
+   "depende_de": "Dirección General de Desarrollo Social",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Inversiones y Programas Federales y Estatales",
+   "titular": "C. Tadeo Ramírez García",
+   "depende_de": "Dirección General de Desarrollo Social",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección General de Fomento Económico",
+   "titular": "C. Abril I. Urueta Martínez",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección general",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Vinculación y Fomento de Empresas",
+   "titular": "D. José Samuel Cisnero Perruyero",
+   "depende_de": "Dirección General de Fomento Económico",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Desarrollo Rural",
+   "titular": "C. Raúl Arturo Montaño Ojeda",
+   "depende_de": "Dirección General de Fomento Económico",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Pesca y Acuacultura",
+   "titular": "C. Roberto Carlos Almanza Macklis",
+   "depende_de": "Dirección General de Fomento Económico",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección General de Desarrollo Urbano",
+   "titular": "C. Roberto Flores Rivera",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección general",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Planeación Urbana",
+   "titular": "C. Luis Julián Rodríguez Guajardo",
+   "depende_de": "Dirección General de Desarrollo Urbano",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Imagen Urbana",
+   "titular": "C. Joel Alejandro Sánchez Mariscal",
+   "depende_de": "Dirección General de Desarrollo Urbano",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Licencias de Construcción",
+   "titular": "C. Jazmín Anaís Neri Ojeda",
+   "depende_de": "Dirección General de Desarrollo Urbano",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Coordinación de Nomenclaturas y Señalética",
+   "titular": "(organigrama indica '[Nombre del titular]')",
+   "depende_de": "Dirección General de Desarrollo Urbano",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección General de Obras Públicas y Asentamientos Humanos",
+   "titular": "C. Alejandra Ramírez Reyes",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección general",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Obras Públicas",
+   "titular": "(organigrama indica '[Nombre del titular]')",
+   "depende_de": "Dirección General de Obras Públicas y Asentamientos Humanos",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Asentamientos Humanos",
+   "titular": "(organigrama indica '[Nombre del titular]')",
+   "depende_de": "Dirección General de Obras Públicas y Asentamientos Humanos",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Coordinación de Licitaciones y Contratos",
+   "titular": "(organigrama indica '[Nombre del titular]')",
+   "depende_de": "Dirección General de Obras Públicas y Asentamientos Humanos",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección General de Servicios Públicos Municipales",
+   "titular": "C. Manuel Ernesto Montaño Castro",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección general",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Administrativa de Servicios Públicos Municipales",
+   "titular": "C. MAP Adrián Espinoza Espinoza",
+   "depende_de": "Dirección General de Servicios Públicos Municipales",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Aseo y Limpia",
+   "titular": "C. Jhonatan Zamudio Olachea",
+   "depende_de": "Dirección General de Servicios Públicos Municipales",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Operación y Mantenimiento de Servicios Públicos",
+   "titular": "C. Ismael Marrón Sandez",
+   "depende_de": "Dirección General de Servicios Públicos Municipales",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "titular": "Cap. de Fragata C.G. Christopher Jordi López Monge",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "dirección general",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Policía Preventiva",
+   "titular": "C. Edilberto Miramontes Gámez",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Tránsito y Vialidad",
+   "titular": "C. José David Pérez Torres",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Atención Ciudadana y Vinculación Social",
+   "titular": "C. Emmanuel Hernández Severino",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Informática y Estadística",
+   "titular": "C. David Julián Almanza Crespo",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Servicio de Carrera Policial",
+   "titular": "C. Jesús Araiza Molina",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Administración (Seguridad Pública)",
+   "titular": "C. Ángeles Ojeda de Jesús",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Comunicación Social (Seguridad Pública)",
+   "titular": "C. Yamileth Verdugo de los Santos",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Dirección Municipal de Transporte",
+   "titular": "C. Flavio Amador Hernández",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Centro de Control y Monitoreo C2",
+   "titular": "Capitán de Corbeta Allan Jordano Oscoy Gansino",
+   "depende_de": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal",
+   "tipo": "dirección municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 3,
+   "area": "Delegaciones",
+   "titular": "",
+   "depende_de": "Presidencia Municipal",
+   "tipo": "coordinación territorial",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Delegación de Cabo San Lucas",
+   "titular": "C. Karina de la O Uribe",
+   "depende_de": "Delegaciones",
+   "tipo": "delegación municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Delegación de Santiago",
+   "titular": "C. Aracely Cota Ruiz",
+   "depende_de": "Delegaciones",
+   "tipo": "delegación municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Delegación de Miraflores",
+   "titular": "C. Aremy García García",
+   "depende_de": "Delegaciones",
+   "tipo": "delegación municipal",
+   "nota": ""
+  },
+  {
+   "nivel": 4,
+   "area": "Delegación de La Ribera",
+   "titular": "C. Linda Maribel Silva Cosío",
+   "depende_de": "Delegaciones",
+   "tipo": "delegación municipal",
+   "nota": ""
+  }
+ ]
+}

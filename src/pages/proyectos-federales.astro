@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import data from '../data/federal_projects.json';
+import { lakePath } from '../lib/paths';
+
+const projects = (data.projects || []) as any[];
+const bySex = data.by_sexenio || {};
+const bySec = data.by_sector || {};
+const sectors = Object.keys(bySec).sort();
+const sexenios = ['AMLO', 'Sheinbaum', 'ambos'];
+const estados = ['anunciado', 'en licitación', 'en obra', 'concluido', 'cancelado'];
+
+const sectorLabel: Record<string, { es: string; en: string }> = {
+  energy: { es: 'Energía', en: 'Energy' },
+  water: { es: 'Agua', en: 'Water' },
+  roads: { es: 'Carreteras', en: 'Roads' },
+  ports: { es: 'Puertos', en: 'Ports' },
+  airports: { es: 'Aeropuertos', en: 'Airports' },
+  housing: { es: 'Vivienda', en: 'Housing' },
+  health: { es: 'Salud', en: 'Health' },
+  education: { es: 'Educación', en: 'Education' },
+  tourism: { es: 'Turismo', en: 'Tourism' },
+  mining: { es: 'Minería', en: 'Mining' },
+  environment: { es: 'Ambiente', en: 'Environment' },
+  social: { es: 'Social', en: 'Social' },
+  internet: { es: 'Internet', en: 'Internet' },
+  security: { es: 'Seguridad', en: 'Security' },
+  fisheries: { es: 'Pesca', en: 'Fisheries' },
+  other: { es: 'Otros', en: 'Other' },
+};
+
+function fmtMonto(v: string) {
+  if (!v) return '—';
+  const n = Number(v);
+  if (!Number.isFinite(n)) return v;
+  return '$' + n.toLocaleString('es-MX');
+}
+---
+<BaseLayout
+  title="Proyectos federales"
+  titleEn="Federal projects"
+  description="Inventario de proyectos federales con impacto en BCS (AMLO 2018–2024 y Sheinbaum 2024–)"
+  descriptionEn="Inventory of federal projects with impact on BCS (AMLO 2018–2024 and Sheinbaum 2024–)"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      {data.count} proyectos federales con impacto territorial en Baja California Sur.
+      Montos solo cuando hay fuente; celdas vacías = dato no localizado (ver <code>data_gap</code>).
+      Corte {data.generated}. Fuente: Base de datos BCS 2050 — proyectos federales.
+    </span>
+    <span data-lang-en hidden>
+      {data.count} federal projects with territorial impact in Baja California Sur.
+      Amounts only when sourced; blank cells = not located (see <code>data_gap</code>).
+      Cutoff {data.generated}. Source: BCS 2050 database — federal projects.
+    </span>
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat"><span class="n">{data.count}</span><span class="l"><span data-lang-es>Total</span><span data-lang-en hidden>Total</span></span></div>
+    <div class="stat"><span class="n">{bySex.AMLO || 0}</span><span class="l">AMLO</span></div>
+    <div class="stat"><span class="n">{bySex.Sheinbaum || 0}</span><span class="l">Sheinbaum</span></div>
+    <div class="stat"><span class="n">{bySex.ambos || 0}</span><span class="l"><span data-lang-es>Ambos</span><span data-lang-en hidden>Both</span></span></div>
+  </div>
+
+  <p class="cite-banner" style="background:#f7f3ea;border:1px solid var(--border);border-left:4px solid #b0892e;padding:0.75rem 1rem;">
+    <span data-lang-es>
+      Drive: <a href="https://drive.google.com/drive/folders/1CEoA0QaztHJBW9KBqqc7J5diAPjZUm3j" target="_blank" rel="noopener">13_federal_projects</a>
+      · Tabla: <a href="https://docs.google.com/spreadsheets/d/1M9KgV_uWnbi4JUPd5NDJhtleSBp_z6nB/edit" target="_blank" rel="noopener">Sheet</a>
+      · Relacionado: <a href="/energia">Energía</a>, <a href="/agua">Agua</a>, <a href="/memoria#brechas-canonicas">Brechas</a>.
+    </span>
+    <span data-lang-en hidden>
+      Drive: <a href="https://drive.google.com/drive/folders/1CEoA0QaztHJBW9KBqqc7J5diAPjZUm3j" target="_blank" rel="noopener">13_federal_projects</a>
+      · Table: <a href="https://docs.google.com/spreadsheets/d/1M9KgV_uWnbi4JUPd5NDJhtleSBp_z6nB/edit" target="_blank" rel="noopener">Sheet</a>
+      · Related: <a href="/energia">Energy</a>, <a href="/agua">Water</a>, <a href="/memoria#brechas-canonicas">Gaps</a>.
+    </span>
+  </p>
+
+  
+  <div class="fed-seg-wrap" style="margin:1rem 0;display:flex;flex-direction:column;gap:0.75rem;">
+    <div>
+      <div class="seg-label"><span data-lang-es>Sexenio</span><span data-lang-en hidden>Term</span></div>
+      <div class="ios-segmented" id="seg-sex" role="group">
+        <button type="button" data-val="" aria-pressed="true">
+          <span data-lang-es>Todos</span><span data-lang-en hidden>All</span>
+        </button>
+        {sexenios.map((s) => (
+          <button type="button" data-val={s} aria-pressed="false">{s}</button>
+        ))}
+      </div>
+    </div>
+    <div>
+      <div class="seg-label"><span data-lang-es>Sector</span><span data-lang-en hidden>Sector</span></div>
+      <div class="ios-segmented ios-segmented--wrap" id="seg-sec" role="group">
+        <button type="button" data-val="" aria-pressed="true">
+          <span data-lang-es>Todos</span><span data-lang-en hidden>All</span>
+        </button>
+        {sectors.slice(0, 8).map((s) => (
+          <button type="button" data-val={s} aria-pressed="false">{sectorLabel[s]?.es || s}</button>
+        ))}
+      </div>
+    </div>
+  </div>
+  <style>
+    .seg-label { font-size: 0.75rem; color: var(--ios-tertiary,#8796a0); margin-bottom: 0.35rem; font-weight: 600; }
+    .ios-segmented--wrap { flex-wrap: wrap; }
+    #fed-filters select { position:absolute; opacity:0; pointer-events:none; width:0; height:0; }
+  </style>
+
+  <div class="filters" id="fed-filters" style="display:flex;flex-wrap:wrap;gap:0.75rem;margin:1rem 0;">
+    <label>
+      <span data-lang-es>Sexenio</span><span data-lang-en hidden>Term</span>
+      <select id="f-sex">
+        <option value="">—</option>
+        {sexenios.map((s) => <option value={s}>{s}</option>)}
+      </select>
+    </label>
+    <label>
+      <span data-lang-es>Sector</span><span data-lang-en hidden>Sector</span>
+      <select id="f-sec">
+        <option value="">—</option>
+        {sectors.map((s) => (
+          <option value={s}>{sectorLabel[s]?.es || s}</option>
+        ))}
+      </select>
+    </label>
+    <label>
+      <span data-lang-es>Municipio</span><span data-lang-en hidden>Municipality</span>
+      <input id="f-mun" type="search" placeholder="Los Cabos, La Paz…" style="min-width:10rem;" />
+    </label>
+    <label>
+      <span data-lang-es>Estado</span><span data-lang-en hidden>Status</span>
+      <select id="f-est">
+        <option value="">—</option>
+        {estados.map((s) => <option value={s}>{s}</option>)}
+      </select>
+    </label>
+    <span id="f-count" style="align-self:end;font-size:0.9rem;opacity:0.8;"></span>
+  </div>
+
+  <div class="table-wrap">
+    <table id="fed-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th><span data-lang-es>Proyecto</span><span data-lang-en hidden>Project</span></th>
+          <th>Sexenio</th>
+          <th><span data-lang-es>Sector</span><span data-lang-en hidden>Sector</span></th>
+          <th><span data-lang-es>Municipio(s)</span><span data-lang-en hidden>Municipality</span></th>
+          <th><span data-lang-es>Estado</span><span data-lang-en hidden>Status</span></th>
+          <th><span data-lang-es>Monto MXN</span><span data-lang-en hidden>Amount MXN</span></th>
+          <th><span data-lang-es>Alcance</span><span data-lang-en hidden>Scope</span></th>
+          <th><span data-lang-es>Fuente</span><span data-lang-en hidden>Source</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {projects.map((p) => (
+          <tr
+            data-sex={p.sexenio}
+            data-sec={p.sector}
+            data-mun={String(p['municipio(s)'] || '').toLowerCase()}
+            data-est={p.estado}
+          >
+            <td><code>{p.id}</code></td>
+            <td>
+              <strong>{p.proyecto}</strong>
+              {p.dependencia ? <div style="font-size:0.8rem;opacity:0.75;">{p.dependencia}</div> : null}
+              {p.data_gap ? <div style="font-size:0.75rem;color:#8a5a00;margin-top:0.25rem;">Gap: {String(p.data_gap).slice(0, 140)}</div> : null}
+            </td>
+            <td>{p.sexenio}</td>
+            <td>
+              <span data-lang-es>{sectorLabel[p.sector]?.es || p.sector}</span>
+              <span data-lang-en hidden>{sectorLabel[p.sector]?.en || p.sector}</span>
+            </td>
+            <td>{p['municipio(s)']}</td>
+            <td>{p.estado}</td>
+            <td>{fmtMonto(p.monto_MXN)}</td>
+            <td style="max-width:18rem;font-size:0.85rem;">{String(p['capacidad/alcance'] || '').slice(0, 160)}</td>
+            <td>
+              {p.fuente_principal_url ? (
+                <a href={p.fuente_principal_url} target="_blank" rel="noopener">link</a>
+              ) : '—'}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="meta"><span data-lang-es>Fuente:</span><span data-lang-en hidden>Source:</span> {lakePath('BCSFP/13_federal_projects/federal_projects_bcs.csv')}</p>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    var sex = document.getElementById('f-sex');
+    var sec = document.getElementById('f-sec');
+    var mun = document.getElementById('f-mun');
+    var est = document.getElementById('f-est');
+    var count = document.getElementById('f-count');
+    var rows = Array.prototype.slice.call(document.querySelectorAll('#fed-table tbody tr'));
+    function apply() {
+      var sx = (sex.value || '').trim();
+      var sc = (sec.value || '').trim();
+      var mu = (mun.value || '').trim().toLowerCase();
+      var es = (est.value || '').trim();
+      var n = 0;
+      rows.forEach(function (tr) {
+        var ok = true;
+        if (sx && tr.getAttribute('data-sex') !== sx) ok = false;
+        if (sc && tr.getAttribute('data-sec') !== sc) ok = false;
+        if (es && tr.getAttribute('data-est') !== es) ok = false;
+        if (mu && (tr.getAttribute('data-mun') || '').indexOf(mu) === -1) ok = false;
+        tr.style.display = ok ? '' : 'none';
+        if (ok) n++;
+      });
+      if (count) count.textContent = n + ' / ' + rows.length;
+    }
+    [sex, sec, est].forEach(function (el) { el && el.addEventListener('change', apply); });
+    mun && mun.addEventListener('input', apply);
+    // deep-link ?municipio=Los+Cabos
+    try {
+      var u = new URL(location.href);
+      var q = u.searchParams.get('municipio') || u.searchParams.get('mun');
+      if (q && mun) { mun.value = q; }
+      var qs = u.searchParams.get('sexenio');
+      if (qs && sex) sex.value = qs;
+      var qc = u.searchParams.get('sector');
+      if (qc && sec) sec.value = qc;
+    } catch (e) {}
+    apply();
+  })();
+
+  function wireSeg(segId, selectId) {
+    var seg = document.getElementById(segId);
+    var sel = document.getElementById(selectId);
+    if (!seg || !sel) return;
+    seg.querySelectorAll('button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        seg.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); b.classList.remove('active'); });
+        btn.setAttribute('aria-pressed', 'true');
+        btn.classList.add('active');
+        sel.value = btn.getAttribute('data-val') || '';
+        sel.dispatchEvent(new Event('change'));
+      });
+    });
+  }
+  wireSeg('seg-sex', 'f-sex');
+  wireSeg('seg-sec', 'f-sec');
+</script>

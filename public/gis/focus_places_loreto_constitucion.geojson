@@ -1,0 +1,71 @@
+{
+  "type": "FeatureCollection",
+  "name": "focus_places_loreto_constitucion",
+  "properties": {
+    "note_es": "Polos de foco adicionales Phase 1 (marcadores + bbox suave).",
+    "note_en": "Additional Phase-1 focus poles (markers + soft bbox)."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "place_loreto",
+        "name_es": "Loreto",
+        "name_en": "Loreto",
+        "kind": "place",
+        "pobtot": "18052",
+        "cab_pob": "16311",
+        "fact_es": "Mun. 18,052 hab. · ANP Bahía de Loreto · POEL 2014",
+        "fact_en": "Mun. 18,052 pop. · Bahía de Loreto NP · POEL 2014",
+        "source": "INEGI Censo 2020 · municipios.json · ontology terr_loreto / terr_anp_loreto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.3452523,
+          26.0097913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "place_constitucion",
+        "name_es": "Ciudad Constitución",
+        "name_en": "Ciudad Constitución",
+        "kind": "place",
+        "pobtot": "43805",
+        "fact_es": "Cabecera Comondú 43,805 hab. · Valle Santo Domingo agro",
+        "fact_en": "Comondú seat 43,805 pop. · Valle Santo Domingo agro",
+        "source": "INEGI Censo 2020 · top_localities / municipios · ontology terr_comondu / dd_agro_santo_domingo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.673339,
+          25.034636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "place_insurgentes",
+        "name_es": "Ciudad Insurgentes",
+        "name_en": "Ciudad Insurgentes",
+        "kind": "place",
+        "pobtot": "8741",
+        "fact_es": "Polo agro Comondú (junto a Constitución)",
+        "fact_en": "Comondú agro pole (with Constitución)",
+        "source": "INEGI / OSM towns · municipios Comondú strengths"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.776166,
+          25.262287
+        ]
+      }
+    }
+  ]
+}

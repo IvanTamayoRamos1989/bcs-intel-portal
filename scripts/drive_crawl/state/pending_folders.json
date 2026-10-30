@@ -1,0 +1,470 @@
+[
+  {
+    "id": "1PpuhNUGPeWARWT235AKPiqpjdixS-JB1",
+    "title": "06_SierraLaLaguna_decreto",
+    "parentId": "1hd5ZW71g-RuMkJcpdUmSXSxondgFBnsh",
+    "path_guess": "06_environment/06_SierraLaLaguna_decreto"
+  },
+  {
+    "id": "1k8_L_t_qaszScr3DUmDgrNsYjkEo8yzL",
+    "title": "06_environment_p02",
+    "parentId": "1hd5ZW71g-RuMkJcpdUmSXSxondgFBnsh",
+    "path_guess": "06_environment/06_environment_p02"
+  },
+  {
+    "id": "1PpuhNUGPeWARWT235AKPiqpjdixS-JB1",
+    "title": "06_SierraLaLaguna_decreto",
+    "parentId": "1hd5ZW71g-RuMkJcpdUmSXSxondgFBnsh",
+    "path_guess": "06_environment/06_SierraLaLaguna_decreto"
+  },
+  {
+    "id": "1k8_L_t_qaszScr3DUmDgrNsYjkEo8yzL",
+    "title": "06_environment_p02",
+    "parentId": "1hd5ZW71g-RuMkJcpdUmSXSxondgFBnsh",
+    "path_guess": "06_environment/06_environment_p02"
+  },
+  {
+    "id": "1ED_Ar5lWPBH1P3e2Ld9Qk7_t9nRZSF80",
+    "title": "2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv"
+  },
+  {
+    "id": "1FTxvVXAtrqDHS5cClOvtLwRyXATl1v7L",
+    "title": "2025-04-28_INEGI_ITAEE_datos_abiertos_csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2025-04-28_INEGI_ITAEE_datos_abiertos_csv"
+  },
+  {
+    "id": "1wktTImb6Bpiz8kOkEZMx9Y4eFS2OrWIG",
+    "title": "2026-03-31_INEGI_ETEF_anual_2007-2025.csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2026-03-31_INEGI_ETEF_anual_2007-2025.csv"
+  },
+  {
+    "id": "1OtDi_xcwo_fPt1lJuP4AUtcDEozPtrGb",
+    "title": "2025-09-25_INEGI_CE2024_datos_abiertos_nacional.csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2025-09-25_INEGI_CE2024_datos_abiertos_nacional.csv"
+  },
+  {
+    "id": "1PKbjxnZ53ShA34PPko715iFhclaGcKfY",
+    "title": "other",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/other"
+  },
+  {
+    "id": "1wc6KG1BErs_DnaieK9K6AevaODLoPgL9",
+    "title": "cabo_re_services",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/cabo_re_services"
+  },
+  {
+    "id": "1C2h815n7333mDH56nGAL0SrbY_Do8qGZ",
+    "title": "jll",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/jll"
+  },
+  {
+    "id": "1ED_Ar5lWPBH1P3e2Ld9Qk7_t9nRZSF80",
+    "title": "2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv"
+  },
+  {
+    "id": "1FTxvVXAtrqDHS5cClOvtLwRyXATl1v7L",
+    "title": "2025-04-28_INEGI_ITAEE_datos_abiertos_csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2025-04-28_INEGI_ITAEE_datos_abiertos_csv"
+  },
+  {
+    "id": "1wktTImb6Bpiz8kOkEZMx9Y4eFS2OrWIG",
+    "title": "2026-03-31_INEGI_ETEF_anual_2007-2025.csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2026-03-31_INEGI_ETEF_anual_2007-2025.csv"
+  },
+  {
+    "id": "1OtDi_xcwo_fPt1lJuP4AUtcDEozPtrGb",
+    "title": "2025-09-25_INEGI_CE2024_datos_abiertos_nacional.csv",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/2025-09-25_INEGI_CE2024_datos_abiertos_nacional.csv"
+  },
+  {
+    "id": "1yZ_6tzJsN1ER9TIIBXE-Va_4g8MbAKNl",
+    "title": "real_estate_market",
+    "parentId": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "path_guess": "07_economy_investment/real_estate_market"
+  },
+  {
+    "id": "1OqHgulAdaUpyL2jCdSZeOs2uXnHzo8gL",
+    "title": "jll",
+    "parentId": "1yZ_6tzJsN1ER9TIIBXE-Va_4g8MbAKNl",
+    "path_guess": "07_economy_investment/real_estate_market/jll"
+  },
+  {
+    "id": "1hKdC77roQuWlqwAXO2TtL6QMrbkS6mia",
+    "title": "other",
+    "parentId": "1yZ_6tzJsN1ER9TIIBXE-Va_4g8MbAKNl",
+    "path_guess": "07_economy_investment/real_estate_market/other"
+  },
+  {
+    "id": "1N_jBPhOc8NWXmZ_wiACkpgvGoj6-Cu52",
+    "title": "cabo_re_services",
+    "parentId": "1yZ_6tzJsN1ER9TIIBXE-Va_4g8MbAKNl",
+    "path_guess": "07_economy_investment/real_estate_market/cabo_re_services"
+  },
+  {
+    "id": "1yGVeK59arkSsDIpK5v7gz_l042_KFL8L",
+    "title": "10_data_lake_indexes",
+    "parentId": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "path_guess": "10_data_lake/10_data_lake_indexes"
+  },
+  {
+    "id": "11Z9b9lBPA3r45TFXCRWJIndGxs5slfA2",
+    "title": "00_README_NotebookLM",
+    "parentId": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "path_guess": "10_data_lake/00_README_NotebookLM"
+  },
+  {
+    "id": "1noLNTUOaC4Hd6mVbFMF-CAKFsBWC-Jlx",
+    "title": "99_source_index",
+    "parentId": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "path_guess": "10_data_lake/99_source_index"
+  },
+  {
+    "id": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "title": "01_Steering_Committee",
+    "parentId": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "path_guess": "10_data_lake/01_Steering_Committee"
+  },
+  {
+    "id": "1jhzwwuURJk6wzdepd_vyehNTfIK5fgAm",
+    "title": "02_Technical_Advisory_Group",
+    "parentId": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "path_guess": "10_data_lake/02_Technical_Advisory_Group"
+  },
+  {
+    "id": "1-AWJ_C61uOHJRrVZvdAA7D_IsfhokrHP",
+    "title": "03_Stakeholders_Forum",
+    "parentId": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "path_guess": "10_data_lake/03_Stakeholders_Forum"
+  },
+  {
+    "id": "1CwVacqK7hVecqyHLounwEeRXkQpoB22s",
+    "title": "01_Project_Governance",
+    "parentId": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "path_guess": "10_data_lake/01_Steering_Committee/01_Project_Governance"
+  },
+  {
+    "id": "1h5zBcrj6ll4CYn1azUSeiZnuzWUkGzC3",
+    "title": "02_Political_Stakeholders",
+    "parentId": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "path_guess": "10_data_lake/01_Steering_Committee/02_Political_Stakeholders"
+  },
+  {
+    "id": "1f66VVZJkL_35QJf_ocRVQ3ifOPHqWYfF",
+    "title": "03_State_Level_SEPUIMM",
+    "parentId": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "path_guess": "10_data_lake/01_Steering_Committee/03_State_Level_SEPUIMM"
+  },
+  {
+    "id": "1btXf_hZ-tsLRene-HKF4xlsApmejOOKo",
+    "title": "04_Municipal_Planning_Authorities",
+    "parentId": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "path_guess": "10_data_lake/01_Steering_Committee/04_Municipal_Planning_Authorities"
+  },
+  {
+    "id": "144FwcpAh-TICD4JOprauRBiF-e4FFWQN",
+    "title": "05_Water_and_Energy_regulators",
+    "parentId": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "path_guess": "10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators"
+  },
+  {
+    "id": "1JB2nvVi4tqNVEzG1DkurUdxL9UmvxpBM",
+    "title": "06_Development_and_Investment_Sector",
+    "parentId": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "path_guess": "10_data_lake/01_Steering_Committee/06_Development_and_Investment_Sector"
+  },
+  {
+    "id": "1Tj8_10TohZZbl1V9vO0fIrs73Gw0B8ND",
+    "title": "01_Infrastructure_and_Utilities",
+    "parentId": "1jhzwwuURJk6wzdepd_vyehNTfIK5fgAm",
+    "path_guess": "10_data_lake/02_Technical_Advisory_Group/01_Infrastructure_and_Utilities"
+  },
+  {
+    "id": "1icODaq6vhAe6AcedXc78KbIsSFym0Upa",
+    "title": "02_Environmental_and_Conservation",
+    "parentId": "1jhzwwuURJk6wzdepd_vyehNTfIK5fgAm",
+    "path_guess": "10_data_lake/02_Technical_Advisory_Group/02_Environmental_and_Conservation"
+  },
+  {
+    "id": "1iAoqXFNGisNzvUIYw7cTxKprt_gmWeyh",
+    "title": "03_Planning_Delivery",
+    "parentId": "1jhzwwuURJk6wzdepd_vyehNTfIK5fgAm",
+    "path_guess": "10_data_lake/02_Technical_Advisory_Group/03_Planning_Delivery"
+  },
+  {
+    "id": "1RbLfs2bstEnNaeV9pvnI_V0JRYT674bt",
+    "title": "04_Mobility_Stakeholders",
+    "parentId": "1jhzwwuURJk6wzdepd_vyehNTfIK5fgAm",
+    "path_guess": "10_data_lake/02_Technical_Advisory_Group/04_Mobility_Stakeholders"
+  },
+  {
+    "id": "1ord-U-XjngOaXpkAaQuqYFMp3pAYbwwb",
+    "title": "01_Economic_Sectors",
+    "parentId": "1-AWJ_C61uOHJRrVZvdAA7D_IsfhokrHP",
+    "path_guess": "10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors"
+  },
+  {
+    "id": "1J9-zVWDXnC9Uynvxi3wowDf0Gqd0-A6q",
+    "title": "02_Communities_and_Local_NGOs",
+    "parentId": "1-AWJ_C61uOHJRrVZvdAA7D_IsfhokrHP",
+    "path_guess": "10_data_lake/03_Stakeholders_Forum/02_Communities_and_Local_NGOs"
+  },
+  {
+    "id": "1kTQVUduKuPXn8XlRLX7wkTNbQD9qBg9g",
+    "title": "03_Global_Thought_Partners",
+    "parentId": "1-AWJ_C61uOHJRrVZvdAA7D_IsfhokrHP",
+    "path_guess": "10_data_lake/03_Stakeholders_Forum/03_Global_Thought_Partners"
+  },
+  {
+    "id": "1Xww61CU5jGrqGTv_5OyQq25D6uDxkK64",
+    "title": "_raw",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/_raw"
+  },
+  {
+    "id": "1m9-GDaBMN2dH8yPUGN64GNsvlT1uwY5e",
+    "title": "ports_demand",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/ports_demand"
+  },
+  {
+    "id": "1Mth3p58fIuIdT4Gf8vNfdSd4VrNp_loH",
+    "title": "plans_archive",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/plans_archive"
+  },
+  {
+    "id": "1gObt1Wk-FRRwIzSzkHICkbYmPOCJWq9l",
+    "title": "catastro_implan",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/catastro_implan"
+  },
+  {
+    "id": "1ugKj2D3G84mosEQSkJiY0BLTRmyE8_y4",
+    "title": "tourism_assets",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/tourism_assets"
+  },
+  {
+    "id": "14BODOLkGsZSc2dqLUwob4HweahZzUofC",
+    "title": "histories",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/histories"
+  },
+  {
+    "id": "1RsD80spYBJS_beU7tt23TKTWTdWGtNjk",
+    "title": "plans",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/plans"
+  },
+  {
+    "id": "13re94tFep2fdAgBmehN1YDfEKvOQbC5m",
+    "title": "earth_studio_tour",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/earth_studio_tour"
+  },
+  {
+    "id": "1cYZbmv_tJIQQ738bhwl2411mElz4Suhj",
+    "title": "fiscal",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/fiscal"
+  },
+  {
+    "id": "18w0cInhPIVx6tXdGy9_p0Y_-pxqfSxSQ",
+    "title": "atlas_riesgos_bcs",
+    "parentId": "1Xww61CU5jGrqGTv_5OyQq25D6uDxkK64",
+    "path_guess": "13_territorial_intelligence/_raw/atlas_riesgos_bcs"
+  },
+  {
+    "id": "1zC6wJEn2G3kRJ2v-gWyPJYT9ng-E_0GE",
+    "title": "maps_listings",
+    "parentId": "1Xww61CU5jGrqGTv_5OyQq25D6uDxkK64",
+    "path_guess": "13_territorial_intelligence/_raw/maps_listings"
+  },
+  {
+    "id": "1dG57bwxql_TrDdnIhM6AKMnfsvpIEYlg",
+    "title": "ssn_cenapred",
+    "parentId": "1Xww61CU5jGrqGTv_5OyQq25D6uDxkK64",
+    "path_guess": "13_territorial_intelligence/_raw/ssn_cenapred"
+  },
+  {
+    "id": "1zR2RS_WSJ7GJSCICN0Tg1xRBvyokUtOK",
+    "title": "poerbcs_shapes",
+    "parentId": "1zC6wJEn2G3kRJ2v-gWyPJYT9ng-E_0GE",
+    "path_guess": "13_territorial_intelligence/_raw/maps_listings/poerbcs_shapes"
+  },
+  {
+    "id": "1Ok6rbIQppI9id-7_G_vypGP_IyIyISKB",
+    "title": "downloads",
+    "parentId": "1gObt1Wk-FRRwIzSzkHICkbYmPOCJWq9l",
+    "path_guess": "13_territorial_intelligence/catastro_implan/downloads"
+  },
+  {
+    "id": "1vSP-vlcWiVHZ_5O-0N9GUPU5PBBzP-lQ",
+    "title": "_downloads",
+    "parentId": "14BODOLkGsZSc2dqLUwob4HweahZzUofC",
+    "path_guess": "13_territorial_intelligence/histories/_downloads"
+  },
+  {
+    "id": "1kl-Ax2nXeZ0WDde4lGKOTmVPwhAIflmK",
+    "title": "_downloads",
+    "parentId": "1Mth3p58fIuIdT4Gf8vNfdSd4VrNp_loH",
+    "path_guess": "13_territorial_intelligence/plans_archive/_downloads"
+  },
+  {
+    "id": "1zI3EgK02hOW34EV1_csghZ52Axjf-6NO",
+    "title": "loreto_pmdu_cartografia",
+    "parentId": "1kl-Ax2nXeZ0WDde4lGKOTmVPwhAIflmK",
+    "path_guess": "13_territorial_intelligence/plans_archive/_downloads/loreto_pmdu_cartografia"
+  },
+  {
+    "id": "1TyyUkMJUf2LxbyDjEXps3vrtZEdZzHM5",
+    "title": "_downloads",
+    "parentId": "1m9-GDaBMN2dH8yPUGN64GNsvlT1uwY5e",
+    "path_guess": "13_territorial_intelligence/ports_demand/_downloads"
+  },
+  {
+    "id": "1ld5Qng6Mq_9B9mHOBq88jrS3gEKwnktW",
+    "title": "_downloads",
+    "parentId": "1ugKj2D3G84mosEQSkJiY0BLTRmyE8_y4",
+    "path_guess": "13_territorial_intelligence/tourism_assets/_downloads"
+  },
+  {
+    "id": "1Mth3p58fIuIdT4Gf8vNfdSd4VrNp_loH",
+    "title": "plans_archive",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/plans_archive"
+  },
+  {
+    "id": "14BODOLkGsZSc2dqLUwob4HweahZzUofC",
+    "title": "histories",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/histories"
+  },
+  {
+    "id": "13re94tFep2fdAgBmehN1YDfEKvOQbC5m",
+    "title": "earth_studio_tour",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/earth_studio_tour"
+  },
+  {
+    "id": "1RsD80spYBJS_beU7tt23TKTWTdWGtNjk",
+    "title": "plans",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/plans"
+  },
+  {
+    "id": "1cYZbmv_tJIQQ738bhwl2411mElz4Suhj",
+    "title": "fiscal",
+    "parentId": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "path_guess": "13_territorial_intelligence/fiscal"
+  },
+  {
+    "id": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+    "title": "13_territorial_intelligence",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/13_territorial_intelligence"
+  },
+  {
+    "id": "11LUYA735fzTKaYKN8EZea2tPyRo0RhDb",
+    "title": "00_catalog",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/00_catalog"
+  },
+  {
+    "id": "1WCOk146uvNMXUce05J9rjpVsbvOhPz6-",
+    "title": "03_energy",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/03_energy"
+  },
+  {
+    "id": "13lEPsMXo1XmyJV0CzZ_bFmYK_ALwoWXm",
+    "title": "BCS_hub_pack",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/BCS_hub_pack"
+  },
+  {
+    "id": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+    "title": "07_economy_investment",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/07_economy_investment"
+  },
+  {
+    "id": "1UCjtCBgWxuuKGUzqBBuzyzRfRRzVB7yO",
+    "title": "08_fp_team_research",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/08_fp_team_research"
+  },
+  {
+    "id": "1jl0uofmBUuijPQSGgCEn_f7yNXXpxwKu",
+    "title": "12_ontology",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/12_ontology"
+  },
+  {
+    "id": "14A_pAcmPy7Q10-V9EAD7f4u0iPFlEVwf",
+    "title": "02_water",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/02_water"
+  },
+  {
+    "id": "1Hq2Zwk0VRS2uo1Z-rYTTsbLk1veCG3gR",
+    "title": "11_bcs_hub",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/11_bcs_hub"
+  },
+  {
+    "id": "1adrzU-rF61CO1vqYaWVhbnNNwlHSOBuQ",
+    "title": "09_shadow_programme",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/09_shadow_programme"
+  },
+  {
+    "id": "1yQPGjlM6Ri_IIELjtpjgcV8PUcCaq0Xh",
+    "title": "04_mobility_waste",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/04_mobility_waste"
+  },
+  {
+    "id": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "title": "10_data_lake",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/10_data_lake"
+  },
+  {
+    "id": "1hd5ZW71g-RuMkJcpdUmSXSxondgFBnsh",
+    "title": "06_environment",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/06_environment"
+  },
+  {
+    "id": "1G1IepLmhKmHn5OGVrggm22Fi4yn2VoYR",
+    "title": "05_demographics",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/05_demographics"
+  },
+  {
+    "id": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+    "title": "01_planning",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/01_planning"
+  },
+  {
+    "id": "1oITn7Uy62deedjcFSPbesLHJIOyun8Lb",
+    "title": "00_README",
+    "parentId": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+    "path_guess": "/00_README"
+  }
+]

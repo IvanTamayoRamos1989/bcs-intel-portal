@@ -1,0 +1,539 @@
+[
+  {
+    "id": "psdu-barriles-ambito-regional",
+    "title": "Ámbito regional — PSDU Los Barriles–El Cardonal",
+    "theme": "planeacion",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-2-AMBITO-REGIONAL.pdf",
+    "page": 1,
+    "caption": "Ámbito regional del PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/psdu-barriles-ambito-regional.jpg",
+    "bytes": 431500,
+    "sprinkle": [
+      "territorio",
+      "planeacion"
+    ]
+  },
+  {
+    "id": "psdu-barriles-area-estudio",
+    "title": "Área de estudio — PSDU Los Barriles–El Cardonal",
+    "theme": "planeacion",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-1-AREA-DE-ESTUDIO.pdf",
+    "page": 1,
+    "caption": "Área de estudio del PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "territorio",
+    "file": "guide_assets/maps/psdu-barriles-area-estudio.jpg",
+    "bytes": 344475,
+    "sprinkle": [
+      "territorio"
+    ]
+  },
+  {
+    "id": "psdu-barriles-modelo",
+    "title": "Modelo de ordenamiento — PSDU Los Barriles",
+    "theme": "planeacion",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-9-MODELO.pdf",
+    "page": 1,
+    "caption": "Modelo de ordenamiento del PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/psdu-barriles-modelo.jpg",
+    "bytes": 322724,
+    "sprinkle": [
+      "planeacion"
+    ]
+  },
+  {
+    "id": "psdu-barriles-uso-suelo",
+    "title": "Uso de suelo y vegetación — Los Barriles",
+    "theme": "planeacion",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-Uso-suelo-vegetacion.pdf",
+    "page": 1,
+    "caption": "Uso de suelo y vegetación, PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "territorio",
+    "file": "guide_assets/maps/psdu-barriles-uso-suelo.jpg",
+    "bytes": 317960,
+    "sprinkle": [
+      "territorio"
+    ]
+  },
+  {
+    "id": "psdu-barriles-mapa-local",
+    "title": "Mapa local — Los Barriles",
+    "theme": "planeacion",
+    "geography": "Los Barriles (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Los-Barriles.pdf",
+    "page": 1,
+    "caption": "Plano local de Los Barriles (Ayuntamiento de La Paz, PSDU 2012).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/psdu-barriles-mapa-local.jpg",
+    "bytes": 328167,
+    "sprinkle": []
+  },
+  {
+    "id": "psdu-barriles-mapa-regional",
+    "title": "Mapa regional — Los Barriles–El Cardonal",
+    "theme": "planeacion",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Regional.pdf",
+    "page": 1,
+    "caption": "Mapa regional Los Barriles–El Cardonal (Ayuntamiento de La Paz, PSDU 2012).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/psdu-barriles-mapa-regional.jpg",
+    "bytes": 410168,
+    "sprinkle": []
+  },
+  {
+    "id": "psdu-todos-santos-zonificacion",
+    "title": "Zonificación — Todos Santos–El Pescadero",
+    "theme": "planeacion",
+    "geography": "Todos Santos–El Pescadero (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-Zonificacion.pdf",
+    "page": 1,
+    "caption": "Zonificación PSDU Todos Santos–El Pescadero (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/psdu-todos-santos-zonificacion.jpg",
+    "bytes": 373173,
+    "sprinkle": [
+      "planeacion"
+    ]
+  },
+  {
+    "id": "psdu-todos-santos-e1",
+    "title": "Estrategia e1 — Todos Santos–El Pescadero",
+    "theme": "planeacion",
+    "geography": "Todos Santos–El Pescadero (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e1-estrategia.pdf",
+    "page": 1,
+    "caption": "Carta de estrategia e1, PSDU Todos Santos (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/psdu-todos-santos-e1.jpg",
+    "bytes": 331351,
+    "sprinkle": []
+  },
+  {
+    "id": "pdu2040-carta-sintesis",
+    "title": "Carta síntesis — PDU Los Cabos 2040",
+    "theme": "planeacion",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-Carta-Sintesis.pdf",
+    "page": 1,
+    "caption": "Carta síntesis del PDU 2040 de Los Cabos (IMPLAN Los Cabos, 2013).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/pdu2040-carta-sintesis.jpg",
+    "bytes": 337430,
+    "sprinkle": [
+      "planeacion"
+    ]
+  },
+  {
+    "id": "pdu2040-et-401-zonificacion-primaria",
+    "title": "Zonificación primaria — PDU Los Cabos 2040",
+    "theme": "planeacion",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::PDU2040-ET-401 - Zonificación Primaria.pdf",
+    "page": 1,
+    "caption": "Zonificación primaria (ET-401), PDU 2040 Los Cabos (IMPLAN, 2013).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/pdu2040-et-401-zonificacion-primaria.jpg",
+    "bytes": 411628,
+    "sprinkle": [
+      "planeacion"
+    ]
+  },
+  {
+    "id": "pdu2040-et-402-estructura-urbana",
+    "title": "Estructura urbana — PDU Los Cabos 2040",
+    "theme": "planeacion",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::PDU2040-ET-402 - Estructura Urbana.pdf",
+    "page": 1,
+    "caption": "Estructura urbana (ET-402), PDU 2040 Los Cabos (IMPLAN, 2013).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/pdu2040-et-402-estructura-urbana.jpg",
+    "bytes": 395918,
+    "sprinkle": []
+  },
+  {
+    "id": "pdu2040-et-403-zonificacion-secundaria",
+    "title": "Zonificación secundaria — PDU Los Cabos 2040",
+    "theme": "planeacion",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::PDU2040-ET-403 - Zonificación Secundaria.pdf",
+    "page": 1,
+    "caption": "Zonificación secundaria (ET-403), PDU 2040 Los Cabos (IMPLAN, 2013).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/pdu2040-et-403-zonificacion-secundaria.jpg",
+    "bytes": 423472,
+    "sprinkle": []
+  },
+  {
+    "id": "poer-ugas-56",
+    "title": "56 UGAs del MOEBCS (POERBCS)",
+    "theme": "planeacion",
+    "geography": "BCS statewide",
+    "year": 2025,
+    "source_path": "01_planning/2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf",
+    "page": 17,
+    "caption": "Delimitación de las 56 UGAs propuestas para el MOEBCS (SEPUIMM, informe modelo POERBCS, 2025).",
+    "section_slug": "planeacion",
+    "file": "guide_assets/maps/poer-ugas-56.jpg",
+    "bytes": 197867,
+    "sprinkle": [
+      "planeacion",
+      "territorio"
+    ]
+  },
+  {
+    "id": "poer-politica-ambiental-ugas",
+    "title": "Política ambiental por UGA — MOEBCS",
+    "theme": "ambiente",
+    "geography": "BCS statewide",
+    "year": 2025,
+    "source_path": "01_planning/2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf",
+    "page": 26,
+    "caption": "Mapa del MOEBCS con política ambiental por UGA (SEPUIMM, informe modelo POERBCS, 2025).",
+    "section_slug": "ambiente",
+    "file": "guide_assets/maps/poer-politica-ambiental-ugas.jpg",
+    "bytes": 260922,
+    "sprinkle": [
+      "ambiente",
+      "planeacion"
+    ]
+  },
+  {
+    "id": "psdu-barriles-estructura-vial",
+    "title": "Estructura vial — PSDU Los Barriles",
+    "theme": "conectividad",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-12-ESTRUCTURA-VIAL.pdf",
+    "page": 1,
+    "caption": "Estructura vial del PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "conectividad",
+    "file": "guide_assets/maps/psdu-barriles-estructura-vial.jpg",
+    "bytes": 589082,
+    "sprinkle": [
+      "conectividad"
+    ]
+  },
+  {
+    "id": "psdu-barriles-mapa-vial",
+    "title": "Mapa vial — Los Barriles–El Cardonal",
+    "theme": "conectividad",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Vial.pdf",
+    "page": 1,
+    "caption": "Mapa vial Los Barriles–El Cardonal (Ayuntamiento de La Paz, PSDU 2012).",
+    "section_slug": "conectividad",
+    "file": "guide_assets/maps/psdu-barriles-mapa-vial.jpg",
+    "bytes": 357186,
+    "sprinkle": []
+  },
+  {
+    "id": "pdu2040-et-801-vial-primaria",
+    "title": "Estructura vial primaria — PDU Los Cabos 2040",
+    "theme": "conectividad",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::PDU2040-ET-801 - Estructura Vial Primaria.pdf",
+    "page": 1,
+    "caption": "Estructura vial primaria (ET-801), PDU 2040 Los Cabos (IMPLAN, 2013).",
+    "section_slug": "conectividad",
+    "file": "guide_assets/maps/pdu2040-et-801-vial-primaria.jpg",
+    "bytes": 350568,
+    "sprinkle": [
+      "conectividad"
+    ]
+  },
+  {
+    "id": "pdu2040-et-804-infra-vial",
+    "title": "Infraestructura vial — PDU Los Cabos 2040",
+    "theme": "conectividad",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::PDU2040-ET-804 - Infraestructura Vial.pdf",
+    "page": 1,
+    "caption": "Infraestructura vial (ET-804), PDU 2040 Los Cabos (IMPLAN, 2013).",
+    "section_slug": "conectividad",
+    "file": "guide_assets/maps/pdu2040-et-804-infra-vial.jpg",
+    "bytes": 407369,
+    "sprinkle": []
+  },
+  {
+    "id": "pdu2040-et-601-agua",
+    "title": "Agua potable y tratada — PDU Los Cabos 2040",
+    "theme": "agua",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::PDU2040-ET-601 - Manejo de Agua Potable y Agua Tratada.pdf",
+    "page": 1,
+    "caption": "Manejo de agua potable y tratada (ET-601), PDU 2040 Los Cabos (IMPLAN, 2013).",
+    "section_slug": "agua",
+    "file": "guide_assets/maps/pdu2040-et-601-agua.jpg",
+    "bytes": 400970,
+    "sprinkle": [
+      "agua"
+    ]
+  },
+  {
+    "id": "dma-la-paz-localizacion",
+    "title": "Localización acuífero La Paz (0324)",
+    "theme": "agua",
+    "geography": "Acuífero La Paz",
+    "year": 2024,
+    "source_path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+    "page": 4,
+    "caption": "Localización del acuífero La Paz 0324 (CONAGUA, Actualización DMA 2024).",
+    "section_slug": "agua",
+    "file": "guide_assets/maps/dma-la-paz-localizacion.jpg",
+    "bytes": 293984,
+    "sprinkle": [
+      "agua"
+    ]
+  },
+  {
+    "id": "dma-la-paz-profundidad",
+    "title": "Profundidad nivel estático — acuífero La Paz",
+    "theme": "agua",
+    "geography": "Acuífero La Paz",
+    "year": 2024,
+    "source_path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+    "page": 21,
+    "caption": "Profundidad al nivel estático 2019, acuífero La Paz (CONAGUA DMA 2024).",
+    "section_slug": "agua",
+    "file": "guide_assets/maps/dma-la-paz-profundidad.jpg",
+    "bytes": 346685,
+    "sprinkle": []
+  },
+  {
+    "id": "dma-sjc-localizacion",
+    "title": "Localización acuífero San José del Cabo (0319)",
+    "theme": "agua",
+    "geography": "Acuífero San José del Cabo",
+    "year": 2024,
+    "source_path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf",
+    "page": 4,
+    "caption": "Localización del acuífero San José del Cabo 0319 (CONAGUA, Actualización DMA 2024).",
+    "section_slug": "agua",
+    "file": "guide_assets/maps/dma-sjc-localizacion.jpg",
+    "bytes": 238455,
+    "sprinkle": [
+      "agua"
+    ]
+  },
+  {
+    "id": "psdu-barriles-saneamiento",
+    "title": "Saneamiento ambiental — PSDU Los Barriles",
+    "theme": "ambiente",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-14-SANEAMIENTO-AMBIENTAL.pdf",
+    "page": 1,
+    "caption": "Saneamiento ambiental, PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "ambiente",
+    "file": "guide_assets/maps/psdu-barriles-saneamiento.jpg",
+    "bytes": 586085,
+    "sprinkle": [
+      "ambiente"
+    ]
+  },
+  {
+    "id": "pdu2040-et-501-ambiente",
+    "title": "Protección e integración ambiental — PDU Los Cabos 2040",
+    "theme": "ambiente",
+    "geography": "Los Cabos",
+    "year": 2013,
+    "source_path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip::PDU2040-ET-501 - Protección e Integración Ambiental.pdf",
+    "page": 1,
+    "caption": "Protección e integración ambiental (ET-501), PDU 2040 Los Cabos (IMPLAN, 2013).",
+    "section_slug": "ambiente",
+    "file": "guide_assets/maps/pdu2040-et-501-ambiente.jpg",
+    "bytes": 403079,
+    "sprinkle": [
+      "ambiente"
+    ]
+  },
+  {
+    "id": "cenace-regiones-control-sen",
+    "title": "Regiones de control del SEN (incl. SIBCS)",
+    "theme": "energia",
+    "geography": "México / SIBCS",
+    "year": 2025,
+    "source_path": "03_energy/2025-12-19_CENACE_PAMRNT-RGD-MEM-2025-2039.pdf",
+    "page": 29,
+    "caption": "Regiones de control del SEN; SIBCS y SIM aparecen como sistemas aislados (CENACE PAMRNT 2025–2039, Fig. 3.1.1).",
+    "section_slug": "energia",
+    "file": "guide_assets/maps/cenace-regiones-control-sen.jpg",
+    "bytes": 235252,
+    "sprinkle": [
+      "energia"
+    ]
+  },
+  {
+    "id": "cenace-sibcs-demanda",
+    "title": "Demanda máxima semanal — SIBCS",
+    "theme": "energia",
+    "geography": "SIBCS",
+    "year": 2025,
+    "source_path": "03_energy/2025-12-19_CENACE_PAMRNT-RGD-MEM-2025-2039.pdf",
+    "page": 139,
+    "caption": "Demanda máxima bruta integrada semanal del SIBCS (CENACE PAMRNT 2025–2039, Fig. 4.5.1).",
+    "section_slug": "energia",
+    "file": "guide_assets/maps/cenace-sibcs-demanda.jpg",
+    "bytes": 204020,
+    "sprinkle": [
+      "energia"
+    ]
+  },
+  {
+    "id": "prodesen-cap0-p16",
+    "title": "Diagrama / mapa PRODESEN 2024–2038 (cap. 0)",
+    "theme": "energia",
+    "geography": "SEN",
+    "year": 2024,
+    "source_path": "03_energy/2024-05-31_SENER_PRODESEN-2024-2038-Cap0-Presentacion.pdf",
+    "page": 16,
+    "caption": "Figura del capítulo 0 PRODESEN 2024–2038 (SENER, 2024).",
+    "section_slug": "energia",
+    "file": "guide_assets/maps/prodesen-cap0-p16.jpg",
+    "bytes": 343724,
+    "sprinkle": []
+  },
+  {
+    "id": "atlas-fallas-sismicidad",
+    "title": "Peligrosidad por fallas y sismicidad",
+    "theme": "riesgos",
+    "geography": "BCS statewide",
+    "year": 2024,
+    "source_path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_FALLAS_Y_SISMICIDAD.pdf",
+    "page": 1,
+    "caption": "Mapa de peligrosidad por fallas y sismicidad (Atlas Estatal de Riesgo BCS, Gobierno BCS–UABCS, 2024).",
+    "section_slug": "riesgos",
+    "file": "guide_assets/maps/atlas-fallas-sismicidad.jpg",
+    "bytes": 413794,
+    "sprinkle": [
+      "riesgos"
+    ]
+  },
+  {
+    "id": "atlas-tsunamis",
+    "title": "Peligrosidad por tsunamis",
+    "theme": "riesgos",
+    "geography": "BCS statewide",
+    "year": 2024,
+    "source_path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_TSUNAMIS.pdf",
+    "page": 1,
+    "caption": "Mapa de peligrosidad por tsunamis (Atlas Estatal de Riesgo BCS, 2024).",
+    "section_slug": "riesgos",
+    "file": "guide_assets/maps/atlas-tsunamis.jpg",
+    "bytes": 302583,
+    "sprinkle": []
+  },
+  {
+    "id": "atlas-inundaciones",
+    "title": "Peligrosidad por inundaciones",
+    "theme": "riesgos",
+    "geography": "BCS statewide",
+    "year": 2024,
+    "source_path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_INUNDACIONES.pdf",
+    "page": 1,
+    "caption": "Mapa de peligrosidad por inundaciones (Atlas Estatal de Riesgo BCS, 2024).",
+    "section_slug": "riesgos",
+    "file": "guide_assets/maps/atlas-inundaciones.jpg",
+    "bytes": 276078,
+    "sprinkle": [
+      "riesgos"
+    ]
+  },
+  {
+    "id": "atlas-ciclones",
+    "title": "Peligrosidad por ciclones tropicales",
+    "theme": "riesgos",
+    "geography": "BCS statewide",
+    "year": 2024,
+    "source_path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_DE_PELIGROSIDAD_POR_CICLONES_TROPICALES.pdf",
+    "page": 1,
+    "caption": "Mapa de peligrosidad por ciclones tropicales (Atlas Estatal de Riesgo BCS, 2024).",
+    "section_slug": "riesgos",
+    "file": "guide_assets/maps/atlas-ciclones.jpg",
+    "bytes": 395191,
+    "sprinkle": []
+  },
+  {
+    "id": "atlas-vulnerabilidad",
+    "title": "Vulnerabilidad estatal",
+    "theme": "riesgos",
+    "geography": "BCS statewide",
+    "year": 2024,
+    "source_path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_ESTATAL_DE_VULNERABILIDAD.pdf",
+    "page": 1,
+    "caption": "Mapa estatal de vulnerabilidad (Atlas Estatal de Riesgo BCS, 2024).",
+    "section_slug": "riesgos",
+    "file": "guide_assets/maps/atlas-vulnerabilidad.jpg",
+    "bytes": 270713,
+    "sprinkle": []
+  },
+  {
+    "id": "atlas-riesgo-puntos-criticos",
+    "title": "Riesgo y puntos críticos",
+    "theme": "riesgos",
+    "geography": "BCS statewide",
+    "year": 2024,
+    "source_path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs/MAPA_ESTATAL_DE_RIESGO_Y_PUNTOS_CRITICOS.pdf",
+    "page": 1,
+    "caption": "Mapa estatal de riesgo y puntos críticos (Atlas Estatal de Riesgo BCS, 2024).",
+    "section_slug": "riesgos",
+    "file": "guide_assets/maps/atlas-riesgo-puntos-criticos.jpg",
+    "bytes": 335923,
+    "sprinkle": [
+      "riesgos"
+    ]
+  },
+  {
+    "id": "psdu-barriles-riesgos",
+    "title": "Riesgos y vulnerabilidad — PSDU Los Barriles",
+    "theme": "riesgos",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-15-RIESGOS-Y-VULNERABILIDAD.pdf",
+    "page": 1,
+    "caption": "Riesgos y vulnerabilidad, PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "riesgos",
+    "file": "guide_assets/maps/psdu-barriles-riesgos.jpg",
+    "bytes": 591949,
+    "sprinkle": []
+  },
+  {
+    "id": "psdu-barriles-tenencia",
+    "title": "Tenencia de la tierra — PSDU Los Barriles",
+    "theme": "territorio",
+    "geography": "Los Barriles–El Cardonal (La Paz)",
+    "year": 2012,
+    "source_path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-10-TENENCIA-DE-LA-TIERRA.pdf",
+    "page": 1,
+    "caption": "Tenencia de la tierra, PSDU Los Barriles–El Cardonal (Ayuntamiento de La Paz, 2012).",
+    "section_slug": "territorio",
+    "file": "guide_assets/maps/psdu-barriles-tenencia.jpg",
+    "bytes": 361664,
+    "sprinkle": [
+      "territorio"
+    ]
+  }
+]

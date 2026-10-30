@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import folders from '../data/folders_summary.json';
+import news from '../data/news.json';
+import federal from '../data/federal_projects.json';
+import { THEMES } from '../lib/ia';
+
+const totalFiles = folders.total_files ?? 0;
+const pdfCount = folders.pdf_count ?? 0;
+const fedCount = federal.count ?? (federal.projects || []).length;
+
+const newsItems = [...(news.items || [])]
+  .sort((a: any, b: any) => String(b.date).localeCompare(String(a.date)))
+  .slice(0, 4);
+
+const widgets = [
+  { href: '/resumen', n: '798,447', l_es: 'Habitantes', l_en: 'Population', s_es: 'INEGI 2020', s_en: 'INEGI 2020' },
+  { href: '/territorio', n: '5', l_es: 'Municipios', l_en: 'Municipalities', s_es: 'BCS', s_en: 'BCS' },
+  { href: '/energia', n: '~689 MW', l_es: 'Demanda eléctrica pico', l_en: 'Peak power demand', s_es: 'SIBCS 2024', s_en: 'SIBCS 2024' },
+  { href: '/proyectos-federales', n: String(fedCount), l_es: 'Proyectos federales', l_en: 'Federal projects', s_es: 'Inventario BCS', s_en: 'BCS inventory' },
+  { href: '/catalogo', n: totalFiles.toLocaleString('es-MX'), l_es: 'Archivos en catálogo', l_en: 'Catalog files', s_es: `${pdfCount} PDF`, s_en: `${pdfCount} PDFs` },
+  { href: '/mapas', n: '56', l_es: 'Unidades de gestión ambiental', l_en: 'Environmental management units', s_es: 'Ordenamiento ecológico (POERBCS)', s_en: 'Ecological zoning (POERBCS)' },
+];
+
+// Former "Accesos rápidos" targets stay reachable: every one is in a theme card below and in the top bar.
+const themeCards = THEMES.map((t) => ({ ...t, top: t.items.slice(0, 4), more: Math.max(0, t.items.length - 4) }));
+
+---
+<BaseLayout
+  title="Portal"
+  titleEn="Portal"
+  description="Cifras clave, accesos por tema y lo más reciente."
+  descriptionEn="Key figures, topic entry points and latest news."
+  wide={true}
+>
+  <section class="pt-purpose" aria-label="Propósito del portal">
+    <p class="pt-purpose-k"><span data-lang-es>Plan Estratégico BCS 2050</span><span data-lang-en hidden>BCS 2050 Strategic Plan</span></p>
+    <p class="pt-purpose-t"><span data-lang-es>BCS 2050 es un plan estratégico para Baja California Sur. Este portal ayuda a consultar datos públicos para que gobierno, sector privado y sociedad civil tomen mejores decisiones.</span><span data-lang-en hidden>BCS 2050 is a strategic plan for Baja California Sur. This portal helps people consult public data so that government, the private sector and civil society can make better decisions.</span></p>
+  </section>
+
+  <h2 class="dash-section-title"><span data-lang-es>¿Prefieres explorar por tu cuenta?</span><span data-lang-en hidden>Prefer to explore on your own?</span></h2>
+  <div class="pt-start">
+    <a class="pt-start-card" href="/studio">
+      <span class="ico" aria-hidden="true">🏘️</span>
+      <strong><span data-lang-es>Quiero ver mi municipio</span><span data-lang-en hidden>I want to see my municipality</span></strong>
+      <p><span data-lang-es>Una ficha por cada uno de los cinco municipios: población, agua, planes y mapas.</span><span data-lang-en hidden>One page for each of the five municipalities: population, water, plans and maps.</span></p>
+    </a>
+    <a class="pt-start-card" href="/agua">
+      <span class="ico" aria-hidden="true">💧</span>
+      <strong><span data-lang-es>Quiero saber sobre el agua</span><span data-lang-en hidden>I want to know about water</span></strong>
+      <p><span data-lang-es>Acuíferos, disponibilidad, desalación y agua de lluvia.</span><span data-lang-en hidden>Aquifers, availability, desalination and rainwater.</span></p>
+    </a>
+    <button type="button" class="pt-start-card" data-open-chat>
+      <span class="ico" aria-hidden="true">💬</span>
+      <strong><span data-lang-es>Tengo una pregunta</span><span data-lang-en hidden>I have a question</span></strong>
+      <p><span data-lang-es>Pregúntale al plan BCS 2050 con tus propias palabras; responde con fuentes.</span><span data-lang-en hidden>Ask the BCS 2050 plan in your own words; it answers with sources.</span></p>
+    </button>
+  </div>
+
+  <h2 class="dash-section-title pt-spec-title"><span data-lang-es>Para especialistas</span><span data-lang-en hidden>For specialists</span></h2>
+  <div class="pt-entry-grid pt-home-top">
+    <a class="pt-entry primary" href="/explorar">
+      <span class="k"><span data-lang-es>Atlas territorial 3D</span><span data-lang-en hidden>3D territorial atlas</span></span>
+      <strong><span data-lang-es>Explorar Baja California Sur sobre el relieve</span><span data-lang-en hidden>Explore Baja California Sur on its terrain</span></strong>
+      <p><span data-lang-es>Capas de agua, energía, conectividad y ordenamiento sobre el terreno, cada elemento con su fuente.</span><span data-lang-en hidden>Water, energy, connectivity and planning layers on the terrain, every feature with its source.</span></p>
+      <span class="go"><span data-lang-es>Abrir el atlas →</span><span data-lang-en hidden>Open the atlas →</span></span>
+    </a>
+    <a class="pt-entry" href="/temas">
+      <span class="k"><span data-lang-es>Temas</span><span data-lang-en hidden>Topics</span></span>
+      <strong><span data-lang-es>Todo el portal en siete temas</span><span data-lang-en hidden>The whole portal in seven topics</span></strong>
+      <p><span data-lang-es>Territorio, planeación, agua y energía, economía, conectividad, actores y temas para especialistas.</span><span data-lang-en hidden>Territory, planning, water and energy, economy, connectivity, stakeholders and specialist topics.</span></p>
+      <span class="go"><span data-lang-es>Ver temas →</span><span data-lang-en hidden>See topics →</span></span>
+    </a>
+    <a class="pt-entry" href="/catalogo">
+      <span class="k"><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></span>
+      <strong><span data-lang-es>Catálogo de datos</span><span data-lang-en hidden>Data catalog</span></strong>
+      <p><span data-lang-es>Todos los archivos del proyecto para ver o descargar; también biblioteca y archivo de planes.</span><span data-lang-en hidden>All project files to view or download; also the library and plans archive.</span></p>
+      <span class="go"><span data-lang-es>Abrir el catálogo →</span><span data-lang-en hidden>Open the catalog →</span></span>
+    </a>
+    <button type="button" class="pt-entry pt-entry-ask" data-open-chat>
+      <span class="k"><span data-lang-es>Asistente</span><span data-lang-en hidden>Assistant</span></span>
+      <strong><span data-lang-es>Preguntar</span><span data-lang-en hidden>Ask</span></strong>
+      <p><span data-lang-es>Escribe o habla; responde con la información del portal y enlaza sus fuentes.</span><span data-lang-en hidden>Type or talk; it answers from the portal's information and links its sources.</span></p>
+      <span class="go"><span data-lang-es>Abrir el asistente →</span><span data-lang-en hidden>Open the assistant →</span></span>
+    </button>
+  </div>
+
+  <h2 class="dash-section-title">
+    <span data-lang-es>Cifras clave</span>
+    <span data-lang-en hidden>Key figures</span>
+  </h2>
+  <div class="dash-grid">
+    {widgets.map((w) => (
+      <a class="dash-widget" href={w.href}>
+        <span class="n">{w.n}</span>
+        <span class="l">
+          <span data-lang-es>{w.l_es}</span>
+          <span data-lang-en hidden>{w.l_en}</span>
+        </span>
+        <span class="src">
+          <span data-lang-es>{w.s_es}</span>
+          <span data-lang-en hidden>{w.s_en}</span>
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <div class="pt-section-title">
+    <h2 class="dash-section-title"><span data-lang-es>Por tema</span><span data-lang-en hidden>By topic</span></h2>
+    <a href="/temas"><span data-lang-es>Ver todos los temas →</span><span data-lang-en hidden>See all topics →</span></a>
+  </div>
+  <div class="pt-home-themes">
+    {themeCards.map((t) => (
+      <section class="pt-home-theme">
+        <h3><a href={`/temas#${t.id}`}><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></a></h3>
+        <p><span data-lang-es>{t.d_es}</span><span data-lang-en hidden>{t.d_en}</span></p>
+        <ul>
+          {t.top.map((i) => (
+            <li><a href={i.href}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>
+          ))}
+          {t.more > 0 && (
+            <li><a class="more" href={`/temas#${t.id}`}><span data-lang-es>+{t.more} más</span><span data-lang-en hidden>+{t.more} more</span></a></li>
+          )}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  <div class="dash-news-head">
+    <h2 class="dash-section-title">
+      <span data-lang-es>Últimas noticias</span>
+      <span data-lang-en hidden>Latest news</span>
+    </h2>
+    <a class="dash-see-all" href="/noticias">
+      <span data-lang-es>Ver todas</span>
+      <span data-lang-en hidden>See all</span>
+    </a>
+  </div>
+  <div class="dash-news">
+    {newsItems.map((it: any) => (
+      <a href={it.url} target="_blank" rel="noopener noreferrer">
+        <strong>
+          <span data-lang-es>{it.title_es}</span>
+          <span data-lang-en hidden>{it.title_en}</span>
+        </strong>
+        <span class="meta">{it.source} · {it.date}</span>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  document.querySelectorAll('[data-open-chat]').forEach(function (b) {
+    b.addEventListener('click', function () { if (window.BCSChat) window.BCSChat.open(); });
+  });
+</script>
+
+<script is:inline>
+  (function () {
+    var en = function () { return (document.documentElement.getAttribute('data-lang') || 'es') === 'en'; };
+    var inp = document.getElementById('pt-chat-hero-in');
+    function ask(q) {
+      q = String(q || '').trim();
+      if (!q) return;
+      if (!window.BCSChat) return;
+      window.BCSChat.open();
+      setTimeout(function () { window.BCSChat.send(q); }, 60);
+      if (inp) inp.value = '';
+    }
+    var f = document.getElementById('pt-chat-hero-form');
+    f && f.addEventListener('submit', function (e) { e.preventDefault(); ask(inp && inp.value); });
+    document.querySelectorAll('[data-hero-q-es]').forEach(function (b) {
+      b.addEventListener('click', function () { ask(en() ? b.getAttribute('data-hero-q-en') : b.getAttribute('data-hero-q-es')); });
+    });
+    function syncPh() { if (inp) inp.placeholder = en() ? inp.getAttribute('data-ph-en') : inp.getAttribute('data-ph-es'); }
+    document.addEventListener('bcs:lang', syncPh);
+    var lt = document.getElementById('lang-toggle'); lt && lt.addEventListener('click', function () { setTimeout(syncPh, 50); });
+    syncPh();
+    // Chat-first home: dock the assistant on desktop on arrival
+  })();
+</script>
+
+<style>
+  .pt-chat-hero { background: linear-gradient(135deg, #23374a 0%, #34607d 100%); color: #fbf8f1; border-radius: calc(var(--radius) + 4px); padding: 1.6rem 1.6rem 1.3rem; margin: 0 0 1.2rem; box-shadow: 0 10px 30px rgba(35,55,74,.18); }
+  .pt-chat-hero-k { margin: 0 0 6px; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .85; }
+  .pt-chat-hero-t { margin: 0 0 6px; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.15; color: #fbf8f1; }
+  .pt-chat-hero-p { margin: 0 0 1rem; font-size: 1rem; line-height: 1.5; max-width: 60ch; opacity: .95; }
+  .pt-chat-hero-form { display: flex; gap: 8px; max-width: 720px; }
+  .pt-chat-hero-form input { flex: 1; min-width: 0; font: inherit; font-size: 1.02rem; padding: .8rem 1rem; border-radius: 12px; border: 0; color: #23374a; background: #fbf8f1; }
+  .pt-chat-hero-go { font: inherit; font-weight: 700; font-size: 1rem; padding: 0 1.3rem; border-radius: 12px; border: 0; background: #e8b04b; color: #23374a; cursor: pointer; min-height: 48px; }
+  .pt-chat-hero-go:hover { filter: brightness(1.05); }
+  .pt-chat-hero-sugg { display: flex; flex-wrap: wrap; gap: 8px; margin-top: .9rem; }
+  .pt-chat-hero-sugg button { font: inherit; font-size: .86rem; font-weight: 600; padding: .45rem .8rem; border-radius: 999px; border: 1px solid rgba(251,248,241,.4); background: rgba(251,248,241,.1); color: #fbf8f1; cursor: pointer; }
+  .pt-chat-hero-sugg button:hover, .pt-chat-hero-sugg button:focus-visible { background: rgba(251,248,241,.25); }
+  .pt-spec-title { opacity: .85; font-size: 1rem !important; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  @media (max-width: 600px) { .pt-chat-hero { padding: 1.1rem 1rem; } .pt-chat-hero-form { flex-direction: column; } }
+  .pt-purpose { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--mineral); border-radius: var(--radius); padding: .9rem 1.1rem; margin: 0 0 1.2rem; }
+  .pt-purpose-k { margin: 0 0 4px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--mineral); }
+  .pt-purpose-t { margin: 0; font-size: 1.02rem; line-height: 1.5; color: var(--ink); }
+  .pt-start { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 1.6rem; }
+  .pt-start-card { display: block; font: inherit; text-align: left; cursor: pointer; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; color: var(--ink); text-decoration: none; }
+  .pt-start-card:hover, .pt-start-card:focus-visible { border-color: var(--mineral); background: var(--mineral-soft); }
+  .pt-start-card .ico { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+  .pt-start-card strong { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+  .pt-start-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+  @media (max-width: 760px) { .pt-start { grid-template-columns: 1fr; } }
+  .pt-home-top { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+  :global(.dash-grid) { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important; }
+  .pt-entry-ask { font: inherit; text-align: left; cursor: pointer; }
+  .pt-home-themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 1.4rem; }
+  .pt-home-theme { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem .8rem; }
+  .pt-home-theme h3 { margin: 0 0 4px; font-size: 1.05rem; }
+  .pt-home-theme h3 a { color: var(--ink); text-decoration: none; }
+  .pt-home-theme h3 a:hover { color: var(--mineral-2); text-decoration: underline; }
+  .pt-home-theme p { margin: 0 0 8px; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+  .pt-home-theme ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .pt-home-theme li a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 11px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); color: var(--ink-2); font-size: .84rem; font-weight: 600; text-decoration: none; }
+  .pt-home-theme li a:hover { background: var(--mineral-soft); color: var(--mineral-2); border-color: var(--mineral); }
+  .pt-home-theme li a.more { background: transparent; color: var(--mineral); }
+  @media (max-width: 1100px) { .pt-home-top { grid-template-columns: 1fr 1fr; } .pt-home-themes { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 980px) { .pt-home-top, .pt-home-themes { grid-template-columns: 1fr; } }
+</style>

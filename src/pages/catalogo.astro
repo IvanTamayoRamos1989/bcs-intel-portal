@@ -1,0 +1,452 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import folders from '../data/folders_summary.json';
+import engagement from '../data/engagement_catalog.json';
+
+const themes = Object.keys(folders.theme_counts || {}).sort();
+---
+<BaseLayout
+  title="Catálogo de datos"
+  titleEn="Data catalog"
+  description="Todos los archivos del proyecto: busca, filtra y ábrelos o descárgalos."
+  descriptionEn="All project files: search, filter, and open or download them."
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      {(folders.total_files||0).toLocaleString("es-MX")} archivos ({folders.pdf_count} PDF). Escribe en el buscador o filtra por tema o grupo;
+      cada archivo se abre o descarga desde Google Drive (Ver / Descargar). Los PDF temáticos (INEGI, CONEVAL, planes…) están
+      ordenados por <strong>tema territorial</strong>; los grupos de trabajo agrupan los paquetes de actores. Al final puedes <a href="#contribuir">subir un archivo</a>.
+    </span>
+    <span data-lang-en hidden>
+      {(folders.total_files||0).toLocaleString("en-US")} files ({folders.pdf_count} PDFs). Type in the search box or filter by theme or group;
+      every file opens or downloads from Google Drive (View / Download). Theme PDFs (INEGI, CONEVAL, plans…) are
+      sorted by <strong>territory theme</strong>; working groups bundle the stakeholder packs. At the bottom you can <a href="#contribuir">upload a file</a>.
+    </span>
+  </p>
+
+  <div class="catalog-toolbar">
+    <input type="search" id="cat-q" data-i18n="searchPlaceholder" placeholder="Buscar por nombre, resumen, grupo…" aria-label="Buscar en el catálogo" />
+    <label>
+      <span data-lang-es>Grupo</span><span data-lang-en hidden>Group</span>
+      <select id="cat-eng">
+        <option value="">Todos / All</option>
+        {engagement.groups.map((g: any) => (
+          <optgroup label={g.label_es} data-label-es={g.label_es} data-label-en={g.label_en}>
+            {g.subgroups.map((s: any) => (
+              <option value={s.id} data-label-es={s.label_es} data-label-en={s.label_en}>{s.label_es}</option>
+            ))}
+          </optgroup>
+        ))}
+      </select>
+    </label>
+    <label>
+      <span data-i18n="filterTheme">Tema</span>
+      <select id="cat-theme">
+        <option value="">Todos</option>
+        {themes.map((t) => <option value={t}>{t}</option>)}
+      </select>
+    </label>
+    <label>
+      <span data-lang-es>Drive</span><span data-lang-en hidden>Drive</span>
+      <select id="cat-drive">
+        <option value="drive">En Drive</option>
+        <option value="all">Todos</option>
+        <option value="pending">Pendiente en Drive</option>
+      </select>
+    </label>
+  </div>
+  <details class="pt-group" id="cat-groups">
+    <summary>
+      <span data-lang-es>Explorar por grupo de trabajo</span>
+      <span data-lang-en hidden>Browse by working group</span>
+      <span class="pt-count"><span data-lang-es>toca un grupo para filtrar la lista</span><span data-lang-en hidden>tap a group to filter the list</span></span>
+    </summary>
+    <div class="pt-group-body">
+  <div class="engagement-browse" id="eng-browse">
+    {engagement.groups.map((g: any) => (
+      <section class="eng-group" data-group={g.id}>
+        <h3 class="eng-group-title">
+          <span data-lang-es>{g.label_es}</span>
+          <span data-lang-en hidden>{g.label_en}</span>
+          <span class="eng-count" data-group-count={g.id}></span>
+        </h3>
+        <div class="folder-grid">
+          {g.subgroups.map((s: any) => (
+            <button
+              type="button"
+              class="folder-card cat-eng-btn"
+              data-eng={s.id}
+              data-group={g.id}
+              style="cursor:pointer;text-align:left;font:inherit;width:100%"
+              hidden
+            >
+              <div class="fcnt" data-eng-count={s.id}>—</div>
+              <p class="flab">
+                <span data-lang-es>{s.label_es}</span>
+                <span data-lang-en hidden>{s.label_en}</span>
+              </p>
+            </button>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+    </div>
+  </details>
+  <p class="catalog-meta" id="cat-meta">Cargando catálogo…</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Archivo</span><span data-lang-en hidden>File</span></th>
+          <th><span data-lang-es>Resumen</span><span data-lang-en hidden>Summary</span></th>
+          <th><span data-lang-es>Grupo</span><span data-lang-en hidden>Group</span></th>
+          <th><span data-lang-es>Tipo</span><span data-lang-en hidden>Type</span></th>
+          <th><span data-lang-es>Abrir</span><span data-lang-en hidden>Open</span></th>
+        </tr>
+      </thead>
+      <tbody id="cat-body"></tbody>
+    </table>
+  </div>
+
+
+  <div class="form-card" id="contribuir" style="margin-top:2.5rem">
+    <h2><span data-lang-es>Subir archivo</span><span data-lang-en hidden>Upload file</span></h2>
+    <p class="meta">
+      <span data-lang-es>Máx. ~10 MB por archivo. Para paquetes grandes, indica el enlace en el mensaje. No subir material confidencial PAL / Acciona.</span>
+      <span data-lang-en hidden>Max ~10 MB per file. For large packs, paste a link in the message. Do not upload confidential PAL / Acciona material.</span>
+    </p>
+    <form name="bcs-file-upload" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/catalogo/gracias/">
+      <input type="hidden" name="form-name" value="bcs-file-upload" />
+      <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
+      <label><span data-lang-es>Nombre</span><span data-lang-en hidden>Name</span></label>
+      <input name="name" required />
+      <label>Email</label>
+      <input type="email" name="email" required />
+      <label><span data-lang-es>Carpeta destino sugerida</span><span data-lang-en hidden>Suggested destination folder</span></label>
+      <input name="folder" placeholder="Planeación / Agua / Energía / …" />
+      <label><span data-lang-es>Descripción</span><span data-lang-en hidden>Description</span></label>
+      <textarea name="description" rows="3" required></textarea>
+      <label><span data-lang-es>Archivo</span><span data-lang-en hidden>File</span></label>
+      <input type="file" name="file" required />
+      <p style="margin-top:1rem">
+        <button class="btn" type="submit">
+          <span data-lang-es>Enviar para revisión</span>
+          <span data-lang-en hidden>Submit for review</span>
+        </button>
+      </p>
+    </form>
+  </div>
+
+  <style is:global>
+    .badge-drive { display:inline-block; font-size:0.7rem; padding:0.1rem 0.4rem; border-radius:999px; background:#e3eadc; color:#4f6e4b; margin-left:0.35rem; vertical-align:middle; }
+    .badge-pending { display:inline-block; font-size:0.7rem; padding:0.1rem 0.4rem; border-radius:999px; background:#f3e6cc; color:#8a5a1e; margin-left:0.35rem; vertical-align:middle; }
+    .drive-links a { margin-right:0.5rem; white-space:nowrap; }
+    .sum-cell { max-width:28rem; font-size:0.85rem; color:#23374a; line-height:1.35; }
+    .eng-group { margin-bottom: 1.25rem; }
+    .eng-group-title { font-size: 1.05rem; margin: 0.75rem 0 0.5rem; color: #34607d; }
+  </style>
+
+  <script is:inline define:vars={{ engJson: engagement }}>
+    (function () {
+      var rows = [];
+      var eng = engJson || { groups: [], exclude_from_downloads: {} };
+      var subgroupIndex = {};
+      (eng.groups || []).forEach(function (g) {
+        (g.subgroups || []).forEach(function (s) {
+          subgroupIndex[s.id] = Object.assign({ groupId: g.id, groupLabel_es: g.label_es, groupLabel_en: g.label_en }, s);
+        });
+      });
+      var excl = eng.exclude_from_downloads || {};
+      var exclFolders = excl.folder_ids || [];
+      var exclPrefixes = excl.path_prefixes || [];
+      var exclSubs = excl.path_substrings || [];
+
+      var qEl = document.getElementById('cat-q');
+      var engSel = document.getElementById('cat-eng');
+      var th = document.getElementById('cat-theme');
+      var drv = document.getElementById('cat-drive');
+      var body = document.getElementById('cat-body');
+      var meta = document.getElementById('cat-meta');
+      var MAX = 500;
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+      function fmtSize(s) {
+        if (s == null) return '';
+        if (s < 1024) return s + ' B';
+        if (s < 1048576) return (s / 1024).toFixed(0) + ' KB';
+        if (s < 1073741824) return (s / 1048576).toFixed(1) + ' MB';
+        return (s / 1073741824).toFixed(2) + ' GB';
+      }
+      function isEn() {
+        var dl = document.documentElement.getAttribute('data-lang');
+        if (dl === 'en' || dl === 'es') return dl === 'en';
+        return document.documentElement.getAttribute('lang') === 'en';
+      }
+      function summaryFor(x) {
+        return isEn() ? (x.sum_en || x.sum_es || '') : (x.sum_es || x.sum_en || '');
+      }
+      function syncEngSelectLabels() {
+        var en = isEn();
+        document.querySelectorAll('#cat-eng optgroup').forEach(function (og) {
+          var lab = en ? og.getAttribute('data-label-en') : og.getAttribute('data-label-es');
+          if (lab) og.label = lab;
+        });
+        document.querySelectorAll('#cat-eng option[data-label-es]').forEach(function (op) {
+          var lab = en ? op.getAttribute('data-label-en') : op.getAttribute('data-label-es');
+          if (lab) op.textContent = lab;
+        });
+      }
+      function blockedDownload(r) {
+        var p = r.p || '';
+        var f = r.f || '';
+        if (exclFolders.indexOf(f) >= 0) return true;
+        for (var i = 0; i < exclPrefixes.length; i++) {
+          if (p.indexOf(exclPrefixes[i]) === 0) return true;
+        }
+        for (var j = 0; j < exclSubs.length; j++) {
+          if (p.indexOf(exclSubs[j]) >= 0) return true;
+        }
+        // never surface ontology YAML/graph packs as catalog downloads
+        if (f === '12_ontology' || p.indexOf('12_ontology') >= 0) return true;
+        if (/\.(ya?ml)$/i.test(r.n || '') && (f === '12_ontology' || p.indexOf('ontology') >= 0)) return true;
+        return false;
+      }
+      var themeNameRe = (function () {
+        var pats = eng.theme_doc_name_patterns || [
+          'INEGI','CONEVAL','Censo','ITER','CONAGUA','CENACE','PRODESEN','SIBCS',
+          'SEMARNAT','CONANP','DOF','BOGE','PDU','POER','POEL','PMD','PMDU','PSDU',
+          'DMA_','Atlas','RTP','ANP','PAMRNT','PLADESE','ENOE','PIBE','ITAEE','ETEF'
+        ];
+        return new RegExp(pats.map(function (x) { return x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|'), 'i');
+      })();
+      function isThemeDoc(r) {
+        var n = r.n || '';
+        var p = r.p || '';
+        if (themeNameRe.test(n)) return true;
+        // canonical theme folders
+        if (/^(00_catalog|01_planning|02_water|03_energy|04_mobility|05_demographics|06_environment|07_economy|13_territorial|14_gis)/.test(p)) return true;
+        return false;
+      }
+      function themeHintId(r) {
+        var n = r.n || '';
+        var p = r.p || '';
+        if (/^(00_catalog\/|10_data_lake\/indexes|10_data_lake_indexes)/.test(p) || /CATALOG|source_index|CROSSWALK/i.test(n)) return 'indexes';
+        if (/^(01_planning\/)/.test(p) || /\b(PDU|POER|POEL|PMD|PMDU|PSDU|PED|ordenamiento)\b/i.test(n)) return 'planning';
+        if (/^(02_water\/)/.test(p) || /CONAGUA|DMA_|desal|acu[ií]fero/i.test(n)) return 'water';
+        if (/^(03_energy\/)/.test(p) || /CENACE|PRODESEN|SIBCS|PAMRNT|PLADESE|CFE_/i.test(n)) return 'energy';
+        if (/^(04_mobility)/.test(p)) return 'mobility_waste';
+        if (/^(05_demographics\/)/.test(p) || /INEGI.*(Censo|ITER|poblacion|Panorama)|CONEVAL|ENOE/i.test(n)) return 'demographics';
+        if (/INEGI.*(PIBE|ITAEE|ETEF|CensosEconomicos|CE20)/i.test(n)) return 'economy';
+        if (/^(06_environment\/)/.test(p) || /CONANP|ANP|SEMARNAT|RTP|SierraLaLaguna|Vizca[ií]no|Pulmo|Balandra/i.test(n)) return 'environment';
+        if (/^(07_economy)/.test(p)) return 'economy';
+        if (/^(13_territorial|14_gis)/.test(p)) return 'ti_maps_gis';
+        if (r.t === 'territorio' || r.t === 'planeacion' || r.t === 'agua' || r.t === 'energia' || r.t === 'ambiente' || r.t === 'economia' || r.t === 'conectividad') {
+          var themeMap = { territorio: 'demographics', planeacion: 'planning', agua: 'water', energia: 'energy', ambiente: 'environment', economia: 'economy', conectividad: 'mobility_waste' };
+          return themeMap[r.t] || null;
+        }
+        return null;
+      }
+      function matchSubgroup(r, sg, forBrowse) {
+        if (!sg) return true;
+        var p = r.p || '';
+        var f = r.f || '';
+        var kind = sg.kind || (sg.groupId === 'territory_data' ? 'theme' : 'engagement');
+        // Engagement browse/label: never treat theme PDFs as stakeholders
+        if (kind === 'engagement' && isThemeDoc(r)) return false;
+        var prefixes = sg.path_prefixes || [];
+        for (var i = 0; i < prefixes.length; i++) {
+          if (p.indexOf(prefixes[i]) === 0 || p.indexOf(prefixes[i]) >= 0) return true;
+        }
+        var folders = sg.folder_ids || [];
+        if (folders.length && folders.indexOf(f) >= 0) return true;
+        if (sg.theme && r.t === sg.theme) return true;
+        var qany = sg.q_any || [];
+        for (var k = 0; k < qany.length; k++) {
+          if (p.indexOf(qany[k]) >= 0 || (r.n || '').indexOf(qany[k]) >= 0) return true;
+        }
+        // theme pack: also match by filename hint when duplicated under engagement paths
+        if (kind === 'theme' && themeHintId(r) === sg.id) return true;
+        return false;
+      }
+      function subgroupLabel(r) {
+        // Prefer territory theme labels over engagement
+        var themeIds = [];
+        var engIds = [];
+        for (var id in subgroupIndex) {
+          if ((subgroupIndex[id].kind || (subgroupIndex[id].groupId === 'territory_data' ? 'theme' : 'engagement')) === 'theme')
+            themeIds.push(id);
+          else engIds.push(id);
+        }
+        var order = themeIds.concat(engIds);
+        for (var i = 0; i < order.length; i++) {
+          var sid = order[i];
+          if (matchSubgroup(r, subgroupIndex[sid], false)) {
+            var s = subgroupIndex[sid];
+            return isEn() ? (s.label_en || s.label_es) : (s.label_es || s.label_en);
+          }
+        }
+        // Fallback: theme hint label even if no path match
+        var hint = themeHintId(r);
+        if (hint && subgroupIndex[hint]) {
+          var sh = subgroupIndex[hint];
+          return isEn() ? (sh.label_en || sh.label_es) : (sh.label_es || sh.label_en);
+        }
+        // Never show raw engagement folder as "Political Stakeholders" for theme docs
+        if (isThemeDoc(r)) {
+          return isEn() ? 'Territory data' : 'Datos territoriales';
+        }
+        return r.f || '—';
+      }
+      function passesExcludesForSub(r, sg) {
+        if (!sg || !sg.exclude_path_substrings) return true;
+        var p = r.p || '';
+        for (var i = 0; i < sg.exclude_path_substrings.length; i++) {
+          if (p.indexOf(sg.exclude_path_substrings[i]) >= 0) return false;
+        }
+        return true;
+      }
+      function render() {
+        var qq = (qEl.value || '').toLowerCase().trim();
+        var ee = engSel ? engSel.value : '';
+        var tt = th.value;
+        var dd = drv ? drv.value : 'drive';
+        var sg = ee ? subgroupIndex[ee] : null;
+        var out = [];
+        for (var i = 0; i < rows.length; i++) {
+          var r = rows[i];
+          var p = (r.p || '');
+          if (p.indexOf('_design_ref') >= 0) continue;
+          if (p.indexOf('11_bcs_hub/') === 0 && p.indexOf('/maps/') < 0 && p.indexOf('/stills/') < 0) continue;
+          if ((r.n || '').indexOf('preview_') === 0) continue;
+          // hide ontology + shadow + earth-studio work packs from public catalog
+          if (blockedDownload(r)) continue;
+          if (p.indexOf('/Users/') >= 0 || p.indexOf('Desktop') >= 0) continue;
+          if (tt && r.t !== tt) continue;
+          if (dd === 'drive' && !r.gid) continue;
+          if (dd === 'pending' && r.gid) continue;
+          if (sg) {
+            if (!matchSubgroup(r, sg)) continue;
+            if (!passesExcludesForSub(r, sg)) continue;
+          }
+          if (qq) {
+            var hay = (r.n + ' ' + p + ' ' + r.e + ' ' + r.t + ' ' + (r.sum_es || '') + ' ' + (r.sum_en || '')).toLowerCase();
+            if (hay.indexOf(qq) < 0) continue;
+          }
+          out.push(r);
+        }
+        var withDrive = 0;
+        for (var k = 0; k < out.length; k++) if (out[k].gid) withDrive++;
+        meta.textContent = out.length + ' / ' + rows.length +
+          ' · Drive: ' + withDrive +
+          (out.length > MAX ? ' (max ' + MAX + ')' : '');
+        var slice = out.slice(0, MAX);
+        var html = '';
+        for (var j = 0; j < slice.length; j++) {
+          var x = slice[j];
+          var badge = x.gid
+            ? '<span class="badge-drive">' + (isEn() ? 'On Drive' : 'En Drive') + '</span>'
+            : '<span class="badge-pending">' + (isEn() ? 'Pending on Drive' : 'Pendiente en Drive') + '</span>';
+          var driveCell = '—';
+          // no download for blocked types (already filtered); still hide dd if somehow present for ontology
+          var allowDl = x.dd && !blockedDownload(x);
+          if (x.gid && x.dv) {
+            driveCell = '<span class="drive-links">' +
+              '<a href="' + esc(x.dv) + '" target="_blank" rel="noopener">' + (isEn() ? 'View' : 'Ver') + '</a>' +
+              (allowDl ? '<a href="' + esc(x.dd) + '" target="_blank" rel="noopener">' + (isEn() ? 'Download' : 'Descargar') + '</a>' : '') +
+              '</span>';
+          } else {
+            driveCell = '<span class="badge-pending">' + (isEn() ? 'Pending on Drive' : 'Pendiente en Drive') + '</span>';
+          }
+          var sum = summaryFor(x);
+          html += '<tr><td>' + esc(x.n) + badge + '<br><small>' + fmtSize(x.s) + '</small></td>' +
+            '<td class="sum-cell">' + esc(sum || '—') + '</td>' +
+            '<td>' + esc(subgroupLabel(x)) + '</td><td>' + esc(x.e) + '</td>' +
+            '<td>' + driveCell + '</td></tr>';
+        }
+        body.innerHTML = html || '<tr><td colspan="5">—</td></tr>';
+      }
+      function params() {
+        var u = new URL(location.href);
+        if (u.searchParams.get('eng') && engSel) engSel.value = u.searchParams.get('eng');
+        if (u.searchParams.get('group') && engSel) {
+          // map legacy folder= to search
+        }
+        if (u.searchParams.get('q') && qEl) qEl.value = u.searchParams.get('q');
+        // redirect legacy earth_studio catalog searches toward stills UX hint
+        if (qEl && /earth_studio|earth-studio/i.test(qEl.value || '')) {
+          qEl.value = '';
+          meta.textContent = (isEn()
+            ? 'Earth Studio tour is on /stills (map), not the catalog.'
+            : 'El tour Earth Studio está en /stills (mapa), no en el catálogo.');
+        }
+        if (u.searchParams.get('theme') && th) th.value = u.searchParams.get('theme');
+        if (u.searchParams.get('drive') && drv) drv.value = u.searchParams.get('drive');
+        // legacy ?folder=10_data_lake → leave as q path hint
+        if (u.searchParams.get('folder') && qEl && !qEl.value) {
+          var fol = u.searchParams.get('folder');
+          if (fol === '12_ontology') {
+            /* ontology not downloadable in catalog */
+          } else if (fol.indexOf('10_data_lake') === 0 || fol.match(/^\d{2}_/)) {
+            qEl.value = fol;
+          }
+        }
+      }
+      params();
+      syncEngSelectLabels();
+      qEl.addEventListener('input', render);
+      if (engSel) engSel.addEventListener('change', render);
+      th.addEventListener('change', render);
+      if (drv) drv.addEventListener('change', render);
+      document.querySelectorAll('.cat-eng-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (engSel) engSel.value = btn.getAttribute('data-eng') || '';
+          qEl.value = '';
+          if (drv) drv.value = 'drive';
+          render();
+          document.getElementById('cat-meta').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+      document.addEventListener('bcs:lang', function () { syncEngSelectLabels(); setTimeout(render, 30); });
+      function updateEngCounts() {
+        var counts = {};
+        var groupCounts = {};
+        (eng.groups || []).forEach(function (g) {
+          groupCounts[g.id] = 0;
+          (g.subgroups || []).forEach(function (s) {
+            var n = 0;
+            for (var i = 0; i < rows.length; i++) {
+              var r = rows[i];
+              if (blockedDownload(r)) continue;
+              var p = r.p || '';
+              if (p.indexOf('/Users/') >= 0 || p.indexOf('Desktop') >= 0) continue;
+              if (!matchSubgroup(r, s)) continue;
+              if (!passesExcludesForSub(r, s)) continue;
+              n++;
+            }
+            counts[s.id] = n;
+            groupCounts[g.id] += n;
+            var btn = document.querySelector('.cat-eng-btn[data-eng="' + s.id + '"]');
+            if (btn) {
+              btn.hidden = n === 0;
+              var cEl = btn.querySelector('[data-eng-count]');
+              if (cEl) cEl.textContent = String(n);
+            }
+          });
+          var gEl = document.querySelector('[data-group-count="' + g.id + '"]');
+          if (gEl) gEl.textContent = groupCounts[g.id] ? (' · ' + groupCounts[g.id]) : '';
+          var sec = document.querySelector('.eng-group[data-group="' + g.id + '"]');
+          if (sec) sec.hidden = groupCounts[g.id] === 0;
+        });
+      }
+      fetch('/catalog_slim.json')
+        .then(function(r){ return r.json(); })
+        .then(function(data){ rows = data; updateEngCounts(); render(); })
+        .catch(function(e){ meta.textContent = 'Error cargando catálogo: ' + e; });
+    })();
+  </script>
+</BaseLayout>

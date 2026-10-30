@@ -1,0 +1,423 @@
+---
+import '../styles/global.css';
+import '../styles/atlas-theme.css';
+import { ui } from '../i18n/ui';
+import { THEMES, DOCS, breadcrumbs, topSection } from '../lib/ia';
+import ChatWidget from '../components/ChatWidget.astro';
+import PlaceStrip from '../components/PlaceStrip.astro';
+
+interface Props {
+  title: string;
+  titleEn?: string;
+  description?: string;
+  descriptionEn?: string;
+  section?: string;
+  sectionEn?: string;
+  home?: boolean;
+  /** Suppress large-title page header (page supplies its own) */
+  hidePageHead?: boolean;
+  wide?: boolean;
+  noindex?: boolean;
+  /** Public landing shell: no portal nav / chat / auth-gate */
+  landing?: boolean;
+  /** Full-viewport chat-only landing (/inicio) */
+  chatHome?: boolean;
+}
+const {
+  title,
+  titleEn,
+  description = '',
+  descriptionEn = '',
+  section,
+  sectionEn,
+  home = false,
+  hidePageHead = false,
+  wide = false,
+  noindex = true,
+  landing = false,
+  chatHome = false,
+} = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const deployCtx = (typeof process !== 'undefined' && process.env && (process.env.CONTEXT || process.env.NETLIFY_CONTEXT)) || '';
+const isProdDeploy = deployCtx === 'production';
+
+const footerSection = section || title;
+const footerSectionEn = sectionEn || titleEn || title;
+
+const top = topSection(path);
+const crumbs = landing || home ? [] : breadcrumbs(path, title, titleEn);
+function isCur(href: string) {
+  const h = href.replace(/\/$/, '');
+  return path === h;
+}
+// Specialist pages: plain-language note on top (citizen UX P0).
+const SPECIALIST: Record<string, { es: string; en: string }> = {
+  '/foresights': { es: 'Aquí se reúnen señales y tendencias que podrían influir en el futuro del estado. Son lecturas de análisis, no hechos ni decisiones tomadas. Sirven para anticipar riesgos y oportunidades.', en: 'Signals and trends that could shape the state\'s future. They are analytical readings, not facts or decisions. They help anticipate risks and opportunities.' },
+  '/preguntas': { es: 'Estas son las grandes preguntas que el plan necesita responder. Cada una indica qué información existe y cuál falta. No son respuestas definitivas.', en: 'These are the big questions the plan needs to answer. Each shows what information exists and what is missing. They are not final answers.' },
+  '/sesion': { es: 'Vista preparada para reuniones de trabajo sobre el plan. Resume temas y datos para discutirlos en grupo. Si buscas información general, empieza en Inicio.', en: 'A view prepared for working meetings on the plan. It summarises topics and data for group discussion. For general information, start at Home.' },
+  '/crecimiento': { es: 'Compara lo que necesitaría el crecimiento (agua, energía, vivienda, servicios) con lo que hay disponible en cada lugar. Es un análisis técnico. Las cifras vienen de las fuentes citadas en la página.', en: 'Compares what growth would need (water, energy, housing, services) with what is available in each place. It is a technical analysis. Figures come from the sources cited on the page.' },
+  '/ontologia': { es: 'Mapa que muestra cómo se conectan lugares, proyectos, instituciones y temas. Es útil para ver relaciones, no para medir cantidades. Pulsa un elemento para ver con qué se relaciona.', en: 'A map of how places, projects, institutions and topics connect. It shows relationships, not quantities. Click an item to see what it relates to.' },
+};
+const specKey = Object.keys(SPECIALIST).find((k) => path === k || path.startsWith(k + '/'));
+const specNote = landing ? undefined : (specKey ? SPECIALIST[specKey] : undefined);
+const pageSubEs = home
+  ? 'Cifras clave, accesos por tema y lo más reciente.'
+  : (description && description.length <= 100 ? description : '');
+const pageSubEn = home
+  ? 'Key figures, topic entry points and latest news.'
+  : (descriptionEn && descriptionEn.length <= 110 ? descriptionEn : (pageSubEs ? descriptionEn || description : ''));
+---
+<!doctype html>
+<html lang="es" data-lang="es" data-title-es={title} data-title-en={titleEn || title} data-title-suffix={landing ? '' : ' · BCS 2050'}>
+  <head>
+    <meta charset="UTF-8" />
+
+    <script is:inline>
+      (function () {
+        var h = location.hostname || '';
+        var prod =
+          h === 'bajacaliforniasur2050.com' ||
+          h === 'www.bajacaliforniasur2050.com' ||
+          h.endsWith('.bajacaliforniasur2050.com');
+        if (prod) {
+          document.documentElement.classList.add('is-prod');
+          var b = document.getElementById('draft-badge');
+          if (b) b.remove();
+        } else {
+          document.documentElement.classList.add('is-draft');
+          var b2 = document.getElementById('draft-badge');
+          if (b2) b2.hidden = false;
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f0e6" />
+    <meta name="color-scheme" content="light only" />
+    <title
+      data-title-es={title}
+      data-title-en={titleEn || title}
+      data-title-suffix={landing ? '' : ' · BCS 2050'}
+    >{landing ? title : `${title} · BCS 2050`}</title>
+    {!landing && (
+      <>
+        <script is:inline define:vars={{ uiObj: ui }}>
+          window.__BCS_UI__ = uiObj;
+        </script>
+        <script is:inline src="/lang-toggle.js"></script>
+        <script is:inline src="/auth-gate.js"></script>
+        <script is:inline src="/header-search.js" defer></script>
+        <script is:inline src="/place-strip.js" defer></script>
+        <script is:inline src="/glossary.js" defer></script>
+      </>
+    )}
+  </head>
+  <body class:list={[landing && 'landing-body', !landing && 'has-chat-sidebar', !landing && 'ios-shell', chatHome && 'chat-home']}>
+    {landing ? (
+      null
+    ) : (
+      <>
+        <header class="pt-top site-header" id="site-header">
+          <a class="pt-brand" href="/inicio" title="Inicio del portal">
+            <strong>BCS2050</strong>
+            <span><span data-lang-es>Portal territorial</span><span data-lang-en hidden>Territorial portal</span></span>
+          </a>
+          <nav class="pt-nav" aria-label="Navegación principal">
+            <a class="pt-navbtn" href="/explorar" aria-current={top === 'explorar' ? 'page' : undefined}>
+              <span data-lang-es>Explorar</span><span data-lang-en hidden>Explore</span>
+            </a>
+            <div class="pt-menu">
+              <button type="button" class:list={['pt-navbtn', top === 'temas' && 'is-current']} aria-expanded="false" aria-controls="pt-temas-panel" data-pt-menu>
+                <span data-lang-es>Temas</span><span data-lang-en hidden>Topics</span><span class="caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="pt-mega" id="pt-temas-panel" hidden>
+                {THEMES.map((t) => (
+                  <section>
+                    <h3><a href={`/temas#${t.id}`}><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></a></h3>
+                    <ul>
+                      {t.items.map((i) => (
+                        <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+                <div class="pt-mega-foot">
+                  <a href="/temas"><span data-lang-es>Ver todos los temas con descripción →</span><span data-lang-en hidden>See all topics with descriptions →</span></a>
+                  <a href="/inicio"><span data-lang-es>Volver al inicio</span><span data-lang-en hidden>Back to home</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="pt-menu">
+              <button type="button" class:list={['pt-navbtn', top === 'documentos' && 'is-current']} aria-expanded="false" aria-controls="pt-docs-panel" data-pt-menu>
+                <span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span><span class="caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="pt-drop" id="pt-docs-panel" hidden>
+                <ul>
+                  {DOCS.map((i) => (
+                    <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span><small><span data-lang-es>{i.d_es}</span><span data-lang-en hidden>{i.d_en}</span></small></a></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <a class="pt-navbtn" href="/noticias" aria-current={top === 'noticias' ? 'page' : undefined}>
+              <span data-lang-es>Noticias</span><span data-lang-en hidden>News</span>
+            </a>
+          </nav>
+          <div class="bcs-header-search" data-bcs-header-search>
+              <button type="button" class="bcs-hs-toggle" aria-label={ui.es.searchOpen} data-i18n-aria="searchOpen">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <path d="M20 20l-3.5-3.5" stroke-linecap="round"></path>
+                </svg>
+              </button>
+              <div class="bcs-hs-field">
+                <svg class="bcs-hs-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <path d="M20 20l-3.5-3.5" stroke-linecap="round"></path>
+                </svg>
+                <input
+                  type="search"
+                  class="bcs-hs-input"
+                  autocomplete="off"
+                  spellcheck="false"
+                  enterkeyhint="search"
+                  data-i18n-placeholder="headerSearchPlaceholder"
+                  placeholder={ui.es.headerSearchPlaceholder}
+                  aria-label={ui.es.headerSearchPlaceholder}
+                  aria-autocomplete="list"
+                  aria-controls="bcs-hs-results"
+                />
+                <kbd class="bcs-hs-kbd" aria-hidden="true" data-i18n="cmdKHint">{(ui.es as any).cmdKHint}</kbd>
+                <button type="button" class="bcs-hs-clear" hidden data-i18n-aria="searchClear" aria-label={ui.es.searchClear}>×</button>
+                <div class="bcs-hs-results" id="bcs-hs-results" role="listbox" hidden></div>
+              </div>
+            </div>
+          <div class="pt-tools">
+            {!isProdDeploy && (
+              <span class="draft-badge" id="draft-badge" data-i18n="draftBadge" hidden>{ui.es.draftBadge}</span>
+            )}
+            <button type="button" class="pt-navbtn accent" id="pt-ask" aria-pressed="false" aria-controls="bcs-chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" stroke-linejoin="round"/></svg>
+              <span data-lang-es>Preguntar</span><span data-lang-en hidden>Ask</span>
+            </button>
+            <a class="pt-navbtn pt-hide-m" href="/ayuda" aria-current={top === 'ayuda' ? 'page' : undefined}>
+              <span data-lang-es>Ayuda<span class="pt-lbl-opt"> y fuentes</span></span><span data-lang-en hidden>Help<span class="pt-lbl-opt"> and sources</span></span>
+            </a>
+            <button type="button" id="lang-toggle" class="lang-toggle pt-hide-m" aria-label={ui.es.toggleAria} aria-pressed="false">
+              <span data-side="es" class="active">ES</span>
+              <span class="sep">|</span>
+              <span data-side="en">EN</span>
+            </button>
+            <button type="button" class="pt-navbtn pt-menu-btn" id="nav-hamburger" aria-expanded="false" aria-controls="site-nav-drawer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+              <span data-lang-es>Menú</span><span data-lang-en hidden>Menu</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="pt-drawer-backdrop" id="nav-drawer-backdrop" hidden></div>
+        <nav class="pt-drawer" id="site-nav-drawer" aria-label="Menú" hidden>
+          <div class="pt-drawer-head">
+            <strong>BCS2050</strong>
+            <button type="button" class="pt-navbtn" id="nav-drawer-close"><span data-lang-es>Cerrar</span><span data-lang-en hidden>Close</span></button>
+          </div>
+          <ul>
+            <li><a href="/inicio" aria-current={top === 'inicio' ? 'page' : undefined}><span data-lang-es>Inicio</span><span data-lang-en hidden>Home</span></a></li>
+            <li><a href="/explorar"><span data-lang-es>Explorar (atlas 3D)</span><span data-lang-en hidden>Explore (3D atlas)</span></a></li>
+          </ul>
+          <div class="pt-drawer-sep"></div>
+          <ul>
+            {THEMES.map((t) => (
+              <li>
+                <details open={t.items.some((i) => isCur(i.href) || path.startsWith(i.href + '/')) ? true : undefined}>
+                  <summary><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></summary>
+                  <ul>
+                    {t.items.map((i) => (
+                      <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ))}
+            <li>
+              <details open={top === 'documentos' ? true : undefined}>
+                <summary><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></summary>
+                <ul>
+                  {DOCS.map((i) => (
+                    <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          </ul>
+          <div class="pt-drawer-sep"></div>
+          <ul>
+            <li><a href="/temas" aria-current={path === '/temas' ? 'page' : undefined}><span data-lang-es>Todos los temas</span><span data-lang-en hidden>All topics</span></a></li>
+            <li><a href="/noticias" aria-current={top === 'noticias' ? 'page' : undefined}><span data-lang-es>Noticias</span><span data-lang-en hidden>News</span></a></li>
+            <li><a href="/ayuda" aria-current={top === 'ayuda' ? 'page' : undefined}><span data-lang-es>Ayuda y fuentes</span><span data-lang-en hidden>Help and sources</span></a></li>
+          </ul>
+          <div class="pt-drawer-tools">
+            <button type="button" class="lang-toggle" data-lang-mirror aria-label={ui.es.toggleAria}><span data-lang-es>English</span><span data-lang-en hidden>Español</span></button>
+          </div>
+        </nav>
+      </>
+    )}
+
+    {!landing && (
+      <div class:list={["pt-sub", wide && "wide"]}>
+        {crumbs.length > 0 && (
+          <nav class="pt-crumbs" aria-label="Ruta">
+            <ol>
+              {crumbs.map((c, idx) => (
+                <li>
+                  {c.href && idx < crumbs.length - 1 ? (
+                    <a href={c.href}><span data-lang-es>{c.es}</span><span data-lang-en hidden>{c.en}</span></a>
+                  ) : (
+                    <span aria-current="page"><span data-lang-es>{c.es}</span><span data-lang-en hidden>{c.en}</span></span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+        <PlaceStrip />
+      </div>
+    )}
+
+    <main class:list={[wide && 'wide', 'ios-main']}>
+      {specNote && (
+        <aside class="pt-spec-note" aria-label="Para especialistas">
+          <strong><span data-lang-es>Para especialistas · en pocas palabras</span><span data-lang-en hidden>For specialists · in short</span></strong>
+          <p><span data-lang-es>{specNote.es}</span><span data-lang-en hidden>{specNote.en}</span></p>
+        </aside>
+      )}
+      {!landing && !hidePageHead && (
+        <header class="ios-page-head">
+          <h1 class="ios-large-title">
+            <span data-lang-es>{home ? 'Inicio' : title}</span>
+            <span data-lang-en hidden>{home ? 'Home' : (titleEn || title)}</span>
+          </h1>
+          {pageSubEs && (
+            <p class="ios-page-sub">
+              <span data-lang-es>{pageSubEs}</span>
+              <span data-lang-en hidden>{pageSubEn || pageSubEs}</span>
+            </p>
+          )}
+        </header>
+      )}
+      <slot />
+    </main>
+
+    {!landing && (
+      <footer class="site-footer">
+        <hr class="footer-rule" />
+        <nav class="pt-foot-links" aria-label="Pie de página">
+          <a href="/inicio"><span data-lang-es>Inicio</span><span data-lang-en hidden>Home</span></a>
+          <a href="/explorar"><span data-lang-es>Explorar</span><span data-lang-en hidden>Explore</span></a>
+          <a href="/temas"><span data-lang-es>Temas</span><span data-lang-en hidden>Topics</span></a>
+          <a href="/catalogo"><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></a>
+          <a href="/noticias"><span data-lang-es>Noticias</span><span data-lang-en hidden>News</span></a>
+        </nav>
+        <div class="footer-inner">
+          <span class="footer-left" data-i18n="footerLeft">{ui.es.footerLeft}</span>
+          <span class="footer-right">
+            <span data-lang-es>{footerSection}</span>
+            <span data-lang-en hidden>{footerSectionEn}</span>
+          </span>
+        </div>
+        <p class="footer-note">
+          <span data-i18n="footerNote">{ui.es.footerNote}</span>
+          {' '}
+          <a href="/ayuda"><span data-lang-es>Ayuda y fuentes</span><span data-lang-en hidden>Help and sources</span></a>
+          {' · '}
+          <a href="/catalogo" data-i18n="fuentesLink">{ui.es.fuentesLink}</a>
+          {' · '}
+          <button type="button" class="logout-link" id="bcs-logout" data-i18n="logout">{ui.es.logout}</button>
+        </p>
+      </footer>
+    )}
+
+    {!landing && <ChatWidget home={chatHome} />}
+
+    {!landing && (
+      <script is:inline>
+        (function () {
+          // Temas / Documentos menus
+          var menuBtns = Array.prototype.slice.call(document.querySelectorAll('[data-pt-menu]'));
+          function closeMenus(except) {
+            menuBtns.forEach(function (b) {
+              if (b === except) return;
+              b.setAttribute('aria-expanded', 'false');
+              var panel = document.getElementById(b.getAttribute('aria-controls'));
+              if (panel) panel.hidden = true;
+            });
+          }
+          menuBtns.forEach(function (b) {
+            var panel = document.getElementById(b.getAttribute('aria-controls'));
+            b.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var open = b.getAttribute('aria-expanded') === 'true';
+              closeMenus(b);
+              b.setAttribute('aria-expanded', open ? 'false' : 'true');
+              if (panel) panel.hidden = open;
+            });
+            panel && panel.addEventListener('click', function (e) { e.stopPropagation(); });
+          });
+          document.addEventListener('click', function () { closeMenus(null); });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { closeMenus(null); setDrawer(false); }
+          });
+
+          // Mobile drawer
+          var hb = document.getElementById('nav-hamburger');
+          var drawer = document.getElementById('site-nav-drawer');
+          var backdrop = document.getElementById('nav-drawer-backdrop');
+          var closeBtn = document.getElementById('nav-drawer-close');
+          function setDrawer(open) {
+            if (!drawer || !hb) return;
+            drawer.hidden = !open;
+            if (backdrop) backdrop.hidden = !open;
+            hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+            document.body.classList.toggle('nav-drawer-open', open);
+          }
+          hb && hb.addEventListener('click', function () { setDrawer(drawer && drawer.hidden); });
+          closeBtn && closeBtn.addEventListener('click', function () { setDrawer(false); });
+          backdrop && backdrop.addEventListener('click', function () { setDrawer(false); });
+          drawer && drawer.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () { setDrawer(false); });
+          });
+          // Drawer language button mirrors the top-bar ES|EN toggle
+          var mirror = document.querySelector('[data-lang-mirror]');
+          var lt = document.getElementById('lang-toggle');
+          mirror && lt && mirror.addEventListener('click', function () { lt.click(); });
+
+          // "Preguntar" opens / closes the assistant, same as in the atlas
+          var ask = document.getElementById('pt-ask');
+          var chat = document.getElementById('bcs-chat');
+          function syncAsk() {
+            if (!ask || !chat) return;
+            ask.setAttribute('aria-pressed', chat.getAttribute('data-open') === 'true' && (window.matchMedia('(max-width: 900px)').matches || document.body.classList.contains('chat-docked')) ? 'true' : 'false');
+          }
+          ask && ask.addEventListener('click', function () {
+            if (!window.BCSChat) return;
+            if (ask.getAttribute('aria-pressed') === 'true') window.BCSChat.close();
+            else window.BCSChat.open();
+            setTimeout(syncAsk, 0);
+          });
+          if (chat && window.MutationObserver) {
+            new MutationObserver(syncAsk).observe(chat, { attributes: true, attributeFilter: ['data-open'] });
+            new MutationObserver(syncAsk).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+          }
+          syncAsk();
+
+          var lo = document.getElementById('bcs-logout');
+          lo && lo.addEventListener('click', function () {
+            fetch('/api/logout', { method: 'POST', credentials: 'same-origin' })
+              .finally(function () { location.replace('/'); });
+          });
+        })();
+      </script>
+    )}
+  </body>
+</html>

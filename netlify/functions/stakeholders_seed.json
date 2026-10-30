@@ -1,0 +1,657 @@
+{
+  "version": 1,
+  "updated": "2026-09-30",
+  "source": "Base de datos BCS 2050 — tabla de datos / Stakeholders sheet; mesas de trabajo: Ivan Tamayo, 30 sep 2026",
+  "items": [
+    {
+      "id": "st-001",
+      "name": "Agustín Coppel Luken",
+      "description": "Forum honorary president; opens public/private doors region-wide.",
+      "contact": "https://mx.linkedin.com/in/agust%C3%ADn-coppel-luken",
+      "group": "Steering Committee",
+      "subgroup": "Project Governance",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-002",
+      "name": "Benjamin A. Coppel",
+      "description": "Client / promoter; sets scope, pace and Commitment.",
+      "contact": "https://www.linkedin.com/in/benjamin-a-coppel-s-22682230",
+      "group": "Steering Committee",
+      "subgroup": "Project Governance",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-005",
+      "name": "Ivan Tamayo Ramos",
+      "description": "Client's Representative; sustainable urbanist; capacity locks.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Project Governance",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-006",
+      "name": "Juan Pablo Yamuni Robles",
+      "description": "Foro Mar de Cortés DG; launch platform and convening.",
+      "contact": "https://www.linkedin.com/in/juan-pablo-yamuni-58aa082",
+      "group": "Steering Committee",
+      "subgroup": "Project Governance",
+      "type": "person",
+      "org": "Mar de Cortés DG"
+    },
+    {
+      "id": "st-009",
+      "name": "Sergio Radamés Díaz Meza",
+      "description": "Forum executive president; institutional agenda.",
+      "contact": "https://www.linkedin.com/in/radames-diaz-meza-7848352a",
+      "group": "Steering Committee",
+      "subgroup": "Project Governance",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-010",
+      "name": "Christian Agúndez Gómez",
+      "description": "Mayor Los Cabos; highest growth pressure and permits.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Political Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-011",
+      "name": "Milena Paola Quiroga Romero",
+      "description": "Mayor La Paz; second demographic pole.",
+      "contact": "https://www.linkedin.com/in/milena-quiroga-a786b7304",
+      "group": "Steering Committee",
+      "subgroup": "Political Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-012",
+      "name": "Rosa Maribel Collins Sánchez",
+      "description": "SETUE; aligns state tourism/economy to long-term vision.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Political Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-013",
+      "name": "Víctor Manuel Castro Cosío",
+      "description": "Governor; state buy-in and Commitment Agreement.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Political Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-014",
+      "name": "Carolina Armenta Cervantes",
+      "description": "SEPUIMM; stewards POERBCS (regulatory lock).",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "State Level — SEPUIMM",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-015",
+      "name": "Alán Roberto Izquierdo Soto",
+      "description": "IMPLAN La Paz; municipal planning and growth.",
+      "contact": "https://mx.linkedin.com/in/alan-roberto-izquierdo-soto-6280a3142",
+      "group": "Steering Committee",
+      "subgroup": "Municipal Planning Authorities",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-016",
+      "name": "Beatriz González Gibert",
+      "description": "IMPLAN Los Cabos; PDU and urban land criteria.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Municipal Planning Authorities",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-017",
+      "name": "CFE Transmisión / Distribución BCS",
+      "description": "Transmission and distribution bottlenecks.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Water and Energy regulators",
+      "type": "institution",
+      "org": "CFE Transmisión / Distribución BCS"
+    },
+    {
+      "id": "st-018",
+      "name": "Julio César Villarreal Trasviña",
+      "description": "CONAGUA BCS; aquifers / DMA (water lock).",
+      "contact": "https://www.linkedin.com/in/julio-villarreal-15b75165",
+      "group": "Steering Committee",
+      "subgroup": "Water and Energy regulators",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-019",
+      "name": "Lesvia Tatiana Davis Monzón",
+      "description": "CEA BCS; state water supply and desalination policy.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Water and Energy regulators",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-020",
+      "name": "Manuel Guerrero Luna",
+      "description": "CONAGUA basin agency; regional hydrology.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Water and Energy regulators",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-021",
+      "name": "Christy Walton",
+      "description": "Rancho Cacachilas / iAlumbra; regenerative reference model.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-022",
+      "name": "Eduardo Sánchez-Navarro Redo",
+      "description": "Questro / Puerto Los Cabos; port, marina, east expansion.",
+      "contact": "https://mx.linkedin.com/in/eduardo-s%C3%A1nchez-navarro-redo-68b9aa46",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-023",
+      "name": "Ernesto Coppel Kelly",
+      "description": "Quivira / Pueblo Bonito; CSL resort-residential scale.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-024",
+      "name": "Gabriel Escaba",
+      "description": "Irongate; Amanvari land development delivery.",
+      "contact": "https://www.linkedin.com/in/gabriel-escaba-955b7341",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-025",
+      "name": "Héctor Olea",
+      "description": "Gauss / Aura Solar; real renewable generation.",
+      "contact": "https://www.linkedin.com/in/hectorolea-gauss",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-026",
+      "name": "Jason Grosfeld",
+      "description": "Irongate / Costa Palmas; East Cape international frontier.",
+      "contact": "https://www.linkedin.com/in/jasongrosfeld",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-027",
+      "name": "Julio Castillo Gómez",
+      "description": "CCC Los Cabos; municipal business vision.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-028",
+      "name": "Ken Jowdy",
+      "description": "Diamante Cabo; west CSL golf-residential + PGA host.",
+      "contact": "https://www.linkedin.com/in/ken-jowdy",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-029",
+      "name": "Laura Ortiz Montemayor",
+      "description": "Regenera Ventures GP; regenerative capital. Board: Reforestamos México (client).",
+      "contact": "https://www.linkedin.com/in/lauraom",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-030",
+      "name": "Lorenzo Cruz Conde Roca",
+      "description": "Los Cabos Desal Plant 2 PPP; 25-year supply piece.",
+      "contact": "https://mx.linkedin.com/in/lcruzconde",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-031",
+      "name": "Michael (Mike) Meldman",
+      "description": "Discovery Land; high land/water-use communities.",
+      "contact": "",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-032",
+      "name": "Santiago Sánchez Navarro",
+      "description": "Questro ops and project pipeline.",
+      "contact": "https://www.linkedin.com/in/santiago-sanchez-navarro-48234416",
+      "group": "Steering Committee",
+      "subgroup": "Development & Investment Sector",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-033",
+      "name": "Abimael Ibarra Abundez",
+      "description": "OOMSAPAS La Paz; water capacity second pole.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Infrastructure & Utilities",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-034",
+      "name": "Arturo Sandoval Montaño",
+      "description": "OOMSAPAS Los Cabos; potable/desal service ceiling.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Infrastructure & Utilities",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-035",
+      "name": "CENACE Subgerencia La Paz",
+      "description": "SIBCS islanded grid; state electricity ceiling.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Infrastructure & Utilities",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-036",
+      "name": "Alina Breceda Martos",
+      "description": "LegacyWorks East Cape Futures; local scenarios.",
+      "contact": "https://www.linkedin.com/in/alina-bm",
+      "group": "Technical Advisory Group",
+      "subgroup": "Environmental & Conservation Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-037",
+      "name": "Benito Rafael Bermúdez Almada",
+      "description": "CONANP regional; ecological ceiling / ANP zoning.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Environmental & Conservation Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-038",
+      "name": "Everardo Mariano Meléndez",
+      "description": "Sierra La Laguna BR; Cabos–La Paz watershed frontier.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Environmental & Conservation Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-039",
+      "name": "Gustavo D. Danemann",
+      "description": "Niparajá; marine evidence and coastal governance.",
+      "contact": "https://www.linkedin.com/in/gustavo-d-danemann-05030a13",
+      "group": "Technical Advisory Group",
+      "subgroup": "Environmental & Conservation Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-040",
+      "name": "James Honey",
+      "description": "Legacy Regenerativa MX; regenerative practice networks.",
+      "contact": "https://www.linkedin.com/in/james-honey-29a61124b",
+      "group": "Technical Advisory Group",
+      "subgroup": "Environmental & Conservation Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-041",
+      "name": "Josué Melesio Tiscareño Villorin",
+      "description": "Cabo Pulmo NP; hard limit on East Cape growth.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Environmental & Conservation Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-042",
+      "name": "Mónica Robinson Bours Muñoz",
+      "description": "Regeneration expert; Ponguinguiola / Rancho La Piedra (water sowing).",
+      "contact": "https://mx.linkedin.com/in/monica-robinson-bours-a18055280",
+      "group": "Technical Advisory Group",
+      "subgroup": "Environmental & Conservation Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-045",
+      "name": "Francisco Villaseñor Reyes",
+      "description": "Los Cabos Airport (SJD) operations.",
+      "contact": "https://www.linkedin.com/in/francisco-villase%C3%B1or-reyes-7a1829303",
+      "group": "Technical Advisory Group",
+      "subgroup": "Mobility Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-046",
+      "name": "Marco Antonio Gutiérrez de la Rosa",
+      "description": "SICT BCS; federal highways / land mobility.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Mobility Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-047",
+      "name": "Narciso Agúndez Gómez",
+      "description": "API-BCS; ports and maritime logistics.",
+      "contact": "",
+      "group": "Technical Advisory Group",
+      "subgroup": "Mobility Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-048",
+      "name": "Raúl Revuelta Musalem",
+      "description": "GAP DG; air-arrivals ceiling = tourism load proxy.",
+      "contact": "https://www.linkedin.com/in/ra%C3%BAl-revuelta-musalem-8118b566",
+      "group": "Technical Advisory Group",
+      "subgroup": "Mobility Stakeholders",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-049",
+      "name": "Asociación de Hoteles de Los Cabos",
+      "description": "Hotel stock and occupancy; tourism load input.",
+      "contact": "",
+      "group": "Stakeholders Forum",
+      "subgroup": "Economic Sectors",
+      "type": "institution",
+      "org": "Asociación de Hoteles de Los Cabos"
+    },
+    {
+      "id": "st-050",
+      "name": "José Antonio Torre Medina-Mora",
+      "description": "Tec Future of Cities; method and metrics.",
+      "contact": "https://www.linkedin.com/in/jos%C3%A9-antonio-torre-medina-mora-918972a1",
+      "group": "Stakeholders Forum",
+      "subgroup": "Global Thought Partners",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-051",
+      "name": "Sergio Roldán Gutiérrez",
+      "description": "City Science Lab MIT–UdeG; urban capacity modelling.",
+      "contact": "https://www.linkedin.com/in/sergiorold%C3%A1nguti%C3%A9rrez",
+      "group": "Stakeholders Forum",
+      "subgroup": "Global Thought Partners",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-hospitalidad-01",
+      "name": "Ernesto Coppel",
+      "description": "empresario hotelero BCS",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Hospitalidad",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-hospitalidad-02",
+      "name": "Armando García",
+      "description": "presidente de la Asociación de Hoteles de Los Cabos",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Hospitalidad",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-inversion-extranjera-01",
+      "name": "Agustín Coppel",
+      "description": "presidente Foro Mar de Cortés",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Inversión extranjera",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-inversion-extranjera-02",
+      "name": "Rafael Fernández",
+      "description": "experto en relación México–EE. UU.",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Inversión extranjera",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-desarrollo-orientado-al-transporte-01",
+      "name": "Alberto Coppel",
+      "description": "filántropo, seguridad vial",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Desarrollo orientado al transporte",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-desarrollo-orientado-al-transporte-02",
+      "name": "José Antonio Medina Torres",
+      "description": "director del Centro de Ciudades",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Desarrollo orientado al transporte",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-politica-estatal-01",
+      "name": "Valerio González",
+      "description": "teniente, pionero de Baja California Sur",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Política estatal",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-politica-estatal-02",
+      "name": "Raúl González",
+      "description": "político, delegado nacional PVEM",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Política estatal",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-urbanizacion-los-cabos-01",
+      "name": "Santiago Sánchez Navarro",
+      "description": "Puerto Los Cabos y Kundavi",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Urbanización Los Cabos",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-regeneracion-biodiversidad-01",
+      "name": "Alejandro Robles González",
+      "description": "director de Noroeste Sustentable",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Regeneración y biodiversidad",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-regeneracion-biodiversidad-02",
+      "name": "Mónica Robinson Bours",
+      "description": "Rancho La Piedra, siembra de agua",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Regeneración y biodiversidad",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-infraestructura-energia-01",
+      "name": "Carolina Armenta Cervantes",
+      "description": "Secretaria de Planeación Urbana, Infraestructura, Movilidad, Medio Ambiente y Recursos Naturales, SEPUIMM",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Infraestructura y energía",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-infraestructura-energia-02",
+      "name": "Zulleth Monserrath Tejas Álvarez",
+      "description": "Directora de Energía y Telecomunicaciones, SEPUIMM",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Infraestructura y energía",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-agua-01",
+      "name": "Lesvia Tatiana Davis Monzón",
+      "description": "Ing.; Directora General de la Comisión Estatal del Agua, CEA BCS",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Agua",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-agua-02",
+      "name": "Julio César Villarreal Trasviña",
+      "description": "Ing.; Director Local de Conagua en BCS",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Agua",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-arquitectura-urbanismo-los-cabos-01",
+      "name": "Arq. Beatriz González Gibert",
+      "description": "Directora General del IMPLAN Los Cabos",
+      "contact": "https://implanloscabos.mx/",
+      "group": "Mesas de trabajo",
+      "subgroup": "Arquitectura y urbanismo (Los Cabos)",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-arquitectura-urbanismo-los-cabos-02",
+      "name": "Arq. Ruth Díaz",
+      "description": "arquitecta de sostenibilidad, Puerto Los Cabos / Kundavi",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Arquitectura y urbanismo (Los Cabos)",
+      "type": "person",
+      "org": null
+    },
+    {
+      "id": "st-mesa-urbanizacion-los-cabos-02",
+      "name": "Rubén Coppel",
+      "description": "Consejo de Seguridad",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Urbanización Los Cabos",
+      "org": null,
+      "type": "person"
+    },
+    {
+      "id": "st-mesa-conservacion-01",
+      "name": "Christy R. Walton",
+      "description": "fundadora de Alumbra Innovations Foundation",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Conservación",
+      "org": "Alumbra Innovations Foundation",
+      "type": "person"
+    },
+    {
+      "id": "st-mesa-conservacion-02",
+      "name": "Ann Ladon",
+      "description": "directora de Alumbra Innovations Foundation",
+      "contact": "",
+      "group": "Mesas de trabajo",
+      "subgroup": "Conservación",
+      "org": "Alumbra Innovations Foundation",
+      "type": "person"
+    }
+  ]
+}

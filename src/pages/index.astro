@@ -1,0 +1,200 @@
+---
+/**
+ * Private access gate only — no project narrative, no public content.
+ * Inline styles so unauthenticated visitors need almost no static assets.
+ */
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Private" />
+    <meta name="color-scheme" content="light only" />
+    <title>Acceso</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: #fbf8f1;
+        color: #23374a;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 1.5rem;
+      }
+      .gate {
+        width: 100%;
+        max-width: 26rem;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+        color: #3c5163;
+      }
+      .row {
+        display: flex;
+        gap: 0.5rem;
+      }
+      input[type="password"] {
+        flex: 1;
+        min-width: 0;
+        padding: 0.65rem 0.75rem;
+        border: 1px solid #d9d2c4;
+        border-radius: 4px;
+        font-size: 1rem;
+        background: #fbf8f1;
+      }
+      input[type="password"]:focus {
+        outline: 2px solid #8796a0;
+        outline-offset: 1px;
+      }
+      button[type="submit"] {
+        padding: 0.65rem 1rem;
+        border: 1px solid #3c5163;
+        border-radius: 4px;
+        background: #23374a;
+        color: #fbf8f1;
+        font-size: 0.95rem;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover { background: #3c5163; }
+      .purpose { margin-bottom: 1.25rem; }
+      .purpose h1 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+      .purpose p { font-size: 0.92rem; line-height: 1.5; margin: 0; color: #3c5163; }
+      .err {
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        color: #a30;
+      }
+      .lang {
+        position: fixed;
+        top: 0.75rem;
+        right: 0.75rem;
+        border: 1px solid #d9d2c4;
+        background: #fbf8f1;
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        cursor: pointer;
+        color: #3c5163;
+      }
+      .lang .sep { margin: 0 0.2rem; color: #c9c1b0; }
+      .lang .on { font-weight: 600; color: #23374a; }
+    </style>
+  </head>
+  <body>
+    <button type="button" class="lang" id="lang-btn" aria-label="Language">
+      <span data-side="es" class="on">ES</span><span class="sep">|</span><span data-side="en">EN</span>
+    </button>
+    <main class="gate">
+      <section class="purpose" aria-label="Propósito">
+        <h1><span data-lang-es>Baja California Sur 2050</span><span data-lang-en hidden>Baja California Sur 2050</span></h1>
+        <p><span data-lang-es>BCS 2050 es un plan estratégico para el estado. Este portal ayuda a consultar datos públicos para que gobierno, sector privado y sociedad civil tomen mejores decisiones.</span><span data-lang-en hidden>BCS 2050 is a strategic plan for the state. This portal helps people consult public data so that government, the private sector and civil society can make better decisions.</span></p>
+      </section>
+      <form id="gate-form" autocomplete="current-password">
+        <label for="gate-password">
+          <span data-lang-es>Contraseña</span>
+          <span data-lang-en hidden>Password</span>
+        </label>
+        <div class="row">
+          <input type="password" id="gate-password" name="password" required maxlength="128" autofocus />
+          <button type="submit">
+            <span data-lang-es>Entrar</span>
+            <span data-lang-en hidden>Enter</span>
+          </button>
+        </div>
+        <p class="err" id="gate-error" hidden></p>
+      </form>
+    </main>
+    <script is:inline>
+      (function () {
+        var form = document.getElementById('gate-form');
+        var err = document.getElementById('gate-error');
+        var input = document.getElementById('gate-password');
+        var langBtn = document.getElementById('lang-btn');
+        var lang = 'es';
+        try {
+          var stored = localStorage.getItem('bcs-lang');
+          if (stored === 'en' || stored === 'es') lang = stored;
+        } catch (e) {}
+
+        function applyLang(l) {
+          lang = l;
+          document.documentElement.lang = l;
+          document.querySelectorAll('[data-lang-es]').forEach(function (el) {
+            el.hidden = l !== 'es';
+          });
+          document.querySelectorAll('[data-lang-en]').forEach(function (el) {
+            el.hidden = l !== 'en';
+          });
+          if (langBtn) {
+            langBtn.querySelectorAll('[data-side]').forEach(function (s) {
+              s.classList.toggle('on', s.getAttribute('data-side') === l);
+            });
+          }
+          document.title = l === 'en' ? 'Private' : 'Acceso';
+          try { localStorage.setItem('bcs-lang', l); } catch (e) {}
+        }
+        applyLang(lang);
+        if (langBtn) {
+          langBtn.addEventListener('click', function () {
+            applyLang(lang === 'es' ? 'en' : 'es');
+          });
+        }
+
+        if (!form) return;
+
+        fetch('/api/auth', { method: 'GET', credentials: 'same-origin' })
+          .then(function (r) { return r.json().catch(function () { return {}; }); })
+          .then(function (d) {
+            if (d && d.ok) location.replace('/inicio');
+          })
+          .catch(function () {});
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (err) { err.hidden = true; err.textContent = ''; }
+          var password = (input && input.value) || '';
+          fetch('/api/auth', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: password })
+          })
+            .then(function (r) {
+              return r.json().then(function (j) { return { ok: r.ok, j: j }; });
+            })
+            .then(function (res) {
+              if (res.ok && res.j && res.j.ok) {
+                location.replace('/inicio');
+                return;
+              }
+              if (err) {
+                err.hidden = false;
+                err.textContent = lang === 'en'
+                  ? 'Incorrect password. Try again.'
+                  : 'Contraseña incorrecta. Intenta de nuevo.';
+              }
+              if (input) { input.value = ''; input.focus(); }
+            })
+            .catch(function () {
+              if (err) {
+                err.hidden = false;
+                err.textContent = lang === 'en'
+                  ? 'Could not reach the auth service.'
+                  : 'No se pudo contactar el servicio de acceso.';
+              }
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>

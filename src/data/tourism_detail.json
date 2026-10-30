@@ -1,0 +1,626 @@
+{
+  "hotels": [
+    {
+      "name": "Four Seasons Resort Los Cabos at Costa Palmas",
+      "municipio": "La Paz",
+      "locality": "La Ribera / Costa Palmas (East Cape)",
+      "brand_operator": "Four Seasons / Irongate (Costa Palmas)",
+      "rooms_if_sourced": "",
+      "notes": "Flagship East Cape resort within Costa Palmas masterplan; rooms count not taken from secondary reviews",
+      "source": "Base de datos BCS 2050 — acervo de datos (Jason Grosfeld / Costa Palmas); costapalmas.com"
+    },
+    {
+      "name": "Amanvari",
+      "municipio": "La Paz",
+      "locality": "Costa Palmas / East Cape",
+      "brand_operator": "Aman / Irongate (Gabriel Escaba land development)",
+      "rooms_if_sourced": "18 casitas (CNT/Aman product pages describe casita inventory; treat as keys not conventional rooms)",
+      "notes": "Ultra-luxury Aman property at Costa Palmas; opening timeline ~2026 in stakeholder notes",
+      "source": "aman.com/resorts/amanvari; Base de datos BCS 2050 — tabla de datos (Escaba); Condé Nast Traveler hotel page"
+    },
+    {
+      "name": "Zadún, a Ritz-Carlton Reserve",
+      "municipio": "Los Cabos",
+      "locality": "Puerto Los Cabos / San José del Cabo (este)",
+      "brand_operator": "Ritz-Carlton Reserve / Grupo Questro",
+      "rooms_if_sourced": "",
+      "notes": "Masterplan Puerto Los Cabos; named in AHLC Travel+Leisure World's Best 2026 congratulations list",
+      "source": "T2_04 / external stakeholders (Eduardo Sánchez-Navarro); AHLC LinkedIn 2026 awards post; ritzcarlton.com sjdzr"
+    },
+    {
+      "name": "Waldorf Astoria Los Cabos Pedregal",
+      "municipio": "Los Cabos",
+      "locality": "Pedregal, Cabo San Lucas",
+      "brand_operator": "Waldorf Astoria / Hilton",
+      "rooms_if_sourced": "",
+      "notes": "Named AHLC T+L World's Best 2026 list",
+      "source": "AHLC LinkedIn awards post 2026; ahloscabos gastronomy article"
+    },
+    {
+      "name": "One&Only Palmilla",
+      "municipio": "Los Cabos",
+      "locality": "Palmilla / corredor",
+      "brand_operator": "One&Only (Kerzner)",
+      "rooms_if_sourced": "",
+      "notes": "Landmark Palmilla; golf Arroyo/Mountain restricted to hotel guests per FORE Magazine",
+      "source": "AHLC T+L 2026 list; FORE Magazine Cabo Evolves"
+    },
+    {
+      "name": "Esperanza, Auberge Collection",
+      "municipio": "Los Cabos",
+      "locality": "Punta Ballena / corredor",
+      "brand_operator": "Auberge Resorts Collection",
+      "rooms_if_sourced": "",
+      "notes": "AHLC T+L World's Best 2026",
+      "source": "AHLC LinkedIn 2026"
+    },
+    {
+      "name": "Chileno Bay Resort & Residences, Auberge Collection",
+      "municipio": "Los Cabos",
+      "locality": "Chileno Bay / corredor",
+      "brand_operator": "Auberge; adjacent Discovery Land Chileno Bay Club",
+      "rooms_if_sourced": "",
+      "notes": "Resort + Discovery Land membership community context",
+      "source": "AHLC LinkedIn 2026; T2_04 Discovery Land / Meldman"
+    },
+    {
+      "name": "Nobu Hotel Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "Corredor turístico",
+      "brand_operator": "Nobu Hotels",
+      "rooms_if_sourced": "",
+      "notes": "AHLC T+L World's Best 2026; AHLC gastronomy article",
+      "source": "AHLC LinkedIn 2026; ahloscabos.com gastronomy 2023"
+    },
+    {
+      "name": "Montage Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "Santa María Bay / corredor",
+      "brand_operator": "Montage International",
+      "rooms_if_sourced": "",
+      "notes": "Stakeholder matrix: resort + residences Santa María Bay",
+      "source": "Base de datos BCS 2050 — tabla de datos; AHLC T+L 2026"
+    },
+    {
+      "name": "The Cape, a Thompson Hotel",
+      "municipio": "Los Cabos",
+      "locality": "Corredor / CSL side",
+      "brand_operator": "Thompson Hotels (Hyatt)",
+      "rooms_if_sourced": "",
+      "notes": "AHLC T+L World's Best 2026",
+      "source": "AHLC LinkedIn 2026"
+    },
+    {
+      "name": "Solaz, a Luxury Collection Resort",
+      "municipio": "Los Cabos",
+      "locality": "Corredor turístico",
+      "brand_operator": "Luxury Collection (Marriott)",
+      "rooms_if_sourced": "",
+      "notes": "Named AHLC gastronomy (Sakagura); CONALEP dual model hotels list in PMD",
+      "source": "ahloscabos gastronomy; PMD Los Cabos 2024-2027 (CONALEP hotels)"
+    },
+    {
+      "name": "Grand Velas Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "Corredor turístico",
+      "brand_operator": "Grand Velas / Velas Resorts",
+      "rooms_if_sourced": "",
+      "notes": "AHLC Consejo (Andreas Schmidt); Blue Flag beach list in PMD",
+      "source": "ahloscabos.com/consejo-de-administracion/; PMD Los Cabos Blue Flag table"
+    },
+    {
+      "name": "Pueblo Bonito Golf & Spa Resorts (portfolio Quivira / CSL)",
+      "municipio": "Los Cabos",
+      "locality": "Cabo San Lucas / Quivira",
+      "brand_operator": "Pueblo Bonito / Ernesto Coppel Kelly",
+      "rooms_if_sourced": "",
+      "notes": "Developer footprint Quivira + PB resorts; AHLC Consejo Presidente Armando García (Grupo Pueblo Bonito); AHLC T+L 2026",
+      "source": "Base de datos BCS 2050 — nota de trabajo; AHLC consejo; AHLC LinkedIn 2026"
+    },
+    {
+      "name": "JW Marriott / Marriott / Westin corridor properties (sample)",
+      "municipio": "Los Cabos",
+      "locality": "Corredor / CSL–SJD",
+      "brand_operator": "Marriott International brands",
+      "rooms_if_sourced": "",
+      "notes": "Observatorio FITURCA sample basket includes JW Marriott, Sheraton, Westin, W; Westin board seat on AHLC (José Manuel Oviedo)",
+      "source": "FITURCA Observatorio FEB26 methodology sample hotels; AHLC consejo"
+    },
+    {
+      "name": "Hilton / DoubleTree / Dreams / Secrets / Hard Rock / Hyatt Regency / RIU / Barceló (sample branded set)",
+      "municipio": "Los Cabos",
+      "locality": "CSL / SJD / corredor / Puerto Los Cabos",
+      "brand_operator": "Various (Hilton, AMResorts/Hyatt, Hard Rock, RIU, Barceló)",
+      "rooms_if_sourced": "",
+      "notes": "Listed as Observatorio price-basket sample hotels operating in Los Cabos — not a complete census",
+      "source": "FITURCA Observatorio FEB26 anexo muestra hoteles 6–7★"
+    },
+    {
+      "name": "Vidanta Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "San José del Cabo area",
+      "brand_operator": "Vidanta",
+      "rooms_if_sourced": "",
+      "notes": "AHLC Consejo Tesorera Geraldine Zaragoza — Vidanta Los Cabos; golf course in Visit Los Cabos Golf Guide",
+      "source": "AHLC consejo; LosCabos Golf Guide"
+    },
+    {
+      "name": "Solmar Hotels & Resorts / Grand Solmar / Rancho San Lucas",
+      "municipio": "Los Cabos",
+      "locality": "Cabo San Lucas / Pacific side",
+      "brand_operator": "Solmar Hotels & Resorts",
+      "rooms_if_sourced": "",
+      "notes": "AHLC Consejo Secretario Mauricio Salicrup; Rancho San Lucas golf (Greg Norman) in Golf Guide",
+      "source": "AHLC consejo; Golf Guide"
+    },
+    {
+      "name": "Marquis Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "Corredor",
+      "brand_operator": "Marquis Los Cabos",
+      "rooms_if_sourced": "",
+      "notes": "AHLC Consejero Mauricio Quezada",
+      "source": "AHLC consejo"
+    },
+    {
+      "name": "Hacienda Beach Club and Residences",
+      "municipio": "Los Cabos",
+      "locality": "Cabo San Lucas",
+      "brand_operator": "Hacienda Beach Club",
+      "rooms_if_sourced": "",
+      "notes": "AHLC Consejero Arturo Peña",
+      "source": "AHLC consejo"
+    },
+    {
+      "name": "The Westin Los Cabos Resort Villas & Spa",
+      "municipio": "Los Cabos",
+      "locality": "Corredor",
+      "brand_operator": "Westin (Marriott)",
+      "rooms_if_sourced": "",
+      "notes": "AHLC Consejo Compras José Manuel Oviedo",
+      "source": "AHLC consejo"
+    },
+    {
+      "name": "Buenavista Oceanfront & Hot Springs Resort",
+      "municipio": "Los Cabos",
+      "locality": "Buenavista / East Cape corridor",
+      "brand_operator": "Buenavista Oceanfront",
+      "rooms_if_sourced": "",
+      "notes": "AHLC Consejo Capacitación Axel Valdez",
+      "source": "AHLC consejo"
+    },
+    {
+      "name": "Secrets Puerto Los Cabos Golf & Spa Resort",
+      "municipio": "Los Cabos",
+      "locality": "Puerto Los Cabos",
+      "brand_operator": "Secrets (AMResorts / Hyatt)",
+      "rooms_if_sourced": "",
+      "notes": "Named in PMD CONALEP dual-model hotel list",
+      "source": "PMD Los Cabos 2024-2027"
+    },
+    {
+      "name": "Hilton Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "Corredor",
+      "brand_operator": "Hilton",
+      "rooms_if_sourced": "",
+      "notes": "Named in PMD CONALEP dual-model hotel list",
+      "source": "PMD Los Cabos 2024-2027"
+    },
+    {
+      "name": "Puerto Cortez (hotel named in PMD training list)",
+      "municipio": "Los Cabos",
+      "locality": "Los Cabos",
+      "brand_operator": "—",
+      "rooms_if_sourced": "",
+      "notes": "Named in PMD CONALEP dual-model hotel list; verify brand/operator",
+      "source": "PMD Los Cabos 2024-2027"
+    },
+    {
+      "name": "CostaBaja Resort & Spa (linked to Marina CostaBaja)",
+      "municipio": "La Paz",
+      "locality": "Carretera a Pichilingue / CostaBaja",
+      "brand_operator": "CostaBaja",
+      "rooms_if_sourced": "",
+      "notes": "Resort adjacent to Marina CostaBaja (250 slips claimed on marina site)",
+      "source": "marinacostabaja.com"
+    },
+    {
+      "name": "Hotel inventory aggregate — Los Cabos municipio",
+      "municipio": "Los Cabos",
+      "locality": "Municipio",
+      "brand_operator": "(aggregate SETUE)",
+      "rooms_if_sourced": "188 hoteles / 22,254 habitaciones (SETUE IE 2026 OCR)",
+      "notes": "Municipal stock — not individual properties; 3 de cada 4 habitaciones BCS",
+      "source": "_downloads/OCR_SETUE_Los-Cabos_turismo_2026.txt; SETUE IE Los Cabos 2026 PDF"
+    },
+    {
+      "name": "Hotel inventory aggregate — La Paz municipio",
+      "municipio": "La Paz",
+      "locality": "Municipio",
+      "brand_operator": "(aggregate SETUE)",
+      "rooms_if_sourced": "148 hoteles / 3,841 habitaciones (SETUE IE 2026 OCR)",
+      "notes": "Municipal stock; occupancy 64% / stay 2.04 days (2025)",
+      "source": "_downloads/OCR_SETUE_La-Paz_turismo_2026.txt"
+    }
+  ],
+  "marinas": [
+    {
+      "name": "Marina Cabo San Lucas (IGY)",
+      "municipio": "Los Cabos",
+      "locality": "Cabo San Lucas — Lote A-18 De la Dársena",
+      "operator": "IGY Marinas",
+      "slips_if_sourced": "380 total slips (33 megayacht); max LOA 375 ft",
+      "notes": "Operator page; stakeholder matrix notes IGY CSL office",
+      "source": "https://www.igymarinas.com/marinas/marina-cabo-san-lucas-mexico/ ; Base de datos BCS 2050 — nota de trabajo"
+    },
+    {
+      "name": "Marina Puerto Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "San José del Cabo / La Playa — Blvd Mar de Cortés",
+      "operator": "Grupo Questro; ops Brian Hopper (marina director)",
+      "slips_if_sourced": "230 slips currently; expansion plans to 400 + yacht club (operator site)",
+      "notes": "puertoloscabos.com/marina; T2_04 / infra research",
+      "source": "https://puertoloscabos.com/marina"
+    },
+    {
+      "name": "Marina Costa Palmas",
+      "municipio": "La Paz",
+      "locality": "La Ribera / East Cape — C. Eureka S/N",
+      "operator": "Irongate / Costa Palmas (Club members & guests)",
+      "slips_if_sourced": "Phase 1: 35 finger/alongside slips (operator lists Marina Village 28 + Four Seasons 7 as components = 35); planned >300 slips",
+      "notes": "costapalmas.com/marina/; T2_04 Marina Costa Palmas",
+      "source": "https://costapalmas.com/marina/"
+    },
+    {
+      "name": "Marina CostaBaja",
+      "municipio": "La Paz",
+      "locality": "Km 7.5 Carretera a Pichilingue",
+      "operator": "Marina CostaBaja",
+      "slips_if_sourced": "250 wet slips (30–225 ft) + dry marina 50 slots ≤35 ft (operator site)",
+      "notes": "marinacostabaja.com",
+      "source": "https://marinacostabaja.com/en/home/"
+    },
+    {
+      "name": "Marina Cortez",
+      "municipio": "La Paz",
+      "locality": "Malecón / La Paz waterfront",
+      "operator": "Marina Cortez",
+      "slips_if_sourced": "50+ slips, 40–300 ft (operator site)",
+      "notes": "marinacortez.com",
+      "source": "https://www.marinacortez.com/"
+    },
+    {
+      "name": "Marina de La Paz",
+      "municipio": "La Paz",
+      "locality": "Topete 3040 y Legaspy, La Paz",
+      "operator": "Marina de La Paz",
+      "slips_if_sourced": "110 slips, 30–200 ft (Boating in Mexico 2023 brochure hosted by marina)",
+      "notes": "marinadelapaz.com brochure 2023",
+      "source": "https://www.marinadelapaz.com/wp-content/uploads/2023/03/boatinginmexico2023.pdf"
+    },
+    {
+      "name": "Marina Puerto Escondido (Loreto)",
+      "municipio": "Loreto",
+      "locality": "Puerto Escondido / CIP Loreto corridor",
+      "operator": "FONATUR-linked nautical node (CIP Loreto history)",
+      "slips_if_sourced": "Expansion press: +80 superyacht slips cited by trade press — verify against FONATUR/API primary",
+      "notes": "Loreto PSDU Memoria (CIP Loreto–Nopoló–Puerto Escondido); trade press",
+      "source": "PSDU Loreto 2024; Superyacht Services Guide item on expansion"
+    },
+    {
+      "name": "Aggregate — espacios marinas Los Cabos (SETUE)",
+      "municipio": "Los Cabos",
+      "locality": "Municipio",
+      "operator": "(aggregate)",
+      "slips_if_sourced": "759 espacios (SETUE IE 2026 OCR); 45% of BCS total",
+      "notes": "Do not double-count with named marinas",
+      "source": "OCR_SETUE_Los-Cabos_turismo_2026.txt"
+    },
+    {
+      "name": "Aggregate — espacios marinas La Paz (SETUE)",
+      "municipio": "La Paz",
+      "locality": "Municipio",
+      "operator": "(aggregate)",
+      "slips_if_sourced": "751 espacios (SETUE IE 2026 OCR); municipio with most spaces",
+      "notes": "Do not double-count with named marinas",
+      "source": "OCR_SETUE_La-Paz_turismo_2026.txt"
+    }
+  ],
+  "golf": [
+    {
+      "name": "Dunes Course at Diamante",
+      "municipio": "Los Cabos",
+      "locality": "Cabo San Lucas — Pacific / Diamante",
+      "designer_if_sourced": "Davis Love III",
+      "operator_developer": "Diamante / Ken Jowdy",
+      "tournament_link": "—",
+      "source": "Visit Los Cabos Golf Guide; T2_04 Ken Jowdy"
+    },
+    {
+      "name": "El Cardonal at Diamante",
+      "municipio": "Los Cabos",
+      "locality": "Diamante",
+      "designer_if_sourced": "Tiger Woods / TGR Design",
+      "operator_developer": "Diamante / Ken Jowdy",
+      "tournament_link": "World Wide Technology Championship (PGA TOUR) host since 2023; Joe Mazzeo tournament director",
+      "source": "Golf Guide; wwtchampionship.com; T2_04 Mazzeo/Jowdy"
+    },
+    {
+      "name": "Oasis Short Course at Diamante",
+      "municipio": "Los Cabos",
+      "locality": "Diamante",
+      "designer_if_sourced": "—",
+      "operator_developer": "Diamante",
+      "tournament_link": "Short course",
+      "source": "Golf Guide"
+    },
+    {
+      "name": "Quivira Golf Club",
+      "municipio": "Los Cabos",
+      "locality": "Quivira / CSL Pacific cliffs",
+      "designer_if_sourced": "Jack Nicklaus",
+      "operator_developer": "Pueblo Bonito / Ernesto Coppel",
+      "tournament_link": "Resort-private; owners/Pueblo Bonito guests",
+      "source": "Golf Guide; FORE Magazine; external stakeholders"
+    },
+    {
+      "name": "Cabo San Lucas Country Club",
+      "municipio": "Los Cabos",
+      "locality": "CSL",
+      "designer_if_sourced": "Roy Dye (per secondary guides)",
+      "operator_developer": "—",
+      "tournament_link": "Public-access listed in guides",
+      "source": "Golf Guide"
+    },
+    {
+      "name": "Cabo del Sol Desert Course",
+      "municipio": "Los Cabos",
+      "locality": "Corredor — Cabo del Sol",
+      "designer_if_sourced": "Tom Weiskopf (reimagining Fry/Straka noted in press)",
+      "operator_developer": "Cabo del Sol",
+      "tournament_link": "Public-access Desert course",
+      "source": "Golf Guide; FORE Magazine"
+    },
+    {
+      "name": "Cove Club (ex Cabo del Sol Ocean)",
+      "municipio": "Los Cabos",
+      "locality": "Corredor — Cabo del Sol",
+      "designer_if_sourced": "Jack Nicklaus",
+      "operator_developer": "Private / Four Seasons linked per secondary",
+      "tournament_link": "Former Ocean Course; private since ~2019",
+      "source": "Golf Guide; FORE Magazine"
+    },
+    {
+      "name": "Twin Dolphin Golf Club",
+      "municipio": "Los Cabos",
+      "locality": "Corredor",
+      "designer_if_sourced": "Fred Couples (secondary)",
+      "operator_developer": "—",
+      "tournament_link": "Resort-private",
+      "source": "Golf Guide"
+    },
+    {
+      "name": "Chileno Bay Club (golf)",
+      "municipio": "Los Cabos",
+      "locality": "Chileno Bay",
+      "designer_if_sourced": "Tom Fazio (secondary)",
+      "operator_developer": "Discovery Land Company",
+      "tournament_link": "Private membership community (Meldman)",
+      "source": "Golf Guide; T2_04 Discovery Land"
+    },
+    {
+      "name": "Cabo Real Golf Club",
+      "municipio": "Los Cabos",
+      "locality": "Corredor",
+      "designer_if_sourced": "Robert Trent Jones Jr.",
+      "operator_developer": "—",
+      "tournament_link": "Public-access listed",
+      "source": "Golf Guide"
+    },
+    {
+      "name": "El Dorado Golf & Beach Club",
+      "municipio": "Los Cabos",
+      "locality": "Corredor",
+      "designer_if_sourced": "Jack Nicklaus",
+      "operator_developer": "Discovery Land Company",
+      "tournament_link": "Private ultra-luxury membership",
+      "source": "Golf Guide; T2_04 Meldman / DLC"
+    },
+    {
+      "name": "Palmilla Golf Club",
+      "municipio": "Los Cabos",
+      "locality": "Palmilla / SJD corridor",
+      "designer_if_sourced": "Jack Nicklaus",
+      "operator_developer": "Palmilla",
+      "tournament_link": "Ocean/Mountain/Arroyo nines; Mountain/Arroyo restricted to One&Only guests per FORE",
+      "source": "Golf Guide; FORE Magazine"
+    },
+    {
+      "name": "Querencia",
+      "municipio": "Los Cabos",
+      "locality": "San José del Cabo / corridor",
+      "designer_if_sourced": "Tom Fazio",
+      "operator_developer": "McCloskey family (stakeholder matrix ~since 2017)",
+      "tournament_link": "Private",
+      "source": "Golf Guide; T2_04 McCloskey/Querencia"
+    },
+    {
+      "name": "Club Campestre San José",
+      "municipio": "Los Cabos",
+      "locality": "San José del Cabo",
+      "designer_if_sourced": "Nicklaus Design",
+      "operator_developer": "—",
+      "tournament_link": "Public-access listed",
+      "source": "Golf Guide"
+    },
+    {
+      "name": "Vidanta Golf Los Cabos",
+      "municipio": "Los Cabos",
+      "locality": "SJD / Vidanta",
+      "designer_if_sourced": "Schjetnan et al. (guide)",
+      "operator_developer": "Vidanta",
+      "tournament_link": "Public-access listed",
+      "source": "Golf Guide"
+    },
+    {
+      "name": "Puerto Los Cabos Golf Club",
+      "municipio": "Los Cabos",
+      "locality": "Puerto Los Cabos / East SJD",
+      "designer_if_sourced": "Greg Norman / Jack Nicklaus (two courses cited in guides)",
+      "operator_developer": "Grupo Questro",
+      "tournament_link": "Public-access listed",
+      "source": "Golf Guide; Puerto Los Cabos masterplan stakeholders"
+    },
+    {
+      "name": "Costa Palmas Golf Club (East Cape)",
+      "municipio": "La Paz",
+      "locality": "Costa Palmas / La Ribera",
+      "designer_if_sourced": "Robert Trent Jones II",
+      "operator_developer": "Irongate / Costa Palmas",
+      "tournament_link": "Resort-private; marina site cites 18-hole RTJ II",
+      "source": "Golf Guide; costapalmas.com/marina"
+    },
+    {
+      "name": "Rancho San Lucas Golf Club",
+      "municipio": "Los Cabos",
+      "locality": "Pacific CSL / Solmar",
+      "designer_if_sourced": "Greg Norman",
+      "operator_developer": "Solmar / Rancho San Lucas",
+      "tournament_link": "Listed #1 on Golf Guide map",
+      "source": "Golf Guide"
+    },
+    {
+      "name": "El Cortés Golf Club",
+      "municipio": "La Paz",
+      "locality": "La Paz area",
+      "designer_if_sourced": "—",
+      "operator_developer": "—",
+      "tournament_link": "Listed under Baja California Sur section of Golf Guide",
+      "source": "Golf Guide p.48"
+    },
+    {
+      "name": "TPC Danzante Bay",
+      "municipio": "Loreto",
+      "locality": "Danzante Bay / Loreto bay",
+      "designer_if_sourced": "—",
+      "operator_developer": "—",
+      "tournament_link": "Listed Golf Guide BCS section",
+      "source": "Golf Guide p.48"
+    },
+    {
+      "name": "Loreto Bay Golf Course",
+      "municipio": "Loreto",
+      "locality": "Loreto Bay",
+      "designer_if_sourced": "—",
+      "operator_developer": "—",
+      "tournament_link": "Listed Golf Guide",
+      "source": "Golf Guide p.49"
+    },
+    {
+      "name": "Paraíso del Mar Golf Course",
+      "municipio": "La Paz",
+      "locality": "Paraíso del Mar / La Paz",
+      "designer_if_sourced": "—",
+      "operator_developer": "—",
+      "tournament_link": "Listed Golf Guide",
+      "source": "Golf Guide p.49"
+    },
+    {
+      "name": "Aggregate — Los Cabos campos (SETUE)",
+      "municipio": "Los Cabos",
+      "locality": "Municipio",
+      "designer_if_sourced": "—",
+      "operator_developer": "—",
+      "tournament_link": "18 campos (SETUE IE 2026 OCR); aligns with Golf Guide Cabos map count",
+      "source": "OCR_SETUE_Los-Cabos_turismo_2026.txt"
+    }
+  ],
+  "malls": [
+    {
+      "name": "Plaza Puerto Paraíso",
+      "municipio": "Los Cabos",
+      "locality_address": "Cabo San Lucas — Av. Lázaro Cárdenas y Cabo Bello S/N",
+      "notes": "Fashion mall frente a marina; 3 niveles; 10 salas cine; estacionamiento >2,000 autos (SETUE)",
+      "source": "https://setuesbcs.gob.mx/actividades/shopping/ ; https://puertoparaiso.mx/nosotros/"
+    },
+    {
+      "name": "Las Tiendas de Palmilla (The Shoppes at Palmilla)",
+      "municipio": "Los Cabos",
+      "locality_address": "Palmilla — Transpeninsular Km 27.5, San José del Cabo",
+      "notes": "Centro comercial alta gama / marcas internacionales (SETUE)",
+      "source": "SETUE shopping; theshoppesatpalmilla.com"
+    },
+    {
+      "name": "Plaza Bonita (Liverpool libre de impuestos local)",
+      "municipio": "Los Cabos",
+      "locality_address": "Cabo San Lucas — Blvd Marina No. 17, Col. Centro",
+      "notes": "SETUE cites Liverpool duty-free at Plaza Bonita Local 38 D",
+      "source": "SETUE shopping"
+    },
+    {
+      "name": "UltraFemme / Ultrajewels (Marina)",
+      "municipio": "Los Cabos",
+      "locality_address": "Boulevard Marina esq. andador Madero, CSL",
+      "notes": "Duty-free perfume/jewelry node cited by SETUE (retail node, not full mall)",
+      "source": "SETUE shopping"
+    },
+    {
+      "name": "Plaza Península",
+      "municipio": "Los Cabos",
+      "locality_address": "San José del Cabo — Transpeninsular ~Km 29.5",
+      "notes": "Commercial plaza on corridor (broker/listings evidence); not detailed on SETUE shopping page",
+      "source": "Secondary local listings / corridor commercial fabric — verify tenant mix"
+    },
+    {
+      "name": "Plaza La Paz",
+      "municipio": "La Paz",
+      "locality_address": "La Paz",
+      "notes": "Named by SETUE among open plazas",
+      "source": "SETUE shopping"
+    },
+    {
+      "name": "Plaza San Diego",
+      "municipio": "La Paz",
+      "locality_address": "La Paz",
+      "notes": "Named by SETUE",
+      "source": "SETUE shopping"
+    },
+    {
+      "name": "Plaza María y José",
+      "municipio": "La Paz",
+      "locality_address": "La Paz",
+      "notes": "Named by SETUE",
+      "source": "SETUE shopping"
+    },
+    {
+      "name": "Cola de Ballena",
+      "municipio": "La Paz",
+      "locality_address": "La Paz",
+      "notes": "Named by SETUE",
+      "source": "SETUE shopping"
+    },
+    {
+      "name": "Forjadores",
+      "municipio": "La Paz",
+      "locality_address": "La Paz",
+      "notes": "Named by SETUE",
+      "source": "SETUE shopping"
+    },
+    {
+      "name": "Galerías La Paz",
+      "municipio": "La Paz",
+      "locality_address": "La Paz",
+      "notes": "Regional mall brand (galerias.com/lapaz); not on SETUE shopping list excerpt",
+      "source": "https://www.galerias.com/galerias/lapaz"
+    },
+    {
+      "name": "Downtown La Paz",
+      "municipio": "La Paz",
+      "locality_address": "Nicolás Bravo 590, Centro",
+      "notes": "Mixed-use / business center + plaza (ARCO); commercial node",
+      "source": "https://www.downtownlapaz.com/"
+    }
+  ],
+  "desktop": "Desktop\\\\BCSFP\\\\13_territorial_intelligence\\\\tourism_assets"
+}

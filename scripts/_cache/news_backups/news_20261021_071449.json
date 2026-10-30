@@ -1,0 +1,3729 @@
+{
+  "updated": "2026-10-20",
+  "source_note": "Mixed curated + daily refresh; blurbs paraphrased from live pages, never fabricated URLs.",
+  "items": [
+    {
+      "id": "protesta-comunidad-maritima-asipona-csl-2026-10-19",
+      "date": "2026-10-19",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/comunidad-maritima-protesta-asipona/",
+      "title_es": "La comunidad marítima de Cabo San Lucas protesta y pide a ASIPONA eliminar el nuevo tarifario de la marina",
+      "title_en": "Cabo San Lucas maritime community protests and asks ASIPONA to scrap the new marina fee schedule",
+      "blurb_es": "Pescadores deportivos, tour operadores y prestadores turísticos se manifestaron el 19 de octubre frente al edificio del CATTAC contra los cobros de ASIPONA por combustible, atraque, embarque de pasajeros y tránsito portuario. Una propietaria de embarcaciones dijo que los cobros ya se aplican pese a un supuesto plazo de 20 días y que el atraque para cargar combustible cuesta entre 1,200 y 1,300 pesos; piden una mesa de diálogo para negociar las tarifas.",
+      "blurb_en": "Sport fishers, tour operators and tourism providers protested on 19 October outside the CATTAC building against ASIPONA charges for fuelling, berthing, passenger boarding and port transit. A boat owner said the fees are already being charged despite a supposed 20-day grace period, with fuel-dock berthing costing 1,200 to 1,300 pesos; they want a dialogue table to negotiate the fees.",
+      "topics": [
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "tormenta-trudy-lluvias-puntuales-bcs-2026-10-19",
+      "date": "2026-10-19",
+      "source": "El Momento BCS",
+      "url": "https://elmomentobcs.mx/2026/10/19/tormenta-tropical-trudy-genera-lluvias-puntuales-en-baja-california-sur/",
+      "title_es": "La tormenta tropical Trudy se aleja, pero deja lluvias puntuales en el sur de BCS",
+      "title_en": "Tropical Storm Trudy moves away but brings scattered rain to southern BCS",
+      "blurb_es": "Trudy se ubicaba a unos 460 km al sur-sureste de Cabo San Lucas con vientos de 65 km/h y se debilitaba alejándose de la costa. Su circulación podía generar chubascos y lluvias puntuales en Los Cabos, La Paz y parte de Comondú; Protección Civil pidió atender los avisos oficiales.",
+      "blurb_en": "Trudy was about 460 km south-southeast of Cabo San Lucas with 65 km/h winds and weakening as it moved away from the coast. Its circulation could bring showers and scattered rain to Los Cabos, La Paz and part of Comondú; civil protection urged people to follow official advisories.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "milena-quiroga-la-paz-sin-deuda-fin-de-ano-2026-10-19",
+      "date": "2026-10-19",
+      "source": "Peninsular Digital",
+      "url": "https://peninsulardigital.com/2026/10/19/no-se-endeudara-la-paz-para-fin-de-ano-promete-milena-quiroga/",
+      "title_es": "Milena Quiroga descarta que La Paz se endeude para pagar las prestaciones de fin de año",
+      "title_en": "Milena Quiroga rules out La Paz borrowing to pay year-end staff benefits",
+      "blurb_es": "En su primera conferencia tras volver de licencia, la alcaldesa dijo que encontró finanzas sanas y que el Ayuntamiento cubrirá sueldos, aguinaldos y bonos sin préstamos. Pidió pagar el predial, con descuentos desde octubre, al ser uno de los principales ingresos para obra pública, y descartó cambios en el gabinete.",
+      "blurb_en": "At her first press conference after returning from leave, the mayor said she found healthy finances and the city will cover salaries, Christmas bonuses and other benefits without loans. She urged residents to pay property tax, discounted since October, as a main source of public-works funding, and ruled out cabinet changes.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "comunidad-maritima-protesta-tarifas-asipona-csl-2026-10-18",
+      "date": "2026-10-18",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/comunidad-maritima-protesta-csl/",
+      "title_es": "La comunidad marítima de Cabo San Lucas protestará el 19 de octubre contra el alza de tarifas de ASIPONA",
+      "title_en": "Cabo San Lucas maritime community to protest ASIPONA fee increases on 19 October",
+      "blurb_es": "Prestadores de servicios náuticos convocaron a una manifestación pacífica el lunes 19 de octubre a las 7:00 en los canales de navegación de la marina de Cabo San Lucas, contra los nuevos cobros de ASIPONA por uso de muelle y embarque y desembarque de pasajeros. El sector advierte del impacto económico sobre las embarcaciones y los servicios turísticos; la convocatoria no precisa cuántas embarcaciones participarán.",
+      "blurb_en": "Nautical service operators called a peaceful protest on Monday 19 October at 7:00 in the Cabo San Lucas marina channels against ASIPONA's new dock-use and passenger embarkation fees. The sector warns of the economic impact on boats and tourism services; the call does not say how many vessels will take part.",
+      "topics": [
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "pescadores-amparo-tarifas-asipona-los-cabos-2026-10-18",
+      "date": "2026-10-18",
+      "source": "Peninsular Digital",
+      "url": "https://peninsulardigital.com/2026/10/18/preparan-pescadores-y-prestadores-turisticos-de-los-cabos-amparo-contra-nuevas-tarifas-portuarias/",
+      "title_es": "Pescadores y prestadores turísticos de Los Cabos preparan un amparo contra las nuevas tarifas portuarias",
+      "title_en": "Los Cabos fishers and tourism operators prepare legal challenge to new port fees",
+      "blurb_es": "La Federación de Sociedades Cooperativas Mar Azul y otros usuarios de la marina de Cabo San Lucas rechazan el aumento de tarifas de ASIPONA porque, dicen, se aprobó sin consulta y encarece la operación de la pesca y el turismo náutico. Preparan un amparo y piden una mesa de diálogo y la revisión de los cobros de atraque y otros conceptos.",
+      "blurb_en": "The Mar Azul cooperative federation and other Cabo San Lucas marina users reject ASIPONA's fee increase, saying it was approved without consultation and raises costs for fishing and nautical tourism. They are preparing an amparo (legal injunction) and want a dialogue table and a review of berthing and other charges.",
+      "topics": [
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "oomsapas-subcolector-el-progreso-la-paz-2026-10-18",
+      "date": "2026-10-18",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/oomsapas-la-paz-inicia-la-construccion-de-subcolecto/",
+      "title_es": "OOMSAPAS La Paz invierte más de 3.5 millones de pesos en un subcolector de drenaje en El Progreso",
+      "title_en": "La Paz water utility invests over MXN 3.5 million in a sewer sub-collector in El Progreso",
+      "blurb_es": "El organismo de agua de La Paz inició un subcolector sanitario de 1,031 metros con 18 pozos de visita para resolver desbordamientos de aguas residuales en El Progreso, Valle del Mezquite, INVI Mezquitito y colonias vecinas, en beneficio de más de 10 mil habitantes. La obra responde a la saturación de tuberías en lluvias y al aumento de flujo por el crecimiento habitacional del sur de la ciudad.",
+      "blurb_en": "La Paz's water utility began a 1,031-metre sewer sub-collector with 18 manholes to stop wastewater overflows in El Progreso, Valle del Mezquite, INVI Mezquitito and nearby neighbourhoods, serving over 10,000 residents. It responds to pipe saturation during rains and rising flows from housing growth in the city's south.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "megaplanton-sierra-la-laguna-materiales-anp-2026-10-18",
+      "date": "2026-10-18",
+      "source": "Peninsular Digital",
+      "url": "https://peninsulardigital.com/2026/10/18/convocan-a-hacerle-un-megaplanton-al-gobernador/",
+      "title_es": "Activista convoca a un «megaplantón» al gobernador por los materiales que siguen en la Sierra La Laguna",
+      "title_en": "Activist calls for a mass sit-in at the governor's office over materials still inside Sierra La Laguna",
+      "blurb_es": "La defensora Elizabeth Álvarez Rosas propuso un plantón ante el gobernador Víctor Castro para exigir el retiro de materiales de construcción de la zona de amortiguamiento del ANP Sierra La Laguna, denunciados hace más de cinco meses. Según las denuncias, en Segundo Valle siguen unas 80 vigas de acero y 200 polines de madera, entre otros materiales.",
+      "blurb_en": "Defender Elizabeth Álvarez Rosas proposed a sit-in before Governor Víctor Castro to demand removal of construction materials from the buffer zone of the Sierra La Laguna protected area, first reported over five months ago. According to the complaints, about 80 steel beams and 200 wooden posts, among other materials, remain at Segundo Valle.",
+      "topics": [
+        "environment",
+        "land_use"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        }
+      ]
+    },
+    {
+      "id": "bcs-325-casos-dengue-comondu-2026-10-17",
+      "date": "2026-10-17",
+      "source": "Peninsular Digital",
+      "url": "https://peninsulardigital.com/2026/10/17/registra-bcs-325-casos-de-dengue/",
+      "title_es": "BCS suma 325 casos de dengue; Salud intensifica fumigación y larvicida en Ciudad Constitución",
+      "title_en": "BCS reaches 325 dengue cases; health authorities step up fumigation in Ciudad Constitución",
+      "blurb_es": "La Secretaría de Salud estatal reporta 325 casos confirmados de dengue y refuerza termonebulización, visitas domiciliarias y larvicida, sobre todo en Ciudad Constitución; las jornadas recientes en Comondú y Loreto cubrieron más de 13 mil hectáreas. Pide lavar y tapar aljibes, tinacos y cubetas, ya que el agua almacenada en casa es el principal criadero del mosquito.",
+      "blurb_en": "State health authorities report 325 confirmed dengue cases and are stepping up fogging, home visits and larvicide, mainly in Ciudad Constitución; recent campaigns in Comondú and Loreto covered over 13,000 hectares. They urge residents to clean and cover cisterns, tanks and buckets, since water stored at home is the mosquito's main breeding site.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "simon-se-degrada-lluvias-fuertes-bcs-2026-10-16",
+      "date": "2026-10-16",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/lluvias-fuertes-bcs-simon/",
+      "title_es": "Simon se degrada, pero Protección Civil prevé lluvias fuertes en Los Cabos, La Paz y Comondú hasta el domingo",
+      "title_en": "Simon weakens, but Civil Protection expects heavy rain in Los Cabos, La Paz and Comondú through Sunday",
+      "blurb_es": "El Consejo Estatal de Protección Civil pronosticó acumulados de 25 a 50 mm del 16 al 18 de octubre en Los Cabos, La Paz y parte de Comondú, pese al debilitamiento de Simon, que se ubicaba a 260 km al sur de Cabo San Lucas y se degradaba a remanente. Se reabrieron la pesca y el turismo náutico en San José del Cabo, Cabo San Lucas y La Paz; el huracán Trudy no tiene trayectoria hacia BCS.",
+      "blurb_en": "The State Civil Protection Council forecast 25–50 mm of rain on 16–18 October in Los Cabos, La Paz and part of Comondú, despite Simon weakening 260 km south of Cabo San Lucas into a remnant low. Fishing and nautical tourism reopened in San José del Cabo, Cabo San Lucas and La Paz; Hurricane Trudy is not tracking toward BCS.",
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "milena-quiroga-reasume-la-paz-ruta-tiburon-2026-10-16",
+      "date": "2026-10-16",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/reasume-milena-quiroga-presidencia-de-la-paz-inaugura-nueva-ruta-del-tiburon-urbano/",
+      "title_es": "Milena Quiroga reasume la alcaldía de La Paz tras el proceso interno de Morena e inaugura una nueva ruta del Tiburón Urbano",
+      "title_en": "Milena Quiroga resumes La Paz mayoralty after Morena's internal process and opens a new city bus route",
+      "blurb_es": "Milena Quiroga Romero regresó a la presidencia municipal de La Paz el 16 de octubre tras su licencia, luego de que Manuel Cota Cárdenas fuera designado coordinador estatal de la Defensa de la Transformación. Su primer acto fue arrancar la ruta Pedregal–Centro del transporte municipal Tiburón Urbano, con dos autobuses.",
+      "blurb_en": "Milena Quiroga Romero returned as La Paz mayor on 16 October after her leave, following Manuel Cota Cárdenas's appointment as Morena's state coordinator for the Defence of the Transformation. Her first act was launching the Pedregal–Centro route of the municipal Tiburón Urbano bus service, with two buses.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "los-cabos-crece-infraestructura-rezago-desarrolladores-2026-10-16",
+      "date": "2026-10-16",
+      "source": "El Mundo Digital",
+      "url": "https://elmundodigital.com.mx/los-cabos-crece-pero-su-infraestructura-no-avanza-al-mismo-ritmo-advierten-desarrolladores-turisticos/",
+      "title_es": "Desarrolladores turísticos advierten que la infraestructura de Los Cabos no crece al ritmo del destino",
+      "title_en": "Tourism developers warn Los Cabos infrastructure is not keeping pace with growth",
+      "blurb_es": "Alberto Villada Camerino, presidente de Promotores y Desarrolladores Turísticos Inmobiliarios, expuso ante el Grupo Madrugadores los retos prioritarios del municipio: abasto de agua e infraestructura hidráulica, movilidad y vialidad, capacidad eléctrica, y la actualización del Plan de Desarrollo Urbano y del Programa de Ordenamiento Ecológico. Los empresarios pidieron inversión federal en agua y luz y advirtieron que, sin respuesta, el destino podría perder viabilidad.",
+      "blurb_en": "Alberto Villada Camerino, head of the Los Cabos tourism real-estate developers' association, told the Grupo Madrugadores the municipality's priority challenges: water supply and hydraulic infrastructure, mobility and roads, power capacity, and updating the Urban Development Plan and Ecological Zoning Programme. Business leaders asked for federal investment in water and power, warning the destination could lose viability otherwise.",
+      "topics": [
+        "planning",
+        "water",
+        "energy",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "desarrolladores-los-cabos-desalacion-excedente-red-2026-10-16",
+      "date": "2026-10-16",
+      "source": "Gringo Gazette",
+      "url": "https://gringogazette.com/los-cabos-developers-pitch-own-water-to-ease-shortage/",
+      "title_es": "Desarrolladores de Los Cabos proponen desalar su propia agua y enviar el excedente a la red municipal",
+      "title_en": "Los Cabos developers pitch their own desalinated water to ease the shortage",
+      "blurb_es": "La asociación de desarrolladores turísticos inmobiliarios propone que los desarrollos con desaladora operen a plena capacidad y aporten el excedente a la red; lo planteó a Conagua, sin acuerdo formal. Su presidente estimó que los pozos aportan unos 1,100 l/s frente a un déficit cercano a 450 l/s, que persistiría aun con la segunda desaladora de Cabo San Lucas (250 l/s proyectados), y señaló la falta de acueductos y bombeo como cuello de botella. Nota basada en información de El Sudcaliforniano.",
+      "blurb_en": "The tourism real-estate developers' association proposes that developments with desalination plants run them at full capacity and feed the surplus into the municipal network; it raised the idea with Conagua, with no formal agreement. Its president estimated wells supply about 1,100 l/s against a gap of roughly 450 l/s that would persist even with Cabo San Lucas's second desalination plant (250 l/s projected), and named missing aqueducts and pumping as the bottleneck. Based on El Sudcaliforniano reporting.",
+      "topics": [
+        "water",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "simon-estacionario-435-km-cabo-san-lucas-2026-10-15",
+      "date": "2026-10-15",
+      "source": "BCS Noticias",
+      "url": "https://bcsnoticias.com/es/n/simon-estacionario-435-km-cabo-san-lucas-noroeste-2026-10-15-pm",
+      "title_es": "Simon, ya tormenta tropical, sigue estacionaria a 435 km de Cabo San Lucas y girará al noroeste",
+      "title_en": "Simon, now a tropical storm, stalls 435 km from Cabo San Lucas before turning northwest",
+      "blurb_es": "Protección Civil estatal reporta a Simon como tormenta tropical estacionaria a 435 km al sur-sureste de Cabo San Lucas, con vientos de 95 km/h. No hay vigilancia ni aviso de ciclón para BCS, pero se esperan de 25 a 50 mm de lluvia (hasta 75 mm aislados) y corrientes de arrastre hasta el sábado; el cierre de puertos a embarcaciones menores en La Paz y Los Cabos sigue sin reapertura anunciada.",
+      "blurb_en": "State Civil Protection reports Simon as a stationary tropical storm 435 km south-southeast of Cabo San Lucas, with 95 km/h winds. There is no cyclone watch or warning for BCS, but 25–50 mm of rain (isolated 75 mm) and rip currents are expected through Saturday; the small-craft port closure in La Paz and Los Cabos has no announced reopening.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "gobernador-sierra-la-laguna-no-autorizar-2026-10-15",
+      "date": "2026-10-15",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/10/15/no-vamos-a-autorizar-gobernador-rechaza-proyectos-que-danen-sierra-la-laguna/",
+      "title_es": "El gobernador afirma que no autorizará proyectos que dañen Sierra La Laguna ni otras áreas naturales protegidas",
+      "title_en": "Governor says he will not authorise projects that harm Sierra La Laguna or other protected areas",
+      "blurb_es": "Víctor Castro Cosío declaró que el Gobierno del Estado no tiene ni autorizará proyectos que afecten la Reserva de la Biosfera Sierra La Laguna, La Giganta u otras áreas protegidas. La postura llega tras meses de denuncias por vuelos de helicóptero y traslado de materiales a la parte alta de la sierra, y de proyectos turnados a evaluación ambiental ante Semarnat.",
+      "blurb_en": "Víctor Castro Cosío said the state government has no projects, and will authorise none, that harm the Sierra La Laguna Biosphere Reserve, La Giganta or other protected areas. The statement follows months of complaints about helicopter flights and materials being moved to the upper sierra, and projects under federal environmental review.",
+      "topics": [
+        "environment",
+        "planning",
+        "land_use"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        }
+      ]
+    },
+    {
+      "id": "congreso-bcs-exhorta-asipona-marina-csl-2026-10-15",
+      "date": "2026-10-15",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/congreso-bcs-marina-csl/",
+      "title_es": "El Congreso de BCS pide a ASIPONA transparentar tarifas y recursos de la Marina de Cabo San Lucas",
+      "title_en": "BCS Congress asks ASIPONA to disclose fees and revenue of the Cabo San Lucas marina",
+      "blurb_es": "El Congreso aprobó un punto de acuerdo para que la administración portuaria de Cabo San Lucas transparente sus tarifas, el estado de sus instalaciones y el destino de sus ingresos. También pide al gobernador gestionar ante la Secretaría de Marina que el puerto se concesione al Gobierno del Estado para reinvertir esos recursos en la comunidad.",
+      "blurb_en": "Congress approved a resolution asking the Cabo San Lucas port administration to disclose its fees, the state of its facilities and how its revenue is used. It also asks the governor to seek, through the Navy ministry, a concession of the port to the state government so the revenue is reinvested locally.",
+      "topics": [
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "programa-bacheo-rehabilitacion-calles-bcs-2026-10-15",
+      "date": "2026-10-15",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/avanza-programa-de-bacheo-y-rehabilitacion-de-calles-tras-lluvias-anuncia-victor-castro-en-bcs/",
+      "title_es": "Nueve brigadas retoman el bacheo en La Paz tras las lluvias; el estado destina 500 millones de pesos al año a obra pública",
+      "title_en": "Nine crews resume pothole repairs in La Paz after the rains; the state spends MXN 500 million a year on public works",
+      "blurb_es": "El gobernador reconoció un rezago amplio en vialidades tras las contingencias climáticas y dijo que nueve brigadas atienden calles secundarias y colonias prioritarias como Camino Real, La Fuente y Paraíso del Sol, además de la reconstrucción con concreto hidráulico de la calle Francisco Kim. Señaló que el estado destina 500 millones de pesos anuales a obra pública.",
+      "blurb_en": "The governor acknowledged a large road backlog after the storms and said nine crews are working on secondary streets and priority neighbourhoods such as Camino Real, La Fuente and Paraíso del Sol, plus a concrete rebuild of Francisco Kim street. He said the state spends MXN 500 million a year on public works.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "gobernador-desaladoras-comondu-semarnat-2026-10-15",
+      "date": "2026-10-15",
+      "source": "Palabra BCS",
+      "url": "https://www.palabrabcs.com/municipios/la-paz/gobernador-a-favor-de-desaladoras-siempre-y-cuando-no-danen-el-ambiente/",
+      "title_es": "El gobernador apoya las desaladoras si no dañan el ambiente; una planta privada para Comondú está en evaluación en Semarnat",
+      "title_en": "Governor backs desalination if it spares the environment; private plant for Comondú under federal review",
+      "blurb_es": "Víctor Castro Cosío se dijo a favor de instalar desaladoras en BCS siempre que no afecten el medio ambiente y confirmó el interés privado en una planta en Comondú cuya agua se destinaría a la agricultura; su manifestación de impacto ambiental, elaborada por la UABCS, está en estudio en Semarnat. También pidió acelerar las ampliaciones de desalación en Los Cabos ante la escasez.",
+      "blurb_en": "Víctor Castro Cosío said he supports desalination plants in BCS as long as they do not harm the environment, and confirmed private interest in a Comondú plant whose water would go to agriculture; its environmental impact statement, prepared by UABCS, is under Semarnat review. He also urged faster completion of desalination expansions in Los Cabos given the shortage.",
+      "topics": [
+        "water",
+        "environment"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "conagua-suspende-bombeo-acuifero-santo-domingo-2026-10-15",
+      "date": "2026-10-15",
+      "source": "Quepoca",
+      "url": "https://www.quepoca.com/articulo/actualidad/frenaran-bombeo-seis-dias-santo-domingo/20261015133314003889.html",
+      "title_es": "Conagua suspende el bombeo en el acuífero Santo Domingo del 18 al 23 de octubre para medir niveles",
+      "title_en": "Conagua halts pumping in the Santo Domingo aquifer from 18 to 23 October to measure water levels",
+      "blurb_es": "Los concesionarios del acuífero 0306 Santo Domingo, en Comondú, deben dejar de bombear del 18 al 23 de octubre mientras Conagua mide los niveles piezométricos tras las lluvias recientes. La suspensión abarca usos agrícolas, pecuarios y de servicios; los pozos de uso público urbano quedan exceptuados y el bombeo se reanuda el 24 de octubre.",
+      "blurb_en": "Concession holders in aquifer 0306 Santo Domingo, Comondú, must stop pumping from 18 to 23 October while Conagua measures groundwater levels after the recent rains. The halt covers agricultural, livestock and service uses; public urban supply wells are exempt and pumping resumes on 24 October.",
+      "topics": [
+        "water",
+        "environment"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "simon-cierre-puertos-la-paz-los-cabos-2026-10-14",
+      "date": "2026-10-14",
+      "source": "BCS Noticias",
+      "url": "https://bcsnoticias.com/es/n/huracan-simon-cierre-puertos-la-paz-los-cabos-2026-10-14",
+      "title_es": "Cierran puertos de La Paz y Los Cabos a embarcaciones menores por el huracán Simon",
+      "title_en": "La Paz and Los Cabos ports close to small craft as Hurricane Simon approaches",
+      "blurb_es": "El Consejo Estatal de Protección Civil cerró la navegación de embarcaciones menores en La Paz y Los Cabos el 14 de octubre; Simon bajó a categoría 1 a unos 400 km de Cabo San Lucas y se prevén lluvias de 25 a 50 mm (hasta 75 mm en el centro y sur) y oleaje elevado. El Consejo vuelve a sesionar el 15 de octubre.",
+      "blurb_en": "On 14 October the State Civil Protection Council closed La Paz and Los Cabos ports to small craft; Simon weakened to Category 1 about 400 km from Cabo San Lucas, with 25–50 mm of rain (up to 75 mm in the centre and south) and high surf expected. The council meets again on 15 October.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "oomsapas-la-paz-agua-tras-corte-electrico-2026-10-14",
+      "date": "2026-10-14",
+      "source": "Diario El Independiente",
+      "url": "https://www.diarioelindependiente.mx/2026/10/oomsapas-la-paz-recupera-gradualmente-el-suministro-de-agua-tras-restablecimiento-de-energia-electrica",
+      "title_es": "OOMSAPAS La Paz recupera poco a poco el agua tras el corte eléctrico en pozos de El Carrizal",
+      "title_en": "La Paz water utility gradually restores supply after power cut at El Carrizal wells",
+      "blurb_es": "Un corte de luz de unas tres horas dejó fuera de operación los pozos de San Pedro, La Trinidad y Melitón Albáñez, que abastecen a la ciudad por el acueducto El Carrizal. Con la energía restablecida, OOMSAPAS prevé recuperar el servicio de forma gradual y avisa de baja presión en una docena de colonias.",
+      "blurb_en": "A roughly three-hour power cut took the San Pedro, La Trinidad and Melitón Albáñez wells offline; they supply the city through the El Carrizal aqueduct. With power back, OOMSAPAS expects a gradual recovery and warned of low pressure in about a dozen neighbourhoods.",
+      "topics": [
+        "water",
+        "energy"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "atlas-energetico-bcs-2026-10-14",
+      "date": "2026-10-14",
+      "source": "Bitácora BCS",
+      "url": "https://bitacorabcs.mx/crean-herramienta-para-conocer-las-condiciones-energeticas-de-baja-california-sur/",
+      "title_es": "Presentan el Atlas Energético de Baja California Sur, elaborado por SEPUIMM y la UABCS",
+      "title_en": "Baja California Sur Energy Atlas presented by the state planning secretariat and UABCS",
+      "blurb_es": "La SEPUIMM y especialistas de la UABCS presentaron un atlas con datos y mapas de la red de transmisión, centrales, acceso a la electricidad, población y zonas con potencial para energías renovables. Se publicará en línea para consulta abierta cuando se aprueben los últimos detalles.",
+      "blurb_en": "The state planning secretariat (SEPUIMM) and UABCS specialists presented an atlas with data and maps of transmission lines, power plants, electricity access, population and areas with renewable-energy potential. It will be published online for open consultation once final details are approved.",
+      "topics": [
+        "energy",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        }
+      ]
+    },
+    {
+      "id": "coplade-quinto-informe-gobierno-bcs-2026-10-14",
+      "date": "2026-10-14",
+      "source": "Palabra BCS",
+      "url": "https://www.palabrabcs.com/municipios/la-paz/concluye-coplade-revision-de-avances-para-el-quinto-informe-de-gobierno-de-bcs/",
+      "title_es": "Coplade concluye la revisión de avances para el Quinto Informe de Gobierno de BCS",
+      "title_en": "State planning committee finishes reviewing results for the governor's fifth annual report",
+      "blurb_es": "Con 17 sesiones de subcomités sectoriales, el Comité de Planeación para el Desarrollo del Estado validó los resultados del 1 de septiembre de 2025 al 31 de agosto de 2026, con participación de dependencias, cámaras, colegios y sociedad civil. El Quinto Informe, alineado al Plan Estatal de Desarrollo 2021-2027, debe presentarse al Congreso a más tardar el 15 de noviembre.",
+      "blurb_en": "Over 17 sector subcommittee sessions, the state development planning committee validated results for 1 September 2025 to 31 August 2026, with agencies, business chambers, professional bodies and civil society taking part. The fifth report, aligned with the 2021–2027 State Development Plan, is due at Congress by 15 November.",
+      "topics": [
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        }
+      ]
+    },
+    {
+      "id": "apagon-delegaciones-la-paz-2026-10-13",
+      "date": "2026-10-13",
+      "source": "Peninsular Digital",
+      "url": "https://peninsulardigital.com/2026/10/13/sin-servicio-electrico-la-mayoria-de-las-delegaciones-de-la-paz/",
+      "title_es": "Sin luz la mayoría de las delegaciones de La Paz por una falla en una subestación",
+      "title_en": "Most rural districts of La Paz lose power after a substation fault",
+      "blurb_es": "Más de 13 mil usuarios de CFE en delegaciones como El Triunfo, San Antonio, Los Planes, El Carrizal y El Sargento se quedaron sin electricidad el 13 de octubre por una falla en la subestación y su línea de alimentación. Es el segundo corte del mes; el anterior duró cerca de cinco días.",
+      "blurb_en": "More than 13,000 CFE customers in La Paz rural districts such as El Triunfo, San Antonio, Los Planes, El Carrizal and El Sargento lost power on 13 October due to a fault in a substation and its feeder line. It is the second outage this month; the previous one lasted about five days.",
+      "topics": [
+        "energy"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "asipona-nuevas-tarifas-marina-cabo-san-lucas-2026-10-13",
+      "date": "2026-10-13",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/asipona-aplicara-nuevas-tarifas-en-la-marina-de-cabo-san-lucas/",
+      "title_es": "Asipona aplicará nuevas tarifas portuarias en la Marina de Cabo San Lucas",
+      "title_en": "Port authority to apply new fees at the Cabo San Lucas marina",
+      "blurb_es": "Tras su publicación en el DOF el 1 de octubre, operadores turísticos y embarcaciones pagarán nuevas cuotas por atraque, rampas, pernocta y uso del muelle 1; también hay cobros para cruceros por pasajero. Entrarán en vigor dentro de los 20 días siguientes a la publicación.",
+      "blurb_en": "Following publication in the federal gazette on 1 October, tour operators and boats will pay new fees for berthing, ramps, overnight stays and use of pier 1; cruise ships also face per-passenger charges. They take effect within 20 days of publication.",
+      "topics": [
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "congreso-bcs-contaminacion-luminica-2026-10-13",
+      "date": "2026-10-13",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/congreso-bcs-contaminacion-luminica/",
+      "title_es": "El Congreso de BCS pide a los cinco ayuntamientos reducir la contaminación lumínica",
+      "title_en": "BCS Congress urges all five municipalities to cut light pollution",
+      "blurb_es": "El exhorto aprobado propone cambiar poco a poco el alumbrado por luminarias que no iluminan hacia el cielo y de luz cálida, usar sensores y horarios, e incluir criterios de iluminación responsable en licencias de construcción y proyectos turísticos. Se destacó el potencial de Loreto para el astroturismo.",
+      "blurb_en": "The approved resolution proposes gradually replacing street lighting with shielded, warm-light fixtures, using sensors and schedules, and adding responsible-lighting criteria to building permits and tourism projects. Loreto's potential for astrotourism was highlighted.",
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ]
+    },
+    {
+      "id": "la-paz-tarifa-transporte-urbano-16-pesos-2026-10-13",
+      "date": "2026-10-13",
+      "source": "Palabra BCS",
+      "url": "https://www.palabrabcs.com/municipios/la-paz/sin-publicarse-en-la-gaceta-oficial-usuarios-dicen-que-ya-se-cobra-nueva-tarifa-de-16-en-transporte-urbano-en-la-paz/",
+      "title_es": "Usuarios de La Paz reportan el cobro de la nueva tarifa de 16 pesos en el transporte urbano antes de su publicación oficial",
+      "title_en": "La Paz riders report the new MXN 16 bus fare being charged before its official publication",
+      "blurb_es": "El Cabildo de La Paz aprobó el 6 de octubre subir el pasaje urbano de 12 a 16 pesos y a 18 pesos el suburbano hacia Chametla y El Centenario. Desde el 13 de octubre algunos choferes ya cobran la nueva tarifa, aunque aún no aparecía en la Gaceta Oficial del Ayuntamiento, requisito para que entre en vigor.",
+      "blurb_en": "La Paz council approved on 6 October raising the urban bus fare from MXN 12 to 16, and the suburban fare to Chametla and El Centenario to MXN 18. Since 13 October some drivers have been charging the new fare even though it had not yet appeared in the municipal gazette, which it needs to take effect.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "croc-plan-maestro-san-pablo-los-cabos-2026-10-12",
+      "date": "2026-10-12",
+      "source": "El Heraldo de México",
+      "url": "https://heraldodemexico.com.mx/edicion-impresa/2026/10/12/croc-pide-al-cabildo-de-los-cabos-aprobar-el-plan-maestro-de-san-pablo-con-10-mil-viviendas-906798.html",
+      "title_es": "La CROC pide al Cabildo de Los Cabos aprobar el Plan Maestro de San Pablo, con más de 10 mil viviendas",
+      "title_en": "CROC union asks Los Cabos council to approve the San Pablo master plan with over 10,000 homes",
+      "blurb_es": "El proyecto, dentro de Vivienda para el Bienestar (Infonavit), ocuparía 120 hectáreas compradas al ejido San José del Cabo, con casas de al menos 60 m² a un precio medio de unos 627 mil pesos. Falta que el Ayuntamiento lo incorpore a la planeación urbana; la CROC pide garantizar desde el inicio agua, drenaje, transporte, escuelas y salud.",
+      "blurb_en": "The project, part of the federal Vivienda para el Bienestar programme (Infonavit), would cover 120 hectares bought from the San José del Cabo ejido, with homes of at least 60 m² at an average price of about 627,000 pesos. The council still has to add it to the urban plan; CROC wants water, drainage, transport, schools and health services guaranteed from the start.",
+      "topics": [
+        "land_use",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "hoteleros-los-cabos-rechazan-aumento-dnr-2026-10-11",
+      "date": "2026-10-11",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/hoteleros-cabos-aumento-dnr/",
+      "title_es": "Hoteleros de Los Cabos rechazan el aumento al Derecho de No Residente para 2027",
+      "title_en": "Los Cabos hoteliers oppose the 2027 increase in Mexico's non-resident entry fee",
+      "blurb_es": "La Asociación de Hoteles de Los Cabos advierte que subir el DNR en 2027 encarecería los viajes familiares y restaría competitividad al destino; pone como ejemplo que una familia de cuatro pagaría unos 300 dólares solo por entrar, frente a unos 37 dólares en República Dominicana.",
+      "blurb_en": "The Los Cabos Hotel Association warns that raising the DNR non-resident fee in 2027 would make family trips more expensive and hurt the destination's competitiveness; it says a family of four would pay about USD 300 just to enter, versus about USD 37 in the Dominican Republic.",
+      "topics": [
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "simon-categoria-4-rachel-aviso-punta-eugenia-2026-10-10",
+      "date": "2026-10-10",
+      "source": "BCS Noticias",
+      "url": "https://bcsnoticias.com/es/n/huracan-simon-categoria-4-rachel-aviso-punta-eugenia-2026-10-10",
+      "title_es": "Simon llega a categoría 4 lejos de Los Cabos; Rachel mantiene aviso desde Punta Eugenia",
+      "title_en": "Simon reaches Category 4 far from Los Cabos; Rachel keeps a warning from Punta Eugenia",
+      "blurb_es": "El 10 de octubre Simon alcanzó categoría 4 frente a Colima y Jalisco; Protección Civil de Los Cabos no prevé impacto directo, pero sí oleaje, rachas y lluvias ligeras a moderadas en la costa. La tormenta tropical Rachel mantuvo un aviso en la costa del Pacífico desde Punta Eugenia (Mulegé) hasta la frontera con EE. UU.",
+      "blurb_en": "On 10 October Simon reached Category 4 off Colima and Jalisco; Los Cabos Civil Protection expected no direct hit but surf, gusts and light to moderate coastal rain. Tropical storm Rachel kept a Pacific-coast warning from Punta Eugenia (Mulegé) to the US border.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "festival-aves-los-cabos-2026-10-09",
+      "date": "2026-10-09",
+      "source": "Trend en Línea",
+      "url": "https://trend-enlinea.com.mx/arranca-el-festival-internacional-de-las-aves-en-los-cabos-habra-actividades-hasta-el-sabado/",
+      "title_es": "Arranca el Festival Internacional de las Aves en Los Cabos con enfoque en conservación y aviturismo",
+      "title_en": "Los Cabos International Bird Festival opens with conservation and birdwatching tourism focus",
+      "blurb_es": "El Segundo Festival Internacional de las Aves de Los Cabos corre del 8 al 10 de octubre (talleres y ponencias) bajo el lema «Las aves nos unen entre el mar y la sierra»; autoridades municipales y UABCS destacan ~340 especies locales y un modelo de turismo de naturaleza de bajo impacto.",
+      "blurb_en": "The Second Los Cabos International Bird Festival runs 8–10 October (workshops and talks) under the motto linking sea and sierra; municipal authorities and UABCS highlight ~340 local species and low-impact nature tourism.",
+      "topics": [
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "desaladora-matancitas-comondu-semarnat-2026-10-09",
+      "date": "2026-10-09",
+      "source": "BCS Noticias",
+      "url": "https://bcsnoticias.com/es/n/bcs-semarnat-desaladora-matancitas-comondu-permisos-ballena-2026-10-09",
+      "title_es": "El Gobierno de BCS presenta a SEMARNAT una desaladora para el ejido Matancitas, en Comondú",
+      "title_en": "BCS government presents a desalination project for Matancitas ejido, Comondú, to SEMARNAT",
+      "blurb_es": "El gobernador presentó en la Ciudad de México un proyecto de desalación con energías limpias propuesto por Grupo Arba México, cuyo estudio de impacto ambiental ya está en evaluación; no se dieron montos, capacidad ni fechas. También pidió agilizar permisos locales para observar ballena gris y nadar con tiburón ballena.",
+      "blurb_en": "In Mexico City the governor presented a clean-energy desalination project proposed by Grupo Arba México, whose environmental impact study is under review; no budget, capacity or dates were given. He also asked for faster local permits for gray-whale watching and whale-shark swimming.",
+      "topics": [
+        "water",
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "rachel-tormenta-recurva-peninsula-2026-10-08",
+      "date": "2026-10-08",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/rachel-cambia-de-rumbo-y-regresa-hacia-la-peninsula-de-baja-california-preven-que-se-acerque-el-fin-de-semana/",
+      "title_es": "Rachel cambia de rumbo y regresa hacia la península; el SMN no prevé impacto directo en BCS",
+      "title_en": "Rachel turns back toward the peninsula; SMN sees no direct BCS impact",
+      "blurb_es": "El SMN reportó el 8 de octubre que la tormenta tropical Rachel, a unos 1,470 km al oeste de Cabo San Lucas, iniciará una recurva hacia el noreste; para el sábado 10 podría situarse a unos 700 km al oeste-suroeste de Punta Eugenia y luego avanzar hacia Baja California, sin efectos directos previstos sobre BCS por la distancia.",
+      "blurb_en": "On 8 October the SMN reported tropical storm Rachel, about 1,470 km west of Cabo San Lucas, will recurve northeast; by Saturday 10 it may be ~700 km west-southwest of Punta Eugenia then move toward Baja California, with no direct BCS effects expected given the distance.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "simon-tormenta-lluvias-los-cabos-2026-10-08",
+      "date": "2026-10-08",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/tormenta-tropical-simon-lluvias-los-cabos/",
+      "title_es": "Tormenta tropical Simón: Protección Civil de Los Cabos prevé lluvias fuertes este fin de semana",
+      "title_en": "Tropical storm Simón: Los Cabos Civil Protection warns of heavy weekend rains",
+      "blurb_es": "Protección Civil de Los Cabos vigilaba el 8 de octubre a la tormenta tropical Simón, con trayectoria potencial por Jalisco–Colima–Nayarit hacia el sur de BCS; podrían llegar lluvias fuertes, vientos de 60–80 km/h y oleaje elevado desde el sábado, con mayor intensidad domingo y lunes, en una temporada reforzada por El Niño y el monzón.",
+      "blurb_en": "On 8 October Los Cabos Civil Protection was watching tropical storm Simón, with a potential track along Jalisco–Colima–Nayarit toward southern BCS; heavy rain, 60–80 km/h winds and high surf could arrive from Saturday, peaking Sunday–Monday, in a season reinforced by El Niño and the monsoon.",
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "vidrio-anp-vizcaino-lgeepa-2026-10-08",
+      "date": "2026-10-08",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/10/08/proponen-restringir-botellas-y-recipientes-de-vidrio-en-areas-naturales-protegidas/",
+      "title_es": "Congreso de BCS avala iniciativa para restringir botellas de vidrio en áreas naturales protegidas",
+      "title_en": "BCS Congress backs bid to restrict glass bottles in protected natural areas",
+      "blurb_es": "El 8 de octubre la Asamblea Legislativa de BCS avaló un punto de acuerdo de la diputada Teresita Valentín para reformar la LGEEPA: que los programas de manejo de ANP prevengan residuos y puedan restringir o prohibir recipientes de vidrio, citando contaminación en la Reserva de la Biosfera El Vizcaíno.",
+      "blurb_en": "On 8 October the BCS legislature backed Deputy Teresita Valentín's call to amend LGEEPA so ANP management programs can prevent waste and restrict or ban glass containers, citing pollution in El Vizcaíno Biosphere Reserve.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "rachel-apunta-bcs-punta-eugenia-2026-10-07",
+      "date": "2026-10-07",
+      "source": "El Momento BCS",
+      "url": "https://elmomentobcs.mx/2026/10/07/trayectoria-del-huracan-rachel-apunta-a-baja-california-sur/",
+      "title_es": "Trayectoria del huracán Rachel apunta de nuevo a Baja California Sur",
+      "title_en": "Hurricane Rachel's track points back toward Baja California Sur",
+      "blurb_es": "Tras alejarse a mar abierto, los modelos muestran una recurvatura de Rachel (categoría 1, a unos 1,085 km al oeste-suroeste de Cabo San Lucas) que podría acercarlo al Pacífico norte de BCS, cerca de Punta Eugenia, el domingo 11 de octubre, ya debilitado; Protección Civil BCS mantiene la vigilancia.",
+      "blurb_en": "After heading out to sea, models show Rachel (Category 1, about 1,085 km west-southwest of Cabo San Lucas) curving back and possibly nearing BCS's northern Pacific coast near Punta Eugenia on Sunday 11 October, already weakened; BCS Civil Protection keeps monitoring.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "rachel-oleaje-3-5m-peninsula-2026-10-07",
+      "date": "2026-10-07",
+      "source": "El Informador",
+      "url": "https://www.informador.mx/mexico/huracan-rachel-apunta-a-baja-california-sur-lo-que-debes-saber-sobre-su-cambio-de-ruta-20261007-0044.html",
+      "title_es": "Rachel cambia de ruta: el SMN prevé olas de 3 a 5 m en la península el fin de semana",
+      "title_en": "Rachel changes course: SMN expects 3–5 m waves on the peninsula this weekend",
+      "blurb_es": "El SMN y Conagua confirmaron el giro de Rachel hacia el norte y noreste; para el domingo 11 se ubicaría a unos 205 km de Punta Eugenia como posible sistema post-tropical. El riesgo principal es oleaje de 3 a 5 m y rachas de viento en las costas de la península.",
+      "blurb_en": "SMN and Conagua confirmed Rachel's turn north-northeast; by Sunday the 11th it would sit about 205 km from Punta Eugenia as a possible post-tropical system. The main risk is 3–5 m waves and wind gusts along the peninsula's coasts.",
+      "topics": [
+        "environment",
+        "water"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        }
+      ]
+    },
+    {
+      "id": "depresion-20e-oleaje-los-cabos-la-paz-2026-10-07",
+      "date": "2026-10-07",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/efectos-depresion-20-e-bcs-smn/",
+      "title_es": "Depresión Tropical 20-E podría traer oleaje y lluvias al sur de BCS",
+      "title_en": "Tropical Depression 20-E could bring high surf and rain to southern BCS",
+      "blurb_es": "El SMN vigila la Depresión Tropical 20-E, que avanzará paralela a la costa del Pacífico con oleaje de 3 a 4 m que podría propagarse hacia la península; Los Cabos y La Paz están entre las zonas con posibles efectos, sobre todo en el extremo sur.",
+      "blurb_en": "SMN is tracking Tropical Depression 20-E, moving parallel to the Pacific coast with 3–4 m waves that could spread toward the peninsula; Los Cabos and La Paz are among the areas that may see effects, mainly at the southern tip.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "blanqueamiento-corales-loreto-los-cabos-2026-10-07",
+      "date": "2026-10-07",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-provoca-blanqueamiento-del-70-de-corales-alertan-expertos/776840",
+      "title_es": "El Niño blanquea entre 60 y 70% de los corales de Loreto a Los Cabos",
+      "title_en": "El Niño bleaches 60–70% of corals from Loreto to Los Cabos",
+      "blurb_es": "Investigadores de la UABCS detectaron blanqueamiento en 60–70% de las colonias de coral entre Loreto y Los Cabos, con el mar cerca de 32 °C. Héctor Reyes Bonilla advierte que si el agua sigue caliente durante octubre habrá mucha mortalidad; las 13 especies de la región están afectadas.",
+      "blurb_en": "UABCS researchers found bleaching in 60–70% of coral colonies between Loreto and Los Cabos, with sea temperatures near 32 °C. Héctor Reyes Bonilla warns that if the water stays hot through October there will be heavy die-off; all 13 regional species are affected.",
+      "topics": [
+        "environment",
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ]
+    },
+    {
+      "id": "los-cabos-temporada-alta-ocupacion-2026-10-07",
+      "date": "2026-10-07",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/tercer-trimestre-de-este-a%C3%B1o-sera-mejor-en-ocupaci%C3%B3n-hotelera-que-2025/776982",
+      "title_es": "Hoteleros de Los Cabos esperan un último trimestre mejor que 2025",
+      "title_en": "Los Cabos hoteliers expect a stronger final quarter than 2025",
+      "blurb_es": "La Asociación de Hoteles de Los Cabos (Lilzi Orcí) prevé ocupación de 70% en octubre, 80% en noviembre y 90% en diciembre, tras meses por debajo de 2025 desde marzo; la temporada alta arranca en la segunda quincena de octubre con el Bisbee's y el Festival de Cine, aunque la inflación en EE. UU. podría cambiar las expectativas.",
+      "blurb_en": "The Los Cabos Hotel Association (Lilzi Orcí) expects 70% occupancy in October, 80% in November and 90% in December, after running below 2025 since March; high season starts in late October with the Bisbee's tournament and the Film Festival, though US inflation could shift expectations.",
+      "topics": [
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "bacheo-csl-corredor-turistico-2026-10-07",
+      "date": "2026-10-07",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/supervisa-reactivacion-bacheo-csl/",
+      "title_es": "Los Cabos reactiva bacheo masivo en Cabo San Lucas tras las lluvias",
+      "title_en": "Los Cabos restarts mass pothole repairs in Cabo San Lucas after the rains",
+      "blurb_es": "El alcalde Christian Agúndez reactivó el programa intensivo de bacheo en Cabo San Lucas por los daños de las lluvias recientes y dijo que coordina con autoridades federales la intervención del corredor turístico San José del Cabo–Cabo San Lucas, además de próximas obras de movilidad.",
+      "blurb_en": "Mayor Christian Agúndez restarted the intensive pothole programme in Cabo San Lucas after recent rain damage and said he is coordinating with federal authorities on works along the San José del Cabo–Cabo San Lucas tourist corridor, plus upcoming mobility projects.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "polo-43-viviendas-perdida-total-comondu-2026-10-07",
+      "date": "2026-10-07",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/al-menos-43-viviendas-con-p%C3%A9rdida-total-deja-polo-en-comond%C3%BA/776415",
+      "title_es": "Polo deja al menos 43 viviendas con pérdida total en Comondú",
+      "title_en": "Polo leaves at least 43 homes total loss in Comondú",
+      "blurb_es": "En Puerto Adolfo López Mateos, 11 viviendas tuvieron pérdida total y 80 daños parciales tras Polo; en Cabo San Lázaro otras 32 casas quedaron inhabitables. El Instituto de Vivienda de BCS revisa daños; la CFE restableció el servicio eléctrico de forma oportuna, según la delegada local.",
+      "blurb_en": "In Puerto Adolfo López Mateos, 11 homes were total losses and 80 partly damaged after Polo; in Cabo San Lázaro another 32 houses were uninhabitable. BCS housing institute is assessing damage; CFE restored power promptly, per the local delegate.",
+      "topics": [
+        "environment",
+        "planning",
+        "energy"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "rachel-podria-tocar-tierra-bcs-11-12-oct-2026-10-06",
+      "date": "2026-10-06",
+      "source": "El Congresista",
+      "url": "https://elcongresista.mx/politica/baja-california-sur/huracan-rachel-impacto-baja-california-sur",
+      "title_es": "Huracán Rachel podría tocar tierra en BCS entre el 11 y 12 de octubre",
+      "title_en": "Hurricane Rachel could make landfall in BCS on 11–12 October",
+      "blurb_es": "Los modelos muestran un cambio de trayectoria de Rachel (categoría 1, a unos 1,025 km al oeste-suroeste de Cabo San Lucas) hacia la península; llegaría como ciclón extratropical, con efectos sobre todo de viento y oleaje, según Protección Civil Sinaloa citando al SMN.",
+      "blurb_en": "Forecast models show Rachel (Category 1, about 1,025 km west-southwest of Cabo San Lucas) turning back toward the peninsula; it would arrive as an extratropical cyclone, mainly bringing wind and waves, per Sinaloa Civil Protection citing SMN.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "protocolo-busqueda-desastres-naturales-bcs-2026-10-06",
+      "date": "2026-10-06",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/bcs-personas-desaparecidas-desastres-naturales/",
+      "title_es": "BCS publica protocolo para buscar a personas desaparecidas tras desastres naturales",
+      "title_en": "BCS publishes protocol to search for people missing after natural disasters",
+      "blurb_es": "Publicado en el Boletín Oficial, el protocolo de la Comisión Estatal de Búsqueda coordina a los tres órdenes de gobierno para actuar más rápido tras huracanes, crecidas de arroyos e inundaciones en los cinco municipios.",
+      "blurb_en": "Published in the state Official Gazette, the State Search Commission's protocol coordinates all three levels of government to respond faster after hurricanes, flash floods and flooding across the five municipalities.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "pueblos-magicos-bcs-promocion-2026-10-06",
+      "date": "2026-10-06",
+      "source": "El Mundo Digital",
+      "url": "https://elmundodigital.com.mx/los-tres-pueblos-magicos-de-bcs-se-preparan-para-conquistar-mas-visitantes/",
+      "title_es": "Los tres Pueblos Mágicos de BCS se preparan para atraer más visitantes",
+      "title_en": "BCS's three Pueblos Mágicos gear up to attract more visitors",
+      "blurb_es": "La SETUE destaca a Todos Santos, Loreto y Santa Rosalía como motores de diversificación turística y anuncia su promoción nacional e internacional, incluido el Tianguis Turístico de Pueblos Mágicos 2026 (26–29 de noviembre, Tampico).",
+      "blurb_en": "The state tourism and economy ministry highlights Todos Santos, Loreto and Santa Rosalía as drivers of tourism diversification and plans national and international promotion, including the 2026 Pueblos Mágicos Tourism Fair (26–29 November, Tampico).",
+      "topics": [
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "todos_santos",
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "rachel-categoria-1-se-aleja-bcs-2026-10-05",
+      "date": "2026-10-05",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/rachel-categoria-1-aleja-bcs/",
+      "title_es": "Huracán Rachel baja a categoría 1 y se aleja de BCS, con oleaje de hasta 3.5 m",
+      "title_en": "Hurricane Rachel weakens to Category 1 and moves away from BCS, with waves up to 3.5 m",
+      "blurb_es": "Tras llegar a categoría 3, Rachel se degradó el 5 de octubre y se aleja mar adentro; sus bandas dejaron lluvias intensas, escurrimientos y afectaciones a la movilidad en Los Cabos, con oleaje de 2.5 a 3.5 m en la costa sur.",
+      "blurb_en": "After peaking at Category 3, Rachel weakened on 5 October and is heading out to sea; its outer bands brought heavy rain, street runoff and mobility disruption in Los Cabos, with 2.5–3.5 m waves on the southern coast.",
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "conagua-operativos-lluvias-comondu-2026-10-05",
+      "date": "2026-10-05",
+      "source": "Agua.org.mx (MVS Noticias)",
+      "url": "https://agua.org.mx/mexico-despliega-conagua-operativos-por-lluvias-en-3-estados-mvs-noticias/",
+      "title_es": "Conagua despliega operativos por lluvias; en Comondú ya desalojó casi 65 mil m³ de agua",
+      "title_en": "Conagua deploys flood operations; nearly 65,000 m³ of water already pumped out in Comondú",
+      "blurb_es": "Conagua activó seis operativos de emergencia en BCS, Tamaulipas y Veracruz tras el huracán Polo y el frente frío 1, con desalojo de agua, desazolve de drenajes y bombeo de zonas inundadas; en Comondú se han retirado casi 65 mil m³.",
+      "blurb_en": "Conagua launched six emergency operations in BCS, Tamaulipas and Veracruz after Hurricane Polo and cold front no. 1, pumping out flooded areas and clearing drains; nearly 65,000 m³ have been removed in Comondú.",
+      "topics": [
+        "water",
+        "environment"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "rachel-categoria-2-lluvias-bcs-2026-10-04",
+      "date": "2026-10-04",
+      "source": "La Razón de México",
+      "url": "https://www.razon.com.mx/mexico/2026/10/04/huracan-rachel-se-fortalece-nuevamente-a-categoria-2-preven-lluvias-muy-fuertes-en-bcs/",
+      "title_es": "Rachel se fortalece de nuevo a categoría 2; prevén lluvias muy fuertes en el sur de BCS",
+      "title_en": "Rachel strengthens again to Category 2; very heavy rain expected in southern BCS",
+      "blurb_es": "A unos 500 km al suroeste de Cabo San Lucas, Rachel mantiene lluvias puntuales muy fuertes, vientos con rachas de 50 a 70 km/h y oleaje de 3 a 4 m en BCS; se prevé que se degrade a categoría 1 el lunes y a tormenta tropical el jueves.",
+      "blurb_en": "About 500 km southwest of Cabo San Lucas, Rachel keeps very heavy localised rain, gusts of 50–70 km/h and 3–4 m waves over BCS; it is expected to weaken to Category 1 on Monday and to a tropical storm by Thursday.",
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "pvem-sobreedificacion-los-cabos-2026-10-03",
+      "date": "2026-10-03",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/el-pvem-pide-frenar-la-sobreedificacion-en-los-cabos-mediante-planes-de-desarrollo-urbano/",
+      "title_es": "PVEM pide frenar la sobreedificación en Los Cabos con planes de desarrollo urbano",
+      "title_en": "PVEM calls to curb overbuilding in Los Cabos through urban development plans",
+      "blurb_es": "Andrés Liceaga (PVEM) propone topar densidades y alturas en desarrollos turísticos, actualizar planes urbanos y vigilar las direcciones de desarrollo urbano; cita El Tezal en Cabo San Lucas, donde se estructura un Plan Parcial con consulta a ejidos, propietarios y colonos.",
+      "blurb_en": "Andrés Liceaga (PVEM) proposes caps on density and height in tourism developments, updated urban plans and oversight of urban-development offices; he cites El Tezal in Cabo San Lucas, where a partial plan is being drafted with input from ejidos, owners and residents.",
+      "topics": [
+        "planning",
+        "land_use",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "rachel-inundaciones-los-cabos-2026-10-03",
+      "date": "2026-10-03",
+      "source": "El Informador",
+      "url": "https://www.informador.mx/mexico/huracan-rachel-de-categoria-1-provoca-lluvias-fuertes-en-baja-california-sur-20261003-0093.html",
+      "title_es": "Huracán Rachel provoca inundaciones y crecidas de arroyos en Los Cabos",
+      "title_en": "Hurricane Rachel brings flooding and swollen arroyos to Los Cabos",
+      "blurb_es": "Sin trayectoria directa sobre BCS, Rachel dejó lluvias copiosas en Cabo San Lucas y San José del Cabo, con calles inundadas y arroyos crecidos; se desplegó el operativo Cruce Seguro y Servicios Públicos prepara desazolve.",
+      "blurb_en": "Without a direct track over BCS, Rachel still brought heavy rain to Cabo San Lucas and San José del Cabo, flooding streets and swelling arroyos; authorities deployed the Safe Crossing operation and public services are preparing to clear drains.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "los-cabos-ocupacion-76-octubre-2026-10-02",
+      "date": "2026-10-02",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/cabos-ocupacion-temporada-alta/",
+      "title_es": "Los Cabos proyecta 76% de ocupación hotelera en octubre, un punto más que en 2025",
+      "title_en": "Los Cabos projects 76% hotel occupancy in October, one point above 2025",
+      "blurb_es": "Con el arranque de la temporada alta, la Asociación de Hoteles de Los Cabos espera 76% de ocupación en octubre, lo que rompería la tendencia de meses por debajo de 2025 registrada desde marzo.",
+      "blurb_en": "As high season begins, the Los Cabos Hotel Association expects 76% occupancy in October, which would break the run of months below 2025 seen since March.",
+      "topics": [
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "bocana-estero-san-jose-cuenca-2026-10-02",
+      "date": "2026-10-02",
+      "source": "624 Noticias",
+      "url": "https://624noticias.com/se-abre-la-bocana-del-estero-de-san-jose-un-ciclo-natural-que-nos-invita-a-cuidar-la-cuenca/",
+      "title_es": "Se abre la bocana del Estero de San José tras Polo y Rachel; llaman a cuidar la cuenca",
+      "title_en": "San José estuary mouth opens after Polo and Rachel; call to protect the watershed",
+      "blurb_es": "La apertura natural de la bocana del Estero de San José, por el agua acumulada en la cuenca, puede afectar temporalmente playas; Los Cabos amplía su capacidad de tratamiento de aguas residuales y avanza el Plan de Regeneración del Estero.",
+      "blurb_en": "The natural opening of the San José estuary mouth, driven by water built up in the watershed, can temporarily affect beaches; Los Cabos is expanding wastewater treatment capacity and the Estuary Regeneration Plan is moving ahead.",
+      "topics": [
+        "environment",
+        "water",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "pvem-crisis-agua-mega-desaladora-2026-10-02",
+      "date": "2026-10-02",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/el-pvem-urge-atender-falta-del-agua-en-bcs-no-bastara-la-desaladora-que-se-construye-en-los-cabos/",
+      "title_es": "PVEM: no bastará la desaladora en construcción en Los Cabos; plantea una mega planta del triple de capacidad",
+      "title_en": "PVEM: the desalination plant under construction in Los Cabos won't be enough; proposes one three times larger",
+      "blurb_es": "Liceaga advierte que la crisis hídrica será el reto principal de los gobiernos que entren en 2027. La Desaladora 2 de Los Cabos terminaría el próximo año, pero propone gestionar una planta tres veces mayor, articulada con pozos calibrados para no salinizar acuíferos, e invertir en redes de distribución.",
+      "blurb_en": "Liceaga warns the water crisis will be the main challenge for governments taking office in 2027. Los Cabos' second desalination plant should finish next year, but he proposes a plant three times larger, paired with calibrated wells to avoid aquifer salinisation, plus investment in distribution networks.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "ptar-fonatur-compra-estancada-2026-10-01",
+      "date": "2026-10-01",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/compra-de-la-planta-de-tratamiento-fonatur-se-estanca-entre-deudas/775076",
+      "title_es": "Compra de la planta de tratamiento Fonatur en San José del Cabo se estanca entre deudas",
+      "title_en": "Purchase of the Fonatur wastewater plant in San José del Cabo stalls over unpaid debts",
+      "blurb_es": "La PTAR Fonatur procesa más del doble de su capacidad de diseño y el contrato de la operadora Opex Latino vence en diciembre. La compra (60 mdp entre Ayuntamiento y Estado) sigue sin cerrarse por adeudos de OOMSAPAS; el estero de San José está en riesgo y se gestionan 450 mdp en el Senado para reubicar la planta.",
+      "blurb_en": "The Fonatur wastewater plant treats more than double its design volume and operator Opex Latino's contract ends in December. The MXN 60m purchase (split between the municipality and the state) remains stuck over OOMSAPAS debts; the San José estuary is at risk, and MXN 450m is being sought in the Senate to relocate the plant.",
+      "topics": [
+        "water",
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "cfe-restablece-100-polo-2026-10-01",
+      "date": "2026-10-01",
+      "source": "Eclipse BCS",
+      "url": "https://eclipsebcs.com.mx/mision-cumplida-cfe-restablece-a-la-normalidad-el-servicio-electrico-del-100-de-los-usuarios-afectados-por-el-huracan-polo/",
+      "title_es": "CFE restablece el 100% del servicio a los usuarios afectados por el huracán Polo",
+      "title_en": "CFE restores power to 100% of customers affected by Hurricane Polo",
+      "blurb_es": "Al corte de las 23:00 h del 30 de septiembre, CFE restableció el suministro a los 110,817 usuarios afectados en Comondú, Loreto y Mulegé (BCS) y varios municipios de Sonora, tras el impacto de Polo en categoría 3.",
+      "blurb_en": "As of 11 pm on Sept 30, CFE had restored power to all 110,817 affected customers in Comondú, Loreto and Mulegé (BCS) and several Sonora municipalities after Polo struck as a Category 3 storm.",
+      "topics": [
+        "energy",
+        "environment"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "rachel-suspende-clases-los-cabos-2026-10-01",
+      "date": "2026-10-01",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/rachel-suspension-clases-cabos/",
+      "title_es": "Rachel: Protección Civil suspende clases en Los Cabos el 1 de octubre",
+      "title_en": "Rachel: Civil Protection suspends classes in Los Cabos on Oct 1",
+      "blurb_es": "Ante lluvias fuertes a intensas asociadas al huracán Rachel (categoría 1, vientos 140 km/h y ráfagas 170 km/h), el Consejo Estatal de Protección Civil suspendió labores escolares el jueves 1 de octubre en Los Cabos, todos los niveles y turnos. El SMN prevé acumulados de hasta 75 mm; se exhorta a prevenir encharcamientos e inundaciones y a vigilar cauces de arroyos urbanos.",
+      "blurb_en": "With heavy to intense rains tied to Hurricane Rachel (Category 1, 140 km/h winds and 170 km/h gusts), the State Civil Protection Council suspended school on Thursday, Oct 1 in Los Cabos for all levels and shifts. The national weather service forecasts up to 75 mm; residents were urged to prepare for flooding and watch urban arroyo channels.",
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "loreto-pavimentacion-padre-ugarte-29-7-mdp-2026-10-01",
+      "date": "2026-10-01",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/10/01/arranca-obra-de-29-7-mdp-en-el-principal-acceso-a-loreto/",
+      "title_es": "Arranca obra de 29.7 mdp en el principal acceso a Loreto",
+      "title_en": "29.7 million peso road works begin on Loreto’s main access boulevard",
+      "blurb_es": "El 1 de octubre SEPUIMM y el Ayuntamiento de Loreto iniciaron la pavimentación con concreto hidráulico del bulevar Padre Juan de Ugarte (Transpeninsular–bulevar Salvatierra), con 29.7 mdp del FOIS. La primera etapa incluye renovación integral de redes de agua potable y drenaje sanitario para entrega a OOMSAPAS Loreto, más guarniciones, banquetas, vegetación regional, alumbrado y señalamiento.",
+      "blurb_en": "On Oct 1 SEPUIMM and Loreto’s city government began hydraulic-concrete paving of Padre Juan de Ugarte boulevard (Transpeninsular–Salvatierra), funded with 29.7 million pesos from FOIS. Phase one also renews potable-water and sewer networks for handover to OOMSAPAS Loreto, plus curbs, sidewalks, regional landscaping, lighting and signage.",
+      "topics": [
+        "planning",
+        "water",
+        "tourism"
+      ],
+      "place_ids": [
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ]
+    },
+    {
+      "id": "rachel-categoria-2-sur-cabos-mar-abierto-2026-10-01",
+      "date": "2026-10-01",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/rachel-ya-es-huracan-categoria-2-y-se-ubica-al-sur-de-los-cabos-mantiene-trayectoria-hacia-mar-abierto/",
+      "title_es": "Rachel ya es huracán categoría 2 al sur de Los Cabos; mantiene trayectoria a mar abierto",
+      "title_en": "Rachel strengthens to Category 2 south of Los Cabos; track keeps it over open ocean",
+      "blurb_es": "El 1 de octubre el SMN/CONAGUA y el NHC reportaron a Rachel como huracán categoría 2 (~155 km/h) a unos 395 km al sur de Cabo San Lucas, con desplazamiento oeste-noroeste hacia aguas abiertas. No hay trayectoria prevista de impacto directo en BCS, aunque se vigilan efectos indirectos y una nueva baja con 70% de probabilidad de desarrollo en siete días.",
+      "blurb_en": "On Oct 1 Mexico’s weather service and the NHC reported Rachel as a Category 2 hurricane (~155 km/h) about 395 km south of Cabo San Lucas, moving west-northwest over open Pacific waters. No direct landfall on BCS is forecast, though indirect effects are watched and a new low has a 70% seven-day chance of development.",
+      "topics": [
+        "environment",
+        "tourism",
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "rachel-cat1-sur-cabo-san-lucas-2026-09-30",
+      "date": "2026-09-30",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/rachel-huracan-sur-cabos-san-lucas/",
+      "title_es": "Huracán Rachel categoría 1 se ubica al sur-sureste de Cabo San Lucas",
+      "title_en": "Category 1 Hurricane Rachel sits south-southeast of Cabo San Lucas",
+      "blurb_es": "El 30 de septiembre a las 15:00 h (Centro), el SMN localizó a Rachel a ~495 km al sur-sureste de Cabo San Lucas y ~300 km al suroeste de Cabo Corrientes, con vientos sostenidos de 140 km/h. Pronostica lluvias fuertes en el sur de BCS, oleaje de 3–5 m en la punta peninsular, e intensificación a categoría 3 el 1 de octubre ~370 km al sur-sureste de Cabo San Lucas, bordeando la península el fin de semana.",
+      "blurb_en": "On Sept 30 at 15:00 Central time, Mexico’s weather service placed Rachel about 495 km south-southeast of Cabo San Lucas and 300 km southwest of Cabo Corrientes, with 140 km/h sustained winds. It forecasts heavy rain in southern BCS, 3–5 m seas at the peninsula tip, and intensification to Category 3 on Oct 1 about 370 km south-southeast of Cabo San Lucas while skirting the peninsula over the weekend.",
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "polo-retiran-agua-caminos-comondu-mulege-2026-09-30",
+      "date": "2026-09-30",
+      "source": "El Universal",
+      "url": "https://www.eluniversal.com.mx/estados/retiran-agua-y-rehabilitan-caminos-en-comunidades-afectadas-por-polo-en-bcs-despliegan-brigada-de-200-personas/",
+      "title_es": "Tras Polo, retiran agua y rehabilitan caminos en Comondú y Mulegé; brigada de 200 en Heroica Mulegé",
+      "title_en": "After Polo, crews drain floodwater and repair roads in Comondú and Mulegé; 200-person brigade in Heroica Mulegé",
+      "blurb_es": "El 30 de septiembre autoridades reabrieron la Transpeninsular tras un corte en el km 145 (San Bruno–Palo Verde) con paso provisional. En Puerto San Carlos siguen el bombeo con Conagua; la JEC rellena socavones en Francisco Villa–San Miguel de Comondú. En Mulegé desplegaron ~200 personas para limpieza tras Polo y un incendio; el gobernador anunció empleo temporal para recuperación.",
+      "blurb_en": "On Sept 30 authorities reopened the Transpeninsular after a cut at km 145 (San Bruno–Palo Verde) via a temporary lane. Pumping continues in Puerto San Carlos with Conagua; the state roads board is filling washouts on Francisco Villa–San Miguel de Comondú. Mulegé deployed about 200 people for cleanup after Polo and a fire; the governor announced temporary employment for recovery work.",
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "cfe-restablece-11k-usuarios-polo-2026-09-30",
+      "date": "2026-09-30",
+      "source": "Luz Noticias",
+      "url": "https://www.luznoticias.mx/2026-09-30/mexico/cfe-restablece-la-luz-a-11-mil-usuarios-tras-polo-cuantos-siguen-sin-servicio-en-bcs-y-sonora/307538",
+      "title_es": "CFE restablece luz a 11,488 usuarios tras Polo; 9,562 siguen sin servicio en BCS y Sonora",
+      "title_en": "CFE restores power to 11,488 users after Polo; 9,562 still without service in BCS and Sonora",
+      "blurb_es": "Al corte del 29 de septiembre (07:00 h), CFE reportó 21,050 usuarios afectados en Comondú, Loreto, Mulegé y Guaymas; ya había restablecido 11,488 (56.96%) y quedaban 9,562. Daños: 20 postes de media tensión, 14 circuitos (2 al 100%, 6 parciales). Operativo: 1,335 electricistas; en BCS concentraron 610 trabajadores desde el 20 de septiembre de forma preventiva.",
+      "blurb_en": "As of Sept 29 07:00, CFE reported 21,050 customers affected in Comondú, Loreto, Mulegé and Guaymas; 11,488 (56.96%) were restored and 9,562 remained offline. Damage included 20 medium-voltage poles and 14 circuits (2 fully restored, 6 partial). Deployment: 1,335 line workers; BCS had staged 610 staff preventively since Sept 20.",
+      "topics": [
+        "energy",
+        "environment"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "rachel-cierre-puertos-csl-sjc-2026-09-30",
+      "date": "2026-09-30",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/rachel-puertos/",
+      "title_es": "Cierran puertos de Cabo San Lucas y San José del Cabo a navegación menor por Rachel",
+      "title_en": "Cabo San Lucas and San José del Cabo ports closed to small craft for Hurricane Rachel",
+      "blurb_es": "El 30 de septiembre SEMAR ordenó el cierre preventivo de los puertos de Cabo San Lucas y San José del Cabo para embarcaciones menores ante oleaje y rachas por el huracán Rachel. Queda prohibida la salida de pesca deportiva, paseos recreativos y lanchas de fondo de cristal; la reapertura dependerá de que bajen el oleaje y las condiciones de seguridad.",
+      "blurb_en": "On Sept 30 Mexico’s Navy ordered a preventive closure of Cabo San Lucas and San José del Cabo ports to small craft amid swell and wind from Hurricane Rachel. Sport fishing, recreational trips and glass-bottom boats were barred; reopening depends on safer sea conditions.",
+      "topics": [
+        "tourism",
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "polo-recuperacion-cfe-20k-carreteras-2026-09-29",
+      "date": "2026-09-29",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/bcs-recuperacion-tras-polo/",
+      "title_es": "Tras Polo, BCS inicia labores de recuperación: CFE atiende a 20 mil usuarios y limpian la Transpeninsular",
+      "title_en": "After Polo, BCS begins recovery: CFE serves 20,000 users and clears the Transpeninsular Highway",
+      "blurb_es": "El 29 de septiembre el Consejo Estatal de Protección Civil reportó saldo blanco con daños menores; la CFE indicó ~20 mil usuarios sin luz (4.9% del estado), concentrados en Mulegé, Loreto y Comondú, con 20 postes caídos y meta de restablecer el 100% ese día. Conagua midió hasta 175 mm en Guadalupe de la Sierra (Mulegé); SICT atiende derrumbes en tramos Insurgentes–Loreto y Loreto–Santa Rosalía. Clases y labores de gobierno se reanudan el 30 de septiembre.",
+      "blurb_en": "On Sept 29 the State Civil Protection Council reported no fatalities with minor damage; CFE said about 20,000 customers lost power (4.9% statewide), mainly in Mulegé, Loreto and Comondú, with 20 fallen medium-voltage poles and a same-day full-restoration goal. Conagua recorded up to 175 mm at Guadalupe de la Sierra (Mulegé); SICT is clearing rockslides on Insurgentes–Loreto and Loreto–Santa Rosalía segments. Classes and government work resume Sept 30.",
+      "topics": [
+        "energy",
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "polo-saldo-blanco-700-albergues-2026-09-29",
+      "date": "2026-09-29",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/huracan-polo-saldo-blanco-bcs/",
+      "title_es": "Huracán Polo deja saldo blanco en BCS tras impactar como categoría 2 en Comondú",
+      "title_en": "Hurricane Polo leaves BCS with no fatalities after Category 2 landfall in Comondú",
+      "blurb_es": "En la mañanera del 29 de septiembre, el gobernador Víctor Castro Cosío y la coordinadora nacional de Protección Civil Laura Velázquez Alzúa informaron saldo blanco en Comondú, Loreto y Mulegé tras el impacto cerca de Las Barrancas ~00:00 como categoría 2. Unas 700 personas se resguardaron en albergues; reportaron encharcamientos, escurrimientos y árboles caídos, con ~6,827 servidores públicos en el operativo.",
+      "blurb_en": "In the Sept 29 morning briefing, Governor Víctor Castro Cosío and national Civil Protection coordinator Laura Velázquez Alzúa reported no fatalities in Comondú, Loreto and Mulegé after landfall near Las Barrancas around midnight as Category 2. About 700 people used shelters; flooding, runoff and fallen trees were noted, with roughly 6,827 public servants in the response.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "polo-vuelve-clases-recuperacion-continua-2026-09-29",
+      "date": "2026-09-29",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/29/saldo-blanco-y-bcs-vuelve-a-clases-pero-recuperacion-continua/",
+      "title_es": "Saldo blanco y BCS vuelve a clases, pero recuperación eléctrica y vial continúa",
+      "title_en": "No fatalities and BCS returns to class, but power and road recovery continue",
+      "blurb_es": "El Consejo Estatal de Protección Civil aprobó el 29 de septiembre reabrir clases y labores de gobierno el 30, mientras la CFE seguía restableciendo al 57% de ~20 mil usuarios afectados y SICT limpiaba derrumbes en la Transpeninsular. Conagua apoya con potabilizadora y pipas en Ciudad Constitución y generador preventivo en un hospital de Loreto; persiste riesgo de nuevos desprendimientos por suelos saturados.",
+      "blurb_en": "On Sept 29 the State Civil Protection Council approved resuming school and government work on the 30th, while CFE was still restoring power for 57% of about 20,000 affected customers and SICT cleared rockslides on the Transpeninsular. Conagua supports with a treatment plant and tankers in Ciudad Constitución and a preventive generator at a Loreto hospital; saturated slopes keep landslide risk elevated.",
+      "topics": [
+        "energy",
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "polo-saldo-blanco-infobae-gobernador-2026-09-29",
+      "date": "2026-09-29",
+      "source": "Infobae",
+      "url": "https://www.infobae.com/mexico/2026/09/29/huracan-polo-deja-saldo-blanco-a-su-paso-por-baja-california-sur-reporta-el-gobernador-victor-manuel/",
+      "title_es": "Huracán Polo deja saldo blanco en BCS, reporta el gobernador Víctor Castro",
+      "title_en": "Hurricane Polo leaves BCS with no fatalities, Governor Víctor Castro reports",
+      "blurb_es": "Infobae resume el informe del 29 de septiembre: Castro Cosío reportó saldo blanco (sin víctimas) en Comondú, Loreto y Mulegé; Velázquez Alzúa situó el impacto categoría 2 cerca de Las Barrancas ~00:00 y, a las 06:00, el centro a ~105 km de Loreto y ~145 km de Guaymas. Unas 700 personas usaron refugios; el gobernador aclaró que daños materiales se evaluarían ese mismo día.",
+      "blurb_en": "Infobae summarizes the Sept 29 briefing: Castro Cosío reported no fatalities in Comondú, Loreto and Mulegé; Velázquez Alzúa placed Category 2 landfall near Las Barrancas around midnight and, at 6 a.m., the center about 105 km from Loreto and 145 km from Guaymas. About 700 people used shelters; the governor said material damage would be assessed that day.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "polo-rompe-bordo-puerto-san-carlos-evacuan-400-2026-09-28",
+      "date": "2026-09-28",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/huracan-polo-rompe-bordo-de-proteccion-en-puerto/",
+      "title_es": "Huracán Polo rompe bordo de protección en Puerto San Carlos; evacúan a 400 personas",
+      "title_en": "Hurricane Polo breaches Puerto San Carlos protective berm; about 400 people evacuated",
+      "blurb_es": "El 28 de septiembre, marejadas asociadas a Polo colapsaron un tramo del bordo en Puerto San Carlos (Comondú), inundaron viviendas en zonas bajas y obligaron a evacuar a unas 400 personas hacia refugios en la región y Ciudad Constitución; el alcalde Roberto Pantoja confirma maquinaria lista para reforzar cuando lo permitan las condiciones.",
+      "blurb_en": "On Sept 28, storm surge from Polo collapsed a section of the protective berm in Puerto San Carlos (Comondú), flooded low-lying homes, and forced about 400 people into shelters in the area and Ciudad Constitución; Mayor Roberto Pantoja said equipment is ready to reinforce once conditions allow.",
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "polo-loreto-7-albergues-suspenden-comercios-2026-09-28",
+      "date": "2026-09-28",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/activan-7-albergues-y-suspenden-comercios-en-loreto-por-la-llegada-del-huracan-polo-paz-del-alma-ochoa-amador/",
+      "title_es": "Activan 7 albergues y suspenden comercios en Loreto por la llegada del huracán Polo",
+      "title_en": "Loreto opens 7 shelters and suspends commerce as Hurricane Polo approaches",
+      "blurb_es": "La alcaldesa Paz del Alma Ochoa Amador informó el 28 de septiembre la apertura de siete refugios (de Agua Verde a San Nicolás), cese de comercios desde las 15:00 y refuerzo con ~60 elementos de Marina y 30 de Defensa; también se protegieron pozos del acueducto de San Juan Londo y se trasladaron pacientes a Comondú y La Paz.",
+      "blurb_en": "On Sept 28 Mayor Paz del Alma Ochoa Amador reported seven shelters open (Agua Verde to San Nicolás), commerce suspended from 3 p.m., and reinforcement with about 60 Navy and 30 Defense personnel; San Juan Londo aqueduct wells were to be protected and patients moved to Comondú and La Paz.",
+      "topics": [
+        "environment",
+        "tourism",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "la_paz",
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "polo-plan-dn-iii-e-1689-elementos-comondu-2026-09-28",
+      "date": "2026-09-28",
+      "source": "Impacto Noticias",
+      "url": "https://impactonoticias.com.mx/mexico/activan-plan-dn-iii-e-en-baja-california-sur-por-huracan-polo-evacuan-a-familias/",
+      "title_es": "Activan Plan DN-III-E en BCS por huracán Polo; 1,689 elementos con foco en Comondú",
+      "title_en": "Plan DN-III-E activated in BCS for Hurricane Polo; 1,689 personnel focused on Comondú",
+      "blurb_es": "El 28 de septiembre, Ejército, Fuerza Aérea y Guardia Nacional mantienen el Plan DN-III-E con 1,689 elementos en BCS (más 500 en Tijuana como refuerzo), perifoneo preventivo y evacuación de 22 personas del campo pesquero San Buto hacia Ciudad Constitución; cuentan con 44 vehículos y tres unidades de maquinaria pesada.",
+      "blurb_en": "On Sept 28 the Army, Air Force and National Guard kept Plan DN-III-E active with 1,689 personnel in BCS (plus 500 in Tijuana as backup), preventive outreach, and evacuation of 22 people from the San Buto fishing camp to Ciudad Constitución; 44 vehicles and three heavy-equipment units support the response.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "polo-impacto-suspenden-movilidad-norte-bcs-78-evacuados-2026-09-28",
+      "date": "2026-09-28",
+      "source": "NTCD",
+      "url": "https://ntcd.mx/noticias-huracan-polo-impactara-hoy-baja-california-sur-suspenden-movilidad",
+      "title_es": "Polo (Cat. 3) impacta BCS; suspenden movilidad en el norte y reportan 78 evacuados",
+      "title_en": "Cat. 3 Polo hits BCS; northern mobility halted and 78 people reported evacuated",
+      "blurb_es": "CNPC (Laura Velázquez) anticipó el 28 de septiembre impacto Cat. 2–3 en la tarde en BCS con segundo paso en Sonora el martes; desde las 14:00 se suspendió la movilidad en municipios del norte, con 78 evacuados preventivos en Ciudad Constitución y alerta de posibles cortes eléctricos e internet mientras CFE se posiciona para restablecer servicio.",
+      "blurb_en": "On Sept 28 CNPC’s Laura Velázquez forecast afternoon Cat. 2–3 landfall in BCS and a second hit in Sonora on Tuesday; mobility in northern municipalities was halted from 2 p.m., with 78 preventive evacuees in Ciudad Constitución and warnings of possible power and internet outages as CFE staged crews to restore service.",
+      "topics": [
+        "environment",
+        "energy",
+        "planning"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "polo-toca-tierra-comondu-avanza-sonora-2026-09-28",
+      "date": "2026-09-28",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/huracan-polo-toca-tierra-comondu-sonora/",
+      "title_es": "Huracán Polo toca tierra en Comondú y avanza hacia Sonora",
+      "title_en": "Hurricane Polo makes landfall in Comondú and tracks toward Sonora",
+      "blurb_es": "El 28 de septiembre el SMN reportó el impacto de Polo en la costa occidental de Comondú con vientos sostenidos superiores a 180 km/h, marejada en Puerto San Carlos y lluvias torrenciales estimadas de 150–250 mm en Comondú, Loreto y Mulegé. Tras cruzar la península se proyectaba un segundo impacto en el litoral sonorense (Guaymas–Bahía de Kino). Marina, Defensa y Guardia Nacional mantenían planes de auxilio en La Ballena, San Juanico, Las Barrancas y Puerto San Carlos.",
+      "blurb_en": "On Sept 28 Mexico’s weather service reported Polo landfall on Comondú’s Pacific coast with sustained winds over 180 km/h, surge at Puerto San Carlos, and torrential rains estimated at 150–250 mm in Comondú, Loreto and Mulegé. After crossing the peninsula a second landfall was projected on Sonora’s coast (Guaymas–Bahía de Kino). Navy, Defense and National Guard kept aid plans active in La Ballena, San Juanico, Las Barrancas and Puerto San Carlos.",
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "polo-coordinan-acciones-comondu-loreto-mulege-2026-09-27",
+      "date": "2026-09-27",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/coordinan-acciones-en-bcs-ante-inminente/",
+      "title_es": "Coordinan acciones en BCS ante inminente impacto del huracán Polo en Comondú, Loreto y Mulegé",
+      "title_en": "BCS coordinates response as Hurricane Polo nears landfall in Comondú, Loreto and Mulegé",
+      "blurb_es": "Tras sesión del Consejo Estatal de Protección Civil el 27 de septiembre, CNPC y gobierno estatal activan protocolos; SMN prevé impacto Cat. 1–2 en costa de Comondú hacia Loreto y sur de Mulegé, con 150–250 mm de lluvia y oleaje de hasta 10 m.",
+      "blurb_en": "After the Sept 27 State Civil Protection Council session, CNPC and the state government activated protocols; SMN forecasts Cat. 1–2 landfall on the Comondú coast toward Loreto and southern Mulegé, with 150–250 mm rain and swells up to 10 m.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "polo-plan-marina-2923-elementos-2026-09-27",
+      "date": "2026-09-27",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/plan-marina-baja-california-sur-huracan-polo/",
+      "title_es": "Despliegan Plan Marina en BCS con 2,923 elementos y 111 refugios por el huracán Polo",
+      "title_en": "Navy deploys Plan Marina in BCS with 2,923 personnel and 111 shelters for Hurricane Polo",
+      "blurb_es": "SEMAR moviliza buque Isla Tiburón, helicóptero MI-17 e insumos; habilitan 111 refugios con capacidad para más de 14 mil personas y monitorean puertos en los cinco municipios.",
+      "blurb_en": "SEMAR mobilized the Isla Tiburón support ship, an MI-17 helicopter and supplies; 111 shelters for more than 14,000 people are ready, with port monitoring across all five municipalities.",
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        }
+      ]
+    },
+    {
+      "id": "polo-weakens-cat3-beaches-ports-closed-2026-09-27",
+      "date": "2026-09-27",
+      "source": "Gringo Gazette",
+      "url": "https://gringogazette.com/polo-weakens-to-cat-3-beaches-ports-stay-closed/",
+      "title_es": "Polo se debilita a categoría 3; playas y puertos de BCS siguen cerrados",
+      "title_en": "Polo weakens to Cat. 3; BCS beaches and ports stay closed",
+      "blurb_es": "Aunque Polo bajó de Cat. 4 a 3, Los Cabos mantiene bandera negra en todas las playas y SEMAR mantiene cierre a navegación menor en CSL, SJD, San Carlos, Bahía Magdalena y Loreto por oleaje de 2.5–3.5 m.",
+      "blurb_en": "Despite a drop from Cat. 4 to 3, Los Cabos keeps black flags on every beach and SEMAR keeps small-craft closures at CSL, SJD, San Carlos, Bahía Magdalena and Loreto amid 8–11 ft swell.",
+      "topics": [
+        "tourism",
+        "environment"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ]
+    },
+    {
+      "id": "polo-puertos-cerrados-semar-2026-09-26",
+      "date": "2026-09-26",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/continuan-puertos-cerrados-bcs-polo/",
+      "title_es": "Continúan puertos cerrados en BCS por la amenaza del huracán Polo",
+      "title_en": "BCS ports remain closed under Hurricane Polo threat",
+      "blurb_es": "SEMAR cierra navegación menor en Cabo San Lucas, Los Cabos, San Carlos, Bahía Magdalena y Loreto; activa fase preventiva del Plan Marina con más de 1,400 elementos y buques de apoyo con plantas potabilizadoras.",
+      "blurb_en": "SEMAR closed small-craft navigation at Cabo San Lucas, Los Cabos, San Carlos, Bahía Magdalena and Loreto; Plan Marina’s preventive phase deploys 1,400+ personnel and support ships carrying water-treatment gear.",
+      "topics": [
+        "tourism",
+        "environment",
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ]
+    },
+    {
+      "id": "polo-impacto-cat2-lunes-centro-bcs-2026-09-26",
+      "date": "2026-09-26",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/el-huracan-polo-impactara-la-porcion-central-de-baja-california-sur-este-lunes-a-las-1800-horas-como-categoria-2/",
+      "title_es": "Huracán Polo impactará el centro de BCS el lunes como categoría 2",
+      "title_en": "Hurricane Polo to hit central BCS Monday as Category 2",
+      "blurb_es": "Protección Civil prevé tocada de tierra ~18:00 del lunes en porción central (Comondú–Loreto), vientos 154–177 km/h; Los Cabos y La Paz sin vientos de tormenta tropical pero con oleaje de 3–5 m y hasta 10 m frente a Puerto San Carlos.",
+      "blurb_en": "Civil Protection forecasts ~18:00 Monday landfall in central BCS (Comondú–Loreto) with 154–177 km/h winds; Los Cabos and La Paz spared tropical-storm winds but face 3–5 m swell and up to 10 m offshore Puerto San Carlos.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "polo-lluvias-250mm-oleaje-10m-2026-09-26",
+      "date": "2026-09-26",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/26/polo-podria-impactar-bcs-como-huracan-de-categoria-1-o-2-preven-lluvias-torrenciales-y-oleaje-de-10-metros/",
+      "title_es": "Polo podría impactar BCS como Cat. 1 o 2; prevén lluvias torrenciales y oleaje de 10 metros",
+      "title_en": "Polo may hit BCS as Cat. 1–2; torrential rains and 10-meter swells forecast",
+      "blurb_es": "SMN estima 150–250 mm en 24 h en zona de ingreso, vigilancia Conagua sobre seis presas sudcalifornianas y 169 refugios en BCS; advierten avenidas repentinas en arroyos y marea de tormenta de 1–1.5 m.",
+      "blurb_en": "SMN estimates 150–250 mm in 24 h near landfall; Conagua is watching six BCS dams and 169 state shelters; flash floods in dry arroyos and 1–1.5 m storm surge are key risks.",
+      "topics": [
+        "environment",
+        "water",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        }
+      ]
+    },
+    {
+      "id": "polo-evacuacion-chicharron-loreto-2026-09-26",
+      "date": "2026-09-26",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/26/preparan-evacuacion-de-el-chicharron-y-evaluan-traslados-en-loreto-ante-huracan-polo/",
+      "title_es": "Preparan evacuación de El Chicharrón y evalúan traslados en Loreto ante Polo",
+      "title_en": "Comondú prepares El Chicharrón evacuation; Loreto weighs rural transfers ahead of Polo",
+      "blurb_es": "Comondú organiza salida anticipada de El Chicharrón por viviendas vulnerables; Loreto evalúa trasladar adultos mayores de San Juan Londó y familias de San Juaniquito ante Sierra de la Giganta saturada de humedad.",
+      "blurb_en": "Comondú is organizing early evacuation of El Chicharrón due to vulnerable housing; Loreto is weighing transfers of elders from San Juan Londó and families from San Juaniquito as Sierra de la Giganta soils stay saturated.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "polo-desazolve-calles-la-paz-2026-09-25",
+      "date": "2026-09-25",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/25/refuerzan-calles-y-desazolves-en-la-paz-ante-llegada-de-polo/",
+      "title_es": "Refuerzan calles y desazolves en La Paz ante llegada de Polo",
+      "title_en": "La Paz reinforces streets and storm-drain clearing ahead of Polo",
+      "blurb_es": "Servicios Públicos niveló 13.4 km de vialidades, atendió 593 baches, hizo desazolves prioritarios y retiró 170 toneladas de basura y ramas para favorecer escurrimiento ante lluvias de Polo.",
+      "blurb_en": "Municipal Public Works leveled 13.4 km of streets, filled 593 potholes, cleared priority drains and removed 170 tons of debris to improve runoff ahead of Polo’s rains.",
+      "topics": [
+        "planning",
+        "environment"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "polo-suspenden-clases-bcs-2026-09-25",
+      "date": "2026-09-25",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/25/suspenden-clases-en-todo-bcs-este-lunes-por-polo/",
+      "title_es": "Suspenden clases en todo BCS el lunes por huracán Polo",
+      "title_en": "School suspended statewide in BCS Monday for Hurricane Polo",
+      "blurb_es": "Consejo Estatal suspende clases el 28 de septiembre en los cinco municipios y turnos; también cancela el festival El Maíz Nos Une en Los Cabos y despliega maquinaria hacia Comondú y Mulegé.",
+      "blurb_en": "State Council suspended classes on Sept 28 across all five municipalities and shifts; also canceled Los Cabos’ El Maíz Nos Une festival and deployed machinery toward Comondú and Mulegé.",
+      "topics": [
+        "planning",
+        "tourism",
+        "environment"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "oomsapas-pipas-brisas-pacifico-d1-2026-09-25",
+      "date": "2026-09-25",
+      "source": "El Mundo Digital",
+      "url": "https://elmundodigital.com.mx/oomsapas-activa-apoyo-emergente-por-falta-de-agua/",
+      "title_es": "OOMSAPAS activa apoyo emergente con pipas por ajustes en Desaladora 1 (Brisas del Pacífico)",
+      "title_en": "OOMSAPAS deploys emergency tanker support after Desaladora 1 calibration cuts (Brisas del Pacífico)",
+      "blurb_es": "El 25 de septiembre OOMSAPAS Los Cabos informó un programa emergente de pipas gratuitas en colonias alimentadas por la Desaladora 1 de Cabo San Lucas tras calibraciones que redujeron el caudal inyectado a la red. Ese día atendieron Brisas del Pacífico con unas 20 pipas (~cinco viajes c/u); el apoyo no sustituye el tandeo diario publicado por el organismo.",
+      "blurb_en": "On Sept 25 OOMSAPAS Los Cabos announced free emergency tankers for neighborhoods fed by Cabo San Lucas Desaladora 1 after technical calibrations cut the flow into the distribution network. That day Brisas del Pacífico received about 20 tankers (~five trips each); the program does not replace the agency’s published daily rationing schedule.",
+      "topics": [
+        "water",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "oomsapas-tandeo-desaladora1-ajustes-2026-09-24",
+      "date": "2026-09-24",
+      "source": "Análisis Periodísticos B.C.S.",
+      "url": "https://analisisbcs.com.mx/2026/09/24/oomsapas-los-cabos-implementa-programa-emergente-de-tandeo-por-ajustes-en-desaladora-1/",
+      "title_es": "OOMSAPAS Los Cabos activa tandeo emergente por ajustes en Desaladora 1",
+      "title_en": "OOMSAPAS Los Cabos launches emergency water rationing after Desal Plant 1 adjustments",
+      "blurb_es": "Calibraciones redujeron caudal hacia Cabo San Lucas; programa escalonado del 24–28 de septiembre (Las Palmas, Lomas del Valle, Los Cangrejos II, Hojazen) mientras reparan codo de acero del acueducto.",
+      "blurb_en": "Technical calibrations cut flow into Cabo San Lucas; a staggered Sept 24–28 schedule covers Las Palmas, Lomas del Valle, Los Cangrejos II and Hojazen while crews repair a steel elbow on the aqueduct.",
+      "topics": [
+        "water",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "fondo-climatico-bcs-2026-09-24",
+      "date": "2026-09-24",
+      "source": "Gringo Gazette",
+      "url": "https://gringogazette.com/bcs-creates-first-climate-fund-to-finance-environmental-projects/",
+      "title_es": "BCS lanza su primer fondo climático para financiar proyectos ambientales",
+      "title_en": "BCS creates first climate fund to finance environmental projects",
+      "blurb_es": "Nace del marco de la Ley Estatal de Cambio Climático: reforestación nativa, protección de acuíferos, infiltración de lluvia y vigilancia de ANP; se analiza destinar parte del impuesto turístico.",
+      "blurb_en": "Born from the State Climate Change Law: native reforestation, aquifer protection, rainwater infiltration, and ANP monitoring; tourist-tax earmark under study.",
+      "topics": [
+        "environment",
+        "planning",
+        "water",
+        "tourism"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        }
+      ]
+    },
+    {
+      "id": "huracan-polo-consejo-estatal-alerta-2026-09-24",
+      "date": "2026-09-24",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/huracan-polo-bcs-alerta-lluvias-impacto/",
+      "title_es": "Consejo Estatal de Protección Civil en alerta por posible impacto del huracán Polo",
+      "title_en": "State Civil Protection Council on alert for possible Hurricane Polo impacts",
+      "blurb_es": "SMN estima acercamiento 28–29 sep; lluvias desde el 25 en Los Cabos y La Paz (75–150 mm posibles). Activan Plan DN-III-E, Plan Marina y brigadas CONAGUA en los cinco municipios.",
+      "blurb_en": "SMN sees approach window Sep 28–29; rains from the 25th in Los Cabos and La Paz (possible 75–150 mm). DN-III-E, Plan Marina, and CONAGUA brigades active statewide.",
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "aguas-negras-ampliacion-olachea-2026-09-24",
+      "date": "2026-09-24",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/fuga-de-aguas-negras-en-ampliacion-agustin-olachea/",
+      "title_es": "Fuga de aguas negras inunda casas y canchas en Ampliación Agustín Olachea, La Paz",
+      "title_en": "Sewage leak floods homes and sports fields in Ampliación Agustín Olachea, La Paz",
+      "blurb_es": "Vecinos reportan más de un mes de desbordes de drenaje hacia viviendas y espacios públicos; critican desazolves temporales de SAPA y piden reparar el tramo colapsado.",
+      "blurb_en": "Residents report over a month of sewer overflows into homes and public spaces; they criticize temporary SAPA clearing and demand a permanent repair of the collapsed stretch.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "huracan-polo-vigilancia-la-paz-2026-09-23",
+      "date": "2026-09-23",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/23/huracan-polo-sigue-bajo-vigilancia-en-la-paz/",
+      "title_es": "Huracán Polo sigue bajo vigilancia en La Paz",
+      "title_en": "Hurricane Polo remains under watch in La Paz",
+      "blurb_es": "Protección Civil municipal mantiene Operativo Huracanes 2026: Polo aún categoría 4 y alejado, pero con trayectoria lenta/errática; activo Cruce Seguro en arroyos.",
+      "blurb_en": "Municipal Civil Protection keeps Hurricane Ops 2026 active: Polo still Category 4 and offshore, but slow/erratic; Safe Crossing watch on arroyos.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "la-paz-2mil-toneladas-operativo-huracanes-2026-09-23",
+      "date": "2026-09-23",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/23/retiran-mas-de-2-mil-toneladas-de-residuos-para-prevenir-inundaciones-en-la-paz/",
+      "title_es": "Retiran más de 2 mil toneladas de residuos para prevenir inundaciones en La Paz",
+      "title_en": "La Paz removes over 2,000 tonnes of debris to prevent flooding",
+      "blurb_es": "Operativo Huracanes: limpieza, desazolve de arroyos y nivelación de calles (Diana Laura, Cardoncitos, Valle Dorado y más); coordinación OOMSAPAS–SEPUIMM.",
+      "blurb_en": "Hurricane Ops: cleanup, arroyo clearing and street leveling (Diana Laura, Cardoncitos, Valle Dorado and more); OOMSAPAS–SEPUIMM coordination.",
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "desazolve-vialidades-csl-2026-09-23",
+      "date": "2026-09-23",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/servicios-publicos-desazolve-vialidades-csl/",
+      "title_es": "Servicios Públicos mantiene desazolve permanente en vialidades de Cabo San Lucas",
+      "title_en": "Public Works keeps permanent street clearing in Cabo San Lucas",
+      "blurb_es": "Tras corridas de arroyos: reabiertas Nicolás Tamaral, Leona Vicario, Camino a Candelaria y Leonardo Gastélum; priorizan rutas de transporte y colonias Azteca, Miranda, Caribe.",
+      "blurb_en": "After arroyo runoff: Nicolás Tamaral, Leona Vicario, Camino a Candelaria and Leonardo Gastélum reopened; priority on transit routes and Azteca, Miranda, Caribe colonias.",
+      "topics": [
+        "planning",
+        "environment"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "cfe-536-mdp-70-mva-bcs-2026-09-23",
+      "date": "2026-09-23",
+      "source": "NBCS Noticias",
+      "url": "https://nbcs.mx/?p=170686",
+      "title_es": "CFE anuncia 536 mdp para reforzar la red eléctrica de BCS y sumar 70 MVA",
+      "title_en": "CFE announces MXN 536 million to reinforce BCS grid and add 70 MVA",
+      "blurb_es": "Inversión 2026–2028 (134 mdp en 2026; 402 en 2027–28) más 313 obras de electrificación (~92 mdp). Buenavista y Cabo Falso ya sumaron 50 MVA en 2025; mesa permanente con municipios.",
+      "blurb_en": "2026–2028 package (MXN 134m in 2026; 402m in 2027–28) plus 313 electrification works (~MXN 92m). Buenavista and Cabo Falso already added 50 MVA in 2025; standing table with municipalities.",
+      "topics": [
+        "energy",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        }
+      ]
+    },
+    {
+      "id": "cfe-bcs-generacion-electrificacion-2026-09-22",
+      "date": "2026-09-22",
+      "source": "Hoja de Ruta Digital",
+      "url": "https://hojaderutadigital.mx/el-gobierno-de-mexico-impulsa-proyectos-de-generacion-y-electrificacion-para-fortalecer-el-suministro-electrico-en-baja-california-sur/",
+      "title_es": "CFE y gobierno revisan generación, redes y electrificación para BCS",
+      "title_en": "CFE and government review generation, grids and electrification for BCS",
+      "blurb_es": "Reunión Calleja–Castro: OASIS renovables en Mulegé/Vizcaíno; 134 mdp en modernización 2026 y 402 mdp 2027-28 (+70 MVA); 313 obras de electrificación (92 mdp) hacia 99.99% de cobertura.",
+      "blurb_en": "Calleja–Castro meeting: OASIS renewables in Mulegé/Vizcaíno; MXN 134m grid upgrades in 2026 and MXN 402m in 2027–28 (+70 MVA); 313 electrification works (MXN 92m) toward 99.99% coverage.",
+      "topics": [
+        "energy",
+        "planning"
+      ],
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "huracan-polo-capitania-cierre-navegacion-2026-09-22",
+      "date": "2026-09-22",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/capitania-puerto-cierre-navegacion/",
+      "title_es": "Capitanía de Cabo San Lucas prepara cierre a navegación ante Polo categoría 5",
+      "title_en": "Cabo San Lucas port authority prepares navigation closure ahead of Cat-5 Polo",
+      "blurb_es": "Aunque Polo se mantiene ~390–444 km al sur de Los Cabos sin impacto directo previsto, Capitanía alerta oleaje/vientos y prevé cierre a embarcaciones menores desde madrugada del 24 sep; bandera roja en playas.",
+      "blurb_en": "Polo remains ~390–444 km south of Los Cabos with no direct landfall forecast, but Capitanía warns of swell/winds and plans a small-craft port closure from early 24 Sep; red flags on beaches.",
+      "topics": [
+        "tourism",
+        "environment"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "la-paz-limpieza-playas-zofemat-2026-09-22",
+      "date": "2026-09-22",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/09/22/casi-75-de-la-basura-retirada-de-playas-de-la-paz-fue-inorganica/",
+      "title_es": "Casi 75% de la basura retirada de playas de La Paz fue inorgánica",
+      "title_en": "Nearly 75% of trash removed from La Paz beaches was inorganic",
+      "blurb_es": "Zofemat recolectó 7,530 kg en 30 sitios (14–18 sep); ~5,646 kg inorgánicos. Bajó 14.6% vs semana previa (8,820 kg) en Balandra, Tecolote, Pichilingue y otros puntos costeros.",
+      "blurb_en": "Zofemat collected 7,530 kg across 30 sites (14–18 Sep); ~5,646 kg inorganic. Down 14.6% vs prior week (8,820 kg) at Balandra, Tecolote, Pichilingue and other coastal points.",
+      "topics": [
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "cfe-128-mw-turbogas-bcs-2026-09-21",
+      "date": "2026-09-21",
+      "source": "Energy & Commerce",
+      "url": "https://energyandcommerce.com.mx/cfe-incorpora-128-mw-de-generacion-para-fortalecer-la-seguridad-energetica-de-baja-california-sur/",
+      "title_es": "CFE incorpora 128 MW de generación móvil en Los Cabos y Cabo Bello",
+      "title_en": "CFE adds 128 MW of mobile generation in Los Cabos and Cabo Bello",
+      "blurb_es": "Cinco unidades turbogás reubicadas desde la central González Ortega ya operan en Los Cabos y Cabo Bello, sumando 128 MW (consumo de casi 89 mil hogares) para ampliar el margen de reserva ante la demanda urbana y turística.",
+      "blurb_en": "Five gas-turbine units moved from the González Ortega plant now run in Los Cabos and Cabo Bello, adding 128 MW (roughly 89,000 homes' consumption) to widen reserve margins against urban and tourism demand.",
+      "topics": [
+        "energy",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "desabasto-78-colonias-acueducto-1-la-paz-2026-09-21",
+      "date": "2026-09-21",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/desabasto-de-agua-en-78-colonias-de-la-paz-por-reparacion-en-acueducto-1-advierte-oomsapas/",
+      "title_es": "Desabasto de agua en 78 colonias de La Paz por reparación del acueducto 1",
+      "title_en": "Water outage in 78 La Paz neighborhoods for Acueducto 1 repair",
+      "blurb_es": "OOMSAPAS La Paz (Abimael Ibarra) anunció el 21 de septiembre un corte temporal en 78 colonias del centro y sur por la reparación de una fuga mayor en el acueducto 1 (tubería de asbesto de 50 cm). Pidió racionar el agua mientras duren las obras, estimadas para concluir esa noche o al día siguiente.",
+      "blurb_en": "OOMSAPAS La Paz (Abimael Ibarra) announced on Sept 21 a temporary outage across 78 central and southern neighborhoods to repair a major leak on Acueducto 1 (50 cm asbestos pipe). Residents were asked to ration water until works finished that night or the next day.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "sheinbaum-visita-bcs-anuncios-2026-09-20",
+      "date": "2026-09-20",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/anuncio-sheinbaum-bcs/",
+      "title_es": "Sheinbaum anuncia en BCS vivienda, agua, energía y nueva central en Los Cabos",
+      "title_en": "Sheinbaum announces BCS housing, water, power and a new Los Cabos plant",
+      "blurb_es": "En La Paz: ~50 mil viviendas (asignación Oct en Los Cabos), revisión CONAGUA de desalación, nueva central eléctrica en Los Cabos, renovable/H2 en Mulegé, 165 consultorios y 500 plazas docentes.",
+      "blurb_en": "In La Paz: ~50k homes (Oct allotment in Los Cabos), CONAGUA desal review, new Los Cabos power plant, Mulegé renewables/H2, 165 clinics and 500 teaching posts.",
+      "topics": [
+        "water",
+        "energy",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "cfe-128mw-moviles-los-cabos-2026-09-18",
+      "date": "2026-09-18",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/cfe-refuerza-el-suministro-electrico-en-los-cabos-con-128-megawatts-adicionales/",
+      "title_es": "CFE refuerza el suministro eléctrico en Los Cabos con 128 MW adicionales",
+      "title_en": "CFE adds 128 MW of mobile generation in Los Cabos",
+      "blurb_es": "Cinco unidades turbogás móviles (~128 MW, ~89 mil hogares) ya operan en Los Cabos y Cabo Bello; BCS sigue como sistema aislado fuera del SIN.",
+      "blurb_en": "Five mobile turbogas units (~128 MW, ~89k homes) now run in Los Cabos and Cabo Bello; BCS remains an island grid off the national interconnected system.",
+      "topics": [
+        "energy",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+"""Generate scripts/eval/questions_es.json — Spanish evaluation battery for /api/chat.
+kind: fact   -> every regex in `all` must match the answer (accent/case-insensitive); `any` = at least one.
+      refuse -> the honest answer is "not in the portal": must contain a refusal marker and no invented number.
+      open   -> qualitative; at least one `any` keyword, and zero invented numbers.
+Expected values come ONLY from portal data (portal_facts.json, guides, aquifers_bcs.json, municipios.json,
+los_cabos_organigrama.json, stakeholders_seed.json)."""
+import json
+from pathlib import Path
+
+N = lambda s: s.replace(",", "[ ,.]?")  # thousands separator tolerant
+Q = []
+def add(cat, q, kind="fact", all=None, any=None, place=None, src=None, note=None):
+    Q.append(dict(id=f"E{len(Q)+1:03d}", cat=cat, q=q, kind=kind, all=all or [], any=any or [],
+                  place=place, expect_sources=src or [], note=note))
+
+# ---------------- AGUA (18)
+add("agua", "¿Cuál es la disponibilidad media anual del acuífero Cabo San Lucas (0317)?", all=[r"24[.,]0?7"], src=["agua", "0317"])
+add("agua", "¿Qué DMA tiene el acuífero San José del Cabo?", all=[r"12[.,]49"], src=["0319"])
+add("agua", "DMA del acuífero La Paz 0324 según la actualización 2024", all=[r"13[.,]49"], src=["0324"])
+add("agua", "¿Qué dice el Acuerdo DOF de agosto 2023 sobre el acuífero de La Paz?", any=[r"27[.,]83", r"sin volumen|no existe volumen|nuevas concesiones"], src=["0324"])
+add("agua", "¿El acuífero Todos Santos tiene disponibilidad para nuevas concesiones?", all=[r"2[.,]96|d[eé]ficit|sin (nuevas )?concesion|no (hay|tiene) (volumen|disponibilidad)"])
+add("agua", "¿Cuál es la DMA del acuífero Santiago?", all=[r"0?[.,]30\b|298[ ,.]?386"])
+add("agua", "DMA del acuífero Los Planes", all=[r"2[.,]34"])
+add("agua", "¿Cuál es la DMA del acuífero El Coyote?", all=[r"6[.,]24"])
+add("agua", "¿Cuál es la disponibilidad del acuífero Cabo Pulmo?", all=[r"2[.,]29"])
+add("agua", "¿Qué capacidad tiene la desaladora de Los Cabos?", all=[r"250\s*(l/s|lps|litros)"], place="los_cabos")
+add("agua", "¿A cuántos hectómetros cúbicos al año equivale la desaladora de 250 l/s?", all=[r"7[.,]88"])
+add("agua", "¿Cuál es la suma de déficits de los acuíferos del pack sur?", all=[r"63[.,]88"])
+add("agua", "¿Cuál es la DMA del acuífero Santo Domingo en Comondú?", all=[r"30[.,]28"], src=["0306"])
+add("agua", "¿Qué acuífero abastece a Loreto y cuál es su disponibilidad?", any=[r"2[.,]58", r"Lond[oó]", r"0329"])
+add("agua", "DMA del acuífero Mulegé 0332", all=[r"0?[.,]48"])
+add("agua", "¿Cuántos acuíferos tiene Baja California Sur?", all=[r"\b39\b"])
+add("agua", "¿La desalación compensa el déficit de los acuíferos según la NOM-011?", kind="open", any=[r"no (compensa|reescribe|cancela|es cr[eé]dito)"])
+
+# ---------------- ENERGÍA (12)
+add("energia", "¿Cuál fue el pico de demanda del SIBCS en 2024?", any=[r"688[.,]5", r"\b689\b"])
+add("energia", "Demanda máxima del sistema eléctrico de BCS en 2023", any=[r"\b660\b", r"\b675\b"])
+add("energia", "¿Cuál fue el consumo neto de electricidad del SIBCS en 2023?", all=[r"3[ ,.]?257"])
+add("energia", "¿Cuánto creció el consumo neto de electricidad en BCS en 2023?", all=[r"9[.,]9\s*%"])
+add("energia", "¿Cuál es el límite de transmisión La Paz–Los Cabos?", all=[r"237"])
+add("energia", "¿Qué es el proyecto P23-BS1?", any=[r"Olas Altas", r"230\s*kV", r"140\s*km"])
+add("energia", "¿Cuántos MW de almacenamiento (SAE) están planeados en BCS 2025–2030?", all=[r"\b63\s*MW"])
+add("energia", "¿Qué pasó con la central de ciclo combinado de 327 MW en BCS?", all=[r"cancelad"])
+add("energia", "¿Cuánta energía generó la turbogás diésel de Los Cabos entre 2023 y 2024?", all=[r"282[.,]7"])
+add("energia", "¿Cuál es la capacidad de la Central de Combustión Interna Los Cabos anunciada?", all=[r"240\s*MW"])
+
+# ---------------- POBLACIÓN / TERRITORIO (12)
+add("poblacion", "¿Cuántos habitantes tiene Baja California Sur?", all=[N(r"798,447")])
+add("poblacion", "¿Cuál es la población del municipio de La Paz?", all=[N(r"292,241")], place="la_paz")
+add("poblacion", "cuantos abitantes tiene los cabos", all=[N(r"351,111")])
+add("poblacion", "Población de Comondú según el censo 2020", all=[N(r"73,021")])
+add("poblacion", "¿Cuántos habitantes tiene Mulegé?", all=[N(r"64,022")])
+add("poblacion", "Población del municipio de Loreto", all=[N(r"18,052")], place="loreto")
+add("poblacion", "¿Cuántos habitantes tiene la ciudad de San José del Cabo?", all=[N(r"136,285")])
+add("poblacion", "¿Cuál es la cabecera de Comondú y cuánta población tiene?", all=[r"Constituci[oó]n", N(r"43,805")])
+add("poblacion", "Población de Santa Rosalía", all=[N(r"14,357")])
+add("poblacion", "¿Cuántas localidades tiene el municipio de La Paz?", all=[N(r"1,018")])
+add("poblacion", "¿Cuántos municipios tiene BCS?", all=[r"\b(5|cinco)\b"])
+add("poblacion", "¿Cuándo se creó el municipio de Los Cabos?", any=[r"1980", r"Decreto 181"])
+
+# ---------------- SEDENA / SEGURIDAD (6)
+add("seguridad", "sedena baja california sur", kind="refuse", note="Portal only has a generic Guardia Nacional federal-project card; no SEDENA data")
+add("seguridad", "¿Cuántos elementos de la Guardia Nacional hay en BCS?", kind="refuse")
+add("seguridad", "¿Dónde están los cuarteles de SEDENA en Baja California Sur?", kind="refuse")
+add("seguridad", "¿Cuál es la tasa de homicidios de Los Cabos en 2025?", kind="refuse")
+add("seguridad", "¿Qué presupuesto tiene la Marina en el puerto de La Paz?", kind="refuse")
+add("seguridad", "¿Qué proyectos federales de seguridad hay en BCS?", kind="open", any=[r"Guardia Nacional"])
+
+# ---------------- STAKEHOLDERS / GOBIERNO (11)
+add("actores", "¿Quién es el presidente municipal de Los Cabos?", all=[r"Christian Ag[uú]ndez"], place="los_cabos")
+add("actores", "¿Quién es el gobernador de Baja California Sur?", all=[r"V[ií]ctor Manuel Castro Cos[ií]o"])
+add("actores", "¿Quién es la presidenta municipal de La Paz?", all=[r"Milena (Paola )?Quiroga"])
+add("actores", "¿Quién dirige el OOMSAPAS Los Cabos?", all=[r"Ram[oó]n Edgardo Rubio"])
+add("actores", "¿Quién encabeza el IMPLAN Los Cabos?", all=[r"Beatriz Gonz[aá]lez Gil?bert"])
+add("actores", "¿Quién dirige el IMPLAN La Paz?", all=[r"Al[aá]n Roberto Izquierdo"])
+add("actores", "¿Quién es la titular de la SETUE?", all=[r"Rosa Maribel Collins"])
+add("actores", "¿Quién representa a CONAGUA en BCS?", all=[r"Julio C[eé]sar Villarreal"])
+add("actores", "¿Quién encabeza la CEA BCS?", all=[r"Lesvia Tatiana Davis"])
+add("actores", "¿Quién es el director de la CFE en Baja California Sur?", kind="refuse", note="no named CFE BCS director in the seed")
+add("actores", "¿Quién es el secretario de Seguridad Pública de BCS?", kind="refuse")
+
+# ---------------- INMOBILIARIO / VIVIENDA (10)
+add("inmobiliario", "¿Cuál fue el volumen residencial de BCS en 2025 según JLL?", all=[N(r"1,570")])
+add("inmobiliario", "¿Cuántas unidades residenciales se vendieron en BCS en 2025 (JLL)?", all=[N(r"1,840")])
+add("inmobiliario", "¿Qué porcentaje del volumen residencial de BCS corresponde a Los Cabos?", any=[r"81\s*%", N(r"1,264")])
+add("inmobiliario", "¿Cuál es la mediana de precio de vivienda en Los Cabos en 2026?", all=[N(r"525,000")])
+add("inmobiliario", "¿Cuántos meses de inventario hay en Los Cabos?", all=[r"\b15\b"])
+add("inmobiliario", "¿Cuál es el rezago habitacional en BCS?", any=[N(r"58,987"), r"21[.,]4\s*%"])
+add("inmobiliario", "¿Cuál es la meta de Vivienda para el Bienestar en BCS?", all=[N(r"37,500")])
+add("inmobiliario", "¿Cuántas acciones de INFONAVIT hubo en BCS en 2025?", all=[N(r"6,604")])
+add("inmobiliario", "¿Cuál es el precio promedio del metro cuadrado en Mulegé?", kind="refuse")
+
+# ---------------- TURISMO / CONECTIVIDAD (11)
+add("turismo", "¿Cuántos pasajeros tuvo el aeropuerto de Los Cabos (SJD) en 2025?", any=[r"3[.,]8\s*M", r"3[.,]8\s*millones"])
+add("turismo", "¿Cuántos pasajeros tuvo el aeropuerto de La Paz en 2025?", all=[N(r"668,800")])
+add("turismo", "aeropuerto loreto pasajeros", any=[r"no (est[aá] |es un dato |fue |ha sido )?consolidad", r"no (hay|tengo|consta)", r"sin dato"], place="loreto", note="portal says CY2025 LTO not consolidated")
+add("turismo", "¿Cuántas habitaciones de hotel tiene Los Cabos?", all=[N(r"22,254")])
+add("turismo", "¿Cuántos hoteles tiene La Paz?", all=[r"\b148\b"])
+add("turismo", "Ocupación hotelera de Los Cabos en 2025", any=[r"70(\.0)?\s*%"])
+add("turismo", "¿Cuántos pasajeros de crucero llegaron a Cabo San Lucas en 2025?", all=[N(r"1,057,758")])
+add("turismo", "¿Cuál fue el RevPAR de Los Cabos en enero 2026?", all=[r"369"])
+add("turismo", "¿Cuántos destinos sin escalas tiene SJD?", all=[r"\b56\b"])
+add("turismo", "¿Qué limita el crecimiento turístico de Todos Santos?", kind="open", any=[r"agua|acu[ií]fero|0313|d[eé]ficit"], place="todos_santos")
+
+# ---------------- ECONOMÍA (8)
+add("economia", "¿Cuál fue el PIB de Baja California Sur en 2024 a precios constantes?", all=[N(r"187,152")])
+add("economia", "PIB nominal de BCS 2024", all=[N(r"251,902")])
+add("economia", "¿Cuánta inversión extranjera directa recibió BCS en 2025?", all=[N(r"1,578")])
+add("economia", "¿Qué porcentaje del VAB de BCS es terciario?", all=[r"72[.,]9"])
+add("economia", "¿Cuántos establecimientos registraron los Censos Económicos 2024 en BCS?", all=[N(r"43,405")])
+add("economia", "¿Cuál es la tasa de desocupación en BCS (ENOE 2026 T2)?", all=[r"2[.,]3\s*%"])
+add("economia", "¿Cuál es la pobreza laboral en BCS según CONEVAL?", all=[r"13[.,]2\s*%"])
+
+# ---------------- AMBIENTE (6)
+add("ambiente", "¿Qué superficie tiene la Reserva de la Biosfera El Vizcaíno?", all=[N(r"2,546,790")])
+add("ambiente", "¿Cuándo se decretó el Parque Nacional Cabo Pulmo y qué superficie tiene?", any=[r"1995", N(r"7,111")])
+add("ambiente", "Superficie de la Reserva Sierra La Laguna", all=[N(r"112,437")])
+add("ambiente", "¿Qué superficie tiene el Parque Nacional Bahía de Loreto?", all=[N(r"206,580")])
+add("ambiente", "¿Cuántas hectáreas ejidales hay en BCS?", all=[N(r"303,95[78]")])
+
+# ---------------- PLANEACIÓN / PROYECTOS FEDERALES (9)
+add("planeacion", "¿Cuándo se publicó el POERBCS y cuántas UGAs tiene?", all=[r"56"], any=[r"2026|21.{0,6}ene"])
+add("planeacion", "¿Qué plan de desarrollo urbano está vigente en Los Cabos?", any=[r"PDU 2040", r"2013"])
+add("planeacion", "¿Qué instrumento urbano rige La Paz?", any=[r"PDUCP", r"PMDU"])
+add("proyectos", "¿Cuántos proyectos federales hay en el inventario de BCS?", all=[r"\b44\b"])
+add("proyectos", "¿Qué capacidad tiene el Hospital General Regional del IMSS en Los Cabos?", any=[r"260\s*camas", N(r"41,000")])
+add("proyectos", "¿Cuál es el monto de la Presa El Novillo?", any=[r"800\s*(M|millones|mdp)", N(r"800,000,000")])
+add("proyectos", "¿Qué pasó con el proyecto Don Diego?", any=[r"rechaz|cancel"])
+add("proyectos", "¿Cuántas acciones hídricas tiene el paquete federal para BCS?", all=[r"\b95\b"])
+
+# ---------------- FUERA DEL ACERVO (1 + 4 replaced, see below)
+add("fuera", "¿Cuánta agua en litros por segundo suministra el OOMSAPAS a todo Los Cabos?", kind="refuse", place="los_cabos")
+# 2026-10-05: E097–E100 (refusals: población 2050, gasolina hoy, turistas chinos, licitación desaladora La Paz)
+# were replaced in questions_es.json by escorrentía questions; synced here 2026-10-08 so regeneration is lossless.
+add("agua", "¿Cuántos kilómetros tiene la red de drenaje de escorrentía de BCS según el modelo HydroRIVERS del paquete 2026?", all=[r"16[.,]?588"], src=["escorrent", "HydroRIVERS", "16,588"], note="Terrain runoff model — not flood map")
+add("agua", "¿Cuántas semillas D8 se usaron para las trayectorias de escorrentía en BCS y cuántas terminan en salida costera?", all=[r"4[.,]?574", r"4[.,]?428"], src=["escorrent", "semilla", "D8"])
+add("agua", "¿Cuántos kilómetros de red de drenaje de escorrentía hay en Los Cabos según el resumen municipal?", all=[r"800"], any=[r"800[.,]58"], place="los_cabos", src=["escorrent", "Cabos"])
+add("agua", "¿El mapa de escorrentía del portal es un mapa oficial de peligro por inundación?", any=["no es un mapa oficial", "modelo de terreno", "no calcula", "sin profundidad", "no es mapa oficial", "not an official"], src=["escorrent"], note="Must state it is NOT an official flood map")
+
+# ---------------- NOTICIAS (6) — daily news feed in the chat corpus (added 2026-10-08)
+# Expected values come from src/data/news.json (press reports, labelled «Noticia» in the chat).
+add("noticias", "¿Hacia dónde apunta la trayectoria del huracán Rachel según las noticias más recientes?", all=[r"punta eugenia"], src=["Noticia"], note="news 2026-10-07 El Momento BCS / El Informador")
+add("noticias", "¿Qué porcentaje de las colonias de coral entre Loreto y Los Cabos detectaron blanqueadas los investigadores de la UABCS?", all=[r"60[^0-9]{1,8}70\s*%"], src=["Noticia"], note="news 2026-10-07 Meganoticias")
+add("noticias", "¿Qué ocupación hotelera esperan los hoteleros de Los Cabos para el último trimestre de 2026?", all=[r"80\s*(%|por ciento)", r"90\s*(%|por ciento)"], src=["Noticia"], note="news 2026-10-07 Meganoticias (Asociación de Hoteles de Los Cabos)")
+add("noticias", "¿Cuántos megawatts de generación móvil incorporó CFE en Los Cabos, según la prensa?", all=[r"\b128\b"], src=["Noticia"], note="news 2026-09-18 HOY BCS / 2026-09-21 Energy & Commerce")
+add("noticias", "¿Qué saldo dejó el huracán Polo a su paso por BCS según las noticias?", any=[r"saldo blanco|sin v[ií]ctimas"], src=["Noticia"], note="news 2026-09-29")
+add("noticias", "¿Cuántas colonias de La Paz se quedaron sin agua por la reparación del acueducto 1?", all=[r"\b78\b"], src=["Noticia"], note="news 2026-09-21 Tribuna de México")
+
+out = Path(__file__).with_name("questions_es.json")
+out.write_text(json.dumps(dict(version=2, created="2026-10-05", updated="2026-10-08", gate=dict(original_min=91, original_n=100, news_cat="noticias", news_min=5), count=len(Q), questions=Q), ensure_ascii=False, indent=1), encoding="utf-8")
+print(len(Q), "questions ->", out)

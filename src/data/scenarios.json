@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "updated": "2026-09-16",
+  "intro_es": "Gemelo de decisión Phase 1: un modelo territorial compartido para elegir estrategia — no un gemelo 3D fotorrealista del estado. Elige un escenario, ve capas y nodos de ontología que importan, y enfoca geografías prioritarias.",
+  "intro_en": "Phase-1 decision twin: one shared territorial model for strategy choices — not a photoreal statewide 3D twin. Pick a scenario, see which layers and ontology nodes matter, and zoom to priority geographies.",
+  "not_es": "No sustituye PDU/POER, DMA oficial ni estudios de ingeniería. Capas de foco son indicativas.",
+  "not_en": "It does not replace PDU/POER, official DMA, or engineering studies. Focus layers are indicative.",
+  "scenarios": [
+    {
+      "id": "baseline",
+      "title_es": "Trayectoria actual",
+      "title_en": "Current trajectory",
+      "blurb_es": "Turismo + crecimiento costero (Cabos, East Cape, Loreto) con DMAs de polos ya en déficit. Presión hotelera-residencial y ANP en interfaces.",
+      "blurb_en": "Tourism + coastal growth (Cabos, East Cape, Loreto) with growth-pole DMAs already in deficit. Hotel–residential pressure and ANP interfaces.",
+      "priority_layer_ids": [
+        "focus_corridor_cabos_lapaz",
+        "focus_east_cape",
+        "focus_water_dmas",
+        "osm_highways",
+        "settlements",
+        "anp_federales"
+      ],
+      "ontology_node_ids": [
+        "terr_los_cabos",
+        "terr_la_paz",
+        "terr_corredor_cabos",
+        "terr_obs_east_cape",
+        "dd_turismo_cabos",
+        "dd_residencial_cabos",
+        "const_dma_deficit",
+        "const_coast_anp_pressure",
+        "const_escasez_agua"
+      ],
+      "focus_bbox": [
+        -110.55,
+        22.75,
+        -109.3,
+        24.35
+      ],
+      "decision_questions_es": [
+        "¿Cuánta demanda adicional cabe sin romper agua–energía–ANP?",
+        "¿Dónde la densidad costera observada choca primero con buffers ANP (East Cape / Pulmo, Loreto)?",
+        "¿Qué candados DMA ya cierran nuevas concesiones en polos?"
+      ],
+      "decision_questions_en": [
+        "How much extra demand fits without breaking water–energy–ANP?",
+        "Where does observed coastal density hit ANP buffers first (East Cape / Pulmo, Loreto)?",
+        "Which DMA locks already close new concessions at growth poles?"
+      ],
+      "kpi_hints": [
+        {
+          "href": "/resumen",
+          "label_es": "4 acuíferos polo en déficit DMA",
+          "label_en": "4 growth-pole aquifers in DMA deficit"
+        },
+        {
+          "href": "/resumen",
+          "label_es": "~4.5 M llegadas aéreas BCS 2025",
+          "label_en": "~4.5 M BCS air arrivals 2025"
+        },
+        {
+          "href": "/turismo",
+          "label_es": "Turismo / oferta",
+          "label_en": "Tourism / offer"
+        }
+      ]
+    },
+    {
+      "id": "corridor_intensify",
+      "title_es": "Intensificar corredor Cabos–La Paz",
+      "title_en": "Intensify Cabos–La Paz corridor",
+      "blurb_es": "Fortalecer movilidad, asentamiento y servicios en el corredor Los Cabos–Todos Santos–La Paz, con East Cape como flanco Golfo bajo tensión ANP/Pulmo.",
+      "blurb_en": "Strengthen mobility, settlement and services on the Los Cabos–Todos Santos–La Paz corridor, with East Cape as the Gulf flank under ANP/Pulmo tension.",
+      "priority_layer_ids": [
+        "focus_corridor_cabos_lapaz",
+        "focus_east_cape",
+        "osm_highways",
+        "highway_nodes",
+        "settlements",
+        "osm_power_lines",
+        "poer_ugas"
+      ],
+      "ontology_node_ids": [
+        "terr_corredor_cabos",
+        "terr_todos_santos",
+        "terr_los_cabos",
+        "terr_la_paz",
+        "terr_obs_east_cape",
+        "terr_anp_cabo_pulmo",
+        "proj_transpeninsular",
+        "rc_tx_lapaz_cabos",
+        "proj_p23_bs1",
+        "inst_pdu_cabos",
+        "inst_pdu_lapaz",
+        "const_coast_anp_pressure",
+        "dq_coast_anp_buffers"
+      ],
+      "focus_bbox": [
+        -110.55,
+        22.8,
+        -109.35,
+        24.3
+      ],
+      "decision_questions_es": [
+        "¿El corredor Mex 19 / hotelero absorbe crecimiento sin empujar East Cape contra Cabo Pulmo?",
+        "¿Qué obras de transmisión La Paz→Cabos (P23-BS1) son condición previa?",
+        "¿Cómo coherenciar PDU Cabos / PDUCP La Paz bajo techo POERBCS?"
+      ],
+      "decision_questions_en": [
+        "Can the Mex 19 / hotel corridor absorb growth without pushing East Cape against Cabo Pulmo?",
+        "Which La Paz→Cabos transmission works (P23-BS1) are prerequisites?",
+        "How to align Cabos PDU / La Paz PDUCP under the POERBCS ceiling?"
+      ],
+      "kpi_hints": [
+        {
+          "href": "/comunidades",
+          "label_es": "Los Cabos 351,111 · La Paz 292,241 (INEGI 2020)",
+          "label_en": "Los Cabos 351,111 · La Paz 292,241 (INEGI 2020)"
+        },
+        {
+          "href": "/energia",
+          "label_es": "Pico SIBCS ~689 MW",
+          "label_en": "SIBCS peak ~689 MW"
+        },
+        {
+          "href": "/ontologia",
+          "label_es": "Nodos corredor / transmisión",
+          "label_en": "Corridor / transmission nodes"
+        }
+      ]
+    },
+    {
+      "id": "water_first",
+      "title_es": "Agua primero",
+      "title_en": "Water security first",
+      "blurb_es": "Priorizar seguridad hídrica: acuíferos en déficit (0313/0317/0319/0324 + 0318 East Cape), desalación/reúso y gestión de demanda antes de abrir más crecimiento.",
+      "blurb_en": "Prioritise water security: deficit aquifers (0313/0317/0319/0324 + 0318 East Cape), desal/reuse and demand management before unlocking more growth.",
+      "priority_layer_ids": [
+        "focus_water_dmas",
+        "focus_corridor_cabos_lapaz",
+        "focus_east_cape",
+        "osm_waterways",
+        "osm_coastline"
+      ],
+      "ontology_node_ids": [
+        "const_dma_deficit",
+        "const_escasez_agua",
+        "const_intrusion_marina",
+        "rc_acuifero_0317",
+        "rc_acuifero_0319",
+        "rc_acuifero_0324",
+        "rc_acuifero_0313",
+        "rc_acuifero_0318",
+        "proj_desal_cabos",
+        "dq_desal_vs_crecimiento",
+        "dq_capacidad_carga",
+        "actor_conagua",
+        "actor_cea",
+        "actor_oomsapas_cabos",
+        "inst_ley_aguas",
+        "ev_dma"
+      ],
+      "focus_bbox": [
+        -110.55,
+        22.75,
+        -109.3,
+        24.35
+      ],
+      "decision_questions_es": [
+        "¿La desaladora Cabos 250 lps desbloquea crecimiento o solo sostiene el déficit?",
+        "¿Qué polos (Cabos, Todos Santos, La Paz, East Cape) quedan sin volumen para nuevas concesiones?",
+        "¿Cómo priorizar reúso y gestión de demanda frente a nueva oferta?"
+      ],
+      "decision_questions_en": [
+        "Does Cabos desalination 250 lps unlock growth or only sustain the deficit?",
+        "Which poles (Cabos, Todos Santos, La Paz, East Cape) have no volume for new concessions?",
+        "How to prioritise reuse and demand management versus new supply?"
+      ],
+      "kpi_hints": [
+        {
+          "href": "/resumen",
+          "label_es": "4 acuíferos polo en déficit DMA",
+          "label_en": "4 growth-pole aquifers in DMA deficit"
+        },
+        {
+          "href": "/agua",
+          "label_es": "Guía agua / DMA CONAGUA 2024",
+          "label_en": "Water guide / CONAGUA DMA 2024"
+        },
+        {
+          "href": "/ontologia",
+          "label_es": "proj_desal_cabos · dq_desal_vs_crecimiento",
+          "label_en": "proj_desal_cabos · dq_desal_vs_crecimiento"
+        }
+      ]
+    },
+    {
+      "id": "ports_air_hubs",
+      "title_es": "Puertos y aeropuertos como anclas",
+      "title_en": "Ports & airports as growth anchors",
+      "blurb_es": "Anclar crecimiento en SJD/LAP/LTO y puertos (CSL, Pichilingue, Santa Rosalía), ligando demanda aérea/crucero a capacidad territorial en Cabos, East Cape y Loreto.",
+      "blurb_en": "Anchor growth at SJD/LAP/LTO and ports (CSL, Pichilingue, Santa Rosalía), linking air/cruise demand to territorial capacity in Cabos, East Cape and Loreto.",
+      "priority_layer_ids": [
+        "focus_ports_air",
+        "focus_places_loreto_constitucion",
+        "focus_corridor_cabos_lapaz",
+        "focus_east_cape",
+        "osm_transport_nodes"
+      ],
+      "ontology_node_ids": [
+        "rc_aeropuerto_sjd",
+        "rc_aeropuerto_lap",
+        "dd_turismo_cabos",
+        "dd_turismo_lapaz",
+        "terr_loreto",
+        "terr_obs_loreto_bay",
+        "terr_obs_east_cape",
+        "dq_readiness_inversion",
+        "ev_setue_ie"
+      ],
+      "focus_bbox": [
+        -112.4,
+        22.7,
+        -109.3,
+        27.5
+      ],
+      "decision_questions_es": [
+        "¿SJD (≈3.8 M pax) sigue concentrando el 83% de arribos sin capacidad hídrica equivalente?",
+        "¿Qué rol juegan Pichilingue / CSL cruceros frente a candados ANP en East Cape?",
+        "¿Loreto (LTO + Bahía ANP) es ancla secundaria o saturación temprana?"
+      ],
+      "decision_questions_en": [
+        "Can SJD (≈3.8 M pax) keep ~83% of arrivals without matching water capacity?",
+        "What role do Pichilingue / CSL cruises play versus East Cape ANP locks?",
+        "Is Loreto (LTO + bay ANP) a secondary anchor or early saturation?"
+      ],
+      "kpi_hints": [
+        {
+          "href": "/puertos",
+          "label_es": "Puertos / aeropuertos",
+          "label_en": "Ports / airports"
+        },
+        {
+          "href": "/resumen",
+          "label_es": "~4.5 M llegadas aéreas BCS 2025",
+          "label_en": "~4.5 M BCS air arrivals 2025"
+        },
+        {
+          "href": "/turismo",
+          "label_es": "Demanda turística",
+          "label_en": "Tourism demand"
+        }
+      ]
+    }
+  ],
+  "focus_areas": [
+    {
+      "id": "corridor",
+      "title_es": "Corredor Cabos–Todos Santos–La Paz",
+      "title_en": "Cabos–Todos Santos–La Paz corridor",
+      "map_href": "/mapas?scenario=corridor_intensify#gis",
+      "layer_ids": [
+        "focus_corridor_cabos_lapaz"
+      ],
+      "facts_es": [
+        "Los Cabos 351,111 hab. · La Paz 292,241 (INEGI Censo 2020).",
+        "Eje hotelero CSL–SJC (ontology terr_corredor_cabos) + Mex 19 vía Todos Santos.",
+        "Candados: acuíferos 0317/0319/0313/0324 en déficit DMA; techo SIBCS."
+      ],
+      "facts_en": [
+        "Los Cabos 351,111 pop. · La Paz 292,241 (INEGI Census 2020).",
+        "CSL–SJC hotel axis (ontology terr_corredor_cabos) + Mex 19 via Todos Santos.",
+        "Locks: aquifers 0317/0319/0313/0324 in DMA deficit; SIBCS ceiling."
+      ],
+      "sources_es": "Base de datos BCS 2050 — municipios · ontology terr_corredor_cabos / terr_todos_santos · Resumen KPI",
+      "sources_en": "Base de datos BCS 2050 — municipios · ontology terr_corredor_cabos / terr_todos_santos · Summary KPIs"
+    },
+    {
+      "id": "east_cape",
+      "title_es": "East Cape / Cabo del Este",
+      "title_en": "East Cape / Cabo del Este",
+      "map_href": "/mapas?scenario=baseline&layers=focus_east_cape,anp_federales#gis",
+      "layer_ids": [
+        "focus_east_cape",
+        "anp_federales"
+      ],
+      "facts_es": [
+        "Franja indicativa Los Barriles (1,674) – Buenavista (705) – La Ribera (2,320) – Cabo Pulmo (INEGI 2020 donde hay POBTOT).",
+        "54 stills en bbox East Cape; interfaz turismo costero ↔ Parque Nacional Cabo Pulmo.",
+        "Acuífero 0318 Cabo Pulmo en déficit (~−2.29 hm³/año); candado ANP CONANP."
+      ],
+      "facts_en": [
+        "Indicative belt Los Barriles (1,674) – Buenavista (705) – La Ribera (2,320) – Cabo Pulmo (INEGI 2020 where POBTOT exists).",
+        "54 stills in East Cape bbox; coastal tourism ↔ Cabo Pulmo National Park interface.",
+        "Cabo Pulmo aquifer 0318 in deficit (~−2.29 hm³/year); CONANP ANP lock."
+      ],
+      "sources_es": "top_localities · ontology terr_obs_east_cape / terr_anp_cabo_pulmo / rc_acuifero_0318 · stills intel",
+      "sources_en": "top_localities · ontology terr_obs_east_cape / terr_anp_cabo_pulmo / rc_acuifero_0318 · stills intel"
+    },
+    {
+      "id": "loreto",
+      "title_es": "Loreto",
+      "title_en": "Loreto",
+      "map_href": "/mapas?scenario=ports_air_hubs&layers=focus_places_loreto_constitucion,anp_federales#gis",
+      "layer_ids": [
+        "focus_places_loreto_constitucion",
+        "anp_federales"
+      ],
+      "facts_es": [
+        "Municipio 18,052 hab.; cabecera Loreto 16,311 (INEGI 2020).",
+        "ANP Bahía de Loreto; POEL 2014 vigente; corredor Nopoló–Puerto Escondido.",
+        "Tercer aeropuerto internacional (LTO) en inventario SETUE; pax CY 2025 no en pack."
+      ],
+      "facts_en": [
+        "Municipality 18,052 pop.; seat Loreto 16,311 (INEGI 2020).",
+        "Bahía de Loreto NP; POEL 2014 in force; Nopoló–Puerto Escondido corridor.",
+        "Third international airport (LTO) in SETUE inventory; CY 2025 pax not in pack."
+      ],
+      "sources_es": "Base de datos BCS 2050 — municipios · ontology terr_loreto / terr_anp_loreto · ports_demand",
+      "sources_en": "Base de datos BCS 2050 — municipios · ontology terr_loreto / terr_anp_loreto · ports_demand"
+    },
+    {
+      "id": "constitucion",
+      "title_es": "Ciudad Constitución",
+      "title_en": "Ciudad Constitución",
+      "map_href": "/mapas?scenario=ports_air_hubs&layers=focus_places_loreto_constitucion#gis",
+      "layer_ids": [
+        "focus_places_loreto_constitucion"
+      ],
+      "facts_es": [
+        "Cabecera de Comondú: 43,805 hab. (INEGI 2020); municipio 73,021.",
+        "Polo agropecuario Valle Santo Domingo (ontology dd_agro_santo_domingo).",
+        "PMDU Visión 2025 + PMD 2024–2027 en datos; sin visor catastral público."
+      ],
+      "facts_en": [
+        "Comondú seat: 43,805 pop. (INEGI 2020); municipality 73,021.",
+        "Valle Santo Domingo agro pole (ontology dd_agro_santo_domingo).",
+        "PMDU Vision 2025 + PMD 2024–2027 on disk; no public cadastre viewer."
+      ],
+      "sources_es": "Base de datos BCS 2050 — municipios · top_localities · ontology terr_comondu",
+      "sources_en": "Base de datos BCS 2050 — municipios · top_localities · ontology terr_comondu"
+    },
+    {
+      "id": "water",
+      "title_es": "Sistemas de agua (DMA en déficit)",
+      "title_en": "Water systems (DMA deficits)",
+      "map_href": "/mapas?scenario=water_first#gis",
+      "layer_ids": [
+        "focus_water_dmas"
+      ],
+      "facts_es": [
+        "Polos Resumen: 0313 Todos Santos −2.96 · 0317 CSL −24.07 · 0319 SJC −12.49 · 0324 La Paz −13.49 hm³/año (CONAGUA DMA 2024).",
+        "East Cape: 0318 Cabo Pulmo −2.29 hm³/año; sin nuevas concesiones.",
+        "Desalación Cabos 250 lps (APP) ≠ crédito DMA (ontology proj_desal_cabos / dq_desal_vs_crecimiento)."
+      ],
+      "facts_en": [
+        "Summary poles: 0313 Todos Santos −2.96 · 0317 CSL −24.07 · 0319 SJC −12.49 · 0324 La Paz −13.49 hm³/year (CONAGUA DMA 2024).",
+        "East Cape: 0318 Cabo Pulmo −2.29 hm³/year; no new concessions.",
+        "Cabos desal 250 lps (PPP) ≠ DMA credit (ontology proj_desal_cabos / dq_desal_vs_crecimiento)."
+      ],
+      "sources_es": "guía agua · ontology rc_acuifero_* / const_dma_deficit · Resumen",
+      "sources_en": "water guide · ontology rc_acuifero_* / const_dma_deficit · Summary"
+    },
+    {
+      "id": "ports_air",
+      "title_es": "Puertos y aeropuertos",
+      "title_en": "Ports & airports",
+      "map_href": "/mapas?scenario=ports_air_hubs#gis",
+      "layer_ids": [
+        "focus_ports_air"
+      ],
+      "facts_es": [
+        "SJD ≈3.8 M pax 2025 (83.2% estatal); LAP 668,800 (+10.9%); BCS tres aeropuertos ≈4.523 M (SETUE IE 2026).",
+        "Cruceros 2025: CSL 285 arribos / 1.06 M pax; Pichilingue 50 / 133k; Santa Rosalía 7 (DataTur).",
+        "Ontology: rc_aeropuerto_sjd / rc_aeropuerto_lap · dd_turismo_cabos."
+      ],
+      "facts_en": [
+        "SJD ≈3.8 M pax 2025 (83.2% of state); LAP 668,800 (+10.9%); BCS three airports ≈4.523 M (SETUE IE 2026).",
+        "Cruises 2025: CSL 285 calls / 1.06 M pax; Pichilingue 50 / 133k; Santa Rosalía 7 (DataTur).",
+        "Ontology: rc_aeropuerto_sjd / rc_aeropuerto_lap · dd_turismo_cabos."
+      ],
+      "sources_es": "Base de datos BCS 2050 — puertos y demanda · SETUE IE · SECTUR DataTur · /puertos",
+      "sources_en": "Base de datos BCS 2050 — puertos y demanda · SETUE IE · SECTUR DataTur · /puertos"
+    }
+  ]
+}

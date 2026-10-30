@@ -1,0 +1,1172 @@
+---
+import { cleanSourceText } from '../lib/sourceLabel';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lakePath } from '../lib/paths';
+import gallery from '../data/maps_gallery.json';
+
+const themeOrder = [
+  { id: 'planeacion', es: 'Planeación', en: 'Planning', href: '/planeacion' },
+  { id: 'agua', es: 'Agua', en: 'Water', href: '/agua' },
+  { id: 'energia', es: 'Energía', en: 'Energy', href: '/energia' },
+  { id: 'ambiente', es: 'Ambiente', en: 'Environment', href: '/ambiente' },
+  { id: 'conectividad', es: 'Conectividad', en: 'Connectivity', href: '/conectividad' },
+  { id: 'riesgos', es: 'Riesgos', en: 'Hazards', href: '/riesgos' },
+  { id: 'territorio', es: 'Territorio', en: 'Territory', href: '/territorio' },
+  { id: 'economia', es: 'Economía', en: 'Economy', href: '/economia' },
+];
+
+const byTheme: Record<string, any[]> = {};
+for (const m of gallery as any[]) {
+  const t = m.theme || 'territorio';
+  (byTheme[t] ||= []).push(m);
+}
+const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
+---
+<BaseLayout
+  title="Mapas"
+  titleEn="Maps"
+  description="Mapa interactivo y galería de mapas temáticos BCS"
+  descriptionEn="Interactive map and BCS thematic map gallery"
+  wide={true}
+>
+  <section class="maps-entry" aria-label="Elige cómo ver el territorio">
+    <p class="lead maps-entry-lead"><span data-lang-es>Elige cómo quieres ver Baja California Sur.</span><span data-lang-en hidden>Choose how you want to see Baja California Sur.</span></p>
+    <div class="maps-entry-grid">
+      <a class="maps-entry-card" href="/stills">
+        <img src="/stills/batch_01/thumbs/S0001_santa_rosalia.jpg" alt="" loading="lazy" width="480" height="270" />
+        <span class="maps-entry-txt">
+          <strong><span data-lang-es>Ver el territorio en fotos</span><span data-lang-en hidden>See the territory in photos</span></strong>
+          <span><span data-lang-es>Vistas aéreas de ciudades, costas y paisajes, ubicadas en el mapa.</span><span data-lang-en hidden>Aerial views of towns, coasts and landscapes, placed on the map.</span></span>
+        </span>
+      </a>
+      <a class="maps-entry-card" href="/explorar" id="maps-entry-3d">
+        <img src="/stills/batch_01/thumbs/S0004_la_paz.jpg" alt="" loading="lazy" width="480" height="270" onerror="this.remove()" />
+        <span class="maps-entry-txt">
+          <strong><span data-lang-es>Explorar en 3D</span><span data-lang-en hidden>Explore in 3D</span></strong>
+          <span><span data-lang-es>El estado sobre su relieve, con capas de agua, energía y conectividad.</span><span data-lang-en hidden>The state on its terrain, with water, energy and connectivity layers.</span></span>
+        </span>
+      </a>
+      <a class="maps-entry-card" href="#capas">
+        <img src="/stills/batch_01/thumbs/S0002_loreto.jpg" alt="" loading="lazy" width="480" height="270" onerror="this.remove()" />
+        <span class="maps-entry-txt">
+          <strong><span data-lang-es>Capas de datos</span><span data-lang-en hidden>Data layers</span></strong>
+          <span><span data-lang-es>Mapa 2D sencillo: municipios, carreteras, áreas protegidas, ríos y más. Funciona en cualquier celular.</span><span data-lang-en hidden>Simple 2D map: municipalities, roads, protected areas, rivers and more. Works on any phone.</span></span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section id="gis" class="maps-gis-section" aria-label="Interactive map">
+  <span id="capas" class="maps-anchor" aria-hidden="true"></span>
+  <h2 class="maps-gis-h"><span data-lang-es>Capas de datos</span><span data-lang-en hidden>Data layers</span></h2>
+<link
+    rel="stylesheet"
+    href="/vendor/leaflet/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <link
+    rel="stylesheet"
+    href="/vendor/leaflet/MarkerCluster.css"
+    crossorigin=""
+  />
+  <link
+    rel="stylesheet"
+    href="/vendor/leaflet/MarkerCluster.Default.css"
+    crossorigin=""
+  />
+
+  <p class="lead gis-lead-plain">
+    <span data-lang-es>
+      Mapa del territorio. Al inicio: fondo claro, límites municipales y proyectos federales.
+      Active más capas en el panel.
+    </span>
+    <span data-lang-en hidden>
+      Territory map. On load: light basemap, municipal boundaries and federal projects.
+      Turn on more layers in the panel.
+    </span>
+  </p>
+  <p class="meta gis-subtle-stats" id="gis-subtle-stats" hidden></p>
+
+  <div class="gis-shell" id="gis-shell">
+    <button type="button" class="gis-drawer-toggle btn secondary" id="gis-drawer-toggle" aria-expanded="false">
+      <span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span>
+    </button>
+
+    <aside class="gis-panel" id="gis-panel" aria-label="Layer panel">
+      <div class="gis-panel-head">
+        <strong data-lang-es>Capas</strong>
+        <strong data-lang-en hidden>Layers</strong>
+        <input type="search" id="gis-layer-filter" placeholder="Filtrar capas…" data-i18n-placeholder-en="Filter layers…" />
+      </div>
+
+      <div class="gis-basemap">
+        <span class="gis-toolbar-label" data-lang-es><span data-lang-es>Mapa base</span><span data-lang-en hidden>Basemap</span></span>
+        <span class="gis-toolbar-label" data-lang-en hidden><span data-lang-es>Mapa base</span><span data-lang-en hidden>Basemap</span></span>
+        <label><input type="radio" name="gis-basemap" value="light" checked />
+          <span data-lang-es>Claro</span><span data-lang-en hidden>Light</span>
+        </label>
+        <label><input type="radio" name="gis-basemap" value="osm" /> Detalle</label>
+        <label><input type="radio" name="gis-basemap" value="topo" /> OpenTopoMap</label>
+        <label><input type="radio" name="gis-basemap" value="esri" />
+          <span data-lang-es>Imagen Esri</span><span data-lang-en hidden>Esri imagery</span>
+        </label>
+      </div>
+
+      <label class="gis-basic-toggle"><input type="checkbox" id="gis-basic" checked />
+        <span><strong><span data-lang-es>Modo básico</span><span data-lang-en hidden>Basic mode</span></strong>
+        <small><span data-lang-es>6 capas esenciales. Desactívalo para ver todas.</span><span data-lang-en hidden>6 essential layers. Turn off to see all.</span></small></span>
+      </label>
+      <div class="gis-layers" id="gis-layer-list"></div>
+      <p class="catalog-meta" id="gis-status">…</p>
+    </aside>
+
+    <div class="gis-map-wrap">
+      <div class="gis-map-toolbar" id="gis-map-toolbar" role="toolbar" aria-label="Herramientas del mapa">
+        <button type="button" class="gis-tb-btn" id="gis-photos-only" title="Solo fotos" aria-label="Solo fotos">
+          <span class="gis-tb-ico" aria-hidden="true">📷</span>
+        </button>
+        <button type="button" class="gis-tb-btn" id="gis-fit-bcs" title="Ajustar BCS" aria-label="Ajustar BCS">
+          <span class="gis-tb-ico" aria-hidden="true">⌖</span>
+        </button>
+        <button type="button" class="gis-tb-btn" id="gis-fullscreen" title="Pantalla completa" aria-label="Pantalla completa">
+          <span class="gis-tb-ico" aria-hidden="true">⛶</span>
+        </button>
+        <div class="gis-tb-sep" aria-hidden="true"></div>
+        <label class="gis-tb-opacity" title="Opacidad polígonos">
+          <span class="gis-tb-ico" aria-hidden="true">◐</span>
+          <input type="range" id="gis-opacity" min="5" max="80" value="28" aria-label="Opacidad polígonos" />
+          <span id="gis-opacity-val" class="gis-tb-opval">28%</span>
+        </label>
+      </div>
+      <aside class="gis-detail" id="gis-detail" hidden>
+        <button type="button" class="gis-detail-close" id="gis-detail-close" aria-label="Cerrar">×</button>
+        <div id="gis-detail-body"></div>
+      </aside>
+      <div id="gis-map" aria-label="Mapa GIS regional"></div>
+    </div>
+  </div>
+
+  <p class="meta gis-legend-note">
+    <span data-lang-es>
+      Límites y proyectos se muestran por defecto. Otras capas (protección, agua, fotos) se activan en el panel.
+      © OpenStreetMap · OpenTopoMap · Esri (imagen).
+    </span>
+    <span data-lang-en hidden>
+      Boundaries and projects show by default. Other layers (protection, water, photos) turn on in the panel.
+      © OpenStreetMap · OpenTopoMap · Esri (imagery).
+    </span>
+  </p>
+
+  <details class="bcs-collapse gis-advanced">
+    <summary>
+      <span data-lang-es>Herramientas avanzadas</span>
+      <span data-lang-en hidden>Advanced tools</span>
+    </summary>
+    <div class="bcs-collapse-body">
+      <p class="cta-row">
+        <a class="btn secondary" href="/catalogo?folder=14_gis_atlas"><span data-lang-es>Catálogo de mapas</span><span data-lang-en hidden>Map catalog</span></a>
+        <a class="btn" href="/stills"><span data-lang-es>Fotos del territorio</span><span data-lang-en hidden>Territory photos</span></a>
+        <a class="btn secondary" href="#gallery"><span data-lang-es>Galería JPG ↓</span><span data-lang-en hidden>JPG gallery ↓</span></a>
+      </p>
+    </div>
+  </details>
+
+  
+  <style>
+    .maps-entry { margin: 0 0 2rem; }
+    .maps-entry-lead { margin: 0 0 .8rem; }
+    .maps-entry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .maps-entry-card { display: flex; flex-direction: column; border: 1px solid #e2dccf; border-radius: 14px; overflow: hidden; background: #fff; color: #23374a; text-decoration: none; box-shadow: 0 4px 14px rgba(35,55,74,.06); }
+    .maps-entry-card:hover, .maps-entry-card:focus-visible { border-color: #34607d; box-shadow: 0 6px 20px rgba(35,55,74,.14); }
+    .maps-entry-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: #e8eef2; }
+    .maps-entry-txt { display: flex; flex-direction: column; gap: 4px; padding: .8rem 1rem 1rem; font-size: .9rem; line-height: 1.45; color: #3c5163; }
+    .maps-entry-txt strong { font-size: 1.1rem; color: #23374a; }
+    @media (max-width: 760px) { .maps-entry-grid { grid-template-columns: 1fr; } }
+    .maps-anchor { display: block; position: relative; top: -80px; visibility: hidden; }
+    .maps-gis-h { margin: 0 0 .3rem; }
+    .gis-basic-toggle { display: flex; gap: .5rem; align-items: flex-start; padding: .55rem .6rem; margin: .4rem 0 .5rem; border-radius: 10px; background: #eef3f6; border: 1px solid #d5e0e7; cursor: pointer; }
+    .gis-basic-toggle small { display: block; color: #5c6e7b; font-size: .74rem; }
+    :global(.gis-layers.is-basic .gis-layer-toggle:not([data-basico="1"])) { display: none !important; }
+    :global(.gis-layers.is-basic .gis-group-actions) { display: none; }
+    :global(.gis-layer-group.is-basic-hidden) { display: none !important; }
+    :global(.gis-layer-what) { display: block; width: 100%; margin: 1px 0 3px 1.6rem; font-size: .72rem; color: #5c6e7b; line-height: 1.3; }
+    :global(.gis-layer-toggle) { flex-wrap: wrap; }
+    .gis-detail {
+      position: absolute; z-index: 5; right: 0.75rem; top: 0.75rem;
+      width: min(340px, calc(100% - 1.5rem)); max-height: calc(100% - 1.5rem);
+      overflow: auto; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
+      border-radius: 14px; border: 1px solid #e2dccf; box-shadow: 0 8px 28px rgba(35, 55, 74,.12);
+      padding: 0.85rem 1rem 1rem;
+    }
+    .gis-map-wrap { position: relative; }
+    .gis-detail-close {
+      position: absolute; right: 0.4rem; top: 0.3rem; border: 0; background: transparent;
+      font-size: 1.3rem; cursor: pointer; color: #5c6e7b;
+    }
+    .gis-detail-kicker { margin: 0; font-size: 0.72rem; color: #34607d; font-weight: 700; text-transform: uppercase; }
+    .gis-detail h3 { margin: 0.2rem 0 0.5rem; font-size: 1.05rem; }
+    .gis-detail-warn { font-size: 0.78rem; color: #9a6700; background: #f3e6cc; padding: 0.4rem 0.5rem; border-radius: 8px; }
+    .gis-detail-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+    @media (max-width: 700px) {
+      .gis-detail { left: 0.5rem; right: 0.5rem; width: auto; top: auto; bottom: 0.5rem; max-height: 42%; }
+    }
+    /* dark-mode block removed: light theme forced */
+
+    /* PASS5 compact map toolbar */
+    .gis-map-toolbar {
+      position: absolute; z-index: 6; left: 0.75rem; top: 0.75rem;
+      display: flex; align-items: center; gap: 0.2rem;
+      padding: 0.28rem 0.35rem;
+      background: rgba(255,255,255,0.94); backdrop-filter: blur(10px);
+      border: 1px solid #e2dccf; border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(35, 55, 74,.1);
+    }
+    .gis-tb-btn {
+      width: 2.1rem; height: 2.1rem; border: 0; border-radius: 8px;
+      background: transparent; cursor: pointer; font-size: 1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #23374a;
+    }
+    .gis-tb-btn:hover, .gis-tb-btn:focus-visible { background: #f0f0f5; }
+    .gis-tb-btn.active, .gis-tb-btn.is-active { background: #34607d; color: #fbf8f1; }
+    .gis-tb-sep { width: 1px; height: 1.4rem; background: #e2dccf; margin: 0 0.15rem; }
+    .gis-tb-opacity {
+      display: inline-flex; align-items: center; gap: 0.25rem;
+      font-size: 0.7rem; color: #5c6e7b; padding: 0 0.25rem;
+    }
+    .gis-tb-opacity input[type=range] { width: 4.5rem; accent-color: #34607d; }
+    .gis-tb-opval { min-width: 2.2rem; font-variant-numeric: tabular-nums; }
+    .gis-quick-toggles, .gis-opacity-row { display: none !important; }
+    @media (max-width: 700px) {
+      .gis-map-toolbar { left: 0.5rem; top: 0.5rem; right: auto; max-width: calc(100% - 1rem); flex-wrap: wrap; }
+      .gis-tb-opacity input[type=range] { width: 3.5rem; }
+    }
+    /* dark-mode block removed: light theme forced */
+  </style>
+
+  <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script is:inline src="/vendor/leaflet/leaflet.markercluster.js" crossorigin=""></script>
+  <script is:inline>
+    (function () {
+      var mapEl = document.getElementById('gis-map');
+      if (!mapEl || typeof L === 'undefined') return;
+
+      var BCS_BOUNDS = L.latLngBounds([22.8, -115.2], [28.0, -109.3]);
+      var map = L.map('gis-map', {
+        scrollWheelZoom: true,
+        maxZoom: 18,
+        attributionControl: true,
+      });
+      map.setView([25.8, -111.8], 7);
+      L.control.scale({ imperial: false, metric: true }).addTo(map);
+
+      var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
+        crossOrigin: true,
+      });
+      var topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        attribution:
+          'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, SRTM | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)',
+        maxZoom: 17,
+      });
+      var esri = L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
+      );
+      var light = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap &copy; CARTO',
+        maxZoom: 19,
+        subdomains: 'abcd',
+      });
+      var basemaps = { light: light, osm: osm, topo: topo, esri: esri };
+      var currentBase = light;
+      light.addTo(map);
+
+      document.querySelectorAll('input[name="gis-basemap"]').forEach(function (r) {
+        r.addEventListener('change', function () {
+          if (!r.checked) return;
+          map.removeLayer(currentBase);
+          currentBase = basemaps[r.value] || osm;
+          currentBase.addTo(map);
+        });
+      });
+
+      var NAME_KEYS = [
+        'name_es', 'name_en', 'NOMBRE', 'NOMBRE_UGA', 'NOM_NUC', 'Name', 'name', 'CLAVE_UGA', 'CLAVE', 'highway',
+        'ref', 'place', 'kind', 'waterway', 'power', 'clave', 'code',
+      ];
+      var SKIP = {
+        timestamp: 1, begin: 1, end: 1, altitudeMode: 1, tessellate: 1, extrude: 1,
+        visibility: 1, drawOrder: 1, icon: 1, description: 1, id: 1, lon: 1, lat: 1,
+        COV_: 1, COV_ID: 1, osm_id: 1, image: 1, thumb: 1, slug: 1, source_frame: 1,
+        source_filename: 1, batch: 1, notes: 1, alt_m: 1, theme: 1, category: 1,
+      };
+
+      var polyFillOpacity = 0.28;
+
+      function featureTitle(props) {
+        if (!props) return '';
+        for (var i = 0; i < NAME_KEYS.length; i++) {
+          var v = props[NAME_KEYS[i]];
+          if (v != null && String(v).trim() !== '') return String(v);
+        }
+        return '';
+      }
+
+      function popupHtml(props) {
+        var title = featureTitle(props);
+        var rows = '';
+        Object.keys(props || {}).forEach(function (k) {
+          if (SKIP[k]) return;
+          var v = props[k];
+          if (v == null || v === '') return;
+          rows +=
+            '<tr><th style="text-align:left;padding:1px 8px 1px 0;color:#3c5163;font-weight:500">' +
+            k +
+            '</th><td style="padding:1px 0">' +
+            String(v) +
+            '</td></tr>';
+        });
+        return (
+          (title ? '<strong>' + title + '</strong><br/>' : '') +
+          '<table style="border-collapse:collapse;font-size:0.8rem;margin-top:4px">' +
+          rows +
+          '</table>'
+        );
+      }
+
+      function gmapsLinks(lat, lon) {
+        if (lat == null || lon == null || isNaN(Number(lat)) || isNaN(Number(lon))) return '';
+        var q = Number(lat).toFixed(6) + ',' + Number(lon).toFixed(6);
+        var en = isEn();
+        return '<div class="gmaps-links" style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">' +
+          '<a class="btn secondary" style="font-size:.78rem;padding:3px 8px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + q + '">' + (en ? 'Open in Google Maps' : 'Abrir en Google Maps') + '</a>' +
+          '<a class="btn secondary" style="font-size:.78rem;padding:3px 8px" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + q + '">' + (en ? 'Directions' : 'Cómo llegar') + '</a></div>';
+      }
+
+      function stillsPopup(props) {
+        var name = (props && (props.name || props.id)) || 'Still';
+        var thumb = props && props.thumb;
+        var full = (props && (props.image || props.full)) || thumb;
+        var src = thumb || full;
+        var lat = props && props.lat;
+        var lon = props && props.lon;
+        var coords =
+          lat != null && lon != null
+            ? Number(lat).toFixed(5) + ', ' + Number(lon).toFixed(5)
+            : '';
+        var img = src
+          ? '<a href="' +
+            (full || src) +
+            '" target="_blank" rel="noopener"><img src="' +
+            src +
+            '" alt="' +
+            name +
+            '" loading="lazy" onerror="this.onerror=null;this.src=\'' +
+            (full || src) +
+            '\';" style="max-width:240px;width:100%;height:auto;border-radius:4px;display:block;margin:6px 0;background:#e8eef2"/></a>'
+          : '';
+        return (
+          '<strong>' +
+          name +
+          '</strong>' +
+          img +
+          (coords ? '<div style="font-size:0.78rem;color:#3c5163">' + coords + '</div>' : '') +
+          (full
+            ? '<a href="' +
+              full +
+              '" target="_blank" rel="noopener" style="font-size:0.85rem">' + (isEn() ? 'Full image ↗' : 'Imagen completa ↗') + '</a> · '
+            : '') +
+          '<a href="/stills" style="font-size:0.85rem">' + (isEn() ? 'All photos' : 'Todas las fotos') + '</a>' +
+          gmapsLinks(lat, lon)
+        );
+      }
+
+      function styleFor(layerMeta) {
+        var c = layerMeta.color || '#34607d';
+        if (layerMeta.type === 'point' || layerMeta.type === 'stills') {
+          return {
+            radius: layerMeta.type === 'stills' ? 5 : 6,
+            color: c,
+            fillColor: c,
+            fillOpacity: 0.85,
+            weight: 1,
+          };
+        }
+        if (layerMeta.type === 'line') {
+          return {
+            color: c,
+            /* PASS4_SOFT_STROKES */ weight: layerMeta.id === 'osm_highways' ? 0.9 : layerMeta.id === 'osm_power_lines' ? 1.1 : 1.2, opacity: layerMeta.id === 'osm_highways' ? 0.35 : 0.55,
+            opacity: 0.85,
+            fillOpacity: 0,
+          };
+        }
+        return {
+          color: c,
+          weight: 1.5,
+          fillColor: c,
+          fillOpacity: polyFillOpacity,
+        };
+      }
+
+      var statusEl = document.getElementById('gis-status');
+      var listEl = document.getElementById('gis-layer-list');
+      var loaded = {};
+      var allMetas = [];
+      var boundsGroup = L.featureGroup();
+      var photosOnly = false;
+
+      function setStatus(msg) {
+        if (statusEl) statusEl.textContent = msg;
+      }
+
+      function isEn() {
+        try {
+          return (localStorage.getItem('bcs_portal_lang') || 'es') === 'en';
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function syncLangSpans(root) {
+        try {
+          var lang = localStorage.getItem('bcs_portal_lang') || 'es';
+          (root || document)
+            .querySelectorAll('#gis-panel [data-lang-es], #gis-panel [data-lang-en], #gis-drawer-toggle [data-lang-es], #gis-drawer-toggle [data-lang-en]')
+            .forEach(function (el) {
+              if (el.hasAttribute('data-lang-es')) el.hidden = lang === 'en';
+              if (el.hasAttribute('data-lang-en')) el.hidden = lang !== 'en';
+            });
+          var filt = document.getElementById('gis-layer-filter');
+          if (filt) {
+            filt.placeholder = lang === 'en' ? 'Filter layers…' : 'Filtrar capas…';
+          }
+        } catch (e) {}
+      }
+
+      function applyPolygonOpacity() {
+        Object.keys(loaded).forEach(function (id) {
+          var pack = loaded[id];
+          if (!pack || !pack.meta || pack.meta.type !== 'polygon') return;
+          pack.layer.setStyle({ fillOpacity: polyFillOpacity });
+        });
+      }
+
+      function setLayerVisible(id, on) {
+        var pack = loaded[id];
+        if (!pack) return;
+        var cb = listEl.querySelector('input[data-layer-id="' + id + '"]');
+        if (on) {
+          if (!map.hasLayer(pack.layer)) pack.layer.addTo(map);
+          if (cb) cb.checked = true;
+        } else {
+          if (map.hasLayer(pack.layer)) map.removeLayer(pack.layer);
+          if (cb) cb.checked = false;
+        }
+      }
+
+      function loadStillsLayer(meta) {
+        return fetch(meta.url)
+          .then(function (r) {
+            if (!r.ok) throw new Error(meta.id + ' ' + r.status);
+            return r.json();
+          })
+          .then(function (geo) {
+            var cluster =
+              typeof L.markerClusterGroup === 'function'
+                ? L.markerClusterGroup({
+                    showCoverageOnHover: false,
+                    maxClusterRadius: 45,
+                    spiderfyOnMaxZoom: true,
+                  })
+                : L.layerGroup();
+
+            var n = 0;
+            (geo.features || []).forEach(function (f) {
+              var g = f.geometry;
+              if (!g || g.type !== 'Point') return;
+              var coords = g.coordinates;
+              var latlng = L.latLng(coords[1], coords[0]);
+              var props = f.properties || {};
+              var m = L.circleMarker(latlng, styleFor(meta));
+              m.bindPopup(function () {
+                return stillsPopup(props);
+              }, { maxWidth: 280, minWidth: 180 });
+              cluster.addLayer(m);
+              n++;
+            });
+
+            loaded[meta.id] = { meta: meta, layer: cluster, count: n };
+            var stat = document.getElementById('gis-stat-stills');
+            if (stat) stat.textContent = String(n);
+            if (meta.defaultOn) {
+              cluster.addTo(map);
+              try {
+                boundsGroup.addLayer(cluster);
+              } catch (e) {}
+            }
+            return meta;
+          });
+      }
+
+
+      /* PASS3_MAP_DETAIL */
+      var PLACE_BOUNDS = {
+        bcs: [[22.8, -115.2], [28.0, -109.3]],
+        los_cabos: [[22.8, -110.2], [23.7, -109.3]],
+        la_paz: [[23.4, -110.8], [24.9, -109.5]],
+        loreto: [[25.4, -111.8], [26.6, -110.8]],
+        comondu: [[24.5, -112.5], [26.3, -110.8]],
+        mulege: [[26.3, -113.5], [28.0, -111.5]],
+      };
+      function openDetail(html) {
+        var sheet = document.getElementById('gis-detail');
+        var body = document.getElementById('gis-detail-body');
+        if (!sheet || !body) return;
+        body.innerHTML = html;
+        sheet.hidden = false;
+      }
+      function closeDetail() {
+        var sheet = document.getElementById('gis-detail');
+        if (sheet) sheet.hidden = true;
+      }
+      var closeBtn = document.getElementById('gis-detail-close');
+      if (closeBtn) closeBtn.addEventListener('click', closeDetail);
+
+      function featureDetailHtml(props, layerMeta, ll) {
+        props = props || {};
+        var en = isEn();
+        var name = props.name || props.proyecto || props.NOMBRE || props.name_es || layerMeta.name_es || '—';
+        var bits = ['<div class="gis-detail-card">'];
+        bits.push('<p class="gis-detail-kicker">' + (en ? (layerMeta.label_ciudadano_en || layerMeta.name_en || layerMeta.id) : (layerMeta.label_ciudadano || layerMeta.name_es || layerMeta.id)) + '</p>');
+        bits.push('<h3>' + name + '</h3>');
+        if (props.precision_es || props.precision) {
+          bits.push('<p class="gis-detail-warn">' + (en ? (props.precision_en || props.precision) : (props.precision_es || props.precision)) + '</p>');
+        }
+        ['sexenio','sector','dependencia','estado','municipios_raw','alcance','kind'].forEach(function (k) {
+          if (props[k]) bits.push('<p><strong>' + k + ':</strong> ' + props[k] + '</p>');
+        });
+        if (props.fuente || props.source) {
+          var src = props.fuente || props.source;
+          if (String(src).indexOf('http') === 0) bits.push('<p><a href="' + src + '" target="_blank" rel="noopener">' + (en ? 'Source' : 'Fuente') + '</a></p>');
+          else bits.push('<p class="meta">' + src + '</p>');
+        }
+        bits.push('<p class="gis-detail-actions">');
+        if (props.studio_href) bits.push('<a class="btn" href="' + props.studio_href + '">' + (en ? 'Dossier' : 'Ficha') + '</a>');
+        if (props.ontology_id) bits.push('<a class="btn secondary" href="/ontologia/?node=' + props.ontology_id + '">' + (en ? 'Relationship map' : 'Mapa de relaciones') + '</a>');
+        if (props.id && String(props.id).indexOf('FED-') === 0) {
+          bits.push('<a class="btn secondary" href="/proyectos-federales/?q=' + encodeURIComponent(props.id) + '">' + (en ? 'Inventory' : 'Inventario') + '</a>');
+        }
+        bits.push('</p>');
+        if (ll) bits.push(gmapsLinks(ll.lat, ll.lng));
+        bits.push('</div>');
+        return bits.join('');
+      }
+
+      function zoomToPlace(id) {
+        var b = PLACE_BOUNDS[id];
+        if (!b) return;
+        map.fitBounds(b, { padding: [28, 28], maxZoom: 10 });
+      }
+      window.addEventListener('bcs:placechange', function (ev) {
+        var id = ev && ev.detail && ev.detail.place;
+        if (id) zoomToPlace(id);
+        else map.fitBounds(BCS_BOUNDS);
+      });
+
+      // URL boot: ?place=&layers=
+      try {
+        var params = new URLSearchParams(location.search);
+        var placeQ = params.get('place');
+        var layersQ = (params.get('layers') || '').split(',').filter(Boolean);
+        if (placeQ) setTimeout(function () { zoomToPlace(placeQ); }, 600);
+        window.__BCS_MAP_BOOT_LAYERS = layersQ;
+      } catch (e) {}
+
+      function loadImageOverlay(meta) {
+        var b = meta.bounds || [[22.0, -116.0], [29.0, -109.0]];
+        var layer = L.imageOverlay(meta.url, b, {
+          opacity: meta.opacity != null ? meta.opacity : 0.55,
+          interactive: false,
+          zIndex: meta.id.indexOf('relieve') >= 0 ? 200 : 250,
+        });
+        loaded[meta.id] = { meta: meta, layer: layer, count: 1 };
+        if (meta.defaultOn) layer.addTo(map);
+        return Promise.resolve(meta);
+      }
+
+      function lineStyleFor(meta, feature) {
+        var props = (feature && feature.properties) || {};
+        var base = meta.color || '#34607d';
+        var w = meta.weight != null ? meta.weight : 1.2;
+        var op = meta.opacity != null ? meta.opacity : 0.75;
+        if (meta.styleBy === 'ORD_STRA') {
+          var ord = Number(props.ORD_STRA || props.ORD_CLAS || 1);
+          w = Math.max(0.6, Math.min(4.2, 0.45 + ord * 0.55));
+          // deeper blue for higher-order streams
+          var blues = ['#90e0ef', '#48cae4', '#00b4d8', '#0096c7', '#34607d', '#023e8a', '#03045e'];
+          base = blues[Math.min(blues.length - 1, Math.max(0, ord - 1))];
+          op = 0.55 + Math.min(0.35, ord * 0.05);
+        }
+        if (meta.id === 'escorrentia_trayectorias') {
+          w = 0.85;
+          op = 0.5;
+          base = meta.color || '#34607d';
+        }
+        return { color: base, weight: w, opacity: op, fillOpacity: 0 };
+      }
+
+      function loadLayer(meta) {
+
+        if (meta.type === 'stills') return loadStillsLayer(meta);
+        if (meta.type === 'imageOverlay') return loadImageOverlay(meta);
+        return fetch(meta.url)
+          .then(function (r) {
+            if (!r.ok) throw new Error(meta.id + ' ' + r.status);
+            return r.json();
+          })
+          .then(function (geo) {
+            var layer = L.geoJSON(geo, {
+              style: function (feature) {
+                var t = feature && feature.geometry && feature.geometry.type;
+                if (t === 'LineString' || t === 'MultiLineString') {
+                  if (meta.group === 'runoff' || meta.styleBy) return lineStyleFor(meta, feature);
+                  return {
+                    color: meta.color || '#34607d',
+                    weight: 2.6,
+                    opacity: 0.9,
+                    fillOpacity: 0,
+                  };
+                }
+                return styleFor(meta);
+              },
+              pointToLayer: function (f, latlng) {
+                var c = meta.color || '#34607d';
+                return L.circleMarker(latlng, {
+                  radius: 7,
+                  color: c,
+                  fillColor: c,
+                  fillOpacity: 0.9,
+                  weight: 1,
+                });
+              },
+              onEachFeature: function (f, lyr) {
+                var props = f.properties || {};
+                var pll = null;
+                try {
+                  if (lyr.getLatLng) pll = lyr.getLatLng();
+                  else if (f.geometry && /Point/.test(f.geometry.type) === false && lyr.getBounds && meta.type === 'polygon') pll = null;
+                } catch (e) {}
+                lyr.bindPopup(function () { return popupHtml(props) + (pll ? gmapsLinks(pll.lat, pll.lng) : ''); }, { maxWidth: 320 });
+                lyr.on('click', function () {
+                  if (meta.id === 'federal_projects' || meta.id === 'energy_assets') {
+                    openDetail(featureDetailHtml(props, meta, pll));
+                  }
+                });
+              },
+            });
+            loaded[meta.id] = {
+              meta: meta,
+              layer: layer,
+              count: (geo.features || []).length,
+            };
+            if (meta.defaultOn) {
+              layer.addTo(map);
+              try {
+                boundsGroup.addLayer(layer);
+              } catch (e) {}
+            }
+            return meta;
+          });
+      }
+
+      function addCheckbox(meta, container) {
+        var label = document.createElement('label');
+        label.className = 'gis-layer-toggle';
+        label.dataset.layerId = meta.id;
+        label.dataset.search =
+          ((meta.label_ciudadano || '') + ' ' + (meta.name_es || '') + ' ' + (meta.name_en || '') + ' ' + meta.id).toLowerCase();
+        if (meta.basico) label.dataset.basico = '1';
+        var cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = !!meta.defaultOn;
+        cb.dataset.layerId = meta.id;
+        var swatch = document.createElement('span');
+        swatch.className = 'gis-swatch';
+        swatch.style.background = meta.color;
+        var es = document.createElement('span');
+        es.setAttribute('data-lang-es', '');
+        es.textContent = meta.label_ciudadano || meta.name_es;
+        var en = document.createElement('span');
+        en.setAttribute('data-lang-en', '');
+        en.hidden = true;
+        en.textContent = meta.label_ciudadano_en || meta.name_en;
+        label.appendChild(cb);
+        label.appendChild(swatch);
+        label.appendChild(es);
+        label.appendChild(en);
+        if (meta.que_significa) {
+          var qs = document.createElement('small');
+          qs.className = 'gis-layer-what';
+          qs.setAttribute('data-lang-es', '');
+          qs.textContent = meta.que_significa;
+          var qsEn = document.createElement('small');
+          qsEn.className = 'gis-layer-what';
+          qsEn.setAttribute('data-lang-en', '');
+          qsEn.hidden = true;
+          qsEn.textContent = meta.que_significa_en || meta.que_significa;
+          label.appendChild(qs);
+          label.appendChild(qsEn);
+        }
+        if (meta.legend_es) {
+          var tip = document.createElement('span');
+          tip.className = 'gis-layer-tip';
+          tip.title = meta.legend_es;
+          tip.setAttribute('data-lang-es', '');
+          tip.textContent = ' ⓘ';
+          var tipEn = document.createElement('span');
+          tipEn.className = 'gis-layer-tip';
+          tipEn.title = meta.legend_en || meta.legend_es;
+          tipEn.setAttribute('data-lang-en', '');
+          tipEn.hidden = true;
+          tipEn.textContent = ' ⓘ';
+          label.appendChild(tip);
+          label.appendChild(tipEn);
+        }
+        container.appendChild(label);
+
+        cb.addEventListener('change', function () {
+          var pack = loaded[meta.id];
+          if (!pack) return;
+          if (cb.checked) pack.layer.addTo(map);
+          else map.removeLayer(pack.layer);
+          if (photosOnly && meta.id !== 'stills' && cb.checked) {
+            photosOnly = false;
+          }
+        });
+      }
+
+      var GROUP_ORDER = ['projects', 'energy', 'focus', 'photos', 'protection', 'transport', 'water', 'runoff', 'places', 'other'];
+
+      function buildGroupedUI(layers) {
+        listEl.innerHTML = '';
+        var groups = {};
+        var order = [];
+        layers.forEach(function (m) {
+          var gid = m.group || 'other';
+          if (!groups[gid]) {
+            groups[gid] = {
+              id: gid,
+              es: m.group_es || gid,
+              en: m.group_en || gid,
+              layers: [],
+            };
+            order.push(gid);
+          }
+          groups[gid].layers.push(m);
+        });
+        order.sort(function (a, b) {
+          var ia = GROUP_ORDER.indexOf(a);
+          var ib = GROUP_ORDER.indexOf(b);
+          if (ia < 0) ia = 99;
+          if (ib < 0) ib = 99;
+          return ia - ib;
+        });
+        order.forEach(function (gid) {
+          var g = groups[gid];
+          var block = document.createElement('details');
+          block.className = 'gis-layer-group';
+          block.open = (gid === "projects" || gid === "places"); block.setAttribute("data-pass4","1");
+          block.dataset.groupId = gid;
+
+          var summary = document.createElement('summary');
+          summary.className = 'gis-group-title';
+          var tes = document.createElement('span');
+          tes.setAttribute('data-lang-es', '');
+          tes.textContent = g.es;
+          var ten = document.createElement('span');
+          ten.setAttribute('data-lang-en', '');
+          ten.hidden = true;
+          ten.textContent = g.en;
+          summary.appendChild(tes);
+          summary.appendChild(ten);
+          block.appendChild(summary);
+
+          var actions = document.createElement('div');
+          actions.className = 'gis-group-actions';
+          var showAll = document.createElement('button');
+          showAll.type = 'button';
+          showAll.className = 'gis-group-btn';
+          showAll.textContent = isEn() ? 'Show all' : 'Mostrar todo';
+          showAll.dataset.es = 'Mostrar todo';
+          showAll.dataset.en = 'Show all';
+          var hideAll = document.createElement('button');
+          hideAll.type = 'button';
+          hideAll.className = 'gis-group-btn';
+          hideAll.textContent = isEn() ? 'Hide all' : 'Ocultar todo';
+          hideAll.dataset.es = 'Ocultar todo';
+          hideAll.dataset.en = 'Hide all';
+          actions.appendChild(showAll);
+          actions.appendChild(hideAll);
+          block.appendChild(actions);
+
+          var row = document.createElement('div');
+          row.className = 'gis-group-rows';
+          g.layers.forEach(function (m) {
+            addCheckbox(m, row);
+          });
+          block.appendChild(row);
+          listEl.appendChild(block);
+
+          showAll.addEventListener('click', function (ev) {
+            ev.preventDefault();
+            g.layers.forEach(function (m) {
+              setLayerVisible(m.id, true);
+            });
+          });
+          hideAll.addEventListener('click', function (ev) {
+            ev.preventDefault();
+            g.layers.forEach(function (m) {
+              setLayerVisible(m.id, false);
+            });
+          });
+        });
+      }
+
+      function filterLayers(q) {
+        var qq = (q || '').toLowerCase().trim();
+        listEl.querySelectorAll('.gis-layer-toggle').forEach(function (lab) {
+          var hay = lab.dataset.search || '';
+          lab.style.display = !qq || hay.indexOf(qq) >= 0 ? '' : 'none';
+        });
+        listEl.querySelectorAll('.gis-layer-group').forEach(function (block) {
+          var any = false;
+          block.querySelectorAll('.gis-layer-toggle').forEach(function (lab) {
+            if (lab.style.display !== 'none') any = true;
+          });
+          block.style.display = any ? '' : 'none';
+        });
+      }
+
+      // Controls
+      var drawerToggle = document.getElementById('gis-drawer-toggle');
+      var panel = document.getElementById('gis-panel');
+      var shell = document.getElementById('gis-shell');
+      if (drawerToggle && panel) {
+        drawerToggle.addEventListener('click', function () {
+          var open = panel.classList.toggle('is-open');
+          drawerToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          setTimeout(function () {
+            map.invalidateSize();
+          }, 220);
+        });
+      }
+
+      document.getElementById('gis-fit-bcs').addEventListener('click', function () {
+        map.fitBounds(BCS_BOUNDS, { padding: [24, 24] });
+      });
+
+      document.getElementById('gis-fullscreen').addEventListener('click', function () {
+        var el = shell || mapEl;
+        if (!document.fullscreenElement) {
+          (el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen).call(el);
+        } else {
+          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        }
+        setTimeout(function () {
+          map.invalidateSize();
+        }, 200);
+      });
+      document.addEventListener('fullscreenchange', function () {
+        setTimeout(function () {
+          map.invalidateSize();
+        }, 100);
+      });
+
+      document.getElementById('gis-photos-only').addEventListener('click', function () {
+        photosOnly = !photosOnly;
+        allMetas.forEach(function (m) {
+          if (m.id === 'stills') setLayerVisible(m.id, true);
+          else setLayerVisible(m.id, !photosOnly && !!m.defaultOn);
+        });
+        if (photosOnly) {
+          // leave only stills on
+          allMetas.forEach(function (m) {
+            if (m.id !== 'stills') setLayerVisible(m.id, false);
+          });
+        }
+        this.classList.toggle('is-active', photosOnly);
+      });
+
+      var opac = document.getElementById('gis-opacity');
+      var opacVal = document.getElementById('gis-opacity-val');
+      if (opac) {
+        opac.addEventListener('input', function () {
+          polyFillOpacity = Number(opac.value) / 100;
+          if (opacVal) opacVal.textContent = opac.value + '%';
+          applyPolygonOpacity();
+        });
+      }
+
+      var filt = document.getElementById('gis-layer-filter');
+      if (filt) {
+        filt.addEventListener('input', function () {
+          filterLayers(filt.value);
+        });
+      }
+
+
+      function parseScenarioId() {
+        try {
+          var params = new URLSearchParams(window.location.search || '');
+          var sid = params.get('scenario');
+          if (sid) return sid;
+          var hash = (window.location.hash || '').replace(/^#/, '');
+          if (hash.indexOf('scenario=') === 0) return hash.slice('scenario='.length).split('&')[0];
+          var m = hash.match(/(?:^|[&#])scenario=([\w-]+)/);
+          if (m) return m[1];
+          // support /mapas#gis with ?scenario= already handled; also #gis&scenario=
+          return null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function parseLayerOverrides() {
+        try {
+          var params = new URLSearchParams(window.location.search || '');
+          var raw = params.get('layers');
+          if (!raw) return null;
+          return raw.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function applyScenarioFromUrl() {
+        var sid = parseScenarioId();
+        var layerOverride = parseLayerOverrides();
+        if (!sid && !layerOverride) return;
+
+        function turnOn(ids, bbox) {
+          // Turn off focus layers first, then enable requested
+          allMetas.forEach(function (m) {
+            if (m.group === 'focus') setLayerVisible(m.id, false);
+          });
+          (ids || []).forEach(function (id) {
+            setLayerVisible(id, true);
+          });
+          if (bbox && bbox.length === 4) {
+            try {
+              var b = L.latLngBounds(
+                [bbox[1], bbox[0]],
+                [bbox[3], bbox[2]]
+              );
+              map.fitBounds(b, { padding: [28, 28], maxZoom: 11 });
+            } catch (e) {}
+          }
+          // Open focus group in panel
+          var block = listEl.querySelector('.gis-layer-group[data-group-id="focus"]');
+          if (block) block.open = (gid === "projects" || gid === "places"); block.setAttribute("data-pass4","1");
+          setStatus('Focus layers on');
+          try {
+            var gis = document.getElementById('gis');
+            if (gis) gis.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } catch (e) {}
+        }
+
+        if (layerOverride && !sid) {
+          turnOn(layerOverride, null);
+          return;
+        }
+
+        fetch('/scenarios.json')
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            var list = (data && data.scenarios) || [];
+            var sc = null;
+            for (var i = 0; i < list.length; i++) {
+              if (list[i].id === sid) { sc = list[i]; break; }
+            }
+            if (!sc) {
+              if (layerOverride) turnOn(layerOverride, null);
+              else setStatus('Unknown scenario: ' + sid);
+              return;
+            }
+            var ids = layerOverride || sc.priority_layer_ids || [];
+            turnOn(ids, sc.focus_bbox);
+          })
+          .catch(function (err) {
+            console.warn(err);
+            if (layerOverride) turnOn(layerOverride, null);
+          });
+      }
+
+      setStatus('Loading…');
+      fetch('/gis/layers.json')
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (layers) {
+          allMetas = layers;
+          var nEl = document.getElementById('gis-stat-layers');
+          if (nEl) nEl.textContent = String(layers.length);
+          buildGroupedUI(layers);
+          var basicCb = document.getElementById('gis-basic');
+          var hasUrlLayers = /[?&](layers|scenario)=/.test(location.search) || /scenario=/.test(location.hash);
+          function applyBasic(on, toggleLayers) {
+            if (listEl) listEl.classList.toggle('is-basic', on);
+            if (toggleLayers) {
+              layers.forEach(function (m) { m.defaultOn = on ? !!m.basico : !!m.__origDefault; });
+            }
+            listEl.querySelectorAll('.gis-layer-group').forEach(function (block) {
+              var any = !on || !!block.querySelector('.gis-layer-toggle[data-basico="1"]');
+              block.classList.toggle('is-basic-hidden', !any);
+              if (on && any) block.open = true;
+            });
+          }
+          layers.forEach(function (m) { m.__origDefault = !!m.defaultOn; });
+          if (basicCb) {
+            if (hasUrlLayers) basicCb.checked = false;
+            applyBasic(basicCb.checked, basicCb.checked);
+            listEl.querySelectorAll('input[data-layer-id]').forEach(function (cb) {
+              var mm = layers.filter(function (x) { return x.id === cb.dataset.layerId; })[0];
+              if (mm) cb.checked = !!mm.defaultOn;
+            });
+            basicCb.addEventListener('change', function () {
+              applyBasic(basicCb.checked, false);
+              if (basicCb.checked) layers.forEach(function (m) { setLayerVisible(m.id, !!m.basico); });
+            });
+          }
+          /* PASS3_BOOT_LAYERS */
+          (window.__BCS_MAP_BOOT_LAYERS || []).forEach(function (id) {
+            setLayerVisible(id, true);
+          });
+          syncLangSpans();
+
+          return Promise.all(
+            layers.map(function (m) {
+              return loadLayer(m).catch(function (err) {
+                console.warn(err);
+                return null;
+              });
+            })
+          ).then(function () {
+            try {
+              map.fitBounds(BCS_BOUNDS, { padding: [20, 20] });
+            } catch (e) {}
+            setTimeout(function () {
+              map.invalidateSize();
+            }, 100);
+            setStatus(layers.length + ' layers');
+            applyScenarioFromUrl();
+          });
+        })
+        .catch(function (err) {
+          setStatus('Error loading layers');
+          console.error(err);
+        });
+
+      document.addEventListener('bcs:lang', function () {
+        syncLangSpans();
+        listEl.querySelectorAll('.gis-group-btn').forEach(function (btn) {
+          btn.textContent = isEn() ? btn.dataset.en : btn.dataset.es;
+        });
+      });
+    })();
+  </script>
+  </section>
+
+
+  <section id="gallery" class="maps-gallery-section" style="margin-top:2.5rem">
+    <h2>
+      <span data-lang-es>Galería de mapas</span>
+      <span data-lang-en hidden>Map gallery</span>
+    </h2>
+    <p class="lead" style="margin-top:0.35rem">
+      <span data-lang-es>
+        {gallery.length} mapas JPG embebidos desde <code>guide_assets/maps</code>, organizados por tema.
+        Cada figura enlaza a la página del tema.
+      </span>
+      <span data-lang-en hidden>
+        {gallery.length} embedded JPG maps from <code>guide_assets/maps</code>, organized by theme.
+        Each figure links to its topic page.
+      </span>
+    </p>
+
+    <p class="cta-row">
+    {used.map((t) => (
+      <a class="btn secondary" href={`#${t.id}`}>
+        <span data-lang-es>{t.es}</span>
+        <span data-lang-en hidden>{t.en}</span>
+        ({(byTheme[t.id] || []).length})
+      </a>
+    ))}
+  </p>
+
+  {used.map((t) => (
+    <section class="theme-section" id={t.id}>
+      <h2>
+        <a href={t.href} style="text-decoration:none">
+          <span data-lang-es>{t.es}</span>
+          <span data-lang-en hidden>{t.en}</span>
+        </a>
+      </h2>
+      <p class="map-section-meta">
+        {(byTheme[t.id] || []).length} mapas ·
+        <a href={t.href}><span data-lang-es>Ver tema</span><span data-lang-en hidden>Open topic</span></a>
+      </p>
+      <div class="map-gallery">
+        {(byTheme[t.id] || []).map((m) => (
+          <figure class="map-card">
+            <a href={m.src} target="_blank" rel="noopener">
+              <img
+                src={m.src}
+                alt={`${m.title_es} / ${m.title_en || m.title_es}`}
+                loading="lazy"
+              />
+            </a>
+            <figcaption class="cap">
+              <strong>
+                <span data-lang-es>{m.title_es}</span>
+                <span data-lang-en hidden>{m.title_en || m.title_es}</span>
+              </strong>
+              <a class="tag chip" href={m.theme_href || t.href}>{m.theme}</a>
+              <p class="map-cap-so">
+                <span data-lang-es>
+                  Mapa de tema «{t.es}» — abrir el tema para contexto de estrategia; Los municipios no se promedian entre sí.
+                </span>
+                <span data-lang-en hidden>
+                  Theme map for “{t.en}” — open the topic for strategy context; Los municipios no se promedian entre sí.
+                </span>
+              </p>
+              {m.source && (
+                <small>
+                  <span data-lang-es>Fuente: {cleanSourceText(m.source)}</span>
+                  <span data-lang-en hidden>Source: {cleanSourceText(m.source_en || m.source)}</span>
+                </small>
+              )}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <div class="fuentes-box">
+    <h2><span data-lang-es>Fuentes</span><span data-lang-en hidden>Sources</span></h2>
+    <ul>
+      <li><span data-lang-es>Base de datos BCS 2050 — galería de mapas · {gallery.length} mapas</span><span data-lang-en hidden>BCS 2050 database — map gallery · {gallery.length} maps</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — catálogo de mapas</span><span data-lang-en hidden>BCS 2050 database — map catalogue</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — atlas SIG</span><span data-lang-en hidden>BCS 2050 database — GIS atlas</span></li>
+    </ul>
+  </div>
+  </section>
+
+
+  <style is:global>
+    .map-cap-so { margin: 0.35rem 0 0.25rem; font-size: 0.78rem; color: #3c5163; line-height: 1.35; font-weight: 400; }
+  </style>
+</BaseLayout>

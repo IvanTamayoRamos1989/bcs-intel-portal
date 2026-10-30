@@ -1,0 +1,145 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.91,
+          22.89
+        ]
+      },
+      "properties": {
+        "id": "los_cabos",
+        "name_es": "Los Cabos / San José–Cabo San Lucas",
+        "name_en": "Los Cabos / San José–Cabo San Lucas",
+        "vocation_short_es": "Motor turístico",
+        "vocation_short_en": "Tourism engine",
+        "vocation_es": "Motor de crecimiento turístico y puerta internacional primaria del cabo.",
+        "vocation_en": "Tourism–growth engine and primary international gateway of the cape.",
+        "color": "#e11d48"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.45,
+          23.35
+        ]
+      },
+      "properties": {
+        "id": "east_cape",
+        "name_es": "East Cape / Cabo del Este (San José del Este)",
+        "name_en": "East Cape / Cabo del Este (San José del Este)",
+        "vocation_short_es": "Flanco Golfo / ANP",
+        "vocation_short_en": "Gulf flank / ANP",
+        "vocation_es": "Frontera de crecimiento costero bajo presión de conservación (lógica Cabo Pulmo / ANP); piloto de realineación espacial.",
+        "vocation_en": "Coastal growth frontier under conservation pressure (Cabo Pulmo / ANP logic); spatial realignment pilot.",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.22,
+          23.45
+        ]
+      },
+      "properties": {
+        "id": "todos_santos",
+        "name_es": "Todos Santos–El Pescadero",
+        "name_en": "Todos Santos–El Pescadero",
+        "vocation_short_es": "Espina Pacífico",
+        "vocation_short_en": "Pacific spine",
+        "vocation_es": "Espina de amenidad del Pacífico (cultura, turismo residencial, amenidades creativas/agro).",
+        "vocation_en": "Pacific amenity spine (culture, residential tourism, creative/agro amenities).",
+        "color": "#8b5cf6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.31,
+          24.14
+        ]
+      },
+      "properties": {
+        "id": "la_paz",
+        "name_es": "La Paz",
+        "name_en": "La Paz",
+        "vocation_short_es": "Capital / servicios",
+        "vocation_short_en": "Capital / services",
+        "vocation_es": "Capital de servicios, conocimiento, administración y logística del estado.",
+        "vocation_en": "Capital of services, knowledge, administration, and logistics for the state.",
+        "color": "#0284c7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.35,
+          25.99
+        ]
+      },
+      "properties": {
+        "id": "loreto",
+        "name_es": "Loreto",
+        "name_en": "Loreto",
+        "vocation_short_es": "Turismo–conservación",
+        "vocation_short_en": "Tourism–conservation",
+        "vocation_es": "Nodo mid-península turismo + conservación (identidad bahía/ANP).",
+        "vocation_en": "Mid-peninsula tourism + conservation node (bay/ANP identity).",
+        "color": "#059669"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.66,
+          25.03
+        ]
+      },
+      "properties": {
+        "id": "comondu",
+        "name_es": "Ciudad Constitución / Comondú",
+        "name_en": "Ciudad Constitución / Comondú",
+        "vocation_short_es": "Agro / inland",
+        "vocation_short_en": "Agri / inland",
+        "vocation_es": "Hub agro / servicios inland; pilotos de desalación, riego y hinterland productivo.",
+        "vocation_en": "Agri / inland service hub; pilots for desal, irrigation, and productive hinterland.",
+        "color": "#ca8a04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.98,
+          26.89
+        ]
+      },
+      "properties": {
+        "id": "mulege_north",
+        "name_es": "Mulegé / Santa Rosalía / Vizcaíno (norte)",
+        "name_en": "Mulegé / Santa Rosalía / Vizcaíno (north)",
+        "vocation_short_es": "Corredor norte / H2",
+        "vocation_short_en": "North corridor / H2",
+        "vocation_es": "Corredor disperso; señales de energía remota y logística de larga distancia (incl. narrativas H2 verde donde hay evidencia).",
+        "vocation_en": "Sparse corridor; remote energy and long-haul logistics signals (incl. green-H2 narratives where evidenced).",
+        "color": "#64748b"
+      }
+    }
+  ]
+}

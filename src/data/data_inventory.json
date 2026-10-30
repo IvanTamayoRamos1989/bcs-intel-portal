@@ -1,0 +1,610 @@
+{
+  "generated": "2026-10-05",
+  "purpose_es": "Inventario y linaje de datos del portal: fuente, fecha, licencia, propietario, método y advertencia de cada dataset y cifra clave.",
+  "catalog_count": {
+    "catalog_json": 6668,
+    "catalog_slim_json": 6668,
+    "folders_summary_total": 6668,
+    "reconciled": true,
+    "excluded_from_public_catalog": {
+      "total": 113,
+      "non_document": 90,
+      "no_content": 22,
+      "superseded": 1
+    },
+    "note_es": "Fuente única: Base de datos BCS 2050 — catálogo de documentos. Antes del 5 oct 2026 catalog_slim tenía 6,747 filas (25 archivos de Base de datos BCS 2050 — proyectos federales faltaban porque se regeneraba desde una copia vieja); ahora se deriva siempre de Base de datos BCS 2050 — catálogo de documentos. El 5 oct 2026 se retiraron del catálogo público las entradas sin contenido: herramientas internas, registros y copias de respaldo (non_document); descargas fallidas cuyo contenido está en otro archivo (superseded); y archivos cuyo contenido no se pudo obtener (no_content). Estos últimos pasan a la lista de documentos por obtener de Base de datos BCS 2050 — brechas de datos (wishlist, visible en /memoria). Lista completa en el repositorio: Base de datos BCS 2050 — acervo de datos"
+  },
+  "datasets": [
+    {
+      "id": "ds-catalog",
+      "title": "Catálogo de archivos del acervo",
+      "file": "src/data/catalog.json",
+      "used_on": [
+        "/catalogo",
+        "/explorar",
+        "/resumen"
+      ],
+      "source": "Escaneo del acervo local BCSFP",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "scripts/build_catalog.py recorre BCSFP (excluye carpetas internas/confidenciales) y registra ruta, tipo, tamaño, fecha",
+      "caveat": "Inventario de archivos, no de contenidos verificados; espejos en 10_data_lake duplican algunos documentos",
+      "refresh": "scripts/build_catalog.py",
+      "exists": true
+    },
+    {
+      "id": "ds-catalog-slim",
+      "title": "Catálogo ligero (cliente)",
+      "file": "src/data/catalog_slim.json",
+      "used_on": [
+        "/catalogo"
+      ],
+      "source": "Derivado de Base de datos BCS 2050 — catálogo de documentos",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Proyección de Base de datos BCS 2050 — catálogo de documentos + enlaces Drive + resúmenes",
+      "caveat": "Debe tener el mismo número de filas que Base de datos BCS 2050 — catálogo de documentos",
+      "refresh": "scripts/build_drive_and_summaries.py",
+      "exists": true
+    },
+    {
+      "id": "ds-file-summaries",
+      "title": "Resúmenes por archivo",
+      "file": "src/data/file_summaries.json",
+      "used_on": [
+        "/catalogo",
+        "chat"
+      ],
+      "source": "Texto extraído de los propios archivos (PDF/MD/CSV/XLSX/KML/imagen EXIF)",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "pdftotext primeras páginas; encabezados de tablas; metadatos (scripts/enrich_file_summaries.py); 2.ª pasada: imágenes/stills, Earth Studio, ZIP, Office, GIS, HTML, OCR (scripts/enrich_thin_entries.py)",
+      "caveat": "Extracto automático, no resumen editorial; tablas: columnas y valores de ejemplo de tablas no personales (nunca se copian datos personales); planos escaneados: OCR o revisión visual, que puede contener errores",
+      "refresh": "scripts/enrich_file_summaries.py",
+      "exists": true
+    },
+    {
+      "id": "ds-chat-corpus",
+      "title": "Corpus del asistente (RAG)",
+      "file": "netlify/functions/chat_corpus.json",
+      "used_on": [
+        "chat"
+      ],
+      "source": "Guías, hechos, archivos con texto, biblioteca, ontología, stills, actores, acuíferos",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "scripts/build_chat_corpus.py; búsqueda BM25 + compuerta de relevancia (netlify/lib/rag.mjs)",
+      "caveat": "Solo se indexan archivos con texto real; las cifras del asistente deben venir de estos fragmentos",
+      "refresh": "scripts/build_chat_corpus.py",
+      "exists": true
+    },
+    {
+      "id": "ds-portal-facts",
+      "title": "Hechos del portal (tablas de guías)",
+      "file": "src/data/portal_facts.json",
+      "used_on": [
+        "chat",
+        "/guías"
+      ],
+      "source": "Tablas de src/content/guides/*.md + 13_federal_projects",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "scripts/extract_portal_facts.py extrae filas de tablas markdown",
+      "caveat": "Hereda fuente y fecha de cada guía",
+      "refresh": "scripts/extract_portal_facts.py",
+      "exists": true
+    },
+    {
+      "id": "ds-escorrentia",
+      "title": "Escorrentía y agua de lluvia (modelo de terreno)",
+      "file": "src/data/escorrentia.json",
+      "used_on": [
+        "/agua/escorrentia",
+        "/mapas",
+        "/studio/*",
+        "chat"
+      ],
+      "source": "HydroSHEDS v1.1 / HydroRIVERS v1 (WWF); SRTM; geoBoundaries; empaquetado Ivan Tamayo Ramos 2026-10-05",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Información pública gubernamental (México); citar fuente",
+      "owner": "WWF HydroSHEDS / Ivan Tamayo Ramos",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Red HydroRIVERS recortada al estado; trayectorias D8 sobre DIR 3″ desde retícula de semillas; ver Modelo de terreno HydroSHEDS / HydroRIVERS method_es",
+      "caveat": "NO es mapa oficial de inundación: sin profundidad, caudal ni área inundada; acumulación = celdas aportantes",
+      "refresh": "scripts/build_escorrentia.py",
+      "exists": true
+    },
+    {
+      "id": "ds-aquifers",
+      "title": "Acuíferos de BCS — DMA (39)",
+      "file": "src/data/aquifers_bcs.json",
+      "used_on": [
+        "/agua",
+        "/studio/*",
+        "chat"
+      ],
+      "source": "DOF 9 nov 2023 Acuerdo DMA 653 acuíferos (p.3) + fichas CONAGUA 2024 / DR",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Información pública gubernamental (México); citar fuente",
+      "owner": "CONAGUA / SEMARNAT",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "NOM-011-CONAGUA-2015: DMA = R − DNC − VEAS",
+      "caveat": "Balance legal de volumen concesionable, no aforo; municipio solo si la ficha lo declara",
+      "refresh": "scripts/build_aquifers.py",
+      "exists": true
+    },
+    {
+      "id": "ds-municipios",
+      "title": "Ficha municipal (población, localidades, cabecera, ingresos)",
+      "file": "src/data/municipios.json",
+      "used_on": [
+        "/studio/*",
+        "/resumen",
+        "chat"
+      ],
+      "source": "INEGI Censo de Población y Vivienda 2020 (ITER); Leyes de Ingresos 2026; Anexo I33 2025",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Términos de Libre Uso de la Información del INEGI",
+      "owner": "INEGI / Congreso BCS / SHCP",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "POBTOT municipal y por localidad",
+      "caveat": "Población 2020: no incluye población flotante/turística",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-growth",
+      "title": "Demanda–oferta por lugar",
+      "file": "src/data/growth_demand_supply.json",
+      "used_on": [
+        "/crecimiento",
+        "/studio/*"
+      ],
+      "source": "Celdas de datasets del portal (vuelos, turismo, agua, energía)",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Cada celda cita su dataset; celdas sin evidencia quedan marcadas como brecha",
+      "caveat": "Lectura cualitativa del balance; no es un modelo",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-federal",
+      "title": "Inventario de proyectos federales BCS (44)",
+      "file": "src/data/federal_projects.json",
+      "used_on": [
+        "/proyectos-federales",
+        "/studio/*",
+        "chat"
+      ],
+      "source": "Comunicados oficiales gob.mx/bcs.gob.mx, DOF, CFE, prensa",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Información pública gubernamental (México); citar fuente",
+      "owner": "Gobierno de México / Gobierno de BCS",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Curaduría manual con URL de fuente principal por proyecto",
+      "caveat": "Montos citados = anuncios, no ejercido; estado puede cambiar",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-flights",
+      "title": "Conectividad aérea (destinos y vuelos)",
+      "file": "src/data/flight_connections_bcs.json",
+      "used_on": [
+        "/vuelos",
+        "/crecimiento"
+      ],
+      "source": "Horarios publicados de aerolíneas / aeropuertos (corte 2026-09-17)",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Información pública gubernamental (México); citar fuente",
+      "owner": "Aerolíneas / GAP / ASA",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Conteo de destinos sin escalas y frecuencias mensuales",
+      "caveat": "Foto de un corte; estacionalidad no capturada",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-tourism",
+      "title": "Turismo: hoteles, golf, marinas",
+      "file": "src/data/tourism_detail.json",
+      "used_on": [
+        "/turismo"
+      ],
+      "source": "SETUE BCS Información Estratégica; DATATUR; catálogos",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Información pública gubernamental (México); citar fuente",
+      "owner": "SETUE / SECTUR",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Inventario de activos y series publicadas",
+      "caveat": "Catálogo no exhaustivo de establecimientos",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-realestate",
+      "title": "Indicadores inmobiliarios",
+      "file": "src/data/inmobiliario_metrics.json",
+      "used_on": [
+        "/inmobiliario"
+      ],
+      "source": "JLL Reporte Anual Los Cabos 2025; Cabo RE; FITURCA; CONAVI/SNIIV",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Informe privado/comercial — solo cita, sin redistribución",
+      "owner": "JLL / Cabo RE / CONAVI",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Cifras citadas de informes",
+      "caveat": "Informes privados con metodología propia; no comparables entre sí",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-stakeholders",
+      "title": "Directorio de actores institucionales",
+      "file": "src/data/stakeholders.json",
+      "used_on": [
+        "/stakeholders",
+        "chat"
+      ],
+      "source": "Base de datos BCS 2050 — tabla de datos (Ivan Tamayo Ramos)",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Lista curada de instituciones y titulares",
+      "caveat": "Cargos cambian: verificar antes de contactar",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-organigrama",
+      "title": "Organigrama H. XV Ayuntamiento de Los Cabos 2024–2027",
+      "file": "src/data/los_cabos_organigrama.json",
+      "used_on": [
+        "/studio/los_cabos",
+        "chat"
+      ],
+      "source": "Organigrama General, BOGE #14 (29 feb 2024)",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Información pública gubernamental (México); citar fuente",
+      "owner": "H. XV Ayuntamiento de Los Cabos",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Transcripción de la imagen oficial",
+      "caveat": "Recuadros sin nombre se dejan vacíos",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-library",
+      "title": "Biblioteca BCS2050 (915 referencias)",
+      "file": "src/data/library.json",
+      "used_on": [
+        "/biblioteca",
+        "chat"
+      ],
+      "source": "Editoriales/organismos de cada referencia (World Bank, CEPAL, OCDE, ONU-Hábitat, etc.)",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Según cada documento (Open/Closed/Mixed)",
+      "owner": "Varios",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Ficha bibliográfica + extractos con página para documentos indexados",
+      "caveat": "Solo los documentos con texto indexado aportan extractos al asistente",
+      "refresh": "scripts/build_library.py",
+      "exists": true
+    },
+    {
+      "id": "ds-gis",
+      "title": "Atlas GIS (capas)",
+      "file": "src/data/gis_atlas.json",
+      "used_on": [
+        "/mapas"
+      ],
+      "source": "INEGI, CONANP, RAN, CONABIO, SEMARNAT",
+      "source_date": null,
+      "file_updated": "2026-10-02",
+      "licence": "Información pública gubernamental (México); citar fuente",
+      "owner": "Varios",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Capas vectoriales convertidas a GeoJSON",
+      "caveat": "Escalas y fechas distintas por capa",
+      "refresh": null,
+      "exists": true
+    },
+    {
+      "id": "ds-foresights",
+      "title": "Prospectiva (señales)",
+      "file": "src/data/foresights.json",
+      "used_on": [
+        "/foresights",
+        "/studio/*"
+      ],
+      "source": "Revisión de fuentes del acervo",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Elaboración interna del portal (no publicar como dato oficial)",
+      "owner": "Equipo del portal",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Síntesis cualitativa con fuentes",
+      "caveat": "Lectura interpretativa, no dato oficial",
+      "refresh": "scripts/update_bcs_foresights.py",
+      "exists": true
+    },
+    {
+      "id": "ds-news",
+      "title": "Noticias",
+      "file": "src/data/news.json",
+      "used_on": [
+        "/noticias",
+        "/studio/*"
+      ],
+      "source": "Medios citados por enlace",
+      "source_date": null,
+      "file_updated": "2026-10-05",
+      "licence": "Derechos del medio — solo enlace y titular",
+      "owner": "Medios",
+      "custodian": "Equipo del portal BCS 2050 (GC1) — ver OPERATIONS.md",
+      "method": "Selección manual",
+      "caveat": "No verificado por el portal",
+      "refresh": null,
+      "exists": true
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig-pob-bcs",
+      "label": "Población BCS",
+      "value": "798,447",
+      "unit": "habitantes",
+      "page": "INEGI CPV 2020",
+      "source": "INEGI Censo de Población y Vivienda 2020",
+      "date": "2020",
+      "method": "Conteo censal POBTOT",
+      "caveat": "No incluye población flotante",
+      "shown_on": [
+        "/resumen",
+        "/studio/bcs"
+      ]
+    },
+    {
+      "id": "fig-pob-los-cabos",
+      "label": "Población Los Cabos",
+      "value": "351,111",
+      "unit": "habitantes",
+      "page": "INEGI ITER 2020",
+      "source": "INEGI CPV 2020",
+      "date": "2020",
+      "method": "POBTOT municipal",
+      "caveat": "Crecimiento posterior a 2020 no reflejado",
+      "shown_on": [
+        "/studio/los_cabos"
+      ]
+    },
+    {
+      "id": "fig-pob-la-paz",
+      "label": "Población La Paz",
+      "value": "292,241",
+      "unit": "habitantes",
+      "page": "INEGI ITER 2020",
+      "source": "INEGI CPV 2020",
+      "date": "2020",
+      "method": "POBTOT municipal",
+      "caveat": "",
+      "shown_on": [
+        "/studio/la_paz"
+      ]
+    },
+    {
+      "id": "fig-pob-comondu",
+      "label": "Población Comondú",
+      "value": "73,021",
+      "unit": "habitantes",
+      "page": "INEGI ITER 2020",
+      "source": "INEGI CPV 2020",
+      "date": "2020",
+      "method": "POBTOT municipal",
+      "caveat": "",
+      "shown_on": [
+        "/studio/comondu"
+      ]
+    },
+    {
+      "id": "fig-pob-mulege",
+      "label": "Población Mulegé",
+      "value": "64,022",
+      "unit": "habitantes",
+      "page": "INEGI ITER 2020",
+      "source": "INEGI CPV 2020",
+      "date": "2020",
+      "method": "POBTOT municipal",
+      "caveat": "",
+      "shown_on": [
+        "/studio/mulege"
+      ]
+    },
+    {
+      "id": "fig-pob-loreto",
+      "label": "Población Loreto",
+      "value": "18,052",
+      "unit": "habitantes",
+      "page": "INEGI ITER 2020",
+      "source": "INEGI CPV 2020",
+      "date": "2020",
+      "method": "POBTOT municipal",
+      "caveat": "",
+      "shown_on": [
+        "/studio/loreto"
+      ]
+    },
+    {
+      "id": "fig-dma-deficit-sur",
+      "label": "Suma de déficits DMA (7 acuíferos pack sur)",
+      "value": "63.88",
+      "unit": "hm³/año",
+      "page": "Fichas CONAGUA 2024 (0313–0325)",
+      "source": "CONAGUA Actualización DMA 2024",
+      "date": "2024",
+      "method": "Suma de DMA negativas",
+      "caveat": "Un remanente no compensa el déficit de otro acuífero",
+      "shown_on": [
+        "/agua"
+      ]
+    },
+    {
+      "id": "fig-dma-bcs-deficit",
+      "label": "Acuíferos BCS en déficit",
+      "value": "22 de 39",
+      "unit": "acuíferos",
+      "page": "DOF 9 nov 2023, p.3",
+      "source": "CONAGUA/SEMARNAT Acuerdo DMA 653 acuíferos",
+      "date": "2023-11-09",
+      "method": "Conteo de DMA < 0",
+      "caveat": "Balance legal",
+      "shown_on": [
+        "/agua"
+      ]
+    },
+    {
+      "id": "fig-desal-cabos",
+      "label": "Desaladora Los Cabos",
+      "value": "250 l/s ≈ 7.88 hm³/año",
+      "unit": "",
+      "page": "DOF 27 oct 2020 convocatoria APP; ficha ProyectosMéxico 2021",
+      "source": "CONAGUA / Proyectos México",
+      "date": "2020–2021",
+      "method": "Conversión a factor de planta 100%",
+      "caveat": "Estado as-built y consumo energético no consolidados",
+      "shown_on": [
+        "/agua"
+      ]
+    },
+    {
+      "id": "fig-sibcs-pico",
+      "label": "Pico de demanda SIBCS",
+      "value": "688.5 MW (10 sep 2024)",
+      "unit": "MW",
+      "page": "PAMRNT 2025–2039 Cuadro 4.1.9",
+      "source": "CENACE",
+      "date": "2024",
+      "method": "Demanda instantánea máxima",
+      "caveat": "No es capacidad instalada",
+      "shown_on": [
+        "/energia"
+      ]
+    },
+    {
+      "id": "fig-sibcs-consumo",
+      "label": "Consumo neto SIBCS",
+      "value": "3,257",
+      "unit": "GWh",
+      "page": "PRODESEN 2024–2038 Cap.3",
+      "source": "SENER",
+      "date": "2023",
+      "method": "Consumo neto anual",
+      "caveat": "PLADESE usa otra contabilidad (3,079 GWh 2024)",
+      "shown_on": [
+        "/energia"
+      ]
+    },
+    {
+      "id": "fig-pib-2024",
+      "label": "PIB BCS 2024 (constante)",
+      "value": "187,152",
+      "unit": "millones de pesos",
+      "page": "INEGI PIBE 2024",
+      "source": "INEGI",
+      "date": "2025-12-05",
+      "method": "Valores constantes base 2018",
+      "caveat": "El PIBE 2023 publicó 181,155 mdp para 2023",
+      "shown_on": [
+        "/economia"
+      ]
+    },
+    {
+      "id": "fig-ied-2025",
+      "label": "IED BCS 2025",
+      "value": "1,578",
+      "unit": "millones de dólares",
+      "page": "Secretaría de Economía / CNIE",
+      "source": "Secretaría de Economía",
+      "date": "2025",
+      "method": "Flujos de IED",
+      "caveat": "Cifras preliminares revisables",
+      "shown_on": [
+        "/economia"
+      ]
+    },
+    {
+      "id": "fig-esc-red-km",
+      "label": "Red de drenaje BCS (HydroRIVERS)",
+      "value": "16,588.1",
+      "unit": "km",
+      "page": "estadisticas.json del paquete BCS_Escorrentia_2026",
+      "source": "HydroRIVERS v1 recortado al estado",
+      "date": "2026-10-05",
+      "method": "Suma CLIPPED_KM de 2,900 tramos",
+      "caveat": "Modelo de terreno, no mapa oficial de inundación",
+      "shown_on": [
+        "/agua/escorrentia"
+      ]
+    },
+    {
+      "id": "fig-esc-seeds",
+      "label": "Semillas D8 de escorrentía",
+      "value": "4,574",
+      "unit": "puntos",
+      "page": "estadisticas_stormwater.json",
+      "source": "HydroSHEDS DIR 3″",
+      "date": "2026-10-05",
+      "method": "Retícula 45 celdas; 4,428 salidas costeras y 146 sumideros",
+      "caveat": "Conteos de rutas muestreadas, no volúmenes",
+      "shown_on": [
+        "/agua/escorrentia"
+      ]
+    },
+    {
+      "id": "fig-files",
+      "label": "Archivos en el catálogo",
+      "value": "6,668",
+      "unit": "archivos",
+      "page": "catalog.json",
+      "source": "Escaneo del acervo",
+      "date": "2026-09-24",
+      "method": "Conteo de Base de datos BCS 2050 — catálogo de documentos (fuente única)",
+      "caveat": "Incluye espejos de 10_data_lake",
+      "shown_on": [
+        "/resumen",
+        "/catalogo",
+        "/explorar"
+      ]
+    }
+  ]
+}

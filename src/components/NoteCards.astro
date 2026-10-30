@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  theme?: string;
+}
+const { theme } = Astro.props;
+let notes = await getCollection('notes');
+if (theme) notes = notes.filter((n) => n.data.theme === theme);
+notes.sort((a, b) => b.data.updated.valueOf() - a.data.updated.valueOf());
+---
+{notes.length > 0 && (
+  <section class="note-list" aria-label="Notas breves">
+    <h2><span data-i18n="workNotes">Notas de trabajo</span></h2>
+    {notes.map((n) => (
+      <article>
+        <span class="tag sand">{n.data.theme}</span>
+        <h3>{n.data.title}</h3>
+        <p class="meta"><span data-i18n="updated">Actualizado</span> {n.data.updated.toISOString().slice(0, 10)}</p>
+        <p>{n.data.summary}</p>
+      </article>
+    ))}
+  </section>
+)}

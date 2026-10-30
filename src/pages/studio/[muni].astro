@@ -1,0 +1,1021 @@
+---
+import { cleanSourceText } from '../../lib/sourceLabel';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { STUDIO_UNITS, STUDIO_BY_ID, isStudioId } from '../../lib/studio';
+import { PLACE_BY_ID } from '../../lib/places';
+import dossiers from '../../data/place_dossiers.json';
+import gds from '../../data/growth_demand_supply.json';
+import foresights from '../../data/foresights.json';
+import sqDoc from '../../data/strategic_questions.json';
+import federalDoc from '../../data/federal_projects.json';
+import newsDoc from '../../data/news.json';
+import graph from '../../data/graph.json';
+import municipios from '../../data/municipios.json';
+import themeDocs from '../../data/theme_docs.json';
+import organigrama from '../../data/los_cabos_organigrama.json';
+import aquifersDoc from '../../data/aquifers_bcs.json';
+import ESC from '../../data/escorrentia.json';
+import SourceCard from '../../components/SourceCard.astro';
+import PrintExpediente from '../../components/PrintExpediente.astro';
+
+export function getStaticPaths() {
+  return STUDIO_UNITS.map((u) => ({ params: { muni: u.id } }));
+}
+
+const { muni } = Astro.params;
+if (!isStudioId(muni)) {
+  return Astro.redirect('/studio/');
+}
+const unit = STUDIO_BY_ID[muni];
+const placeSet = new Set(unit.placeIds);
+
+const allDossiers = (dossiers as any).places || [];
+const unitDossiers = allDossiers.filter((p: any) => placeSet.has(p.id));
+
+const gdsPlaces = ((gds as any).places || []).filter((p: any) => placeSet.has(p.id));
+const signals = ((foresights as any).signals || []).filter(
+  (s: any) => (s.place_ids || []).some((id: string) => placeSet.has(id)) || unit.id === 'bcs'
+);
+const signalsShow = unit.id === 'bcs' ? ((foresights as any).signals || []).slice(0, 6) : signals.slice(0, 6);
+
+const sqs = ((sqDoc as any).questions || []).filter((q: any) => {
+  const pls = q.places || [];
+  if (unit.id === 'bcs') return true;
+  return pls.some((id: string) => placeSet.has(id));
+});
+const sqsShow = unit.id === 'bcs' ? sqs.slice(0, 6) : sqs;
+
+const hypo = (foresights as any).hypothesis_monitor || null;
+const sessionHref = unit.primaryPlace
+  ? `/sesion/?place=${unit.primaryPlace}`
+  : '/sesion/';
+const crecimientoHref = unit.primaryPlace
+  ? `/crecimiento/?place=${unit.primaryPlace}#${unit.primaryPlace}`
+  : '/crecimiento/';
+const foresightsHref = unit.primaryPlace
+  ? `/foresights/?place=${unit.primaryPlace}`
+  : '/foresights/';
+
+function placeLabel(id: string) {
+  const p = PLACE_BY_ID[id];
+  return p ? { es: p.short_es, en: p.short_en } : { es: id, en: id };
+}
+
+/* PASS3_DOSSIER_HUB */
+const MUNI_LABEL: Record<string, string[]> = {
+  los_cabos: ['Los Cabos', 'Cabos'],
+  la_paz: ['La Paz', 'Todos Santos'],
+  loreto: ['Loreto'],
+  comondu: ['Comondú', 'Comondu'],
+  mulege: ['Mulegé', 'Mulege'],
+  bcs: ['Estatal', 'BCS', 'SIBCS'],
+};
+const muniKeys = MUNI_LABEL[unit.id] || [unit.short_es];
+const fedProjects = ((federalDoc as any).projects || []).filter((pr: any) => {
+  const raw = String(pr['municipio(s)'] || '');
+  if (unit.id === 'bcs') return true;
+  return muniKeys.some((k) => raw.toLowerCase().includes(k.toLowerCase()));
+});
+const fedShow = unit.id === 'bcs' ? fedProjects.slice(0, 8) : fedProjects.slice(0, 12);
+
+const newsItems = ((newsDoc as any).items || []).filter((n: any) => {
+  const places = n.place_ids || [];
+  if (unit.id === 'bcs') return true;
+  return places.some((id: string) => placeSet.has(id)) || places.includes(unit.id) || places.includes(unit.primaryPlace);
+});
+const newsShow = newsItems.slice(0, 5);
+
+const terrId =
+  unit.id === 'bcs' ? 'terr_bcs' :
+  unit.id === 'los_cabos' ? 'terr_los_cabos' :
+  unit.id === 'la_paz' ? 'terr_la_paz' :
+  unit.id === 'loreto' ? 'terr_loreto' :
+  unit.id === 'comondu' ? 'terr_comondu' :
+  unit.id === 'mulege' ? 'terr_mulege' : 'terr_bcs';
+const nodeById = Object.fromEntries(((graph as any).nodes || []).map((n: any) => [n.id, n]));
+const neighborIds = new Set<string>();
+for (const e of ((graph as any).edges || []) as any[]) {
+  if (e.from === terrId) neighborIds.add(e.to);
+  if (e.to === terrId) neighborIds.add(e.from);
+}
+const ontoNeighbors = [...neighborIds]
+  .map((id) => nodeById[id])
+  .filter(Boolean)
+  .slice(0, 10);
+
+const muniStatsKey =
+  unit.id === 'los_cabos' ? 'Los Cabos' :
+  unit.id === 'la_paz' ? 'La Paz' :
+  unit.id === 'loreto' ? 'Loreto' :
+  unit.id === 'comondu' ? 'Comondú' :
+  unit.id === 'mulege' ? 'Mulegé' : '';
+const muniStats = muniStatsKey ? (municipios as any)[muniStatsKey] : null;
+// Seat coordinates from the georeferenced territory photos (category "cabecera"), for Google Maps links.
+import stillsGeo from '../../../public/stills/stills.geojson?raw';
+const seatPt = muniStats ? (JSON.parse(stillsGeo as any).features || []).map((f: any) => f.properties).find((p: any) => p.category === 'cabecera' && p.name === muniStats.cabecera) : null;
+const popFigId = unit.id === 'bcs' ? 'fig-pob-bcs' : `fig-pob-${unit.id.replace('_', '-')}`;
+/* Aquifers (DOF 2023 + CONAGUA fichas) — only municipio assignments stated in a CONAGUA document */
+const AQ: any = aquifersDoc as any;
+const aqByClave = Object.fromEntries((AQ.aquifers || []).map((a: any) => [a.clave, a]));
+const aqClaves: string[] = muniStatsKey ? ((AQ.by_municipio || {})[muniStatsKey] || []) : [];
+const aqRows = (unit.id === 'bcs' ? (AQ.aquifers || []) : aqClaves.map((c) => aqByClave[c]).filter(Boolean))
+  .slice()
+  .sort((a: any, b: any) => a.dma_hm3 - b.dma_hm3);
+const fmtDma = (v: number) => v.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const printDate = new Date().toISOString().slice(0, 10);
+
+const themeHints: { id: string; es: string; en: string }[] = [
+  { id: 'agua', es: 'Agua', en: 'Water' },
+  { id: 'energia', es: 'Energía', en: 'Energy' },
+  { id: 'economia', es: 'Economía', en: 'Economy' },
+  { id: 'ambiente', es: 'Ambiente', en: 'Environment' },
+  { id: 'conectividad', es: 'Conectividad', en: 'Connectivity' },
+  { id: 'planeacion', es: 'Planeación', en: 'Planning' },
+];
+const catalogHints = themeHints.map((th) => ({
+  ...th,
+  n: ((themeDocs as any)[th.id] || []).length,
+})).filter((th) => th.n > 0);
+
+/* 14_gobierno: organigrama municipal (solo Los Cabos) */
+const orgRows: any[] = unit.id === 'los_cabos' ? ((organigrama as any).unidades || []) : [];
+const orgSkip = new Set(['H. XV Ayuntamiento de Los Cabos', 'Cabildo', 'Delegaciones']);
+const orgGroups: { name: string; rows: any[] }[] = [];
+for (const r of orgRows) {
+  if (!r.depende_de) continue;
+  let g = orgGroups.find((x) => x.name === r.depende_de);
+  if (!g) { g = { name: r.depende_de, rows: [] }; orgGroups.push(g); }
+  g.rows.push(r);
+}
+const orgSource = (organigrama as any).meta?.fuente || '';
+
+const dataGaps: { es: string; en: string }[] = [];
+if (unit.id !== 'bcs' && fedShow.some((pr: any) => pr.data_gap)) {
+  dataGaps.push({
+    es: 'Varios proyectos federales en este municipio aún reportan brechas de fuente o estado.',
+    en: 'Several federal projects in this municipality still report source or status gaps.',
+  });
+}
+if (unit.id === 'mulege') {
+  dataGaps.push({
+    es: 'Poca evidencia pública consolidada en el norte / Vizcaíno; evitar extrapolar al estado.',
+    en: 'Limited consolidated public evidence in the north / Vizcaíno; avoid statewide extrapolation.',
+  });
+}
+
+const escRow: any = unit.id === 'bcs' ? null : (ESC.municipios as any)[unit.id] || null;
+const escSw = ESC.statewide;
+
+// Capacity studies (Phase 0 stub) — hidden unless PUBLIC_STUDIES_ENABLED=1 at build time.
+const STUDIES_ON = import.meta.env.PUBLIC_STUDIES_ENABLED === '1';
+const studyDocs = import.meta.glob('../../data/studies/*.json', { eager: true }) as Record<string, any>;
+const studyDoc = Object.entries(studyDocs).find(([k]) => k.endsWith(`/${muni}.json`))?.[1];
+const unitStudies: any[] = STUDIES_ON ? ((studyDoc?.default ?? studyDoc)?.studies || []) : [];
+
+// --- display helpers for studies (plain Spanish; every number comes from the study JSON) ---
+const stNum = (v: any, d = 2) => (typeof v === 'number' ? v.toLocaleString('es-MX', { minimumFractionDigits: d, maximumFractionDigits: d }) : '—');
+const stInt = (v: any) => (typeof v === 'number' ? Math.round(v).toLocaleString('es-MX') : '—');
+const stKm2 = (m2: any) => (typeof m2 === 'number' ? stNum(m2 / 1e6, 2) : '—');
+const ST_PLAIN: [RegExp, string][] = [
+  [/\s*\(flow_concentration\)/g, ''],
+  [/\(ver assumptions con requires_bcs_confirmation\)/g, '(ver «Supuestos pendientes de confirmar»)'],
+  [/\s*\(LOD schematic\)/g, ''],
+  [/La capa runoff_network/g, 'La red de escurrimientos'],
+  [/flow_concentration/g, 'concentración de flujo'],
+  [/runoff_network/g, 'red de escurrimientos'],
+  [/protected_areas/g, 'áreas naturales protegidas'],
+  [/poer_ugas/g, 'UGA del POERBCS'],
+  [/Reparadas con make_valid/g, 'Se reparó automáticamente'],
+  [/con make_valid/g, 'automáticamente'],
+  [/El atributo area_m2 de las celdas/g, 'El área declarada de las celdas'],
+  [/sin VIVPAR_HAB 2020/g, 'sin dato de viviendas particulares habitadas 2020'],
+  [/BCS debe fijar el retiro con fuente/g, 'El equipo BCS 2050 debe fijar esa franja de protección con fuente'],
+  [/Los checks con resultado fail no cambian el estado por sí solos/g, 'Las verificaciones que no se cumplen no cambian el estado por sí solas'],
+  [/\(ver checks de disponibilidad\)/g, '(ver las verificaciones de disponibilidad)'],
+  [/Se deja vacío por regla del contrato/g, 'Se deja vacío: no se usan cifras sin fuente'],
+  [/make_valid/g, 'reparación automática'],
+  [/el atributo area_m2/g, 'el área declarada en el archivo'],
+  [/el atributo area_m2 de las celdas/g, 'el área declarada de las celdas'],
+  [/\ben units\b/g, 'en las celdas'],
+  [/Estado partial/g, 'Estado parcial'],
+  [/hay checks no evaluables/g, 'hay verificaciones que no se pudieron evaluar'],
+  [/infeasible si/g, '«inviable» si'],
+  [/; partial si/g, '; «parcial» si'],
+  [/; ok en otro caso/g, '; «completo» en otro caso'],
+  [/algún check es no evaluable/g, 'alguna verificación no se pudo evaluar'],
+  [/Los checks con resultado fail/g, 'Las verificaciones que no se cumplen'],
+  [/por BCS/g, 'por el equipo BCS 2050'],
+];
+const stPlain = (t: any) => (typeof t === 'string' ? ST_PLAIN.reduce((acc, [rx, rep]) => acc.replace(rx, rep), t) : t);
+const ST_RESULT: Record<string, string> = { pass: 'Cumple', fail: 'No cumple', not_evaluable: 'No se pudo evaluar' };
+const ST_STATUS: Record<string, string> = { ok: 'completo', partial: 'parcial (incompleto)', infeasible: 'inviable' };
+// Plain labels for known check ids; unknown ids fall back to the study's own label.
+const ST_CHECK_LABEL: Record<string, string> = {
+  unit_geometries_valid: 'Forma de las celdas de cálculo',
+  aquifer_0317_availability: 'Agua disponible en el acuífero 0317 Cabo San Lucas',
+  aquifer_0319_availability: 'Agua disponible en el acuífero 0319 San José del Cabo',
+  water_demand_vs_aquifer_availability: '¿Alcanza el agua para la demanda?',
+  growth_horizon_vs_dwelling_capacity: '¿Alcanza la capacidad para el crecimiento al 2050?',
+};
+const ST_GAP_LABEL: Record<string, string> = {
+  invalid_geometry: 'Forma de las celdas',
+  localities_vivpar_null: 'Viviendas habitadas por localidad (Censo 2020)',
+  unit_area_attribute: 'Área de las celdas',
+};
+function stCheckDetail(c: any): string {
+  if (c.result === 'not_evaluable') return stPlain(c.reason_es || c.note_es || '');
+  if (c.id === 'unit_geometries_valid') return `${stInt(c.measured)} celda con forma defectuosa. ${stPlain(c.note_es || '')}`.trim();
+  if (/^aquifer_\d+_availability$/.test(c.id)) return `Disponibilidad media anual: ${stNum(c.measured)} ${c.unit || ''} (negativa = sin agua disponible para nuevas concesiones; CONAGUA, DOF 2023).`;
+  const m = c.measured ?? '—';
+  return `Medido: ${typeof m === 'number' ? stNum(m) : m} ${c.unit || ''}; umbral: ${c.threshold ?? '—'}. ${stPlain(c.note_es || '')}`.trim();
+}
+function stView(st: any) {
+  const t = st.totals || {};
+  const checks: any[] = st.checks || [];
+  const nr = st.null_reasons_es || {};
+  const growth = st.growth || {};
+  const water = st.water || {};
+  const overlap = [t.excluded_protected_areas_m2, t.excluded_flow_concentration_m2, t.excluded_area_m2].every((x) => typeof x === 'number')
+    ? t.excluded_protected_areas_m2 + t.excluded_flow_concentration_m2 - t.excluded_area_m2 : null;
+  const keyGaps: { label: string; text: string }[] = [];
+  if (t.gross_floor_m2 === null || t.dwellings_est === null) {
+    keyGaps.push({ label: 'Cuánto se puede construir (FAR/CUS y COS)', text: [nr.gross_floor_m2, nr.cos_assumed].filter(Boolean).join(' ') || 'Sin coeficientes con fuente.' });
+    keyGaps.push({ label: 'Densidad de vivienda (viviendas por hectárea)', text: nr.dwellings_est || 'Sin densidad con fuente.' });
+  }
+  if (water.per_capita_demand === null) keyGaps.push({ label: 'Consumo de agua por persona (demanda per cápita)', text: water.per_capita_demand_note_es || 'Sin dato con fuente.' });
+  if (growth.population_horizon === null) keyGaps.push({ label: `Proyección de población al ${growth.horizon_year ?? 2050}`, text: growth.population_horizon_note_es || 'Sin proyección con fuente.' });
+  if (growth.floating_population === null) keyGaps.push({ label: 'Población flotante y turística', text: growth.floating_population_note_es || 'Sin cifra consolidada.' });
+  return {
+    t, overlap,
+    failed: checks.filter((c) => c.result === 'fail'),
+    notEval: checks.filter((c) => c.result === 'not_evaluable'),
+    passed: checks.filter((c) => c.result === 'pass'),
+    pending: st.pending_assumptions || [],
+    keyGaps,
+    otherGaps: (st.data_gaps || []).map((g: any) => ({ label: ST_GAP_LABEL[g.item] || g.item, status: stPlain(g.status), where: g.where_es })),
+    aquifers: water.aquifers || [],
+    history: growth.history || [],
+    observed: growth.observed,
+  };
+}
+
+---
+<BaseLayout
+  title={unit.name_es}
+  titleEn={unit.name_en}
+  description={unit.blurb_es}
+  descriptionEn={unit.blurb_en}
+  wide={true}
+  hidePageHead={true}
+>
+  <nav class="su-crumb" aria-label="Breadcrumb">
+    <a href="/mapas/"><span data-lang-es>Territorio</span><span data-lang-en hidden>Territory</span></a>
+    <span aria-hidden="true">/</span>
+    <a href="/studio/"><span data-lang-es>Lugares</span><span data-lang-en hidden>Places</span></a>
+    <span aria-hidden="true">/</span>
+    <span>
+      <span data-lang-es>{unit.short_es}</span>
+      <span data-lang-en hidden>{unit.short_en}</span>
+    </span>
+  </nav>
+
+  <header class="su-hero" id="intro">
+    <h1>
+      <span data-lang-es>{unit.name_es}</span>
+      <span data-lang-en hidden>{unit.name_en}</span>
+    </h1>
+    <p class="lead">
+      <span data-lang-es>{unit.blurb_es}</span>
+      <span data-lang-en hidden>{unit.blurb_en}</span>
+    </p>
+    {unit.placeIds.length > 0 && (
+      <div class="su-voc-chips">
+        {unit.placeIds.map((pid) => {
+          const lab = placeLabel(pid);
+          return (
+            <a class="su-chip" href={`#place-${pid}`}>
+              <span data-lang-es>{lab.es}</span>
+              <span data-lang-en hidden>{lab.en}</span>
+            </a>
+          );
+        })}
+      </div>
+    )}
+    <div class="su-cta-row">
+      <a class="btn" href={sessionHref}>
+        <span data-lang-es>Sesión de estrategia</span>
+        <span data-lang-en hidden>Strategy session</span>
+      </a>
+      <a class="btn secondary" href={crecimientoHref}>
+        <span data-lang-es>Detalle demanda–oferta</span>
+        <span data-lang-en hidden>Demand–supply detail</span>
+      </a>
+      <a class="btn secondary" href={foresightsHref}>
+        <span data-lang-es>Prospectiva</span>
+        <span data-lang-en hidden>Foresights</span>
+      </a>
+    </div>
+    <div class="su-export-row"><PrintExpediente title={unit.name_es} /></div>
+    <p class="print-only meta">Expediente generado desde bajacaliforniasur2050.com/studio/{unit.id}/ · {printDate}. Cifras con su ficha de fuente; no incluye estimaciones nuevas.</p>
+  </header>
+
+  {/* Vocations / dossiers — one block per nested place */}
+  <section class="su-sec" id="vocacion">
+    <h2>
+      <span data-lang-es>Vocación{unit.placeIds.length > 1 ? 'es' : ''}</span>
+      <span data-lang-en hidden>Vocation{unit.placeIds.length > 1 ? 's' : ''}</span>
+    </h2>
+    {unit.id === 'bcs' && (
+      <p class="su-note">
+        <span data-lang-es>
+          Los municipios no se promedian entre sí: la presión en un lugar no se “compensa” con holgura en otro.
+          Abra un municipio para ver su ficha completa.
+        </span>
+        <span data-lang-en hidden>
+          Municipalities do not average out: pressure in one place is not “offset” by slack elsewhere.
+          Open a municipality for its full profile.
+        </span>
+      </p>
+    )}
+    <div class="su-voc-grid">
+      {unitDossiers.map((d: any) => {
+        const voc = d.vocation || {};
+        return (
+          <article class="su-voc" id={`place-${d.id}`}>
+            <h3>
+              <span data-lang-es>{d.name_es}</span>
+              <span data-lang-en hidden>{d.name_en}</span>
+            </h3>
+            <p>
+              <span data-lang-es>{voc.statement_es || voc.structure_note_es}</span>
+              <span data-lang-en hidden>{voc.statement_en || voc.structure_note_en}</span>
+            </p>
+            {(voc.structure_note_es || voc.structure_note_en) && (
+              <p class="su-struct">
+                <span data-lang-es>{voc.structure_note_es}</span>
+                <span data-lang-en hidden>{voc.structure_note_en}</span>
+              </p>
+            )}
+            {(d.tenure?.open_ask_es || d.mobility?.corridor_es) && (
+              <ul class="su-mini">
+                {d.mobility?.corridor_es && (
+                  <li>
+                    <strong><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span>:</strong>
+                    {' '}
+                    <span data-lang-es>{d.mobility.corridor_es}</span>
+                    <span data-lang-en hidden>{d.mobility.corridor_en}</span>
+                  </li>
+                )}
+                {d.tenure?.open_ask_es && (
+                  <li>
+                    <strong><span data-lang-es>Propiedad del suelo</span><span data-lang-en hidden>Land ownership</span>:</strong>
+                    {' '}
+                    <span data-lang-es>{d.tenure.open_ask_es}</span>
+                    <span data-lang-en hidden>{d.tenure.open_ask_en}</span>
+                  </li>
+                )}
+              </ul>
+            )}
+            {(d.instruments || []).length > 0 && (
+              <div class="su-instr">
+                {(d.instruments || []).slice(0, 6).map((ins: any) => (
+                  <span class="su-itag">{ins.instrument || ins.label_es || ins.id || ins}</span>
+                ))}
+              </div>
+            )}
+          </article>
+        );
+      })}
+      {unitDossiers.length === 0 && (
+        <p class="meta">
+          <span data-lang-es>Sin dossier cargado para esta unidad.</span>
+          <span data-lang-en hidden>No dossier loaded for this unit.</span>
+        </p>
+      )}
+    </div>
+  </section>
+
+  {/* Demand–supply synthesis */}
+  <section class="su-sec" id="crecimiento">
+    <h2>
+      <span data-lang-es>Demanda–oferta y capacidad</span>
+      <span data-lang-en hidden>Demand–supply and capacity</span>
+    </h2>
+    <div class="su-gds-list">
+      {gdsPlaces.map((pl: any) => (
+        <article class="su-gds">
+          <header>
+            <h3>
+              <span data-lang-es>{pl.name_es || placeLabel(pl.id).es}</span>
+              <span data-lang-en hidden>{pl.name_en || placeLabel(pl.id).en}</span>
+            </h3>
+            {pl.balance_read && (
+              <span class="su-bal" style="--c:#34607d">
+                {pl.balance_read}
+              </span>
+            )}
+          </header>
+          <p>
+            <span data-lang-es>{pl.balance_read_es || pl.summary_es || '—'}</span>
+            <span data-lang-en hidden>{pl.balance_read_en || pl.summary_en || '—'}</span>
+          </p>
+          <a class="su-more" href={`/crecimiento/?place=${pl.id}#${pl.id}`}>
+            <span data-lang-es>Ver detalle →</span>
+            <span data-lang-en hidden>See detail →</span>
+          </a>
+        </article>
+      ))}
+      {unit.id === 'bcs' && (gds as any).state_rollup && (
+        <article class="su-gds">
+          <h3>
+            <span data-lang-es>Síntesis estatal</span>
+            <span data-lang-en hidden>Statewide synthesis</span>
+          </h3>
+          <p>
+            <span data-lang-es>{(gds as any).state_rollup.balance_read_es || (gds as any).method_note_es}</span>
+            <span data-lang-en hidden>{(gds as any).state_rollup.balance_read_en || (gds as any).method_note_en}</span>
+          </p>
+          <a class="su-more" href="/crecimiento/">
+            <span data-lang-es>Ver tablero →</span>
+            <span data-lang-en hidden>See dashboard →</span>
+          </a>
+        </article>
+      )}
+    </div>
+  </section>
+
+  {/* Strategic questions */}
+  <section class="su-sec" id="preguntas">
+    <h2>
+      <span data-lang-es>Preguntas estratégicas</span>
+      <span data-lang-en hidden>Strategic questions</span>
+    </h2>
+    <ul class="su-sq">
+      {sqsShow.map((q: any) => (
+        <li>
+          <a href={`/preguntas/${q.id}/`}>
+            <span data-lang-es>{q.question_es}</span>
+            <span data-lang-en hidden>{q.question_en}</span>
+          </a>
+          <span class="su-sq-meta">{(q.confidence || '').toString()} · {(q.places || []).join(', ')}</span>
+        </li>
+      ))}
+    </ul>
+    {sqsShow.length === 0 && (
+      <p class="meta">
+        <span data-lang-es>Sin preguntas indexadas para esta unidad.</span>
+        <span data-lang-en hidden>No questions indexed for this unit.</span>
+      </p>
+    )}
+    <p class="su-lib">
+      <a href="/preguntas/">
+        <span data-lang-es>Biblioteca completa de preguntas →</span>
+        <span data-lang-en hidden>Full question library →</span>
+      </a>
+    </p>
+  </section>
+
+  {/* Foresight signals */}
+  <section class="su-sec" id="foresights">
+    <h2>
+      <span data-lang-es>Señales de prospectiva</span>
+      <span data-lang-en hidden>Foresight signals</span>
+    </h2>
+    {unit.id === 'bcs' && hypo && (
+      <div class="su-hypo">
+        <p>
+          <strong><span data-lang-es>Confirmaría</span><span data-lang-en hidden>Would confirm</span>:</strong>
+          {' '}
+          <span data-lang-es>{hypo.confirm_es}</span>
+          <span data-lang-en hidden>{hypo.confirm_en}</span>
+        </p>
+        <p>
+          <strong><span data-lang-es>Debilitaría</span><span data-lang-en hidden>Would weaken</span>:</strong>
+          {' '}
+          <span data-lang-es>{hypo.weaken_es}</span>
+          <span data-lang-en hidden>{hypo.weaken_en}</span>
+        </p>
+      </div>
+    )}
+    <div class="su-sig-list">
+      {signalsShow.map((s: any) => (
+        <article class="su-sig">
+          <h3>
+            <a href={`/foresights/?signal=${s.id}#signal-${s.id}`}>
+              <span data-lang-es>{s.title_es}</span>
+              <span data-lang-en hidden>{s.title_en}</span>
+            </a>
+          </h3>
+          <p>
+            <span data-lang-es>{s.why_es || s.summary_es}</span>
+            <span data-lang-en hidden>{s.why_en || s.summary_en}</span>
+          </p>
+        </article>
+      ))}
+    </div>
+    <p class="su-lib">
+      <a href={foresightsHref}>
+        <span data-lang-es>Edición completa de prospectiva →</span>
+        <span data-lang-en hidden>Full foresight edition →</span>
+      </a>
+    </p>
+  </section>
+
+
+  <!-- PASS3_DOSSIER_HUB sections -->
+  {muniStats && (
+    <section class="su-sec" id="cifras">
+      <h2><span data-lang-es>Cifras clave</span><span data-lang-en hidden>Key figures</span></h2>
+      <div class="su-stat-grid">
+        <div class="su-stat"><span class="n">{Number(muniStats.pob).toLocaleString('es-MX')}</span><span class="l"><span data-lang-es>Habitantes (INEGI 2020)</span><span data-lang-en hidden>Inhabitants (INEGI 2020)</span></span><SourceCard id={popFigId} /></div>
+        <div class="su-stat"><span class="n">{muniStats.locs}</span><span class="l"><span data-lang-es>Localidades</span><span data-lang-en hidden>Localities</span></span></div>
+        <div class="su-stat"><span class="n">{muniStats.cabecera}</span><span class="l"><span data-lang-es>Cabecera</span><span data-lang-en hidden>Seat</span></span></div>
+        <div class="su-stat"><span class="n">{fedShow.length}{unit.id === 'bcs' ? '+' : ''}</span><span class="l"><span data-lang-es>Proyectos federales listados</span><span data-lang-en hidden>Listed federal projects</span></span></div>
+      </div>
+      {seatPt && (
+        <p class="cta-row gmaps-links">
+          <a class="btn secondary" href={`https://www.google.com/maps/search/?api=1&query=${seatPt.lat},${seatPt.lon}`} target="_blank" rel="noopener"><span data-lang-es>Abrir {muniStats.cabecera} en Google Maps</span><span data-lang-en hidden>Open {muniStats.cabecera} in Google Maps</span></a>
+          <a class="btn secondary" href={`https://www.google.com/maps/dir/?api=1&destination=${seatPt.lat},${seatPt.lon}`} target="_blank" rel="noopener"><span data-lang-es>Cómo llegar</span><span data-lang-en hidden>Directions</span></a>
+        </p>
+      )}
+      <p class="meta"><span data-lang-es>Fuentes: INEGI 2020 · inventario federal curado (sin inventar montos faltantes).</span><span data-lang-en hidden>Sources: INEGI 2020 · curated federal inventory (no invented missing amounts).</span></p>
+    </section>
+  )}
+
+  {aqRows.length > 0 && (
+    <section class="su-sec" id="acuiferos">
+      <h2>
+        <span data-lang-es>Agua: acuíferos {unit.id === 'bcs' ? 'de BCS' : `con superficie en ${muniStatsKey}`}</span>
+        <span data-lang-en hidden>Water: aquifers {unit.id === 'bcs' ? 'in BCS' : `with area in ${muniStatsKey}`}</span>
+        <SourceCard source="CONAGUA/SEMARNAT — Acuerdo de disponibilidad media anual (DMA) de 653 acuíferos" page="DOF 9 nov 2023, p.3; fichas CONAGUA por acuífero (página citada en cada fila)" date="2023-11-09" method={AQ.method_es} caveat={AQ.caveat_es} file="02_water/2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf" />
+      </h2>
+      {unit.id === 'bcs' ? (
+        <p class="meta"><span data-lang-es>{AQ.deficit_count} de {(AQ.aquifers || []).length} acuíferos en déficit (suma {fmtDma(AQ.deficit_sum_hm3)} hm³/año).</span><span data-lang-en hidden>{AQ.deficit_count} of {(AQ.aquifers || []).length} aquifers in deficit (sum {fmtDma(AQ.deficit_sum_hm3)} hm³/yr).</span></p>
+      ) : (
+        <p class="meta"><span data-lang-es>Solo se listan acuíferos cuya ficha CONAGUA en el acervo declara superficie en el municipio. Otros acuíferos de BCS siguen “por verificar”.</span><span data-lang-en hidden>Only aquifers whose CONAGUA fact sheet in the archive states area in this municipality. Other BCS aquifers remain “to be verified”.</span></p>
+      )}
+      <div class="su-table-wrap">
+        <table class="su-aq">
+          <thead><tr><th>Clave</th><th><span data-lang-es>Acuífero</span><span data-lang-en hidden>Aquifer</span></th><th>DMA hm³/año</th><th><span data-lang-es>Estado</span><span data-lang-en hidden>Status</span></th><th><span data-lang-es>Municipios (ficha)</span><span data-lang-en hidden>Municipalities (sheet)</span></th></tr></thead>
+          <tbody>
+            {aqRows.map((a: any) => (
+              <tr class={a.dma_hm3 < 0 ? 'neg' : ''}>
+                <td>{a.clave}</td>
+                <td>{a.nombre}</td>
+                <td class="num">{fmtDma(a.dma_hm3)}</td>
+                <td>{a.dma_hm3 < 0 ? <span><span data-lang-es>Déficit</span><span data-lang-en hidden>Deficit</span></span> : <span><span data-lang-es>Disponible</span><span data-lang-en hidden>Available</span></span>}</td>
+                <td>{a.municipios && a.municipios.length ? a.municipios.join(', ') + (a.municipio_por_confirmar ? ' (por confirmar)' : '') : 'por verificar'}{a.ficha_file ? ` · p.${a.ficha_page}` : ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="meta"><a href="/agua/#acuiferos">Tabla completa de 39 acuíferos y método</a> · <a href="/aquifers_bcs.json"><span data-lang-es>Datos CONAGUA — disponibilidad de acuíferos (DOF 2023)</span><span data-lang-en hidden>CONAGUA data — aquifer availability (DOF 2023)</span></a></p>
+    </section>
+  )}
+
+  <section class="su-sec" id="escorrentia">
+    <h2>
+      <span data-lang-es>Escorrentía (modelo de terreno)</span>
+      <span data-lang-en hidden>Runoff (terrain model)</span>
+      <SourceCard source={ESC.source_es} page="HydroSHEDS / HydroRIVERS · BCS_Escorrentia_2026" date={ESC.package_date} method={ESC.method_es} caveat={ESC.caveat_es} file="16_escorrentia/BCS_Escorrentia.zip" />
+    </h2>
+    <div class="esc-warn-mini" role="note">
+      <span data-lang-es><strong>No es un mapa oficial de inundación.</strong> Recorridos potenciales a partir del relieve; sin profundidad ni caudal.</span>
+      <span data-lang-en hidden><strong>Not an official flood map.</strong> Terrain-based potential routes; no depth or discharge.</span>
+    </div>
+    {unit.id === 'bcs' ? (
+      <p>
+        <span data-lang-es>Red estatal: <strong>{escSw.tramos_unicos.toLocaleString('es-MX')}</strong> tramos · <strong>{escSw.longitud_km.toLocaleString('es-MX')}</strong> km · <strong>{escSw.seed_count.toLocaleString('es-MX')}</strong> semillas D8 (<strong>{escSw.salida_costera.toLocaleString('es-MX')}</strong> salidas costeras, <strong>{escSw.sumidero_interior}</strong> sumideros interiores).</span>
+        <span data-lang-en hidden>Statewide network: <strong>{escSw.tramos_unicos.toLocaleString('en-US')}</strong> reaches · <strong>{escSw.longitud_km.toLocaleString('en-US')}</strong> km · <strong>{escSw.seed_count.toLocaleString('en-US')}</strong> D8 seeds.</span>
+      </p>
+    ) : escRow ? (
+      <p>
+        <span data-lang-es>En {escRow.label_es}: <strong>{escRow.tramos_unicos.toLocaleString('es-MX')}</strong> tramos · <strong>{escRow.longitud_km.toLocaleString('es-MX')}</strong> km de red · <strong>{escRow.trayectorias_distintas.toLocaleString('es-MX')}</strong> trayectorias D8 distintas (muestreo).</span>
+        <span data-lang-en hidden>In {escRow.label_en}: <strong>{escRow.tramos_unicos.toLocaleString('en-US')}</strong> reaches · <strong>{escRow.longitud_km.toLocaleString('en-US')}</strong> km · <strong>{escRow.trayectorias_distintas.toLocaleString('en-US')}</strong> distinct D8 paths (sample).</span>
+      </p>
+    ) : null}
+    <p class="meta">
+      <a href="/agua/escorrentia/"><span data-lang-es>Mapa de escorrentía</span><span data-lang-en hidden>Runoff map</span></a>
+      {' · '}
+      <a href={`/mapas/?place=${unit.id}&layers=escorrentia_red,escorrentia_trayectorias,escorrentia_concentracion`}>/mapas</a>
+      {' · '}
+      <a href="/escorrentia.json"><span data-lang-es>Datos del modelo (HydroSHEDS / HydroRIVERS)</span><span data-lang-en hidden>Model data (HydroSHEDS / HydroRIVERS)</span></a>
+    </p>
+  </section>
+
+
+
+  {STUDIES_ON && unitStudies.length > 0 && (
+    <section class="su-sec" id="estudios-capacidad">
+      <h2><span data-lang-es>Estudio de capacidad del territorio</span><span data-lang-en hidden>Land capacity study</span></h2>
+      {unitStudies.map((st: any) => {
+        const v = stView(st);
+        return (
+          <article class="st-study">
+            <p class="st-badges">
+              <span class="st-badge st-badge-pre">Estudio preliminar</span>
+              <span class="st-badge">Estado: {ST_STATUS[st.status] || st.status}</span>
+              <span class="st-badge">Nivel de detalle: esquemático</span>
+              {st.created && <span class="st-badge st-badge-muted">{st.created}</span>}
+            </p>
+            <p class="st-lead">
+              Primer cálculo, todavía incompleto, de cuánto suelo de {unit.short_es} queda <strong>sin restricciones ambientales o de escurrimiento</strong> según las capas disponibles.
+              No es un dictamen, no expresa capacidad legal por predio y no sustituye al Programa de Desarrollo Urbano vigente.
+            </p>
+            {st.status_reason_es && <p class="su-muted">{stPlain(st.status_reason_es)}</p>}
+
+            <div class="st-cards">
+              <div class="st-card">
+                <span class="st-k">Superficie analizada</span>
+                <span class="st-v">{stKm2(v.t.area_m2)} km²</span>
+                <span class="st-s">{stInt(v.t.units_count)} celdas de cálculo de 500 m (no son predios)</span>
+              </div>
+              <div class="st-card st-card-excl">
+                <span class="st-k">Descartada por restricciones</span>
+                <span class="st-v">{stKm2(v.t.excluded_area_m2)} km²</span>
+                <span class="st-s">Áreas naturales protegidas federales: {stKm2(v.t.excluded_protected_areas_m2)} km² · Cauces con mucho escurrimiento: {stKm2(v.t.excluded_flow_concentration_m2)} km²</span>
+                {typeof v.overlap === 'number' && v.overlap > 0 && <span class="st-s">Ambas se traslapan en {stKm2(v.overlap)} km²; el total no cuenta dos veces esa parte.</span>}
+              </div>
+              <div class="st-card st-card-free">
+                <span class="st-k">No descartada por estas capas</span>
+                <span class="st-v">{stKm2(v.t.buildable_area_m2)} km² <small>({stNum(v.t.buildable_share_pct)} %)</small></span>
+                <span class="st-s">Ver advertencia: no es suelo urbanizable</span>
+              </div>
+              <div class="st-card st-card-null">
+                <span class="st-k">Superficie construible y viviendas</span>
+                <span class="st-v">Sin estimar</span>
+                <span class="st-s">Faltan coeficientes de construcción y densidad con fuente</span>
+              </div>
+            </div>
+
+            <div class="st-warn" role="note">
+              <strong>«No descartada» no significa «urbanizable».</strong>
+              Esos {stKm2(v.t.buildable_area_m2)} km² son solo la superficie que no cae en áreas naturales protegidas federales ni en cauces con mucho escurrimiento.
+              El estudio no revisa zonificación urbana, propiedad del suelo (catastro), zona federal costera ni zonas inundables oficiales, porque esos datos aún no están disponibles. Ver «Datos que faltan».
+            </div>
+
+            <h3>Lo que no pasa la revisión</h3>
+            {v.failed.length === 0 ? <p class="su-muted">Ninguna verificación falló.</p> : (
+              <ul class="st-list st-list-fail">
+                {v.failed.map((c: any) => (<li><strong>{ST_CHECK_LABEL[c.id] || stPlain(c.label_es) || c.id}</strong> — {ST_RESULT[c.result]}. {stCheckDetail(c)}</li>))}
+              </ul>
+            )}
+
+            <h3>Lo que todavía no se puede evaluar</h3>
+            {v.notEval.length === 0 ? <p class="su-muted">Todas las verificaciones pudieron evaluarse.</p> : (
+              <ul class="st-list st-list-ne">
+                {v.notEval.map((c: any) => (<li><strong>{ST_CHECK_LABEL[c.id] || stPlain(c.label_es) || c.id}</strong> — {ST_RESULT[c.result]}. {stCheckDetail(c)}</li>))}
+              </ul>
+            )}
+            {v.passed.length > 0 && (
+              <details class="st-details">
+                <summary>Verificaciones que sí se cumplen ({v.passed.length})</summary>
+                <ul class="st-list">{v.passed.map((c: any) => (<li>{stPlain(c.label_es) || c.id}</li>))}</ul>
+              </details>
+            )}
+
+            <h3>Supuestos pendientes de confirmar ({v.pending.length})</h3>
+            <p class="su-muted">El estudio tuvo que decidir estas reglas por su cuenta. El equipo BCS 2050 todavía no las ha confirmado; si cambian, cambian las cifras.</p>
+            <ul class="st-list st-list-pend">
+              {v.pending.map((a: any) => (<li><span class="st-pend-tag">Pendiente</span> {stPlain(a.text_es)} <span class="st-id">{a.id}</span></li>))}
+            </ul>
+
+            <h3>Datos que faltan</h3>
+            <ul class="st-list st-list-gap">
+              {v.keyGaps.map((g) => (<li><strong>{g.label}</strong>: {stPlain(g.text)}</li>))}
+            </ul>
+            {v.otherGaps.length > 0 && (
+              <details class="st-details" open>
+                <summary>Otras capas y datos no disponibles ({v.otherGaps.length})</summary>
+                <ul class="st-list">
+                  {v.otherGaps.map((g: any) => (<li><strong>{g.label}</strong>: {g.status}{g.where && <span class="su-muted"> — dónde conseguirlo: {g.where}</span>}</li>))}
+                </ul>
+              </details>
+            )}
+
+            {v.aquifers.length > 0 && (
+              <>
+                <h3>Agua subterránea</h3>
+                <div class="su-table-wrap">
+                  <table class="su-aq">
+                    <thead><tr><th>Acuífero</th><th>Recarga (hm³/año)</th><th>Disponibilidad media anual (hm³/año)</th><th>Situación</th></tr></thead>
+                    <tbody>
+                      {v.aquifers.map((q: any) => (
+                        <tr class={typeof q.dma_hm3 === 'number' && q.dma_hm3 < 0 ? 'neg' : ''}>
+                          <td>{q.clave} {q.nombre}</td><td class="num">{stNum(q.R_hm3, 1)}</td><td class="num">{stNum(q.dma_hm3)}</td>
+                          <td>{q.status === 'deficit' ? 'Déficit: sin agua disponible para nuevas concesiones' : q.status}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            )}
+
+            {v.history.length > 0 && (
+              <>
+                <h3>Población</h3>
+                <p>
+                  Censos: {v.history.map((h: any) => `${h.year}: ${stInt(h.population)}`).join(' · ')} habitantes.
+                  {v.observed && typeof v.observed.cagr_pct === 'number' && <> Entre {v.observed.from_year} y {v.observed.to_year} creció en promedio {stNum(v.observed.cagr_pct)} % al año (dato observado, <strong>no es una proyección</strong>).</>}
+                  {' '}No hay proyección al 2050 con fuente, por eso no se compara con la capacidad.
+                </p>
+              </>
+            )}
+
+            <details class="st-details">
+              <summary>Otros datos del estudio</summary>
+              <ul class="st-list">
+                {typeof v.t.condition_flow_concentration_m2 === 'number' && <li>Cauces con escurrimiento moderado: {stKm2(v.t.condition_flow_concentration_m2)} km². Se señalan, pero no se descuentan.</li>}
+                {typeof v.t.condition_runoff_network_length_m === 'number' && <li>Red de escurrimientos: {stNum(v.t.condition_runoff_network_length_m / 1000, 1)} km de cauces en {stInt(v.t.units_with_runoff_network)} celdas. No se aplicó franja de protección porque no está definida.</li>}
+                {typeof v.t.pop_2020_localities_in_excluded_area === 'number' && <li>Habitantes (Censo 2020) en localidades dentro de zonas descartadas: {stInt(v.t.pop_2020_localities_in_excluded_area)} (indicativo: las localidades son puntos, no manchas urbanas).</li>}
+                {typeof v.t.units_fully_excluded === 'number' && <li>Celdas totalmente descartadas: {stInt(v.t.units_fully_excluded)} · celdas con superficie no descartada: {stInt(v.t.units_with_buildable_area)}.</li>}
+              </ul>
+              {st.narrative_es && <p class="su-muted">Resumen del estudio: {stPlain(st.narrative_es)}</p>}
+            </details>
+
+            <SourceCard
+              source={(st.sources || []).map((x: any) => [x.title, x.owner].filter(Boolean).join(' — ')).join(' · ') || 'Estudio de capacidad'}
+              date={st.created || (studyDoc?.default ?? studyDoc)?.generated}
+              method="Estudio esquemático: a la superficie municipal (retícula de 500 m sobre el límite INEGI 2022) se le restan las áreas naturales protegidas federales y los cauces con mucho escurrimiento; el resto de capas se reporta sin restar."
+              caveat={stPlain(st.caveat_es)}
+            />
+          </article>
+        );
+      })}
+    </section>
+  )}
+
+  <section class="su-sec" id="federales">
+    <h2><span data-lang-es>Proyectos federales</span><span data-lang-en hidden>Federal projects</span></h2>
+    {fedShow.length === 0 ? (
+      <p class="bcs-empty"><span data-lang-es>Sin proyectos federales etiquetados para este municipio en el inventario.</span><span data-lang-en hidden>No federal projects tagged to this municipality in the inventory.</span></p>
+    ) : (
+      <div class="su-fed-list">
+        {fedShow.map((pr: any) => (
+          <article class="su-fed">
+            <h3>{pr.proyecto}</h3>
+            <p class="meta">{pr.sexenio} · {pr.sector} · {pr.estado} · {pr['municipio(s)']}</p>
+            {pr['capacidad/alcance'] && <p class="su-fed-cap">{pr['capacidad/alcance']}</p>}
+            <p class="su-fed-links">
+              <a href={`/ontologia/?node=proj_${String(pr.id).toLowerCase().replace(/-/g, '_')}`}>Mapa de relaciones</a>
+              {pr.fuente_principal_url && <a href={pr.fuente_principal_url} target="_blank" rel="noopener">Fuente</a>}
+              <a href={`/mapas/?layers=federal_projects&place=${unit.id}`}>Mapa</a>
+            </p>
+          </article>
+        ))}
+      </div>
+    )}
+    <p class="su-lib"><a href="/proyectos-federales/"><span data-lang-es>Inventario completo →</span><span data-lang-en hidden>Full inventory →</span></a></p>
+  </section>
+
+  {orgRows.length > 0 && (
+    <section class="su-sec" id="gobierno-municipal">
+      <h2><span data-lang-es>Gobierno municipal: organigrama 2024–2027</span><span data-lang-en hidden>Municipal government: org chart 2024–2027</span></h2>
+      <p class="lead" style="margin-top:0">
+        <span data-lang-es>Quién encabeza cada área del H. XV Ayuntamiento de Los Cabos. El asistente del portal usa esta tabla para responder «¿quién dirige…?».</span>
+        <span data-lang-en hidden>Who heads each unit of the XV City Council of Los Cabos. The portal assistant uses this table to answer “who runs…?”.</span>
+      </p>
+      <a href="/gobierno/los_cabos_organigrama_2024_2027.png" target="_blank" rel="noopener" class="su-org-img">
+        <img src="/gobierno/los_cabos_organigrama_2024_2027.png" alt="Organigrama general del H. XV Ayuntamiento de Los Cabos 2024–2027" loading="lazy" width="1920" height="1080" />
+      </a>
+      <details class="su-org-details">
+        <summary><span data-lang-es>Ver tabla completa ({orgRows.length - 3} áreas)</span><span data-lang-en hidden>Show full table ({orgRows.length - 3} units)</span></summary>
+        <div class="su-org-scroll">
+          <table class="su-org-table">
+            <thead><tr><th><span data-lang-es>Área</span><span data-lang-en hidden>Unit</span></th><th><span data-lang-es>Titular</span><span data-lang-en hidden>Head</span></th><th><span data-lang-es>Depende de</span><span data-lang-en hidden>Reports to</span></th></tr></thead>
+            <tbody>
+              {orgGroups.flatMap((g) => g.rows).filter((r) => !orgSkip.has(r.area)).map((r) => (
+                <tr class={r.tipo === 'dirección general' || r.tipo === 'dependencia' ? 'su-org-main' : ''}>
+                  <td>{r.area}</td><td>{r.titular}</td><td>{r.depende_de}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <p class="meta"><span data-lang-es>Fuente:</span><span data-lang-en hidden>Source:</span> {orgSource}. <span data-lang-es>Transcripción de la imagen oficial; los recuadros sin nombre se dejan así.</span><span data-lang-en hidden>Transcribed from the official image; boxes without a name are left as is.</span></p>
+    </section>
+  )}
+
+  <section class="su-sec" id="catalogo-tema">
+    <h2><span data-lang-es>Documentos por tema</span><span data-lang-en hidden>Documents by theme</span></h2>
+    <div class="su-theme-row">
+      {catalogHints.map((th) => (
+        <a class="su-theme-chip" href={`/${th.id}/`}>
+          <span data-lang-es>{th.es}</span><span data-lang-en hidden>{th.en}</span>
+          <span class="su-theme-n">{th.n}</span>
+        </a>
+      ))}
+      <a class="su-theme-chip" href="/catalogo/"><span data-lang-es>Catálogo</span><span data-lang-en hidden>Catalog</span></a>
+    </div>
+  </section>
+
+  <section class="su-sec" id="noticias-lugar">
+    <h2><span data-lang-es>Noticias recientes</span><span data-lang-en hidden>Recent news</span></h2>
+    {newsShow.length === 0 ? (
+      <p class="bcs-empty"><span data-lang-es>Sin noticias etiquetadas a este lugar.</span><span data-lang-en hidden>No news tagged to this place.</span></p>
+    ) : (
+      <ul class="su-news">
+        {newsShow.map((n: any) => (
+          <li>
+            <a href={n.url} target="_blank" rel="noopener">
+              <span data-lang-es>{n.title_es}</span>
+              <span data-lang-en hidden>{n.title_en}</span>
+            </a>
+            <span class="meta">{cleanSourceText(n.source)} · {n.date}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+    <p class="su-lib"><a href="/noticias/"><span data-lang-es>Todas las noticias →</span><span data-lang-en hidden>All news →</span></a></p>
+  </section>
+
+  <section class="su-sec" id="mapa-snippet">
+    <h2><span data-lang-es>Mapa</span><span data-lang-en hidden>Map</span></h2>
+    <p class="lead" style="margin-top:0">
+      <span data-lang-es>Abre el mapa centrado en este ámbito con proyectos federales.</span>
+      <span data-lang-en hidden>Open the map focused on this place with federal projects.</span>
+    </p>
+    <p class="su-cta-row">
+      <a class="btn" href={`/mapas/?place=${unit.id}&layers=federal_projects,energy_assets`}>
+        <span data-lang-es>Ver en mapa</span><span data-lang-en hidden>View on map</span>
+      </a>
+      <a class="btn secondary" href={`/ontologia/?node=${terrId}`}>
+        <span data-lang-es>Nodo ontológico</span><span data-lang-en hidden>Ontology node</span>
+      </a>
+    </p>
+  </section>
+
+  <section class="su-sec" id="ontologia-vecinos">
+    <h2><span data-lang-es>Vecinos en la ontología</span><span data-lang-en hidden>Ontology neighbours</span></h2>
+    {ontoNeighbors.length === 0 ? (
+      <p class="bcs-empty"><span data-lang-es>Sin vecinos enlazados aún.</span><span data-lang-en hidden>No linked neighbours yet.</span></p>
+    ) : (
+      <div class="su-onto-row">
+        {ontoNeighbors.map((n: any) => (
+          <a class="su-onto-chip" href={`/ontologia/?node=${n.id}`}>
+            <span class="su-onto-type">{n.type}</span>
+            <span data-lang-es>{n.label}</span>
+            <span data-lang-en hidden>{n.label_en || n.label}</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+
+  {dataGaps.length > 0 && (
+    <section class="su-sec" id="brechas">
+      <h2><span data-lang-es>Brechas de datos</span><span data-lang-en hidden>Data gaps</span></h2>
+      <ul class="su-gaps">
+        {dataGaps.map((g) => (
+          <li>
+            <span data-lang-es>{g.es}</span>
+            <span data-lang-en hidden>{g.en}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <footer class="su-foot">
+    <a class="btn" href={sessionHref}>
+      <span data-lang-es>Abrir sesión de estrategia</span>
+      <span data-lang-en hidden>Open strategy session</span>
+    </a>
+    <a class="btn secondary" href="/studio/">
+      <span data-lang-es>Todos los municipios</span>
+      <span data-lang-en hidden>All municipalities</span>
+    </a>
+  </footer>
+
+  <style is:global>
+    .su-crumb { font-size: 0.8rem; color: #5c6e7b; margin-bottom: 0.75rem; display: flex; gap: 0.4rem; align-items: center; }
+    .su-crumb a { color: #34607d; text-decoration: none; }
+    .su-export-row { margin-top: 0.6rem; }
+    .su-table-wrap { overflow-x: auto; }
+    .su-aq { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .su-aq th, .su-aq td { border-bottom: 1px solid #e2dccf; padding: 0.3rem 0.45rem; text-align: left; }
+    .su-aq td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .su-aq tr.neg td.num { color: #a8543f; font-weight: 600; }
+    .su-hero h1 { font-size: 1.55rem; margin: 0 0 0.35rem; color: #23374a; }
+    .su-voc-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0; }
+    .su-chip {
+      font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.55rem;
+      border-radius: 999px; background: #dfe8ee; color: #34607d; text-decoration: none;
+    }
+    .su-cta-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
+    .su-sec { margin-top: 2rem; padding-top: 0.5rem; border-top: 1px solid #e2dccf; }
+    .su-sec h2 { font-size: 1.15rem; color: #23374a; margin: 0 0 0.75rem; }
+    .su-note { font-size: 0.88rem; color: #3c5163; background: #f3eee3; padding: 0.65rem 0.85rem; border-radius: 10px; }
+    .su-voc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.85rem; }
+    .su-voc {
+      border: 1px solid #e2dccf; border-radius: 12px; padding: 0.95rem 1rem; background: #fbf8f1;
+    }
+    .su-voc h3 { margin: 0 0 0.35rem; font-size: 1rem; color: #34607d; }
+    .su-voc p { margin: 0; font-size: 0.88rem; color: #23374a; line-height: 1.4; }
+    .su-struct { margin-top: 0.45rem !important; font-size: 0.82rem !important; color: #5c6e7b !important; }
+    .su-mini { margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.8rem; color: #3c5163; }
+    .su-instr { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.55rem; }
+    .su-itag {
+      font-size: 0.68rem; padding: 0.1rem 0.4rem; border-radius: 6px;
+      background: #f3eee3; color: #3c5163;
+    }
+    .su-gds-list { display: flex; flex-direction: column; gap: 0.65rem; }
+    .su-gds {
+      border-left: 4px solid var(--c, #34607d); padding: 0.65rem 0.85rem;
+      background: #f3eee3; border-radius: 0 10px 10px 0;
+    }
+    .su-gds header { display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; }
+    .su-gds h3 { margin: 0; font-size: 0.95rem; }
+    .su-bal { font-size: 0.72rem; font-weight: 700; color: var(--c, #5c6e7b); }
+    .su-gds p { margin: 0.35rem 0; font-size: 0.86rem; color: #23374a; }
+    .su-more { font-size: 0.8rem; font-weight: 600; color: #34607d; text-decoration: none; }
+    .su-sq { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+    .su-sq li {
+      border: 1px solid #e2dccf; border-radius: 10px; padding: 0.65rem 0.85rem; background: #fbf8f1;
+    }
+    .su-sq a { color: #23374a; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .su-sq a:hover { color: #34607d; }
+    .su-sq-meta { display: block; margin-top: 0.25rem; font-size: 0.72rem; color: #8796a0; }
+    .su-lib { margin-top: 0.75rem; font-size: 0.85rem; }
+    .su-lib a { color: #34607d; }
+    .su-hypo {
+      background: #dfe8ee; border: 1px solid #c5d6e1; border-radius: 10px;
+      padding: 0.75rem 0.9rem; margin-bottom: 0.85rem; font-size: 0.86rem; color: #23374a;
+    }
+    .su-hypo p { margin: 0.35rem 0; }
+    .su-sig-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.65rem; }
+    .su-sig { border: 1px solid #e2dccf; border-radius: 10px; padding: 0.75rem; background: #fbf8f1; }
+    .su-sig h3 { margin: 0 0 0.3rem; font-size: 0.9rem; }
+    .su-sig h3 a { color: #34607d; text-decoration: none; }
+    .su-sig p { margin: 0; font-size: 0.82rem; color: #3c5163; }
+    .su-foot {
+      margin: 2.25rem 0 1rem; padding-top: 1rem; border-top: 1px solid #e2dccf;
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    @media (max-width: 640px) {
+      .su-voc-grid, .su-sig-list { grid-template-columns: 1fr; }
+    }
+
+    /* PASS3 dossier hub */
+    .su-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.65rem; }
+    .su-stat { background: #fbf8f1; border: 1px solid #e2dccf; border-radius: 14px; padding: 0.85rem; box-shadow: 0 1px 2px rgba(35, 55, 74,.04); }
+    .su-stat .n { display: block; font-size: 1.25rem; font-weight: 700; color: #23374a; }
+    .su-stat .l { font-size: 0.75rem; color: #5c6e7b; }
+    .su-fed-list { display: grid; gap: 0.65rem; }
+    .su-fed { background: #fbf8f1; border: 1px solid #e2dccf; border-radius: 14px; padding: 0.85rem 1rem; }
+    .su-fed h3 { margin: 0 0 0.25rem; font-size: 0.98rem; }
+    .su-fed-cap { font-size: 0.85rem; color: #3c5163; margin: 0.25rem 0; }
+    .su-fed-links { display: flex; flex-wrap: wrap; gap: 0.65rem; font-size: 0.82rem; margin: 0.35rem 0 0; }
+    .su-theme-row, .su-onto-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .su-theme-chip, .su-onto-chip {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.4rem 0.7rem; border-radius: 999px; background: #f3eee3; color: #23374a;
+      text-decoration: none; font-size: 0.82rem; font-weight: 600;
+    }
+    .su-theme-n { background: #e2dccf; border-radius: 999px; padding: 0.05rem 0.4rem; font-size: 0.72rem; }
+    .su-onto-type { font-size: 0.65rem; color: #34607d; text-transform: uppercase; letter-spacing: 0.03em; }
+    .su-news { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+    .su-news li { background: #fbf8f1; border: 1px solid #e2dccf; border-radius: 12px; padding: 0.7rem 0.85rem; }
+    .su-news a { color: #23374a; font-weight: 600; text-decoration: none; }
+    .su-gaps { margin: 0; padding-left: 1.1rem; color: #5c6e7b; }
+    .su-org-img { display: block; border: 1px solid #e2dccf; border-radius: 12px; overflow: hidden; background: #fbf8f1; }
+    .su-org-img img { display: block; width: 100%; height: auto; }
+    .su-org-details { margin-top: 0.75rem; }
+    .su-org-details summary { cursor: pointer; font-weight: 600; color: #34607d; font-size: 0.9rem; }
+    .su-org-scroll { overflow-x: auto; margin-top: 0.5rem; }
+    .su-org-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; background: #fbf8f1; }
+    .su-org-table th, .su-org-table td { text-align: left; padding: 0.4rem 0.55rem; border-bottom: 1px solid #e2dccf; vertical-align: top; color: #23374a; }
+    .su-org-table th { background: #f3eee3; font-weight: 700; }
+    .su-org-table tr.su-org-main td { font-weight: 600; }
+
+    .esc-warn-mini { background:#f3e6cc; border:1px solid #e2c27e; color:#6b4e00; padding:0.55rem 0.75rem; border-radius:8px; font-size:0.88rem; margin:0.4rem 0 0.75rem; }
+    .st-study { background:#fbf8f1; border:1px solid #e2dccf; border-radius:12px; padding:1rem 1.15rem; }
+    .st-study h3 { font-size:1rem; color:#23374a; margin:1.25rem 0 0.45rem; }
+    .st-badges { display:flex; flex-wrap:wrap; gap:0.35rem; margin:0 0 0.6rem; }
+    .st-badge { font-size:0.75rem; font-weight:600; padding:0.18rem 0.55rem; border-radius:999px; background:#f3eee3; color:#23374a; }
+    .st-badge-pre { background:#f3e6cc; color:#8a5a00; border:1px solid #e2c27e; }
+    .st-badge-muted { font-weight:500; color:#5c6e7b; }
+    .st-lead { font-size:0.95rem; color:#23374a; margin:0 0 0.4rem; }
+    .st-cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(210px, 1fr)); gap:0.7rem; margin:0.85rem 0; }
+    .st-card { display:flex; flex-direction:column; gap:0.2rem; border:1px solid #e2dccf; border-radius:10px; padding:0.7rem 0.8rem; background:#f3eee3; }
+    .st-card-excl { border-left:4px solid #a8543f; }
+    .st-card-free { border-left:4px solid #b9852f; }
+    .st-card-null { border-left:4px solid #8796a0; }
+    .st-k { font-size:0.78rem; color:#3c5163; font-weight:600; }
+    .st-v { font-size:1.25rem; font-weight:700; color:#23374a; font-variant-numeric:tabular-nums; }
+    .st-v small { font-size:0.85rem; font-weight:600; color:#3c5163; }
+    .st-s { font-size:0.8rem; color:#3c5163; }
+    .st-warn { background:#f3e6cc; border:1px solid #e2c27e; border-left:4px solid #b9852f; color:#5c4100; padding:0.7rem 0.9rem; border-radius:8px; font-size:0.9rem; margin:0.5rem 0 0.25rem; }
+    .st-list { margin:0.25rem 0 0.5rem; padding-left:1.15rem; font-size:0.9rem; color:#23374a; }
+    .st-list li { margin:0.3rem 0; }
+    .st-list-fail li::marker { color:#a8543f; }
+    .st-list-ne li::marker { color:#b9852f; }
+    .st-pend-tag { display:inline-block; font-size:0.7rem; font-weight:700; padding:0.05rem 0.4rem; border-radius:6px; background:#f3e6cc; color:#8a5a1e; margin-right:0.25rem; }
+    .st-id { font-size:0.72rem; color:#8796a0; margin-left:0.25rem; }
+    .st-details { margin:0.6rem 0; font-size:0.9rem; }
+    .st-details summary { cursor:pointer; color:#34607d; font-weight:600; }
+</style>
+</BaseLayout>

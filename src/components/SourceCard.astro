@@ -1,0 +1,62 @@
+---
+/**
+ * Ficha de fuente — compact provenance chip for a figure.
+ * Props: id (data_inventory.json figure id) OR explicit fields.
+ */
+import inv from '../data/data_inventory.json';
+import { cleanSourceText, labelForPath } from '../lib/sourceLabel';
+interface Props {
+  id?: string;
+  source?: string;
+  page?: string;
+  date?: string;
+  method?: string;
+  caveat?: string;
+  file?: string;
+  label?: string;
+}
+const p = Astro.props as Props;
+const fig: any = p.id ? ((inv as any).figures || []).find((f: any) => f.id === p.id) || {} : {};
+const source = cleanSourceText(p.source ?? fig.source ?? '');
+const page = cleanSourceText(p.page ?? fig.page ?? '');
+const date = p.date ?? fig.date ?? '';
+const method = cleanSourceText(p.method ?? fig.method ?? '');
+const caveat = cleanSourceText(p.caveat ?? fig.caveat ?? '');
+// Plain dataset label — internal file paths and *.json names are never shown (2026-10-08).
+const file = (p.file ?? fig.file) ? labelForPath(p.file ?? fig.file) : '';
+const label = p.label ?? fig.label ?? '';
+---
+{source && (
+  <details class="srccard">
+    <summary title="Ficha de fuente">
+      <span aria-hidden="true">ⓘ</span>
+      <span data-lang-es>Fuente</span><span data-lang-en hidden>Source</span>
+    </summary>
+    <dl>
+      {label && (<><dt><span data-lang-es>Dato</span><span data-lang-en hidden>Figure</span></dt><dd>{label}</dd></>)}
+      <dt><span data-lang-es>Fuente</span><span data-lang-en hidden>Source</span></dt><dd>{source}</dd>
+      {page && (<><dt><span data-lang-es>Referencia</span><span data-lang-en hidden>Reference</span></dt><dd>{page}</dd></>)}
+      {date && (<><dt><span data-lang-es>Fecha</span><span data-lang-en hidden>Date</span></dt><dd>{date}</dd></>)}
+      {method && (<><dt><span data-lang-es>Método</span><span data-lang-en hidden>Method</span></dt><dd>{method}</dd></>)}
+      {caveat && (<><dt><span data-lang-es>Advertencia</span><span data-lang-en hidden>Caveat</span></dt><dd>{caveat}</dd></>)}
+      {file && file !== source && (<><dt><span data-lang-es>Conjunto de datos</span><span data-lang-en hidden>Dataset</span></dt><dd>{file}</dd></>)}
+    </dl>
+  </details>
+)}
+<style>
+  .srccard { display: inline-block; font-size: 0.78rem; vertical-align: middle; margin-left: 0.35rem; }
+  .srccard summary { cursor: pointer; list-style: none; color: #34607d; border: 1px solid #c5d6e1; background: #dfe8ee; border-radius: 999px; padding: 0.05rem 0.5rem; display: inline-flex; gap: 0.25rem; align-items: center; }
+  .srccard summary::-webkit-details-marker { display: none; }
+  .srccard[open] summary { background: #dfe8ee; }
+  .srccard dl { margin: 0.35rem 0 0; padding: 0.55rem 0.7rem; background: #fbf8f1; border: 1px solid #e2dccf; border-radius: 8px; display: grid; grid-template-columns: max-content 1fr; gap: 0.2rem 0.6rem; max-width: 36rem; color: #23374a; box-shadow: 0 2px 8px rgba(15,23,42,.06); }
+  .srccard dt { font-weight: 600; color: #23374a; }
+  .srccard dd { margin: 0; }
+  @media print { .srccard { display: block; margin: 0.2rem 0 0; } .srccard dl { box-shadow: none; } .srccard summary { display: none; } }
+</style>
+<script is:inline>
+  // Open every source card when printing the expediente.
+  if (!window.__srccardPrint) {
+    window.__srccardPrint = true;
+    window.addEventListener('beforeprint', function () { document.querySelectorAll('details.srccard').forEach(function (d) { d.setAttribute('open', ''); }); });
+  }
+</script>

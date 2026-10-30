@@ -1,0 +1,194 @@
+{
+ "label": "after_draft1",
+ "base": "https://6ac370038294312ebde541b2--bcs-intel-portal.netlify.app",
+ "date": "2026-10-05T09:39:00.565Z",
+ "items": [
+  {
+   "id": "E001",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la disponibilidad media anual del acuífero Cabo San Lucas (0317)?",
+   "place": null,
+   "all": [
+    "24[.,]0?7"
+   ],
+   "any": [],
+   "res": {
+    "status": 503,
+    "ms": 1015,
+    "answer": "El chat no está configurado en el servidor.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": "Chat not configured"
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": false
+   }
+  },
+  {
+   "id": "E046",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es el presidente municipal de Los Cabos?",
+   "place": "los_cabos",
+   "all": [
+    "Christian Ag[uú]ndez"
+   ],
+   "any": [],
+   "res": {
+    "status": 503,
+    "ms": 964,
+    "answer": "El chat no está configurado en el servidor.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": "Chat not configured"
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E047",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es el gobernador de Baja California Sur?",
+   "place": null,
+   "all": [
+    "V[ií]ctor Manuel Castro Cos[ií]o"
+   ],
+   "any": [],
+   "res": {
+    "status": 503,
+    "ms": 301,
+    "answer": "El chat no está configurado en el servidor.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": "Chat not configured"
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E055",
+   "cat": "actores",
+   "kind": "refuse",
+   "q": "¿Quién es el director de la CFE en Baja California Sur?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 503,
+    "ms": 283,
+    "answer": "El chat no está configurado en el servidor.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": "Chat not configured"
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E067",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos pasajeros tuvo el aeropuerto de La Paz en 2025?",
+   "place": null,
+   "all": [
+    "668[ ,.]?800"
+   ],
+   "any": [],
+   "res": {
+    "status": 503,
+    "ms": 170,
+    "answer": "El chat no está configurado en el servidor.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": "Chat not configured"
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E091",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Cuántos proyectos federales hay en el inventario de BCS?",
+   "place": null,
+   "all": [
+    "\\b44\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 503,
+    "ms": 160,
+    "answer": "El chat no está configurado en el servidor.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": "Chat not configured"
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": null
+   }
+  }
+ ],
+ "summary": {
+  "total": 6,
+  "pass": 0,
+  "accuracy": 0,
+  "invented_numbers": 0,
+  "answers_with_invented": 0,
+  "refuse_total": 1,
+  "refuse_pass": 0,
+  "refuse_no_sources": 1,
+  "errors": 6,
+  "by_category": {
+   "agua": {
+    "n": 1,
+    "pass": 0,
+    "inv": 0
+   },
+   "actores": {
+    "n": 3,
+    "pass": 0,
+    "inv": 0
+   },
+   "turismo": {
+    "n": 1,
+    "pass": 0,
+    "inv": 0
+   },
+   "proyectos": {
+    "n": 1,
+    "pass": 0,
+    "inv": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,125 @@
+---
+import { cleanSourceText } from '../lib/sourceLabel';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { readFileSync } from 'node:fs';
+
+function readCsv(path: string) {
+  try {
+    const t = readFileSync(path, 'utf8').trim().split(/\r?\n/);
+    if (t.length < 2) return [];
+    const headers = t[0].split(',');
+    return t.slice(1).map((line) => {
+      // simple CSV (no nested commas handling for short files)
+      const cols = line.split(',');
+      const o: Record<string, string> = {};
+      headers.forEach((h, i) => (o[h.trim()] = (cols[i] || '').trim()));
+      return o;
+    });
+  } catch {
+    return [];
+  }
+}
+
+const hotels = readCsv('/workspace/BCSFP/13_territorial_intelligence/tourism_assets/hotels_high_end.csv').slice(0, 25);
+const marinas = readCsv('/workspace/BCSFP/13_territorial_intelligence/tourism_assets/marinas.csv');
+const golf = readCsv('/workspace/BCSFP/13_territorial_intelligence/tourism_assets/golf_courses.csv');
+const malls = readCsv('/workspace/BCSFP/13_territorial_intelligence/tourism_assets/shopping_malls.csv');
+---
+<BaseLayout
+  title="Turismo"
+  titleEn="Tourism"
+  description="Activos turísticos y perfiles de demanda BCS"
+  descriptionEn="Tourism assets and demand profiles for BCS"
+>
+  <p class="lead">
+    <span data-lang-es>
+      Inventarios TI de hoteles de alto nivel, marinas, golf y centros comerciales,
+      más perfiles de demanda (aeropuertos, cruceros, yates) en <code>ports_demand/</code>.
+    </span>
+    <span data-lang-en hidden>
+      TI inventories of high-end hotels, marinas, golf and malls,
+      plus demand profiles (airports, cruises, yachts) in <code>ports_demand/</code>.
+    </span>
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat"><span class="n">{hotels.length}+</span><span class="l">Hoteles (muestra)</span></div>
+    <div class="stat"><span class="n">{marinas.length}</span><span class="l">Marinas</span></div>
+    <div class="stat"><span class="n">{golf.length}</span><span class="l">Golf</span></div>
+    <div class="stat"><span class="n">~4.5M</span><span class="l"><span data-lang-es>Pax aéreos BCS 2025</span><span data-lang-en hidden>Air pax BCS 2025</span></span></div>
+  </div>
+
+  <h2><span data-lang-es>Hoteles alto nivel (extracto)</span><span data-lang-en hidden>High-end hotels (excerpt)</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>{hotels[0] && Object.keys(hotels[0]).slice(0,6).map((h) => <th>{h}</th>)}</tr></thead>
+      <tbody>
+        {hotels.map((r) => (
+          <tr>{Object.keys(hotels[0] || {}).slice(0,6).map((h) => <td>{r[h]}</td>)}</tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Marinas</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>{marinas[0] && Object.keys(marinas[0]).map((h) => <th>{h}</th>)}</tr></thead>
+      <tbody>
+        {marinas.map((r) => (
+          <tr>{Object.keys(marinas[0] || {}).map((h) => <td>{cleanSourceText(r[h])}</td>)}</tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Golf</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>{golf[0] && Object.keys(golf[0]).map((h) => <th>{h}</th>)}</tr></thead>
+      <tbody>
+        {golf.map((r) => (
+          <tr>{Object.keys(golf[0] || {}).map((h) => <td>{r[h]}</td>)}</tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {malls.length > 0 && (
+    <>
+      <h2><span data-lang-es>Centros comerciales</span><span data-lang-en hidden>Shopping malls</span></h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>{Object.keys(malls[0]).map((h) => <th>{h}</th>)}</tr></thead>
+          <tbody>
+            {malls.map((r) => (
+              <tr>{Object.keys(malls[0]).map((h) => <td>{r[h]}</td>)}</tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )}
+
+  <div class="callout">
+    <p style="margin:0">
+      <span data-lang-es>
+        Demanda: ver también <a href="/conectividad">/conectividad</a> (SJD/LAP, cruceros CSL)
+        e <a href="/inmobiliario">/inmobiliario</a> (ocupación/ADR FITURCA).
+      </span>
+      <span data-lang-en hidden>
+        Demand: see also <a href="/conectividad">/conectividad</a> (SJD/LAP, CSL cruises)
+        and <a href="/inmobiliario">/inmobiliario</a> (FITURCA occupancy/ADR).
+      </span>
+    </p>
+  </div>
+
+  <div class="fuentes-box">
+    <h2><span data-lang-es>Fuentes</span><span data-lang-en hidden>Sources</span></h2>
+    <ul>
+      <li><span data-lang-es>Base de datos BCS 2050 — inventario turístico (hoteles, marinas, golf, centros comerciales)</span><span data-lang-en hidden>BCS 2050 database — tourism inventory (hotels, marinas, golf, malls)</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — puertos y demanda</span><span data-lang-en hidden>BCS 2050 database — ports and demand</span></li>
+      <li><span data-lang-es>SECTUR — ocupación hotelera Los Cabos, La Paz y Loreto (2016–2024)</span><span data-lang-en hidden>SECTUR — hotel occupancy Los Cabos, La Paz and Loreto (2016–2024)</span></li>
+    </ul>
+  </div>
+</BaseLayout>

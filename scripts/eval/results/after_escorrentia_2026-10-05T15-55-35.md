@@ -1,0 +1,50 @@
+# Chat eval — after_escorrentia
+
+- Base: https://bajacaliforniasur2050.com
+- Date: 2026-10-05T15:55:35.609Z
+- Accuracy: **92/100 (92%)**
+- Invented numbers: **0** in 0 answers
+- Honest refusals (out-of-acervo questions): 8/9; with zero sources shown: 2/9
+- Errors: 0
+
+| Category | Pass | Invented # |
+|---|---:|---:|
+| agua | 19/21 | 0 |
+| energia | 9/10 | 0 |
+| poblacion | 11/12 | 0 |
+| seguridad | 4/6 | 0 |
+| actores | 11/11 | 0 |
+| inmobiliario | 9/9 | 0 |
+| turismo | 9/10 | 0 |
+| economia | 7/7 | 0 |
+| ambiente | 5/5 | 0 |
+| planeacion | 2/3 | 0 |
+| proyectos | 5/5 | 0 |
+| fuera | 1/1 | 0 |
+
+## Failures
+
+- **E014** [agua/fact] ¿Qué acuífero abastece a Loreto y cuál es su disponibilidad?
+  - FAIL; invented: —; sources: 5
+  - A: El acuífero que abastece a Loreto es el Acuífero 0328 Loreto, con una disponibilidad media anual de 0.09 hm³/año, lo que indica una disponibilidad positiva (Acuífero 0328 Loreto — DMA, DOF 2023).
+- **E019** [energia/fact] Demanda máxima del sistema eléctrico de BCS en 2023
+  - FAIL; invented: —; sources: 5
+  - A: El portal no tiene ese dato. Sin embargo, menciona que el pico de demanda para el Sistema Interconectado Baja California Sur (SIBCS) está documentado en alerta para 2024, con un rango de aproximadamente 688.5 a 689 MW (Guía energía: SIBCS — hechos operativos). Para información más detallada, se podr
+- **E038** [poblacion/fact] ¿Cuántos municipios tiene BCS?
+  - FAIL; invented: —; sources: 5
+  - A: El portal no tiene ese dato. Sin embargo, se menciona que Baja California Sur tiene varios municipios, entre ellos Los Cabos, La Paz, Comondú, Mulegé y Loreto. Para información oficial, se podría consultar el INEGI o el Gobierno del Estado de Baja California Sur.
+- **E040** [seguridad/refuse] sedena baja california sur
+  - FAIL; invented: —; sources: 1
+  - A: La Secretaría de la Defensa Nacional (SEDENA) está involucrada en el despliegue de la infraestructura de la Guardia Nacional en Baja California Sur, según el contexto del proyecto federal (ontología, 12_ontology/graph.json#proj_fed_seg_001). Sin embargo, no se proporcionan detalles específicos sobre
+- **E045** [seguridad/open] ¿Qué proyectos federales de seguridad hay en BCS?
+  - FAIL; invented: —; sources: 5
+  - A: El portal no tiene ese dato. Sin embargo, menciona que hay un inventario de 44 proyectos federales en Baja California Sur, aunque no especifica cuáles son de seguridad (Hecho proyectos-federales: Inventario proyectos federales BCS). Para información detallada sobre proyectos específicos de seguridad
+- **E068** [turismo/fact] aeropuerto loreto pasajeros
+  - FAIL; invented: —; sources: 5
+  - A: En 2025, el Aeropuerto Internacional de Loreto (LTO) tuvo un total de 33,412 pasajeros (Hecho conectividad: Pasajeros 2025 — Loreto). Además, el dato de pasajeros totales para el año 2026 no está consolidado (Guía conectividad: Aeropuertos internacionales).
+- **E090** [planeacion/fact] ¿Qué instrumento urbano rige La Paz?
+  - FAIL; invented: —; sources: 5
+  - A: El instrumento urbano que rige La Paz es el Programa de Desarrollo Urbano de Centro de Población de La Paz, vigente desde 2018 (Guía planeacion: Instrumentos clave (vigencia), 2024).
+- **E097** [agua/fact] ¿Cuántos kilómetros tiene la red de drenaje de escorrentía de BCS según el modelo HydroRIVERS del paquete 2026?
+  - FAIL; invented: —; sources: 5
+  - A: La red de drenaje de escorrentía de Baja California Sur según el modelo HydroRIVERS del paquete 2026 tiene 16,588.1 km (Escorrentía BCS — modelo de terreno — escorrentia/resumen, 2026).

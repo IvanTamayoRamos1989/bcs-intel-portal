@@ -1,0 +1,67 @@
+{
+  "Los Cabos": {
+    "cve": "008",
+    "pob": 351111,
+    "locs": 428,
+    "cabecera": "San José del Cabo",
+    "cab_pob": 136285,
+    "ley_ingresos_2026": 7421559352,
+    "anexo_i33_2025": 1282611261,
+    "strengths_es": "Municipio primate; SJD; hotelería; mayor capacidad fiscal relativa.",
+    "strengths_en": "Primate municipality; SJD airport; hotels; highest relative fiscal capacity.",
+    "locks_es": "Acuíferos 0317/0319 en déficit; techo SIBCS; East Cape / Cabo Pulmo.",
+    "locks_en": "Aquifers 0317/0319 in deficit; SIBCS ceiling; East Cape / Cabo Pulmo."
+  },
+  "La Paz": {
+    "cve": "003",
+    "pob": 292241,
+    "locs": 1018,
+    "cabecera": "La Paz",
+    "cab_pob": 250141,
+    "ley_ingresos_2026": 2905974532,
+    "anexo_i33_2025": 837464432,
+    "strengths_es": "Capital administrativa; pobreza municipal más baja (20.6% 2020); PDUCP 2018.",
+    "strengths_en": "Administrative capital; lowest municipal poverty (20.6% 2020); PDUCP 2018.",
+    "locks_es": "Acuíferos 0324 y 0313 (Todos Santos) en déficit; deferencia POER→PDU.",
+    "locks_en": "Aquifers 0324 and 0313 (Todos Santos) in deficit; POER→PDU deference."
+  },
+  "Comondú": {
+    "cve": "001",
+    "pob": 73021,
+    "locs": 589,
+    "cabecera": "Ciudad Constitución",
+    "cab_pob": 43805,
+    "ley_ingresos_2026": 817244119,
+    "anexo_i33_2025": 369189086,
+    "strengths_es": "Polo agropecuario Valle Santo Domingo; pesca; Constitución / Insurgentes / San Carlos; PMDU Visión 2025 + PMD 2024–2027 en datos.",
+    "strengths_en": "Agro pole Valle Santo Domingo; fisheries; Constitución / Insurgentes / San Carlos; PMDU Vision 2025 + PMD 2024–2027 on disk.",
+    "locks_es": "Sin visor catastral público. PMDU Visión 2025 + PMD 2024–2027 ON DISK (Base de datos BCS 2050 — planeación).",
+    "locks_en": "No public cadastre viewer. PMDU Vision 2025 + PMD 2024–2027 ON DISK (Base de datos BCS 2050 — planeación)."
+  },
+  "Mulegé": {
+    "cve": "002",
+    "pob": 64022,
+    "locs": 381,
+    "cabecera": "Santa Rosalía",
+    "cab_pob": 14357,
+    "ley_ingresos_2026": null,
+    "anexo_i33_2025": 357354826,
+    "strengths_es": "Santa Rosalía / Guerrero Negro / Villa A.A. Alvarado; PMD 2024–2027 en archivo; pesca / sal.",
+    "strengths_en": "Santa Rosalía / Guerrero Negro / Villa A.A. Alvarado; PMD 2024–2027 on file; fisheries / salt.",
+    "locks_es": "Sin portal catastro/IMPLAN público; PMDU en proceso consultivo.",
+    "locks_en": "No public cadastre/IMPLAN portal; PMDU in consultative process."
+  },
+  "Loreto": {
+    "cve": "009",
+    "pob": 18052,
+    "locs": 127,
+    "cabecera": "Loreto",
+    "cab_pob": 16311,
+    "ley_ingresos_2026": null,
+    "anexo_i33_2025": 263961262,
+    "strengths_es": "POEL 2014 vigente; ANP Bahía de Loreto; corredor Nopoló–Puerto Escondido; SETUE IE Loreto 2025/2026 ON DISK.",
+    "strengths_en": "POEL 2014 in force; Bahía de Loreto ANP; Nopoló–Puerto Escondido corridor; SETUE IE Loreto 2025/2026 ON DISK.",
+    "locks_es": "PSDU 2007 citado sin PDF gazeta; actualización 2024 en consulta; sin mapa catastral.",
+    "locks_en": "PSDU 2007 cited without gazette PDF; 2024 update in consultation; no cadastre map."
+  }
+}

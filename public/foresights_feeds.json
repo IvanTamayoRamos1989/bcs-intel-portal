@@ -1,0 +1,4970 @@
+{
+  "updated": "2026-10-30",
+  "place_labels": {
+    "los_cabos": {
+      "es": "Los Cabos",
+      "en": "Los Cabos"
+    },
+    "east_cape": {
+      "es": "Cabo Este",
+      "en": "East Cape"
+    },
+    "todos_santos": {
+      "es": "Todos Santos",
+      "en": "Todos Santos"
+    },
+    "la_paz": {
+      "es": "La Paz",
+      "en": "La Paz"
+    },
+    "loreto": {
+      "es": "Loreto",
+      "en": "Loreto"
+    },
+    "comondu": {
+      "es": "Comondú",
+      "en": "Comondú"
+    },
+    "mulege_north": {
+      "es": "Mulegé N.",
+      "en": "Mulegé N."
+    }
+  },
+  "news": [
+    {
+      "id": "playas-cerradas-los-cabos-tribuna-2026-10-29",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "environment"
+      ]
+    },
+    {
+      "id": "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "asipona-traspaso-congreso-bitacora-2026-10-29",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+      "place_ids": [
+        "los_cabos",
+        "east_cape"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "east_cape"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use",
+        "tourism"
+      ]
+    },
+    {
+      "id": "facultades-municipales-ambientales-hcn-2026-10-29",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        }
+      ],
+      "topics": [
+        "environment",
+        "land_use"
+      ]
+    },
+    {
+      "id": "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "energy",
+        "planning"
+      ]
+    },
+    {
+      "id": "dengue-comondu-brigadas-tribuna-2026-10-29",
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "vance-inunda-los-cabos-reforma-2026-10-28",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "tourism",
+        "water"
+      ]
+    },
+    {
+      "id": "suspension-clases-lluvias-60mm-cabos-2026-10-28",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "desazolve-vial-csl-lluvias-2026-10-28",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment"
+      ]
+    },
+    {
+      "id": "castro-cambio-climatico-mareas-bcs-2026-10-28",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "transpeninsular-socavacion-vance-independiente-2026-10-28",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment",
+        "water"
+      ]
+    },
+    {
+      "id": "hoteleros-plan-crisis-energetica-bcs-2026-10-27",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "energy",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "los-cabos-ocupacion-hotelera-cae-5-2026-10-27",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning",
+        "energy"
+      ]
+    },
+    {
+      "id": "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "sismo-3-7-santa-rosalia-2026-10-27",
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "sepuimm-campana-transicion-energetica-sjc-2026-10-27",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "energy",
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "hoteleros-crisis-energetica-zeta-2026-10-27",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "energy",
+        "tourism"
+      ]
+    },
+    {
+      "id": "fiturca-vision-2036-los-cabos-2026-10-26",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "los-cabos-campana-global-vip-summit-2026-10-26",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "vinoramas-rechaza-pipas-sapa-la-paz-2026-10-26",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning",
+        "land_use"
+      ]
+    },
+    {
+      "id": "los-cabos-informe-dos-anos-obras-pdu-2026-10-26",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use",
+        "water"
+      ]
+    },
+    {
+      "id": "bcs-monitoreo-diario-dengue-2026-10-26",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "marea-alta-inunda-costa-la-paz-2026-10-25",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "los-cabos-aviso-preventivo-lluvias-viento-2026-10-25",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water",
+        "energy",
+        "planning"
+      ]
+    },
+    {
+      "id": "planta-purificadora-agua-bienestar-la-pasion-la-paz-2026-10-25",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water"
+      ]
+    },
+    {
+      "id": "oomsapas-la-paz-paraiso-del-sol-tandeo-2026-10-24",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water"
+      ]
+    },
+    {
+      "id": "dengue-comondu-los-cabos-refuerzo-federal-2026-10-24",
+      "place_ids": [
+        "los_cabos",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "marcha-agua-cabo-san-lucas-oomsapas-2026-10-22",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "vivienda-bienestar-ventanilla-bcs-2026-10-22",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use"
+      ]
+    },
+    {
+      "id": "baches-la-paz-temporada-lluvias-2026-10-22",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "zatarain-caida-turismo-los-cabos-2026-10-21",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "comodato-guardia-nacional-donacion-inmuebles-salud-2026-10-21",
+      "place_ids": [
+        "la_paz",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use"
+      ]
+    },
+    {
+      "id": "sheinbaum-evaluara-salud-bcs-noviembre-2026-10-21",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "dengue-comondu-13-mil-hectareas-fumigadas-2026-10-21",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "cambio-proteccion-civil-los-cabos-feria-2026-10-21",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "dengue-satura-hospitales-los-cabos-2026-10-20",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment"
+      ]
+    },
+    {
+      "id": "distintivos-tiburon-ballena-la-paz-2026-10-20",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "environment"
+      ]
+    },
+    {
+      "id": "congreso-donacion-predios-vivienda-comondu-mulege-2026-10-20",
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "land_use",
+        "planning"
+      ]
+    },
+    {
+      "id": "cabildo-la-paz-tarifa-transporte-16-18-pesos-2026-10-20",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "fuga-gas-infra-pueblo-nuevo-la-paz-2026-10-20",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use",
+        "tourism"
+      ]
+    },
+    {
+      "id": "morena-coordinaciones-municipales-2027-bcs-2026-10-20",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "protesta-comunidad-maritima-asipona-csl-2026-10-19",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "tormenta-trudy-lluvias-puntuales-bcs-2026-10-19",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "milena-quiroga-la-paz-sin-deuda-fin-de-ano-2026-10-19",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "buzos-bcs-decada-proyectos-electricidad-2026-10-19",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "energy",
+        "planning"
+      ]
+    },
+    {
+      "id": "turismo-eu-cae-14-los-cabos-2026-10-19",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "comunidad-maritima-protesta-tarifas-asipona-csl-2026-10-18",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "pescadores-amparo-tarifas-asipona-los-cabos-2026-10-18",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "oomsapas-subcolector-el-progreso-la-paz-2026-10-18",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "megaplanton-sierra-la-laguna-materiales-anp-2026-10-18",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        }
+      ],
+      "topics": [
+        "environment",
+        "land_use"
+      ]
+    },
+    {
+      "id": "hoteles-los-cabos-repunte-cierre-2026-10-18",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "bcs-325-casos-dengue-comondu-2026-10-17",
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "simon-se-degrada-lluvias-fuertes-bcs-2026-10-16",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "milena-quiroga-reasume-la-paz-ruta-tiburon-2026-10-16",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "los-cabos-crece-infraestructura-rezago-desarrolladores-2026-10-16",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "water",
+        "energy",
+        "tourism"
+      ]
+    },
+    {
+      "id": "desarrolladores-los-cabos-desalacion-excedente-red-2026-10-16",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "simon-estacionario-435-km-cabo-san-lucas-2026-10-15",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "gobernador-sierra-la-laguna-no-autorizar-2026-10-15",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "land_use"
+      ]
+    },
+    {
+      "id": "congreso-bcs-exhorta-asipona-marina-csl-2026-10-15",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "programa-bacheo-rehabilitacion-calles-bcs-2026-10-15",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "gobernador-desaladoras-comondu-semarnat-2026-10-15",
+      "place_ids": [
+        "los_cabos",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "water",
+        "environment"
+      ]
+    },
+    {
+      "id": "conagua-suspende-bombeo-acuifero-santo-domingo-2026-10-15",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "water",
+        "environment"
+      ]
+    },
+    {
+      "id": "simon-cierre-puertos-la-paz-los-cabos-2026-10-14",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "oomsapas-la-paz-agua-tras-corte-electrico-2026-10-14",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water",
+        "energy"
+      ]
+    },
+    {
+      "id": "atlas-energetico-bcs-2026-10-14",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        }
+      ],
+      "topics": [
+        "energy",
+        "planning"
+      ]
+    },
+    {
+      "id": "coplade-quinto-informe-gobierno-bcs-2026-10-14",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "apagon-delegaciones-la-paz-2026-10-13",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "energy"
+      ]
+    },
+    {
+      "id": "asipona-nuevas-tarifas-marina-cabo-san-lucas-2026-10-13",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "congreso-bcs-contaminacion-luminica-2026-10-13",
+      "place_ids": [
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "la-paz-tarifa-transporte-urbano-16-pesos-2026-10-13",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "croc-plan-maestro-san-pablo-los-cabos-2026-10-12",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "land_use",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "hoteleros-los-cabos-rechazan-aumento-dnr-2026-10-11",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "simon-categoria-4-rachel-aviso-punta-eugenia-2026-10-10",
+      "place_ids": [
+        "los_cabos",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "festival-aves-los-cabos-2026-10-09",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "desaladora-matancitas-comondu-semarnat-2026-10-09",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "water",
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "rachel-tormenta-recurva-peninsula-2026-10-08",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "simon-tormenta-lluvias-los-cabos-2026-10-08",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "vidrio-anp-vizcaino-lgeepa-2026-10-08",
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "rachel-apunta-bcs-punta-eugenia-2026-10-07",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "rachel-oleaje-3-5m-peninsula-2026-10-07",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        }
+      ],
+      "topics": [
+        "environment",
+        "water"
+      ]
+    },
+    {
+      "id": "depresion-20e-oleaje-los-cabos-la-paz-2026-10-07",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "blanqueamiento-corales-loreto-los-cabos-2026-10-07",
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "environment",
+        "water"
+      ]
+    },
+    {
+      "id": "los-cabos-temporada-alta-ocupacion-2026-10-07",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "bacheo-csl-corredor-turistico-2026-10-07",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-43-viviendas-perdida-total-comondu-2026-10-07",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "energy"
+      ]
+    },
+    {
+      "id": "rachel-podria-tocar-tierra-bcs-11-12-oct-2026-10-06",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "protocolo-busqueda-desastres-naturales-bcs-2026-10-06",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "pueblos-magicos-bcs-promocion-2026-10-06",
+      "place_ids": [
+        "todos_santos",
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "rachel-categoria-1-se-aleja-bcs-2026-10-05",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "conagua-operativos-lluvias-comondu-2026-10-05",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "water",
+        "environment"
+      ]
+    },
+    {
+      "id": "rachel-categoria-2-lluvias-bcs-2026-10-04",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "pvem-sobreedificacion-los-cabos-2026-10-03",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use",
+        "tourism"
+      ]
+    },
+    {
+      "id": "rachel-inundaciones-los-cabos-2026-10-03",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "los-cabos-ocupacion-76-octubre-2026-10-02",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "bocana-estero-san-jose-cuenca-2026-10-02",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "water",
+        "tourism"
+      ]
+    },
+    {
+      "id": "pvem-crisis-agua-mega-desaladora-2026-10-02",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "ptar-fonatur-compra-estancada-2026-10-01",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "cfe-restablece-100-polo-2026-10-01",
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "energy",
+        "environment"
+      ]
+    },
+    {
+      "id": "rachel-suspende-clases-los-cabos-2026-10-01",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "loreto-pavimentacion-padre-ugarte-29-7-mdp-2026-10-01",
+      "place_ids": [
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "planning",
+        "water",
+        "tourism"
+      ]
+    },
+    {
+      "id": "rachel-categoria-2-sur-cabos-mar-abierto-2026-10-01",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "water"
+      ]
+    },
+    {
+      "id": "rachel-cat1-sur-cabo-san-lucas-2026-09-30",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-retiran-agua-caminos-comondu-mulege-2026-09-30",
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "cfe-restablece-11k-usuarios-polo-2026-09-30",
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "energy",
+        "environment"
+      ]
+    },
+    {
+      "id": "rachel-cierre-puertos-csl-sjc-2026-09-30",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-recuperacion-cfe-20k-carreteras-2026-09-29",
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "energy",
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "polo-saldo-blanco-700-albergues-2026-09-29",
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-vuelve-clases-recuperacion-continua-2026-09-29",
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "energy",
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "polo-saldo-blanco-infobae-gobernador-2026-09-29",
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-rompe-bordo-puerto-san-carlos-evacuan-400-2026-09-28",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "polo-loreto-7-albergues-suspenden-comercios-2026-09-28",
+      "place_ids": [
+        "la_paz",
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "polo-plan-dn-iii-e-1689-elementos-comondu-2026-09-28",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-impacto-suspenden-movilidad-norte-bcs-78-evacuados-2026-09-28",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "energy",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-toca-tierra-comondu-avanza-sonora-2026-09-28",
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "polo-coordinan-acciones-comondu-loreto-mulege-2026-09-27",
+      "place_ids": [
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-plan-marina-2923-elementos-2026-09-27",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-weakens-cat3-beaches-ports-closed-2026-09-27",
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "environment"
+      ]
+    },
+    {
+      "id": "polo-puertos-cerrados-semar-2026-09-26",
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "environment",
+        "water"
+      ]
+    },
+    {
+      "id": "polo-impacto-cat2-lunes-centro-bcs-2026-09-26",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-lluvias-250mm-oleaje-10m-2026-09-26",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        }
+      ],
+      "topics": [
+        "environment",
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-evacuacion-chicharron-loreto-2026-09-26",
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "polo-desazolve-calles-la-paz-2026-09-25",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment"
+      ]
+    },
+    {
+      "id": "polo-suspenden-clases-bcs-2026-09-25",
+      "place_ids": [
+        "los_cabos",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism",
+        "environment"
+      ]
+    },
+    {
+      "id": "oomsapas-pipas-brisas-pacifico-d1-2026-09-25",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "oomsapas-tandeo-desaladora1-ajustes-2026-09-24",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "tourism"
+      ]
+    },
+    {
+      "id": "fondo-climatico-bcs-2026-09-24",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water",
+        "tourism"
+      ]
+    },
+    {
+      "id": "huracan-polo-consejo-estatal-alerta-2026-09-24",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "aguas-negras-ampliacion-olachea-2026-09-24",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "huracan-polo-vigilancia-la-paz-2026-09-23",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "la-paz-2mil-toneladas-operativo-huracanes-2026-09-23",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "desazolve-vialidades-csl-2026-09-23",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment"
+      ]
+    },
+    {
+      "id": "cfe-536-mdp-70-mva-bcs-2026-09-23",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        }
+      ],
+      "topics": [
+        "energy",
+        "planning"
+      ]
+    },
+    {
+      "id": "cfe-bcs-generacion-electrificacion-2026-09-22",
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "energy",
+        "planning"
+      ]
+    },
+    {
+      "id": "huracan-polo-capitania-cierre-navegacion-2026-09-22",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "environment"
+      ]
+    },
+    {
+      "id": "la-paz-limpieza-playas-zofemat-2026-09-22",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "cfe-128-mw-turbogas-bcs-2026-09-21",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "energy",
+        "tourism"
+      ]
+    },
+    {
+      "id": "desabasto-78-colonias-acueducto-1-la-paz-2026-09-21",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "sheinbaum-visita-bcs-anuncios-2026-09-20",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "water",
+        "energy",
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "cfe-128mw-moviles-los-cabos-2026-09-18",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "energy",
+        "tourism",
+        "planning"
+      ]
+    }
+  ],
+  "flights": [
+    {
+      "iata": "SJD",
+      "place_id": "los_cabos",
+      "destinations": 56,
+      "feeds_into_signals": [
+        "sig-hurricanes-polo-rachel",
+        "sig-csl-marina-asipona-tariffs",
+        "sig-sibcs-island-grid",
+        "sig-tourism-fdi-vs-water"
+      ],
+      "feeds_into_place": "los_cabos"
+    },
+    {
+      "iata": "LAP",
+      "place_id": "la_paz",
+      "destinations": 7,
+      "feeds_into_signals": [
+        "sig-hurricanes-polo-rachel",
+        "sig-water-energy-coupling",
+        "sig-flight-connectivity-sjd"
+      ],
+      "feeds_into_place": "la_paz"
+    },
+    {
+      "iata": "LTO",
+      "place_id": "loreto",
+      "destinations": 5,
+      "feeds_into_signals": [
+        "sig-hurricanes-polo-rachel",
+        "sig-csl-marina-asipona-tariffs",
+        "sig-flight-connectivity-sjd",
+        "sig-comondu-desal-loreto-ptar"
+      ],
+      "feeds_into_place": "loreto"
+    }
+  ],
+  "signals": [
+    {
+      "id": "sig-hurricanes-polo-rachel",
+      "theme": "environment",
+      "place_ids": [
+        "comondu",
+        "mulege_north",
+        "los_cabos",
+        "loreto",
+        "la_paz"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "facultades-municipales-ambientales-hcn-2026-10-29",
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "Huracanes Polo y Rachel: la resiliencia costera y de red entra al techo 2050",
+      "title_en": "Hurricanes Polo and Rachel: coastal and grid resilience joins the 2050 ceiling"
+    },
+    {
+      "id": "sig-social-housing-land",
+      "theme": "land_use",
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "provenance": {
+        "news_ids": [
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "sismo-3-7-santa-rosalia-2026-10-27",
+          "dengue-comondu-los-cabos-refuerzo-federal-2026-10-24",
+          "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
+          "vivienda-bienestar-ventanilla-bcs-2026-10-22",
+          "comodato-guardia-nacional-donacion-inmuebles-salud-2026-10-21"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "Vivienda para el Bienestar: suelo estatal para vivienda social en Comondú y Mulegé",
+      "title_en": "Housing for Wellbeing: state land for social housing in Comondú and Mulegé"
+    },
+    {
+      "id": "sig-csl-marina-asipona-tariffs",
+      "theme": "tourism",
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "vance-inunda-los-cabos-reforma-2026-10-28",
+          "suspension-clases-lluvias-60mm-cabos-2026-10-28"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LTO",
+            "place_id": "loreto",
+            "destinations": 5,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      },
+      "title_es": "Marina de Cabo San Lucas: tarifas de ASIPONA abren disputa por la gobernanza del puerto",
+      "title_en": "Cabo San Lucas marina: ASIPONA fees open a dispute over who governs the port"
+    },
+    {
+      "id": "sig-water-energy-coupling",
+      "theme": "water",
+      "place_ids": [
+        "la_paz"
+      ],
+      "provenance": {
+        "news_ids": [
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "vance-inunda-los-cabos-reforma-2026-10-28",
+          "transpeninsular-socavacion-vance-independiente-2026-10-28",
+          "hoteleros-plan-crisis-energetica-bcs-2026-10-27",
+          "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
+          "hoteleros-crisis-energetica-zeta-2026-10-27"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "Acoplamiento agua–energía: desaladoras y apagones en Cabos y La Paz",
+      "title_en": "Water–energy coupling: desal plants and outages in Cabos and La Paz"
+    },
+    {
+      "id": "sig-sibcs-island-grid",
+      "theme": "energy",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "provenance": {
+        "news_ids": [
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "vance-inunda-los-cabos-reforma-2026-10-28",
+          "suspension-clases-lluvias-60mm-cabos-2026-10-28",
+          "desazolve-vial-csl-lluvias-2026-10-28",
+          "transpeninsular-socavacion-vance-independiente-2026-10-28",
+          "hoteleros-plan-crisis-energetica-bcs-2026-10-27"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "SIBCS como isla energética: confiabilidad e inversión CFE",
+      "title_en": "SIBCS as an energy island: CFE reliability and investment"
+    },
+    {
+      "id": "sig-tourism-fdi-vs-water",
+      "theme": "tourism",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "los-cabos-ocupacion-hotelera-cae-5-2026-10-27",
+          "sepuimm-campana-transicion-energetica-sjc-2026-10-27",
+          "los-cabos-campana-global-vip-summit-2026-10-26"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      },
+      "title_es": "IED turística líder vs. freno político por falta de agua en Cabos",
+      "title_en": "Leading tourism FDI vs. political brake from water scarcity in Cabos"
+    },
+    {
+      "id": "sig-flight-connectivity-sjd",
+      "theme": "tourism",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
+          "los-cabos-campana-global-vip-summit-2026-10-26"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LAP",
+            "place_id": "la_paz",
+            "destinations": 7,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LTO",
+            "place_id": "loreto",
+            "destinations": 5,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      },
+      "title_es": "Conectividad SJD: demanda aérea que empuja la vocación Cabos",
+      "title_en": "SJD connectivity: air demand reinforcing the Cabos vocation"
+    },
+    {
+      "id": "sig-poel-developer-water",
+      "theme": "planning",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "provenance": {
+        "news_ids": [
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "suspension-clases-lluvias-60mm-cabos-2026-10-28",
+          "desazolve-vial-csl-lluvias-2026-10-28",
+          "castro-cambio-climatico-mareas-bcs-2026-10-28"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      },
+      "title_es": "POEL Los Cabos y obligación de agua/residuos a desarrolladores",
+      "title_en": "Los Cabos POEL and developer water/waste obligations"
+    },
+    {
+      "id": "sig-comondu-desal-loreto-ptar",
+      "theme": "water",
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "provenance": {
+        "news_ids": [
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "vinoramas-rechaza-pipas-sapa-la-paz-2026-10-26",
+          "marea-alta-inunda-costa-la-paz-2026-10-25",
+          "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
+          "planta-purificadora-agua-bienestar-la-pasion-la-paz-2026-10-25",
+          "oomsapas-la-paz-paraiso-del-sol-tandeo-2026-10-24"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "Comondú desalación limpia + Loreto PTAR/acueducto",
+      "title_en": "Comondú clean desal + Loreto WWTP/aqueduct"
+    },
+    {
+      "id": "sig-mulege-oasis-h2",
+      "theme": "energy",
+      "place_ids": [
+        "mulege_north"
+      ],
+      "provenance": {
+        "news_ids": [
+          "sismo-3-7-santa-rosalia-2026-10-27",
+          "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
+          "atlas-energetico-bcs-2026-10-14",
+          "vidrio-anp-vizcaino-lgeepa-2026-10-08",
+          "cfe-restablece-100-polo-2026-10-01",
+          "cfe-restablece-11k-usuarios-polo-2026-09-30"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "Oasis hidrógeno verde en Mulegé: señal energética del norte",
+      "title_en": "Green-hydrogen Oasis in Mulegé: northern energy signal"
+    }
+  ]
+}

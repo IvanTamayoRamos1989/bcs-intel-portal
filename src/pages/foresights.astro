@@ -1,0 +1,768 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DebateConsensus from '../components/DebateConsensus.astro';
+import foresights from '../data/foresights.json';
+
+const themeLabel: Record<string, { es: string; en: string }> = {
+  water: { es: 'Agua', en: 'Water' },
+  energy: { es: 'Energía', en: 'Energy' },
+  land_use: { es: 'Uso de suelo', en: 'Land use' },
+  tourism: { es: 'Turismo', en: 'Tourism' },
+  environment: { es: 'Ambiente', en: 'Environment' },
+  planning: { es: 'Planeación', en: 'Planning' },
+};
+
+const f = foresights as any;
+const periodFrom = f.period?.from || '';
+const periodTo = f.period?.to || '';
+const places = f.places || [];
+const signals = f.signals || [];
+const roles = f.role_briefs || [];
+const seeds = f.consensus_seeds || [];
+const watch = f.watchlist || [];
+const visuals: any[] = f.visuals || [];
+
+const thesisEs = f.edition_thesis_es || f.headline_es;
+const thesisEn = f.edition_thesis_en || f.headline_en;
+const thesisSumEs = f.edition_thesis_summary_es || f.summary_es;
+const thesisSumEn = f.edition_thesis_summary_en || f.summary_en;
+
+const byId = (id: string) => visuals.find((v) => v.id === id);
+const vocationMap = byId('vocation_map');
+const signalsDiagram = byId('signals_diagram');
+const roleTensions = byId('role_tensions');
+const chartFlights = byId('constraints_flights');
+const chartDma = byId('constraints_dma');
+const chartCounts = byId('constraints_counts');
+const stillsStrip = byId('stills_strip');
+
+function portalHref(p: string) {
+  if (!p) return '#';
+  if (p.startsWith('http')) return p;
+  if (p.startsWith('/')) return p.endsWith('/') || p.includes('#') || p.includes('?') ? p : p + '/';
+  return '/catalogo/?q=' + encodeURIComponent(p.split('/').pop() || p);
+}
+---
+<BaseLayout
+  title="Prospectiva BCS"
+  titleEn="BCS Foresights"
+  description="Prospectiva semanal BCS 2050: tesis, señales, lentes y consenso por vocación de lugar"
+  descriptionEn="Weekly BCS 2050 foresight: thesis, signals, lenses and consensus by place vocation"
+  wide={true}
+>
+  {/* 1. Edition thesis */}
+  <div class="fs-hero" id="thesis">
+    <p class="fs-kicker">
+      <span data-lang-es>Argumento semanal · inteligencia interna</span>
+      <span data-lang-en hidden>Weekly argument · internal intelligence</span>
+    </p>
+    <p class="fs-arg-step">
+      <span data-lang-es>1 · Tesis de la edición</span>
+      <span data-lang-en hidden>1 · Edition thesis</span>
+    </p>
+    <h1>
+      <span data-lang-es>{thesisEs}</span>
+      <span data-lang-en hidden>{thesisEn}</span>
+    </h1>
+    <p class="fs-period">
+      <span data-lang-es>Periodo {periodFrom} → {periodTo}</span>
+      <span data-lang-en hidden>Period {periodFrom} → {periodTo}</span>
+      <span class="fs-dot">·</span>
+      <span data-lang-es>Actualizado {f.updated}</span>
+      <span data-lang-en hidden>Updated {f.updated}</span>
+    </p>
+    <p class="lead fs-summary">
+      <span data-lang-es>{thesisSumEs}</span>
+      <span data-lang-en hidden>{thesisSumEn}</span>
+    </p>
+    {(f.system_view_es || f.system_view_en) && (
+      <blockquote class="fs-system fs-system-inline">
+        <span data-lang-es>{f.system_view_es}</span>
+        <span data-lang-en hidden>{f.system_view_en}</span>
+      </blockquote>
+    )}
+    <p class="fs-disclaimer">
+      <span data-lang-es>Borrador de prospectiva interna — no es un plan oficial ni un juego de escenarios cerrados. El gemelo de decisión público permanece diferido.</span>
+      <span data-lang-en hidden>Internal draft foresight — not an official plan and not a locked scenario set. The public decision twin remains deferred.</span>
+    </p>
+    <div class="fs-quick">
+      <a href="#signals"><span data-lang-es>2 Señales</span><span data-lang-en hidden>2 Signals</span></a>
+      <a href="#roles"><span data-lang-es>3 Lentes</span><span data-lang-en hidden>3 Lenses</span></a>
+      <a href="#debate"><span data-lang-es>4 Consenso</span><span data-lang-en hidden>4 Consensus</span></a>
+      <a href="#visuals"><span data-lang-es>5 Visuales</span><span data-lang-en hidden>5 Visuals</span></a>
+      <a href="#places"><span data-lang-es>6 Lugares</span><span data-lang-en hidden>6 Places</span></a>
+      <a href="#cta-crecimiento"><span data-lang-es>7 Demanda–oferta</span><span data-lang-en hidden>7 Demand–supply</span></a>
+    </div>
+  </div>
+
+
+  {(f.hypothesis_monitor) && (
+    <section class="fs-section fs-hypo" id="hypothesis">
+      <p class="fs-arg-step"><span data-lang-es>Hipótesis monitoreada</span><span data-lang-en hidden>Monitored hypothesis</span></p>
+      <h2><span data-lang-es>Qué confirmaría / debilitaría esta edición</span><span data-lang-en hidden>What would confirm / weaken this edition</span></h2>
+      <span class={`lg-tag tag-${(f.hypothesis_monitor.tag || 'ASSUMPTION').toLowerCase()}`}>{f.hypothesis_monitor.tag || 'ASSUMPTION'}</span>
+      <div class="fs-hypo-grid">
+        <div>
+          <h3><span data-lang-es>Confirmaría</span><span data-lang-en hidden>Would confirm</span></h3>
+          <p><span data-lang-es>{f.hypothesis_monitor.confirm_es}</span><span data-lang-en hidden>{f.hypothesis_monitor.confirm_en}</span></p>
+        </div>
+        <div>
+          <h3><span data-lang-es>Debilitaría</span><span data-lang-en hidden>Would weaken</span></h3>
+          <p><span data-lang-es>{f.hypothesis_monitor.weaken_es}</span><span data-lang-en hidden>{f.hypothesis_monitor.weaken_en}</span></p>
+        </div>
+      </div>
+      <p class="meta">
+        <span data-lang-es>Lugares afectados: {(f.hypothesis_monitor.places_affected || []).join(', ')}</span>
+        <span data-lang-en hidden>Places affected: {(f.hypothesis_monitor.places_affected || []).join(', ')}</span>
+      </p>
+      <ul class="fs-watch-ind">
+        {(f.hypothesis_monitor.watch_indicators || []).map((w: any) => (
+          <li>
+            <span class={`lg-tag tag-${(w.tag || 'FACT').toLowerCase()}`}>{w.tag || 'FACT'}</span>
+            <span data-lang-es>{w.es}</span>
+            <span data-lang-en hidden>{w.en}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="meta"><span data-lang-es>{f.hypothesis_monitor.tag_note_es}</span><span data-lang-en hidden>{f.hypothesis_monitor.tag_note_en}</span></p>
+      <p class="meta">src {f.freshness?.source_date || f.updated} · refresh {f.freshness?.portal_refresh || f.updated}</p>
+    </section>
+  )}
+
+  {/* 2. Signals with sources */}
+  <section class="fs-section" id="signals">
+    <p class="fs-arg-step">
+      <span data-lang-es>2 · Señales con fuentes</span>
+      <span data-lang-en hidden>2 · Signals with sources</span>
+    </p>
+    <h2>
+      <span data-lang-es>Señales de la semana</span>
+      <span data-lang-en hidden>Signals this week</span>
+    </h2>
+    <p class="fs-sec-lead">
+      <span data-lang-es>Hechos y notas que alimentan el argumento — cada una con URL o ruta del portal.</span>
+      <span data-lang-en hidden>Facts and notes that feed the argument — each with a URL or portal path.</span>
+    </p>
+    <div class="fs-signals">
+      {signals.map((s: any) => (
+                <article class="fs-signal" id={`signal-${s.id}`} data-signal-id={s.id}>
+          <div class="fs-sig-meta">
+            <span class="topic-chip">
+              <span data-lang-es>{themeLabel[s.theme]?.es || s.theme}</span>
+              <span data-lang-en hidden>{themeLabel[s.theme]?.en || s.theme}</span>
+            </span>
+            <code class="fs-id">{s.id}</code>
+          </div>
+          <h3>
+            <span data-lang-es>{s.title_es}</span>
+            <span data-lang-en hidden>{s.title_en}</span>
+          </h3>
+          <p>
+            <span data-lang-es>{s.why_es}</span>
+            <span data-lang-en hidden>{s.why_en}</span>
+          </p>
+          {(s.place_ids || []).length > 0 && (
+            <div class="fs-prov">
+              <span class="fs-prov-k"><span data-lang-es>Studio</span><span data-lang-en hidden>Studio</span></span>
+              {(s.place_ids || []).map((pid: string) => (
+                <a class="fs-prov-chip" href={`?place=${pid}#${pid}`}>{pid}</a>
+              ))}
+            </div>
+          )}
+          {((s.provenance?.news_ids || []).length > 0 || (s.provenance?.flight_refs || []).length > 0) && (
+            <div class="fs-prov">
+              <span class="fs-prov-k"><span data-lang-es>Procedencia</span><span data-lang-en hidden>Provenance</span></span>
+              {(s.provenance?.news_ids || []).slice(0, 4).map((nid: string) => (
+                <a class="fs-prov-chip fs-prov-chip--news" href={`/noticias/#`} title={nid}>
+                  <span data-lang-es>Noticia</span><span data-lang-en hidden>News</span>
+                </a>
+              ))}
+              {(s.provenance?.flight_refs || []).map((fr: any) => (
+                <a class="fs-prov-chip fs-prov-chip--flight" href={`/vuelos/#${(fr.iata || '').toLowerCase()}`}>
+                  {fr.iata}{fr.destinations != null ? ` · ${fr.destinations}` : ''}
+                </a>
+              ))}
+            </div>
+          )}
+          <div class="fs-links">
+            {(s.source_urls || []).slice(0, 4).map((u: string) => (
+              <a href={u} target="_blank" rel="noopener noreferrer">
+                {(() => { try { return new URL(u).hostname.replace(/^www\./,''); } catch { return 'fuente'; } })()}
+              </a>
+            ))}
+            {(s.portal_paths || []).filter((p: string) => p.startsWith('/')).map((p: string) => (
+              <a href={portalHref(p)}>{p}</a>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  {/* 3. Role-lens disagreements / tensions */}
+  <section class="fs-section" id="roles">
+    <p class="fs-arg-step">
+      <span data-lang-es>3 · Desacuerdos de lentes de rol</span>
+      <span data-lang-en hidden>3 · Role-lens disagreements</span>
+    </p>
+    <h2>
+      <span data-lang-es>Tensiones entre lentes</span>
+      <span data-lang-en hidden>Tensions across lenses</span>
+    </h2>
+    <p class="fs-sec-lead">
+      <span data-lang-es>Misma evidencia, lecturas disciplinarias distintas — el desacuerdo es el producto, no un fallo.</span>
+      <span data-lang-en hidden>Same evidence, different disciplinary reads — disagreement is the product, not a failure.</span>
+    </p>
+    {roleTensions && (
+      <figure class="fs-fig fs-fig-inline">
+        <button type="button" class="fs-diagram-btn" data-lightbox-src={roleTensions.path} data-lightbox-alt="Role tensions">
+          <img src={roleTensions.path} alt="Role tensions sketch" class="fs-img" loading="lazy" width="1000" height="550" />
+        </button>
+        <figcaption class="fs-cap">
+          <span data-lang-es>{roleTensions.caption_es}</span>
+          <span data-lang-en hidden>{roleTensions.caption_en}</span>
+        </figcaption>
+      </figure>
+    )}
+    <div class="fs-roles">
+      {roles.map((r: any) => (
+        <details class="fs-role">
+          <summary>
+            <span data-lang-es>{r.role_label_es}</span>
+            <span data-lang-en hidden>{r.role_label_en}</span>
+          </summary>
+          <p>
+            <span data-lang-es><strong>Postura:</strong> {r.stance_es}</span>
+            <span data-lang-en hidden><strong>Stance:</strong> {r.stance_en}</span>
+          </p>
+          <p class="fs-tension">
+            <span data-lang-es><strong>Tensión:</strong> {r.tension_es}</span>
+            <span data-lang-en hidden><strong>Tension:</strong> {r.tension_en}</span>
+          </p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {/* 4. Consensus seeds + watchlist */}
+  <p class="fs-arg-step fs-arg-step-alone">
+    <span data-lang-es>4 · Semillas de consenso y seguimiento</span>
+    <span data-lang-en hidden>4 · Consensus seeds and watchlist</span>
+  </p>
+  <DebateConsensus seeds={seeds} watch={watch} />
+
+  {/* 5. Visuals — so what for this place? */}
+  <section class="fs-section" id="visuals">
+    <p class="fs-arg-step">
+      <span data-lang-es>5 · Visuales — ¿y eso qué implica para el lugar?</span>
+      <span data-lang-en hidden>5 · Visuals — so what for this place?</span>
+    </p>
+    <h2>
+      <span data-lang-es>Figuras del argumento</span>
+      <span data-lang-en hidden>Argument figures</span>
+    </h2>
+    <p class="fs-sec-lead">
+      <span data-lang-es>Cada caption responde “so what” para el sistema de lugares. Sin cifras inventadas.</span>
+      <span data-lang-en hidden>Each caption answers “so what” for the place system. No invented figures.</span>
+    </p>
+
+    {vocationMap && (
+      <figure class="fs-fig fs-fig-map">
+        <button
+          type="button"
+          class="fs-diagram-btn"
+          data-lightbox-src={vocationMap.path}
+          data-lightbox-alt="BCS place vocations map"
+        >
+          <img
+            src={vocationMap.path}
+            alt="BCS place vocations / Vocaciones de lugar"
+            class="fs-img-full"
+            loading="lazy"
+            width="850"
+            height="1100"
+          />
+        </button>
+        <figcaption class="fs-cap">
+          <span data-lang-es>{vocationMap.caption_es}</span>
+          <span data-lang-en hidden>{vocationMap.caption_en}</span>
+          <span class="fs-src"> · {vocationMap.source_es}</span>
+        </figcaption>
+      </figure>
+    )}
+
+    {vocationMap?.geojson && (
+      <div class="fs-leaflet-wrap">
+        <div id="fs-vocation-map" class="fs-leaflet" role="img" aria-label="Interactive vocation places map"></div>
+        <p class="fs-cap fs-cap-inline">
+          <span data-lang-es>Mapa interactivo (Leaflet) · clic en marcadores para vocación</span>
+          <span data-lang-en hidden>Interactive map (Leaflet) · click markers for vocation</span>
+        </p>
+      </div>
+    )}
+
+    <div class="fs-visual-grid">
+      {signalsDiagram && (
+        <figure class="fs-fig">
+          <button type="button" class="fs-diagram-btn" data-lightbox-src={signalsDiagram.path} data-lightbox-alt="Signals diagram">
+            <img src={signalsDiagram.path} alt="Signals diagram" class="fs-img" loading="lazy" width="1000" height="800" />
+          </button>
+          <figcaption class="fs-cap">
+            <span data-lang-es>{signalsDiagram.caption_es}</span>
+            <span data-lang-en hidden>{signalsDiagram.caption_en}</span>
+          </figcaption>
+        </figure>
+      )}
+      {chartFlights && (
+        <figure class="fs-fig">
+          <button type="button" class="fs-diagram-btn" data-lightbox-src={chartFlights.path} data-lightbox-alt="Flight destinations">
+            <img src={chartFlights.path} alt="Flight destinations chart" class="fs-img" loading="lazy" width="750" height="420" />
+          </button>
+          <figcaption class="fs-cap">
+            <span data-lang-es>{chartFlights.caption_es}</span>
+            <span data-lang-en hidden>{chartFlights.caption_en}</span>
+          </figcaption>
+        </figure>
+      )}
+      {chartDma && (
+        <figure class="fs-fig">
+          <button type="button" class="fs-diagram-btn" data-lightbox-src={chartDma.path} data-lightbox-alt="DMA deficits">
+            <img src={chartDma.path} alt="DMA deficit aquifers" class="fs-img" loading="lazy" width="800" height="450" />
+          </button>
+          <figcaption class="fs-cap">
+            <span data-lang-es>{chartDma.caption_es}</span>
+            <span data-lang-en hidden>{chartDma.caption_en}</span>
+          </figcaption>
+        </figure>
+      )}
+      {chartCounts && (
+        <figure class="fs-fig">
+          <button type="button" class="fs-diagram-btn" data-lightbox-src={chartCounts.path} data-lightbox-alt="Portal counts">
+            <img src={chartCounts.path} alt="Portal evidence counts" class="fs-img" loading="lazy" width="650" height="320" />
+          </button>
+          <figcaption class="fs-cap">
+            <span data-lang-es>{chartCounts.caption_es}</span>
+            <span data-lang-en hidden>{chartCounts.caption_en}</span>
+          </figcaption>
+        </figure>
+      )}
+    </div>
+
+    {stillsStrip?.items?.length > 0 && (
+      <div class="fs-stills-wrap" id="stills-strip">
+        <h3 class="fs-subh">
+          <span data-lang-es>Territorio — stills cerca de vocaciones</span>
+          <span data-lang-en hidden>Territory — stills near vocations</span>
+        </h3>
+        <div class="fs-stills">
+          {stillsStrip.items.map((it: any) => (
+            <figure class="fs-still" data-place-item={it.place_id}>
+              <button type="button" class="fs-diagram-btn" data-lightbox-src={it.path} data-lightbox-alt={it.name}>
+                <img src={it.path} alt={it.name} loading="lazy" width="320" height="200" />
+              </button>
+              <figcaption>
+                <strong>{it.name}</strong>
+                <span class="fs-still-place">{it.place_id}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="fs-cap">
+          <span data-lang-es>{stillsStrip.caption_es}</span>
+          <span data-lang-en hidden>{stillsStrip.caption_en}</span>
+        </p>
+      </div>
+    )}
+  </section>
+
+  {/* 6. Place scorecards / vocation cards — filtered by PlaceStrip */}
+  <section class="fs-section" id="places">
+    <p class="fs-arg-step">
+      <span data-lang-es>6 · Vocaciones de lugar (filtro de la franja)</span>
+      <span data-lang-en hidden>6 · Place vocations (strip filter)</span>
+    </p>
+    <h2>
+      <span data-lang-es>Scorecards de vocación</span>
+      <span data-lang-en hidden>Vocation scorecards</span>
+    </h2>
+    <p class="fs-sec-lead">
+      <span data-lang-es>Usa la franja «Lugares = BCS 2050» para destacar un lugar. Cada tarjeta enlaza al ledger de demanda–oferta.</span>
+      <span data-lang-en hidden>Use the “Places = BCS 2050” strip to highlight one place. Each card links to the demand–supply ledger.</span>
+    </p>
+    <div class="fs-places">
+      {places.map((pl: any) => (
+        <article class="fs-place" id={pl.id} data-place-card={pl.id}>
+          <h3>
+            <span data-lang-es>{pl.name_es}</span>
+            <span data-lang-en hidden>{pl.name_en}</span>
+          </h3>
+          <p class="fs-voc">
+            <span data-lang-es><strong>Vocación:</strong> {pl.vocation_es}</span>
+            <span data-lang-en hidden><strong>Vocation:</strong> {pl.vocation_en}</span>
+          </p>
+          <div class="fs-place-grid">
+            <div>
+              <h4 data-lang-es>Fortalezas</h4>
+              <h4 data-lang-en hidden>Strengths</h4>
+              <p><span data-lang-es>{pl.strengths_es}</span><span data-lang-en hidden>{pl.strengths_en}</span></p>
+            </div>
+            <div>
+              <h4 data-lang-es>Restricciones</h4>
+              <h4 data-lang-en hidden>Constraints</h4>
+              <p><span data-lang-es>{pl.constraints_es}</span><span data-lang-en hidden>{pl.constraints_en}</span></p>
+            </div>
+          </div>
+          {(pl.sum_2050_es || pl.sum_2050_en) && (
+            <p class="fs-sum">
+              <span data-lang-es><strong>Suma 2050:</strong> {pl.sum_2050_es}</span>
+              <span data-lang-en hidden><strong>2050 sum:</strong> {pl.sum_2050_en}</span>
+            </p>
+          )}
+          <p class="fs-q">
+            <span data-lang-es><strong>Pregunta abierta:</strong> {pl.open_question_es}</span>
+            <span data-lang-en hidden><strong>Open question:</strong> {pl.open_question_en}</span>
+          </p>
+          {((pl.provenance?.news_ids || []).length > 0 || (pl.provenance?.flight_refs || []).length > 0) && (
+            <div class="fs-prov">
+              <span class="fs-prov-k"><span data-lang-es>Entradas</span><span data-lang-en hidden>Inputs</span></span>
+              {(pl.provenance?.news_ids || []).length > 0 && (
+                <a class="fs-prov-chip fs-prov-chip--news" href="/noticias/">
+                  <span data-lang-es>{(pl.provenance?.news_ids || []).length} noticias</span>
+                  <span data-lang-en hidden>{(pl.provenance?.news_ids || []).length} news</span>
+                </a>
+              )}
+              {(pl.provenance?.flight_refs || []).map((fr: any) => (
+                <a class="fs-prov-chip fs-prov-chip--flight" href={`/vuelos/#${(fr.iata || '').toLowerCase()}`}>
+                  {fr.iata}{fr.destinations != null ? ` · ${fr.destinations}` : ''}
+                </a>
+              ))}
+            </div>
+          )}
+          <div class="fs-links">
+            <a href={`/studio/${pl.id === "east_cape" ? "los_cabos" : pl.id === "todos_santos" ? "la_paz" : pl.id === "mulege_north" ? "mulege" : pl.id}/`}>
+              <span data-lang-es>Studio</span>
+              <span data-lang-en hidden>Studio</span>
+            </a>
+            <a href={`/crecimiento/?place=${pl.id}#${pl.id}`}>
+              <span data-lang-es>Demanda–oferta</span>
+              <span data-lang-en hidden>Demand–supply</span>
+            </a>
+            {(pl.portal_paths || []).map((p: string) => (
+              <a href={portalHref(p)}>{p.startsWith('/') ? p : 'Catálogo'}</a>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  {/* 7. CTA to /crecimiento */}
+  <div class="fs-gds-cta" id="cta-crecimiento">
+    <p class="fs-arg-step">
+      <span data-lang-es>7 · Siguiente paso del argumento</span>
+      <span data-lang-en hidden>7 · Next step of the argument</span>
+    </p>
+    <strong>
+      <span data-lang-es>Ledger demanda–oferta por vocación</span>
+      <span data-lang-en hidden>Demand–supply ledger by vocation</span>
+    </strong>
+    <p>
+      <span data-lang-es>Scorecard por lugar (presión vs capacidad) — prerequisite antes de escenarios. Solo datos del portal; gaps marcados. La franja de lugares persiste al cruzar.</span>
+      <span data-lang-en hidden>Scorecard by place (pressure vs capacity) — prerequisite before scenarios. Portal data only; gaps marked. The place strip persists across.</span>
+    </p>
+    <a class="btn" href="/crecimiento/" data-bcs-gds-cta>
+      <span data-lang-es>Abrir /crecimiento</span>
+      <span data-lang-en hidden>Open /crecimiento</span>
+    </a>
+  </div>
+
+  <p class="meta fs-method">
+    <span data-lang-es>{f.method_note_es}</span>
+    <span data-lang-en hidden>{f.method_note_en}</span>
+  </p>
+
+  <dialog id="fs-lightbox" class="fs-lightbox" aria-label="Expanded figure">
+    <form method="dialog" class="fs-lightbox-bar">
+      <button type="submit" class="fs-lightbox-close" value="close">
+        <span data-lang-es>Cerrar</span>
+        <span data-lang-en hidden>Close</span>
+      </button>
+    </form>
+    <img id="fs-lightbox-img" src="" alt="" />
+  </dialog>
+
+  <link
+    rel="stylesheet"
+    href="/vendor/leaflet/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script is:inline>
+    (function () {
+      var lb = document.getElementById('fs-lightbox');
+      var lbImg = document.getElementById('fs-lightbox-img');
+      if (lb && lbImg && typeof lb.showModal === 'function') {
+        document.querySelectorAll('.fs-diagram-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var src = btn.getAttribute('data-lightbox-src') || '';
+            var alt = btn.getAttribute('data-lightbox-alt') || '';
+            if (!src) return;
+            lbImg.src = src;
+            lbImg.alt = alt;
+            lb.showModal();
+          });
+        });
+        lb.addEventListener('click', function (e) {
+          if (e.target === lb) lb.close();
+        });
+      }
+
+      var el = document.getElementById('fs-vocation-map');
+      if (el && window.L) {
+        var map = L.map(el, { scrollWheelZoom: false }).setView([25.0, -111.5], 6);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; OpenStreetMap &copy; CARTO',
+          maxZoom: 12,
+        }).addTo(map);
+        fetch('/foresights/vocation_places.geojson')
+          .then(function (r) { return r.json(); })
+          .then(function (gj) {
+            var layer = L.geoJSON(gj, {
+              pointToLayer: function (feat, latlng) {
+                var c = (feat.properties && feat.properties.color) || '#34607d';
+                return L.circleMarker(latlng, {
+                  radius: 9,
+                  fillColor: c,
+                  color: '#fbf8f1',
+                  weight: 2,
+                  fillOpacity: 0.95,
+                });
+              },
+              onEachFeature: function (feat, layer) {
+                var p = feat.properties || {};
+                var html =
+                  '<strong>' + (p.name_es || p.name_en || '') + '</strong><br/>' +
+                  '<em>' + (p.vocation_short_es || '') + ' / ' + (p.vocation_short_en || '') + '</em><br/>' +
+                  '<span style="font-size:0.85em">' + (p.vocation_es || p.vocation_en || '') + '</span>';
+                layer.bindPopup(html);
+              },
+            }).addTo(map);
+            try {
+              map.fitBounds(layer.getBounds().pad(0.35));
+            } catch (e) {}
+          })
+          .catch(function () {});
+      }
+
+      // Keep CTA deep-link in sync with place strip
+      function syncCta() {
+        var a = document.querySelector('[data-bcs-gds-cta]');
+        if (!a || !window.BCSPlace) return;
+        var id = window.BCSPlace.get();
+        a.href = id ? '/crecimiento/?place=' + encodeURIComponent(id) + '#' + encodeURIComponent(id) : '/crecimiento/';
+      }
+      window.addEventListener('bcs:placechange', syncCta);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', syncCta);
+      else setTimeout(syncCta, 0);
+    })();
+  </script>
+
+  <style is:global>
+    .fs-hero { margin-bottom: 1.75rem; }
+    .fs-kicker {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #34607d; font-weight: 700; margin: 0 0 0.35rem;
+    }
+    .fs-hypo { background:#f3eee3; border:1px solid #e2dccf; border-radius:12px; padding:1rem 1.1rem; }
+    .fs-hypo-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:0.75rem 0; }
+    .fs-hypo-grid h3 { margin:0 0 0.25rem; font-size:0.9rem; }
+    .fs-hypo-grid p { margin:0; font-size:0.88rem; color:#23374a; }
+    .fs-watch-ind { list-style:none; padding:0; margin:0.5rem 0; }
+    .fs-watch-ind li { font-size:0.85rem; margin:0.3rem 0; color:#23374a; }
+    .lg-tag { display:inline-block; font-size:0.62rem; font-weight:800; padding:0.1rem 0.35rem; border-radius:4px; margin-right:0.3rem; }
+    .tag-fact, .tag-FACT { background:#e3eadc; color:#4f6e4b; }
+    .tag-assumption, .tag-ASSUMPTION { background:#f3e6cc; color:#a8664a; }
+    @media (max-width:640px) { .fs-hypo-grid { grid-template-columns:1fr; } }
+    .fs-arg-step {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; color: #5c6e7b; margin: 0 0 0.4rem;
+    }
+    .fs-arg-step-alone { margin: 1.5rem 0 0; }
+    .fs-hero h1 {
+      font-size: clamp(1.35rem, 3.5vw, 1.85rem); line-height: 1.25;
+      margin: 0 0 0.5rem; color: #23374a;
+    }
+    .fs-period { font-size: 0.85rem; color: #5c6e7b; margin: 0 0 0.75rem; }
+    .fs-dot { margin: 0 0.35rem; }
+    .fs-summary { margin-top: 0.5rem; }
+    .fs-system-inline { margin: 1rem 0; }
+    .fs-disclaimer {
+      font-size: 0.85rem; color: #8a5a1e; background: #f3e6cc;
+      border: 1px solid #e2c27e; border-radius: 8px; padding: 0.65rem 0.85rem; margin: 1rem 0;
+    }
+    .fs-quick { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .fs-quick a, .fs-links a {
+      font-size: 0.8rem; font-weight: 600; color: #34607d; text-decoration: none;
+      background: #dfe8ee; padding: 0.25rem 0.6rem; border-radius: 999px;
+    }
+    .fs-quick a:hover, .fs-links a:hover { background: #c5d6e1; }
+    .fs-section { margin: 2rem 0 1.5rem; }
+    .fs-section h2 {
+      font-size: 1.2rem; color: #23374a; border-bottom: 2px solid #dfe8ee;
+      padding-bottom: 0.35rem; margin-bottom: 0.75rem;
+    }
+    .fs-subh { font-size: 1rem; color: #23374a; margin: 1.25rem 0 0.65rem; }
+    .fs-sec-lead { font-size: 0.92rem; color: #3c5163; margin: 0 0 1rem; }
+    .fs-system {
+      margin: 0; padding: 1rem 1.15rem; background: #dfe8ee; border-left: 4px solid #34607d;
+      border-radius: 0 10px 10px 0; color: #23374a; line-height: 1.5; font-size: 0.98rem;
+    }
+    .fs-fig { margin: 0 0 1.25rem; }
+    .fs-fig-inline { max-width: 720px; }
+    .fs-fig-map { width: 100%; }
+    .fs-diagram-btn {
+      display: block; width: 100%; padding: 0; border: 1px solid #e2dccf; border-radius: 12px;
+      background: #fbf8f1; cursor: zoom-in; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,128,192,0.08);
+    }
+    .fs-diagram-btn:hover { border-color: #34607d; }
+    .fs-img-full, .fs-img {
+      display: block; width: 100%; height: auto; max-height: min(70vh, 820px); object-fit: contain;
+      background: #f3eee3;
+    }
+    .fs-fig-map .fs-img-full { max-height: min(80vh, 920px); }
+    .fs-cap {
+      font-size: 0.82rem; color: #3c5163; margin: 0.45rem 0 0; line-height: 1.4;
+    }
+    .fs-cap-inline { margin-top: 0.35rem; }
+    .fs-src { color: #8796a0; }
+    .fs-visual-grid, .fs-charts {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;
+    }
+    .fs-leaflet-wrap { margin: 0 0 1.5rem; }
+    .fs-leaflet {
+      height: min(420px, 55vh); width: 100%; border-radius: 12px; border: 1px solid #e2dccf;
+      z-index: 0;
+    }
+    .fs-stills {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem;
+    }
+    .fs-still { margin: 0; }
+    .fs-still img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .fs-still figcaption {
+      font-size: 0.78rem; color: #23374a; padding: 0.35rem 0.15rem; display: flex;
+      flex-direction: column; gap: 0.1rem;
+    }
+    .fs-still-place { color: #34607d; font-weight: 600; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.04em; }
+    .fs-places {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;
+    }
+    .fs-place {
+      border: 1px solid #e2dccf; border-radius: 12px; padding: 1rem 1.1rem; background: #fbf8f1;
+      box-shadow: 0 1px 2px rgba(0,128,192,0.06); display: flex; flex-direction: column; gap: 0.45rem;
+      scroll-margin-top: 5.5rem;
+    }
+    .fs-place h3 { margin: 0; font-size: 1.05rem; color: #23374a; }
+    .fs-voc { margin: 0; font-size: 0.92rem; color: #34607d; }
+    .fs-place-grid { display: grid; gap: 0.5rem; }
+    .fs-place-grid h4 { margin: 0; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #5c6e7b; }
+    .fs-place-grid p, .fs-sum, .fs-q { margin: 0; font-size: 0.88rem; color: #23374a; line-height: 1.4; }
+    .fs-sum { background: #f3eee3; padding: 0.45rem 0.55rem; border-radius: 6px; }
+    .fs-q { color: #23374a; }
+    .fs-links { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
+    .fs-prov { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin-top: 0.25rem; }
+    .fs-prov-k { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #5c6e7b; margin-right: 0.15rem; }
+    .fs-prov-chip {
+      font-size: 0.68rem; font-weight: 600; padding: 0.12rem 0.45rem; border-radius: 999px;
+      background: #f3eee3; color: #23374a; text-decoration: none;
+    }
+    .fs-prov-chip--news { background: #dfe8ee; color: #34607d; }
+    .fs-prov-chip--flight { background: #f3e6cc; color: #a8664a; }
+    .fs-signal.bcs-signal-active {
+      outline: 2px solid #34607d; outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(0,128,192,0.12);
+    }
+    .fs-signals {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;
+    }
+    .fs-signal {
+      border: 1px solid #e2dccf; border-radius: 12px; padding: 1rem; background: #fbf8f1;
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .fs-signal h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
+    .fs-signal p { margin: 0; font-size: 0.88rem; color: #23374a; flex: 1; }
+    .fs-sig-meta { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+    .fs-id { font-size: 0.65rem; color: #8796a0; }
+    .topic-chip {
+      font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 999px;
+      background: #dfe8ee; color: #34607d; font-weight: 600;
+    }
+    .fs-roles { display: flex; flex-direction: column; gap: 0.5rem; }
+    .fs-role {
+      border: 1px solid #e2dccf; border-radius: 10px; padding: 0.65rem 0.9rem; background: #fbf8f1;
+    }
+    .fs-role summary {
+      cursor: pointer; font-weight: 700; color: #23374a; list-style: none;
+    }
+    .fs-role summary::-webkit-details-marker { display: none; }
+    .fs-role summary::before { content: '▸ '; color: #34607d; }
+    .fs-role[open] summary::before { content: '▾ '; }
+    .fs-role p { margin: 0.5rem 0 0; font-size: 0.9rem; color: #23374a; }
+    .fs-tension { color: #a8664a !important; }
+    .fs-seeds, .fs-watch { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+    .fs-seed, .fs-watch li {
+      border: 1px solid #e2dccf; border-radius: 10px; padding: 0.75rem 0.9rem; background: #fbf8f1;
+      font-size: 0.92rem; color: #23374a; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start;
+    }
+    .fs-seed.status-emerging .topic-chip { background: #e3eadc; color: #4f6e4b; }
+    .fs-seed.status-contested .topic-chip { background: #f3e6cc; color: #a8664a; }
+    .fs-seed.status-gap .topic-chip { background: #f3eee3; color: #3c5163; }
+    .fs-gds-cta {
+      margin: 1.75rem 0; padding: 1.15rem 1.25rem; background: #dfe8ee;
+      border: 1px solid #c5d6e1; border-radius: 12px;
+    }
+    .fs-gds-cta p { margin: 0.4rem 0 0.75rem; font-size: 0.9rem; color: #23374a; }
+    .fs-gds-cta .btn {
+      display: inline-block; background: #34607d; color: #fbf8f1; font-weight: 700;
+      text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem;
+    }
+    .fs-gds-cta .btn:hover { background: #34607d; }
+    .fs-method { margin-top: 2rem; font-size: 0.85rem; color: #5c6e7b; line-height: 1.45; }
+    .fs-lightbox {
+      border: none; border-radius: 12px; padding: 0; max-width: min(96vw, 1100px);
+      max-height: 92vh; background: #23374a;
+    }
+    .fs-lightbox::backdrop { background: rgba(15, 23, 42, 0.72); }
+    .fs-lightbox-bar {
+      display: flex; justify-content: flex-end; margin: 0; padding: 0.5rem 0.65rem;
+      background: #23374a;
+    }
+    .fs-lightbox-close {
+      background: #dfe8ee; color: #34607d; border: none; border-radius: 8px;
+      padding: 0.35rem 0.75rem; font-weight: 700; cursor: pointer;
+    }
+    .fs-lightbox-close:hover { background: #c5d6e1; }
+    .fs-lightbox img {
+      display: block; max-width: 96vw; max-height: calc(92vh - 3rem); margin: 0 auto 0.75rem;
+      object-fit: contain;
+    }
+    @media (max-width: 640px) {
+      .fs-places, .fs-signals { grid-template-columns: 1fr; }
+      .fs-hero h1 { font-size: 1.25rem; }
+      .fs-leaflet { height: 300px; }
+      .fs-img-full, .fs-img { max-height: 55vh; }
+      .fs-visual-grid, .fs-charts { grid-template-columns: 1fr; }
+      .fs-signal, .fs-place, .fs-debate-card {
+        border-radius: 14px;
+        padding: 1rem 1rem 1.1rem;
+      }
+      .fs-signal h3 { font-size: 1.05rem; line-height: 1.35; }
+      .fs-signal p { font-size: 0.92rem; }
+      .fs-arg-step { font-size: 0.7rem; }
+      .fs-quick { gap: 0.4rem; }
+      .fs-quick a { font-size: 0.78rem; padding: 0.35rem 0.7rem; }
+      .fs-hypo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</BaseLayout>

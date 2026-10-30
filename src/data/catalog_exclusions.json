@@ -1,0 +1,457 @@
+{
+  "note": "Entradas retiradas del catálogo público por enrich_thin_entries.py. non_document = herramienta interna; no_content = contenido no obtenible (ver wishlist en Base de datos BCS 2050 — brechas de datos).",
+  "paths": {
+    "00_catalog/DOWNLOAD.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "00_catalog/DOWNLOAD_MANIFEST.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "01_planning/_acq_2026-09-21/apsdu_try/12CIMwJksG0DbEo8gVo_InISloqYzZrvU.bin": {
+      "reason": "no_content",
+      "detail": "descarga fallida (0 bytes)"
+    },
+    "01_planning/_acq_2026-09-21/apsdu_try/1Np48DZTyIh51O6cHqpEuMv_IdhLCs-nM.bin": {
+      "reason": "no_content",
+      "detail": "descarga fallida (0 bytes)"
+    },
+    "01_planning/_acq_2026-09-21b/anx_12CIMwJksG0DbEo8gVo_InISloqYzZrvU.bin": {
+      "reason": "no_content",
+      "detail": "descarga fallida (0 bytes)"
+    },
+    "01_planning/_acq_2026-09-21b/anx_1Np48DZTyIh51O6cHqpEuMv_IdhLCs-nM.bin": {
+      "reason": "no_content",
+      "detail": "descarga fallida (0 bytes)"
+    },
+    "01_planning/_acq_2026-09-21c/setues_318.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_319.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_320.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_321.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_322.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_323.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_324.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_325.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_326.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_327.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_328.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_329.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_330.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_400.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "01_planning/_acq_2026-09-21c/setues_428.pdf": {
+      "reason": "no_content",
+      "detail": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía"
+    },
+    "09_shadow_programme/_v6_rows.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "10_data_lake/01_Steering_Committee/02_Political_Stakeholders/2026_DataMexico_BCS.pdf": {
+      "reason": "superseded",
+      "detail": "descarga fallida; el contenido está en 10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors/2026_DataMexico_profile_Baja-California-Sur-bs_text_extract.txt"
+    },
+    "11_bcs_hub/guide_assets/maps/missing.log": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "11_bcs_hub_data_guide.tar.gz": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "12_ontology/export_graph.py": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "12_ontology/ontology.yaml": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_federal_projects/docs/health/2024-10-25_Presidencia_Estenografica-Hospital-Santa-Rosalia.html": {
+      "reason": "no_content",
+      "detail": "Challenge Validation"
+    },
+    "13_federal_projects/docs/health/2024-10-25_Presidencia_Estenografica-Hospital-Santa-Rosalia.pdf": {
+      "reason": "no_content",
+      "detail": "página de verificación anti-bot guardada en lugar del documento"
+    },
+    "13_territorial_intelligence/communities_master.csv.bak_20260915": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_01_02_combined/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_01_02_combined/SELECT_BOTH_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_01_02_combined/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_01_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_01_render/PARENT_COPYTOBOX.md": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_01_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_01_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_02_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_02_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_02_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_03_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_03_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_03_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_04_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_04_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_04_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_05_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_05_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_05_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_06_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_06_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_06_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_07_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_07_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_07_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_08_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_08_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_08_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_09_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_09_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_09_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_10_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_10_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_10_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_11_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_11_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_11_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_12_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_12_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_12_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_13_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_13_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_13_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_14_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_14_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_14_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_15_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_15_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_15_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_16_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_16_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_16_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_17_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_17_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_17_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_18_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_18_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_18_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_19_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_19_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_19_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_20_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_20_render/SELECT_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/batch_20_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/combined_render/COPYTOBOX_MAP.tsv": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/combined_render/DEDUP_REPORT.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/combined_render/FINISH_WHEN_ZIP_LANDS.sh": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/combined_render/PARENT_COPYTOBOX.md": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/combined_render/SCAN_AND_STAGE_MIDHOLD.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/combined_render/SELECT_ALL_ON_WINDOWS.ps1": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/combined_render/selection_manifest.json": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/generate_stills_esp.py": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/generate_urban_coast_esp.py": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills/process_stills.py": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_stills_urban_coast/generate_urban_coast_esp.py": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_tour/esp_template.esp": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_tour/generate_kml.py": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/plans_archive/plans_master.csv.bak_20260915": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/ports_demand/_downloads/2026-07_AFAC_Estadistica-Operativa-Aeropuertos-2006-2026.xlsx": {
+      "reason": "no_content",
+      "detail": "Challenge Validation"
+    },
+    "BCS_14_gis_atlas.tar.gz": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "BCS_earth_studio_stills.tar.gz": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "SYNC_STATUS.md": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    },
+    "13_territorial_intelligence/earth_studio_FIXED/COPY_TO_DESKTOP.md": {
+      "reason": "non_document",
+      "detail": "herramienta interna / registro / copia de respaldo (no es documento fuente)"
+    }
+  }
+}

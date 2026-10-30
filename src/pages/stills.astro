@@ -1,0 +1,385 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import stills from '../data/stills.json';
+import points from '../data/stills_points.json';
+import report from '../data/stills_dedup_report.json';
+
+const gallery = ((stills as any[]) || []).filter((s) => s && s.thumb);
+const mapList = gallery.length ? gallery : ((points as any[]) || []);
+const list = gallery;
+const cats = Array.from(new Set(mapList.map((s) => s.category).filter(Boolean))).sort();
+const munis = Array.from(
+  new Set(mapList.map((s) => s.municipio).filter((m) => m && String(m).trim()))
+).sort() as string[];
+const n = gallery.length;
+const nMap = mapList.length;
+const dropped = (report as any).near_dupe_dropped || 0;
+const catLabels: Record<string, { es: string; en: string }> = {
+  anp: { es: 'ANP', en: 'Protected area' },
+  cabecera: { es: 'Cabecera', en: 'Municipal seat' },
+  carretera: { es: 'Carretera', en: 'Highway' },
+  grid: { es: 'Malla', en: 'Grid' },
+  localidad: { es: 'Localidad', en: 'Locality' },
+  puerto: { es: 'Puerto', en: 'Port' },
+  tenencia: { es: 'Propiedad del suelo', en: 'Land ownership' },
+  turismo: { es: 'Turismo', en: 'Tourism' },
+};
+---
+<BaseLayout
+  title="Fotos del territorio"
+  titleEn="Territory photos"
+  description="Fotos nadir del territorio de BCS en un mapa — un fotograma por lugar"
+  descriptionEn="Nadir photos of BCS territory on a map — one frame per place"
+  wide={true}
+>
+  <link
+    rel="stylesheet"
+    href="/vendor/leaflet/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <p class="lead">
+    <span data-lang-es>
+      Fotografías aéreas del territorio (Google Earth Studio) colocadas en el mapa.
+      Un fotograma por lugar · {nMap} puntos únicos
+      {dropped > 0 && <> (sin casi-duplicados)</>}.
+      Clic en el mapa o en una tarjeta para sincronizar.
+    </span>
+    <span data-lang-en hidden>
+      Aerial photos of the territory (Google Earth Studio) placed on the map.
+      One frame per place · {nMap} unique points
+      {dropped > 0 && <> (near-duplicates removed)</>}.
+      Click the map or a card to sync.
+    </span>
+  </p>
+
+  <div class="stat-grid stills-stats">
+    <div class="stat"><span class="n">{nMap}</span><span class="l"><span data-lang-es>Lugares</span><span data-lang-en hidden>Places</span></span></div>
+    <div class="stat"><span class="n">{cats.length}</span><span class="l"><span data-lang-es>Categorías</span><span data-lang-en hidden>Categories</span></span></div>
+    <div class="stat"><span class="n">{munis.length}</span><span class="l"><span data-lang-es>Municipios</span><span data-lang-en hidden>Municipalities</span></span></div>
+  </div>
+
+  <div class="stills-toolbar catalog-toolbar" role="toolbar" aria-label="Filtros de stills">
+    <label>
+      <span data-lang-es>Categoría</span><span data-lang-en hidden>Category</span>
+      <select id="still-cat">
+        <option value="all" data-label-es="Todas" data-label-en="All">Todas</option>
+        {cats.map((c) => {
+          const es = catLabels[c]?.es || c;
+          const en = catLabels[c]?.en || c;
+          return (
+            <option value={c} data-label-es={es} data-label-en={en}>
+              {es}
+            </option>
+          );
+        })}
+      </select>
+    </label>
+    {munis.length > 0 && (
+      <label>
+        <span data-lang-es>Municipio</span><span data-lang-en hidden>Municipality</span>
+        <select id="still-muni">
+          <option value="all" data-label-es="Todos" data-label-en="All">Todos</option>
+          {munis.map((m) => (
+            <option value={m}>{m}</option>
+          ))}
+        </select>
+      </label>
+    )}
+    <span class="catalog-meta" id="still-count">{nMap} lugares</span>
+    <a class="btn secondary stills-fullmap" href="/mapas#gis">
+      <span data-lang-es>Mapa completo</span>
+      <span data-lang-en hidden>Full map</span>
+    </a>
+  </div>
+
+  <div class="stills-basemap-bar" role="group" aria-label="Basemap">
+    <span class="stills-basemap-label"><span data-lang-es>Mapa base</span><span data-lang-en hidden>Basemap</span></span>
+    <label><input type="radio" name="stills-basemap" value="osm" checked /> OSM</label>
+    <label><input type="radio" name="stills-basemap" value="topo" /> OpenTopoMap</label>
+    <label><input type="radio" name="stills-basemap" value="esri" />
+      <span data-lang-es>Imagen satelital</span><span data-lang-en hidden>Satellite</span>
+    </label>
+  </div>
+  <div id="stills-map" aria-label="Mapa de fotos del territorio"></div>
+
+  <h2>
+    <span data-lang-es>Galería</span>
+    <span data-lang-en hidden>Gallery</span>
+  </h2>
+  <div class="map-gallery" id="stills-grid">
+    {list.map((s) => (
+      <figure
+        class="map-card still-card"
+        data-cat={s.category}
+        data-muni={s.municipio || ''}
+        data-id={s.id}
+        data-lat={s.lat}
+        data-lon={s.lon}
+        tabindex="0"
+        role="button"
+        aria-label={s.name}
+      >
+        <img src={s.thumb} alt={s.name} loading="lazy" width="480" height="270" />
+        <figcaption class="cap">
+          <strong>{s.name}</strong>
+          <span class="tag chip">
+            <span data-lang-es>{catLabels[s.category]?.es || s.category}</span>
+            <span data-lang-en hidden>{catLabels[s.category]?.en || s.category}</span>
+          </span>
+          {s.municipio && <span class="tag chip chip-muted">{s.municipio}</span>}
+          {typeof s.lat === 'number' && typeof s.lon === 'number' && (
+            <span class="gmaps-links">
+              <a href={`https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lon}`} target="_blank" rel="noopener"><span data-lang-es>Abrir en Google Maps</span><span data-lang-en hidden>Open in Google Maps</span></a>
+              {' · '}
+              <a href={`https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}`} target="_blank" rel="noopener"><span data-lang-es>Cómo llegar</span><span data-lang-en hidden>Directions</span></a>
+            </span>
+          )}
+          <span class="still-cap-so">
+            <span data-lang-es>Fotograma territorial — sincroniza con el mapa; no es un indicador de carga.</span>
+            <span data-lang-en hidden>Territory frame — syncs with the map; not a load indicator.</span>
+          </span>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+
+  {n === 0 && (
+    <p class="lead">
+      <span data-lang-es>Aún no hay imágenes en el portal; el mapa muestra los puntos georreferenciados.</span>
+      <span data-lang-en hidden>Images are not on the portal yet; the map shows georeferenced points.</span>
+    </p>
+  )}
+
+  <p class="cta-row stills-cta">
+    <a class="btn secondary" href="/mapas#gis">
+      <span data-lang-es>Mapa completo</span>
+      <span data-lang-en hidden>Full map</span>
+    </a>
+  </p>
+
+  <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script is:inline define:vars={{ stillsJson: mapList, catLabelsJson: catLabels }}>
+    (function () {
+      var data = stillsJson || [];
+      var catLabels = catLabelsJson || {};
+      var mapEl = document.getElementById('stills-map');
+      if (!mapEl || typeof L === 'undefined') return;
+      var map = L.map('stills-map', { scrollWheelZoom: true, preferCanvas: false });
+      // Prefer standard OSM (colorful) as default; avoid washed/gray light styles
+      var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
+        crossOrigin: true,
+      });
+      var topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        attribution:
+          'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, SRTM | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)',
+        maxZoom: 17,
+        crossOrigin: true,
+      });
+      var esri = L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        { attribution: 'Tiles &copy; Esri', maxZoom: 19, crossOrigin: true }
+      );
+      var basemaps = { osm: osm, topo: topo, esri: esri };
+      var currentBase = osm;
+      osm.addTo(map);
+      document.querySelectorAll('input[name="stills-basemap"]').forEach(function (r) {
+        r.addEventListener('change', function () {
+          if (!r.checked) return;
+          map.removeLayer(currentBase);
+          currentBase = basemaps[r.value] || osm;
+          currentBase.addTo(map);
+        });
+      });
+      // Ensure tiles are not desaturated by inherited CSS
+      try {
+        var pane = map.getPane('tilePane');
+        if (pane) {
+          pane.style.filter = 'none';
+          pane.style.opacity = '1';
+        }
+      } catch (e) {}
+      var group = L.layerGroup().addTo(map);
+      var markers = {};
+      var activeId = null;
+
+      function catLabel(cat) {
+        var Lbl = catLabels[cat];
+        if (!Lbl) return cat || '';
+        var lang = document.documentElement.getAttribute('lang') || 'es';
+        return lang === 'en' ? (Lbl.en || Lbl.es) : (Lbl.es || Lbl.en);
+      }
+
+      function popupHtml(s) {
+        var img = s.thumb
+          ? '<a href="' + (s.image || s.thumb) + '" target="_blank" rel="noopener"><img src="' + s.thumb + '" alt="' + (s.name || '') + '" style="width:220px;max-width:100%;height:auto;display:block;margin:0 0 8px;border-radius:2px"/></a>'
+          : '';
+        var muni = s.municipio ? '<br/><span style="color:#3c5163">' + s.municipio + '</span>' : '';
+        var en = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
+        var gm = (typeof s.lat === 'number' && typeof s.lon === 'number')
+          ? '<div class="gmaps-links" style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">' +
+            '<a class="btn secondary" style="font-size:.8rem;padding:4px 8px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + s.lat + ',' + s.lon + '">' + (en ? 'Open in Google Maps' : 'Abrir en Google Maps') + '</a>' +
+            '<a class="btn secondary" style="font-size:.8rem;padding:4px 8px" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '">' + (en ? 'Directions' : 'Cómo llegar') + '</a></div>'
+          : '';
+        return img + '<strong style="font-size:1rem">' + (s.name || '') + '</strong>' +
+          '<br/><span style="color:#3c5163">' + catLabel(s.category) + '</span>' + muni + gm;
+      }
+
+      function colorFor(cat) {
+        if (cat === 'cabecera') return '#34607d';
+        if (cat === 'puerto') return '#2a5069';
+        if (cat === 'localidad') return '#387820';
+        if (cat === 'turismo') return '#c45c26';
+        if (cat === 'anp') return '#2d6a4f';
+        if (cat === 'carretera') return '#6c757d';
+        if (cat === 'tenencia') return '#7b2d8e';
+        return '#88a0b0';
+      }
+
+      function clearActive() {
+        document.querySelectorAll('.still-card.is-active').forEach(function (c) {
+          c.classList.remove('is-active');
+        });
+        activeId = null;
+      }
+
+      function highlightCard(id, scroll) {
+        clearActive();
+        activeId = id;
+        var card = document.querySelector('.still-card[data-id="' + id + '"]');
+        if (card) {
+          card.classList.add('is-active');
+          if (scroll) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+
+      function focusMarker(id, openPopup) {
+        var m = markers[id];
+        if (!m) return;
+        var ll = m.getLatLng();
+        map.setView(ll, Math.max(map.getZoom(), 10), { animate: true });
+        if (openPopup) m.openPopup();
+      }
+
+      data.forEach(function (s) {
+        if (typeof s.lat !== 'number' || typeof s.lon !== 'number') return;
+        var m = L.circleMarker([s.lat, s.lon], {
+          radius: s.category === 'cabecera' ? 8 : 6,
+          color: colorFor(s.category),
+          fillColor: colorFor(s.category),
+          fillOpacity: 0.85,
+          weight: 1,
+        }).bindPopup(popupHtml(s), { maxWidth: 260 });
+        m.on('click', function () {
+          highlightCard(s.id, true);
+        });
+        m.addTo(group);
+        markers[s.id] = m;
+      });
+
+      try {
+        var b = group.getLayers().length ? L.featureGroup(group.getLayers()).getBounds() : null;
+        if (b && b.isValid()) map.fitBounds(b.pad(0.12));
+        else map.setView([25.8, -111.8], 7);
+      } catch (e) {
+        map.setView([25.8, -111.8], 7);
+      }
+
+      var catSel = document.getElementById('still-cat');
+      var muniSel = document.getElementById('still-muni');
+      var countEl = document.getElementById('still-count');
+
+      function apply() {
+        var cat = catSel ? catSel.value : 'all';
+        var muni = muniSel ? muniSel.value : 'all';
+        var n = 0;
+        var visible = [];
+        document.querySelectorAll('.still-card').forEach(function (card) {
+          var id = card.getAttribute('data-id');
+          var ok =
+            (cat === 'all' || card.getAttribute('data-cat') === cat) &&
+            (muni === 'all' || card.getAttribute('data-muni') === muni);
+          card.hidden = !ok;
+          if (markers[id]) {
+            if (ok) {
+              markers[id].addTo(group);
+              visible.push(markers[id]);
+            } else {
+              group.removeLayer(markers[id]);
+            }
+          }
+          if (ok) n++;
+        });
+        if (countEl) {
+          var lang = document.documentElement.getAttribute('lang') || 'es';
+          countEl.textContent = n + (lang === 'en' ? ' places' : ' lugares');
+        }
+        if (visible.length) {
+          try {
+            var bb = L.featureGroup(visible).getBounds();
+            if (bb && bb.isValid()) map.fitBounds(bb.pad(0.1));
+          } catch (e) {}
+        }
+      }
+
+      catSel && catSel.addEventListener('change', apply);
+      muniSel && muniSel.addEventListener('change', apply);
+
+      document.querySelectorAll('.still-card').forEach(function (card) {
+        function activate() {
+          var id = card.getAttribute('data-id');
+          if (!id || card.hidden) return;
+          highlightCard(id, false);
+          focusMarker(id, true);
+        }
+        card.addEventListener('click', function (ev) {
+          if (ev.target && ev.target.closest && ev.target.closest('a')) return;
+          activate();
+        });
+        card.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            activate();
+          }
+        });
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    (function () {
+      function syncStillOptions(lang) {
+        document.querySelectorAll('#still-cat option[data-label-es], #still-muni option[data-label-es]').forEach(function (opt) {
+          var es = opt.getAttribute('data-label-es');
+          var en = opt.getAttribute('data-label-en');
+          if (lang === 'en' && en) opt.textContent = en;
+          else if (es) opt.textContent = es;
+        });
+        var countEl = document.getElementById('still-count');
+        if (countEl) {
+          var n = countEl.textContent.replace(/\D/g, '') || countEl.textContent;
+          var num = parseInt(String(countEl.textContent).replace(/[^\d]/g, ''), 10);
+          if (!isNaN(num)) countEl.textContent = num + (lang === 'en' ? ' places' : ' lugares');
+        }
+      }
+      document.addEventListener('bcs:lang', function (ev) {
+        syncStillOptions((ev.detail && ev.detail.lang) || 'es');
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+        var lang = 'es';
+        try {
+          var s = localStorage.getItem('bcs_portal_lang');
+          if (s === 'en' || s === 'es') lang = s;
+        } catch (e) {}
+        syncStillOptions(lang);
+      });
+    })();
+  </script>
+
+  <style is:global>
+    .still-cap-so { display:block; margin-top:0.3rem; font-size:0.72rem; color:#5c6e7b; font-weight:400; }
+  </style>
+</BaseLayout>

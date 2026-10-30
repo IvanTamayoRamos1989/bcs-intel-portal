@@ -1,0 +1,117 @@
+---
+import { cleanSourceText } from '../lib/sourceLabel';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lakePath } from '../lib/paths';
+import ports from '../data/ports_demand.json';
+
+const md = (ports.markdown || {}) as Record<string, string>;
+const airports = (ports.airports || []) as any[];
+
+const airportHeaderMap: Record<string, { es: string; en: string }> = {
+  airport_code: { es: 'Código', en: 'Code' },
+  airport_name: { es: 'Aeropuerto', en: 'Airport' },
+  ontology_id: { es: 'Id ontología', en: 'Ontology id' },
+  connection_type: { es: 'Tipo de conexión', en: 'Connection type' },
+  destination_region_or_city: { es: 'Destino / región', en: 'Destination / region' },
+  airline: { es: 'Aerolínea', en: 'Airline' },
+  metric: { es: 'Métrica', en: 'Metric' },
+  value: { es: 'Valor', en: 'Value' },
+  unit: { es: 'Unidad', en: 'Unit' },
+  period: { es: 'Periodo', en: 'Period' },
+  source_file: { es: 'Archivo fuente', en: 'Source file' },
+  note: { es: 'Nota', en: 'Note' },
+};
+
+const preferredAirportCols = [
+  'airport_code',
+  'airport_name',
+  'connection_type',
+  'destination_region_or_city',
+  'airline',
+  'metric',
+  'value',
+  'period',
+];
+const airportKeys = airports.length
+  ? preferredAirportCols.filter((k) => k in airports[0]).concat(
+      Object.keys(airports[0]).filter((k) => !preferredAirportCols.includes(k)).slice(0, 0)
+    ).slice(0, 8)
+  : [];
+
+const sectionMeta: Record<string, { es: string; en: string }> = {
+  'airports.md': { es: 'Aeropuertos', en: 'Airports' },
+  'cruises.md': { es: 'Cruceros', en: 'Cruises' },
+  'freight_ports.md': { es: 'Puertos de carga', en: 'Freight ports' },
+  'yachts_profile.md': { es: 'Perfil de yates', en: 'Yacht profile' },
+  'demand_target_groups.md': { es: 'Grupos objetivo de demanda', en: 'Demand target groups' },
+};
+
+const sections = Object.entries(md).map(([name, body]) => ({
+  name,
+  titleEs: sectionMeta[name]?.es || name.replace(/\.md$/, '').replace(/_/g, ' '),
+  titleEn: sectionMeta[name]?.en || name.replace(/\.md$/, '').replace(/_/g, ' '),
+  body: cleanSourceText(String(body).replace(/`?([\w-]+\.md)`?/g, (m0, n) => (sectionMeta[n] ? `«${sectionMeta[n].es}»` : m0))).slice(0, 4500),
+}));
+---
+<BaseLayout
+  title="Puertos y demanda"
+  titleEn="Ports and demand"
+  description="Aeropuertos, cruceros, carga, yates y perfiles de demanda BCS"
+  descriptionEn="Airports, cruises, freight, yachts and BCS demand profiles"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Pack TI <code>ports_demand/</code>: aeropuertos y conexiones, cruceros, puertos de carga,
+      perfil de yates y grupos objetivo de demanda. Complementa <a href="/conectividad">Conectividad</a>, <a href="/vuelos">Vuelos</a> y <a href="/turismo">Turismo</a>.
+    </span>
+    <span data-lang-en hidden>
+      TI pack <code>ports_demand/</code>: airports and connections, cruises, freight ports,
+      yacht profile and demand target groups. Complements <a href="/conectividad">Connectivity</a>, <a href="/vuelos">Flights</a> and <a href="/turismo">Tourism</a>.
+    </span>
+  </p>
+
+  <p class="cite-banner" style="background:#f7f3ea;border:1px solid var(--border);border-left:4px solid #b0892e;padding:0.75rem 1rem;">
+    <span data-lang-es>Panel de destinos sin escalas (FlightConnections): <a href="/vuelos">Conectividad aérea / Vuelos</a>.</span>
+    <span data-lang-en hidden>Non-stop destinations panel (FlightConnections): <a href="/vuelos">Air connectivity / Flights</a>.</span>
+  </p>
+
+  {airports.length > 0 && (
+    <>
+      <h2><span data-lang-es>Conexiones aeroportuarias</span><span data-lang-en hidden>Airport connections</span></h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              {airportKeys.map((k) => (
+                <th>
+                  <span data-lang-es>{airportHeaderMap[k]?.es || k}</span>
+                  <span data-lang-en hidden>{airportHeaderMap[k]?.en || k}</span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {airports.slice(0, 40).map((r) => (
+              <tr>
+                {airportKeys.map((k) => <td>{String(r[k] ?? '').slice(0, 60)}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )}
+
+  {sections.map((s) => (
+    <section class="theme-section">
+      <h2>
+        <span data-lang-es>{s.titleEs}</span>
+        <span data-lang-en hidden>{s.titleEn}</span>
+      </h2>
+      <pre style="white-space:pre-wrap;font-size:0.86rem;background:#fbf8f1;border:1px solid var(--border);padding:1rem;overflow:auto">{s.body}</pre>
+    </section>
+  ))}
+
+  <p class="meta"><span data-lang-es>Fuente:</span><span data-lang-en hidden>Source:</span> {lakePath(ports.desktop)}</p>
+</BaseLayout>

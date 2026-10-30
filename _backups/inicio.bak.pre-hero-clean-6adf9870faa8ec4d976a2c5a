@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Pregúntale al plan BCS 2050"
+  titleEn="Ask the BCS 2050 plan"
+  description="Consulta ciudadana conversacional sobre Baja California Sur."
+  descriptionEn="Conversational citizen consultation on Baja California Sur."
+  home={true}
+  hidePageHead={true}
+  chatHome={true}
+></BaseLayout>

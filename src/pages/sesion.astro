@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import sq from '../data/strategic_questions.json';
+import dossiers from '../data/place_dossiers.json';
+import gds from '../data/growth_demand_supply.json';
+import foresights from '../data/foresights.json';
+import { PLACE_BY_ID, PLACE_IDS } from '../lib/places';
+
+const questions = ((sq as any).questions || []) as any[];
+const places = ((dossiers as any).places || []) as any[];
+const gPlaces = ((gds as any).places || []) as any[];
+const seeds = ((foresights as any).consensus_seeds || []) as any[];
+
+const byPlace: Record<string, any> = Object.fromEntries(places.map((p) => [p.id, p]));
+const gByPlace: Record<string, any> = Object.fromEntries(gPlaces.map((p) => [p.id, p]));
+---
+<BaseLayout
+  title="Sesión de estrategia"
+  titleEn="Strategy session"
+  description="Vista de sesión: preguntas, evidencia, desacuerdos, restricciones, creencia actual, evidencia faltante, siguientes acciones"
+  descriptionEn="Session view: questions, evidence, disagreements, constraints, current belief, missing evidence, next actions"
+  wide={true}
+>
+  <div class="ss-hero">
+    <p class="ss-kicker"><span data-lang-es>Strategy Session · imprimible</span><span data-lang-en hidden>Strategy Session · printable</span></p>
+    <h1><span data-lang-es>Sesión de estrategia por lugar</span><span data-lang-en hidden>Strategy session by place</span></h1>
+    <p class="lead">
+      <span data-lang-es>Selecciona un lugar en la franja. La presión en un municipio no se compensa con holgura en otro.</span>
+      <span data-lang-en hidden>Select a place on the strip. Pressure in one municipality is not offset by slack in another.</span>
+    </p>
+    <p class="meta ss-print-hide">
+      <button type="button" class="ss-print" onclick="window.print()">
+        <span data-lang-es>Imprimir / PDF</span><span data-lang-en hidden>Print / PDF</span>
+      </button>
+      · <a href="/preguntas/"><span data-lang-es>Preguntas</span><span data-lang-en hidden>Questions</span></a>
+      · <a href="/studio/"><span data-lang-es>Studio</span><span data-lang-en hidden>Studio</span></a>
+    </p>
+  </div>
+
+  <div id="ss-bcs" class="ss-panel ss-bcs" data-place-card="">
+    <h2><span data-lang-es>Vista BCS-wide</span><span data-lang-en hidden>BCS-wide view</span></h2>
+    <p>
+      <span data-lang-es>{(gds as any).state_rollup?.balance_read_es}</span>
+      <span data-lang-en hidden>{(gds as any).state_rollup?.balance_read_en}</span>
+    </p>
+    <p class="meta">
+      <span data-lang-es>{(gds as any).state_rollup?.imbalances_es}</span>
+      <span data-lang-en hidden>{(gds as any).state_rollup?.imbalances_en}</span>
+    </p>
+    <p class="meta ss-fresh">src {(gds as any).updated} · foresights {(foresights as any).updated}</p>
+  </div>
+
+  {PLACE_IDS.map((pid) => {
+    const dossier = byPlace[pid];
+    const g = gByPlace[pid];
+    const qs = questions.filter((q) => (q.places || []).includes(pid)).slice(0, 5);
+    const claims = seeds.filter((s) => (s.place_ids || []).includes(pid)).slice(0, 4);
+    const gaps = [...(g?.demand || []), ...(g?.supply || [])].filter((c: any) => c.status === 'gap');
+    return (
+      <article class="ss-panel ss-place" id={pid} data-place-card={pid} hidden>
+        <header class="ss-head">
+          <h2>
+            <span data-lang-es>{PLACE_BY_ID[pid]?.name_es || dossier?.name_es || pid}</span>
+            <span data-lang-en hidden>{PLACE_BY_ID[pid]?.name_en || dossier?.name_en || pid}</span>
+          </h2>
+          <span class="ss-fresh">refresh {(dossiers as any).updated}</span>
+        </header>
+
+        <section>
+          <h3><span data-lang-es>1. Preguntas a resolver (3–5)</span><span data-lang-en hidden>1. Questions to resolve (3–5)</span></h3>
+          <ul>
+            {qs.map((q) => (
+              <li>
+                <a href={`/preguntas/${q.id}/`}>
+                  <span data-lang-es>{q.question_es}</span>
+                  <span data-lang-en hidden>{q.question_en}</span>
+                </a>
+              </li>
+            ))}
+            {!qs.length && (
+              <li class="meta"><span data-lang-es>Sin preguntas sembradas — ver /preguntas</span><span data-lang-en hidden>No seeded questions — see /preguntas</span></li>
+            )}
+          </ul>
+        </section>
+
+        <section>
+          <h3><span data-lang-es>2. Qué dice la evidencia</span><span data-lang-en hidden>2. What the evidence says</span></h3>
+          <p>
+            <span data-lang-es>{g?.balance_read_es || dossier?.demand_supply?.balance_read_es}</span>
+            <span data-lang-en hidden>{g?.balance_read_en || dossier?.demand_supply?.balance_read_en}</span>
+          </p>
+          <p>
+            <a href={`/crecimiento/?place=${pid}#${pid}`}>/crecimiento</a> ·
+            <a href={`/studio/${pid === "east_cape" ? "los_cabos" : pid === "todos_santos" ? "la_paz" : pid === "mulege_north" ? "mulege" : (pid || "bcs")}/`}>Studio</a> ·
+            <a href={`/foresights/?place=${pid}`}>/foresights</a>
+          </p>
+        </section>
+
+        <section>
+          <h3><span data-lang-es>3. Dónde hay desacuerdo</span><span data-lang-en hidden>3. Where stakeholders disagree</span></h3>
+          <ul>
+            {claims.map((c) => (
+              <li>
+                <span class="ss-status">{c.status}</span>
+                <span data-lang-es>{c.claim_es}</span>
+                <span data-lang-en hidden>{c.claim_en}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h3><span data-lang-es>4. Restricciones que atan el crecimiento</span><span data-lang-en hidden>4. Constraints that bind growth</span></h3>
+          <ul>
+            {(dossier?.instruments || []).filter((i: any) => i.status === 'gap').slice(0, 4).map((i: any) => (
+              <li><strong>{i.instrument}</strong> · gap · <span data-lang-es>{i.note_es}</span><span data-lang-en hidden>{i.note_en}</span></li>
+            ))}
+            {(qs[0]?.capacity_constraints || []).map((c: any) => (
+              <li>{c.theme}: <span data-lang-es>{c.label_es}</span><span data-lang-en hidden>{c.label_en}</span> ({c.status})</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h3><span data-lang-es>5. Qué creemos ahora</span><span data-lang-en hidden>5. What we currently believe</span></h3>
+          <p>
+            <span data-lang-es>{qs[0]?.planning_position_es || dossier?.vocation?.structure_note_es}</span>
+            <span data-lang-en hidden>{qs[0]?.planning_position_en || dossier?.vocation?.structure_note_en}</span>
+          </p>
+        </section>
+
+        <section>
+          <h3><span data-lang-es>6. Evidencia faltante</span><span data-lang-en hidden>6. Missing evidence</span></h3>
+          <ul>
+            {gaps.slice(0, 6).map((c: any) => (
+              <li>
+                <span class="lg-tag tag-fact">FACT</span>
+                <span data-lang-es>{c.label_es || c.id}: {c.evidence_missing_es || 'gap'}</span>
+                <span data-lang-en hidden>{c.label_en || c.id}: {c.evidence_missing_en || 'gap'}</span>
+              </li>
+            ))}
+            {!gaps.length && <li class="meta">—</li>}
+          </ul>
+        </section>
+
+        <section>
+          <h3><span data-lang-es>7. Qué sigue</span><span data-lang-en hidden>7. What happens next</span></h3>
+          <ul>
+            {qs.slice(0, 3).map((q) => (
+              <li>
+                <a href={`/preguntas/${q.id}/`}>
+                  <span data-lang-es>{q.next_evidence_es}</span>
+                  <span data-lang-en hidden>{q.next_evidence_en}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </article>
+    );
+  })}
+
+  <script is:inline>
+    (function () {
+      function show() {
+        var id = (window.BCSPlace && window.BCSPlace.get && window.BCSPlace.get()) || '';
+        var bcs = document.getElementById('ss-bcs');
+        document.querySelectorAll('.ss-place').forEach(function (el) {
+          var on = id && el.getAttribute('data-place-card') === id;
+          el.hidden = !on;
+        });
+        if (bcs) bcs.hidden = !!id;
+      }
+      window.addEventListener('bcs:placechange', show);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show);
+      else setTimeout(show, 50);
+    })();
+  </script>
+
+  <style is:global>
+    .ss-kicker { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:#34607d; font-weight:700; }
+    .ss-panel { border:1px solid #e2dccf; border-radius:12px; padding:1.1rem 1.2rem; margin:1.25rem 0; background:#fbf8f1; scroll-margin-top:5rem; }
+    .ss-bcs { background:#dfe8ee; border-color:#c5d6e1; }
+    .ss-head { display:flex; justify-content:space-between; gap:0.75rem; align-items:baseline; }
+    .ss-head h2 { margin:0; font-size:1.3rem; }
+    .ss-panel h3 { font-size:0.95rem; margin:1rem 0 0.35rem; color:#23374a; border-bottom:1px solid #dfe8ee; padding-bottom:0.2rem; }
+    .ss-panel ul { margin:0.25rem 0; padding-left:1.1rem; }
+    .ss-panel li { margin:0.3rem 0; font-size:0.9rem; color:#23374a; }
+    .ss-status { font-size:0.68rem; font-weight:700; text-transform:uppercase; color:#a8664a; margin-right:0.35rem; }
+    .ss-fresh { font-size:0.72rem; color:#5c6e7b; }
+    .ss-print { background:#34607d; color:#fbf8f1; border:none; border-radius:8px; padding:0.35rem 0.75rem; font-weight:700; cursor:pointer; }
+    .lg-tag { display:inline-block; font-size:0.62rem; font-weight:800; padding:0.1rem 0.35rem; border-radius:4px; margin-right:0.3rem; background:#e3eadc; color:#4f6e4b; }
+    @media print {
+      .ss-print-hide, .bcs-place-strip, .site-header, .bcs-chat, .site-footer, .nav-drawer, .nav-drawer-backdrop { display:none !important; }
+      .ss-panel { break-inside: avoid; box-shadow:none; border-color:#d9d2c4; }
+      .ss-place[hidden] { display:block !important; }
+      body { background:#fbf8f1; }
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,40 @@
+{
+  "stills_master": "13_territorial_intelligence/earth_studio_stills/stills_master.csv",
+  "stills_manifest": "13_territorial_intelligence/earth_studio_stills/stills_manifest.csv",
+  "stills_count": 1000,
+  "esp_count": 20,
+  "esp_dir": "13_territorial_intelligence/earth_studio_stills/esp/",
+  "kml_dir": "13_territorial_intelligence/earth_studio_stills/kml/",
+  "fps": 30,
+  "hold_frames": 15,
+  "hold_seconds": 0.5,
+  "batch_size": 50,
+  "max_duration_s": 25.0,
+  "resolution": "1920x1080",
+  "tilt_deg": 0,
+  "category_counts": {
+    "cabecera": 5,
+    "localidad": 190,
+    "puerto": 3,
+    "turismo": 2,
+    "carretera": 17,
+    "anp": 14,
+    "tenencia": 41,
+    "grid": 728
+  },
+  "altitude_counts": {
+    "2500": 197,
+    "800": 3,
+    "10000": 800
+  },
+  "notes": [
+    "ESP: 30 fps, HOLD_FRAMES=15 (0.5s) per still, duration=n_stills*15",
+    "Resolution 1920x1080; 4K optional later in Studio UI",
+    "Encoding matches earth_studio_tour/generate_kml.py (mkatzef google-studio-utils)",
+    "Export image sequence; pick frames at hold midpoints (frame_index in manifest) OR export all and dedupe",
+    "No Drive upload; PAL confidential never"
+  ],
+  "desktop_root": "Desktop\\\\BCSFP\\\\13_territorial_intelligence\\\\earth_studio_stills",
+  "tour_desktop": "Desktop\\\\BCSFP\\\\13_territorial_intelligence\\\\earth_studio_tour",
+  "fixed_desktop": "Desktop\\\\BCSFP\\\\13_territorial_intelligence\\\\earth_studio_FIXED"
+}

@@ -1,0 +1,192 @@
+---
+import { cleanSourceText } from '../../lib/sourceLabel';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import sq from '../../data/strategic_questions.json';
+import stakeholders from '../../data/stakeholders.json';
+import { PLACE_BY_ID } from '../../lib/places';
+import PrintExpediente from '../../components/PrintExpediente.astro';
+
+export function getStaticPaths() {
+  const questions = (sq as any).questions || [];
+  return questions.map((q: any) => ({ params: { id: q.id } }));
+}
+
+const { id } = Astro.params;
+const questions = ((sq as any).questions || []) as any[];
+const q = questions.find((x) => x.id === id);
+if (!q) {
+  return Astro.redirect('/preguntas/');
+}
+
+const stItems = Array.isArray(stakeholders) ? stakeholders : (stakeholders as any).items || [];
+const stById = Object.fromEntries(stItems.map((s: any) => [String(s.id), s]));
+const participants = (q.stakeholder_ids || []).map((sid: string) => stById[sid]).filter(Boolean);
+
+const confLabel: Record<string, { es: string; en: string }> = {
+  high: { es: 'Alta', en: 'High' },
+  medium: { es: 'Media', en: 'Medium' },
+  low: { es: 'Baja', en: 'Low' },
+};
+---
+<BaseLayout
+  title={q.question_es?.slice(0, 60) || 'Pregunta estratégica'}
+  titleEn={q.question_en?.slice(0, 60) || 'Strategic question'}
+  description="Registro de pregunta estratégica BCS 2050"
+  descriptionEn="BCS 2050 strategic question record"
+  wide={true}
+>
+  <p class="meta">
+    <a href="/preguntas/"><span data-lang-es>← Preguntas</span><span data-lang-en hidden>← Questions</span></a>
+    · <code>{q.id}</code>
+    · <span class="sq-fresh-chip">src {q.freshness?.source_date || '—'} · refresh {q.freshness?.portal_refresh || q.updated}</span>
+  </p>
+
+  <article class="sq-detail">
+    <p class="sq-kicker"><span data-lang-es>Pregunta estratégica</span><span data-lang-en hidden>Strategic question</span></p>
+    <h1>
+      <span data-lang-es>{q.question_es}</span>
+      <span data-lang-en hidden>{q.question_en}</span>
+    </h1>
+    <div class="sq-export"><PrintExpediente title={q.id} /></div>
+
+    <div class="sq-places">
+      {(q.places || []).map((pid: string) => (
+        <a class="sq-chip" href={`/studio/${pid === "east_cape" ? "los_cabos" : pid === "todos_santos" ? "la_paz" : pid === "mulege_north" ? "mulege" : (pid || "bcs")}/`}>
+          <span data-lang-es>{PLACE_BY_ID[pid]?.short_es || pid}</span>
+          <span data-lang-en hidden>{PLACE_BY_ID[pid]?.short_en || pid}</span>
+        </a>
+      ))}
+      <span class="sq-conf-pill">
+        <span data-lang-es>Confianza {confLabel[q.confidence]?.es || q.confidence}</span>
+        <span data-lang-en hidden>Confidence {confLabel[q.confidence]?.en || q.confidence}</span>
+      </span>
+    </div>
+
+    <section class="sq-block">
+      <h2><span data-lang-es>Posición de planeación</span><span data-lang-en hidden>Planning position</span></h2>
+      <p><span data-lang-es>{q.planning_position_es}</span><span data-lang-en hidden>{q.planning_position_en}</span></p>
+    </section>
+
+    <section class="sq-block">
+      <h2><span data-lang-es>Evidencia de apoyo</span><span data-lang-en hidden>Supporting evidence</span></h2>
+      <ul class="sq-ev">
+        {(q.supporting_evidence || []).map((e: any) => (
+          <li>
+            <span class={`lg-tag tag-${(e.tag || 'FACT').toLowerCase()}`}>{e.tag || 'FACT'}</span>
+            <a href={e.href || '#'}>{e.id || e.label || e.type}</a>
+            <span class="meta"> · {e.type}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="sq-block">
+      <h2><span data-lang-es>Lentes en tensión</span><span data-lang-en hidden>Opposing lenses</span></h2>
+      <div class="sq-places">
+        {(q.opposing_lenses || []).map((L: any) => (
+          <span class="sq-chip sq-chip-lens">
+            <span data-lang-es>{L.label_es}</span>
+            <span data-lang-en hidden>{L.label_en}</span>
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <section class="sq-block">
+      <h2><span data-lang-es>Notas demanda–oferta</span><span data-lang-en hidden>Demand–supply notes</span></h2>
+      <p><span data-lang-es>{q.demand_supply_notes_es}</span><span data-lang-en hidden>{q.demand_supply_notes_en}</span></p>
+    </section>
+
+    <section class="sq-block">
+      <h2><span data-lang-es>Restricciones de capacidad</span><span data-lang-en hidden>Capacity constraints</span></h2>
+      <div class="sq-cap">
+        {(q.capacity_constraints || []).map((c: any) => (
+          <div class="sq-cap-card">
+            <strong>{c.theme}</strong>
+            <span class={`lg-tag tag-${(c.tag || 'FACT').toLowerCase()}`}>{c.tag || 'FACT'}</span>
+            <p><span data-lang-es>{c.label_es}</span><span data-lang-en hidden>{c.label_en}</span></p>
+            <p class="meta">{c.status} · {cleanSourceText(c.source)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="sq-block">
+      <h2><span data-lang-es>Incertidumbres</span><span data-lang-en hidden>Uncertainties</span></h2>
+      <ul>
+        {(q.uncertainties || []).map((u: any) => (
+          <li>
+            <span class={`lg-tag tag-${(u.tag || 'ASSUMPTION').toLowerCase()}`}>{u.tag || 'ASSUMPTION'}</span>
+            <span data-lang-es>{u.es}</span>
+            <span data-lang-en hidden>{u.en}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="sq-block sq-next">
+      <h2><span data-lang-es>Siguiente evidencia</span><span data-lang-en hidden>Next evidence</span></h2>
+      <p><span data-lang-es>{q.next_evidence_es}</span><span data-lang-en hidden>{q.next_evidence_en}</span></p>
+      <p class="meta"><span data-lang-es>Responsable: {q.owner}</span><span data-lang-en hidden>Owner: {q.owner}</span></p>
+    </section>
+
+    <section class="sq-block">
+      <h2><span data-lang-es>Quién debe participar</span><span data-lang-en hidden>Who must participate</span></h2>
+      {participants.length ? (
+        <ul class="sq-who">
+          {participants.map((s: any) => (
+            <li>
+              <a href={`/stakeholders?q=${encodeURIComponent(s.name)}`}>{s.name}</a>
+              {s.org && <span class="meta"> · {s.org}</span>}
+              {s.group && <span class="meta"> · {s.group}</span>}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="meta">
+          <span data-lang-es>Sin coincidencia clara en directorio — añadir desde Actores.</span>
+          <span data-lang-en hidden>No clear directory match — add from Stakeholders.</span>
+        </p>
+      )}
+      <a class="sq-chip" href="/stakeholders/"><span data-lang-es>Directorio</span><span data-lang-en hidden>Directory</span></a>
+    </section>
+
+    <div class="sq-actions">
+      {(q.places || []).slice(0,1).map((pid: string) => (
+        <a class="sq-btn" href={`/studio/${pid === "east_cape" ? "los_cabos" : pid === "todos_santos" ? "la_paz" : pid === "mulege_north" ? "mulege" : (pid || "bcs")}/`}><span data-lang-es>Studio</span><span data-lang-en hidden>Studio</span></a>
+      ))}
+      {(q.places || []).slice(0,1).map((pid: string) => (
+        <a class="sq-btn" href={`/crecimiento/?place=${pid}#${pid}`}><span data-lang-es>Crecimiento</span><span data-lang-en hidden>Growth</span></a>
+      ))}
+      <a class="sq-btn" href="/foresights/#debate"><span data-lang-es>Debate</span><span data-lang-en hidden>Debate</span></a>
+      <a class="sq-btn" href={`/sesion/?place=${(q.places||[])[0]||''}`}><span data-lang-es>Sesión</span><span data-lang-en hidden>Session</span></a>
+      <a class="sq-btn secondary" href="/preguntas/"><span data-lang-es>Todas</span><span data-lang-en hidden>All</span></a>
+    </div>
+  </article>
+
+  <style is:global>
+    .sq-kicker { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:#34607d; font-weight:700; }
+    .sq-detail h1 { font-size:clamp(1.2rem,3vw,1.65rem); line-height:1.3; margin:0.35rem 0 0.75rem; }
+    .sq-places { display:flex; flex-wrap:wrap; gap:0.35rem; margin:0.5rem 0 1rem; }
+    .sq-chip { font-size:0.72rem; font-weight:600; padding:0.18rem 0.5rem; border-radius:999px; background:#dfe8ee; color:#34607d; text-decoration:none; }
+    .sq-chip-lens { background:#f3e6cc; color:#a8664a; }
+    .sq-conf-pill { font-size:0.72rem; font-weight:700; padding:0.18rem 0.5rem; border-radius:999px; background:#f3eee3; color:#23374a; }
+    .sq-block { margin:1.25rem 0; }
+    .sq-block h2 { font-size:1.05rem; margin:0 0 0.4rem; border-bottom:2px solid #dfe8ee; padding-bottom:0.25rem; }
+    .sq-block p, .sq-block li { font-size:0.92rem; color:#23374a; line-height:1.45; }
+    .sq-ev { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.35rem; }
+    .sq-cap { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.55rem; }
+    .sq-cap-card { border:1px solid #e2dccf; border-radius:10px; padding:0.65rem; background:#f3eee3; }
+    .sq-cap-card p { margin:0.25rem 0 0; }
+    .sq-next { background:#dfe8ee; border:1px solid #c5d6e1; border-radius:12px; padding:0.9rem 1rem; }
+    .sq-actions { display:flex; flex-wrap:wrap; gap:0.45rem; margin:1.5rem 0; }
+    .sq-btn { background:#34607d; color:#fbf8f1; font-weight:700; text-decoration:none; padding:0.45rem 0.85rem; border-radius:8px; font-size:0.85rem; }
+    .sq-btn.secondary { background:#dfe8ee; color:#34607d; }
+    .lg-tag { display:inline-block; font-size:0.62rem; font-weight:800; letter-spacing:0.04em; padding:0.1rem 0.35rem; border-radius:4px; margin-right:0.3rem; }
+    .tag-fact, .tag-FACT { background:#e3eadc; color:#4f6e4b; }
+    .tag-assumption, .tag-ASSUMPTION { background:#f3e6cc; color:#a8664a; }
+    .sq-fresh-chip { font-size:0.72rem; background:#f3eee3; padding:0.15rem 0.45rem; border-radius:6px; }
+    .sq-who { list-style:none; padding:0; }
+    .sq-who a { font-weight:600; color:#34607d; text-decoration:none; }
+  </style>
+</BaseLayout>

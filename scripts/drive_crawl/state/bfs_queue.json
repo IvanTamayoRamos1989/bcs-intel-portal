@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1ld5Qng6Mq_9B9mHOBq88jrS3gEKwnktW",
+    "path": "13_territorial_intelligence/tourism_assets/_downloads",
+    "priority": true
+  },
+  {
+    "id": "13re94tFep2fdAgBmehN1YDfEKvOQbC5m",
+    "path": "13_territorial_intelligence/earth_studio_tour",
+    "priority": true
+  },
+  {
+    "id": "1vSP-vlcWiVHZ_5O-0N9GUPU5PBBzP-lQ",
+    "path": "13_territorial_intelligence/histories/_downloads",
+    "priority": true
+  },
+  {
+    "id": "1zR2RS_WSJ7GJSCICN0Tg1xRBvyokUtOK",
+    "path": "13_territorial_intelligence/_raw/maps_listings/poerbcs_shapes",
+    "priority": true
+  },
+  {
+    "id": "1zI3EgK02hOW34EV1_csghZ52Axjf-6NO",
+    "path": "13_territorial_intelligence/plans_archive/_downloads/loreto_pmdu_cartografia",
+    "priority": true
+  },
+  {
+    "id": "18w0cInhPIVx6tXdGy9_p0Y_-pxqfSxSQ",
+    "path": "13_territorial_intelligence/_raw/atlas_riesgos_bcs",
+    "priority": true
+  },
+  {
+    "id": "1dG57bwxql_TrDdnIhM6AKMnfsvpIEYlg",
+    "path": "13_territorial_intelligence/_raw/ssn_cenapred",
+    "priority": true
+  },
+  {
+    "id": "1TyyUkMJUf2LxbyDjEXps3vrtZEdZzHM5",
+    "path": "13_territorial_intelligence/ports_demand/_downloads",
+    "priority": true
+  },
+  {
+    "id": "1ED_Ar5lWPBH1P3e2Ld9Qk7_t9nRZSF80",
+    "path": "07_economy_investment/2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv",
+    "priority": false
+  },
+  {
+    "id": "1FTxvVXAtrqDHS5cClOvtLwRyXATl1v7L",
+    "path": "07_economy_investment/2025-04-28_INEGI_ITAEE_datos_abiertos_csv",
+    "priority": false
+  },
+  {
+    "id": "1wktTImb6Bpiz8kOkEZMx9Y4eFS2OrWIG",
+    "path": "07_economy_investment/2026-03-31_INEGI_ETEF_anual_2007-2025.csv",
+    "priority": false
+  },
+  {
+    "id": "1OtDi_xcwo_fPt1lJuP4AUtcDEozPtrGb",
+    "path": "07_economy_investment/2025-09-25_INEGI_CE2024_datos_abiertos_nacional.csv",
+    "priority": false
+  },
+  {
+    "id": "1OqHgulAdaUpyL2jCdSZeOs2uXnHzo8gL",
+    "path": "07_economy_investment/real_estate_market/jll",
+    "priority": false
+  },
+  {
+    "id": "1hKdC77roQuWlqwAXO2TtL6QMrbkS6mia",
+    "path": "07_economy_investment/real_estate_market/other",
+    "priority": false
+  },
+  {
+    "id": "1N_jBPhOc8NWXmZ_wiACkpgvGoj6-Cu52",
+    "path": "07_economy_investment/real_estate_market/cabo_re_services",
+    "priority": false
+  },
+  {
+    "id": "13lEPsMXo1XmyJV0CzZ_bFmYK_ALwoWXm",
+    "path": "BCS_hub_pack",
+    "priority": true
+  },
+  {
+    "id": "1yGVeK59arkSsDIpK5v7gz_l042_KFL8L",
+    "path": "10_data_lake/10_data_lake_indexes",
+    "priority": true
+  },
+  {
+    "id": "11Z9b9lBPA3r45TFXCRWJIndGxs5slfA2",
+    "path": "10_data_lake/00_README_NotebookLM",
+    "priority": true
+  },
+  {
+    "id": "1noLNTUOaC4Hd6mVbFMF-CAKFsBWC-Jlx",
+    "path": "10_data_lake/99_source_index",
+    "priority": true
+  },
+  {
+    "id": "1CwVacqK7hVecqyHLounwEeRXkQpoB22s",
+    "path": "10_data_lake/01_Steering_Committee/01_Project_Governance",
+    "priority": true
+  },
+  {
+    "id": "1h5zBcrj6ll4CYn1azUSeiZnuzWUkGzC3",
+    "path": "10_data_lake/01_Steering_Committee/02_Political_Stakeholders",
+    "priority": true
+  },
+  {
+    "id": "1f66VVZJkL_35QJf_ocRVQ3ifOPHqWYfF",
+    "path": "10_data_lake/01_Steering_Committee/03_State_Level_SEPUIMM",
+    "priority": true
+  },
+  {
+    "id": "1JB2nvVi4tqNVEzG1DkurUdxL9UmvxpBM",
+    "path": "10_data_lake/01_Steering_Committee/06_Development_and_Investment_Sector",
+    "priority": true
+  },
+  {
+    "id": "1iAoqXFNGisNzvUIYw7cTxKprt_gmWeyh",
+    "path": "10_data_lake/02_Technical_Advisory_Group/03_Planning_Delivery",
+    "priority": true
+  },
+  {
+    "id": "1RbLfs2bstEnNaeV9pvnI_V0JRYT674bt",
+    "path": "10_data_lake/02_Technical_Advisory_Group/04_Mobility_Stakeholders",
+    "priority": true
+  },
+  {
+    "id": "1ord-U-XjngOaXpkAaQuqYFMp3pAYbwwb",
+    "path": "10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors",
+    "priority": true
+  },
+  {
+    "id": "1J9-zVWDXnC9Uynvxi3wowDf0Gqd0-A6q",
+    "path": "10_data_lake/03_Stakeholders_Forum/02_Communities_and_Local_NGOs",
+    "priority": true
+  },
+  {
+    "id": "1kTQVUduKuPXn8XlRLX7wkTNbQD9qBg9g",
+    "path": "10_data_lake/03_Stakeholders_Forum/03_Global_Thought_Partners",
+    "priority": true
+  }
+]

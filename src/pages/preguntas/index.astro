@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import sq from '../../data/strategic_questions.json';
+import { PLACE_BY_ID } from '../../lib/places';
+
+const d = sq as any;
+const questions: any[] = d.questions || [];
+const confLabel: Record<string, { es: string; en: string }> = {
+  high: { es: 'Alta', en: 'High' },
+  medium: { es: 'Media', en: 'Medium' },
+  low: { es: 'Baja', en: 'Low' },
+};
+---
+<BaseLayout
+  title="Preguntas estratégicas"
+  titleEn="Strategic questions"
+  description="Unidad de trabajo de estrategia BCS 2050 — pregunta, evidencia, lentes, capacidad, siguiente acción"
+  descriptionEn="BCS 2050 strategy work unit — question, evidence, lenses, capacity, next action"
+  wide={true}
+>
+  <div class="sq-hero">
+    <p class="sq-kicker"><span data-lang-es>Decision OS · unidad de trabajo</span><span data-lang-en hidden>Decision OS · work unit</span></p>
+    <h1><span data-lang-es>{d.title_es}</span><span data-lang-en hidden>{d.title_en}</span></h1>
+    <p class="lead"><span data-lang-es>{d.disclaimer_es}</span><span data-lang-en hidden>{d.disclaimer_en}</span></p>
+    <p class="meta">
+      <span data-lang-es>Actualizado {d.updated} · {questions.length} preguntas</span>
+      <span data-lang-en hidden>Updated {d.updated} · {questions.length} questions</span>
+      · <a href="/studio/"><span data-lang-es>Studio</span><span data-lang-en hidden>Studio</span></a>
+      · <a href="/sesion/"><span data-lang-es>Sesión de estrategia</span><span data-lang-en hidden>Strategy session</span></a>
+    </p>
+  </div>
+
+  <div class="sq-grid">
+    {questions.map((q) => (
+      <article class="sq-card" id={q.id} data-sq={q.id}>
+        <div class="sq-meta">
+          <span class="sq-conf">
+            <span data-lang-es>Confianza {confLabel[q.confidence]?.es || q.confidence}</span>
+            <span data-lang-en hidden>Confidence {confLabel[q.confidence]?.en || q.confidence}</span>
+          </span>
+          {q.freshness?.source_date && (
+            <span class="sq-fresh">src {q.freshness.source_date}</span>
+          )}
+        </div>
+        <h2>
+          <a href={`/preguntas/${q.id}/`}>
+            <span data-lang-es>{q.question_es}</span>
+            <span data-lang-en hidden>{q.question_en}</span>
+          </a>
+        </h2>
+        <div class="sq-places">
+          {(q.places || []).map((pid: string) => (
+            <a class="sq-chip" href={`/studio/${pid === "east_cape" ? "los_cabos" : pid === "todos_santos" ? "la_paz" : pid === "mulege_north" ? "mulege" : (pid || "bcs")}/`}>
+              <span data-lang-es>{PLACE_BY_ID[pid]?.short_es || pid}</span>
+              <span data-lang-en hidden>{PLACE_BY_ID[pid]?.short_en || pid}</span>
+            </a>
+          ))}
+        </div>
+        <p class="sq-pos">
+          <span data-lang-es>{q.planning_position_es}</span>
+          <span data-lang-en hidden>{q.planning_position_en}</span>
+        </p>
+        <a class="sq-open" href={`/preguntas/${q.id}/`}>
+          <span data-lang-es>Abrir registro →</span>
+          <span data-lang-en hidden>Open record →</span>
+        </a>
+      </article>
+    ))}
+  </div>
+
+  <style is:global>
+    .sq-kicker { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:#34607d; font-weight:700; }
+    .sq-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; margin-top:1rem; }
+    .sq-card { border:1px solid #e2dccf; border-radius:12px; padding:1rem 1.1rem; background:#fbf8f1; display:flex; flex-direction:column; gap:0.45rem; }
+    .sq-card h2 { margin:0; font-size:1.02rem; line-height:1.35; }
+    .sq-card h2 a { color:#23374a; text-decoration:none; }
+    .sq-card h2 a:hover { color:#34607d; }
+    .sq-meta { display:flex; justify-content:space-between; gap:0.5rem; font-size:0.72rem; color:#5c6e7b; }
+    .sq-conf { font-weight:700; color:#34607d; }
+    .sq-places { display:flex; flex-wrap:wrap; gap:0.3rem; }
+    .sq-chip { font-size:0.7rem; font-weight:600; padding:0.15rem 0.45rem; border-radius:999px; background:#dfe8ee; color:#34607d; text-decoration:none; }
+    .sq-pos { margin:0; font-size:0.88rem; color:#23374a; flex:1; }
+    .sq-open { font-size:0.82rem; font-weight:700; color:#34607d; text-decoration:none; }
+  </style>
+</BaseLayout>

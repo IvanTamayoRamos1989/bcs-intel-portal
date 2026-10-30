@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "updated": "2026-09-30",
+  "source": "Ivan Tamayo, notas de mesas de trabajo, 30 sep 2026",
+  "mesas": [
+    {
+      "id": "hospitalidad",
+      "nombre": "Hospitalidad",
+      "integrantes": [
+        {
+          "nombre": "Ernesto Coppel",
+          "descripcion": "empresario hotelero BCS"
+        },
+        {
+          "nombre": "Armando García",
+          "descripcion": "presidente de la Asociación de Hoteles de Los Cabos"
+        }
+      ]
+    },
+    {
+      "id": "inversion-extranjera",
+      "nombre": "Inversión extranjera",
+      "integrantes": [
+        {
+          "nombre": "Agustín Coppel",
+          "descripcion": "presidente Foro Mar de Cortés"
+        },
+        {
+          "nombre": "Rafael Fernández",
+          "descripcion": "experto en relación México–EE. UU."
+        }
+      ]
+    },
+    {
+      "id": "desarrollo-orientado-al-transporte",
+      "nombre": "Desarrollo orientado al transporte",
+      "integrantes": [
+        {
+          "nombre": "Alberto Coppel",
+          "descripcion": "filántropo, seguridad vial"
+        },
+        {
+          "nombre": "José Antonio Medina Torres",
+          "descripcion": "director del Centro de Ciudades"
+        }
+      ]
+    },
+    {
+      "id": "politica-estatal",
+      "nombre": "Política estatal",
+      "integrantes": [
+        {
+          "nombre": "Valerio González",
+          "descripcion": "teniente, pionero de Baja California Sur"
+        },
+        {
+          "nombre": "Raúl González",
+          "descripcion": "político, delegado nacional PVEM"
+        }
+      ]
+    },
+    {
+      "id": "urbanizacion-los-cabos",
+      "nombre": "Urbanización Los Cabos",
+      "integrantes": [
+        {
+          "nombre": "Santiago Sánchez Navarro",
+          "descripcion": "Puerto Los Cabos y Kundavi"
+        },
+        {
+          "nombre": "Rubén Coppel",
+          "descripcion": "Consejo de Seguridad"
+        }
+      ]
+    },
+    {
+      "id": "regeneracion-biodiversidad",
+      "nombre": "Regeneración y biodiversidad",
+      "integrantes": [
+        {
+          "nombre": "Alejandro Robles González",
+          "descripcion": "director de Noroeste Sustentable"
+        },
+        {
+          "nombre": "Mónica Robinson Bours",
+          "descripcion": "Rancho La Piedra, siembra de agua"
+        }
+      ]
+    },
+    {
+      "id": "infraestructura-energia",
+      "nombre": "Infraestructura y energía",
+      "integrantes": [
+        {
+          "nombre": "Carolina Armenta Cervantes",
+          "descripcion": "Secretaria de Planeación Urbana, Infraestructura, Movilidad, Medio Ambiente y Recursos Naturales, SEPUIMM"
+        },
+        {
+          "nombre": "Zulleth Monserrath Tejas Álvarez",
+          "descripcion": "Directora de Energía y Telecomunicaciones, SEPUIMM"
+        }
+      ]
+    },
+    {
+      "id": "agua",
+      "nombre": "Agua",
+      "integrantes": [
+        {
+          "nombre": "Lesvia Tatiana Davis Monzón",
+          "descripcion": "Ing.; Directora General de la Comisión Estatal del Agua, CEA BCS"
+        },
+        {
+          "nombre": "Julio César Villarreal Trasviña",
+          "descripcion": "Ing.; Director Local de Conagua en BCS"
+        }
+      ]
+    },
+    {
+      "id": "arquitectura-urbanismo-los-cabos",
+      "nombre": "Arquitectura y urbanismo (Los Cabos)",
+      "integrantes": [
+        {
+          "nombre": "Arq. Beatriz González Gibert",
+          "descripcion": "Directora General del IMPLAN Los Cabos"
+        },
+        {
+          "nombre": "Arq. Ruth Díaz",
+          "descripcion": "arquitecta de sostenibilidad, Puerto Los Cabos / Kundavi"
+        }
+      ]
+    },
+    {
+      "id": "conservacion",
+      "nombre": "Conservación",
+      "integrantes": [
+        {
+          "nombre": "Christy R. Walton",
+          "descripcion": "fundadora de Alumbra Innovations Foundation"
+        },
+        {
+          "nombre": "Ann Ladon",
+          "descripcion": "directora de Alumbra Innovations Foundation"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+[
+  {
+    "path": "01_Steering_Committee/05_Water_and_Energy_regulators/2024-03-01_CONAGUA_Estadisticas-del-Agua-en-Mexico-2023.pdf",
+    "title": "2024-03-01_CONAGUA_Estadisticas-del-Agua-en-Mexico-2023",
+    "theme": "agua",
+    "subgroup": "01_Steering_Committee/05_Water_and_Energy_regulators",
+    "format": "pdf",
+    "bytes": 36007285,
+    "source_url": "https://www.gob.mx/conagua or https://www.gob.mx/conanp (local BCSFP copy)",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators/2024-03-01_CONAGUA_Estadisticas-del-Agua-en-Mexico-2023.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/05_Water_and_Energy_regulators/2012-01-01_OOMSAPAS-Los-Cabos_Normas-y-Lineamientos-Tecnicos-Agua-Drenaje.pdf",
+    "title": "2012-01-01_OOMSAPAS-Los-Cabos_Normas-y-Lineamientos-Tecnicos-Agua-Drenaje",
+    "theme": "agua",
+    "subgroup": "01_Steering_Committee/05_Water_and_Energy_regulators",
+    "format": "pdf",
+    "bytes": 10329491,
+    "source_url": "BCSFP existing harvest / official .gob.mx",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators/2012-01-01_OOMSAPAS-Los-Cabos_Normas-y-Lineamientos-Tecnicos-Agua-Drenaje.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/05_Water_and_Energy_regulators/2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf",
+    "title": "2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos",
+    "theme": "agua",
+    "subgroup": "01_Steering_Committee/05_Water_and_Energy_regulators",
+    "format": "pdf",
+    "bytes": 3371968,
+    "source_url": "BCSFP existing harvest / official .gob.mx",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators/2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2025-11-01_Ayuntamiento-Los-Cabos_Primer-Informe-EJE-3-Gestion-Integral-del-Agua-PTAR.pdf",
+    "title": "2025-11-01_Ayuntamiento-Los-Cabos_Primer-Informe-EJE-3-Gestion-Integral-del-Agua-PTAR",
+    "theme": "agua",
+    "subgroup": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities",
+    "format": "pdf",
+    "bytes": 3144405,
+    "source_url": "Municipal BCS official publication",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2025-11-01_Ayuntamiento-Los-Cabos_Primer-Informe-EJE-3-Gestion-Integral-del-Agua-PTAR.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/05_Water_and_Energy_regulators/2025-12-19_CENACE_PAMRNT-RGD-MEM-2025-2039.pdf",
+    "title": "2025-12-19_CENACE_PAMRNT-RGD-MEM-2025-2039",
+    "theme": "energia",
+    "subgroup": "01_Steering_Committee/05_Water_and_Energy_regulators",
+    "format": "pdf",
+    "bytes": 59027993,
+    "source_url": "https://www.gob.mx/cenace / SENER",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators/2025-12-19_CENACE_PAMRNT-RGD-MEM-2025-2039.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/05_Water_and_Energy_regulators/2024-05-31_SENER_PRODESEN-2024-2038-Cap3-Demanda-consumo.pdf",
+    "title": "2024-05-31_SENER_PRODESEN-2024-2038-Cap3-Demanda-consumo",
+    "theme": "energia",
+    "subgroup": "01_Steering_Committee/05_Water_and_Energy_regulators",
+    "format": "pdf",
+    "bytes": 17674020,
+    "source_url": "https://www.gob.mx/cenace / SENER",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators/2024-05-31_SENER_PRODESEN-2024-2038-Cap3-Demanda-consumo.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/05_Water_and_Energy_regulators/2025-10-17_SENER_PLADESE-2025-2039.pdf",
+    "title": "2025-10-17_SENER_PLADESE-2025-2039",
+    "theme": "energia",
+    "subgroup": "01_Steering_Committee/05_Water_and_Energy_regulators",
+    "format": "pdf",
+    "bytes": 10763820,
+    "source_url": "https://www.gob.mx/cenace / SENER",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators/2025-10-17_SENER_PLADESE-2025-2039.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/05_Water_and_Energy_regulators/2024-05-31_SENER_PRODESEN-2024-2038-Cap0-Presentacion.pdf",
+    "title": "2024-05-31_SENER_PRODESEN-2024-2038-Cap0-Presentacion",
+    "theme": "energia",
+    "subgroup": "01_Steering_Committee/05_Water_and_Energy_regulators",
+    "format": "pdf",
+    "bytes": 9534649,
+    "source_url": "https://www.gob.mx/cenace / SENER",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators/2024-05-31_SENER_PRODESEN-2024-2038-Cap0-Presentacion.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/04_Municipal_Planning_Authorities/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip",
+    "title": "2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA",
+    "theme": "planes",
+    "subgroup": "01_Steering_Committee/04_Municipal_Planning_Authorities",
+    "format": "zip",
+    "bytes": 127751004,
+    "source_url": "Municipal BCS official publication",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/04_Municipal_Planning_Authorities/2013_IMPLAN-Los-Cabos_PDU-2040-CARTOGRAFIA.zip"
+  },
+  {
+    "path": "01_Steering_Committee/02_Political_Stakeholders/2026-01-21_BOGE-BCS_POERBCS-Decreto-Boletin-Oficial-No09.pdf",
+    "title": "2026-01-21_BOGE-BCS_POERBCS-Decreto-Boletin-Oficial-No09",
+    "theme": "planes",
+    "subgroup": "01_Steering_Committee/02_Political_Stakeholders",
+    "format": "pdf",
+    "bytes": 103164099,
+    "source_url": "https://www.bcs.gob.mx/ / SEPUIMM",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/02_Political_Stakeholders/2026-01-21_BOGE-BCS_POERBCS-Decreto-Boletin-Oficial-No09.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/03_State_Level_SEPUIMM/2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf",
+    "title": "2025_SEPUIMM_POERBCS-Informe-propuesta-modelo",
+    "theme": "planes",
+    "subgroup": "01_Steering_Committee/03_State_Level_SEPUIMM",
+    "format": "pdf",
+    "bytes": 102981339,
+    "source_url": "https://www.bcs.gob.mx/ / SEPUIMM",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/03_State_Level_SEPUIMM/2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/02_Political_Stakeholders/2013-05-06_BOGE-BCS_No19-PDU-2040-Los-Cabos.pdf",
+    "title": "2013-05-06_BOGE-BCS_No19-PDU-2040-Los-Cabos",
+    "theme": "planes",
+    "subgroup": "01_Steering_Committee/02_Political_Stakeholders",
+    "format": "pdf",
+    "bytes": 68738618,
+    "source_url": "BCSFP existing harvest / official .gob.mx",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/02_Political_Stakeholders/2013-05-06_BOGE-BCS_No19-PDU-2040-Los-Cabos.pdf"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/02_Environmental_and_Conservation/2009-11-13_CONANP_Programa_manejo_PN_Cabo_Pulmo.pdf",
+    "title": "2009-11-13_CONANP_Programa_manejo_PN_Cabo_Pulmo",
+    "theme": "anp",
+    "subgroup": "02_Technical_Advisory_Group/02_Environmental_and_Conservation",
+    "format": "pdf",
+    "bytes": 50806107,
+    "source_url": "https://www.gob.mx/conagua or https://www.gob.mx/conanp (local BCSFP copy)",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/02_Environmental_and_Conservation/2009-11-13_CONANP_Programa_manejo_PN_Cabo_Pulmo.pdf"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/02_Environmental_and_Conservation/1994-06-06_SEMARNAT_Decreto_RB_Sierra_La_Laguna.pdf",
+    "title": "1994-06-06_SEMARNAT_Decreto_RB_Sierra_La_Laguna",
+    "theme": "anp",
+    "subgroup": "02_Technical_Advisory_Group/02_Environmental_and_Conservation",
+    "format": "pdf",
+    "bytes": 23490228,
+    "source_url": "BCSFP existing harvest / official .gob.mx",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/02_Environmental_and_Conservation/1994-06-06_SEMARNAT_Decreto_RB_Sierra_La_Laguna.pdf"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/02_Environmental_and_Conservation/1988-11-30_SEMARNAT_Decreto_RB_El_Vizcaino.pdf",
+    "title": "1988-11-30_SEMARNAT_Decreto_RB_El_Vizcaino",
+    "theme": "anp",
+    "subgroup": "02_Technical_Advisory_Group/02_Environmental_and_Conservation",
+    "format": "pdf",
+    "bytes": 22144756,
+    "source_url": "BCSFP existing harvest / official .gob.mx",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/02_Environmental_and_Conservation/1988-11-30_SEMARNAT_Decreto_RB_El_Vizcaino.pdf"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/02_Environmental_and_Conservation/2000-09-01_CONANP_Programa_manejo_RB_El_Vizcaino.pdf",
+    "title": "2000-09-01_CONANP_Programa_manejo_RB_El_Vizcaino",
+    "theme": "anp",
+    "subgroup": "02_Technical_Advisory_Group/02_Environmental_and_Conservation",
+    "format": "pdf",
+    "bytes": 8539431,
+    "source_url": "https://www.gob.mx/conagua or https://www.gob.mx/conanp (local BCSFP copy)",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/02_Environmental_and_Conservation/2000-09-01_CONANP_Programa_manejo_RB_El_Vizcaino.pdf"
+  },
+  {
+    "path": "03_Stakeholders_Forum/01_Economic_Sectors/2025-11-28_SECTUR_Compendio_Estadistico_Turismo_Mexico_2024.zip",
+    "title": "2025-11-28_SECTUR_Compendio_Estadistico_Turismo_Mexico_2024",
+    "theme": "demanda",
+    "subgroup": "03_Stakeholders_Forum/01_Economic_Sectors",
+    "format": "zip",
+    "bytes": 31273349,
+    "source_url": "https://www.datatur.sectur.gob.mx/",
+    "data_lake_rel": "../10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors/2025-11-28_SECTUR_Compendio_Estadistico_Turismo_Mexico_2024.zip"
+  },
+  {
+    "path": "01_Steering_Committee/04_Municipal_Planning_Authorities/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+    "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz",
+    "theme": "demanda",
+    "subgroup": "01_Steering_Committee/04_Municipal_Planning_Authorities",
+    "format": "pdf",
+    "bytes": 7032516,
+    "source_url": "Municipal BCS official publication",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/04_Municipal_Planning_Authorities/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+  },
+  {
+    "path": "03_Stakeholders_Forum/01_Economic_Sectors/2025-05-28_SECTUR_Ocupacion_hotelera_70_destinos.csv",
+    "title": "2025-05-28_SECTUR_Ocupacion_hotelera_70_destinos",
+    "theme": "demanda",
+    "subgroup": "03_Stakeholders_Forum/01_Economic_Sectors",
+    "format": "csv",
+    "bytes": 2740171,
+    "source_url": "https://www.datatur.sectur.gob.mx/",
+    "data_lake_rel": "../10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors/2025-05-28_SECTUR_Ocupacion_hotelera_70_destinos.csv"
+  },
+  {
+    "path": "03_Stakeholders_Forum/01_Economic_Sectors/2025-12-03_SECTUR_CETM2024_06_actividad_hotelera_entidad_2.xlsx",
+    "title": "2025-12-03_SECTUR_CETM2024_06_actividad_hotelera_entidad_2",
+    "theme": "demanda",
+    "subgroup": "03_Stakeholders_Forum/01_Economic_Sectors",
+    "format": "xlsx",
+    "bytes": 2674718,
+    "source_url": "https://www.datatur.sectur.gob.mx/",
+    "data_lake_rel": "../10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors/2025-12-03_SECTUR_CETM2024_06_actividad_hotelera_entidad_2.xlsx"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2018_datosbcs_padron_vehicular_extranjero_BCS.csv",
+    "title": "2018_datosbcs_padron_vehicular_extranjero_BCS",
+    "theme": "movilidad",
+    "subgroup": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities",
+    "format": "csv",
+    "bytes": 46532105,
+    "source_url": "https://datos.bcs.gob.mx/wp-content/themes/TemaSEPUIT/assets/images/doc/economia/finanzas/ingresos/2018/padron vehicular extranjero BCS.csv",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2018_datosbcs_padron_vehicular_extranjero_BCS.csv"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2018_datosbcs_padron_vehicular_nacional_BCS.csv",
+    "title": "2018_datosbcs_padron_vehicular_nacional_BCS",
+    "theme": "movilidad",
+    "subgroup": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities",
+    "format": "csv",
+    "bytes": 25702479,
+    "source_url": "https://datos.bcs.gob.mx/wp-content/themes/TemaSEPUIT/assets/images/doc/economia/finanzas/ingresos/2018/padron vehicular nacional BCS.csv",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2018_datosbcs_padron_vehicular_nacional_BCS.csv"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2018_datosbcs_padron_vehicular_extranjero_LA_PAZ.csv",
+    "title": "2018_datosbcs_padron_vehicular_extranjero_LA_PAZ",
+    "theme": "movilidad",
+    "subgroup": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities",
+    "format": "csv",
+    "bytes": 20712545,
+    "source_url": "https://datos.bcs.gob.mx/wp-content/themes/TemaSEPUIT/assets/images/doc/economia/finanzas/ingresos/2018/padron vehicular extranjero LA PAZ.csv",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2018_datosbcs_padron_vehicular_extranjero_LA_PAZ.csv"
+  },
+  {
+    "path": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2026-05-26_Ayuntamiento-Los-Cabos_Programa-Inversion-Obra-Publica-FISAM-2026.pdf",
+    "title": "2026-05-26_Ayuntamiento-Los-Cabos_Programa-Inversion-Obra-Publica-FISAM-2026",
+    "theme": "economia",
+    "subgroup": "02_Technical_Advisory_Group/01_Infrastructure_and_Utilities",
+    "format": "pdf",
+    "bytes": 27297206,
+    "source_url": "Municipal BCS official publication",
+    "data_lake_rel": "../10_data_lake/02_Technical_Advisory_Group/01_Infrastructure_and_Utilities/2026-05-26_Ayuntamiento-Los-Cabos_Programa-Inversion-Obra-Publica-FISAM-2026.pdf"
+  },
+  {
+    "path": "01_Steering_Committee/06_Development_and_Investment_Sector/2026-06-16_Banxico_Reporte-Economias-Regionales_2026T1.pdf",
+    "title": "2026-06-16_Banxico_Reporte-Economias-Regionales_2026T1",
+    "theme": "economia",
+    "subgroup": "01_Steering_Committee/06_Development_and_Investment_Sector",
+    "format": "pdf",
+    "bytes": 10468861,
+    "source_url": "BCSFP existing harvest / official .gob.mx",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/06_Development_and_Investment_Sector/2026-06-16_Banxico_Reporte-Economias-Regionales_2026T1.pdf"
+  },
+  {
+    "path": "03_Stakeholders_Forum/02_Communities_and_Local_NGOs/2018_datosbcs_PADRON_DE_PROPIEDADES_BCS-RPPYC-005.xlsx",
+    "title": "2018_datosbcs_PADRON_DE_PROPIEDADES_BCS-RPPYC-005",
+    "theme": "economia",
+    "subgroup": "03_Stakeholders_Forum/02_Communities_and_Local_NGOs",
+    "format": "xlsx",
+    "bytes": 5502414,
+    "source_url": "https://datos.bcs.gob.mx/wp-content/themes/TemaSEPUIT/assets/images/doc/desarrollo/reg_pub/2018/PADRON DE PROPIEDADES BCS-RPPYC-005.xlsx",
+    "data_lake_rel": "../10_data_lake/03_Stakeholders_Forum/02_Communities_and_Local_NGOs/2018_datosbcs_PADRON_DE_PROPIEDADES_BCS-RPPYC-005.xlsx"
+  },
+  {
+    "path": "01_Steering_Committee/02_Political_Stakeholders/2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv.zip",
+    "title": "2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv",
+    "theme": "economia",
+    "subgroup": "01_Steering_Committee/02_Political_Stakeholders",
+    "format": "zip",
+    "bytes": 4689892,
+    "source_url": "https://www.inegi.org.mx/",
+    "data_lake_rel": "../10_data_lake/01_Steering_Committee/02_Political_Stakeholders/2024-12-05_INEGI_PIBE_datos_abiertos_base2018.csv.zip"
+  }
+]

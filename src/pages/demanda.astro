@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="demanda (redirigido)" titleEn="demanda (redirected)" noindex={true}>
+  <p class="lead">
+    <span data-lang-es>Esta ruta legacy ya no forma parte de la navegación. Usa las páginas temáticas.</span>
+    <span data-lang-en hidden>This legacy route is no longer in the navigation. Use the topic pages.</span>
+  </p>
+  <p class="cta-row">
+    <a class="btn" href={"/turismo"}>Continuar</a>
+    <a class="btn secondary" href="/">Inicio</a>
+  </p>
+</BaseLayout>

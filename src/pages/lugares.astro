@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Studio" titleEn="Studio" description="Redirigiendo al Studio municipal" descriptionEn="Redirecting to municipal Studio">
+  <p class="lead">
+    <span data-lang-es>Redirigiendo al Studio…</span>
+    <span data-lang-en hidden>Redirecting to Studio…</span>
+  </p>
+  <script is:inline>
+    (function () {
+      var map = {
+        los_cabos: 'los_cabos', east_cape: 'los_cabos',
+        la_paz: 'la_paz', todos_santos: 'la_paz',
+        loreto: 'loreto', comondu: 'comondu', mulege_north: 'mulege'
+      };
+      var place = '';
+      try { place = new URLSearchParams(location.search).get('place') || ''; } catch (e) {}
+      var dest = place && map[place] ? '/studio/' + map[place] + '/' : '/studio/';
+      location.replace(dest);
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0;url=/studio/" /></noscript>
+  <p><a href="/studio/">Studio →</a></p>
+</BaseLayout>

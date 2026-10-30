@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import munis from '../data/municipios.json';
+import tops from '../data/top_localities.json';
+
+const order = ['Los Cabos', 'La Paz', 'Comondú', 'Mulegé', 'Loreto'];
+function topsFor(name: string) {
+  return (tops as any[]).filter((r) => r.nom_mun === name).slice(0, 8);
+}
+---
+<BaseLayout
+  title="Comunidades"
+  titleEn="Communities"
+  description="Cinco municipios de BCS — población, fiscal, fortalezas y candados"
+  descriptionEn="Five BCS municipalities — population, fiscal, strengths and locks"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Perfiles municipales sintetizados desde la Base de datos BCS 2050 (comunidades, finanzas municipales
+      y fortalezas y oportunidades).
+      Población Censo 2020 INEGI ITER. Top localidades por municipio incluidas.
+    </span>
+    <span data-lang-en hidden>
+      Municipal profiles synthesized from the BCS 2050 database (communities, municipal finances
+      and strengths and opportunities).
+      Population from INEGI Census 2020 ITER. Top localities per municipality included.
+    </span>
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat"><span class="n">798,447</span><span class="l">POBTOT BCS 2020</span></div>
+    <div class="stat"><span class="n">2,543</span><span class="l"><span data-lang-es>Localidades</span><span data-lang-en hidden>Localities</span></span></div>
+    <div class="stat"><span class="n">26.9B</span><span class="l"><span data-lang-es>PE estatal 2026 MXN</span><span data-lang-en hidden>State budget 2026 MXN</span></span></div>
+  </div>
+
+  <p class="cta-row">
+    <a class="btn secondary" href="/fiscal">Fiscal</a>
+    <a class="btn secondary" href="/planes-archivo">Planes archivo</a>
+    <a class="btn secondary" href="/historia">Historia</a>
+  </p>
+
+  <div class="muni-grid">
+    {order.map((name) => {
+      const m = (munis as any)[name];
+      const loc = topsFor(name);
+      return (
+        <article class="muni-card" id={name.toLowerCase().replace(/\s+/g, '-')}>
+          <h3>{name} <span class="tag chip">CVE {m.cve}</span></h3>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td><span data-lang-es>Población mun.</span><span data-lang-en hidden>Mun. population</span></td><td><strong>{m.pob.toLocaleString('es-MX')}</strong></td></tr>
+                <tr><td><span data-lang-es>Localidades</span><span data-lang-en hidden>Localities</span></td><td>{m.locs}</td></tr>
+                <tr><td><span data-lang-es>Cabecera</span><span data-lang-en hidden>Seat</span></td><td>{m.cabecera} ({m.cab_pob.toLocaleString('es-MX')})</td></tr>
+                <tr><td>Ley Ingresos 2026</td><td>{m.ley_ingresos_2026 ? `$${m.ley_ingresos_2026.toLocaleString('es-MX')} MXN` : '— (gap)'}</td></tr>
+                <tr><td>Anexo I-33 2025</td><td>${m.anexo_i33_2025.toLocaleString('es-MX')} MXN</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4><span data-lang-es>Fortalezas</span><span data-lang-en hidden>Strengths</span></h4>
+          <p>
+            <span data-lang-es>{m.strengths_es}</span>
+            <span data-lang-en hidden>{m.strengths_en}</span>
+          </p>
+          <h4><span data-lang-es>Candados</span><span data-lang-en hidden>Locks</span></h4>
+          <p>
+            <span data-lang-es>{m.locks_es}</span>
+            <span data-lang-en hidden>{m.locks_en}</span>
+          </p>
+          {loc.length > 0 && (
+            <>
+              <h4><span data-lang-es>Top localidades</span><span data-lang-en hidden>Top localities</span></h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>#</th><th><span data-lang-es>Localidad</span><span data-lang-en hidden>Locality</span></th><th>POBTOT</th><th><span data-lang-es>Ámbito</span><span data-lang-en hidden>Ambit</span></th></tr></thead>
+                  <tbody>
+                    {loc.map((r: any) => (
+                      <tr>
+                        <td>{r.rank}</td>
+                        <td>{r.nom_loc}</td>
+                        <td>{Number(r.pobtot).toLocaleString('es-MX')}</td>
+                        <td>{r.ambit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </article>
+      );
+    })}
+  </div>
+
+  <div class="fuentes-box">
+    <h2><span data-lang-es>Fuentes</span><span data-lang-en hidden>Sources</span></h2>
+    <ul>
+      <li><span data-lang-es>Base de datos BCS 2050 — comunidades</span><span data-lang-en hidden>BCS 2050 database — communities</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — localidades principales por municipio</span><span data-lang-en hidden>BCS 2050 database — top localities by municipality</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — finanzas municipales</span><span data-lang-en hidden>BCS 2050 database — municipal finances</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — fortalezas y oportunidades</span><span data-lang-en hidden>BCS 2050 database — strengths and opportunities</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — jerarquía de asentamientos</span><span data-lang-en hidden>BCS 2050 database — settlement hierarchy</span></li>
+      <li><span data-lang-es>Base de datos BCS 2050 — planes por comunidad</span><span data-lang-en hidden>BCS 2050 database — plans by community</span></li>
+    </ul>
+  </div>
+</BaseLayout>

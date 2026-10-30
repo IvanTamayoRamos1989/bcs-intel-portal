@@ -1,0 +1,812 @@
+{
+  "generated_at": "2026-09-15T18:01:54.926661+00:00",
+  "summary": {
+    "total_trashed": 110,
+    "by_bucket_root": {
+      "shadow": 47,
+      "earth_studio_tour": 8,
+      "earth_studio": 55
+    },
+    "shadow_files_and_folders": 47,
+    "earth_studio_files_and_folders": 63
+  },
+  "drive_engagement_folders_created": {
+    "10_data_lake": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+    "01_Steering_Committee": "1l9bkpZCeN-zgRpMgKYc7frh5-MuDWwCO",
+    "02_Technical_Advisory_Group": "1jhzwwuURJk6wzdepd_vyehNTfIK5fgAm",
+    "03_Stakeholders_Forum": "1-AWJ_C61uOHJRrVZvdAA7D_IsfhokrHP",
+    "subgroups": {
+      "01_Project_Governance": "1CwVacqK7hVecqyHLounwEeRXkQpoB22s",
+      "02_Political_Stakeholders": "1h5zBcrj6ll4CYn1azUSeiZnuzWUkGzC3",
+      "03_State_Level_SEPUIMM": "1f66VVZJkL_35QJf_ocRVQ3ifOPHqWYfF",
+      "04_Municipal_Planning_Authorities": "1btXf_hZ-tsLRene-HKF4xlsApmejOOKo",
+      "05_Water_and_Energy_regulators": "144FwcpAh-TICD4JOprauRBiF-e4FFWQN",
+      "06_Development_and_Investment_Sector": "1JB2nvVi4tqNVEzG1DkurUdxL9UmvxpBM",
+      "01_Infrastructure_and_Utilities": "1Tj8_10TohZZbl1V9vO0fIrs73Gw0B8ND",
+      "02_Environmental_and_Conservation": "1icODaq6vhAe6AcedXc78KbIsSFym0Upa",
+      "03_Planning_Delivery": "1iAoqXFNGisNzvUIYw7cTxKprt_gmWeyh",
+      "04_Mobility_Stakeholders": "1RbLfs2bstEnNaeV9pvnI_V0JRYT674bt",
+      "01_Economic_Sectors": "1ord-U-XjngOaXpkAaQuqYFMp3pAYbwwb",
+      "02_Communities_and_Local_NGOs": "1J9-zVWDXnC9Uynvxi3wowDf0Gqd0-A6q",
+      "03_Global_Thought_Partners": "1kTQVUduKuPXn8XlRLX7wkTNbQD9qBg9g"
+    }
+  },
+  "kept": [
+    "PAL/Acciona never touched",
+    "Thematic PDFs in 01_planning..07_economy kept",
+    "Public stills under portal public/stills/ kept",
+    "Unrelated Drive RENDER/FIXED outside BCS root not trashed"
+  ],
+  "trashed": [
+    {
+      "id": "1yp9v0evstenwAZLTJM72Kpa0BCnTkh1f",
+      "title": "T1_04_task1_vision_hold.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926461+00:00"
+    },
+    {
+      "id": "1ZwK_PJQAWq8XeiCSFnyBlSnChE0rUNJM",
+      "title": "T3_02_energy_sibcs.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926486+00:00"
+    },
+    {
+      "id": "1JvVtKbVhFpEYxCEJUUNqWcUsnHl7obMJ",
+      "title": "T3_01_water_carrying_capacity.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926488+00:00"
+    },
+    {
+      "id": "1ag7TCmITSGM2UIr24Lr4fTM-HoVuKydU",
+      "title": "BCS_Stakeholders_list_v2.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926490+00:00"
+    },
+    {
+      "id": "1fAoNofXnaVnCSK92iRpEzVL312zTp0DY",
+      "title": "T2_04_stakeholders_F+P_simple.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926491+00:00"
+    },
+    {
+      "id": "19HZV9Mde-S235iAiGq_AEVcKTrxvzD3C",
+      "title": "BCS_stakeholders_simple.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926492+00:00"
+    },
+    {
+      "id": "1ghrv1Dnc7D1Za63MOOeB83Z79zRwxMYA",
+      "title": "T2_04_stakeholder_crossmatch_F+P.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926493+00:00"
+    },
+    {
+      "id": "1Dv0WGDDG_TiF7S8ekA8_-sev1IkpRusG8EOu-Ja2wbQ",
+      "title": "BCS_Stakeholders_core",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926494+00:00"
+    },
+    {
+      "id": "1qxNKAEgdsHTFbV-VrNFuSL5rZnjHP65kD3yeNs1X5ZI",
+      "title": "STAKEHOLDERS_POINTERS",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926497+00:00"
+    },
+    {
+      "id": "13wb0OBM73S3a6QvqS6k0DJuXf-kMMU6Q",
+      "title": "T2_04_priority_actors_v6_linkedin.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926498+00:00"
+    },
+    {
+      "id": "1ufxAI1D8tjZI946yHBfh7fKD5V8Nn7_Q",
+      "title": "T2_04_priority_actors_v6.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926499+00:00"
+    },
+    {
+      "id": "1fbjdubkl5uYbdJjl8eAOKa0e4HhE5B5f",
+      "title": "T2_04_stakeholders_matrix.csv",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926500+00:00"
+    },
+    {
+      "id": "1DBQNPfIC2Y8XE4if04CIsBkt9ZVtAwAy",
+      "title": "_v6_rows.json",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926501+00:00"
+    },
+    {
+      "id": "1c4fZjfK3DrTyp1FXs8RS6ZjXx3hMYL8e",
+      "title": "T2_04_actores_prioritarios_v5_EN.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926502+00:00"
+    },
+    {
+      "id": "1qzg7HBMT9w7yX5XCVv1zzjRBT-Lrhj8a",
+      "title": "T2_04_priority_actors_v5_EN.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926504+00:00"
+    },
+    {
+      "id": "1GznvYNCjrB4KWWCnsghkiiqZZ0G9mUyq",
+      "title": "T2_04_actores_prioritarios_v5.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926505+00:00"
+    },
+    {
+      "id": "19LiBoC51Arx2hSKw_Vw7oIdebTMq5Jrn",
+      "title": "T2_04_priority_actors.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926506+00:00"
+    },
+    {
+      "id": "17j8qxM8psoCPWg2lsv2ncdb2Kmt0sgod",
+      "title": "T2_04_stakeholders_matrix.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926507+00:00"
+    },
+    {
+      "id": "15ToJ_W3efZL5yPBxgkNsiGj29yOG0pAC",
+      "title": "T2_04_stakeholders_matrix_v4.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926508+00:00"
+    },
+    {
+      "id": "1SiQBxOfZ24U4U7HZQdocCoxtiAqrmRJ2",
+      "title": "T2_04_stakeholders_matrix_v3.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926509+00:00"
+    },
+    {
+      "id": "16_9warY0pA8fsnpsYtbgKFvVSUisy4d7",
+      "title": "_research_infra_stakeholders.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926510+00:00"
+    },
+    {
+      "id": "1Tzg6jx3E5_Swv1I9fDYwf1yGiZghcbua",
+      "title": "T2_04_stakeholders_matrix_v2.xlsx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926511+00:00"
+    },
+    {
+      "id": "18-myqoVRZWhbTdomJqsUwtrQu90o3FTF",
+      "title": "T2_04_stakeholders_matrix.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926512+00:00"
+    },
+    {
+      "id": "12TVAVPIq8kldmOdE2i4DuxJuAj35a7EB",
+      "title": "T2_03_mesas_stakeholders.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926513+00:00"
+    },
+    {
+      "id": "1eE2cLlgnCwJq3tQQC9YqUcvG1FVFWsia",
+      "title": "_research_bcs_officeholders.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926514+00:00"
+    },
+    {
+      "id": "1YbgH0yc2u27eIL70Jabqb-tJFkW4Cntb",
+      "title": "_research_external_stakeholders.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926515+00:00"
+    },
+    {
+      "id": "127FNN8eTltvR7KJumBcYHtF2n-R53-mb",
+      "title": "T3_04_anp_heritage.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926516+00:00"
+    },
+    {
+      "id": "1SSieC6WA0ckimPsyF78OmKODng7mMiUv",
+      "title": "T3_03_mobility_waste.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926518+00:00"
+    },
+    {
+      "id": "14wQ-UFZ7zx4up6duWtKbG293MDcxRUFY",
+      "title": "T3_01_water_dma.csv",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926519+00:00"
+    },
+    {
+      "id": "1H2tOrLmxZ0SeJ2TMxmgFK6yPI4PxTlj5",
+      "title": "T3_02_energy_sibcs.csv",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926521+00:00"
+    },
+    {
+      "id": "1Y8AtSmrxnmDZGbwGCSCA76ufIl1eKpxW",
+      "title": "T2_02_workshop_card.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926523+00:00"
+    },
+    {
+      "id": "12WFvtPFmTb35J9LRVAUnzUqQ1s4A39Rt",
+      "title": "T2_01_stakeholders.csv",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926524+00:00"
+    },
+    {
+      "id": "1zomoJu0q6yHEuaz93pFN3swPY1VX2dag",
+      "title": "T2_01_stakeholder_map.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926525+00:00"
+    },
+    {
+      "id": "1edKdEoAWdmN0Mx6ED_e8mVz5j-eEWeQC",
+      "title": "00_ROADMAP.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926526+00:00"
+    },
+    {
+      "id": "1BE6cSzyyI5vZy9RNhQfQtY1-ZBDUtzj8",
+      "title": "T1_02_population_municipal.csv",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926527+00:00"
+    },
+    {
+      "id": "1Dmoc9394DnJxqTbLivBv80kZLTNdCUic",
+      "title": "T1_01_regulatory_baseline.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926528+00:00"
+    },
+    {
+      "id": "1L5J6RYwfOeQlemBM5TPekdGt7bKa45n6",
+      "title": "BCS-Program.pptx",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926529+00:00"
+    },
+    {
+      "id": "1dOXvEQYdsct0qHWxi33iXwFd7D-LP0rw",
+      "title": "T1_01_instrument_status.csv",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926530+00:00"
+    },
+    {
+      "id": "1DHue_Becj29_0zaTI5cJe_RC8JDJjCc2",
+      "title": "T0_stage1_diagnosis.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926531+00:00"
+    },
+    {
+      "id": "1PIId_Hfsz952MPbCzBJGigZlilWuJW5p",
+      "title": "T1_03_economy_snapshot.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926532+00:00"
+    },
+    {
+      "id": "1KDazswis-PXo07m2qprzEwfiraRpYRiY",
+      "title": "T1_02_settlement_demographics.md",
+      "bucket": "shadow",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926535+00:00"
+    },
+    {
+      "id": "185wR-GcIBrQUW6ALxawrINvP45DBYtw-",
+      "title": "NOTES_11Sep_working_session.md",
+      "bucket": "shadow/meetings",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926536+00:00"
+    },
+    {
+      "id": "1n8YnfD5O_63N9DpDNyojbT24tcGl0mAy",
+      "title": "01_Vision_Outline_Programme_fee.pdf",
+      "bucket": "shadow/meetings",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926538+00:00"
+    },
+    {
+      "id": "1nCaIk3kCDEed93UHr-mfXVa_XRTNRdTq",
+      "title": "03_Last_meeting.pdf",
+      "bucket": "shadow/meetings",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926539+00:00"
+    },
+    {
+      "id": "1wwpg_vBOmvpTOymlsJKFFziVLR2c_Aho",
+      "title": "02_Client_workshop_11Sep_stakeholders.pdf",
+      "bucket": "shadow/meetings",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926540+00:00"
+    },
+    {
+      "id": "1InkTXF0Sicc1l7-AnyL4gB4nllOe8IiD",
+      "title": "esp_manifest.csv",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926541+00:00"
+    },
+    {
+      "id": "1a1lxcxTmxzk_eXu5ft_faMA61_9BKDRb",
+      "title": "_segment_meta.json",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926544+00:00"
+    },
+    {
+      "id": "17axXYSHIcEzVx2N72ofgUUs3nIH97WIh",
+      "title": "waypoints_master.csv",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926545+00:00"
+    },
+    {
+      "id": "1F53uy2o1Geo70rgFwp6h0N9Hm4_Vjczo",
+      "title": "generate_kml.py",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926546+00:00"
+    },
+    {
+      "id": "17634ZXgOaDAlEAY4j9n5rqmaso9TwACt",
+      "title": "README.md",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926547+00:00"
+    },
+    {
+      "id": "11aR3PLUmBvBM-er8vJZufmh-cXygSIpP",
+      "title": "README.md",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926548+00:00"
+    },
+    {
+      "id": "1xjM5QvdAGZTysuZwVrUq-dvUmUn3XKho",
+      "title": "README.md",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926549+00:00"
+    },
+    {
+      "id": "1YDLPl7RgnWK82pZLHYDcAPPBaEYhuyJn",
+      "title": "earth_studio_brief.md",
+      "bucket": "earth_studio_tour",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926551+00:00"
+    },
+    {
+      "id": "1nqCpfLspSNHhT7pZI8rLKtRJClvh1_Ib",
+      "title": "26_east_cape_p3_miraflores_junction_to_san_jose_del_cabo_cabecera.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926552+00:00"
+    },
+    {
+      "id": "1PL2SntcuxkNm0yomxfjrAECoe4l6KnEG",
+      "title": "21_pacifico_mex19_p2_mex_1_mex_19_junction_to_mex_1_mex_19_junction.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926553+00:00"
+    },
+    {
+      "id": "1zSfIjruc4y5a4KXdFylqq1R6svEewgoa",
+      "title": "24_east_cape_p1_el_triunfo_to_los_barriles.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926554+00:00"
+    },
+    {
+      "id": "1mIJQBFIPLYIsc1vJVHhqFYxsXXflJe_B",
+      "title": "25_east_cape_p2_los_barriles_to_miraflores_junction.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926555+00:00"
+    },
+    {
+      "id": "15keZrypZ1dog388-Zr9_mBobYdIrTzV6",
+      "title": "22_pacifico_mex19_p3_todos_santos_to_el_pescadero.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926556+00:00"
+    },
+    {
+      "id": "17oHLwKl0b9I-Up8VaycYfgw83D2M58Cl",
+      "title": "23_pacifico_mex19_p4_cabo_san_lucas_entrance_hwy_19_to_cabo_san_lucas_centro.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926558+00:00"
+    },
+    {
+      "id": "1eo7yAkFf2bXOV_WMQDOdsGrS423ry00D",
+      "title": "20_pacifico_mex19_p1_la_paz_centro_to_mex_1_mex_19_junction.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926559+00:00"
+    },
+    {
+      "id": "1IpKLvyoqkgp3j6NL2VByPVeOItpu3dQd",
+      "title": "19_magdalena_lapaz_p5_la_paz_cut_across_jcn_to_la_paz_centro.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926560+00:00"
+    },
+    {
+      "id": "1oibQUSUt9lMULkMhwpcehjJFfLwdXWAC",
+      "title": "18_magdalena_lapaz_p4_corridor_6_6_to_corridor_6_16.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926563+00:00"
+    },
+    {
+      "id": "1-a7sPJrr3Za9yFOr_FGbflFS8hk7y27u",
+      "title": "13_giganta_p4_ciudad_insurgentes_to_ciudad_insurgentes.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926564+00:00"
+    },
+    {
+      "id": "1EJYSyRjdzADNDXpYacCDYXUp_5ttxgAR",
+      "title": "07_golfo_norte_p2_heroica_mulege_to_santispac_bahia_concepcion.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926565+00:00"
+    },
+    {
+      "id": "1yqCz-Cnqo_g0kmZMEfC76jOOoiqudUY1",
+      "title": "16_magdalena_lapaz_p2_puerto_cancun_road_to_santa_rita.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926566+00:00"
+    },
+    {
+      "id": "1K2Tb8Wg8OcNg-CNIrk6mc6IMSZ0OvVcX",
+      "title": "14_giganta_p5_ciudad_constitucion_centro_to_ciudad_constitucion_centro.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926567+00:00"
+    },
+    {
+      "id": "1RagOmWiDr9j4AtJ64ZC8__mnF1RCBva6",
+      "title": "15_magdalena_lapaz_p1_ciudad_constitucion_centro_to_puerto_cancun_road.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926568+00:00"
+    },
+    {
+      "id": "1cK9vHF0oOTNN8BmW6BqboeLr0AtXaeBI",
+      "title": "10_giganta_p1_loreto_centro_to_puerto_escondido_road.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926569+00:00"
+    },
+    {
+      "id": "1LgE8CSFxthfHRefVavmIUyPMEKmWIVgS",
+      "title": "06_golfo_norte_p1_santa_rosalia_centro_to_san_jose_de_magdalena_road.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926571+00:00"
+    },
+    {
+      "id": "1ATUnmTE4JmbuiZHkbGfcizQestLd73M5",
+      "title": "11_giganta_p2_puerto_escondido_road_to_bahia_agua_verde_road_jcn.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926572+00:00"
+    },
+    {
+      "id": "1v2zBokTXvDPwT5pxRdcjlSmt1X4F3ZD1",
+      "title": "17_magdalena_lapaz_p3_la_soledad_road_to_la_soledad_road.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926573+00:00"
+    },
+    {
+      "id": "12sjUVsfsYD7BVTKYb3jGoc24Strl-e50",
+      "title": "09_golfo_norte_p4_san_juan_londo_road_to_loreto_centro.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926575+00:00"
+    },
+    {
+      "id": "1PDfxHjBsi8b2f9u3OLhGRfB4WEVht_W5",
+      "title": "08_golfo_norte_p3_el_rosarito_road_to_san_isidro_la_purisima_road.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926577+00:00"
+    },
+    {
+      "id": "1rtuplyjukLqTgcg434tpUVEO457FLooG",
+      "title": "05_norte_p5_geothermal_road_area_to_santa_rosalia_centro.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926578+00:00"
+    },
+    {
+      "id": "1_cyN96YxD_qPgSde0RPdE3LspwADnFqN",
+      "title": "12_giganta_p3_bahia_agua_verde_road_jcn_to_bahia_agua_verde_road_jcn.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926579+00:00"
+    },
+    {
+      "id": "1_ciPm8loQokRcCjOe4uGdZlMaC08gJoK",
+      "title": "04_norte_p4_punta_abreojos_junction_to_san_ignacio_oasis.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926580+00:00"
+    },
+    {
+      "id": "1srABOZXkQJjm9S2SZKy4lNpC-HS-QRxt",
+      "title": "03_norte_p3_el_vizcaino_villa_a_a_alvarado_aramburo_to_punta_abreojos_junction.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926581+00:00"
+    },
+    {
+      "id": "1s1FA5nV0Q2BORsNzAAVDFY7c3T6LX8Zs",
+      "title": "02_norte_p2_guillermo_prieto_jcn_to_el_vizcaino_villa_a_a_alvarado_aramburo.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926582+00:00"
+    },
+    {
+      "id": "1frbqt2r1XQHesvT9vWoaec7l74GlmbwJ",
+      "title": "01_norte_p1_guerrero_negro_centro_to_guerrero_negro_mex_1_jcn.esp",
+      "bucket": "earth_studio/esp",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926583+00:00"
+    },
+    {
+      "id": "1sAmVUFJg0aUlUQpPYbJ_d5JvKyZikR1V",
+      "title": "segment_22_todos_santos_el_pescadero.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926584+00:00"
+    },
+    {
+      "id": "112P0wKskb85xz1OPe12nVYzWN3mnmyU-",
+      "title": "segment_16_puerto_cancun_road_santa_rita.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926585+00:00"
+    },
+    {
+      "id": "1_iwvyoKhnJIBkpY7I_b1CXSXg3AMO9Iy",
+      "title": "segment_24_el_triunfo_los_barriles.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926586+00:00"
+    },
+    {
+      "id": "1daI2dLByihetODKJpp6AHw3xCrAG9vva",
+      "title": "segment_17_la_soledad_road_la_soledad_road.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926587+00:00"
+    },
+    {
+      "id": "1Uf6P0fhdTcMCB0e3z90ob_bIr1TKpTpH",
+      "title": "segment_26_miraflores_junction_san_jose_del_cabo_cabecera.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926589+00:00"
+    },
+    {
+      "id": "1DNBMSL1iX9odeOQchJ7A1a7YJCVIMwcm",
+      "title": "segment_21_mex_1_mex_19_junction_mex_1_mex_19_junction.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926590+00:00"
+    },
+    {
+      "id": "1VrOzZZkoBUkWiieMplzzLBnvQHew72U4",
+      "title": "segment_23_cabo_san_lucas_entrance_hwy_19_cabo_san_lucas_centro.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926591+00:00"
+    },
+    {
+      "id": "1ji1O_rkRb-6-l19h4sWIZ_ri45Oe252y",
+      "title": "segment_18_corridor_6_6_corridor_6_16.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926592+00:00"
+    },
+    {
+      "id": "1ao1DN5n8vyIcxI4L_0rIsr2CDN6NUbX6",
+      "title": "segment_19_la_paz_cut_across_jcn_la_paz_centro.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926593+00:00"
+    },
+    {
+      "id": "16H4mG6Pu7drkLmyCkxZCzsSisJS9qhL7",
+      "title": "segment_15_ciudad_constitucion_centro_puerto_cancun_road.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926594+00:00"
+    },
+    {
+      "id": "1McbiIg_1eXq3AG5ByX2N1e2FS0czOqSR",
+      "title": "segment_25_los_barriles_miraflores_junction.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926595+00:00"
+    },
+    {
+      "id": "1vXGVyYJNrVdMyQz_8ZV4cEP-S3V3WmWE",
+      "title": "segment_20_la_paz_centro_mex_1_mex_19_junction.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926596+00:00"
+    },
+    {
+      "id": "1ubTUtVJtyHT5ci9ElnJWKX3YrPjDy2J2",
+      "title": "segment_14_ciudad_constitucion_centro_ciudad_constitucion_centro.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926597+00:00"
+    },
+    {
+      "id": "1hyxiqF5zBzRBuusf8Jc08BKSVHqBYSUb",
+      "title": "segment_13_ciudad_insurgentes_ciudad_insurgentes.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926599+00:00"
+    },
+    {
+      "id": "1VgGZMARfl7liMrsbiFTr4UFQeL5pAwJi",
+      "title": "segment_12_bahia_agua_verde_road_jcn_bahia_agua_verde_road_jcn.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926601+00:00"
+    },
+    {
+      "id": "1ewu9UKvnPyxKE9MDKmxaM9kz3q6ZVOWY",
+      "title": "segment_11_puerto_escondido_road_bahia_agua_verde_road_jcn.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926602+00:00"
+    },
+    {
+      "id": "1pnWgueaYuQaCn6aMoGQ6S_NYRf2HIIhF",
+      "title": "segment_10_loreto_centro_puerto_escondido_road.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926603+00:00"
+    },
+    {
+      "id": "1DcuDO_d7vyOo8YC6Pu3ihU3nvxV4J4VN",
+      "title": "segment_09_san_juan_londo_road_loreto_centro.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926606+00:00"
+    },
+    {
+      "id": "18j3phYuKIgB62pneOjnDziHUDGu93X6O",
+      "title": "segment_08_el_rosarito_road_san_isidro_la_purisima_road.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926607+00:00"
+    },
+    {
+      "id": "1EqIa5oZQdxuy-RWNw_wHJi32MwIgWkAx",
+      "title": "segment_06_santa_rosalia_centro_san_jose_de_magdalena_road.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926608+00:00"
+    },
+    {
+      "id": "1LHPn1qGArsSFOoXdyW1pqQej0QawUIHo",
+      "title": "segment_07_heroica_mulege_santispac_bahia_concepcion.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926609+00:00"
+    },
+    {
+      "id": "1HoGIyNCEn5IESkRygxU9xze35ixc4PdD",
+      "title": "segment_05_geothermal_road_area_santa_rosalia_centro.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926610+00:00"
+    },
+    {
+      "id": "1GaFwY1jXLRCwo_xb5MRuCE1tF8gETy6j",
+      "title": "segment_04_punta_abreojos_junction_san_ignacio_oasis.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926611+00:00"
+    },
+    {
+      "id": "1SWxk6-LZ74jyZzHlU1im66Vnj5lN2MkZ",
+      "title": "segment_03_el_vizcaino_villa_a_a_alvarado_aramburo_punta_abreojos_junction.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926612+00:00"
+    },
+    {
+      "id": "1ZjSo2BWz2eklWImo5x9c-KhzImD8plFR",
+      "title": "segment_01_guerrero_negro_centro_guerrero_negro_mex_1_jcn.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926615+00:00"
+    },
+    {
+      "id": "1DIrFi17fxIWLDC3nsIuSm9miky0S5-J1",
+      "title": "segment_02_guillermo_prieto_jcn_el_vizcaino_villa_a_a_alvarado_aramburo.kml",
+      "bucket": "earth_studio/kml",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926616+00:00"
+    },
+    {
+      "id": "18FLL1mX52f8l6ElLy1evNtBQ0NFYcLui",
+      "title": "meetings_2026-09-11",
+      "bucket": "shadow/folder",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926617+00:00"
+    },
+    {
+      "id": "1KYXFeMecfM03VJF21Iewa3towPqE1H32",
+      "title": "esp",
+      "bucket": "earth_studio/folder",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926618+00:00"
+    },
+    {
+      "id": "1ETJ98Mu7rhwTCuyh23X_xNzv5uP171__",
+      "title": "kml",
+      "bucket": "earth_studio/folder",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926619+00:00"
+    },
+    {
+      "id": "13re94tFep2fdAgBmehN1YDfEKvOQbC5m",
+      "title": "earth_studio_tour",
+      "bucket": "earth_studio/folder",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926620+00:00"
+    },
+    {
+      "id": "1adrzU-rF61CO1vqYaWVhbnNNwlHSOBuQ",
+      "title": "09_shadow_programme",
+      "bucket": "shadow/folder",
+      "status": "trashed",
+      "trashed_at": "2026-09-15T18:01:54.926622+00:00"
+    }
+  ]
+}

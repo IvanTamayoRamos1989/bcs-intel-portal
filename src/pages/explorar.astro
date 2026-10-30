@@ -1,0 +1,266 @@
+---
+/* Atlas territorial 3D ("Explorar"). Full-screen page with its own chrome; reuses the portal
+   chat widget (same /api/chat). Data and code are static assets under /explorar/ (gated by the
+   edge auth like the rest of the portal). */
+import { ui } from '../i18n/ui';
+import ChatWidget from '../components/ChatWidget.astro';
+const deployCtx = (typeof process !== 'undefined' && process.env && (process.env.CONTEXT || process.env.NETLIFY_CONTEXT)) || '';
+const isProdDeploy = deployCtx === 'production';
+const v = Date.now().toString(36);
+---
+<!doctype html>
+<html lang="es" data-lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f4f0e6" />
+    <meta name="color-scheme" content="light only" />
+    <title>Explorar · BCS 2050</title>
+    <link rel="icon" href="data:," />
+    <meta name="description" content="Atlas territorial 3D de Baja California Sur: capas con fuente, inventario espacial y asistente." />
+    <script is:inline>
+      (function () {
+        var h = location.hostname || '';
+        var prod = h === 'bajacaliforniasur2050.com' || h === 'www.bajacaliforniasur2050.com' || h.endsWith('.bajacaliforniasur2050.com');
+        document.documentElement.classList.add(prod ? 'is-prod' : 'is-draft');
+        window.__BCS_IS_PROD__ = prod;
+      })();
+    </script>
+    <script is:inline define:vars={{ uiObj: ui }}>window.__BCS_UI__ = uiObj;</script>
+    <script is:inline src="/auth-gate.js"></script>
+    <script is:inline src="/place-strip.js" defer></script>
+    <link rel="preload" href="/explorar/fonts/dmsans-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/explorar/fonts/dmsans-600.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="/explorar/vendor/maplibre-gl.css" />
+    <link rel="stylesheet" href={`/explorar/explorer.css?v=${v}`} />
+  </head>
+  <body class="explorar" data-basemap="ilustrado">
+    <a class="sr-only" href="#ex-map-focus">Saltar al mapa</a>
+    <header class="ex-top">
+      <a class="ex-brand" href="/inicio" title="Inicio del portal"><strong>BCS2050</strong><span>Atlas territorial</span></a>
+      <nav class="ex-nav" aria-label="Atlas">
+        <a class="ex-navbtn ex-hide-m" href="/explorar" aria-current="page"><span class="ex-lbl">Explorar</span></a>
+        <button type="button" class="ex-navbtn" id="ex-capas-btn" aria-controls="ex-capas" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 3 2.5 8 12 13l9.5-5L12 3Z"/><path d="m2.5 12.5 9.5 5 9.5-5"/><path d="m2.5 16.5 9.5 5 9.5-5"/></svg>
+          <span class="ex-lbl">Capas</span><span class="ex-count" id="ex-capas-count" aria-label="capas activas" hidden>0</span>
+        </button>
+        <button type="button" class="ex-navbtn" id="ex-topics-btn" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 10.8 16M16 7.5 13.2 16M8.5 6h7"/></svg>
+          <span class="ex-lbl ex-lbl-opt">Temas</span>
+        </button>
+        <button type="button" class="ex-navbtn" id="ex-inv-btn" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          <span class="ex-lbl ex-lbl-opt">Inventario</span>
+        </button>
+        <button type="button" class="ex-navbtn" id="ex-saved-btn" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M6 3.5h12v17l-6-4-6 4v-17Z"/></svg>
+          <span class="ex-lbl ex-lbl-opt">Mis hallazgos</span><span class="ex-count" id="ex-saved-count" aria-label="hallazgos guardados" hidden>0</span>
+        </button>
+      </nav>
+      <div class="ex-search-wrap" role="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
+        <label class="sr-only" for="ex-search">Buscar lugares, capas, temas, documentos y noticias</label>
+        <input id="ex-search" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar lugar, capa, tema, documento…" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="ex-search-results" />
+        <ul class="ex-results" id="ex-search-results" role="listbox" aria-label="Resultados" hidden></ul>
+      </div>
+      <nav class="ex-nav" aria-label="Ayuda y asistente">
+        <button type="button" class="ex-navbtn accent" id="ex-chat-btn" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 5.5h16v10H9l-5 4v-14Z"/></svg>
+          <span class="ex-lbl">Preguntar</span>
+        </button>
+        <button type="button" class="ex-navbtn" id="ex-help-btn" aria-haspopup="dialog">
+          <span class="ex-help-q" aria-hidden="true">?</span><span class="ex-lbl ex-lbl-help">Ayuda<span class="ex-lbl-long"> y fuentes</span></span>
+        </button>
+        {!isProdDeploy && <span class="ex-draft" id="ex-draft" hidden>BORRADOR</span>}
+      </nav>
+    </header>
+    <script is:inline>
+      (function () { var b = document.getElementById('ex-draft'); if (!b) return; if (window.__BCS_IS_PROD__) b.remove(); else b.hidden = false; })();
+    </script>
+
+    <main>
+      <h1 class="sr-only">Explorar Baja California Sur: atlas territorial 3D</h1>
+      <div id="ex-map" role="region" aria-label="Mapa 3D de Baja California Sur" aria-describedby="ex-map-help"></div>
+      <button type="button" id="ex-map-focus" class="sr-only" onclick="document.querySelector('#ex-map canvas')?.focus()">Enfocar el mapa</button>
+      <p id="ex-map-help" class="sr-only">Con el mapa enfocado: flechas para desplazar, más y menos para acercar o alejar, Mayúsculas más flechas para girar e inclinar. Tecla barra para buscar, C para capas, signo de interrogación para ayuda, Escape cierra el panel abierto sin perder la vista.</p>
+
+      <div class="ex-basemaps" role="group" aria-label="Mapa base">
+        <button type="button" data-basemap="ilustrado" aria-pressed="true">Ilustrado</button>
+        <button type="button" data-basemap="satelite" aria-pressed="false">Satélite</button>
+        <button type="button" data-basemap="nocturno" aria-pressed="false">Nocturno</button>
+      </div>
+      <div class="ex-zone"><button type="button" id="ex-zone-btn">Preguntar sobre esta zona</button></div>
+      <p class="ex-flag" id="ex-relief-flag" hidden>Relieve exagerado 2.5× para leer la forma; las alturas no son reales</p>
+
+      <div class="ex-toolbar" role="toolbar" aria-label="Controles del mapa">
+        <button type="button" class="ex-tool" id="ex-home">Ver todo BCS</button>
+        <span class="ex-sep" aria-hidden="true"></span>
+        <button type="button" class="ex-tool icon" id="ex-zout" aria-label="Alejar">−</button>
+        <button type="button" class="ex-tool icon" id="ex-zin" aria-label="Acercar">+</button>
+        <span class="ex-sep" aria-hidden="true"></span>
+        <button type="button" class="ex-tool icon" id="ex-rotl" aria-label="Girar a la izquierda">⟲</button>
+        <button type="button" class="ex-tool" id="ex-north" aria-label="Orientar al norte"><span aria-hidden="true">↑</span> Norte</button>
+        <button type="button" class="ex-tool icon" id="ex-rotr" aria-label="Girar a la derecha">⟳</button>
+        <span class="ex-sep" aria-hidden="true"></span>
+        <button type="button" class="ex-tool" id="ex-pitch" aria-pressed="true">Vista cenital</button>
+        <button type="button" class="ex-tool" id="ex-light" aria-pressed="false">Día</button>
+        <button type="button" class="ex-tool" id="ex-relief" aria-pressed="false">Relieve 1× (real)</button>
+      </div>
+
+      <div class="ex-legend" id="ex-legend" aria-live="polite" hidden></div>
+      <div class="ex-probe" id="ex-probe" role="status" hidden></div>
+
+      <section class="ex-panel" id="ex-capas" aria-labelledby="ex-capas-title" hidden>
+        <div class="ex-panel-head">
+          <h2 id="ex-capas-title" tabindex="-1">Capas</h2>
+          <button type="button" class="ex-icon-btn" id="ex-capas-close" aria-label="Cerrar capas">Cerrar</button>
+        </div>
+        <div class="ex-panel-body">
+          <div class="ex-block">
+            <span class="ex-label" id="ex-base-label">Mapa base</span>
+            <div class="ex-seg" role="group" aria-labelledby="ex-base-label">
+              <button type="button" data-basemap="ilustrado" aria-pressed="true">Ilustrado</button>
+              <button type="button" data-basemap="satelite" aria-pressed="false">Satélite</button>
+              <button type="button" data-basemap="nocturno" aria-pressed="false">Nocturno</button>
+            </div>
+          </div>
+          <div class="ex-block">
+            <span class="ex-label" id="ex-preset-label">Combinaciones</span>
+            <div class="ex-presets" role="group" aria-labelledby="ex-preset-label">
+              <button type="button" data-preset="basico" aria-pressed="false">Modo básico</button>
+              <button type="button" data-preset="esencial" aria-pressed="false">Esencial</button>
+              <button type="button" data-preset="infraestructura" aria-pressed="false">Infraestructura</button>
+              <button type="button" data-preset="agua" aria-pressed="false">Agua y vida</button>
+              <button type="button" data-preset="todo" aria-pressed="false">Todo</button>
+            </div>
+            <div class="ex-install-row">
+              <button type="button" class="ex-btn accent" id="ex-install">Instalar sobre el terreno</button>
+            </div>
+          </div>
+          <div class="ex-block">
+            <label class="ex-global"><span>Opacidad de las capas</span><input type="range" id="ex-global-opacity" min="10" max="100" step="5" value="100" /><output id="ex-global-out">100 %</output></label>
+          </div>
+          <div class="ex-block ex-photos-block">
+            <div class="ex-row ex-photos-row" id="ex-photos-row">
+              <div class="ex-row-main">
+                <img class="ex-photos-thumb" src="/stills/batch_01/thumbs/S0004_la_paz.jpg" alt="" loading="lazy" width="64" height="36" />
+                <span class="ex-row-text"><span class="ex-row-name" id="lbl-fotos">Fotos del territorio</span>
+                <span class="ex-row-what">Vistas aéreas de lugares del estado; pulsa un punto para ver la foto.</span>
+                <span class="ex-row-meta"><a href="/stills">Ver todas las fotos</a></span></span>
+                <button type="button" class="ex-toggle" id="ex-photos-toggle" aria-pressed="false" aria-labelledby="lbl-fotos"><span class="ex-toggle-track" aria-hidden="true"><span class="ex-toggle-dot"></span></span><span class="sr-only">Mostrar capa</span></button>
+              </div>
+            </div>
+          </div>
+          <div id="ex-groups"></div>
+        </div>
+        <div class="ex-panel-foot">Cada capa se dibuja con su geometría de origen. Lo que no tiene geometría confirmada está en <button type="button" class="ex-link-btn" data-open-unlocated="all">Información por ubicar</button>.</div>
+      </section>
+
+      <section class="ex-panel" id="ex-ficha" aria-labelledby="ex-ficha-heading" hidden>
+        <div class="ex-panel-head">
+          <button type="button" class="ex-icon-btn" id="ex-back" hidden>← Atrás</button>
+          <h2 id="ex-ficha-heading" class="sr-only">Ficha</h2>
+          <span style="flex:1"></span>
+          <button type="button" class="ex-icon-btn" id="ex-wide" aria-pressed="false">Ampliar</button>
+          <button type="button" class="ex-icon-btn" id="ex-ficha-close" aria-label="Cerrar ficha">Cerrar</button>
+        </div>
+        <div class="ex-panel-body" id="ex-ficha-body"></div>
+      </section>
+
+      <div class="ex-statusbar">
+        <span id="ex-status" role="status" aria-live="polite">Cargando…</span>
+        <span id="ex-coords" aria-hidden="true"></span>
+        <span id="ex-attrib"></span>
+      </div>
+      <div class="ex-toast" id="ex-toast" role="status" aria-live="polite"></div>
+
+      <div class="ex-loading" id="ex-loading"><div><strong>Baja California Sur</strong><p id="ex-loading-text">Preparando el atlas…</p><div class="ex-bar"></div></div></div>
+
+      <div class="ex-fallback" id="ex-fallback" hidden>
+        <div>
+          <h1>Usa el mapa 2D en este dispositivo</h1>
+          <p id="ex-fallback-reason"></p>
+          <p>El mapa 2D muestra las mismas capas principales y funciona en cualquier celular o computadora.</p>
+          <p><a class="ex-btn" href="/mapas#capas">Abrir el mapa 2D</a> <a class="ex-btn ghost" href="/stills">Ver fotos del territorio</a> <button type="button" class="ex-btn ghost" id="ex-fallback-inv">Ver inventario</button></p>
+          <p class="ex-fine" id="ex-fallback-auto" hidden>Te llevamos al mapa 2D en <span id="ex-fallback-count">8</span> s. <button type="button" class="ex-link-btn" id="ex-fallback-stay">Quedarme aquí</button></p>
+        </div>
+      </div>
+    </main>
+
+    <dialog class="ex-dialog" id="ex-inventory" aria-labelledby="ex-inv-title">
+      <div class="ex-dialog-head"><h2 id="ex-inv-title">Inventario espacial</h2><button type="button" class="ex-icon-btn" data-close="ex-inventory">Cerrar</button></div>
+      <div class="ex-dialog-body">
+        <div class="ex-tabs" role="tablist">
+          <button type="button" role="tab" data-inv-tab="located" aria-selected="true" aria-controls="ex-inv-located">Con geometría</button>
+          <button type="button" role="tab" data-inv-tab="unlocated" aria-selected="false" aria-controls="ex-inv-unlocated">Información por ubicar</button>
+        </div>
+        <div id="ex-inv-located" role="tabpanel">
+          <div class="ex-filters">
+            <label class="sr-only" for="ex-inv-layer">Capa</label><select id="ex-inv-layer"></select>
+            <label class="sr-only" for="ex-inv-q">Filtrar por nombre, municipio o referencia</label><input id="ex-inv-q" type="search" placeholder="Nombre, municipio, clave o referencia" data-autofocus />
+          </div>
+          <p class="ex-fine" id="ex-inv-count" aria-live="polite"></p>
+          <ul class="ex-inv-list" id="ex-inv-list"></ul>
+          <div class="ex-pager"><button type="button" class="ex-btn ghost small" id="ex-inv-prev">Anterior</button><button type="button" class="ex-btn ghost small" id="ex-inv-next">Siguiente</button></div>
+        </div>
+        <div id="ex-inv-unlocated" role="tabpanel" hidden>
+          <p class="ex-note">Registros documentados en el portal sin geometría oficial o confirmada (acuíferos sin polígono, proyectos con referencia solo municipal, infraestructura citada sin coordenadas). No se dibujan ni se asignan por cercanía.</p>
+          <div class="ex-filters">
+            <label class="sr-only" for="ex-unl-kind">Tipo</label><select id="ex-unl-kind"></select>
+            <label class="sr-only" for="ex-unl-q">Filtrar</label><input id="ex-unl-q" type="search" placeholder="Filtrar por nombre o clave" />
+          </div>
+          <p class="ex-fine" id="ex-unl-count" aria-live="polite"></p>
+          <ul class="ex-links" id="ex-unl-list"></ul>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="ex-dialog" id="ex-topics" aria-labelledby="ex-topics-title">
+      <div class="ex-dialog-head"><h2 id="ex-topics-title">Temas del portal</h2><button type="button" class="ex-icon-btn" data-close="ex-topics" data-autofocus>Cerrar</button></div>
+      <div class="ex-dialog-body">
+        <p class="ex-fine">Cada tema abre su ficha con las capas que tienen geometría, la información por ubicar y las páginas del portal. Los temas sin geometría verificada no se dibujan en el mapa.</p>
+        <div id="ex-topics-list"></div>
+      </div>
+    </dialog>
+
+    <dialog class="ex-dialog" id="ex-saved" aria-labelledby="ex-saved-title">
+      <div class="ex-dialog-head"><h2 id="ex-saved-title">Mis hallazgos</h2><button type="button" class="ex-icon-btn" data-close="ex-saved" data-autofocus>Cerrar</button></div>
+      <div class="ex-dialog-body">
+        <p class="ex-fine">Se guardan solo en este navegador. Pulsa uno para localizarlo en el mapa.</p>
+        <ul class="ex-saved-list" id="ex-saved-list"></ul>
+      </div>
+    </dialog>
+
+    <dialog class="ex-dialog" id="ex-help" aria-labelledby="ex-help-title">
+      <div class="ex-dialog-head"><h2 id="ex-help-title">Ayuda y fuentes</h2><button type="button" class="ex-icon-btn" data-close="ex-help" data-autofocus>Cerrar</button></div>
+      <div class="ex-dialog-body">
+        <h3>Cómo explorar</h3>
+        <p>Activa capas en <strong>Capas</strong> o elige una combinación. Pulsa cualquier elemento del mapa para abrir su ficha con atributos originales, fuente y conexiones. Pulsa el terreno vacío para conocer su altitud. <strong>Buscar</strong> encuentra lugares, capas, temas, documentos y noticias; <strong>Inventario</strong> lista todo lo que tiene geometría y, aparte, la información por ubicar.</p>
+        <h3>Teclado</h3>
+        <dl class="ex-kbd">
+          <dt><kbd>/</kbd></dt><dd>Buscar</dd>
+          <dt><kbd>C</kbd></dt><dd>Abrir o cerrar Capas</dd>
+          <dt><kbd>?</kbd></dt><dd>Esta ayuda</dd>
+          <dt><kbd>Esc</kbd></dt><dd>Cerrar el panel abierto sin perder la vista del mapa</dd>
+          <dt><kbd>←↑→↓</kbd></dt><dd>Desplazar el mapa (con el mapa enfocado)</dd>
+          <dt><kbd>+</kbd> <kbd>−</kbd></dt><dd>Acercar y alejar</dd>
+          <dt><kbd>Mayús</kbd> + <kbd>←→</kbd> / <kbd>↑↓</kbd></dt><dd>Girar e inclinar</dd>
+        </dl>
+        <h3>«Instalar sobre el terreno»</h3>
+        <p>Al activar una capa, sus elementos descienden y se asientan sobre el relieve en algo más de un segundo. Es solo una transición visual: la posición final es siempre la coordenada original de la fuente, nunca se desplaza ni se aproxima, y el mapa sigue siendo utilizable durante la animación. Si tu sistema pide reducir el movimiento, las capas aparecen directamente sin animación.</p>
+        <h3>Datos, interpretación y horizonte 2050</h3>
+        <p><strong>Dato</strong>: geometrías y atributos tal como los publica la fuente (INEGI, CONANP, CONABIO, RAN, POERBCS, OpenStreetMap, HydroRIVERS). <strong>Interpretación</strong>: lecturas del portal, marcadas como tales en las fichas (por ejemplo, fortalezas y restricciones municipales). <strong>Horizonte 2050</strong>: prospectiva y preguntas estratégicas; nunca se dibujan como si fueran hechos en el mapa.</p>
+        <p>Los símbolos 3D son ilustrativos: no representan tamaño, capacidad ni extensión. El relieve se muestra a escala real (1×) salvo que actives el relieve exagerado, que se indica en pantalla. El mar se representa plano a nivel 0 m. Los datos eléctricos de OpenStreetMap son parciales y comunitarios; los generadores no se suman como centrales.</p>
+        <h3>Mapas base</h3>
+        <p><strong>Ilustrado</strong>: relieve real con paleta cartográfica. <strong>Satélite</strong>: mosaico Sentinel-2 sin nubes 2016 (EOX, CC BY 4.0). <strong>Nocturno</strong>: luces nocturnas VIIRS 2016 (NASA Black Marble, dominio público) sobre el relieve, que miden luz emitida, no población ni consumo.</p>
+        <h3>Fuentes</h3>
+        <ul class="ex-sources" id="ex-sources-layers"></ul>
+      </div>
+    </dialog>
+
+    <ChatWidget />
+    <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
+    <script is:inline src={`/explorar/explorer.js?v=${v}`}></script>
+  </body>
+</html>

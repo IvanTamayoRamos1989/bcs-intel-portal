@@ -1,0 +1,480 @@
+{
+ "version": 2,
+ "built": "2026-10-08",
+ "crs": "EPSG:4326",
+ "groups": [
+  {
+   "id": "habitar",
+   "label": "Habitar y conectar"
+  },
+  {
+   "id": "agua",
+   "label": "Agua y vida"
+  },
+  {
+   "id": "ordenar",
+   "label": "Ordenar el territorio"
+  }
+ ],
+ "presets": {
+  "basico": [
+   "cities",
+   "roads",
+   "rivers",
+   "protected",
+   "transport"
+  ],
+  "esencial": [
+   "cities",
+   "roads",
+   "rivers"
+  ],
+  "infraestructura": [
+   "cities",
+   "roads",
+   "transport",
+   "plants",
+   "substations",
+   "transmission"
+  ],
+  "agua": [
+   "rivers",
+   "runoff",
+   "protected",
+   "priority"
+  ],
+  "todo": [
+   "cities",
+   "protected",
+   "priority",
+   "zoning",
+   "agrarian",
+   "roads",
+   "rivers",
+   "runoff",
+   "plants",
+   "substations",
+   "transmission",
+   "generators",
+   "transport"
+  ]
+ },
+ "missing": [
+  {
+   "id": "aquifers",
+   "group": "agua",
+   "label": "Acuíferos",
+   "count": 39,
+   "note": "Sin polígonos oficiales en el acervo: 39 registros en «Información por ubicar» y en el tema Agua."
+  }
+ ],
+ "layers": [
+  {
+   "id": "cities",
+   "group": "habitar",
+   "label": "Ciudades y localidades",
+   "unit": "localidades",
+   "geom": "point",
+   "symbol": "city",
+   "source": {
+    "title": "Censo de Población y Vivienda 2020 · Integración territorial (ITER) BCS",
+    "owner": "INEGI",
+    "date": "2020-03-15 (fecha censal)",
+    "license": "INEGI · términos de libre uso de la información",
+    "url": "https://www.inegi.org.mx/programas/ccpv/2020/#datos_abiertos",
+    "resolution": "Punto de referencia por localidad (coordenada publicada en grados, minutos y segundos)",
+    "method": "Todas las localidades con coordenadas publicadas; conversión DMS → grados decimales sin desplazar puntos.",
+    "limits": "Puntos de referencia censal, no límites urbanos ni edificios. Población 2020; no es proyección 2050."
+   },
+   "count": 2543,
+   "file": "layer-cities.json",
+   "bytes": 1281238,
+   "label_ciudadano": "Ciudades y pueblos",
+   "que_significa": "Localidades del Censo 2020: dónde vive la gente.",
+   "label_ciudadano_en": "Cities and towns",
+   "que_significa_en": "Census 2020 localities: where people live."
+  },
+  {
+   "id": "protected",
+   "group": "agua",
+   "label": "Áreas naturales protegidas federales",
+   "unit": "áreas",
+   "geom": "polygon",
+   "source": {
+    "title": "Áreas naturales protegidas federales",
+    "owner": "CONANP / CONABIO",
+    "date": "2025-04 (copia del atlas regional)",
+    "license": "Información pública federal",
+    "url": "https://sig.conanp.gob.mx/",
+    "resolution": "Polígonos oficiales simplificados 15 m",
+    "method": "Polígonos completos del atlas regional, sin recorte; simplificación topológica 15 m (UTM 12N).",
+    "limits": "No incluye subzonificación ni reglas de manejo; varias áreas son mayormente marinas (se indica en cada ficha). Consultar el decreto vigente."
+   },
+   "count": 10,
+   "file": "layer-protected.json",
+   "bytes": 98827,
+   "label_ciudadano": "Áreas naturales protegidas",
+   "que_significa": "Zonas decretadas para conservar la naturaleza, con reglas de uso.",
+   "label_ciudadano_en": "Protected natural areas",
+   "que_significa_en": "Zones decreed to conserve nature, with use rules."
+  },
+  {
+   "id": "priority",
+   "group": "agua",
+   "label": "Regiones terrestres prioritarias",
+   "unit": "regiones",
+   "geom": "polygon",
+   "source": {
+    "title": "Regiones terrestres prioritarias de México",
+    "owner": "CONABIO",
+    "date": "2004",
+    "license": "CONABIO · uso no lucrativo con atribución (ver geoportal)",
+    "url": "http://www.conabio.gob.mx/informacion/gis/",
+    "resolution": "Escala de origen 1:1 000 000; simplificado 25 m",
+    "method": "Polígonos completos del atlas regional; simplificación topológica 25 m.",
+    "limits": "Prioridad de conservación; no equivale a un decreto de área natural protegida. Un nombre del archivo trae un error de codificación (Vizca¡no); se muestra corregido y el valor original se conserva."
+   },
+   "count": 5,
+   "file": "layer-priority.json",
+   "bytes": 177901,
+   "label_ciudadano": "Regiones prioritarias para la biodiversidad",
+   "que_significa": "Zonas de gran valor natural según CONABIO; no son un decreto.",
+   "label_ciudadano_en": "Priority biodiversity regions",
+   "que_significa_en": "High natural-value zones per CONABIO; not a decree."
+  },
+  {
+   "id": "zoning",
+   "group": "ordenar",
+   "label": "Unidades de gestión ambiental POERBCS",
+   "unit": "polígonos",
+   "geom": "polygon",
+   "source": {
+    "title": "Programa de Ordenamiento Ecológico Regional de BCS (POERBCS) · UGA",
+    "owner": "Gobierno de BCS / SEMARNAT (atlas regional del portal)",
+    "date": "Capa del atlas regional (fecha de la capa sin registrar)",
+    "license": "Información pública",
+    "url": "https://www.gob.mx/semarnat/acciones-y-programas/programas-de-ordenamiento-ecologico-expedidos",
+    "resolution": "Simplificado 25 m",
+    "method": "69 polígonos = 56 claves UGA (la UGA 54 se divide en 14 polígonos 54_xx). Simplificación topológica 25 m.",
+    "limits": "Consultar el instrumento publicado y sus criterios antes de interpretar una UGA como permiso de uso."
+   },
+   "count": 69,
+   "file": "layer-zoning.json",
+   "bytes": 536491,
+   "label_ciudadano": "Zonas del ordenamiento ecológico",
+   "que_significa": "Cada zona tiene reglas sobre qué usos del suelo son compatibles.",
+   "label_ciudadano_en": "Ecological zoning units",
+   "que_significa_en": "Each zone has rules on which land uses are compatible."
+  },
+  {
+   "id": "agrarian",
+   "group": "ordenar",
+   "label": "Núcleos agrarios",
+   "unit": "núcleos",
+   "geom": "polygon",
+   "source": {
+    "title": "Núcleos agrarios (perímetros)",
+    "owner": "Registro Agrario Nacional (RAN)",
+    "date": "Capa del atlas regional (fecha de corte sin registrar)",
+    "license": "Información pública (RAN datos abiertos)",
+    "url": "https://datos.gob.mx/busca/organization/ran",
+    "resolution": "Simplificado 15 m",
+    "method": "Perímetros del atlas regional (origen KML RAN); simplificación topológica 15 m.",
+    "limits": "No acredita propiedad, derechos ni deslindes vigentes; requiere consulta registral."
+   },
+   "count": 96,
+   "file": "layer-agrarian.json",
+   "bytes": 307133,
+   "label_ciudadano": "Ejidos y comunidades agrarias",
+   "que_significa": "Perímetros de tierras ejidales y comunales registrados por el RAN.",
+   "label_ciudadano_en": "Ejidos and agrarian communities",
+   "que_significa_en": "Perimeters of ejido and communal land registered by RAN."
+  },
+  {
+   "id": "roads",
+   "group": "habitar",
+   "label": "Carreteras principales",
+   "unit": "segmentos",
+   "geom": "line",
+   "source": {
+    "title": "OpenStreetMap · vías motorway, trunk, primary y secondary",
+    "owner": "© Colaboradores de OpenStreetMap",
+    "date": "2026-10-08",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "resolution": "Vías completas; simplificación 5 m",
+    "method": "Consulta Overpass; se conservan las vías completas que tocan BCS (sin recortes) y todas sus etiquetas.",
+    "limits": "Cartografía comunitaria: completitud y clasificación variables; omite calles locales y caminos menores. No es inventario oficial de SICT."
+   },
+   "count": 2173,
+   "file": "layer-roads.json",
+   "bytes": 1162008,
+   "label_ciudadano": "Carreteras",
+   "que_significa": "Las principales carreteras del estado.",
+   "label_ciudadano_en": "Highways",
+   "que_significa_en": "The state's main highways."
+  },
+  {
+   "id": "rivers",
+   "group": "agua",
+   "label": "Red de drenaje modelada",
+   "unit": "tramos",
+   "geom": "line",
+   "source": {
+    "title": "HydroRIVERS v1 · recorte del paquete Escorrentía BCS 2026",
+    "owner": "WWF / HydroSHEDS (Lehner y Grill 2013)",
+    "date": "2026-10-05 (paquete)",
+    "license": "HydroSHEDS · licencia libre con atribución",
+    "url": "https://www.hydrosheds.org/products/hydrorivers",
+    "resolution": "Derivado de HydroSHEDS 15″ (~500 m); simplificación 20 m",
+    "method": "2,981 partes de línea = 2,900 tramos únicos (HYRIV_ID). Orden Strahler ≥ 3 a escala estatal; todos los tramos al acercarse.",
+    "limits": "Red modelada: no demuestra agua permanente, caudal actual ni nombres oficiales. No es mapa de inundación."
+   },
+   "portal": {
+    "href": "/agua/escorrentia/",
+    "label": "Escorrentía y agua de lluvia"
+   },
+   "count": 2981,
+   "file": "layer-rivers.json",
+   "bytes": 1427016,
+   "label_ciudadano": "Ríos y arroyos (modelo)",
+   "que_significa": "Cauces calculados por el relieve; muchos solo llevan agua cuando llueve.",
+   "label_ciudadano_en": "Rivers and streams (model)",
+   "que_significa_en": "Channels from the terrain; many only carry water when it rains."
+  },
+  {
+   "id": "runoff",
+   "group": "agua",
+   "label": "Trayectorias de escorrentía (modelo de terreno)",
+   "unit": "trayectorias",
+   "geom": "line",
+   "source": {
+    "title": "Trayectorias D8 de escorrentía potencial · paquete Escorrentía BCS 2026",
+    "owner": "HydroSHEDS DIR 3″ (WWF); trazado del paquete Escorrentía BCS",
+    "date": "2026-10-05",
+    "license": "HydroSHEDS · licencia libre con atribución",
+    "url": "https://www.hydrosheds.org/",
+    "resolution": "Dirección de flujo 3″ (~90 m); semillas cada ~3.7–4.2 km; simplificación 20 m",
+    "method": "Recorridos D8 desde una retícula uniforme de semillas hasta la costa o un sumidero interior.",
+    "limits": "Modelo de terreno, NO es mapa oficial de inundación: no calcula profundidad, velocidad, caudal ni superficie inundada. No modela drenaje urbano."
+   },
+   "portal": {
+    "href": "/agua/escorrentia/",
+    "label": "Escorrentía y agua de lluvia"
+   },
+   "count": 2128,
+   "file": "layer-runoff.json",
+   "bytes": 2136008,
+   "label_ciudadano": "Recorridos del agua de lluvia (modelo)",
+   "que_significa": "Por dónde bajaría el agua de lluvia según el relieve; no es un mapa de inundación.",
+   "label_ciudadano_en": "Rainwater paths (model)",
+   "que_significa_en": "Where rainwater would flow given the terrain; not a flood map."
+  },
+  {
+   "id": "plants",
+   "group": "habitar",
+   "label": "Centrales eléctricas",
+   "unit": "centrales",
+   "geom": "facility",
+   "symbol": "plant",
+   "partial": true,
+   "source": {
+    "title": "OpenStreetMap · power=plant",
+    "owner": "© Colaboradores de OpenStreetMap",
+    "date": "2026-10-08",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "resolution": "Coordenadas OSM originales; sin simplificar",
+    "method": "Objetos etiquetados power=plant/substation/line/generator dentro del límite INEGI de BCS. Las líneas que cruzan el límite conservan solo sus vértices OSM interiores; no se interpolan conexiones.",
+    "limits": "Cartografía comunitaria, PARCIAL y no certificada: no es el inventario oficial de CFE/CENACE. Tensión y potencia son etiquetas OSM sin verificar. Un generador puede formar parte de una central: no se suman como centrales."
+   },
+   "count": 16,
+   "file": "layer-plants.json",
+   "bytes": 13299,
+   "label_ciudadano": "Plantas eléctricas",
+   "que_significa": "Dónde se genera la electricidad (datos comunitarios, parciales).",
+   "label_ciudadano_en": "Power plants",
+   "que_significa_en": "Where electricity is generated (community data, partial)."
+  },
+  {
+   "id": "substations",
+   "group": "habitar",
+   "label": "Subestaciones",
+   "unit": "subestaciones",
+   "geom": "facility",
+   "symbol": "transformer",
+   "partial": true,
+   "source": {
+    "title": "OpenStreetMap · power=substation",
+    "owner": "© Colaboradores de OpenStreetMap",
+    "date": "2026-10-08",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "resolution": "Coordenadas OSM originales; sin simplificar",
+    "method": "Objetos etiquetados power=plant/substation/line/generator dentro del límite INEGI de BCS. Las líneas que cruzan el límite conservan solo sus vértices OSM interiores; no se interpolan conexiones.",
+    "limits": "Cartografía comunitaria, PARCIAL y no certificada: no es el inventario oficial de CFE/CENACE. Tensión y potencia son etiquetas OSM sin verificar."
+   },
+   "count": 44,
+   "file": "layer-substations.json",
+   "bytes": 23195,
+   "label_ciudadano": "Subestaciones eléctricas",
+   "que_significa": "Instalaciones que transforman la electricidad para distribuirla.",
+   "label_ciudadano_en": "Substations",
+   "que_significa_en": "Facilities that transform electricity for distribution."
+  },
+  {
+   "id": "transmission",
+   "group": "habitar",
+   "label": "Líneas eléctricas",
+   "unit": "líneas",
+   "geom": "line",
+   "symbol": null,
+   "partial": true,
+   "source": {
+    "title": "OpenStreetMap · power=line",
+    "owner": "© Colaboradores de OpenStreetMap",
+    "date": "2026-10-08",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "resolution": "Coordenadas OSM originales; sin simplificar",
+    "method": "Objetos etiquetados power=plant/substation/line/generator dentro del límite INEGI de BCS. Las líneas que cruzan el límite conservan solo sus vértices OSM interiores; no se interpolan conexiones.",
+    "limits": "Cartografía comunitaria, PARCIAL y no certificada: no es el inventario oficial de CFE/CENACE. Tensión y potencia son etiquetas OSM sin verificar."
+   },
+   "count": 106,
+   "file": "layer-transmission.json",
+   "bytes": 152129,
+   "label_ciudadano": "Líneas eléctricas",
+   "que_significa": "Trazado de las líneas que llevan la electricidad.",
+   "label_ciudadano_en": "Power lines",
+   "que_significa_en": "Routes of the lines that carry electricity."
+  },
+  {
+   "id": "generators",
+   "group": "habitar",
+   "label": "Generadores",
+   "unit": "generadores",
+   "geom": "facility",
+   "symbol": "generator",
+   "partial": true,
+   "source": {
+    "title": "OpenStreetMap · power=generator",
+    "owner": "© Colaboradores de OpenStreetMap",
+    "date": "2026-10-08",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "resolution": "Coordenadas OSM originales; sin simplificar",
+    "method": "Objetos etiquetados power=plant/substation/line/generator dentro del límite INEGI de BCS. Las líneas que cruzan el límite conservan solo sus vértices OSM interiores; no se interpolan conexiones.",
+    "limits": "Cartografía comunitaria, PARCIAL y no certificada: no es el inventario oficial de CFE/CENACE. Tensión y potencia son etiquetas OSM sin verificar. Un generador puede formar parte de una central: no se suman como centrales."
+   },
+   "count": 58,
+   "file": "layer-generators.json",
+   "bytes": 35289,
+   "label_ciudadano": "Generadores eléctricos",
+   "que_significa": "Equipos de generación registrados, como paneles o turbinas.",
+   "label_ciudadano_en": "Generators",
+   "que_significa_en": "Recorded generation units, such as panels or turbines."
+  },
+  {
+   "id": "transport",
+   "group": "habitar",
+   "label": "Aeropuertos y puertos",
+   "unit": "elementos",
+   "geom": "facility",
+   "symbol": "transport",
+   "partial": true,
+   "source": {
+    "title": "OpenStreetMap · aeródromos, terminales de transbordador y puertos",
+    "owner": "© Colaboradores de OpenStreetMap",
+    "date": "nodos 2026-09 (extracción del portal) · polígonos de aeródromo 2026-10-08 (Overpass)",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "resolution": "Polígono OSM del aeródromo (vértices originales) o nodo OSM (punto)",
+    "method": "10 polígonos aeroway=aerodrome que tocan BCS (incluye los aeropuertos SJD, LAP, LTO, CSL y Guerrero Negro) + nodos OSM aeroway=aerodrome, amenity=ferry_terminal y harbour dentro de BCS (tolerancia costera ~2 km). Se omiten 0 nodos de aeródromo que caen dentro de un polígono ya dibujado.",
+    "limits": "Incluye pistas menores; no distingue operación comercial. Rutas aéreas en /vuelos (FlightConnections)."
+   },
+   "portal": {
+    "href": "/vuelos/",
+    "label": "Vuelos y conectividad aérea"
+   },
+   "count": 55,
+   "file": "layer-transport.json",
+   "bytes": 45388,
+   "label_ciudadano": "Aeropuertos y puertos",
+   "que_significa": "Dónde se llega y se sale por aire y por mar.",
+   "label_ciudadano_en": "Airports and ports",
+   "que_significa_en": "Where people arrive and leave by air and sea."
+  }
+ ],
+ "base_sources": [
+  {
+   "id": "boundary",
+   "label": "Límite estatal y municipios",
+   "title": "Marco Geoestadístico 2022 · municipios de Baja California Sur",
+   "owner": "INEGI / CONABIO",
+   "date": "2022-12",
+   "license": "INEGI · términos de libre uso de la información",
+   "url": "https://www.inegi.org.mx/temas/mg/",
+   "resolution": "Simplificado ~39 m para visualización regional",
+   "method": "Cinco polígonos municipales disueltos en el límite estatal; se conservan islas y huecos.",
+   "limits": "Límite geoestadístico de referencia; no acredita linderos legales."
+  },
+  {
+   "id": "land",
+   "label": "Tierra circundante",
+   "title": "Natural Earth 1:10 millones · tierra física",
+   "owner": "Natural Earth",
+   "date": "v5",
+   "license": "Dominio público",
+   "url": "https://www.naturalearthdata.com/",
+   "resolution": "1:10 000 000",
+   "method": "Solo contexto alrededor de BCS.",
+   "limits": "Costa generalizada; la costa de BCS usa INEGI."
+  },
+  {
+   "id": "bands",
+   "label": "Bandas de altitud",
+   "title": "Bandas derivadas del modelo de elevación Terrarium (caché general)",
+   "owner": "Tilezen / AWS Terrain Tiles (INEGI, USGS, NOAA y otros)",
+   "date": "caché 2026-10-08",
+   "license": "Atribución según Tilezen joerd",
+   "url": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+   "resolution": "~1.1 km por píxel a 25° N",
+   "method": "Umbrales 150, 450, 900 y 1,500 m sobre el DEM de visión general.",
+   "limits": "Codifican altitud; no vegetación ni uso del suelo. Se desvanecen al acercarse."
+  }
+ ],
+ "terrain_tiles": [
+  "5/5/13",
+  "5/6/13",
+  "6/11/26",
+  "6/11/27",
+  "6/12/26",
+  "6/12/27",
+  "7/22/53",
+  "7/22/54",
+  "7/22/55",
+  "7/23/53",
+  "7/23/54",
+  "7/23/55",
+  "7/24/53",
+  "7/24/54",
+  "7/24/55",
+  "7/25/53",
+  "7/25/54",
+  "7/25/55"
+ ],
+ "checks": {
+  "iter_localities": 2543,
+  "vertex_subset_checked": {
+   "protected": 4286,
+   "priority": 8100,
+   "zoning": 23071,
+   "agrarian": 12181,
+   "roads": 11335,
+   "rivers": 22013,
+   "runoff": 66991
+  },
+  "poer_distinct_uga_codes": 56,
+  "hydrorivers_unique_ids": 2900
+ }
+}

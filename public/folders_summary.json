@@ -1,0 +1,258 @@
+{
+  "generated_at": "2026-09-24T13:32:16.085471+00:00",
+  "total_files": 6668,
+  "pdf_count": 695,
+  "md_count": 120,
+  "csv_count": 500,
+  "folder_counts": {
+    "00_catalog": 12,
+    "01_planning": 119,
+    "02_water": 27,
+    "03_energy": 17,
+    "04_mobility_waste": 10,
+    "05_demographics": 30,
+    "06_environment": 18,
+    "07_economy_investment": 84,
+    "09_shadow_programme": 41,
+    "10_data_lake": 1419,
+    "11_bcs_hub": 2022,
+    "12_ontology": 8,
+    "13_federal_projects": 23,
+    "13_territorial_intelligence": 2830,
+    "14_gis_atlas": 8
+  },
+  "ext_counts": {
+    "jpg": 2957,
+    "jpeg": 1000,
+    "pdf": 695,
+    "xlsx": 532,
+    "csv": 500,
+    "esp": 396,
+    "kml": 209,
+    "md": 120,
+    "zip": 86,
+    "html": 53,
+    "txt": 36,
+    "geojson": 21,
+    "json": 15,
+    "doc": 10,
+    "dbf": 4,
+    "prj": 4,
+    "shp": 4,
+    "shx": 4,
+    "gz": 4,
+    "xls": 2,
+    "cpg": 2,
+    "sbn": 2,
+    "sbx": 2,
+    "xml": 2,
+    "bin": 1,
+    "pptx": 1,
+    "tsv": 1,
+    "lyr": 1,
+    "gpkg": 1,
+    "qgs": 1,
+    "qgz": 1,
+    "qml": 1
+  },
+  "theme_counts": {
+    "catalogo": 12,
+    "planeacion": 119,
+    "agua": 27,
+    "energia": 17,
+    "conectividad": 10,
+    "territorio": 30,
+    "ambiente": 18,
+    "economia": 84,
+    "programa": 41,
+    "data_lake": 1419,
+    "portal": 2022,
+    "ontologia": 8,
+    "proyectos_federales": 23,
+    "inteligencia_territorial": 2830,
+    "mapas": 8
+  },
+  "folders": [
+    {
+      "id": "00_catalog",
+      "count": 12,
+      "label_es": "Índices y catálogos de datos",
+      "label_en": "Data indexes and catalogs",
+      "theme": "catalogo"
+    },
+    {
+      "id": "01_planning",
+      "count": 119,
+      "label_es": "Planeación: POER, PDU, POEL, PMD",
+      "label_en": "Planning: POER, PDU, POEL, PMD",
+      "theme": "planeacion"
+    },
+    {
+      "id": "02_water",
+      "count": 27,
+      "label_es": "Agua: DMA, CONAGUA, desalación",
+      "label_en": "Water: DMA, CONAGUA, desalination",
+      "theme": "agua"
+    },
+    {
+      "id": "03_energy",
+      "count": 17,
+      "label_es": "Energía: SIBCS, CENACE, PRODESEN",
+      "label_en": "Energy: SIBCS, CENACE, PRODESEN",
+      "theme": "energia"
+    },
+    {
+      "id": "04_mobility_waste",
+      "count": 10,
+      "label_es": "Movilidad y residuos",
+      "label_en": "Mobility and waste",
+      "theme": "conectividad"
+    },
+    {
+      "id": "05_demographics",
+      "count": 30,
+      "label_es": "Demografía INEGI / ITER",
+      "label_en": "Demographics INEGI / ITER",
+      "theme": "territorio"
+    },
+    {
+      "id": "06_environment",
+      "count": 18,
+      "label_es": "Ambiente: ANP, RTP, POER UGAs",
+      "label_en": "Environment: ANP, RTP, POER UGAs",
+      "theme": "ambiente"
+    },
+    {
+      "id": "07_economy_investment",
+      "count": 84,
+      "label_es": "Economía, IED e inmobiliario",
+      "label_en": "Economy, FDI and real estate",
+      "theme": "economia"
+    },
+    {
+      "id": "09_shadow_programme",
+      "count": 41,
+      "label_es": "Material de programa (archivo)",
+      "label_en": "Programme archive material",
+      "theme": "programa"
+    },
+    {
+      "id": "10_data_lake",
+      "count": 1419,
+      "label_es": "Data lake NotebookLM / fuentes",
+      "label_en": "Data lake NotebookLM / sources",
+      "theme": "data_lake"
+    },
+    {
+      "id": "12_ontology",
+      "count": 8,
+      "label_es": "Ontología territorial",
+      "label_en": "Territorial ontology",
+      "theme": "ontologia"
+    },
+    {
+      "id": "13_federal_projects",
+      "count": 23,
+      "label_es": "13_federal_projects",
+      "label_en": "13_federal_projects",
+      "theme": "proyectos_federales"
+    },
+    {
+      "id": "13_territorial_intelligence",
+      "count": 2830,
+      "label_es": "Inteligencia territorial (TI)",
+      "label_en": "Territorial intelligence (TI)",
+      "theme": "inteligencia_territorial"
+    },
+    {
+      "id": "14_gis_atlas",
+      "count": 8,
+      "label_es": "Atlas GIS / mapas",
+      "label_en": "GIS atlas / maps",
+      "theme": "mapas"
+    }
+  ],
+  "ti_subpacks": [
+    {
+      "id": "_raw",
+      "count": 45,
+      "path": "13_territorial_intelligence/_raw"
+    },
+    {
+      "id": "catastro_implan",
+      "count": 7,
+      "path": "13_territorial_intelligence/catastro_implan"
+    },
+    {
+      "id": "earth_studio_FIXED",
+      "count": 193,
+      "path": "13_territorial_intelligence/earth_studio_FIXED"
+    },
+    {
+      "id": "earth_studio_stills",
+      "count": 2161,
+      "path": "13_territorial_intelligence/earth_studio_stills"
+    },
+    {
+      "id": "earth_studio_stills_urban_coast",
+      "count": 25,
+      "path": "13_territorial_intelligence/earth_studio_stills_urban_coast"
+    },
+    {
+      "id": "earth_studio_tour",
+      "count": 348,
+      "path": "13_territorial_intelligence/earth_studio_tour"
+    },
+    {
+      "id": "fiscal",
+      "count": 15,
+      "path": "13_territorial_intelligence/fiscal"
+    },
+    {
+      "id": "hazards",
+      "count": 2,
+      "path": "13_territorial_intelligence/hazards"
+    },
+    {
+      "id": "histories",
+      "count": 12,
+      "path": "13_territorial_intelligence/histories"
+    },
+    {
+      "id": "land_tenure",
+      "count": 4,
+      "path": "13_territorial_intelligence/land_tenure"
+    },
+    {
+      "id": "maps_catalog",
+      "count": 3,
+      "path": "13_territorial_intelligence/maps_catalog"
+    },
+    {
+      "id": "plans",
+      "count": 4,
+      "path": "13_territorial_intelligence/plans"
+    },
+    {
+      "id": "plans_archive",
+      "count": 23,
+      "path": "13_territorial_intelligence/plans_archive"
+    },
+    {
+      "id": "ports_demand",
+      "count": 28,
+      "path": "13_territorial_intelligence/ports_demand"
+    },
+    {
+      "id": "tourism_assets",
+      "count": 21,
+      "path": "13_territorial_intelligence/tourism_assets"
+    }
+  ],
+  "excluded_from_public_catalog": {
+    "total": 113,
+    "non_document": 90,
+    "no_content": 22,
+    "superseded": 1
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "version": 1,
+  "browse_label": {
+    "es": "Explorar por grupo",
+    "en": "Browse by group"
+  },
+  "groups": [
+    {
+      "id": "steering",
+      "label_es": "Steering Committee",
+      "label_en": "Steering Committee",
+      "subgroups": [
+        {
+          "id": "project_governance",
+          "label_es": "Project Governance",
+          "label_en": "Project Governance",
+          "path_prefixes": [
+            "10_data_lake/01_Steering_Committee/01_Project_Governance"
+          ],
+          "folder_ids": [],
+          "q_any": [
+            "Project_Governance"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "political",
+          "label_es": "Political Stakeholders",
+          "label_en": "Political Stakeholders",
+          "path_prefixes": [
+            "10_data_lake/01_Steering_Committee/02_Political_Stakeholders"
+          ],
+          "q_any": [
+            "Political_Stakeholders"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "sepuimm",
+          "label_es": "State Level — SEPUIMM",
+          "label_en": "State Level — SEPUIMM",
+          "path_prefixes": [
+            "10_data_lake/01_Steering_Committee/03_State_Level_SEPUIMM"
+          ],
+          "q_any": [
+            "SEPUIMM",
+            "State_Level"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "municipal_planning",
+          "label_es": "Municipal Planning Authorities",
+          "label_en": "Municipal Planning Authorities",
+          "path_prefixes": [
+            "10_data_lake/01_Steering_Committee/04_Municipal_Planning_Authorities"
+          ],
+          "q_any": [
+            "Municipal_Planning"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "water_energy_reg",
+          "label_es": "Water and Energy regulators",
+          "label_en": "Water and Energy regulators",
+          "path_prefixes": [
+            "10_data_lake/01_Steering_Committee/05_Water_and_Energy_regulators"
+          ],
+          "q_any": [
+            "Water_and_Energy_regulators"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "dev_investment",
+          "label_es": "Development & Investment Sector",
+          "label_en": "Development & Investment Sector",
+          "path_prefixes": [
+            "10_data_lake/01_Steering_Committee/06_Development_and_Investment_Sector"
+          ],
+          "q_any": [
+            "Development_and_Investment"
+          ],
+          "kind": "engagement"
+        }
+      ],
+      "kind": "engagement"
+    },
+    {
+      "id": "tag",
+      "label_es": "Technical Advisory Group",
+      "label_en": "Technical Advisory Group",
+      "subgroups": [
+        {
+          "id": "infra_utilities",
+          "label_es": "Infrastructure & Utilities",
+          "label_en": "Infrastructure & Utilities",
+          "path_prefixes": [
+            "10_data_lake/02_Technical_Advisory_Group/01_Infrastructure_and_Utilities"
+          ],
+          "q_any": [
+            "Infrastructure_and_Utilities"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "env_cons",
+          "label_es": "Environmental & Conservation Stakeholders",
+          "label_en": "Environmental & Conservation Stakeholders",
+          "path_prefixes": [
+            "10_data_lake/02_Technical_Advisory_Group/02_Environmental_and_Conservation"
+          ],
+          "q_any": [
+            "Environmental_and_Conservation"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "planning_delivery",
+          "label_es": "Planning Delivery",
+          "label_en": "Planning Delivery",
+          "path_prefixes": [
+            "10_data_lake/02_Technical_Advisory_Group/03_Planning_Delivery"
+          ],
+          "q_any": [
+            "Planning_Delivery"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "mobility",
+          "label_es": "Mobility Stakeholders",
+          "label_en": "Mobility Stakeholders",
+          "path_prefixes": [
+            "10_data_lake/02_Technical_Advisory_Group/04_Mobility_Stakeholders"
+          ],
+          "q_any": [
+            "Mobility_Stakeholders"
+          ],
+          "kind": "engagement"
+        }
+      ],
+      "kind": "engagement"
+    },
+    {
+      "id": "forum",
+      "label_es": "Stakeholders Forum",
+      "label_en": "Stakeholders Forum",
+      "subgroups": [
+        {
+          "id": "economic",
+          "label_es": "Economic Sectors",
+          "label_en": "Economic Sectors",
+          "path_prefixes": [
+            "10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors"
+          ],
+          "q_any": [
+            "Economic_Sectors"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "communities_ngos",
+          "label_es": "Communities and Local NGOs",
+          "label_en": "Communities and Local NGOs",
+          "path_prefixes": [
+            "10_data_lake/03_Stakeholders_Forum/02_Communities_and_Local_NGOs"
+          ],
+          "q_any": [
+            "Communities_and_Local_NGOs"
+          ],
+          "kind": "engagement"
+        },
+        {
+          "id": "global_thought",
+          "label_es": "Global Thought Partners",
+          "label_en": "Global Thought Partners",
+          "path_prefixes": [
+            "10_data_lake/03_Stakeholders_Forum/03_Global_Thought_Partners"
+          ],
+          "q_any": [
+            "Global_Thought_Partners"
+          ],
+          "kind": "engagement"
+        }
+      ],
+      "kind": "engagement"
+    },
+    {
+      "id": "territory_data",
+      "label_es": "Territory data",
+      "label_en": "Territory data",
+      "subgroups": [
+        {
+          "id": "indexes",
+          "label_es": "Índices / catálogos",
+          "label_en": "Indexes / catalogs",
+          "kind": "theme",
+          "path_prefixes": [
+            "00_catalog/",
+            "10_data_lake/indexes/",
+            "10_data_lake_indexes/"
+          ],
+          "folder_ids": [
+            "00_catalog"
+          ],
+          "q_any": [
+            "CATALOG.csv",
+            "CATALOG_",
+            "99_source_index",
+            "CROSSWALK"
+          ]
+        },
+        {
+          "id": "planning",
+          "label_es": "Planeación / Planning",
+          "label_en": "Planning",
+          "path_prefixes": [
+            "01_planning/"
+          ],
+          "folder_ids": [
+            "01_planning"
+          ],
+          "theme": "planeacion",
+          "kind": "theme"
+        },
+        {
+          "id": "water",
+          "label_es": "Agua / Water",
+          "label_en": "Water",
+          "path_prefixes": [
+            "02_water/"
+          ],
+          "folder_ids": [
+            "02_water"
+          ],
+          "theme": "agua",
+          "kind": "theme"
+        },
+        {
+          "id": "energy",
+          "label_es": "Energía / Energy",
+          "label_en": "Energy",
+          "path_prefixes": [
+            "03_energy/"
+          ],
+          "folder_ids": [
+            "03_energy"
+          ],
+          "theme": "energia",
+          "kind": "theme"
+        },
+        {
+          "id": "federal_projects",
+          "label_es": "Proyectos federales",
+          "label_en": "Federal projects",
+          "kind": "theme",
+          "path_prefixes": [
+            "13_federal_projects/"
+          ],
+          "folder_ids": [
+            "13_federal_projects"
+          ],
+          "theme": "proyectos_federales",
+          "q_any": [
+            "federal",
+            "sexenio",
+            "AMLO",
+            "Sheinbaum",
+            "PRODESEN",
+            "desaliniz"
+          ]
+        },
+        {
+          "id": "mobility_waste",
+          "label_es": "Movilidad y residuos",
+          "label_en": "Mobility and waste",
+          "path_prefixes": [
+            "04_mobility_waste/"
+          ],
+          "folder_ids": [
+            "04_mobility_waste"
+          ],
+          "theme": "conectividad",
+          "kind": "theme"
+        },
+        {
+          "id": "demographics",
+          "label_es": "Demografía",
+          "label_en": "Demographics",
+          "path_prefixes": [
+            "05_demographics/"
+          ],
+          "folder_ids": [
+            "05_demographics"
+          ],
+          "theme": "territorio",
+          "kind": "theme"
+        },
+        {
+          "id": "environment",
+          "label_es": "Ambiente / ANP",
+          "label_en": "Environment / ANP",
+          "path_prefixes": [
+            "06_environment/"
+          ],
+          "folder_ids": [
+            "06_environment"
+          ],
+          "theme": "ambiente",
+          "kind": "theme"
+        },
+        {
+          "id": "economy",
+          "label_es": "Economía e inversión",
+          "label_en": "Economy and investment",
+          "path_prefixes": [
+            "07_economy_investment/"
+          ],
+          "folder_ids": [
+            "07_economy_investment"
+          ],
+          "theme": "economia",
+          "kind": "theme"
+        },
+        {
+          "id": "ti_maps_gis",
+          "label_es": "Mapas / GIS / TI",
+          "label_en": "Maps / GIS / TI",
+          "path_prefixes": [
+            "13_territorial_intelligence/",
+            "14_gis_atlas/"
+          ],
+          "folder_ids": [
+            "13_territorial_intelligence",
+            "14_gis_atlas"
+          ],
+          "exclude_path_substrings": [
+            "earth_studio_tour",
+            "earth_studio_FIXED",
+            "/esp/",
+            "/kml/",
+            ".esp",
+            "stills_batch"
+          ],
+          "kind": "theme"
+        }
+      ],
+      "kind": "theme"
+    }
+  ],
+  "exclude_from_downloads": {
+    "path_prefixes": [
+      "12_ontology/",
+      "09_shadow_programme/",
+      "08_fp_team_research/"
+    ],
+    "folder_ids": [
+      "12_ontology",
+      "09_shadow_programme",
+      "08_fp_team_research",
+      "1UCjtCBgWxuuKGUzqBBuzyzRfRRzVB7yO"
+    ],
+    "path_substrings": [
+      "earth_studio_tour",
+      "earth_studio_FIXED",
+      "/esp/",
+      ".esp",
+      "RENDER",
+      "stills_batch",
+      "08_fp_team_research"
+    ]
+  },
+  "notes": "F+P engagement labels only for actor-related packs under 10_data_lake engagement folders. Theme PDFs/CSVs (INEGI, CONEVAL, plans, DMA…) use Territory theme labels even if duplicated under engagement paths. F+P participant fichas under 08_fp_team_research are backend-only (hidden from public catalog/search/downloads/chat).",
+  "theme_doc_name_patterns": [
+    "INEGI",
+    "CONEVAL",
+    "Censo",
+    "ITER",
+    "CONAGUA",
+    "CENACE",
+    "PRODESEN",
+    "SIBCS",
+    "SEMARNAT",
+    "CONANP",
+    "DOF",
+    "BOGE",
+    "PDU",
+    "POER",
+    "POEL",
+    "PMD",
+    "PMDU",
+    "PSDU",
+    "DMA_",
+    "Atlas",
+    "RTP",
+    "ANP",
+    "PAMRNT",
+    "PLADESE",
+    "ENOE",
+    "PIBE",
+    "ITAEE",
+    "ETEF",
+    "SETUE",
+    "DataMexico",
+    "Informacion-Estrategica"
+  ]
+}

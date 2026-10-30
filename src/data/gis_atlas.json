@@ -1,0 +1,53 @@
+{
+  "readme": "# BCS Regional Atlas (QGIS)\n\nReady-to-open regional map pack for Baja California Sur.\n\n## Open\n\n1. Install [QGIS](https://qgis.org) 3.28+ if needed.\n2. Double-click `BCS_regional.qgz` (or open `BCS_regional.qgs`).\n3. Keep `BCS_regional.gpkg` next to the project file (relative paths).\n\nIf a layer fails to load: **Browser panel → GeoPackage → BCS_regional.gpkg → drag layers** into the map.\n\n## Layers (GeoPackage)\n\n| Layer | Content | Default |\n|-------|---------|---------|\n| `poer_ugas` | POERBCS UGAs (2D, preferred) | on |\n| `poer_ugas_01` / `_02` | Raw POER shapefile imports | off |\n| `anp_federales` | Federal protected areas (BCS clip) | on |\n| `rtp_conabio` | CONABIO priority regions | off |\n| `ran_nucleos` | RAN agrarian nuclei polygons | on |\n| `settlements` | Cabeceras + main localities (~77) | on |\n| `highway_nodes` | Named corridor nodes from Earth Studio study | on |\n| `stills_points` | ~1000 Earth Studio still camera points | off |\n\nCRS: **EPSG:4326 (WGS 84)**. Extent covers the peninsula.\n\n## Suggested basemap\n\nIn QGIS: **Browser → XYZ Tiles → OpenStreetMap**, or add Google/Esri satellite via XYZ URL. Project stays offline-capable without basemap.\n\n## Suggested next layers\n\n- INEGI Marco Geoestadístico (municipios / localidades AGEB)\n- SCT / OpenStreetMap highways as lines\n- CONAGUA aquifers (from `02_water`)\n- Tourism assets CSV → points\n\n## Sources\n\nBuilt from `13_territorial_intelligence/_raw` (POER shapes, ANP, RTP, RAN KML) plus stills/settlement CSVs. See sibling `maps_catalog/` for the full map inventory.\n\n## Folder layout\n\n```\n14_gis_atlas/\n  BCS_regional.qgz      ← open this\n  BCS_regional.qgs\n  BCS_regional.gpkg     ← all vectors\n  csv/                  ← source point tables\n  styles/               ← optional QML\n  README.md\n```\n",
+  "files": [
+    "BCS_regional.qgz",
+    "BCS_regional.qgs",
+    "BCS_regional.gpkg"
+  ],
+  "desktop": "Desktop\\\\BCSFP\\\\14_gis_atlas",
+  "layers": [
+    {
+      "id": "poer_ugas",
+      "es": "UGAs POERBCS",
+      "en": "POERBCS UGAs",
+      "on": true
+    },
+    {
+      "id": "anp_federales",
+      "es": "ANP federales",
+      "en": "Federal protected areas",
+      "on": true
+    },
+    {
+      "id": "rtp_conabio",
+      "es": "RTP CONABIO",
+      "en": "CONABIO priority regions",
+      "on": false
+    },
+    {
+      "id": "ran_nucleos",
+      "es": "Núcleos agrarios RAN",
+      "en": "RAN agrarian nuclei",
+      "on": true
+    },
+    {
+      "id": "settlements",
+      "es": "Asentamientos (~77)",
+      "en": "Settlements (~77)",
+      "on": true
+    },
+    {
+      "id": "highway_nodes",
+      "es": "Nodos carreteros",
+      "en": "Highway nodes",
+      "on": true
+    },
+    {
+      "id": "stills_points",
+      "es": "Puntos Earth Studio (~1000)",
+      "en": "Earth Studio points (~1000)",
+      "on": false
+    }
+  ]
+}

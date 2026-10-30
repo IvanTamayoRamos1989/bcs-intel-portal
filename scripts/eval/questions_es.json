@@ -1,0 +1,1440 @@
+{
+ "version": 2,
+ "created": "2026-10-05",
+ "updated": "2026-10-08",
+ "gate": {
+  "original_min": 91,
+  "original_n": 100,
+  "news_cat": "noticias",
+  "news_min": 5
+ },
+ "count": 106,
+ "questions": [
+  {
+   "id": "E001",
+   "cat": "agua",
+   "q": "¿Cuál es la disponibilidad media anual del acuífero Cabo San Lucas (0317)?",
+   "kind": "fact",
+   "all": [
+    "24[.,]0?7"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "agua",
+    "0317"
+   ],
+   "note": null
+  },
+  {
+   "id": "E002",
+   "cat": "agua",
+   "q": "¿Qué DMA tiene el acuífero San José del Cabo?",
+   "kind": "fact",
+   "all": [
+    "12[.,]49"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "0319"
+   ],
+   "note": null
+  },
+  {
+   "id": "E003",
+   "cat": "agua",
+   "q": "DMA del acuífero La Paz 0324 según la actualización 2024",
+   "kind": "fact",
+   "all": [
+    "13[.,]49"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "0324"
+   ],
+   "note": null
+  },
+  {
+   "id": "E004",
+   "cat": "agua",
+   "q": "¿Qué dice el Acuerdo DOF de agosto 2023 sobre el acuífero de La Paz?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "27[.,]83",
+    "sin volumen|no existe volumen|nuevas concesiones"
+   ],
+   "place": null,
+   "expect_sources": [
+    "0324"
+   ],
+   "note": null
+  },
+  {
+   "id": "E005",
+   "cat": "agua",
+   "q": "¿El acuífero Todos Santos tiene disponibilidad para nuevas concesiones?",
+   "kind": "fact",
+   "all": [
+    "2[.,]96|d[eé]ficit|sin (nuevas )?concesion|no (hay|tiene) (volumen|disponibilidad)"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E006",
+   "cat": "agua",
+   "q": "¿Cuál es la DMA del acuífero Santiago?",
+   "kind": "fact",
+   "all": [
+    "0?[.,]30\\b|298[ ,.]?386"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E007",
+   "cat": "agua",
+   "q": "DMA del acuífero Los Planes",
+   "kind": "fact",
+   "all": [
+    "2[.,]34"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E008",
+   "cat": "agua",
+   "q": "¿Cuál es la DMA del acuífero El Coyote?",
+   "kind": "fact",
+   "all": [
+    "6[.,]24"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E009",
+   "cat": "agua",
+   "q": "¿Cuál es la disponibilidad del acuífero Cabo Pulmo?",
+   "kind": "fact",
+   "all": [
+    "2[.,]29"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E010",
+   "cat": "agua",
+   "q": "¿Qué capacidad tiene la desaladora de Los Cabos?",
+   "kind": "fact",
+   "all": [
+    "250\\s*(l/s|lps|litros)"
+   ],
+   "any": [],
+   "place": "los_cabos",
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E011",
+   "cat": "agua",
+   "q": "¿A cuántos hectómetros cúbicos al año equivale la desaladora de 250 l/s?",
+   "kind": "fact",
+   "all": [
+    "7[.,]88"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E012",
+   "cat": "agua",
+   "q": "¿Cuál es la suma de déficits de los acuíferos del pack sur?",
+   "kind": "fact",
+   "all": [
+    "63[.,]88"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E013",
+   "cat": "agua",
+   "q": "¿Cuál es la DMA del acuífero Santo Domingo en Comondú?",
+   "kind": "fact",
+   "all": [
+    "30[.,]28"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "0306"
+   ],
+   "note": null
+  },
+  {
+   "id": "E014",
+   "cat": "agua",
+   "q": "¿Qué acuífero abastece a Loreto y cuál es su disponibilidad?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "2[.,]58",
+    "Lond[oó]",
+    "0329"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E015",
+   "cat": "agua",
+   "q": "DMA del acuífero Mulegé 0332",
+   "kind": "fact",
+   "all": [
+    "0?[.,]48"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E016",
+   "cat": "agua",
+   "q": "¿Cuántos acuíferos tiene Baja California Sur?",
+   "kind": "fact",
+   "all": [
+    "\\b39\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E017",
+   "cat": "agua",
+   "q": "¿La desalación compensa el déficit de los acuíferos según la NOM-011?",
+   "kind": "open",
+   "all": [],
+   "any": [
+    "no (compensa|reescribe|cancela|es cr[eé]dito)"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E018",
+   "cat": "energia",
+   "q": "¿Cuál fue el pico de demanda del SIBCS en 2024?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "688[.,]5",
+    "\\b689\\b"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E019",
+   "cat": "energia",
+   "q": "Demanda máxima del sistema eléctrico de BCS en 2023",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "\\b660\\b",
+    "\\b675\\b"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E020",
+   "cat": "energia",
+   "q": "¿Cuál fue el consumo neto de electricidad del SIBCS en 2023?",
+   "kind": "fact",
+   "all": [
+    "3[ ,.]?257"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E021",
+   "cat": "energia",
+   "q": "¿Cuánto creció el consumo neto de electricidad en BCS en 2023?",
+   "kind": "fact",
+   "all": [
+    "9[.,]9\\s*%"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E022",
+   "cat": "energia",
+   "q": "¿Cuál es el límite de transmisión La Paz–Los Cabos?",
+   "kind": "fact",
+   "all": [
+    "237"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E023",
+   "cat": "energia",
+   "q": "¿Qué es el proyecto P23-BS1?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "Olas Altas",
+    "230\\s*kV",
+    "140\\s*km"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E024",
+   "cat": "energia",
+   "q": "¿Cuántos MW de almacenamiento (SAE) están planeados en BCS 2025–2030?",
+   "kind": "fact",
+   "all": [
+    "\\b63\\s*MW"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E025",
+   "cat": "energia",
+   "q": "¿Qué pasó con la central de ciclo combinado de 327 MW en BCS?",
+   "kind": "fact",
+   "all": [
+    "cancelad"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E026",
+   "cat": "energia",
+   "q": "¿Cuánta energía generó la turbogás diésel de Los Cabos entre 2023 y 2024?",
+   "kind": "fact",
+   "all": [
+    "282[.,]7"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E027",
+   "cat": "energia",
+   "q": "¿Cuál es la capacidad de la Central de Combustión Interna Los Cabos anunciada?",
+   "kind": "fact",
+   "all": [
+    "240\\s*MW"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E028",
+   "cat": "poblacion",
+   "q": "¿Cuántos habitantes tiene Baja California Sur?",
+   "kind": "fact",
+   "all": [
+    "798[ ,.]?447"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E029",
+   "cat": "poblacion",
+   "q": "¿Cuál es la población del municipio de La Paz?",
+   "kind": "fact",
+   "all": [
+    "292[ ,.]?241"
+   ],
+   "any": [],
+   "place": "la_paz",
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E030",
+   "cat": "poblacion",
+   "q": "cuantos abitantes tiene los cabos",
+   "kind": "fact",
+   "all": [
+    "351[ ,.]?111"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E031",
+   "cat": "poblacion",
+   "q": "Población de Comondú según el censo 2020",
+   "kind": "fact",
+   "all": [
+    "73[ ,.]?021"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E032",
+   "cat": "poblacion",
+   "q": "¿Cuántos habitantes tiene Mulegé?",
+   "kind": "fact",
+   "all": [
+    "64[ ,.]?022"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E033",
+   "cat": "poblacion",
+   "q": "Población del municipio de Loreto",
+   "kind": "fact",
+   "all": [
+    "18[ ,.]?052"
+   ],
+   "any": [],
+   "place": "loreto",
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E034",
+   "cat": "poblacion",
+   "q": "¿Cuántos habitantes tiene la ciudad de San José del Cabo?",
+   "kind": "fact",
+   "all": [
+    "136[ ,.]?285"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E035",
+   "cat": "poblacion",
+   "q": "¿Cuál es la cabecera de Comondú y cuánta población tiene?",
+   "kind": "fact",
+   "all": [
+    "Constituci[oó]n",
+    "43[ ,.]?805"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E036",
+   "cat": "poblacion",
+   "q": "Población de Santa Rosalía",
+   "kind": "fact",
+   "all": [
+    "14[ ,.]?357"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E037",
+   "cat": "poblacion",
+   "q": "¿Cuántas localidades tiene el municipio de La Paz?",
+   "kind": "fact",
+   "all": [
+    "1[ ,.]?018"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E038",
+   "cat": "poblacion",
+   "q": "¿Cuántos municipios tiene BCS?",
+   "kind": "fact",
+   "all": [
+    "\\b(5|cinco)\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E039",
+   "cat": "poblacion",
+   "q": "¿Cuándo se creó el municipio de Los Cabos?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "1980",
+    "Decreto 181"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E040",
+   "cat": "seguridad",
+   "q": "sedena baja california sur",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": "Portal only has a generic Guardia Nacional federal-project card; no SEDENA data"
+  },
+  {
+   "id": "E041",
+   "cat": "seguridad",
+   "q": "¿Cuántos elementos de la Guardia Nacional hay en BCS?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E042",
+   "cat": "seguridad",
+   "q": "¿Dónde están los cuarteles de SEDENA en Baja California Sur?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E043",
+   "cat": "seguridad",
+   "q": "¿Cuál es la tasa de homicidios de Los Cabos en 2025?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E044",
+   "cat": "seguridad",
+   "q": "¿Qué presupuesto tiene la Marina en el puerto de La Paz?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E045",
+   "cat": "seguridad",
+   "q": "¿Qué proyectos federales de seguridad hay en BCS?",
+   "kind": "open",
+   "all": [],
+   "any": [
+    "Guardia Nacional"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E046",
+   "cat": "actores",
+   "q": "¿Quién es el presidente municipal de Los Cabos?",
+   "kind": "fact",
+   "all": [
+    "Christian Ag[uú]ndez"
+   ],
+   "any": [],
+   "place": "los_cabos",
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E047",
+   "cat": "actores",
+   "q": "¿Quién es el gobernador de Baja California Sur?",
+   "kind": "fact",
+   "all": [
+    "V[ií]ctor Manuel Castro Cos[ií]o"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E048",
+   "cat": "actores",
+   "q": "¿Quién es la presidenta municipal de La Paz?",
+   "kind": "fact",
+   "all": [
+    "Milena (Paola )?Quiroga"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E049",
+   "cat": "actores",
+   "q": "¿Quién dirige el OOMSAPAS Los Cabos?",
+   "kind": "fact",
+   "all": [
+    "Ram[oó]n Edgardo Rubio"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E050",
+   "cat": "actores",
+   "q": "¿Quién encabeza el IMPLAN Los Cabos?",
+   "kind": "fact",
+   "all": [
+    "Beatriz Gonz[aá]lez Gil?bert"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E051",
+   "cat": "actores",
+   "q": "¿Quién dirige el IMPLAN La Paz?",
+   "kind": "fact",
+   "all": [
+    "Al[aá]n Roberto Izquierdo"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E052",
+   "cat": "actores",
+   "q": "¿Quién es la titular de la SETUE?",
+   "kind": "fact",
+   "all": [
+    "Rosa Maribel Collins"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E053",
+   "cat": "actores",
+   "q": "¿Quién representa a CONAGUA en BCS?",
+   "kind": "fact",
+   "all": [
+    "Julio C[eé]sar Villarreal"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E054",
+   "cat": "actores",
+   "q": "¿Quién encabeza la CEA BCS?",
+   "kind": "fact",
+   "all": [
+    "Lesvia Tatiana Davis"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E055",
+   "cat": "actores",
+   "q": "¿Quién es el director de la CFE en Baja California Sur?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": "no named CFE BCS director in the seed"
+  },
+  {
+   "id": "E056",
+   "cat": "actores",
+   "q": "¿Quién es el secretario de Seguridad Pública de BCS?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E057",
+   "cat": "inmobiliario",
+   "q": "¿Cuál fue el volumen residencial de BCS en 2025 según JLL?",
+   "kind": "fact",
+   "all": [
+    "1[ ,.]?570"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E058",
+   "cat": "inmobiliario",
+   "q": "¿Cuántas unidades residenciales se vendieron en BCS en 2025 (JLL)?",
+   "kind": "fact",
+   "all": [
+    "1[ ,.]?840"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E059",
+   "cat": "inmobiliario",
+   "q": "¿Qué porcentaje del volumen residencial de BCS corresponde a Los Cabos?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "81\\s*%",
+    "1[ ,.]?264"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E060",
+   "cat": "inmobiliario",
+   "q": "¿Cuál es la mediana de precio de vivienda en Los Cabos en 2026?",
+   "kind": "fact",
+   "all": [
+    "525[ ,.]?000"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E061",
+   "cat": "inmobiliario",
+   "q": "¿Cuántos meses de inventario hay en Los Cabos?",
+   "kind": "fact",
+   "all": [
+    "\\b15\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E062",
+   "cat": "inmobiliario",
+   "q": "¿Cuál es el rezago habitacional en BCS?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "58[ ,.]?987",
+    "21[.,]4\\s*%"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E063",
+   "cat": "inmobiliario",
+   "q": "¿Cuál es la meta de Vivienda para el Bienestar en BCS?",
+   "kind": "fact",
+   "all": [
+    "37[ ,.]?500"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E064",
+   "cat": "inmobiliario",
+   "q": "¿Cuántas acciones de INFONAVIT hubo en BCS en 2025?",
+   "kind": "fact",
+   "all": [
+    "6[ ,.]?604"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E065",
+   "cat": "inmobiliario",
+   "q": "¿Cuál es el precio promedio del metro cuadrado en Mulegé?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E066",
+   "cat": "turismo",
+   "q": "¿Cuántos pasajeros tuvo el aeropuerto de Los Cabos (SJD) en 2025?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "3[.,]8\\s*M",
+    "3[.,]8\\s*millones"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E067",
+   "cat": "turismo",
+   "q": "¿Cuántos pasajeros tuvo el aeropuerto de La Paz en 2025?",
+   "kind": "fact",
+   "all": [
+    "668[ ,.]?800"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E068",
+   "cat": "turismo",
+   "q": "aeropuerto loreto pasajeros",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "no (est[aá] |es un dato |fue |ha sido )?consolidad",
+    "no (hay|tengo|consta)",
+    "sin dato"
+   ],
+   "place": "loreto",
+   "expect_sources": [],
+   "note": "portal says CY2025 LTO not consolidated"
+  },
+  {
+   "id": "E069",
+   "cat": "turismo",
+   "q": "¿Cuántas habitaciones de hotel tiene Los Cabos?",
+   "kind": "fact",
+   "all": [
+    "22[ ,.]?254"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E070",
+   "cat": "turismo",
+   "q": "¿Cuántos hoteles tiene La Paz?",
+   "kind": "fact",
+   "all": [
+    "\\b148\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E071",
+   "cat": "turismo",
+   "q": "Ocupación hotelera de Los Cabos en 2025",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "70(\\.0)?\\s*%"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E072",
+   "cat": "turismo",
+   "q": "¿Cuántos pasajeros de crucero llegaron a Cabo San Lucas en 2025?",
+   "kind": "fact",
+   "all": [
+    "1[ ,.]?057[ ,.]?758"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E073",
+   "cat": "turismo",
+   "q": "¿Cuál fue el RevPAR de Los Cabos en enero 2026?",
+   "kind": "fact",
+   "all": [
+    "369"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E074",
+   "cat": "turismo",
+   "q": "¿Cuántos destinos sin escalas tiene SJD?",
+   "kind": "fact",
+   "all": [
+    "\\b56\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E075",
+   "cat": "turismo",
+   "q": "¿Qué limita el crecimiento turístico de Todos Santos?",
+   "kind": "open",
+   "all": [],
+   "any": [
+    "agua|acu[ií]fero|0313|d[eé]ficit"
+   ],
+   "place": "todos_santos",
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E076",
+   "cat": "economia",
+   "q": "¿Cuál fue el PIB de Baja California Sur en 2024 a precios constantes?",
+   "kind": "fact",
+   "all": [
+    "187[ ,.]?152"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E077",
+   "cat": "economia",
+   "q": "PIB nominal de BCS 2024",
+   "kind": "fact",
+   "all": [
+    "251[ ,.]?902"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E078",
+   "cat": "economia",
+   "q": "¿Cuánta inversión extranjera directa recibió BCS en 2025?",
+   "kind": "fact",
+   "all": [
+    "1[ ,.]?578"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E079",
+   "cat": "economia",
+   "q": "¿Qué porcentaje del VAB de BCS es terciario?",
+   "kind": "fact",
+   "all": [
+    "72[.,]9"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E080",
+   "cat": "economia",
+   "q": "¿Cuántos establecimientos registraron los Censos Económicos 2024 en BCS?",
+   "kind": "fact",
+   "all": [
+    "43[ ,.]?405"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E081",
+   "cat": "economia",
+   "q": "¿Cuál es la tasa de desocupación en BCS (ENOE 2026 T2)?",
+   "kind": "fact",
+   "all": [
+    "2[.,]3\\s*%"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E082",
+   "cat": "economia",
+   "q": "¿Cuál es la pobreza laboral en BCS según CONEVAL?",
+   "kind": "fact",
+   "all": [
+    "13[.,]2\\s*%"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E083",
+   "cat": "ambiente",
+   "q": "¿Qué superficie tiene la Reserva de la Biosfera El Vizcaíno?",
+   "kind": "fact",
+   "all": [
+    "2[ ,.]?546[ ,.]?790"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E084",
+   "cat": "ambiente",
+   "q": "¿Cuándo se decretó el Parque Nacional Cabo Pulmo y qué superficie tiene?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "1995",
+    "7[ ,.]?111"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E085",
+   "cat": "ambiente",
+   "q": "Superficie de la Reserva Sierra La Laguna",
+   "kind": "fact",
+   "all": [
+    "112[ ,.]?437"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E086",
+   "cat": "ambiente",
+   "q": "¿Qué superficie tiene el Parque Nacional Bahía de Loreto?",
+   "kind": "fact",
+   "all": [
+    "206[ ,.]?580"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E087",
+   "cat": "ambiente",
+   "q": "¿Cuántas hectáreas ejidales hay en BCS?",
+   "kind": "fact",
+   "all": [
+    "303[ ,.]?95[78]"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E088",
+   "cat": "planeacion",
+   "q": "¿Cuándo se publicó el POERBCS y cuántas UGAs tiene?",
+   "kind": "fact",
+   "all": [
+    "56"
+   ],
+   "any": [
+    "2026|21.{0,6}ene"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E089",
+   "cat": "planeacion",
+   "q": "¿Qué plan de desarrollo urbano está vigente en Los Cabos?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "PDU 2040",
+    "2013"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E090",
+   "cat": "planeacion",
+   "q": "¿Qué instrumento urbano rige La Paz?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "PDUCP",
+    "PMDU"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E091",
+   "cat": "proyectos",
+   "q": "¿Cuántos proyectos federales hay en el inventario de BCS?",
+   "kind": "fact",
+   "all": [
+    "\\b44\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E092",
+   "cat": "proyectos",
+   "q": "¿Qué capacidad tiene el Hospital General Regional del IMSS en Los Cabos?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "260\\s*camas",
+    "41[ ,.]?000"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E093",
+   "cat": "proyectos",
+   "q": "¿Cuál es el monto de la Presa El Novillo?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "800\\s*(M|millones|mdp)",
+    "800[ ,.]?000[ ,.]?000"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E094",
+   "cat": "proyectos",
+   "q": "¿Qué pasó con el proyecto Don Diego?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "rechaz|cancel"
+   ],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E095",
+   "cat": "proyectos",
+   "q": "¿Cuántas acciones hídricas tiene el paquete federal para BCS?",
+   "kind": "fact",
+   "all": [
+    "\\b95\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E096",
+   "cat": "fuera",
+   "q": "¿Cuánta agua en litros por segundo suministra el OOMSAPAS a todo Los Cabos?",
+   "kind": "refuse",
+   "all": [],
+   "any": [],
+   "place": "los_cabos",
+   "expect_sources": [],
+   "note": null
+  },
+  {
+   "id": "E097",
+   "cat": "agua",
+   "q": "¿Cuántos kilómetros tiene la red de drenaje de escorrentía de BCS según el modelo HydroRIVERS del paquete 2026?",
+   "kind": "fact",
+   "all": [
+    "16[.,]?588"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "escorrent",
+    "HydroRIVERS",
+    "16,588"
+   ],
+   "note": "Terrain runoff model — not flood map"
+  },
+  {
+   "id": "E098",
+   "cat": "agua",
+   "q": "¿Cuántas semillas D8 se usaron para las trayectorias de escorrentía en BCS y cuántas terminan en salida costera?",
+   "kind": "fact",
+   "all": [
+    "4[.,]?574",
+    "4[.,]?428"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "escorrent",
+    "semilla",
+    "D8"
+   ],
+   "note": null
+  },
+  {
+   "id": "E099",
+   "cat": "agua",
+   "q": "¿Cuántos kilómetros de red de drenaje de escorrentía hay en Los Cabos según el resumen municipal?",
+   "kind": "fact",
+   "all": [
+    "800"
+   ],
+   "any": [
+    "800[.,]58"
+   ],
+   "place": "los_cabos",
+   "expect_sources": [
+    "escorrent",
+    "Cabos"
+   ],
+   "note": null
+  },
+  {
+   "id": "E100",
+   "cat": "agua",
+   "q": "¿El mapa de escorrentía del portal es un mapa oficial de peligro por inundación?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "no es un mapa oficial",
+    "modelo de terreno",
+    "no calcula",
+    "sin profundidad",
+    "no es mapa oficial",
+    "not an official"
+   ],
+   "place": null,
+   "expect_sources": [
+    "escorrent"
+   ],
+   "note": "Must state it is NOT an official flood map"
+  },
+  {
+   "id": "E101",
+   "cat": "noticias",
+   "q": "¿Hacia dónde apunta la trayectoria del huracán Rachel según las noticias más recientes?",
+   "kind": "fact",
+   "all": [
+    "punta eugenia"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "Noticia"
+   ],
+   "note": "news 2026-10-07 El Momento BCS / El Informador"
+  },
+  {
+   "id": "E102",
+   "cat": "noticias",
+   "q": "¿Qué porcentaje de las colonias de coral entre Loreto y Los Cabos detectaron blanqueadas los investigadores de la UABCS?",
+   "kind": "fact",
+   "all": [
+    "60[^0-9]{1,8}70\\s*%"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "Noticia"
+   ],
+   "note": "news 2026-10-07 Meganoticias"
+  },
+  {
+   "id": "E103",
+   "cat": "noticias",
+   "q": "¿Qué ocupación hotelera esperan los hoteleros de Los Cabos para el último trimestre de 2026?",
+   "kind": "fact",
+   "all": [
+    "80\\s*(%|por ciento)",
+    "90\\s*(%|por ciento)"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "Noticia"
+   ],
+   "note": "news 2026-10-07 Meganoticias (Asociación de Hoteles de Los Cabos)"
+  },
+  {
+   "id": "E104",
+   "cat": "noticias",
+   "q": "¿Cuántos megawatts de generación móvil incorporó CFE en Los Cabos, según la prensa?",
+   "kind": "fact",
+   "all": [
+    "\\b128\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "Noticia"
+   ],
+   "note": "news 2026-09-18 HOY BCS / 2026-09-21 Energy & Commerce"
+  },
+  {
+   "id": "E105",
+   "cat": "noticias",
+   "q": "¿Qué saldo dejó el huracán Polo a su paso por BCS según las noticias?",
+   "kind": "fact",
+   "all": [],
+   "any": [
+    "saldo blanco|sin v[ií]ctimas"
+   ],
+   "place": null,
+   "expect_sources": [
+    "Noticia"
+   ],
+   "note": "news 2026-09-29"
+  },
+  {
+   "id": "E106",
+   "cat": "noticias",
+   "q": "¿Cuántas colonias de La Paz se quedaron sin agua por la reparación del acueducto 1?",
+   "kind": "fact",
+   "all": [
+    "\\b78\\b"
+   ],
+   "any": [],
+   "place": null,
+   "expect_sources": [
+    "Noticia"
+   ],
+   "note": "news 2026-09-21 Tribuna de México"
+  }
+ ]
+}

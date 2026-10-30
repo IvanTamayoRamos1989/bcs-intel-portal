@@ -1,0 +1,27 @@
+{
+  "name": "bcs-hub",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "python3 scripts/ingest_studies.py && python3 scripts/update_bcs_news.py --check && python3 scripts/clean_data_labels.py && python3 scripts/clean_source_labels.py && python3 scripts/build_chat_corpus.py && python3 scripts/build_chat_media.py && node scripts/check_card_titles.mjs && node scripts/build_explorer_assets.mjs && astro build && node scripts/check_forbidden_terms.mjs && node scripts/check_visible_paths.mjs && node scripts/check_explorer.mjs",
+    "check:terms": "node scripts/check_forbidden_terms.mjs",
+    "preview": "astro preview",
+    "corpus": "python3 scripts/build_chat_corpus.py",
+    "news": "python3 scripts/update_bcs_news.py",
+    "news:check": "python3 scripts/update_bcs_news.py --check",
+    "check:paths": "node scripts/check_visible_paths.mjs",
+    "labels": "python3 scripts/clean_data_labels.py && python3 scripts/clean_source_labels.py",
+    "check:cards": "node scripts/check_card_titles.mjs",
+    "explorer:data": "python3 scripts/build_explorer_data.py && python3 scripts/add_citizen_labels.py",
+    "check:explorer": "node scripts/build_explorer_assets.mjs && node scripts/check_explorer.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13",
+    "astro": "^5.13.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
+}

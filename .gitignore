@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Local Netlify folder
+.netlify
+
+# Keep GitHub lean (Netlify still deploys from box with full assets)
+public/stills/
+foresights_swarm/
+*.pdf
+.env
+.env.*

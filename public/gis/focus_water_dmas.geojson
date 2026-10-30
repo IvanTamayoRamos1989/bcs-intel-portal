@@ -1,0 +1,120 @@
+{
+  "type": "FeatureCollection",
+  "name": "focus_water_dmas",
+  "properties": {
+    "note_es": "Puntos indicativos (no polígonos oficiales de acuífero). Cuatro polos en déficit citados en Resumen + 0318 East Cape.",
+    "note_en": "Indicative points (not official aquifer polygons). Four growth-pole deficits on Summary + 0318 East Cape."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "dma_0313",
+        "clave": "0313",
+        "name_es": "Acuífero Todos Santos (0313)",
+        "name_en": "Todos Santos aquifer (0313)",
+        "dma": "−2.96 hm³/año",
+        "situacion_es": "Sin nuevas concesiones",
+        "situacion_en": "No new concessions",
+        "kind": "dma_marker",
+        "indicative": true,
+        "source": "CONAGUA DMA 2024 · ontology rc_acuifero_0313 · guía agua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.225374,
+          23.450067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "dma_0317",
+        "clave": "0317",
+        "name_es": "Acuífero Cabo San Lucas (0317)",
+        "name_en": "Cabo San Lucas aquifer (0317)",
+        "dma": "−24.07 hm³/año",
+        "situacion_es": "Sin nuevas concesiones (mayor déficit pack sur)",
+        "situacion_en": "No new concessions (largest deficit in southern pack)",
+        "kind": "dma_marker",
+        "indicative": true,
+        "source": "CONAGUA DMA 2024 · ontology rc_acuifero_0317 · guía agua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.925186,
+          22.897019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "dma_0319",
+        "clave": "0319",
+        "name_es": "Acuífero San José del Cabo (0319)",
+        "name_en": "San José del Cabo aquifer (0319)",
+        "dma": "−12.49 hm³/año",
+        "situacion_es": "Sin nuevas concesiones",
+        "situacion_en": "No new concessions",
+        "kind": "dma_marker",
+        "indicative": true,
+        "source": "CONAGUA DMA 2024 · ontology rc_acuifero_0319 · guía agua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702515,
+          23.059836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "dma_0324",
+        "clave": "0324",
+        "name_es": "Acuífero La Paz (0324)",
+        "name_en": "La Paz aquifer (0324)",
+        "dma": "−13.49 hm³/año",
+        "situacion_es": "Sin nuevas concesiones",
+        "situacion_en": "No new concessions",
+        "kind": "dma_marker",
+        "indicative": true,
+        "source": "CONAGUA DMA 2024 · ontology rc_acuifero_0324 · guía agua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.315853,
+          24.161995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "dma_0318",
+        "clave": "0318",
+        "name_es": "Acuífero Cabo Pulmo (0318)",
+        "name_en": "Cabo Pulmo aquifer (0318)",
+        "dma": "−2.29 hm³/año",
+        "situacion_es": "Sin nuevas concesiones · East Cape",
+        "situacion_en": "No new concessions · East Cape",
+        "kind": "dma_marker",
+        "indicative": true,
+        "source": "CONAGUA DMA 2024 · ontology rc_acuifero_0318 · guía agua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.4283,
+          23.4425
+        ]
+      }
+    }
+  ]
+}

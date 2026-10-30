@@ -1,0 +1,4506 @@
+{
+  "generated_from": "src/content/guides/*.md + 13_federal_projects",
+  "count": 450,
+  "facts": [
+    {
+      "id": "fact:agua:dma_0313:0",
+      "metric": "DMA — 0313",
+      "value": "−2.96",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0314:1",
+      "metric": "DMA — 0314",
+      "value": "+0.11",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:situacin_cierre_conagua_0314:2",
+      "metric": "Situación (cierre CONAGUA) — 0314",
+      "value": "Disponible ~107,682 m³",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0317:3",
+      "metric": "DMA — 0317",
+      "value": "−24.07",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0318:4",
+      "metric": "DMA — 0318",
+      "value": "−2.29",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0319:5",
+      "metric": "DMA — 0319",
+      "value": "−12.49",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0320:6",
+      "metric": "DMA — 0320",
+      "value": "+0.30",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:situacin_cierre_conagua_0320:7",
+      "metric": "Situación (cierre CONAGUA) — 0320",
+      "value": "Disponible ~298,386 m³",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0322:8",
+      "metric": "DMA — 0322",
+      "value": "+0.71",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:situacin_cierre_conagua_0322:9",
+      "metric": "Situación (cierre CONAGUA) — 0322",
+      "value": "Disponible ~713,376 m³",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0323:10",
+      "metric": "DMA — 0323",
+      "value": "−2.34",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0324:11",
+      "metric": "DMA — 0324",
+      "value": "−13.49",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_0325:12",
+      "metric": "DMA — 0325",
+      "value": "−6.24",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#1",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:capacidad_nominal:13",
+      "metric": "Capacidad nominal",
+      "value": "250 l/s",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#3",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:inversin_estimada_ficha_2021:14",
+      "metric": "Inversión estimada (ficha 2021)",
+      "value": "≈ MXN 986 M",
+      "unit": "",
+      "year": "2021",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#3",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:equivalente_a_factor_100:15",
+      "metric": "Equivalente a factor 100%",
+      "value": "≈ 7.88 hm³/año",
+      "unit": "hm³/año",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#3",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:los_cabos:16",
+      "metric": "Los Cabos",
+      "value": "0314 El Pescadero +0.11; 0317 Cabo San Lucas −24.07; 0318 Cabo Pulmo −2.29; 0319 San José del Cabo −12.49; 0320 Santiago +0.30",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:la_paz:17",
+      "metric": "La Paz",
+      "value": "0306 Santo Domingo −30.28; 0313 Todos Santos −2.96; 0314 El Pescadero +0.11; 0322 El Carrizal +0.71; 0323 Los Planes −2.34; 0324 La Paz −13.49; 0325 El Coyote −6.24",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:comond:18",
+      "metric": "Comondú",
+      "value": "0306 Santo Domingo −30.28",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:loreto:19",
+      "metric": "Loreto",
+      "value": "0306 Santo Domingo −30.28; 0329 San Juan B. Londó −2.58 (por confirmar)",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:muleg:20",
+      "metric": "Mulegé",
+      "value": "0332 Mulegé +0.48",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0301:21",
+      "metric": "DMA (hm³/año) — 0301",
+      "value": "+1.27",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0301:22",
+      "metric": "Ficha / página — 0301",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0302:23",
+      "metric": "DMA (hm³/año) — 0302",
+      "value": "−0.50",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0302:24",
+      "metric": "Ficha / página — 0302",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0303:25",
+      "metric": "DMA (hm³/año) — 0303",
+      "value": "−3.13",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0303:26",
+      "metric": "Ficha / página — 0303",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0304:27",
+      "metric": "DMA (hm³/año) — 0304",
+      "value": "−1.91",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0304:28",
+      "metric": "Ficha / página — 0304",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0305:29",
+      "metric": "DMA (hm³/año) — 0305",
+      "value": "+0.05",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0305:30",
+      "metric": "Ficha / página — 0305",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0306:31",
+      "metric": "DMA (hm³/año) — 0306",
+      "value": "−30.28",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0306:32",
+      "metric": "Ficha / página — 0306",
+      "value": "DR_0306.pdf p.35",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0307:33",
+      "metric": "DMA (hm³/año) — 0307",
+      "value": "−0.04",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0307:34",
+      "metric": "Ficha / página — 0307",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0308:35",
+      "metric": "DMA (hm³/año) — 0308",
+      "value": "+4.16",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0308:36",
+      "metric": "Ficha / página — 0308",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0309:37",
+      "metric": "DMA (hm³/año) — 0309",
+      "value": "−0.00",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0309:38",
+      "metric": "Ficha / página — 0309",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0310:39",
+      "metric": "DMA (hm³/año) — 0310",
+      "value": "−0.27",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0310:40",
+      "metric": "Ficha / página — 0310",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0311:41",
+      "metric": "DMA (hm³/año) — 0311",
+      "value": "−0.13",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0311:42",
+      "metric": "Ficha / página — 0311",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0312:43",
+      "metric": "DMA (hm³/año) — 0312",
+      "value": "−0.08",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0312:44",
+      "metric": "Ficha / página — 0312",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0313:45",
+      "metric": "DMA (hm³/año) — 0313",
+      "value": "−2.96",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0313:46",
+      "metric": "Ficha / página — 0313",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Todos-Santos-0313.pdf p.28",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0314:47",
+      "metric": "DMA (hm³/año) — 0314",
+      "value": "+0.11",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0314:48",
+      "metric": "Ficha / página — 0314",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Pescadero-0314.pdf p.30",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0315:49",
+      "metric": "DMA (hm³/año) — 0315",
+      "value": "−0.01",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0315:50",
+      "metric": "Ficha / página — 0315",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0316:51",
+      "metric": "DMA (hm³/año) — 0316",
+      "value": "+0.01",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0316:52",
+      "metric": "Ficha / página — 0316",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0317:53",
+      "metric": "DMA (hm³/año) — 0317",
+      "value": "−24.07",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0317:54",
+      "metric": "Ficha / página — 0317",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf p.27",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0318:55",
+      "metric": "DMA (hm³/año) — 0318",
+      "value": "−2.29",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0318:56",
+      "metric": "Ficha / página — 0318",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf p.30",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0319:57",
+      "metric": "DMA (hm³/año) — 0319",
+      "value": "−12.49",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0319:58",
+      "metric": "Ficha / página — 0319",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf p.31",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0320:59",
+      "metric": "DMA (hm³/año) — 0320",
+      "value": "+0.30",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0320:60",
+      "metric": "Ficha / página — 0320",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Santiago-0320.pdf p.23",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0321:61",
+      "metric": "DMA (hm³/año) — 0321",
+      "value": "+1.79",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0321:62",
+      "metric": "Ficha / página — 0321",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0322:63",
+      "metric": "DMA (hm³/año) — 0322",
+      "value": "+0.71",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0322:64",
+      "metric": "Ficha / página — 0322",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Carrizal-0322.pdf p.29",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0323:65",
+      "metric": "DMA (hm³/año) — 0323",
+      "value": "−2.34",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0323:66",
+      "metric": "Ficha / página — 0323",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Los-Planes-0323.pdf p.27",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0324:67",
+      "metric": "DMA (hm³/año) — 0324",
+      "value": "−13.49",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0324:68",
+      "metric": "Ficha / página — 0324",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf p.30",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0325:69",
+      "metric": "DMA (hm³/año) — 0325",
+      "value": "−6.24",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0325:70",
+      "metric": "Ficha / página — 0325",
+      "value": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Coyote-0325.pdf p.26",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0326:71",
+      "metric": "DMA (hm³/año) — 0326",
+      "value": "+2.14",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0326:72",
+      "metric": "Ficha / página — 0326",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0327:73",
+      "metric": "DMA (hm³/año) — 0327",
+      "value": "+1.09",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0327:74",
+      "metric": "Ficha / página — 0327",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0328:75",
+      "metric": "DMA (hm³/año) — 0328",
+      "value": "+0.09",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0328:76",
+      "metric": "Ficha / página — 0328",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0329:77",
+      "metric": "DMA (hm³/año) — 0329",
+      "value": "−2.58",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0329:78",
+      "metric": "Ficha / página — 0329",
+      "value": "DR_0329.pdf p.29",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0330:79",
+      "metric": "DMA (hm³/año) — 0330",
+      "value": "+0.16",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0330:80",
+      "metric": "Ficha / página — 0330",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0331:81",
+      "metric": "DMA (hm³/año) — 0331",
+      "value": "+0.72",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0331:82",
+      "metric": "Ficha / página — 0331",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0332:83",
+      "metric": "DMA (hm³/año) — 0332",
+      "value": "+0.48",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0332:84",
+      "metric": "Ficha / página — 0332",
+      "value": "DR_0332.pdf p.26",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0333:85",
+      "metric": "DMA (hm³/año) — 0333",
+      "value": "−1.37",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0333:86",
+      "metric": "Ficha / página — 0333",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0334:87",
+      "metric": "DMA (hm³/año) — 0334",
+      "value": "−0.63",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0334:88",
+      "metric": "Ficha / página — 0334",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0335:89",
+      "metric": "DMA (hm³/año) — 0335",
+      "value": "−0.14",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0335:90",
+      "metric": "Ficha / página — 0335",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0336:91",
+      "metric": "DMA (hm³/año) — 0336",
+      "value": "−0.19",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0336:92",
+      "metric": "Ficha / página — 0336",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0337:93",
+      "metric": "DMA (hm³/año) — 0337",
+      "value": "+0.03",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0337:94",
+      "metric": "Ficha / página — 0337",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0338:95",
+      "metric": "DMA (hm³/año) — 0338",
+      "value": "+1.42",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0338:96",
+      "metric": "Ficha / página — 0338",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:acufero_0339:97",
+      "metric": "Acuífero — 0339",
+      "value": "Paralelo 28",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:dma_hm_ao_0339:98",
+      "metric": "DMA (hm³/año) — 0339",
+      "value": "+1.40",
+      "unit": "hm³/año",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:ficha_pgina_0339:99",
+      "metric": "Ficha / página — 0339",
+      "value": "DOF 2023 p.3",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#4",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:clave_cabo_san_lucas:100",
+      "metric": "Clave — Cabo San Lucas",
+      "value": "0317",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:clave_san_jos_del_cabo:101",
+      "metric": "Clave — San José del Cabo",
+      "value": "0319",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:clave_la_paz:102",
+      "metric": "Clave — La Paz",
+      "value": "0324",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:clave_todos_santos:103",
+      "metric": "Clave — Todos Santos",
+      "value": "0313",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:clave_santiago:104",
+      "metric": "Clave — Santiago",
+      "value": "0320",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:lectura_santiago:105",
+      "metric": "Lectura — Santiago",
+      "value": "Margen mínimo (~+0.30 hm³/año) — no es válvula de escape",
+      "unit": "hm³/año",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:pack_agua:106",
+      "metric": "Pack agua",
+      "value": "Base de datos BCS 2050 — agua",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:agua:mapas_dma_gua:107",
+      "metric": "Mapas DMA guía",
+      "value": "Base de datos BCS 2050 — galería de mapas",
+      "unit": "",
+      "year": null,
+      "source": "guides/agua.md",
+      "path": "guides/agua.md#9",
+      "theme": "agua"
+    },
+    {
+      "id": "fact:conectividad:pista_sjd:108",
+      "metric": "Pista — SJD",
+      "value": "3,004 m × 45 m",
+      "unit": "",
+      "year": null,
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#1",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:terminal_sjd:109",
+      "metric": "Terminal — SJD",
+      "value": "15,130 m²",
+      "unit": "",
+      "year": null,
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#1",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pasajeros_2025_setue_sjd:110",
+      "metric": "Pasajeros 2025 (SETUE) — SJD",
+      "value": "~3.8 M (83.2% del estado)",
+      "unit": "%",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#1",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pista_lap:111",
+      "metric": "Pista — LAP",
+      "value": "2,500 m × 45 m",
+      "unit": "",
+      "year": null,
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#1",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:terminal_lap:112",
+      "metric": "Terminal — LAP",
+      "value": "5,900 m²",
+      "unit": "",
+      "year": null,
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#1",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pasajeros_2025_setue_lap:113",
+      "metric": "Pasajeros 2025 (SETUE) — LAP",
+      "value": "668,800 (+10.9% YoY)",
+      "unit": "%",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#1",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pasajeros_2025_setue_lto:114",
+      "metric": "Pasajeros 2025 (SETUE) — LTO",
+      "value": "CY 2025 dato no consolidado",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#1",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:arribos_2025_cabo_san_lucas:115",
+      "metric": "Arribos 2025 — Cabo San Lucas",
+      "value": "285",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pasajeros_2025_cabo_san_lucas:116",
+      "metric": "Pasajeros 2025 — Cabo San Lucas",
+      "value": "1,057,758",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:arribos_2025_pichilingue:117",
+      "metric": "Arribos 2025 — Pichilingue",
+      "value": "50",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pasajeros_2025_pichilingue:118",
+      "metric": "Pasajeros 2025 — Pichilingue",
+      "value": "133,269",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:arribos_2025_loreto:119",
+      "metric": "Arribos 2025 — Loreto",
+      "value": "20",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pasajeros_2025_loreto:120",
+      "metric": "Pasajeros 2025 — Loreto",
+      "value": "33,412",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:arribos_2025_la_paz:121",
+      "metric": "Arribos 2025 — La Paz",
+      "value": "31",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:pasajeros_2025_la_paz:122",
+      "metric": "Pasajeros 2025 — La Paz",
+      "value": "1,359",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#2",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:la_paz:123",
+      "metric": "La Paz",
+      "value": "751",
+      "unit": "",
+      "year": null,
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#4",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:conectividad:los_cabos:124",
+      "metric": "Los Cabos",
+      "value": "759 (45% del estado según IE Cabos)",
+      "unit": "%",
+      "year": null,
+      "source": "guides/conectividad.md",
+      "path": "guides/conectividad.md#4",
+      "theme": "conectividad"
+    },
+    {
+      "id": "fact:economia:pib_constante:125",
+      "metric": "PIB constante",
+      "value": "187,152 millones de pesos (+3.5% vs 2023)",
+      "unit": "millones de pesos",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#1",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:pib_nominal:126",
+      "metric": "PIB nominal",
+      "value": "251,902 millones de pesos",
+      "unit": "millones de pesos",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#1",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:estructura_vab_corriente:127",
+      "metric": "Estructura VAB (corriente)",
+      "value": "Primarias 4.1% · Secundarias 15.9% · Terciarias 72.9% · ISPN 7.1%",
+      "unit": "%",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#1",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:2024_mdd_baja_california_sur:128",
+      "metric": "2024 (mdd) — Baja California Sur",
+      "value": "1,353",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#2",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:2025_mdd_baja_california_sur:129",
+      "metric": "2025 (mdd) — Baja California Sur",
+      "value": "1,578",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#2",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:share_2025_baja_california_sur:130",
+      "metric": "Share 2025 — Baja California Sur",
+      "value": "3.9% (5° nacional)",
+      "unit": "%",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#2",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:2024_mdd_baja_california_norte:131",
+      "metric": "2024 (mdd) — Baja California (norte)",
+      "value": "2,479",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#2",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:2025_mdd_baja_california_norte:132",
+      "metric": "2025 (mdd) — Baja California (norte)",
+      "value": "1,892",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#2",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:share_2025_baja_california_norte:133",
+      "metric": "Share 2025 — Baja California (norte)",
+      "value": "4.6%",
+      "unit": "%",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#2",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:censos_econmicos_2024:134",
+      "metric": "Censos Económicos 2024",
+      "value": "43,405 establecimientos; 300,857 personas",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#3",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:turismo:enoe_2026_t2:135",
+      "metric": "ENOE 2026 T2",
+      "value": "PEA 512 mil; ocupación 500 mil; desocupación 2.3%",
+      "unit": "%",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#3",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:economia:coneval_itlp_4t_2024:136",
+      "metric": "CONEVAL ITLP 4T 2024",
+      "value": "Pobreza laboral 13.2% (la más baja de 32 entidades en ese corte)",
+      "unit": "%",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#3",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:turismo:hoteles_los_cabos:137",
+      "metric": "Hoteles — Los Cabos",
+      "value": "188",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#4",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:habitaciones_los_cabos:138",
+      "metric": "Habitaciones — Los Cabos",
+      "value": "22,254",
+      "unit": "cuartos",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#4",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:ocupacin_2025_los_cabos:139",
+      "metric": "Ocupación 2025 — Los Cabos",
+      "value": "70.0% (estancia 4.7 días)",
+      "unit": "%",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#4",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:hoteles_la_paz:140",
+      "metric": "Hoteles — La Paz",
+      "value": "148",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#4",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:habitaciones_la_paz:141",
+      "metric": "Habitaciones — La Paz",
+      "value": "3,841",
+      "unit": "cuartos",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#4",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:ocupacin_2025_la_paz:142",
+      "metric": "Ocupación 2025 — La Paz",
+      "value": "64% (estancia 2.04 días)",
+      "unit": "%",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#4",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:economia:toneladas_2024p_sal:143",
+      "metric": "Toneladas 2024p — Sal",
+      "value": "5,240,906",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#6",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_sal:144",
+      "metric": "Fuente — Sal",
+      "value": "SGM Anuario 2024 ed.2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#6",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:toneladas_2024p_fosforita:145",
+      "metric": "Toneladas 2024p — Fosforita",
+      "value": "886,454",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#6",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:toneladas_2024p_yeso:146",
+      "metric": "Toneladas 2024p — Yeso",
+      "value": "1,499,540",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#6",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:toneladas_2024p_cobre:147",
+      "metric": "Toneladas 2024p — Cobre",
+      "value": "13,978",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#6",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_pib_2024_constante:148",
+      "metric": "Valor — PIB 2024 constante",
+      "value": "187,152 M MXN",
+      "unit": "millones de pesos",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_pib_2024_constante:149",
+      "metric": "Fuente — PIB 2024 constante",
+      "value": "INEGI PIBE / T1_03",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_ied_bcs_2025:150",
+      "metric": "Valor — IED BCS 2025",
+      "value": "1,578 mdd (5° nacional en corte citado)",
+      "unit": "millones de dólares",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_ied_bcs_2025:151",
+      "metric": "Fuente — IED BCS 2025",
+      "value": "CNIE / pack 07",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_empleo_itaee_enoe:152",
+      "metric": "Valor — Empleo / ITAEE / ENOE",
+      "value": "series en Base de datos BCS 2050 — economía e inversión",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:turismo:fuente_setue_ie_2026:153",
+      "metric": "Fuente — SETUE IE 2026",
+      "value": "07_.../2026_SETUE-BCS_*.pdf",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:valor_setue_ie_loreto_2025_2026:154",
+      "metric": "Valor — SETUE IE Loreto 2025/2026",
+      "value": "Fichas biblioteca 520 / 547",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:fuente_setue_ie_loreto_2025_2026:155",
+      "metric": "Fuente — SETUE IE Loreto 2025/2026",
+      "value": "SETUE BCS — Informacion Estrategica Loreto 2025 (2025) · …Loreto-2026.pdf",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#8",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:economia:valor_volumen_residencial_bcs_jll:156",
+      "metric": "Valor — Volumen residencial BCS (JLL)",
+      "value": "US$1,570 M",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_volumen_residencial_bcs_jll:157",
+      "metric": "Año / periodo — Volumen residencial BCS (JLL)",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_volumen_residencial_bcs_jll:158",
+      "metric": "Fuente — Volumen residencial BCS (JLL)",
+      "value": "JLL Reporte Anual Los Cabos 2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_unidades_residenciales_bcs_jll:159",
+      "metric": "Valor — Unidades residenciales BCS (JLL)",
+      "value": "1,840",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_unidades_residenciales_bcs_jll:160",
+      "metric": "Año / periodo — Unidades residenciales BCS (JLL)",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_unidades_residenciales_bcs_jll:161",
+      "metric": "Fuente — Unidades residenciales BCS (JLL)",
+      "value": "JLL 2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_volumen_los_cabos_jll:162",
+      "metric": "Valor — Volumen Los Cabos (JLL)",
+      "value": "US$1,264 M (81% BCS)",
+      "unit": "%",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_volumen_los_cabos_jll:163",
+      "metric": "Año / periodo — Volumen Los Cabos (JLL)",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_volumen_los_cabos_jll:164",
+      "metric": "Fuente — Volumen Los Cabos (JLL)",
+      "value": "JLL 2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_volumen_los_cabos_under_contract_cabo_re:165",
+      "metric": "Valor — Volumen Los Cabos under contract (Cabo RE)",
+      "value": "US$456 M / 293 u.",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_volumen_los_cabos_under_contract_cabo:166",
+      "metric": "Año / periodo — Volumen Los Cabos under contract (Cabo RE)",
+      "value": "2026 Q2",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_mediana_precio_los_cabos:167",
+      "metric": "Valor — Mediana precio Los Cabos",
+      "value": "US$525,000",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_mediana_precio_los_cabos:168",
+      "metric": "Año / periodo — Mediana precio Los Cabos",
+      "value": "2026 Q2",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_meses_de_inventario_los_cabos:169",
+      "metric": "Valor — Meses de inventario Los Cabos",
+      "value": "15",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_meses_de_inventario_los_cabos:170",
+      "metric": "Año / periodo — Meses de inventario Los Cabos",
+      "value": "2026 Q2",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_inventario_activo_los_cabos:171",
+      "metric": "Valor — Inventario activo Los Cabos",
+      "value": "2,134 u. / US$2.86 B list",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_inventario_activo_los_cabos:172",
+      "metric": "Año / periodo — Inventario activo Los Cabos",
+      "value": "2026 Q2",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_revpar_los_cabos:173",
+      "metric": "Valor — RevPAR Los Cabos",
+      "value": "US$369",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_revpar_los_cabos:174",
+      "metric": "Año / periodo — RevPAR Los Cabos",
+      "value": "ene-2026",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_revpar_los_cabos:175",
+      "metric": "Fuente — RevPAR Los Cabos",
+      "value": "FITURCA Observatorio FEB26",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_adr_los_cabos:176",
+      "metric": "Valor — ADR Los Cabos",
+      "value": "US$499",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_adr_los_cabos:177",
+      "metric": "Año / periodo — ADR Los Cabos",
+      "value": "ene-2026",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:turismo:valor_ocupacin_hotelera_los_cabos:178",
+      "metric": "Valor — Ocupación hotelera Los Cabos",
+      "value": "74%",
+      "unit": "%",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:ao_periodo_ocupacin_hotelera_los_cabos:179",
+      "metric": "Año / periodo — Ocupación hotelera Los Cabos",
+      "value": "ene-2026",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:economia:valor_pax_sjd:180",
+      "metric": "Valor — Pax SJD",
+      "value": "328.5 mil",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_pax_sjd:181",
+      "metric": "Año / periodo — Pax SJD",
+      "value": "ene-2026",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:turismo:valor_rezago_habitacional_bcs:182",
+      "metric": "Valor — Rezago habitacional BCS",
+      "value": "58,987 viv. (21.4%)",
+      "unit": "%",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:ao_periodo_rezago_habitacional_bcs:183",
+      "metric": "Año / periodo — Rezago habitacional BCS",
+      "value": "2024",
+      "unit": "cuartos",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:turismo:fuente_rezago_habitacional_bcs:184",
+      "metric": "Fuente — Rezago habitacional BCS",
+      "value": "CONAVI ENIGH 2024",
+      "unit": "cuartos",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "turismo"
+    },
+    {
+      "id": "fact:economia:valor_registro_vivienda_sniiv_bcs:185",
+      "metric": "Valor — Registro vivienda SNIIV BCS",
+      "value": "776",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_registro_vivienda_sniiv_bcs:186",
+      "metric": "Año / periodo — Registro vivienda SNIIV BCS",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_financiamiento_vivienda_bcs:187",
+      "metric": "Valor — Financiamiento vivienda BCS",
+      "value": "8,993 acciones / $6,560 M MXN",
+      "unit": "millones de pesos",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_financiamiento_vivienda_bcs:188",
+      "metric": "Año / periodo — Financiamiento vivienda BCS",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_infonavit_acciones_bcs:189",
+      "metric": "Valor — INFONAVIT acciones BCS",
+      "value": "6,604",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_infonavit_acciones_bcs:190",
+      "metric": "Año / periodo — INFONAVIT acciones BCS",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_vivienda_para_el_bienestar_meta_bcs:191",
+      "metric": "Valor — Vivienda para el Bienestar meta BCS",
+      "value": "37,500 acciones / 6 años",
+      "unit": "",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_vivienda_para_el_bienestar_meta_bcs:192",
+      "metric": "Año / periodo — Vivienda para el Bienestar meta BCS",
+      "value": "convenio oct-2024",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_enec_valor_produccin_bcs_var_anual:193",
+      "metric": "Valor — ENEC valor producción BCS var. anual",
+      "value": "+41.1%",
+      "unit": "%",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_enec_valor_produccin_bcs_var_anual:194",
+      "metric": "Año / periodo — ENEC valor producción BCS var. anual",
+      "value": "oct-2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_loreto_share_volumen_bcs_jll_mpi:195",
+      "metric": "Valor — Loreto share volumen BCS (JLL MPI)",
+      "value": "3% / US$42 M",
+      "unit": "%",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_loreto_share_volumen_bcs_jll_mpi:196",
+      "metric": "Año / periodo — Loreto share volumen BCS (JLL MPI)",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_loreto_share_volumen_bcs_jll_mpi:197",
+      "metric": "Fuente — Loreto share volumen BCS (JLL MPI)",
+      "value": "JLL 2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:valor_pacfico_share_volumen_bcs_jll_mpi:198",
+      "metric": "Valor — Pacífico share volumen BCS (JLL MPI)",
+      "value": "18%",
+      "unit": "%",
+      "year": null,
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:ao_periodo_pacfico_share_volumen_bcs_jll_mpi:199",
+      "metric": "Año / periodo — Pacífico share volumen BCS (JLL MPI)",
+      "value": "2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:economia:fuente_pacfico_share_volumen_bcs_jll_mpi:200",
+      "metric": "Fuente — Pacífico share volumen BCS (JLL MPI)",
+      "value": "JLL 2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/economia.md",
+      "path": "guides/economia.md#11",
+      "theme": "economia"
+    },
+    {
+      "id": "fact:energia:pico_sibcs_2023:201",
+      "metric": "Pico SIBCS — 2023",
+      "value": "660 MWh/h neta",
+      "unit": "MW",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_2023:202",
+      "metric": "Fuente — 2023",
+      "value": "PRODESEN Cap.3 Cuadro 3.2",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:pico_sibcs_2023:203",
+      "metric": "Pico SIBCS — 2023",
+      "value": "675 MWh/h",
+      "unit": "MW",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_2023:204",
+      "metric": "Fuente — 2023",
+      "value": "PLADESE Tabla A1.6",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:pico_sibcs_2024:205",
+      "metric": "Pico SIBCS — 2024",
+      "value": "689 MWh/h",
+      "unit": "MW",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_2024:206",
+      "metric": "Fuente — 2024",
+      "value": "PAMRNT Cuadro 5.3.4; PLADESE A1.6",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:pico_sibcs_2024_instantneo:207",
+      "metric": "Pico SIBCS — 2024 (instantáneo)",
+      "value": "688.5 MW (10 sep 2024, 15:45)",
+      "unit": "MW",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_2024_instantneo:208",
+      "metric": "Fuente — 2024 (instantáneo)",
+      "value": "PAMRNT Cuadro 4.1.9",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#2",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:pico_alerta_demanda:209",
+      "metric": "Pico / alerta demanda",
+      "value": "CENACE ~688.5–689 MW (2024) en materiales shadow + mapas",
+      "unit": "MW",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#9",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:cuello_la_pazlos_cabos:210",
+      "metric": "Cuello La Paz→Los Cabos",
+      "value": "Límite transmisión citado ~237 MW",
+      "unit": "MW",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#9",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_85:211",
+      "metric": "Tensión citada — 85",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_86:212",
+      "metric": "Tensión citada — 86",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_87:213",
+      "metric": "Tensión citada — 87",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_88:214",
+      "metric": "Tensión citada — 88",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_89:215",
+      "metric": "Tensión citada — 89",
+      "value": "115 / 230 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_90:216",
+      "metric": "Tensión citada — 90",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_91:217",
+      "metric": "Tensión citada — 91",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_92:218",
+      "metric": "Tensión citada — 92",
+      "value": "230 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_93:219",
+      "metric": "Tensión citada — 93",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_94:220",
+      "metric": "Tensión citada — 94",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_95:221",
+      "metric": "Tensión citada — 95",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_96:222",
+      "metric": "Tensión citada — 96",
+      "value": "115 / 230 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_97:223",
+      "metric": "Tensión citada — 97",
+      "value": "230 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:tensin_citada_98:224",
+      "metric": "Tensión citada — 98",
+      "value": "115 kV",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#14",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:metas_fsicas_publicadas_p23_bs1:225",
+      "metric": "Metas físicas publicadas — P23-BS1",
+      "value": "LT Olas Altas – TG Los Cabos 230 kV, 2 circ., 140 km-c (1.er circuito)",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#15",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fechas_p23_bs1:226",
+      "metric": "Fechas — P23-BS1",
+      "value": "Nec. abr-28 · Fact. dic-28",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#15",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:estado_p23_bs1:227",
+      "metric": "Estado — P23-BS1",
+      "value": "En Análisis · avance 0%",
+      "unit": "%",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#15",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fechas_p18_bs6:228",
+      "metric": "Fechas — P18-BS6",
+      "value": "En operación (dic 2021)",
+      "unit": "",
+      "year": "2021",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#15",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:valor_generacin_tg_disel_los_cabos:229",
+      "metric": "Valor — Generación TG diésel Los Cabos",
+      "value": "282.7 GWh en 7,760 / 8,784 h (sep 2023–sep 2024)",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#16",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:valor_pista_secundaria_combustleo_disel_la_paz:230",
+      "metric": "Valor — Pista secundaria combustóleo/diésel La Paz",
+      "value": "CCI+Punta Prieta: 623,744.78 m³ (2018); 448,989.15 m³ (2019) — sin separar diésel",
+      "unit": "",
+      "year": "2019",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#16",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_pista_secundaria_combustleo_disel_la_paz:231",
+      "metric": "Fuente — Pista secundaria combustóleo/diésel La Paz",
+      "value": "CERCA 2021 (no CFE)",
+      "unit": "",
+      "year": "2021",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#16",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:capacidad_aura_solar_i:232",
+      "metric": "Capacidad — Aura Solar I",
+      "value": "42 MWp / 30 MWac",
+      "unit": "MW",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:empresa_estado_aura_solar_i:233",
+      "metric": "Empresa / estado — Aura Solar I",
+      "value": "Gauss · COD 2013 · PPA CFE",
+      "unit": "",
+      "year": "2013",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:capacidad_aura_solar_iii:234",
+      "metric": "Capacidad — Aura Solar III",
+      "value": "32 MWp / 25 MWac + BESS 10.5 MW",
+      "unit": "MW",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:empresa_estado_aura_solar_iii:235",
+      "metric": "Empresa / estado — Aura Solar III",
+      "value": "Gauss · COD 2018 · CRE Pequeña Producción",
+      "unit": "",
+      "year": "2018",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:capacidad_sae_planeados_regin_bcs:236",
+      "metric": "Capacidad — SAE planeados región BCS",
+      "value": "63 MW adición 2025–2030 (2+20+41)",
+      "unit": "MW",
+      "year": "2030",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:ubicacin_sae_planeados_regin_bcs:237",
+      "metric": "Ubicación — SAE planeados región BCS",
+      "value": "GCR 07",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:empresa_estado_sae_planeados_regin_bcs:238",
+      "metric": "Empresa / estado — SAE planeados región BCS",
+      "value": "PVIRCE / PAMRNT Cuadro 3.13.1",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:capacidad_oasis_bcs_fase_i_anuncio:239",
+      "metric": "Capacidad — Oasis BCS Fase I (anuncio)",
+      "value": "FV 72 MW + BESS 20 MW (+ H₂)",
+      "unit": "MW",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:empresa_estado_oasis_bcs_fase_i_anuncio:240",
+      "metric": "Empresa / estado — Oasis BCS Fase I (anuncio)",
+      "value": "CFE · en evaluación (2026)",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#17",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:valor_consumo_neto_sibcs:241",
+      "metric": "Valor — Consumo neto SIBCS",
+      "value": "3,257 GWh (= 3.257×10⁹ kWh)",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:ao_consumo_neto_sibcs:242",
+      "metric": "Año — Consumo neto SIBCS",
+      "value": "2023",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_consumo_neto_sibcs:243",
+      "metric": "Fuente — Consumo neto SIBCS",
+      "value": "PRODESEN Cap.3",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:valor_crecimiento_consumo_neto:244",
+      "metric": "Valor — Crecimiento consumo neto",
+      "value": "+9.9%",
+      "unit": "%",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:ao_crecimiento_consumo_neto:245",
+      "metric": "Año — Crecimiento consumo neto",
+      "value": "2023",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_crecimiento_consumo_neto:246",
+      "metric": "Fuente — Crecimiento consumo neto",
+      "value": "PRODESEN Cap.3",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:valor_pico_demanda:247",
+      "metric": "Valor — Pico demanda",
+      "value": "660 MWh/h neta",
+      "unit": "MW",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:ao_pico_demanda:248",
+      "metric": "Año — Pico demanda",
+      "value": "2023",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_pico_demanda:249",
+      "metric": "Fuente — Pico demanda",
+      "value": "PRODESEN Cap.3",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:valor_pico_instantneo:250",
+      "metric": "Valor — Pico / instantáneo",
+      "value": "689 MWh/h · 688.5 MW",
+      "unit": "MW",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:ao_pico_instantneo:251",
+      "metric": "Año — Pico / instantáneo",
+      "value": "2024",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:valor_consumo_final_otra_contabilidad:252",
+      "metric": "Valor — Consumo final (otra contabilidad)",
+      "value": "3,079 GWh",
+      "unit": "",
+      "year": null,
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:ao_consumo_final_otra_contabilidad:253",
+      "metric": "Año — Consumo final (otra contabilidad)",
+      "value": "2024",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:energia:fuente_consumo_final_otra_contabilidad:254",
+      "metric": "Fuente — Consumo final (otra contabilidad)",
+      "value": "PLADESE — no restar del neto 2023",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/energia.md",
+      "path": "guides/energia.md#18",
+      "theme": "energia"
+    },
+    {
+      "id": "fact:riesgos:la_paz:255",
+      "metric": "La Paz",
+      "value": "31",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:muleg:256",
+      "metric": "Mulegé",
+      "value": "26",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:los_cabos:257",
+      "metric": "Los Cabos",
+      "value": "19",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:comond:258",
+      "metric": "Comondú",
+      "value": "18",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:loreto:259",
+      "metric": "Loreto",
+      "value": "2",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:total:260",
+      "metric": "Total",
+      "value": "96",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:total_ha_bcs:261",
+      "metric": "Total ha — BCS",
+      "value": "1,860,658",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:ejidal_bcs:262",
+      "metric": "Ejidal — BCS",
+      "value": "303,958",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:privada_bcs:263",
+      "metric": "Privada — BCS",
+      "value": "1,467,770",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:total_ha_la_paz:264",
+      "metric": "Total ha — La Paz",
+      "value": "734,239",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:ejidal_la_paz:265",
+      "metric": "Ejidal — La Paz",
+      "value": "97,286",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:privada_la_paz:266",
+      "metric": "Privada — La Paz",
+      "value": "620,766",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#2",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:what_it_is_private_pequea_propiedad_privada:267",
+      "metric": "What it is — Private (pequeña propiedad / privada)",
+      "value": "Dominio pleno under Art. 27 / civil registry; RPP municipal/state",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#9",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:evidence_in_bcsfp_private_pequea_propiedad_priva:268",
+      "metric": "Evidence in the portal — Private (pequeña propiedad / privada)",
+      "value": "Cited in PDUCP La Paz (títulos de vivienda; Tabla 71 “Privada”); no parcel shapefile on disk",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#9",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:evidence_in_bcsfp_federal:269",
+      "metric": "Evidence in the portal — Federal",
+      "value": "ANP shapefile + decretos Base de datos BCS 2050 — ambiente ZOFEMAT geometry GAP; legal cites in Loreto PSDU / PDUCP",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#9",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:evidence_in_bcsfp_ejido_propiedad_social:270",
+      "metric": "Evidence in the portal — Ejido (propiedad social)",
+      "value": "RAN KML 96 ejidos; PSDU Barriles d-10 TENENCIA map; PDUCP Tabla 71 “Ejidal”",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#9",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:evidence_in_bcsfp_anp_overlay_not_a_tenure_class:271",
+      "metric": "Evidence in the portal — ANP (overlay, not a tenure class)",
+      "value": "Shapefile 10 ANP federales; PM PDFs in Base de datos BCS 2050 — ambiente ontology const_anp_nucleos / F07",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#9",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:total_ha_baja_california_sur:272",
+      "metric": "Total (ha) — Baja California Sur",
+      "value": "1,860,658.1",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:ejidal_baja_california_sur:273",
+      "metric": "Ejidal — Baja California Sur",
+      "value": "303,957.6",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:comunal_baja_california_sur:274",
+      "metric": "Comunal — Baja California Sur",
+      "value": "42.0",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:privada_baja_california_sur:275",
+      "metric": "Privada — Baja California Sur",
+      "value": "1,467,770.3",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:de_colonia_baja_california_sur:276",
+      "metric": "De Colonia — Baja California Sur",
+      "value": "76,075.9",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:pblica_baja_california_sur:277",
+      "metric": "Pública — Baja California Sur",
+      "value": "12,812.3",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:total_ha_la_paz_municipio:278",
+      "metric": "Total (ha) — La Paz (municipio)",
+      "value": "734,239.1",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:ejidal_la_paz_municipio:279",
+      "metric": "Ejidal — La Paz (municipio)",
+      "value": "97,286.3",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:comunal_la_paz_municipio:280",
+      "metric": "Comunal — La Paz (municipio)",
+      "value": "0.0",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:privada_la_paz_municipio:281",
+      "metric": "Privada — La Paz (municipio)",
+      "value": "620,766.0",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:de_colonia_la_paz_municipio:282",
+      "metric": "De Colonia — La Paz (municipio)",
+      "value": "4,887.3",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:riesgos:pblica_la_paz_municipio:283",
+      "metric": "Pública — La Paz (municipio)",
+      "value": "11,299.5",
+      "unit": "",
+      "year": null,
+      "source": "guides/riesgos.md",
+      "path": "guides/riesgos.md#10",
+      "theme": "riesgos"
+    },
+    {
+      "id": "fact:territorio:poblacin_estatal_pobtot:284",
+      "metric": "Población estatal (POBTOT)",
+      "value": "798,447",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#1",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:municipios:285",
+      "metric": "Municipios",
+      "value": "5",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#1",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:localidades_nombradas_con_pobtot_1:286",
+      "metric": "Localidades nombradas con POBTOT ≥ 1",
+      "value": "2,543",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#1",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:clave_los_cabos:287",
+      "metric": "Clave — Los Cabos",
+      "value": "008",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:pobtot_los_cabos:288",
+      "metric": "Población del municipio Los Cabos (POBTOT municipal, municipio completo)",
+      "value": "351,111",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:localidades_los_cabos:289",
+      "metric": "Localidades — Los Cabos",
+      "value": "428",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:cabecera_pobtot_los_cabos:290",
+      "metric": "Población de la localidad cabecera del municipio Los Cabos (no es el total municipal)",
+      "value": "San José del Cabo (136,285)",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:clave_la_paz:291",
+      "metric": "Clave — La Paz",
+      "value": "003",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:pobtot_la_paz:292",
+      "metric": "Población del municipio La Paz (POBTOT municipal, municipio completo)",
+      "value": "292,241",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:localidades_la_paz:293",
+      "metric": "Localidades — La Paz",
+      "value": "1,018",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:cabecera_pobtot_la_paz:294",
+      "metric": "Población de la localidad cabecera del municipio La Paz (no es el total municipal)",
+      "value": "La Paz (250,141)",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:clave_comond:295",
+      "metric": "Clave — Comondú",
+      "value": "001",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:pobtot_comond:296",
+      "metric": "Población del municipio Comondú (POBTOT municipal, municipio completo)",
+      "value": "73,021",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:localidades_comond:297",
+      "metric": "Localidades — Comondú",
+      "value": "589",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:cabecera_pobtot_comond:298",
+      "metric": "Población de la localidad cabecera del municipio Comondú (no es el total municipal)",
+      "value": "Ciudad Constitución (43,805)",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:clave_muleg:299",
+      "metric": "Clave — Mulegé",
+      "value": "002",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:pobtot_muleg:300",
+      "metric": "Población del municipio Mulegé (POBTOT municipal, municipio completo)",
+      "value": "64,022",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:localidades_muleg:301",
+      "metric": "Localidades — Mulegé",
+      "value": "381",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:cabecera_pobtot_muleg:302",
+      "metric": "Población de la localidad cabecera del municipio Mulegé (no es el total municipal)",
+      "value": "Santa Rosalía (14,357)",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:clave_loreto:303",
+      "metric": "Clave — Loreto",
+      "value": "009",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:pobtot_loreto:304",
+      "metric": "Población del municipio Loreto (POBTOT municipal, municipio completo)",
+      "value": "18,052",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:localidades_loreto:305",
+      "metric": "Localidades — Loreto",
+      "value": "127",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:cabecera_pobtot_loreto:306",
+      "metric": "Población de la localidad cabecera del municipio Loreto (no es el total municipal)",
+      "value": "Loreto (16,311)",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#2",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:master_communities:307",
+      "metric": "Master communities",
+      "value": "Base de datos BCS 2050 — inteligencia territorial",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#6",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:top_localidades:308",
+      "metric": "Top localidades",
+      "value": "Base de datos BCS 2050 — inteligencia territorial",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#6",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:jerarqua:309",
+      "metric": "Jerarquía",
+      "value": "Base de datos BCS 2050 — inteligencia territorial",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#6",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:territorio:historias:310",
+      "metric": "Historias",
+      "value": "Base de datos BCS 2050 — historia",
+      "unit": "",
+      "year": null,
+      "source": "guides/territorio.md",
+      "path": "guides/territorio.md#6",
+      "theme": "territorio"
+    },
+    {
+      "id": "fact:ambiente:decreto:311",
+      "metric": "Decreto",
+      "value": "DOF 30 nov 1988 (PM también cita 5 dic 1988)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:superficie:312",
+      "metric": "Superficie",
+      "value": "2,546,790.25 ha",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:municipio:313",
+      "metric": "Municipio",
+      "value": "Mulegé (~77% del municipio según PM)",
+      "unit": "%",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:ncleos:314",
+      "metric": "Núcleos",
+      "value": "16 zonas núcleo (~363 mil ha según localización del PM)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:patrimonio:315",
+      "metric": "Patrimonio",
+      "value": "UNESCO 1993: refugio de ballenas (lagunas) y pinturas rupestres Sierra de San Francisco",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decreto:316",
+      "metric": "Decreto",
+      "value": "DOF 6 jun 1994",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:superficie:317",
+      "metric": "Superficie",
+      "value": "112,437.07 ha (toda terrestre)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:ncleo:318",
+      "metric": "Núcleo",
+      "value": "~32,520 ha — el PM la describe como recarga principal de acuíferos del sur del estado",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decreto:319",
+      "metric": "Decreto",
+      "value": "DOF 6 jun 1995",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:superficie:320",
+      "metric": "Superficie",
+      "value": "7,111.01 ha (~99% marina)",
+      "unit": "%",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decreto:321",
+      "metric": "Decreto",
+      "value": "DOF 19 jul 1996",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:superficie:322",
+      "metric": "Superficie",
+      "value": "206,580.75 ha",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:pm_actualizado:323",
+      "metric": "PM actualizado",
+      "value": "Resumen DOF 23 abr 2019",
+      "unit": "",
+      "year": "2019",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#1",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:ha_cabo_san_lucas:324",
+      "metric": "ha — Cabo San Lucas",
+      "value": "3,996.05",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decreto_cabo_san_lucas:325",
+      "metric": "Decreto — Cabo San Lucas",
+      "value": "1973-11-29",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:ha_balandra:326",
+      "metric": "ha — Balandra",
+      "value": "2,512.73",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decreto_balandra:327",
+      "metric": "Decreto — Balandra",
+      "value": "2012-11-30",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:ha_loreto_ii:328",
+      "metric": "ha — Loreto II",
+      "value": "6,217.52",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decreto_loreto_ii:329",
+      "metric": "Decreto — Loreto II",
+      "value": "2023-08-15",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:ha_nopol:330",
+      "metric": "ha — Nopoló",
+      "value": "2,076.52",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decreto_nopol:331",
+      "metric": "Decreto — Nopoló",
+      "value": "2023-08-15",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#2",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:el_vizcano:332",
+      "metric": "El Vizcaíno",
+      "value": "2,546,790.25",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#3",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:baha_de_loreto:333",
+      "metric": "Bahía de Loreto",
+      "value": "206,580.75",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#3",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:sierra_la_laguna:334",
+      "metric": "Sierra La Laguna",
+      "value": "112,437.07",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#3",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:cabo_pulmo:335",
+      "metric": "Cabo Pulmo",
+      "value": "7,111.01",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#3",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:contenido_anp_federales:336",
+      "metric": "Contenido — ANP federales",
+      "value": "~10 polígonos BCS (Pulmo, Vizcaíno, Sierra La Laguna, Loreto, Balandra, …)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#4",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:pack_anp_federales:337",
+      "metric": "Pack — ANP federales",
+      "value": "Base de datos BCS 2050 — ambiente + shapes TI",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#4",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:contenido_rtp_conabio:338",
+      "metric": "Contenido — RTP CONABIO",
+      "value": "5 regiones terrestres prioritarias",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#4",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:pack_rtp_conabio:339",
+      "metric": "Pack — RTP CONABIO",
+      "value": "zip 2004 + shp TI",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#4",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree:340",
+      "metric": "Decree",
+      "value": "DOF 30 Nov 1988 (management program also cites 5 Dec 1988)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:area:341",
+      "metric": "Area",
+      "value": "2,546,790.25 ha",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:municipality:342",
+      "metric": "Municipality",
+      "value": "Mulegé (~77% of the municipality per management program)",
+      "unit": "%",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:core_zones:343",
+      "metric": "Core zones",
+      "value": "16 core zones (~363k ha per PM location notes)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:heritage:344",
+      "metric": "Heritage",
+      "value": "UNESCO 1993: whale refuge (lagoons) and Sierra de San Francisco rock art",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree:345",
+      "metric": "Decree",
+      "value": "DOF 6 Jun 1994",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:area:346",
+      "metric": "Area",
+      "value": "112,437.07 ha (all terrestrial)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:core:347",
+      "metric": "Core",
+      "value": "~32,520 ha — PM describes it as the main aquifer recharge for the south of the state",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree:348",
+      "metric": "Decree",
+      "value": "DOF 6 Jun 1995",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:area:349",
+      "metric": "Area",
+      "value": "7,111.01 ha (~99% marine)",
+      "unit": "%",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree:350",
+      "metric": "Decree",
+      "value": "DOF 19 Jul 1996",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:area:351",
+      "metric": "Area",
+      "value": "206,580.75 ha",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:updated_pm:352",
+      "metric": "Updated PM",
+      "value": "DOF summary 23 Apr 2019",
+      "unit": "",
+      "year": "2019",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#7",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree_cabo_san_lucas:353",
+      "metric": "Decree — Cabo San Lucas",
+      "value": "1973-11-29",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#8",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree_balandra:354",
+      "metric": "Decree — Balandra",
+      "value": "2012-11-30",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#8",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree_loreto_ii:355",
+      "metric": "Decree — Loreto II",
+      "value": "2023-08-15",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#8",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:decree_nopol:356",
+      "metric": "Decree — Nopoló",
+      "value": "2023-08-15",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#8",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:content_federal_anps:357",
+      "metric": "Content — Federal ANPs",
+      "value": "~10 BCS polygons (Pulmo, Vizcaíno, Sierra La Laguna, Loreto, Balandra, …)",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#10",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:pack_federal_anps:358",
+      "metric": "Pack — Federal ANPs",
+      "value": "Base de datos BCS 2050 — ambiente + TI shapes",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#10",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:content_conabio_rtp:359",
+      "metric": "Content — CONABIO RTP",
+      "value": "5 priority terrestrial regions",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#10",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:ambiente:pack_conabio_rtp:360",
+      "metric": "Pack — CONABIO RTP",
+      "value": "2004 zip + TI shp",
+      "unit": "",
+      "year": null,
+      "source": "guides/ambiente.md",
+      "path": "guides/ambiente.md#10",
+      "theme": "ambiente"
+    },
+    {
+      "id": "fact:historia:10_abr_1980:361",
+      "metric": "10 abr 1980",
+      "value": "Decreto 181 — municipio de Los Cabos (cabecera San José del Cabo)",
+      "unit": "",
+      "year": null,
+      "source": "guides/historia.md",
+      "path": "guides/historia.md#2",
+      "theme": "historia"
+    },
+    {
+      "id": "fact:historia:20_ago_1992:362",
+      "metric": "20 ago 1992",
+      "value": "Decreto 872 — se reerige el municipio de Loreto → cinco municipios actuales",
+      "unit": "",
+      "year": null,
+      "source": "guides/historia.md",
+      "path": "guides/historia.md#2",
+      "theme": "historia"
+    },
+    {
+      "id": "fact:historia:pobtot_cabecera_la_paz:363",
+      "metric": "Población de la localidad cabecera La Paz, municipio La Paz (no es el total municipal)",
+      "value": "250,141",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/historia.md",
+      "path": "guides/historia.md#4",
+      "theme": "historia"
+    },
+    {
+      "id": "fact:historia:pobtot_cabecera_los_cabos:364",
+      "metric": "Población de la localidad cabecera San José del Cabo, municipio Los Cabos (no es el total municipal)",
+      "value": "136,285",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/historia.md",
+      "path": "guides/historia.md#4",
+      "theme": "historia"
+    },
+    {
+      "id": "fact:historia:pobtot_cabecera_comond:365",
+      "metric": "Población de la localidad cabecera Ciudad Constitución, municipio Comondú (no es el total municipal)",
+      "value": "43,805",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/historia.md",
+      "path": "guides/historia.md#4",
+      "theme": "historia"
+    },
+    {
+      "id": "fact:historia:pobtot_cabecera_loreto:366",
+      "metric": "Población de la localidad cabecera Loreto, municipio Loreto (no es el total municipal)",
+      "value": "16,311",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/historia.md",
+      "path": "guides/historia.md#4",
+      "theme": "historia"
+    },
+    {
+      "id": "fact:historia:pobtot_cabecera_muleg:367",
+      "metric": "Población de la localidad cabecera Santa Rosalía, municipio Mulegé (no es el total municipal)",
+      "value": "14,357",
+      "unit": "",
+      "year": "2020",
+      "source": "guides/historia.md",
+      "path": "guides/historia.md#4",
+      "theme": "historia"
+    },
+    {
+      "id": "fact:planeacion:instrumento_21_ene_2026:368",
+      "metric": "Instrumento — 21 ene 2026",
+      "value": "POERBCS (BOGE Extraordinario Tomo LIII No. 09)",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:nota_21_ene_2026:369",
+      "metric": "Nota — 21 ene 2026",
+      "value": "Programa de Ordenamiento Ecológico Regional del Estado; 56 UGAs",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_2013_6_may:370",
+      "metric": "Instrumento — 2013 (6 may)",
+      "value": "PDU 2040 Los Cabos 2ª actualización",
+      "unit": "",
+      "year": "2013",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:nota_2013_6_may:371",
+      "metric": "Nota — 2013 (6 may)",
+      "value": "Vigente (BOGE No. 19)",
+      "unit": "",
+      "year": "2013",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:nota_2014_12_mar:372",
+      "metric": "Nota — 2014 (12 mar)",
+      "value": "En disco (BOGE No. 12)",
+      "unit": "",
+      "year": "2014",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:nota_20212027:373",
+      "metric": "Nota — 2021–2027",
+      "value": "Turismo como palanca; PEH 2050 citado",
+      "unit": "",
+      "year": "2027",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_2024:374",
+      "metric": "Instrumento — 2024",
+      "value": "Cabildo La Paz aprueba PMDU (20 dic)",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_20252026:375",
+      "metric": "Instrumento — 2025–2026",
+      "value": "Propuesta POEL Los Cabos V4",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#1",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:status_poerbcs:376",
+      "metric": "Status — POERBCS",
+      "value": "Vigente BOGE 21-ene-2026; 56 UGAs",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:ruta_nota_poerbcs:377",
+      "metric": "Ruta / nota — POERBCS",
+      "value": "Boletín Oficial BCS — POERBCS Decreto (2026)",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:status_pdu_2040_los_cabos_2_act:378",
+      "metric": "Status — PDU 2040 Los Cabos (2ª act.)",
+      "value": "Vigente 2013",
+      "unit": "",
+      "year": "2013",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:ruta_nota_pdu_2040_los_cabos_2_act:379",
+      "metric": "Ruta / nota — PDU 2040 Los Cabos (2ª act.)",
+      "value": "IMPLAN Los Cabos — PDU 2040 (2013)",
+      "unit": "",
+      "year": "2013",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:ruta_nota_pdu_2040_3_act:380",
+      "metric": "Ruta / nota — PDU 2040 3ª act.",
+      "value": "Convocatoria 2023 en datos",
+      "unit": "",
+      "year": "2023",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:status_poel_los_cabos_v4:381",
+      "metric": "Status — POEL Los Cabos V4",
+      "value": "Propuesta 2025",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:ruta_nota_poel_los_cabos_v4:382",
+      "metric": "Ruta / nota — POEL Los Cabos V4",
+      "value": "2025-11-18_...POEL-Propuesta-de-Modelo-V4.pdf",
+      "unit": "",
+      "year": "2025",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:status_pducp_la_paz:383",
+      "metric": "Status — PDUCP La Paz",
+      "value": "Vigente 2018",
+      "unit": "",
+      "year": "2018",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:ruta_nota_pducp_la_paz:384",
+      "metric": "Ruta / nota — PDUCP La Paz",
+      "value": "2018_Ayuntamiento-La-Paz_PDUCP-...",
+      "unit": "",
+      "year": null,
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:status_psdu_todos_santos_barriles:385",
+      "metric": "Status — PSDU Todos Santos / Barriles",
+      "value": "Vigentes ~2012–2013",
+      "unit": "",
+      "year": "2013",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:status_poel_loreto:386",
+      "metric": "Status — POEL Loreto",
+      "value": "Vigente BOGE 2014",
+      "unit": "",
+      "year": "2014",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:ruta_nota_poel_loreto:387",
+      "metric": "Ruta / nota — POEL Loreto",
+      "value": "2014-03-12_BOGE-BCS_No12-POEL-Loreto.pdf",
+      "unit": "",
+      "year": "2014",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:geografa_pmd_20242027:388",
+      "metric": "Geografía — PMD 2024–2027",
+      "value": "5 mun.",
+      "unit": "",
+      "year": "2027",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#5",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_estatal_oe:389",
+      "metric": "Instrumento — Estatal OE",
+      "value": "POERBCS (56 UGAs)",
+      "unit": "",
+      "year": null,
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:estado_en_datos_estatal_oe:390",
+      "metric": "Estado en datos — Estatal OE",
+      "value": "Decreto BOGE Ext. No.09 · 21-ene-2026",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_estatal_programa:391",
+      "metric": "Instrumento — Estatal programa",
+      "value": "PED 2021–2027",
+      "unit": "",
+      "year": "2027",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:estado_en_datos_estatal_programa:392",
+      "metric": "Estado en datos — Estatal programa",
+      "value": "PDF en Base de datos BCS 2050 — planeación",
+      "unit": "",
+      "year": null,
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_los_cabos:393",
+      "metric": "Instrumento — Los Cabos",
+      "value": "PDU 2040 (2ª act.) + PMD 2024–27 + POEL propuesta V4",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_la_paz:394",
+      "metric": "Instrumento — La Paz",
+      "value": "PDUCP 2018 + PSDU Todos Santos / Barriles + PMD",
+      "unit": "",
+      "year": "2018",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:estado_en_datos_la_paz:395",
+      "metric": "Estado en datos — La Paz",
+      "value": "PMDU 2024 acta; PDF completo GAP",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_loreto:396",
+      "metric": "Instrumento — Loreto",
+      "value": "PMDU Feb 2024 + PSDU 2024 consulta + POEL 2014",
+      "unit": "",
+      "year": "2014",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:estado_en_datos_loreto:397",
+      "metric": "Estado en datos — Loreto",
+      "value": "ON DISK; GAP: gazette PSDU 2007 + PMD",
+      "unit": "",
+      "year": null,
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_muleg:398",
+      "metric": "Instrumento — Mulegé",
+      "value": "PMD 2024–2027",
+      "unit": "",
+      "year": "2027",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:instrumento_comond:399",
+      "metric": "Instrumento — Comondú",
+      "value": "PMDU Visión 2025 + PMD 2024–27",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:estado_en_datos_comond:400",
+      "metric": "Estado en datos — Comondú",
+      "value": "ON DISK Base de datos BCS 2050 — planeación (PMDU ~61 MB — Drive; no public/)",
+      "unit": "",
+      "year": null,
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:mbito_bcs30as:401",
+      "metric": "Ámbito — BCS30AS",
+      "value": "Loreto (consulta 2024 + PMDU ON DISK; gazette 2007 GAP)",
+      "unit": "",
+      "year": "2024",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#8",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:notes_poel_1995_full_operative_text:402",
+      "metric": "Notes — POEL 1995 full operative text",
+      "value": "Municipality says remains operative until 2026 proposal decreed; full gazette PDF not confirmed",
+      "unit": "",
+      "year": "2026",
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#11",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:url_attempt_poel_1995_full_operative_text:403",
+      "metric": "URL / attempt — POEL 1995 full operative text",
+      "value": "See Base de datos BCS 2050 — catálogo",
+      "unit": "",
+      "year": null,
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#11",
+      "theme": "planeacion"
+    },
+    {
+      "id": "fact:planeacion:notes_dedicated_psdu_la_ribera:404",
+      "metric": "Notes — Dedicated PSDU “La Ribera”",
+      "value": "No PSDU/PDU named La Ribera on disk; La Ribera (0217, POBTOT 2320) has no linked_plan",
+      "unit": "",
+      "year": null,
+      "source": "guides/planeacion.md",
+      "path": "guides/planeacion.md#11",
+      "theme": "planeacion"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Inventario proyectos federales BCS",
+      "value": "44 (AMLO 10 / Sheinbaum 20 / ambos 14)",
+      "unit": "proyectos",
+      "place": "BCS",
+      "source": "Base de datos BCS 2050 — proyectos federales",
+      "notes": "Ver /proyectos-federales. Montos solo con fuente.",
+      "id": "fed-summary-counts"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "value": "concluido | AMLO | monto_citado=127800000 MXN | ~74 MW brutos (2 unidades rehabilitadas)",
+      "unit": "energy",
+      "place": "La Paz",
+      "source": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=2119",
+      "notes": "Confirmar MW exactos por unidad en informes CFE posteriores.",
+      "id": "fed-fed-ene-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "value": "cancelado | AMLO | monto_citado=9840000000 MXN | 327 MW anunciados; no construida en sexenio AMLO",
+      "unit": "energy",
+      "place": "BCS (sitio no definitivo público)",
+      "source": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=2119",
+      "notes": "Acta formal cancelación CFE no localizada en DOF; status por ausencia en Plan Fortalecimiento 2025-2030.",
+      "id": "fed-fed-ene-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Programa CFE reforzamiento generación SIBCS (gas / modernización Punta Prieta y CI BCS)",
+      "value": "anunciado | AMLO | Anuncio +514 MW / 11,373 MDP programa integral (incluye CC no ejecutado)",
+      "unit": "energy",
+      "place": "La Paz",
+      "source": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=2119",
+      "notes": "Desglose ejecutado vs cancelado; monto del paquete omitido por mezclar no entregados.",
+      "id": "fed-fed-ene-003"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Refuerzo transmisión La Paz–Los Cabos (P23-BS1 / LT Olas Altas–TG Los Cabos 230 kV)",
+      "value": "en licitación | ambos | LT 230 kV ~140 km-c; factible dic-2028; En Análisis 0% (PAMRNT)",
+      "unit": "energy",
+      "place": "La Paz",
+      "source": "https://www.cenace.gob.mx/Docs/10_PLANEACION/ProgramasAyM/Programas%20de%20Ampliaci%C3%B3n%20y%20Modernizaci%C3%B3n%20de%20la%20RNT%20y%20RGD%20del%20MEM%202025%20%E2%80%93%202039.pdf",
+      "notes": "Monto MDP y financiamiento no publicados en cuadros consultados.",
+      "id": "fed-fed-ene-004"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030",
+      "value": "anunciado | Sheinbaum | 240 MW; inversión estimada ~370–474 MDD; COD estimado ~2028",
+      "unit": "energy",
+      "place": "Los Cabos",
+      "source": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/",
+      "notes": "Monto MXN unívoco, sitio exacto y avance de licitación.",
+      "id": "fed-fed-ene-005"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Dos centrales termosolares (torre central + almacenamiento térmico) CFE en BCS",
+      "value": "anunciado | Sheinbaum | 100 MW primera etapa conjunta; ~11 h operación; 800 MDD; construcción 36–48 meses",
+      "unit": "energy",
+      "place": "BCS (sitios por definir públicamente)",
+      "source": "https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10321",
+      "notes": "Sitios municipales, desglose MW por planta y contrato.",
+      "id": "fed-fed-ene-006"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Subestación Buenavista y ampliación Cabo Falso",
+      "value": "concluido | Sheinbaum | +50 MVA a la red local",
+      "unit": "energy",
+      "place": "Los Cabos",
+      "source": "https://nbcs.mx/?p=170686",
+      "notes": "Comunicado CFE oficial con montos por obra.",
+      "id": "fed-fed-ene-007"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Modernización/ampliación red eléctrica BCS CFE 2026-2028 (+70 MVA)",
+      "value": "anunciado | Sheinbaum | monto_citado=536000000 MXN | +70 MVA; 134 MDP (2026) + 402 MDP (2027-28); electrificación adicional citada",
+      "unit": "energy",
+      "place": "Estatal",
+      "source": "https://nbcs.mx/?p=170686",
+      "notes": "Validar en comunicado CFE o PEF.",
+      "id": "fed-fed-ene-008"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "value": "anunciado | ambos | PAMRNT SAE SIBCS; lectura lake ~63 MW SAE GCR-07 2025-30; Aura III BESS 10.5 MW privado histórico",
+      "unit": "energy",
+      "place": "SIBCS",
+      "source": "https://www.cenace.gob.mx/Docs/10_PLANEACION/ProgramasAyM/Programas%20de%20Ampliaci%C3%B3n%20y%20Modernizaci%C3%B3n%20de%20la%20RNT%20y%20RGD%20del%20MEM%202025%20%E2%80%93%202039.pdf",
+      "notes": "Listado completo SAE federales (MW, sitio, empresa).",
+      "id": "fed-fed-ene-009"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "PRODESEN / PLADESE planeación SIBCS (interconexión SIN-BCS pausada)",
+      "value": "anunciado | ambos | Instrumentos de planeación; SIN–BCS Pausado/En revisión",
+      "unit": "energy",
+      "place": "Estatal",
+      "source": "https://base.energia.gob.mx/PRODESEN2024/prodesen24-38cap3.PDF",
+      "notes": "Marco de proyectos federales de energía en BCS.",
+      "id": "fed-fed-ene-010"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Planta Desalinizadora Los Cabos No. 2 (250 l/s) — APP / Plan Nacional Hídrico",
+      "value": "en obra | ambos | 250 l/s; operación proyectada inicios 2027 (>60% avance ene 2026)",
+      "unit": "water",
+      "place": "Los Cabos",
+      "source": "https://www.dof.gob.mx/nota_detalle.php?codigo=5603930&fecha=27/10/2020",
+      "notes": "Monto total y split federal/municipal no unificado.",
+      "id": "fed-fed-agu-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Desalinizadora La Paz (compromiso AMLO)",
+      "value": "anunciado | AMLO | Anunciada; sin evidencia pública de COD en sexenio AMLO",
+      "unit": "water",
+      "place": "La Paz",
+      "source": "https://www.bcsnoticias.mx/si-habra-planta-de-ciclo-combinado-para-bcs-y-tambien-desaladora-amlo-1/",
+      "notes": "Ficha técnica, monto, sitio y estatus formal CONAGUA.",
+      "id": "fed-fed-agu-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Presa El Novillo (sistema integral agua La Paz)",
+      "value": "en obra | Sheinbaum | monto_citado=800000000 MXN | Presa + sistema (potabilizadora/sectorización asociadas)",
+      "unit": "water",
+      "place": "La Paz",
+      "source": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+      "notes": "Ficha CONAGUA capacidad hm³ y avance %.",
+      "id": "fed-fed-agu-003"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Sectorización agua potable y planta potabilizadora La Paz",
+      "value": "anunciado | Sheinbaum | Parte del sistema integral con Presa El Novillo",
+      "unit": "water",
+      "place": "La Paz",
+      "source": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+      "notes": "Montos separados y avance.",
+      "id": "fed-fed-agu-004"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "PTAR Loreto (rehabilitación/construcción)",
+      "value": "en obra | Sheinbaum | monto_citado=75000000 MXN | >18 mil habitantes; conclusión anunciada ~2026",
+      "unit": "water",
+      "place": "Loreto",
+      "source": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+      "notes": "",
+      "id": "fed-fed-agu-005"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "PTAR La Sonoreña I (rehab) y Sonoreña II (construcción) Los Cabos",
+      "value": "en obra | Sheinbaum | Rehabilitación + ampliación/redes",
+      "unit": "water",
+      "place": "Los Cabos",
+      "source": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+      "notes": "Separar montos PTAR vs desaladora (cifras periodísticas 300/487 MDP por verificar).",
+      "id": "fed-fed-agu-006"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "value": "en obra | Sheinbaum | monto_citado=1400000000 MXN | 95 acciones 2025; ~2,800 MDP proyectados en sexenio",
+      "unit": "water",
+      "place": "Estatal (5 municipios)",
+      "source": "https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/",
+      "notes": "Lista nominativa de las 95 acciones.",
+      "id": "fed-fed-agu-007"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "value": "concluido | AMLO | Acuerdos DOF DMA (p.ej. La Paz 0324) — instrumento regulatorio",
+      "unit": "water",
+      "place": "La Paz",
+      "source": "https://www.dof.gob.mx",
+      "notes": "",
+      "id": "fed-fed-agu-008"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Ampliación carretera acceso puerto / libramientos La Paz (entrega AMLO)",
+      "value": "concluido | AMLO | Ampliación conectando ~70% carga puerto con libramientos y ciudad",
+      "unit": "roads",
+      "place": "La Paz",
+      "source": "https://heraldodemexico.com.mx/nacional/2021/2/21/entrega-amlo-obras-de-infraestructura-carretera-energetica-en-baja-california-sur-260601.html",
+      "notes": "Nombre oficial SICT y monto PEF.",
+      "id": "fed-fed-car-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "value": "en obra | Sheinbaum | ~780 m, 4 carriles, ciclovía ~840 m, 17 cruces peatonales; meta jun 2026",
+      "unit": "roads",
+      "place": "Los Cabos",
+      "source": "https://www.bcs.gob.mx/presidenta-claudia-sheinbaum-da-banderazo-de-inicio-a-la-construccion-del-nuevo-hospital-general-regional-del-imss-en-los-cabos/",
+      "notes": "Monto contractual SICT.",
+      "id": "fed-fed-car-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Repavimentación / conservación Carretera Transpeninsular BCS",
+      "value": "en obra | Sheinbaum | Programa conservación/reencarpetado anunciado en gira",
+      "unit": "roads",
+      "place": "Estatal",
+      "source": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+      "notes": "Tramos km y montos por tramo.",
+      "id": "fed-fed-car-003"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Programa SICT atención carreteras BCS (~350 MDP)",
+      "value": "en obra | Sheinbaum | monto_citado=350000000 MXN | Conservación, señalamiento, modernización de puentes",
+      "unit": "roads",
+      "place": "Estatal",
+      "source": "https://www.diarioelindependiente.mx/2025/04/anuncia-sict-inversion-de-350-mdp-para-atender-carreteras-en-bcs",
+      "notes": "Comunicado SICT gob.mx con desglose.",
+      "id": "fed-fed-car-004"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "ASIPONA Cabo San Lucas — transferencia a SEMAR (fin régimen FONATUR)",
+      "value": "concluido | AMLO | Título concesión DOF recinto CSL a ASIPONA Cabo San Lucas",
+      "unit": "ports",
+      "place": "Los Cabos",
+      "source": "https://www.jornada.com.mx/2022/06/22/politica/009n1pol",
+      "notes": "",
+      "id": "fed-fed-pue-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "API BCS — vigencia/addendum concesión federal (Pichilingue y otros)",
+      "value": "concluido | AMLO | Concesión federal API BCS (vigencia citada hasta 2047)",
+      "unit": "ports",
+      "place": "La Paz",
+      "source": "https://apibcs.com.mx/antecedentes/",
+      "notes": "Obras físicas federales 2018-2026 en Pichilingue.",
+      "id": "fed-fed-pue-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Marco AFAC aeropuertos SJD / LAP / LTO (sin megaproyecto nuevo catalogado)",
+      "value": "concluido | ambos | Regulación federal continua",
+      "unit": "airports",
+      "place": "Los Cabos",
+      "source": "https://www.gob.mx/afac",
+      "notes": "CAPEX federal 2018-2026 por aeropuerto.",
+      "id": "fed-fed-aer-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "value": "en obra | Sheinbaum | Convenio ~37,500 acciones; gira posterior cita 55 mil viviendas + regularizaciones; ~50 mil familias reducción créditos",
+      "unit": "housing",
+      "place": "Estatal (prioridad Los Cabos)",
+      "source": "https://www.bcs.gob.mx/firma-claudia-sheinbaum-y-gobernador-vcc-convenio-para-iniciar-el-programa-vivienda-para-el-bienestar-en-baja-california-sur/",
+      "notes": "Avance oficial entregado vs anunciado y monto presupuestal BCS.",
+      "id": "fed-fed-viv-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Hospital General Regional IMSS Los Cabos (nuevo)",
+      "value": "en obra | Sheinbaum | 41,000 m²; 260 camas; 46 especialidades; modelo IMSS universal",
+      "unit": "health",
+      "place": "Los Cabos",
+      "source": "https://www.bcs.gob.mx/presidenta-claudia-sheinbaum-da-banderazo-de-inicio-a-la-construccion-del-nuevo-hospital-general-regional-del-imss-en-los-cabos/",
+      "notes": "Monto de inversión y plazo contractual.",
+      "id": "fed-fed-sal-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Hospital General Santa Rosalía (IMSS-Bienestar) — inauguración",
+      "value": "concluido | ambos | monto_citado=390000000 MXN | 30 camas; 8 especialidades; atención universal citada",
+      "unit": "health",
+      "place": "Mulegé",
+      "source": "https://www.gob.mx/presidencia/articulos/version-estenografica-inauguracion-del-hospital-general-santa-rosalia",
+      "notes": "Confirmar monto exacto en contrato/PEF.",
+      "id": "fed-fed-sal-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "500 plazas docentes nuevas BCS",
+      "value": "anunciado | Sheinbaum | 500 plazas",
+      "unit": "education",
+      "place": "Estatal",
+      "source": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+      "notes": "Calendario y distribución municipal.",
+      "id": "fed-fed-edu-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Campus Universidad Nacional Rosario Castellanos en La Paz",
+      "value": "anunciado | Sheinbaum | Educación superior pública anunciada en gira",
+      "unit": "education",
+      "place": "La Paz",
+      "source": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+      "notes": "Sitio, cupo, presupuesto, fecha apertura.",
+      "id": "fed-fed-edu-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Pueblos Mágicos (programa federal) — localidades BCS",
+      "value": "concluido | ambos | Programa continuo de denominación y apoyos",
+      "unit": "tourism",
+      "place": "Loreto",
+      "source": "https://www.gob.mx/sectur",
+      "notes": "Montos PEF por localidad 2019-2026.",
+      "id": "fed-fed-tur-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Renombre Glorieta Fonatur → Glorieta de las Mujeres Libres de BCS",
+      "value": "anunciado | Sheinbaum | Propuesta simbólica ligada a FED-CAR-002",
+      "unit": "tourism",
+      "place": "Los Cabos",
+      "source": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+      "notes": "",
+      "id": "fed-fed-tur-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Mina Los Cardones — rechazo AMLO y anulación autorización SEMARNAT",
+      "value": "cancelado | ambos | Oro a cielo abierto; no en operación; litigio residual reportado",
+      "unit": "mining",
+      "place": "La Paz (Sierra La Laguna)",
+      "source": "https://www.jornada.com.mx/2019/03/04/politica/003n1pol",
+      "notes": "Estado jurídico actual de cada concesión.",
+      "id": "fed-fed-min-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "value": "cancelado | ambos | MIA rechazada; concesiones canceladas 2024; laudo ICSID ~37.1 MDD (sep 2024)",
+      "unit": "mining",
+      "place": "Comondú / Golfo de Ulloa",
+      "source": "https://elpais.com/mexico/economia/2024-09-20/mexico-pierde-el-caso-contra-la-minera-submarina-odyssey-marine-y-debera-pagarle-mas-de-37-millones-de-dolares.html",
+      "notes": "",
+      "id": "fed-fed-min-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Exportadora de Sal (ESSA) Guerrero Negro — nacionalización (compra 49% Mitsubishi)",
+      "value": "concluido | AMLO | monto_citado=1500000000 MXN | Control 100% estatal; concesión ~40,000 ha",
+      "unit": "mining",
+      "place": "Mulegé (Guerrero Negro)",
+      "source": "https://amlo.presidente.gob.mx/presidente-nacionaliza-empresa-exportadora-de-sal/",
+      "notes": "",
+      "id": "fed-fed-min-003"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "ANP / decretos ambientales federales con efecto en BCS (marco)",
+      "value": "concluido | ambos | Gestión continua ANP (Sierra La Laguna, Cabo Pulmo, Vizcaíno, etc.)",
+      "unit": "environment",
+      "place": "Estatal",
+      "source": "https://www.gob.mx/conanp",
+      "notes": "Inventario decretos DOF 2018-2026 específicos BCS.",
+      "id": "fed-fed-amb-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Programas para el Bienestar — inversión territorial BCS 2025",
+      "value": "en obra | Sheinbaum | monto_citado=6766000000 MXN | ~179–220 mil beneficiarios según fuente; pensión y becas",
+      "unit": "social",
+      "place": "Estatal",
+      "source": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+      "notes": "Serie multi-año AMLO+Sheinbaum homogenizada.",
+      "id": "fed-fed-soc-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+      "value": "anunciado | ambos | Programas nacionales; obras locales no inventariadas aquí",
+      "unit": "social",
+      "place": "Estatal",
+      "source": "https://www.gob.mx/bienestar",
+      "notes": "Padrón Sembrando Vida BCS y listado PMU 2019-2026.",
+      "id": "fed-fed-soc-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Conectividad satelital Aldeas Inteligentes — Isla Santa Margarita",
+      "value": "concluido | AMLO | Conexión satelital comunitaria reportada",
+      "unit": "internet",
+      "place": "Comondú (Isla Santa Margarita)",
+      "source": "https://www.notimx.mx/2024/01/conectan-via-satelital-isla-santa.html",
+      "notes": "Comunicado SICT oficial.",
+      "id": "fed-fed-int-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "CFE TEIT / Internet para el Bienestar — despliegue BCS",
+      "value": "anunciado | ambos | Programa nacional; cobertura BCS por confirmar",
+      "unit": "internet",
+      "place": "Estatal",
+      "source": "https://www.cfe.mx",
+      "notes": "Mapa sitios CFE TEIT y usuarios en BCS.",
+      "id": "fed-fed-int-002"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Infraestructura Guardia Nacional en BCS",
+      "value": "anunciado | ambos | Despliegue nacional; cuarteles BCS no listados con fuente primaria aquí",
+      "unit": "security",
+      "place": "Estatal",
+      "source": "https://www.gob.mx/guardianacional",
+      "notes": "Inventario cuarteles 2019-2026 con montos.",
+      "id": "fed-fed-seg-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Programas CONAPESCA / apoyo pesca-acuacultura BCS (marco)",
+      "value": "anunciado | ambos | Programas recurrentes; sin megaproyecto único documentado aquí",
+      "unit": "fisheries",
+      "place": "Estatal (costero)",
+      "source": "https://www.gob.mx/conapesca",
+      "notes": "PEF y padrones BCS 2019-2026.",
+      "id": "fed-fed-pes-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Modernización transporte público La Paz (autobuses anunciados 2026)",
+      "value": "anunciado | Sheinbaum | Nuevas unidades ~marzo 2026 (anuncio gira)",
+      "unit": "other",
+      "place": "La Paz",
+      "source": "https://www.bcs.gob.mx/claudia-sheinbaum-rinde-su-primer-informe-de-gobierno-ante-el-pueblo-sudcaliforniano/",
+      "notes": "Monto, unidades y split federal/estatal.",
+      "id": "fed-fed-otr-001"
+    },
+    {
+      "theme": "proyectos-federales",
+      "metric": "Centros LIBRE (mujeres) — uno por municipio",
+      "value": "anunciado | Sheinbaum | Anunciados en cobertura de gira",
+      "unit": "other",
+      "place": "Estatal (5 municipios)",
+      "source": "https://www.periodicoenfoque.com.mx/politica/claudia-sheinbaum-anuncia-obras-y-apoyos-historicos-en-baja-california-sur",
+      "notes": "Confirmación comunicado Presidencia y avance.",
+      "id": "fed-fed-otr-002"
+    }
+  ]
+}

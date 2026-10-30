@@ -1,0 +1,72 @@
+{
+  "root_id": "1v3_MVil8BzvWXf6NCsQBfx6aSJEmOCC7",
+  "queue": [
+    {
+      "id": "11LUYA735fzTKaYKN8EZea2tPyRo0RhDb",
+      "path": "00_catalog"
+    },
+    {
+      "id": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "path": "01_planning"
+    },
+    {
+      "id": "14A_pAcmPy7Q10-V9EAD7f4u0iPFlEVwf",
+      "path": "02_water"
+    },
+    {
+      "id": "1WCOk146uvNMXUce05J9rjpVsbvOhPz6-",
+      "path": "03_energy"
+    },
+    {
+      "id": "1yQPGjlM6Ri_IIELjtpjgcV8PUcCaq0Xh",
+      "path": "04_mobility_waste"
+    },
+    {
+      "id": "1G1IepLmhKmHn5OGVrggm22Fi4yn2VoYR",
+      "path": "05_demographics"
+    },
+    {
+      "id": "1hd5ZW71g-RuMkJcpdUmSXSxondgFBnsh",
+      "path": "06_environment"
+    },
+    {
+      "id": "1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+      "path": "07_economy_investment"
+    },
+    {
+      "id": "1UCjtCBgWxuuKGUzqBBuzyzRfRRzVB7yO",
+      "path": "08_fp_team_research"
+    },
+    {
+      "id": "1adrzU-rF61CO1vqYaWVhbnNNwlHSOBuQ",
+      "path": "09_shadow_programme"
+    },
+    {
+      "id": "158H29D8F_1XShR3Hx0lyXZ7Tc5nyREJZ",
+      "path": "10_data_lake"
+    },
+    {
+      "id": "1Hq2Zwk0VRS2uo1Z-rYTTsbLk1veCG3gR",
+      "path": "11_bcs_hub"
+    },
+    {
+      "id": "1jl0uofmBUuijPQSGgCEn_f7yNXXpxwKu",
+      "path": "12_ontology"
+    },
+    {
+      "id": "1t5_CTE7mybtqhe1LVaF-769uKoGXHvcE",
+      "path": "13_territorial_intelligence"
+    },
+    {
+      "id": "1oITn7Uy62deedjcFSPbesLHJIOyun8Lb",
+      "path": "00_README"
+    },
+    {
+      "id": "13lEPsMXo1XmyJV0CzZ_bFmYK_ALwoWXm",
+      "path": "BCS_hub_pack"
+    }
+  ],
+  "done": [],
+  "visited": [],
+  "pending_pages": []
+}

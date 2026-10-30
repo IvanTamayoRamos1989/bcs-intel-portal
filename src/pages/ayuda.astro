@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { THEMES } from '../lib/ia';
+---
+<BaseLayout
+  title="Ayuda y fuentes"
+  titleEn="Help and sources"
+  description="Cómo moverse por el portal, preguntar al asistente y encontrar la fuente de cada dato."
+  descriptionEn="How to get around, ask the assistant and find the source of each figure."
+  section="Ayuda"
+  sectionEn="Help"
+>
+  <div class="pt-help">
+    <section class="pt-theme">
+      <h2><span data-lang-es>Cómo moverse</span><span data-lang-en hidden>Getting around</span></h2>
+      <ul class="pt-help-list">
+        <li><a href="/explorar"><strong><span data-lang-es>Explorar</span><span data-lang-en hidden>Explore</span></strong></a> — <span data-lang-es>el atlas 3D: capas sobre el relieve de todo el estado.</span><span data-lang-en hidden>the 3D atlas: layers on the terrain of the whole state.</span></li>
+        <li><a href="/temas"><strong><span data-lang-es>Temas</span><span data-lang-en hidden>Topics</span></strong></a> — <span data-lang-es>todas las páginas agrupadas en siete temas:</span><span data-lang-en hidden>every page grouped into seven topics:</span>
+          {THEMES.map((t, i) => (<>{i > 0 ? ', ' : ' '}<a href={`/temas#${t.id}`}><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></a></>))}.
+        </li>
+        <li><a href="/temas#documentos"><strong><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></strong></a> — <span data-lang-es>catálogo de datos, biblioteca, archivo de planes y mapa de relaciones.</span><span data-lang-en hidden>data catalog, library, plans archive and relationship map.</span></li>
+        <li><a href="/noticias"><strong><span data-lang-es>Noticias</span><span data-lang-en hidden>News</span></strong></a> — <span data-lang-es>notas recientes sobre Baja California Sur.</span><span data-lang-en hidden>recent news about Baja California Sur.</span></li>
+        <li><strong><span data-lang-es>Buscador</span><span data-lang-en hidden>Search</span></strong> — <span data-lang-es>en la barra superior; busca páginas y archivos por nombre. Atajo: Ctrl+K (⌘K en Mac).</span><span data-lang-en hidden>in the top bar; finds pages and files by name. Shortcut: Ctrl+K (⌘K on Mac).</span></li>
+        <li><strong><span data-lang-es>Ruta</span><span data-lang-en hidden>Breadcrumbs</span></strong> — <span data-lang-es>debajo de la barra superior verás dónde estás (Inicio › Tema › Página); cada paso es un enlace para volver.</span><span data-lang-en hidden>under the top bar you see where you are (Home › Topic › Page); each step links back.</span></li>
+      </ul>
+    </section>
+
+    <section class="pt-theme">
+      <h2><span data-lang-es>Preguntar al asistente</span><span data-lang-en hidden>Asking the assistant</span></h2>
+      <p class="pt-help-p"><span data-lang-es>El botón «Preguntar» abre el asistente en cualquier página (en el atlas también). Responde con la información del portal y muestra enlaces a las páginas y archivos de donde sale la respuesta. Puedes escribir o usar «Hablar» para preguntar con la voz y «Escuchar» para oír la respuesta.</span><span data-lang-en hidden>The “Ask” button opens the assistant on any page (the atlas too). It answers from the portal's information and links to the pages and files the answer comes from. You can type, or use “Talk” to ask by voice and “Listen” to hear the answer.</span></p>
+      <p class="pt-help-p"><button type="button" class="btn" data-open-chat><span data-lang-es>Abrir el asistente</span><span data-lang-en hidden>Open the assistant</span></button></p>
+    </section>
+
+    <section class="pt-theme">
+      <h2><span data-lang-es>Ver por municipio</span><span data-lang-en hidden>View by municipality</span></h2>
+      <p class="pt-help-p"><span data-lang-es>La fila «Ver por municipio» (BCS y los cinco municipios) fija un lugar para todo el portal: las páginas que tienen datos por municipio y el asistente usan esa selección. Elige «BCS» para volver a todo el estado.</span><span data-lang-en hidden>The “View by municipality” row (BCS and the five municipalities) sets a place for the whole portal: pages with municipal data and the assistant use that choice. Pick “BCS” to return to the whole state.</span></p>
+    </section>
+
+    <section class="pt-theme">
+      <h2><span data-lang-es>De dónde vienen los datos</span><span data-lang-en hidden>Where the data comes from</span></h2>
+      <p class="pt-help-p"><span data-lang-es>Las cifras del portal salen solo de fuentes públicas consolidadas. Para revisar el original:</span><span data-lang-en hidden>The portal's figures come only from consolidated public sources. To check the original:</span></p>
+      <ul class="pt-help-list">
+        <li><a href="/catalogo"><span data-lang-es>Catálogo de datos</span><span data-lang-en hidden>Data catalog</span></a> — <span data-lang-es>todos los archivos del proyecto, con enlace para verlos o descargarlos.</span><span data-lang-en hidden>all project files, with links to view or download them.</span></li>
+        <li><a href="/biblioteca"><span data-lang-es>Biblioteca</span><span data-lang-en hidden>Library</span></a> — <span data-lang-es>referencias de planeación, agua, costa, transporte y finanzas.</span><span data-lang-en hidden>references on planning, water, coast, transport and finance.</span></li>
+        <li><a href="/planes-archivo"><span data-lang-es>Archivo de planes</span><span data-lang-en hidden>Plans archive</span></a> — <span data-lang-es>instrumentos de planeación, vigentes e históricos.</span><span data-lang-en hidden>planning instruments, current and historical.</span></li>
+        <li><a href="/ontologia"><span data-lang-es>Mapa de relaciones</span><span data-lang-en hidden>Relationship map</span></a> — <span data-lang-es>cómo se conectan lugares, proyectos y actores.</span><span data-lang-en hidden>how places, projects and stakeholders connect.</span></li>
+      </ul>
+      <p class="pt-help-p"><span data-lang-es>Nota: este portal trata de Baja California Sur; no confundir con Baja California (norte).</span><span data-lang-en hidden>Note: this portal covers Baja California Sur, not to be confused with Baja California (north).</span></p>
+    </section>
+
+    <section class="pt-theme">
+      <h2><span data-lang-es>Idioma y sesión</span><span data-lang-en hidden>Language and session</span></h2>
+      <p class="pt-help-p"><span data-lang-es>Cambia entre español e inglés con «ES | EN» (en el móvil, dentro de «Menú»). Para salir, usa «Cerrar sesión» al pie de cualquier página.</span><span data-lang-en hidden>Switch between Spanish and English with “ES | EN” (on mobile, inside “Menu”). To leave, use “Log out” at the foot of any page.</span></p>
+    </section>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  document.querySelectorAll('[data-open-chat]').forEach(function (b) {
+    b.addEventListener('click', function () { if (window.BCSChat) window.BCSChat.open(); });
+  });
+</script>
+
+<style>
+  .pt-help { display: grid; gap: 14px; max-width: 860px; }
+  .pt-help-list { list-style: disc !important; display: block !important; padding-left: 1.2rem !important; }
+  .pt-help-list li { margin: .35rem 0; line-height: 1.55; }
+  .pt-help-p { margin: .3rem 0 .6rem; line-height: 1.6; color: var(--ink-2); }
+</style>

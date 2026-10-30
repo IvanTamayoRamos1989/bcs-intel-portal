@@ -1,0 +1,159 @@
+{
+  "type": "FeatureCollection",
+  "name": "focus_corridor_cabos_lapaz",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "properties": {
+    "note_es": "Indicativo — franja Los Cabos–Todos Santos–La Paz (espina Mex 19 / crecimiento costero). No es un buffer topográfico exacto.",
+    "note_en": "Indicative — Los Cabos–Todos Santos–La Paz belt (Mex 19 / coastal growth spine). Not an exact topographic buffer."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "corridor_belt",
+        "name_es": "Franja corredor Cabos–Todos Santos–La Paz",
+        "name_en": "Cabos–Todos Santos–La Paz corridor belt",
+        "kind": "belt",
+        "indicative": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -109.98,
+              22.85
+            ],
+            [
+              -109.65,
+              22.85
+            ],
+            [
+              -109.62,
+              23.08
+            ],
+            [
+              -110.05,
+              23.4
+            ],
+            [
+              -110.35,
+              23.55
+            ],
+            [
+              -110.42,
+              23.95
+            ],
+            [
+              -110.45,
+              24.22
+            ],
+            [
+              -110.2,
+              24.22
+            ],
+            [
+              -110.15,
+              23.95
+            ],
+            [
+              -110.1,
+              23.5
+            ],
+            [
+              -109.98,
+              23.2
+            ],
+            [
+              -109.85,
+              23.02
+            ],
+            [
+              -109.98,
+              22.85
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "corridor_spine_mex19",
+        "name_es": "Espina Mex 19 (indicativa)",
+        "name_en": "Mex 19 spine (indicative)",
+        "kind": "spine",
+        "indicative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -109.925186,
+            22.897019
+          ],
+          [
+            -109.92006,
+            22.893888
+          ],
+          [
+            -110.167529,
+            23.364174
+          ],
+          [
+            -110.225613,
+            23.450437
+          ],
+          [
+            -110.258142,
+            23.899378
+          ],
+          [
+            -110.264781,
+            23.924692
+          ],
+          [
+            -110.30659,
+            24.148745
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "corridor_hotel_csl_sjc",
+        "name_es": "Eje hotelero CSL–SJC (indicativo)",
+        "name_en": "CSL–SJC hotel axis (indicative)",
+        "kind": "spine",
+        "indicative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -109.925186,
+            22.897019
+          ],
+          [
+            -109.85,
+            22.95
+          ],
+          [
+            -109.75,
+            23.02
+          ],
+          [
+            -109.702515,
+            23.059836
+          ]
+        ]
+      }
+    }
+  ]
+}

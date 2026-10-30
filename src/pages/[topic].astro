@@ -1,0 +1,19 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import GuideShell from '../components/GuideShell.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((g) => ({
+    params: { topic: g.id },
+    props: { id: g.id },
+  }));
+}
+
+const { id } = Astro.props;
+const entry = await getEntry('guides', id);
+if (!entry) {
+  throw new Error(`Guide not found: ${id}`);
+}
+---
+<GuideShell entry={entry} />

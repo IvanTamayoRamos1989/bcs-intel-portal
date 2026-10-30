@@ -1,0 +1,5660 @@
+{
+ "label": "xai_switch",
+ "base": "https://bajacaliforniasur2050.com",
+ "date": "2026-10-16T08:00:25.206Z",
+ "items": [
+  {
+   "id": "E001",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la disponibilidad media anual del acuífero Cabo San Lucas (0317)?",
+   "place": null,
+   "all": [
+    "24[.,]0?7"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 4494,
+    "answer": "La disponibilidad media anual (DMA) del acuífero Cabo San Lucas (0317) es de -24.07 hm³/año (Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3; CONAGUA — Actualizacion DMA Acuifero Cabo San Lucas 0317, 2024, p.27). \n\nEsto indica un déficit, por lo que no hay volumen para nuevas concesiones (Guía agua: Diez acuíferos del pack sur, 2024).",
+    "sources": [
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero Cabo San Lucas 0317 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0317 Cabo San Lucas — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0317",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Acuífero 0335 San Lucas — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0335",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — portal",
+      "path": "11_bcs_hub/guide_assets/maps/dma-sjc-localizacion.jpg",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero Cabo San Lucas 0317 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E002",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué DMA tiene el acuífero San José del Cabo?",
+   "place": null,
+   "all": [
+    "12[.,]49"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 4822,
+    "answer": "**DMA del acuífero 0319 San José del Cabo: -12.49 hm³/año (déficit).**\n\nSegún el Acuerdo DMA 653 acuíferos (DOF 9 nov 2023, p.3), la disponibilidad media anual es -12.493828 hm³/año (≈ -12.49). No hay volumen disponible para nuevas concesiones. (Fuente: [1] hecho Acuífero 0319 San José del Cabo — DMA, y ficha CONAGUA 2024 p.31). \n\nEl dato coincide en la Guía agua: Diez acuíferos del pack sur (2024) y en el documento CONAGUA Actualización DMA Acuífero San José del Cabo 0319 (2024).",
+    "sources": [
+     {
+      "title": "Acuífero 0319 San José del Cabo — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0319",
+      "type": "fact"
+     },
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero San Jose del Cabo 0319 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — portal",
+      "path": "11_bcs_hub/guide_assets/maps/dma-sjc-localizacion.jpg",
+      "type": "file"
+     },
+     {
+      "title": "Mapa galería: DMA San José del Cabo — localización",
+      "path": "portal/mapas#gallery:dma-sjc-localizacion.jpg",
+      "type": "guide"
+     },
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero Cabo San Lucas 0317 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero San Jose del Cabo 0319 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E003",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "DMA del acuífero La Paz 0324 según la actualización 2024",
+   "place": null,
+   "all": [
+    "13[.,]49"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2133,
+    "answer": "**DMA del acuífero La Paz 0324 según la actualización 2024: -13.49 hm³/año.**\n\nEsto indica déficit (sin volumen para nuevas concesiones). \nFuente: CONAGUA — Actualizacion DMA Acuifero La Paz 0324 (2024), p.30; también en Guía agua: Diez acuíferos del pack sur (2024) y Hecho Acuífero 0324 La Paz — DMA (DOF 2023, actualizado 2024).",
+    "sources": [
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero La Paz 0324 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuerdo DMA Acuifero La Paz 0324 (2023)",
+      "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0324 La Paz — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0324",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho agua: Ficha / página — 0324",
+      "path": "guides/agua.md#4",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho proyectos-federales: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero La Paz 0324 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E004",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué dice el Acuerdo DOF de agosto 2023 sobre el acuífero de La Paz?",
+   "place": null,
+   "all": [],
+   "any": [
+    "27[.,]83",
+    "sin volumen|no existe volumen|nuevas concesiones"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2079,
+    "answer": "Según el **Acuerdo DMA Acuífero La Paz 0324 (DOF 17 de agosto de 2023)**, se actualiza la disponibilidad media anual de las aguas nacionales subterráneas del acuífero La Paz, clave 0324, en el Estado de Baja California Sur.\n\nEl documento indica que se cuenta con los elementos técnicos que permiten esta actualización, conforme a la NOM-011-CONAGUA-2015 y al artículo 22 de la Ley de Aguas Nacionales.\n\n**Cifra oficial del acuerdo (hecho [2]):** \nDisponibilidad media anual (DMA) = **-13.49 hm³/año** (déficit). No hay volumen disponible para nuevas concesiones.\n\n(Fuente: Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3; y ficha CONAGUA 2024, p.30. El acuerdo específico de agosto 2023 es el documento [1] y [8]).",
+    "sources": [
+     {
+      "title": "Acuerdo DMA Acuifero La Paz 0324 (2023)",
+      "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0324 La Paz — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0324",
+      "type": "fact"
+     },
+     {
+      "title": "Acuífero 0322 El Carrizal — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0322",
+      "type": "fact"
+     },
+     {
+      "title": "Acuífero 0314 El Pescadero — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0314",
+      "type": "fact"
+     },
+     {
+      "title": "Acuífero 0313 Todos Santos — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0313",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "Acuerdo DMA Acuifero La Paz 0324 (2023)",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E005",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿El acuífero Todos Santos tiene disponibilidad para nuevas concesiones?",
+   "place": null,
+   "all": [
+    "2[.,]96|d[eé]ficit|sin (nuevas )?concesion|no (hay|tiene) (volumen|disponibilidad)"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1236,
+    "answer": "**No.** El acuífero 0313 Todos Santos tiene DMA de -2.96 hm³/año y está en situación de “Sin nuevas concesiones” (Guía agua: Diez acuíferos del pack sur, 2024; Acuífero 0313 Todos Santos — DMA, DOF 2023). \n\nEl portal no tiene otro dato.",
+    "sources": [
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Acuífero 0313 Todos Santos — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0313",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Lectura de capacidad hídrica",
+      "path": "guides/agua.md#10",
+      "type": "guide"
+     },
+     {
+      "title": "Acuífero 0306 Santo Domingo — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0306",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": {
+     "title": "Hallazgos vinculados a la ontología v1",
+     "path": "12_ontology/FINDINGS_LINKED.md"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E006",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la DMA del acuífero Santiago?",
+   "place": null,
+   "all": [
+    "0?[.,]30\\b|298[ ,.]?386"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1570,
+    "answer": "**La DMA del acuífero Santiago (0320) es +0.30 hm³/año** (CONAGUA — Actualizacion DMA Acuifero Santiago 0320, 2024; Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3). \n\nTambién se reporta como 0.298386 hm³/año (≈ 0.30), con disponibilidad positiva (Acuerdo DMA 653 acuíferos, DOF 2023). \n\nSegún la Guía agua (2024), tiene un margen mínimo y no es un acuífero sin volumen disponible para nuevas concesiones.",
+    "sources": [
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero Santiago 0320 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Santiago-0320.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0320 Santiago — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0320",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Lectura de capacidad hídrica",
+      "path": "guides/agua.md#10",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho proyectos-federales: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero Santiago 0320 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Santiago-0320.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E007",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "DMA del acuífero Los Planes",
+   "place": null,
+   "all": [
+    "2[.,]34"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1364,
+    "answer": "**DMA del acuífero Los Planes (0323):** -2.34 hm³/año (déficit). Sin nuevas concesiones.\n\n**Fuentes:** \n- CONAGUA — Actualizacion DMA Acuifero Los Planes 0323 (2024), p.27. \n- Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3. \n- Guía agua: Diez acuíferos del pack sur (2024).",
+    "sources": [
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero Los Planes 0323 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Los-Planes-0323.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0323 Los Planes — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0323",
+      "type": "fact"
+     },
+     {
+      "title": "Acuíferos de Baja California Sur — 39 acuíferos, 22 en déficit (DOF 2023)",
+      "path": "data/aquifers_bcs.json",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho proyectos-federales: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero Los Planes 0323 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Los-Planes-0323.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E008",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la DMA del acuífero El Coyote?",
+   "place": null,
+   "all": [
+    "6[.,]24"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1595,
+    "answer": "**La DMA del acuífero 0325 El Coyote es -6.24 hm³/año** (déficit; sin nuevas concesiones).\n\n**Fuentes oficiales:**\n- Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3 (≈ -6.24 hm³/año).\n- Ficha CONAGUA: Actualización DMA Acuífero El Coyote 0325 (2024), p.26.\n\nEl portal no tiene otra cifra distinta. (Guía agua: pack sur, 2024).",
+    "sources": [
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero El Coyote 0325 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Coyote-0325.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0325 El Coyote — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0325",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho agua: Ficha / página — 0325",
+      "path": "guides/agua.md#4",
+      "type": "fact"
+     },
+     {
+      "title": "Acuíferos de Baja California Sur — 39 acuíferos, 22 en déficit (DOF 2023)",
+      "path": "data/aquifers_bcs.json",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero El Coyote 0325 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Coyote-0325.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E009",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la disponibilidad del acuífero Cabo Pulmo?",
+   "place": null,
+   "all": [
+    "2[.,]29"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1463,
+    "answer": "Según el Acuerdo DMA 653 acuíferos (DOF 9 nov 2023, p.3), la disponibilidad media anual (DMA) del acuífero 0318 Cabo Pulmo es -2.29 hm³/año (déficit, sin nuevas concesiones). (Fuente: [2] Acuífero 0318 Cabo Pulmo — DMA (DOF 2023); también en [3] Guía agua: Diez acuíferos del pack sur, 2024). \n\nEl documento CONAGUA 2024 confirma la misma actualización.",
+    "sources": [
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero Cabo Pulmo 0318 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0318 Cabo Pulmo — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0318",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Acuíferos de Baja California Sur — 39 acuíferos, 22 en déficit (DOF 2023)",
+      "path": "data/aquifers_bcs.json",
+      "type": "fact"
+     },
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero Cabo San Lucas 0317 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero Cabo Pulmo 0318 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E010",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué capacidad tiene la desaladora de Los Cabos?",
+   "place": "los_cabos",
+   "all": [
+    "250\\s*(l/s|lps|litros)"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1482,
+    "answer": "La desaladora de Los Cabos tiene una capacidad nominal de 250 l/s, equivalente a ≈ 7.88 hm³/año al 100% de factor planta. Sirve en bloque potable a la ciudad de Cabo San Lucas y no reescribe el déficit del acuífero DMA 0317 (Guía agua: Desalación Los Cabos, dato de proyecto; ProyectosMexico — Ficha Planta Desaladora Los Cabos 250lps, 2021; Guía agua: DMA — lectura de capacidad).",
+    "sources": [
+     {
+      "title": "Guía agua: Desalación Los Cabos (dato de proyecto)",
+      "path": "guides/agua.md#4",
+      "type": "guide"
+     },
+     {
+      "title": "Guía agua: DMA — lectura de capacidad",
+      "path": "guides/agua.md#7",
+      "type": "guide"
+     },
+     {
+      "title": "Guía agua: Lectura de capacidad hídrica",
+      "path": "guides/agua.md#10",
+      "type": "guide"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 2 oct 2026): PVEM: no bastará la desaladora en construcción en Los Cabos; plantea una mega planta del triple de capacidad",
+      "path": "noticias/2026-10-02/pvem-crisis-agua-mega-desaladora-2026-10-02",
+      "type": "news"
+     },
+     {
+      "title": "Ontology Evidence: Ficha APP Desaladora Los Cabos 250 lps",
+      "path": "12_ontology/graph.json#ev_desal_app",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E011",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿A cuántos hectómetros cúbicos al año equivale la desaladora de 250 l/s?",
+   "place": null,
+   "all": [
+    "7[.,]88"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1221,
+    "answer": "La desaladora de 250 l/s equivale a ≈ 7.88 hm³/año a factor 100% (Guía agua: Desalación Los Cabos, 2021; Guía agua: DMA — lectura de capacidad).",
+    "sources": [
+     {
+      "title": "Guía agua: Desalación Los Cabos (dato de proyecto)",
+      "path": "guides/agua.md#4",
+      "type": "guide"
+     },
+     {
+      "title": "Guía agua: DMA — lectura de capacidad",
+      "path": "guides/agua.md#7",
+      "type": "guide"
+     },
+     {
+      "title": "Ontology Evidence: Ficha APP Desaladora Los Cabos 250 lps",
+      "path": "12_ontology/graph.json#ev_desal_app",
+      "type": "ontology"
+     },
+     {
+      "title": "Ontology DecisionQuestion: ¿La desaladora desbloquea crecimiento o solo sostiene el déficit?",
+      "path": "12_ontology/graph.json#dq_desal_vs_crecimiento",
+      "type": "ontology"
+     },
+     {
+      "title": "Guía agua: Lectura de capacidad hídrica",
+      "path": "guides/agua.md#10",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E012",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la suma de déficits de los acuíferos del pack sur?",
+   "place": null,
+   "all": [
+    "63[.,]88"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1414,
+    "answer": "La suma de déficits de los 7 acuíferos del pack sur es ≈ 63.88 hm³/año (Guía agua: Diez acuíferos del pack sur, 2024). \n\nTambién se reporta la misma cifra en: BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis, 2024) y Guía agua: DMA — lectura de capacidad (2024).",
+    "sources": [
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot",
+      "type": "guide"
+     },
+     {
+      "title": "Guía agua: DMA — lectura de capacidad",
+      "path": "guides/agua.md#7",
+      "type": "guide"
+     },
+     {
+      "title": "Acuíferos de Baja California Sur — 39 acuíferos, 22 en déficit (DOF 2023)",
+      "path": "data/aquifers_bcs.json",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Todos los acuíferos de BCS y su municipio (DOF 2023)",
+      "path": "guides/agua.md#5",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E013",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la DMA del acuífero Santo Domingo en Comondú?",
+   "place": null,
+   "all": [
+    "30[.,]28"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1589,
+    "answer": "**DMA del acuífero 0306 Santo Domingo en Comondú: -30.28 hm³/año (déficit).**\n\nSegún el Acuerdo DMA 653 acuíferos (DOF 9 nov 2023, p.3), la disponibilidad media anual es -30.280721 hm³/año (≈ -30.28 hm³/año). No hay volumen para nuevas concesiones. El acuífero abarca municipios de Comondú, Loreto y La Paz. (Fuente: [1] Acuerdo DMA 653 acuíferos, DOF 2023; [3] Guía agua: Todos los acuíferos de BCS y su municipio, DOF 2023).",
+    "sources": [
+     {
+      "title": "Acuífero 0306 Santo Domingo — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0306",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Lectura de capacidad hídrica",
+      "path": "guides/agua.md#10",
+      "type": "guide"
+     },
+     {
+      "title": "Guía agua: Todos los acuíferos de BCS y su municipio (DOF 2023)",
+      "path": "guides/agua.md#5",
+      "type": "guide"
+     },
+     {
+      "title": "Ontology DemandDriver: Agro Valle Santo Domingo",
+      "path": "12_ontology/graph.json#dd_agro_santo_domingo",
+      "type": "ontology"
+     },
+     {
+      "title": "Acuíferos de Baja California Sur — 39 acuíferos, 22 en déficit (DOF 2023)",
+      "path": "data/aquifers_bcs.json",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero Todos Santos 0313 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Todos-Santos-0313.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E014",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué acuífero abastece a Loreto y cuál es su disponibilidad?",
+   "place": null,
+   "all": [],
+   "any": [
+    "2[.,]58",
+    "Lond[oó]",
+    "0329"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1612,
+    "answer": "El acuífero que abastece a Loreto es el **Acuífero 0328 Loreto**, con una disponibilidad media anual (DMA) de **0.09 hm³/año** (disponibilidad positiva).\n\n**Fuente:** Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3 (hecho [1]).\n\nNota: El municipio de Loreto también intersecta el Acuífero 0306 Santo Domingo (DMA -30.28 hm³/año, déficit), según el mismo documento.",
+    "sources": [
+     {
+      "title": "Acuífero 0328 Loreto — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0328",
+      "type": "fact"
+     },
+     {
+      "title": "Acuífero 0306 Santo Domingo — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0306",
+      "type": "fact"
+     },
+     {
+      "title": "Acuífero 0329 San Juan B. Londó — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0329",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho proyectos-federales: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Acuerdo DMA Acuifero La Paz 0324 (2023)",
+      "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Acuerdo DMA Acuifero La Paz 0324 (2023)",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E015",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "DMA del acuífero Mulegé 0332",
+   "place": null,
+   "all": [
+    "0?[.,]48"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1381,
+    "answer": "**DMA del acuífero Mulegé 0332: +0.48 hm³/año (disponibilidad positiva).**\n\nFuentes: \n- Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3 \n- Guía agua: Todos los acuíferos de BCS y su municipio (DOF 2023) \n- Hecho portal [agua]: DMA (hm³/año) — 0332 = +0.48 hm³/año (2023)",
+    "sources": [
+     {
+      "title": "Acuífero 0332 Mulegé — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0332",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — agua",
+      "path": "02_water/DR_0332.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía agua: Todos los acuíferos de BCS y su municipio (DOF 2023)",
+      "path": "guides/agua.md#5",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho agua: DMA (hm³/año) — 0332",
+      "path": "guides/agua.md#4",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho agua: Mulegé",
+      "path": "guides/agua.md#4",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "Documento del acervo BCS 2050 — agua",
+     "path": "02_water/DR_0332.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E016",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuántos acuíferos tiene Baja California Sur?",
+   "place": null,
+   "all": [
+    "\\b39\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1093,
+    "answer": "Baja California Sur tiene 39 acuíferos oficiales publicados por CONAGUA (Acuerdo DMA 653 acuíferos, DOF 9 nov 2023, p.3).",
+    "sources": [
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero La Paz 0324 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+      "type": "file"
+     },
+     {
+      "title": "CONAGUA — Actualizacion DMA Acuifero Santiago 0320 (2024)",
+      "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Santiago-0320.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Acuíferos de Baja California Sur — 39 acuíferos, 22 en déficit (DOF 2023)",
+      "path": "data/aquifers_bcs.json",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — portal",
+      "path": "11_bcs_hub/guide_assets/maps/dma-la-paz-localizacion.jpg",
+      "type": "file"
+     },
+     {
+      "title": "Acuífero 0316 Migriño — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0316",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "CONAGUA — Actualizacion DMA Acuifero La Paz 0324 (2024)",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E017",
+   "cat": "agua",
+   "kind": "open",
+   "q": "¿La desalación compensa el déficit de los acuíferos según la NOM-011?",
+   "place": null,
+   "all": [],
+   "any": [
+    "no (compensa|reescribe|cancela|es cr[eé]dito)"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1492,
+    "answer": "**No.** \n\nLa desalación es fuente de agua de mar para servicio municipal; **no es crédito NOM-011 ni cancela el déficit de acuíferos** (Guía agua: Desalación Los Cabos, dato de proyecto). \n\nSegún la NOM-011-CONAGUA-2015, el balance DMA se calcula por clave de acuífero (DMA = R − DNC − VEAS) y el remanente de un acuífero no compensa el déficit de otro (Guía agua: Diez acuíferos del pack sur, 2024).",
+    "sources": [
+     {
+      "title": "Guía agua: Desalación Los Cabos (dato de proyecto)",
+      "path": "guides/agua.md#4",
+      "type": "guide"
+     },
+     {
+      "title": "Guía agua: Diez acuíferos del pack sur (hm³/año, 2024)",
+      "path": "guides/agua.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot",
+      "type": "guide"
+     },
+     {
+      "title": "Acuíferos de Baja California Sur — 39 acuíferos, 22 en déficit (DOF 2023)",
+      "path": "data/aquifers_bcs.json",
+      "type": "fact"
+     },
+     {
+      "title": "Acuífero 0302 Vizcaíno — DMA (DOF 2023)",
+      "path": "data/aquifers_bcs.json#0302",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E018",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál fue el pico de demanda del SIBCS en 2024?",
+   "place": null,
+   "all": [],
+   "any": [
+    "688[.,]5",
+    "\\b689\\b"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 3173,
+    "answer": "Según el documento CENACE PAMRNT 2025–2039, la demanda máxima instantánea se presentó el 10 de septiembre de 2024 a las 15:45 horas, alcanzando un valor pico de 688.5 MW. La guía energia (cifras oficiales) y el hecho portal [energia] reportan 689 MWh/h y 688.5 MW (instantáneo) para 2024.",
+    "sources": [
+     {
+      "title": "Documento del acervo BCS 2050 — portal",
+      "path": "11_bcs_hub/guide_assets/maps/cenace-sibcs-diagnostico-operativo.jpg",
+      "type": "file"
+     },
+     {
+      "title": "Guía energia: Demanda anual (cifras oficiales)",
+      "path": "guides/energia.md#18",
+      "type": "guide"
+     },
+     {
+      "title": "Guía energia: Demanda (cifras publicadas)",
+      "path": "guides/energia.md#2",
+      "type": "guide"
+     },
+     {
+      "title": "Guía energia: SIBCS — hechos operativos",
+      "path": "guides/energia.md#6",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho energia: Pico SIBCS — 2024",
+      "path": "guides/energia.md#2",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "Lentes de decisión — grafo BCS Futures",
+     "path": "12_ontology/decision_lenses.md"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E019",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "Demanda máxima del sistema eléctrico de BCS en 2023",
+   "place": null,
+   "all": [],
+   "any": [
+    "\\b660\\b",
+    "\\b675\\b"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1745,
+    "answer": "Según el mapa CENACE — Demanda SIBCS (CENACE PAMRNT 2025-2039), el comportamiento de la demanda máxima bruta integrada semanal del SIBCS en 2023 se muestra en la figura 4.5.1, sin cifra anual exacta consolidada.\n\nEl portal no tiene ese dato preciso para 2023. Para el pico de referencia 2024 se reporta ~688.5 MW (Ontology ResourceCapacity: SIBCS y Guía energia: SIBCS — hechos operativos). La fuente oficial es CENACE / PRODESEN.",
+    "sources": [
+     {
+      "title": "Documento del acervo BCS 2050 — portal",
+      "path": "11_bcs_hub/guide_assets/maps/cenace-sibcs-demanda.jpg",
+      "type": "file"
+     },
+     {
+      "title": "SENER — Prodesen 2024 2038 cap0 (2024)",
+      "path": "03_energy/official_gap_docs/2024_SENER_PRODESEN-2024-2038-Cap0.pdf",
+      "type": "file"
+     },
+     {
+      "title": "SENER — PRODESEN 2024 2038 Cap0 Presentacion (2024)",
+      "path": "03_energy/2024-05-31_SENER_PRODESEN-2024-2038-Cap0-Presentacion.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía energia: SIBCS — sistema aislado",
+      "path": "guides/energia.md#9",
+      "type": "guide"
+     },
+     {
+      "title": "Guía energia: Pronóstico (no es capacidad libre)",
+      "path": "guides/energia.md#5",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "SENER — Prodesen 2024 2038 cap0 (2024)",
+     "path": "03_energy/official_gap_docs/2024_SENER_PRODESEN-2024-2038-Cap0.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E020",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál fue el consumo neto de electricidad del SIBCS en 2023?",
+   "place": null,
+   "all": [
+    "3[ ,.]?257"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1413,
+    "answer": "**Consumo neto SIBCS en 2023: 3,257 GWh** (equivalente a 3.257×10⁹ kWh). \n\n(Fuente: Guía energia — Demanda anual (cifras oficiales), 2023; Hecho portal [energia]: Valor — Consumo neto SIBCS; PRODESEN Cap.3).",
+    "sources": [
+     {
+      "title": "Hecho energia: Año — Consumo neto SIBCS",
+      "path": "guides/energia.md#18",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho energia: Fuente — Consumo neto SIBCS",
+      "path": "guides/energia.md#18",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho energia: Valor — Consumo neto SIBCS",
+      "path": "guides/energia.md#18",
+      "type": "fact"
+     },
+     {
+      "title": "Guía energia: Demanda anual (cifras oficiales)",
+      "path": "guides/energia.md#18",
+      "type": "guide"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — portal",
+      "path": "11_bcs_hub/guide_assets/maps/prodesen-sibcs-consumo-regional.jpg",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "SENER — Prodesen 2024 2038 cap0 (2024)",
+     "path": "03_energy/official_gap_docs/2024_SENER_PRODESEN-2024-2038-Cap0.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E021",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuánto creció el consumo neto de electricidad en BCS en 2023?",
+   "place": null,
+   "all": [
+    "9[.,]9\\s*%"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1629,
+    "answer": "**+9.9% en 2023.**\n\nSegún la Guía energia: Demanda anual (cifras oficiales), el crecimiento del consumo neto SIBCS fue de +9.9% en 2023 (PRODESEN Cap.3). \n\nEl portal también registra el valor del consumo neto SIBCS en 3,257 GWh para ese mismo año (Guía energia y Hecho portal [energia]).",
+    "sources": [
+     {
+      "title": "SENER — PRODESEN 2024 2038 Cap3 Demanda consumo (2024)",
+      "path": "03_energy/official_gap_docs/2024_SENER_PRODESEN-2024-2038-Cap3-Demanda-consumo.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Hecho energia: Año — Consumo neto SIBCS",
+      "path": "guides/energia.md#18",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — portal",
+      "path": "11_bcs_hub/guide_assets/maps/prodesen-consumo-neto-sistemas.jpg",
+      "type": "file"
+     },
+     {
+      "title": "Hecho energia: Fuente — Consumo neto SIBCS",
+      "path": "guides/energia.md#18",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho energia: Valor — Consumo neto SIBCS",
+      "path": "guides/energia.md#18",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "SENER — PRODESEN 2024 2038 Cap3 Demanda consumo (2024)",
+     "path": "03_energy/official_gap_docs/2024_SENER_PRODESEN-2024-2038-Cap3-Demanda-consumo.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E022",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál es el límite de transmisión La Paz–Los Cabos?",
+   "place": null,
+   "all": [
+    "237"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1687,
+    "answer": "El límite operativo de transmisión La Paz → Los Cabos es **237 MW** (2×230 kV + 1×115 kV). \n\n(Cuello La Paz→Los Cabos, guía energia; Ontology ResourceCapacity: Compuerta transmisión La Paz→Los Cabos; Guía energia: SIBCS — hechos operativos; Guía energia: Transmisión La Paz → Los Cabos). \n\nEn 2024 se registraron 10 horas por encima del límite (máx. 245.77 MW) y 603 horas por encima del 95% (Guía energia: Transmisión La Paz → Los Cabos).",
+    "sources": [
+     {
+      "title": "Hecho energia: Cuello La Paz→Los Cabos",
+      "path": "guides/energia.md#9",
+      "type": "fact"
+     },
+     {
+      "title": "Guía energia: Transmisión La Paz → Los Cabos",
+      "path": "guides/energia.md#4",
+      "type": "guide"
+     },
+     {
+      "title": "Guía energia: SIBCS — hechos operativos",
+      "path": "guides/energia.md#6",
+      "type": "guide"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Compuerta transmisión La Paz→Los Cabos",
+      "path": "12_ontology/graph.json#rc_tx_lapaz_cabos",
+      "type": "ontology"
+     },
+     {
+      "title": "Guía energia: SIBCS — sistema aislado",
+      "path": "guides/energia.md#9",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E023",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Qué es el proyecto P23-BS1?",
+   "place": null,
+   "all": [],
+   "any": [
+    "Olas Altas",
+    "230\\s*kV",
+    "140\\s*km"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1996,
+    "answer": "**El proyecto P23-BS1** es el **Refuerzo de la transmisión La Paz–Los Cabos**, consistente en la línea de transmisión **LT Olas Altas–TG Los Cabos 230 kV, 2 circuitos, 140 km-c (1.er circuito)**.\n\n**Estado actual**: En Análisis con avance 0 %. \n**Fechas**: Necesidad en abril 2028; factible en diciembre 2028. \n**Objetivo**: Incrementar la confiabilidad y aliviar la compuerta de flujo La Paz → Los Cabos (límite operativo actual 237 MW).\n\n**Fuentes**: \n- Guía energia: Transmisión — proyectos (parcial), CENACE PAMRNT 2025–2039. \n- Hecho portal [energia]: Metas físicas publicadas — P23-BS1 y Fechas — P23-BS1 (guides/energia.md). \n- Ontology Project: P23-BS1.",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Refuerzo transmisión La Paz–Los Cabos (P23-BS1 / LT Olas Altas–TG Los Cabos 230 kV)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho energia: Estado — P23-BS1",
+      "path": "guides/energia.md#15",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho energia: Fechas — P23-BS1",
+      "path": "guides/energia.md#15",
+      "type": "fact"
+     },
+     {
+      "title": "Guía energia: Transmisión — proyectos (parcial)",
+      "path": "guides/energia.md#15",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho energia: Metas físicas publicadas — P23-BS1",
+      "path": "guides/energia.md#15",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E024",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuántos MW de almacenamiento (SAE) están planeados en BCS 2025–2030?",
+   "place": null,
+   "all": [
+    "\\b63\\s*MW"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1917,
+    "answer": "**63 MW de almacenamiento SAE planeados en BCS para 2025–2030.**\n\nSegún el hecho portal [energia] (guía energia.md), la capacidad es de 63 MW adición 2025–2030 (2+20+41). \n\nEsto coincide con la lectura del PAMRNT (PAMRNT SAE SIBCS, Cuadro 3.13.1) que reporta ~63 MW asociados a tres proyectos de energía limpia en el SIBCS (GCR 07), citados en el documento CENACE PAMRNT/PRODESEN 2025-2039 y en la guía de renovables y baterías. \n\nNo hay otras cifras de SAE planeados en el contexto para ese periodo.",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho energia: Capacidad — SAE planeados región BCS",
+      "path": "guides/energia.md#17",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Project: Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "path": "12_ontology/graph.json#proj_fed_ene_009",
+      "type": "ontology"
+     },
+     {
+      "title": "Guía energia: Renovables y baterías (parcial)",
+      "path": "guides/energia.md#17",
+      "type": "guide"
+     },
+     {
+      "title": "Ontology Instrument: Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "path": "12_ontology/graph.json#inst_federal_pipeline",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E025",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Qué pasó con la central de ciclo combinado de 327 MW en BCS?",
+   "place": null,
+   "all": [
+    "cancelad"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2125,
+    "answer": "Según el contexto del portal, la **Central de Ciclo Combinado BCS de 327 MW** fue anunciada por la CFE en 2021 con un monto de 9,840 millones de pesos, pero **fue cancelada** durante el sexenio de AMLO y **no se construyó**.\n\n- Fuente oficial: CFE Boletín 2021 (anuncio y posterior ausencia en ejecución).\n- No aparece en el Plan Fortalecimiento 2025-2030; en su lugar se lista la CCI Los Cabos de 240 MW.\n- Brecha: no se localiza acta formal de cancelación en el DOF.\n\n(Hecho proyectos-federales; CFE Boletín 2021; Ontology Project proj_fed_ene_002; Plan Fortalecimiento 2025-2030).",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "CFE Boletín — unidades TG BCS + anuncio ciclo combinado 327 MW (2021)",
+      "path": "13_federal_projects/docs/energy/2021_CFE_Boletin-TG-BCS_SOURCE.md",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Project: Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "path": "12_ontology/graph.json#proj_fed_ene_002",
+      "type": "ontology"
+     },
+     {
+      "title": "Ontology Instrument: Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "path": "12_ontology/graph.json#inst_federal_pipeline",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 4,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E026",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuánta energía generó la turbogás diésel de Los Cabos entre 2023 y 2024?",
+   "place": null,
+   "all": [
+    "282[.,]7"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2078,
+    "answer": "**282.7 GWh** entre septiembre de 2023 y septiembre de 2024, en 7,760 de 8,784 horas de operación (Guía energia: Operación en el pico 2024, Cuadro 4.1.9 PAMRNT; Hecho energia: Valor — Generación TG diésel Los Cabos, 2024; Guía energia: Diésel / combustible).",
+    "sources": [
+     {
+      "title": "Guía energia: Operación en el pico 2024",
+      "path": "guides/energia.md#3",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho energia: Valor — Generación TG diésel Los Cabos",
+      "path": "guides/energia.md#16",
+      "type": "fact"
+     },
+     {
+      "title": "Guía energia: Diésel / combustible (parcial)",
+      "path": "guides/energia.md#16",
+      "type": "guide"
+     },
+     {
+      "title": "Guía energia: SIBCS — sistema aislado",
+      "path": "guides/energia.md#9",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 4,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E027",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál es la capacidad de la Central de Combustión Interna Los Cabos anunciada?",
+   "place": null,
+   "all": [
+    "240\\s*MW"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1678,
+    "answer": "Según el hecho portal [proyectos-federales], la Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030 fue anunciada con **240 MW** (Sheinbaum, fuente: https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/).\n\nEl inventario de proyectos federales BCS (44) y la ontología Pipeline de proyectos federales (AMLO/Sheinbaum) también la registran con esa misma relación. El documento SENER CFE — Plan Fortalecimiento SEN 2025-2030 (2025) no detalla la capacidad específica de esta central.",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Instrument: Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "path": "12_ontology/graph.json#inst_federal_pipeline",
+      "type": "ontology"
+     },
+     {
+      "title": "Ontology Evidence: Inventario proyectos federales BCS (44)",
+      "path": "12_ontology/graph.json#ev_federal_projects_inventory",
+      "type": "ontology"
+     },
+     {
+      "title": "Hecho proyectos-federales: Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "SENER CFE — Plan Fortalecimiento SEN 2025 2030 (2025)",
+      "path": "13_federal_projects/docs/energy/2025_SENER-CFE_Plan-Fortalecimiento-SEN-2025-2030.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E028",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos habitantes tiene Baja California Sur?",
+   "place": null,
+   "all": [
+    "798[ ,.]?447"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1030,
+    "answer": "En 2020, Baja California Sur tenía 798,447 habitantes (Data México, 2026, perfil BCS). \n\nEl portal no tiene dato posterior a 2020.",
+    "sources": [
+     {
+      "title": "Baja California Sur: Economía, empleo, equidad, calidad de vida, educación, salud y seguridad… (2026)",
+      "path": "10_data_lake/01_Steering_Committee/02_Political_Stakeholders/2026_DataMexico_profile_Baja-California-Sur-bs.html",
+      "type": "file"
+     },
+     {
+      "title": "Población del municipio La Paz — INEGI Censo 2020",
+      "path": "municipios/La Paz",
+      "type": "municipio"
+     },
+     {
+      "title": "Biblioteca: Programa Hidrico del Estado de Baja California Sur 2015-2021 — p. 41",
+      "path": "13_library/11_MEXICO_BCS/11_T1_2018_CEABCS_PHE.pdf#p41",
+      "type": "library"
+     },
+     {
+      "title": "Población de la localidad Ciudad Constitución, cabecera del municipio Comondú — INEGI Censo 2020",
+      "path": "municipios/Comondú/localidad/Ciudad Constitución",
+      "type": "municipio"
+     },
+     {
+      "title": "Población de la localidad Santa Rosalía, cabecera del municipio Mulegé — INEGI Censo 2020",
+      "path": "municipios/Mulegé/localidad/Santa Rosalía",
+      "type": "municipio"
+     }
+    ],
+    "primary_file": {
+     "title": "Biblioteca: Programa Hidrico del Estado de Baja California Sur 2015-2021 — p. 41",
+     "path": "13_library/11_MEXICO_BCS/11_T1_2018_CEABCS_PHE.pdf#p41"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E029",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuál es la población del municipio de La Paz?",
+   "place": "la_paz",
+   "all": [
+    "292[ ,.]?241"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1329,
+    "answer": "**292,241 habitantes (2020).**\n\nFuentes: \n- INEGI Censo de Población y Vivienda 2020 (POBTOT municipal). \n- Guía territorio: Municipio La Paz (`003`) — POBTOT **292,241**. \n- Hecho territorio: Población del municipio La Paz = 292,241 (2020). \n- Data México (2026): En 2020, la población en La Paz fue de 292,241 habitantes.",
+    "sources": [
+     {
+      "title": "Población del municipio La Paz — INEGI Censo 2020",
+      "path": "municipios/La Paz",
+      "type": "municipio"
+     },
+     {
+      "title": "Población de la localidad La Paz, cabecera del municipio La Paz — INEGI Censo 2020",
+      "path": "municipios/La Paz/localidad/La Paz",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — La Paz (INEGI 2020)",
+      "path": "05_demographics/top_localities/La Paz",
+      "type": "municipio"
+     },
+     {
+      "title": "Hecho territorio: Población del municipio La Paz (POBTOT municipal, municipio completo)",
+      "path": "guides/territorio.md#2",
+      "type": "fact"
+     },
+     {
+      "title": "Guía territorio: Municipio: La Paz (`003`) — POBTOT **292,241**",
+      "path": "guides/territorio.md#12",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E030",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "cuantos abitantes tiene los cabos",
+   "place": null,
+   "all": [
+    "351[ ,.]?111"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1368,
+    "answer": "**Los Cabos tiene 351,111 habitantes (año 2020).**\n\nFuente: INEGI Censo de Población y Vivienda 2020 (POBTOT municipal). \nCifra confirmada en: Guía territorio Los Cabos, Hecho territorio portal y DataMéxico 2026.",
+    "sources": [
+     {
+      "title": "Población del municipio Los Cabos — INEGI Censo 2020",
+      "path": "municipios/Los Cabos",
+      "type": "municipio"
+     },
+     {
+      "title": "Población de la localidad San José del Cabo, cabecera del municipio Los Cabos — INEGI Censo 2020",
+      "path": "municipios/Los Cabos/localidad/San José del Cabo",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — Los Cabos (INEGI 2020)",
+      "path": "05_demographics/top_localities/Los Cabos",
+      "type": "municipio"
+     },
+     {
+      "title": "Guía territorio: Municipio: Los Cabos (`008`) — POBTOT **351,111**",
+      "path": "guides/territorio.md#11",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho territorio: Población del municipio Los Cabos (POBTOT municipal, municipio completo)",
+      "path": "guides/territorio.md#2",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E031",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "Población de Comondú según el censo 2020",
+   "place": null,
+   "all": [
+    "73[ ,.]?021"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1287,
+    "answer": "**73,021 habitantes.**\n\nFuente: INEGI Censo de Población y Vivienda 2020 (POBTOT municipal, municipio completo, CVE 001). \n(Cita: [1], [3], [4], [5] Guía territorio: Municipio Comondú). \n\nLa cabecera, Ciudad Constitución, tiene 43,805 habitantes (no es el total municipal).",
+    "sources": [
+     {
+      "title": "Población del municipio Comondú — INEGI Censo 2020",
+      "path": "municipios/Comondú",
+      "type": "municipio"
+     },
+     {
+      "title": "Población de la localidad Ciudad Constitución, cabecera del municipio Comondú — INEGI Censo 2020",
+      "path": "municipios/Comondú/localidad/Ciudad Constitución",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — Comondú (INEGI 2020)",
+      "path": "05_demographics/top_localities/Comondú",
+      "type": "municipio"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios",
+      "type": "municipio"
+     },
+     {
+      "title": "Guía territorio: Municipio: Comondú (`001`) — POBTOT **73,021**",
+      "path": "guides/territorio.md#13",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E032",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos habitantes tiene Mulegé?",
+   "place": null,
+   "all": [
+    "64[ ,.]?022"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1205,
+    "answer": "**64,022 habitantes** (INEGI Censo de Población y Vivienda 2020, POBTOT municipal; [1], [3], [4], [5], [6], [7]).\n\nEsta cifra corresponde al municipio completo de Mulegé (CVE 002). Su cabecera, Santa Rosalía, tiene 14,357 habitantes ([2], [3], [4]).",
+    "sources": [
+     {
+      "title": "Población del municipio Mulegé — INEGI Censo 2020",
+      "path": "municipios/Mulegé",
+      "type": "municipio"
+     },
+     {
+      "title": "Población de la localidad Santa Rosalía, cabecera del municipio Mulegé — INEGI Censo 2020",
+      "path": "municipios/Mulegé/localidad/Santa Rosalía",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — Mulegé (INEGI 2020)",
+      "path": "05_demographics/top_localities/Mulegé",
+      "type": "municipio"
+     },
+     {
+      "title": "Guía territorio: Municipio: Mulegé (`002`) — POBTOT **64,022**",
+      "path": "guides/territorio.md#14",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho territorio: Población del municipio Mulegé (POBTOT municipal, municipio completo)",
+      "path": "guides/territorio.md#2",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E033",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "Población del municipio de Loreto",
+   "place": "loreto",
+   "all": [
+    "18[ ,.]?052"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2061,
+    "answer": "**Población del municipio de Loreto: 18,052 habitantes (2020).**\n\nFuente: INEGI Censo de Población y Vivienda 2020 (POBTOT municipal). \nTambién aparece en: guides/territorio.md (hecho territorio), Data México 2026 y tabla municipal BCS (INEGI 2020). \n\nLa cabecera (localidad Loreto) tiene 16,311 habitantes (INEGI 2020).",
+    "sources": [
+     {
+      "title": "Población del municipio Loreto — INEGI Censo 2020",
+      "path": "municipios/Loreto",
+      "type": "municipio"
+     },
+     {
+      "title": "Población de la localidad Loreto, cabecera del municipio Loreto — INEGI Censo 2020",
+      "path": "municipios/Loreto/localidad/Loreto",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — Loreto (INEGI 2020)",
+      "path": "05_demographics/top_localities/Loreto",
+      "type": "municipio"
+     },
+     {
+      "title": "Hecho territorio: Población del municipio Loreto (POBTOT municipal, municipio completo)",
+      "path": "guides/territorio.md#2",
+      "type": "fact"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios",
+      "type": "municipio"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E034",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos habitantes tiene la ciudad de San José del Cabo?",
+   "place": null,
+   "all": [
+    "136[ ,.]?285"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1687,
+    "answer": "La ciudad de San José del Cabo, cabecera del municipio Los Cabos, tiene **136,285 habitantes** (INEGI Censo de Población y Vivienda 2020, resultados por localidad, ITER).\n\nNota: Esta cifra corresponde solo a la localidad cabecera, no al municipio completo de Los Cabos que suma 351,111 habitantes (INEGI Censo 2020).",
+    "sources": [
+     {
+      "title": "Población de la localidad San José del Cabo, cabecera del municipio Los Cabos — INEGI Censo 2020",
+      "path": "municipios/Los Cabos/localidad/San José del Cabo",
+      "type": "municipio"
+     },
+     {
+      "title": "Población del municipio Los Cabos — INEGI Censo 2020",
+      "path": "municipios/Los Cabos",
+      "type": "municipio"
+     },
+     {
+      "title": "Guía territorio: Municipio: Los Cabos (`008`) — POBTOT **351,111**",
+      "path": "guides/territorio.md#11",
+      "type": "guide"
+     },
+     {
+      "title": "Localidades y población — Los Cabos (INEGI 2020)",
+      "path": "05_demographics/top_localities/Los Cabos",
+      "type": "municipio"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios",
+      "type": "municipio"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E035",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuál es la cabecera de Comondú y cuánta población tiene?",
+   "place": null,
+   "all": [
+    "Constituci[oó]n",
+    "43[ ,.]?805"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1650,
+    "answer": "**Ciudad Constitución** es la cabecera municipal de Comondú. \n\nSu población es de **43,805 habitantes** (INEGI Censo de Población y Vivienda 2020, ITER, localidad). \n\nNota: esta cifra corresponde solo a la localidad cabecera, no al total del municipio (que es 73,021 habitantes según la misma fuente). \n\n(Fuentes: [1], [2], [3], [4], [5], [7], [8] — INEGI 2020 y Guía territorio BCS 2050).",
+    "sources": [
+     {
+      "title": "Población de la localidad Ciudad Constitución, cabecera del municipio Comondú — INEGI Censo 2020",
+      "path": "municipios/Comondú/localidad/Ciudad Constitución",
+      "type": "municipio"
+     },
+     {
+      "title": "Población del municipio Comondú — INEGI Censo 2020",
+      "path": "municipios/Comondú",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — Comondú (INEGI 2020)",
+      "path": "05_demographics/top_localities/Comondú",
+      "type": "municipio"
+     },
+     {
+      "title": "Guía territorio: Municipio: Comondú (`001`) — POBTOT **73,021**",
+      "path": "guides/territorio.md#13",
+      "type": "guide"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios",
+      "type": "municipio"
+     }
+    ],
+    "primary_file": {
+     "title": "Notas históricas por asentamiento (sourced)",
+     "path": "13_territorial_intelligence/histories/history_settlements.md"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E036",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "Población de Santa Rosalía",
+   "place": null,
+   "all": [
+    "14[ ,.]?357"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1767,
+    "answer": "**Población de Santa Rosalía (cabecera municipal de Mulegé):** 14,357 habitantes (INEGI Censo de Población y Vivienda 2020, POBTOT de la localidad).\n\n**Nota:** Esta cifra corresponde solo a la localidad de Santa Rosalía, no al municipio completo de Mulegé, que tiene 64,022 habitantes (INEGI Censo 2020).\n\nFuentes: \n- INEGI Censo 2020 (resultados por localidad, ITER) \n- Guía territorio: Municipio Mulegé (002) \n- Hecho territorio e historia del portal.",
+    "sources": [
+     {
+      "title": "Población de la localidad Santa Rosalía, cabecera del municipio Mulegé — INEGI Censo 2020",
+      "path": "municipios/Mulegé/localidad/Santa Rosalía",
+      "type": "municipio"
+     },
+     {
+      "title": "Población del municipio Mulegé — INEGI Censo 2020",
+      "path": "municipios/Mulegé",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — Mulegé (INEGI 2020)",
+      "path": "05_demographics/top_localities/Mulegé",
+      "type": "municipio"
+     },
+     {
+      "title": "Guía territorio: Municipio: Mulegé (`002`) — POBTOT **64,022**",
+      "path": "guides/territorio.md#14",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho historia: Población de la localidad cabecera Santa Rosalía, municipio Mulegé (no es el total municipal)",
+      "path": "guides/historia.md#4",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E037",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántas localidades tiene el municipio de La Paz?",
+   "place": null,
+   "all": [
+    "1[ ,.]?018"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1126,
+    "answer": "El municipio de La Paz tiene **1,018 localidades** (INEGI Censo de Población y Vivienda 2020). \n\nFuente: [3], [4] y [8] (guía territorio: Municipios y cabeceras).",
+    "sources": [
+     {
+      "title": "Hecho historia: Población de la localidad cabecera La Paz, municipio La Paz (no es el total municipal)",
+      "path": "guides/historia.md#4",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho territorio: Población de la localidad cabecera del municipio La Paz (no es el total municipal)",
+      "path": "guides/territorio.md#2",
+      "type": "fact"
+     },
+     {
+      "title": "Población de la localidad La Paz, cabecera del municipio La Paz — INEGI Censo 2020",
+      "path": "municipios/La Paz/localidad/La Paz",
+      "type": "municipio"
+     },
+     {
+      "title": "Población del municipio La Paz — INEGI Censo 2020",
+      "path": "municipios/La Paz",
+      "type": "municipio"
+     },
+     {
+      "title": "Localidades y población — La Paz (INEGI 2020)",
+      "path": "05_demographics/top_localities/La Paz",
+      "type": "municipio"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E038",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos municipios tiene BCS?",
+   "place": null,
+   "all": [
+    "\\b(5|cinco)\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1266,
+    "answer": "Baja California Sur tiene 5 municipios.\n\n**Fuentes oficiales del contexto:**\n- INEGI Censo 2020 (fragmento [3]): Los Cabos, La Paz, Comondú, Mulegé y Loreto.\n- CONEVAL — Fichas municipales BCS (2024) (fragmento [1]).\n- Documento del acervo BCS 2050 — catálogo (fragmento [6]).",
+    "sources": [
+     {
+      "title": "CONEVAL — Fichas municipales BCS (2024)",
+      "path": "05_demographics/2024-07-10_CONEVAL_Fichas_municipales_BCS.zip",
+      "type": "file"
+     },
+     {
+      "title": "INEGI — Poblacion municipal BCS serie censal (1990–2020)",
+      "path": "05_demographics/1990-2020_INEGI_Poblacion_municipal_BCS_serie_censal.csv",
+      "type": "file"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios",
+      "type": "municipio"
+     },
+     {
+      "title": "Finanzas BCS — Anexo I 33 Transferencias Participaciones Municipios 2025 (2025)",
+      "path": "13_territorial_intelligence/fiscal/2025-01-01_Finanzas-BCS_Anexo-I-33-Transferencias-Participaciones-Municipios-2025.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía territorio: Fortalezas / candados / oportunidades — por municipio (evidencia)",
+      "path": "guides/territorio.md#16",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "CONEVAL — Fichas municipales BCS (2024)",
+     "path": "05_demographics/2024-07-10_CONEVAL_Fichas_municipales_BCS.zip"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E039",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuándo se creó el municipio de Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "1980",
+    "Decreto 181"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1312,
+    "answer": "**10 de abril de 1980.**\n\nSegún la guía de historia del portal, el municipio de Los Cabos (con cabecera en San José del Cabo) se creó mediante el Decreto 181 el 10 de abril de 1980 (Hecho historia: 10 abr 1980; Guía historia: Estadohood).",
+    "sources": [
+     {
+      "title": "Datos BCS — Decreto-Creación-del-Comité-de-Planeación-para-el-Desarrollo-del-Estado-de-BCS (2019)",
+      "path": "10_data_lake/01_Steering_Committee/01_Project_Governance/2019_datosbcs_Decreto-Creación-del-Comité-de-Planeación-para-el-Desarrollo-del-Estado-de-BCS.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Aviso de consulta pública — Propuesta de Modelo POEL Los Cabos 2026 — H. XV Ayuntamiento de Los Cabos",
+      "path": "01_planning/2026_Ayuntamiento-Los-Cabos_POEL-Aviso-Consulta-Publica.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Datos BCS — Decreto-Creación-Gabinetes-Sectoriales-de-la-Administración-Pública-del-Estado-de-BCS (2019)",
+      "path": "10_data_lake/01_Steering_Committee/01_Project_Governance/2019_datosbcs_Decreto-Creación-Gabinetes-Sectoriales-de-la-Administración-Pública-del-Estado-de-BCS.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Compendio fuentes web MX — DT047 — Mangrove Monitoring System of Mexico (SMMM) (2020)",
+      "path": "13_library/COMPENDIO_FUENTES_WEB_MX.md",
+      "type": "library"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 4,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E040",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "sedena baja california sur",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1289,
+    "answer": "El portal no tiene ese dato.\n\nEl CONTEXTO solo menciona que la **Secretaría de la Defensa Nacional (SEDENA)** participa en el despliegue nacional de la **Guardia Nacional** en Baja California Sur (anunciado, sexenio ambos), pero no lista cuarteles, montos ni proyectos específicos en BCS. (Ontology Project: Infraestructura Guardia Nacional en BCS; Hecho proyectos-federales).",
+    "sources": [
+     {
+      "title": "Ontology Project: Infraestructura Guardia Nacional en BCS",
+      "path": "12_ontology/graph.json#proj_fed_seg_001",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 1,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E041",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Cuántos elementos de la Guardia Nacional hay en BCS?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1530,
+    "answer": "Según la noticia más reciente (Impacto Noticias, 28 sep 2026), el 28 de septiembre se mantenía el Plan DN-III-E con 1.689 elementos de Ejército, Fuerza Aérea y Guardia Nacional en BCS (más 500 en Tijuana como refuerzo). (Noticia: Impacto Noticias, 28 sep 2026)\n\nEl portal no tiene un dato oficial desglosado solo de Guardia Nacional en BCS.",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Infraestructura Guardia Nacional en BCS",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Project: Infraestructura Guardia Nacional en BCS",
+      "path": "12_ontology/graph.json#proj_fed_seg_001",
+      "type": "ontology"
+     },
+     {
+      "title": "CENACE — Pamrnt rgd mem 2025 2039 (2025)",
+      "path": "03_energy/official_gap_docs/2025_CENACE_PAMRNT-RGD-MEM-2025-2039.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Noticia (Impacto Noticias, 28 sep 2026): Activan Plan DN-III-E en BCS por huracán Polo; 1,689 elementos con foco en Comondú",
+      "path": "noticias/2026-09-28/polo-plan-dn-iii-e-1689-elementos-comondu-2026-09-28",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 4,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E042",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Dónde están los cuarteles de SEDENA en Baja California Sur?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1104,
+    "answer": "El portal no tiene ese dato. El contexto solo indica que los cuarteles de la Guardia Nacional en BCS no están listados con fuente primaria aquí (Ontology Project: Infraestructura Guardia Nacional en BCS; Hecho proyectos-federales, 2024).",
+    "sources": [
+     {
+      "title": "Ontology Project: Infraestructura Guardia Nacional en BCS",
+      "path": "12_ontology/graph.json#proj_fed_seg_001",
+      "type": "ontology"
+     },
+     {
+      "title": "Hecho proyectos-federales: Infraestructura Guardia Nacional en BCS",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 2,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E043",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Cuál es la tasa de homicidios de Los Cabos en 2025?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 832,
+    "answer": "El portal no tiene ese dato.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E044",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Qué presupuesto tiene la Marina en el puerto de La Paz?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1170,
+    "answer": "El portal no tiene ese dato. El contexto menciona marinas en La Paz con 751 espacios (Guía conectividad: Marinas, agregado SETUE) y la ampliación de acceso al puerto (hecho proyectos-federales, concluido), pero no incluye cifras de presupuesto para la Marina en el puerto de La Paz.",
+    "sources": [
+     {
+      "title": "SETUE Shopping page https://setuesbcs.gob.mx/actividades/shopping/ (fetched 2026-09-15)",
+      "path": "13_territorial_intelligence/tourism_assets/_downloads/SETUE_shopping_excerpt.txt",
+      "type": "file"
+     },
+     {
+      "title": "Actor: Eduardo Sánchez-Navarro Redo",
+      "path": "stakeholders/st-022",
+      "type": "actor"
+     },
+     {
+      "title": "FONATUR — Puerto Los Cabos Libro Blanco (2006)",
+      "path": "01_planning/2006_FONATUR_Puerto-Los-Cabos-Libro-Blanco.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 26 sep 2026): Continúan puertos cerrados en BCS por la amenaza del huracán Polo",
+      "path": "noticias/2026-09-26/polo-puertos-cerrados-semar-2026-09-26",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 27 sep 2026): Despliegan Plan Marina en BCS con 2,923 elementos y 111 refugios por el huracán Polo",
+      "path": "noticias/2026-09-27/polo-plan-marina-2923-elementos-2026-09-27",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E045",
+   "cat": "seguridad",
+   "kind": "open",
+   "q": "¿Qué proyectos federales de seguridad hay en BCS?",
+   "place": null,
+   "all": [],
+   "any": [
+    "Guardia Nacional"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1441,
+    "answer": "El portal no tiene ese dato. \n\nEn el inventario de proyectos federales de BCS se registran 44 proyectos en total (10 de AMLO, 20 de Sheinbaum y 14 de ambos), sin desglose por sector de seguridad (Base de datos BCS 2050 — proyectos federales). \n\nPara información oficial sobre proyectos de seguridad pública federal se recomienda consultar la Secretaría de Seguridad y Protección Ciudadana o la Guardia Nacional.",
+    "sources": [
+     {
+      "title": "Comondú: Economía, empleo, equidad, calidad de vida, educación, salud y seguridad pública Data… (2026)",
+      "path": "10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors/2026_DataMexico_profile_comondu_text_extract.txt",
+      "type": "file"
+     },
+     {
+      "title": "La Paz: Economía, empleo, equidad, calidad de vida, educación, salud y seguridad pública Data… (2026)",
+      "path": "10_data_lake/03_Stakeholders_Forum/01_Economic_Sectors/2026_DataMexico_profile_la-paz_text_extract.txt",
+      "type": "file"
+     },
+     {
+      "title": "Ayuntamiento Los Cabos — Plan Desarrollo Municipal 2024 2027 (2025)",
+      "path": "13_territorial_intelligence/ports_demand/_downloads/2025-01-18_Ayuntamiento-Los-Cabos_Plan-Desarrollo-Municipal-2024-2027.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Hecho proyectos-federales: Inventario proyectos federales BCS",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "CENACE — PAMRNT 2025 2039 Parte3 gobmx (2025)",
+      "path": "03_energy/official_gap_docs/2025_CENACE_PAMRNT-2025-2039-Parte3-gobmx.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Ayuntamiento Los Cabos — Plan Desarrollo Municipal 2024 2027 (2025)",
+     "path": "13_territorial_intelligence/ports_demand/_downloads/2025-01-18_Ayuntamiento-Los-Cabos_Plan-Desarrollo-Municipal-2024-2027.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E046",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es el presidente municipal de Los Cabos?",
+   "place": "los_cabos",
+   "all": [
+    "Christian Ag[uú]ndez"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1251,
+    "answer": "**Arq. Christian Agúndez Gómez** es el Presidente Municipal de Los Cabos (Presidencia Municipal de Los Cabos y sus unidades de apoyo, 2024; Organigrama General H. XV Ayuntamiento de Los Cabos, BOGE #14, 29 feb 2024).",
+    "sources": [
+     {
+      "title": "Oficialía Mayor de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#oficialia-mayor",
+      "type": "guide"
+     },
+     {
+      "title": "Presidencia Municipal de Los Cabos y sus unidades de apoyo",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#presidencia",
+      "type": "guide"
+     },
+     {
+      "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview",
+      "type": "guide"
+     },
+     {
+      "title": "Contraloría Municipal de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#contraloria-municipal",
+      "type": "guide"
+     },
+     {
+      "title": "Secretaría General de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#secretaria-general",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E047",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es el gobernador de Baja California Sur?",
+   "place": null,
+   "all": [
+    "V[ií]ctor Manuel Castro Cos[ií]o"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1745,
+    "answer": "Según el contexto disponible, **Víctor Manuel Castro Cosío** es el Gobernador del Estado de Baja California Sur.\n\nEsta información aparece en:\n- Ontología del Plan Estatal de Desarrollo 2021–2027 (2021)\n- Ley de Ingresos del Municipio de Mulegé para el ejercicio fiscal 2026 (publicada el 31 de diciembre de 2025)\n- Ley de Ingresos del Municipio de Comondú para el ejercicio fiscal 2026 (publicada el 24 de diciembre de 2025)\n\nEl portal no tiene datos posteriores a diciembre de 2025.",
+    "sources": [
+     {
+      "title": "Datos BCS — Ley de Sistema de Archivos BCS (2019)",
+      "path": "10_data_lake/01_Steering_Committee/01_Project_Governance/2019_datosbcs_Ley_de_Sistema_de_Archivos_BCS.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Datos BCS — Ley de Mejora Regulatoria BCS (2019)",
+      "path": "10_data_lake/01_Steering_Committee/01_Project_Governance/2019_datosbcs_Ley_de_Mejora_Regulatoria_BCS.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Instrument: Plan Estatal de Desarrollo 2021–2027",
+      "path": "12_ontology/graph.json#inst_ped",
+      "type": "ontology"
+     },
+     {
+      "title": "Actor: Víctor Manuel Castro Cosío",
+      "path": "stakeholders/st-013",
+      "type": "actor"
+     },
+     {
+      "title": "Ley de ingresos del municipio de Mulegé, Baja California Sur (2025)",
+      "path": "13_territorial_intelligence/fiscal/2025-12-31_Congreso-BCS_LIngresosMulege-2026.doc",
+      "type": "file"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": "Víctor Manuel Castro Cosío",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E048",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es la presidenta municipal de La Paz?",
+   "place": null,
+   "all": [
+    "Milena (Paola )?Quiroga"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1282,
+    "answer": "**Milena Paola Quiroga Romero** es la presidenta municipal de La Paz.\n\nSegún el contexto del portal BCS 2050 (actor del Steering Committee), Milena Paola Quiroga Romero ocupa el cargo de Presidenta municipal / alcaldía de La Paz. (Fuente: [1] Actor: Milena Paola Quiroga Romero, programa BCS 2050).",
+    "sources": [
+     {
+      "title": "Actor: Milena Paola Quiroga Romero",
+      "path": "stakeholders/st-011",
+      "type": "actor"
+     },
+     {
+      "title": "Oficialía Mayor de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#oficialia-mayor",
+      "type": "guide"
+     },
+     {
+      "title": "Actor: Christian Agúndez Gómez",
+      "path": "stakeholders/st-010",
+      "type": "actor"
+     },
+     {
+      "title": "Presidencia Municipal de Los Cabos y sus unidades de apoyo",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#presidencia",
+      "type": "guide"
+     },
+     {
+      "title": "Contraloría Municipal de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#contraloria-municipal",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": "Milena Paola Quiroga Romero",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E049",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién dirige el OOMSAPAS Los Cabos?",
+   "place": null,
+   "all": [
+    "Ram[oó]n Edgardo Rubio"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1621,
+    "answer": "**Ing. Ramón Edgardo Rubio Apodaca** dirige el OOMSAPAS Los Cabos.\n\nSegún el Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027), actualizado conforme al Reglamento de la Administración Pública Municipal (BOGE #14, 29 feb 2024), es el titular del Organismo Operador Municipal del Sistema de Agua Potable, Alcantarillado y Saneamiento de Los Cabos. (Fuente: [2], [4] y [5]).",
+    "sources": [
+     {
+      "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados",
+      "type": "guide"
+     },
+     {
+      "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview",
+      "type": "guide"
+     },
+     {
+      "title": "Actor: Arturo Sandoval Montaño",
+      "path": "stakeholders/st-034",
+      "type": "actor"
+     },
+     {
+      "title": "Ontology Actor: OOMSAPAS Los Cabos",
+      "path": "12_ontology/graph.json#actor_oomsapas_cabos",
+      "type": "ontology"
+     },
+     {
+      "title": "Ontology Evidence: Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027)",
+      "path": "12_ontology/graph.json#ev_organigrama_cabos",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": "Arturo Sandoval Montaño",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E050",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién encabeza el IMPLAN Los Cabos?",
+   "place": null,
+   "all": [
+    "Beatriz Gonz[aá]lez Gil?bert"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1219,
+    "answer": "**Arq. Beatriz González Gibert** es la titular del Instituto Municipal de Planeación (IMPLAN Los Cabos).\n\n(Cita: Organigrama General H. XV Ayuntamiento de Los Cabos 2024–2027, BOGE #14, 29 feb 2024; y guía Organismos descentralizados e institutos municipales de Los Cabos).",
+    "sources": [
+     {
+      "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados",
+      "type": "guide"
+     },
+     {
+      "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview",
+      "type": "guide"
+     },
+     {
+      "title": "Ontology Actor: IMPLAN Los Cabos",
+      "path": "12_ontology/graph.json#actor_implan_cabos",
+      "type": "ontology"
+     },
+     {
+      "title": "Actor: Beatriz González Gibert",
+      "path": "stakeholders/st-016",
+      "type": "actor"
+     },
+     {
+      "title": "Contraloría Municipal de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#contraloria-municipal",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": "Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E051",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién dirige el IMPLAN La Paz?",
+   "place": null,
+   "all": [
+    "Al[aá]n Roberto Izquierdo"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1839,
+    "answer": "**Alán Roberto Izquierdo Soto** dirige el IMPLAN La Paz.\n\nSegún el contexto del portal BCS 2050, él es el actor del programa BCS 2050 (Steering Committee) asociado al IMPLAN La Paz, con cargo en planeación municipal y crecimiento (actor, [1]). \n\nLos documentos APSRDU de Los Barriles-El Cardonal (2024) y Todos Santos-El Pescadero-Las Playitas (2024) también mencionan agradecimientos al IMPLAN, pero no especifican otro director ([2], [3]).",
+    "sources": [
+     {
+      "title": "Actor: Alán Roberto Izquierdo Soto",
+      "path": "stakeholders/st-015",
+      "type": "actor"
+     },
+     {
+      "title": "IMPLAN La Paz — APSRDU Los Barriles El Cardonal (2024)",
+      "path": "01_planning/2024_IMPLAN-La-Paz_APSRDU-Los-Barriles-El-Cardonal.pdf",
+      "type": "file"
+     },
+     {
+      "title": "IMPLAN La Paz — APSRDU Todos Santos El Pescadero Las Playitas (2024)",
+      "path": "01_planning/2024_IMPLAN-La-Paz_APSRDU-Todos-Santos-El-Pescadero-Las-Playitas.pdf",
+      "type": "file"
+     },
+     {
+      "title": "BCS Catastro & IMPLAN / Planning Portals — Live Inventory",
+      "path": "13_territorial_intelligence/catastro_implan/CATASTRO_IMPLAN_PORTALS.md",
+      "type": "file"
+     },
+     {
+      "title": "Actor: Beatriz González Gibert",
+      "path": "stakeholders/st-016",
+      "type": "actor"
+     }
+    ],
+    "primary_file": {
+     "title": "IMPLAN La Paz — APSRDU Los Barriles El Cardonal (2024)",
+     "path": "01_planning/2024_IMPLAN-La-Paz_APSRDU-Los-Barriles-El-Cardonal.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E052",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es la titular de la SETUE?",
+   "place": null,
+   "all": [
+    "Rosa Maribel Collins"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1269,
+    "answer": "El portal no tiene ese dato. \n\nEn el contexto aparece Rosa Maribel Collins Sánchez como actor del programa BCS 2050 (Steering Committee) por SETUE, en el tema de turismo (actor, sin cargo específico).",
+    "sources": [
+     {
+      "title": "Dirección General de Obras Públicas y Asentamientos Humanos de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-obras-publicas-y-asentamientos-humanos",
+      "type": "guide"
+     },
+     {
+      "title": "Contraloría Municipal de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#contraloria-municipal",
+      "type": "guide"
+     },
+     {
+      "title": "Secretaría General de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#secretaria-general",
+      "type": "guide"
+     },
+     {
+      "title": "Oficialía Mayor de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#oficialia-mayor",
+      "type": "guide"
+     },
+     {
+      "title": "Dirección General de Desarrollo Urbano de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-desarrollo-urbano",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E053",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién representa a CONAGUA en BCS?",
+   "place": null,
+   "all": [
+    "Julio C[eé]sar Villarreal"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1489,
+    "answer": "Según el portal BCS 2050, Julio César Villarreal Trasviña representa a CONAGUA en BCS como responsable de acuíferos y DMA (agua lock) en el Steering Committee del programa.\n\nTambién aparece Manuel Guerrero Luna como actor del Steering Committee vinculado a CONAGUA (agencia de cuenca; hidrología regional).\n\n(Fuentes: actor [1] y actor [2], programa BCS 2050).",
+    "sources": [
+     {
+      "title": "Actor: Manuel Guerrero Luna",
+      "path": "stakeholders/st-020",
+      "type": "actor"
+     },
+     {
+      "title": "Actor: Julio César Villarreal Trasviña",
+      "path": "stakeholders/st-018",
+      "type": "actor"
+     },
+     {
+      "title": "Dirección General de Obras Públicas y Asentamientos Humanos de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-obras-publicas-y-asentamientos-humanos",
+      "type": "guide"
+     },
+     {
+      "title": "Contraloría Municipal de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#contraloria-municipal",
+      "type": "guide"
+     },
+     {
+      "title": "Secretaría General de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#secretaria-general",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "Compendio fuentes web MX — Mexico BCS",
+     "path": "13_library/COMPENDIO_FUENTES_WEB_MX.md"
+    },
+    "stakeholder": "Manuel Guerrero Luna",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E054",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién encabeza la CEA BCS?",
+   "place": null,
+   "all": [
+    "Lesvia Tatiana Davis"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2131,
+    "answer": "**Lesvia Tatiana Davis Monzón** es la Directora General de la Comisión Estatal del Agua (CEA BCS).\n\nEsta información proviene directamente del contexto oficial del portal BCS 2050:\n- Aparece como **Actor del programa BCS 2050 (Steering Committee)** con el cargo explícito de **Directora General de la CEA BCS** (fuente: [1] Actor y [6] Mesa de trabajo Agua, notas de Ivan Tamayo, 30 sep 2026).\n- Se confirma en la **ontología del actor CEA BCS** y en el **Programa Hídrico del Estado de Baja California Sur 2015-2021** (Comisión Estatal del Agua BCS, 2018, p. 8), donde se indica que la CEA es el organismo responsable de las políticas hídricas.\n\nNo hay otra persona mencionada en el contexto como titular de la CEA BCS.",
+    "sources": [
+     {
+      "title": "Actor: Lesvia Tatiana Davis Monzón",
+      "path": "stakeholders/st-019",
+      "type": "actor"
+     },
+     {
+      "title": "POERBCS — Proyectos, programas, sectores y lineamientos (MOEBCS) — SEPUIMM / SIG BCS Bitácora Ambiental (2025)",
+      "path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Actor: CEA BCS",
+      "path": "12_ontology/graph.json#actor_cea",
+      "type": "ontology"
+     },
+     {
+      "title": "Ley de Aguas del Estado de BCS (versión CEA, anterior al consolidado 2019) — Comisión Estatal del Agua de BCS (2016)",
+      "path": "01_planning/2016_CEA-BCS_Ley-de-Aguas-del-Estado.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": {
+     "title": "POERBCS — Proyectos, programas, sectores y lineamientos (MOEBCS) — SEPUIMM / SIG BCS Bitácora Ambiental (2025)",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf"
+    },
+    "stakeholder": "Lesvia Tatiana Davis Monzón",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E055",
+   "cat": "actores",
+   "kind": "refuse",
+   "q": "¿Quién es el director de la CFE en Baja California Sur?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1218,
+    "answer": "El portal no tiene ese dato. El contexto solo menciona directores generales y titulares de dependencias del H. XV Ayuntamiento de Los Cabos (organigrama BOGE #14, 29 feb 2024), como Obras Públicas, Desarrollo Urbano o Fomento Económico.",
+    "sources": [
+     {
+      "title": "Dirección General de Obras Públicas y Asentamientos Humanos de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-obras-publicas-y-asentamientos-humanos",
+      "type": "guide"
+     },
+     {
+      "title": "Dirección General de Desarrollo Urbano de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-desarrollo-urbano",
+      "type": "guide"
+     },
+     {
+      "title": "Contraloría Municipal de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#contraloria-municipal",
+      "type": "guide"
+     },
+     {
+      "title": "Dirección General de Fomento Económico de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-fomento-economico",
+      "type": "guide"
+     },
+     {
+      "title": "Secretaría General de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#secretaria-general",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E056",
+   "cat": "actores",
+   "kind": "refuse",
+   "q": "¿Quién es el secretario de Seguridad Pública de BCS?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1247,
+    "answer": "El portal no tiene ese dato. \n\nSegún el Segundo Informe de Gobierno BCS 2023 (Anexo de acciones, página 327), existe la Secretaría de Seguridad Pública del Gobierno del Estado, pero no se menciona el nombre del titular en el contexto disponible.",
+    "sources": [
+     {
+      "title": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-seguridad-publica-policia-preventiva-y-t",
+      "type": "guide"
+     },
+     {
+      "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview",
+      "type": "guide"
+     },
+     {
+      "title": "Secretaría General de Los Cabos: titular y direcciones (organigrama 2024–2027)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#secretaria-general",
+      "type": "guide"
+     },
+     {
+      "title": "Segundo Informe de Gobierno BCS — Anexo de acciones — Gobierno del Estado de Baja California Sur (2023)",
+      "path": "07_economy_investment/2023-10-24_Gobierno-BCS_2do-Informe_Anexo-acciones.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Presidencia Municipal de Los Cabos y sus unidades de apoyo",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#presidencia",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "Segundo Informe de Gobierno BCS — Anexo de acciones — Gobierno del Estado de Baja California Sur (2023)",
+     "path": "07_economy_investment/2023-10-24_Gobierno-BCS_2do-Informe_Anexo-acciones.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E057",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál fue el volumen residencial de BCS en 2025 según JLL?",
+   "place": null,
+   "all": [
+    "1[ ,.]?570"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1125,
+    "answer": "**US$1,570 M** (JLL Reporte Anual Los Cabos 2025, 2025). \n\nFuente: guides/economia.md y Reporte Mercado Residencial Los Cabos (2025), p. 3.",
+    "sources": [
+     {
+      "title": "Hecho economia: Fuente — Volumen residencial BCS (JLL)",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Año / periodo — Volumen residencial BCS (JLL)",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Guía economia: Lectura económica (evidencia pack)",
+      "path": "guides/economia.md#11",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho economia: Valor — Volumen residencial BCS (JLL)",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — economía",
+      "path": "07_economy_investment/real_estate_market/BCS_RE_TALKING_POINTS.md",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Reporte Mercado Residencial Los Cabos (2025)",
+     "path": "07_economy_investment/real_estate_market/jll/2025_JLL_Reporte_Mercado_Residencial_Los_Cabos.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E058",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuántas unidades residenciales se vendieron en BCS en 2025 (JLL)?",
+   "place": null,
+   "all": [
+    "1[ ,.]?840"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1102,
+    "answer": "**1,840 unidades residenciales se vendieron en BCS en 2025 según JLL.**\n\nFuente: Unidades residenciales BCS (JLL), JLL 2025 (2025). (guides/economia.md y JLL Reporte Anual Los Cabos 2025).",
+    "sources": [
+     {
+      "title": "Hecho economia: Fuente — Unidades residenciales BCS (JLL)",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Año / periodo — Unidades residenciales BCS (JLL)",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Valor — Unidades residenciales BCS (JLL)",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Guía economia: Lectura económica (evidencia pack)",
+      "path": "guides/economia.md#11",
+      "type": "guide"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — economía",
+      "path": "07_economy_investment/real_estate_market/BCS_RE_TALKING_POINTS.md",
+      "type": "file"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E059",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Qué porcentaje del volumen residencial de BCS corresponde a Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "81\\s*%",
+    "1[ ,.]?264"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1271,
+    "answer": "Según el JLL Reporte Anual Los Cabos 2025, Los Cabos representa el **81%** del volumen residencial de BCS (US$1,264 M de US$1,570 M total estatal). (JLL Reporte Anual Los Cabos 2025, 2025).",
+    "sources": [
+     {
+      "title": "Hecho economia: Fuente — Volumen residencial BCS (JLL)",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Guía economia: Lectura económica (evidencia pack)",
+      "path": "guides/economia.md#11",
+      "type": "guide"
+     },
+     {
+      "title": "CaboRE — Los Cabos Residential Market Report (Q4 2021)",
+      "path": "07_economy_investment/real_estate_market/cabo_re_services/2021_Q4_CaboRE_Los_Cabos_Residential_Market_Report.pdf",
+      "type": "file"
+     },
+     {
+      "title": "PDU 2040 Los Cabos — Carta síntesis (densidades RT0/RT1 etc.) — IMPLAN Los Cabos (2013)",
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-Carta-Sintesis.pdf",
+      "type": "file"
+     },
+     {
+      "title": "CaboRE — Los Cabos Residential Market Report (Q2 2022)",
+      "path": "07_economy_investment/real_estate_market/cabo_re_services/2022_Q2_CaboRE_Los_Cabos_Residential_Market_Report.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "CaboRE — Los Cabos Residential Market Report (Q4 2021)",
+     "path": "07_economy_investment/real_estate_market/cabo_re_services/2021_Q4_CaboRE_Los_Cabos_Residential_Market_Report.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E060",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál es la mediana de precio de vivienda en Los Cabos en 2026?",
+   "place": null,
+   "all": [
+    "525[ ,.]?000"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1887,
+    "answer": "**US$525,000 (2026 Q2).**\n\nSegún el portal BCS 2050 (hecho portal [economía], guides/economia.md) y el reporte CaboRE — Los Cabos Residential Market Report (Q2 2026). \nEsta es la mediana de precio overall para propiedades residenciales en Los Cabos.",
+    "sources": [
+     {
+      "title": "Hecho economia: Año / periodo — Mediana precio Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Valor — Mediana precio Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Guía economia: Lectura económica (evidencia pack)",
+      "path": "guides/economia.md#11",
+      "type": "guide"
+     },
+     {
+      "title": "Noticia (El Heraldo de México, 12 oct 2026): La CROC pide al Cabildo de Los Cabos aprobar el Plan Maestro de San Pablo, con más de 10 mil viviendas",
+      "path": "noticias/2026-10-12/croc-plan-maestro-san-pablo-los-cabos-2026-10-12",
+      "type": "news"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — economía",
+      "path": "07_economy_investment/real_estate_market/BCS_RE_TALKING_POINTS.md",
+      "type": "file"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E061",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuántos meses de inventario hay en Los Cabos?",
+   "place": null,
+   "all": [
+    "\\b15\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1126,
+    "answer": "**15 meses de inventario en Los Cabos (2026 Q2).** \n(Fuente: Guía economía: Lectura económica (evidencia pack), 2026; y Hecho portal [economía]: Valor — Meses de inventario Los Cabos, guides/economia.md).",
+    "sources": [
+     {
+      "title": "Hecho economia: Valor — Meses de inventario Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Año / periodo — Meses de inventario Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "FITURCA — LosCabosObservatorio FEB26 (2026)",
+      "path": "07_economy_investment/real_estate_market/other/2026_FITURCA_LosCabosObservatorio_FEB26.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 2 oct 2026): Los Cabos proyecta 76% de ocupación hotelera en octubre, un punto más que en 2025",
+      "path": "noticias/2026-10-02/los-cabos-ocupacion-76-octubre-2026-10-02",
+      "type": "news"
+     },
+     {
+      "title": "Guía economia: Lectura económica (evidencia pack)",
+      "path": "guides/economia.md#11",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "FITURCA — LosCabosObservatorio FEB26 (2026)",
+     "path": "07_economy_investment/real_estate_market/other/2026_FITURCA_LosCabosObservatorio_FEB26.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E062",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál es el rezago habitacional en BCS?",
+   "place": null,
+   "all": [],
+   "any": [
+    "58[ ,.]?987",
+    "21[.,]4\\s*%"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1340,
+    "answer": "Según el **Boletín Rezago Habitacional 2024 — SEDATU / CONAVI (2025)**, el rezago habitacional en Baja California Sur es de **58,987 viviendas**, que representan el **21.4%**.\n\nFuente: guides/economia.md (hechos [1], [2] y [3]) y Boletín Rezago Habitacional 2024 — SEDATU / CONAVI (2025).",
+    "sources": [
+     {
+      "title": "Hecho turismo: Fuente — Rezago habitacional BCS",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho turismo: Año / periodo — Rezago habitacional BCS",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho turismo: Valor — Rezago habitacional BCS",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Boletín Rezago Habitacional 2024 — SEDATU / CONAVI (2025)",
+      "path": "07_economy_investment/2025_SEDATU-CONAVI_Boletin-Rezago-Habitacional-2024.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Actualización del cálculo del Rezago Habitacional 2024 — CONAVI / SEDATU (2025)",
+      "path": "07_economy_investment/2025_CONAVI_Rezago-Habitacional-2024.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Boletín Rezago Habitacional 2024 — SEDATU / CONAVI (2025)",
+     "path": "07_economy_investment/2025_SEDATU-CONAVI_Boletin-Rezago-Habitacional-2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E063",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál es la meta de Vivienda para el Bienestar en BCS?",
+   "place": null,
+   "all": [
+    "37[ ,.]?500"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1621,
+    "answer": "La meta de Vivienda para el Bienestar en BCS es de **37,500 acciones** en **6 años** (guides/economia.md, 2024).\n\nSegún el convenio firmado en octubre de 2024, el programa se encuentra en obra con ese mismo objetivo de ~37,500 acciones (hecho proyectos-federales y documento BCS gob — Convenio Vivienda para el Bienestar, 2024).",
+    "sources": [
+     {
+      "title": "Hecho economia: Valor — Vivienda para el Bienestar meta BCS",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Año / periodo — Vivienda para el Bienestar meta BCS",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho proyectos-federales: Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "BCS gob — Convenio Vivienda para el Bienestar (2024)",
+      "path": "13_federal_projects/docs/housing/2024-10_BCS-gob_Convenio-Vivienda-para-el-Bienestar.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Firma claudia sheinbaum y gobernador vcc convenio para iniciar el programa “vivienda para el… (2024)",
+      "path": "13_federal_projects/docs/housing/2024-10_BCS-gob_Convenio-Vivienda-para-el-Bienestar.html",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "BCS gob — Convenio Vivienda para el Bienestar (2024)",
+     "path": "13_federal_projects/docs/housing/2024-10_BCS-gob_Convenio-Vivienda-para-el-Bienestar.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E064",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuántas acciones de INFONAVIT hubo en BCS en 2025?",
+   "place": null,
+   "all": [
+    "6[ ,.]?604"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1220,
+    "answer": "**6,604 acciones de INFONAVIT en BCS en 2025.** (Hecho portal [economia], guides/economia.md).\n\nEl portal no registra desglose adicional por tipo de acción ni avance físico.",
+    "sources": [
+     {
+      "title": "Hecho economia: Año / periodo — INFONAVIT acciones BCS",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Valor — INFONAVIT acciones BCS",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho proyectos-federales: Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Project: Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "path": "12_ontology/graph.json#proj_fed_viv_001",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 4,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E065",
+   "cat": "inmobiliario",
+   "kind": "refuse",
+   "q": "¿Cuál es el precio promedio del metro cuadrado en Mulegé?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1209,
+    "answer": "El portal no tiene ese dato. Para información oficial sobre precios inmobiliarios en Mulegé, consulta el Instituto Nacional de Estadística y Geografía (INEGI) o la Secretaría de Economía del Gobierno del Estado.",
+    "sources": [],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 0,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E066",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos pasajeros tuvo el aeropuerto de Los Cabos (SJD) en 2025?",
+   "place": null,
+   "all": [],
+   "any": [
+    "3[.,]8\\s*M",
+    "3[.,]8\\s*millones"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1470,
+    "answer": "**~3.8 millones de pasajeros en 2025 (83.2% del total estatal).**\n\nFuente: (guía) Guía conectividad: Aeropuertos internacionales (SETUE, 2025); también en (hecho) Hecho conectividad: Pasajeros 2025 (SETUE) — SJD y (guía) Guía conectividad: Aeropuertos (TI ports demand). \n\nEl total de los tres aeropuertos fue ~4.523 M (+2.0% vs 2024).",
+    "sources": [
+     {
+      "title": "Guía conectividad: Aeropuertos internacionales",
+      "path": "guides/conectividad.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Guía conectividad: Aeropuertos (TI ports demand)",
+      "path": "guides/conectividad.md#5",
+      "type": "guide"
+     },
+     {
+      "title": "Demand target groups — BCS (evidence personas)",
+      "path": "13_territorial_intelligence/ports_demand/demand_target_groups.md",
+      "type": "file"
+     },
+     {
+      "title": "Hecho conectividad: Pasajeros 2025 (SETUE) — SJD",
+      "path": "guides/conectividad.md#1",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — inteligencia territorial",
+      "path": "13_territorial_intelligence/ports_demand/_downloads/Ficha-0302-SJD.txt",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Ficha 0302 — Aeropuerto Internacional de San José del Cabo (concesión GAP) — Proyectos México / SICT / AFAC (2026)",
+     "path": "07_economy_investment/2026-08-31_ProyectosMexico_Ficha-0302-Aeropuerto-San-Jose-del-Cabo.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E067",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos pasajeros tuvo el aeropuerto de La Paz en 2025?",
+   "place": null,
+   "all": [
+    "668[ ,.]?800"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1711,
+    "answer": "Según la **Guía conectividad: Aeropuertos internacionales** (2026-09-17), el Aeropuerto Internacional de La Paz “Manuel Márquez de León” tuvo **668,800 pasajeros** en 2025 (+10.9% YoY).\n\nEl **Hecho conectividad: Pasajeros 2025 — La Paz** reporta una cifra distinta: **1,359** (2025). Fuente: guides/conectividad.md.\n\nEl portal no explica la discrepancia entre ambas fuentes.",
+    "sources": [
+     {
+      "title": "Guía conectividad: Aeropuertos internacionales",
+      "path": "guides/conectividad.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Ficha 0305 — Aeropuerto Internacional de La Paz Manuel Márquez de León — Proyectos México / SICT / AFAC (2026)",
+      "path": "07_economy_investment/2026-08-31_ProyectosMexico_Ficha-0305-Aeropuerto-La-Paz.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Hecho conectividad: Pasajeros 2025 — La Paz",
+      "path": "guides/conectividad.md#2",
+      "type": "fact"
+     },
+     {
+      "title": "Ficha 0302 — Aeropuerto Internacional de San José del Cabo (concesión GAP) — Proyectos México / SICT / AFAC (2026)",
+      "path": "07_economy_investment/2026-08-31_ProyectosMexico_Ficha-0302-Aeropuerto-San-Jose-del-Cabo.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Aeropuerto Internacional de Loreto (LTO / MMLT) — pasajeros (2026)",
+      "path": "13_territorial_intelligence/ports_demand/_downloads/2026_LTO_Loreto_airport_passengers_AFAC_cited.md",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Ficha 0305 — Aeropuerto Internacional de La Paz Manuel Márquez de León — Proyectos México / SICT / AFAC (2026)",
+     "path": "07_economy_investment/2026-08-31_ProyectosMexico_Ficha-0305-Aeropuerto-La-Paz.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E068",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "aeropuerto loreto pasajeros",
+   "place": "loreto",
+   "all": [],
+   "any": [
+    "no (est[aá] |es un dato |fue |ha sido )?consolidad",
+    "no (hay|tengo|consta)",
+    "sin dato"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1712,
+    "answer": "**Aeropuerto Internacional de Loreto (LTO) — Pasajeros**\n\n- 2025: **33,412** pasajeros (Hecho conectividad: Pasajeros 2025 — Loreto, guía).\n- 2026: dato no consolidado (Guía conectividad: Aeropuertos internacionales, SETUE 2026).\n\nEl portal no tiene cifra oficial consolidada para 2026 ni series históricas completas. Fuente primaria: AFAC (no espejada en este pase).",
+    "sources": [
+     {
+      "title": "Aeropuerto Internacional de Loreto (LTO / MMLT) — pasajeros (2026)",
+      "path": "13_territorial_intelligence/ports_demand/_downloads/2026_LTO_Loreto_airport_passengers_AFAC_cited.md",
+      "type": "file"
+     },
+     {
+      "title": "Guía conectividad: Aeropuertos internacionales",
+      "path": "guides/conectividad.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — inteligencia territorial",
+      "path": "13_territorial_intelligence/ports_demand/_downloads/ocr_notes/SETUE_OCR_key_figures.txt",
+      "type": "file"
+     },
+     {
+      "title": "Ficha 0305 — Aeropuerto Internacional de La Paz Manuel Márquez de León — Proyectos México / SICT / AFAC (2026)",
+      "path": "07_economy_investment/2026-08-31_ProyectosMexico_Ficha-0305-Aeropuerto-La-Paz.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ficha 0302 — Aeropuerto Internacional de San José del Cabo (concesión GAP) — Proyectos México / SICT / AFAC (2026)",
+      "path": "07_economy_investment/2026-08-31_ProyectosMexico_Ficha-0302-Aeropuerto-San-Jose-del-Cabo.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Ficha 0305 — Aeropuerto Internacional de La Paz Manuel Márquez de León — Proyectos México / SICT / AFAC (2026)",
+     "path": "07_economy_investment/2026-08-31_ProyectosMexico_Ficha-0305-Aeropuerto-La-Paz.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E069",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántas habitaciones de hotel tiene Los Cabos?",
+   "place": null,
+   "all": [
+    "22[ ,.]?254"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1156,
+    "answer": "**22,254 habitaciones** (High-end / branded hotels & resorts — Baja California Sur, 2026; Guía economia: Turismo (agregados SETUE IE 2026); Hecho turismo: Habitaciones — Los Cabos, 2026). \n\nEl portal también registra 188 hoteles high-end en el municipio (misma fuente).",
+    "sources": [
+     {
+      "title": "High-end / branded hotels & resorts — Baja California Sur",
+      "path": "13_territorial_intelligence/tourism_assets/hotels_high_end.md",
+      "type": "file"
+     },
+     {
+      "title": "Población del municipio Los Cabos — INEGI Censo 2020",
+      "path": "municipios/Los Cabos",
+      "type": "municipio"
+     },
+     {
+      "title": "Actor: Asociación de Hoteles de Los Cabos",
+      "path": "stakeholders/st-049",
+      "type": "actor"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 2 oct 2026): Los Cabos proyecta 76% de ocupación hotelera en octubre, un punto más que en 2025",
+      "path": "noticias/2026-10-02/los-cabos-ocupacion-76-octubre-2026-10-02",
+      "type": "news"
+     },
+     {
+      "title": "PDU 2040 Los Cabos — Tabla de compatibilidad de usos de suelo — IMPLAN Los Cabos (2013)",
+      "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-Tabla-de-Compatibilidad.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "PDU 2040 Los Cabos — Tabla de compatibilidad de usos de suelo — IMPLAN Los Cabos (2013)",
+     "path": "01_planning/2013_IMPLAN-Los-Cabos_PDU-2040-Tabla-de-Compatibilidad.pdf"
+    },
+    "stakeholder": "Asociación de Hoteles de Los Cabos",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E070",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos hoteles tiene La Paz?",
+   "place": null,
+   "all": [
+    "\\b148\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1291,
+    "answer": "**148 hoteles (2026).** \nFuente: guides/economia.md (hecho portal turismo La Paz) y OCR SETUE La Paz turismo 2026 (páginas ~14-16, 2026-09-15). \n\nEl mismo dato aparece en la Guía economía: Turismo (agregados SETUE IE 2026) y en el documento High-end / branded hotels & resorts — Baja California Sur.",
+    "sources": [
+     {
+      "title": "Hecho turismo: Hoteles — La Paz",
+      "path": "guides/economia.md#4",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — inteligencia territorial",
+      "path": "13_territorial_intelligence/tourism_assets/_downloads/OCR_SETUE_La-Paz_turismo_2026.txt",
+      "type": "file"
+     },
+     {
+      "title": "Guía economia: Turismo (agregados SETUE IE 2026)",
+      "path": "guides/economia.md#4",
+      "type": "guide"
+     },
+     {
+      "title": "PSDU Todos Santos–El Pescadero — plano estratégico e-1 — H. Ayuntamiento de La Paz (2012)",
+      "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e1-estrategia.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — planeación",
+      "path": "01_planning/EntreMares_La-Paz_MIA_CEC-nota.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "PSDU Todos Santos–El Pescadero — plano estratégico e-1 — H. Ayuntamiento de La Paz (2012)",
+     "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e1-estrategia.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E071",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "Ocupación hotelera de Los Cabos en 2025",
+   "place": null,
+   "all": [],
+   "any": [
+    "70(\\.0)?\\s*%"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1319,
+    "answer": "**70.0%** (estancia promedio 4.7 días).\n\nFuente: Guía economía: Turismo (agregados SETUE IE 2026); Documento del acervo BCS 2050 — OCR SETUE Los Cabos turismo 2026 (2026-09-15, págs. ~15-16); Hecho portal [turismo] (guides/economia.md).",
+    "sources": [
+     {
+      "title": "Hecho turismo: Valor — Ocupación hotelera Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho turismo: Año / periodo — Ocupación hotelera Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — inteligencia territorial",
+      "path": "13_territorial_intelligence/tourism_assets/_downloads/OCR_SETUE_Los-Cabos_turismo_2026.txt",
+      "type": "file"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 2 oct 2026): Los Cabos proyecta 76% de ocupación hotelera en octubre, un punto más que en 2025",
+      "path": "noticias/2026-10-02/los-cabos-ocupacion-76-octubre-2026-10-02",
+      "type": "news"
+     },
+     {
+      "title": "SECTUR — Ocupacion hotelera 70 destinos (2025)",
+      "path": "05_demographics/2025-05-28_SECTUR_Ocupacion_hotelera_70_destinos.csv",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "SECTUR — Ocupacion hotelera 70 destinos (2025)",
+     "path": "05_demographics/2025-05-28_SECTUR_Ocupacion_hotelera_70_destinos.csv"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E072",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos pasajeros de crucero llegaron a Cabo San Lucas en 2025?",
+   "place": null,
+   "all": [
+    "1[ ,.]?057[ ,.]?758"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1057,
+    "answer": "**1,057,758 pasajeros de crucero llegaron a Cabo San Lucas en 2025.**\n\n(Fuente: Guía conectividad: Cruceros (DataTur / SETUE), 2025; y Hecho conectividad: Pasajeros 2025 — Cabo San Lucas).",
+    "sources": [
+     {
+      "title": "Guía conectividad: Cruceros (DataTur / SETUE)",
+      "path": "guides/conectividad.md#2",
+      "type": "guide"
+     },
+     {
+      "title": "Arribos de cruceros a puertos del País, por región y puerto años: 2024–2025; 2025 y 2026…",
+      "path": "13_territorial_intelligence/ports_demand/_downloads/DataTur_cruceros_ene-may-2026.txt",
+      "type": "file"
+     },
+     {
+      "title": "Arribos de cruceros a puertos del país — ene–may 2026 (incluye Cabo San Lucas, Pichilingue, La Paz, Loreto, San Carlos, Santa Rosalía, Puerto Escondido) — SECTUR DataTur / Secretaría de Marina (DGP-CGPMM)",
+      "path": "07_economy_investment/2026-05_SECTUR-DataTur_Arribos-cruceros-puertos-ene-may-2026.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Noticia (HOY BCS, 13 oct 2026): Asipona aplicará nuevas tarifas portuarias en la Marina de Cabo San Lucas",
+      "path": "noticias/2026-10-13/asipona-nuevas-tarifas-marina-cabo-san-lucas-2026-10-13",
+      "type": "news"
+     },
+     {
+      "title": "Cruise arrivals — Baja California Sur ports",
+      "path": "13_territorial_intelligence/ports_demand/cruises.md",
+      "type": "file"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E073",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuál fue el RevPAR de Los Cabos en enero 2026?",
+   "place": null,
+   "all": [
+    "369"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1297,
+    "answer": "**US$369** (FITURCA — LosCabosObservatorio FEB26, 2026).\n\nSegún el Observatorio Turístico de Los Cabos (enero 2026), el RevPAR fue de $369, con una variación de -1.9% respecto al mismo mes del año previo (FITURCA Observatorio FEB26, 2026).",
+    "sources": [
+     {
+      "title": "Hecho economia: Año / periodo — RevPAR Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Valor — RevPAR Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho economia: Fuente — RevPAR Los Cabos",
+      "path": "guides/economia.md#11",
+      "type": "fact"
+     },
+     {
+      "title": "Arribos de cruceros a puertos del País, por región y puerto años: 2024–2025; 2025 y 2026…",
+      "path": "13_territorial_intelligence/ports_demand/_downloads/DataTur_cruceros_ene-may-2026.txt",
+      "type": "file"
+     },
+     {
+      "title": "FITURCA — LosCabosObservatorio FEB26 (2026)",
+      "path": "07_economy_investment/real_estate_market/other/2026_FITURCA_LosCabosObservatorio_FEB26.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "FITURCA — LosCabosObservatorio FEB26 (2026)",
+     "path": "07_economy_investment/real_estate_market/other/2026_FITURCA_LosCabosObservatorio_FEB26.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E074",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos destinos sin escalas tiene SJD?",
+   "place": null,
+   "all": [
+    "\\b56\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1269,
+    "answer": "**56 destinos sin escalas.**\n\nSegún FlightConnections.com (consultado 2026-09-17), el Aeropuerto Internacional de Los Cabos (SJD) tiene 56 rutas sin escalas: 13 México, 31 Estados Unidos, 10 Canadá, 1 Europa y 1 other. (guía) Vuelos / Air connectivity BCS y (guía) Flights from SJD.",
+    "sources": [
+     {
+      "title": "Vuelos / Air connectivity BCS (FlightConnections)",
+      "path": "portal/vuelos",
+      "type": "guide"
+     },
+     {
+      "title": "Guía conectividad: Aeropuertos internacionales",
+      "path": "guides/conectividad.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Flights from SJD / Vuelos desde SJD",
+      "path": "portal/vuelos#sjd",
+      "type": "guide"
+     },
+     {
+      "title": "Guía conectividad: Air",
+      "path": "guides/conectividad.md#11",
+      "type": "guide"
+     },
+     {
+      "title": "Flights from LTO / Vuelos desde LTO",
+      "path": "portal/vuelos#lto",
+      "type": "guide"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E075",
+   "cat": "turismo",
+   "kind": "open",
+   "q": "¿Qué limita el crecimiento turístico de Todos Santos?",
+   "place": "todos_santos",
+   "all": [],
+   "any": [
+    "agua|acu[ií]fero|0313|d[eé]ficit"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1980,
+    "answer": "**El principal límite al crecimiento turístico de Todos Santos es el acuífero 0313 en Déficit DMA, sin volumen disponible para nuevas concesiones (Guía agua: Lectura de capacidad hídrica, 2024).**\n\nEsto se alinea con los cuatro polos de crecimiento (incluido Todos Santos) que cierran 2024 sin DMA para nuevas concesiones (Hallazgos vinculados a la ontología v1, 2026). El Programa Subregional de Desarrollo Urbano Todos Santos–Pescadero–Las Playitas (2008) y el PEOTDU estatal (2024, p. 15) siguen vigentes como instrumentos de planeación. La desalación no reescribe el estado DMA ni habilita densificación (Guía agua). \n\nEl portal no tiene datos actualizados de demanda turística específica para este polo.",
+    "sources": [
+     {
+      "title": "Guía agua: Lectura de capacidad hídrica",
+      "path": "guides/agua.md#10",
+      "type": "guide"
+     },
+     {
+      "title": "Loreto PMDU — barrios consolidacion b (2024)",
+      "path": "13_territorial_intelligence/plans_archive/_downloads/loreto_pmdu_cartografia/2024_Loreto-PMDU_barrios-consolidacion-b.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Biblioteca: Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Plan BCS tomos) — p. 15",
+      "path": "13_library/11_MEXICO_BCS/11_T1_2024_BCS_POETDU.pdf#p15",
+      "type": "library"
+     },
+     {
+      "title": "Crecimiento demanda–oferta / Growth demand–supply",
+      "path": "portal/crecimiento",
+      "type": "guide"
+     },
+     {
+      "title": "CONANP — Programa manejo PN Cabo Pulmo (2009)",
+      "path": "06_environment/2009-11-13_CONANP_Programa_manejo_PN_Cabo_Pulmo.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Biblioteca: Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Plan BCS tomos) — p. 15",
+     "path": "13_library/11_MEXICO_BCS/11_T1_2024_BCS_POETDU.pdf#p15"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E076",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuál fue el PIB de Baja California Sur en 2024 a precios constantes?",
+   "place": null,
+   "all": [
+    "187[ ,.]?152"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2088,
+    "answer": "**187,152 millones de pesos.**\n\nSegún el documento oficial PIBE 2024 — Baja California Sur (comunicado 159/25) — INEGI (2025), el PIB de Baja California Sur en 2024 a valores constantes alcanzó 187,152 millones de pesos, con un incremento real de 3.5 % respecto a 2023.\n\nEsta cifra coincide con la Guía economía: Producto interno (PIBE 2024, INEGI) y los hechos del portal [economia].",
+    "sources": [
+     {
+      "title": "PIBE 2024 — Baja California Sur (comunicado 159/25) — INEGI (2025)",
+      "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+      "type": "file"
+     },
+     {
+      "title": "PIBE BCS 2023 preliminar (comunicado 771/24) — already in 05 demographics — INEGI (2024)",
+      "path": "05_demographics/2024-12-05_INEGI_PIBE_BCS_2023.pdf",
+      "type": "file"
+     },
+     {
+      "title": "PIBE 2024 — comunicado nacional (156/25) — INEGI (2025)",
+      "path": "07_economy_investment/2025-12-05_INEGI_PIBE_2024_nacional.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho economia: Valor — PIB 2024 constante",
+      "path": "guides/economia.md#8",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "PIBE 2024 — Baja California Sur (comunicado 159/25) — INEGI (2025)",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E077",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "PIB nominal de BCS 2024",
+   "place": null,
+   "all": [
+    "251[ ,.]?902"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1224,
+    "answer": "**PIB nominal de BCS 2024: 251,902 millones de pesos.**\n\nFuente: (guía) Guía economia: Producto interno (PIBE 2024, INEGI) y (hecho) Hecho economia: PIB nominal.",
+    "sources": [
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "PIBE 2024 — comunicado nacional (156/25) — INEGI (2025)",
+      "path": "07_economy_investment/2025-12-05_INEGI_PIBE_2024_nacional.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Hecho economia: PIB nominal",
+      "path": "guides/economia.md#1",
+      "type": "fact"
+     },
+     {
+      "title": "PIBE 2024 — Baja California Sur (comunicado 159/25) — INEGI (2025)",
+      "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+      "type": "file"
+     },
+     {
+      "title": "PIBE BCS 2023 preliminar (comunicado 771/24) — already in 05 demographics — INEGI (2024)",
+      "path": "05_demographics/2024-12-05_INEGI_PIBE_BCS_2023.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "PIBE 2024 — comunicado nacional (156/25) — INEGI (2025)",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_2024_nacional.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E078",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuánta inversión extranjera directa recibió BCS en 2025?",
+   "place": null,
+   "all": [
+    "1[ ,.]?578"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2088,
+    "answer": "**Baja California Sur recibió 1,578 millones de dólares (mdd) de Inversión Extranjera Directa (IED) en 2025**, lo que representó el 3.9% del total nacional y lo ubicó en el 5° lugar a nivel nacional.\n\n**Fuente:** Guía economia: Inversión extranjera directa (CNIE 2025). \n\nEsta cifra también se confirma en las Cifras ancla como IED BCS 2025: 1,578 mdd (5° nacional). (Guía economia: Cifras ancla, CNIE / pack 07). \n\n**Nota:** El documento oficial “Informe estadístico sobre el comportamiento de la IED en México al 4T-2025” (CNIE / SE, 2026) contiene la desglose completo por entidad, pero no extrae la cifra específica de BCS en el extracto disponible.",
+    "sources": [
+     {
+      "title": "Remisión al Congreso + Informe IED 4T-2025 (paquete SIL SEGOB) — SEGOB / Secretaría de Economía / CNIE (2026)",
+      "path": "07_economy_investment/2026-04-14_SEGOB-SIL_Informe-Estadistico-IED-4T-2025.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía economia: Inversión extranjera directa (CNIE 2025)",
+      "path": "guides/economia.md#2",
+      "type": "guide"
+     },
+     {
+      "title": "Informe estadístico sobre el comportamiento de la IED en México al 4T-2025 (CNIE / SE) — Comisión Nacional de Inversiones Extranjeras / Secretaría de Economía (2026)",
+      "path": "07_economy_investment/2026-04-14_CNIE-CamaraDiputados_Informe-Estadistico-IED-4T-2025.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Mesa de trabajo Inversión extranjera: integrantes",
+      "path": "portal/mesas-de-trabajo#inversion-extranjera",
+      "type": "guide"
+     },
+     {
+      "title": "Mesas de trabajo BCS2050: integrantes",
+      "path": "portal/mesas-de-trabajo",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "Remisión al Congreso + Informe IED 4T-2025 (paquete SIL SEGOB) — SEGOB / Secretaría de Economía / CNIE (2026)",
+     "path": "07_economy_investment/2026-04-14_SEGOB-SIL_Informe-Estadistico-IED-4T-2025.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E079",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Qué porcentaje del VAB de BCS es terciario?",
+   "place": null,
+   "all": [
+    "72[.,]9"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1825,
+    "answer": "**72.9%** (Guía economía: Producto interno (PIBE 2024, INEGI); Hecho portal [economia]: Estructura VAB (corriente), 2024).",
+    "sources": [
+     {
+      "title": "Hecho economia: Estructura VAB (corriente)",
+      "path": "guides/economia.md#1",
+      "type": "fact"
+     },
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "PIBE 2024 — Baja California Sur (comunicado 159/25) — INEGI (2025)",
+      "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+      "type": "file"
+     },
+     {
+      "title": "PIBE BCS 2023 preliminar (comunicado 771/24) — already in 05 demographics — INEGI (2024)",
+      "path": "05_demographics/2024-12-05_INEGI_PIBE_BCS_2023.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "PIBE 2024 — Baja California Sur (comunicado 159/25) — INEGI (2025)",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 4,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E080",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuántos establecimientos registraron los Censos Económicos 2024 en BCS?",
+   "place": null,
+   "all": [
+    "43[ ,.]?405"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1262,
+    "answer": "**43,405 establecimientos** (Censos Económicos 2024, INEGI, 2025, p. 1; guía economía: Empleo y establecimientos, INEGI). \n\nEsta cifra coincide con el hecho portal [economía] y el comunicado oficial 82/25.",
+    "sources": [
+     {
+      "title": "Hecho economia: Censos Económicos 2024",
+      "path": "guides/economia.md#3",
+      "type": "fact"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3",
+      "type": "guide"
+     },
+     {
+      "title": "Censos Económicos 2024 — resultados definitivos BCS (comunicado 82/25) — INEGI (2025)",
+      "path": "07_economy_investment/2025-07-24_INEGI_CensosEconomicos2024_BCS.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Censos Económicos 2019 — resultados definitivos Baja California Sur (boletín 322/20) — INEGI (2020)",
+      "path": "07_economy_investment/2020-07-16_INEGI_CensosEconomicos2019_BCS.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — catálogo",
+      "path": "00_catalog/MISSING_economy.md",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Censos Económicos 2024 — resultados definitivos BCS (comunicado 82/25) — INEGI (2025)",
+     "path": "07_economy_investment/2025-07-24_INEGI_CensosEconomicos2024_BCS.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E081",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuál es la tasa de desocupación en BCS (ENOE 2026 T2)?",
+   "place": null,
+   "all": [
+    "2[.,]3\\s*%"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1263,
+    "answer": "La tasa de desocupación en Baja California Sur según la ENOE 2026 T2 es de **2.3%** de la PEA.\n\n**Fuente:** ENOE Baja California Sur — 2T-2026 (boletín 506/26) — INEGI, y Guía economía: Empleo y establecimientos (INEGI).",
+    "sources": [
+     {
+      "title": "Hecho turismo: ENOE 2026 T2",
+      "path": "guides/economia.md#3",
+      "type": "fact"
+     },
+     {
+      "title": "ENOE Baja California Sur — 2T-2026 (boletín 506/26) — INEGI",
+      "path": "07_economy_investment/2026-08-25_INEGI_ENOE_2026T2_BCS.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "ENOE Baja California Sur — 2T-2026 (boletín 506/26) — INEGI",
+     "path": "07_economy_investment/2026-08-25_INEGI_ENOE_2026T2_BCS.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 3,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E082",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuál es la pobreza laboral en BCS según CONEVAL?",
+   "place": null,
+   "all": [
+    "13[.,]2\\s*%"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1268,
+    "answer": "**La pobreza laboral en BCS es del 13.2% según CONEVAL ITLP 4T 2024** (la más baja de las 32 entidades en ese corte). \n\nFuente: Guía economía: Empleo y establecimientos (INEGI), Hecho portal [economía]: CONEVAL ITLP 4T 2024.",
+    "sources": [
+     {
+      "title": "Hecho economia: CONEVAL ITLP 4T 2024",
+      "path": "guides/economia.md#3",
+      "type": "fact"
+     },
+     {
+      "title": "ITLP — pobreza laboral 4T-2024 (nacional con entidades) — CONEVAL (2025)",
+      "path": "07_economy_investment/2025-02-26_CONEVAL_ITLP_pobreza-laboral_4T2024.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3",
+      "type": "guide"
+     },
+     {
+      "title": "ITLP — indicadores de pobreza laboral por entidad federativa 4T-2024 — CONEVAL (2025)",
+      "path": "07_economy_investment/2025-02-26_CONEVAL_ITLP_indicadores_estatal_4T2024.pdf",
+      "type": "file"
+     },
+     {
+      "title": "CONEVAL — Informe pobreza y evaluacion BCS 2020 (2020)",
+      "path": "05_demographics/2020-01-01_CONEVAL_Informe_pobreza_y_evaluacion_BCS_2020.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "ITLP — pobreza laboral 4T-2024 (nacional con entidades) — CONEVAL (2025)",
+     "path": "07_economy_investment/2025-02-26_CONEVAL_ITLP_pobreza-laboral_4T2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E083",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Qué superficie tiene la Reserva de la Biosfera El Vizcaíno?",
+   "place": null,
+   "all": [
+    "2[ ,.]?546[ ,.]?790"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2046,
+    "answer": "Según el **POERBCS — Fichas de Unidades de Gestión Ambiental (UGAs)** (SEPUIMM / SIG BCS Bitácora Ambiental, 2025), la UGA 01 ANP Reserva de la Biosfera El Vizcaíno tiene una **superficie total de 2,131,423.99 ha**.\n\nSegún la **Guía ambiente: Cuatro ANP de referencia** y **Guía ambiente: ANP — superficies citadas (T3_04 / CONANP)**, la superficie es de **2,546,790.25 ha** (decreto DOF 30 nov 1988 / 5 dic 1988).\n\nSegún el **SEMARNAT — DOF resumen PM RB El Vizcaíno (2000)**, ocupa el 76.96% del municipio de Mulegé.",
+    "sources": [
+     {
+      "title": "POERBCS — Fichas de Unidades de Gestión Ambiental (UGAs) — SEPUIMM / SIG BCS Bitácora Ambiental (2025)",
+      "path": "01_planning/2025_SEPUIMM_POERBCS-UGA-Fichas.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía ambiente: Cuatro ANP de referencia",
+      "path": "guides/ambiente.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "CONANP — Programa manejo RB El Vizcaino (2000)",
+      "path": "06_environment/2000-09-01_CONANP_Programa_manejo_RB_El_Vizcaino.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Territory: Reserva de la Biosfera El Vizcaíno",
+      "path": "12_ontology/graph.json#terr_anp_vizcaino",
+      "type": "ontology"
+     },
+     {
+      "title": "Guía ambiente: ANP — superficies citadas (T3 04 / CONANP)",
+      "path": "guides/ambiente.md#3",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "POERBCS — Fichas de Unidades de Gestión Ambiental (UGAs) — SEPUIMM / SIG BCS Bitácora Ambiental (2025)",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-UGA-Fichas.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E084",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Cuándo se decretó el Parque Nacional Cabo Pulmo y qué superficie tiene?",
+   "place": null,
+   "all": [],
+   "any": [
+    "1995",
+    "7[ ,.]?111"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1505,
+    "answer": "Según la **Guía ambiente: Cuatro ANP de referencia** (p. 1), el **Parque Nacional Cabo Pulmo** fue decretado el **6 de junio de 1995** y tiene una superficie de **7,111.01 ha** (~99% marina).\n\nEl decreto se publicó en el Diario Oficial de la Federación (DOF) el 6 de junio de 1995, según el mismo documento.",
+    "sources": [
+     {
+      "title": "Guía ambiente: Cuatro ANP de referencia",
+      "path": "guides/ambiente.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "SEMARNAT — Decreto PN Bahia de Loreto (1996)",
+      "path": "06_environment/1996-07-19_SEMARNAT_Decreto_PN_Bahia_de_Loreto.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Actor: CONANP",
+      "path": "12_ontology/graph.json#actor_conanp",
+      "type": "ontology"
+     },
+     {
+      "title": "CONANP — Aviso DOF PM PN Cabo Pulmo (2009)",
+      "path": "06_environment/2009-11-13_CONANP_Aviso_DOF_PM_PN_Cabo_Pulmo.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Territory: Parque Nacional Cabo Pulmo",
+      "path": "12_ontology/graph.json#terr_anp_cabo_pulmo",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": {
+     "title": "SEMARNAT — Decreto PN Bahia de Loreto (1996)",
+     "path": "06_environment/1996-07-19_SEMARNAT_Decreto_PN_Bahia_de_Loreto.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E085",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "Superficie de la Reserva Sierra La Laguna",
+   "place": null,
+   "all": [
+    "112[ ,.]?437"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1163,
+    "answer": "**Superficie de la Reserva de la Biosfera Sierra La Laguna: 112,437.07 ha** (Guía ambiente: ANP — superficies citadas (T3 04 / CONANP); también en Guía ambiente: Cuatro ANP de referencia). Toda terrestre.",
+    "sources": [
+     {
+      "title": "Guía ambiente: Cuatro ANP de referencia",
+      "path": "guides/ambiente.md#1",
+      "type": "guide"
+     },
+     {
+      "title": "Guía ambiente: ANP — superficies citadas (T3 04 / CONANP)",
+      "path": "guides/ambiente.md#3",
+      "type": "guide"
+     },
+     {
+      "title": "CONANP — Aviso DOF PM RB Sierra La Laguna (2003)",
+      "path": "06_environment/2003-06-19_CONANP_Aviso_DOF_PM_RB_Sierra_La_Laguna.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Noticia (Diario Humano, 15 oct 2026): El gobernador afirma que no autorizará proyectos que dañen Sierra La Laguna ni otras áreas naturales protegidas",
+      "path": "noticias/2026-10-15/gobernador-sierra-la-laguna-no-autorizar-2026-10-15",
+      "type": "news"
+     },
+     {
+      "title": "CONANP — Programa manejo RB Sierra La Laguna (2003)",
+      "path": "06_environment/2003-06-19_CONANP_Programa_manejo_RB_Sierra_La_Laguna.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "CONANP — Aviso DOF PM RB Sierra La Laguna (2003)",
+     "path": "06_environment/2003-06-19_CONANP_Aviso_DOF_PM_RB_Sierra_La_Laguna.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E086",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Qué superficie tiene el Parque Nacional Bahía de Loreto?",
+   "place": null,
+   "all": [
+    "206[ ,.]?580"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1603,
+    "answer": "**El Parque Nacional Bahía de Loreto tiene una superficie de 206,580.75 hectáreas.**\n\nEsta cifra proviene de dos fuentes oficiales en el contexto:\n\n- (SEMARNAT — Decreto PN Bahia de Loreto, 1996): “superficie total de 206,580-75-00 hectáreas”.\n- (Guía ambiente: ANP — superficies citadas (T3 04 / CONANP)): 206,580.75 ha.\n\nAmbas coinciden exactamente.",
+    "sources": [
+     {
+      "title": "SEMARNAT — Decreto PN Bahia de Loreto (1996)",
+      "path": "06_environment/1996-07-19_SEMARNAT_Decreto_PN_Bahia_de_Loreto.pdf",
+      "type": "file"
+     },
+     {
+      "title": "CONANP — Aviso DOF PM PN Bahia de Loreto (2002)",
+      "path": "06_environment/2002-11-11_CONANP_Aviso_DOF_PM_PN_Bahia_de_Loreto.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Territory: Parque Nacional Bahía de Loreto",
+      "path": "12_ontology/graph.json#terr_anp_loreto",
+      "type": "ontology"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Loreto",
+      "path": "12_ontology/graph.json#terr_loreto",
+      "type": "ontology"
+     },
+     {
+      "title": "Guía ambiente: Cuatro ANP de referencia",
+      "path": "guides/ambiente.md#1",
+      "type": "guide"
+     }
+    ],
+    "primary_file": {
+     "title": "SEMARNAT — Decreto PN Bahia de Loreto (1996)",
+     "path": "06_environment/1996-07-19_SEMARNAT_Decreto_PN_Bahia_de_Loreto.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E087",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Cuántas hectáreas ejidales hay en BCS?",
+   "place": null,
+   "all": [
+    "303[ ,.]?95[78]"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1545,
+    "answer": "**303,957.6 hectáreas ejidales en BCS** (Guía riesgos: What we can say, tabla PDUCP La Paz 2018 / INEGI 2007). \n\nTambién se reporta la cifra redondeada de **303,958 ha** (Hecho riesgos: Ejidal — BCS). \n\nEstas superficies corresponden a unidades de producción (2007), no al porcentaje catastral del territorio estatal.",
+    "sources": [
+     {
+      "title": "Biblioteca: Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Plan BCS tomos) — p. 8",
+      "path": "13_library/11_MEXICO_BCS/11_T1_2024_BCS_POETDU.pdf#p8",
+      "type": "library"
+     },
+     {
+      "title": "Guía riesgos: Tenencia de la tierra",
+      "path": "guides/riesgos.md#2",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho riesgos: Ejidal — BCS",
+      "path": "guides/riesgos.md#2",
+      "type": "fact"
+     },
+     {
+      "title": "SEMARNAT — Decreto PN Bahia de Loreto (1996)",
+      "path": "06_environment/1996-07-19_SEMARNAT_Decreto_PN_Bahia_de_Loreto.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Hecho riesgos: Ejidal — La Paz",
+      "path": "guides/riesgos.md#2",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "Biblioteca: Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Plan BCS tomos) — p. 8",
+     "path": "13_library/11_MEXICO_BCS/11_T1_2024_BCS_POETDU.pdf#p8"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E088",
+   "cat": "planeacion",
+   "kind": "fact",
+   "q": "¿Cuándo se publicó el POERBCS y cuántas UGAs tiene?",
+   "place": null,
+   "all": [
+    "56"
+   ],
+   "any": [
+    "2026|21.{0,6}ene"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1380,
+    "answer": "El POERBCS se publicó en el Boletín Oficial del Gobierno del Estado (BOGE) el 21 de enero de 2026 y cuenta con 56 UGAs (Hecho planeacion: Status — POERBCS; Guía planeacion: 0. State-wide / multi-municipio; Guía planeacion: Stack de instrumentos; Hecho planeacion: Instrumento — Estatal OE).",
+    "sources": [
+     {
+      "title": "Propuesta POERBCS (consulta pública 2025) — SEPUIMM / SIG BCS Bitácora Ambiental",
+      "path": "01_planning/2025_SEPUIMM_POERBCS-Propuesta-consulta-publica.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Tarjeta de taller — Task 2",
+      "path": "09_shadow_programme/T2_02_workshop_card.md",
+      "type": "file"
+     },
+     {
+      "title": "Guía planeacion: 0. State-wide / multi-municipio (binds all five)",
+      "path": "guides/planeacion.md#10",
+      "type": "guide"
+     },
+     {
+      "title": "Mapa galería: POERBCS — política ambiental UGAs",
+      "path": "portal/mapas#gallery:poer-politica-ambiental-ugas.jpg",
+      "type": "guide"
+     },
+     {
+      "title": "Hecho planeacion: Status — POERBCS",
+      "path": "guides/planeacion.md#5",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "Propuesta POERBCS (consulta pública 2025) — SEPUIMM / SIG BCS Bitácora Ambiental",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Propuesta-consulta-publica.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E089",
+   "cat": "planeacion",
+   "kind": "fact",
+   "q": "¿Qué plan de desarrollo urbano está vigente en Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "PDU 2040",
+    "2013"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1976,
+    "answer": "**El plan de desarrollo urbano vigente en Los Cabos es el PDU 2040 (Segunda Actualización), aprobado en 2013.**\n\nSegún la Guía de planeación: Instrumentos clave (vigencia), el **PDU 2040 Los Cabos (2ª act.)** tiene estatus **Vigente** (fuente: IMPLAN Los Cabos, 2013).\n\nEl **POERBCS** (vigente hasta 2026) también lo reconoce como instrumento clave para el municipio. La tercera actualización se encuentra en consulta y sin publicación final en el Boletín Oficial.\n\nFuente principal: Guía planeacion: Instrumentos clave (vigencia) y Biblioteca BCS2050 — Plan Director de Desarrollo Urbano 2040 (Segunda Actualizacion) (H. Ayuntamiento de Los Cabos, 2013).",
+    "sources": [
+     {
+      "title": "Biblioteca: Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Plan BCS tomos) — p. 15",
+      "path": "13_library/11_MEXICO_BCS/11_T1_2024_BCS_POETDU.pdf#p15",
+      "type": "library"
+     },
+     {
+      "title": "Guía planeacion: Instrumentos clave (vigencia)",
+      "path": "guides/planeacion.md#5",
+      "type": "guide"
+     },
+     {
+      "title": "Biblioteca: Plan Director de Desarrollo Urbano 2040 (Segunda Actualizacion) - San Jose del Cabo y Cabo San Lucas (H. Ayuntamiento de Los Cabos, 2013)",
+      "path": "13_library/11_MEXICO_BCS/11_T1_2013_LosCabos_PDU2040.pdf",
+      "type": "library"
+     },
+     {
+      "title": "Segunda Actualización del Plan Director de Desarrollo Urbano San José del Cabo y Cabo San Lucas 2040 (texto, 313 pp., Abril 2013) — H. Ayuntamiento de Los Cabos / IMPLAN Los Cabos",
+      "path": "01_planning/2013-05-06_IMPLAN-Los-Cabos_PDU-2040-Segunda-Actualizacion.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — inteligencia territorial",
+      "path": "13_territorial_intelligence/catastro_implan/downloads/LaPaz_PDUCP_2018.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Biblioteca: Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Plan BCS tomos) — p. 15",
+     "path": "13_library/11_MEXICO_BCS/11_T1_2024_BCS_POETDU.pdf#p15"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E090",
+   "cat": "planeacion",
+   "kind": "fact",
+   "q": "¿Qué instrumento urbano rige La Paz?",
+   "place": null,
+   "all": [],
+   "any": [
+    "PDUCP",
+    "PMDU"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2438,
+    "answer": "El instrumento urbano que rige La Paz es el **PDUCP 2018** (Programa de Desarrollo Urbano del Centro de Población de La Paz).\n\n**Fuentes oficiales del contexto:**\n- Guía planeacion: Instrumentos clave (vigencia) — “PDUCP La Paz — La Paz Vigente 2018”\n- Guía planeacion: Stack de instrumentos — “La Paz PDUCP 2018 + PSDU”\n- Ontología Instrument [inst_pdu_lapaz] — “PDUCP Centro de Población La Paz … governs→Municipio de La Paz”\n- Biblioteca: Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Plan BCS tomos) p. 15 — “Plan de Desarrollo Urbano de Centro de Población de La Paz de 2018” (vigente al momento de elaboración del PEOTDU).\n\nDebe coherenciar con el **POERBCS 2026** (vigente desde 21-ene-2026).",
+    "sources": [
+     {
+      "title": "Ontology Instrument: PDUCP Centro de Población La Paz",
+      "path": "12_ontology/graph.json#inst_pdu_lapaz",
+      "type": "ontology"
+     },
+     {
+      "title": "Programa de Desarrollo Urbano del Centro de Población de La Paz (PDUCP 2018) — H. Ayuntamiento de La Paz / IMPLAN La Paz",
+      "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Documento del acervo BCS 2050 — inteligencia territorial",
+      "path": "13_territorial_intelligence/catastro_implan/downloads/LaPaz_PDUCP_2018.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Guía planeacion: Stack de instrumentos",
+      "path": "guides/planeacion.md#8",
+      "type": "guide"
+     },
+     {
+      "title": "Página web — Comondú",
+      "path": "01_planning/_acq_2026-09-21c/pmdu_comondu.html",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Programa de Desarrollo Urbano del Centro de Población de La Paz (PDUCP 2018) — H. Ayuntamiento de La Paz / IMPLAN La Paz",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E091",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Cuántos proyectos federales hay en el inventario de BCS?",
+   "place": null,
+   "all": [
+    "\\b44\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1286,
+    "answer": "**44 proyectos federales** en el inventario de BCS (Base de datos BCS 2050 — proyectos federales; Ontology Evidence: Inventario proyectos federales BCS).\n\nDesglose: 10 de AMLO, 20 de Sheinbaum y 14 de ambos. (Fuente: [1] y [3]).",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Inventario proyectos federales BCS",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Hecho proyectos-federales: Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Evidence: Inventario proyectos federales BCS (44)",
+      "path": "12_ontology/graph.json#ev_federal_projects_inventory",
+      "type": "ontology"
+     },
+     {
+      "title": "Ontology Project: ANP / decretos ambientales federales con efecto en BCS (marco)",
+      "path": "12_ontology/graph.json#proj_fed_amb_001",
+      "type": "ontology"
+     },
+     {
+      "title": "Hecho proyectos-federales: Pueblos Mágicos (programa federal) — localidades BCS",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E092",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Qué capacidad tiene el Hospital General Regional del IMSS en Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "260\\s*camas",
+    "41[ ,.]?000"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1250,
+    "answer": "El Hospital General Regional IMSS Los Cabos (nuevo) tiene una capacidad de **260 camas** y **46 especialidades** (hecho portal [proyectos-federales], 2025; documento BCS gob — Banderazo Hospital IMSS Los Cabos, 2025; ontología Project [proj_fed_sal_001]).",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Hospital General Regional IMSS Los Cabos (nuevo)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "BCS gob — Banderazo Hospital IMSS Los Cabos (2025)",
+      "path": "13_federal_projects/docs/health/2025_BCS-gob_Banderazo-Hospital-IMSS-Los-Cabos.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Presidenta Claudia Sheinbaum da banderazo de inicio a la construcción del nuevo Hospital General… (2025)",
+      "path": "13_federal_projects/docs/health/2025_BCS-gob_Banderazo-Hospital-IMSS-Los-Cabos.html",
+      "type": "file"
+     },
+     {
+      "title": "Ontology Project: Hospital General Regional IMSS Los Cabos (nuevo)",
+      "path": "12_ontology/graph.json#proj_fed_sal_001",
+      "type": "ontology"
+     },
+     {
+      "title": "Hecho proyectos-federales: Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     }
+    ],
+    "primary_file": {
+     "title": "BCS gob — Banderazo Hospital IMSS Los Cabos (2025)",
+     "path": "13_federal_projects/docs/health/2025_BCS-gob_Banderazo-Hospital-IMSS-Los-Cabos.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E093",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Cuál es el monto de la Presa El Novillo?",
+   "place": null,
+   "all": [],
+   "any": [
+    "800\\s*(M|millones|mdp)",
+    "800[ ,.]?000[ ,.]?000"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1491,
+    "answer": "El monto citado para la Presa El Novillo (sistema integral agua La Paz) es de 800000000 MXN (hecho proyectos-federales, fuente: https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/).\n\nLa ficha de sostenibilidad 0985 (Proyectos México / CONAGUA / BANOBRAS, 2026) no menciona el monto de inversión.",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Presa El Novillo (sistema integral agua La Paz)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Project: Sectorización agua potable y planta potabilizadora La Paz",
+      "path": "12_ontology/graph.json#proj_fed_agu_004",
+      "type": "ontology"
+     },
+     {
+      "title": "Ficha de sostenibilidad 0985 — Presa El Novillo, La Paz, BCS — Proyectos México / CONAGUA / BANOBRAS (2026)",
+      "path": "07_economy_investment/2026-04-16_ProyectosMexico_Sostenibilidad-0985-Presa-El-Novillo.pdf",
+      "type": "file"
+     },
+     {
+      "title": "Hecho proyectos-federales: Sectorización agua potable y planta potabilizadora La Paz",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Project: Presa El Novillo (sistema integral agua La Paz)",
+      "path": "12_ontology/graph.json#proj_fed_agu_003",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": {
+     "title": "Ficha de sostenibilidad 0985 — Presa El Novillo, La Paz, BCS — Proyectos México / CONAGUA / BANOBRAS (2026)",
+     "path": "07_economy_investment/2026-04-16_ProyectosMexico_Sostenibilidad-0985-Presa-El-Novillo.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E094",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Qué pasó con el proyecto Don Diego?",
+   "place": null,
+   "all": [],
+   "any": [
+    "rechaz|cancel"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1460,
+    "answer": "Según el Inventario de proyectos federales BCS (2024), el proyecto Don Diego (fosfato submarino en el Golfo de Ulloa, municipio de Comondú) fue cancelado: la MIA fue rechazada y las concesiones fueron canceladas en 2024. México perdió el laudo ante el CIADI y deberá pagar ~37.1 MDD (sep 2024).\n\nFuente: Hecho proyectos-federales y Ontology Project [proj_fed_min_002] (2024).",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Project: Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "path": "12_ontology/graph.json#proj_fed_min_002",
+      "type": "ontology"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Comondú",
+      "path": "12_ontology/graph.json#terr_comondu",
+      "type": "ontology"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 3,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E095",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Cuántas acciones hídricas tiene el paquete federal para BCS?",
+   "place": null,
+   "all": [
+    "\\b95\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1715,
+    "answer": "**95 acciones hídricas.**\n\nSegún el hecho portal [proyectos-federales] y la ontología Project [proj_fed_agu_007], el Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira) contempla **95 acciones para 2025** en el estado, con un monto citado de 1,400 millones de MXN para 2025 y ~2,800 MDP proyectados en el sexenio (fuente: https://iert.bcs.gob.mx/anuncia-la-presidenta-sheinbaum-fuerte-respaldo-a-bcs/). \n\nLa dependencia es CONAGUA y el estado se encuentra en obra.",
+    "sources": [
+     {
+      "title": "Hecho proyectos-federales: Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "path": "guides/proyectos-federales.md#fact",
+      "type": "fact"
+     },
+     {
+      "title": "Ontology Project: Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "path": "12_ontology/graph.json#proj_fed_agu_007",
+      "type": "ontology"
+     },
+     {
+      "title": "Biblioteca: Programa Hidrico del Estado de Baja California Sur 2015-2021 — p. 11",
+      "path": "13_library/11_MEXICO_BCS/11_T1_2018_CEABCS_PHE.pdf#p11",
+      "type": "library"
+     },
+     {
+      "title": "Compendio fuentes web MX — Mexico BCS",
+      "path": "13_library/COMPENDIO_FUENTES_WEB_MX.md",
+      "type": "library"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 4,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E096",
+   "cat": "fuera",
+   "kind": "refuse",
+   "q": "¿Cuánta agua en litros por segundo suministra el OOMSAPAS a todo Los Cabos?",
+   "place": "los_cabos",
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1422,
+    "answer": "El portal no tiene ese dato. El CONTEXTO solo menciona una planta desaladora proyectada de 250 lps para Cabo San Lucas (Convocatoria APP Desaladora Los Cabos 250lps, 2020) y una meta de recuperar ~95 l/s mediante mejora de eficiencia (Ficha de sostenibilidad 0015 — MIG Agua Los Cabos, 2020).",
+    "sources": [
+     {
+      "title": "Convocatoria APP Desaladora Los Cabos 250lps (2020)",
+      "path": "02_water/2020-10-27_DOF_Convocatoria-APP-Desaladora-Los-Cabos-250lps.pdf",
+      "type": "file"
+     }
+    ],
+    "primary_file": {
+     "title": "Convocatoria APP Desaladora Los Cabos 250lps (2020)",
+     "path": "02_water/2020-10-27_DOF_Convocatoria-APP-Desaladora-Los-Cabos-250lps.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 1,
+    "src_hit": null,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E097",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuántos kilómetros tiene la red de drenaje de escorrentía de BCS según el modelo HydroRIVERS del paquete 2026?",
+   "place": null,
+   "all": [
+    "16[.,]?588"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1485,
+    "answer": "Según el modelo de terreno HydroSHEDS/HydroRIVERS (paquete entregado el 5 de octubre de 2026), la red de drenaje de escorrentía de Baja California Sur tiene **16,588.1 km**.\n\n**Fuente:** \n- [6] (hecho) Escorrentía BCS — modelo de terreno (p. principal) \n- [7] (guía) Guía agua: Escorrentía y agua de lluvia (modelo de terreno)",
+    "sources": [
+     {
+      "title": "Escorrentía — Mulegé",
+      "path": "escorrentia/mulege",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Loreto",
+      "path": "escorrentia/loreto",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Comondú",
+      "path": "escorrentia/comondu",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — La Paz",
+      "path": "escorrentia/la_paz",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Los Cabos",
+      "path": "escorrentia/los_cabos",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E098",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuántas semillas D8 se usaron para las trayectorias de escorrentía en BCS y cuántas terminan en salida costera?",
+   "place": null,
+   "all": [
+    "4[.,]?574",
+    "4[.,]?428"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1276,
+    "answer": "Se usaron **4,574 semillas D8** para las trayectorias de escorrentía en BCS. De ellas, **4,428 terminan en salida costera** y 146 en sumideros interiores.\n\n(Fuente: Escorrentía BCS — modelo de terreno, 2026; Guía agua: Escorrentía y agua de lluvia, 2026)",
+    "sources": [
+     {
+      "title": "Escorrentía BCS — modelo de terreno",
+      "path": "escorrentia/resumen",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Escorrentía y agua de lluvia (modelo de terreno)",
+      "path": "guides/agua.md#3",
+      "type": "guide"
+     },
+     {
+      "title": "Escorrentía — Mulegé",
+      "path": "escorrentia/mulege",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Loreto",
+      "path": "escorrentia/loreto",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Comondú",
+      "path": "escorrentia/comondu",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E099",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuántos kilómetros de red de drenaje de escorrentía hay en Los Cabos según el resumen municipal?",
+   "place": "los_cabos",
+   "all": [
+    "800"
+   ],
+   "any": [
+    "800[.,]58"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1331,
+    "answer": "Según el resumen municipal (hecho Escorrentía — Los Cabos), hay **800.58 km** de red de drenaje de escorrentía en Los Cabos.\n\n(Fuente: [hecho] Escorrentía — Los Cabos, modelo HydroSHEDS/HydroRIVERS).",
+    "sources": [
+     {
+      "title": "Escorrentía — Los Cabos",
+      "path": "escorrentia/los_cabos",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía BCS — modelo de terreno",
+      "path": "escorrentia/resumen",
+      "type": "fact"
+     },
+     {
+      "title": "Guía agua: Escorrentía y agua de lluvia (modelo de terreno)",
+      "path": "guides/agua.md#3",
+      "type": "guide"
+     },
+     {
+      "title": "Escorrentía — Mulegé",
+      "path": "escorrentia/mulege",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Loreto",
+      "path": "escorrentia/loreto",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E100",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿El mapa de escorrentía del portal es un mapa oficial de peligro por inundación?",
+   "place": null,
+   "all": [],
+   "any": [
+    "no es un mapa oficial",
+    "modelo de terreno",
+    "no calcula",
+    "sin profundidad",
+    "no es mapa oficial",
+    "not an official"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2054,
+    "answer": "**No.** \n\nEl mapa de escorrentía del portal **no es un mapa oficial de peligro por inundación**. \n\nSegún la Guía agua: Escorrentía y agua de lluvia (modelo de terreno, 5 oct 2026) y el hecho Escorrentía BCS — modelo de terreno: \n- Solo muestra recorridos potenciales de escorrentía superficial a partir del relieve (HydroSHEDS/HydroRIVERS). \n- No calcula profundidad, velocidad, caudal, tiempo de llegada ni superficie inundada. \n- La acumulación representa número de celdas aportantes, no agua almacenada. \n\nCita: (Guía agua: Escorrentía y agua de lluvia, 2026) y (Escorrentía BCS — modelo de terreno, 2026). \n\nEl portal no tiene un mapa oficial de inundaciones.",
+    "sources": [
+     {
+      "title": "Escorrentía BCS — modelo de terreno",
+      "path": "escorrentia/resumen",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Mulegé",
+      "path": "escorrentia/mulege",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Loreto",
+      "path": "escorrentia/loreto",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — Comondú",
+      "path": "escorrentia/comondu",
+      "type": "fact"
+     },
+     {
+      "title": "Escorrentía — La Paz",
+      "path": "escorrentia/la_paz",
+      "type": "fact"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E101",
+   "cat": "noticias",
+   "kind": "fact",
+   "q": "¿Hacia dónde apunta la trayectoria del huracán Rachel según las noticias más recientes?",
+   "place": null,
+   "all": [
+    "punta eugenia"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2599,
+    "answer": "Según la noticia más reciente (El Momento BCS, 7 oct 2026), la trayectoria del huracán Rachel (categoría 1, a 1,085 km al oeste-suroeste de Cabo San Lucas) muestra una recurvatura que podría acercarlo al Pacífico norte de BCS, cerca de Punta Eugenia, el domingo 11 de octubre, ya debilitado.\n\nAntes (El Congresista, 6 oct 2026) se había reportado que podría tocar tierra en BCS entre el 11 y 12 de octubre como ciclón extratropical.",
+    "sources": [
+     {
+      "title": "Noticia (El Momento BCS, 7 oct 2026): Trayectoria del huracán Rachel apunta de nuevo a Baja California Sur",
+      "path": "noticias/2026-10-07/rachel-apunta-bcs-punta-eugenia-2026-10-07",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (HOY BCS, 1 oct 2026): Rachel ya es huracán categoría 2 al sur de Los Cabos; mantiene trayectoria a mar abierto",
+      "path": "noticias/2026-10-01/rachel-categoria-2-sur-cabos-mar-abierto-2026-10-01",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (El Congresista, 6 oct 2026): Huracán Rachel podría tocar tierra en BCS entre el 11 y 12 de octubre",
+      "path": "noticias/2026-10-06/rachel-podria-tocar-tierra-bcs-11-12-oct-2026-10-06",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (El Informador, 3 oct 2026): Huracán Rachel provoca inundaciones y crecidas de arroyos en Los Cabos",
+      "path": "noticias/2026-10-03/rachel-inundaciones-los-cabos-2026-10-03",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 5 oct 2026): Huracán Rachel baja a categoría 1 y se aleja de BCS, con oleaje de hasta 3.5 m",
+      "path": "noticias/2026-10-05/rachel-categoria-1-se-aleja-bcs-2026-10-05",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E102",
+   "cat": "noticias",
+   "kind": "fact",
+   "q": "¿Qué porcentaje de las colonias de coral entre Loreto y Los Cabos detectaron blanqueadas los investigadores de la UABCS?",
+   "place": null,
+   "all": [
+    "60[^0-9]{1,8}70\\s*%"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2082,
+    "answer": "Según la noticia más reciente (Meganoticias, 7 de octubre de 2026), los investigadores de la UABCS detectaron blanqueamiento en entre 60 y 70% de las colonias de coral entre Loreto y Los Cabos. (Noticia: Meganoticias, 7 oct 2026)",
+    "sources": [
+     {
+      "title": "Noticia (Meganoticias, 7 oct 2026): El Niño blanquea entre 60 y 70% de los corales de Loreto a Los Cabos",
+      "path": "noticias/2026-10-07/blanqueamiento-corales-loreto-los-cabos-2026-10-07",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 1,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E103",
+   "cat": "noticias",
+   "kind": "fact",
+   "q": "¿Qué ocupación hotelera esperan los hoteleros de Los Cabos para el último trimestre de 2026?",
+   "place": null,
+   "all": [
+    "80\\s*(%|por ciento)",
+    "90\\s*(%|por ciento)"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1391,
+    "answer": "Según la noticia más reciente (Meganoticias, 7 de octubre de 2026), los hoteleros de Los Cabos esperan para el último trimestre de 2026 una ocupación de 70% en octubre, 80% en noviembre y 90% en diciembre.\n\nAntes (Tribuna de México, 2 de octubre de 2026) se había proyectado 76% de ocupación hotelera solo para octubre.",
+    "sources": [
+     {
+      "title": "Noticia (Meganoticias, 7 oct 2026): Hoteleros de Los Cabos esperan un último trimestre mejor que 2025",
+      "path": "noticias/2026-10-07/los-cabos-temporada-alta-ocupacion-2026-10-07",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 2 oct 2026): Los Cabos proyecta 76% de ocupación hotelera en octubre, un punto más que en 2025",
+      "path": "noticias/2026-10-02/los-cabos-ocupacion-76-octubre-2026-10-02",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 2,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E104",
+   "cat": "noticias",
+   "kind": "fact",
+   "q": "¿Cuántos megawatts de generación móvil incorporó CFE en Los Cabos, según la prensa?",
+   "place": null,
+   "all": [
+    "\\b128\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1229,
+    "answer": "Según la noticia más reciente (Energy & Commerce, 21 de septiembre de 2026), CFE incorporó **128 MW** de generación móvil en Los Cabos y Cabo Bello. Cinco unidades turbogás reubicadas desde la central González Ortega ya operan en la zona. (Noticia: Energy & Commerce, 21 sep 2026)",
+    "sources": [
+     {
+      "title": "Noticia (Energy & Commerce, 21 sep 2026): CFE incorpora 128 MW de generación móvil en Los Cabos y Cabo Bello",
+      "path": "noticias/2026-09-21/cfe-128-mw-turbogas-bcs-2026-09-21",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 1,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E105",
+   "cat": "noticias",
+   "kind": "fact",
+   "q": "¿Qué saldo dejó el huracán Polo a su paso por BCS según las noticias?",
+   "place": null,
+   "all": [],
+   "any": [
+    "saldo blanco|sin v[ií]ctimas"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1988,
+    "answer": "Según la noticia más reciente (El Informador, 3 oct 2026), no menciona al huracán Polo. \n\nLas noticias previas reportan **saldo blanco** (sin víctimas) en Comondú, Loreto y Mulegé tras el paso de Polo como categoría 2 cerca de Las Barrancas (Infobae, 29 sep 2026; Tribuna de México, 29 sep 2026). Se usaron refugios por unas 700 personas y se reportaron encharcamientos, escurrimientos y árboles caídos. CFE restableció el servicio al 100% de los 110,817 usuarios afectados al 30 de septiembre (Eclipse BCS, 1 oct 2026). \n\nEstos son reportes de prensa, no datos oficiales.",
+    "sources": [
+     {
+      "title": "Noticia (Infobae, 29 sep 2026): Huracán Polo deja saldo blanco en BCS, reporta el gobernador Víctor Castro",
+      "path": "noticias/2026-09-29/polo-saldo-blanco-infobae-gobernador-2026-09-29",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (Tribuna de México, 29 sep 2026): Huracán Polo deja saldo blanco en BCS tras impactar como categoría 2 en Comondú",
+      "path": "noticias/2026-09-29/polo-saldo-blanco-700-albergues-2026-09-29",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (El Informador, 3 oct 2026): Huracán Rachel provoca inundaciones y crecidas de arroyos en Los Cabos",
+      "path": "noticias/2026-10-03/rachel-inundaciones-los-cabos-2026-10-03",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (Eclipse BCS, 1 oct 2026): CFE restablece el 100% del servicio a los usuarios afectados por el huracán Polo",
+      "path": "noticias/2026-10-01/cfe-restablece-100-polo-2026-10-01",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (Impacto Noticias, 28 sep 2026): Activan Plan DN-III-E en BCS por huracán Polo; 1,689 elementos con foco en Comondú",
+      "path": "noticias/2026-09-28/polo-plan-dn-iii-e-1689-elementos-comondu-2026-09-28",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  },
+  {
+   "id": "E106",
+   "cat": "noticias",
+   "kind": "fact",
+   "q": "¿Cuántas colonias de La Paz se quedaron sin agua por la reparación del acueducto 1?",
+   "place": null,
+   "all": [
+    "\\b78\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1625,
+    "answer": "Según la noticia (Tribuna de México, 21 sep 2026), **78 colonias** de La Paz se quedaron sin agua por la reparación del acueducto 1. \n\nEsta es la única cifra disponible en el contexto para ese evento específico.",
+    "sources": [
+     {
+      "title": "Noticia (Tribuna de México, 21 sep 2026): Desabasto de agua en 78 colonias de La Paz por reparación del acueducto 1",
+      "path": "noticias/2026-09-21/desabasto-78-colonias-acueducto-1-la-paz-2026-09-21",
+      "type": "news"
+     },
+     {
+      "title": "Noticia (Diario El Independiente, 14 oct 2026): OOMSAPAS La Paz recupera poco a poco el agua tras el corte eléctrico en pozos de El Carrizal",
+      "path": "noticias/2026-10-14/oomsapas-la-paz-agua-tras-corte-electrico-2026-10-14",
+      "type": "news"
+     }
+    ],
+    "primary_file": null,
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 2,
+    "src_hit": true,
+    "bad_cards": []
+   }
+  }
+ ],
+ "summary": {
+  "gate": {
+   "original_pass": 98,
+   "original_n": 100,
+   "news_pass": 6,
+   "news_n": 6,
+   "bad_card_titles": 0,
+   "cards_total": 540,
+   "pass": true
+  },
+  "total": 106,
+  "pass": 104,
+  "accuracy": 98.1,
+  "invented_numbers": 0,
+  "answers_with_invented": 0,
+  "refuse_total": 9,
+  "refuse_pass": 9,
+  "refuse_no_sources": 2,
+  "errors": 0,
+  "by_category": {
+   "agua": {
+    "n": 21,
+    "pass": 20,
+    "inv": 0
+   },
+   "energia": {
+    "n": 10,
+    "pass": 9,
+    "inv": 0
+   },
+   "poblacion": {
+    "n": 12,
+    "pass": 12,
+    "inv": 0
+   },
+   "seguridad": {
+    "n": 6,
+    "pass": 6,
+    "inv": 0
+   },
+   "actores": {
+    "n": 11,
+    "pass": 11,
+    "inv": 0
+   },
+   "inmobiliario": {
+    "n": 9,
+    "pass": 9,
+    "inv": 0
+   },
+   "turismo": {
+    "n": 10,
+    "pass": 10,
+    "inv": 0
+   },
+   "economia": {
+    "n": 7,
+    "pass": 7,
+    "inv": 0
+   },
+   "ambiente": {
+    "n": 5,
+    "pass": 5,
+    "inv": 0
+   },
+   "planeacion": {
+    "n": 3,
+    "pass": 3,
+    "inv": 0
+   },
+   "proyectos": {
+    "n": 5,
+    "pass": 5,
+    "inv": 0
+   },
+   "fuera": {
+    "n": 1,
+    "pass": 1,
+    "inv": 0
+   },
+   "noticias": {
+    "n": 6,
+    "pass": 6,
+    "inv": 0
+   }
+  }
+ }
+}

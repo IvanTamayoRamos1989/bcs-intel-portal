@@ -1,0 +1,432 @@
+{
+  "master_stills": 1000,
+  "image_files_indexed": 3436,
+  "present_batches": [
+    "batch_01",
+    "batch_02",
+    "batch_03",
+    "batch_04",
+    "batch_05",
+    "batch_06",
+    "batch_07",
+    "batch_08",
+    "batch_09",
+    "batch_10",
+    "batch_11",
+    "batch_12",
+    "batch_13",
+    "batch_14",
+    "batch_15",
+    "batch_16",
+    "batch_17",
+    "batch_18",
+    "batch_19",
+    "batch_20"
+  ],
+  "primary_selected": 1000,
+  "missing_or_black": 0,
+  "missing_ids": [],
+  "black_swaps": [],
+  "near_dupe_dropped": 44,
+  "near_dupe_pairs": [
+    {
+      "dropped": "S0080",
+      "kept": "S0001",
+      "hamming": 4,
+      "dropped_name": "Timbabichi",
+      "kept_name": "Santa Rosalía",
+      "dropped_cat": "localidad",
+      "kept_cat": "cabecera"
+    },
+    {
+      "dropped": "S0100",
+      "kept": "S0071",
+      "hamming": 4,
+      "dropped_name": "San Buto [Campo Pesquero]",
+      "kept_name": "Rancho San Cosme",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0101",
+      "kept": "S0071",
+      "hamming": 3,
+      "dropped_name": "Puerto Magdalena",
+      "kept_name": "Rancho San Cosme",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0109",
+      "kept": "S0039",
+      "hamming": 2,
+      "dropped_name": "Boca del Sauzoso",
+      "kept_name": "San Hipólito",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0115",
+      "kept": "S0039",
+      "hamming": 4,
+      "dropped_name": "El Sargento",
+      "kept_name": "San Hipólito",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0117",
+      "kept": "S0071",
+      "hamming": 4,
+      "dropped_name": "La Ventana",
+      "kept_name": "Rancho San Cosme",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0135",
+      "kept": "S0133",
+      "hamming": 4,
+      "dropped_name": "Los Algodones",
+      "kept_name": "La Línea",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0147",
+      "kept": "S0071",
+      "hamming": 3,
+      "dropped_name": "Agua de la Costa",
+      "kept_name": "Rancho San Cosme",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0168",
+      "kept": "S0097",
+      "hamming": 4,
+      "dropped_name": "La Joya del Mar [Empacadora]",
+      "kept_name": "El Ranchito",
+      "dropped_cat": "localidad",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0241",
+      "kept": "S0016",
+      "hamming": 3,
+      "dropped_name": "Ejido SAN IGNACIO",
+      "kept_name": "San Francisco de la Sierra",
+      "dropped_cat": "tenencia",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0255",
+      "kept": "S0038",
+      "hamming": 3,
+      "dropped_name": "Ejido N.C.P.E. FLOR DE CALIFORNIA",
+      "kept_name": "Punta Prieta",
+      "dropped_cat": "tenencia",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0271",
+      "kept": "S0192",
+      "hamming": 1,
+      "dropped_name": "Ejido SAN JOSE DEL CABO",
+      "kept_name": "Santa Cruz de los Zacatitos",
+      "dropped_cat": "tenencia",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0281",
+      "kept": "S0176",
+      "hamming": 3,
+      "dropped_name": "grid_27.790_-114.010",
+      "kept_name": "Cabo Pulmo",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0365",
+      "kept": "S0002",
+      "hamming": 4,
+      "dropped_name": "grid_27.400_-112.320",
+      "kept_name": "Loreto",
+      "dropped_cat": "grid",
+      "kept_cat": "cabecera"
+    },
+    {
+      "dropped": "S0447",
+      "kept": "S0228",
+      "hamming": 4,
+      "dropped_name": "grid_26.880_-113.750",
+      "kept_name": "ANP Balandra",
+      "dropped_cat": "grid",
+      "kept_cat": "anp"
+    },
+    {
+      "dropped": "S0471",
+      "kept": "S0038",
+      "hamming": 4,
+      "dropped_name": "grid_26.750_-113.620",
+      "kept_name": "Punta Prieta",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0486",
+      "kept": "S0321",
+      "hamming": 4,
+      "dropped_name": "grid_26.750_-111.670",
+      "kept_name": "grid_27.530_-114.790",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0507",
+      "kept": "S0002",
+      "hamming": 2,
+      "dropped_name": "grid_26.620_-111.800",
+      "kept_name": "Loreto",
+      "dropped_cat": "grid",
+      "kept_cat": "cabecera"
+    },
+    {
+      "dropped": "S0539",
+      "kept": "S0258",
+      "hamming": 0,
+      "dropped_name": "grid_26.360_-112.710",
+      "kept_name": "Ejido CONQUISTA AGRARIA",
+      "dropped_cat": "grid",
+      "kept_cat": "tenencia"
+    },
+    {
+      "dropped": "S0543",
+      "kept": "S0228",
+      "hamming": 4,
+      "dropped_name": "grid_26.360_-112.190",
+      "kept_name": "ANP Balandra",
+      "dropped_cat": "grid",
+      "kept_cat": "anp"
+    },
+    {
+      "dropped": "S0566",
+      "kept": "S0199",
+      "hamming": 4,
+      "dropped_name": "grid_26.230_-111.280",
+      "kept_name": "Punta Ballena (corredor turismo)",
+      "dropped_cat": "grid",
+      "kept_cat": "turismo"
+    },
+    {
+      "dropped": "S0600",
+      "kept": "S0097",
+      "hamming": 2,
+      "dropped_name": "grid_25.970_-110.760",
+      "kept_name": "El Ranchito",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0612",
+      "kept": "S0472",
+      "hamming": 4,
+      "dropped_name": "grid_25.840_-111.150",
+      "kept_name": "grid_26.750_-113.490",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0613",
+      "kept": "S0291",
+      "hamming": 4,
+      "dropped_name": "grid_25.840_-111.020",
+      "kept_name": "grid_27.790_-112.710",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0615",
+      "kept": "S0199",
+      "hamming": 1,
+      "dropped_name": "grid_25.840_-110.760",
+      "kept_name": "Punta Ballena (corredor turismo)",
+      "dropped_cat": "grid",
+      "kept_cat": "turismo"
+    },
+    {
+      "dropped": "S0633",
+      "kept": "S0097",
+      "hamming": 2,
+      "dropped_name": "grid_25.580_-112.060",
+      "kept_name": "El Ranchito",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0654",
+      "kept": "S0291",
+      "hamming": 4,
+      "dropped_name": "grid_25.450_-111.020",
+      "kept_name": "grid_27.790_-112.710",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0657",
+      "kept": "S0573",
+      "hamming": 4,
+      "dropped_name": "grid_25.450_-110.630",
+      "kept_name": "grid_26.100_-112.320",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0661",
+      "kept": "S0228",
+      "hamming": 3,
+      "dropped_name": "grid_25.320_-112.060",
+      "kept_name": "ANP Balandra",
+      "dropped_cat": "grid",
+      "kept_cat": "anp"
+    },
+    {
+      "dropped": "S0688",
+      "kept": "S0376",
+      "hamming": 4,
+      "dropped_name": "grid_25.190_-110.500",
+      "kept_name": "grid_27.270_-114.010",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0708",
+      "kept": "S0199",
+      "hamming": 2,
+      "dropped_name": "grid_24.930_-112.190",
+      "kept_name": "Punta Ballena (corredor turismo)",
+      "dropped_cat": "grid",
+      "kept_cat": "turismo"
+    },
+    {
+      "dropped": "S0720",
+      "kept": "S0033",
+      "hamming": 2,
+      "dropped_name": "grid_24.930_-110.630",
+      "kept_name": "Isla San Marcos",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0769",
+      "kept": "S0321",
+      "hamming": 3,
+      "dropped_name": "grid_24.540_-110.760",
+      "kept_name": "grid_27.530_-114.790",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0782",
+      "kept": "S0291",
+      "hamming": 4,
+      "dropped_name": "grid_24.410_-111.410",
+      "kept_name": "grid_27.790_-112.710",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0791",
+      "kept": "S0016",
+      "hamming": 4,
+      "dropped_name": "grid_24.410_-110.240",
+      "kept_name": "San Francisco de la Sierra",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0807",
+      "kept": "S0071",
+      "hamming": 3,
+      "dropped_name": "grid_24.280_-110.630",
+      "kept_name": "Rancho San Cosme",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0809",
+      "kept": "S0039",
+      "hamming": 4,
+      "dropped_name": "grid_24.280_-110.370",
+      "kept_name": "San Hipólito",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0812",
+      "kept": "S0016",
+      "hamming": 2,
+      "dropped_name": "grid_24.280_-109.980",
+      "kept_name": "San Francisco de la Sierra",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0860",
+      "kept": "S0097",
+      "hamming": 3,
+      "dropped_name": "grid_23.890_-109.980",
+      "kept_name": "El Ranchito",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0876",
+      "kept": "S0039",
+      "hamming": 4,
+      "dropped_name": "grid_23.760_-109.720",
+      "kept_name": "San Hipólito",
+      "dropped_cat": "grid",
+      "kept_cat": "localidad"
+    },
+    {
+      "dropped": "S0880",
+      "kept": "S0532",
+      "hamming": 1,
+      "dropped_name": "grid_23.695_-110.955",
+      "kept_name": "grid_26.490_-111.410",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0910",
+      "kept": "S0261",
+      "hamming": 4,
+      "dropped_name": "grid_23.500_-110.110",
+      "kept_name": "Ejido SAN LUIS",
+      "dropped_cat": "grid",
+      "kept_cat": "tenencia"
+    },
+    {
+      "dropped": "S0954",
+      "kept": "S0321",
+      "hamming": 4,
+      "dropped_name": "grid_23.175_-110.175",
+      "kept_name": "grid_27.530_-114.790",
+      "dropped_cat": "grid",
+      "kept_cat": "grid"
+    },
+    {
+      "dropped": "S0972",
+      "kept": "S0199",
+      "hamming": 3,
+      "dropped_name": "grid_23.045_-110.045",
+      "kept_name": "Punta Ballena (corredor turismo)",
+      "dropped_cat": "grid",
+      "kept_cat": "turismo"
+    }
+  ],
+  "final_kept": 956,
+  "hamming_max": 4,
+  "notes": "Primary: 1 mid-hold frame per still_id. Secondary: aHash Hamming <= 4, keep cabecera>puerto>localidad>turismo>anp>carretera>tenencia>grid, else lower still_id. Never drop category in (cabecera, puerto) — Loreto S0002 must remain."
+}

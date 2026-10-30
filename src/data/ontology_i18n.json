@@ -1,0 +1,402 @@
+{
+  "terr_bcs": {
+    "label_en": "Baja California Sur (state)",
+    "summary_en": "State unit of the 2026–2056 programme. Regulatory ceiling via POERBCS and PED; isolated power grid (SIBCS)."
+  },
+  "terr_los_cabos": {
+    "label_en": "Los Cabos Municipality",
+    "summary_en": "Highest tourism–residential pressure pole. PDU 2040, OOMSAPAS Cabos and aquifers 0317/0319 in deficit."
+  },
+  "terr_la_paz": {
+    "label_en": "La Paz Municipality",
+    "summary_en": "Second demographic pole and political capital. Aquifer 0324 in deficit; PDUCP Population Centre."
+  },
+  "terr_loreto": {
+    "label_en": "Loreto Municipality",
+    "summary_en": "North-central pole tied to Bahía de Loreto NP; lower absolute volume but high ANP sensitivity."
+  },
+  "terr_comondu": {
+    "label_en": "Comondú Municipality",
+    "summary_en": "Agricultural municipality (Valle Santo Domingo). ITER catalogue + municipal fiscal in 13_territorial_intelligence; no PDU/zoning on disk. Do not invent DMA/energy here."
+  },
+  "terr_mulege": {
+    "label_en": "Mulegé Municipality",
+    "summary_en": "Largest-area municipality; mining/fishing and Vizcaíno ANP condition corridors. ITER catalogue + fiscal in TI; no PDU on disk. Water–energy capacity not claimed beyond TI."
+  },
+  "terr_corredor_cabos": {
+    "label_en": "Cabo San Lucas–San José del Cabo corridor",
+    "summary_en": "Hotel–residential axis concentrating water demand, power peaks and pressure on PDU/POEL."
+  },
+  "terr_todos_santos": {
+    "label_en": "Todos Santos–El Pescadero corridor",
+    "summary_en": "La Paz fringe with PSDU and aquifer 0313 in deficit; tension between boutique tourism and water capacity."
+  },
+  "terr_anp_cabo_pulmo": {
+    "label_en": "Cabo Pulmo National Park",
+    "summary_en": "Marine core that closes construction/mining/dredging in the Cabos influence zone; CONANP ecological lock."
+  },
+  "terr_anp_sierra_laguna": {
+    "label_en": "Sierra La Laguna Biosphere Reserve",
+    "summary_en": "Critical recharge for southern aquifers and use veto in the core; ecological–hydrological capacity bridge."
+  },
+  "terr_anp_vizcaino": {
+    "label_en": "El Vizcaíno Biosphere Reserve",
+    "summary_en": "Large northern ANP; conditions corridors and works (e.g. Transpeninsular Guerrero Negro–Vizcaíno)."
+  },
+  "terr_anp_loreto": {
+    "label_en": "Bahía de Loreto National Park",
+    "summary_en": "Marine–coastal lock on Loreto growth; CONANP management programme in force."
+  },
+  "terr_anp_apff_csl": {
+    "label_en": "APFF Cabo San Lucas",
+    "summary_en": "Flora and Fauna Protection Area (~3,996 ha, 1973 decree). Present in CONANP 2025 layer and POER UGA BCS55PT; management-plan text still a gap."
+  },
+  "inst_poerbcs": {
+    "label_en": "POERBCS 2026",
+    "summary_en": "Regional Ecological Ordinance decreed (Jan 2026). Sets state UGAs; SEPUIMM is lead. Ceiling over PDU/POEL."
+  },
+  "inst_ped": {
+    "label_en": "State Development Plan 2021–2027",
+    "summary_en": "Sexennial government agenda; aligns SETUE/SEPUIMM but does not replace the POER ecological ceiling."
+  },
+  "inst_pdu_cabos": {
+    "label_en": "PDU 2040 Los Cabos",
+    "summary_en": "Municipal land-use instrument (IMPLAN). Operates under POERBCS; strained by DMA in deficit."
+  },
+  "inst_pdu_lapaz": {
+    "label_en": "PDUCP La Paz Population Centre",
+    "summary_en": "Urban development plan for the capital; must cohere with POERBCS and DMA 0324."
+  },
+  "inst_poel_cabos": {
+    "label_en": "POEL Los Cabos (agreement)",
+    "summary_en": "Local ecological ordinance in articulation with IMPLAN/SEPUIMM; municipal bridge of the POER."
+  },
+  "inst_ley_aguas": {
+    "label_en": "BCS State Water Law",
+    "summary_en": "State water framework; CEA and municipal operators act under this ceiling together with federal CONAGUA."
+  },
+  "inst_prodesen": {
+    "label_en": "PRODESEN 2024–2038",
+    "summary_en": "National electricity planning (SENER). For BCS defines scenarios of the isolated system versus the SIN."
+  },
+  "inst_pamrnt": {
+    "label_en": "PAMRNT CENACE 2025–2039",
+    "summary_en": "Grid expansion and modernisation programme; SIBCS transmission/distribution bottlenecks."
+  },
+  "inst_veda_1954": {
+    "label_en": "Federal bans 1954 (type III, southern BCS region)",
+    "summary_en": "DOF 2 and 6 Jul 1954: limited extractions / indefinite ban. Legal layer under which southern aquifers operate together with DMA NOM-011."
+  },
+  "rc_acuifero_0317": {
+    "label_en": "Cabo San Lucas aquifer (0317)",
+    "summary_en": "DMA 2024 in severe deficit (~−24 hm³/year). No volume for new concessions; hard lock on the corridor."
+  },
+  "rc_acuifero_0319": {
+    "label_en": "San José del Cabo aquifer (0319)",
+    "summary_en": "DMA in deficit (~−12.5 hm³/year). Feeds SJD and part of the corridor; direct hotel–residential pressure."
+  },
+  "rc_acuifero_0324": {
+    "label_en": "La Paz aquifer (0324)",
+    "summary_en": "DMA in deficit (~−13.5 hm³/year). Conditions capital expansion and Todos Santos corridor via regional supply."
+  },
+  "rc_acuifero_0313": {
+    "label_en": "Todos Santos aquifer (0313)",
+    "summary_en": "DMA in deficit (~−3 hm³/year). Small in absolute volume but critical for the boutique corridor."
+  },
+  "rc_acuifero_0320": {
+    "label_en": "Santiago aquifer (0320)",
+    "summary_en": "DMA +0.30 hm³/year (~9.5 l/s) under 1954 ban. CONAGUA names it a 'tourism alternative'; the figure does not licence a pole. CENACE flags electrical pressure in the same zone."
+  },
+  "rc_acuifero_0318": {
+    "label_en": "Cabo Pulmo aquifer (0318)",
+    "summary_en": "DMA in deficit (~−2.29 hm³/year). Closes groundwater supply on East Cape together with the park ANP lock."
+  },
+  "rc_sibcs": {
+    "label_en": "Baja California Sur Interconnected System (SIBCS)",
+    "summary_en": "Isolated grid outside the SIN. Reference peak 688.5 MW (Sep 2024) on alert; CFE/CENACE ceiling."
+  },
+  "rc_aeropuerto_sjd": {
+    "label_en": "Los Cabos International Airport (SJD)",
+    "summary_en": "Main tourism-demand gateway. GAP concession ~until 2048; brownfield that conditions seasonal peaks."
+  },
+  "rc_aeropuerto_lap": {
+    "label_en": "La Paz International Airport (LAP)",
+    "summary_en": "Secondary state gateway under GAP concession; relevant for the capital and north–south connectivity."
+  },
+  "rc_vivienda_cabos": {
+    "label_en": "Los Cabos housing capacity",
+    "summary_en": "Stock and urbanisation frontier conditioned by PDU, water and energy; proxy for 'how many keys'."
+  },
+  "rc_tx_lapaz_cabos": {
+    "label_en": "La Paz→Los Cabos transmission gate",
+    "summary_en": "Operational limit 237 MW (2×230 kV + 1×115 kV). 2024: 10 h over limit, 603 h >95%. Bottleneck separating La Paz generation from the corridor."
+  },
+  "dd_turismo_cabos": {
+    "label_en": "Los Cabos tourism",
+    "summary_en": "Dominant driver of water, energy and land in the CSL–SJD corridor. Without a capacity balance there is no keys target."
+  },
+  "dd_residencial_cabos": {
+    "label_en": "Los Cabos residential and second homes",
+    "summary_en": "Permanent/semi-permanent demand competing with hotels for DMA and grid capacity."
+  },
+  "dd_turismo_lapaz": {
+    "label_en": "La Paz / Malecón tourism",
+    "summary_en": "Moderate pressure vs Cabos but sensitive to aquifer 0324 and an ecological-capital narrative."
+  },
+  "dd_agro_santo_domingo": {
+    "label_en": "Valle Santo Domingo agriculture",
+    "summary_en": "Historical irrigation demand under DOF bans and regulations; anchored in Comondú (TI/strengths). Do not invent municipal DMA here."
+  },
+  "dd_eventos_foro": {
+    "label_en": "Foro Mar de Cortés agenda",
+    "summary_en": "Public convening (Nov) and engagement platform; does not close Stage 1 but accelerates political narrative."
+  },
+  "const_escasez_agua": {
+    "label_en": "Structural water scarcity (south)",
+    "summary_en": "Four key aquifers in DMA deficit. Design veto on growth scenarios without new supply (desal/reuse)."
+  },
+  "const_dma_deficit": {
+    "label_en": "DMA in deficit (0313/0317/0319/0324)",
+    "summary_en": "CONAGUA availabilities with no margin for new concessions at growth poles."
+  },
+  "const_red_aislada": {
+    "label_en": "Isolated power grid (SIBCS)",
+    "summary_en": "BCS outside the SIN; peaks on alert. Planning hotels/residential without PAMRNT/PRODESEN is a central risk."
+  },
+  "const_anp_nucleos": {
+    "label_en": "ANP cores as use veto",
+    "summary_en": "Cabo Pulmo, Vizcaíno, Sierra La Laguna and Loreto close construction/mining/dredging in cores; they are not decorative annexes."
+  },
+  "const_tenencia": {
+    "label_en": "Irregular tenure / land conflict",
+    "summary_en": "Recurring limit on peri-urban expansion and corridors; appears in PDU mapping (e.g. Los Barriles)."
+  },
+  "const_ciclo_politico": {
+    "label_en": "State/municipal political cycle",
+    "summary_en": "PED 2021–2027 window and municipal calendars condition Commitment, Forum and decree pace."
+  },
+  "const_intrusion_marina": {
+    "label_en": "Seawater intrusion (La Paz / Los Planes)",
+    "summary_en": "Levels below mean sea and quality damage from over-extraction. Quality lock in addition to volume deficit in 0324/0323."
+  },
+  "actor_sepuimm": {
+    "label_en": "SEPUIMM",
+    "summary_en": "Lead of POERBCS and state territorial alignment. F+P subgroup: State Level — SEPUIMM."
+  },
+  "actor_setues": {
+    "label_en": "SETUE (state tourism / economy)",
+    "summary_en": "Aligns tourism–economic agenda to the long horizon; bridge with governorship and Forum."
+  },
+  "actor_conagua": {
+    "label_en": "CONAGUA",
+    "summary_en": "Federal authority on DMA, bans and concessions. Source of truth for the water lock."
+  },
+  "actor_cea": {
+    "label_en": "CEA BCS",
+    "summary_en": "State water commission; articulates Water Law, WWTP and desalination with municipal operators."
+  },
+  "actor_oomsapas_cabos": {
+    "label_en": "OOMSAPAS Los Cabos",
+    "summary_en": "Municipal water/sewer operator at the highest-deficit pole. Key node on capacity→PDU paths. Head (2024–2027 org chart): Ing. Ramón Edgardo Rubio Apodaca."
+  },
+  "actor_cfe": {
+    "label_en": "CFE (generation / transmission / distribution)",
+    "summary_en": "Operates the SIBCS; concentrates capacity and expansion bottlenecks."
+  },
+  "actor_cenace": {
+    "label_en": "CENACE",
+    "summary_en": "System operator and PAMRNT; defines SIBCS grid expansions."
+  },
+  "actor_conanp": {
+    "label_en": "CONANP",
+    "summary_en": "Administers ANP management programmes; guarantor of the ecological lock."
+  },
+  "actor_foro": {
+    "label_en": "Foro Mar de Cortés",
+    "summary_en": "Convening and public launch platform (Nov). Steering: Project Governance."
+  },
+  "actor_fp": {
+    "label_en": "Foster + Partners (territorial team)",
+    "summary_en": "Lead for Territorial Development / Vision & Spatial Framework; methodological custodian of the shadow programme."
+  },
+  "actor_gobernador": {
+    "label_en": "State Governor (Víctor M. Castro Cosío)",
+    "summary_en": "State buy-in and Commitment Agreement signature; political-cycle node."
+  },
+  "actor_ayunt_cabos": {
+    "label_en": "Los Cabos City Council",
+    "summary_en": "Highest growth permits and pressure in the state; aligns local PDU/POEL."
+  },
+  "actor_ayunt_lapaz": {
+    "label_en": "La Paz City Council",
+    "summary_en": "Second pole; PDUCP and capital narrative. Steering: Political Stakeholders."
+  },
+  "actor_ayunt_comondu": {
+    "label_en": "Comondú City Council",
+    "summary_en": "Municipal government; 2026 Revenue Law documented in TI fiscal. PMD cited on portal (local PDF pending)."
+  },
+  "actor_ayunt_mulege": {
+    "label_en": "Mulegé City Council",
+    "summary_en": "Municipal government; 2026 Revenue Law and PMD 2024–2027 on disk (TI/plans). Does not claim water–energy unlock."
+  },
+  "actor_implan_cabos": {
+    "label_en": "IMPLAN Los Cabos",
+    "summary_en": "Technical authority for PDU 2040 and POEL agreement; Municipal Planning Authorities. Head (2024–2027 org chart): Arq. Beatriz González Gilbert."
+  },
+  "proj_desal_cabos": {
+    "label_en": "Los Cabos desalination plant 250 lps (PPP)",
+    "summary_en": "Documented PPP project (DOF/Proyectos México). Candidate to ease deficit — not to erase the DMA lock."
+  },
+  "proj_transpeninsular": {
+    "label_en": "Transpeninsular Highway (widenings)",
+    "summary_en": "State road spine; segments (e.g. Guerrero Negro–Vizcaíno) conditioned by ANP and budget."
+  },
+  "proj_commitment": {
+    "label_en": "Commitment Agreement (programme)",
+    "summary_en": "Public–private agreement targeted by Steering; depends on capacity balances and political window."
+  },
+  "proj_p23_bs1": {
+    "label_en": "P23-BS1 La Paz–Los Cabos transmission increase",
+    "summary_en": "CFE-Transmission instructed work; feasible date Dec 2028 in PAMRNT. Enables (does not guarantee today) relief of the 237 MW gate."
+  },
+  "ev_dma": {
+    "label_en": "CONAGUA DMA updates (southern aquifers)",
+    "summary_en": "2023–2024 DMA agreements and updates for 0313/0317/0319/0324 and neighbours. Numerical basis of the water lock."
+  },
+  "ev_prodesen": {
+    "label_en": "PRODESEN / PAMRNT / PLADESE (energy package)",
+    "summary_en": "SENER/CENACE documents in 03_energy and data lake; SIBCS ceiling and expansion."
+  },
+  "ev_poerbcs": {
+    "label_en": "POERBCS / POETBCS dossier (characterisation–forecast)",
+    "summary_en": "SEPUIMM reports and 2026 decree in 01_planning; UGAs as regulatory input."
+  },
+  "ev_anp_pm": {
+    "label_en": "CONANP management programmes (BCS ANP)",
+    "summary_en": "Decrees and MPs for Cabo Pulmo, Vizcaíno, Sierra La Laguna, Loreto in 06_environment."
+  },
+  "ev_stakeholders": {
+    "label_en": "F+P / Forum actor matrix",
+    "summary_en": "Lists and matrices in 09_shadow_programme and Steering/TAG/Forum data-lake packs."
+  },
+  "ev_desal_app": {
+    "label_en": "Los Cabos desalination PPP 250 lps factsheet",
+    "summary_en": "DOF call and Proyectos México factsheet; evidence of water-infrastructure readiness."
+  },
+  "ev_setue_ie": {
+    "label_en": "SETUE Strategic Information (2020/2026)",
+    "summary_en": "State and municipal profiles (BCS, Los Cabos, La Paz; Loreto 2020). Demographics, tourism, airport — demand driver documented by SETUE."
+  },
+  "ev_fiscal_municipal": {
+    "label_en": "Municipal / state fiscal (TI)",
+    "summary_en": "2026 revenue laws and 2025 Anexo I-33 by municipality (incl. Comondú/Mulegé). Informs fiscal agenda/readiness — does not unlock DMA or SIBCS."
+  },
+  "ev_communities_master": {
+    "label_en": "ITER localities catalogue (communities_master)",
+    "summary_en": "2,543 named BCS localities (POBTOT≥1, 2020 Census ITER) in Base de datos BCS 2050 — comunidades. Spatial registry; not a water–energy capacity node."
+  },
+  "dq_capacidad_carga": {
+    "label_en": "How much demand fits without breaking water–energy–ANP?",
+    "summary_en": "Mother carrying-capacity question. Must be answered before vision, keys or destination benchmarking."
+  },
+  "dq_desal_vs_crecimiento": {
+    "label_en": "Does desalination unlock growth or only sustain the deficit?",
+    "summary_en": "Distinguishes net new supply vs substitution. Implies SIBCS energy and OOMSAPAS/CEA governance."
+  },
+  "dq_agenda_politica": {
+    "label_en": "What is feasible in the current political window?",
+    "summary_en": "Crosses Forum (Nov), PED, municipalities and Commitment. Avoids designing off-agenda."
+  },
+  "dq_vision_hold": {
+    "label_en": "When to release the Vision (Task 1)?",
+    "summary_en": "Explicit hold until capacity balances; indicative budget ~US$1.5 M does not authorise drawing without locks."
+  },
+  "dq_coherencia_instrumentos": {
+    "label_en": "Are POERBCS ↔ PDU ↔ projects coherent?",
+    "summary_en": "Regulatory cascade test. Scenarios that redraw UGAs or penetrate ANP cores fall outside instrument."
+  },
+  "dq_integridad_ecologica": {
+    "label_en": "Does the scenario regenerate or only mitigate ANP/recharge harm?",
+    "summary_en": "Ecological-integrity lens; Sierra La Laguna as recharge and cores as veto."
+  },
+  "dq_readiness_inversion": {
+    "label_en": "Which infrastructure is ready for investment / PPP?",
+    "summary_en": "Readiness of desal, power grid and airports versus developer narrative."
+  },
+  "ev_stills_intel": {
+    "label_en": "Earth Studio stills territorial intelligence (956)",
+    "summary_en": "Statewide study: 956 stills with GIS join (~1500 m) to roads, ANP, POER UGA, coast, settlements, waterways and power; AI vision 956/956. Globals: near_coast 169, protected_any 283, in_anp 213, in_osm_protected 20, tourism_resort 45, coast∩protected 72; land_cover desert 535 + scrub 148. Source: Base de datos BCS 2050 — análisis de imágenes del territorio / chat still:overview."
+  },
+  "terr_obs_cabos_coast": {
+    "label_en": "Observation — Los Cabos coastal densification",
+    "summary_en": "Spatial sample (bbox ~22.8–23.55 N, 110.2–109.4 W): 106 stills. near_coast 23, coast_visible 24, tourism_resort 17, moderate+dense settlement 13, protected_any/in_anp 12. Cover: scrub 32, mixed 23, desert 20. Flags observed hotel–residential pressure on the CSL–SJD fringe — does not invent DMA."
+  },
+  "terr_obs_loreto_bay": {
+    "label_en": "Observation — Loreto bay (stills)",
+    "summary_en": "Spatial sample (bbox ~25.5–26.15 N, 111.55–111.15 W): 33 stills. near_coast 15, coast_visible 14, protected_any 16, in_anp 7, tourism_resort 6; desert 16 + scrub 9. Crosses coastal fringe with Bahía de Loreto NP / buffers — high ANP sensitivity at low absolute volume."
+  },
+  "terr_obs_vizcaino_spine": {
+    "label_en": "Observation — Vizcaíno desert spine",
+    "summary_en": "Northern spatial sample (bbox ~26.5–28.2 N, 115.2–112.5 W): 222 stills. land_cover desert 166 (+ scrub 15), in_anp/protected_any 165, near_coast 35, tourism_resort 3. El Vizcaíno ANP dominates corridors; spatial lock before tourism density."
+  },
+  "terr_obs_east_cape": {
+    "label_en": "Observation — East Cape / Cabo Pulmo (stills)",
+    "summary_en": "East Cape sample (bbox ~23.35–23.9 N, 109.85–109.4 W): 54 stills. near_coast 16, in_anp 7, tourism_resort 10; scrub/mixed/coastal dominant. Coastal tourism ↔ Cabo Pulmo NP interface (+ aquifer 0318 in deficit)."
+  },
+  "const_coast_anp_pressure": {
+    "label_en": "Coastal tourism pressure at ANP interfaces",
+    "summary_en": "Of 956 stills: 72 near_coast∩protected_any (Vizcaíno 38, Pacific Islands 6, Bahía de Loreto 5, Cabo Pulmo 2, …); 39 tourism_resort∩near_coast; 20 OSM protected cross-refs. Design lock: observed coastal density hits ANP buffers before 'filling' DMA/SIBCS."
+  },
+  "dq_coast_anp_buffers": {
+    "label_en": "Where does coastal tourism pressure meet ANP buffers?",
+    "summary_en": "Stills-informed competency Q: map near_coast∩protected fringes (72 points) and East Cape / Loreto / Cabos samples before key-count scenarios on ANP edges."
+  },
+  "dq_vizcaino_corridor": {
+    "label_en": "How does Vizcaíno (desert/ANP) condition northern corridors?",
+    "summary_en": "Competency Q: 222 stills on Vizcaíno spine with 165 in_anp and desert 166 — any Transpeninsular widening or new node must start from the ANP lock, not tourism density (only 3 tourism_resort in the sample)."
+  },
+  "dq_stills_densification": {
+    "label_en": "Which coastal fringes show observed densification vs locks?",
+    "summary_en": "Competency Q: Cabos coastal sample (106) has 17 tourism_resort and 13 moderate+dense settlement vs 12 ANP/protected points; cross with DMA 0317/0319 and SIBCS before licensing more density."
+  },
+  "ev_organigrama_cabos": {
+    "label_en": "Los Cabos XV City Council org chart (2024–2027)",
+    "summary_en": "Transcribed general org chart (99 units, 92 named heads), updated per the Municipal Public Administration Regulation, BOGE #14 of 29 Feb 2024."
+  },
+  "actor_cabos_presidencia": {
+    "label_en": "Los Cabos Mayor's Office",
+    "summary_en": "Head: Arq. Christian Agúndez Gómez (XV City Council 2024–2027). Oversees the General Secretariat, Treasury, Comptroller, Chief Administrative Office, General Directorates, decentralised bodies and delegations."
+  },
+  "actor_cabos_dg_ecologia": {
+    "label_en": "Los Cabos General Directorate of Ecology and Environment",
+    "summary_en": "Los Cabos General Directorate of Ecology and Environment. Head (2024–2027 org chart): C. Rosa Esther Natali Cruz Ocampo."
+  },
+  "actor_cabos_dg_desarrollo_social": {
+    "label_en": "Los Cabos General Directorate of Social Development",
+    "summary_en": "Los Cabos General Directorate of Social Development. Head (2024–2027 org chart): C. Carlos Castro Ceseña."
+  },
+  "actor_cabos_dg_fomento_economico": {
+    "label_en": "Los Cabos General Directorate of Economic Development",
+    "summary_en": "Los Cabos General Directorate of Economic Development. Head (2024–2027 org chart): C. Abril I. Urueta Martínez."
+  },
+  "actor_cabos_dg_desarrollo_urbano": {
+    "label_en": "Los Cabos General Directorate of Urban Development",
+    "summary_en": "Los Cabos General Directorate of Urban Development. Head (2024–2027 org chart): C. Roberto Flores Rivera."
+  },
+  "actor_cabos_dg_obras_publicas": {
+    "label_en": "Los Cabos General Directorate of Public Works and Human Settlements",
+    "summary_en": "Los Cabos General Directorate of Public Works and Human Settlements. Head (2024–2027 org chart): C. Alejandra Ramírez Reyes."
+  },
+  "actor_cabos_dg_servicios_publicos": {
+    "label_en": "Los Cabos General Directorate of Municipal Public Services",
+    "summary_en": "Los Cabos General Directorate of Municipal Public Services. Head (2024–2027 org chart): C. Manuel Ernesto Montaño Castro."
+  },
+  "actor_cabos_dg_seguridad_publica": {
+    "label_en": "Los Cabos General Directorate of Public Security, Preventive Police and Municipal Transit",
+    "summary_en": "Los Cabos General Directorate of Public Security, Preventive Police and Municipal Transit. Head (2024–2027 org chart): Cap. de Fragata C.G. Christopher Jordi López Monge."
+  },
+  "actor_cabos_delegaciones": {
+    "label_en": "Los Cabos municipal delegations",
+    "summary_en": "Delegations of Cabo San Lucas (C. Karina de la O Uribe), Santiago (C. Aracely Cota Ruiz), Miraflores (C. Aremy García García) and La Ribera (C. Linda Maribel Silva Cosío); report to the Mayor's Office."
+  }
+}

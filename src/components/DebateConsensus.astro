@@ -1,0 +1,201 @@
+---
+/**
+ * P1 — first-class debate/consensus: status, places, opposing lenses, next evidence ask.
+ */
+import { PLACE_BY_ID } from '../lib/places';
+
+interface Props {
+  seeds?: any[];
+  watch?: any[];
+  /** When true: no outer section title; ids prefixed to avoid duplicates on /lugares */
+  embedded?: boolean;
+  idPrefix?: string;
+}
+const statusLabel: Record<string, { es: string; en: string }> = {
+  emerging: { es: 'Emergente', en: 'Emerging' },
+  contested: { es: 'En disputa', en: 'Contested' },
+  agreed: { es: 'Acuerdo', en: 'Agreed' },
+  gap: { es: 'Brecha', en: 'Gap' },
+};
+const { seeds = [], watch = [], embedded = false, idPrefix = '' } = Astro.props;
+const secId = idPrefix ? `${idPrefix}-debate` : 'debate';
+const watchId = idPrefix ? `${idPrefix}-watchlist` : 'watchlist';
+
+function placeLabel(id: string, lang: 'es' | 'en') {
+  const p = PLACE_BY_ID[id];
+  if (!p) return id;
+  return lang === 'en' ? p.short_en : p.short_es;
+}
+---
+<section class:list={["fs-section", "fs-debate", embedded && "fs-debate--embedded"]} id={secId}>
+  {!embedded && (
+    <>
+      <h2>
+        <span data-lang-es>Debate y consenso</span>
+        <span data-lang-en hidden>Debate and consensus</span>
+      </h2>
+      <p class="fs-sec-lead">
+        <span data-lang-es>Afirmaciones en disputa, acuerdos emergentes y brechas — cada una con lugares, lentes en tensión y un siguiente paso de evidencia concreto.</span>
+        <span data-lang-en hidden>Contested claims, emerging agreements and gaps — each with places, opposing lenses and one concrete next evidence ask.</span>
+      </p>
+    </>
+  )}
+  <ul class="fs-seeds fs-debate-list">
+    {seeds.map((c: any) => {
+      const placeIds: string[] = c.place_ids || c.places || [];
+      const lenses: any[] = c.opposing_lenses || [];
+      return (
+        <li class={`fs-seed fs-debate-card status-${c.status || 'emerging'}`}>
+          <div class="fs-debate-top">
+            <span class="topic-chip">
+              <span data-lang-es>{statusLabel[c.status]?.es || c.status}</span>
+              <span data-lang-en hidden>{statusLabel[c.status]?.en || c.status}</span>
+            </span>
+          </div>
+          <p class="fs-debate-claim">
+            <span data-lang-es>{c.claim_es}</span>
+            <span data-lang-en hidden>{c.claim_en}</span>
+          </p>
+          {placeIds.length > 0 && (
+            <div class="fs-debate-row">
+              <span class="fs-debate-k">
+                <span data-lang-es>Lugares</span>
+                <span data-lang-en hidden>Places</span>
+              </span>
+              <div class="fs-debate-chips">
+                {placeIds.map((pid: string) => (
+                  <a class="fs-debate-chip" href={`/foresights/?place=${pid}#${pid}`} data-place-item={pid}>
+                    <span data-lang-es>{placeLabel(pid, 'es')}</span>
+                    <span data-lang-en hidden>{placeLabel(pid, 'en')}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+          {lenses.length > 0 && (
+            <div class="fs-debate-row">
+              <span class="fs-debate-k">
+                <span data-lang-es>Lentes en tensión</span>
+                <span data-lang-en hidden>Opposing lenses</span>
+              </span>
+              <div class="fs-debate-chips">
+                {lenses.map((L: any) => (
+                  <span class="fs-debate-chip fs-debate-chip--lens" title={L.role_id || ''}>
+                    <span data-lang-es>{L.label_es || L.role_id}</span>
+                    <span data-lang-en hidden>{L.label_en || L.label_es || L.role_id}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          {(c.next_evidence_es || c.next_evidence_en) && (
+            <div class="fs-debate-next">
+              <span class="fs-debate-k">
+                <span data-lang-es>Siguiente evidencia</span>
+                <span data-lang-en hidden>Next evidence ask</span>
+              </span>
+              <p>
+                <span data-lang-es>{c.next_evidence_es}</span>
+                <span data-lang-en hidden>{c.next_evidence_en || c.next_evidence_es}</span>
+              </p>
+              <div class="fs-debate-chips">
+                <a class="fs-debate-chip fs-debate-chip--cta" href="/crecimiento/">
+                  <span data-lang-es>/crecimiento</span>
+                  <span data-lang-en hidden>/crecimiento</span>
+                </a>
+                <a class="fs-debate-chip fs-debate-chip--cta" href="#signals">
+                  <span data-lang-es>#señales</span>
+                  <span data-lang-en hidden>#signals</span>
+                </a>
+                <a class="fs-debate-chip fs-debate-chip--cta" href="/preguntas/">
+                  <span data-lang-es>Pregunta estratégica</span>
+                  <span data-lang-en hidden>Strategic question</span>
+                </a>
+              </div>
+            </div>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+  {watch.length > 0 && (
+    <div class="fs-debate-watch" id={watchId}>
+      <h3>
+        <span data-lang-es>Lista de seguimiento</span>
+        <span data-lang-en hidden>Watchlist</span>
+      </h3>
+      <ul class="fs-watch">
+        {watch.map((w: any) => (
+          <li>
+            <span data-lang-es>{w.item_es}</span>
+            <span data-lang-en hidden>{w.item_en}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</section>
+
+<style is:global>
+  .fs-debate-list { gap: 0.85rem; }
+  .fs-debate-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.55rem !important;
+  }
+  .fs-debate-claim {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #23374a;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+  .fs-debate-row, .fs-debate-next {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .fs-debate-k {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #5c6e7b;
+  }
+  .fs-debate-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  .fs-debate-chip {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.18rem 0.5rem;
+    border-radius: 999px;
+    background: #dfe8ee;
+    color: #34607d;
+    text-decoration: none;
+  }
+  .fs-debate-chip--lens {
+    background: #f3e6cc;
+    color: #a8664a;
+  }
+  .fs-debate-chip--cta {
+    background: #34607d;
+    color: #fbf8f1;
+  }
+  .fs-debate-chip--cta:hover { background: #34607d; }
+  .fs-debate-next p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #34607d;
+    line-height: 1.4;
+  }
+  .fs-debate-watch { margin-top: 1.25rem; }
+  .fs-debate-watch h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+    color: #23374a;
+  }
+  .fs-seed.status-agreed .topic-chip { background: #dbeafe; color: #1e40af; }
+</style>

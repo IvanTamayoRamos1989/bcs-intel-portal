@@ -1,0 +1,22 @@
+---
+/** "Exportar expediente (PDF)" button: browser print-to-PDF with print-optimised CSS. */
+interface Props { title?: string }
+const { title = '' } = Astro.props as Props;
+---
+<button type="button" class="btn secondary print-exp" data-title={title} onclick="(function(b){var t=document.title;if(b.dataset.title){document.title='Expediente — '+b.dataset.title;}document.querySelectorAll('details').forEach(function(d){d.setAttribute('open','')});window.print();setTimeout(function(){document.title=t},500);})(this)">
+  <span data-lang-es>Exportar expediente (PDF)</span><span data-lang-en hidden>Export dossier (PDF)</span>
+</button>
+<style is:global>
+  @media print {
+    @page { size: A4; margin: 14mm 12mm; }
+    html, body { background: #fbf8f1 !important; color: #23374a !important; padding: 0 !important; margin: 0 !important; }
+    body.has-chat-sidebar, main, main.wide { padding-right: 0 !important; margin-right: 0 !important; max-width: none !important; }
+    header.site-header, .ios-tabbar, .ios-sheet, #ios-more-sheet, .site-footer, #bcs-chat, .bcs-chat, .place-strip, .su-breadcrumb, nav[aria-label], .print-exp, .su-cta-row, .no-print, .badge-borrador, [data-no-print] { display: none !important; }
+    a { color: #23374a !important; text-decoration: none !important; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #3c5163; word-break: break-all; }
+    section, .su-sec, table, figure { break-inside: avoid-page; }
+    h1, h2, h3 { break-after: avoid-page; }
+    .print-only { display: block !important; }
+  }
+  .print-only { display: none; }
+</style>

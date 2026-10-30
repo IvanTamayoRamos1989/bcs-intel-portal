@@ -1,0 +1,2670 @@
+{
+  "updated": "2026-09-24",
+  "count": 197,
+  "items": [
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-001",
+      "href": "/proyectos-federales/?q=FED-ENE-001",
+      "title_es": "Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "title_en": "Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "blurb_es": "energy · AMLO · La Paz",
+      "blurb_en": "energy · AMLO · La Paz",
+      "tags": [
+        "energy",
+        "AMLO",
+        "CFE",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-002",
+      "href": "/proyectos-federales/?q=FED-ENE-002",
+      "title_es": "Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "title_en": "Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "blurb_es": "energy · AMLO · BCS (sitio no definitivo público)",
+      "blurb_en": "energy · AMLO · BCS (sitio no definitivo público)",
+      "tags": [
+        "energy",
+        "AMLO",
+        "CFE",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-003",
+      "href": "/proyectos-federales/?q=FED-ENE-003",
+      "title_es": "Programa CFE reforzamiento generación SIBCS (gas / modernización Punta Prieta y CI BCS)",
+      "title_en": "Programa CFE reforzamiento generación SIBCS (gas / modernización Punta Prieta y CI BCS)",
+      "blurb_es": "energy · AMLO · La Paz",
+      "blurb_en": "energy · AMLO · La Paz",
+      "tags": [
+        "energy",
+        "AMLO",
+        "CFE",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-004",
+      "href": "/proyectos-federales/?q=FED-ENE-004",
+      "title_es": "Refuerzo transmisión La Paz–Los Cabos (P23-BS1 / LT Olas Altas–TG Los Cabos 230 kV)",
+      "title_en": "Refuerzo transmisión La Paz–Los Cabos (P23-BS1 / LT Olas Altas–TG Los Cabos 230 kV)",
+      "blurb_es": "energy · ambos · La Paz; Los Cabos",
+      "blurb_en": "energy · ambos · La Paz; Los Cabos",
+      "tags": [
+        "energy",
+        "ambos",
+        "CFE Transmisión / CENACE",
+        "los_cabos",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-005",
+      "href": "/proyectos-federales/?q=FED-ENE-005",
+      "title_es": "Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030",
+      "title_en": "Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030",
+      "blurb_es": "energy · Sheinbaum · Los Cabos",
+      "blurb_en": "energy · Sheinbaum · Los Cabos",
+      "tags": [
+        "energy",
+        "Sheinbaum",
+        "CFE / SENER",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-006",
+      "href": "/proyectos-federales/?q=FED-ENE-006",
+      "title_es": "Dos centrales termosolares (torre central + almacenamiento térmico) CFE en BCS",
+      "title_en": "Dos centrales termosolares (torre central + almacenamiento térmico) CFE en BCS",
+      "blurb_es": "energy · Sheinbaum · BCS (sitios por definir públicamente)",
+      "blurb_en": "energy · Sheinbaum · BCS (sitios por definir públicamente)",
+      "tags": [
+        "energy",
+        "Sheinbaum",
+        "CFE / SENER",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-007",
+      "href": "/proyectos-federales/?q=FED-ENE-007",
+      "title_es": "Subestación Buenavista y ampliación Cabo Falso",
+      "title_en": "Subestación Buenavista y ampliación Cabo Falso",
+      "blurb_es": "energy · Sheinbaum · Los Cabos",
+      "blurb_en": "energy · Sheinbaum · Los Cabos",
+      "tags": [
+        "energy",
+        "Sheinbaum",
+        "CFE",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-008",
+      "href": "/proyectos-federales/?q=FED-ENE-008",
+      "title_es": "Modernización/ampliación red eléctrica BCS CFE 2026-2028 (+70 MVA)",
+      "title_en": "Modernización/ampliación red eléctrica BCS CFE 2026-2028 (+70 MVA)",
+      "blurb_es": "energy · Sheinbaum · Estatal",
+      "blurb_en": "energy · Sheinbaum · Estatal",
+      "tags": [
+        "energy",
+        "Sheinbaum",
+        "CFE",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-009",
+      "href": "/proyectos-federales/?q=FED-ENE-009",
+      "title_es": "Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "title_en": "Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "blurb_es": "energy · ambos · SIBCS",
+      "blurb_en": "energy · ambos · SIBCS",
+      "tags": [
+        "energy",
+        "ambos",
+        "CENACE / CFE / SENER",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-ENE-010",
+      "href": "/proyectos-federales/?q=FED-ENE-010",
+      "title_es": "PRODESEN / PLADESE planeación SIBCS (interconexión SIN-BCS pausada)",
+      "title_en": "PRODESEN / PLADESE planeación SIBCS (interconexión SIN-BCS pausada)",
+      "blurb_es": "energy · ambos · Estatal",
+      "blurb_en": "energy · ambos · Estatal",
+      "tags": [
+        "energy",
+        "ambos",
+        "SENER / CENACE",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-001",
+      "href": "/proyectos-federales/?q=FED-AGU-001",
+      "title_es": "Planta Desalinizadora Los Cabos No. 2 (250 l/s) — APP / Plan Nacional Hídrico",
+      "title_en": "Planta Desalinizadora Los Cabos No. 2 (250 l/s) — APP / Plan Nacional Hídrico",
+      "blurb_es": "water · ambos · Los Cabos",
+      "blurb_en": "water · ambos · Los Cabos",
+      "tags": [
+        "water",
+        "ambos",
+        "CONAGUA / OOMSAPAS Los Cabos",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-002",
+      "href": "/proyectos-federales/?q=FED-AGU-002",
+      "title_es": "Desalinizadora La Paz (compromiso AMLO)",
+      "title_en": "Desalinizadora La Paz (compromiso AMLO)",
+      "blurb_es": "water · AMLO · La Paz",
+      "blurb_en": "water · AMLO · La Paz",
+      "tags": [
+        "water",
+        "AMLO",
+        "CONAGUA / Presidencia",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-003",
+      "href": "/proyectos-federales/?q=FED-AGU-003",
+      "title_es": "Presa El Novillo (sistema integral agua La Paz)",
+      "title_en": "Presa El Novillo (sistema integral agua La Paz)",
+      "blurb_es": "water · Sheinbaum · La Paz",
+      "blurb_en": "water · Sheinbaum · La Paz",
+      "tags": [
+        "water",
+        "Sheinbaum",
+        "CONAGUA",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-004",
+      "href": "/proyectos-federales/?q=FED-AGU-004",
+      "title_es": "Sectorización agua potable y planta potabilizadora La Paz",
+      "title_en": "Sectorización agua potable y planta potabilizadora La Paz",
+      "blurb_es": "water · Sheinbaum · La Paz",
+      "blurb_en": "water · Sheinbaum · La Paz",
+      "tags": [
+        "water",
+        "Sheinbaum",
+        "CONAGUA",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-005",
+      "href": "/proyectos-federales/?q=FED-AGU-005",
+      "title_es": "PTAR Loreto (rehabilitación/construcción)",
+      "title_en": "PTAR Loreto (rehabilitación/construcción)",
+      "blurb_es": "water · Sheinbaum · Loreto",
+      "blurb_en": "water · Sheinbaum · Loreto",
+      "tags": [
+        "water",
+        "Sheinbaum",
+        "CONAGUA",
+        "loreto"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-006",
+      "href": "/proyectos-federales/?q=FED-AGU-006",
+      "title_es": "PTAR La Sonoreña I (rehab) y Sonoreña II (construcción) Los Cabos",
+      "title_en": "PTAR La Sonoreña I (rehab) y Sonoreña II (construcción) Los Cabos",
+      "blurb_es": "water · Sheinbaum · Los Cabos",
+      "blurb_en": "water · Sheinbaum · Los Cabos",
+      "tags": [
+        "water",
+        "Sheinbaum",
+        "CONAGUA",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-007",
+      "href": "/proyectos-federales/?q=FED-AGU-007",
+      "title_es": "Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "title_en": "Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "blurb_es": "water · Sheinbaum · Estatal (5 municipios)",
+      "blurb_en": "water · Sheinbaum · Estatal (5 municipios)",
+      "tags": [
+        "water",
+        "Sheinbaum",
+        "CONAGUA",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AGU-008",
+      "href": "/proyectos-federales/?q=FED-AGU-008",
+      "title_es": "Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "title_en": "Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "blurb_es": "water · AMLO · La Paz; Los Cabos; otros",
+      "blurb_en": "water · AMLO · La Paz; Los Cabos; otros",
+      "tags": [
+        "water",
+        "AMLO",
+        "CONAGUA / SEMARNAT",
+        "los_cabos",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-CAR-001",
+      "href": "/proyectos-federales/?q=FED-CAR-001",
+      "title_es": "Ampliación carretera acceso puerto / libramientos La Paz (entrega AMLO)",
+      "title_en": "Ampliación carretera acceso puerto / libramientos La Paz (entrega AMLO)",
+      "blurb_es": "roads · AMLO · La Paz",
+      "blurb_en": "roads · AMLO · La Paz",
+      "tags": [
+        "roads",
+        "AMLO",
+        "SICT",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-CAR-002",
+      "href": "/proyectos-federales/?q=FED-CAR-002",
+      "title_es": "Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "title_en": "Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "blurb_es": "roads · Sheinbaum · Los Cabos",
+      "blurb_en": "roads · Sheinbaum · Los Cabos",
+      "tags": [
+        "roads",
+        "Sheinbaum",
+        "SICT",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-CAR-003",
+      "href": "/proyectos-federales/?q=FED-CAR-003",
+      "title_es": "Repavimentación / conservación Carretera Transpeninsular BCS",
+      "title_en": "Repavimentación / conservación Carretera Transpeninsular BCS",
+      "blurb_es": "roads · Sheinbaum · Estatal",
+      "blurb_en": "roads · Sheinbaum · Estatal",
+      "tags": [
+        "roads",
+        "Sheinbaum",
+        "SICT",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-CAR-004",
+      "href": "/proyectos-federales/?q=FED-CAR-004",
+      "title_es": "Programa SICT atención carreteras BCS (~350 MDP)",
+      "title_en": "Programa SICT atención carreteras BCS (~350 MDP)",
+      "blurb_es": "roads · Sheinbaum · Estatal",
+      "blurb_en": "roads · Sheinbaum · Estatal",
+      "tags": [
+        "roads",
+        "Sheinbaum",
+        "SICT",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-PUE-001",
+      "href": "/proyectos-federales/?q=FED-PUE-001",
+      "title_es": "ASIPONA Cabo San Lucas — transferencia a SEMAR (fin régimen FONATUR)",
+      "title_en": "ASIPONA Cabo San Lucas — transferencia a SEMAR (fin régimen FONATUR)",
+      "blurb_es": "ports · AMLO · Los Cabos",
+      "blurb_en": "ports · AMLO · Los Cabos",
+      "tags": [
+        "ports",
+        "AMLO",
+        "SEMAR / ASIPONA",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-PUE-002",
+      "href": "/proyectos-federales/?q=FED-PUE-002",
+      "title_es": "API BCS — vigencia/addendum concesión federal (Pichilingue y otros)",
+      "title_en": "API BCS — vigencia/addendum concesión federal (Pichilingue y otros)",
+      "blurb_es": "ports · AMLO · La Paz; Loreto; Mulegé; Comondú",
+      "blurb_en": "ports · AMLO · La Paz; Loreto; Mulegé; Comondú",
+      "tags": [
+        "ports",
+        "AMLO",
+        "SICT / API BCS",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AER-001",
+      "href": "/proyectos-federales/?q=FED-AER-001",
+      "title_es": "Marco AFAC aeropuertos SJD / LAP / LTO (sin megaproyecto nuevo catalogado)",
+      "title_en": "Marco AFAC aeropuertos SJD / LAP / LTO (sin megaproyecto nuevo catalogado)",
+      "blurb_es": "airports · ambos · Los Cabos; La Paz; Loreto",
+      "blurb_en": "airports · ambos · Los Cabos; La Paz; Loreto",
+      "tags": [
+        "airports",
+        "ambos",
+        "AFAC / SICT",
+        "los_cabos",
+        "la_paz",
+        "loreto"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-VIV-001",
+      "href": "/proyectos-federales/?q=FED-VIV-001",
+      "title_es": "Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "title_en": "Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "blurb_es": "housing · Sheinbaum · Estatal (prioridad Los Cabos)",
+      "blurb_en": "housing · Sheinbaum · Estatal (prioridad Los Cabos)",
+      "tags": [
+        "housing",
+        "Sheinbaum",
+        "CONAVI / INFONAVIT / SEDATU",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-SAL-001",
+      "href": "/proyectos-federales/?q=FED-SAL-001",
+      "title_es": "Hospital General Regional IMSS Los Cabos (nuevo)",
+      "title_en": "Hospital General Regional IMSS Los Cabos (nuevo)",
+      "blurb_es": "health · Sheinbaum · Los Cabos",
+      "blurb_en": "health · Sheinbaum · Los Cabos",
+      "tags": [
+        "health",
+        "Sheinbaum",
+        "IMSS",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-SAL-002",
+      "href": "/proyectos-federales/?q=FED-SAL-002",
+      "title_es": "Hospital General Santa Rosalía (IMSS-Bienestar) — inauguración",
+      "title_en": "Hospital General Santa Rosalía (IMSS-Bienestar) — inauguración",
+      "blurb_es": "health · ambos · Mulegé",
+      "blurb_en": "health · ambos · Mulegé",
+      "tags": [
+        "health",
+        "ambos",
+        "IMSS-Bienestar",
+        "mulege"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-EDU-001",
+      "href": "/proyectos-federales/?q=FED-EDU-001",
+      "title_es": "500 plazas docentes nuevas BCS",
+      "title_en": "500 plazas docentes nuevas BCS",
+      "blurb_es": "education · Sheinbaum · Estatal",
+      "blurb_en": "education · Sheinbaum · Estatal",
+      "tags": [
+        "education",
+        "Sheinbaum",
+        "SEP / USICAMM",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-EDU-002",
+      "href": "/proyectos-federales/?q=FED-EDU-002",
+      "title_es": "Campus Universidad Nacional Rosario Castellanos en La Paz",
+      "title_en": "Campus Universidad Nacional Rosario Castellanos en La Paz",
+      "blurb_es": "education · Sheinbaum · La Paz",
+      "blurb_en": "education · Sheinbaum · La Paz",
+      "tags": [
+        "education",
+        "Sheinbaum",
+        "Gobierno de México / UNRC",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-TUR-001",
+      "href": "/proyectos-federales/?q=FED-TUR-001",
+      "title_es": "Pueblos Mágicos (programa federal) — localidades BCS",
+      "title_en": "Pueblos Mágicos (programa federal) — localidades BCS",
+      "blurb_es": "tourism · ambos · Loreto; Todos Santos; Mulegé; otros",
+      "blurb_en": "tourism · ambos · Loreto; Todos Santos; Mulegé; otros",
+      "tags": [
+        "tourism",
+        "ambos",
+        "SECTUR",
+        "loreto",
+        "mulege",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-TUR-002",
+      "href": "/proyectos-federales/?q=FED-TUR-002",
+      "title_es": "Renombre Glorieta Fonatur → Glorieta de las Mujeres Libres de BCS",
+      "title_en": "Renombre Glorieta Fonatur → Glorieta de las Mujeres Libres de BCS",
+      "blurb_es": "tourism · Sheinbaum · Los Cabos",
+      "blurb_en": "tourism · Sheinbaum · Los Cabos",
+      "tags": [
+        "tourism",
+        "Sheinbaum",
+        "Presidencia / municipio",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-MIN-001",
+      "href": "/proyectos-federales/?q=FED-MIN-001",
+      "title_es": "Mina Los Cardones — rechazo AMLO y anulación autorización SEMARNAT",
+      "title_en": "Mina Los Cardones — rechazo AMLO y anulación autorización SEMARNAT",
+      "blurb_es": "mining · ambos · La Paz (Sierra La Laguna)",
+      "blurb_en": "mining · ambos · La Paz (Sierra La Laguna)",
+      "tags": [
+        "mining",
+        "ambos",
+        "SEMARNAT",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-MIN-002",
+      "href": "/proyectos-federales/?q=FED-MIN-002",
+      "title_es": "Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "title_en": "Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "blurb_es": "mining · ambos · Comondú / Golfo de Ulloa",
+      "blurb_en": "mining · ambos · Comondú / Golfo de Ulloa",
+      "tags": [
+        "mining",
+        "ambos",
+        "SEMARNAT / Economía",
+        "comondu"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-MIN-003",
+      "href": "/proyectos-federales/?q=FED-MIN-003",
+      "title_es": "Exportadora de Sal (ESSA) Guerrero Negro — nacionalización (compra 49% Mitsubishi)",
+      "title_en": "Exportadora de Sal (ESSA) Guerrero Negro — nacionalización (compra 49% Mitsubishi)",
+      "blurb_es": "mining · AMLO · Mulegé (Guerrero Negro)",
+      "blurb_en": "mining · AMLO · Mulegé (Guerrero Negro)",
+      "tags": [
+        "mining",
+        "AMLO",
+        "Gobierno de México / ESSA",
+        "mulege"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-AMB-001",
+      "href": "/proyectos-federales/?q=FED-AMB-001",
+      "title_es": "ANP / decretos ambientales federales con efecto en BCS (marco)",
+      "title_en": "ANP / decretos ambientales federales con efecto en BCS (marco)",
+      "blurb_es": "environment · ambos · Estatal",
+      "blurb_en": "environment · ambos · Estatal",
+      "tags": [
+        "environment",
+        "ambos",
+        "SEMARNAT / CONANP",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-SOC-001",
+      "href": "/proyectos-federales/?q=FED-SOC-001",
+      "title_es": "Programas para el Bienestar — inversión territorial BCS 2025",
+      "title_en": "Programas para el Bienestar — inversión territorial BCS 2025",
+      "blurb_es": "social · Sheinbaum · Estatal",
+      "blurb_en": "social · Sheinbaum · Estatal",
+      "tags": [
+        "social",
+        "Sheinbaum",
+        "Bienestar / Presidencia",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-SOC-002",
+      "href": "/proyectos-federales/?q=FED-SOC-002",
+      "title_es": "Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+      "title_en": "Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+      "blurb_es": "social · ambos · Estatal",
+      "blurb_en": "social · ambos · Estatal",
+      "tags": [
+        "social",
+        "ambos",
+        "Bienestar / SEDATU",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-INT-001",
+      "href": "/proyectos-federales/?q=FED-INT-001",
+      "title_es": "Conectividad satelital Aldeas Inteligentes — Isla Santa Margarita",
+      "title_en": "Conectividad satelital Aldeas Inteligentes — Isla Santa Margarita",
+      "blurb_es": "internet · AMLO · Comondú (Isla Santa Margarita)",
+      "blurb_en": "internet · AMLO · Comondú (Isla Santa Margarita)",
+      "tags": [
+        "internet",
+        "AMLO",
+        "SICT",
+        "comondu"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-INT-002",
+      "href": "/proyectos-federales/?q=FED-INT-002",
+      "title_es": "CFE TEIT / Internet para el Bienestar — despliegue BCS",
+      "title_en": "CFE TEIT / Internet para el Bienestar — despliegue BCS",
+      "blurb_es": "internet · ambos · Estatal",
+      "blurb_en": "internet · ambos · Estatal",
+      "tags": [
+        "internet",
+        "ambos",
+        "CFE TEIT",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-SEG-001",
+      "href": "/proyectos-federales/?q=FED-SEG-001",
+      "title_es": "Infraestructura Guardia Nacional en BCS",
+      "title_en": "Infraestructura Guardia Nacional en BCS",
+      "blurb_es": "security · ambos · Estatal",
+      "blurb_en": "security · ambos · Estatal",
+      "tags": [
+        "security",
+        "ambos",
+        "Guardia Nacional / SEDENA / SEMAR",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-PES-001",
+      "href": "/proyectos-federales/?q=FED-PES-001",
+      "title_es": "Programas CONAPESCA / apoyo pesca-acuacultura BCS (marco)",
+      "title_en": "Programas CONAPESCA / apoyo pesca-acuacultura BCS (marco)",
+      "blurb_es": "fisheries · ambos · Estatal (costero)",
+      "blurb_en": "fisheries · ambos · Estatal (costero)",
+      "tags": [
+        "fisheries",
+        "ambos",
+        "CONAPESCA",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-OTR-001",
+      "href": "/proyectos-federales/?q=FED-OTR-001",
+      "title_es": "Modernización transporte público La Paz (autobuses anunciados 2026)",
+      "title_en": "Modernización transporte público La Paz (autobuses anunciados 2026)",
+      "blurb_es": "other · Sheinbaum · La Paz",
+      "blurb_en": "other · Sheinbaum · La Paz",
+      "tags": [
+        "other",
+        "Sheinbaum",
+        "Gobierno federal / estatal",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "federal_project",
+      "id": "FED-OTR-002",
+      "href": "/proyectos-federales/?q=FED-OTR-002",
+      "title_es": "Centros LIBRE (mujeres) — uno por municipio",
+      "title_en": "Centros LIBRE (mujeres) — uno por municipio",
+      "blurb_es": "other · Sheinbaum · Estatal (5 municipios)",
+      "blurb_en": "other · Sheinbaum · Estatal (5 municipios)",
+      "tags": [
+        "other",
+        "Sheinbaum",
+        "INMUJERES / Bienestar",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_bcs",
+      "href": "/ontologia/?node=terr_bcs",
+      "title_es": "Baja California Sur (estado)",
+      "title_en": "Baja California Sur (state)",
+      "blurb_es": "Unidad estatal del programa 2026–2056. Techo regulatorio vía POERBCS y PED; red energética aislada (SIBCS).",
+      "blurb_en": "State unit of the 2026–2056 programme. Regulatory ceiling via POERBCS and PED; isolated power grid (SIBCS).",
+      "tags": [
+        "Territory",
+        "terr_bcs"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_los_cabos",
+      "href": "/ontologia/?node=terr_los_cabos",
+      "title_es": "Municipio de Los Cabos",
+      "title_en": "Los Cabos Municipality",
+      "blurb_es": "Polo de mayor presión turística-residencial. PDU 2040, OOMSAPAS Cabos y acuíferos 0317/0319 en déficit.",
+      "blurb_en": "Highest tourism–residential pressure pole. PDU 2040, OOMSAPAS Cabos and aquifers 0317/0319 in deficit.",
+      "tags": [
+        "Territory",
+        "terr_los_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_la_paz",
+      "href": "/ontologia/?node=terr_la_paz",
+      "title_es": "Municipio de La Paz",
+      "title_en": "La Paz Municipality",
+      "blurb_es": "Segundo polo demográfico y capital política. Acuífero 0324 en déficit; PDUCP Centro de Población.",
+      "blurb_en": "Second demographic pole and political capital. Aquifer 0324 in deficit; PDUCP Population Centre.",
+      "tags": [
+        "Territory",
+        "terr_la_paz"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_loreto",
+      "href": "/ontologia/?node=terr_loreto",
+      "title_es": "Municipio de Loreto",
+      "title_en": "Loreto Municipality",
+      "blurb_es": "Polo norte-centro ligado a PN Bahía de Loreto; menor volumen absoluto pero alta sensibilidad ANP.",
+      "blurb_en": "North-central pole tied to Bahía de Loreto NP; lower absolute volume but high ANP sensitivity.",
+      "tags": [
+        "Territory",
+        "terr_loreto"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_comondu",
+      "href": "/ontologia/?node=terr_comondu",
+      "title_es": "Municipio de Comondú",
+      "title_en": "Comondú Municipality",
+      "blurb_es": "Municipio agropecuario (Valle Santo Domingo). Catálogo ITER + fiscal municipal en 13_territorial_intelligence; sin PDU/zoning en disco. No inventar DMA/energía ",
+      "blurb_en": "Agricultural municipality (Valle Santo Domingo). ITER catalogue + municipal fiscal in 13_territorial_intelligence; no PDU/zoning on disk. Do not invent DMA/ener",
+      "tags": [
+        "Territory",
+        "terr_comondu"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_mulege",
+      "href": "/ontologia/?node=terr_mulege",
+      "title_es": "Municipio de Mulegé",
+      "title_en": "Mulegé Municipality",
+      "blurb_es": "Municipio de mayor superficie; minería/pesca y ANP Vizcaíno condicionan corredores. Catálogo ITER + fiscal en TI; sin PDU en disco. Capacidad agua–energía no re",
+      "blurb_en": "Largest-area municipality; mining/fishing and Vizcaíno ANP condition corridors. ITER catalogue + fiscal in TI; no PDU on disk. Water–energy capacity not claimed",
+      "tags": [
+        "Territory",
+        "terr_mulege"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_corredor_cabos",
+      "href": "/ontologia/?node=terr_corredor_cabos",
+      "title_es": "Corredor Cabo San Lucas–San José del Cabo",
+      "title_en": "Cabo San Lucas–San José del Cabo corridor",
+      "blurb_es": "Eje hotelero-residencial donde se concentran demanda hídrica, picos eléctricos y presión sobre PDU/POEL.",
+      "blurb_en": "Hotel–residential axis concentrating water demand, power peaks and pressure on PDU/POEL.",
+      "tags": [
+        "Territory",
+        "terr_corredor_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_todos_santos",
+      "href": "/ontologia/?node=terr_todos_santos",
+      "title_es": "Corredor Todos Santos–El Pescadero",
+      "title_en": "Todos Santos–El Pescadero corridor",
+      "blurb_es": "Franja La Paz con PSDU y acuífero 0313 en déficit; tensión entre turismo boutique y capacidad hídrica.",
+      "blurb_en": "La Paz fringe with PSDU and aquifer 0313 in deficit; tension between boutique tourism and water capacity.",
+      "tags": [
+        "Territory",
+        "terr_todos_santos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_anp_cabo_pulmo",
+      "href": "/ontologia/?node=terr_anp_cabo_pulmo",
+      "title_es": "Parque Nacional Cabo Pulmo",
+      "title_en": "Cabo Pulmo National Park",
+      "blurb_es": "Núcleo marino que cierra obra/minería/dragado en zona de influencia Cabos; candado ecológico CONANP.",
+      "blurb_en": "Marine core that closes construction/mining/dredging in the Cabos influence zone; CONANP ecological lock.",
+      "tags": [
+        "Territory",
+        "terr_anp_cabo_pulmo"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_anp_sierra_laguna",
+      "href": "/ontologia/?node=terr_anp_sierra_laguna",
+      "title_es": "Reserva de la Biosfera Sierra La Laguna",
+      "title_en": "Sierra La Laguna Biosphere Reserve",
+      "blurb_es": "Recarga crítica de acuíferos del sur y veto de usos en núcleo; puente capacidad ecológica–hídrica.",
+      "blurb_en": "Critical recharge for southern aquifers and use veto in the core; ecological–hydrological capacity bridge.",
+      "tags": [
+        "Territory",
+        "terr_anp_sierra_laguna"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_anp_vizcaino",
+      "href": "/ontologia/?node=terr_anp_vizcaino",
+      "title_es": "Reserva de la Biosfera El Vizcaíno",
+      "title_en": "El Vizcaíno Biosphere Reserve",
+      "blurb_es": "ANP de gran extensión en el norte; condiciona corredores y obras (p.ej. Transpeninsular Guerrero Negro–Vizcaíno).",
+      "blurb_en": "Large northern ANP; conditions corridors and works (e.g. Transpeninsular Guerrero Negro–Vizcaíno).",
+      "tags": [
+        "Territory",
+        "terr_anp_vizcaino"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_anp_loreto",
+      "href": "/ontologia/?node=terr_anp_loreto",
+      "title_es": "Parque Nacional Bahía de Loreto",
+      "title_en": "Bahía de Loreto National Park",
+      "blurb_es": "Candado marino-costero sobre el crecimiento de Loreto; programa de manejo CONANP vigente.",
+      "blurb_en": "Marine–coastal lock on Loreto growth; CONANP management programme in force.",
+      "tags": [
+        "Territory",
+        "terr_anp_loreto"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_poerbcs",
+      "href": "/ontologia/?node=inst_poerbcs",
+      "title_es": "POERBCS 2026",
+      "title_en": "POERBCS 2026",
+      "blurb_es": "Ordenamiento Ecológico Regional decretado (ene 2026). Fija UGAs estatales; SEPUIMM es rector. Techo sobre PDU/POEL.",
+      "blurb_en": "Regional Ecological Ordinance decreed (Jan 2026). Sets state UGAs; SEPUIMM is lead. Ceiling over PDU/POEL.",
+      "tags": [
+        "Instrument",
+        "inst_poerbcs"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_ped",
+      "href": "/ontologia/?node=inst_ped",
+      "title_es": "Plan Estatal de Desarrollo 2021–2027",
+      "title_en": "State Development Plan 2021–2027",
+      "blurb_es": "Agenda sexenal de gobierno; alinea SETUE/SEPUIMM pero no sustituye el techo ecológico del POER.",
+      "blurb_en": "Sexennial government agenda; aligns SETUE/SEPUIMM but does not replace the POER ecological ceiling.",
+      "tags": [
+        "Instrument",
+        "inst_ped"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_pdu_cabos",
+      "href": "/ontologia/?node=inst_pdu_cabos",
+      "title_es": "PDU 2040 Los Cabos",
+      "title_en": "PDU 2040 Los Cabos",
+      "blurb_es": "Instrumento municipal de usos de suelo (IMPLAN). Opera debajo del POERBCS; tensionado por DMA en déficit.",
+      "blurb_en": "Municipal land-use instrument (IMPLAN). Operates under POERBCS; strained by DMA in deficit.",
+      "tags": [
+        "Instrument",
+        "inst_pdu_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_pdu_lapaz",
+      "href": "/ontologia/?node=inst_pdu_lapaz",
+      "title_es": "PDUCP Centro de Población La Paz",
+      "title_en": "PDUCP La Paz Population Centre",
+      "blurb_es": "Plan de desarrollo urbano de la capital; debe coherenciar con POERBCS y DMA 0324.",
+      "blurb_en": "Urban development plan for the capital; must cohere with POERBCS and DMA 0324.",
+      "tags": [
+        "Instrument",
+        "inst_pdu_lapaz"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_poel_cabos",
+      "href": "/ontologia/?node=inst_poel_cabos",
+      "title_es": "POEL Los Cabos (convenio)",
+      "title_en": "POEL Los Cabos (agreement)",
+      "blurb_es": "Ordenamiento ecológico local en articulación con IMPLAN/SEPUIMM; puente municipal del POER.",
+      "blurb_en": "Local ecological ordinance in articulation with IMPLAN/SEPUIMM; municipal bridge of the POER.",
+      "tags": [
+        "Instrument",
+        "inst_poel_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_ley_aguas",
+      "href": "/ontologia/?node=inst_ley_aguas",
+      "title_es": "Ley de Aguas del Estado de BCS",
+      "title_en": "BCS State Water Law",
+      "blurb_es": "Marco estatal de agua; CEA y operadores municipales actúan bajo este techo junto con CONAGUA federal.",
+      "blurb_en": "State water framework; CEA and municipal operators act under this ceiling together with federal CONAGUA.",
+      "tags": [
+        "Instrument",
+        "inst_ley_aguas"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_prodesen",
+      "href": "/ontologia/?node=inst_prodesen",
+      "title_es": "PRODESEN 2024–2038",
+      "title_en": "PRODESEN 2024–2038",
+      "blurb_es": "Planeación nacional de electricidad (SENER). Para BCS define escenarios del sistema aislado frente al SIN.",
+      "blurb_en": "National electricity planning (SENER). For BCS defines scenarios of the isolated system versus the SIN.",
+      "tags": [
+        "Instrument",
+        "inst_prodesen"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_pamrnt",
+      "href": "/ontologia/?node=inst_pamrnt",
+      "title_es": "PAMRNT CENACE 2025–2039",
+      "title_en": "PAMRNT CENACE 2025–2039",
+      "blurb_es": "Programa de ampliación y modernización de la red; cuellos de transmisión/distribución del SIBCS.",
+      "blurb_en": "Grid expansion and modernisation programme; SIBCS transmission/distribution bottlenecks.",
+      "tags": [
+        "Instrument",
+        "inst_pamrnt"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_acuifero_0317",
+      "href": "/ontologia/?node=rc_acuifero_0317",
+      "title_es": "Acuífero Cabo San Lucas (0317)",
+      "title_en": "Cabo San Lucas aquifer (0317)",
+      "blurb_es": "DMA 2024 en déficit severo (~−24 hm³/año). Sin volumen para nuevas concesiones; candado duro sobre el corredor.",
+      "blurb_en": "DMA 2024 in severe deficit (~−24 hm³/year). No volume for new concessions; hard lock on the corridor.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_acuifero_0317"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_acuifero_0319",
+      "href": "/ontologia/?node=rc_acuifero_0319",
+      "title_es": "Acuífero San José del Cabo (0319)",
+      "title_en": "San José del Cabo aquifer (0319)",
+      "blurb_es": "DMA en déficit (~−12.5 hm³/año). Alimenta SJD y parte del corredor; presión hotelera-residencial directa.",
+      "blurb_en": "DMA in deficit (~−12.5 hm³/year). Feeds SJD and part of the corridor; direct hotel–residential pressure.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_acuifero_0319"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_acuifero_0324",
+      "href": "/ontologia/?node=rc_acuifero_0324",
+      "title_es": "Acuífero La Paz (0324)",
+      "title_en": "La Paz aquifer (0324)",
+      "blurb_es": "DMA en déficit (~−13.5 hm³/año). Condiciona expansión de la capital y corredor Todos Santos vía oferta regional.",
+      "blurb_en": "DMA in deficit (~−13.5 hm³/year). Conditions capital expansion and Todos Santos corridor via regional supply.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_acuifero_0324"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_acuifero_0313",
+      "href": "/ontologia/?node=rc_acuifero_0313",
+      "title_es": "Acuífero Todos Santos (0313)",
+      "title_en": "Todos Santos aquifer (0313)",
+      "blurb_es": "DMA en déficit (~−3 hm³/año). Pequeño en volumen absoluto pero crítico para el corredor boutique.",
+      "blurb_en": "DMA in deficit (~−3 hm³/year). Small in absolute volume but critical for the boutique corridor.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_acuifero_0313"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_sibcs",
+      "href": "/ontologia/?node=rc_sibcs",
+      "title_es": "Sistema Interconectado Baja California Sur (SIBCS)",
+      "title_en": "Baja California Sur Interconnected System (SIBCS)",
+      "blurb_es": "Red aislada fuera del SIN. Pico de referencia 688.5 MW (sep 2024) en alerta; techo CFE/CENACE.",
+      "blurb_en": "Isolated grid outside the SIN. Reference peak 688.5 MW (Sep 2024) on alert; CFE/CENACE ceiling.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_sibcs"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_aeropuerto_sjd",
+      "href": "/ontologia/?node=rc_aeropuerto_sjd",
+      "title_es": "Aeropuerto Internacional de Los Cabos (SJD)",
+      "title_en": "Los Cabos International Airport (SJD)",
+      "blurb_es": "Principal puerta de demanda turística. Concesión GAP ~hasta 2048; brownfield que condiciona picos estacionales.",
+      "blurb_en": "Main tourism-demand gateway. GAP concession ~until 2048; brownfield that conditions seasonal peaks.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_aeropuerto_sjd"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_aeropuerto_lap",
+      "href": "/ontologia/?node=rc_aeropuerto_lap",
+      "title_es": "Aeropuerto Internacional de La Paz (LAP)",
+      "title_en": "La Paz International Airport (LAP)",
+      "blurb_es": "Puerta secundaria estatal bajo concesión GAP; relevante para capital y conectividad norte-sur.",
+      "blurb_en": "Secondary state gateway under GAP concession; relevant for the capital and north–south connectivity.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_aeropuerto_lap"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_vivienda_cabos",
+      "href": "/ontologia/?node=rc_vivienda_cabos",
+      "title_es": "Capacidad habitacional Los Cabos",
+      "title_en": "Los Cabos housing capacity",
+      "blurb_es": "Stock y frontera de urbanización condicionados por PDU, agua y energía; proxy de “cuántas llaves”.",
+      "blurb_en": "Stock and urbanisation frontier conditioned by PDU, water and energy; proxy for 'how many keys'.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_vivienda_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dd_turismo_cabos",
+      "href": "/ontologia/?node=dd_turismo_cabos",
+      "title_es": "Turismo Los Cabos",
+      "title_en": "Los Cabos tourism",
+      "blurb_es": "Motor dominante de agua, energía y suelo en el corredor CSL–SJD. Sin balance de capacidad no hay meta de llaves.",
+      "blurb_en": "Dominant driver of water, energy and land in the CSL–SJD corridor. Without a capacity balance there is no keys target.",
+      "tags": [
+        "DemandDriver",
+        "dd_turismo_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dd_residencial_cabos",
+      "href": "/ontologia/?node=dd_residencial_cabos",
+      "title_es": "Residencial y second homes Los Cabos",
+      "title_en": "Los Cabos residential and second homes",
+      "blurb_es": "Demanda permanente/semipermanente que compite con hotelería por DMA y capacidad de red.",
+      "blurb_en": "Permanent/semi-permanent demand competing with hotels for DMA and grid capacity.",
+      "tags": [
+        "DemandDriver",
+        "dd_residencial_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dd_turismo_lapaz",
+      "href": "/ontologia/?node=dd_turismo_lapaz",
+      "title_es": "Turismo La Paz / Malecón",
+      "title_en": "La Paz / Malecón tourism",
+      "blurb_es": "Presión moderada vs Cabos pero sensible a acuífero 0324 y a narrativa de capital ecológica.",
+      "blurb_en": "Moderate pressure vs Cabos but sensitive to aquifer 0324 and an ecological-capital narrative.",
+      "tags": [
+        "DemandDriver",
+        "dd_turismo_lapaz"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dd_agro_santo_domingo",
+      "href": "/ontologia/?node=dd_agro_santo_domingo",
+      "title_es": "Agro Valle Santo Domingo",
+      "title_en": "Valle Santo Domingo agriculture",
+      "blurb_es": "Demanda histórica de riego bajo vedas y reglamentos DOF; anclada en Comondú (TI/strengths). No inventar DMA municipal aquí.",
+      "blurb_en": "Historical irrigation demand under DOF bans and regulations; anchored in Comondú (TI/strengths). Do not invent municipal DMA here.",
+      "tags": [
+        "DemandDriver",
+        "dd_agro_santo_domingo"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dd_eventos_foro",
+      "href": "/ontologia/?node=dd_eventos_foro",
+      "title_es": "Agenda Foro Mar de Cortés",
+      "title_en": "Foro Mar de Cortés agenda",
+      "blurb_es": "Convocatoria pública (nov) y plataforma de engagement; no cierra Etapa 1 pero acelera narrativa política.",
+      "blurb_en": "Public convening (Nov) and engagement platform; does not close Stage 1 but accelerates political narrative.",
+      "tags": [
+        "DemandDriver",
+        "dd_eventos_foro"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_escasez_agua",
+      "href": "/ontologia/?node=const_escasez_agua",
+      "title_es": "Escasez hídrica estructural (sur)",
+      "title_en": "Structural water scarcity (south)",
+      "blurb_es": "Cuatro acuíferos clave en déficit DMA. Veto de diseño sobre escenarios de crecimiento sin nueva oferta (desal/reúso).",
+      "blurb_en": "Four key aquifers in DMA deficit. Design veto on growth scenarios without new supply (desal/reuse).",
+      "tags": [
+        "Constraint",
+        "const_escasez_agua"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_dma_deficit",
+      "href": "/ontologia/?node=const_dma_deficit",
+      "title_es": "DMA en déficit (0313/0317/0319/0324)",
+      "title_en": "DMA in deficit (0313/0317/0319/0324)",
+      "blurb_es": "Disponibilidades CONAGUA sin margen para nuevas concesiones en polos de crecimiento.",
+      "blurb_en": "CONAGUA availabilities with no margin for new concessions at growth poles.",
+      "tags": [
+        "Constraint",
+        "const_dma_deficit"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_red_aislada",
+      "href": "/ontologia/?node=const_red_aislada",
+      "title_es": "Red eléctrica aislada (SIBCS)",
+      "title_en": "Isolated power grid (SIBCS)",
+      "blurb_es": "BCS fuera del SIN; picos en alerta. Planear hotelería/residencial sin PAMRNT/PRODESEN es riesgo central.",
+      "blurb_en": "BCS outside the SIN; peaks on alert. Planning hotels/residential without PAMRNT/PRODESEN is a central risk.",
+      "tags": [
+        "Constraint",
+        "const_red_aislada"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_anp_nucleos",
+      "href": "/ontologia/?node=const_anp_nucleos",
+      "title_es": "Núcleos ANP como veto de uso",
+      "title_en": "ANP cores as use veto",
+      "blurb_es": "Cabo Pulmo, Vizcaíno, Sierra La Laguna y Loreto cierran obra/minería/dragado en núcleos; no son anexos decorativos.",
+      "blurb_en": "Cabo Pulmo, Vizcaíno, Sierra La Laguna and Loreto close construction/mining/dredging in cores; they are not decorative annexes.",
+      "tags": [
+        "Constraint",
+        "const_anp_nucleos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_tenencia",
+      "href": "/ontologia/?node=const_tenencia",
+      "title_es": "Tenencia irregular / conflicto de tierra",
+      "title_en": "Irregular tenure / land conflict",
+      "blurb_es": "Limitante recurrente en expansión periurbana y corredores; aparece en cartografía PDU (p.ej. Los Barriles).",
+      "blurb_en": "Recurring limit on peri-urban expansion and corridors; appears in PDU mapping (e.g. Los Barriles).",
+      "tags": [
+        "Constraint",
+        "const_tenencia"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_ciclo_politico",
+      "href": "/ontologia/?node=const_ciclo_politico",
+      "title_es": "Ciclo político estatal/municipal",
+      "title_en": "State/municipal political cycle",
+      "blurb_es": "Ventana PED 2021–2027 y calendarios municipales condicionan Commitment, Foro y ritmo de decretos.",
+      "blurb_en": "PED 2021–2027 window and municipal calendars condition Commitment, Forum and decree pace.",
+      "tags": [
+        "Constraint",
+        "const_ciclo_politico"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_sepuimm",
+      "href": "/ontologia/?node=actor_sepuimm",
+      "title_es": "SEPUIMM",
+      "title_en": "SEPUIMM",
+      "blurb_es": "Rector del POERBCS y alineación territorial estatal. Subgrupo F+P: State Level — SEPUIMM.",
+      "blurb_en": "Lead of POERBCS and state territorial alignment. F+P subgroup: State Level — SEPUIMM.",
+      "tags": [
+        "Actor",
+        "actor_sepuimm"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_setues",
+      "href": "/ontologia/?node=actor_setues",
+      "title_es": "SETUE (turismo / economía estatal)",
+      "title_en": "SETUE (state tourism / economy)",
+      "blurb_es": "Alinea agenda turística-económica al horizonte largo; puente con gobernación y Foro.",
+      "blurb_en": "Aligns tourism–economic agenda to the long horizon; bridge with governorship and Forum.",
+      "tags": [
+        "Actor",
+        "actor_setues"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_conagua",
+      "href": "/ontologia/?node=actor_conagua",
+      "title_es": "CONAGUA",
+      "title_en": "CONAGUA",
+      "blurb_es": "Autoridad federal de DMA, vedas y concesiones. Fuente de verdad del candado hídrico.",
+      "blurb_en": "Federal authority on DMA, bans and concessions. Source of truth for the water lock.",
+      "tags": [
+        "Actor",
+        "actor_conagua"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_cea",
+      "href": "/ontologia/?node=actor_cea",
+      "title_es": "CEA BCS",
+      "title_en": "CEA BCS",
+      "blurb_es": "Comisión estatal de agua; articula Ley de Aguas, PTAR y desalación con operadores municipales.",
+      "blurb_en": "State water commission; articulates Water Law, WWTP and desalination with municipal operators.",
+      "tags": [
+        "Actor",
+        "actor_cea"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_oomsapas_cabos",
+      "href": "/ontologia/?node=actor_oomsapas_cabos",
+      "title_es": "OOMSAPAS Los Cabos",
+      "title_en": "OOMSAPAS Los Cabos",
+      "blurb_es": "Operador municipal de agua/drenaje en el polo de mayor déficit. Nodo clave en rutas capacidad→PDU.",
+      "blurb_en": "Municipal water/sewer operator at the highest-deficit pole. Key node on capacity→PDU paths.",
+      "tags": [
+        "Actor",
+        "actor_oomsapas_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_cfe",
+      "href": "/ontologia/?node=actor_cfe",
+      "title_es": "CFE (generación / transmisión / distribución)",
+      "title_en": "CFE (generation / transmission / distribution)",
+      "blurb_es": "Opera el SIBCS; concentra cuellos de botella de capacidad y expansión.",
+      "blurb_en": "Operates the SIBCS; concentrates capacity and expansion bottlenecks.",
+      "tags": [
+        "Actor",
+        "actor_cfe"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_cenace",
+      "href": "/ontologia/?node=actor_cenace",
+      "title_es": "CENACE",
+      "title_en": "CENACE",
+      "blurb_es": "Operador del sistema y PAMRNT; define ampliaciones de red del SIBCS.",
+      "blurb_en": "System operator and PAMRNT; defines SIBCS grid expansions.",
+      "tags": [
+        "Actor",
+        "actor_cenace"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_conanp",
+      "href": "/ontologia/?node=actor_conanp",
+      "title_es": "CONANP",
+      "title_en": "CONANP",
+      "blurb_es": "Administra programas de manejo de ANP; garante del candado ecológico.",
+      "blurb_en": "Administers ANP management programmes; guarantor of the ecological lock.",
+      "tags": [
+        "Actor",
+        "actor_conanp"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_foro",
+      "href": "/ontologia/?node=actor_foro",
+      "title_es": "Foro Mar de Cortés",
+      "title_en": "Foro Mar de Cortés",
+      "blurb_es": "Plataforma de convocación y lanzamiento público (nov). Steering: Project Governance.",
+      "blurb_en": "Convening and public launch platform (Nov). Steering: Project Governance.",
+      "tags": [
+        "Actor",
+        "actor_foro"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_fp",
+      "href": "/ontologia/?node=actor_fp",
+      "title_es": "Foster + Partners (equipo territorial)",
+      "title_en": "Foster + Partners (territorial team)",
+      "blurb_es": "Lead de Territorial Development / Vision & Spatial Framework; custodio metodológico del shadow programme.",
+      "blurb_en": "Lead for Territorial Development / Vision & Spatial Framework; methodological custodian of the shadow programme.",
+      "tags": [
+        "Actor",
+        "actor_fp"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_gobernador",
+      "href": "/ontologia/?node=actor_gobernador",
+      "title_es": "Gobernador del Estado (Víctor M. Castro Cosío)",
+      "title_en": "State Governor (Víctor M. Castro Cosío)",
+      "blurb_es": "Buy-in estatal y firma del Commitment Agreement; nodo del ciclo político.",
+      "blurb_en": "State buy-in and Commitment Agreement signature; political-cycle node.",
+      "tags": [
+        "Actor",
+        "actor_gobernador"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_ayunt_cabos",
+      "href": "/ontologia/?node=actor_ayunt_cabos",
+      "title_es": "Ayuntamiento de Los Cabos",
+      "title_en": "Los Cabos City Council",
+      "blurb_es": "Permisos y presión de crecimiento más alta del estado; alinea PDU/POEL locales.",
+      "blurb_en": "Highest growth permits and pressure in the state; aligns local PDU/POEL.",
+      "tags": [
+        "Actor",
+        "actor_ayunt_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_ayunt_lapaz",
+      "href": "/ontologia/?node=actor_ayunt_lapaz",
+      "title_es": "Ayuntamiento de La Paz",
+      "title_en": "La Paz City Council",
+      "blurb_es": "Segundo polo; PDUCP y narrativa de capital. Steering: Political Stakeholders.",
+      "blurb_en": "Second pole; PDUCP and capital narrative. Steering: Political Stakeholders.",
+      "tags": [
+        "Actor",
+        "actor_ayunt_lapaz"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_ayunt_comondu",
+      "href": "/ontologia/?node=actor_ayunt_comondu",
+      "title_es": "Ayuntamiento de Comondú",
+      "title_en": "Comondú City Council",
+      "blurb_es": "Gobierno municipal; Ley de Ingresos 2026 documentada en TI fiscal. PMD citado en portal (PDF local pendiente).",
+      "blurb_en": "Municipal government; 2026 Revenue Law documented in TI fiscal. PMD cited on portal (local PDF pending).",
+      "tags": [
+        "Actor",
+        "actor_ayunt_comondu"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_ayunt_mulege",
+      "href": "/ontologia/?node=actor_ayunt_mulege",
+      "title_es": "Ayuntamiento de Mulegé",
+      "title_en": "Mulegé City Council",
+      "blurb_es": "Gobierno municipal; Ley de Ingresos 2026 y PMD 2024–2027 en disco (TI/plans). Sin reclamar unlock agua–energía.",
+      "blurb_en": "Municipal government; 2026 Revenue Law and PMD 2024–2027 on disk (TI/plans). Does not claim water–energy unlock.",
+      "tags": [
+        "Actor",
+        "actor_ayunt_mulege"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "actor_implan_cabos",
+      "href": "/ontologia/?node=actor_implan_cabos",
+      "title_es": "IMPLAN Los Cabos",
+      "title_en": "IMPLAN Los Cabos",
+      "blurb_es": "Autoridad técnica del PDU 2040 y convenio POEL; Municipal Planning Authorities.",
+      "blurb_en": "Technical authority for PDU 2040 and POEL agreement; Municipal Planning Authorities.",
+      "tags": [
+        "Actor",
+        "actor_implan_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_desal_cabos",
+      "href": "/ontologia/?node=proj_desal_cabos",
+      "title_es": "Desaladora Los Cabos 250 lps (APP)",
+      "title_en": "Los Cabos desalination plant 250 lps (PPP)",
+      "blurb_es": "Proyecto APP documentado (DOF/Proyectos México). Candidato a aliviar déficit — no a borrar el candado DMA.",
+      "blurb_en": "Documented PPP project (DOF/Proyectos México). Candidate to ease deficit — not to erase the DMA lock.",
+      "tags": [
+        "Project",
+        "proj_desal_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_transpeninsular",
+      "href": "/ontologia/?node=proj_transpeninsular",
+      "title_es": "Carretera Transpeninsular (ensanches)",
+      "title_en": "Transpeninsular Highway (widenings)",
+      "blurb_es": "Columna vial del estado; tramos (p.ej. Guerrero Negro–Vizcaíno) condicionados por ANP y presupuesto.",
+      "blurb_en": "State road spine; segments (e.g. Guerrero Negro–Vizcaíno) conditioned by ANP and budget.",
+      "tags": [
+        "Project",
+        "proj_transpeninsular"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_commitment",
+      "href": "/ontologia/?node=proj_commitment",
+      "title_es": "Commitment Agreement (programa)",
+      "title_en": "Commitment Agreement (programme)",
+      "blurb_es": "Acuerdo público-privado objetivo del Steering; depende de balances de capacidad y ventana política.",
+      "blurb_en": "Public–private agreement targeted by Steering; depends on capacity balances and political window.",
+      "tags": [
+        "Project",
+        "proj_commitment"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_dma",
+      "href": "/ontologia/?node=ev_dma",
+      "title_es": "Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "title_en": "CONAGUA DMA updates (southern aquifers)",
+      "blurb_es": "Acuerdos y actualizaciones 2023–2024 de DMA para 0313/0317/0319/0324 y vecinos. Base numérica del candado hídrico.",
+      "blurb_en": "2023–2024 DMA agreements and updates for 0313/0317/0319/0324 and neighbours. Numerical basis of the water lock.",
+      "tags": [
+        "Evidence",
+        "ev_dma"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_prodesen",
+      "href": "/ontologia/?node=ev_prodesen",
+      "title_es": "PRODESEN / PAMRNT / PLADESE (paquete energía)",
+      "title_en": "PRODESEN / PAMRNT / PLADESE (energy package)",
+      "blurb_es": "Documentos SENER/CENACE en 03_energy y data lake; techo y expansión del SIBCS.",
+      "blurb_en": "SENER/CENACE documents in 03_energy and data lake; SIBCS ceiling and expansion.",
+      "tags": [
+        "Evidence",
+        "ev_prodesen"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_poerbcs",
+      "href": "/ontologia/?node=ev_poerbcs",
+      "title_es": "Expediente POERBCS / POETBCS (caracterización–pronóstico)",
+      "title_en": "POERBCS / POETBCS dossier (characterisation–forecast)",
+      "blurb_es": "Informes SEPUIMM y decreto 2026 en 01_planning; UGAs como input regulatorio.",
+      "blurb_en": "SEPUIMM reports and 2026 decree in 01_planning; UGAs as regulatory input.",
+      "tags": [
+        "Evidence",
+        "ev_poerbcs"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_anp_pm",
+      "href": "/ontologia/?node=ev_anp_pm",
+      "title_es": "Programas de manejo CONANP (ANP BCS)",
+      "title_en": "CONANP management programmes (BCS ANP)",
+      "blurb_es": "Decretos y PM de Cabo Pulmo, Vizcaíno, Sierra La Laguna, Loreto en 06_environment.",
+      "blurb_en": "Decrees and MPs for Cabo Pulmo, Vizcaíno, Sierra La Laguna, Loreto in 06_environment.",
+      "tags": [
+        "Evidence",
+        "ev_anp_pm"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_stakeholders",
+      "href": "/ontologia/?node=ev_stakeholders",
+      "title_es": "Matriz de actores F+P / Foro",
+      "title_en": "F+P / Forum actor matrix",
+      "blurb_es": "Listas y matrices en 09_shadow_programme y packs data lake Steering/TAG/Foro.",
+      "blurb_en": "Lists and matrices in 09_shadow_programme and Steering/TAG/Forum data-lake packs.",
+      "tags": [
+        "Evidence",
+        "ev_stakeholders"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_desal_app",
+      "href": "/ontologia/?node=ev_desal_app",
+      "title_es": "Ficha APP Desaladora Los Cabos 250 lps",
+      "title_en": "Los Cabos desalination PPP 250 lps factsheet",
+      "blurb_es": "Convocatoria DOF y ficha Proyectos México; evidencia de readiness de infraestructura hídrica.",
+      "blurb_en": "DOF call and Proyectos México factsheet; evidence of water-infrastructure readiness.",
+      "tags": [
+        "Evidence",
+        "ev_desal_app"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_acuifero_0320",
+      "href": "/ontologia/?node=rc_acuifero_0320",
+      "title_es": "Acuífero Santiago (0320)",
+      "title_en": "Santiago aquifer (0320)",
+      "blurb_es": "DMA +0.30 hm³/año (~9.5 l/s) bajo veda 1954. CONAGUA lo nombra 'alternativa turística'; el número no licencia un polo. CENACE marca presión eléctrica en la mism",
+      "blurb_en": "DMA +0.30 hm³/year (~9.5 l/s) under 1954 ban. CONAGUA names it a 'tourism alternative'; the figure does not licence a pole. CENACE flags electrical pressure in ",
+      "tags": [
+        "ResourceCapacity",
+        "rc_acuifero_0320"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_acuifero_0318",
+      "href": "/ontologia/?node=rc_acuifero_0318",
+      "title_es": "Acuífero Cabo Pulmo (0318)",
+      "title_en": "Cabo Pulmo aquifer (0318)",
+      "blurb_es": "DMA en déficit (~−2.29 hm³/año). Cierra oferta subterránea en East Cape junto al candado ANP del parque.",
+      "blurb_en": "DMA in deficit (~−2.29 hm³/year). Closes groundwater supply on East Cape together with the park ANP lock.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_acuifero_0318"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_tx_lapaz_cabos",
+      "href": "/ontologia/?node=rc_tx_lapaz_cabos",
+      "title_es": "Compuerta transmisión La Paz→Los Cabos",
+      "title_en": "La Paz→Los Cabos transmission gate",
+      "blurb_es": "Límite operativo 237 MW (2×230 kV + 1×115 kV). 2024: 10 h sobre límite, 603 h >95%. Cuello que separa generación La Paz del corredor.",
+      "blurb_en": "Operational limit 237 MW (2×230 kV + 1×115 kV). 2024: 10 h over limit, 603 h >95%. Bottleneck separating La Paz generation from the corridor.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_tx_lapaz_cabos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_p23_bs1",
+      "href": "/ontologia/?node=proj_p23_bs1",
+      "title_es": "P23-BS1 Incremento transmisión La Paz–Los Cabos",
+      "title_en": "P23-BS1 La Paz–Los Cabos transmission increase",
+      "blurb_es": "Obra instruida CFE-Transmisión; fecha factible dic 2028 en PAMRNT. Habilita (no garantiza hoy) alivio de la compuerta 237 MW.",
+      "blurb_en": "CFE-Transmission instructed work; feasible date Dec 2028 in PAMRNT. Enables (does not guarantee today) relief of the 237 MW gate.",
+      "tags": [
+        "Project",
+        "proj_p23_bs1"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_veda_1954",
+      "href": "/ontologia/?node=inst_veda_1954",
+      "title_es": "Vedas federales 1954 (tipo III, región meridional BCS)",
+      "title_en": "Federal bans 1954 (type III, southern BCS region)",
+      "blurb_es": "DOF 2 y 6 jul 1954: extracciones limitadas / veda indefinida. Capa jurídica bajo la que operan los acuíferos del sur junto con DMA NOM-011.",
+      "blurb_en": "DOF 2 and 6 Jul 1954: limited extractions / indefinite ban. Legal layer under which southern aquifers operate together with DMA NOM-011.",
+      "tags": [
+        "Instrument",
+        "inst_veda_1954"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_intrusion_marina",
+      "href": "/ontologia/?node=const_intrusion_marina",
+      "title_es": "Intrusión marina (La Paz / Los Planes)",
+      "title_en": "Seawater intrusion (La Paz / Los Planes)",
+      "blurb_es": "Niveles bajo el mar medio y daño de calidad por sobreextracción. Candado de calidad además del déficit de volumen en 0324/0323.",
+      "blurb_en": "Levels below mean sea and quality damage from over-extraction. Quality lock in addition to volume deficit in 0324/0323.",
+      "tags": [
+        "Constraint",
+        "const_intrusion_marina"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_anp_apff_csl",
+      "href": "/ontologia/?node=terr_anp_apff_csl",
+      "title_es": "APFF Cabo San Lucas",
+      "title_en": "APFF Cabo San Lucas",
+      "blurb_es": "Área de Protección de Flora y Fauna (~3,996 ha, decreto 1973). Presente en capa CONANP 2025 y UGA BCS55PT del POER; PM texto aún gap.",
+      "blurb_en": "Flora and Fauna Protection Area (~3,996 ha, 1973 decree). Present in CONANP 2025 layer and POER UGA BCS55PT; management-plan text still a gap.",
+      "tags": [
+        "Territory",
+        "terr_anp_apff_csl"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_setue_ie",
+      "href": "/ontologia/?node=ev_setue_ie",
+      "title_es": "SETUE Información Estratégica (2020/2026)",
+      "title_en": "SETUE Strategic Information (2020/2026)",
+      "blurb_es": "Perfiles estatales y municipales (BCS, Los Cabos, La Paz; Loreto 2020). Demografía, turismo, aeropuerto — motor de demanda documentado por SETUE.",
+      "blurb_en": "State and municipal profiles (BCS, Los Cabos, La Paz; Loreto 2020). Demographics, tourism, airport — demand driver documented by SETUE.",
+      "tags": [
+        "Evidence",
+        "ev_setue_ie"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_fiscal_municipal",
+      "href": "/ontologia/?node=ev_fiscal_municipal",
+      "title_es": "Fiscal municipal / estatal (TI)",
+      "title_en": "Municipal / state fiscal (TI)",
+      "blurb_es": "Leyes de ingresos 2026 y Anexo I-33 2025 por municipio (incl. Comondú/Mulegé). Informa agenda/readiness fiscal — no desbloquea DMA ni SIBCS.",
+      "blurb_en": "2026 revenue laws and 2025 Anexo I-33 by municipality (incl. Comondú/Mulegé). Informs fiscal agenda/readiness — does not unlock DMA or SIBCS.",
+      "tags": [
+        "Evidence",
+        "ev_fiscal_municipal"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_communities_master",
+      "href": "/ontologia/?node=ev_communities_master",
+      "title_es": "Catálogo de localidades ITER (communities_master)",
+      "title_en": "ITER localities catalogue (communities_master)",
+      "blurb_es": "2,543 localidades nombradas BCS (POBTOT≥1, Censo 2020 ITER) en communities_master.csv. Registro espacial; no es nodo de capacidad agua–energía.",
+      "blurb_en": "2,543 named BCS localities (POBTOT≥1, 2020 Census ITER) in communities_master.csv. Spatial registry; not a water–energy capacity node.",
+      "tags": [
+        "Evidence",
+        "ev_communities_master"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_capacidad_carga",
+      "href": "/ontologia/?node=dq_capacidad_carga",
+      "title_es": "¿Cuánta demanda cabe sin romper agua–energía–ANP?",
+      "title_en": "How much demand fits without breaking water–energy–ANP?",
+      "blurb_es": "Pregunta madre de capacidad de carga. Debe responderse antes de visión, llaves o benchmarking de destino.",
+      "blurb_en": "Mother carrying-capacity question. Must be answered before vision, keys or destination benchmarking.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_capacidad_carga"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_desal_vs_crecimiento",
+      "href": "/ontologia/?node=dq_desal_vs_crecimiento",
+      "title_es": "¿La desaladora desbloquea crecimiento o solo sostiene el déficit?",
+      "title_en": "Does desalination unlock growth or only sustain the deficit?",
+      "blurb_es": "Distingue oferta nueva neta vs. sustitución. Implica energía del SIBCS y gobernanza OOMSAPAS/CEA.",
+      "blurb_en": "Distinguishes net new supply vs substitution. Implies SIBCS energy and OOMSAPAS/CEA governance.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_desal_vs_crecimiento"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_agenda_politica",
+      "href": "/ontologia/?node=dq_agenda_politica",
+      "title_es": "¿Qué es factible en la ventana política actual?",
+      "title_en": "What is feasible in the current political window?",
+      "blurb_es": "Cruza Foro (nov), PED, ayuntamientos y Commitment. Evita diseñar fuera de agenda.",
+      "blurb_en": "Crosses Forum (Nov), PED, municipalities and Commitment. Avoids designing off-agenda.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_agenda_politica"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_vision_hold",
+      "href": "/ontologia/?node=dq_vision_hold",
+      "title_es": "¿Cuándo liberar la Visión (Task 1)?",
+      "title_en": "When to release the Vision (Task 1)?",
+      "blurb_es": "Hold explícito hasta balances de capacidad; presupuesto indicativo ~US$1.5 M no autoriza dibujar sin candados.",
+      "blurb_en": "Explicit hold until capacity balances; indicative budget ~US$1.5 M does not authorise drawing without locks.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_vision_hold"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_coherencia_instrumentos",
+      "href": "/ontologia/?node=dq_coherencia_instrumentos",
+      "title_es": "¿POERBCS ↔ PDU ↔ proyectos son coherentes?",
+      "title_en": "Are POERBCS ↔ PDU ↔ projects coherent?",
+      "blurb_es": "Prueba de cascada regulatoria. Escenarios que redibujen UGAs o penetren núcleos ANP quedan fuera de instrumento.",
+      "blurb_en": "Regulatory cascade test. Scenarios that redraw UGAs or penetrate ANP cores fall outside instrument.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_coherencia_instrumentos"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_integridad_ecologica",
+      "href": "/ontologia/?node=dq_integridad_ecologica",
+      "title_es": "¿El escenario regenera o solo mitiga daño a ANP/recarga?",
+      "title_en": "Does the scenario regenerate or only mitigate ANP/recharge harm?",
+      "blurb_es": "Lente de integridad ecológica; Sierra La Laguna como recarga y núcleos como veto.",
+      "blurb_en": "Ecological-integrity lens; Sierra La Laguna as recharge and cores as veto.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_integridad_ecologica"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_readiness_inversion",
+      "href": "/ontologia/?node=dq_readiness_inversion",
+      "title_es": "¿Qué infraestructura está lista para inversión / APP?",
+      "title_en": "Which infrastructure is ready for investment / PPP?",
+      "blurb_es": "Readiness de desal, red eléctrica y aeropuertos frente a narrativa de desarrolladores.",
+      "blurb_en": "Readiness of desal, power grid and airports versus developer narrative.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_readiness_inversion"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_stills_intel",
+      "href": "/ontologia/?node=ev_stills_intel",
+      "title_es": "Inteligencia territorial stills Earth Studio (956)",
+      "title_en": "Earth Studio stills territorial intelligence (956)",
+      "blurb_es": "Estudio statewide: 956 stills con join GIS (~1500 m) a carreteras, ANP, POER UGA, costa, asentamientos, cauces y energía; visión IA 956/956. Globales: near_coas",
+      "blurb_en": "Statewide study: 956 stills with GIS join (~1500 m) to roads, ANP, POER UGA, coast, settlements, waterways and power; AI vision 956/956. Globals: near_coast 169",
+      "tags": [
+        "Evidence",
+        "ev_stills_intel"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_obs_cabos_coast",
+      "href": "/ontologia/?node=terr_obs_cabos_coast",
+      "title_es": "Observación — densificación costera Los Cabos",
+      "title_en": "Observation — Los Cabos coastal densification",
+      "blurb_es": "Muestra espacial (bbox ~22.8–23.55 N, 110.2–109.4 W): 106 stills. near_coast 23, coast_visible 24, tourism_resort 17, asentamiento moderate+dense 13, protected_",
+      "blurb_en": "Spatial sample (bbox ~22.8–23.55 N, 110.2–109.4 W): 106 stills. near_coast 23, coast_visible 24, tourism_resort 17, moderate+dense settlement 13, protected_any/",
+      "tags": [
+        "Territory",
+        "terr_obs_cabos_coast"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_obs_loreto_bay",
+      "href": "/ontologia/?node=terr_obs_loreto_bay",
+      "title_es": "Observación — bahía de Loreto (stills)",
+      "title_en": "Observation — Loreto bay (stills)",
+      "blurb_es": "Muestra espacial (bbox ~25.5–26.15 N, 111.55–111.15 W): 33 stills. near_coast 15, coast_visible 14, protected_any 16, in_anp 7, tourism_resort 6; desert 16 + sc",
+      "blurb_en": "Spatial sample (bbox ~25.5–26.15 N, 111.55–111.15 W): 33 stills. near_coast 15, coast_visible 14, protected_any 16, in_anp 7, tourism_resort 6; desert 16 + scru",
+      "tags": [
+        "Territory",
+        "terr_obs_loreto_bay"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_obs_vizcaino_spine",
+      "href": "/ontologia/?node=terr_obs_vizcaino_spine",
+      "title_es": "Observación — espina desértica Vizcaíno",
+      "title_en": "Observation — Vizcaíno desert spine",
+      "blurb_es": "Muestra espacial norte (bbox ~26.5–28.2 N, 115.2–112.5 W): 222 stills. land_cover desert 166 (+ scrub 15), in_anp/protected_any 165, near_coast 35, tourism_reso",
+      "blurb_en": "Northern spatial sample (bbox ~26.5–28.2 N, 115.2–112.5 W): 222 stills. land_cover desert 166 (+ scrub 15), in_anp/protected_any 165, near_coast 35, tourism_res",
+      "tags": [
+        "Territory",
+        "terr_obs_vizcaino_spine"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "terr_obs_east_cape",
+      "href": "/ontologia/?node=terr_obs_east_cape",
+      "title_es": "Observación — East Cape / Cabo Pulmo (stills)",
+      "title_en": "Observation — East Cape / Cabo Pulmo (stills)",
+      "blurb_es": "Muestra East Cape (bbox ~23.35–23.9 N, 109.85–109.4 W): 54 stills. near_coast 16, in_anp 7, tourism_resort 10; scrub/mixed/coastal dominantes. Interfaz turismo ",
+      "blurb_en": "East Cape sample (bbox ~23.35–23.9 N, 109.85–109.4 W): 54 stills. near_coast 16, in_anp 7, tourism_resort 10; scrub/mixed/coastal dominant. Coastal tourism ↔ Ca",
+      "tags": [
+        "Territory",
+        "terr_obs_east_cape"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "const_coast_anp_pressure",
+      "href": "/ontologia/?node=const_coast_anp_pressure",
+      "title_es": "Presión turística costera en interfaces ANP",
+      "title_en": "Coastal tourism pressure at ANP interfaces",
+      "blurb_es": "De 956 stills: 72 near_coast∩protected_any (Vizcaíno 38, Islas Pacífico 6, Bahía de Loreto 5, Cabo Pulmo 2, …); 39 tourism_resort∩near_coast; 20 con cruce OSM p",
+      "blurb_en": "Of 956 stills: 72 near_coast∩protected_any (Vizcaíno 38, Pacific Islands 6, Bahía de Loreto 5, Cabo Pulmo 2, …); 39 tourism_resort∩near_coast; 20 OSM protected ",
+      "tags": [
+        "Constraint",
+        "const_coast_anp_pressure"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_coast_anp_buffers",
+      "href": "/ontologia/?node=dq_coast_anp_buffers",
+      "title_es": "¿Dónde la presión turística costera encuentra buffers ANP?",
+      "title_en": "Where does coastal tourism pressure meet ANP buffers?",
+      "blurb_es": "Competency Q stills-informed: mapear franjas near_coast∩protegido (72 puntos) y muestras East Cape / Loreto / Cabos antes de escenarios de llaves en borde ANP.",
+      "blurb_en": "Stills-informed competency Q: map near_coast∩protected fringes (72 points) and East Cape / Loreto / Cabos samples before key-count scenarios on ANP edges.",
+      "tags": [
+        "DecisionQuestion",
+        "dq_coast_anp_buffers"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_vizcaino_corridor",
+      "href": "/ontologia/?node=dq_vizcaino_corridor",
+      "title_es": "¿Cómo condiciona Vizcaíno (desierto/ANP) los corredores norte?",
+      "title_en": "How does Vizcaíno (desert/ANP) condition northern corridors?",
+      "blurb_es": "Competency Q: 222 stills en espina Vizcaíno con 165 in_anp y desert 166 — cualquier ensanche Transpeninsular o nodo nuevo debe partir del candado ANP, no de den",
+      "blurb_en": "Competency Q: 222 stills on Vizcaíno spine with 165 in_anp and desert 166 — any Transpeninsular widening or new node must start from the ANP lock, not tourism d",
+      "tags": [
+        "DecisionQuestion",
+        "dq_vizcaino_corridor"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "dq_stills_densification",
+      "href": "/ontologia/?node=dq_stills_densification",
+      "title_es": "¿Qué franjas costeras muestran densificación observada vs candados?",
+      "title_en": "Which coastal fringes show observed densification vs locks?",
+      "blurb_es": "Competency Q: en muestra Cabos costera (106) hay 17 tourism_resort y 13 asentamiento moderate+dense frente a 12 puntos en ANP/protegido; cruzar con DMA 0317/031",
+      "blurb_en": "Competency Q: Cabos coastal sample (106) has 17 tourism_resort and 13 moderate+dense settlement vs 12 ANP/protected points; cross with DMA 0317/0319 and SIBCS b",
+      "tags": [
+        "DecisionQuestion",
+        "dq_stills_densification"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_plant_sol_insurgentes",
+      "href": "/ontologia/?node=rc_plant_sol_insurgentes",
+      "title_es": "Planta solar Sol de Insurgentes (OSM)",
+      "title_en": "Sol de Insurgentes solar plant (OSM)",
+      "blurb_es": "Nodo OSM power=plant en Comondú. Capacidad MW no consolidada en portal — ver brecha renovables.",
+      "blurb_en": "Nodo OSM power=plant en Comondú. Capacidad MW no consolidada en portal — ver brecha renovables.",
+      "tags": [
+        "ResourceCapacity",
+        "rc_plant_sol_insurgentes"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_bess_gap",
+      "href": "/ontologia/?node=rc_bess_gap",
+      "title_es": "Brecha: proyectos BESS (ubicación/MW)",
+      "title_en": "Gap: BESS projects (location/MW)",
+      "blurb_es": "Almacenamiento en baterías: capacidad, sitio y empresas aún no consolidados con fuente primaria en el portal.",
+      "blurb_en": "Almacenamiento en baterías: capacidad, sitio y empresas aún no consolidados con fuente primaria en el portal.",
+      "tags": [
+        "Constraint",
+        "rc_bess_gap"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "rc_subestaciones_gap",
+      "href": "/ontologia/?node=rc_subestaciones_gap",
+      "title_es": "Brecha: inventario subestaciones SIBCS",
+      "title_en": "Gap: SIBCS substation inventory",
+      "blurb_es": "Falta listado público consolidado de subestaciones (nombre, MVA) para el SIBCS.",
+      "blurb_en": "Falta listado público consolidado de subestaciones (nombre, MVA) para el SIBCS.",
+      "tags": [
+        "Constraint",
+        "rc_subestaciones_gap"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "ev_federal_projects_inventory",
+      "href": "/ontologia/?node=ev_federal_projects_inventory",
+      "title_es": "Inventario proyectos federales BCS (44)",
+      "title_en": "BCS federal projects inventory (44)",
+      "blurb_es": "JSON/CSV curado en 13_federal_projects — anuncios y fuentes; no implica ejecución completa.",
+      "blurb_en": "JSON/CSV curado en 13_federal_projects — anuncios y fuentes; no implica ejecución completa.",
+      "tags": [
+        "Evidence",
+        "ev_federal_projects_inventory"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "inst_federal_pipeline",
+      "href": "/ontologia/?node=inst_federal_pipeline",
+      "title_es": "Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "title_en": "Federal project pipeline (AMLO/Sheinbaum)",
+      "blurb_es": "Conjunto de anuncios e instrumentos federales rastreados para BCS; cruzar con estado y fuente.",
+      "blurb_en": "Conjunto de anuncios e instrumentos federales rastreados para BCS; cruzar con estado y fuente.",
+      "tags": [
+        "Instrument",
+        "inst_federal_pipeline"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_001",
+      "href": "/ontologia/?node=proj_fed_ene_001",
+      "title_es": "Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "title_en": "Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "blurb_es": "Sexenio AMLO; sector energy; estado concluido. Dependencia: CFE. ~74 MW brutos (2 unidades rehabilitadas) Brecha: Confirmar MW exactos por unidad en informes CF",
+      "blurb_en": "Sexenio AMLO; sector energy; estado concluido. Dependencia: CFE. ~74 MW brutos (2 unidades rehabilitadas) Brecha: Confirmar MW exactos por unidad en informes CF",
+      "tags": [
+        "Project",
+        "proj_fed_ene_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_002",
+      "href": "/ontologia/?node=proj_fed_ene_002",
+      "title_es": "Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "title_en": "Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "blurb_es": "Sexenio AMLO; sector energy; estado cancelado. Dependencia: CFE. 327 MW anunciados; no construida en sexenio AMLO Brecha: Acta formal cancelación CFE no localiz",
+      "blurb_en": "Sexenio AMLO; sector energy; estado cancelado. Dependencia: CFE. 327 MW anunciados; no construida en sexenio AMLO Brecha: Acta formal cancelación CFE no localiz",
+      "tags": [
+        "Project",
+        "proj_fed_ene_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_003",
+      "href": "/ontologia/?node=proj_fed_ene_003",
+      "title_es": "Programa CFE reforzamiento generación SIBCS (gas / modernización Punta Prieta y CI BCS)",
+      "title_en": "Programa CFE reforzamiento generación SIBCS (gas / modernización Punta Prieta y CI BCS)",
+      "blurb_es": "Sexenio AMLO; sector energy; estado anunciado. Dependencia: CFE. Anuncio +514 MW / 11,373 MDP programa integral (incluye CC no ejecutado) Brecha: Desglose ejecu",
+      "blurb_en": "Sexenio AMLO; sector energy; estado anunciado. Dependencia: CFE. Anuncio +514 MW / 11,373 MDP programa integral (incluye CC no ejecutado) Brecha: Desglose ejecu",
+      "tags": [
+        "Project",
+        "proj_fed_ene_003"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_005",
+      "href": "/ontologia/?node=proj_fed_ene_005",
+      "title_es": "Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030",
+      "title_en": "Central de Combustión Interna Los Cabos (CCI) — Plan Fortalecimiento SEN 2025-2030",
+      "blurb_es": "Sexenio Sheinbaum; sector energy; estado anunciado. Dependencia: CFE / SENER. 240 MW; inversión estimada ~370–474 MDD; COD estimado ~2028 Brecha: Monto MXN unív",
+      "blurb_en": "Sexenio Sheinbaum; sector energy; estado anunciado. Dependencia: CFE / SENER. 240 MW; inversión estimada ~370–474 MDD; COD estimado ~2028 Brecha: Monto MXN unív",
+      "tags": [
+        "Project",
+        "proj_fed_ene_005"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_006",
+      "href": "/ontologia/?node=proj_fed_ene_006",
+      "title_es": "Dos centrales termosolares (torre central + almacenamiento térmico) CFE en BCS",
+      "title_en": "Dos centrales termosolares (torre central + almacenamiento térmico) CFE en BCS",
+      "blurb_es": "Sexenio Sheinbaum; sector energy; estado anunciado. Dependencia: CFE / SENER. 100 MW primera etapa conjunta; ~11 h operación; 800 MDD; construcción 36–48 meses ",
+      "blurb_en": "Sexenio Sheinbaum; sector energy; estado anunciado. Dependencia: CFE / SENER. 100 MW primera etapa conjunta; ~11 h operación; 800 MDD; construcción 36–48 meses ",
+      "tags": [
+        "Project",
+        "proj_fed_ene_006"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_007",
+      "href": "/ontologia/?node=proj_fed_ene_007",
+      "title_es": "Subestación Buenavista y ampliación Cabo Falso",
+      "title_en": "Subestación Buenavista y ampliación Cabo Falso",
+      "blurb_es": "Sexenio Sheinbaum; sector energy; estado concluido. Dependencia: CFE. +50 MVA a la red local Brecha: Comunicado CFE oficial con montos por obra.",
+      "blurb_en": "Sexenio Sheinbaum; sector energy; estado concluido. Dependencia: CFE. +50 MVA a la red local Brecha: Comunicado CFE oficial con montos por obra.",
+      "tags": [
+        "Project",
+        "proj_fed_ene_007"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_008",
+      "href": "/ontologia/?node=proj_fed_ene_008",
+      "title_es": "Modernización/ampliación red eléctrica BCS CFE 2026-2028 (+70 MVA)",
+      "title_en": "Modernización/ampliación red eléctrica BCS CFE 2026-2028 (+70 MVA)",
+      "blurb_es": "Sexenio Sheinbaum; sector energy; estado anunciado. Dependencia: CFE. +70 MVA; 134 MDP (2026) + 402 MDP (2027-28); electrificación adicional citada Brecha: Vali",
+      "blurb_en": "Sexenio Sheinbaum; sector energy; estado anunciado. Dependencia: CFE. +70 MVA; 134 MDP (2026) + 402 MDP (2027-28); electrificación adicional citada Brecha: Vali",
+      "tags": [
+        "Project",
+        "proj_fed_ene_008"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_009",
+      "href": "/ontologia/?node=proj_fed_ene_009",
+      "title_es": "Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "title_en": "Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "blurb_es": "Sexenio ambos; sector energy; estado anunciado. Dependencia: CENACE / CFE / SENER. PAMRNT SAE SIBCS; lectura lake ~63 MW SAE GCR-07 2025-30; Aura III BESS 10.5 ",
+      "blurb_en": "Sexenio ambos; sector energy; estado anunciado. Dependencia: CENACE / CFE / SENER. PAMRNT SAE SIBCS; lectura lake ~63 MW SAE GCR-07 2025-30; Aura III BESS 10.5 ",
+      "tags": [
+        "Project",
+        "proj_fed_ene_009"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_ene_010",
+      "href": "/ontologia/?node=proj_fed_ene_010",
+      "title_es": "PRODESEN / PLADESE planeación SIBCS (interconexión SIN-BCS pausada)",
+      "title_en": "PRODESEN / PLADESE planeación SIBCS (interconexión SIN-BCS pausada)",
+      "blurb_es": "Sexenio ambos; sector energy; estado anunciado. Dependencia: SENER / CENACE. Instrumentos de planeación; SIN–BCS Pausado/En revisión",
+      "blurb_en": "Sexenio ambos; sector energy; estado anunciado. Dependencia: SENER / CENACE. Instrumentos de planeación; SIN–BCS Pausado/En revisión",
+      "tags": [
+        "Project",
+        "proj_fed_ene_010"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_001",
+      "href": "/ontologia/?node=proj_fed_agu_001",
+      "title_es": "Planta Desalinizadora Los Cabos No. 2 (250 l/s) — APP / Plan Nacional Hídrico",
+      "title_en": "Planta Desalinizadora Los Cabos No. 2 (250 l/s) — APP / Plan Nacional Hídrico",
+      "blurb_es": "Sexenio ambos; sector water; estado en obra. Dependencia: CONAGUA / OOMSAPAS Los Cabos. 250 l/s; operación proyectada inicios 2027 (>60% avance ene 2026) Brecha",
+      "blurb_en": "Sexenio ambos; sector water; estado en obra. Dependencia: CONAGUA / OOMSAPAS Los Cabos. 250 l/s; operación proyectada inicios 2027 (>60% avance ene 2026) Brecha",
+      "tags": [
+        "Project",
+        "proj_fed_agu_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_002",
+      "href": "/ontologia/?node=proj_fed_agu_002",
+      "title_es": "Desalinizadora La Paz (compromiso AMLO)",
+      "title_en": "Desalinizadora La Paz (compromiso AMLO)",
+      "blurb_es": "Sexenio AMLO; sector water; estado anunciado. Dependencia: CONAGUA / Presidencia. Anunciada; sin evidencia pública de COD en sexenio AMLO Brecha: Ficha técnica,",
+      "blurb_en": "Sexenio AMLO; sector water; estado anunciado. Dependencia: CONAGUA / Presidencia. Anunciada; sin evidencia pública de COD en sexenio AMLO Brecha: Ficha técnica,",
+      "tags": [
+        "Project",
+        "proj_fed_agu_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_003",
+      "href": "/ontologia/?node=proj_fed_agu_003",
+      "title_es": "Presa El Novillo (sistema integral agua La Paz)",
+      "title_en": "Presa El Novillo (sistema integral agua La Paz)",
+      "blurb_es": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. Presa + sistema (potabilizadora/sectorización asociadas) Brecha: Ficha CONAGUA capacidad ",
+      "blurb_en": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. Presa + sistema (potabilizadora/sectorización asociadas) Brecha: Ficha CONAGUA capacidad ",
+      "tags": [
+        "Project",
+        "proj_fed_agu_003"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_004",
+      "href": "/ontologia/?node=proj_fed_agu_004",
+      "title_es": "Sectorización agua potable y planta potabilizadora La Paz",
+      "title_en": "Sectorización agua potable y planta potabilizadora La Paz",
+      "blurb_es": "Sexenio Sheinbaum; sector water; estado anunciado. Dependencia: CONAGUA. Parte del sistema integral con Presa El Novillo Brecha: Montos separados y avance.",
+      "blurb_en": "Sexenio Sheinbaum; sector water; estado anunciado. Dependencia: CONAGUA. Parte del sistema integral con Presa El Novillo Brecha: Montos separados y avance.",
+      "tags": [
+        "Project",
+        "proj_fed_agu_004"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_005",
+      "href": "/ontologia/?node=proj_fed_agu_005",
+      "title_es": "PTAR Loreto (rehabilitación/construcción)",
+      "title_en": "PTAR Loreto (rehabilitación/construcción)",
+      "blurb_es": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. >18 mil habitantes; conclusión anunciada ~2026",
+      "blurb_en": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. >18 mil habitantes; conclusión anunciada ~2026",
+      "tags": [
+        "Project",
+        "proj_fed_agu_005"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_006",
+      "href": "/ontologia/?node=proj_fed_agu_006",
+      "title_es": "PTAR La Sonoreña I (rehab) y Sonoreña II (construcción) Los Cabos",
+      "title_en": "PTAR La Sonoreña I (rehab) y Sonoreña II (construcción) Los Cabos",
+      "blurb_es": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. Rehabilitación + ampliación/redes Brecha: Separar montos PTAR vs desaladora (cifras perio",
+      "blurb_en": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. Rehabilitación + ampliación/redes Brecha: Separar montos PTAR vs desaladora (cifras perio",
+      "tags": [
+        "Project",
+        "proj_fed_agu_006"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_007",
+      "href": "/ontologia/?node=proj_fed_agu_007",
+      "title_es": "Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "title_en": "Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "blurb_es": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. 95 acciones 2025; ~2,800 MDP proyectados en sexenio Brecha: Lista nominativa de las 95 ac",
+      "blurb_en": "Sexenio Sheinbaum; sector water; estado en obra. Dependencia: CONAGUA. 95 acciones 2025; ~2,800 MDP proyectados en sexenio Brecha: Lista nominativa de las 95 ac",
+      "tags": [
+        "Project",
+        "proj_fed_agu_007"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_agu_008",
+      "href": "/ontologia/?node=proj_fed_agu_008",
+      "title_es": "Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "title_en": "Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "blurb_es": "Sexenio AMLO; sector water; estado concluido. Dependencia: CONAGUA / SEMARNAT. Acuerdos DOF DMA (p.ej. La Paz 0324) — instrumento regulatorio",
+      "blurb_en": "Sexenio AMLO; sector water; estado concluido. Dependencia: CONAGUA / SEMARNAT. Acuerdos DOF DMA (p.ej. La Paz 0324) — instrumento regulatorio",
+      "tags": [
+        "Project",
+        "proj_fed_agu_008"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_car_001",
+      "href": "/ontologia/?node=proj_fed_car_001",
+      "title_es": "Ampliación carretera acceso puerto / libramientos La Paz (entrega AMLO)",
+      "title_en": "Ampliación carretera acceso puerto / libramientos La Paz (entrega AMLO)",
+      "blurb_es": "Sexenio AMLO; sector roads; estado concluido. Dependencia: SICT. Ampliación conectando ~70% carga puerto con libramientos y ciudad Brecha: Nombre oficial SICT y",
+      "blurb_en": "Sexenio AMLO; sector roads; estado concluido. Dependencia: SICT. Ampliación conectando ~70% carga puerto con libramientos y ciudad Brecha: Nombre oficial SICT y",
+      "tags": [
+        "Project",
+        "proj_fed_car_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_car_002",
+      "href": "/ontologia/?node=proj_fed_car_002",
+      "title_es": "Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "title_en": "Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "blurb_es": "Sexenio Sheinbaum; sector roads; estado en obra. Dependencia: SICT. ~780 m, 4 carriles, ciclovía ~840 m, 17 cruces peatonales; meta jun 2026 Brecha: Monto contr",
+      "blurb_en": "Sexenio Sheinbaum; sector roads; estado en obra. Dependencia: SICT. ~780 m, 4 carriles, ciclovía ~840 m, 17 cruces peatonales; meta jun 2026 Brecha: Monto contr",
+      "tags": [
+        "Project",
+        "proj_fed_car_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_car_003",
+      "href": "/ontologia/?node=proj_fed_car_003",
+      "title_es": "Repavimentación / conservación Carretera Transpeninsular BCS",
+      "title_en": "Repavimentación / conservación Carretera Transpeninsular BCS",
+      "blurb_es": "Sexenio Sheinbaum; sector roads; estado en obra. Dependencia: SICT. Programa conservación/reencarpetado anunciado en gira Brecha: Tramos km y montos por tramo.",
+      "blurb_en": "Sexenio Sheinbaum; sector roads; estado en obra. Dependencia: SICT. Programa conservación/reencarpetado anunciado en gira Brecha: Tramos km y montos por tramo.",
+      "tags": [
+        "Project",
+        "proj_fed_car_003"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_car_004",
+      "href": "/ontologia/?node=proj_fed_car_004",
+      "title_es": "Programa SICT atención carreteras BCS (~350 MDP)",
+      "title_en": "Programa SICT atención carreteras BCS (~350 MDP)",
+      "blurb_es": "Sexenio Sheinbaum; sector roads; estado en obra. Dependencia: SICT. Conservación, señalamiento, modernización de puentes Brecha: Comunicado SICT gob.mx con desg",
+      "blurb_en": "Sexenio Sheinbaum; sector roads; estado en obra. Dependencia: SICT. Conservación, señalamiento, modernización de puentes Brecha: Comunicado SICT gob.mx con desg",
+      "tags": [
+        "Project",
+        "proj_fed_car_004"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_pue_001",
+      "href": "/ontologia/?node=proj_fed_pue_001",
+      "title_es": "ASIPONA Cabo San Lucas — transferencia a SEMAR (fin régimen FONATUR)",
+      "title_en": "ASIPONA Cabo San Lucas — transferencia a SEMAR (fin régimen FONATUR)",
+      "blurb_es": "Sexenio AMLO; sector ports; estado concluido. Dependencia: SEMAR / ASIPONA. Título concesión DOF recinto CSL a ASIPONA Cabo San Lucas",
+      "blurb_en": "Sexenio AMLO; sector ports; estado concluido. Dependencia: SEMAR / ASIPONA. Título concesión DOF recinto CSL a ASIPONA Cabo San Lucas",
+      "tags": [
+        "Project",
+        "proj_fed_pue_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_pue_002",
+      "href": "/ontologia/?node=proj_fed_pue_002",
+      "title_es": "API BCS — vigencia/addendum concesión federal (Pichilingue y otros)",
+      "title_en": "API BCS — vigencia/addendum concesión federal (Pichilingue y otros)",
+      "blurb_es": "Sexenio AMLO; sector ports; estado concluido. Dependencia: SICT / API BCS. Concesión federal API BCS (vigencia citada hasta 2047) Brecha: Obras físicas federale",
+      "blurb_en": "Sexenio AMLO; sector ports; estado concluido. Dependencia: SICT / API BCS. Concesión federal API BCS (vigencia citada hasta 2047) Brecha: Obras físicas federale",
+      "tags": [
+        "Project",
+        "proj_fed_pue_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_aer_001",
+      "href": "/ontologia/?node=proj_fed_aer_001",
+      "title_es": "Marco AFAC aeropuertos SJD / LAP / LTO (sin megaproyecto nuevo catalogado)",
+      "title_en": "Marco AFAC aeropuertos SJD / LAP / LTO (sin megaproyecto nuevo catalogado)",
+      "blurb_es": "Sexenio ambos; sector airports; estado concluido. Dependencia: AFAC / SICT. Regulación federal continua Brecha: CAPEX federal 2018-2026 por aeropuerto.",
+      "blurb_en": "Sexenio ambos; sector airports; estado concluido. Dependencia: AFAC / SICT. Regulación federal continua Brecha: CAPEX federal 2018-2026 por aeropuerto.",
+      "tags": [
+        "Project",
+        "proj_fed_aer_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_viv_001",
+      "href": "/ontologia/?node=proj_fed_viv_001",
+      "title_es": "Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "title_en": "Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "blurb_es": "Sexenio Sheinbaum; sector housing; estado en obra. Dependencia: CONAVI / INFONAVIT / SEDATU. Convenio ~37,500 acciones; gira posterior cita 55 mil viviendas + r",
+      "blurb_en": "Sexenio Sheinbaum; sector housing; estado en obra. Dependencia: CONAVI / INFONAVIT / SEDATU. Convenio ~37,500 acciones; gira posterior cita 55 mil viviendas + r",
+      "tags": [
+        "Project",
+        "proj_fed_viv_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_sal_001",
+      "href": "/ontologia/?node=proj_fed_sal_001",
+      "title_es": "Hospital General Regional IMSS Los Cabos (nuevo)",
+      "title_en": "Hospital General Regional IMSS Los Cabos (nuevo)",
+      "blurb_es": "Sexenio Sheinbaum; sector health; estado en obra. Dependencia: IMSS. 41,000 m²; 260 camas; 46 especialidades; modelo IMSS universal Brecha: Monto de inversión y",
+      "blurb_en": "Sexenio Sheinbaum; sector health; estado en obra. Dependencia: IMSS. 41,000 m²; 260 camas; 46 especialidades; modelo IMSS universal Brecha: Monto de inversión y",
+      "tags": [
+        "Project",
+        "proj_fed_sal_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_sal_002",
+      "href": "/ontologia/?node=proj_fed_sal_002",
+      "title_es": "Hospital General Santa Rosalía (IMSS-Bienestar) — inauguración",
+      "title_en": "Hospital General Santa Rosalía (IMSS-Bienestar) — inauguración",
+      "blurb_es": "Sexenio ambos; sector health; estado concluido. Dependencia: IMSS-Bienestar. 30 camas; 8 especialidades; atención universal citada Brecha: Confirmar monto exact",
+      "blurb_en": "Sexenio ambos; sector health; estado concluido. Dependencia: IMSS-Bienestar. 30 camas; 8 especialidades; atención universal citada Brecha: Confirmar monto exact",
+      "tags": [
+        "Project",
+        "proj_fed_sal_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_edu_001",
+      "href": "/ontologia/?node=proj_fed_edu_001",
+      "title_es": "500 plazas docentes nuevas BCS",
+      "title_en": "500 plazas docentes nuevas BCS",
+      "blurb_es": "Sexenio Sheinbaum; sector education; estado anunciado. Dependencia: SEP / USICAMM. 500 plazas Brecha: Calendario y distribución municipal.",
+      "blurb_en": "Sexenio Sheinbaum; sector education; estado anunciado. Dependencia: SEP / USICAMM. 500 plazas Brecha: Calendario y distribución municipal.",
+      "tags": [
+        "Project",
+        "proj_fed_edu_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_edu_002",
+      "href": "/ontologia/?node=proj_fed_edu_002",
+      "title_es": "Campus Universidad Nacional Rosario Castellanos en La Paz",
+      "title_en": "Campus Universidad Nacional Rosario Castellanos en La Paz",
+      "blurb_es": "Sexenio Sheinbaum; sector education; estado anunciado. Dependencia: Gobierno de México / UNRC. Educación superior pública anunciada en gira Brecha: Sitio, cupo,",
+      "blurb_en": "Sexenio Sheinbaum; sector education; estado anunciado. Dependencia: Gobierno de México / UNRC. Educación superior pública anunciada en gira Brecha: Sitio, cupo,",
+      "tags": [
+        "Project",
+        "proj_fed_edu_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_tur_001",
+      "href": "/ontologia/?node=proj_fed_tur_001",
+      "title_es": "Pueblos Mágicos (programa federal) — localidades BCS",
+      "title_en": "Pueblos Mágicos (programa federal) — localidades BCS",
+      "blurb_es": "Sexenio ambos; sector tourism; estado concluido. Dependencia: SECTUR. Programa continuo de denominación y apoyos Brecha: Montos PEF por localidad 2019-2026.",
+      "blurb_en": "Sexenio ambos; sector tourism; estado concluido. Dependencia: SECTUR. Programa continuo de denominación y apoyos Brecha: Montos PEF por localidad 2019-2026.",
+      "tags": [
+        "Project",
+        "proj_fed_tur_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_tur_002",
+      "href": "/ontologia/?node=proj_fed_tur_002",
+      "title_es": "Renombre Glorieta Fonatur → Glorieta de las Mujeres Libres de BCS",
+      "title_en": "Renombre Glorieta Fonatur → Glorieta de las Mujeres Libres de BCS",
+      "blurb_es": "Sexenio Sheinbaum; sector tourism; estado anunciado. Dependencia: Presidencia / municipio. Propuesta simbólica ligada a FED-CAR-002",
+      "blurb_en": "Sexenio Sheinbaum; sector tourism; estado anunciado. Dependencia: Presidencia / municipio. Propuesta simbólica ligada a FED-CAR-002",
+      "tags": [
+        "Project",
+        "proj_fed_tur_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_min_001",
+      "href": "/ontologia/?node=proj_fed_min_001",
+      "title_es": "Mina Los Cardones — rechazo AMLO y anulación autorización SEMARNAT",
+      "title_en": "Mina Los Cardones — rechazo AMLO y anulación autorización SEMARNAT",
+      "blurb_es": "Sexenio ambos; sector mining; estado cancelado. Dependencia: SEMARNAT. Oro a cielo abierto; no en operación; litigio residual reportado Brecha: Estado jurídico ",
+      "blurb_en": "Sexenio ambos; sector mining; estado cancelado. Dependencia: SEMARNAT. Oro a cielo abierto; no en operación; litigio residual reportado Brecha: Estado jurídico ",
+      "tags": [
+        "Project",
+        "proj_fed_min_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_min_002",
+      "href": "/ontologia/?node=proj_fed_min_002",
+      "title_es": "Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "title_en": "Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "blurb_es": "Sexenio ambos; sector mining; estado cancelado. Dependencia: SEMARNAT / Economía. MIA rechazada; concesiones canceladas 2024; laudo ICSID ~37.1 MDD (sep 2024)",
+      "blurb_en": "Sexenio ambos; sector mining; estado cancelado. Dependencia: SEMARNAT / Economía. MIA rechazada; concesiones canceladas 2024; laudo ICSID ~37.1 MDD (sep 2024)",
+      "tags": [
+        "Project",
+        "proj_fed_min_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_min_003",
+      "href": "/ontologia/?node=proj_fed_min_003",
+      "title_es": "Exportadora de Sal (ESSA) Guerrero Negro — nacionalización (compra 49% Mitsubishi)",
+      "title_en": "Exportadora de Sal (ESSA) Guerrero Negro — nacionalización (compra 49% Mitsubishi)",
+      "blurb_es": "Sexenio AMLO; sector mining; estado concluido. Dependencia: Gobierno de México / ESSA. Control 100% estatal; concesión ~40,000 ha",
+      "blurb_en": "Sexenio AMLO; sector mining; estado concluido. Dependencia: Gobierno de México / ESSA. Control 100% estatal; concesión ~40,000 ha",
+      "tags": [
+        "Project",
+        "proj_fed_min_003"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_amb_001",
+      "href": "/ontologia/?node=proj_fed_amb_001",
+      "title_es": "ANP / decretos ambientales federales con efecto en BCS (marco)",
+      "title_en": "ANP / decretos ambientales federales con efecto en BCS (marco)",
+      "blurb_es": "Sexenio ambos; sector environment; estado concluido. Dependencia: SEMARNAT / CONANP. Gestión continua ANP (Sierra La Laguna, Cabo Pulmo, Vizcaíno, etc.) Brecha:",
+      "blurb_en": "Sexenio ambos; sector environment; estado concluido. Dependencia: SEMARNAT / CONANP. Gestión continua ANP (Sierra La Laguna, Cabo Pulmo, Vizcaíno, etc.) Brecha:",
+      "tags": [
+        "Project",
+        "proj_fed_amb_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_soc_001",
+      "href": "/ontologia/?node=proj_fed_soc_001",
+      "title_es": "Programas para el Bienestar — inversión territorial BCS 2025",
+      "title_en": "Programas para el Bienestar — inversión territorial BCS 2025",
+      "blurb_es": "Sexenio Sheinbaum; sector social; estado en obra. Dependencia: Bienestar / Presidencia. ~179–220 mil beneficiarios según fuente; pensión y becas Brecha: Serie m",
+      "blurb_en": "Sexenio Sheinbaum; sector social; estado en obra. Dependencia: Bienestar / Presidencia. ~179–220 mil beneficiarios según fuente; pensión y becas Brecha: Serie m",
+      "tags": [
+        "Project",
+        "proj_fed_soc_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_soc_002",
+      "href": "/ontologia/?node=proj_fed_soc_002",
+      "title_es": "Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+      "title_en": "Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+      "blurb_es": "Sexenio ambos; sector social; estado anunciado. Dependencia: Bienestar / SEDATU. Programas nacionales; obras locales no inventariadas aquí Brecha: Padrón Sembra",
+      "blurb_en": "Sexenio ambos; sector social; estado anunciado. Dependencia: Bienestar / SEDATU. Programas nacionales; obras locales no inventariadas aquí Brecha: Padrón Sembra",
+      "tags": [
+        "Project",
+        "proj_fed_soc_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_int_001",
+      "href": "/ontologia/?node=proj_fed_int_001",
+      "title_es": "Conectividad satelital Aldeas Inteligentes — Isla Santa Margarita",
+      "title_en": "Conectividad satelital Aldeas Inteligentes — Isla Santa Margarita",
+      "blurb_es": "Sexenio AMLO; sector internet; estado concluido. Dependencia: SICT. Conexión satelital comunitaria reportada Brecha: Comunicado SICT oficial.",
+      "blurb_en": "Sexenio AMLO; sector internet; estado concluido. Dependencia: SICT. Conexión satelital comunitaria reportada Brecha: Comunicado SICT oficial.",
+      "tags": [
+        "Project",
+        "proj_fed_int_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_int_002",
+      "href": "/ontologia/?node=proj_fed_int_002",
+      "title_es": "CFE TEIT / Internet para el Bienestar — despliegue BCS",
+      "title_en": "CFE TEIT / Internet para el Bienestar — despliegue BCS",
+      "blurb_es": "Sexenio ambos; sector internet; estado anunciado. Dependencia: CFE TEIT. Programa nacional; cobertura BCS por confirmar Brecha: Mapa sitios CFE TEIT y usuarios ",
+      "blurb_en": "Sexenio ambos; sector internet; estado anunciado. Dependencia: CFE TEIT. Programa nacional; cobertura BCS por confirmar Brecha: Mapa sitios CFE TEIT y usuarios ",
+      "tags": [
+        "Project",
+        "proj_fed_int_002"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_seg_001",
+      "href": "/ontologia/?node=proj_fed_seg_001",
+      "title_es": "Infraestructura Guardia Nacional en BCS",
+      "title_en": "Infraestructura Guardia Nacional en BCS",
+      "blurb_es": "Sexenio ambos; sector security; estado anunciado. Dependencia: Guardia Nacional / SEDENA / SEMAR. Despliegue nacional; cuarteles BCS no listados con fuente prim",
+      "blurb_en": "Sexenio ambos; sector security; estado anunciado. Dependencia: Guardia Nacional / SEDENA / SEMAR. Despliegue nacional; cuarteles BCS no listados con fuente prim",
+      "tags": [
+        "Project",
+        "proj_fed_seg_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_pes_001",
+      "href": "/ontologia/?node=proj_fed_pes_001",
+      "title_es": "Programas CONAPESCA / apoyo pesca-acuacultura BCS (marco)",
+      "title_en": "Programas CONAPESCA / apoyo pesca-acuacultura BCS (marco)",
+      "blurb_es": "Sexenio ambos; sector fisheries; estado anunciado. Dependencia: CONAPESCA. Programas recurrentes; sin megaproyecto único documentado aquí Brecha: PEF y padrones",
+      "blurb_en": "Sexenio ambos; sector fisheries; estado anunciado. Dependencia: CONAPESCA. Programas recurrentes; sin megaproyecto único documentado aquí Brecha: PEF y padrones",
+      "tags": [
+        "Project",
+        "proj_fed_pes_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_otr_001",
+      "href": "/ontologia/?node=proj_fed_otr_001",
+      "title_es": "Modernización transporte público La Paz (autobuses anunciados 2026)",
+      "title_en": "Modernización transporte público La Paz (autobuses anunciados 2026)",
+      "blurb_es": "Sexenio Sheinbaum; sector other; estado anunciado. Dependencia: Gobierno federal / estatal. Nuevas unidades ~marzo 2026 (anuncio gira) Brecha: Monto, unidades y",
+      "blurb_en": "Sexenio Sheinbaum; sector other; estado anunciado. Dependencia: Gobierno federal / estatal. Nuevas unidades ~marzo 2026 (anuncio gira) Brecha: Monto, unidades y",
+      "tags": [
+        "Project",
+        "proj_fed_otr_001"
+      ]
+    },
+    {
+      "kind": "ontology",
+      "id": "proj_fed_otr_002",
+      "href": "/ontologia/?node=proj_fed_otr_002",
+      "title_es": "Centros LIBRE (mujeres) — uno por municipio",
+      "title_en": "Centros LIBRE (mujeres) — uno por municipio",
+      "blurb_es": "Sexenio Sheinbaum; sector other; estado anunciado. Dependencia: INMUJERES / Bienestar. Anunciados en cobertura de gira Brecha: Confirmación comunicado Presidenc",
+      "blurb_en": "Sexenio Sheinbaum; sector other; estado anunciado. Dependencia: INMUJERES / Bienestar. Anunciados en cobertura de gira Brecha: Confirmación comunicado Presidenc",
+      "tags": [
+        "Project",
+        "proj_fed_otr_002"
+      ]
+    },
+    {
+      "kind": "place",
+      "id": "los_cabos",
+      "href": "/studio/los_cabos/",
+      "title_es": "Los Cabos",
+      "title_en": "Los Cabos",
+      "blurb_es": "Ficha municipal / studio",
+      "blurb_en": "Municipal dossier / studio",
+      "tags": [
+        "municipio",
+        "lugar",
+        "los_cabos"
+      ]
+    },
+    {
+      "kind": "place",
+      "id": "la_paz",
+      "href": "/studio/la_paz/",
+      "title_es": "La Paz",
+      "title_en": "La Paz",
+      "blurb_es": "Ficha municipal / studio",
+      "blurb_en": "Municipal dossier / studio",
+      "tags": [
+        "municipio",
+        "lugar",
+        "la_paz"
+      ]
+    },
+    {
+      "kind": "place",
+      "id": "loreto",
+      "href": "/studio/loreto/",
+      "title_es": "Loreto",
+      "title_en": "Loreto",
+      "blurb_es": "Ficha municipal / studio",
+      "blurb_en": "Municipal dossier / studio",
+      "tags": [
+        "municipio",
+        "lugar",
+        "loreto"
+      ]
+    },
+    {
+      "kind": "place",
+      "id": "comondu",
+      "href": "/studio/comondu/",
+      "title_es": "Comondú",
+      "title_en": "Comondú",
+      "blurb_es": "Ficha municipal / studio",
+      "blurb_en": "Municipal dossier / studio",
+      "tags": [
+        "municipio",
+        "lugar",
+        "comondu"
+      ]
+    },
+    {
+      "kind": "place",
+      "id": "mulege",
+      "href": "/studio/mulege/",
+      "title_es": "Mulegé",
+      "title_en": "Mulegé",
+      "blurb_es": "Ficha municipal / studio",
+      "blurb_en": "Municipal dossier / studio",
+      "tags": [
+        "municipio",
+        "lugar",
+        "mulege"
+      ]
+    },
+    {
+      "kind": "place",
+      "id": "bcs",
+      "href": "/studio/bcs/",
+      "title_es": "BCS",
+      "title_en": "BCS",
+      "blurb_es": "Ficha municipal / studio",
+      "blurb_en": "Municipal dossier / studio",
+      "tags": [
+        "municipio",
+        "lugar",
+        "bcs"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "agua",
+      "href": "/agua/",
+      "title_es": "Agua",
+      "title_en": "Water",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "agua"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "energia",
+      "href": "/energia/",
+      "title_es": "Energía",
+      "title_en": "Energy",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "energia"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "economia",
+      "href": "/economia/",
+      "title_es": "Economía",
+      "title_en": "Economy",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "economia"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "territorio",
+      "href": "/territorio/",
+      "title_es": "Población / territorio",
+      "title_en": "Population / territory",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "territorio"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "conectividad",
+      "href": "/conectividad/",
+      "title_es": "Movilidad / infraestructura",
+      "title_en": "Mobility / infrastructure",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "conectividad"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "ambiente",
+      "href": "/ambiente/",
+      "title_es": "Medio ambiente",
+      "title_en": "Environment",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "ambiente"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "turismo",
+      "href": "/turismo/",
+      "title_es": "Turismo",
+      "title_en": "Tourism",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "turismo"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "planeacion",
+      "href": "/planeacion/",
+      "title_es": "Gobernanza / planeación",
+      "title_en": "Governance / planning",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "planeacion"
+      ]
+    },
+    {
+      "kind": "theme",
+      "id": "proyectos-federales",
+      "href": "/proyectos-federales/",
+      "title_es": "Proyectos federales",
+      "title_en": "Federal projects",
+      "blurb_es": "Eje temático",
+      "blurb_en": "Theme hub",
+      "tags": [
+        "tema",
+        "proyectos-federales"
+      ]
+    }
+  ]
+}

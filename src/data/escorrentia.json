@@ -1,0 +1,108 @@
+{
+  "id": "ds-escorrentia",
+  "updated": "2026-10-05",
+  "title_es": "Escorrentía y agua de lluvia (modelo de terreno)",
+  "title_en": "Runoff and stormwater (terrain model)",
+  "package": "16_escorrentia/BCS_Escorrentia_2026",
+  "package_date": "2026-10-05",
+  "source_es": "HydroSHEDS v1.1 y HydroRIVERS v1 (WWF y colaboradores); relieve SRTM; límites geoBoundaries (municipios World Bank 2012, estado INEGI 2020). Empaquetado y recorte al estado: Ivan Tamayo Ramos, 5 oct 2026.",
+  "source_en": "HydroSHEDS v1.1 and HydroRIVERS v1 (WWF et al.); SRTM terrain; geoBoundaries. Packaged and clipped to BCS by Ivan Tamayo Ramos, 5 Oct 2026.",
+  "method_es": "Red regional HydroRIVERS recortada al estado (2,900 tramos; 16,588.1 km). Dirección comprobada en 2,680 tramos. Trayectorias D8 desde 4,574 semillas en retícula de 45 celdas (~3.7–4.2 km) sobre HydroSHEDS DIR 3″; 4,428 salidas costeras y 146 sumideros interiores. Conteos de rutas muestreadas, no volúmenes ni probabilidades.",
+  "method_en": "HydroRIVERS network clipped to the state (2,900 reaches; 16,588.1 km). D8 paths from 4,574 seeds on a 45-cell lattice over HydroSHEDS DIR 3″; 4,428 coastal outlets and 146 inland sinks. Sampled-route counts, not volumes.",
+  "caveat_es": "Modelo preliminar de recorridos potenciales de escorrentía superficial a partir del relieve (HydroSHEDS DIR 3″ / HydroRIVERS). NO es un mapa oficial de peligro por inundación: no calcula profundidad, velocidad, caudal, tiempo de llegada ni superficie inundada. La acumulación es número de celdas aportantes, no agua almacenada. La lluvia puede infiltrarse o evaporarse; aquí solo se representa dónde podría ir la fracción que produce escorrentía. No modela tuberías, alcantarillas ni obras hidráulicas. Relieve base SRTM ~2000. Límites municipales de referencia: World Bank 2012 vía geoBoundaries; límite estatal INEGI 2020 vía geoBoundaries.",
+  "caveat_en": "Preliminary terrain-based potential surface-runoff routes (HydroSHEDS DIR 3″ / HydroRIVERS). NOT an official flood-hazard map: no depth, velocity, discharge, travel time or inundated area. Accumulation is contributing-cell count, not stored water. Does not model pipes or storm drains.",
+  "citations": [
+    "https://www.hydrosheds.org/",
+    "Lehner, Verdin y Jarvis (2008), Eos 89(10):93–94",
+    "Lehner y Grill (2013), Hydrological Processes 27:2171–2186",
+    "https://atlasriesgo.uabcs.mx/ (contexto documental de inundaciones; no es la capa modelada)",
+    "https://www.geoboundaries.org/"
+  ],
+  "bounds": {
+    "north": 29.0,
+    "south": 22.0,
+    "east": -109.0,
+    "west": -116.0
+  },
+  "statewide": {
+    "tramos_unicos": 2900,
+    "longitud_km": 16588.1,
+    "tramos_direccion_verificada": 2680,
+    "tramos_direccion_no_verificada": 220,
+    "seed_count": 4574,
+    "salida_costera": 4428,
+    "sumidero_interior": 146,
+    "resolution_arcsec": 3,
+    "sampling_note": "Uniform 45-cell lattice (~3.7-4.2 km). Sampling spacing is not hydrological resolution. Paths traced to termination before state/municipal clipping. D8 is a potential route, no storm runoff volumes or travel times."
+  },
+  "municipios": {
+    "mulege": {
+      "id": "mulege",
+      "label_es": "Mulegé",
+      "label_en": "Mulege",
+      "carpeta": "01_Mulege",
+      "tramos_unicos": 1251,
+      "partes_red": 1276,
+      "longitud_km": 7455.69,
+      "redes_conectadas": 153,
+      "trayectorias_distintas": 1992,
+      "partes_trayectorias": 2787
+    },
+    "loreto": {
+      "id": "loreto",
+      "label_es": "Loreto",
+      "label_en": "Loreto",
+      "carpeta": "02_Loreto",
+      "tramos_unicos": 203,
+      "partes_red": 211,
+      "longitud_km": 879.09,
+      "redes_conectadas": 47,
+      "trayectorias_distintas": 323,
+      "partes_trayectorias": 395
+    },
+    "comondu": {
+      "id": "comondu",
+      "label_es": "Comondú",
+      "label_en": "Comondú",
+      "carpeta": "03_Comondu",
+      "tramos_unicos": 730,
+      "partes_red": 817,
+      "longitud_km": 4149.35,
+      "redes_conectadas": 54,
+      "trayectorias_distintas": 1406,
+      "partes_trayectorias": 4477
+    },
+    "la_paz": {
+      "id": "la_paz",
+      "label_es": "La Paz",
+      "label_en": "La Paz",
+      "carpeta": "04_La_Paz",
+      "tramos_unicos": 643,
+      "partes_red": 666,
+      "longitud_km": 3303.4,
+      "redes_conectadas": 112,
+      "trayectorias_distintas": 993,
+      "partes_trayectorias": 1701
+    },
+    "los_cabos": {
+      "id": "los_cabos",
+      "label_es": "Los Cabos",
+      "label_en": "Los Cabos",
+      "carpeta": "05_Los_Cabos",
+      "tramos_unicos": 152,
+      "partes_red": 156,
+      "longitud_km": 800.58,
+      "redes_conectadas": 33,
+      "trayectorias_distintas": 244,
+      "partes_trayectorias": 260
+    }
+  },
+  "layers": {
+    "red_drenaje": "/gis/escorrentia/red_drenaje.geojson",
+    "trayectorias": "/gis/escorrentia/trayectorias.geojson",
+    "relieve": "/gis/escorrentia/relieve.png",
+    "concentracion": "/gis/escorrentia/concentracion.png"
+  },
+  "label_es": "Modelo de terreno de escorrentía — no es mapa oficial de inundación",
+  "label_en": "Terrain-based runoff model — not an official flood map"
+}

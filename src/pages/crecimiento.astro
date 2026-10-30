@@ -1,0 +1,668 @@
+---
+import { cleanSourceText } from '../lib/sourceLabel';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import gds from '../data/growth_demand_supply.json';
+import sq from '../data/strategic_questions.json';
+
+const g = gds as any;
+const places: any[] = g.places || [];
+const roll = g.state_rollup || {};
+const metrics = g.metrics || {};
+const balCounts = metrics.balance_counts || {};
+
+const balLabel: Record<string, { es: string; en: string; color: string }> = {
+  constrained: { es: 'Restringido', en: 'Constrained', color: '#a8762a' },
+  contested: { es: 'En disputa', en: 'Contested', color: '#7c3aed' },
+  headroom: { es: 'Con margen', en: 'Has room', color: '#047857' },
+  unknown: { es: 'Desconocido', en: 'Unknown', color: '#5c6e7b' },
+};
+
+const themeLabel: Record<string, { es: string; en: string }> = {
+  air: { es: 'Aire', en: 'Air' },
+  tourism: { es: 'Turismo', en: 'Tourism' },
+  settlement: { es: 'Asentamiento', en: 'Settlement' },
+  economic: { es: 'Economía', en: 'Economy' },
+  water: { es: 'Agua', en: 'Water' },
+  energy: { es: 'Energía', en: 'Energy' },
+  land: { es: 'Suelo', en: 'Land' },
+  env: { es: 'Ambiente', en: 'Environment' },
+  news: { es: 'Noticias', en: 'News' },
+};
+
+function portalHref(p: string) {
+  if (!p) return '#';
+  if (p.startsWith('http')) return p;
+  if (p.startsWith('/')) return p.endsWith('/') || p.includes('#') || p.includes('?') ? p : p + '/';
+  return '/catalogo/?q=' + encodeURIComponent(p.split('/').pop() || p);
+}
+
+function fmtVal(v: any, unit: string | null) {
+  if (v === null || v === undefined) return '—';
+  if (typeof v === 'number') {
+    const abs = Math.abs(v);
+    let s: string;
+    if (abs >= 1e9) s = (v / 1e9).toLocaleString('es-MX', { maximumFractionDigits: 2 }) + ' mil M';
+    else if (abs >= 1e6) s = (v / 1e6).toLocaleString('es-MX', { maximumFractionDigits: 2 }) + ' M';
+    else s = v.toLocaleString('es-MX');
+    return unit ? `${s} ${unit}` : s;
+  }
+  return unit ? `${v} ${unit}` : String(v);
+}
+
+// Chart: DMA deficits (numeric only)
+const dmaBars = places
+  .flatMap((pl) =>
+    (pl.supply || [])
+      .filter((s: any) => s.status === 'ok' && typeof s.value === 'number' && (s.id || '').includes('dma') && s.unit === 'hm³/año')
+      .map((s: any) => ({
+        place: pl.name_es,
+        label: (s.label_es || '').replace('DMA acuífero ', '').replace('DMA ', ''),
+        value: s.value as number,
+      }))
+  )
+  .sort((a, b) => a.value - b.value);
+const dmaMin = Math.min(...dmaBars.map((d) => d.value), 0);
+const dmaMax = Math.max(...dmaBars.map((d) => d.value), 0.01);
+const dmaSpan = Math.max(Math.abs(dmaMin), Math.abs(dmaMax), 0.01);
+
+// Flight bars
+const flights = metrics.flights || {};
+const flightBars = ['SJD', 'LAP', 'LTO']
+  .filter((k) => flights[k])
+  .map((k) => ({
+    iata: k,
+    dest: flights[k].destinations,
+    fpm: flights[k].flights_per_month,
+  }));
+const maxDest = Math.max(...flightBars.map((f) => f.dest), 1);
+
+const balOrder = ['constrained', 'contested', 'headroom', 'unknown'];
+const balMax = Math.max(...balOrder.map((k) => balCounts[k] || 0), 1);
+const allSq = ((sq as any).questions || []) as any[];
+const metricsFresh = g.updated || '';
+
+/** Build inspectable constraint rows from GDS cells (FACT only; blank if unknown). */
+function constraintPanel(pl: any) {
+  const themes = ['water', 'energy', 'air', 'env', 'land'];
+  const rows: any[] = [];
+  for (const th of themes) {
+    const dem = (pl.demand || []).filter((c: any) => c.theme === th);
+    const sup = (pl.supply || []).filter((c: any) => c.theme === th);
+    if (!dem.length && !sup.length) continue;
+    const okSup = sup.filter((c: any) => c.status === 'ok');
+    const gapSup = sup.filter((c: any) => c.status === 'gap');
+    const okDem = dem.filter((c: any) => c.status === 'ok');
+    rows.push({
+      theme: th,
+      demand_inputs: okDem.map((c: any) => ({
+        label_es: c.label_es, label_en: c.label_en, value: c.value, unit: c.unit,
+        source: c.source, status: c.status, tag: 'FACT',
+      })),
+      supply_inputs: okSup.map((c: any) => ({
+        label_es: c.label_es, label_en: c.label_en, value: c.value, unit: c.unit,
+        source: c.source, status: c.status, tag: 'FACT',
+      })),
+      gaps: [...dem, ...sup].filter((c: any) => c.status === 'gap').map((c: any) => ({
+        label_es: c.label_es || c.id, label_en: c.label_en || c.id,
+        missing_es: c.evidence_missing_es, missing_en: c.evidence_missing_en, tag: 'FACT',
+      })),
+      load_known: okDem.length ? 'partial' : 'unknown',
+      capacity_known: okSup.length ? 'partial' : (gapSup.length ? 'gap' : 'unknown'),
+    });
+  }
+  return rows;
+}
+
+---
+<BaseLayout
+  title="Crecimiento: demanda y oferta"
+  titleEn="Growth demand–supply"
+  description="Scorecard demanda vs oferta de crecimiento por vocación de lugar — solo datos del portal"
+  descriptionEn="Growth demand vs supply scorecard by place vocation — portal data only"
+  wide={true}
+>
+  <div class="gds-hero">
+    <p class="gds-kicker">
+      <span data-lang-es>Capa previa a escenarios · inteligencia interna</span>
+      <span data-lang-en hidden>Pre-scenario layer · internal intelligence</span>
+    </p>
+    <h1>
+      <span data-lang-es>{g.title_es}</span>
+      <span data-lang-en hidden>{g.title_en}</span>
+    </h1>
+    <p class="gds-period">
+      <span data-lang-es>Actualizado {g.updated}</span>
+      <span data-lang-en hidden>Updated {g.updated}</span>
+      <span class="gds-dot">·</span>
+      <span data-lang-es>{metrics.cells_ok || 0} celdas con cifra · {metrics.cells_gap || 0} gaps</span>
+      <span data-lang-en hidden>{metrics.cells_ok || 0} cells with figures · {metrics.cells_gap || 0} gaps</span>
+    </p>
+    <p class="lead">
+      <span data-lang-es>{g.method_note_es}</span>
+      <span data-lang-en hidden>{g.method_note_en}</span>
+    </p>
+    <p class="gds-disclaimer">
+      <span data-lang-es>{g.disclaimer_es}</span>
+      <span data-lang-en hidden>{g.disclaimer_en}</span>
+    </p>
+    <div class="gds-quick">
+      <a href="#rollup"><span data-lang-es>Roll-up estatal</span><span data-lang-en hidden>State roll-up</span></a>
+      <a href="#charts"><span data-lang-es>Cifras</span><span data-lang-en hidden>Figures</span></a>
+      <a href="#places"><span data-lang-es>Studio</span><span data-lang-en hidden>Studio</span></a>
+      <a href="/foresights/"><span data-lang-es>Prospectiva</span><span data-lang-en hidden>Foresights</span></a>
+      <a href="/resumen/"><span data-lang-es>Resumen</span><span data-lang-en hidden>Summary</span></a>
+      <a href="/agua/">Agua</a>
+      <a href="/energia/"><span data-lang-es>Energía</span><span data-lang-en hidden>Energy</span></a>
+      <a href="/vuelos/"><span data-lang-es>Vuelos</span><span data-lang-en hidden>Flights</span></a>
+    </div>
+  </div>
+
+  <section class="gds-section" id="rollup">
+    <h2>
+      <span data-lang-es>Roll-up estatal — cómo suman las vocaciones</span>
+      <span data-lang-en hidden>State roll-up — how vocations add up</span>
+    </h2>
+    <div class="gds-rollup">
+      <p class="gds-bal-pill" style={`--bal:${balLabel[roll.balance_read || 'unknown']?.color || '#5c6e7b'}`}>
+        <span data-lang-es>{balLabel[roll.balance_read]?.es || roll.balance_read}</span>
+        <span data-lang-en hidden>{balLabel[roll.balance_read]?.en || roll.balance_read}</span>
+      </p>
+      <p class="gds-system">
+        <span data-lang-es>{roll.balance_read_es}</span>
+        <span data-lang-en hidden>{roll.balance_read_en}</span>
+      </p>
+      <p class="gds-imbalance">
+        <span data-lang-es>{roll.imbalances_es}</span>
+        <span data-lang-en hidden>{roll.imbalances_en}</span>
+      </p>
+      <h3>
+        <span data-lang-es>Qué debe ser verdad para un 2050 coherente</span>
+        <span data-lang-en hidden>What must be true for a coherent 2050</span>
+      </h3>
+      <ul class="gds-must">
+        {(roll.must_be_true_es || []).map((t: string, i: number) => (
+          <li>
+            <span data-lang-es>{t}</span>
+            <span data-lang-en hidden>{(roll.must_be_true_en || [])[i] || t}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <figure class="gds-fig">
+      <img
+        src="/growth/balance_overview.png"
+        alt="Balance overview by place vocation"
+        class="gds-img"
+        loading="eager"
+        width="960"
+        height="520"
+      />
+      <figcaption class="gds-cap">
+        <span data-lang-es>Vista de balances por lugar (restringido / en disputa / margen / desconocido). Sin inventar magnitudes.</span>
+        <span data-lang-en hidden>Balance overview by place (pressured / contested / has room / unknown). No invented magnitudes.</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="gds-section" id="charts">
+    <h2>
+      <span data-lang-es>Cifras disponibles (solo donde hay número)</span>
+      <span data-lang-en hidden>Available figures (only where a number exists)</span>
+    </h2>
+    <div class="gds-chart-grid">
+      <div class="gds-chart-card">
+        <h3>
+          <span data-lang-es>Destinos aéreos sin escalas</span>
+          <span data-lang-en hidden>Non-stop air destinations</span>
+        </h3>
+        <div class="gds-bars">
+          {flightBars.map((f) => (
+            <div class="gds-bar-row">
+              <div class="gds-bar-name">{f.iata}</div>
+              <div class="gds-bar-track">
+                <div class="gds-bar-fill" style={`width:${(f.dest / maxDest) * 100}%`}></div>
+              </div>
+              <div class="gds-bar-val">{f.dest} <small>({f.fpm}/mes)</small></div>
+            </div>
+          ))}
+        </div>
+        <p class="gds-src">FlightConnections · {flights.retrieved || '—'} · /vuelos</p>
+      </div>
+
+      <div class="gds-chart-card">
+        <h3>
+          <span data-lang-es>DMA acuíferos (hm³/año)</span>
+          <span data-lang-en hidden>Aquifer DMA (hm³/year)</span>
+        </h3>
+        <div class="gds-bars">
+          {dmaBars.map((d) => {
+            const pct = (Math.abs(d.value) / dmaSpan) * 100;
+            const neg = d.value < 0;
+            return (
+              <div class="gds-bar-row">
+                <div class="gds-bar-name" title={d.place}>{d.label}</div>
+                <div class="gds-bar-track">
+                  <div
+                    class:list={['gds-bar-fill', { neg }]}
+                    style={`width:${pct}%`}
+                  ></div>
+                </div>
+                <div class="gds-bar-val">{d.value}</div>
+              </div>
+            );
+          })}
+        </div>
+        <p class="gds-src">CONAGUA DMA 2024 · /agua · focus_water_dmas</p>
+      </div>
+
+      <div class="gds-chart-card">
+        <h3>
+          <span data-lang-es>Lecturas de balance (conteo)</span>
+          <span data-lang-en hidden>Balance reads (count)</span>
+        </h3>
+        <div class="gds-bars">
+          {balOrder.map((k) => (
+            <div class="gds-bar-row">
+              <div class="gds-bar-name">
+                <span data-lang-es>{balLabel[k].es}</span>
+                <span data-lang-en hidden>{balLabel[k].en}</span>
+              </div>
+              <div class="gds-bar-track">
+                <div
+                  class="gds-bar-fill"
+                  style={`width:${((balCounts[k] || 0) / balMax) * 100}%;background:${balLabel[k].color}`}
+                ></div>
+              </div>
+              <div class="gds-bar-val">{balCounts[k] || 0}</div>
+            </div>
+          ))}
+        </div>
+        <p class="gds-src">
+          <span data-lang-es>Lectura cualitativa por lugar — ver scorecards</span>
+          <span data-lang-en hidden>Qualitative read per place — see scorecards</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gds-section" id="places">
+    <h2>
+      <span data-lang-es>Scorecards por vocación</span>
+      <span data-lang-en hidden>Scorecards by vocation</span>
+    </h2>
+    <p class="gds-sec-lead">
+      <span data-lang-es>Demanda = lo que el crecimiento pide. Oferta = lo que el territorio puede dar. Gap = falta evidencia numérica en el portal.</span>
+      <span data-lang-en hidden>Demand = what growth asks for. Supply = what the territory can give. Gap = missing numeric evidence in the portal.</span>
+    </p>
+
+    <div class="gds-place-grid">
+      {places.map((pl) => {
+        const bal = balLabel[pl.balance_read] || balLabel.unknown;
+        const demand = pl.demand || [];
+        const supply = pl.supply || [];
+        const gaps = [...demand, ...supply].filter((x: any) => x.status === 'gap').length;
+        return (
+          <article class="gds-place" id={pl.id} data-place-card={pl.id} style={`--bal:${bal.color}`}>
+            <header class="gds-place-head">
+              <div>
+                <h3>
+                  <span data-lang-es>{pl.name_es}</span>
+                  <span data-lang-en hidden>{pl.name_en}</span>
+                </h3>
+                <p class="gds-voc">
+                  <span data-lang-es>{pl.vocation_es}</span>
+                  <span data-lang-en hidden>{pl.vocation_en}</span>
+                </p>
+              </div>
+              <span class="gds-bal-tag">
+                <span data-lang-es>{bal.es}</span>
+                <span data-lang-en hidden>{bal.en}</span>
+              </span>
+            </header>
+            <p class="gds-bal-read">
+              <span data-lang-es>{pl.balance_read_es}</span>
+              <span data-lang-en hidden>{pl.balance_read_en}</span>
+            </p>
+            <p class="gds-dossier-link">
+              <a href={`/studio/${pl.id === "east_cape" ? "los_cabos" : pl.id === "todos_santos" ? "la_paz" : pl.id === "mulege_north" ? "mulege" : pl.id}/`}>
+                <span data-lang-es>Studio municipal →</span>
+                <span data-lang-en hidden>Municipal studio →</span>
+              </a>
+            </p>
+
+            <div class="gds-layers">
+              <div class="gds-layer">
+                <strong><span data-lang-es>Demanda de mercado</span><span data-lang-en hidden>Market demand</span></strong>
+                <span class="meta"><span data-lang-es>Qué pide el crecimiento (vuelos, turismo, asentamiento…)</span><span data-lang-en hidden>What growth asks for (flights, tourism, settlement…)</span></span>
+              </div>
+              <div class="gds-layer">
+                <strong><span data-lang-es>Oferta territorial</span><span data-lang-en hidden>Territorial supply</span></strong>
+                <span class="meta"><span data-lang-es>Qué puede dar el territorio (DMA, SIBCS, instrumentos…)</span><span data-lang-en hidden>What the territory can give (DMA, SIBCS, instruments…)</span></span>
+              </div>
+              <div class="gds-layer">
+                <strong><span data-lang-es>Capacidad de carga</span><span data-lang-en hidden>Carrying capacity</span></strong>
+                <span class="meta"><span data-lang-es>Techos que no se cancelan entre lugares — ver panel abajo</span><span data-lang-en hidden>Ceilings that do not cancel across places — see panel below</span></span>
+              </div>
+            </div>
+
+            <div class="gds-cap-panel">
+              <h4><span data-lang-es>Panel de restricciones (inspeccionable)</span><span data-lang-en hidden>Constraint panel (inspectable)</span></h4>
+              <p class="meta"><span data-lang-es>Fuente {metricsFresh}. Celdas en blanco = desconocido (no inventado).</span><span data-lang-en hidden>Source {metricsFresh}. Blank cells = unknown (not invented).</span></p>
+              {constraintPanel(pl).map((row: any) => (
+                <div class="gds-cap-row">
+                  <strong class="gds-cap-theme">{row.theme}</strong>
+                  <div class="gds-cap-grid">
+                    <div>
+                      <span class="gds-cap-k"><span data-lang-es>Carga conocida</span><span data-lang-en hidden>Known load</span></span>
+                      {(row.demand_inputs || []).length ? row.demand_inputs.map((c: any) => (
+                        <div class="gds-cap-cell">
+                          <span class="lg-tag tag-fact">FACT</span>
+                          <span data-lang-es>{c.label_es}</span><span data-lang-en hidden>{c.label_en}</span>
+                          {c.value != null && <strong> {c.value}{c.unit ? ` ${c.unit}` : ''}</strong>}
+                          <div class="meta">{cleanSourceText(c.source)}</div>
+                        </div>
+                      )) : <span class="meta">—</span>}
+                    </div>
+                    <div>
+                      <span class="gds-cap-k"><span data-lang-es>Capacidad conocida</span><span data-lang-en hidden>Known capacity</span></span>
+                      {(row.supply_inputs || []).length ? row.supply_inputs.map((c: any) => (
+                        <div class="gds-cap-cell">
+                          <span class="lg-tag tag-fact">FACT</span>
+                          <span data-lang-es>{c.label_es}</span><span data-lang-en hidden>{c.label_en}</span>
+                          {c.value != null && <strong> {c.value}{c.unit ? ` ${c.unit}` : ''}</strong>}
+                          <div class="meta">{cleanSourceText(c.source)}</div>
+                        </div>
+                      )) : <span class="meta">—</span>}
+                    </div>
+                    <div>
+                      <span class="gds-cap-k"><span data-lang-es>Huecos / 2050</span><span data-lang-en hidden>Gaps / 2050</span></span>
+                      {(row.gaps || []).length ? row.gaps.map((c: any) => (
+                        <div class="gds-cap-cell gap">
+                          <span class="lg-tag tag-fact">FACT</span>
+                          <span data-lang-es>{c.label_es}: {c.missing_es || 'gap'}</span>
+                          <span data-lang-en hidden>{c.label_en}: {c.missing_en || 'gap'}</span>
+                        </div>
+                      )) : <span class="meta"><span data-lang-es>Sin gap listado · umbral 2050 no inventado</span><span data-lang-en hidden>No listed gap · 2050 threshold not invented</span></span>}
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {!constraintPanel(pl).length && <p class="meta">—</p>}
+              <p class="gds-sq-links">
+                {allSq.filter((q: any) => (q.places || []).includes(pl.id)).slice(0, 3).map((q: any) => (
+                  <a href={`/preguntas/${q.id}/`}>{q.id}</a>
+                ))}
+              </p>
+            </div>
+
+            <div class="gds-cols">
+              <div>
+                <h4>
+                  <span data-lang-es>Demanda de mercado (detalle)</span>
+                  <span data-lang-en hidden>Market demand (detail)</span>
+                </h4>
+                <ul class="gds-cells">
+                  {demand.map((c: any) => (
+                    <li class:list={['gds-cell', c.status]}>
+                      <div class="gds-cell-top">
+                        <span class="gds-cell-label">
+                          <span data-lang-es>{c.label_es}</span>
+                          <span data-lang-en hidden>{c.label_en}</span>
+                        </span>
+                        {c.status === 'gap' ? (
+                          <span class="gds-badge gap">gap</span>
+                        ) : (
+                          <span class="gds-cell-val">{fmtVal(c.value, c.unit)}</span>
+                        )}
+                      </div>
+                      {c.status === 'gap' ? (
+                        <p class="gds-gap">
+                          <span data-lang-es>{c.evidence_missing_es}</span>
+                          <span data-lang-en hidden>{c.evidence_missing_en}</span>
+                        </p>
+                      ) : (
+                        c.note_es && (
+                          <p class="gds-note">
+                            <span data-lang-es>{c.note_es}</span>
+                            <span data-lang-en hidden>{c.note_en || c.note_es}</span>
+                          </p>
+                        )
+                      )}
+                      {c.source && <p class="gds-src-inline">{cleanSourceText(c.source)}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4>
+                  <span data-lang-es>Oferta / capacidad</span>
+                  <span data-lang-en hidden>Supply / capacity</span>
+                </h4>
+                <ul class="gds-cells">
+                  {supply.map((c: any) => (
+                    <li class:list={['gds-cell', c.status]}>
+                      <div class="gds-cell-top">
+                        <span class="gds-cell-label">
+                          <span data-lang-es>{c.label_es}</span>
+                          <span data-lang-en hidden>{c.label_en}</span>
+                        </span>
+                        {c.status === 'gap' ? (
+                          <span class="gds-badge gap">gap</span>
+                        ) : (
+                          <span class="gds-cell-val">{fmtVal(c.value, c.unit)}</span>
+                        )}
+                      </div>
+                      {c.status === 'gap' ? (
+                        <p class="gds-gap">
+                          <span data-lang-es>{c.evidence_missing_es}</span>
+                          <span data-lang-en hidden>{c.evidence_missing_en}</span>
+                        </p>
+                      ) : (
+                        c.note_es && (
+                          <p class="gds-note">
+                            <span data-lang-es>{c.note_es}</span>
+                            <span data-lang-en hidden>{c.note_en || c.note_es}</span>
+                          </p>
+                        )
+                      )}
+                      {c.source && <p class="gds-src-inline">{cleanSourceText(c.source)}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {(pl.open_questions || []).length > 0 && (
+              <div class="gds-oq">
+                <h4>
+                  <span data-lang-es>Preguntas abiertas</span>
+                  <span data-lang-en hidden>Open questions</span>
+                </h4>
+                <ul>
+                  {pl.open_questions.map((q: any) => (
+                    <li>
+                      <span data-lang-es>{q.es}</span>
+                      <span data-lang-en hidden>{q.en}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div class="gds-links">
+              <span class="gds-meta">{gaps} gap{(gaps === 1) ? '' : 's'}</span>
+              {(pl.portal_paths || []).map((path: string) => (
+                <a href={portalHref(path)}>{path}</a>
+              ))}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <p class="meta gds-method">
+    <span data-lang-es>
+      Método y datos: Base de datos BCS 2050 — demanda y oferta de crecimiento.
+      Prerequisite de Ivan antes de escenarios públicos. Gemelo de decisión permanece diferido.
+    </span>
+    <span data-lang-en hidden>
+      Method and data: BCS 2050 database — growth demand and supply.
+      Ivan’s prerequisite before public scenarios. Decision twin remains deferred.
+    </span>
+  </p>
+
+  <p class="cta-row" style="margin-top:1.25rem">
+    <a class="btn" href="/foresights/">
+      <span data-lang-es>Prospectiva</span>
+      <span data-lang-en hidden>Foresights</span>
+    </a>
+    <a class="btn secondary" href="/resumen/">
+      <span data-lang-es>Resumen</span>
+      <span data-lang-en hidden>Summary</span>
+    </a>
+    <a class="btn secondary" href="/mapas/">
+      <span data-lang-es>Mapas</span>
+      <span data-lang-en hidden>Maps</span>
+    </a>
+  </p>
+
+  <style is:global>
+    .gds-hero { margin-bottom: 1.5rem; }
+    .gds-kicker {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #34607d; font-weight: 700; margin: 0 0 0.35rem;
+    }
+    .gds-hero h1 {
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem); line-height: 1.25;
+      margin: 0 0 0.5rem; color: #23374a;
+    }
+    .gds-period { font-size: 0.85rem; color: #5c6e7b; margin: 0 0 0.75rem; }
+    .gds-dot { margin: 0 0.35rem; }
+    .gds-disclaimer {
+      font-size: 0.85rem; color: #8a5a1e; background: #f3e6cc;
+      border: 1px solid #e2c27e; border-radius: 8px; padding: 0.65rem 0.85rem; margin: 1rem 0;
+    }
+    .gds-quick { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .gds-quick a, .gds-links a {
+      font-size: 0.8rem; font-weight: 600; color: #34607d; text-decoration: none;
+      background: #dfe8ee; padding: 0.25rem 0.6rem; border-radius: 999px;
+    }
+    .gds-quick a:hover, .gds-links a:hover { background: #c5d6e1; }
+    .gds-section { margin: 2rem 0 1.5rem; }
+    .gds-section h2 {
+      font-size: 1.2rem; color: #23374a; border-bottom: 2px solid #dfe8ee;
+      padding-bottom: 0.35rem; margin-bottom: 0.75rem;
+    }
+    .gds-sec-lead { font-size: 0.92rem; color: #3c5163; margin: 0 0 1rem; }
+    .gds-rollup {
+      background: #f3eee3; border: 1px solid #e2dccf; border-radius: 12px;
+      padding: 1rem 1.15rem; margin-bottom: 1.25rem;
+    }
+    .gds-bal-pill {
+      display: inline-block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.04em; color: #fbf8f1; background: var(--bal, #5c6e7b);
+      padding: 0.2rem 0.65rem; border-radius: 999px; margin: 0 0 0.75rem;
+    }
+    .gds-system {
+      margin: 0 0 0.75rem; padding: 0.85rem 1rem; background: #dfe8ee;
+      border-left: 4px solid #34607d; border-radius: 0 8px 8px 0;
+      color: #23374a; line-height: 1.5; font-size: 0.95rem;
+    }
+    .gds-imbalance { font-size: 0.9rem; color: #23374a; margin: 0 0 1rem; line-height: 1.45; }
+    .gds-rollup h3 { font-size: 1rem; margin: 0 0 0.5rem; color: #23374a; }
+    .gds-must { margin: 0; padding-left: 1.15rem; }
+    .gds-must li { margin: 0.35rem 0; font-size: 0.9rem; color: #23374a; }
+    .gds-fig { margin: 0 0 1rem; }
+    .gds-img { width: 100%; max-width: 960px; height: auto; border-radius: 10px; border: 1px solid #e2dccf; }
+    .gds-cap { font-size: 0.8rem; color: #5c6e7b; margin-top: 0.4rem; }
+    .gds-chart-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.85rem;
+    }
+    .gds-chart-card {
+      background: #fbf8f1; border: 1px solid #e2dccf; border-radius: 12px; padding: 0.9rem 1rem;
+    }
+    .gds-chart-card h3 { margin: 0 0 0.65rem; font-size: 0.95rem; color: #34607d; }
+    .gds-bars { display: flex; flex-direction: column; gap: 0.4rem; }
+    .gds-bar-row {
+      display: grid; grid-template-columns: 5.5rem 1fr 4.5rem; gap: 0.45rem; align-items: center;
+    }
+    .gds-bar-name { font-size: 0.75rem; font-weight: 600; color: #23374a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .gds-bar-track { height: 10px; background: #dfe8ee; border-radius: 999px; overflow: hidden; }
+    .gds-bar-fill { height: 100%; background: linear-gradient(90deg, #34607d, #38bdf8); border-radius: 999px; }
+    .gds-bar-fill.neg { background: linear-gradient(90deg, #c2410c, #fb923c); }
+    .gds-bar-val { font-size: 0.75rem; text-align: right; color: #23374a; }
+    .gds-src, .gds-src-inline { font-size: 0.7rem; color: #8796a0; margin: 0.5rem 0 0; }
+    .gds-place-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+    .gds-place {
+      scroll-margin-top: 5.5rem;
+      border: 1px solid #e2dccf; border-left: 5px solid var(--bal, #34607d);
+      border-radius: 0 12px 12px 0; background: #fbf8f1; padding: 1rem 1.1rem;
+    }
+    .gds-place-head {
+      display: flex; justify-content: space-between; gap: 0.75rem; align-items: flex-start;
+      flex-wrap: wrap; margin-bottom: 0.5rem;
+    }
+    .gds-place h3 { margin: 0 0 0.25rem; font-size: 1.1rem; color: #23374a; }
+    .gds-voc { margin: 0; font-size: 0.88rem; color: #3c5163; line-height: 1.4; }
+    .gds-bal-tag {
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
+      color: #fbf8f1; background: var(--bal); padding: 0.25rem 0.55rem; border-radius: 999px; white-space: nowrap;
+    }
+    .gds-dossier-link { margin: 0.35rem 0 0.5rem; }
+    .gds-dossier-link a { font-size: 0.82rem; font-weight: 600; color: #34607d; text-decoration: none; }
+    .gds-bal-read { font-size: 0.9rem; color: #23374a; margin: 0.5rem 0 0.85rem; line-height: 1.45; }
+    .gds-cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .gds-cols h4 {
+      margin: 0 0 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em;
+      color: #34607d;
+    }
+    .gds-cells { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+    .gds-cell {
+      background: #f3eee3; border: 1px solid #e2dccf; border-radius: 8px; padding: 0.55rem 0.65rem;
+    }
+    .gds-cell.gap { background: #fff7ed; border-color: #fed7aa; }
+    .gds-cell-top { display: flex; justify-content: space-between; gap: 0.5rem; align-items: flex-start; }
+    .gds-cell-label { font-size: 0.82rem; font-weight: 600; color: #23374a; flex: 1; }
+    .gds-cell-val { font-size: 0.82rem; font-weight: 800; color: #34607d; white-space: nowrap; }
+    .gds-badge.gap {
+      font-size: 0.65rem; font-weight: 800; text-transform: uppercase;
+      background: #ea580c; color: #fbf8f1; padding: 0.1rem 0.4rem; border-radius: 4px;
+    }
+    .gds-gap { font-size: 0.75rem; color: #a8664a; margin: 0.35rem 0 0; line-height: 1.35; }
+    .gds-note { font-size: 0.75rem; color: #5c6e7b; margin: 0.3rem 0 0; line-height: 1.35; }
+    .gds-oq { margin-top: 0.85rem; }
+    .gds-oq h4 { font-size: 0.85rem; color: #23374a; margin: 0 0 0.35rem; }
+    .gds-oq ul { margin: 0; padding-left: 1.1rem; }
+    .gds-oq li { font-size: 0.85rem; color: #3c5163; margin: 0.25rem 0; }
+    .gds-links {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 0.85rem;
+    }
+    .gds-meta { font-size: 0.75rem; color: #8796a0; margin-right: 0.35rem; }
+    .gds-method { margin-top: 1.5rem; }
+    @media (max-width: 720px) {
+      .gds-cols { grid-template-columns: 1fr; }
+      .gds-bar-row { grid-template-columns: 4.2rem 1fr 3.8rem; }
+    }
+  
+    .gds-layers { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; margin:0.75rem 0; }
+    .gds-layer { background:#f3eee3; border:1px solid #e2dccf; border-radius:10px; padding:0.55rem 0.65rem; font-size:0.82rem; }
+    .gds-cap-panel { border:1px solid #c5d6e1; background:#dfe8ee; border-radius:12px; padding:0.85rem 1rem; margin:0.75rem 0 1rem; }
+    .gds-cap-panel h4 { margin:0 0 0.35rem; font-size:0.9rem; }
+    .gds-cap-row { margin:0.65rem 0; padding-top:0.5rem; border-top:1px dashed #c5d6e1; }
+    .gds-cap-theme { text-transform:uppercase; font-size:0.72rem; letter-spacing:0.04em; color:#34607d; }
+    .gds-cap-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; margin-top:0.35rem; }
+    .gds-cap-k { display:block; font-size:0.68rem; font-weight:700; text-transform:uppercase; color:#5c6e7b; margin-bottom:0.25rem; }
+    .gds-cap-cell { font-size:0.8rem; color:#23374a; margin:0.25rem 0; }
+    .gds-cap-cell.gap { color:#a8664a; }
+    .gds-sq-links { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.5rem; }
+    .gds-sq-links a { font-size:0.72rem; font-weight:600; background:#dfe8ee; color:#34607d; padding:0.15rem 0.45rem; border-radius:999px; text-decoration:none; }
+    .lg-tag { display:inline-block; font-size:0.62rem; font-weight:800; padding:0.1rem 0.3rem; border-radius:4px; margin-right:0.25rem; background:#e3eadc; color:#4f6e4b; }
+    @media (max-width:720px) {
+      .gds-layers, .gds-cap-grid { grid-template-columns:1fr; }
+    }
+</style>
+</BaseLayout>

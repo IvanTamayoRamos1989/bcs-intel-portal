@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { THEMES, DOCS } from '../lib/ia';
+---
+<BaseLayout
+  title="Temas"
+  titleEn="Topics"
+  description="Todo el portal, ordenado en siete temas y los documentos."
+  descriptionEn="The whole portal, in seven topics plus the documents."
+  section="Temas"
+  sectionEn="Topics"
+  wide={true}
+>
+  <nav class="pt-jump" aria-label="Ir a un tema">
+    {THEMES.map((t) => (
+      <a href={`#${t.id}`}><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></a>
+    ))}
+    <a href="#documentos"><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></a>
+  </nav>
+
+  <div class="pt-themes">
+    {THEMES.map((t) => (
+      <section class="pt-theme" id={t.id}>
+        <h2><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></h2>
+        <p><span data-lang-es>{t.d_es}</span><span data-lang-en hidden>{t.d_en}</span></p>
+        <ul>
+          {t.items.map((i) => (
+            <li>
+              <a href={i.href}>
+                <span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span>
+                {i.d_es && <small><span data-lang-es>{i.d_es}</span><span data-lang-en hidden>{i.d_en}</span></small>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+    <section class="pt-theme" id="documentos">
+      <h2><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></h2>
+      <p><span data-lang-es>Archivos originales, referencias y planes, con enlace para verlos o descargarlos.</span><span data-lang-en hidden>Original files, references and plans, with links to view or download them.</span></p>
+      <ul>
+        {DOCS.map((i) => (
+          <li>
+            <a href={i.href}>
+              <span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span>
+              {i.d_es && <small><span data-lang-es>{i.d_es}</span><span data-lang-en hidden>{i.d_en}</span></small>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+    <section class="pt-theme" id="actualidad">
+      <h2><span data-lang-es>Actualidad y ayuda</span><span data-lang-en hidden>News and help</span></h2>
+      <p><span data-lang-es>Lo más reciente y cómo usar el portal.</span><span data-lang-en hidden>The latest news and how to use the portal.</span></p>
+      <ul>
+        <li><a href="/noticias"><span data-lang-es>Noticias</span><span data-lang-en hidden>News</span><small><span data-lang-es>Notas recientes sobre BCS, con su fuente</span><span data-lang-en hidden>Recent BCS news, with sources</span></small></a></li>
+        <li><a href="/ayuda"><span data-lang-es>Ayuda y fuentes</span><span data-lang-en hidden>Help and sources</span><small><span data-lang-es>Cómo moverse por el portal y de dónde vienen los datos</span><span data-lang-en hidden>How to get around and where the data comes from</span></small></a></li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .pt-jump { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 1.1rem; }
+  .pt-jump a { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line); color: var(--ink-2); font-weight: 600; font-size: .88rem; text-decoration: none; }
+  .pt-jump a:hover { border-color: var(--mineral); color: var(--mineral-2); background: var(--mineral-soft); }
+</style>

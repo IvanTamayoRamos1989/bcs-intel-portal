@@ -1,0 +1,263 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import lib from '../data/library.json';
+
+const items = (lib as any).items as any[];
+const topics = (lib as any).topics as Record<string, { es: string; en: string }>;
+const paths = ((lib as any).paths || []) as { title: string; items: string[] }[];
+const glossary = ((lib as any).glossary || []) as { term: string; definition: string }[];
+const total = items.filter((i) => !String(i.id).endsWith('-ALT')).length;
+const indexed = items.filter((i) => i.status === 'indexed').length;
+const byTopic: Record<string, { n: number; idx: number }> = {};
+for (const i of items) {
+  const t = i.folder || '';
+  byTopic[t] = byTopic[t] || { n: 0, idx: 0 };
+  byTopic[t].n += 1;
+  if (i.status === 'indexed') byTopic[t].idx += 1;
+}
+const orgCounts: Record<string, number> = {};
+for (const i of items) if (i.org_key) orgCounts[i.org_key] = (orgCounts[i.org_key] || 0) + 1;
+const topOrgs = Object.entries(orgCounts).filter(([, n]) => n >= 3).sort((a, b) => b[1] - a[1]).map(([o]) => o);
+---
+<BaseLayout
+  title="Biblioteca BCS2050"
+  titleEn="BCS2050 Library"
+  description="Referencias de planeación, agua, costa, transporte y finanzas para BCS 2050"
+  descriptionEn="Planning, water, coast, transit and finance references for BCS 2050"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Biblioteca de referencia para la estrategia BCS 2050: <strong>{total}</strong> documentos catalogados en {Object.keys(topics).length} temas.
+      <strong>{indexed}</strong> PDF revisados tienen extractos con página que la Consulta (chat) puede citar.
+      Los enlaces llevan a la <strong>fuente pública original</strong>; aquí no se alojan los PDF.
+    </span>
+    <span data-lang-en hidden>
+      Reference library for the BCS 2050 strategy: <strong>{total}</strong> catalogued documents across {Object.keys(topics).length} topics.
+      <strong>{indexed}</strong> reviewed PDFs have page-cited extracts that the chat (Consulta) can quote.
+      Links go to the <strong>original public source</strong>; PDFs are not hosted here.
+    </span>
+  </p>
+
+  <h2><span data-lang-es>Temas</span><span data-lang-en hidden>Topics</span></h2>
+  <div class="folder-grid lib-topics">
+    {Object.entries(topics).map(([k, t]) => (
+      <button type="button" class="folder-card lib-topic-btn" data-topic={k}>
+        <div class="fcnt">{byTopic[k]?.n || 0}</div>
+        <p class="flab">
+          <span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span>
+        </p>
+        <p class="lib-sub">
+          <span data-lang-es>{byTopic[k]?.idx || 0} con extracto</span>
+          <span data-lang-en hidden>{byTopic[k]?.idx || 0} with extracts</span>
+        </p>
+      </button>
+    ))}
+  </div>
+
+  <div class="catalog-toolbar" id="lib-toolbar">
+    <input type="search" id="lib-q" placeholder="Buscar título, organización, etiqueta…" data-ph-es="Buscar título, organización, etiqueta…" data-ph-en="Search title, organisation, tag…" />
+    <label>
+      <span data-lang-es>Tema</span><span data-lang-en hidden>Topic</span>
+      <select id="lib-topic">
+        <option value="" data-es="Todos" data-en="All">Todos</option>
+        {Object.entries(topics).map(([k, t]) => <option value={k} data-es={t.es} data-en={t.en}>{t.es}</option>)}
+      </select>
+    </label>
+    <label>
+      <span data-lang-es>Organización</span><span data-lang-en hidden>Organisation</span>
+      <select id="lib-org">
+        <option value="" data-es="Todas" data-en="All">Todas</option>
+        {topOrgs.map((o) => <option value={o}>{o} ({orgCounts[o]})</option>)}
+      </select>
+    </label>
+    <label>
+      <span data-lang-es>Año</span><span data-lang-en hidden>Year</span>
+      <select id="lib-year">
+        <option value="" data-es="Todos" data-en="All">Todos</option>
+        <option value="2020">2020 o después</option>
+        <option value="2010">2010–2019</option>
+        <option value="2000">2000–2009</option>
+        <option value="1900" data-es="Antes de 2000" data-en="Before 2000">Antes de 2000</option>
+      </select>
+    </label>
+    <label>
+      <span data-lang-es>Estado</span><span data-lang-en hidden>Status</span>
+      <select id="lib-status">
+        <option value="" data-es="Todos" data-en="All">Todos</option>
+        <option value="indexed" data-es="Con extracto en Consulta" data-en="With chat extracts">Con extracto en Consulta</option>
+        <option value="catalog" data-es="Solo ficha de catálogo" data-en="Catalogue record only">Solo ficha de catálogo</option>
+      </select>
+    </label>
+  </div>
+  <p class="catalog-meta" id="lib-meta">Cargando biblioteca…</p>
+
+  <div class="table-wrap">
+    <table class="lib-table">
+      <thead>
+        <tr>
+          <th><span data-lang-es>Documento</span><span data-lang-en hidden>Document</span></th>
+          <th><span data-lang-es>Organización</span><span data-lang-en hidden>Organisation</span></th>
+          <th><span data-lang-es>Año</span><span data-lang-en hidden>Year</span></th>
+          <th><span data-lang-es>Tema</span><span data-lang-en hidden>Topic</span></th>
+          <th><span data-lang-es>Por qué importa para BCS</span><span data-lang-en hidden>Why it matters for BCS</span></th>
+        </tr>
+      </thead>
+      <tbody id="lib-body"></tbody>
+    </table>
+  </div>
+  <p class="meta" id="lib-more" hidden></p>
+
+  <h2 id="rutas"><span data-lang-es>Rutas de lectura</span><span data-lang-en hidden>Reading paths</span></h2>
+  <p class="meta">
+    <span data-lang-es>Diez lecturas imprescindibles por tema (códigos del catálogo).</span>
+    <span data-lang-en hidden>Ten must-reads per topic (catalogue codes).</span>
+  </p>
+  <div class="lib-paths">
+    {paths.map((p) => (
+      <section class="lib-path">
+        <h3>{p.title}</h3>
+        <ol>{p.items.map((x) => <li>{x}</li>)}</ol>
+      </section>
+    ))}
+  </div>
+
+  <h2 id="glosario"><span data-lang-es>Glosario</span><span data-lang-en hidden>Glossary</span></h2>
+  <dl class="lib-gloss">
+    {glossary.map((g) => (<><dt>{g.term}</dt><dd>{g.definition}</dd></>))}
+  </dl>
+
+  <style is:global>
+    .lib-topics .folder-card { cursor: pointer; text-align: left; font: inherit; width: 100%; }
+    .lib-topics .folder-card.is-active { outline: 2px solid #34607d; }
+    .lib-sub { font-size: 0.75rem; color: #5c6e7b; margin: 0.15rem 0 0; }
+    .lib-table td { vertical-align: top; }
+    .lib-table .lib-title a { font-weight: 600; }
+    .lib-table .lib-rel { max-width: 30rem; font-size: 0.85rem; color: #23374a; line-height: 1.35; }
+    .lib-badge { display: inline-block; font-size: 0.7rem; padding: 0.1rem 0.45rem; border-radius: 999px; margin-left: 0.35rem; vertical-align: middle; white-space: nowrap; }
+    .lib-badge.ok { background: #e3eadc; color: #4f6e4b; }
+    .lib-badge.cat { background: #f3eee3; color: #3c5163; }
+    .lib-small { display: block; font-size: 0.75rem; color: #5c6e7b; margin-top: 0.15rem; }
+    .lib-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1rem; }
+    .lib-path { border: 1px solid #e2dccf; border-radius: 0.75rem; padding: 0.75rem 1rem; background: #fbf8f1; }
+    .lib-path h3 { font-size: 1rem; margin: 0 0 0.4rem; color: #34607d; }
+    .lib-path ol { margin: 0; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.4; }
+    .lib-gloss dt { font-weight: 600; margin-top: 0.6rem; }
+    .lib-gloss dd { margin: 0.1rem 0 0 0; color: #23374a; font-size: 0.9rem; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      var data = null;
+      var MAX = 300;
+      var qEl = document.getElementById('lib-q');
+      var tEl = document.getElementById('lib-topic');
+      var oEl = document.getElementById('lib-org');
+      var yEl = document.getElementById('lib-year');
+      var sEl = document.getElementById('lib-status');
+      var body = document.getElementById('lib-body');
+      var meta = document.getElementById('lib-meta');
+      var more = document.getElementById('lib-more');
+      function isEn() {
+        var dl = document.documentElement.getAttribute('data-lang');
+        if (dl === 'en' || dl === 'es') return dl === 'en';
+        return document.documentElement.getAttribute('lang') === 'en';
+      }
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+      function fold(s) {
+        return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      }
+      function syncLabels() {
+        var en = isEn();
+        document.querySelectorAll('#lib-toolbar option[data-es]').forEach(function (op) {
+          op.textContent = en ? op.getAttribute('data-en') : op.getAttribute('data-es');
+        });
+        qEl.placeholder = en ? qEl.getAttribute('data-ph-en') : qEl.getAttribute('data-ph-es');
+      }
+      function yearOk(y, f) {
+        if (!f) return true;
+        var n = parseInt(String(y || '').slice(0, 4), 10);
+        if (!n) return false;
+        if (f === '2020') return n >= 2020;
+        if (f === '2010') return n >= 2010 && n <= 2019;
+        if (f === '2000') return n >= 2000 && n <= 2009;
+        return n < 2000;
+      }
+      function render() {
+        if (!data) return;
+        var en = isEn();
+        var q = fold(qEl.value.trim());
+        var t = tEl.value, o = oEl.value, y = yEl.value, st = sEl.value;
+        document.querySelectorAll('.lib-topic-btn').forEach(function (b) {
+          b.classList.toggle('is-active', !!t && b.getAttribute('data-topic') === t);
+        });
+        var rows = data.items.filter(function (i) {
+          if (t && i.folder !== t) return false;
+          if (o && i.org_key !== o) return false;
+          if (!yearOk(i.year, y)) return false;
+          if (st === 'indexed' && i.status !== 'indexed') return false;
+          if (st === 'catalog' && i.status === 'indexed') return false;
+          if (q) {
+            var hay = fold([i.id, i.title, i.org, i.year, i.topic_es, i.topic_en, (i.tags || []).join(' '), i.relevance].join(' '));
+            var ok = q.split(/\s+/).every(function (w) { return hay.indexOf(w) >= 0; });
+            if (!ok) return false;
+          }
+          return true;
+        });
+        rows.sort(function (a, b) {
+          var ai = a.status === 'indexed' ? 0 : 1, bi = b.status === 'indexed' ? 0 : 1;
+          if (ai !== bi) return ai - bi;
+          return (String(b.year || '')).localeCompare(String(a.year || ''));
+        });
+        var nIdx = rows.filter(function (r) { return r.status === 'indexed'; }).length;
+        meta.textContent = en
+          ? rows.length + ' documents · ' + nIdx + ' with chat extracts'
+          : rows.length + ' documentos · ' + nIdx + ' con extracto en Consulta';
+        var html = rows.slice(0, MAX).map(function (i) {
+          var url = i.url || i.pdf_url || '';
+          var title = url
+            ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(i.title) + '</a>'
+            : esc(i.title);
+          var badge = i.status === 'indexed'
+            ? '<span class="lib-badge ok">' + (en ? 'In chat' : 'En Consulta') + (i.pages ? ' · ' + i.pages + (en ? ' pp.' : ' pp.') : '') + '</span>'
+            : '<span class="lib-badge cat">' + (en ? 'Catalogue' : 'Catálogo') + '</span>';
+          var small = [i.id && !/-ALT$/.test(i.id) ? i.id : '', i.type, i.lang, i.access === 'Closed' ? (en ? 'restricted access' : 'acceso restringido') : '']
+            .filter(Boolean).join(' · ');
+          return '<tr>' +
+            '<td class="lib-title">' + title + badge + '<span class="lib-small">' + esc(small) + '</span></td>' +
+            '<td>' + esc(i.org) + '</td>' +
+            '<td>' + esc(i.year) + '</td>' +
+            '<td>' + esc(en ? i.topic_en : i.topic_es) + '</td>' +
+            '<td class="lib-rel">' + esc(i.relevance) + '</td>' +
+            '</tr>';
+        }).join('');
+        body.innerHTML = html || '<tr><td colspan="5">' + (en ? 'No results.' : 'Sin resultados.') + '</td></tr>';
+        if (rows.length > MAX) {
+          more.hidden = false;
+          more.textContent = en ? ('Showing first ' + MAX + '. Refine the filters to see more.') : ('Se muestran los primeros ' + MAX + '. Ajusta los filtros para ver más.');
+        } else { more.hidden = true; }
+      }
+      document.querySelectorAll('.lib-topic-btn').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var k = b.getAttribute('data-topic');
+          tEl.value = tEl.value === k ? '' : k;
+          render();
+          document.getElementById('lib-toolbar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+      [qEl].forEach(function (e) { e.addEventListener('input', render); });
+      [tEl, oEl, yEl, sEl].forEach(function (e) { e.addEventListener('change', render); });
+      document.addEventListener('bcs:lang', function () { syncLabels(); setTimeout(render, 30); });
+      var params = new URLSearchParams(location.search);
+      if (params.get('tema')) tEl.value = params.get('tema');
+      if (params.get('q')) qEl.value = params.get('q');
+      syncLabels();
+      fetch('/library_catalog.json', { credentials: 'same-origin' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { data = d; render(); })
+        .catch(function () { meta.textContent = isEn() ? 'Could not load the library.' : 'No se pudo cargar la biblioteca.'; });
+    })();
+  </script>
+</BaseLayout>

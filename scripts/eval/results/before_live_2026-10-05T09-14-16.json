@@ -1,0 +1,5363 @@
+{
+ "label": "before_live",
+ "base": "https://bajacaliforniasur2050.com",
+ "date": "2026-10-05T09:14:16.315Z",
+ "items": [
+  {
+   "id": "E001",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la disponibilidad media anual del acuífero Cabo San Lucas (0317)?",
+   "place": null,
+   "all": [
+    "24[.,]0?7"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2368,
+    "answer": "El acuífero Cabo San Lucas (0317) presenta un déficit de aproximadamente 24.07 hm³/año, lo que indica que no hay disponibilidad media anual para nuevas concesiones. Este déficit refleja la presión hídrica en la zona y la imposibilidad de aumentar la extracción sin comprometer aún más los recursos hídricos. Para más detalles, puedes consultar la guía de agua [guía agua: Lectura de capacidad hídrica](guides/agua.md#8).",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": true
+   }
+  },
+  {
+   "id": "E002",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué DMA tiene el acuífero San José del Cabo?",
+   "place": null,
+   "all": [
+    "12[.,]49"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2247,
+    "answer": "El acuífero San José del Cabo (clave 0319) presenta un déficit en la disponibilidad de agua, según la información de CONAGUA. Esto significa que no hay margen para nuevas concesiones en este acuífero, lo que limita el crecimiento en la región. Puedes consultar más detalles en la guía de agua [guía agua: Lectura de capacidad hídrica](guides/agua.md#8).",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": true
+   }
+  },
+  {
+   "id": "E003",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "DMA del acuífero La Paz 0324 según la actualización 2024",
+   "place": null,
+   "all": [
+    "13[.,]49"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 3614,
+    "answer": "El déficit del acuífero La Paz (0324) según la actualización 2024 es de −13.49 hm³/año. Además, el Acuerdo DOF del 17 de agosto de 2023 señala un déficit de −27.83 hm³, incluyendo la reserva VAPRH. Ambos documentos indican que no hay volumen disponible para nuevas concesiones. Puedes consultar más detalles en la guía de agua [aquí](guides/agua.md#2).",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": true
+   }
+  },
+  {
+   "id": "E004",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué dice el Acuerdo DOF de agosto 2023 sobre el acuífero de La Paz?",
+   "place": null,
+   "all": [],
+   "any": [
+    "27[.,]83",
+    "sin volumen|no existe volumen|nuevas concesiones"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2928,
+    "answer": "El Acuerdo DOF de agosto de 2023 señala que el acuífero de La Paz (DMA 0324) presenta un déficit de −27.83 hm³, lo que indica que no hay volumen disponible para nuevas concesiones. Además, se menciona la intrusión marina y niveles de extracción por debajo del mar en zonas de explotación. Para más detalles, puedes consultar el documento completo en la guía de agua [aquí](guides/agua.md#9).",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": true
+   }
+  },
+  {
+   "id": "E005",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿El acuífero Todos Santos tiene disponibilidad para nuevas concesiones?",
+   "place": null,
+   "all": [
+    "2[.,]96|d[eé]ficit|sin (nuevas )?concesion|no (hay|tiene) (volumen|disponibilidad)"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1920,
+    "answer": "No, el acuífero Todos Santos (clave 0313) se encuentra en déficit según las actualizaciones de la DMA de CONAGUA. Esto significa que no hay volumen disponible para nuevas concesiones en este acuífero, lo que limita el crecimiento en la zona. Esta situación está documentada en la guía de agua y en las señales de prospectiva relacionadas con la escasez hídrica estructural en la región [9][10].",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Todos-Santos-0313.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Todos-Santos-0313.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E006",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la DMA del acuífero Santiago?",
+   "place": null,
+   "all": [
+    "0?[.,]30\\b|298[ ,.]?386"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2137,
+    "answer": "La DMA del acuífero Santiago (clave 0320) muestra un margen mínimo de disponibilidad hídrica de aproximadamente +0.30 hm³/año. Sin embargo, este volumen no es suficiente para considerar nuevas concesiones, ya que no actúa como una válvula de escape para la demanda existente. Esto indica que el acuífero enfrenta restricciones significativas en su capacidad para satisfacer nuevas demandas de agua. \n\nPuedes consultar más detalles en la guía de agua [aquí](guides/agua.md#8).",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Santiago (0320)",
+      "path": "12_ontology/graph.json#rc_acuifero_0320"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     },
+     {
+      "title": "Guía agua: Growth-pole DMA deficits (portal)",
+      "path": "guides/agua.md#9"
+     },
+     {
+      "title": "Guía agua: Desalination",
+      "path": "guides/agua.md#10"
+     },
+     {
+      "title": "Guía agua: DMA — lectura de capacidad",
+      "path": "guides/agua.md#5"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Santiago-0320.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Santiago-0320.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E007",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "DMA del acuífero Los Planes",
+   "place": null,
+   "all": [
+    "2[.,]34"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 3455,
+    "answer": "El acuífero Los Planes (0324) presenta un déficit de aproximadamente −13.49 hm³/año según la información más reciente de CONAGUA. Este déficit afecta la disponibilidad de agua en la región y limita la expansión de la capital y el corredor de Todos Santos. Además, se ha reportado intrusión marina en las zonas de explotación, lo que agrava la situación hídrica en el área. \n\nPara más detalles, puedes consultar la guía de agua en el portal [guía agua: La Paz](guides/agua.md#2).",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo San Lucas (0317)",
+      "path": "12_ontology/graph.json#rc_acuifero_0317"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Acuífero La Paz (0324)",
+      "path": "12_ontology/graph.json#rc_acuifero_0324"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Actor: CONAGUA",
+      "path": "12_ontology/graph.json#actor_conagua"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Los-Planes-0323.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Los-Planes-0323.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E008",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la DMA del acuífero El Coyote?",
+   "place": null,
+   "all": [
+    "6[.,]24"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2250,
+    "answer": "No hay información específica sobre la DMA del acuífero El Coyote en el contexto proporcionado. Los datos disponibles se centran en otros acuíferos clave de Baja California Sur, como Cabo San Lucas, San José del Cabo, La Paz y Todos Santos. Para obtener información detallada sobre la DMA de El Coyote, sería recomendable consultar fuentes adicionales o documentos específicos de CONAGUA.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo San Lucas (0317)",
+      "path": "12_ontology/graph.json#rc_acuifero_0317"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo Pulmo (0318)",
+      "path": "12_ontology/graph.json#rc_acuifero_0318"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Actor: CONAGUA",
+      "path": "12_ontology/graph.json#actor_conagua"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Coyote-0325.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Coyote-0325.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E009",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la disponibilidad del acuífero Cabo Pulmo?",
+   "place": null,
+   "all": [
+    "2[.,]29"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2333,
+    "answer": "El acuífero Cabo Pulmo (clave 0318) no presenta datos específicos de disponibilidad en el contexto actual. Sin embargo, se menciona que está en un marco de presión hídrica general en la región, donde los acuíferos clave enfrentan déficits y restricciones para nuevas concesiones. Para más detalles sobre la situación hídrica en la región, puedes consultar la guía de agua en el portal. \n\nDato que falta: Información específica sobre la disponibilidad del acuífero Cabo Pulmo (0318) y su estado actual.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Constraint: Presión turística costera en interfaces ANP",
+      "path": "12_ontology/graph.json#const_coast_anp_pressure"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E010",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué capacidad tiene la desaladora de Los Cabos?",
+   "place": "los_cabos",
+   "all": [
+    "250\\s*(l/s|lps|litros)"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2685,
+    "answer": "La desaladora de Los Cabos tiene una capacidad de aproximadamente 250 litros por segundo (l/s), lo que equivale a cerca de 7.88 hectómetros cúbicos por año (hm³/año) si se considera un factor de planta del 100% [guía agua: Desalination].",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2020-10-27_DOF_Convocatoria-APP-Desaladora-Los-Cabos-250lps.pdf",
+     "path": "02_water/2020-10-27_DOF_Convocatoria-APP-Desaladora-Los-Cabos-250lps.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E011",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿A cuántos hectómetros cúbicos al año equivale la desaladora de 250 l/s?",
+   "place": null,
+   "all": [
+    "7[.,]88"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1403,
+    "answer": "La desaladora de 250 l/s tiene una capacidad nominal equivalente a aproximadamente 7.88 hectómetros cúbicos al año, asumiendo un factor de operación del 100% [guía agua].",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo San Lucas (0317)",
+      "path": "12_ontology/graph.json#rc_acuifero_0317"
+     },
+     {
+      "title": "Ontology Actor: CONAGUA",
+      "path": "12_ontology/graph.json#actor_conagua"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Actor: OOMSAPAS Los Cabos",
+      "path": "12_ontology/graph.json#actor_oomsapas_cabos"
+     },
+     {
+      "title": "Ontology Project: Desaladora Los Cabos 250 lps (APP)",
+      "path": "12_ontology/graph.json#proj_desal_cabos"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     }
+    ],
+    "primary_file": {
+     "title": "2020-10-27_DOF_Convocatoria-APP-Desaladora-Los-Cabos-250lps.pdf",
+     "path": "02_water/2020-10-27_DOF_Convocatoria-APP-Desaladora-Los-Cabos-250lps.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E012",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la suma de déficits de los acuíferos del pack sur?",
+   "place": null,
+   "all": [
+    "63[.,]88"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2743,
+    "answer": "La suma de déficits de los acuíferos del pack sur es aproximadamente 63.88 hm³/año. Este total incluye los déficits de los acuíferos de Cabo San Lucas (−24.07 hm³/año), San José del Cabo (−12.49 hm³/año), La Paz (−13.49 hm³/año) y Todos Santos (−2.96 hm³/año) [11][12].",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf",
+     "path": "02_water/2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E013",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuál es la DMA del acuífero Santo Domingo en Comondú?",
+   "place": null,
+   "all": [
+    "30[.,]28"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1718,
+    "answer": "No hay información específica sobre la DMA del acuífero Santo Domingo en Comondú en el contexto disponible. Sin embargo, se menciona que el Valle Santo Domingo tiene una veda histórica, lo que indica restricciones en su uso. Para más detalles, puedes consultar la guía de agua en el portal.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Todos-Santos-0313.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Todos-Santos-0313.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": false
+   }
+  },
+  {
+   "id": "E014",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Qué acuífero abastece a Loreto y cuál es su disponibilidad?",
+   "place": null,
+   "all": [],
+   "any": [
+    "2[.,]58",
+    "Lond[oó]",
+    "0329"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 3277,
+    "answer": "Loreto se abastece principalmente del acuífero 0324, que corresponde a la región de La Paz. Este acuífero enfrenta un déficit de disponibilidad, lo que significa que no hay suficiente agua para nuevas concesiones. Según la información disponible, la presión hídrica en esta área es crítica, lo que limita el crecimiento y desarrollo en la región. Para más detalles sobre la disponibilidad y el estado de los acuíferos, puedes consultar la guía de agua en el portal.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E015",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "DMA del acuífero Mulegé 0332",
+   "place": null,
+   "all": [
+    "0?[.,]48"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 3542,
+    "answer": "No hay información específica sobre el acuífero Mulegé 0332 en el contexto proporcionado. Los datos disponibles se centran en otros acuíferos en déficit, como los de Cabo San Lucas (0317), San José del Cabo (0319), La Paz (0324) y Todos Santos (0313). Para obtener detalles sobre el acuífero Mulegé 0332, sería necesario consultar fuentes adicionales o específicas sobre la región. \n\nDato que falta: Información sobre la disponibilidad y déficit del acuífero Mulegé 0332.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E016",
+   "cat": "agua",
+   "kind": "fact",
+   "q": "¿Cuántos acuíferos tiene Baja California Sur?",
+   "place": null,
+   "all": [
+    "\\b39\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1598,
+    "answer": "Baja California Sur cuenta con un total de 12 acuíferos. Estos acuíferos son fundamentales para la disponibilidad de agua en la región, aunque varios de ellos enfrentan déficits significativos según las actualizaciones de la CONAGUA.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf",
+     "path": "02_water/2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E017",
+   "cat": "agua",
+   "kind": "open",
+   "q": "¿La desalación compensa el déficit de los acuíferos según la NOM-011?",
+   "place": null,
+   "all": [],
+   "any": [
+    "no (compensa|reescribe|cancela|es cr[eé]dito)"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 3942,
+    "answer": "La desalación en Los Cabos tiene una capacidad nominal de 250 l/s, lo que equivale a aproximadamente 7.88 hm³/año. Sin embargo, esta cantidad no compensa el déficit de los acuíferos, ya que los déficits documentados en los acuíferos clave de la región suman aproximadamente 63.88 hm³/año. Esto significa que la desalación no cubre el déficit hídrico existente, según la NOM-011, que establece que la disponibilidad de agua se mide considerando la extracción y la demanda. \n\nLa desaladora es una fuente adicional de agua, pero no resuelve el problema de la presión hídrica en los acuíferos. \n\nDato que falta: Cifras exactas de consumo municipal que podrían ayudar a evaluar el impacto real de la desalación en el déficit.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo San Lucas (0317)",
+      "path": "12_ontology/graph.json#rc_acuifero_0317"
+     },
+     {
+      "title": "Ontology Actor: CONAGUA",
+      "path": "12_ontology/graph.json#actor_conagua"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     },
+     {
+      "title": "Guía agua: Desalación Los Cabos (dato de proyecto)",
+      "path": "guides/agua.md#3"
+     },
+     {
+      "title": "Guía agua: <div data-lang-es>",
+      "path": "guides/agua.md#0"
+     },
+     {
+      "title": "Biblioteca: The Water-Energy-Food Nexus: A new approach in support of food security and sustainable agriculture — p. 7",
+      "path": "13_library/08_WATER_STRESSED_REGIONS/08_T1_2014_FAO_WEFNexus.pdf#p7"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf",
+     "path": "02_water/2023-11-09_SEMARNAT_Acuerdo-DMA-653-acuiferos.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E018",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál fue el pico de demanda del SIBCS en 2024?",
+   "place": null,
+   "all": [],
+   "any": [
+    "688[.,]5",
+    "\\b689\\b"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2322,
+    "answer": "El pico de demanda del Sistema Interconectado Baja California Sur (SIBCS) en 2024 fue de 688.5 MW, registrado en septiembre. Este dato se encuentra en estado de alerta debido a la capacidad limitada de la red eléctrica.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Santiago (0320)",
+      "path": "12_ontology/graph.json#rc_acuifero_0320"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "path": "12_ontology/graph.json#proj_fed_ene_009"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     },
+     {
+      "title": "Guía agua: La Paz: ficha 2024 y Acuerdo DOF 2023",
+      "path": "guides/agua.md#2"
+     },
+     {
+      "title": "Guía agua: Growth-pole DMA deficits (portal)",
+      "path": "guides/agua.md#9"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E019",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "Demanda máxima del sistema eléctrico de BCS en 2023",
+   "place": null,
+   "all": [],
+   "any": [
+    "\\b660\\b",
+    "\\b675\\b"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2366,
+    "answer": "No hay un dato específico sobre la demanda máxima del sistema eléctrico de Baja California Sur para 2023 en el contexto proporcionado. Sin embargo, el sistema eléctrico de BCS enfrenta desafíos de confiabilidad e inversión, especialmente en áreas como Los Cabos y La Paz, donde la demanda turística y residencial puede incrementar la presión sobre la infraestructura eléctrica. Para obtener información precisa sobre la demanda máxima, sería recomendable consultar fuentes específicas de la CFE o informes de energía del estado. \n\nDato que falta: Cifra exacta de la demanda máxima del sistema eléctrico de BCS en 2023.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo San Lucas (0317)",
+      "path": "12_ontology/graph.json#rc_acuifero_0317"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Santiago (0320)",
+      "path": "12_ontology/graph.json#rc_acuifero_0320"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E020",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál fue el consumo neto de electricidad del SIBCS en 2023?",
+   "place": null,
+   "all": [
+    "3[ ,.]?257"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1661,
+    "answer": "El consumo neto de electricidad del Sistema Interconectado de Baja California Sur (SIBCS) en 2023 fue de 1,069 GWh. Esta cifra se encuentra en la guía de energía del portal.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Santiago (0320)",
+      "path": "12_ontology/graph.json#rc_acuifero_0320"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo San Lucas (0317)",
+      "path": "12_ontology/graph.json#rc_acuifero_0317"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology DecisionQuestion: ¿Cuánta demanda cabe sin romper agua–energía–ANP?",
+      "path": "12_ontology/graph.json#dq_capacidad_carga"
+     },
+     {
+      "title": "Ontology Project: Desaladora Los Cabos 250 lps (APP)",
+      "path": "12_ontology/graph.json#proj_desal_cabos"
+     },
+     {
+      "title": "Ontology Project: Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "path": "12_ontology/graph.json#proj_fed_ene_009"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E021",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuánto creció el consumo neto de electricidad en BCS en 2023?",
+   "place": null,
+   "all": [
+    "9[.,]9\\s*%"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1675,
+    "answer": "No hay datos específicos sobre el crecimiento del consumo neto de electricidad en Baja California Sur para 2023 en el contexto disponible. Para obtener información precisa, te recomendaría consultar fuentes como la Comisión Federal de Electricidad (CFE) o informes de energía del gobierno estatal. Si necesitas información sobre tendencias o proyecciones, puedo ayudarte a buscar en otros documentos relacionados.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Cabo San Lucas (0317)",
+      "path": "12_ontology/graph.json#rc_acuifero_0317"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Acuífero Santiago (0320)",
+      "path": "12_ontology/graph.json#rc_acuifero_0320"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas"
+     },
+     {
+      "title": "BCS DMA deficit snapshot — CONAGUA / ontology (estimate basis)",
+      "path": "guides/agua.md#dma-snapshot"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E022",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál es el límite de transmisión La Paz–Los Cabos?",
+   "place": null,
+   "all": [
+    "237"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1712,
+    "answer": "El límite de transmisión de la compuerta entre La Paz y Los Cabos está relacionado con la capacidad del Sistema Interconectado Baja California Sur (SIBCS). Actualmente, el pico de referencia es de 688.5 MW, con alertas de capacidad en el sistema. Este límite es crucial para planificar el crecimiento turístico y residencial en Los Cabos, ya que cualquier expansión debe considerar esta restricción energética [6].",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2016-2024_SECTUR_Ocupacion_hotelera_LosCabos_LaPaz_Loreto.csv",
+     "path": "05_demographics/2016-2024_SECTUR_Ocupacion_hotelera_LosCabos_LaPaz_Loreto.csv"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E023",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Qué es el proyecto P23-BS1?",
+   "place": null,
+   "all": [],
+   "any": [
+    "Olas Altas",
+    "230\\s*kV",
+    "140\\s*km"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 3273,
+    "answer": "El proyecto P23-BS1 se refiere al \"Incremento de transmisión La Paz–Los Cabos\", que consiste en la construcción de una línea de transmisión de 230 kV, con una longitud aproximada de 140 km. Este proyecto está en licitación y se espera que sea factible para diciembre de 2028. Su objetivo es mejorar la capacidad de transmisión eléctrica entre La Paz y Los Cabos, lo que podría aliviar cuellos de botella en el Sistema Interconectado de Baja California Sur (SIBCS) y facilitar el crecimiento energético en la región. \n\nPara más detalles, puedes consultar el documento de referencia en el portal [proyectos-federales](https://www.cenace.gob.mx/Docs/10_PLANEACION/ProgramasAyM/Programas%20de%20Ampliaci%C3%B3n%20y%20Modernizaci%C3%B3n%20de%20la%20RNT%20y%20RGD%20del%20MEM%202025%20%E2%80%93%202039.pdf).",
+    "sources": [
+     {
+      "title": "Ontology Project: P23-BS1 Incremento transmisión La Paz–Los Cabos",
+      "path": "12_ontology/graph.json#proj_p23_bs1"
+     },
+     {
+      "title": "Ontology Constraint: Brecha: proyectos BESS (ubicación/MW)",
+      "path": "12_ontology/graph.json#rc_bess_gap"
+     },
+     {
+      "title": "Ontology Instrument: Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "path": "12_ontology/graph.json#inst_federal_pipeline"
+     },
+     {
+      "title": "Ontology Actor: CFE (generación / transmisión / distribución)",
+      "path": "12_ontology/graph.json#actor_cfe"
+     },
+     {
+      "title": "Hecho proyectos-federales: Refuerzo transmisión La Paz–Los Cabos (P23-BS1 / LT Olas Altas–TG Los Cabos 230 kV)",
+      "path": "guides/proyectos-federales.md#fact"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E024",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuántos MW de almacenamiento (SAE) están planeados en BCS 2025–2030?",
+   "place": null,
+   "all": [
+    "\\b63\\s*MW"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1833,
+    "answer": "Se planean 63 MW de almacenamiento (SAE) en Baja California Sur para el periodo 2025–2030. Esta capacidad está asociada a proyectos anunciados en el Sistema Interconectado Baja California Sur (SIBCS) y se detalla en el documento de planeación de la CFE.",
+    "sources": [
+     {
+      "title": "Ontology Project: Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "path": "12_ontology/graph.json#proj_fed_ene_009"
+     },
+     {
+      "title": "Ontology Project: Dos centrales termosolares (torre central + almacenamiento térmico) CFE en BCS",
+      "path": "12_ontology/graph.json#proj_fed_ene_006"
+     },
+     {
+      "title": "Ontology Instrument: POERBCS 2026",
+      "path": "12_ontology/graph.json#inst_poerbcs"
+     },
+     {
+      "title": "Guía energia: Renovables y baterías (parcial)",
+      "path": "guides/energia.md#17"
+     },
+     {
+      "title": "Guía ambiente: Otras ANP en la capa federal 2025 (BCS)",
+      "path": "guides/ambiente.md#2"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-12-05_INEGI_PIBE_BCS_2023.pdf",
+     "path": "05_demographics/2024-12-05_INEGI_PIBE_BCS_2023.pdf"
+    },
+    "stakeholder": "CFE Transmisión / Distribución BCS",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E025",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Qué pasó con la central de ciclo combinado de 327 MW en BCS?",
+   "place": null,
+   "all": [
+    "cancelad"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2087,
+    "answer": "La central de ciclo combinado de 327 MW en Baja California Sur fue anunciada por la CFE, pero su construcción fue cancelada durante el sexenio de AMLO. El monto citado para el proyecto era de aproximadamente 9,840 millones de pesos. No se ha construido y no hay evidencia pública de su avance en este sexenio. Puedes consultar más detalles en el boletín de la CFE [aquí](https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=2119).",
+    "sources": [
+     {
+      "title": "Ontology Project: Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "path": "12_ontology/graph.json#proj_fed_ene_002"
+     },
+     {
+      "title": "Ontology Project: Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "path": "12_ontology/graph.json#proj_fed_car_002"
+     },
+     {
+      "title": "Ontology Project: Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "path": "12_ontology/graph.json#proj_fed_ene_001"
+     },
+     {
+      "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados"
+     },
+     {
+      "title": "Mapa galería: Atlas — Ciclones",
+      "path": "portal/mapas#gallery:atlas-ciclones.jpg"
+     }
+    ],
+    "primary_file": {
+     "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+     "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E026",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuánta energía generó la turbogás diésel de Los Cabos entre 2023 y 2024?",
+   "place": null,
+   "all": [
+    "282[.,]7"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1770,
+    "answer": "La turbogás diésel de Los Cabos generó aproximadamente 282.7 GWh entre septiembre de 2023 y septiembre de 2024. Esta planta operó 7,760 de 8,784 horas durante ese periodo. [guía energía, p. 11]",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf",
+     "path": "01_planning/2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E027",
+   "cat": "energia",
+   "kind": "fact",
+   "q": "¿Cuál es la capacidad de la Central de Combustión Interna Los Cabos anunciada?",
+   "place": null,
+   "all": [
+    "240\\s*MW"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2006,
+    "answer": "No hay información específica sobre la capacidad de la Central de Combustión Interna Los Cabos en el contexto proporcionado. Para detalles sobre proyectos energéticos en la región, te recomendaría consultar documentos específicos sobre infraestructura energética o proyectos en Baja California Sur. Si necesitas más información sobre la red eléctrica o la capacidad del Sistema Interconectado Baja California Sur (SIBCS), puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf",
+     "path": "01_planning/2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E028",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos habitantes tiene Baja California Sur?",
+   "place": null,
+   "all": [
+    "798[ ,.]?447"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1359,
+    "answer": "Baja California Sur tiene una población total de 798,447 habitantes, según el Censo 2020 de INEGI.",
+    "sources": [
+     {
+      "title": "Guía territorio: Settlement hierarchy — Baja California Sur",
+      "path": "guides/territorio.md#9"
+     },
+     {
+      "title": "Guía territorio: Estado: Baja California Sur (`cve_ent=03`) — POBTOT **798,447**",
+      "path": "guides/territorio.md#10"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios"
+     },
+     {
+      "title": "Municipio La Paz — población INEGI 2020",
+      "path": "municipios/La Paz"
+     },
+     {
+      "title": "Municipio Comondú — población INEGI 2020",
+      "path": "municipios/Comondú"
+     }
+    ],
+    "primary_file": {
+     "title": "2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf",
+     "path": "05_demographics/2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E029",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuál es la población del municipio de La Paz?",
+   "place": "la_paz",
+   "all": [
+    "292[ ,.]?241"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1612,
+    "answer": "La población del municipio de La Paz es de 250,141 habitantes, según el Censo 2020 de INEGI.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E030",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "cuantos abitantes tiene los cabos",
+   "place": null,
+   "all": [
+    "351[ ,.]?111"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1391,
+    "answer": "La población de Los Cabos es de aproximadamente 351,111 habitantes, según el Censo 2020 de INEGI. Si necesitas más información sobre la demografía o proyecciones, puedo ayudarte.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf",
+     "path": "01_planning/2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E031",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "Población de Comondú según el censo 2020",
+   "place": null,
+   "all": [
+    "73[ ,.]?021"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1438,
+    "answer": "La población de Comondú según el Censo 2020 es de 47,036 habitantes (INEGI Censo 2020).",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2021-02-23_INEGI_Panorama_sociodemografico_BCS_Censo2020.pdf",
+     "path": "05_demographics/2021-02-23_INEGI_Panorama_sociodemografico_BCS_Censo2020.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E032",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos habitantes tiene Mulegé?",
+   "place": null,
+   "all": [
+    "64[ ,.]?022"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2167,
+    "answer": "No hay una cifra exacta de la población de Mulegé en el contexto actual. Te recomiendo consultar los documentos demográficos disponibles, como el \"2021-02-23_INEGI_Panorama_sociodemografico_BCS_Censo2020.pdf\" o el \"2020-03-15_INEGI_Censo2020_ITER_descriptor.pdf\" para obtener información actualizada sobre la población.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-06-01_Ayuntamiento-Mulege_Plan-Municipal-Desarrollo-2024-2027.pdf",
+     "path": "13_territorial_intelligence/plans/2025-06-01_Ayuntamiento-Mulege_Plan-Municipal-Desarrollo-2024-2027.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E033",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "Población del municipio de Loreto",
+   "place": "loreto",
+   "all": [
+    "18[ ,.]?052"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 3601,
+    "answer": "No hay un dato específico de población actual en el contexto. Para información demográfica sobre Loreto, puedes consultar los siguientes documentos: \n\n- 2024-12-05_INEGI_PIBE_BCS_2023.pdf\n- 2021-02-23_INEGI_Panorama_sociodemografico_BCS_Censo2020.pdf\n- 2020-03-15_INEGI_Censo2020_ITER_descriptor.pdf\n\nEstos archivos contienen datos relevantes sobre la población en Baja California Sur, incluyendo el municipio de Loreto.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E034",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos habitantes tiene la ciudad de San José del Cabo?",
+   "place": null,
+   "all": [
+    "136[ ,.]?285"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1824,
+    "answer": "No hay una cifra exacta de habitantes de San José del Cabo en el contexto actual. Sin embargo, puedes consultar los documentos demográficos como el \"2021-02-23_INEGI_Panorama_sociodemografico_BCS_Censo2020.pdf\" para obtener información actualizada sobre la población en esa área.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-San-Jose-del-Cabo-0319.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E035",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuál es la cabecera de Comondú y cuánta población tiene?",
+   "place": null,
+   "all": [
+    "Constituci[oó]n",
+    "43[ ,.]?805"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1904,
+    "answer": "La cabecera del municipio de Comondú es Ciudad Constitución. Según el Censo 2020 de INEGI, la población de Ciudad Constitución es de aproximadamente 24,000 habitantes. Puedes consultar más detalles en el documento \"2021-02-23_INEGI_Panorama_sociodemografico_BCS_Censo2020.pdf\".",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E036",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "Población de Santa Rosalía",
+   "place": null,
+   "all": [
+    "14[ ,.]?357"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2319,
+    "answer": "No hay un dato específico sobre la población de Santa Rosalía en el contexto proporcionado. Para obtener información demográfica, puedes consultar los documentos de INEGI, como el \"Censo 2020\" o el \"Panorama sociodemográfico BCS\". \n\nReferencias útiles:\n- 2021-02-23_INEGI_Panorama_sociodemografico_BCS_Censo2020.pdf\n- 2020-03-15_INEGI_Censo2020_ITER_descriptor.pdf",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E037",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántas localidades tiene el municipio de La Paz?",
+   "place": null,
+   "all": [
+    "1[ ,.]?018"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1881,
+    "answer": "El municipio de La Paz cuenta con 12 localidades. Para más detalles sobre la demografía y características de estas localidades, puedes consultar los documentos demográficos disponibles en el portal.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E038",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuántos municipios tiene BCS?",
+   "place": null,
+   "all": [
+    "\\b(5|cinco)\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1052,
+    "answer": "Baja California Sur tiene cinco municipios: La Paz, Los Cabos, Comondú, Loreto y Mulegé.",
+    "sources": [
+     {
+      "title": "Ontology DecisionQuestion: ¿La desaladora desbloquea crecimiento o solo sostiene el déficit?",
+      "path": "12_ontology/graph.json#dq_desal_vs_crecimiento"
+     },
+     {
+      "title": "Ontology Instrument: POERBCS 2026",
+      "path": "12_ontology/graph.json#inst_poerbcs"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas"
+     },
+     {
+      "title": "2022-12-01_INEGI-CONABIO_Municipios_BCS_MarcoGeoestadistico2022.zip",
+      "path": "05_demographics/2022-12-01_INEGI-CONABIO_Municipios_BCS_MarcoGeoestadistico2022.zip"
+     },
+     {
+      "title": "2019_datosbcs_Acuerdo_Mediante_el_Cual_se_Crean_las_Representaciones_del_Poder_Ejecutivo_del_Estado_en_los_Municipios.pdf",
+      "path": "10_data_lake/01_Steering_Committee/01_Project_Governance/2019_datosbcs_Acuerdo_Mediante_el_Cual_se_Crean_las_Representaciones_del_Poder_Ejecutivo_del_Estado_en_los_Municipios.pdf"
+     }
+    ],
+    "primary_file": {
+     "title": "2022-12-01_INEGI-CONABIO_Municipios_BCS_MarcoGeoestadistico2022.zip",
+     "path": "05_demographics/2022-12-01_INEGI-CONABIO_Municipios_BCS_MarcoGeoestadistico2022.zip"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E039",
+   "cat": "poblacion",
+   "kind": "fact",
+   "q": "¿Cuándo se creó el municipio de Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "1980",
+    "Decreto 181"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1155,
+    "answer": "El municipio de Los Cabos fue creado el 8 de octubre de 1992.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf",
+     "path": "01_planning/2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E040",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "sedena baja california sur",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2045,
+    "answer": "La Secretaría de la Defensa Nacional (SEDENA) tiene presencia en Baja California Sur a través de la Guardia Nacional, que se despliega en el estado como parte de un esfuerzo nacional de seguridad. Sin embargo, no se especifican los cuarteles de la Guardia Nacional en el estado en el contexto actual. Para más información sobre proyectos federales y la infraestructura de seguridad en BCS, puedes consultar el inventario de proyectos federales. \n\nSi necesitas detalles específicos sobre la infraestructura o el despliegue de la Guardia Nacional en BCS, házmelo saber.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Baja California Sur (estado)",
+      "path": "12_ontology/graph.json#terr_bcs"
+     },
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Project: Infraestructura Guardia Nacional en BCS",
+      "path": "12_ontology/graph.json#proj_fed_seg_001"
+     },
+     {
+      "title": "Hecho economia: 2024 (mdd) — Baja California Sur",
+      "path": "guides/economia.md#2"
+     }
+    ],
+    "primary_file": {
+     "title": "2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf",
+     "path": "05_demographics/2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf"
+    },
+    "stakeholder": "CFE Transmisión / Distribución BCS",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E041",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Cuántos elementos de la Guardia Nacional hay en BCS?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1650,
+    "answer": "No hay información específica sobre la cantidad exacta de elementos de la Guardia Nacional en Baja California Sur. La ontología del proyecto menciona que hay un despliegue nacional, pero no proporciona cifras detalladas sobre los cuarteles o el número de elementos en el estado. Para más detalles, puedes consultar la fuente oficial en [Gobierno de México](https://www.gob.mx/guardianacional).",
+    "sources": [
+     {
+      "title": "Ontology Project: Infraestructura Guardia Nacional en BCS",
+      "path": "12_ontology/graph.json#proj_fed_seg_001"
+     },
+     {
+      "title": "Ontology Project: Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "path": "12_ontology/graph.json#proj_fed_agu_007"
+     },
+     {
+      "title": "Ontology Project: Sembrando Vida / Mejoramiento Urbano (PMU) — presencia BCS",
+      "path": "12_ontology/graph.json#proj_fed_soc_002"
+     },
+     {
+      "title": "1954-07-02_DOF_Acuerdo-Distrito-Nacional-Riego-BCS.pdf",
+      "path": "02_water/1954-07-02_DOF_Acuerdo-Distrito-Nacional-Riego-BCS.pdf"
+     },
+     {
+      "title": "Hecho proyectos-federales: Infraestructura Guardia Nacional en BCS",
+      "path": "guides/proyectos-federales.md#fact"
+     }
+    ],
+    "primary_file": {
+     "title": "1954-07-02_DOF_Acuerdo-Distrito-Nacional-Riego-BCS.pdf",
+     "path": "02_water/1954-07-02_DOF_Acuerdo-Distrito-Nacional-Riego-BCS.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E042",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Dónde están los cuarteles de SEDENA en Baja California Sur?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1803,
+    "answer": "No se listan los cuarteles de SEDENA en Baja California Sur en el contexto actual. Sin embargo, se menciona que hay un despliegue nacional de la Guardia Nacional, y que los cuarteles en BCS no están especificados en la fuente primaria consultada. Para más información, puedes revisar el inventario de proyectos federales en BCS.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Baja California Sur (estado)",
+      "path": "12_ontology/graph.json#terr_bcs"
+     },
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Project: Infraestructura Guardia Nacional en BCS",
+      "path": "12_ontology/graph.json#proj_fed_seg_001"
+     },
+     {
+      "title": "Hecho economia: 2024 (mdd) — Baja California Sur",
+      "path": "guides/economia.md#2"
+     }
+    ],
+    "primary_file": {
+     "title": "2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf",
+     "path": "05_demographics/2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf"
+    },
+    "stakeholder": "CFE Transmisión / Distribución BCS",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E043",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Cuál es la tasa de homicidios de Los Cabos en 2025?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1577,
+    "answer": "No hay datos específicos sobre la tasa de homicidios de Los Cabos en 2025 en el contexto disponible. Para obtener información actualizada sobre la seguridad y la criminalidad en la región, te recomendaría consultar fuentes oficiales como el Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública o informes de seguridad locales. Si necesitas información sobre tendencias o contextos relacionados, puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-08-19_ProyectosMexico_Ficha-0015-Mejoramiento-Integral-Agua-Los-Cabos.pdf",
+     "path": "07_economy_investment/2025-08-19_ProyectosMexico_Ficha-0015-Mejoramiento-Integral-Agua-Los-Cabos.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E044",
+   "cat": "seguridad",
+   "kind": "refuse",
+   "q": "¿Qué presupuesto tiene la Marina en el puerto de La Paz?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2203,
+    "answer": "No hay información específica sobre el presupuesto de la Marina en el puerto de La Paz en el contexto disponible. Para obtener datos precisos sobre el presupuesto, te recomendaría consultar fuentes oficiales como la Secretaría de Marina o el gobierno municipal de La Paz. Si necesitas información sobre otros aspectos relacionados con el puerto o la marina, házmelo saber.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E045",
+   "cat": "seguridad",
+   "kind": "open",
+   "q": "¿Qué proyectos federales de seguridad hay en BCS?",
+   "place": null,
+   "all": [],
+   "any": [
+    "Guardia Nacional"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2243,
+    "answer": "No hay información específica sobre proyectos federales de seguridad en Baja California Sur en el contexto actual. El inventario de proyectos federales disponible se centra principalmente en proyectos de infraestructura energética y otros sectores, pero no menciona iniciativas relacionadas directamente con la seguridad. Para más detalles, puedes consultar el inventario de proyectos federales en el portal.",
+    "sources": [
+     {
+      "title": "Ontology Evidence: Inventario proyectos federales BCS (44)",
+      "path": "12_ontology/graph.json#ev_federal_projects_inventory"
+     },
+     {
+      "title": "Ontology Instrument: Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "path": "12_ontology/graph.json#inst_federal_pipeline"
+     },
+     {
+      "title": "Ontology Instrument: Vedas federales 1954 (tipo III, región meridional BCS)",
+      "path": "12_ontology/graph.json#inst_veda_1954"
+     },
+     {
+      "title": "Hecho proyectos-federales: Inventario proyectos federales BCS",
+      "path": "guides/proyectos-federales.md#fact"
+     },
+     {
+      "title": "Hecho proyectos-federales: Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "path": "guides/proyectos-federales.md#fact"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E046",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es el presidente municipal de Los Cabos?",
+   "place": "los_cabos",
+   "all": [
+    "Christian Ag[uú]ndez"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1300,
+    "answer": "El presidente municipal de Los Cabos es el Arq. Christian Agúndez Gómez, según el organigrama del H. XV Ayuntamiento de Los Cabos para el periodo 2024–2027. Puedes consultar más detalles en el documento [1].",
+    "sources": [
+     {
+      "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview"
+     },
+     {
+      "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios"
+     },
+     {
+      "title": "Municipio Los Cabos — población INEGI 2020",
+      "path": "municipios/Los Cabos"
+     },
+     {
+      "title": "Población San José del Cabo (INEGI Censo 2020)",
+      "path": "municipios/Los Cabos/localidad/San José del Cabo"
+     }
+    ],
+    "primary_file": {
+     "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+     "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview"
+    },
+    "stakeholder": "Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E047",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es el gobernador de Baja California Sur?",
+   "place": null,
+   "all": [
+    "V[ií]ctor Manuel Castro Cos[ií]o"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 904,
+    "answer": "El gobernador de Baja California Sur es Víctor Manuel Castro Cosío.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Baja California Sur (estado)",
+      "path": "12_ontology/graph.json#terr_bcs"
+     },
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Instrument: Plan Estatal de Desarrollo 2021–2027",
+      "path": "12_ontology/graph.json#inst_ped"
+     },
+     {
+      "title": "2015-05-31_Contraloria-BCS_Ley-de-Desarrollo-Urbano.pdf",
+      "path": "01_planning/2015-05-31_Contraloria-BCS_Ley-de-Desarrollo-Urbano.pdf"
+     }
+    ],
+    "primary_file": {
+     "title": "2015-05-31_Contraloria-BCS_Ley-de-Desarrollo-Urbano.pdf",
+     "path": "01_planning/2015-05-31_Contraloria-BCS_Ley-de-Desarrollo-Urbano.pdf"
+    },
+    "stakeholder": "CFE Transmisión / Distribución BCS",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E048",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es la presidenta municipal de La Paz?",
+   "place": null,
+   "all": [
+    "Milena (Paola )?Quiroga"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1319,
+    "answer": "La presidenta municipal de La Paz es Milena Quiroga Romero. Asumió el cargo en septiembre de 2021.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E049",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién dirige el OOMSAPAS Los Cabos?",
+   "place": null,
+   "all": [
+    "Ram[oó]n Edgardo Rubio"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2200,
+    "answer": "El Organismo Operador Municipal del Sistema de Agua Potable, Alcantarillado y Saneamiento de Los Cabos (OOMSAPAS) es dirigido por el Ing. Ramón Edgardo Rubio Apodaca, según el organigrama del H. XV Ayuntamiento de Los Cabos para el periodo 2024-2027. Puedes consultar más detalles en el documento del organigrama [aquí](https://drive.google.com/file/d/1ST2zM7inC6QSOsGuN2leonNrEGkAev1_/view).",
+    "sources": [
+     {
+      "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados"
+     },
+     {
+      "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Actor: CONAGUA",
+      "path": "12_ontology/graph.json#actor_conagua"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+     "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados"
+    },
+    "stakeholder": "Arturo Sandoval Montaño",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E050",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién encabeza el IMPLAN Los Cabos?",
+   "place": null,
+   "all": [
+    "Beatriz Gonz[aá]lez Gil?bert"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1539,
+    "answer": "El IMPLAN Los Cabos es encabezado por la Arq. Beatriz González Gibert, según el organigrama del H. XV Ayuntamiento de Los Cabos para el periodo 2024-2027.",
+    "sources": [
+     {
+      "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados"
+     },
+     {
+      "title": "Organigrama Ayuntamiento de Los Cabos 2024–2027 (quién es quién)",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#overview"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology Actor: IMPLAN Los Cabos",
+      "path": "12_ontology/graph.json#actor_implan_cabos"
+     },
+     {
+      "title": "Ontology Instrument: POEL Los Cabos (convenio)",
+      "path": "12_ontology/graph.json#inst_poel_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "Organismos descentralizados e institutos municipales de Los Cabos (OOMSAPAS, IMPLAN, DIF)",
+     "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#descentralizados"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E051",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién dirige el IMPLAN La Paz?",
+   "place": null,
+   "all": [
+    "Al[aá]n Roberto Izquierdo"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1942,
+    "answer": "La dirección del IMPLAN La Paz está a cargo de un presidente municipal, quien es responsable de la coordinación y supervisión de las actividades del instituto. Para información específica sobre la persona que ocupa actualmente este cargo, te recomendaría consultar el sitio web oficial del IMPLAN La Paz o las redes sociales del Ayuntamiento de La Paz, donde suelen publicar actualizaciones sobre su administración.",
+    "sources": [
+     {
+      "title": "Ontology Instrument: PDUCP Centro de Población La Paz",
+      "path": "12_ontology/graph.json#inst_pdu_lapaz"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Acuífero La Paz (0324)",
+      "path": "12_ontology/graph.json#rc_acuifero_0324"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Aeropuerto Internacional de La Paz (LAP)",
+      "path": "12_ontology/graph.json#rc_aeropuerto_lap"
+     },
+     {
+      "title": "2024_IMPLAN-La-Paz_APSRDU-Los-Barriles-El-Cardonal.pdf",
+      "path": "01_planning/2024_IMPLAN-La-Paz_APSRDU-Los-Barriles-El-Cardonal.pdf"
+     },
+     {
+      "title": "2024_IMPLAN-La-Paz_APSRDU-Todos-Santos-El-Pescadero-Las-Playitas.pdf",
+      "path": "01_planning/2024_IMPLAN-La-Paz_APSRDU-Todos-Santos-El-Pescadero-Las-Playitas.pdf"
+     }
+    ],
+    "primary_file": {
+     "title": "LaPaz_PDUCP_2018.pdf",
+     "path": "13_territorial_intelligence/catastro_implan/downloads/LaPaz_PDUCP_2018.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E052",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién es la titular de la SETUE?",
+   "place": null,
+   "all": [
+    "Rosa Maribel Collins"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1627,
+    "answer": "La titular de la Secretaría de Turismo, Economía y Sustentabilidad (SETUE) de Baja California Sur es Maribel Collins.",
+    "sources": [
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1"
+     },
+     {
+      "title": "Guía economia: Loreto — SETUE Información Estratégica (ON DISK)",
+      "path": "guides/economia.md#5"
+     },
+     {
+      "title": "Guía economia: Cifras ancla",
+      "path": "guides/economia.md#8"
+     },
+     {
+      "title": "Guía economia: Turismo (agregados SETUE IE 2026)",
+      "path": "guides/economia.md#4"
+     },
+     {
+      "title": "Guía energia: Renovables y baterías (parcial)",
+      "path": "guides/energia.md#17"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E053",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién representa a CONAGUA en BCS?",
+   "place": null,
+   "all": [
+    "Julio C[eé]sar Villarreal"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1415,
+    "answer": "El representante de CONAGUA en Baja California Sur es Julio César Villarreal Trasviña, quien ocupa el cargo de Director Local de CONAGUA en el estado.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-Pulmo-0318.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E054",
+   "cat": "actores",
+   "kind": "fact",
+   "q": "¿Quién encabeza la CEA BCS?",
+   "place": null,
+   "all": [
+    "Lesvia Tatiana Davis"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1358,
+    "answer": "La Comisión Estatal del Agua de Baja California Sur (CEA BCS) es encabezada por Lesvia Tatiana Davis Monzón, quien ocupa el cargo de Directora General.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-09-10_Congreso-BCS_Ley-de-Aguas-del-Estado.pdf",
+     "path": "02_water/2025-09-10_Congreso-BCS_Ley-de-Aguas-del-Estado.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E055",
+   "cat": "actores",
+   "kind": "refuse",
+   "q": "¿Quién es el director de la CFE en Baja California Sur?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1491,
+    "answer": "No tengo información específica sobre el director actual de la CFE en Baja California Sur. Te recomendaría consultar el sitio web oficial de la CFE o fuentes de noticias locales para obtener la información más actualizada.",
+    "sources": [
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Project: Almacenamiento SAE / BESS en planeación SIBCS (PAMRNT / PRODESEN)",
+      "path": "12_ontology/graph.json#proj_fed_ene_009"
+     },
+     {
+      "title": "Ontology Territory: Baja California Sur (estado)",
+      "path": "12_ontology/graph.json#terr_bcs"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Instrument: PAMRNT CENACE 2025–2039",
+      "path": "12_ontology/graph.json#inst_pamrnt"
+     }
+    ],
+    "primary_file": {
+     "title": "2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf",
+     "path": "05_demographics/2022-01-01_CONEVAL_SIDS_BajaCaliforniaSur.pdf"
+    },
+    "stakeholder": "CFE Transmisión / Distribución BCS",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E056",
+   "cat": "actores",
+   "kind": "refuse",
+   "q": "¿Quién es el secretario de Seguridad Pública de BCS?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2062,
+    "answer": "El secretario de Seguridad Pública de Baja California Sur es el Capitán de Fragata C.G. Christopher Jordi López Monge, quien dirige la Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal de Los Cabos. Esta información se encuentra en el organigrama del H. XV Ayuntamiento de Los Cabos para el periodo 2024-2027.",
+    "sources": [
+     {
+      "title": "Ontology Actor: DG Seguridad Pública, Policía Preventiva y Tránsito Municipal (Los Cabos)",
+      "path": "12_ontology/graph.json#actor_cabos_dg_seguridad_publica"
+     },
+     {
+      "title": "Ontology Instrument: POERBCS 2026",
+      "path": "12_ontology/graph.json#inst_poerbcs"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas"
+     },
+     {
+      "title": "Dirección General de Seguridad Pública, Policía Preventiva y Tránsito Municipal de Los Cabos: director general y direcciones",
+      "path": "14_gobierno/los_cabos_organigrama_2024_2027.json#dg-seguridad-publica-policia-preventiva-y-t"
+     },
+     {
+      "title": "Mesas de trabajo BCS2050: integrantes",
+      "path": "portal/mesas-de-trabajo"
+     }
+    ],
+    "primary_file": {
+     "title": "2022-03-23_Gobierno-BCS_Plan-Estatal-de-Desarrollo-2021-2027.pdf",
+     "path": "01_planning/2022-03-23_Gobierno-BCS_Plan-Estatal-de-Desarrollo-2021-2027.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E057",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál fue el volumen residencial de BCS en 2025 según JLL?",
+   "place": null,
+   "all": [
+    "1[ ,.]?570"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1266,
+    "answer": "El volumen residencial de Baja California Sur en 2025, según JLL, es un dato que se encuentra en la guía de economía. Para más detalles, puedes consultar el documento específico en la ruta: guides/economia.md.",
+    "sources": [
+     {
+      "title": "Guía territorio: Municipio: Loreto (`009`) — POBTOT **18,052**",
+      "path": "guides/territorio.md#15"
+     },
+     {
+      "title": "Guía historia: Cabeceras hoy (Censo 2020)",
+      "path": "guides/historia.md#4"
+     },
+     {
+      "title": "Guía territorio: Cifras clave (INEGI Censo 2020 ITER)",
+      "path": "guides/territorio.md#1"
+     },
+     {
+      "title": "Guía territorio: Municipios y cabeceras",
+      "path": "guides/territorio.md#2"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_JLL_Reporte_Mercado_Residencial_Los_Cabos.pdf",
+     "path": "07_economy_investment/real_estate_market/jll/2025_JLL_Reporte_Mercado_Residencial_Los_Cabos.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E058",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuántas unidades residenciales se vendieron en BCS en 2025 (JLL)?",
+   "place": null,
+   "all": [
+    "1[ ,.]?840"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1243,
+    "answer": "Se vendieron 1,840 unidades residenciales en Baja California Sur en 2025, según el informe de JLL. Puedes consultar más detalles en la guía de economía [guías/economia.md#11].",
+    "sources": [
+     {
+      "title": "Guía territorio: Municipio: Loreto (`009`) — POBTOT **18,052**",
+      "path": "guides/territorio.md#15"
+     },
+     {
+      "title": "Guía historia: Cabeceras hoy (Censo 2020)",
+      "path": "guides/historia.md#4"
+     },
+     {
+      "title": "Guía territorio: Cifras clave (INEGI Censo 2020 ITER)",
+      "path": "guides/territorio.md#1"
+     },
+     {
+      "title": "Guía territorio: Fortalezas / candados / oportunidades — por municipio (evidencia)",
+      "path": "guides/territorio.md#16"
+     },
+     {
+      "title": "Guía territorio: Municipios y cabeceras",
+      "path": "guides/territorio.md#2"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E059",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Qué porcentaje del volumen residencial de BCS corresponde a Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "81\\s*%",
+    "1[ ,.]?264"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2367,
+    "answer": "No hay un dato específico sobre el porcentaje del volumen residencial de Baja California Sur que corresponda a Los Cabos en el contexto disponible. Sin embargo, se menciona que Los Cabos es un polo de alta presión turística y residencial, lo que sugiere que tiene una participación significativa en el desarrollo residencial del estado. Para obtener cifras precisas, sería necesario consultar fuentes adicionales o estudios específicos sobre la distribución del volumen residencial en BCS. \n\nDato que falta: Porcentaje exacto del volumen residencial de BCS correspondiente a Los Cabos.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2026_SETUE-BCS_Informacion-Estrategica-Los-Cabos-2026.pdf",
+     "path": "07_economy_investment/2026_SETUE-BCS_Informacion-Estrategica-Los-Cabos-2026.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E060",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál es la mediana de precio de vivienda en Los Cabos en 2026?",
+   "place": null,
+   "all": [
+    "525[ ,.]?000"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1939,
+    "answer": "No hay datos específicos sobre la mediana de precio de vivienda en Los Cabos para 2026 en el contexto disponible. Para obtener información precisa sobre precios de vivienda, se recomienda consultar fuentes como el INEGI o estudios de mercado inmobiliario específicos de la región. \n\nDato que falta: Mediana de precio de vivienda en Los Cabos para 2026.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2026_Ayuntamiento-Los-Cabos_POEL-Aviso-Consulta-Publica.pdf",
+     "path": "01_planning/2026_Ayuntamiento-Los-Cabos_POEL-Aviso-Consulta-Publica.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E061",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuántos meses de inventario hay en Los Cabos?",
+   "place": null,
+   "all": [
+    "\\b15\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1672,
+    "answer": "No hay información específica sobre el número de meses de inventario en Los Cabos en el contexto disponible. Para obtener datos precisos sobre inventarios, sería necesario consultar fuentes específicas de mercado inmobiliario o informes de desarrollo urbano que no están presentes en el contexto actual. \n\nSi necesitas información sobre otros aspectos relacionados con Los Cabos, házmelo saber.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf",
+     "path": "01_planning/2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E062",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál es el rezago habitacional en BCS?",
+   "place": null,
+   "all": [],
+   "any": [
+    "58[ ,.]?987",
+    "21[.,]4\\s*%"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1962,
+    "answer": "El rezago habitacional en Baja California Sur es de 58,987 viviendas, lo que representa el 21.4% del total de viviendas en el estado. Esta cifra corresponde a datos de la Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) 2024, según la Comisión Nacional de Vivienda (CONAVI) [guías/economia.md#11].",
+    "sources": [
+     {
+      "title": "Ontology Instrument: POERBCS 2026",
+      "path": "12_ontology/graph.json#inst_poerbcs"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "2025_CONAVI_Rezago-Habitacional-2024.pdf",
+      "path": "07_economy_investment/2025_CONAVI_Rezago-Habitacional-2024.pdf"
+     },
+     {
+      "title": "2025_SEDATU-CONAVI_Boletin-Rezago-Habitacional-2024.pdf",
+      "path": "07_economy_investment/2025_SEDATU-CONAVI_Boletin-Rezago-Habitacional-2024.pdf"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_CONAVI_Rezago-Habitacional-2024.pdf",
+     "path": "07_economy_investment/2025_CONAVI_Rezago-Habitacional-2024.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E063",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuál es la meta de Vivienda para el Bienestar en BCS?",
+   "place": null,
+   "all": [
+    "37[ ,.]?500"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1536,
+    "answer": "La meta de Vivienda para el Bienestar en Baja California Sur es la construcción de 2,000 viviendas en el estado. Este programa busca atender las necesidades de vivienda de la población, especialmente de aquellos en situación de vulnerabilidad. La estrategia se enfoca en mejorar las condiciones de vida y garantizar el acceso a una vivienda digna.",
+    "sources": [
+     {
+      "title": "Guía territorio: Municipio: Loreto (`009`) — POBTOT **18,052**",
+      "path": "guides/territorio.md#15"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios"
+     },
+     {
+      "title": "Municipio Los Cabos — población INEGI 2020",
+      "path": "municipios/Los Cabos"
+     },
+     {
+      "title": "Municipio La Paz — población INEGI 2020",
+      "path": "municipios/La Paz"
+     },
+     {
+      "title": "Municipio Comondú — población INEGI 2020",
+      "path": "municipios/Comondú"
+     }
+    ],
+    "primary_file": {
+     "title": "2026-08-31_SNIIV-SEDATU_Registro-y-financiamiento-vivienda-BCS.json",
+     "path": "07_economy_investment/2026-08-31_SNIIV-SEDATU_Registro-y-financiamiento-vivienda-BCS.json"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E064",
+   "cat": "inmobiliario",
+   "kind": "fact",
+   "q": "¿Cuántas acciones de INFONAVIT hubo en BCS en 2025?",
+   "place": null,
+   "all": [
+    "6[ ,.]?604"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1221,
+    "answer": "En 2025, se registraron 6,604 acciones de INFONAVIT en Baja California Sur. [Año periodo INFONAVIT acciones BCS cifra dato tabla guía economia]",
+    "sources": [
+     {
+      "title": "Ontology Project: Paquete 95 acciones hídricas BCS (Plan Nacional Hídrico / gira)",
+      "path": "12_ontology/graph.json#proj_fed_agu_007"
+     },
+     {
+      "title": "Ontology Project: Vivienda para el Bienestar — convenio BCS (CONAVI / INFONAVIT / FOVISSSTE)",
+      "path": "12_ontology/graph.json#proj_fed_viv_001"
+     },
+     {
+      "title": "Ontology Project: Programas para el Bienestar — inversión territorial BCS 2025",
+      "path": "12_ontology/graph.json#proj_fed_soc_001"
+     },
+     {
+      "title": "Guía ambiente: Otras ANP en la capa federal 2025 (BCS)",
+      "path": "guides/ambiente.md#2"
+     },
+     {
+      "title": "Guía ambiente: Other ANPs in the 2025 federal layer (BCS)",
+      "path": "guides/ambiente.md#8"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E065",
+   "cat": "inmobiliario",
+   "kind": "refuse",
+   "q": "¿Cuál es el precio promedio del metro cuadrado en Mulegé?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1910,
+    "answer": "No hay información específica sobre el precio promedio del metro cuadrado en Mulegé en el contexto disponible. Para obtener datos precisos sobre precios de bienes raíces, te recomendaría consultar fuentes locales de bienes raíces o informes de mercado específicos de la región. Si necesitas información sobre otros aspectos de Mulegé, házmelo saber.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-06-01_Ayuntamiento-Mulege_Plan-Municipal-Desarrollo-2024-2027.pdf",
+     "path": "13_territorial_intelligence/plans/2025-06-01_Ayuntamiento-Mulege_Plan-Municipal-Desarrollo-2024-2027.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E066",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos pasajeros tuvo el aeropuerto de Los Cabos (SJD) en 2025?",
+   "place": null,
+   "all": [],
+   "any": [
+    "3[.,]8\\s*M",
+    "3[.,]8\\s*millones"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2160,
+    "answer": "No hay datos específicos sobre el número de pasajeros del aeropuerto de Los Cabos (SJD) en 2025 en el contexto disponible. Sin embargo, el crecimiento del turismo en la región es un motor clave que impulsa la demanda de conectividad aérea, lo que sugiere que el tráfico de pasajeros podría seguir aumentando. Para información más precisa, te recomendaría consultar fuentes oficiales o estadísticas de la administración del aeropuerto.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-08-19_ProyectosMexico_Ficha-0015-Mejoramiento-Integral-Agua-Los-Cabos.pdf",
+     "path": "07_economy_investment/2025-08-19_ProyectosMexico_Ficha-0015-Mejoramiento-Integral-Agua-Los-Cabos.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E067",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos pasajeros tuvo el aeropuerto de La Paz en 2025?",
+   "place": null,
+   "all": [
+    "668[ ,.]?800"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1602,
+    "answer": "No hay datos específicos sobre el número de pasajeros del aeropuerto de La Paz en 2025 en el contexto disponible. Para información actualizada sobre el tráfico aéreo, te recomendaría consultar fuentes oficiales como la Agencia Federal de Aviación Civil o el propio aeropuerto. Si necesitas información sobre tendencias o proyecciones, puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-12-09_Congreso-BCS_Boletin-552-leyes-ingresos-LaPaz-Mulege-2026.html",
+     "path": "13_territorial_intelligence/fiscal/2025-12-09_Congreso-BCS_Boletin-552-leyes-ingresos-LaPaz-Mulege-2026.html"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E068",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "aeropuerto loreto pasajeros",
+   "place": "loreto",
+   "all": [],
+   "any": [
+    "no consolidad",
+    "no (hay|tengo|consta)",
+    "sin dato"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2033,
+    "answer": "No hay datos específicos sobre el número de pasajeros del aeropuerto de Loreto en el contexto proporcionado. Sin embargo, el crecimiento del turismo en la región puede influir en la demanda de vuelos. Para información detallada sobre el tráfico aéreo, te recomendaría consultar fuentes oficiales como la Secretaría de Turismo o el propio aeropuerto de Loreto. \n\nSi necesitas más información sobre el impacto del turismo en Loreto, puedo ayudarte a explorar eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf",
+     "path": "01_planning/2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E069",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántas habitaciones de hotel tiene Los Cabos?",
+   "place": null,
+   "all": [
+    "22[ ,.]?254"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2026,
+    "answer": "No hay una cifra exacta de habitaciones de hotel en Los Cabos en el contexto disponible. Sin embargo, el turismo es un motor dominante en la región, lo que implica una alta demanda de infraestructura hotelera. Para obtener información precisa sobre el número de habitaciones, te recomendaría consultar fuentes locales o estadísticas del sector turístico en Baja California Sur. \n\nDato que falta: Número exacto de habitaciones de hotel en Los Cabos por año y fuente específica.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2016-2024_SECTUR_Ocupacion_hotelera_LosCabos_LaPaz_Loreto.csv",
+     "path": "05_demographics/2016-2024_SECTUR_Ocupacion_hotelera_LosCabos_LaPaz_Loreto.csv"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E070",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos hoteles tiene La Paz?",
+   "place": null,
+   "all": [
+    "\\b148\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1886,
+    "answer": "No hay un número específico de hoteles en La Paz en el contexto disponible. Para obtener información precisa sobre la cantidad de hoteles, te recomendaría consultar fuentes locales o bases de datos de turismo. Si necesitas información sobre la capacidad hotelera o el impacto del turismo en la región, puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E071",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "Ocupación hotelera de Los Cabos en 2025",
+   "place": null,
+   "all": [],
+   "any": [
+    "70(\\.0)?\\s*%"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2120,
+    "answer": "No hay datos específicos sobre la ocupación hotelera de Los Cabos en 2025 en el contexto actual. Sin embargo, el turismo es un motor dominante en la región, y la presión sobre los recursos hídricos y energéticos es significativa, lo que podría afectar la capacidad de crecimiento y la sostenibilidad del sector. \n\nPara más información sobre el turismo y su impacto en Los Cabos, puedes consultar la sección de turismo en el contexto o revisar documentos relacionados en /foresights y /crecimiento. \n\nDato que falta: Proyección específica de ocupación hotelera para 2025.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2016-2024_SECTUR_Ocupacion_hotelera_LosCabos_LaPaz_Loreto.csv",
+     "path": "05_demographics/2016-2024_SECTUR_Ocupacion_hotelera_LosCabos_LaPaz_Loreto.csv"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E072",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos pasajeros de crucero llegaron a Cabo San Lucas en 2025?",
+   "place": null,
+   "all": [
+    "1[ ,.]?057[ ,.]?758"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1533,
+    "answer": "No hay datos específicos sobre la llegada de pasajeros de crucero a Cabo San Lucas en 2025 en el contexto disponible. Para información actualizada sobre el turismo de cruceros, te recomendaría consultar fuentes oficiales de turismo o estadísticas de puertos. Si necesitas información sobre tendencias o proyecciones, puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+     "path": "02_water/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E073",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuál fue el RevPAR de Los Cabos en enero 2026?",
+   "place": null,
+   "all": [
+    "369"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1608,
+    "answer": "No hay datos específicos sobre el RevPAR de Los Cabos en enero de 2026 en el contexto disponible. Para obtener información precisa sobre el RevPAR, te recomendaría consultar fuentes de la industria hotelera o informes de turismo específicos para esa fecha. Si necesitas más información sobre el turismo en Los Cabos o su impacto en la demanda de recursos, puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2026_Ayuntamiento-Los-Cabos_POEL-Aviso-Consulta-Publica.pdf",
+     "path": "01_planning/2026_Ayuntamiento-Los-Cabos_POEL-Aviso-Consulta-Publica.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E074",
+   "cat": "turismo",
+   "kind": "fact",
+   "q": "¿Cuántos destinos sin escalas tiene SJD?",
+   "place": null,
+   "all": [
+    "\\b56\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1832,
+    "answer": "El Aeropuerto Internacional de Los Cabos (SJD) ofrece actualmente 34 destinos sin escalas. Esta conectividad impulsa la vocación turística de la región, facilitando el acceso a Los Cabos y contribuyendo a su crecimiento económico. Para más detalles sobre el impacto de esta conectividad en el turismo, puedes consultar la señal de conectividad aérea en el contexto.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-05-28_SECTUR_Ocupacion_hotelera_70_destinos.csv",
+     "path": "05_demographics/2025-05-28_SECTUR_Ocupacion_hotelera_70_destinos.csv"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E075",
+   "cat": "turismo",
+   "kind": "open",
+   "q": "¿Qué limita el crecimiento turístico de Todos Santos?",
+   "place": "todos_santos",
+   "all": [],
+   "any": [
+    "agua|acu[ií]fero|0313|d[eé]ficit"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2325,
+    "answer": "El crecimiento turístico de Todos Santos está limitado principalmente por la escasez hídrica estructural, ya que el acuífero 0313 presenta un déficit significativo de agua. Esto restringe la capacidad para desarrollar nuevos proyectos turísticos y residenciales, ya que no hay margen para nuevas concesiones de agua en la región. Además, la presión del turismo en el área puede generar conflictos con la disponibilidad de recursos hídricos y energéticos, lo que complica aún más el crecimiento sostenible del sector. \n\nReferencias: \n- Signal sig-water-energy-coupling [water]\n- Ontología Constraint: Escasez hídrica estructural (sur) [1]\n- Ontología Constraint: DMA en déficit (0313) [2]",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Constraint: Presión turística costera en interfaces ANP",
+      "path": "12_ontology/graph.json#const_coast_anp_pressure"
+     },
+     {
+      "title": "Ontology Constraint: Núcleos ANP como veto de uso",
+      "path": "12_ontology/graph.json#const_anp_nucleos"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     }
+    ],
+    "primary_file": {
+     "title": "2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+     "path": "01_planning/2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E076",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuál fue el PIB de Baja California Sur en 2024 a precios constantes?",
+   "place": null,
+   "all": [
+    "187[ ,.]?152"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1900,
+    "answer": "El PIB de Baja California Sur en 2024 a precios constantes fue de 187,152 millones de pesos, lo que representa un incremento del 3.5% en comparación con 2023. [guías/economía.md#8]",
+    "sources": [
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1"
+     },
+     {
+      "title": "Guía economia: Inversión extranjera directa (CNIE 2025)",
+      "path": "guides/economia.md#2"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3"
+     },
+     {
+      "title": "Guía economia: Minería (SGM Anuario 2024, ed. 2025)",
+      "path": "guides/economia.md#6"
+     },
+     {
+      "title": "Guía energia: Renovables y baterías (parcial)",
+      "path": "guides/energia.md#17"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E077",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "PIB nominal de BCS 2024",
+   "place": null,
+   "all": [
+    "251[ ,.]?902"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1565,
+    "answer": "El PIB nominal de Baja California Sur para 2024 es de 251,902 millones de pesos. Esta cifra refleja el valor total de la producción de bienes y servicios en la entidad durante ese año. [guías/economía.md#4]",
+    "sources": [
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1"
+     },
+     {
+      "title": "Guía economia: Minería (SGM Anuario 2024, ed. 2025)",
+      "path": "guides/economia.md#6"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3"
+     },
+     {
+      "title": "Guía economia: Cifras ancla",
+      "path": "guides/economia.md#8"
+     },
+     {
+      "title": "Guía ambiente: Otras ANP en la capa federal 2025 (BCS)",
+      "path": "guides/ambiente.md#2"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E078",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuánta inversión extranjera directa recibió BCS en 2025?",
+   "place": null,
+   "all": [
+    "1[ ,.]?578"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1213,
+    "answer": "Baja California Sur recibió 1,578 millones de dólares en inversión extranjera directa en 2025, posicionándose como el quinto estado a nivel nacional en este rubro. [guía economía]",
+    "sources": [
+     {
+      "title": "Ontology Project: Programas para el Bienestar — inversión territorial BCS 2025",
+      "path": "12_ontology/graph.json#proj_fed_soc_001"
+     },
+     {
+      "title": "Ontology Instrument: PAMRNT CENACE 2025–2039",
+      "path": "12_ontology/graph.json#inst_pamrnt"
+     },
+     {
+      "title": "Ontology Project: Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "path": "12_ontology/graph.json#proj_fed_ene_002"
+     },
+     {
+      "title": "Guía economia: Inversión extranjera directa (CNIE 2025)",
+      "path": "guides/economia.md#2"
+     },
+     {
+      "title": "Mesa de trabajo Inversión extranjera: integrantes",
+      "path": "portal/mesas-de-trabajo#inversion-extranjera"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E079",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Qué porcentaje del VAB de BCS es terciario?",
+   "place": null,
+   "all": [
+    "72[.,]9"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1584,
+    "answer": "El VAB terciario en Baja California Sur representa el 72.9% del total. Esta cifra se deriva de la estructura del Valor Agregado Bruto (VAB) para el año 2024.",
+    "sources": [
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3"
+     },
+     {
+      "title": "Guía economia: Loreto — SETUE Información Estratégica (ON DISK)",
+      "path": "guides/economia.md#5"
+     },
+     {
+      "title": "Guía economia: Minería (SGM Anuario 2024, ed. 2025)",
+      "path": "guides/economia.md#6"
+     },
+     {
+      "title": "Guía ambiente: Otras ANP en la capa federal 2025 (BCS)",
+      "path": "guides/ambiente.md#2"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E080",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuántos establecimientos registraron los Censos Económicos 2024 en BCS?",
+   "place": null,
+   "all": [
+    "43[ ,.]?405"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1872,
+    "answer": "Los Censos Económicos 2024 registraron un total de 43,405 establecimientos en Baja California Sur. [Censos Económicos 2024 cifra dato tabla guía economia]",
+    "sources": [
+     {
+      "title": "Stills / mapa por municipio — BCS",
+      "path": "stills/municipio/BCS"
+     },
+     {
+      "title": "Stills / mapa por municipio — Comondú",
+      "path": "stills/municipio/Comondú"
+     },
+     {
+      "title": "Mapas GIS BCS — capas interactivas y galería",
+      "path": "portal/mapas"
+     },
+     {
+      "title": "Ontology Evidence: Inteligencia territorial stills Earth Studio (956)",
+      "path": "12_ontology/graph.json#ev_stills_intel"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Loreto",
+      "path": "12_ontology/graph.json#terr_loreto"
+     },
+     {
+      "title": "Ontology Evidence: Catálogo de localidades ITER (communities_master)",
+      "path": "12_ontology/graph.json#ev_communities_master"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-07-24_INEGI_CensosEconomicos2024_BCS.pdf",
+     "path": "07_economy_investment/2025-07-24_INEGI_CensosEconomicos2024_BCS.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E081",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuál es la tasa de desocupación en BCS (ENOE 2026 T2)?",
+   "place": null,
+   "all": [
+    "2[.,]3\\s*%"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1463,
+    "answer": "La tasa de desocupación en Baja California Sur es del 2.3% según la Encuesta Nacional de Ocupación y Empleo (ENOE) del segundo trimestre de 2026.",
+    "sources": [
+     {
+      "title": "Guía economia: Producto interno (PIBE 2024, INEGI)",
+      "path": "guides/economia.md#1"
+     },
+     {
+      "title": "Guía economia: Empleo y establecimientos (INEGI)",
+      "path": "guides/economia.md#3"
+     },
+     {
+      "title": "Guía economia: Loreto — SETUE Información Estratégica (ON DISK)",
+      "path": "guides/economia.md#5"
+     },
+     {
+      "title": "Guía economia: Cifras ancla",
+      "path": "guides/economia.md#8"
+     },
+     {
+      "title": "Guía economia: Minería (SGM Anuario 2024, ed. 2025)",
+      "path": "guides/economia.md#6"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-12-05_INEGI_PIBE_BCS_2024.pdf",
+     "path": "07_economy_investment/2025-12-05_INEGI_PIBE_BCS_2024.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E082",
+   "cat": "economia",
+   "kind": "fact",
+   "q": "¿Cuál es la pobreza laboral en BCS según CONEVAL?",
+   "place": null,
+   "all": [
+    "13[.,]2\\s*%"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1522,
+    "answer": "La pobreza laboral en Baja California Sur es del 13.2%, la más baja de las 32 entidades en el corte del cuarto trimestre de 2024, según el informe de CONEVAL [CONEVAL ITLP 4T 2024].",
+    "sources": [
+     {
+      "title": "Ontology Project: Programas para el Bienestar — inversión territorial BCS 2025",
+      "path": "12_ontology/graph.json#proj_fed_soc_001"
+     },
+     {
+      "title": "Ontology Instrument: POERBCS 2026",
+      "path": "12_ontology/graph.json#inst_poerbcs"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas"
+     },
+     {
+      "title": "2020-01-01_CONEVAL_Informe_pobreza_y_evaluacion_BCS_2020.pdf",
+      "path": "05_demographics/2020-01-01_CONEVAL_Informe_pobreza_y_evaluacion_BCS_2020.pdf"
+     },
+     {
+      "title": "2025-02-26_CONEVAL_ITLP_pobreza-laboral_4T2024.pdf",
+      "path": "07_economy_investment/2025-02-26_CONEVAL_ITLP_pobreza-laboral_4T2024.pdf"
+     }
+    ],
+    "primary_file": {
+     "title": "2020-01-01_CONEVAL_Informe_pobreza_y_evaluacion_BCS_2020.pdf",
+     "path": "05_demographics/2020-01-01_CONEVAL_Informe_pobreza_y_evaluacion_BCS_2020.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E083",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Qué superficie tiene la Reserva de la Biosfera El Vizcaíno?",
+   "place": null,
+   "all": [
+    "2[ ,.]?546[ ,.]?790"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2185,
+    "answer": "La Reserva de la Biosfera El Vizcaíno tiene una superficie aproximada de 2,500,000 hectáreas. Esta área protegida es una de las más grandes de México y alberga una gran diversidad de ecosistemas y especies. Para más detalles, puedes consultar el documento de la CONANP sobre la reserva.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2000-09-01_CONANP_Aviso_DOF_PM_RB_El_Vizcaino.pdf",
+     "path": "06_environment/2000-09-01_CONANP_Aviso_DOF_PM_RB_El_Vizcaino.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E084",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Cuándo se decretó el Parque Nacional Cabo Pulmo y qué superficie tiene?",
+   "place": null,
+   "all": [],
+   "any": [
+    "1995",
+    "7[ ,.]?111"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1580,
+    "answer": "El Parque Nacional Cabo Pulmo fue decretado el 6 de noviembre de 1995. Su superficie es de aproximadamente 7,111 hectáreas. Este parque es conocido por su rica biodiversidad marina y su importancia ecológica en la región.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "1995-06-06_SEMARNAT_Decreto_PN_Cabo_Pulmo.pdf",
+     "path": "06_environment/1995-06-06_SEMARNAT_Decreto_PN_Cabo_Pulmo.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E085",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "Superficie de la Reserva Sierra La Laguna",
+   "place": null,
+   "all": [
+    "112[ ,.]?437"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 966,
+    "answer": "La superficie de la Reserva de la Biosfera Sierra La Laguna es de 112,437.07 hectáreas.",
+    "sources": [
+     {
+      "title": "Ontology Territory: Reserva de la Biosfera Sierra La Laguna",
+      "path": "12_ontology/graph.json#terr_anp_sierra_laguna"
+     },
+     {
+      "title": "Ontology Constraint: Núcleos ANP como veto de uso",
+      "path": "12_ontology/graph.json#const_anp_nucleos"
+     },
+     {
+      "title": "Ontology Territory: Reserva de la Biosfera El Vizcaíno",
+      "path": "12_ontology/graph.json#terr_anp_vizcaino"
+     },
+     {
+      "title": "2003-06-19_CONANP_Aviso_DOF_PM_RB_Sierra_La_Laguna.pdf",
+      "path": "06_environment/2003-06-19_CONANP_Aviso_DOF_PM_RB_Sierra_La_Laguna.pdf"
+     },
+     {
+      "title": "2003-06-19_SEMARNAT_DOF_resumen_PM_RB_Sierra_La_Laguna.pdf",
+      "path": "06_environment/2003-06-19_SEMARNAT_DOF_resumen_PM_RB_Sierra_La_Laguna.pdf"
+     }
+    ],
+    "primary_file": {
+     "title": "2003-06-19_CONANP_Aviso_DOF_PM_RB_Sierra_La_Laguna.pdf",
+     "path": "06_environment/2003-06-19_CONANP_Aviso_DOF_PM_RB_Sierra_La_Laguna.pdf"
+    },
+    "stakeholder": "Everardo Mariano Meléndez",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E086",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Qué superficie tiene el Parque Nacional Bahía de Loreto?",
+   "place": null,
+   "all": [
+    "206[ ,.]?580"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1792,
+    "answer": "El Parque Nacional Bahía de Loreto tiene una superficie de aproximadamente 206,000 hectáreas. Este parque es conocido por su biodiversidad marina y terrestre, así como por su importancia ecológica en la región. Si necesitas más información sobre su gestión o características, házmelo saber.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2002-11-11_CONANP_Aviso_DOF_PM_PN_Bahia_de_Loreto.pdf",
+     "path": "06_environment/2002-11-11_CONANP_Aviso_DOF_PM_PN_Bahia_de_Loreto.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E087",
+   "cat": "ambiente",
+   "kind": "fact",
+   "q": "¿Cuántas hectáreas ejidales hay en BCS?",
+   "place": null,
+   "all": [
+    "303[ ,.]?95[78]"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1298,
+    "answer": "No hay información específica sobre la cantidad total de hectáreas ejidales en Baja California Sur en el contexto disponible. Para obtener datos precisos sobre la superficie ejidal, se recomienda consultar fuentes oficiales como el Registro Agrario Nacional (RAN) o la Secretaría de Desarrollo Agrario, Territorial y Urbano (SEDATU).",
+    "sources": [
+     {
+      "title": "Ontology Instrument: POERBCS 2026",
+      "path": "12_ontology/graph.json#inst_poerbcs"
+     },
+     {
+      "title": "Ontology Instrument: Ley de Aguas del Estado de BCS",
+      "path": "12_ontology/graph.json#inst_ley_aguas"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Capacidad habitacional Los Cabos",
+      "path": "12_ontology/graph.json#rc_vivienda_cabos"
+     },
+     {
+      "title": "Hecho agua: DMA — 0313",
+      "path": "guides/agua.md#1"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-12-05_INEGI_PIBE_BCS_2023.pdf",
+     "path": "05_demographics/2024-12-05_INEGI_PIBE_BCS_2023.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E088",
+   "cat": "planeacion",
+   "kind": "fact",
+   "q": "¿Cuándo se publicó el POERBCS y cuántas UGAs tiene?",
+   "place": null,
+   "all": [
+    "56"
+   ],
+   "any": [
+    "2026|21.{0,6}ene"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1136,
+    "answer": "El POERBCS fue publicado el 21 de enero de 2026 y cuenta con 56 Unidades de Gestión Ambiental (UGAs) [4].",
+    "sources": [
+     {
+      "title": "Ontology Instrument: POERBCS 2026",
+      "path": "12_ontology/graph.json#inst_poerbcs"
+     },
+     {
+      "title": "Ontology DecisionQuestion: ¿POERBCS ↔ PDU ↔ proyectos son coherentes?",
+      "path": "12_ontology/graph.json#dq_coherencia_instrumentos"
+     },
+     {
+      "title": "Ontology Instrument: PDUCP Centro de Población La Paz",
+      "path": "12_ontology/graph.json#inst_pdu_lapaz"
+     },
+     {
+      "title": "Ontology Evidence: Expediente POERBCS / POETBCS (caracterización–pronóstico)",
+      "path": "12_ontology/graph.json#ev_poerbcs"
+     },
+     {
+      "title": "Hecho planeacion: Status — POERBCS",
+      "path": "guides/planeacion.md#5"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E089",
+   "cat": "planeacion",
+   "kind": "fact",
+   "q": "¿Qué plan de desarrollo urbano está vigente en Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "PDU 2040",
+    "2013"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2104,
+    "answer": "El plan de desarrollo urbano vigente en Los Cabos es el PDU 2040. Este instrumento municipal de usos de suelo opera bajo el marco del POERBCS y está tensionado por la escasez hídrica estructural y los déficits en los acuíferos de la región. El PDU 2040 busca regular el crecimiento y el uso del suelo en el municipio, considerando las limitaciones de agua y energía en el área. Puedes consultar más sobre esto en la ontología relacionada [PDU 2040 Los Cabos](12_ontology/graph.json#inst_pdu_cabos).",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024_Ayuntamiento-Los-Cabos_Plan-Municipal-de-Desarrollo-2024-2027.pdf",
+     "path": "01_planning/2024_Ayuntamiento-Los-Cabos_Plan-Municipal-de-Desarrollo-2024-2027.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E090",
+   "cat": "planeacion",
+   "kind": "fact",
+   "q": "¿Qué instrumento urbano rige La Paz?",
+   "place": null,
+   "all": [],
+   "any": [
+    "PDUCP",
+    "PMDU"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1920,
+    "answer": "La Paz está regida por el Plan de Desarrollo Urbano de La Paz (PDUCP) 2018, que actúa como un instrumento de planeación urbana. Este documento establece lineamientos y regulaciones para el uso del suelo y el desarrollo urbano en el municipio, aunque se enfrenta a restricciones debido a la escasez hídrica estructural y el déficit en los acuíferos de la región [5].",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E091",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Cuántos proyectos federales hay en el inventario de BCS?",
+   "place": null,
+   "all": [
+    "\\b44\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1583,
+    "answer": "Hay un total de 44 proyectos federales en el inventario de Baja California Sur. Esta cifra incluye 10 proyectos de la administración de AMLO, 20 de Sheinbaum y 14 que son de ambos. Puedes consultar más detalles en el documento del inventario de proyectos federales [aquí](guides/proyectos-federales.md#fact).",
+    "sources": [
+     {
+      "title": "Ontology Evidence: Inventario proyectos federales BCS (44)",
+      "path": "12_ontology/graph.json#ev_federal_projects_inventory"
+     },
+     {
+      "title": "Ontology Instrument: Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "path": "12_ontology/graph.json#inst_federal_pipeline"
+     },
+     {
+      "title": "Ontology Project: ANP / decretos ambientales federales con efecto en BCS (marco)",
+      "path": "12_ontology/graph.json#proj_fed_amb_001"
+     },
+     {
+      "title": "Ontology Project: Unidades turbogás aeroderivadas Central Combustión Interna BCS (reubicadas Lechería)",
+      "path": "12_ontology/graph.json#proj_fed_ene_001"
+     },
+     {
+      "title": "Ontology Project: Central de Ciclo Combinado BCS (anuncio CFE 327 MW)",
+      "path": "12_ontology/graph.json#proj_fed_ene_002"
+     }
+    ],
+    "primary_file": {
+     "title": "2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf",
+     "path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf"
+    },
+    "stakeholder": "Carolina Armenta Cervantes",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E092",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Qué capacidad tiene el Hospital General Regional del IMSS en Los Cabos?",
+   "place": null,
+   "all": [],
+   "any": [
+    "260\\s*camas",
+    "41[ ,.]?000"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1594,
+    "answer": "No hay información específica sobre la capacidad del Hospital General Regional del IMSS en Los Cabos en el contexto disponible. Para obtener datos precisos sobre su capacidad, te recomendaría consultar directamente con el IMSS o revisar fuentes oficiales relacionadas con la infraestructura de salud en la región.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf",
+     "path": "01_planning/2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf"
+    },
+    "stakeholder": "Arq. Beatriz González Gibert",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E093",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Cuál es el monto de la Presa El Novillo?",
+   "place": null,
+   "all": [],
+   "any": [
+    "800\\s*(M|millones|mdp)",
+    "800[ ,.]?000[ ,.]?000"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 1168,
+    "answer": "El monto de la Presa El Novillo es de 800,000,000 MXN, según la información del portal [proyectos-federales].",
+    "sources": [
+     {
+      "title": "Ontology Project: Presa El Novillo (sistema integral agua La Paz)",
+      "path": "12_ontology/graph.json#proj_fed_agu_003"
+     },
+     {
+      "title": "Ontology Project: Sectorización agua potable y planta potabilizadora La Paz",
+      "path": "12_ontology/graph.json#proj_fed_agu_004"
+     },
+     {
+      "title": "Ontology Constraint: Brecha: proyectos BESS (ubicación/MW)",
+      "path": "12_ontology/graph.json#rc_bess_gap"
+     },
+     {
+      "title": "2026-04-16_ProyectosMexico_Sostenibilidad-0985-Presa-El-Novillo.pdf",
+      "path": "07_economy_investment/2026-04-16_ProyectosMexico_Sostenibilidad-0985-Presa-El-Novillo.pdf"
+     },
+     {
+      "title": "Hecho proyectos-federales: Presa El Novillo (sistema integral agua La Paz)",
+      "path": "guides/proyectos-federales.md#fact"
+     }
+    ],
+    "primary_file": {
+     "title": "2026-04-16_ProyectosMexico_Sostenibilidad-0985-Presa-El-Novillo.pdf",
+     "path": "07_economy_investment/2026-04-16_ProyectosMexico_Sostenibilidad-0985-Presa-El-Novillo.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E094",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Qué pasó con el proyecto Don Diego?",
+   "place": null,
+   "all": [],
+   "any": [
+    "rechaz|cancel"
+   ],
+   "res": {
+    "status": 200,
+    "ms": 2525,
+    "answer": "El proyecto Don Diego, relacionado con la extracción de fosfato submarino en el Golfo de Ulloa, fue cancelado. La Manifestación de Impacto Ambiental (MIA) fue rechazada y las concesiones fueron canceladas en 2024. Además, se reportó un laudo del Centro Internacional de Arreglo de Diferencias Relativas a Inversiones (ICSID) que obliga a México a pagar aproximadamente 37.1 millones de dólares por el caso. Este proyecto estaba ubicado en el municipio de Comondú y su cancelación se debió a preocupaciones ambientales y la falta de aprobación por parte de las autoridades competentes. \n\nPuedes consultar más detalles en el artículo de El País sobre el tema.",
+    "sources": [
+     {
+      "title": "Ontology Project: Don Diego (fosfato submarino Golfo de Ulloa) — rechazo MIA y cancelación concesiones",
+      "path": "12_ontology/graph.json#proj_fed_min_002"
+     },
+     {
+      "title": "Ontology Constraint: Brecha: proyectos BESS (ubicación/MW)",
+      "path": "12_ontology/graph.json#rc_bess_gap"
+     },
+     {
+      "title": "Ontology Instrument: Pipeline de proyectos federales (AMLO/Sheinbaum)",
+      "path": "12_ontology/graph.json#inst_federal_pipeline"
+     },
+     {
+      "title": "Ontology Project: Paso a desnivel / paso inferior Glorieta Fonatur (Glorieta Mujeres Libres BCS)",
+      "path": "12_ontology/graph.json#proj_fed_car_002"
+     },
+     {
+      "title": "Ontology Project: Mina Los Cardones — rechazo AMLO y anulación autorización SEMARNAT",
+      "path": "12_ontology/graph.json#proj_fed_min_001"
+     }
+    ],
+    "primary_file": {
+     "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-El-Cardonal-Politicas-y-Estrategia.pdf",
+     "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-El-Cardonal-Politicas-y-Estrategia.pdf"
+    },
+    "stakeholder": "Milena Paola Quiroga Romero",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E095",
+   "cat": "proyectos",
+   "kind": "fact",
+   "q": "¿Cuántas acciones hídricas tiene el paquete federal para BCS?",
+   "place": null,
+   "all": [
+    "\\b95\\b"
+   ],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2363,
+    "answer": "No hay información específica sobre el número exacto de acciones hídricas en el paquete federal para Baja California Sur en el contexto disponible. Para detalles sobre proyectos y acciones específicas, se sugiere revisar el \"Inventario de proyectos federales BCS\" o consultar documentos relacionados con la gestión hídrica en la región. Puedes encontrar más información en el enlace de la biblioteca o en los documentos de referencia.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Project: Acuerdos DMA acuíferos BCS (vedas/disponibilidad)",
+      "path": "12_ontology/graph.json#proj_fed_agu_008"
+     },
+     {
+      "title": "Ontology Evidence: Actualizaciones DMA CONAGUA (acuíferos sur)",
+      "path": "12_ontology/graph.json#ev_dma"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2025-09-10_Congreso-BCS_Ley-de-Aguas-del-Estado.pdf",
+     "path": "02_water/2025-09-10_Congreso-BCS_Ley-de-Aguas-del-Estado.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E096",
+   "cat": "fuera",
+   "kind": "refuse",
+   "q": "¿Cuánta agua en litros por segundo suministra el OOMSAPAS a todo Los Cabos?",
+   "place": "los_cabos",
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2825,
+    "answer": "No hay un dato específico sobre el suministro total de agua en litros por segundo que el OOMSAPAS proporciona a todo Los Cabos en el contexto disponible. Sin embargo, se menciona que la desaladora de Los Cabos tiene una capacidad nominal de 250 litros por segundo, lo que representa una parte de la oferta de agua en la región. \n\nPara obtener una cifra precisa del suministro total, sería necesario consultar directamente con OOMSAPAS o revisar informes específicos sobre el abastecimiento de agua en Los Cabos. \n\nDato que falta: Suministro total de agua en litros por segundo de OOMSAPAS a Los Cabos.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2012-01-01_OOMSAPAS-Los-Cabos_Normas-y-Lineamientos-Tecnicos-Agua-Drenaje.pdf",
+     "path": "02_water/2012-01-01_OOMSAPAS-Los-Cabos_Normas-y-Lineamientos-Tecnicos-Agua-Drenaje.pdf"
+    },
+    "stakeholder": "Arturo Sandoval Montaño",
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E097",
+   "cat": "fuera",
+   "kind": "refuse",
+   "q": "¿Cuál será la población de BCS en 2050?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 3655,
+    "answer": "La población de Baja California Sur en 2050 no está directamente proyectada en el contexto actual. Sin embargo, se puede estimar un crecimiento lineal basado en la población actual de 798,447 habitantes (Censo 2020). \n\nSi consideramos un crecimiento poblacional promedio, por ejemplo, del 1.5% anual, la proyección para 2050 sería:\n\n1. **Crecimiento anual**: 798,447 × 0.015 = 11,976.71 (aproximadamente 11,977 habitantes por año).\n2. **Años hasta 2050**: 30 años.\n3. **Crecimiento total**: 11,977 × 30 = 359,310.\n4. **Población estimada en 2050**: 798,447 + 359,310 ≈ 1,157,757.\n\nPor lo tanto, la población de BCS podría aproximarse a 1,157,757 habitantes en 2050 bajo este supuesto de crecimiento lineal.\n\nDato que falta: Proyección oficial de crecimiento poblacional específica para BCS hasta 2050.",
+    "sources": [
+     {
+      "title": "Guía territorio: Municipio: Loreto (`009`) — POBTOT **18,052**",
+      "path": "guides/territorio.md#15"
+     },
+     {
+      "title": "Guía historia: Cabeceras hoy (Censo 2020)",
+      "path": "guides/historia.md#4"
+     },
+     {
+      "title": "Guía territorio: Cifras clave (INEGI Censo 2020 ITER)",
+      "path": "guides/territorio.md#1"
+     },
+     {
+      "title": "Guía territorio: Municipios y cabeceras",
+      "path": "guides/territorio.md#2"
+     },
+     {
+      "title": "Población municipal y cabeceras BCS — INEGI Censo 2020",
+      "path": "05_demographics/portal_extract_censo2020_municipios"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-12-05_INEGI_PIBE_BCS_2023.pdf",
+     "path": "05_demographics/2024-12-05_INEGI_PIBE_BCS_2023.pdf"
+    },
+    "stakeholder": null,
+    "error": null
+   },
+   "score": {
+    "pass": false,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E098",
+   "cat": "fuera",
+   "kind": "refuse",
+   "q": "¿Cuál es el precio de la gasolina en La Paz hoy?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1548,
+    "answer": "No tengo acceso a información actualizada sobre precios de gasolina en La Paz. Te recomiendo consultar fuentes locales o aplicaciones de monitoreo de precios de combustibles para obtener la información más reciente.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+     "path": "01_planning/2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E099",
+   "cat": "fuera",
+   "kind": "refuse",
+   "q": "¿Cuántos turistas chinos visitaron Loreto en 2024?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 1875,
+    "answer": "No hay datos específicos sobre la cantidad de turistas chinos que visitaron Loreto en 2024 en el contexto disponible. Para información detallada sobre el turismo en Loreto, te recomendaría consultar fuentes oficiales de turismo o estadísticas del gobierno local. Si necesitas información sobre el turismo en general en Loreto, puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf",
+     "path": "01_planning/2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf"
+    },
+    "stakeholder": "Julio César Villarreal Trasviña",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 5,
+    "src_hit": null
+   }
+  },
+  {
+   "id": "E100",
+   "cat": "fuera",
+   "kind": "refuse",
+   "q": "¿Qué empresa ganó la licitación de la desaladora de La Paz y por cuánto?",
+   "place": null,
+   "all": [],
+   "any": [],
+   "res": {
+    "status": 200,
+    "ms": 2251,
+    "answer": "No hay información específica en el contexto sobre la empresa que ganó la licitación de la desaladora de La Paz ni el monto del contrato. Para obtener esos detalles, te recomendaría consultar fuentes oficiales o noticias recientes relacionadas con el proyecto de la desaladora. Si necesitas información sobre el contexto hídrico o las implicaciones de la desalación en La Paz, puedo ayudarte con eso.",
+    "sources": [
+     {
+      "title": "Ontology Constraint: Escasez hídrica estructural (sur)",
+      "path": "12_ontology/graph.json#const_escasez_agua"
+     },
+     {
+      "title": "Ontology Constraint: DMA en déficit (0313/0317/0319/0324)",
+      "path": "12_ontology/graph.json#const_dma_deficit"
+     },
+     {
+      "title": "Ontology Constraint: Red eléctrica aislada (SIBCS)",
+      "path": "12_ontology/graph.json#const_red_aislada"
+     },
+     {
+      "title": "Ontology Constraint: Tenencia irregular / conflicto de tierra",
+      "path": "12_ontology/graph.json#const_tenencia"
+     },
+     {
+      "title": "Ontology Instrument: PDU 2040 Los Cabos",
+      "path": "12_ontology/graph.json#inst_pdu_cabos"
+     },
+     {
+      "title": "Ontology ResourceCapacity: Sistema Interconectado Baja California Sur (SIBCS)",
+      "path": "12_ontology/graph.json#rc_sibcs"
+     },
+     {
+      "title": "Ontology Territory: Municipio de Los Cabos",
+      "path": "12_ontology/graph.json#terr_los_cabos"
+     }
+    ],
+    "primary_file": {
+     "title": "2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf",
+     "path": "02_water/2023-08-17_DOF_Acuerdo-DMA-Acuifero-La-Paz-0324.pdf"
+    },
+    "stakeholder": "Alán Roberto Izquierdo Soto",
+    "error": null
+   },
+   "score": {
+    "pass": true,
+    "invented": [],
+    "n_sources": 7,
+    "src_hit": null
+   }
+  }
+ ],
+ "summary": {
+  "total": 100,
+  "pass": 52,
+  "accuracy": 52,
+  "invented_numbers": 0,
+  "answers_with_invented": 0,
+  "refuse_total": 13,
+  "refuse_pass": 8,
+  "refuse_no_sources": 0,
+  "errors": 0,
+  "by_category": {
+   "agua": {
+    "n": 17,
+    "pass": 9,
+    "inv": 0
+   },
+   "energia": {
+    "n": 10,
+    "pass": 5,
+    "inv": 0
+   },
+   "poblacion": {
+    "n": 12,
+    "pass": 3,
+    "inv": 0
+   },
+   "seguridad": {
+    "n": 6,
+    "pass": 3,
+    "inv": 0
+   },
+   "actores": {
+    "n": 11,
+    "pass": 8,
+    "inv": 0
+   },
+   "inmobiliario": {
+    "n": 9,
+    "pass": 4,
+    "inv": 0
+   },
+   "turismo": {
+    "n": 10,
+    "pass": 2,
+    "inv": 0
+   },
+   "economia": {
+    "n": 7,
+    "pass": 7,
+    "inv": 0
+   },
+   "ambiente": {
+    "n": 5,
+    "pass": 2,
+    "inv": 0
+   },
+   "planeacion": {
+    "n": 3,
+    "pass": 3,
+    "inv": 0
+   },
+   "proyectos": {
+    "n": 5,
+    "pass": 3,
+    "inv": 0
+   },
+   "fuera": {
+    "n": 5,
+    "pass": 3,
+    "inv": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,477 @@
+{
+  "as_of": "2026-09-25",
+  "disclaimer_es": "Síntesis factual con fuentes nombradas. No es recomendación de inversión.",
+  "disclaimer_en": "Factual synthesis with named sources. Not investment advice.",
+  "scope_note_es": "La mayor parte de la serie residencial de alto valor (Cabo RE) cubre el municipio de Los Cabos (CSL, SJD, Corredor, Pacific/East Cape overlaps) vía BCS MLS casas+condos bajo contrato; excluye ventas off-MLS de desarrolladores y, en la serie Cabo RE, no reporta tierra. JLL 2025 es anual BCS/Los Cabos e incluye tierra. Coldwell Banker Q1 2025 es estatal y tipología ampliada.",
+  "scope_note_en": "Most high-value residential series (Cabo RE) covers Los Cabos municipality (CSL, SJD, Corridor, Pacific/East Cape overlaps) via BCS MLS houses+condos under contract; excludes off-MLS developer sales and, in the Cabo RE series, does not report land. JLL 2025 is annual BCS/Los Cabos and includes land. Coldwell Banker Q1 2025 is statewide with broader property types.",
+  "catalog_count": 28,
+  "jll_2025_bcs": {
+    "source": "JLL Reporte Anual Mercado Residencial Los Cabos 2025 (BCS MLS)",
+    "url": "https://www.jll.com/content/dam/jllcom/en/mx/documents/reports/research-reports/26-insights-reporte-mercado-residencial-los-cabos.pdf",
+    "as_of": "2025",
+    "desktop": "Desktop\\\\BCSFP\\\\07_economy_investment\\\\real_estate_market\\\\jll\\\\2025_JLL_Reporte_Mercado_Residencial_Los_Cabos.pdf",
+    "volume_m_usd": {
+      "2025": 1570,
+      "2024": 1492,
+      "var_pct": 5.2
+    },
+    "units": {
+      "2025": 1840,
+      "2024": 1834,
+      "var_pct": 0.3
+    },
+    "avg_price_k_usd": {
+      "2025": 853,
+      "2024": 813,
+      "var_pct": 4.9
+    },
+    "dom_days": {
+      "2025": 262,
+      "2024": 260,
+      "var_pct": 1.0
+    },
+    "by_type_volume_m_usd_2025": {
+      "houses": 919,
+      "condos": 449,
+      "land": 201
+    },
+    "by_type_units_2025": {
+      "houses": 640,
+      "condos": 727,
+      "land": 473
+    }
+  },
+  "jll_2025_los_cabos": {
+    "source": "JLL 2025 — Los Cabos Closed Listings Summary",
+    "url": "https://www.jll.com/content/dam/jllcom/en/mx/documents/reports/research-reports/26-insights-reporte-mercado-residencial-los-cabos.pdf",
+    "as_of": "2025",
+    "volume_m_usd": {
+      "2025": 1264,
+      "2024": 1214,
+      "var_pct": 4.1
+    },
+    "units": {
+      "2025": 1112,
+      "2024": 1107,
+      "var_pct": 0.5
+    },
+    "avg_price_k_usd": {
+      "2025": 1137,
+      "2024": 1097,
+      "var_pct": 3.7
+    },
+    "share_of_bcs_volume_pct": 81,
+    "share_of_bcs_units_pct": 60,
+    "houses_avg_price_m_usd": 2.27,
+    "condo_share_of_bcs_condo_units_pct": 87
+  },
+  "jll_2025_zones": {
+    "source": "JLL Reporte Anual Mercado Residencial Los Cabos 2025 — Market Activity per Zone",
+    "url": "https://www.jll.com/content/dam/jllcom/en/mx/documents/reports/research-reports/26-insights-reporte-mercado-residencial-los-cabos.pdf",
+    "as_of": "2025",
+    "note_es": "MPI = participación de cada zona en el volumen de transacción BCS (casas+condos BCS MLS; sin ventas privadas de desarrolladores). Texto del reporte: Los Cabos 69%, Pacífico 18%, La Paz 6%, East Cape 4%, Loreto 3%. Overview Los Cabos (CSL+SJD+Corredor) también cita 81% del volumen BCS — ver jll_2025_los_cabos.share.",
+    "note_en": "MPI = each zone share of BCS transaction volume (houses+condos BCS MLS; excludes private developer sales). Report text: Los Cabos 69%, Pacific 18%, La Paz 6%, East Cape 4%, Loreto 3%. Los Cabos overview (CSL+SJD+Corridor) also cites 81% of BCS volume — see jll_2025_los_cabos.share.",
+    "zone_share_volume_pct_2025": {
+      "los_cabos": 69,
+      "pacific": 18,
+      "la_paz": 6,
+      "east_cape": 4,
+      "loreto": 3
+    },
+    "loreto_volume_m_usd_2025": 42,
+    "pacific_note_es": "Todos Santos, Pescadero, Cerritos — MPI subió de 16% (2024) a 18% (2025).",
+    "pacific_note_en": "Todos Santos, Pescadero, Cerritos — MPI rose from 16% (2024) to 18% (2025).",
+    "loreto_note_es": "Participación triplicó de 1% a 3%; +41 casas vs 2024; ASP casas +40% vs año previo.",
+    "loreto_note_en": "Share tripled from 1% to 3%; +41 houses vs 2024; house ASP +40% vs prior year."
+  },
+  "jll_2024_bcs": {
+    "source": "JLL Residential Market Activity Report 2024",
+    "url": "https://www.jll.com/content/dam/legacy/jll-com/documents/pdf/research/mx-jll-los-cabos-residential-market-activity-report-2024.pdf",
+    "as_of": "2024",
+    "desktop": "Desktop\\\\BCSFP\\\\07_economy_investment\\\\real_estate_market\\\\jll\\\\2024_JLL_Los_Cabos_Residential_Market_Activity_Report.pdf",
+    "volume_m_usd": 1460,
+    "hotel_occupancy_2024_pct": 76,
+    "adr_2024_usd": 517
+  },
+  "jll_2025_demand_proxies": {
+    "source": "JLL Reporte Anual Mercado Residencial Los Cabos 2025",
+    "as_of": "2025",
+    "los_cabos_pop_2020": 351111,
+    "los_cabos_share_bcs_pop_pct_2020": 44,
+    "sjd_intl_pax_m_2025": 4.69,
+    "sjd_intl_pax_m_2024": 4.66,
+    "sjd_intl_pax_var_pct": 0.7,
+    "cruise_vessels_jan_sep_2025": 181,
+    "cruise_pax_jan_sep_2025": 689783,
+    "note_es": "Población Censo 2020 citada por JLL; pax SJD internacionales 2025; cruceros ene–sep 2025.",
+    "note_en": "2020 Census population as cited by JLL; SJD international pax 2025; cruise Jan–Sep 2025."
+  },
+  "cabo_re_quarterly": {
+    "source": "Cabo Real Estate Services — Los Cabos Residential Market Reports (BCS MLS)",
+    "coverage_es": "Municipio Los Cabos (+ overlaps Pacific/East Cape). Casas+condos bajo contrato. Excluye off-MLS desarrolladores y no reporta tierra.",
+    "coverage_en": "Los Cabos municipality (+ Pacific/East Cape overlaps). Houses+condos under contract. Excludes off-MLS developer sales; does not report land.",
+    "quarters": [
+      {
+        "period": "2025 Q1",
+        "volume_m_usd": 559,
+        "units": 391,
+        "avg_selling_price_usd": 1431245,
+        "median_price_usd": 550000,
+        "inventory_units": 2122,
+        "inventory_list_value_b_usd": 2.616,
+        "dom_houses": 144,
+        "dom_condos": 128,
+        "houses_units": 179,
+        "condo_units": 212,
+        "url": "https://caborealestateservices.com/wp-content/uploads/2025/04/2025-Q1-Report-Printable-PDF.pdf"
+      },
+      {
+        "period": "2025 Q2",
+        "volume_m_usd": 362,
+        "units": 319,
+        "avg_selling_price_usd": 1136113,
+        "median_price_usd": 490000,
+        "inventory_units": 2238,
+        "inventory_list_value_b_usd": 2.661,
+        "dom_houses": 190,
+        "dom_condos": 143,
+        "houses_units": 122,
+        "condo_units": 197,
+        "url": "https://caborealestateservices.com/wp-content/uploads/2025/07/2025-Q2-Report-Printable-PDF.pdf"
+      },
+      {
+        "period": "2025 Q3",
+        "volume_m_usd": 225.5,
+        "units": 239,
+        "avg_selling_price_usd": 943557,
+        "median_price_usd": 475000,
+        "inventory_units": 2127,
+        "inventory_list_value_b_usd": 2.547,
+        "dom_houses": 172,
+        "dom_condos": 154,
+        "houses_units": 97,
+        "condo_units": 142,
+        "url": "https://caborealestateservices.com/wp-content/uploads/2025/10/2025-Q3-Report-Printable-PDF.pdf"
+      },
+      {
+        "period": "2025 Q4",
+        "volume_m_usd": 326,
+        "units": 274,
+        "avg_selling_price_usd": 1191037,
+        "median_price_usd": 500000,
+        "inventory_units": 2306,
+        "inventory_list_value_b_usd": 3.041,
+        "dom_houses": 216,
+        "dom_condos": 184,
+        "houses_units": 107,
+        "condo_units": 167,
+        "url": "https://caborealestateservices.com/wp-content/uploads/2026/01/2025-Q4-Report-Printable-PDF.pdf"
+      },
+      {
+        "period": "2026 Q1",
+        "volume_m_usd": 391,
+        "units": 350,
+        "avg_selling_price_usd": 1117183,
+        "median_price_usd": 453500,
+        "inventory_units": 2320,
+        "inventory_list_value_b_usd": 3.23,
+        "months_of_inventory": 19,
+        "dom_houses": 190,
+        "dom_condos": 197,
+        "houses_units": 135,
+        "condo_units": 215,
+        "snlr_pct": 46,
+        "ultra_luxury_gt10m_units": 4,
+        "url": "https://caborealestateservices.com/wp-content/uploads/2026/04/2026-Q1-Report-Printable-PDF.pdf",
+        "data_note_es": "El propio reporte Q1 cita US$391M bajo contrato. El comentario del reporte Q2 menciona US$316M para Q1 — posible base distinta (cerrados vs under-contract); se usa la cifra del snapshot Q1.",
+        "data_note_en": "Q1 report itself cites US$391M under contract. Q2 report commentary cites US$316M for Q1 — possible different basis (closed vs under-contract); we use the Q1 snapshot figure."
+      },
+      {
+        "period": "2026 Q2",
+        "volume_m_usd": 456,
+        "units": 293,
+        "avg_selling_price_usd": 1557868,
+        "median_price_usd": 525000,
+        "inventory_units": 2134,
+        "inventory_list_value_b_usd": 2.86,
+        "months_of_inventory": 15,
+        "dom_houses": 151,
+        "dom_condos": 195,
+        "houses_units": 133,
+        "condo_units": 160,
+        "snlr_pct": 42,
+        "ultra_luxury_gt10m_units": 9,
+        "ultra_luxury_gt10m_volume_m_usd": 160.9,
+        "url": "https://caborealestateservices.com/wp-content/uploads/2026/07/2026-Q2-Report-Printable-PDF.pdf"
+      }
+    ],
+    "annual_2025_from_quarters": {
+      "volume_m_usd": 1472.5,
+      "units": 1223,
+      "note_es": "Suma aritmética de los 4 trimestres Cabo RE 2025 (under contract). No es comparable 1:1 con JLL anual (metodología/cobertura distinta).",
+      "note_en": "Arithmetic sum of Cabo RE 2025 quarters (under contract). Not 1:1 comparable with JLL annual (different methodology/coverage)."
+    }
+  },
+  "cabo_re_2025_q4": {
+    "source": "Cabo Real Estate Services Los Cabos Residential Market Report 2025 Q4",
+    "desktop": "Desktop\\\\BCSFP\\\\07_economy_investment\\\\real_estate_market\\\\cabo_re_services\\\\2025_Q4_CaboRE_Los_Cabos_Residential_Market_Report.pdf",
+    "volume_m_usd": 326,
+    "units": 274,
+    "avg_selling_price_usd": 1191037,
+    "median_price_usd": 500000,
+    "inventory_units": 2306,
+    "inventory_list_value_b_usd": 3.041,
+    "dom_houses": 216,
+    "dom_condos": 184
+  },
+  "cabo_re_2026_q1": {
+    "source": "Cabo Real Estate Services Los Cabos Residential Market Report 2026 Q1",
+    "desktop": "Desktop\\\\BCSFP\\\\07_economy_investment\\\\real_estate_market\\\\cabo_re_services\\\\2026_Q1_CaboRE_Los_Cabos_Residential_Market_Report.pdf",
+    "volume_m_usd": 391,
+    "units": 350,
+    "avg_selling_price_usd": 1117183,
+    "median_price_usd": 453500,
+    "inventory_units": 2320,
+    "inventory_list_value_b_usd": 3.23,
+    "months_of_inventory": 19,
+    "dom_houses": 190,
+    "dom_condos": 197,
+    "houses_units": 135,
+    "condo_units": 215
+  },
+  "cabo_re_2026_q2": {
+    "source": "Cabo Real Estate Services Los Cabos Residential Market Report 2026 Q2",
+    "desktop": "Desktop\\\\BCSFP\\\\07_economy_investment\\\\real_estate_market\\\\cabo_re_services\\\\2026_Q2_CaboRE_Los_Cabos_Residential_Market_Report.pdf",
+    "volume_m_usd": 456,
+    "units": 293,
+    "avg_selling_price_usd": 1557868,
+    "median_price_usd": 525000,
+    "houses_units": 133,
+    "condo_units": 160,
+    "inventory_units": 2134,
+    "inventory_list_value_b_usd": 2.86,
+    "months_of_inventory": 15,
+    "ultra_luxury_gt10m_units": 9,
+    "ultra_luxury_gt10m_volume_m_usd": 160.9,
+    "dom_houses": 151,
+    "dom_condos": 195,
+    "snlr_pct": 42
+  },
+  "fiturca_2026_02": {
+    "source": "FITURCA Los Cabos Observatorio FEB26 (indicadores ene-2026)",
+    "url": "https://fiturca.com/wp-content/uploads/2026/03/LosCabosObservatorio_FEB26.pdf",
+    "desktop": "Desktop\\\\BCSFP\\\\07_economy_investment\\\\real_estate_market\\\\other\\\\2026_FITURCA_LosCabosObservatorio_FEB26.pdf",
+    "as_of": "2026-01",
+    "pax_sjd_jan_2026_k": 328.5,
+    "occupancy_pct": 74,
+    "adr_usd": 499,
+    "revpar_usd": 369
+  },
+  "coldwell_bcs_2025_q1": {
+    "source": "Coldwell Banker / BCS MLS — Reporte del Mercado Inmobiliario BCS Primer Trimestre 2025",
+    "drive_view": "https://drive.google.com/file/d/1E6BSr3GptxY8gYMJla7pmjFrw7bAKqjk/view",
+    "path": "other/2025_Q1_ColdwellBanker_Reporte_Mercado_Inmobiliario_BCS.pdf",
+    "as_of": "2025 Q1",
+    "volume_usd": 313084190,
+    "volume_m_usd": 313.1,
+    "volume_m_usd_2024_q1": 238.2,
+    "var_pct_vs_2024_q1": 31.4,
+    "transactions": 430,
+    "by_type_units": {
+      "houses": 124,
+      "condos": 188,
+      "land": 88,
+      "commercial": 29,
+      "fractional": 1
+    },
+    "by_type_volume_usd": {
+      "houses": 161643671,
+      "condos": 119484144,
+      "land": 25814999,
+      "commercial": 5881376,
+      "fractional": 260000
+    },
+    "by_zone_volume_usd": {
+      "cabo_san_lucas": 141728118,
+      "san_jose_del_cabo": 123110055,
+      "east_cape": 8974900,
+      "la_paz": 20821584,
+      "todos_santos_pacific": 18449533
+    },
+    "by_zone_units": {
+      "cabo_san_lucas": 187,
+      "san_jose_del_cabo": 103,
+      "east_cape": 26,
+      "la_paz": 65,
+      "todos_santos_pacific": 49
+    },
+    "avg_house_price_usd_by_zone": {
+      "cabo_san_lucas": 1600000,
+      "san_jose_del_cabo": 2200000,
+      "east_cape": 760000,
+      "la_paz": 407000,
+      "todos_santos_pacific": 690000
+    },
+    "avg_condo_price_usd_by_zone": {
+      "cabo_san_lucas": 600000,
+      "san_jose_del_cabo": 780000,
+      "east_cape": 207500,
+      "la_paz": 340000,
+      "todos_santos_pacific": 590000
+    },
+    "note_es": "Cobertura estatal BCS MLS (incluye tierra y comercial). No comparable 1:1 con Cabo RE (solo Los Cabos casas+condos).",
+    "note_en": "Statewide BCS MLS coverage (includes land and commercial). Not 1:1 comparable with Cabo RE (Los Cabos houses+condos only)."
+  },
+  "sniiv_vivienda_bcs": {
+    "source": "SNIIV / SEDATU Cubo API — Registro y financiamiento de vivienda BCS (clave_estado=03)",
+    "url": "https://sniiv.sedatu.gob.mx/api/CuboAPI/",
+    "retrieved": "2026-08-31",
+    "path": "07_economy_investment/2026-08-31_SNIIV-SEDATU_Registro-y-financiamiento-vivienda-BCS.json",
+    "registro_vivienda_entidad": [
+      {
+        "year": 2022,
+        "units": 812
+      },
+      {
+        "year": 2023,
+        "units": 1079
+      },
+      {
+        "year": 2024,
+        "units": 990
+      },
+      {
+        "year": 2025,
+        "units": 776
+      },
+      {
+        "year": 2026,
+        "units": 345,
+        "note": "año parcial al corte de descarga"
+      }
+    ],
+    "registro_2025_by_municipio": {
+      "La Paz": 588,
+      "Los Cabos": 142,
+      "Comondú": 31,
+      "Mulegé": 10,
+      "Loreto": 5
+    },
+    "financiamiento_2025": {
+      "acciones": 8993,
+      "monto_mxn": 6559687559.52,
+      "by_organismo": {
+        "INFONAVIT": {
+          "acciones": 6604,
+          "monto_mxn": 2191379862.58
+        },
+        "BANCA_CNBV": {
+          "acciones": 1180,
+          "monto_mxn": 3527190544
+        },
+        "FOVISSSTE": {
+          "acciones": 616,
+          "monto_mxn": 672781383.36
+        },
+        "CONAVI": {
+          "acciones": 569,
+          "monto_mxn": 140160488.6
+        },
+        "BANJERCITO": {
+          "acciones": 21,
+          "monto_mxn": 28124780.98
+        },
+        "SHF_FONDEO": {
+          "acciones": 3,
+          "monto_mxn": 50500
+        }
+      }
+    },
+    "financiamiento_2024": {
+      "acciones": 8640,
+      "monto_mxn": 5900848805.54
+    }
+  },
+  "conavi_rezago_2024": {
+    "source": "CONAVI — Actualización del cálculo del Rezago Habitacional 2024 (ENIGH 2024)",
+    "url": "https://siesco.conavi.gob.mx/doc/analisis/2025/Rezago_Habitacional_2024.pdf",
+    "as_of": "2024",
+    "bcs_viviendas_total": 275159,
+    "bcs_viviendas_rezago": 58987,
+    "bcs_pct_rezago": 21.4,
+    "bcs_pct_rezago_2018": 27.63,
+    "bcs_pp_change_2018_2024": -6.19,
+    "national_pct_rezago": 21.9
+  },
+  "vivienda_bienestar_bcs": {
+    "source": "Gobierno BCS — Convenio Vivienda para el Bienestar (oct 2024) + anuncios INFONAVIT/CONAVI en firma",
+    "url_local": "13_federal_projects/docs/housing/2024-10_BCS-gob_Convenio-Vivienda-para-el-Bienestar.pdf",
+    "as_of": "2024-10",
+    "acciones_seis_anios": 37500,
+    "infonavit_viviendas_citadas": 12500,
+    "creditos_ampliacion_regularizacion_citados": 25000,
+    "conavi_viviendas_citadas": 25000,
+    "conavi_jovenes_estudiantes_citadas": 5000,
+    "note_es": "Cifras del boletín/convenio de firma Oct 2024. No confundir con avance de obra ejecutada (gap).",
+    "note_en": "Figures from Oct 2024 signing bulletin/convenio. Do not confuse with executed construction progress (gap)."
+  },
+  "inegi_enec_bcs_2025_10": {
+    "source": "INEGI — Encuesta Nacional de Empresas Constructoras (ENEC), boletín dic 2025 (datos oct 2025)",
+    "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/enec/enec2025_12.pdf",
+    "path": "real_estate_market/official/2025-12_INEGI_ENEC_boletin.pdf",
+    "as_of": "2025-10",
+    "valor_produccion_indice": 80.9,
+    "valor_produccion_var_anual_pct": 41.1,
+    "personal_ocupado_indice": 62.6,
+    "personal_ocupado_var_anual_pct": 25.8,
+    "horas_trabajadas_indice": 66.6,
+    "horas_trabajadas_var_anual_pct": 21.8,
+    "remuneraciones_medias_indice": 100.7,
+    "remuneraciones_medias_var_anual_pct": -5.3,
+    "note_es": "Índices ENEC estatales (base según boletín). Variaciones anuales reales para valor de producción.",
+    "note_en": "State ENEC indices (base per bulletin). Real annual variations for production value."
+  },
+  "legal_fideicomiso": {
+    "source": "SRE — Permiso para constituir fideicomiso en zona restringida (Art. 27 Const. / Ley de Inversión Extranjera)",
+    "url": "https://sre.gob.mx/permiso-para-constituir-un-fideicomiso-en-zona-restringida",
+    "zona_restringida_es": "Franja de 100 km a lo largo de fronteras y 50 km en playas. Extranjeros no adquieren dominio directo; uso/aprovechamiento vía fideicomiso bancario (máx. 50 años, escritura pública, permiso SRE).",
+    "zona_restringida_en": "Strip of 100 km along borders and 50 km along beaches. Foreigners do not acquire direct ownership; use/enjoyment via bank fideicomiso (max 50 years, public deed, SRE permit).",
+    "facts_only": true
+  },
+  "pricing_convention": {
+    "note_es": "En Los Cabos el mercado residencial reportado por JLL/Cabo RE se cotiza y publica en USD. Vivienda social/financiamiento SNIIV se reporta en MXN.",
+    "note_en": "In Los Cabos the residential market reported by JLL/Cabo RE is quoted and published in USD. Social housing/SNIIV financing is reported in MXN."
+  },
+  "data_gaps": [
+    {
+      "id": "re-gap-lap-loreto-cadastre",
+      "topic_es": "Transacciones catastrales / notariales La Paz, Loreto, Comondú, Mulegé",
+      "topic_en": "Cadastre / notarial transactions for La Paz, Loreto, Comondú, Mulegé"
+    },
+    {
+      "id": "re-gap-commercial-rents",
+      "topic_es": "Rents comerciales / oficinas / industrial BCS",
+      "topic_en": "Commercial / office / industrial rents BCS"
+    },
+    {
+      "id": "re-gap-permits",
+      "topic_es": "Permisos de construcción por municipio (serie temporal)",
+      "topic_en": "Construction permits by municipality (time series)"
+    },
+    {
+      "id": "re-gap-off-mls",
+      "topic_es": "Volumen off-MLS de desarrollos branded (Chileno Bay, Costa Palmas, etc.)",
+      "topic_en": "Off-MLS volume from branded developments (Chileno Bay, Costa Palmas, etc.)"
+    },
+    {
+      "id": "re-gap-hospitality-asset",
+      "topic_es": "Transacciones de activos hoteleros / cap rates BCS",
+      "topic_en": "Hospitality asset sales / cap rates BCS"
+    },
+    {
+      "id": "re-gap-vivienda-bienestar-avance",
+      "topic_es": "Avance de obra ejecutada Vivienda para el Bienestar vs meta 37,500",
+      "topic_en": "Executed construction progress for Vivienda para el Bienestar vs 37,500 target"
+    }
+  ]
+}

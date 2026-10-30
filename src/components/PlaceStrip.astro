@@ -1,0 +1,197 @@
+---
+import { MUNI_CHIPS } from '../lib/places';
+
+interface Props {
+  /** Compact variant for ChatWidget / tight chrome */
+  compact?: boolean;
+  /** Extra class on root */
+  class?: string;
+}
+const { compact = false, class: className = '' } = Astro.props;
+---
+<nav
+  class:list={['bcs-place-strip', compact && 'bcs-place-strip--compact', className]}
+  aria-label="Municipios"
+  data-bcs-place-strip
+  data-compact={compact ? 'true' : 'false'}
+>
+  <div class="bcs-ps-inner">
+    <span class="bcs-ps-label" id="bcs-ps-label">
+      <span data-lang-es>Ver por municipio</span>
+      <span data-lang-en hidden>View by municipality</span>
+    </span>
+    {/* sr-only live region kept for place-strip.js syncState */}
+    <span class="sr-only" data-bcs-place-state aria-live="polite">
+      <span data-lang-es>Contexto: BCS</span>
+      <span data-lang-en hidden>Context: BCS</span>
+    </span>
+    <div class="bcs-ps-seg" role="list" aria-labelledby="bcs-ps-label">
+      <button
+        type="button"
+        class="bcs-ps-chip bcs-ps-all"
+        data-place=""
+        data-studio="bcs"
+        role="listitem"
+        aria-pressed="true"
+        title="BCS"
+      >
+        BCS
+      </button>
+      {MUNI_CHIPS.map((p) => (
+        <button
+          type="button"
+          class="bcs-ps-chip"
+          data-place={p.id}
+          data-studio={p.id === 'mulege_north' ? 'mulege' : p.id}
+          role="listitem"
+          aria-pressed="false"
+          title={p.name_es}
+        >
+          <span data-lang-es>{p.short_es}</span>
+          <span data-lang-en hidden>{p.short_en}</span>
+        </button>
+      ))}
+    </div>
+    <div class="bcs-ps-links" data-bcs-place-links hidden>
+      <a class="bcs-ps-deep" data-deep="studio" href="/studio/"><span data-lang-es>Municipios</span><span data-lang-en hidden>Municipalities</span></a>
+      <a class="bcs-ps-deep" data-deep="foresights" href="/foresights/">
+        <span data-lang-es>Prospectiva</span>
+        <span data-lang-en hidden>Foresights</span>
+      </a>
+      <a class="bcs-ps-deep" data-deep="crecimiento" href="/crecimiento/">
+        <span data-lang-es>Demanda–oferta</span>
+        <span data-lang-en hidden>Demand–supply</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style is:global>
+  .bcs-place-strip {
+    position: relative;
+    z-index: 85;
+    background: var(--ios-surface, #fbf8f1);
+    border-bottom: 1px solid var(--ios-separator, rgba(60, 60, 67, 0.12));
+  }
+  .bcs-place-strip--compact {
+    z-index: 1;
+    background: transparent;
+    border-bottom: 1px solid var(--ios-separator, rgba(60, 60, 67, 0.12));
+  }
+  .bcs-ps-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.55rem;
+    max-width: calc(var(--max, 1080px) + 4rem);
+    margin: 0 auto;
+    padding: 0.35rem 1rem;
+    min-height: 40px;
+  }
+  .bcs-place-strip--compact .bcs-ps-inner {
+    max-width: none;
+    padding: 0.35rem 0.75rem;
+    gap: 0.4rem;
+  }
+  .bcs-ps-label {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ios-secondary, #5c6e7b);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .bcs-place-strip--compact .bcs-ps-label {
+    font-size: 0.68rem;
+    color: var(--ios-secondary, #5c6e7b);
+  }
+  .bcs-ps-seg {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 2px;
+    padding: 2px;
+    background: var(--ios-fill, rgba(120, 120, 128, 0.12));
+    border-radius: 9px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+    min-width: 0;
+    flex: 1;
+  }
+  .bcs-ps-seg::-webkit-scrollbar { display: none; }
+  .bcs-ps-chip {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--ios-secondary, #5c6e7b);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.7rem;
+    min-height: 32px;
+    border-radius: 7px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1.2;
+    transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+  }
+  .bcs-ps-chip:hover { color: var(--ios-text, #23374a); }
+  .bcs-ps-chip[aria-pressed='true'] {
+    background: var(--ios-surface, #fbf8f1);
+    color: var(--ios-text, #23374a);
+    box-shadow: 0 1px 3px rgba(35, 55, 74, 0.12);
+  }
+  .bcs-place-strip--compact .bcs-ps-chip {
+    font-size: 0.7rem;
+    padding: 0.28rem 0.55rem;
+    min-height: 28px;
+  }
+  .bcs-ps-links {
+    display: none; /* hide deep links from chrome — available via Studio nav */
+  }
+  [data-place-card].bcs-place-dim {
+    opacity: 0.38;
+    filter: grayscale(0.25);
+  }
+  [data-place-card].bcs-place-active {
+    outline: 2px solid var(--ios-accent, #34607d);
+    outline-offset: 2px;
+  }
+  /* dark-mode block removed: light theme forced */
+
+  /* PASS3_PS_SCROLL */
+  .bcs-place-strip--compact .bcs-ps-label { display: none; }
+  .bcs-place-strip--compact .bcs-ps-seg {
+    max-width: 100%;
+    overflow-x: auto !important;
+    scrollbar-width: thin;
+  }
+  .bcs-place-strip--compact .bcs-ps-chip {
+    font-size: 0.62rem !important;
+    padding: 0.18rem 0.4rem !important;
+  }
+
+  /* PASS3_PS_SCROLL_V2 */
+  .bcs-place-strip--compact .bcs-ps-label { display: none !important; }
+  .bcs-place-strip--compact .bcs-ps-seg {
+    max-width: 100%;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    flex-wrap: nowrap !important;
+  }
+  .bcs-place-strip--compact .bcs-ps-chip {
+    font-size: 0.62rem !important;
+    padding: 0.18rem 0.42rem !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* PASS4_PS_WRAP — chat / narrow: 2 rows so Mulegé stays visible */
+  .bcs-place-strip--compact .bcs-ps-seg {
+    flex-wrap: wrap;
+    row-gap: 0.28rem;
+  }
+</style>

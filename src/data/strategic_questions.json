@@ -1,0 +1,739 @@
+{
+  "updated": "2026-09-20",
+  "title_es": "Preguntas estratégicas — BCS 2050",
+  "title_en": "Strategic questions — BCS 2050",
+  "disclaimer_es": "Unidad de trabajo de estrategia. FACT = evidencia del portal. ASSUMPTION = lectura de diseño. Cabos ≠ BCS.",
+  "disclaimer_en": "Strategy work unit. FACT = portal evidence. ASSUMPTION = design reading. Cabos ≠ BCS.",
+  "questions": [
+    {
+      "id": "sq-cabos-water-energy",
+      "places": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "vocations": [
+        "tourism_gateway",
+        "governance_capital"
+      ],
+      "question_es": "¿Cuánto crecimiento turístico adicional cabe en Los Cabos si el agua desalada y el techo SIBCS no reescriben el crédito DMA?",
+      "question_en": "How much additional tourism growth fits in Los Cabos if desal water and the SIBCS ceiling do not rewrite DMA credit?",
+      "planning_position_es": "Tratar agua–energía como constricción vinculante del motor Cabos; no asumir que desalación equivale a margen ilimitado. Posición emergente alineada a scorecard constrained y señal de acoplamiento agua–energía.",
+      "planning_position_en": "Treat water–energy as binding constraint of the Cabos engine; do not assume desalination equals unlimited headroom. Emerging position aligned to constrained scorecard and water–energy coupling signal.",
+      "supporting_evidence": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling",
+          "href": "/foresights/?signal=sig-water-energy-coupling#signal-sig-water-energy-coupling",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "id": "los_cabos",
+          "href": "/crecimiento/?place=los_cabos#los_cabos",
+          "tag": "FACT"
+        },
+        {
+          "type": "metric",
+          "label": "SJD 56 destinations",
+          "href": "/vuelos/",
+          "tag": "FACT"
+        },
+        {
+          "type": "dossier",
+          "id": "los_cabos",
+          "href": "/studio/los_cabos/",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "water_security",
+          "label_es": "Seguridad hídrica",
+          "label_en": "Water security"
+        },
+        {
+          "role_id": "energy_grid",
+          "label_es": "Energía y red",
+          "label_en": "Energy & grid"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "sustainability_infra",
+          "label_es": "Sustentabilidad e infraestructura",
+          "label_en": "Sustainability & infrastructure"
+        }
+      ],
+      "demand_supply_notes_es": "GDS Los Cabos = constrained: demanda aérea/turística vs. DMA 0317/0319 en déficit + techo SIBCS/transmisión. Celdas gap: settlement_coastal, land_pdu_status.",
+      "demand_supply_notes_en": "GDS Los Cabos = constrained: air/tourism demand vs. DMA 0317/0319 deficit + SIBCS/transmission ceiling. Gap cells: settlement_coastal, land_pdu_status.",
+      "capacity_constraints": [
+        {
+          "theme": "water",
+          "label_es": "DMA 0317/0319 + desal Cabos",
+          "label_en": "DMA 0317/0319 + Cabos desal",
+          "status": "constrained",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento"
+        },
+        {
+          "theme": "energy",
+          "label_es": "SIBCS / transmisión",
+          "label_en": "SIBCS / transmission",
+          "status": "constrained",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento metrics"
+        },
+        {
+          "theme": "mobility",
+          "label_es": "SJD 56 destinos",
+          "label_en": "SJD 56 destinations",
+          "status": "high_demand",
+          "tag": "FACT",
+          "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+        }
+      ],
+      "confidence": "medium",
+      "uncertainties": [
+        {
+          "es": "Cuánta demanda turística adicional cabe si desalación no reescribe el crédito DMA (pregunta abierta GDS).",
+          "en": "How much additional tourism demand fits if desalination does not rewrite DMA credit (GDS open question).",
+          "tag": "FACT"
+        },
+        {
+          "es": "Falta métrica pública unificada agua–kWh–cuartos por lugar.",
+          "en": "Missing public unified water–kWh–rooms metric by place.",
+          "tag": "FACT"
+        }
+      ],
+      "next_evidence_es": "Cerrar celdas gap settlement/land en /crecimiento Los Cabos y citar cifras desal (L/s) ya en GDS metrics sin inventar totales de consumo estatal.",
+      "next_evidence_en": "Close settlement/land gap cells on /crecimiento Los Cabos and cite desal L/s already in GDS metrics without inventing statewide consumption totals.",
+      "owner": "Steering · Water & Energy / TAG Infrastructure",
+      "stakeholder_ids": [
+        "st-010",
+        "st-015",
+        "st-016"
+      ],
+      "consensus_seed_ref": "agua y energía",
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-19",
+        "portal_refresh": "2026-09-20"
+      }
+    },
+    {
+      "id": "sq-east-cape-edge",
+      "places": [
+        "east_cape",
+        "los_cabos"
+      ],
+      "vocations": [
+        "conservation_edge",
+        "tourism_gateway"
+      ],
+      "question_es": "¿Debe East Cape tratarse como edge de conservación (Cabo Pulmo / ANP) frente al desborde de Cabos, o como extensión turística residual?",
+      "question_en": "Should East Cape be treated as a conservation edge (Cabo Pulmo / ANP) against Cabos spillover, or as residual tourism extension?",
+      "planning_position_es": "Posición en disputa: techo de conservación vs. demanda de desborde. edge condition, no turismo residual.",
+      "planning_position_en": "Contested position: conservation ceiling vs. spillover demand. edge condition, not residual tourism.",
+      "supporting_evidence": [
+        {
+          "type": "dossier",
+          "id": "east_cape",
+          "href": "/studio/los_cabos/",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "id": "east_cape",
+          "href": "/crecimiento/?place=east_cape#east_cape",
+          "tag": "FACT"
+        },
+        {
+          "type": "foresights",
+          "href": "/foresights/#debate",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "environment_anp",
+          "label_es": "Ambiente y ANPs",
+          "label_en": "Environment & ANPs"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        }
+      ],
+      "demand_supply_notes_es": "GDS East Cape = contested; gaps en settlement_pressure, economic_jobs, land_instruments. DMA 0318 Pulmo en supply.",
+      "demand_supply_notes_en": "GDS East Cape = contested; gaps in settlement_pressure, economic_jobs, land_instruments. DMA 0318 Pulmo on supply.",
+      "capacity_constraints": [
+        {
+          "theme": "ecology",
+          "label_es": "ANP / Cabo Pulmo",
+          "label_en": "ANP / Cabo Pulmo",
+          "status": "contested",
+          "tag": "ASSUMPTION",
+          "source": "foresights consensus"
+        },
+        {
+          "theme": "water",
+          "label_es": "DMA 0318",
+          "label_en": "DMA 0318",
+          "status": "deficit",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento"
+        }
+      ],
+      "confidence": "medium",
+      "uncertainties": [
+        {
+          "es": "Evidencia cuantitativa de carga aún incompleta (GDS).",
+          "en": "Quantitative load evidence still incomplete (GDS).",
+          "tag": "FACT"
+        }
+      ],
+      "next_evidence_es": "Abrir scorecard East Cape y cruzar con instrumentos de planeación East Cape / San José del Este y PSDU Barriles.",
+      "next_evidence_en": "Open East Cape scorecard and cross-check East Cape / San José del Este planning instruments and Barriles PSDU.",
+      "owner": "TAG · Environmental & Conservation / Municipal Planning",
+      "stakeholder_ids": [
+        "st-015",
+        "st-016",
+        "st-037"
+      ],
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-19",
+        "portal_refresh": "2026-09-20"
+      }
+    },
+    {
+      "id": "sq-la-paz-capital",
+      "places": [
+        "la_paz"
+      ],
+      "vocations": [
+        "governance_capital"
+      ],
+      "question_es": "¿Cómo se asegura que La Paz permanezca como capital de servicios/gobernanza y no se convierta en un segundo Cabos?",
+      "question_en": "How do we ensure La Paz remains the services/governance capital and does not become a second Cabos?",
+      "planning_position_es": "Posición emergente: La Paz = coordinación estatal + acoplamiento agua–energía; no replicar el modelo resort.",
+      "planning_position_en": "Emerging position: La Paz = statewide coordination + water–energy coupling; do not replicate the resort model.",
+      "supporting_evidence": [
+        {
+          "type": "dossier",
+          "id": "la_paz",
+          "href": "/studio/la_paz/",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "id": "la_paz",
+          "href": "/crecimiento/?place=la_paz#la_paz",
+          "tag": "FACT"
+        },
+        {
+          "type": "metric",
+          "label": "LAP destinations",
+          "href": "/vuelos/",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "territorial_development",
+          "label_es": "Desarrollo territorial",
+          "label_en": "Territorial development"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        }
+      ],
+      "demand_supply_notes_es": "GDS La Paz = constrained; gap water_desal_lp. Roll-up estatal: La Paz carga coordinación.",
+      "demand_supply_notes_en": "GDS La Paz = constrained; gap water_desal_lp. State roll-up: La Paz carries coordination.",
+      "capacity_constraints": [
+        {
+          "theme": "water",
+          "label_es": "Acoplamiento agua–energía La Paz",
+          "label_en": "La Paz water–energy coupling",
+          "status": "constrained",
+          "tag": "FACT",
+          "source": "foresights signals + GDS"
+        },
+        {
+          "theme": "mobility",
+          "label_es": "LAP 7 destinos",
+          "label_en": "LAP 7 destinations",
+          "status": "limited",
+          "tag": "FACT",
+          "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+        }
+      ],
+      "confidence": "medium",
+      "uncertainties": [
+        {
+          "es": "Hueco conocido: texto completo PMDU La Paz.",
+          "en": "Known hole: full La Paz PMDU text.",
+          "tag": "FACT"
+        }
+      ],
+      "next_evidence_es": "Priorizar cierre del hueco PMDU La Paz en catálogo y documentar rol de servicios en scorecard.",
+      "next_evidence_en": "Prioritize closing La Paz PMDU gap in catalog and document services role on scorecard.",
+      "owner": "Steering · Municipal Planning Authorities",
+      "stakeholder_ids": [
+        "st-011",
+        "st-015",
+        "st-016"
+      ],
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-19",
+        "portal_refresh": "2026-09-20"
+      }
+    },
+    {
+      "id": "sq-loreto-anp",
+      "places": [
+        "loreto"
+      ],
+      "vocations": [
+        "mid_peninsula_node"
+      ],
+      "question_es": "¿El crecimiento de Loreto debe subordinarse a techos ANP/POEL, con PTAR/acueducto como habilitador o demora?",
+      "question_en": "Should Loreto growth be subordinated to ANP/POEL ceilings, with WWTP/aqueduct as enabler or delay?",
+      "planning_position_es": "Posición contestada: nodo mid-península turismo+conservación; evidenciar techos antes de escalar oferta.",
+      "planning_position_en": "Contested position: mid-peninsula tourism+conservation node; evidence ceilings before scaling supply.",
+      "supporting_evidence": [
+        {
+          "type": "dossier",
+          "id": "loreto",
+          "href": "/studio/loreto/",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "id": "loreto",
+          "href": "/crecimiento/?place=loreto#loreto",
+          "tag": "FACT"
+        },
+        {
+          "type": "instrument",
+          "label": "POEL Loreto on disk",
+          "href": "/studio/loreto/",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "environment_anp",
+          "label_es": "Ambiente y ANPs",
+          "label_en": "Environment & ANPs"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        },
+        {
+          "role_id": "water_security",
+          "label_es": "Seguridad hídrica",
+          "label_en": "Water security"
+        }
+      ],
+      "demand_supply_notes_es": "GDS Loreto = contested; gaps tourism_occupancy, water_dma_local, energy_local. LTO = 5 destinos.",
+      "demand_supply_notes_en": "GDS Loreto = contested; gaps tourism_occupancy, water_dma_local, energy_local. LTO = 5 destinations.",
+      "capacity_constraints": [
+        {
+          "theme": "mobility",
+          "label_es": "LTO 5 destinos",
+          "label_en": "LTO 5 destinations",
+          "status": "limited",
+          "tag": "FACT",
+          "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+        },
+        {
+          "theme": "water",
+          "label_es": "DMA local (gap)",
+          "label_en": "Local DMA (gap)",
+          "status": "gap",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento"
+        }
+      ],
+      "confidence": "low",
+      "uncertainties": [
+        {
+          "es": "Huecos conocidos: PMD/PSDU Loreto; PMDU posible incompleto.",
+          "en": "Known holes: Loreto PMD/PSDU; PMDU possibly incomplete.",
+          "tag": "FACT"
+        }
+      ],
+      "next_evidence_es": "Completar instrumentos PMD/PSDU y celdas gap agua/energía locales en GDS.",
+      "next_evidence_en": "Complete PMD/PSDU instruments and local water/energy GDS gap cells.",
+      "owner": "TAG · Environmental / Municipal Planning",
+      "stakeholder_ids": [
+        "st-037"
+      ],
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-19",
+        "portal_refresh": "2026-09-20"
+      }
+    },
+    {
+      "id": "sq-comondu-non-offset",
+      "places": [
+        "comondu",
+        "los_cabos"
+      ],
+      "vocations": [
+        "working_landscape",
+        "tourism_gateway"
+      ],
+      "question_es": "¿Puede el headroom agro/producción de Comondú compensar el déficit sur (Cabos), o eso es una falacia de cancelación?",
+      "question_en": "Can Comondú agri/production headroom offset the southern (Cabos) deficit, or is that a cancellation fallacy?",
+      "planning_position_es": "Posición: los desequilibrios locales no se cancelan (NOM-011 por acuífero; SIBCS un techo). Comondú = segundo pilar productivo, no offset del sur.",
+      "planning_position_en": "Position: local imbalances do not cancel (NOM-011 per aquifer; SIBCS one ceiling). Comondú = second productive pillar, not southern offset.",
+      "supporting_evidence": [
+        {
+          "type": "gds",
+          "id": "state_rollup",
+          "href": "/crecimiento/#rollup",
+          "tag": "FACT"
+        },
+        {
+          "type": "dossier",
+          "id": "comondu",
+          "href": "/studio/comondu/",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "id": "comondu",
+          "href": "/crecimiento/?place=comondu#comondu",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "water_security",
+          "label_es": "Seguridad hídrica",
+          "label_en": "Water security"
+        },
+        {
+          "role_id": "territorial_development",
+          "label_es": "Desarrollo territorial",
+          "label_en": "Territorial development"
+        }
+      ],
+      "demand_supply_notes_es": "GDS Comondú = headroom; state_rollup imbalances_es explícito. Gaps: air, tourism_demand, water_dma_irrigation.",
+      "demand_supply_notes_en": "GDS Comondú = headroom; state_rollup imbalances_en explicit. Gaps: air, tourism_demand, water_dma_irrigation.",
+      "capacity_constraints": [
+        {
+          "theme": "water",
+          "label_es": "DMA riego (gap)",
+          "label_en": "Irrigation DMA (gap)",
+          "status": "gap",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento"
+        }
+      ],
+      "confidence": "high",
+      "uncertainties": [
+        {
+          "es": "Magnitud de desal inland Comondú aún con celdas gap.",
+          "en": "Inland Comondú desal magnitude still has gap cells.",
+          "tag": "FACT"
+        }
+      ],
+      "next_evidence_es": "No inventar hm³; cerrar gaps de riego DMA en GDS y citar roll-up estatal.",
+      "next_evidence_en": "Do not invent hm³; close irrigation DMA gaps in GDS and cite state roll-up.",
+      "owner": "Steering · regional strategy",
+      "stakeholder_ids": [
+        "st-018",
+        "st-020"
+      ],
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-20",
+        "portal_refresh": "2026-09-20"
+      }
+    },
+    {
+      "id": "sq-mulege-evidence-desert",
+      "places": [
+        "mulege_north"
+      ],
+      "vocations": [
+        "evidence_desert"
+      ],
+      "question_es": "¿Qué evidencia mínima debe existir antes de usar Mulegé/norte como offset energético o de crecimiento estatal (Oasis H2)?",
+      "question_en": "What minimum evidence must exist before using Mulegé/north as a statewide energy or growth offset (Oasis H2)?",
+      "planning_position_es": "Marcar evidence desert: balance unknown; no inventar offset norte. Señales H2 son noticia, no capacidad demostrada.",
+      "planning_position_en": "Mark evidence desert: balance unknown; do not invent northern offset. H2 signals are news, not demonstrated capacity.",
+      "supporting_evidence": [
+        {
+          "type": "dossier",
+          "id": "mulege_north",
+          "href": "/studio/mulege/",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "id": "mulege_north",
+          "href": "/crecimiento/?place=mulege_north#mulege_north",
+          "tag": "FACT"
+        },
+        {
+          "type": "noticias",
+          "href": "/noticias/",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "energy_grid",
+          "label_es": "Energía y red",
+          "label_en": "Energy & grid"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "territorial_development",
+          "label_es": "Desarrollo territorial",
+          "label_en": "Territorial development"
+        },
+        {
+          "role_id": "community_tenure",
+          "label_es": "Comunidad y tenencia",
+          "label_en": "Community & land tenure"
+        }
+      ],
+      "demand_supply_notes_es": "GDS mulege_north = unknown; gaps air, economic_h2_demand, water_dma.",
+      "demand_supply_notes_en": "GDS mulege_north = unknown; gaps air, economic_h2_demand, water_dma.",
+      "capacity_constraints": [
+        {
+          "theme": "energy",
+          "label_es": "H2 / remoto (gap)",
+          "label_en": "H2 / remote (gap)",
+          "status": "unknown",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento"
+        },
+        {
+          "theme": "water",
+          "label_es": "DMA (gap)",
+          "label_en": "DMA (gap)",
+          "status": "gap",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento"
+        }
+      ],
+      "confidence": "low",
+      "uncertainties": [
+        {
+          "es": "Casi todas las celdas clave en gap/unknown.",
+          "en": "Almost all key cells are gap/unknown.",
+          "tag": "FACT"
+        }
+      ],
+      "next_evidence_es": "Inventariar gaps GDS norte y exigir fuentes antes de cualquier narrativa de compensación estatal.",
+      "next_evidence_en": "Inventory northern GDS gaps and require sources before any statewide compensation narrative.",
+      "owner": "TAG · Infrastructure / Steering",
+      "stakeholder_ids": [],
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-20",
+        "portal_refresh": "2026-09-20"
+      }
+    },
+    {
+      "id": "sq-todos-santos-amenity",
+      "places": [
+        "todos_santos",
+        "los_cabos"
+      ],
+      "vocations": [
+        "pacific_spine"
+      ],
+      "question_es": "¿La migración de amenidad en Todos Santos–Pescadero diversifica BCS o densifica sin infraestructura a escala Cabos?",
+      "question_en": "Does amenity migration in Todos Santos–Pescadero diversify BCS or densify without Cabos-scale infrastructure?",
+      "planning_position_es": "Contestado: diversificación vs. densificación no planeada; morfología de pueblo = ASSUMPTION hasta evidencia catastral.",
+      "planning_position_en": "Contested: diversification vs. unplanned densification; pueblo morphology = ASSUMPTION until cadastral evidence.",
+      "supporting_evidence": [
+        {
+          "type": "dossier",
+          "id": "todos_santos",
+          "href": "/studio/la_paz/",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "id": "todos_santos",
+          "href": "/crecimiento/?place=todos_santos#todos_santos",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "community_tenure",
+          "label_es": "Comunidad y tenencia",
+          "label_en": "Community & land tenure"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        }
+      ],
+      "demand_supply_notes_es": "GDS Todos Santos = constrained; 5 gaps (tourism_rooms, air_access, economic_amenity, …).",
+      "demand_supply_notes_en": "GDS Todos Santos = constrained; 5 gaps (tourism_rooms, air_access, economic_amenity, …).",
+      "capacity_constraints": [
+        {
+          "theme": "housing",
+          "label_es": "Amenidad / cuartos (gap)",
+          "label_en": "Amenity / rooms (gap)",
+          "status": "gap",
+          "tag": "FACT",
+          "source": "Base de datos BCS 2050 — demanda y oferta de crecimiento"
+        }
+      ],
+      "confidence": "low",
+      "uncertainties": [
+        {
+          "es": "Morfología pueblo sin evidencia catastral consolidada.",
+          "en": "Pueblo morphology without consolidated cadastral evidence.",
+          "tag": "ASSUMPTION"
+        }
+      ],
+      "next_evidence_es": "Cerrar gaps GDS amenidad y vincular PSDU Todos Santos en catálogo.",
+      "next_evidence_en": "Close amenity GDS gaps and link Todos Santos PSDU in catalog.",
+      "owner": "Forum · communities / tenure",
+      "stakeholder_ids": [],
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-19",
+        "portal_refresh": "2026-09-20"
+      }
+    },
+    {
+      "id": "sq-carrying-capacity-metrics",
+      "places": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "east_cape",
+        "todos_santos",
+        "comondu",
+        "mulege_north"
+      ],
+      "vocations": [
+        "system"
+      ],
+      "question_es": "¿Qué métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar se necesitan para arbitrar IED vs. freno político?",
+      "question_en": "What public carrying-capacity metrics (water–kWh–rooms) by place are needed to arbitrate FDI vs. political brake?",
+      "planning_position_es": "Brecha explícita (consensus status=gap): sin métricas comparables, foresights y scorecards no pueden cerrar escenarios.",
+      "planning_position_en": "Explicit gap (consensus status=gap): without comparable metrics, foresights and scorecards cannot close scenarios.",
+      "supporting_evidence": [
+        {
+          "type": "foresights",
+          "href": "/foresights/#debate",
+          "tag": "FACT"
+        },
+        {
+          "type": "gds",
+          "href": "/crecimiento/",
+          "tag": "FACT"
+        }
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "sustainability_infra",
+          "label_es": "Sustentabilidad e infraestructura",
+          "label_en": "Sustainability & infrastructure"
+        },
+        {
+          "role_id": "water_security",
+          "label_es": "Seguridad hídrica",
+          "label_en": "Water security"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        }
+      ],
+      "demand_supply_notes_es": "22 celdas gap en GDS statewide; metrics parciales (flights, dma_hm3, sibcs_peak_mw, desal_cabos_ls) ya existen.",
+      "demand_supply_notes_en": "22 gap cells in statewide GDS; partial metrics (flights, dma_hm3, sibcs_peak_mw, desal_cabos_ls) already exist.",
+      "capacity_constraints": [
+        {
+          "theme": "system",
+          "label_es": "Métricas comparables por lugar",
+          "label_en": "Comparable metrics by place",
+          "status": "gap",
+          "tag": "FACT",
+          "source": "foresights consensus_seeds"
+        }
+      ],
+      "confidence": "high",
+      "uncertainties": [
+        {
+          "es": "Qué umbrales 2050 usar sin inventar cifras.",
+          "en": "Which 2050 thresholds to use without inventing figures.",
+          "tag": "ASSUMPTION"
+        }
+      ],
+      "next_evidence_es": "Inventariar celdas gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar las que bloquean IED.",
+      "next_evidence_en": "Inventory gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize those blocking FDI.",
+      "owner": "Steering · regional strategy",
+      "stakeholder_ids": [
+        "st-017",
+        "st-018",
+        "st-019"
+      ],
+      "updated": "2026-09-20",
+      "freshness": {
+        "source_date": "2026-09-20",
+        "portal_refresh": "2026-09-20"
+      }
+    }
+  ]
+}

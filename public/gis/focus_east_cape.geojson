@@ -1,0 +1,196 @@
+{
+  "type": "FeatureCollection",
+  "name": "focus_east_cape",
+  "properties": {
+    "note_es": "Indicativo — Cabo del Este / East Cape (Golfo, este de SJC): franja Los Barriles–Buenavista–La Ribera–Cabo Pulmo. No enumera todos los rancheríos.",
+    "note_en": "Indicative — East Cape / Cabo del Este (Gulf side east of SJC): Los Barriles–Buenavista–La Ribera–Cabo Pulmo belt. Not every hamlet."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east_cape_belt",
+        "name_es": "Franja East Cape / Cabo del Este",
+        "name_en": "East Cape / Cabo del Este belt",
+        "kind": "belt",
+        "indicative": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -109.72,
+              23.08
+            ],
+            [
+              -109.55,
+              23.08
+            ],
+            [
+              -109.38,
+              23.35
+            ],
+            [
+              -109.35,
+              23.5
+            ],
+            [
+              -109.42,
+              23.75
+            ],
+            [
+              -109.75,
+              23.78
+            ],
+            [
+              -109.78,
+              23.55
+            ],
+            [
+              -109.72,
+              23.35
+            ],
+            [
+              -109.72,
+              23.08
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east_cape_spine",
+        "name_es": "Espina East Cape (indicativa)",
+        "name_en": "East Cape spine (indicative)",
+        "kind": "spine",
+        "indicative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -109.702515,
+            23.059836
+          ],
+          [
+            -109.714928,
+            23.481999
+          ],
+          [
+            -109.704577,
+            23.680601
+          ],
+          [
+            -109.698328,
+            23.657356
+          ],
+          [
+            -109.586067,
+            23.596563
+          ],
+          [
+            -109.4283,
+            23.4425
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east_marker_san_josé_del_cabo",
+        "name_es": "San José del Cabo",
+        "name_en": "San José del Cabo",
+        "kind": "settlement",
+        "municipio": "Los Cabos",
+        "source": "INEGI Censo 2020 · top_localities / municipios",
+        "pobtot": "136285"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702515,
+          23.059836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east_marker_los_barriles",
+        "name_es": "Los Barriles",
+        "name_en": "Los Barriles",
+        "kind": "settlement",
+        "municipio": "La Paz",
+        "source": "INEGI Censo 2020 · top_localities (PSDU Los Barriles–El Cardonal on disk)",
+        "pobtot": "1674"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.704577,
+          23.680601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east_marker_buenavista",
+        "name_es": "Buenavista",
+        "name_en": "Buenavista",
+        "kind": "settlement",
+        "municipio": "Los Cabos",
+        "source": "INEGI Censo 2020 · top_localities",
+        "pobtot": "705"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.698328,
+          23.657356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east_marker_la_ribera",
+        "name_es": "La Ribera",
+        "name_en": "La Ribera",
+        "kind": "settlement",
+        "municipio": "Los Cabos",
+        "source": "INEGI Censo 2020 · top_localities",
+        "pobtot": "2320"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.586067,
+          23.596563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east_marker_cabo_pulmo",
+        "name_es": "Cabo Pulmo",
+        "name_en": "Cabo Pulmo",
+        "kind": "settlement",
+        "municipio": "Los Cabos",
+        "source": "Indicative gateway coords · ANP Parque Nacional Cabo Pulmo (ontology terr_anp_cabo_pulmo); pobtot not in top_localities extract"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.4283,
+          23.4425
+        ]
+      }
+    }
+  ]
+}

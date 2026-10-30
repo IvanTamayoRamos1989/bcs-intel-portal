@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<BaseLayout title="Bitácora técnica" description="Bitácora técnica secundaria — noindex; fuera de la navegación principal">
+  <h1>Bitácora técnica</h1>
+  <p class="lead">
+    Archivo secundario de notas de trabajo. <strong>No forma parte de la guía pública</strong>
+    ni aparece en la navegación principal. Conservado por trazabilidad interna (noindex).
+  </p>
+  <div class="post-list">
+    {posts.map((post) => (
+      <article>
+        <p class="meta">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toISOString().slice(0, 10)}
+          </time>
+          {post.data.draft && <span class="tag">borrador</span>}
+        </p>
+        <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
+        <p>{post.data.description}</p>
+      </article>
+    ))}
+  </div>
+</BaseLayout>

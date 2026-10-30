@@ -1,0 +1,248 @@
+---
+import { cleanSourceText, docTitle, labelForPath } from '../lib/sourceLabel';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import federalDoc from '../data/federal_projects.json';
+import themeDocs from '../data/theme_docs.json';
+import graph from '../data/graph.json';
+import newsDoc from '../data/news.json';
+import inventory from '../data/data_inventory.json';
+import SourceCard from './SourceCard.astro';
+import PrintExpediente from './PrintExpediente.astro';
+
+interface Props {
+  entry: CollectionEntry<'guides'>;
+  titleEn?: string;
+}
+const { entry, titleEn } = Astro.props;
+const { Content } = await render(entry);
+const keyFigs = ((inventory as any).figures || []).filter((f: any) => (f.shown_on || []).includes(`/${entry.id}`));
+
+/* PASS3_THEME_HUB */
+const THEME_SECTOR: Record<string, string[]> = {
+  energia: ['energy'],
+  agua: ['water'],
+  economia: ['economy', 'tourism', 'housing', 'mining', 'other'],
+  conectividad: ['roads', 'ports', 'airports', 'internet'],
+  ambiente: ['environment'],
+  planeacion: [],
+  territorio: [],
+  riesgos: [],
+  historia: [],
+};
+const THEME_ONTO: Record<string, string[]> = {
+  energia: ['rc_sibcs', 'proj_p23_bs1', 'actor_cfe', 'actor_cenace', 'rc_plant_sol_insurgentes', 'const_bess_gap', 'const_subestaciones_gap'],
+  agua: ['rc_acuifero_0317', 'rc_acuifero_0319', 'actor_conagua', 'proj_desal_cabos'],
+  ambiente: ['actor_conanp'],
+  conectividad: ['rc_aeropuerto_sjd', 'rc_aeropuerto_lap'],
+};
+const sectors = THEME_SECTOR[entry.id] || [];
+const themeFed = ((federalDoc as any).projects || [])
+  .filter((pr: any) => !sectors.length || sectors.includes(pr.sector))
+  .slice(0, 8);
+const docs = ((themeDocs as any)[entry.id] || []).slice(0, 6);
+const nodeById = Object.fromEntries(((graph as any).nodes || []).map((n: any) => [n.id, n]));
+const ontoIds = THEME_ONTO[entry.id] || [];
+const ontoNodes = ontoIds.map((id) => nodeById[id]).filter(Boolean);
+const themeNews = ((newsDoc as any).items || [])
+  .filter((n: any) => (n.topics || []).some((t: string) => {
+    const map: Record<string, string[]> = {
+      energia: ['energy', 'infrastructure'],
+      agua: ['water'],
+      ambiente: ['environment'],
+      planeacion: ['planning'],
+      economia: ['economy', 'tourism'],
+      conectividad: ['infrastructure', 'transport'],
+    };
+    return (map[entry.id] || []).includes(t);
+  }))
+  .slice(0, 4);
+const enTitles: Record<string, string> = {
+  territorio: 'Territory',
+  agua: 'Water',
+  energia: 'Energy',
+  ambiente: 'Environment',
+  planeacion: 'Planning',
+  economia: 'Economy',
+  conectividad: 'Connectivity',
+  riesgos: 'Hazards & tenure',
+  historia: 'History',
+};
+const enLeads: Record<string, string> = {
+  territorio: 'Five municipalities, 2,543 localities, 798,447 inhabitants (INEGI 2020) — settlement hierarchy and Drive catalog paths into the TI pack.',
+  planeacion: 'POERBCS 56 UGAs, PED, PDU/PSDU/PMD stack and historical plans archive.',
+  agua: 'CONAGUA DMA deficits on growth-pole aquifers and desalination as point supply — not a DMA rewrite.',
+  energia: 'Isolated SIBCS system, CENACE peaks and La Paz→Los Cabos transmission ceiling.',
+  ambiente: 'Federal ANPs, CONABIO RTP and POER environmental policy binding land use.',
+  conectividad: 'Airports, ports and Federal Highways 1/19 with PDU/PSDU mobility layers.',
+  riesgos: 'State hazard atlas themes, seismicity and agrarian land tenure constraints.',
+  economia: 'SETUE economic structure plus the deep real-estate report pack.',
+  historia: 'State and municipal histories harvested into territorial intelligence.',
+};
+const resolvedEn = titleEn || enTitles[entry.id] || entry.data.title;
+---
+<BaseLayout
+  title={entry.data.title}
+  titleEn={resolvedEn}
+  description={entry.data.description}
+  descriptionEn={enLeads[entry.id] || entry.data.description}
+  section={entry.data.title}
+  sectionEn={resolvedEn}
+  wide={true}
+>
+  <p class="meta">
+    <span data-i18n="updated">Actualizado</span> {entry.data.updated.toISOString().slice(0, 10)}
+  </p>
+  {/* The page header already shows short descriptions; repeat only long ones as the lead. */}
+  {entry.data.description.length > 100 && (
+    <p class="lead">
+      <span data-lang-es>{entry.data.description}</span>
+      <span data-lang-en hidden>{enLeads[entry.id] || entry.data.description}</span>
+    </p>
+  )}
+
+  <!-- PASS3_THEME_HUB -->
+  <nav class="theme-axis" aria-label="Temas">
+    {[
+      ['agua','Agua','Water'],
+      ['energia','Energía','Energy'],
+      ['economia','Economía','Economy'],
+      ['territorio','Territorio','Territory'],
+      ['conectividad','Conectividad','Connectivity'],
+      ['ambiente','Ambiente','Environment'],
+      ['planeacion','Planeación','Planning'],
+      ['proyectos-federales','Proyectos','Projects'],
+    ].map(([id, es, en]) => (
+      <a class:list={['theme-axis-chip', entry.id === id && 'is-active']} href={`/${id}/`}>
+        <span data-lang-es>{es}</span><span data-lang-en hidden>{en}</span>
+      </a>
+    ))}
+  </nav>
+
+  <div class="theme-hub-grid">
+    <section class="theme-hub-card">
+      <h2><span data-lang-es>Proyectos federales</span><span data-lang-en hidden>Federal projects</span></h2>
+      {themeFed.length === 0 ? (
+        <p class="bcs-empty"><span data-lang-es>Sin proyectos de este sector en el inventario.</span><span data-lang-en hidden>No projects for this sector in the inventory.</span></p>
+      ) : (
+        <ul class="theme-hub-list">
+          {themeFed.map((pr: any) => (
+            <li>
+              <strong>{pr.proyecto}</strong>
+              <span class="meta">{pr.sexenio} · {pr['municipio(s)']} · {pr.estado}</span>
+              <a href={`/ontologia/?node=proj_${String(pr.id).toLowerCase().replace(/-/g, '_')}`}>Mapa de relaciones</a>
+            </li>
+          ))}
+        </ul>
+      )}
+      <a class="theme-more" href="/proyectos-federales/"><span data-lang-es>Inventario →</span><span data-lang-en hidden>Inventory →</span></a>
+    </section>
+
+    <section class="theme-hub-card">
+      <h2><span data-lang-es>Documentos del tema</span><span data-lang-en hidden>Theme documents</span></h2>
+      {docs.length === 0 ? (
+        <p class="bcs-empty"><span data-lang-es>Sin documentos indexados.</span><span data-lang-en hidden>No indexed documents.</span></p>
+      ) : (
+        <ul class="theme-hub-list">
+          {docs.map((d: any) => (
+            <li>
+              <span>{docTitle(d.n)}</span>
+              <span class="meta">{labelForPath(String(d.f || '') + '/')} · {d.y || '—'}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      <a class="theme-more" href={`/catalogo/?tema=${entry.id}`}><span data-lang-es>Catálogo →</span><span data-lang-en hidden>Catalog →</span></a>
+    </section>
+
+    <section class="theme-hub-card">
+      <h2><span data-lang-es>Mapa de relaciones</span><span data-lang-en hidden>Ontology</span></h2>
+      {ontoNodes.length === 0 ? (
+        <p class="bcs-empty"><span data-lang-es>Explora el grafo completo.</span><span data-lang-en hidden>Explore the full graph.</span></p>
+      ) : (
+        <div class="theme-onto-row">
+          {ontoNodes.map((n: any) => (
+            <a href={`/ontologia/?node=${n.id}`}>{n.label}</a>
+          ))}
+        </div>
+      )}
+      <a class="theme-more" href="/ontologia/"><span data-lang-es>Ver relaciones →</span><span data-lang-en hidden>See relationships →</span></a>
+    </section>
+
+    <section class="theme-hub-card">
+      <h2><span data-lang-es>Mapa y noticias</span><span data-lang-en hidden>Map and news</span></h2>
+      <p class="su-cta-row" style="margin:0 0 0.75rem">
+        <a class="btn" href={`/mapas/?layers=federal_projects,energy_assets&theme=${entry.id}`}>
+          <span data-lang-es>Abrir mapa</span><span data-lang-en hidden>Open map</span>
+        </a>
+        <a class="btn secondary" href={`/studio/los_cabos/`}><span data-lang-es>Por lugar</span><span data-lang-en hidden>By place</span></a>
+      </p>
+      {themeNews.length === 0 ? (
+        <p class="bcs-empty"><span data-lang-es>Sin noticias recientes de este tema.</span><span data-lang-en hidden>No recent news for this theme.</span></p>
+      ) : (
+        <ul class="theme-hub-list">
+          {themeNews.map((n: any) => (
+            <li>
+              <a href={n.url} target="_blank" rel="noopener">{n.title_es}</a>
+              <span class="meta">{cleanSourceText(n.source)} · {n.date}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  </div>
+
+  {keyFigs.length > 0 && (
+    <section class="guide-keyfigs" id="cifras-fuente">
+      <h2><span data-lang-es>Cifras clave y su fuente</span><span data-lang-en hidden>Key figures and their source</span></h2>
+      <ul>
+        {keyFigs.map((f: any) => (
+          <li><strong>{f.value}</strong> {f.unit} — {f.label} <SourceCard id={f.id} /></li>
+        ))}
+      </ul>
+    </section>
+  )}
+  <div class="guide-export"><PrintExpediente title={entry.data.title} /></div>
+
+  <details class="bcs-collapse" open>
+    <summary>
+      <span data-lang-es>Guía completa</span>
+      <span data-lang-en hidden>Full guide</span>
+    </summary>
+    <div class="bcs-collapse-body prose">
+      <Content />
+    </div>
+  </details>
+
+  <style>
+    .guide-keyfigs { margin: 0.5rem 0 1rem; padding: 0.7rem 0.9rem; border: 1px solid #e2dccf; border-radius: 12px; background: #fbf8f1; }
+    .guide-keyfigs h2 { font-size: 1rem; margin: 0 0 0.4rem; }
+    .guide-keyfigs ul { margin: 0; padding-left: 1.1rem; }
+    .guide-keyfigs li { margin: 0.2rem 0; }
+    .guide-export { margin: 0 0 0.8rem; }
+    .theme-axis { display:flex; flex-wrap:wrap; gap:0.4rem; margin: 0.75rem 0 1.1rem; }
+    .theme-axis-chip {
+      padding: 0.35rem 0.7rem; border-radius: 999px; background: #f3eee3; color:#23374a;
+      text-decoration:none; font-size:0.8rem; font-weight:600;
+    }
+    .theme-axis-chip.is-active { background:#34607d; color:#fbf8f1; }
+    .theme-hub-grid {
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.75rem; margin-bottom: 1.25rem;
+    }
+    .theme-hub-card {
+      background:#fbf8f1; border:1px solid #e2dccf; border-radius: 14px; padding: 0.9rem 1rem;
+      box-shadow: 0 1px 2px rgba(35, 55, 74,.04);
+    }
+    .theme-hub-card h2 { margin:0 0 0.55rem; font-size:1rem; }
+    .theme-hub-list { list-style:none; padding:0; margin:0; display:grid; gap:0.45rem; }
+    .theme-hub-list li { display:grid; gap:0.1rem; font-size:0.88rem; }
+    .theme-more { display:inline-block; margin-top:0.65rem; font-size:0.82rem; font-weight:600; color:#34607d; }
+    .theme-onto-row { display:flex; flex-wrap:wrap; gap:0.35rem; }
+    .theme-onto-row a {
+      font-size:0.78rem; padding:0.3rem 0.55rem; border-radius:999px; background:#eef6fb; color:#34607d; text-decoration:none;
+    }
+    /* dark-mode block removed: light theme forced */
+  </style>
+</BaseLayout>

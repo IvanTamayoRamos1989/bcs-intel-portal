@@ -1,0 +1,146 @@
+{
+  "type": "FeatureCollection",
+  "name": "focus_ports_air",
+  "properties": {
+    "note_es": "Marcadores indicativos para foco de decisión (coords aproximadas / OSM donde hay nodo).",
+    "note_en": "Indicative markers for decision focus (approx coords / OSM where a node exists)."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "air_sjd",
+        "name_es": "Aeropuerto Internacional de Los Cabos (SJD)",
+        "name_en": "Los Cabos International Airport (SJD)",
+        "kind": "airport",
+        "code": "SJD",
+        "fact_es": "≈3.8 M pax 2025 · 83.2% arribos aéreos estatales",
+        "fact_en": "≈3.8 M pax 2025 · 83.2% of state air arrivals",
+        "source": "SETUE IE Los Cabos 2026 · ports_demand · ontology rc_aeropuerto_sjd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.721,
+          23.152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "air_lap",
+        "name_es": "Aeropuerto Internacional de La Paz (LAP)",
+        "name_en": "La Paz International Airport (LAP)",
+        "kind": "airport",
+        "code": "LAP",
+        "fact_es": "668,800 pax 2025 · +10.9% YoY",
+        "fact_en": "668,800 pax 2025 · +10.9% YoY",
+        "source": "SETUE IE La Paz 2026 · ports_demand · ontology rc_aeropuerto_lap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.362,
+          24.073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "air_lto",
+        "name_es": "Aeropuerto Internacional de Loreto (LTO)",
+        "name_en": "Loreto International Airport (LTO)",
+        "kind": "airport",
+        "code": "LTO",
+        "fact_es": "Tercer aeropuerto internacional SETUE; pax CY 2025 no publicado en pack",
+        "fact_en": "Third SETUE international airport; CY 2025 pax not in pack",
+        "source": "SETUE IE BCS 2026 fuentes · ports_demand (gap)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.348,
+          25.989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "port_csl",
+        "name_es": "Puerto / muelle cruceros Cabo San Lucas",
+        "name_en": "Cabo San Lucas cruise pier / port",
+        "kind": "port",
+        "fact_es": "285 arribos / 1,057,758 pax crucero 2025 (DataTur)",
+        "fact_en": "285 calls / 1,057,758 cruise pax 2025 (DataTur)",
+        "source": "SECTUR DataTur · ports_demand cruises.md"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.9084336,
+          22.8807271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "port_pichilingue",
+        "name_es": "Pichilingue / ferry La Paz",
+        "name_en": "Pichilingue / La Paz ferry",
+        "kind": "port",
+        "fact_es": "50 arribos crucero 2025 · 133,269 pax (DataTur)",
+        "fact_en": "50 cruise calls 2025 · 133,269 pax (DataTur)",
+        "source": "SECTUR DataTur · ports_demand · OSM ferry terminal near La Paz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.327151,
+          24.2750857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "port_lapaz_marina",
+        "name_es": "Marina La Paz",
+        "name_en": "Marina La Paz",
+        "kind": "harbour",
+        "fact_es": "Puerto La Paz: 31 arribos crucero 2025 (DataTur)",
+        "fact_en": "La Paz port: 31 cruise calls 2025 (DataTur)",
+        "source": "SECTUR DataTur · OSM Marina La Paz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.327032,
+          24.1548699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "port_santa_rosalia",
+        "name_es": "Santa Rosalía (ferry / puerto)",
+        "name_en": "Santa Rosalía (ferry / port)",
+        "kind": "port",
+        "fact_es": "7 arribos crucero 2025 · ferry Guaymas–Santa Rosalía (OSM)",
+        "fact_en": "7 cruise calls 2025 · Guaymas–Santa Rosalía ferry (OSM)",
+        "source": "SECTUR DataTur · OSM ferry terminal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2680462,
+          27.3364279
+        ]
+      }
+    }
+  ]
+}

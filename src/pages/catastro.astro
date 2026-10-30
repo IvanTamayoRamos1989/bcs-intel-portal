@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import portals from '../data/catastro_portals.json';
+
+const list = (portals as any).portals || [];
+const byMun: Record<string, any[]> = {};
+for (const p of list) {
+  (byMun[p.municipality] ||= []).push(p);
+}
+---
+<BaseLayout
+  title="Catastro e IMPLAN"
+  titleEn="Cadastre & IMPLAN"
+  description="Portales vivos de catastro, predial e IMPLAN en BCS"
+  descriptionEn="Live cadastre, property-tax and IMPLAN portals in BCS"
+>
+  <p class="lead">
+    <span data-lang-es>
+      Inventario de portales públicos verificado {portals.checked_at}.
+      Estado <em>live</em> = responde; gaps explícitos cuando no hay visor.
+      Evidencia: Base de datos BCS 2050 — catastro.
+    </span>
+    <span data-lang-en hidden>
+      Public portal inventory checked {portals.checked_at}.
+      <em>live</em> = responds; explicit gaps when no viewer exists.
+      Evidence: BCS 2050 database — cadastre.
+    </span>
+  </p>
+
+  {Object.entries(byMun).map(([mun, items]) => (
+    <section class="group-block">
+      <h2>{mun}</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><span data-lang-es>Tipo</span><span data-lang-en hidden>Type</span></th>
+              <th>URL</th>
+              <th><span data-i18n="status">Status</span></th>
+              <th><span data-lang-es>Notas</span><span data-lang-en hidden>Notes</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((p) => (
+              <tr>
+                <td><code>{p.type}</code></td>
+                <td>{p.url ? <a href={p.url} target="_blank" rel="noopener">{p.url}</a> : '—'}</td>
+                <td>
+                  <span class={`portal-status ${p.status === 'live' ? 'live' : (String(p.status).includes('no public') ? 'gap' : '')}`}>
+                    {p.status}
+                  </span>
+                </td>
+                <td>{p.notes}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <div class="fuentes-box">
+    <h2><span data-lang-es>Fuentes</span><span data-lang-en hidden>Sources</span></h2>
+    <ul>
+      <li><span data-lang-es>Base de datos BCS 2050 — portales de catastro e IMPLAN (inventario y notas)</span><span data-lang-en hidden>BCS 2050 database — cadastre and IMPLAN portals (inventory and notes)</span></li>
+    </ul>
+  </div>
+</BaseLayout>

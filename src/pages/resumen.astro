@@ -1,0 +1,396 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import municipios from '../data/municipios.json';
+import graph from '../data/graph.json';
+import folders from '../data/folders_summary.json';
+import fiscal from '../data/fiscal_docs.json';
+import stills from '../data/stills.json';
+import SourceCard from '../components/SourceCard.astro';
+
+const mun = municipios as Record<string, any>;
+const popState = 798447;
+const losCabos = mun['Los Cabos']?.pob ?? 351111;
+const sjc = mun['Los Cabos']?.cab_pob ?? 136285;
+const laPaz = mun['La Paz']?.pob ?? 292241;
+const munCount = Object.keys(mun).length;
+const stillsCount = Array.isArray(stills) ? stills.length : 956;
+const nodes = (graph.nodes || []).length;
+const edges = (graph.edges || []).length;
+const pe2026 = fiscal.state_pe_2026;
+const peFmt = pe2026
+  ? (pe2026 / 1e9).toLocaleString('es-MX', { maximumFractionDigits: 1 })
+  : null;
+
+const cards = [
+  {
+    value: '798,447',
+    fig: 'fig-pob-bcs',
+    label_es: 'Población estatal',
+    label_en: 'State population',
+    note_es: 'INEGI Censo 2020 · ITER / communities_master',
+    note_en: 'INEGI Census 2020 · ITER / communities_master',
+    href: '/territorio',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'comondu', es: 'Comondú', en: 'Comondú' },
+    ],
+  },
+  {
+    value: losCabos.toLocaleString('es-MX'),
+    fig: 'fig-pob-los-cabos',
+    label_es: 'Los Cabos (hab.)',
+    label_en: 'Los Cabos (pop.)',
+    note_es: `Cabecera SJC ${sjc.toLocaleString('es-MX')} · INEGI 2020`,
+    note_en: `SJC seat ${sjc.toLocaleString('en-US')} · INEGI 2020`,
+    href: '/comunidades',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'east_cape', es: 'Cabo Este', en: 'East Cape' },
+      { id: 'todos_santos', es: 'Todos Santos', en: 'Todos Santos' },
+    ],
+  },
+  {
+    value: laPaz.toLocaleString('es-MX'),
+    fig: 'fig-pob-la-paz',
+    label_es: 'La Paz (hab.)',
+    label_en: 'La Paz (pop.)',
+    note_es: 'Capital · INEGI Censo 2020',
+    note_en: 'Capital · INEGI Census 2020',
+    href: '/comunidades',
+    drivers: [
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'todos_santos', es: 'Todos Santos', en: 'Todos Santos' },
+      { id: 'loreto', es: 'Loreto', en: 'Loreto' },
+    ],
+  },
+  {
+    value: '4',
+    label_es: 'Acuíferos polo en déficit DMA',
+    label_en: 'Growth-pole aquifers in DMA deficit',
+    note_es: '0313, 0317, 0319, 0324 · CONAGUA DMA 2024',
+    note_en: '0313, 0317, 0319, 0324 · CONAGUA DMA 2024',
+    href: '/agua',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'east_cape', es: 'Cabo Este', en: 'East Cape' },
+    ],
+  },
+  {
+    value: '~689 MW',
+    label_es: 'Pico SIBCS 2024',
+    label_en: 'SIBCS 2024 peak',
+    note_es: 'PAMRNT / PLADESE · sistema aislado',
+    note_en: 'PAMRNT / PLADESE · isolated system',
+    href: '/energia',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'todos_santos', es: 'Todos Santos', en: 'Todos Santos' },
+    ],
+  },
+  {
+    value: '~4.5 M',
+    label_es: 'Llegadas aéreas BCS 2025',
+    label_en: 'BCS air arrivals 2025',
+    note_es: 'SETUE IE BCS 2026 · tres aeropuertos · ver /vuelos',
+    note_en: 'SETUE IE BCS 2026 · three airports · see /vuelos',
+    href: '/vuelos',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos (SJD)', en: 'Los Cabos (SJD)' },
+      { id: 'la_paz', es: 'La Paz (LAP)', en: 'La Paz (LAP)' },
+      { id: 'loreto', es: 'Loreto (LTO)', en: 'Loreto (LTO)' },
+    ],
+  },
+  {
+    value: '56',
+    label_es: 'Destinos sin escalas SJD',
+    label_en: 'SJD non-stop destinations',
+    note_es: 'FlightConnections · consultado 2026-09-17 · también LAP 7 · LTO 5',
+    note_en: 'FlightConnections · retrieved 2026-09-17 · also LAP 7 · LTO 5',
+    href: '/vuelos',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'east_cape', es: 'Cabo Este', en: 'East Cape' },
+      { id: 'todos_santos', es: 'Todos Santos', en: 'Todos Santos' },
+    ],
+  },
+  {
+    value: '~10',
+    label_es: 'ANP federales (capa 2025)',
+    label_en: 'Federal ANPs (2025 layer)',
+    note_es: 'CONANP–CONABIO · Pulmo, Vizcaíno, Sierra La Laguna, Loreto…',
+    note_en: 'CONANP–CONABIO · Pulmo, Vizcaíno, Sierra La Laguna, Loreto…',
+    href: '/ambiente',
+    drivers: [
+      { id: 'east_cape', es: 'Cabo Este', en: 'East Cape' },
+      { id: 'loreto', es: 'Loreto', en: 'Loreto' },
+      { id: 'mulege_north', es: 'Mulegé N.', en: 'Mulegé N.' },
+    ],
+  },
+  {
+    value: String(stillsCount),
+    label_es: 'Fotos del territorio',
+    label_en: 'Territory photos',
+    note_es: 'Stills georreferenciados en /stills',
+    note_en: 'Georeferenced stills on /stills',
+    href: '/stills',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'loreto', es: 'Loreto', en: 'Loreto' },
+    ],
+  },
+  {
+    value: String(munCount),
+    label_es: 'Municipios',
+    label_en: 'Municipalities',
+    note_es: 'Los Cabos, La Paz, Comondú, Mulegé, Loreto',
+    note_en: 'Los Cabos, La Paz, Comondú, Mulegé, Loreto',
+    href: '/comunidades',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'comondu', es: 'Comondú', en: 'Comondú' },
+      { id: 'mulege_north', es: 'Mulegé N.', en: 'Mulegé N.' },
+    ],
+  },
+  {
+    value: String(nodes),
+    label_es: 'Nodos de ontología',
+    label_en: 'Ontology nodes',
+    note_es: `${edges} relaciones · grafo territorial`,
+    note_en: `${edges} relations · territorial graph`,
+    href: '/ontologia',
+    drivers: [
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'loreto', es: 'Loreto', en: 'Loreto' },
+    ],
+  },
+  {
+    value: peFmt ? `$${peFmt} mil M` : '—',
+    label_es: 'Presupuesto estatal PE 2026',
+    label_en: 'State budget PE 2026',
+    note_es: 'Pack fiscal · Ley de Egresos / PE',
+    note_en: 'Fiscal pack · expenditure law / PE',
+    href: '/fiscal',
+    drivers: [
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'comondu', es: 'Comondú', en: 'Comondú' },
+    ],
+  },
+  {
+    value: (folders.total_files || 0).toLocaleString('es-MX'),
+    fig: 'fig-files',
+    label_es: 'Archivos indexados',
+    label_en: 'Indexed files',
+    note_es: `${folders.pdf_count || 0} PDFs · catálogo Drive`,
+    note_en: `${folders.pdf_count || 0} PDFs · Drive catalog`,
+    href: '/catalogo',
+    drivers: [
+      { id: 'los_cabos', es: 'Los Cabos', en: 'Los Cabos' },
+      { id: 'la_paz', es: 'La Paz', en: 'La Paz' },
+      { id: 'loreto', es: 'Loreto', en: 'Loreto' },
+    ],
+  },
+];
+
+
+// Simple bar chart data: municipal population share
+const munBars = Object.entries(mun).map(([name, v]: any) => ({
+  name,
+  pob: v.pob || 0,
+  pct: Math.round(((v.pob || 0) / popState) * 1000) / 10,
+}));
+munBars.sort((a, b) => b.pob - a.pob);
+const maxPob = Math.max(...munBars.map((m) => m.pob));
+---
+<BaseLayout
+  title="Resumen"
+  titleEn="Summary"
+  description="Tablero de cifras clave de Baja California Sur desde datos del portal"
+  descriptionEn="Key-figure dashboard for Baja California Sur from portal data"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Tablero de inteligencia territorial — cifras consolidadas ya presentes en guías, ontología y packs de datos.
+      Cada tarjeta cita su fuente y las tres vocaciones de lugar que más la impulsan (). Enlaces a tableros y fichas de lugar.
+    </span>
+    <span data-lang-en hidden>
+      Territorial intelligence dashboard — figures already consolidated in guides, ontology and data packs.
+      Each card cites its source and the three place vocations that most drive it (). Links open growth dashboards and place profiles.
+    </span>
+  </p>
+
+
+
+  <div class="kpi-grid">
+    {cards.map((c) => (
+      <article class="kpi-card">
+        <a class="kpi-main" href={c.href}>
+          <div class="kpi-value">{c.value}</div>
+          <div class="kpi-label">
+            <span data-lang-es>{c.label_es}</span>
+            <span data-lang-en hidden>{c.label_en}</span>
+          </div>
+          <div class="kpi-src">
+            <span data-lang-es>{c.note_es}</span>
+            <span data-lang-en hidden>{c.note_en}</span>
+          </div>
+        </a>
+        {(c as any).fig && <div class="kpi-srccard"><SourceCard id={(c as any).fig} /></div>}
+        {(c.drivers || []).length > 0 && (
+          <div class="kpi-drivers">
+            <span class="kpi-drivers-k">
+              <span data-lang-es>Vocaciones que impulsan</span>
+              <span data-lang-en hidden>Driving vocations</span>
+            </span>
+            <div class="kpi-driver-chips">
+              {c.drivers.map((d: any) => (
+                <>
+                  <a class="kpi-chip" href={`/crecimiento/?place=${d.id}#${d.id}`}>
+                    <span data-lang-es>{d.es}</span>
+                    <span data-lang-en hidden>{d.en}</span>
+                    <span class="kpi-chip-sub">GDS</span>
+                  </a>
+                  <a class="kpi-chip kpi-chip--dossier" href={`/studio/${d.id === "east_cape" ? "los_cabos" : d.id === "todos_santos" ? "la_paz" : d.id === "mulege_north" ? "mulege" : d.id}/`}>
+                    <span data-lang-es>Studio</span>
+                    <span data-lang-en hidden>Studio</span>
+                  </a>
+                </>
+              ))}
+            </div>
+          </div>
+        )}
+      </article>
+    ))}
+  </div>
+
+  <h2 style="margin-top:2rem">
+    <span data-lang-es>Población por municipio (INEGI 2020)</span>
+    <span data-lang-en hidden>Population by municipality (INEGI 2020)</span>
+  </h2>
+  <div class="bar-panel">
+    {munBars.map((m) => (
+      <div class="bar-row">
+        <div class="bar-name">{m.name}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style={`width:${(m.pob / maxPob) * 100}%`}></div>
+        </div>
+        <div class="bar-val">{m.pob.toLocaleString('es-MX')} <small>({m.pct}%)</small></div>
+      </div>
+    ))}
+  </div>
+  <p class="meta">
+    <span data-lang-es>Fuente: INEGI Censo 2020. Total 798,447.</span>
+    <span data-lang-en hidden>Source: INEGI Census 2020. Total 798,447.</span>
+  </p>
+
+  <h2>
+    <span data-lang-es>Candados operativos (síntesis)</span>
+    <span data-lang-en hidden>Operating locks (synopsis)</span>
+  </h2>
+  <div class="lock-grid">
+    <div class="lock-card">
+      <h3><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></h3>
+      <p>
+        <span data-lang-es>4 acuíferos de polos sin volumen para nuevas concesiones (CONAGUA DMA). Desalación ≠ crédito DMA.</span>
+        <span data-lang-en hidden>4 growth-pole aquifers with no volume for new concessions (CONAGUA DMA). Desalination ≠ DMA credit.</span>
+      </p>
+      <a href="/agua">→</a>
+    </div>
+    <div class="lock-card">
+      <h3><span data-lang-es>Energía</span><span data-lang-en hidden>Energy</span></h3>
+      <p>
+        <span data-lang-es>SIBCS aislado; pico 2024 ~689 MW en alerta; interconexión SIN–BCS pausada.</span>
+        <span data-lang-en hidden>Isolated SIBCS; 2024 peak ~689 MW under alert; SIN–BCS interconnection paused.</span>
+      </p>
+      <a href="/energia">→</a>
+    </div>
+    <div class="lock-card">
+      <h3><span data-lang-es>Ambiente</span><span data-lang-en hidden>Environment</span></h3>
+      <p>
+        <span data-lang-es>ANP federales y núcleos (Pulmo, Vizcaíno, Sierra La Laguna, Loreto) como restricción de uso.</span>
+        <span data-lang-en hidden>Federal ANPs and cores (Pulmo, Vizcaíno, Sierra La Laguna, Loreto) as use restrictions.</span>
+      </p>
+      <a href="/ambiente">→</a>
+    </div>
+  </div>
+
+  <p class="cta-row" style="margin-top:1.5rem">
+    <a class="btn" href="/crecimiento/"><span data-lang-es>Demanda–oferta</span><span data-lang-en hidden>Demand–supply</span></a>
+    <a class="btn secondary" href="/foresights/"><span data-lang-es>Prospectiva</span><span data-lang-en hidden>Foresights</span></a>
+    <a class="btn secondary" href="/explorar"><span data-lang-es>Explorar</span><span data-lang-en hidden>Explore</span></a>
+    <a class="btn secondary" href="/noticias"><span data-lang-es>Noticias</span><span data-lang-en hidden>News</span></a>
+    <a class="btn secondary" href="/mapas"><span data-lang-es>Mapas</span><span data-lang-en hidden>Maps</span></a>
+  </p>
+
+  <style is:global>
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+    .kpi-card {
+      border: 1px solid #e2dccf;
+      border-radius: 12px;
+      padding: 1rem;
+      background: #fbf8f1;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,128,192,0.06);
+    }
+    .kpi-card:hover { border-color: #34607d; }
+    .kpi-main { text-decoration: none; color: inherit; display: block; }
+    .kpi-value {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #34607d;
+      line-height: 1.15;
+    }
+    .kpi-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #23374a;
+      margin-top: 0.25rem;
+    }
+    .kpi-src {
+      font-size: 0.75rem;
+      color: #5c6e7b;
+      margin-top: 0.35rem;
+      line-height: 1.35;
+    }
+    .kpi-drivers {
+      margin-top: 0.55rem;
+      padding-top: 0.45rem;
+      border-top: 1px dashed #e2dccf;
+    }
+    .kpi-drivers-k {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #5c6e7b;
+      margin-bottom: 0.3rem;
+    }
+    .kpi-driver-chips { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+    .kpi-chip {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.12rem 0.4rem;
+      border-radius: 999px;
+      background: #dfe8ee;
+      color: #34607d;
+      text-decoration: none;
+    }
+    .kpi-chip--dossier { background: #e3eadc; color: #4f6e4b; }
+    .kpi-chip-sub { opacity: 0.75; margin-left: 0.15rem; font-size: 0.6rem; }
+    .bar-panel { margin-top: 0.75rem; }
+  </style>
+
+</BaseLayout>

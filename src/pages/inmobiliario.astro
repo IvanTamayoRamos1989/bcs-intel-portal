@@ -1,0 +1,666 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { fileName } from '../lib/paths';
+import m from '../data/inmobiliario_metrics.json';
+import reports from '../data/re_reports.json';
+
+const j25 = m.jll_2025_bcs as any;
+const j25lc = m.jll_2025_los_cabos as any;
+const zones = m.jll_2025_zones as any;
+const demand = m.jll_2025_demand_proxies as any;
+const c26 = m.cabo_re_2026_q2 as any;
+const c26q1 = m.cabo_re_2026_q1 as any;
+const c25 = m.cabo_re_2025_q4 as any;
+const qseries = (m.cabo_re_quarterly as any).quarters as any[];
+const fit = m.fiturca_2026_02 as any;
+const cb = m.coldwell_bcs_2025_q1 as any;
+const sniiv = m.sniiv_vivienda_bcs as any;
+const rez = m.conavi_rezago_2024 as any;
+const vb = m.vivienda_bienestar_bcs as any;
+const enec = m.inegi_enec_bcs_2025_10 as any;
+const legal = m.legal_fideicomiso as any;
+const gaps = (m.data_gaps as any[]) || [];
+const reps = reports as any[];
+
+const fmtM = (n: number) =>
+  n >= 100 ? n.toLocaleString('en-US', { maximumFractionDigits: 0 }) : n.toLocaleString('en-US', { maximumFractionDigits: 1 });
+const fmtUsd = (n: number) =>
+  n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFractionDigits: 0 });
+---
+<BaseLayout
+  title="Inmobiliario · mercado residencial en BCS"
+  titleEn="Real estate · BCS market brief"
+  description="Brief residencial BCS / Los Cabos — JLL, Cabo RE, FITURCA, SNIIV, CONAVI"
+  descriptionEn="BCS / Los Cabos residential market brief — JLL, Cabo RE, FITURCA, SNIIV, CONAVI"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Brief factual del mercado inmobiliario de Baja California Sur ({m.catalog_count} reportes en catálogo).
+      Cada cifra cita editor y periodo. {m.disclaimer_es}
+    </span>
+    <span data-lang-en hidden>
+      Factual Baja California Sur real-estate market brief ({m.catalog_count} reports in catalog).
+      Every figure cites publisher and period. {m.disclaimer_en}
+    </span>
+  </p>
+
+  <div class="callout">
+    <p style="margin:0">
+      <span data-lang-es><strong>Alcance:</strong> {m.scope_note_es}</span>
+      <span data-lang-en hidden><strong>Scope:</strong> {m.scope_note_en}</span>
+    </p>
+  </div>
+
+  <!-- 1. Executive snapshot -->
+  <h2 id="snapshot">
+    <span data-lang-es>1. Instantánea ejecutiva</span>
+    <span data-lang-en hidden>1. Executive snapshot</span>
+  </h2>
+  <div class="stat-grid">
+    <div class="stat">
+      <span class="n">US${fmtM(j25.volume_m_usd['2025'])}M</span>
+      <span class="l"><span data-lang-es>Volumen BCS 2025</span><span data-lang-en hidden>BCS volume 2025</span></span>
+      <span class="tag chip">JLL 2025</span>
+    </div>
+    <div class="stat">
+      <span class="n">{j25.units['2025'].toLocaleString('en-US')}</span>
+      <span class="l"><span data-lang-es>Unidades BCS 2025</span><span data-lang-en hidden>BCS units 2025</span></span>
+      <span class="tag chip">JLL 2025</span>
+    </div>
+    <div class="stat">
+      <span class="n">{fmtUsd(c26.median_price_usd)}</span>
+      <span class="l"><span data-lang-es>Mediana Los Cabos Q2 2026</span><span data-lang-en hidden>Los Cabos median Q2 2026</span></span>
+      <span class="tag chip">Cabo RE</span>
+    </div>
+    <div class="stat">
+      <span class="n">{c26.months_of_inventory}</span>
+      <span class="l"><span data-lang-es>Meses de inventario Q2 2026</span><span data-lang-en hidden>Months of inventory Q2 2026</span></span>
+      <span class="tag chip">Cabo RE</span>
+    </div>
+    <div class="stat">
+      <span class="n">US${fit.revpar_usd}</span>
+      <span class="l">RevPAR · ene-2026</span>
+      <span class="tag chip">FITURCA</span>
+    </div>
+    <div class="stat">
+      <span class="n">US${fmtM(c26.volume_m_usd)}M</span>
+      <span class="l"><span data-lang-es>Volumen Cabo Q2 2026</span><span data-lang-en hidden>Cabo volume Q2 2026</span></span>
+      <span class="tag chip">Cabo RE</span>
+    </div>
+  </div>
+  <p class="meta">
+    <span data-lang-es>
+      ASP Q2 2026 {fmtUsd(c26.avg_selling_price_usd)} (mix ultra-lujo); inventario {c26.inventory_units.toLocaleString('en-US')} u. / US${c26.inventory_list_value_b_usd}B list.
+      BCS 2025 vs 2024: volumen +{j25.volume_m_usd.var_pct}%, unidades +{j25.units.var_pct}%.
+    </span>
+    <span data-lang-en hidden>
+      ASP Q2 2026 {fmtUsd(c26.avg_selling_price_usd)} (ultra-luxury mix); inventory {c26.inventory_units.toLocaleString('en-US')} units / US${c26.inventory_list_value_b_usd}B list.
+      BCS 2025 vs 2024: volume +{j25.volume_m_usd.var_pct}%, units +{j25.units.var_pct}%.
+    </span>
+  </p>
+
+  <!-- 2. Market context -->
+  <h2 id="demanda">
+    <span data-lang-es>2. Contexto de mercado y demanda</span>
+    <span data-lang-en hidden>2. Market context &amp; demand drivers</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Indicador</span><span data-lang-en hidden>Indicator</span></th>
+          <th><span data-lang-es>Valor</span><span data-lang-en hidden>Value</span></th>
+          <th><span data-lang-es>Fuente / periodo</span><span data-lang-en hidden>Source / period</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pax SJD (ene-2026)</td>
+          <td><strong>{fit.pax_sjd_jan_2026_k} mil</strong></td>
+          <td>FITURCA Observatorio FEB26</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Ocupación hotelera</span><span data-lang-en hidden>Hotel occupancy</span></td>
+          <td><strong>{fit.occupancy_pct}%</strong></td>
+          <td>FITURCA · ene-2026</td>
+        </tr>
+        <tr>
+          <td>ADR</td>
+          <td><strong>US${fit.adr_usd}</strong></td>
+          <td>FITURCA · ene-2026</td>
+        </tr>
+        <tr>
+          <td>RevPAR</td>
+          <td><strong>US${fit.revpar_usd}</strong></td>
+          <td>FITURCA · ene-2026</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Pax internacionales SJD 2025</span><span data-lang-en hidden>SJD international pax 2025</span></td>
+          <td><strong>{demand.sjd_intl_pax_m_2025} M</strong> (+{demand.sjd_intl_pax_var_pct}% vs {demand.sjd_intl_pax_m_2024} M)</td>
+          <td>JLL 2025 (cita aeroportuaria)</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Cruceros Los Cabos ene–sep 2025</span><span data-lang-en hidden>Los Cabos cruises Jan–Sep 2025</span></td>
+          <td><strong>{demand.cruise_vessels_jan_sep_2025}</strong> buques · <strong>{demand.cruise_pax_jan_sep_2025.toLocaleString('en-US')}</strong> pax</td>
+          <td>JLL 2025</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Población Los Cabos 2020</span><span data-lang-en hidden>Los Cabos population 2020</span></td>
+          <td><strong>{demand.los_cabos_pop_2020.toLocaleString('en-US')}</strong> ({demand.los_cabos_share_bcs_pop_pct_2020}% BCS)</td>
+          <td>JLL 2025 · Censo 2020</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Ocupación hotelera / ADR 2024 (ref.)</span><span data-lang-en hidden>Hotel occupancy / ADR 2024 (ref.)</span></td>
+          <td>{(m.jll_2024_bcs as any).hotel_occupancy_2024_pct}% · US${(m.jll_2024_bcs as any).adr_2024_usd}</td>
+          <td>JLL 2024</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>
+    <span data-lang-es>Marco legal — zona restringida / fideicomiso</span>
+    <span data-lang-en hidden>Legal frame — restricted zone / fideicomiso</span>
+  </h3>
+  <p>
+    <span data-lang-es>{legal.zona_restringida_es}</span>
+    <span data-lang-en hidden>{legal.zona_restringida_en}</span>
+  </p>
+  <p class="meta">
+    <a href={legal.url} target="_blank" rel="noopener">SRE — permiso fideicomiso zona restringida</a>
+  </p>
+  <p>
+    <span data-lang-es>{(m.pricing_convention as any).note_es}</span>
+    <span data-lang-en hidden>{(m.pricing_convention as any).note_en}</span>
+  </p>
+  <p class="cta-row">
+    <a class="btn secondary" href="/turismo"><span data-lang-es>Turismo</span><span data-lang-en hidden>Tourism</span></a>
+    <a class="btn secondary" href="/vuelos"><span data-lang-es>Vuelos / SJD–LAP</span><span data-lang-en hidden>Flights / SJD–LAP</span></a>
+  </p>
+
+  <!-- 3. Submarkets -->
+  <h2 id="submercados">
+    <span data-lang-es>3. Submercados</span>
+    <span data-lang-en hidden>3. Submarkets</span>
+  </h2>
+  <p>
+    <span data-lang-es>
+      Lenguaje de hubs alineado a <a href="/studio">/studio</a>.
+      <strong>Bandera:</strong> la serie Cabo RE es Cabo-only (municipio Los Cabos). JLL aporta MPI estatal por zona; Coldwell Banker Q1 2025 da cortes zonales estatales (incl. La Paz / Pacífico).
+    </span>
+    <span data-lang-en hidden>
+      Hub language aligned with <a href="/studio">/studio</a>.
+      <strong>Flag:</strong> Cabo RE series is Cabo-only (Los Cabos municipality). JLL provides statewide zone MPI; Coldwell Banker Q1 2025 gives statewide zonal cuts (incl. La Paz / Pacific).
+    </span>
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Hub / zona</span><span data-lang-en hidden>Hub / zone</span></th>
+          <th>JLL MPI 2025</th>
+          <th><span data-lang-es>Notas citadas</span><span data-lang-en hidden>Cited notes</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Los Cabos <span class="tag chip">CSL · SJD · Corredor</span></td>
+          <td>{zones.zone_share_volume_pct_2025.los_cabos}% vol. · región {j25lc.share_of_bcs_volume_pct}% (overview)</td>
+          <td>
+            <span data-lang-es>Núcleo de valor; ~{j25lc.share_of_bcs_units_pct}% unidades BCS; {j25lc.condo_share_of_bcs_condo_units_pct}% de condos BCS.</span>
+            <span data-lang-en hidden>Value core; ~{j25lc.share_of_bcs_units_pct}% of BCS units; {j25lc.condo_share_of_bcs_condo_units_pct}% of BCS condos.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Pacífico <span class="tag chip">Todos Santos · Pescadero · Cerritos</span></td>
+          <td>{zones.zone_share_volume_pct_2025.pacific}%</td>
+          <td>
+            <span data-lang-es>{zones.pacific_note_es}</span>
+            <span data-lang-en hidden>{zones.pacific_note_en}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>La Paz</td>
+          <td>{zones.zone_share_volume_pct_2025.la_paz}%</td>
+          <td>
+            <span data-lang-es>Estable; nicho cultura/producto diverso (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.la_paz/1e6).toFixed(1)}M · {cb.by_zone_units.la_paz} u.</span>
+            <span data-lang-en hidden>Stable; culture/diverse-product niche (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.la_paz/1e6).toFixed(1)}M · {cb.by_zone_units.la_paz} units.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>East Cape</td>
+          <td>{zones.zone_share_volume_pct_2025.east_cape}%</td>
+          <td>
+            <span data-lang-es>Costa Palmas como ancla ultra-premium (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.east_cape/1e6).toFixed(1)}M · {cb.by_zone_units.east_cape} u.</span>
+            <span data-lang-en hidden>Costa Palmas as ultra-premium anchor (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.east_cape/1e6).toFixed(1)}M · {cb.by_zone_units.east_cape} units.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Loreto</td>
+          <td>{zones.zone_share_volume_pct_2025.loreto}% · US${zones.loreto_volume_m_usd_2025}M</td>
+          <td>
+            <span data-lang-es>{zones.loreto_note_es}</span>
+            <span data-lang-en hidden>{zones.loreto_note_en}</span>
+          </td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Resto del estado</span><span data-lang-en hidden>Rest of state</span></td>
+          <td>—</td>
+          <td>
+            <span data-lang-es class="meta">Brecha: sin serie MLS/catastro citada para Comondú / Mulegé comparable a Cabo.</span>
+            <span data-lang-en hidden class="meta">Gap: no cited MLS/cadastre series for Comondú / Mulegé comparable to Cabo.</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>
+    <span data-lang-es>Coldwell Banker / BCS MLS — Q1 2025 (estatal)</span>
+    <span data-lang-en hidden>Coldwell Banker / BCS MLS — Q1 2025 (statewide)</span>
+  </h3>
+  <div class="stat-grid">
+    <div class="stat"><span class="n">US${fmtM(cb.volume_m_usd)}M</span><span class="l">Volumen Q1 2025</span></div>
+    <div class="stat"><span class="n">+{cb.var_pct_vs_2024_q1}%</span><span class="l">vs Q1 2024</span></div>
+    <div class="stat"><span class="n">{cb.transactions}</span><span class="l"><span data-lang-es>Transacciones</span><span data-lang-en hidden>Transactions</span></span></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Zona</span><span data-lang-en hidden>Zone</span></th>
+          <th>US$ M</th>
+          <th>U.</th>
+          <th><span data-lang-es>ASP casas</span><span data-lang-en hidden>House ASP</span></th>
+          <th><span data-lang-es>ASP condo</span><span data-lang-en hidden>Condo ASP</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Cabo San Lucas</td><td>{(cb.by_zone_volume_usd.cabo_san_lucas/1e6).toFixed(1)}</td><td>{cb.by_zone_units.cabo_san_lucas}</td><td>{fmtUsd(cb.avg_house_price_usd_by_zone.cabo_san_lucas)}</td><td>{fmtUsd(cb.avg_condo_price_usd_by_zone.cabo_san_lucas)}</td></tr>
+        <tr><td>San José del Cabo</td><td>{(cb.by_zone_volume_usd.san_jose_del_cabo/1e6).toFixed(1)}</td><td>{cb.by_zone_units.san_jose_del_cabo}</td><td>{fmtUsd(cb.avg_house_price_usd_by_zone.san_jose_del_cabo)}</td><td>{fmtUsd(cb.avg_condo_price_usd_by_zone.san_jose_del_cabo)}</td></tr>
+        <tr><td>East Cape</td><td>{(cb.by_zone_volume_usd.east_cape/1e6).toFixed(1)}</td><td>{cb.by_zone_units.east_cape}</td><td>{fmtUsd(cb.avg_house_price_usd_by_zone.east_cape)}</td><td>{fmtUsd(cb.avg_condo_price_usd_by_zone.east_cape)}</td></tr>
+        <tr><td>La Paz</td><td>{(cb.by_zone_volume_usd.la_paz/1e6).toFixed(1)}</td><td>{cb.by_zone_units.la_paz}</td><td>{fmtUsd(cb.avg_house_price_usd_by_zone.la_paz)}</td><td>{fmtUsd(cb.avg_condo_price_usd_by_zone.la_paz)}</td></tr>
+        <tr><td>Todos Santos / Pacífico</td><td>{(cb.by_zone_volume_usd.todos_santos_pacific/1e6).toFixed(1)}</td><td>{cb.by_zone_units.todos_santos_pacific}</td><td>{fmtUsd(cb.avg_house_price_usd_by_zone.todos_santos_pacific)}</td><td>{fmtUsd(cb.avg_condo_price_usd_by_zone.todos_santos_pacific)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">
+    <span data-lang-es>{cb.note_es}</span>
+    <span data-lang-en hidden>{cb.note_en}</span>
+    · <a href={cb.drive_view} target="_blank" rel="noopener">Drive</a>
+  </p>
+
+  <!-- 4. Supply & pipeline -->
+  <h2 id="oferta">
+    <span data-lang-es>4. Oferta y pipeline</span>
+    <span data-lang-en hidden>4. Supply &amp; pipeline</span>
+  </h2>
+  <h3>Los Cabos — inventario (Cabo RE)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Periodo</span><span data-lang-en hidden>Period</span></th>
+          <th><span data-lang-es>Inventario u.</span><span data-lang-en hidden>Inventory units</span></th>
+          <th>List US$ B</th>
+          <th>MOI</th>
+          <th>DOM H / C</th>
+        </tr>
+      </thead>
+      <tbody>
+        {qseries.map((q) => (
+          <tr>
+            <td>{q.period}</td>
+            <td>{q.inventory_units.toLocaleString('en-US')}</td>
+            <td>{q.inventory_list_value_b_usd}</td>
+            <td>{q.months_of_inventory ?? '—'}</td>
+            <td>{q.dom_houses} / {q.dom_condos}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">
+    <span data-lang-es>Q2 2026: houses {c26.houses_units} / condos {c26.condo_units} vendidos; SNLR {c26.snlr_pct}%. Pico de inventario Q1 2026 ({c26q1.inventory_units.toLocaleString('en-US')} u., MOI {c26q1.months_of_inventory}).</span>
+    <span data-lang-en hidden>Q2 2026: houses {c26.houses_units} / condos {c26.condo_units} sold; SNLR {c26.snlr_pct}%. Inventory peak Q1 2026 ({c26q1.inventory_units.toLocaleString('en-US')} units, MOI {c26q1.months_of_inventory}).</span>
+  </p>
+
+  <h3>
+    <span data-lang-es>Mix de producto JLL BCS 2025</span>
+    <span data-lang-en hidden>JLL BCS 2025 product mix</span>
+  </h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Tipo</span><span data-lang-en hidden>Type</span></th>
+          <th>US$ M</th>
+          <th><span data-lang-es>Unidades</span><span data-lang-en hidden>Units</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span data-lang-es>Casas</span><span data-lang-en hidden>Houses</span></td><td>{j25.by_type_volume_m_usd_2025.houses}</td><td>{j25.by_type_units_2025.houses}</td></tr>
+        <tr><td>Condos</td><td>{j25.by_type_volume_m_usd_2025.condos}</td><td>{j25.by_type_units_2025.condos}</td></tr>
+        <tr><td><span data-lang-es>Tierra</span><span data-lang-en hidden>Land</span></td><td>{j25.by_type_volume_m_usd_2025.land}</td><td>{j25.by_type_units_2025.land}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>
+    <span data-lang-es>Vivienda social / asequible</span>
+    <span data-lang-en hidden>Social / affordable housing</span>
+  </h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Programa / métrica</span><span data-lang-en hidden>Program / metric</span></th>
+          <th><span data-lang-es>Cifra</span><span data-lang-en hidden>Figure</span></th>
+          <th><span data-lang-es>Fuente</span><span data-lang-en hidden>Source</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CONAVI rezago habitacional BCS 2024</td>
+          <td><strong>{rez.bcs_viviendas_rezago.toLocaleString('es-MX')}</strong> / {rez.bcs_viviendas_total.toLocaleString('es-MX')} ({rez.bcs_pct_rezago}%)</td>
+          <td>CONAVI ENIGH 2024</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Cambio pp rezago 2018→2024</span><span data-lang-en hidden>Backlog pp change 2018→2024</span></td>
+          <td>{rez.bcs_pp_change_2018_2024} pp (de {rez.bcs_pct_rezago_2018}%)</td>
+          <td>CONAVI / SEDATU boletín</td>
+        </tr>
+        <tr>
+          <td>SNIIV registro vivienda BCS 2025</td>
+          <td><strong>{sniiv.registro_vivienda_entidad.find((x: any) => x.year === 2025).units}</strong> u.</td>
+          <td>SNIIV Cubo API · corte 2026-08-31</td>
+        </tr>
+        <tr>
+          <td>SNIIV registro 2025 por municipio</td>
+          <td>
+            La Paz {sniiv.registro_2025_by_municipio['La Paz']} · Los Cabos {sniiv.registro_2025_by_municipio['Los Cabos']} ·
+            Comondú {sniiv.registro_2025_by_municipio['Comondú']} · Mulegé {sniiv.registro_2025_by_municipio['Mulegé']} ·
+            Loreto {sniiv.registro_2025_by_municipio['Loreto']}
+          </td>
+          <td>SNIIV</td>
+        </tr>
+        <tr>
+          <td>SNIIV financiamiento 2025</td>
+          <td>{sniiv.financiamiento_2025.acciones.toLocaleString('es-MX')} acciones · ${fmtMxnM(sniiv.financiamiento_2025.monto_mxn)} M MXN</td>
+          <td>SNIIV</td>
+        </tr>
+        <tr>
+          <td>INFONAVIT 2025 (acciones / monto)</td>
+          <td>{sniiv.financiamiento_2025.by_organismo.INFONAVIT.acciones.toLocaleString('es-MX')} · ${fmtMxnM(sniiv.financiamiento_2025.by_organismo.INFONAVIT.monto_mxn)} M MXN</td>
+          <td>SNIIV</td>
+        </tr>
+        <tr>
+          <td>Vivienda para el Bienestar (meta convenio)</td>
+          <td>{vb.acciones_seis_anios.toLocaleString('es-MX')} acciones / 6 años (INFONAVIT {vb.infonavit_viviendas_citadas.toLocaleString('es-MX')} viv. + {vb.creditos_ampliacion_regularizacion_citados.toLocaleString('es-MX')} créditos; CONAVI {vb.conavi_viviendas_citadas.toLocaleString('es-MX')} viv.)</td>
+          <td>Gobierno BCS oct-2024</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">
+    <span data-lang-es>{vb.note_es}</span>
+    <span data-lang-en hidden>{vb.note_en}</span>
+  </p>
+  <p class="cta-row">
+    <a class="btn secondary" href="/proyectos-federales"><span data-lang-es>Proyectos federales</span><span data-lang-en hidden>Federal projects</span></a>
+  </p>
+
+  <!-- 5. Pricing & absorption -->
+  <h2 id="precios">
+    <span data-lang-es>5. Precios y absorción</span>
+    <span data-lang-en hidden>5. Pricing &amp; absorption</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Periodo</span><span data-lang-en hidden>Period</span></th>
+          <th>US$ M</th>
+          <th>U.</th>
+          <th>ASP</th>
+          <th><span data-lang-es>Mediana</span><span data-lang-en hidden>Median</span></th>
+          <th>DOM H/C</th>
+        </tr>
+      </thead>
+      <tbody>
+        {qseries.map((q) => (
+          <tr>
+            <td>{q.period}</td>
+            <td><strong>{fmtM(q.volume_m_usd)}</strong></td>
+            <td>{q.units}</td>
+            <td>{fmtUsd(q.avg_selling_price_usd)}</td>
+            <td>{fmtUsd(q.median_price_usd)}</td>
+            <td>{q.dom_houses}/{q.dom_condos}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">
+    <span data-lang-es>
+      Suma Cabo RE 2025: US${(m.cabo_re_quarterly as any).annual_2025_from_quarters.volume_m_usd}M / {(m.cabo_re_quarterly as any).annual_2025_from_quarters.units} u.
+      {(m.cabo_re_quarterly as any).annual_2025_from_quarters.note_es}
+      Ultra-lujo &gt;$10M Q2 2026: {c26.ultra_luxury_gt10m_units} u. / US${c26.ultra_luxury_gt10m_volume_m_usd}M.
+    </span>
+    <span data-lang-en hidden>
+      Cabo RE 2025 sum: US${(m.cabo_re_quarterly as any).annual_2025_from_quarters.volume_m_usd}M / {(m.cabo_re_quarterly as any).annual_2025_from_quarters.units} units.
+      {(m.cabo_re_quarterly as any).annual_2025_from_quarters.note_en}
+      Ultra-luxury &gt;$10M Q2 2026: {c26.ultra_luxury_gt10m_units} units / US${c26.ultra_luxury_gt10m_volume_m_usd}M.
+    </span>
+  </p>
+
+  <h3>JLL 2025 — BCS vs Los Cabos</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Métrica</span><span data-lang-en hidden>Metric</span></th>
+          <th>BCS 2025</th>
+          <th>BCS 2024</th>
+          <th>Los Cabos 2025</th>
+          <th>Los Cabos 2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Volumen US$ M</td>
+          <td><strong>{j25.volume_m_usd['2025']}</strong></td>
+          <td>{j25.volume_m_usd['2024']}</td>
+          <td><strong>{j25lc.volume_m_usd['2025']}</strong></td>
+          <td>{j25lc.volume_m_usd['2024']}</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Unidades</span><span data-lang-en hidden>Units</span></td>
+          <td><strong>{j25.units['2025']}</strong></td>
+          <td>{j25.units['2024']}</td>
+          <td><strong>{j25lc.units['2025']}</strong></td>
+          <td>{j25lc.units['2024']}</td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Precio prom. US$ miles</span><span data-lang-en hidden>Avg price US$ k</span></td>
+          <td><strong>{j25.avg_price_k_usd['2025']}</strong></td>
+          <td>{j25.avg_price_k_usd['2024']}</td>
+          <td><strong>{j25lc.avg_price_k_usd['2025']}</strong></td>
+          <td>{j25lc.avg_price_k_usd['2024']}</td>
+        </tr>
+        <tr>
+          <td>DOM (días)</td>
+          <td><strong>{j25.dom_days['2025']}</strong></td>
+          <td>{j25.dom_days['2024']}</td>
+          <td colspan="2"><span data-lang-es>Casas Los Cabos ASP US${j25lc.houses_avg_price_m_usd}M</span><span data-lang-en hidden>Los Cabos houses ASP US${j25lc.houses_avg_price_m_usd}M</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 6. Commercial / hospitality / land -->
+  <h2 id="comercial">
+    <span data-lang-es>6. Comercial / hospitalidad / tierra</span>
+    <span data-lang-en hidden>6. Commercial / hospitality / land</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Tema</span><span data-lang-en hidden>Topic</span></th>
+          <th><span data-lang-es>Lo que hay (citado)</span><span data-lang-en hidden>What exists (cited)</span></th>
+          <th><span data-lang-es>Brecha</span><span data-lang-en hidden>Gap</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span data-lang-es>Tierra (residencial MLS)</span><span data-lang-en hidden>Land (residential MLS)</span></td>
+          <td>JLL BCS 2025: US${j25.by_type_volume_m_usd_2025.land}M · {j25.by_type_units_2025.land} u. · Coldwell Q1 2025: {cb.by_type_units.land} u. / US${(cb.by_type_volume_usd.land/1e6).toFixed(1)}M</td>
+          <td><span data-lang-es>Cabo RE no reporta tierra</span><span data-lang-en hidden>Cabo RE does not report land</span></td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Comercial (MLS)</span><span data-lang-en hidden>Commercial (MLS)</span></td>
+          <td>Coldwell Q1 2025: {cb.by_type_units.commercial} u. / US${(cb.by_type_volume_usd.commercial/1e6).toFixed(1)}M</td>
+          <td><span data-lang-es>Sin serie de rents / vacancia</span><span data-lang-en hidden>No rents / vacancy series</span></td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Hospitalidad (demanda)</span><span data-lang-en hidden>Hospitality (demand)</span></td>
+          <td>FITURCA occ/ADR/RevPAR; JLL ADR 2024 US${(m.jll_2024_bcs as any).adr_2024_usd}</td>
+          <td><span data-lang-es>Sin ventas de activos / cap rates citados</span><span data-lang-en hidden>No cited asset sales / cap rates</span></td>
+        </tr>
+        <tr>
+          <td><span data-lang-es>Construcción (macro)</span><span data-lang-en hidden>Construction (macro)</span></td>
+          <td>INEGI ENEC oct-2025 BCS: valor producción +{enec.valor_produccion_var_anual_pct}% a/a; personal +{enec.personal_ocupado_var_anual_pct}%</td>
+          <td><span data-lang-es>Índices, no m²/viviendas nuevas por municipio</span><span data-lang-en hidden>Indices, not m²/new homes by municipality</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 7. Risks -->
+  <h2 id="riesgos">
+    <span data-lang-es>7. Riesgos y restricciones</span>
+    <span data-lang-en hidden>7. Risks &amp; constraints</span>
+  </h2>
+  <ul>
+    <li>
+      <span data-lang-es><strong>Agua / DMA:</strong> presión hídrica en Los Cabos y corredor — ver <a href="/agua">/agua</a> y <a href="/crecimiento">/crecimiento</a>.</span>
+      <span data-lang-en hidden><strong>Water / DMA:</strong> water stress in Los Cabos and corridor — see <a href="/agua">/agua</a> and <a href="/crecimiento">/crecimiento</a>.</span>
+    </li>
+    <li>
+      <span data-lang-es><strong>Energía / red SIBCS:</strong> capacidad y subestaciones — <a href="/energia">/energia</a>; brechas en <a href="/memoria">/memoria</a>.</span>
+      <span data-lang-en hidden><strong>Energy / SIBCS grid:</strong> capacity and substations — <a href="/energia">/energia</a>; gaps in <a href="/memoria">/memoria</a>.</span>
+    </li>
+    <li>
+      <span data-lang-es><strong>Huracán / seguros:</strong> exposición costera; sin serie portal de primas — marcar brecha cualitativa.</span>
+      <span data-lang-en hidden><strong>Hurricane / insurance:</strong> coastal exposure; no portal premium series — qualitative gap.</span>
+    </li>
+    <li>
+      <span data-lang-es><strong>Regulatorio:</strong> zona restringida / fideicomiso (SRE, arriba); uso de suelo municipal — <a href="/mapas">/mapas</a>, <a href="/catastro">/catastro</a>.</span>
+      <span data-lang-en hidden><strong>Regulatory:</strong> restricted zone / fideicomiso (SRE, above); municipal land use — <a href="/mapas">/mapas</a>, <a href="/catastro">/catastro</a>.</span>
+    </li>
+    <li>
+      <span data-lang-es><strong>Infraestructura:</strong> SJD/LAP, carreteras, desalación — <a href="/proyectos-federales">/proyectos-federales</a>, <a href="/vuelos">/vuelos</a>.</span>
+      <span data-lang-en hidden><strong>Infrastructure:</strong> SJD/LAP, roads, desalination — <a href="/proyectos-federales">/proyectos-federales</a>, <a href="/vuelos">/vuelos</a>.</span>
+    </li>
+    <li>
+      <span data-lang-es><strong>Inventario / absorción:</strong> MOI 15–19 meses (Cabo RE 2026) = mercado de comprador en condos mid-market; ultra-lujo más resiliente.</span>
+      <span data-lang-en hidden><strong>Inventory / absorption:</strong> MOI 15–19 months (Cabo RE 2026) = buyer’s market in mid-market condos; ultra-luxury more resilient.</span>
+    </li>
+  </ul>
+
+  <!-- 8. Data gaps -->
+  <h2 id="brechas">
+    <span data-lang-es>8. Registro de brechas de datos</span>
+    <span data-lang-en hidden>8. Data gaps register</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th><span data-lang-es>Brecha</span><span data-lang-en hidden>Gap</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {gaps.map((g) => (
+          <tr>
+            <td><code>{g.id}</code></td>
+            <td>
+              <span data-lang-es>{g.topic_es}</span>
+              <span data-lang-en hidden>{g.topic_en}</span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">
+    <span data-lang-es>También en <a href="/memoria">/memoria</a> (brechas de datos).</span>
+    <span data-lang-en hidden>Also in <a href="/memoria">/memoria</a> (data gaps).</span>
+  </p>
+
+  <!-- 9. Sources -->
+  <h2 id="fuentes">
+    <span data-lang-es>9. Apéndice de fuentes — {reps.length} reportes</span>
+    <span data-lang-en hidden>9. Sources appendix — {reps.length} reports</span>
+  </h2>
+  <p>
+    <span data-lang-es>Cabo RE · JLL · FITURCA · Coldwell Banker · INEGI ENEC. Conjunto: Base de datos BCS 2050 — mercado inmobiliario.</span>
+    <span data-lang-en hidden>Cabo RE · JLL · FITURCA · Coldwell Banker · INEGI ENEC. Pack: BCS 2050 database — real estate market.</span>
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Publisher</th>
+          <th>Title</th>
+          <th><span data-lang-es>Archivo</span><span data-lang-en hidden>File</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {reps.map((r) => (
+          <tr>
+            <td>{r.period}</td>
+            <td>{r.publisher}</td>
+            <td>{r.url ? <a href={r.url} target="_blank" rel="noopener">{r.title}</a> : r.title}</td>
+            <td class="path-cell">{r.drive_view ? (
+              <a href={r.drive_view} target="_blank" rel="noopener">{fileName(r.path || r.desktop)}</a>
+            ) : r.url ? (
+              <a href={r.url} target="_blank" rel="noopener">{fileName(r.path || r.desktop)}</a>
+            ) : (
+              <code>{fileName(r.path || r.desktop)}</code>
+            )}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fuentes-box">
+    <h2><span data-lang-es>Fuentes clave</span><span data-lang-en hidden>Key sources</span></h2>
+    <ul>
+      <li>JLL Reporte Anual Mercado Residencial Los Cabos 2025</li>
+      <li>Cabo Real Estate Services — quarterly 2025 Q1–2026 Q2</li>
+      <li>FITURCA Observatorio FEB 2026</li>
+      <li>Coldwell Banker / BCS MLS Q1 2025</li>
+      <li>SNIIV/SEDATU Cubo API · CONAVI Rezago 2024 · INEGI ENEC</li>
+      <li>SRE — fideicomiso zona restringida</li>
+      <li>Gobierno BCS — Convenio Vivienda para el Bienestar (oct 2024)</li>
+    </ul>
+  </div>
+
+  <p class="cta-row">
+    <a class="btn" href="/catalogo?folder=07_economy_investment">
+      <span data-lang-es>Ver en catálogo</span>
+      <span data-lang-en hidden>View in catalog</span>
+    </a>
+    <a class="btn secondary" href="/economia">
+      <span data-lang-es>Economía</span>
+      <span data-lang-en hidden>Economy</span>
+    </a>
+  </p>
+</BaseLayout>

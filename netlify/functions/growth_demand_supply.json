@@ -1,0 +1,1462 @@
+{
+  "updated": "2026-09-20",
+  "title_es": "Demanda–oferta de crecimiento por vocación de lugar",
+  "title_en": "Growth demand–supply by place vocation",
+  "disclaimer_es": "Capa de inteligencia previa a escenarios. Solo cifras ya presentes en el portal. Celdas sin número: status gap. No es un plan oficial ni gemelo de decisión.",
+  "disclaimer_en": "Pre-scenario intelligence layer. Only figures already in the portal. Cells without numbers: status gap. Not an official plan or decision twin.",
+  "method_note_es": "Demanda desde vuelos, turismo_detail, municipios, noticias y foresights. Oferta desde DMA CONAGUA (capa GIS + guía agua), SIBCS (guía energía), instrumentos PDU/POEL/PMD (municipios) y ANPs. Sin estadísticas inventadas.",
+  "method_note_en": "Demand from flights, tourism_detail, municipios, news and foresights. Supply from CONAGUA DMA (GIS layer + water guide), SIBCS (energy guide), PDU/POEL/PMD instruments (municipios) and ANPs. No invented statistics.",
+  "sources": [
+    "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)",
+    "Base de datos BCS 2050 — turismo",
+    "Base de datos BCS 2050 — municipios",
+    "Base de datos BCS 2050 — noticias",
+    "Base de datos BCS 2050 — prospectiva",
+    "Base de datos BCS 2050 — capa SIG",
+    "src/content/guides/agua.md",
+    "src/content/guides/energia.md"
+  ],
+  "metrics": {
+    "places": 7,
+    "cells_ok": 46,
+    "cells_gap": 22,
+    "balance_counts": {
+      "constrained": 3,
+      "contested": 2,
+      "headroom": 1,
+      "unknown": 1
+    },
+    "flights": {
+      "SJD": {
+        "destinations": 56,
+        "us": 31,
+        "mx": 13,
+        "flights_per_month": 1315,
+        "source": "https://www.flightconnections.com/flights-from-san-jose-del-cabo-sjd"
+      },
+      "LAP": {
+        "destinations": 7,
+        "us": 1,
+        "mx": 6,
+        "flights_per_month": 330,
+        "source": "https://www.flightconnections.com/flights-from-la-paz-lap"
+      },
+      "LTO": {
+        "destinations": 5,
+        "us": 3,
+        "mx": 1,
+        "flights_per_month": 36,
+        "source": "https://www.flightconnections.com/flights-from-loreto-lto"
+      },
+      "retrieved": "2026-09-17"
+    },
+    "dma_hm3": {
+      "0313": "−2.96 hm³/año",
+      "0317": "−24.07 hm³/año",
+      "0319": "−12.49 hm³/año",
+      "0324": "−13.49 hm³/año",
+      "0318": "−2.29 hm³/año"
+    },
+    "sibcs_peak_mw": 689,
+    "desal_cabos_ls": 250,
+    "tx_lap_cabos_mw": 237
+  },
+  "state_rollup": {
+    "balance_read": "constrained",
+    "balance_read_es": "A nivel estado la lectura es restringida: el motor Cabos + corredor Pacífico concentra demanda aérea/turística sobre déficits DMA y un SIBCS aislado en alerta; East Cape y Loreto están en disputa conservación–crecimiento; Comondú ofrece margen relativo agro; el norte permanece desconocido.",
+    "balance_read_en": "At state scale the read is constrained: the Cabos engine + Pacific corridor concentrate air/tourism demand on DMA deficits and an isolated SIBCS under alert; East Cape and Loreto are conservation–growth contested; Comondú offers relative agri headroom; the north remains unknown.",
+    "imbalances_es": "Los desequilibrios locales no se cancelan entre sí (NOM-011 por acuífero; SIBCS es un solo techo). Cabos importa agua desalada y presión eléctrica; La Paz carga coordinación y acoplamiento agua–energía; East Cape importa riesgo ANP; el interior/norte no «compensa» el déficit sur.",
+    "imbalances_en": "Local imbalances do not cancel each other (NOM-011 per aquifer; SIBCS is one ceiling). Cabos imports desal water and electric pressure; La Paz carries coordination and water–energy coupling; East Cape imports ANP risk; inland/north do not «offset» the southern deficit.",
+    "must_be_true_es": [
+      "Cada vocación aporta un rol distinto (no un Cabos diluido en todo el estado).",
+      "Nuevo crecimiento turístico/residencial solo donde agua y energía tienen evidencia de margen o fuente no-DMA (p.ej. desal) sin fingir crédito NOM-011.",
+      "East Cape y Loreto respetan techos ANP/POEL antes de escalar hospitalidad.",
+      "Comondú/norte suman producción/energía sin vaciar servicios ni ANPs.",
+      "Los gaps marcados (DMA Loreto/norte, cuartos amenity, PDU Cabos, MW bombeo) se cierran con evidencia antes de escenarios públicos."
+    ],
+    "must_be_true_en": [
+      "Each vocation contributes a distinct role (not diluted Cabos statewide).",
+      "New tourism/residential growth only where water and energy show evidenced margin or non-DMA source (e.g. desal) without pretending NOM-011 credit.",
+      "East Cape and Loreto respect ANP/POEL ceilings before scaling hospitality.",
+      "Comondú/north add production/energy without emptying services or ANPs.",
+      "Marked gaps (Loreto/north DMA, amenity rooms, Cabos PDU, pumping MW) are closed with evidence before public scenarios."
+    ],
+    "portal_paths": [
+      "/foresights",
+      "/resumen",
+      "/agua",
+      "/energia",
+      "/vuelos",
+      "/turismo",
+      "/mapas",
+      "/noticias"
+    ]
+  },
+  "places": [
+    {
+      "id": "los_cabos",
+      "name_es": "Los Cabos / San José–Cabo San Lucas",
+      "name_en": "Los Cabos / San José–Cabo San Lucas",
+      "vocation_es": "Motor de crecimiento turístico y puerta internacional primaria del cabo.",
+      "vocation_en": "Tourism–growth engine and primary international gateway of the cape.",
+      "balance_read": "constrained",
+      "balance_read_es": "Restringido: demanda aérea/turística dominante vs. acuíferos 0317/0319 en déficit y techo SIBCS/transmisión.",
+      "balance_read_en": "Constrained: dominant air/tourism demand vs. aquifers 0317/0319 in deficit and SIBCS/transmission ceiling.",
+      "demand": [
+        {
+          "id": "air_connectivity",
+          "theme": "air",
+          "label_es": "Destinos sin escalas SJD",
+          "label_en": "SJD non-stop destinations",
+          "value": 56,
+          "unit": "destinations",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17) · 2026-09-17",
+          "portal_paths": [
+            "/vuelos"
+          ],
+          "note_es": "1315 vuelos/mes listados (suma destinos); US 31 · MX 13",
+          "note_en": "1315 flights/month listed (sum of destinations); US 31 · MX 13"
+        },
+        {
+          "id": "tourism_hotels",
+          "theme": "tourism",
+          "label_es": "Hoteles en catálogo (municipio Los Cabos)",
+          "label_en": "Hotels in catalog (Los Cabos mun.)",
+          "value": 23,
+          "unit": "assets",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — turismo",
+          "portal_paths": [
+            "/turismo"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "tourism_golf",
+          "theme": "tourism",
+          "label_es": "Campos de golf (Los Cabos)",
+          "label_en": "Golf courses (Los Cabos)",
+          "value": 18,
+          "unit": "assets",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — turismo",
+          "portal_paths": [
+            "/turismo"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "settlement_pop",
+          "theme": "settlement",
+          "label_es": "Población municipal",
+          "label_en": "Municipal population",
+          "value": 351111,
+          "unit": "hab",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "INEGI Censo 2020",
+          "portal_paths": [
+            "/comunidades",
+            "/resumen"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "economic_fiscal",
+          "theme": "economic",
+          "label_es": "Ley de Ingresos 2026 (municipio)",
+          "label_en": "Revenue law 2026 (municipality)",
+          "value": 7421559352,
+          "unit": "MXN",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios · pack fiscal",
+          "portal_paths": [
+            "/fiscal"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "settlement_coastal_gap",
+          "theme": "settlement_coastal",
+          "label_es": "Presión costera / habitaciones nuevas",
+          "label_en": "Coastal pressure / new rooms",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Serie oficial de cuartos/ocupación por corredor costero no consolidada en el portal más allá del catálogo cualitativo.",
+          "evidence_missing_en": "Official rooms/occupancy series by coastal corridor not consolidated beyond qualitative catalog.",
+          "source": null,
+          "portal_paths": [
+            "/turismo",
+            "/inmobiliario"
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "id": "water_dma_0317",
+          "theme": "water",
+          "label_es": "DMA acuífero Cabo San Lucas (0317)",
+          "label_en": "DMA Cabo San Lucas aquifer (0317)",
+          "value": -24.07,
+          "unit": "hm³/año",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "CONAGUA DMA 2024 · Base de datos BCS 2050 — capa SIG · guía /agua",
+          "portal_paths": [
+            "/agua",
+            "/mapas"
+          ],
+          "note_es": "Sin nuevas concesiones (mayor déficit pack sur)",
+          "note_en": "No new concessions (largest southern-pack deficit)"
+        },
+        {
+          "id": "water_dma_0319",
+          "theme": "water",
+          "label_es": "DMA acuífero San José del Cabo (0319)",
+          "label_en": "DMA San José del Cabo aquifer (0319)",
+          "value": -12.49,
+          "unit": "hm³/año",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "CONAGUA DMA 2024 · Base de datos BCS 2050 — capa SIG",
+          "portal_paths": [
+            "/agua"
+          ],
+          "note_es": "Sin nuevas concesiones",
+          "note_en": "No new concessions"
+        },
+        {
+          "id": "water_desal",
+          "theme": "water",
+          "label_es": "Desaladora Los Cabos (capacidad nominal)",
+          "label_en": "Los Cabos desal plant (nominal capacity)",
+          "value": 250,
+          "unit": "l/s",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "guía /agua · ficha proyecto ≈7.88 hm³/año @100%",
+          "portal_paths": [
+            "/agua"
+          ],
+          "note_es": "No es crédito NOM-011 ni cancela déficit DMA 0317",
+          "note_en": "Not NOM-011 credit; does not cancel DMA 0317 deficit"
+        },
+        {
+          "id": "energy_sibcs",
+          "theme": "energy",
+          "label_es": "Pico SIBCS 2024 (sistema estatal aislado)",
+          "label_en": "SIBCS 2024 peak (isolated state system)",
+          "value": 689,
+          "unit": "MW",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "PAMRNT / PLADESE · guía /energia",
+          "portal_paths": [
+            "/energia"
+          ],
+          "note_es": "Estado operativo de alerta documentado; TG diésel Cabos en uso intensivo",
+          "note_en": "Documented alert operating state; Cabos diesel peaker heavily used"
+        },
+        {
+          "id": "energy_tx",
+          "theme": "energy",
+          "label_es": "Límite transmisión La Paz→Los Cabos",
+          "label_en": "La Paz→Los Cabos transmission limit",
+          "value": 237,
+          "unit": "MW",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "PAMRNT · guía /energia",
+          "portal_paths": [
+            "/energia"
+          ],
+          "note_es": "Excedido; refuerzo citado factible dic 2028",
+          "note_en": "Exceeded; reinforcement cited feasible Dec 2028"
+        },
+        {
+          "id": "land_planning",
+          "theme": "land",
+          "label_es": "Candados municipales / ANP spillover",
+          "label_en": "Municipal locks / ANP spillover",
+          "value": "East Cape / Cabo Pulmo",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios locks · foresights places",
+          "portal_paths": [
+            "/planeacion",
+            "/ambiente"
+          ],
+          "note_es": "Acuíferos 0317/0319 en déficit; techo SIBCS; East Cape / Cabo Pulmo.",
+          "note_en": "Aquifers 0317/0319 in deficit; SIBCS ceiling; East Cape / Cabo Pulmo."
+        },
+        {
+          "id": "land_pdu_status_gap",
+          "theme": "land_pdu_status",
+          "label_es": "Estado PDU / POEL Los Cabos vigente citables",
+          "label_en": "Citable in-force PDU/POEL status for Los Cabos",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Instrumento municipal vigente con PDF gazeta y capas no consolidado en portal como ficha única.",
+          "evidence_missing_en": "In-force municipal instrument with gazette PDF and layers not consolidated as a single portal card.",
+          "source": null,
+          "portal_paths": [
+            "/planeacion",
+            "/planes-archivo"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "es": "¿Cuánta demanda turística adicional cabe si desalación no reescribe el crédito DMA?",
+          "en": "How much additional tourism demand fits if desalination does not rewrite DMA credit?"
+        },
+        {
+          "es": "¿El refuerzo de transmisión 2028 llega antes del siguiente ciclo hotelero?",
+          "en": "Does the 2028 transmission reinforcement arrive before the next hotel cycle?"
+        }
+      ],
+      "portal_paths": [
+        "/turismo",
+        "/agua",
+        "/energia",
+        "/vuelos",
+        "/planeacion",
+        "/mapas",
+        "/noticias"
+      ]
+    },
+    {
+      "id": "east_cape",
+      "name_es": "East Cape / Cabo del Este (San José del Este)",
+      "name_en": "East Cape / Cabo del Este (San José del Este)",
+      "vocation_es": "Frontera de crecimiento costero bajo presión de conservación (lógica Cabo Pulmo / ANP); piloto de realineación espacial.",
+      "vocation_en": "Coastal growth frontier under conservation pressure (Cabo Pulmo / ANP logic); spatial realignment pilot.",
+      "balance_read": "contested",
+      "balance_read_es": "En disputa: resorts/masterplans (Costa Palmas et al.) vs. DMA 0318 Pulmo y techos ANP; evidencia cuantitativa de carga aún incompleta.",
+      "balance_read_en": "Contested: resorts/masterplans (Costa Palmas et al.) vs. DMA 0318 Pulmo and ANP ceilings; quantitative load evidence still incomplete.",
+      "demand": [
+        {
+          "id": "tourism_assets",
+          "theme": "tourism",
+          "label_es": "Activos turismo East Cape en catálogo",
+          "label_en": "East Cape tourism assets in catalog",
+          "value": 6,
+          "unit": "assets",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — turismo (hoteles/golf/marina East Cape)",
+          "portal_paths": [
+            "/turismo",
+            "/catalogo"
+          ],
+          "note_es": "Incluye Four Seasons Costa Palmas, Amanvari, marina/golf Costa Palmas — conteo de catálogo, no inventario oficial completo",
+          "note_en": "Includes Four Seasons Costa Palmas, Amanvari, Costa Palmas marina/golf — catalog count, not full official inventory"
+        },
+        {
+          "id": "air_spillover",
+          "theme": "air",
+          "label_es": "Acceso aéreo vía SJD (spillover)",
+          "label_en": "Air access via SJD (spillover)",
+          "value": 56,
+          "unit": "SJD destinations",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)",
+          "portal_paths": [
+            "/vuelos"
+          ],
+          "note_es": "East Cape no tiene aeropuerto propio en el pack; depende de SJD",
+          "note_en": "East Cape has no own airport in the pack; depends on SJD"
+        },
+        {
+          "id": "settlement_pressure_gap",
+          "theme": "settlement_pressure",
+          "label_es": "Tasa de urbanización / unidades costeras",
+          "label_en": "Urbanization rate / coastal units",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Serie demográfica/inmobiliaria específica East Cape no publicada en portal; evidencia cualitativa de planeación pendiente de consolidar.",
+          "evidence_missing_en": "East Cape-specific demographic/real-estate series not published; qualitative planning evidence not yet consolidated.",
+          "source": null,
+          "portal_paths": [
+            "/planeacion",
+            "/inmobiliario",
+            "/catalogo"
+          ]
+        },
+        {
+          "id": "economic_jobs_gap",
+          "theme": "economic_jobs",
+          "label_es": "Empleo / derrama local East Cape",
+          "label_en": "Local employment / spend East Cape",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Indicadores laborales municipales no desglosan East Cape vs. Cabo corridor.",
+          "evidence_missing_en": "Municipal labor indicators do not split East Cape vs. Cabo corridor.",
+          "source": null,
+          "portal_paths": [
+            "/economia",
+            "/noticias"
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "id": "water_dma_0318",
+          "theme": "water",
+          "label_es": "DMA acuífero Cabo Pulmo (0318)",
+          "label_en": "DMA Cabo Pulmo aquifer (0318)",
+          "value": -2.29,
+          "unit": "hm³/año",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "CONAGUA DMA 2024 · Base de datos BCS 2050 — capa SIG",
+          "portal_paths": [
+            "/agua",
+            "/mapas"
+          ],
+          "note_es": "Sin nuevas concesiones · East Cape",
+          "note_en": "No new concessions · East Cape"
+        },
+        {
+          "id": "env_anp",
+          "theme": "env",
+          "label_es": "ANP Cabo Pulmo (restricción de uso)",
+          "label_en": "Cabo Pulmo ANP (use restriction)",
+          "value": "federal ANP",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "guía /ambiente · foresights · candados",
+          "portal_paths": [
+            "/ambiente"
+          ],
+          "note_es": "Núcleo ANP como veto de diseño (obra/minería/dragado según programas de manejo)",
+          "note_en": "ANP core as design veto (works/mining/dredging per management programs)"
+        },
+        {
+          "id": "energy_thin",
+          "theme": "energy",
+          "label_es": "Infra eléctrica / hídrica delgada",
+          "label_en": "Thin electric / water infrastructure",
+          "value": "pre-mass-hospitality",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "foresights places constraints · noticias agua",
+          "portal_paths": [
+            "/energia",
+            "/agua"
+          ],
+          "note_es": "Límites ANP y capacidad de carga; infraestructura delgada; agua/energía antes de hotelería masiva; riesgo de spillover no gestionado desde Cabos.",
+          "note_en": "ANP and carrying-capacity limits; thin infrastructure; water/energy before mass hospitality; unmanaged spillover risk from Cabos."
+        },
+        {
+          "id": "land_instruments_gap",
+          "theme": "land_instruments",
+          "label_es": "PDU/POEL / plan parcial East Cape vigente",
+          "label_en": "In-force PDU/POEL / partial plan East Cape",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Instrumento municipal vigente East Cape / San José del Este con capas no consolidado como scorecard en el portal.",
+          "evidence_missing_en": "In-force East Cape / San José del Este municipal instrument with layers not consolidated as a scorecard on the portal.",
+          "source": null,
+          "portal_paths": [
+            "/planeacion",
+            "/catalogo",
+            "/mapas"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "es": "¿Qué capacidad de carga costera queda compatible con DMA 0318 y Cabo Pulmo?",
+          "en": "What coastal carrying capacity remains compatible with DMA 0318 and Cabo Pulmo?"
+        },
+        {
+          "es": "¿Cómo se filtra el spillover de SJD sin colapsar servicios locales?",
+          "en": "How is SJD spillover filtered without collapsing local services?"
+        }
+      ],
+      "portal_paths": [
+        "/planeacion",
+        "/catalogo",
+        "/mapas",
+        "/ambiente",
+        "/noticias"
+      ]
+    },
+    {
+      "id": "todos_santos",
+      "name_es": "Todos Santos–El Pescadero",
+      "name_en": "Todos Santos–El Pescadero",
+      "vocation_es": "Espina de amenidad del Pacífico (cultura, turismo residencial, amenidades creativas/agro).",
+      "vocation_en": "Pacific amenity spine (culture, residential tourism, creative/agro amenities).",
+      "balance_read": "constrained",
+      "balance_read_es": "Restringido: amenidad/migración residencial sobre acuífero 0313 en déficit; remanente 0314 El Pescadero es mínimo y no compensa.",
+      "balance_read_en": "Constrained: amenity/residential migration on deficit aquifer 0313; 0314 El Pescadero remnant is tiny and non-transferable.",
+      "demand": [
+        {
+          "id": "settlement_corridor",
+          "theme": "settlement",
+          "label_es": "Corredor Pacífico en foco GIS",
+          "label_en": "Pacific corridor in GIS focus",
+          "value": "Cabos–Todos Santos–La Paz",
+          "unit": "layer",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — capa SIG · mapas",
+          "portal_paths": [
+            "/mapas"
+          ],
+          "note_es": "Capa de foco (off por defecto) — señal de presión territorial, no censo de amenidad",
+          "note_en": "Focus layer (off by default) — territorial pressure signal, not amenity census"
+        },
+        {
+          "id": "tourism_rooms_gap",
+          "theme": "tourism_rooms",
+          "label_es": "Cuartos / Airbnb / amenidad residencial",
+          "label_en": "Rooms / Airbnb / residential amenity",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Catálogo tourism_detail no lista hoteles Todos Santos; falta serie habitacional amenity.",
+          "evidence_missing_en": "tourism_detail catalog lists no Todos Santos hotels; amenity housing series missing.",
+          "source": null,
+          "portal_paths": [
+            "/turismo",
+            "/inmobiliario"
+          ]
+        },
+        {
+          "id": "air_access_gap",
+          "theme": "air_access",
+          "label_es": "Conectividad aérea propia",
+          "label_en": "Own air connectivity",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Sin aeropuerto en pack; acceso vía LAP/SJD no cuantificado como origen-destino amenity.",
+          "evidence_missing_en": "No airport in pack; LAP/SJD access not quantified as amenity O-D.",
+          "source": null,
+          "portal_paths": [
+            "/vuelos"
+          ]
+        },
+        {
+          "id": "economic_amenity_gap",
+          "theme": "economic_amenity",
+          "label_es": "Señales económicas de amenidad",
+          "label_en": "Amenity economic signals",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "IED/empleo amenity no desagregado para Todos Santos–Pescadero en portal.",
+          "evidence_missing_en": "Amenity FDI/employment not disaggregated for Todos Santos–Pescadero in portal.",
+          "source": null,
+          "portal_paths": [
+            "/economia",
+            "/noticias"
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "id": "water_dma_0313",
+          "theme": "water",
+          "label_es": "DMA acuífero Todos Santos (0313)",
+          "label_en": "DMA Todos Santos aquifer (0313)",
+          "value": -2.96,
+          "unit": "hm³/año",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "CONAGUA DMA 2024 · focus_water_dmas · guía /agua",
+          "portal_paths": [
+            "/agua"
+          ],
+          "note_es": "Sin nuevas concesiones",
+          "note_en": "No new concessions"
+        },
+        {
+          "id": "water_dma_0314",
+          "theme": "water",
+          "label_es": "DMA acuífero El Pescadero (0314)",
+          "label_en": "DMA El Pescadero aquifer (0314)",
+          "value": 0.11,
+          "unit": "hm³/año",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "guía /agua (pack sur)",
+          "portal_paths": [
+            "/agua"
+          ],
+          "note_es": "Remanente positivo ~107,682 m³ — no compensa déficit 0313 (NOM-011 por clave)",
+          "note_en": "Positive remnant ~107,682 m³ — does not offset 0313 deficit (NOM-011 per key)"
+        },
+        {
+          "id": "land_admin",
+          "theme": "land",
+          "label_es": "Administración municipal (La Paz)",
+          "label_en": "Municipal administration (La Paz)",
+          "value": "La Paz mun.",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios · foresights",
+          "portal_paths": [
+            "/comunidades",
+            "/planeacion"
+          ],
+          "note_es": "Todos Santos bajo La Paz; acuíferos 0324 y 0313 citados en locks municipales",
+          "note_en": "Todos Santos under La Paz; aquifers 0324 and 0313 cited in municipal locks"
+        },
+        {
+          "id": "energy_local_gap",
+          "theme": "energy_local",
+          "label_es": "Capacidad eléctrica local / calidad de servicio",
+          "label_en": "Local electric capacity / service quality",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Sin desglose municipal de carga SIBCS para corredor Pacífico en portal.",
+          "evidence_missing_en": "No municipal SIBCS load split for Pacific corridor in portal.",
+          "source": null,
+          "portal_paths": [
+            "/energia"
+          ]
+        },
+        {
+          "id": "env_waste_gap",
+          "theme": "env_waste",
+          "label_es": "Saneamiento / septic bajo crecimiento amenity",
+          "label_en": "Sanitation / septic under amenity growth",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Evidencia de capacidad de tratamiento específica Todos Santos no consolidada.",
+          "evidence_missing_en": "Todos Santos-specific treatment capacity evidence not consolidated.",
+          "source": null,
+          "portal_paths": [
+            "/agua",
+            "/comunidades"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "es": "¿Qué techo de amenidad es compatible con 0313 sin nuevas concesiones?",
+          "en": "What amenity ceiling is compatible with 0313 with no new concessions?"
+        },
+        {
+          "es": "¿Cómo se alinea POER→PDU para el corredor Pacífico?",
+          "en": "How does POER→PDU align for the Pacific corridor?"
+        }
+      ],
+      "portal_paths": [
+        "/mapas",
+        "/agua",
+        "/comunidades",
+        "/riesgos",
+        "/inmobiliario"
+      ]
+    },
+    {
+      "id": "la_paz",
+      "name_es": "La Paz",
+      "name_en": "La Paz",
+      "vocation_es": "Capital de servicios, conocimiento, administración y logística del estado.",
+      "vocation_en": "Capital of services, knowledge, administration, and logistics for the state.",
+      "balance_read": "constrained",
+      "balance_read_es": "Restringido: capital de servicios con DMA 0324 en déficit y acoplamiento agua–energía documentado en noticias; PDUCP 2018 como instrumento, no margen libre.",
+      "balance_read_en": "Constrained: service capital with DMA 0324 in deficit and documented water–energy coupling in news; PDUCP 2018 is an instrument, not free headroom.",
+      "demand": [
+        {
+          "id": "settlement_pop",
+          "theme": "settlement",
+          "label_es": "Población municipal",
+          "label_en": "Municipal population",
+          "value": 292241,
+          "unit": "hab",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "INEGI 2020",
+          "portal_paths": [
+            "/comunidades"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "air_connectivity",
+          "theme": "air",
+          "label_es": "Destinos sin escalas LAP",
+          "label_en": "LAP non-stop destinations",
+          "value": 7,
+          "unit": "destinations",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17) · 2026-09-17",
+          "portal_paths": [
+            "/vuelos"
+          ],
+          "note_es": "330 vuelos/mes listados",
+          "note_en": "330 flights/month listed"
+        },
+        {
+          "id": "tourism_hotels",
+          "theme": "tourism",
+          "label_es": "Hoteles en catálogo (municipio La Paz)",
+          "label_en": "Hotels in catalog (La Paz mun.)",
+          "value": 4,
+          "unit": "assets",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — turismo (incluye algunos East Cape bajo mun. La Paz)",
+          "portal_paths": [
+            "/turismo"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "tourism_marinas",
+          "theme": "tourism",
+          "label_es": "Marinas (La Paz)",
+          "label_en": "Marinas (La Paz)",
+          "value": 5,
+          "unit": "assets",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — turismo",
+          "portal_paths": [
+            "/turismo",
+            "/puertos"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "economic_fiscal",
+          "theme": "economic",
+          "label_es": "Ley de Ingresos 2026",
+          "label_en": "Revenue law 2026",
+          "value": 2905974532,
+          "unit": "MXN",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios",
+          "portal_paths": [
+            "/fiscal"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "news_water_energy",
+          "theme": "news",
+          "label_es": "Señales noticias agua–energía (periodo pack)",
+          "label_en": "News water–energy signals (pack period)",
+          "value": 3,
+          "unit": "articles",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — noticias (apagones / OOMSAPAS / acoplamiento)",
+          "portal_paths": [
+            "/noticias"
+          ],
+          "note_es": "Citas: apagón→agua La Paz; OOMSAPAS; CFE confiabilidad BCS",
+          "note_en": "Cited: outage→water La Paz; OOMSAPAS; CFE BCS reliability"
+        }
+      ],
+      "supply": [
+        {
+          "id": "water_dma_0324",
+          "theme": "water",
+          "label_es": "DMA acuífero La Paz (0324)",
+          "label_en": "DMA La Paz aquifer (0324)",
+          "value": -13.49,
+          "unit": "hm³/año",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "CONAGUA DMA 2024 · guía /agua",
+          "portal_paths": [
+            "/agua"
+          ],
+          "note_es": "Sin nuevas concesiones; DOF 2023 también sin volumen (cifras distintas, no promediar)",
+          "note_en": "No new concessions; 2023 DOF also no volume (distinct figures, do not average)"
+        },
+        {
+          "id": "energy_sibcs_node",
+          "theme": "energy",
+          "label_es": "Nodo capital en SIBCS aislado",
+          "label_en": "Capital node on isolated SIBCS",
+          "value": 689,
+          "unit": "MW peak system",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "guía /energia · PAMRNT",
+          "portal_paths": [
+            "/energia"
+          ],
+          "note_es": "Transmisión La Paz→Cabos 237 MW es candado compartido",
+          "note_en": "La Paz→Cabos 237 MW transmission is shared lock"
+        },
+        {
+          "id": "land_pdu",
+          "theme": "land",
+          "label_es": "PDUCP La Paz",
+          "label_en": "La Paz PDUCP",
+          "value": 2018,
+          "unit": "year",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios strengths",
+          "portal_paths": [
+            "/planeacion"
+          ],
+          "note_es": "PDUCP 2018 citado; deferencia POER→PDU en locks",
+          "note_en": "PDUCP 2018 cited; POER→PDU deference in locks"
+        },
+        {
+          "id": "env_bay",
+          "theme": "env",
+          "label_es": "Bahía / expansión urbana",
+          "label_en": "Bay / urban expansion",
+          "value": "tension",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "foresights places constraints",
+          "portal_paths": [
+            "/ambiente",
+            "/mapas"
+          ],
+          "note_es": "Acoplamiento agua–energía de capital en crecimiento; expansión urbana vs. bahía; carga de coordinación intermunicipal; acuíferos 0324/0313 en déficit.",
+          "note_en": null
+        },
+        {
+          "id": "water_desal_lp_gap",
+          "theme": "water_desal_lp",
+          "label_es": "Capacidad desalación / nuevas fuentes La Paz",
+          "label_en": "Desal / new sources capacity La Paz",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Sin ficha de planta desaladora La Paz equivalente a los 250 l/s de Cabos en guía agua.",
+          "evidence_missing_en": "No La Paz desal plant card equivalent to Cabos 250 l/s in water guide.",
+          "source": null,
+          "portal_paths": [
+            "/agua",
+            "/noticias"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "es": "¿Cómo se desacopla agua urbana del pico eléctrico en alertas SIBCS?",
+          "en": "How is urban water decoupled from electric peaks under SIBCS alerts?"
+        },
+        {
+          "es": "¿Qué parte de la demanda de servicios de capital es exportable vs. fija?",
+          "en": "What share of capital-service demand is exportable vs. fixed?"
+        }
+      ],
+      "portal_paths": [
+        "/comunidades",
+        "/agua",
+        "/energia",
+        "/planeacion",
+        "/noticias",
+        "/mapas"
+      ]
+    },
+    {
+      "id": "loreto",
+      "name_es": "Loreto",
+      "name_en": "Loreto",
+      "vocation_es": "Nodo mid-península turismo + conservación (identidad bahía/ANP).",
+      "vocation_en": "Mid-peninsula tourism + conservation node (bay/ANP identity).",
+      "balance_read": "contested",
+      "balance_read_es": "En disputa: turismo estacional + LTO pequeño vs. ANP Bahía de Loreto y POEL 2014; agua/PTAR en obras (noticias) sin DMA local consolidada en scorecard.",
+      "balance_read_en": "Contested: seasonal tourism + small LTO vs. Bahía de Loreto ANP and POEL 2014; water/WWTP works in news without a consolidated local DMA in this scorecard.",
+      "demand": [
+        {
+          "id": "air_connectivity",
+          "theme": "air",
+          "label_es": "Destinos sin escalas LTO",
+          "label_en": "LTO non-stop destinations",
+          "value": 5,
+          "unit": "destinations",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17) · 2026-09-17",
+          "portal_paths": [
+            "/vuelos"
+          ],
+          "note_es": "36 vuelos/mes listados (US 3)",
+          "note_en": "36 flights/month listed (US 3)"
+        },
+        {
+          "id": "settlement_pop",
+          "theme": "settlement",
+          "label_es": "Población municipal",
+          "label_en": "Municipal population",
+          "value": 18052,
+          "unit": "hab",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "INEGI 2020",
+          "portal_paths": [
+            "/comunidades"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "tourism_golf",
+          "theme": "tourism",
+          "label_es": "Golf (Loreto)",
+          "label_en": "Golf (Loreto)",
+          "value": 2,
+          "unit": "assets",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — turismo",
+          "portal_paths": [
+            "/turismo"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "tourism_marina",
+          "theme": "tourism",
+          "label_es": "Marinas (Loreto)",
+          "label_en": "Marinas (Loreto)",
+          "value": 1,
+          "unit": "assets",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — turismo",
+          "portal_paths": [
+            "/turismo",
+            "/puertos"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "news_water",
+          "theme": "news",
+          "label_es": "Obras agua (noticias pack)",
+          "label_en": "Water works (pack news)",
+          "value": 2,
+          "unit": "articles",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — noticias · PTAR Loreto · acueducto San Juan Londó",
+          "portal_paths": [
+            "/noticias",
+            "/agua"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "tourism_occupancy_gap",
+          "theme": "tourism_occupancy",
+          "label_es": "Ocupación / llegadas Loreto serie oficial",
+          "label_en": "Official Loreto occupancy / arrivals series",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "SETUE IE Loreto citado ON DISK en municipios; serie no volcada a JSON de portal.",
+          "evidence_missing_en": "SETUE IE Loreto cited ON DISK in municipios; series not loaded into portal JSON.",
+          "source": null,
+          "portal_paths": [
+            "/turismo",
+            "/catalogo"
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "id": "land_poel",
+          "theme": "land",
+          "label_es": "POEL Loreto",
+          "label_en": "Loreto POEL",
+          "value": 2014,
+          "unit": "year in force",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios strengths",
+          "portal_paths": [
+            "/planeacion"
+          ],
+          "note_es": "POEL 2014 vigente; PSDU 2007 citado sin PDF gazeta; actualización 2024 en consulta",
+          "note_en": "POEL 2014 in force; PSDU 2007 cited without gazette PDF; 2024 update in consultation"
+        },
+        {
+          "id": "env_anp",
+          "theme": "env",
+          "label_es": "ANP Bahía de Loreto",
+          "label_en": "Bahía de Loreto ANP",
+          "value": "federal ANP",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios · /ambiente",
+          "portal_paths": [
+            "/ambiente"
+          ],
+          "note_es": "Corredor Nopoló–Puerto Escondido bajo techos de conservación",
+          "note_en": "Nopoló–Puerto Escondido corridor under conservation ceilings"
+        },
+        {
+          "id": "water_dma_local_gap",
+          "theme": "water_dma_local",
+          "label_es": "DMA acuífero(s) Loreto en capa foco",
+          "label_en": "Loreto aquifer DMA(s) in focus layer",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Base de datos BCS 2050 — capa SIG cubre pack sur (0313–0325); sin marcador DMA Loreto en esa capa.",
+          "evidence_missing_en": "Base de datos BCS 2050 — capa SIG covers southern pack (0313–0325); no Loreto DMA marker in that layer.",
+          "source": null,
+          "portal_paths": [
+            "/agua",
+            "/mapas"
+          ]
+        },
+        {
+          "id": "energy_local_gap",
+          "theme": "energy_local",
+          "label_es": "Margen eléctrico local Loreto",
+          "label_en": "Local electric margin Loreto",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Sin desglose de demanda Loreto dentro del pico SIBCS en portal.",
+          "evidence_missing_en": "No Loreto demand split within SIBCS peak in portal.",
+          "source": null,
+          "portal_paths": [
+            "/energia"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "es": "¿Cuál es el techo turístico compatible con ANP Bahía de Loreto y POEL?",
+          "en": "What tourism ceiling is compatible with Bahía de Loreto ANP and POEL?"
+        },
+        {
+          "es": "¿Las obras PTAR/acueducto cierran el gap de evidencia hídrica o solo el servicio?",
+          "en": "Do WWTP/aqueduct works close the water-evidence gap or only service delivery?"
+        }
+      ],
+      "portal_paths": [
+        "/ambiente",
+        "/planeacion",
+        "/agua",
+        "/turismo",
+        "/vuelos",
+        "/noticias"
+      ]
+    },
+    {
+      "id": "comondu",
+      "name_es": "Ciudad Constitución / Comondú",
+      "name_en": "Ciudad Constitución / Comondú",
+      "vocation_es": "Hub agro / servicios inland; pilotos de desalación, riego y hinterland productivo.",
+      "vocation_en": "Agri / inland service hub; pilots for desal, irrigation, and productive hinterland.",
+      "balance_read": "headroom",
+      "balance_read_es": "Con margen relativo (lectura cualitativa): hub agro inland con menor presión aérea/turística; aún así riego/acuíferos y energía de bombeo/desal son candados — no «espacio vacío».",
+      "balance_read_en": "Relative headroom (qualitative read): inland agri hub with lower air/tourism pressure; irrigation/aquifers and pumping/desal energy remain locks — not empty space.",
+      "demand": [
+        {
+          "id": "settlement_pop",
+          "theme": "settlement",
+          "label_es": "Población municipal",
+          "label_en": "Municipal population",
+          "value": 73021,
+          "unit": "hab",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "INEGI 2020",
+          "portal_paths": [
+            "/comunidades"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "economic_agro",
+          "theme": "economic",
+          "label_es": "Polo agropecuario (señal cualitativa)",
+          "label_en": "Agri pole (qualitative signal)",
+          "value": "Valle Santo Domingo",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios strengths",
+          "portal_paths": [
+            "/economia"
+          ],
+          "note_es": "Polo agropecuario Valle Santo Domingo; pesca; Constitución / Insurgentes / San Carlos; PMDU Visión 2025 + PMD 2024–2027 en datos.",
+          "note_en": "Agro pole Valle Santo Domingo; fisheries; Constitución / Insurgentes / San Carlos; PMDU Vision 2025 + PMD 2024–2027 on disk."
+        },
+        {
+          "id": "news_water",
+          "theme": "news",
+          "label_es": "Señales noticias agua/riego/desal",
+          "label_en": "News water/irrigation/desal signals",
+          "value": 2,
+          "unit": "articles",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — noticias · MIA desal Comondú · obras riego",
+          "portal_paths": [
+            "/noticias",
+            "/agua"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "air_connectivity_gap",
+          "theme": "air_connectivity",
+          "label_es": "Conectividad aérea propia",
+          "label_en": "Own air connectivity",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Sin aeropuerto en FlightConnections.com — rutas sin escalas (consultado 2026-09-17) (solo SJD/LAP/LTO).",
+          "evidence_missing_en": "No airport in FlightConnections.com — rutas sin escalas (consultado 2026-09-17) (only SJD/LAP/LTO).",
+          "source": null,
+          "portal_paths": [
+            "/vuelos"
+          ]
+        },
+        {
+          "id": "tourism_demand_gap",
+          "theme": "tourism_demand",
+          "label_es": "Demanda turística cuantificada",
+          "label_en": "Quantified tourism demand",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Catálogo hotelero no lista activos Comondú; turismo no es motor primario en pack.",
+          "evidence_missing_en": "Hotel catalog lists no Comondú assets; tourism is not primary engine in pack.",
+          "source": null,
+          "portal_paths": [
+            "/turismo"
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "id": "land_pmdu",
+          "theme": "land",
+          "label_es": "PMDU / PMD en archivo",
+          "label_en": "PMDU / PMD on file",
+          "value": "PMDU Visión 2025 + PMD 2024–2027",
+          "unit": "on disk",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios · Base de datos BCS 2050 — planeación",
+          "portal_paths": [
+            "/planeacion",
+            "/catalogo"
+          ],
+          "note_es": "Sin visor catastral público",
+          "note_en": "No public cadastre viewer"
+        },
+        {
+          "id": "water_desal_pilot",
+          "theme": "water",
+          "label_es": "Piloto desal / MIA (noticia)",
+          "label_en": "Desal pilot / MIA (news)",
+          "value": "UABCS MIA",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — noticias 2026-08-29",
+          "portal_paths": [
+            "/noticias",
+            "/agua"
+          ],
+          "note_es": "Señal de oferta hídrica en diseño — no capacidad as-built en portal",
+          "note_en": "Water-supply signal in design — not as-built capacity in portal"
+        },
+        {
+          "id": "water_dma_irrigation_gap",
+          "theme": "water_dma_irrigation",
+          "label_es": "DMA acuíferos de riego Santo Domingo",
+          "label_en": "Irrigation aquifer DMAs Santo Domingo",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Capa DMA foco es pack sur cabo/La Paz; déficits de riego Comondú no en focus_water_dmas.",
+          "evidence_missing_en": "DMA focus layer is southern Cabo/La Paz pack; Comondú irrigation deficits not in focus_water_dmas.",
+          "source": null,
+          "portal_paths": [
+            "/agua",
+            "/mapas"
+          ]
+        },
+        {
+          "id": "energy_pumping_gap",
+          "theme": "energy_pumping",
+          "label_es": "Energía para bombeo/desal (MW locales)",
+          "label_en": "Energy for pumping/desal (local MW)",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Sin cifra de demanda de bombeo/riego en JSON energético del portal.",
+          "evidence_missing_en": "No pumping/irrigation demand figure in portal energy JSON.",
+          "source": null,
+          "portal_paths": [
+            "/energia",
+            "/agua"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "es": "¿Los pilotos desal/riego escalan sin robar reserva al SIBCS en alerta?",
+          "en": "Can desal/irrigation pilots scale without stealing reserve from an alert SIBCS?"
+        },
+        {
+          "es": "¿Qué vocación 2050 agro vs. servicios inland evita convertirse en spillover de Cabos?",
+          "en": "What 2050 agri vs. inland-services vocation avoids becoming Cabos spillover?"
+        }
+      ],
+      "portal_paths": [
+        "/economia",
+        "/agua",
+        "/energia",
+        "/planeacion",
+        "/noticias",
+        "/comunidades"
+      ]
+    },
+    {
+      "id": "mulege_north",
+      "name_es": "Mulegé / Santa Rosalía / Vizcaíno (norte)",
+      "name_en": "Mulegé / Santa Rosalía / Vizcaíno (north)",
+      "vocation_es": "Corredor disperso; señales de energía remota y logística de larga distancia (incl. narrativas H2 verde donde hay evidencia).",
+      "vocation_en": "Sparse corridor; remote energy and long-haul logistics signals (incl. green-H2 narratives where evidenced).",
+      "balance_read": "unknown",
+      "balance_read_es": "Desconocido / especulativo: señales H2 verde y energía remota en noticias; servicios, agua y mercados delgados — evidencia de oferta/demanda aún fragmentaria.",
+      "balance_read_en": "Unknown / speculative: green-H2 and remote-energy signals in news; thin services, water and markets — demand/supply evidence still fragmentary.",
+      "demand": [
+        {
+          "id": "settlement_pop",
+          "theme": "settlement",
+          "label_es": "Población municipal Mulegé",
+          "label_en": "Mulegé municipal population",
+          "value": 64022,
+          "unit": "hab",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "INEGI 2020",
+          "portal_paths": [
+            "/comunidades"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "news_h2",
+          "theme": "news",
+          "label_es": "Señal proyecto Oasis H2 verde (noticia)",
+          "label_en": "Oasis green-H2 project signal (news)",
+          "value": 1,
+          "unit": "article",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — noticias 2026-09-11 CFE Oasis hidrógeno verde Mulegé",
+          "portal_paths": [
+            "/noticias",
+            "/energia"
+          ],
+          "note_es": null,
+          "note_en": null
+        },
+        {
+          "id": "air_connectivity_gap",
+          "theme": "air_connectivity",
+          "label_es": "Conectividad aérea norte",
+          "label_en": "Northern air connectivity",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Sin aeropuerto en pack de vuelos del portal.",
+          "evidence_missing_en": "No airport in portal flights pack.",
+          "source": null,
+          "portal_paths": [
+            "/vuelos"
+          ]
+        },
+        {
+          "id": "economic_h2_demand_gap",
+          "theme": "economic_h2_demand",
+          "label_es": "Demanda de energía/empleo del corredor H2",
+          "label_en": "Energy/jobs demand of H2 corridor",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "Solo titular/noticia; sin MW, empleo o CAPEX en JSON del portal.",
+          "evidence_missing_en": "Headline/news only; no MW, jobs or CAPEX in portal JSON.",
+          "source": null,
+          "portal_paths": [
+            "/energia",
+            "/economia"
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "id": "land_pmd",
+          "theme": "land",
+          "label_es": "PMD 2024–2027 en archivo",
+          "label_en": "PMD 2024–2027 on file",
+          "value": "PMD 2024–2027",
+          "unit": "on disk",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "Base de datos BCS 2050 — municipios",
+          "portal_paths": [
+            "/planeacion"
+          ],
+          "note_es": "PMDU en proceso consultivo; sin portal catastro/IMPLAN público",
+          "note_en": "PMDU in consultative process; no public cadastre/IMPLAN portal"
+        },
+        {
+          "id": "env_anp",
+          "theme": "env",
+          "label_es": "ANP Vizcaíno (contexto norte)",
+          "label_en": "Vizcaíno ANP (northern context)",
+          "value": "federal ANP",
+          "unit": "qualitative",
+          "status": "ok",
+          "evidence_missing_es": null,
+          "evidence_missing_en": null,
+          "source": "candados · /ambiente · foresights",
+          "portal_paths": [
+            "/ambiente"
+          ],
+          "note_es": "Ecosistemas frágiles + distancia a mercados",
+          "note_en": "Fragile ecosystems + distance to markets"
+        },
+        {
+          "id": "water_dma_gap",
+          "theme": "water_dma",
+          "label_es": "DMA acuíferos Mulegé / Vizcaíno",
+          "label_en": "Mulegé / Vizcaíno aquifer DMAs",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "No incluidos en focus_water_dmas (pack sur).",
+          "evidence_missing_en": "Not included in focus_water_dmas (southern pack).",
+          "source": null,
+          "portal_paths": [
+            "/agua",
+            "/mapas"
+          ]
+        },
+        {
+          "id": "energy_remote_gap",
+          "theme": "energy_remote",
+          "label_es": "Capacidad remota / interconexión norte",
+          "label_en": "Remote capacity / northern interconnection",
+          "value": null,
+          "unit": null,
+          "status": "gap",
+          "evidence_missing_es": "SIBCS es sistema estatal; oferta remota H2/generación no cuantificada as-built.",
+          "evidence_missing_en": "SIBCS is state system; remote H2/generation supply not quantified as-built.",
+          "source": null,
+          "portal_paths": [
+            "/energia"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "es": "¿Qué debe ser verdad para que H2 remoto sume a la estrategia 2050 sin vaciar servicios locales?",
+          "en": "What must be true for remote H2 to add to the 2050 strategy without emptying local services?"
+        },
+        {
+          "es": "¿Cómo se protege Vizcaíno si el corredor energético escala?",
+          "en": "How is Vizcaíno protected if the energy corridor scales?"
+        }
+      ],
+      "portal_paths": [
+        "/energia",
+        "/comunidades",
+        "/noticias",
+        "/ambiente"
+      ]
+    }
+  ]
+}

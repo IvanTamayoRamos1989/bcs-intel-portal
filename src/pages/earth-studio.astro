@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import stills from '../data/stills.json';
+import points from '../data/stills_points.json';
+
+const nImg = ((stills as any[]) || []).filter((s) => s && s.thumb).length;
+const nMap = ((points as any[]) || []).length || nImg;
+---
+<BaseLayout
+  title="Earth Studio · tour"
+  titleEn="Earth Studio · tour"
+  description="Tour territorial vía stills georreferenciados — mapa Leaflet"
+  descriptionEn="Territory tour via georeferenced stills — Leaflet map"
+>
+  <meta http-equiv="refresh" content="0;url=/stills" />
+
+  <p class="lead">
+    <span data-lang-es>
+      El tour Earth Studio del programa se consulta como <strong>stills georreferenciados</strong>
+      en el mapa abierto (OpenStreetMap) — no como paquete ESP/KML ni catálogo de work docs.
+      {nMap} POIs · {nImg} imágenes en galería.
+    </span>
+    <span data-lang-en hidden>
+      The programme Earth Studio tour is available as <strong>georeferenced stills</strong>
+      on an open basemap (OpenStreetMap) — not as an ESP/KML work pack or catalog rows.
+      {nMap} POIs · {nImg} gallery images.
+    </span>
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat"><span class="n">{nMap}</span><span class="l">POIs</span></div>
+    <div class="stat"><span class="n">{nImg}</span><span class="l">Stills</span></div>
+  </div>
+
+  <p class="cta-row">
+    <a class="btn" href="/stills"><span data-lang-es>Abrir mapa de stills</span><span data-lang-en hidden>Open stills map</span></a>
+    <a class="btn secondary" href="/mapas#gis"><span data-lang-es>Mapas</span><span data-lang-en hidden>Maps</span></a>
+  </p>
+
+  <script is:inline>
+    try { location.replace('/stills'); } catch (e) {}
+  </script>
+</BaseLayout>

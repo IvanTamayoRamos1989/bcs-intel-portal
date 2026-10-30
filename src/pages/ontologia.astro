@@ -1,0 +1,1685 @@
+---
+import { cleanSourceText } from '../lib/sourceLabel';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import graph from '../data/graph.json';
+
+const typeOrder = [
+  'Territory',
+  'Instrument',
+  'ResourceCapacity',
+  'DemandDriver',
+  'Constraint',
+  'Actor',
+  'Project',
+  'Evidence',
+  'DecisionQuestion',
+];
+
+const typeEn: Record<string, { label: string; description: string }> = {
+  Territory: {
+    label: 'Territory',
+    description: 'State, municipality, corridor or protected area as a spatial decision unit.',
+  },
+  Instrument: {
+    label: 'Instrument',
+    description: 'Plan, law or programme governing land uses, UGAs or investment (POERBCS, PED, PDU, POEL…).',
+  },
+  ResourceCapacity: {
+    label: 'Resource capacity',
+    description: 'Physical or network supply — water/aquifer, energy/SIBCS, mobility.',
+  },
+  DemandDriver: {
+    label: 'Demand driver',
+    description: 'Pressure that consumes capacity — tourism, residential, agro, industry.',
+  },
+  Constraint: {
+    label: 'Constraint / lock',
+    description: 'Structural or temporary restriction that vetoes or conditions scenarios.',
+  },
+  Actor: {
+    label: 'Actor',
+    description: 'Person or organization with a governance role; may include fp_group tags.',
+  },
+  Project: {
+    label: 'Project',
+    description: 'Concrete intervention (desalination plant, PPP, highway, Commitment…).',
+  },
+  Evidence: {
+    label: 'Evidence',
+    description: 'Document or dataset in the portal documentary sources.',
+  },
+  DecisionQuestion: {
+    label: 'Decision question',
+    description: 'Workshop / lock question the graph should inform.',
+  },
+};
+
+const predicateEn: Record<string, string> = {
+  governs: 'Regulates',
+  constrains: 'Limits',
+  enables: 'Enables',
+  demands: 'Demands from',
+  supplies: 'Supplies',
+  located_in: 'Located in',
+  engages_in: 'Engages in',
+  evidenced_by: 'Evidenced by',
+  conflicts_with: 'Conflicts with',
+  depends_on: 'Depends on',
+  informs_decision: 'Informs the decision',
+  observed_in: 'Observed in',
+  cross_ref_osm: 'Related to',
+  isA: 'Is a',
+};
+
+const typeMeta = Object.fromEntries(
+  (graph.entity_types || []).map((t) => [t.id, t])
+);
+
+const nodesByType = typeOrder.map((type) => ({
+  type,
+  meta: typeMeta[type],
+  en: typeEn[type],
+  nodes: graph.nodes.filter((n) => n.type === type),
+}));
+
+const labelOf = Object.fromEntries(graph.nodes.map((n) => [n.id, n.label]));
+const labelEnOf = Object.fromEntries(
+  graph.nodes.map((n) => [n.id, (n as { label_en?: string }).label_en || n.label])
+);
+const predicateLabel = Object.fromEntries(
+  (graph.relation_types || []).map((r) => [r.id, r.label_es || r.id])
+);
+
+/* PASS5_PRED_ES plain Spanish relation labels */
+const PRED_ES_PLAIN: Record<string, string> = {
+  governs: 'Regulado por',
+  constrains: 'Limita a',
+  enables: 'Habilita',
+  demands: 'Demanda de',
+  supplies: 'Abastece a',
+  located_in: 'Se ubica en',
+  engages_in: 'Participa en',
+  evidenced_by: 'Respaldado por',
+  conflicts_with: 'En tensión con',
+  depends_on: 'Depende de',
+  informs_decision: 'Informa la decisión',
+  observed_in: 'Observado en',
+  cross_ref_osm: 'Relacionado con',
+  isA: 'Es un',
+};
+Object.keys(PRED_ES_PLAIN).forEach((k) => { predicateLabel[k] = PRED_ES_PLAIN[k]; });
+
+
+const edgeRows = graph.edges.slice(0, 80).map((e) => ({
+  from: labelOf[e.from] || e.from,
+  fromEn: labelEnOf[e.from] || e.from,
+  fromId: e.from,
+  predicate: predicateLabel[e.predicate] || e.predicate,
+  predicateEn: predicateEn[e.predicate] || e.predicate,
+  predicateId: e.predicate,
+  to: labelOf[e.to] || e.to,
+  toEn: labelEnOf[e.to] || e.to,
+  toId: e.to,
+}));
+
+const predicateListEs = graph.relation_types.map((r) => r.label_es).join(' · ');
+const predicateListEn = graph.relation_types
+  .map((r) => predicateEn[r.id] || r.label_es || r.id)
+  .join(' · ');
+
+/** Decision-core node ids for default subgraph view */
+const CORE_IDS = [
+  'dq_capacidad_carga',
+  'dq_coast_anp_buffers',
+  'dq_stills_densification',
+  'dd_turismo_cabos',
+  'dd_residencial_cabos',
+  'rc_acuifero_0317',
+  'rc_acuifero_0319',
+  'rc_acuifero_0324',
+  'rc_acuifero_0313',
+  'rc_sibcs',
+  'rc_aeropuerto_sjd',
+  'rc_aeropuerto_lap',
+  'rc_tx_lapaz_cabos',
+  'const_dma_deficit',
+  'const_escasez_agua',
+  'const_red_aislada',
+  'const_anp_nucleos',
+  'const_coast_anp_pressure',
+  'inst_pdu_cabos',
+  'inst_poerbcs',
+  'inst_pamrnt',
+  'actor_oomsapas_cabos',
+  'actor_conagua',
+  'actor_cfe',
+  'actor_cenace',
+  'actor_conanp',
+  'proj_desal_cabos',
+  'proj_p23_bs1',
+  'terr_los_cabos',
+  'terr_corredor_cabos',
+  'terr_anp_cabo_pulmo',
+  'terr_anp_sierra_laguna',
+  'terr_obs_cabos_coast',
+  'ev_stills_intel',
+];
+
+const typeColors: Record<string, string> = {
+  Territory: '#34607d',
+  Instrument: '#2a5069',
+  ResourceCapacity: '#00A3C4',
+  DemandDriver: '#E8A838',
+  Constraint: '#C45C4A',
+  Actor: '#5B8C5A',
+  Project: '#7B6BB0',
+  Evidence: '#6B7C8A',
+  DecisionQuestion: '#34607d',
+};
+
+const graphPayload = {
+  nodes: graph.nodes.map((n) => ({
+    id: n.id,
+    type: n.type,
+    label: n.label,
+    label_en: (n as { label_en?: string }).label_en || n.label,
+    summary: n.summary || '',
+    summary_en: (n as { summary_en?: string }).summary_en || n.summary || '',
+    evidence_path: (n as { evidence_path?: string }).evidence_path || '',
+  })),
+  edges: graph.edges.map((e) => ({
+    from: e.from,
+    to: e.to,
+    predicate: e.predicate,
+    predicate_es: predicateLabel[e.predicate] || e.predicate,
+    predicate_en: predicateEn[e.predicate] || e.predicate,
+  })),
+  coreIds: CORE_IDS,
+  typeColors,
+  typeLabelsEs: Object.fromEntries(
+    typeOrder.map((t) => [t, typeMeta[t]?.label_es || t])
+  ),
+  typeLabelsEn: Object.fromEntries(
+    typeOrder.map((t) => [t, typeEn[t]?.label || t])
+  ),
+};
+---
+<BaseLayout
+  title="Mapa de relaciones"
+  titleEn="Ontology"
+  description="Mapa de relaciones entre territorio, capacidad, proyectos y actores en BCS"
+  descriptionEn="Relationship map of territory, capacity, projects and actors in BCS"
+  wide={true}
+>
+  <p class="lead onto-lead">
+    <span data-lang-es>
+      Mapa de cómo se conectan lugares, capacidad (agua y energía), proyectos y actores.
+      Pulse un nodo para ver vecinos y enlaces.
+    </span>
+    <span data-lang-en hidden>
+      Map of how places, capacity (water and energy), projects and actors connect.
+      Tap a node to see neighbours and links.
+    </span>
+  </p><!-- PASS4: technical source callout removed -->
+
+  <!-- PASS3_ONTO_COLLAPSE -->
+  <details class="bcs-collapse">
+  <summary>
+    <span data-lang-es>Para qué sirve en la decisión</span>
+    <span data-lang-en hidden>How it supports decisions</span>
+  </summary>
+  <div class="bcs-collapse-body">
+  <h2 class="sr-only">
+    <span data-lang-es>Para qué sirve en la decisión</span>
+    <span data-lang-en hidden>How it supports decisions</span>
+  </h2>
+  <ol data-lang-es>
+    <li>Partir de una <strong>pregunta de decisión</strong> (p.ej. capacidad de carga).</li>
+    <li>Recorrer nodos por tipo — no leer PDFs al azar.</li>
+    <li>Anclar la ruta en <strong>evidencia</strong> de las fuentes documentales del portal.</li>
+    <li>Llevar la conclusión al grupo de decisión con la ruta de evidencia clara.</li>
+  </ol>
+  <ol data-lang-en hidden>
+    <li>Start from a <strong>decision question</strong> (e.g. carrying capacity).</li>
+    <li>Walk nodes by type — do not read PDFs at random.</li>
+    <li>Anchor the path in <strong>evidence</strong> from the portal documentary sources.</li>
+    <li>Bring the conclusion back to the decision group with a clear evidence path.</li>
+  </ol>
+
+  <div class="cta-row">
+    <a class="btn" href="/agua/"><span data-lang-es>Ver capacidad</span><span data-lang-en hidden>View capacity</span></a>
+    <a class="btn secondary" href="/limitaciones"><span data-lang-es>Ver candados</span><span data-lang-en hidden>View constraints</span></a>
+    <a class="btn secondary" href="/actores"><span data-lang-es>Ver actores</span><span data-lang-en hidden>View actors</span></a>
+  </div>
+  </div></details>
+
+  
+  <!-- PASS5 ontology graph hero -->
+  <style>
+    /* PASS5_ONTO_LAYOUT */
+    .onto-lead { max-width: 42rem; margin: 0 0 0.75rem; color: #5c6e7b; font-size: 0.95rem; }
+    .onto-graph-shell.onto-graph-hero {
+      display: flex;
+      flex-direction: column;
+      margin: 0.75rem 0 1.5rem;
+      border: 1px solid #e2dccf;
+      border-radius: 16px;
+      background: #fbf8f1;
+      overflow: hidden;
+      min-height: 70vh;
+    }
+    .onto-graph-toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1px solid #e2dccf;
+      background: #f3eee3;
+    }
+    .onto-toolbar-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; justify-content: space-between;
+    }
+    .onto-graph-toggles { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .onto-graph-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .onto-scope {
+      border: 0; border-radius: 999px; padding: 0.35rem 0.75rem;
+      background: #e8e8ed; color: #23374a; font: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+    }
+    .onto-scope.active { background: #34607d; color: #fbf8f1; }
+    .onto-type-seg { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .onto-type-chip {
+      border: 0; border-radius: 999px; padding: 0.28rem 0.65rem;
+      background: #fbf8f1; color: #23374a; font: inherit; font-size: 0.74rem; font-weight: 600;
+      cursor: pointer; border: 1px solid #e2dccf; display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .onto-type-chip i { width: 0.5rem; height: 0.5rem; border-radius: 50%; display: inline-block; }
+    .onto-type-chip.active { background: #34607d; color: #fbf8f1; border-color: #34607d; }
+    .onto-type-chip.active i { box-shadow: 0 0 0 1px #fbf8f1; }
+    .onto-search-wrap input {
+      min-width: 9rem; padding: 0.35rem 0.6rem; border: 1px solid #d1d1d6; border-radius: 8px; font: inherit; font-size: 0.85rem;
+    }
+    .onto-check { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: #5c6e7b; }
+    .onto-graph-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+      min-height: 0;
+      flex: 1;
+      position: relative;
+    }
+    .onto-cy-wrap {
+      position: relative;
+      min-height: 70vh;
+      height: 70vh;
+      background: #fbf8f1;
+    }
+    #onto-cy { width: 100% !important; height: 100% !important; min-height: 70vh; }
+    .onto-zoom-hint { display: none; }
+    .onto-detail {
+      border-left: 1px solid #e2dccf;
+      background: rgba(249,249,251,0.98);
+      padding: 0.9rem 1rem;
+      overflow: auto;
+      max-height: 70vh;
+    }
+    .onto-detail .onto-type { font-size: 0.72rem; font-weight: 700; color: #34607d; text-transform: uppercase; letter-spacing: 0.03em; }
+    .onto-detail h4 { margin: 0.25rem 0 0.45rem; font-size: 1.05rem; }
+    .onto-detail ul { margin: 0.35rem 0 0; padding-left: 0; list-style: none; }
+    .onto-detail li { margin: 0.35rem 0; font-size: 0.88rem; line-height: 1.35; }
+    .onto-pred { color: #5c6e7b; font-weight: 500; }
+    .onto-type-filters { display: none !important; }
+    .onto-legend { display: none; }
+    @media (max-width: 900px) {
+      .onto-graph-layout { grid-template-columns: 1fr; }
+      .onto-cy-wrap, #onto-cy { min-height: 55vh; height: 55vh; }
+      .onto-detail { border-left: 0; border-top: 1px solid #e2dccf; max-height: 38vh; }
+    }
+    /* dark-mode block removed: light theme forced */
+  </style>
+
+  <div class="onto-graph-shell onto-graph-hero" id="onto-graph-shell">
+    <div class="onto-graph-toolbar">
+      <div class="onto-toolbar-row">
+        <div class="onto-graph-toggles" role="group" aria-label="Vista">
+          <button type="button" class="onto-scope active" data-scope="core" id="onto-scope-core">
+            <span data-lang-es>Núcleo de decisión</span>
+            <span data-lang-en hidden>Decision core</span>
+          </button>
+          <button type="button" class="onto-scope" data-scope="full" id="onto-scope-full">
+            <span data-lang-es>Grafo completo</span>
+            <span data-lang-en hidden>Full graph</span>
+          </button>
+        </div>
+        <div class="onto-graph-tools">
+          <label class="onto-search-wrap">
+            <span class="sr-only">Buscar</span>
+            <input type="search" id="onto-search" placeholder="Buscar…" autocomplete="off" />
+          </label>
+          <label class="onto-check">
+            <input type="checkbox" id="onto-hide-isolates" />
+            <span data-lang-es>Ocultar aislados</span>
+            <span data-lang-en hidden>Hide isolates</span>
+          </label>
+          <button type="button" class="btn secondary" id="onto-zoom-sel">
+            <span data-lang-es>Zoom</span><span data-lang-en hidden>Zoom</span>
+          </button>
+          <button type="button" class="btn secondary" id="onto-reset">
+            <span data-lang-es>Restablecer</span><span data-lang-en hidden>Reset</span>
+          </button>
+        </div>
+      </div>
+      <div class="onto-type-seg" id="onto-type-seg" role="group" aria-label="Tipo">
+        <button type="button" class="onto-type-chip active" data-type="all">
+          <span data-lang-es>Todos</span>
+          <span data-lang-en hidden>All</span>
+        </button>
+      </div>
+    </div>
+    <div class="onto-type-filters" id="onto-type-filters" hidden>
+      <div class="onto-filter-grid" id="onto-filter-grid"></div>
+    </div>
+    <div class="onto-graph-layout">
+      <div class="onto-cy-wrap">
+        <div id="onto-cy" role="img" aria-label="Grafo ontológico"></div>
+      </div>
+      <aside class="onto-detail" id="onto-detail" aria-live="polite">
+        <p class="meta" data-lang-es>Seleccione un nodo para ver su ficha y vecinos.</p>
+        <p class="meta" data-lang-en hidden>Select a node to see its card and neighbours.</p>
+      </aside>
+    </div>
+  </div>
+  <div class="onto-legend" id="onto-legend" hidden></div>
+
+  </div>
+
+  <h2><span data-lang-es>Tipos de entidad</span><span data-lang-en hidden>Entity types</span></h2>
+  <div class="card-grid">
+    {nodesByType.map(({ type, meta, en, nodes }) => (
+      <div class="card" id={`tipo-${type}`}>
+        <h3>
+          <span data-lang-es>{meta?.label_es || type}</span>
+          <span data-lang-en hidden>{en?.label || type}</span>
+        </h3>
+        <p>
+          <span data-lang-es>{meta?.description || ''}</span>
+          <span data-lang-en hidden>{en?.description || meta?.description || ''}</span>
+        </p>
+        <p style="margin-top:0.65rem;font-size:0.85rem;color:var(--muted)">
+          <span class="tag">{nodes.length}</span>
+          <code style="font-size:0.8rem">{type}</code>
+        </p>
+      </div>
+    ))}
+  </div>
+
+  <h2>
+    <span data-lang-es>Subgrafo núcleo — capacidad de carga</span>
+    <span data-lang-en hidden>Core subgraph — carrying capacity</span>
+  </h2>
+  <p data-lang-es>
+    Ruta canónica del programa: demanda turística de Los Cabos → agua en déficit →
+    candado DMA → PDU → operador OOMSAPAS (y en paralelo el techo del SIBCS).
+  </p>
+  <p data-lang-en hidden>
+    Canonical programme path: Los Cabos tourism demand → deficit water →
+    DMA lock → PDU → OOMSAPAS operator (and in parallel the SIBCS ceiling).
+  </p>
+  <div class="callout" style="overflow-x:auto">
+    <pre class="mermaid-block" style="margin:0;font-size:0.82rem;white-space:pre-wrap;font-family:ui-monospace,monospace;line-height:1.45" data-lang-es>flowchart LR
+  DD["Demanda turismo Cabos"] -->|demanda| AGUA["Acuífero CSL 0317"]
+  DD -->|demanda| SIBCS["SIBCS"]
+  AGUA -->|restringe| DMA["DMA en déficit"]
+  DMA -->|restringe| PDU["PDU 2040 Los Cabos"]
+  OOM["OOMSAPAS Cabos"] -->|participa_en| PDU
+  SIBCS -->|restringe| RED["Red aislada"]
+  ANP["Núcleos ANP"] -->|restringe| DD
+  DMA -->|informa| DQ["¿Cuánta demanda cabe?"]
+  RED -->|informa| DQ</pre>
+    <pre class="mermaid-block" style="margin:0;font-size:0.82rem;white-space:pre-wrap;font-family:ui-monospace,monospace;line-height:1.45" data-lang-en hidden>flowchart LR
+  DD["Cabos tourism demand"] -->|demands| AGUA["CSL aquifer 0317"]
+  DD -->|demands| SIBCS["SIBCS"]
+  AGUA -->|constrains| DMA["DMA in deficit"]
+  DMA -->|constrains| PDU["PDU 2040 Los Cabos"]
+  OOM["OOMSAPAS Cabos"] -->|engages_in| PDU
+  SIBCS -->|constrains| RED["Isolated grid"]
+  ANP["ANP cores"] -->|constrains| DD
+  DMA -->|informs| DQ["How much demand fits?"]
+  RED -->|informs| DQ</pre>
+  </div>
+  <p class="meta">
+    <span data-lang-es>Diagrama de texto de la misma ruta canónica del grafo interactivo.</span>
+    <span data-lang-en hidden>Text diagram of the same canonical path as the interactive graph.</span>
+  </p>
+
+  <h2>
+    <span data-lang-es>Entidades por tipo (semilla BCS)</span>
+    <span data-lang-en hidden>Entities by type (BCS seed)</span>
+  </h2>
+  {nodesByType.map(({ type, meta, en, nodes }) => (
+    <div class="group-block">
+      <h3>
+        <span data-lang-es>{meta?.label_es || type}</span>
+        <span data-lang-en hidden>{en?.label || type}</span>
+        {' '}
+        <span class="tag sand">{nodes.length}</span>
+      </h3>
+      <ul>
+        {nodes.map((n) => {
+          const nEn = n as { label_en?: string; summary_en?: string };
+          return (
+            <li>
+              <strong>
+                <span data-lang-es>{n.label}</span>
+                <span data-lang-en hidden>{nEn.label_en || n.label}</span>
+              </strong>
+              <code style="font-size:0.78rem;margin-left:0.35rem">{n.id}</code>
+              —{' '}
+              <span data-lang-es>{n.summary}</span>
+              <span data-lang-en hidden>{nEn.summary_en || n.summary}</span>
+              {n.evidence_path && (
+                <>
+                  {' '}
+                  <span class="meta" style="display:inline">[{/^https?:/.test(n.evidence_path) ? n.evidence_path : cleanSourceText(n.evidence_path)}]</span>
+                </>
+              )}
+              {n.fp_group && (
+                <>
+                  {' '}
+                  <span class="tag">{n.fp_group}</span>
+                  {n.subgroup && <span class="tag sand">{n.subgroup}</span>}
+                </>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  ))}
+
+  <h2>
+    <span data-lang-es>Relaciones (muestra del grafo)</span>
+    <span data-lang-en hidden>Relations (graph sample)</span>
+  </h2>
+  <p>
+    <span data-lang-es>
+      Predicados: {predicateListEs}.
+      Tabla con las primeras {edgeRows.length} de {graph.edges.length} aristas.
+    </span>
+    <span data-lang-en hidden>
+      Predicates: {predicateListEn}.
+      Table shows the first {edgeRows.length} of {graph.edges.length} edges.
+    </span>
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Desde</span><span data-lang-en hidden>From</span></th>
+          <th><span data-lang-es>Relación</span><span data-lang-en hidden>Relation</span></th>
+          <th><span data-lang-es>Hacia</span><span data-lang-en hidden>To</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {edgeRows.map((row) => (
+          <tr>
+            <td>
+              <span data-lang-es>{row.from}</span>
+              <span data-lang-en hidden>{row.fromEn}</span>
+              <br /><code style="font-size:0.75rem">{row.fromId}</code>
+            </td>
+            <td>
+              <span class="tag">
+                <span data-lang-es>{row.predicate}</span>
+                <span data-lang-en hidden>{row.predicateEn}</span>
+              </span>
+            </td>
+            <td>
+              <span data-lang-es>{row.to}</span>
+              <span data-lang-en hidden>{row.toEn}</span>
+              <br /><code style="font-size:0.75rem">{row.toId}</code>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>
+    <span data-lang-es>Cinco lentes</span>
+    <span data-lang-en hidden>Five lenses</span>
+  </h2>
+  <ol data-lang-es>
+    <li><strong>Capacidad de carga</strong> — agua–energía–ANP vs demanda.</li>
+    <li><strong>Factibilidad política / agenda</strong> — Foro, PED, Commitment.</li>
+    <li><strong>Readiness de inversión</strong> — desaladora, red, aeropuertos.</li>
+    <li><strong>Integridad ecológica</strong> — núcleos ANP y recarga.</li>
+    <li><strong>Coherencia de instrumentos</strong> — POERBCS ↔ PDU ↔ proyectos.</li>
+  </ol>
+  <ol data-lang-en hidden>
+    <li><strong>Carrying capacity</strong> — water–energy–ANP vs demand.</li>
+    <li><strong>Political / agenda feasibility</strong> — Forum, PED, Commitment.</li>
+    <li><strong>Investment readiness</strong> — desalination, grid, airports.</li>
+    <li><strong>Ecological integrity</strong> — ANP core zones and recharge.</li>
+    <li><strong>Instrument coherence</strong> — POERBCS ↔ PDU ↔ projects.</li>
+  </ol>
+  
+
+  <style>
+    .onto-graph-shell {
+      margin: 1rem 0 2rem;
+      border: 1px solid #e2dccf;
+      border-radius: 10px;
+      background: #f3eee3;
+      overflow: hidden;
+    }
+    .onto-graph-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e2dccf;
+      background: #fbf8f1;
+    }
+    .onto-graph-toggles { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .onto-graph-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .onto-scope.active {
+      background: var(--fp-blue) !important;
+      color: #fbf8f1 !important;
+      border-color: var(--fp-blue) !important;
+    }
+    .onto-search-wrap input {
+      min-width: 10rem;
+      max-width: 16rem;
+      padding: 0.4rem 0.65rem;
+      border: 1px solid #c5d0da;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .onto-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+    }
+    .onto-type-filters {
+      padding: 0.65rem 1rem 0.85rem;
+      border-bottom: 1px solid #e2dccf;
+      background: #fafcfd;
+    }
+    .onto-filters-label {
+      margin: 0 0 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .onto-filter-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+    }
+    .onto-filter-grid label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      padding: 0.15rem 0.35rem;
+      border-radius: 999px;
+      background: #fbf8f1;
+      border: 1px solid #e2e8ef;
+    }
+    .onto-filter-grid label i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .onto-graph-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(180px, 240px);
+      gap: 0;
+      min-height: 70vh;
+    }
+    @media (max-width: 900px) {
+      .onto-graph-layout { grid-template-columns: 1fr; min-height: 0; }
+      .onto-search-wrap input { min-width: 8rem; max-width: 100%; width: 100%; }
+    }
+    .onto-cy-wrap {
+      position: relative;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
+      border-right: 1px solid #e2dccf;
+      background: linear-gradient(180deg, #fbfcfd 0%, #eef4f8 100%);
+      min-height: 640px;
+      height: min(78vh, 860px);
+    }
+    @media (max-width: 900px) {
+      .onto-cy-wrap {
+        border-right: none;
+        border-bottom: 1px solid #e2dccf;
+        min-height: 520px;
+        height: min(70vh, 720px);
+      }
+    }
+    #onto-cy {
+      width: 100%;
+      min-width: 320px;
+      height: 100%;
+      min-height: 640px;
+    }
+    @media (max-width: 900px) {
+      #onto-cy { min-height: 520px; }
+    }
+    .onto-zoom-hint {
+      position: absolute;
+      left: 0.65rem;
+      bottom: 0.45rem;
+      margin: 0;
+      font-size: 0.72rem;
+      background: rgba(255,255,255,0.85);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .onto-detail {
+      padding: 1rem;
+      background: #fbf8f1;
+      font-size: 0.92rem;
+      overflow: auto;
+      max-height: min(78vh, 860px);
+      min-height: 640px;
+    }
+    @media (max-width: 900px) {
+      .onto-detail { min-height: 0; max-height: 320px; }
+    }
+    /* Expand / near-fullscreen graph pane */
+    .onto-graph-shell.onto-expanded {
+      position: relative;
+      z-index: 40;
+    }
+    .onto-graph-shell.onto-expanded .onto-graph-layout {
+      min-height: 85vh;
+    }
+    .onto-graph-shell.onto-expanded .onto-cy-wrap,
+    .onto-graph-shell.onto-expanded .onto-detail {
+      height: min(85vh, 960px);
+      max-height: min(85vh, 960px);
+      min-height: 720px;
+    }
+    .onto-graph-shell.onto-expanded #onto-cy {
+      min-height: 720px;
+    }
+    body.onto-fs-active {
+      overflow: hidden;
+    }
+    .onto-graph-shell.onto-fullscreen {
+      position: fixed;
+      inset: 0.75rem;
+      z-index: 1200;
+      margin: 0;
+      max-height: none;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 40px rgba(13, 27, 36, 0.28);
+    }
+    .onto-graph-shell.onto-fullscreen .onto-graph-layout {
+      flex: 1;
+      min-height: 0;
+      height: 100%;
+    }
+    .onto-graph-shell.onto-fullscreen .onto-cy-wrap,
+    .onto-graph-shell.onto-fullscreen .onto-detail {
+      height: 100%;
+      max-height: none;
+      min-height: 0;
+    }
+    .onto-graph-shell.onto-fullscreen #onto-cy {
+      min-height: 0;
+      height: 100%;
+    }
+    .onto-detail h4 {
+      margin: 0 0 0.35rem;
+      color: var(--fp-blue);
+      font-size: 1rem;
+    }
+    .onto-detail .onto-type {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: var(--fp-blue-soft);
+      color: var(--fp-blue-dark);
+      margin-bottom: 0.5rem;
+    }
+    .onto-detail ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+    .onto-detail li { margin: 0.2rem 0; }
+    .onto-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.85rem;
+      padding: 0.65rem 1rem;
+      border-top: 1px solid #e2dccf;
+      background: #fbf8f1;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .onto-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .onto-legend i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  </style>
+
+  <!-- PASS5 cascade overrides (wins over legacy graph CSS below) -->
+  <style>
+    .onto-graph-shell.onto-graph-hero {
+      display: flex !important;
+      flex-direction: column !important;
+      min-height: 70vh !important;
+      background: #fbf8f1 !important;
+    }
+    .onto-graph-shell.onto-graph-hero > .onto-graph-toolbar {
+      display: flex !important;
+      flex-direction: column !important;
+      flex-wrap: nowrap !important;
+      align-items: stretch !important;
+      gap: 0.55rem !important;
+      padding: 0.75rem 0.9rem !important;
+      background: #f3eee3 !important;
+      border-bottom: 1px solid #e2dccf !important;
+    }
+    .onto-graph-shell.onto-graph-hero .onto-graph-layout {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 320px) !important;
+      flex: 1 !important;
+      min-height: 0 !important;
+      position: relative !important;
+    }
+    .onto-graph-shell.onto-graph-hero .onto-cy-wrap {
+      position: relative !important;
+      min-height: 70vh !important;
+      height: 70vh !important;
+      background: #fbf8f1 !important;
+      border-right: 0 !important;
+      overflow: hidden !important;
+    }
+    .onto-graph-shell.onto-graph-hero #onto-cy {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 70vh !important;
+      min-width: 0 !important;
+    }
+    .onto-graph-shell.onto-graph-hero .onto-detail {
+      border-left: 1px solid #e2dccf !important;
+      background: rgba(249,249,251,0.98) !important;
+      max-height: 70vh !important;
+      min-height: 0 !important;
+      overflow: auto !important;
+      padding: 0.9rem 1rem !important;
+    }
+    .onto-graph-shell.onto-graph-hero .onto-detail ul { padding-left: 0 !important; list-style: none !important; }
+    .onto-graph-shell.onto-graph-hero .onto-pred { color: #5c6e7b; font-weight: 500; font-family: inherit !important; }
+    .onto-type-filters, #onto-type-filters, .onto-legend, #onto-legend {
+      display: none !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      border: 0 !important;
+      margin: 0 !important;
+    }
+    .onto-type-seg { display: flex !important; flex-wrap: wrap !important; gap: 0.3rem !important; }
+    @media (max-width: 900px) {
+      .onto-graph-shell.onto-graph-hero .onto-graph-layout { grid-template-columns: 1fr !important; }
+      .onto-graph-shell.onto-graph-hero .onto-cy-wrap,
+      .onto-graph-shell.onto-graph-hero #onto-cy { min-height: 58vh !important; height: 58vh !important; }
+      .onto-graph-shell.onto-graph-hero .onto-detail {
+        border-left: 0 !important; border-top: 1px solid #e2dccf !important;
+        max-height: 34vh !important;
+      }
+      .onto-graph-shell.onto-graph-hero > .onto-graph-toolbar {
+        padding: 0.55rem 0.65rem !important;
+        gap: 0.4rem !important;
+      }
+      .onto-type-seg {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.15rem;
+        max-width: 100%;
+      }
+      .onto-type-chip { flex: 0 0 auto; white-space: nowrap; }
+      .onto-search-wrap input { min-width: 0 !important; width: 100%; max-width: 100%; }
+    }
+  </style>
+
+
+  <script is:inline define:vars={{ graphPayload }}>
+    window.__ONTO_GRAPH__ = graphPayload;
+  </script>
+  <script is:inline src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
+  <script is:inline>
+    (function () {
+      var data = window.__ONTO_GRAPH__;
+      if (!data || typeof cytoscape === 'undefined') return;
+
+      var cyEl = document.getElementById('onto-cy');
+      var detailEl = document.getElementById('onto-detail');
+      var legendEl = document.getElementById('onto-legend');
+      var filtersEl = document.getElementById('onto-type-filters');
+      var filterGrid = document.getElementById('onto-filter-grid');
+      var searchEl = document.getElementById('onto-search');
+      var hideIsolatesEl = document.getElementById('onto-hide-isolates');
+      var scope = 'core';
+      var cy = null;
+      /* Screen-space labels: inverse to zoom so zoom-in shrinks text */
+      var LABEL_ZOOM = 0.72;       /* bulk labels appear above this */
+      var DETAIL_ZOOM = 1.35;      /* denser detail / focus emphasis */
+      var BASE_SCREEN_FONT = 11;   /* target px on screen at z≈1 */
+      var MIN_SCREEN_FONT = 7;
+      var MAX_SCREEN_FONT = 12;
+      var FIT_PAD = 48;
+      var typeOrder = Object.keys(data.typeColors || {});
+      var enabledTypes = {};
+      typeOrder.forEach(function (t) { enabledTypes[t] = true; });
+      var focusNodeId = null;
+
+      function lang() {
+        return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
+      }
+
+      function nodeLabel(n) {
+        return lang() === 'en' ? (n.label_en || n.label) : n.label;
+      }
+
+      function typeLabel(t) {
+        return lang() === 'en'
+          ? (data.typeLabelsEn[t] || t)
+          : (data.typeLabelsEs[t] || t);
+      }
+
+      function buildFilterUI() {
+        if (!filterGrid) return;
+        var html = '';
+        typeOrder.forEach(function (t) {
+          html += '<label><input type="checkbox" data-type="' + t + '" checked />' +
+            '<i style="background:' + (data.typeColors[t] || '#8796a0') + '"></i>' +
+            '<span data-type-label="' + t + '">' + typeLabel(t) + '</span></label>';
+        });
+        filterGrid.innerHTML = html;
+        filterGrid.querySelectorAll('input[type=checkbox]').forEach(function (cb) {
+          cb.addEventListener('change', function () {
+            enabledTypes[cb.getAttribute('data-type')] = cb.checked;
+            if (scope === 'full') initCy();
+
+      });
+        });
+      }
+
+      function syncFilterLabels() {
+        if (!filterGrid) return;
+        filterGrid.querySelectorAll('[data-type-label]').forEach(function (el) {
+          el.textContent = typeLabel(el.getAttribute('data-type-label'));
+        });
+      }
+
+      function buildElements(useCore) {
+        var idSet = null;
+        if (useCore) {
+          idSet = {};
+          (data.coreIds || []).forEach(function (id) { idSet[id] = true; });
+        }
+        var nodes = data.nodes.filter(function (n) {
+          if (idSet && !idSet[n.id]) return false;
+          if (!useCore && !enabledTypes[n.type]) return false;
+          return true;
+        });
+        var nodeIds = {};
+        nodes.forEach(function (n) { nodeIds[n.id] = true; });
+        var edges = data.edges.filter(function (e) {
+          return nodeIds[e.from] && nodeIds[e.to];
+        });
+        if (hideIsolatesEl && hideIsolatesEl.checked) {
+          var connected = {};
+          edges.forEach(function (e) {
+            connected[e.from] = true;
+            connected[e.to] = true;
+          });
+          nodes = nodes.filter(function (n) { return connected[n.id]; });
+          nodeIds = {};
+          nodes.forEach(function (n) { nodeIds[n.id] = true; });
+          edges = edges.filter(function (e) {
+            return nodeIds[e.from] && nodeIds[e.to];
+          });
+        }
+        var typeIndex = {};
+        typeOrder.forEach(function (t, i) { typeIndex[t] = i + 1; });
+        return nodes.map(function (n) {
+          return {
+            group: 'nodes',
+            data: {
+              id: n.id,
+              label: nodeLabel(n),
+              type: n.type,
+              summary: n.summary,
+              summary_en: n.summary_en,
+              label_es: n.label,
+              label_en: n.label_en,
+              color: data.typeColors[n.type] || '#34607d',
+              concentric: typeIndex[n.type] || 99,
+            },
+          };
+        }).concat(edges.map(function (e, i) {
+          return {
+            group: 'edges',
+            data: {
+              id: 'e' + i + '_' + e.from + '_' + e.to,
+              source: e.from,
+              target: e.to,
+              predicate: e.predicate,
+              predicate_es: e.predicate_es,
+              predicate_en: e.predicate_en,
+            },
+          };
+        }));
+      }
+
+
+      /* PASS5_TYPE_SEG */
+      function setupTypeSeg() {
+        var row = document.getElementById('onto-type-seg');
+        if (!row || !data) return;
+        // keep All chip, rebuild rest
+        row.querySelectorAll('.onto-type-chip:not([data-type="all"])').forEach(function (x) { x.remove(); });
+        typeOrder.forEach(function (tp) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'onto-type-chip';
+          b.setAttribute('data-type', tp);
+          var col = (data.typeColors && data.typeColors[tp]) || '#8796a0';
+          b.innerHTML = '<i style="background:' + col + '"></i><span>' + typeLabel(tp) + '</span>';
+          row.appendChild(b);
+        });
+        if (!row._bound) {
+          row._bound = true;
+          row.addEventListener('click', function (ev) {
+            var btn = ev.target.closest('.onto-type-chip');
+            if (!btn) return;
+            row.querySelectorAll('.onto-type-chip').forEach(function (x) { x.classList.remove('active'); });
+            btn.classList.add('active');
+            var tp = btn.getAttribute('data-type');
+            if (!cy) return;
+            if (tp === 'all') {
+              cy.nodes().style('display', 'element');
+              cy.edges().style('display', 'element');
+            } else {
+              cy.nodes().forEach(function (n) {
+                n.style('display', n.data('type') === tp ? 'element' : 'none');
+              });
+              cy.edges().forEach(function (e) {
+                var ok = e.source().style('display') !== 'none' && e.target().style('display') !== 'none';
+                e.style('display', ok ? 'element' : 'none');
+              });
+            }
+            try { cy.fit(cy.nodes(':visible'), 48); } catch (e) {}
+          });
+        }
+      }
+
+      function renderLegend() {
+        if (!legendEl) return;
+        var html = '';
+        typeOrder.forEach(function (t) {
+          html += '<span><i style="background:' + data.typeColors[t] + '"></i>' +
+            typeLabel(t) + '</span>';
+        });
+        legendEl.innerHTML = html;
+      }
+
+
+      var PRED_PLAIN_ES = {
+        governs: 'Regulado por', gobierna: 'Regulado por',
+        constrains: 'Limita a', restringe: 'Limita a',
+        enables: 'Habilita', habilita: 'Habilita',
+        demands: 'Demanda de', demanda: 'Demanda de',
+        supplies: 'Abastece a', abastece: 'Abastece a',
+        located_in: 'Se ubica en', ubicado_en: 'Se ubica en',
+        engages_in: 'Participa en', participa: 'Participa en',
+        evidenced_by: 'Respaldado por', evidenciado_por: 'Respaldado por',
+        conflicts_with: 'En tensión con', conflige_con: 'En tensión con',
+        depends_on: 'Depende de', depende_de: 'Depende de',
+        informs_decision: 'Informa la decisión', informa_decision: 'Informa la decisión',
+        observed_in: 'Observado en', observado_en: 'Observado en',
+        cross_ref_osm: 'Relacionado con', isA: 'Es un'
+      };
+      var PRED_PLAIN_EN = {
+        governs: 'Regulates', constrains: 'Limits', enables: 'Enables',
+        demands: 'Demands from', supplies: 'Supplies', located_in: 'Located in',
+        engages_in: 'Engages in', evidenced_by: 'Evidenced by', conflicts_with: 'Conflicts with',
+        depends_on: 'Depends on', informs_decision: 'Informs the decision',
+        observed_in: 'Observed in', cross_ref_osm: 'Related to', isA: 'Is a'
+      };
+      function plainPred(label, id) {
+        var key = (id || label || '').toString();
+        var map = lang() === 'en' ? PRED_PLAIN_EN : PRED_PLAIN_ES;
+        if (map[key]) return map[key];
+        // also try normalized label
+        var low = key.toLowerCase().replace(/\s+/g, '_');
+        if (map[low]) return map[low];
+        // strip code-like underscores for display
+        return (label || key).toString().replace(/_/g, ' ');
+      }
+
+      function showDetail(node) {
+        if (!detailEl || !node) return;
+        var d = node.data();
+        var title = lang() === 'en' ? (d.label_en || d.label) : (d.label_es || d.label);
+        var summary = lang() === 'en' ? (d.summary_en || d.summary) : d.summary;
+        var neighbors = node.neighborhood('node');
+        var neighHtml = '';
+        neighbors.forEach(function (nb) {
+          var nd = nb.data();
+          var edge = node.edgesWith(nb)[0];
+          var pred = '';
+          if (edge) {
+            pred = lang() === 'en'
+              ? (edge.data('predicate_en') || edge.data('predicate'))
+              : (edge.data('predicate_es') || edge.data('predicate'));
+          }
+          var nl = lang() === 'en' ? (nd.label_en || nd.label) : (nd.label_es || nd.label);
+          neighHtml += '<li><span class="onto-pred">' + plainPred(pred, edge ? edge.data('predicate') : '') + '</span> → <strong>' + nl + '</strong></li>';
+        });
+        var neighTitle = lang() === 'en' ? 'Neighbours' : 'Vecinos';
+        /* PASS3_ONTO_SHEET */
+        var actions = '';
+        var studioMap = {
+          terr_los_cabos: '/studio/los_cabos/',
+          terr_la_paz: '/studio/la_paz/',
+          terr_loreto: '/studio/loreto/',
+          terr_comondu: '/studio/comondu/',
+          terr_mulege: '/studio/mulege/',
+          terr_bcs: '/studio/bcs/'
+        };
+        if (studioMap[d.id]) {
+          actions += '<a class="btn" href="' + studioMap[d.id] + '">' + (lang()==='en'?'Dossier':'Ficha') + '</a>';
+        }
+        if (String(d.id).indexOf('proj_fed_') === 0 || d.type === 'Project') {
+          actions += '<a class="btn secondary" href="/mapas/?layers=federal_projects">' + (lang()==='en'?'Map':'Mapa') + '</a>';
+        }
+        if (d.id === 'rc_sibcs' || d.id === 'proj_p23_bs1' || d.id === 'rc_plant_sol_insurgentes') {
+          actions += '<a class="btn secondary" href="/mapas/?layers=energy_assets">' + (lang()==='en'?'Energy map':'Mapa energía') + '</a>';
+        }
+        if (String(d.id).indexOf('proj_fed_') === 0) {
+          var fedId = d.id.replace('proj_','').replace(/_/g,'-').toUpperCase().replace('FED-','FED-');
+          // proj_fed_ene_001 -> FED-ENE-001
+          var m = /^proj_fed_([a-z]+)_([0-9]+)$/.exec(d.id);
+          if (m) fedId = 'FED-' + m[1].toUpperCase() + '-' + m[2];
+          actions += '<a class="btn secondary" href="/proyectos-federales/?q=' + encodeURIComponent(fedId) + '">' + (lang()==='en'?'Inventory':'Inventario') + '</a>';
+        }
+        if (d.evidence_path && String(d.evidence_path).indexOf('http') === 0) {
+          actions += '<a class="btn secondary" href="' + d.evidence_path + '" target="_blank" rel="noopener">' + (lang()==='en'?'Source':'Fuente') + '</a>';
+        }
+        detailEl.innerHTML =
+          '<span class="onto-type">' + typeLabel(d.type) + '</span>' +
+          '<h4>' + title + '</h4>' +
+          '<p style="margin:0 0 0.5rem">' + (summary || '') + '</p>' +
+          '' + /* hide technical node id */
+          (actions ? '<p class="onto-detail-actions" style="display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.65rem 0 0">' + actions + '</p>' : '') +
+          (neighHtml
+            ? '<p style="margin:0.75rem 0 0.2rem;font-weight:600">' + neighTitle + '</p><ul>' + neighHtml + '</ul>'
+            : '');
+      }
+
+      function clearHighlight() {
+        if (!cy) return;
+        focusNodeId = null;
+        cy.elements().removeClass('faded highlighted focus-center');
+      }
+
+      function highlight(node) {
+        if (!cy) return;
+        clearHighlight();
+        focusNodeId = node.id();
+        var neighborhood = node.closedNeighborhood();
+        cy.elements().addClass('faded');
+        neighborhood.removeClass('faded').addClass('highlighted');
+        node.addClass('focus-center');
+        applyZoomStyles();
+      }
+
+      function clamp(v, lo, hi) {
+        return Math.max(lo, Math.min(hi, v));
+      }
+
+      /** Inverse-zoom font-size (screen-space) + label density / focus contrast */
+      function applyZoomStyles() {
+        if (!cy) return;
+        var z = Math.max(cy.zoom(), 0.05);
+        /* Hide bulk labels when zoomed out; always show focus/selection */
+        var showAllLabels = z >= LABEL_ZOOM;
+        /* At high zoom with a locked focus, only selected + neighbours keep labels */
+        var denseFocus = !!focusNodeId && z >= DETAIL_ZOOM;
+
+        /* Screen-space font shrinks slightly as zoom rises (fits dense clusters) */
+        var screenFont = clamp(
+          BASE_SCREEN_FONT / Math.pow(Math.max(z, 0.45), 0.55),
+          MIN_SCREEN_FONT,
+          MAX_SCREEN_FONT
+        );
+        /* Model units → Cytoscape scales by zoom, so /z keeps screen size ≈ screenFont */
+        var fontSize = screenFont / z;
+        var focusScreen = clamp(screenFont + 1.5, MIN_SCREEN_FONT + 1, MAX_SCREEN_FONT + 1);
+        var focusFont = focusScreen / z;
+
+        /* Nodes stay roughly constant on screen (slight grow when zoomed out) */
+        var nodeScreen = z < 0.7 ? 11 : (z < DETAIL_ZOOM ? 10 : 9);
+        var nodeSize = nodeScreen / z;
+        var dqSize = nodeSize * 1.35;
+
+        var edgeW = (z < 0.7 ? 0.9 : (z < DETAIL_ZOOM ? 1.15 : 1.35)) / Math.sqrt(z);
+        var edgeOp = z < 0.7 ? 0.22 : (z < DETAIL_ZOOM ? 0.38 : 0.5);
+        /* ~78–110 px on screen, wrapping long names to ~2 lines */
+        var textMax = clamp(88 / z, 28, 220);
+        var bgOp = showAllLabels ? 0.88 : 0.75;
+        var typeMargin = {
+          Territory: 3, Instrument: 5, ResourceCapacity: 4, DemandDriver: 6,
+          Constraint: 7, Actor: 5, Project: 8, Evidence: 4, DecisionQuestion: 9
+        };
+
+        cy.batch(function () {
+          cy.nodes().forEach(function (n) {
+            var isFocus = n.hasClass('highlighted') || n.hasClass('focus-center') || n.grabbed();
+            var faded = n.hasClass('faded');
+            var show = isFocus || (showAllLabels && !denseFocus && !faded);
+            if (denseFocus && faded) show = false;
+            var fs = isFocus ? focusFont : fontSize;
+            var sz = n.data('type') === 'DecisionQuestion'
+              ? (isFocus ? dqSize * 1.12 : dqSize)
+              : (isFocus ? nodeSize * 1.2 : nodeSize);
+            var raw = show ? (n.data('label') || '') : '';
+            /* Truncate long labels at mid/low zoom; full wrap when zoomed in or focused */
+            var lab = raw;
+            if (raw && !isFocus && z < DETAIL_ZOOM && raw.length > 26) {
+              lab = raw.slice(0, 24).replace(/\s+\S*$/, '') + '…';
+              if (lab.length < 8) lab = raw.slice(0, 23) + '…';
+            }
+            n.style({
+              'label': lab,
+              'font-size': fs,
+              'font-weight': isFocus ? 600 : 500,
+              'color': '#23374a',
+              'text-outline-color': '#fbf8f1',
+              'text-outline-width': show ? (isFocus ? 2.5 : 1.75) / Math.max(z, 0.6) : 0,
+              'text-outline-opacity': show ? 0.95 : 0,
+              'text-background-color': '#fbf8f1',
+              'text-background-opacity': show ? (isFocus ? 0.94 : bgOp) : 0,
+              'text-background-padding': show ? 2 / Math.max(z, 0.7) : 0,
+              'text-max-width': textMax,
+              'text-wrap': 'wrap',
+              'text-margin-y': (typeMargin[n.data('type')] || 5) / Math.max(z, 0.7),
+              'width': sz,
+              'height': sz,
+              'opacity': faded ? 0.12 : 1,
+            });
+          });
+
+          cy.edges().forEach(function (e) {
+            var hi = e.hasClass('highlighted');
+            var faded = e.hasClass('faded');
+            if (hi) {
+              e.style({
+                'width': Math.max(edgeW * 1.7, 1.6 / z),
+                'opacity': 0.95,
+                'line-color': '#34607d',
+                'target-arrow-color': '#34607d',
+                'curve-style': 'bezier',
+                'target-arrow-shape': 'triangle',
+              });
+            } else if (faded) {
+              e.style({
+                'width': edgeW * 0.7,
+                'opacity': 0.08,
+                'line-color': '#c5d6e1',
+                'target-arrow-color': '#c5d6e1',
+                'curve-style': 'haystack',
+              });
+            } else {
+              e.style({
+                'width': edgeW,
+                'opacity': edgeOp,
+                'line-color': '#c5d6e1',
+                'target-arrow-color': '#c5d6e1',
+                'curve-style': 'haystack',
+              });
+            }
+          });
+        });
+      }
+
+      function updateLabels() {
+        applyZoomStyles();
+      }
+
+      function layoutOpts() {
+        if (scope === 'full') {
+          return {
+            name: 'concentric',
+            animate: false,
+            padding: FIT_PAD,
+            minNodeSpacing: 36,
+            concentric: function (n) { return n.data('concentric') || 1; },
+            levelWidth: function () { return 1; },
+            avoidOverlap: true,
+            spacingFactor: 1.22,
+          };
+        }
+        return {
+          name: 'cose',
+          animate: false,
+          padding: FIT_PAD,
+          nodeRepulsion: function () { return 22000; },
+          idealEdgeLength: function () { return 125; },
+          nestingFactor: 1.2,
+          gravity: 0.28,
+          numIter: 1000,
+          initialTemp: 220,
+          coolingFactor: 0.95,
+          minTemp: 1.0,
+          componentSpacing: 48,
+          nodeOverlap: 36,
+        };
+      }
+
+      function zoomToSelection() {
+        if (!cy) return;
+        var sel = cy.$('node.highlighted, node.focus-center');
+        if (!sel.length) {
+          var hovered = cy.$('node:active');
+          if (hovered.length) sel = hovered;
+        }
+        if (!sel.length) {
+          cy.animate({ fit: { eles: cy.elements(), padding: FIT_PAD }, duration: 260 });
+          return;
+        }
+        var eles = sel.closedNeighborhood();
+        cy.animate({
+          fit: { eles: eles, padding: FIT_PAD + 12 },
+          duration: 280,
+        });
+      }
+
+      function initCy() {
+        var elements = buildElements(scope === 'core');
+        if (cy) {
+          cy.destroy();
+          cy = null;
+        }
+        focusNodeId = null;
+        cy = cytoscape({
+          container: cyEl,
+          elements: elements,
+          style: [
+            {
+              selector: 'node',
+              style: {
+                'background-color': 'data(color)',
+                'label': 'data(label)',
+                'color': '#23374a',
+                'font-size': 10,
+                'font-weight': 500,
+                'font-family': 'Inter, system-ui, sans-serif',
+                'text-wrap': 'wrap',
+                'text-max-width': 88,
+                'text-valign': 'bottom',
+                'text-halign': 'center',
+                'text-margin-y': 5,
+                'text-outline-color': '#fbf8f1',
+                'text-outline-width': 2,
+                'text-outline-opacity': 0.9,
+                'text-background-color': '#fbf8f1',
+                'text-background-opacity': 0.82,
+                'text-background-padding': 2,
+                'text-background-shape': 'roundrectangle',
+                'width': 12,
+                'height': 12,
+                'border-width': 2,
+                'border-color': '#fbf8f1',
+                'overlay-padding': 4,
+                'min-zoomed-font-size': 0,
+              },
+            },
+            {
+              selector: 'node[type = "DecisionQuestion"]',
+              style: {
+                'shape': 'diamond',
+                'width': 18,
+                'height': 18,
+                'background-color': '#34607d',
+              },
+            },
+            {
+              selector: 'edge',
+              style: {
+                'width': 1,
+                'line-color': '#c5d6e1',
+                'target-arrow-color': '#c5d6e1',
+                'target-arrow-shape': 'triangle',
+                'curve-style': 'haystack',
+                'haystack-radius': 0.55,
+                'arrow-scale': 0.65,
+                'opacity': 0.35,
+              },
+            },
+            {
+              selector: '.faded',
+              style: { opacity: 0.12 },
+            },
+            {
+              selector: 'node.highlighted',
+              style: {
+                opacity: 1,
+                'border-width': 3,
+                'border-color': '#34607d',
+                'z-index': 999,
+              },
+            },
+            {
+              selector: 'node.focus-center',
+              style: {
+                opacity: 1,
+                'border-width': 4,
+                'border-color': '#2a5069',
+                'z-index': 1000,
+              },
+            },
+            {
+              selector: 'edge.highlighted',
+              style: {
+                'curve-style': 'bezier',
+                'line-color': '#34607d',
+                'target-arrow-color': '#34607d',
+                'target-arrow-shape': 'triangle',
+                width: 2.4,
+                opacity: 0.95,
+                'z-index': 998,
+              },
+            },
+          ],
+          layout: layoutOpts(),
+          minZoom: 0.15,
+          maxZoom: 4.5,
+          wheelSensitivity: 0.18,
+          userZoomingEnabled: true,
+          userPanningEnabled: true,
+          boxSelectionEnabled: false,
+          autoungrabify: false,
+        });
+
+        cy.on('tap', 'node', function (evt) {
+          var node = evt.target;
+          highlight(node);
+          showDetail(node);
+          cy.animate({
+            fit: { eles: node.closedNeighborhood(), padding: FIT_PAD + 8 },
+            duration: 280,
+          });
+        });
+        cy.on('tap', function (evt) {
+          if (evt.target === cy) {
+            clearHighlight();
+            applyZoomStyles();
+            detailEl.innerHTML =
+              lang() === 'en'
+                ? '<p class="meta">Select a node to see its card and neighbours.</p>'
+                : '<p class="meta">Selecciona un nodo para ver su ficha y vecinos.</p>';
+          }
+        });
+        cy.on('mouseover', 'node', function (evt) {
+          var n = evt.target;
+          /* Soft 1-hop preview when nothing is locked by click */
+          if (!focusNodeId) {
+            cy.elements().removeClass('faded highlighted focus-center');
+            cy.elements().addClass('faded');
+            n.closedNeighborhood().removeClass('faded').addClass('highlighted');
+            n.addClass('focus-center');
+            applyZoomStyles();
+          } else {
+            var hz = Math.max(cy.zoom(), 0.05);
+            n.style({
+              'label': n.data('label'),
+              'font-size': clamp(12 / Math.pow(Math.max(hz, 0.45), 0.55), 8, 13) / hz,
+              'font-weight': 600,
+              'text-outline-width': 2.5 / Math.max(hz, 0.6),
+              'text-background-opacity': 0.94,
+            });
+          }
+        });
+        cy.on('mouseout', 'node', function () {
+          if (!focusNodeId) {
+            cy.elements().removeClass('faded highlighted focus-center');
+            applyZoomStyles();
+          } else {
+            var sel = cy.getElementById(focusNodeId);
+            if (sel.length) {
+              cy.elements().removeClass('faded highlighted focus-center');
+              cy.elements().addClass('faded');
+              sel.closedNeighborhood().removeClass('faded').addClass('highlighted');
+              sel.addClass('focus-center');
+            }
+            applyZoomStyles();
+          }
+        });
+        cy.on('zoom pan', function () { applyZoomStyles(); });
+        window.__ontoCy = cy;
+        setupTypeSeg();
+        function fitAfterLayout() {
+          try {
+            cy.resize();
+            cy.fit(cy.nodes(), 56);
+            applyZoomStyles();
+          } catch (eFit) {}
+        }
+        cy.one('layoutstop', function () { fitAfterLayout(); });
+        /* fallback if layout already finished or is continuous */
+        setTimeout(fitAfterLayout, 120);
+        setTimeout(fitAfterLayout, 600);
+        setTimeout(fitAfterLayout, 1400);
+        setTimeout(fitAfterLayout, 2400);
+        window.addEventListener('resize', function () {
+          try { cy.resize(); } catch (e) {}
+          fitAfterLayout();
+        });
+        /* PASS3_ONTO_NODE_BOOT */
+        setTimeout(function () {
+          try {
+            var nodeQ = new URLSearchParams(location.search).get('node') || 'rc_sibcs';
+            var n0 = cy.getElementById(nodeQ);
+            if (!(n0 && n0.length)) n0 = cy.getElementById('proj_fed_ene_001');
+            if (!(n0 && n0.length) && cy.nodes().length) n0 = cy.nodes().first();
+            if (n0 && n0.length) {
+              highlight(n0);
+              showDetail(n0);
+              try { cy.fit(n0.closedNeighborhood(), 48); } catch (e2) {}
+            }
+          } catch (e) { console.warn('onto boot', e); }
+        }, 400);
+      }
+
+      function relabelNodes() {
+        if (!cy) return;
+        cy.nodes().forEach(function (n) {
+          var d = n.data();
+          n.data('label', lang() === 'en' ? (d.label_en || d.label_es) : d.label_es);
+        });
+        applyZoomStyles();
+        renderLegend();
+        setupTypeSeg();
+
+        syncFilterLabels();
+        var sel = cy.$('node.focus-center, node.highlighted');
+        if (sel.length) showDetail(sel[0]);
+        if (searchEl) {
+          searchEl.placeholder = lang() === 'en' ? 'Search…' : 'Buscar…';
+        }
+      }
+
+      function setScope(next) {
+        scope = next;
+        document.querySelectorAll('.onto-scope').forEach(function (btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-scope') === next);
+        });
+        if (filtersEl) filtersEl.hidden = next !== 'full';
+        initCy();
+        renderLegend();
+      }
+
+      function focusSearch(q) {
+        if (!cy || !q) return;
+        var ql = q.trim().toLowerCase();
+        if (!ql) return;
+        var hit = cy.nodes().filter(function (n) {
+          var d = n.data();
+          var hay = ((d.label_es || '') + ' ' + (d.label_en || '') + ' ' + d.id + ' ' + (d.type || '')).toLowerCase();
+          return hay.indexOf(ql) !== -1;
+        });
+        if (!hit.length) return;
+        var node = hit[0];
+        highlight(node);
+        showDetail(node);
+        cy.animate({
+          fit: { eles: node.closedNeighborhood(), padding: FIT_PAD + 8 },
+          duration: 280,
+        });
+      }
+
+      document.getElementById('onto-scope-core')?.addEventListener('click', function () {
+        setScope('core');
+      });
+      document.getElementById('onto-scope-full')?.addEventListener('click', function () {
+        setScope('full');
+      });
+      document.getElementById('onto-zoom-sel')?.addEventListener('click', function () {
+        zoomToSelection();
+      });
+      document.getElementById('onto-reset')?.addEventListener('click', function () {
+        if (!cy) return;
+        clearHighlight();
+        applyZoomStyles();
+        cy.fit(undefined, FIT_PAD);
+        cy.center();
+        if (searchEl) searchEl.value = '';
+        detailEl.innerHTML =
+          lang() === 'en'
+            ? '<p class="meta">Select a node to see its card and neighbours.</p>'
+            : '<p class="meta">Selecciona un nodo para ver su ficha y vecinos.</p>';
+      });
+      (function setupExpand() {
+        var shell = document.getElementById('onto-graph-shell');
+        var btn = document.getElementById('onto-expand');
+        if (!shell || !btn) return;
+        function setLabel(fs) {
+          var es = btn.querySelector('[data-lang-es]');
+          var en = btn.querySelector('[data-lang-en]');
+          if (es) es.textContent = fs ? 'Cerrar' : 'Ampliar';
+          if (en) en.textContent = fs ? 'Close' : 'Expand';
+          btn.setAttribute('aria-pressed', fs ? 'true' : 'false');
+        }
+        function refreshCy() {
+          if (!cy) return;
+          requestAnimationFrame(function () {
+            cy.resize();
+            applyZoomStyles();
+          });
+        }
+        btn.addEventListener('click', function () {
+          var fs = !shell.classList.contains('onto-fullscreen');
+          shell.classList.toggle('onto-fullscreen', fs);
+          shell.classList.toggle('onto-expanded', fs);
+          document.body.classList.toggle('onto-fs-active', fs);
+          setLabel(fs);
+          refreshCy();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && shell.classList.contains('onto-fullscreen')) {
+            shell.classList.remove('onto-fullscreen', 'onto-expanded');
+            document.body.classList.remove('onto-fs-active');
+            setLabel(false);
+            refreshCy();
+          }
+        });
+        window.addEventListener('resize', function () {
+          if (cy) { cy.resize(); applyZoomStyles(); }
+        });
+      })();
+      hideIsolatesEl?.addEventListener('change', function () {
+        initCy();
+      });
+      var searchTimer = null;
+      searchEl?.addEventListener('input', function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function () { focusSearch(searchEl.value); }, 180);
+      });
+      searchEl?.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          focusSearch(searchEl.value);
+        }
+      });
+
+      document.addEventListener('bcs:lang', relabelNodes);
+
+      buildFilterUI();
+      if (filtersEl) filtersEl.hidden = true;
+
+      function applyHashFocus() {
+        try {
+          var h = (location.hash || '').replace(/^#/, '');
+          if (!h || h.indexOf('=') >= 0) return;
+          var id = decodeURIComponent(h);
+          if (!id) return;
+          if (searchEl) searchEl.value = id;
+          focusSearch(id);
+        } catch (e) {}
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          initCy();
+          renderLegend();
+          setTimeout(applyHashFocus, 120);
+        });
+      } else {
+        initCy();
+        renderLegend();
+        setTimeout(applyHashFocus, 120);
+      }
+      window.addEventListener('hashchange', applyHashFocus);
+    })();
+  </script>
+</BaseLayout>

@@ -1,0 +1,864 @@
+{
+  "note": "Every news item ever published in the portal feed (key = normalised URL). Checked by `update_bcs_news.py --check` during `npm run build`; remove items only with `--remove <url>`.",
+  "items": {
+    "u:elmomentobcs.mx/2026/10/07/trayectoria-del-huracan-rachel-apunta-a-baja-california-sur": {
+      "url": "https://elmomentobcs.mx/2026/10/07/trayectoria-del-huracan-rachel-apunta-a-baja-california-sur/",
+      "title_es": "Trayectoria del huracán Rachel apunta de nuevo a Baja California Sur",
+      "date": "2026-10-07",
+      "first_seen": "2026-10-08"
+    },
+    "u:informador.mx/mexico/huracan-rachel-apunta-a-baja-california-sur-lo-que-debes-saber-sobre-su-cambio-de-ruta-20261007-0044.html": {
+      "url": "https://www.informador.mx/mexico/huracan-rachel-apunta-a-baja-california-sur-lo-que-debes-saber-sobre-su-cambio-de-ruta-20261007-0044.html",
+      "title_es": "Rachel cambia de ruta: el SMN prevé olas de 3 a 5 m en la península el fin de semana",
+      "date": "2026-10-07",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/efectos-depresion-20-e-bcs-smn": {
+      "url": "https://tribunademexico.com/efectos-depresion-20-e-bcs-smn/",
+      "title_es": "Depresión Tropical 20-E podría traer oleaje y lluvias al sur de BCS",
+      "date": "2026-10-07",
+      "first_seen": "2026-10-08"
+    },
+    "u:meganoticias.mx/la-paz/noticia/el-niño-provoca-blanqueamiento-del-70-de-corales-alertan-expertos/776840": {
+      "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-provoca-blanqueamiento-del-70-de-corales-alertan-expertos/776840",
+      "title_es": "El Niño blanquea entre 60 y 70% de los corales de Loreto a Los Cabos",
+      "date": "2026-10-07",
+      "first_seen": "2026-10-08"
+    },
+    "u:meganoticias.mx/los-cabos/noticia/tercer-trimestre-de-este-año-sera-mejor-en-ocupación-hotelera-que-2025/776982": {
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/tercer-trimestre-de-este-a%C3%B1o-sera-mejor-en-ocupaci%C3%B3n-hotelera-que-2025/776982",
+      "title_es": "Hoteleros de Los Cabos esperan un último trimestre mejor que 2025",
+      "date": "2026-10-07",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/supervisa-reactivacion-bacheo-csl": {
+      "url": "https://tribunademexico.com/supervisa-reactivacion-bacheo-csl/",
+      "title_es": "Los Cabos reactiva bacheo masivo en Cabo San Lucas tras las lluvias",
+      "date": "2026-10-07",
+      "first_seen": "2026-10-08"
+    },
+    "u:elcongresista.mx/politica/baja-california-sur/huracan-rachel-impacto-baja-california-sur": {
+      "url": "https://elcongresista.mx/politica/baja-california-sur/huracan-rachel-impacto-baja-california-sur",
+      "title_es": "Huracán Rachel podría tocar tierra en BCS entre el 11 y 12 de octubre",
+      "date": "2026-10-06",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/bcs-personas-desaparecidas-desastres-naturales": {
+      "url": "https://tribunademexico.com/bcs-personas-desaparecidas-desastres-naturales/",
+      "title_es": "BCS publica protocolo para buscar a personas desaparecidas tras desastres naturales",
+      "date": "2026-10-06",
+      "first_seen": "2026-10-08"
+    },
+    "u:elmundodigital.com.mx/los-tres-pueblos-magicos-de-bcs-se-preparan-para-conquistar-mas-visitantes": {
+      "url": "https://elmundodigital.com.mx/los-tres-pueblos-magicos-de-bcs-se-preparan-para-conquistar-mas-visitantes/",
+      "title_es": "Los tres Pueblos Mágicos de BCS se preparan para atraer más visitantes",
+      "date": "2026-10-06",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/rachel-categoria-1-aleja-bcs": {
+      "url": "https://tribunademexico.com/rachel-categoria-1-aleja-bcs/",
+      "title_es": "Huracán Rachel baja a categoría 1 y se aleja de BCS, con oleaje de hasta 3.5 m",
+      "date": "2026-10-05",
+      "first_seen": "2026-10-08"
+    },
+    "u:agua.org.mx/mexico-despliega-conagua-operativos-por-lluvias-en-3-estados-mvs-noticias": {
+      "url": "https://agua.org.mx/mexico-despliega-conagua-operativos-por-lluvias-en-3-estados-mvs-noticias/",
+      "title_es": "Conagua despliega operativos por lluvias; en Comondú ya desalojó casi 65 mil m³ de agua",
+      "date": "2026-10-05",
+      "first_seen": "2026-10-08"
+    },
+    "u:razon.com.mx/mexico/2026/10/04/huracan-rachel-se-fortalece-nuevamente-a-categoria-2-preven-lluvias-muy-fuertes-en-bcs": {
+      "url": "https://www.razon.com.mx/mexico/2026/10/04/huracan-rachel-se-fortalece-nuevamente-a-categoria-2-preven-lluvias-muy-fuertes-en-bcs/",
+      "title_es": "Rachel se fortalece de nuevo a categoría 2; prevén lluvias muy fuertes en el sur de BCS",
+      "date": "2026-10-04",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/el-pvem-pide-frenar-la-sobreedificacion-en-los-cabos-mediante-planes-de-desarrollo-urbano": {
+      "url": "https://tribunademexico.com/el-pvem-pide-frenar-la-sobreedificacion-en-los-cabos-mediante-planes-de-desarrollo-urbano/",
+      "title_es": "PVEM pide frenar la sobreedificación en Los Cabos con planes de desarrollo urbano",
+      "date": "2026-10-03",
+      "first_seen": "2026-10-08"
+    },
+    "u:informador.mx/mexico/huracan-rachel-de-categoria-1-provoca-lluvias-fuertes-en-baja-california-sur-20261003-0093.html": {
+      "url": "https://www.informador.mx/mexico/huracan-rachel-de-categoria-1-provoca-lluvias-fuertes-en-baja-california-sur-20261003-0093.html",
+      "title_es": "Huracán Rachel provoca inundaciones y crecidas de arroyos en Los Cabos",
+      "date": "2026-10-03",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/cabos-ocupacion-temporada-alta": {
+      "url": "https://tribunademexico.com/cabos-ocupacion-temporada-alta/",
+      "title_es": "Los Cabos proyecta 76% de ocupación hotelera en octubre, un punto más que en 2025",
+      "date": "2026-10-02",
+      "first_seen": "2026-10-08"
+    },
+    "u:624noticias.com/se-abre-la-bocana-del-estero-de-san-jose-un-ciclo-natural-que-nos-invita-a-cuidar-la-cuenca": {
+      "url": "https://624noticias.com/se-abre-la-bocana-del-estero-de-san-jose-un-ciclo-natural-que-nos-invita-a-cuidar-la-cuenca/",
+      "title_es": "Se abre la bocana del Estero de San José tras Polo y Rachel; llaman a cuidar la cuenca",
+      "date": "2026-10-02",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/el-pvem-urge-atender-falta-del-agua-en-bcs-no-bastara-la-desaladora-que-se-construye-en-los-cabos": {
+      "url": "https://tribunademexico.com/el-pvem-urge-atender-falta-del-agua-en-bcs-no-bastara-la-desaladora-que-se-construye-en-los-cabos/",
+      "title_es": "PVEM: no bastará la desaladora en construcción en Los Cabos; plantea una mega planta del triple de capacidad",
+      "date": "2026-10-02",
+      "first_seen": "2026-10-08"
+    },
+    "u:meganoticias.mx/los-cabos/noticia/compra-de-la-planta-de-tratamiento-fonatur-se-estanca-entre-deudas/775076": {
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/compra-de-la-planta-de-tratamiento-fonatur-se-estanca-entre-deudas/775076",
+      "title_es": "Compra de la planta de tratamiento Fonatur en San José del Cabo se estanca entre deudas",
+      "date": "2026-10-01",
+      "first_seen": "2026-10-08"
+    },
+    "u:eclipsebcs.com.mx/mision-cumplida-cfe-restablece-a-la-normalidad-el-servicio-electrico-del-100-de-los-usuarios-afectados-por-el-huracan-polo": {
+      "url": "https://eclipsebcs.com.mx/mision-cumplida-cfe-restablece-a-la-normalidad-el-servicio-electrico-del-100-de-los-usuarios-afectados-por-el-huracan-polo/",
+      "title_es": "CFE restablece el 100% del servicio a los usuarios afectados por el huracán Polo",
+      "date": "2026-10-01",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/rachel-suspension-clases-cabos": {
+      "url": "https://tribunademexico.com/rachel-suspension-clases-cabos/",
+      "title_es": "Rachel: Protección Civil suspende clases en Los Cabos el 1 de octubre",
+      "date": "2026-10-01",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/10/01/arranca-obra-de-29-7-mdp-en-el-principal-acceso-a-loreto": {
+      "url": "https://diariohumano.com.mx/2026/10/01/arranca-obra-de-29-7-mdp-en-el-principal-acceso-a-loreto/",
+      "title_es": "Arranca obra de 29.7 mdp en el principal acceso a Loreto",
+      "date": "2026-10-01",
+      "first_seen": "2026-10-08"
+    },
+    "u:hoybcs.com/rachel-ya-es-huracan-categoria-2-y-se-ubica-al-sur-de-los-cabos-mantiene-trayectoria-hacia-mar-abierto": {
+      "url": "https://hoybcs.com/rachel-ya-es-huracan-categoria-2-y-se-ubica-al-sur-de-los-cabos-mantiene-trayectoria-hacia-mar-abierto/",
+      "title_es": "Rachel ya es huracán categoría 2 al sur de Los Cabos; mantiene trayectoria a mar abierto",
+      "date": "2026-10-01",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/rachel-huracan-sur-cabos-san-lucas": {
+      "url": "https://tribunademexico.com/rachel-huracan-sur-cabos-san-lucas/",
+      "title_es": "Huracán Rachel categoría 1 se ubica al sur-sureste de Cabo San Lucas",
+      "date": "2026-09-30",
+      "first_seen": "2026-10-08"
+    },
+    "u:eluniversal.com.mx/estados/retiran-agua-y-rehabilitan-caminos-en-comunidades-afectadas-por-polo-en-bcs-despliegan-brigada-de-200-personas": {
+      "url": "https://www.eluniversal.com.mx/estados/retiran-agua-y-rehabilitan-caminos-en-comunidades-afectadas-por-polo-en-bcs-despliegan-brigada-de-200-personas/",
+      "title_es": "Tras Polo, retiran agua y rehabilitan caminos en Comondú y Mulegé; brigada de 200 en Heroica Mulegé",
+      "date": "2026-09-30",
+      "first_seen": "2026-10-08"
+    },
+    "u:luznoticias.mx/2026-09-30/mexico/cfe-restablece-la-luz-a-11-mil-usuarios-tras-polo-cuantos-siguen-sin-servicio-en-bcs-y-sonora/307538": {
+      "url": "https://www.luznoticias.mx/2026-09-30/mexico/cfe-restablece-la-luz-a-11-mil-usuarios-tras-polo-cuantos-siguen-sin-servicio-en-bcs-y-sonora/307538",
+      "title_es": "CFE restablece luz a 11,488 usuarios tras Polo; 9,562 siguen sin servicio en BCS y Sonora",
+      "date": "2026-09-30",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/rachel-puertos": {
+      "url": "https://tribunademexico.com/rachel-puertos/",
+      "title_es": "Cierran puertos de Cabo San Lucas y San José del Cabo a navegación menor por Rachel",
+      "date": "2026-09-30",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/bcs-recuperacion-tras-polo": {
+      "url": "https://tribunademexico.com/bcs-recuperacion-tras-polo/",
+      "title_es": "Tras Polo, BCS inicia labores de recuperación: CFE atiende a 20 mil usuarios y limpian la Transpeninsular",
+      "date": "2026-09-29",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/huracan-polo-saldo-blanco-bcs": {
+      "url": "https://tribunademexico.com/huracan-polo-saldo-blanco-bcs/",
+      "title_es": "Huracán Polo deja saldo blanco en BCS tras impactar como categoría 2 en Comondú",
+      "date": "2026-09-29",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/29/saldo-blanco-y-bcs-vuelve-a-clases-pero-recuperacion-continua": {
+      "url": "https://diariohumano.com.mx/2026/09/29/saldo-blanco-y-bcs-vuelve-a-clases-pero-recuperacion-continua/",
+      "title_es": "Saldo blanco y BCS vuelve a clases, pero recuperación eléctrica y vial continúa",
+      "date": "2026-09-29",
+      "first_seen": "2026-10-08"
+    },
+    "u:infobae.com/mexico/2026/09/29/huracan-polo-deja-saldo-blanco-a-su-paso-por-baja-california-sur-reporta-el-gobernador-victor-manuel": {
+      "url": "https://www.infobae.com/mexico/2026/09/29/huracan-polo-deja-saldo-blanco-a-su-paso-por-baja-california-sur-reporta-el-gobernador-victor-manuel/",
+      "title_es": "Huracán Polo deja saldo blanco en BCS, reporta el gobernador Víctor Castro",
+      "date": "2026-09-29",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/huracan-polo-rompe-bordo-de-proteccion-en-puerto": {
+      "url": "https://tribunademexico.com/huracan-polo-rompe-bordo-de-proteccion-en-puerto/",
+      "title_es": "Huracán Polo rompe bordo de protección en Puerto San Carlos; evacúan a 400 personas",
+      "date": "2026-09-28",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/activan-7-albergues-y-suspenden-comercios-en-loreto-por-la-llegada-del-huracan-polo-paz-del-alma-ochoa-amador": {
+      "url": "https://tribunademexico.com/activan-7-albergues-y-suspenden-comercios-en-loreto-por-la-llegada-del-huracan-polo-paz-del-alma-ochoa-amador/",
+      "title_es": "Activan 7 albergues y suspenden comercios en Loreto por la llegada del huracán Polo",
+      "date": "2026-09-28",
+      "first_seen": "2026-10-08"
+    },
+    "u:impactonoticias.com.mx/mexico/activan-plan-dn-iii-e-en-baja-california-sur-por-huracan-polo-evacuan-a-familias": {
+      "url": "https://impactonoticias.com.mx/mexico/activan-plan-dn-iii-e-en-baja-california-sur-por-huracan-polo-evacuan-a-familias/",
+      "title_es": "Activan Plan DN-III-E en BCS por huracán Polo; 1,689 elementos con foco en Comondú",
+      "date": "2026-09-28",
+      "first_seen": "2026-10-08"
+    },
+    "u:ntcd.mx/noticias-huracan-polo-impactara-hoy-baja-california-sur-suspenden-movilidad": {
+      "url": "https://ntcd.mx/noticias-huracan-polo-impactara-hoy-baja-california-sur-suspenden-movilidad",
+      "title_es": "Polo (Cat. 3) impacta BCS; suspenden movilidad en el norte y reportan 78 evacuados",
+      "date": "2026-09-28",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/huracan-polo-toca-tierra-comondu-sonora": {
+      "url": "https://tribunademexico.com/huracan-polo-toca-tierra-comondu-sonora/",
+      "title_es": "Huracán Polo toca tierra en Comondú y avanza hacia Sonora",
+      "date": "2026-09-28",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/coordinan-acciones-en-bcs-ante-inminente": {
+      "url": "https://tribunademexico.com/coordinan-acciones-en-bcs-ante-inminente/",
+      "title_es": "Coordinan acciones en BCS ante inminente impacto del huracán Polo en Comondú, Loreto y Mulegé",
+      "date": "2026-09-27",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/plan-marina-baja-california-sur-huracan-polo": {
+      "url": "https://tribunademexico.com/plan-marina-baja-california-sur-huracan-polo/",
+      "title_es": "Despliegan Plan Marina en BCS con 2,923 elementos y 111 refugios por el huracán Polo",
+      "date": "2026-09-27",
+      "first_seen": "2026-10-08"
+    },
+    "u:gringogazette.com/polo-weakens-to-cat-3-beaches-ports-stay-closed": {
+      "url": "https://gringogazette.com/polo-weakens-to-cat-3-beaches-ports-stay-closed/",
+      "title_es": "Polo se debilita a categoría 3; playas y puertos de BCS siguen cerrados",
+      "date": "2026-09-27",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/continuan-puertos-cerrados-bcs-polo": {
+      "url": "https://tribunademexico.com/continuan-puertos-cerrados-bcs-polo/",
+      "title_es": "Continúan puertos cerrados en BCS por la amenaza del huracán Polo",
+      "date": "2026-09-26",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/el-huracan-polo-impactara-la-porcion-central-de-baja-california-sur-este-lunes-a-las-1800-horas-como-categoria-2": {
+      "url": "https://tribunademexico.com/el-huracan-polo-impactara-la-porcion-central-de-baja-california-sur-este-lunes-a-las-1800-horas-como-categoria-2/",
+      "title_es": "Huracán Polo impactará el centro de BCS el lunes como categoría 2",
+      "date": "2026-09-26",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/26/polo-podria-impactar-bcs-como-huracan-de-categoria-1-o-2-preven-lluvias-torrenciales-y-oleaje-de-10-metros": {
+      "url": "https://diariohumano.com.mx/2026/09/26/polo-podria-impactar-bcs-como-huracan-de-categoria-1-o-2-preven-lluvias-torrenciales-y-oleaje-de-10-metros/",
+      "title_es": "Polo podría impactar BCS como Cat. 1 o 2; prevén lluvias torrenciales y oleaje de 10 metros",
+      "date": "2026-09-26",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/26/preparan-evacuacion-de-el-chicharron-y-evaluan-traslados-en-loreto-ante-huracan-polo": {
+      "url": "https://diariohumano.com.mx/2026/09/26/preparan-evacuacion-de-el-chicharron-y-evaluan-traslados-en-loreto-ante-huracan-polo/",
+      "title_es": "Preparan evacuación de El Chicharrón y evalúan traslados en Loreto ante Polo",
+      "date": "2026-09-26",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/25/refuerzan-calles-y-desazolves-en-la-paz-ante-llegada-de-polo": {
+      "url": "https://diariohumano.com.mx/2026/09/25/refuerzan-calles-y-desazolves-en-la-paz-ante-llegada-de-polo/",
+      "title_es": "Refuerzan calles y desazolves en La Paz ante llegada de Polo",
+      "date": "2026-09-25",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/25/suspenden-clases-en-todo-bcs-este-lunes-por-polo": {
+      "url": "https://diariohumano.com.mx/2026/09/25/suspenden-clases-en-todo-bcs-este-lunes-por-polo/",
+      "title_es": "Suspenden clases en todo BCS el lunes por huracán Polo",
+      "date": "2026-09-25",
+      "first_seen": "2026-10-08"
+    },
+    "u:elmundodigital.com.mx/oomsapas-activa-apoyo-emergente-por-falta-de-agua": {
+      "url": "https://elmundodigital.com.mx/oomsapas-activa-apoyo-emergente-por-falta-de-agua/",
+      "title_es": "OOMSAPAS activa apoyo emergente con pipas por ajustes en Desaladora 1 (Brisas del Pacífico)",
+      "date": "2026-09-25",
+      "first_seen": "2026-10-08"
+    },
+    "u:analisisbcs.com.mx/2026/09/24/oomsapas-los-cabos-implementa-programa-emergente-de-tandeo-por-ajustes-en-desaladora-1": {
+      "url": "https://analisisbcs.com.mx/2026/09/24/oomsapas-los-cabos-implementa-programa-emergente-de-tandeo-por-ajustes-en-desaladora-1/",
+      "title_es": "OOMSAPAS Los Cabos activa tandeo emergente por ajustes en Desaladora 1",
+      "date": "2026-09-24",
+      "first_seen": "2026-10-08"
+    },
+    "u:gringogazette.com/bcs-creates-first-climate-fund-to-finance-environmental-projects": {
+      "url": "https://gringogazette.com/bcs-creates-first-climate-fund-to-finance-environmental-projects/",
+      "title_es": "BCS lanza su primer fondo climático para financiar proyectos ambientales",
+      "date": "2026-09-24",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/huracan-polo-bcs-alerta-lluvias-impacto": {
+      "url": "https://tribunademexico.com/huracan-polo-bcs-alerta-lluvias-impacto/",
+      "title_es": "Consejo Estatal de Protección Civil en alerta por posible impacto del huracán Polo",
+      "date": "2026-09-24",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/fuga-de-aguas-negras-en-ampliacion-agustin-olachea": {
+      "url": "https://tribunademexico.com/fuga-de-aguas-negras-en-ampliacion-agustin-olachea/",
+      "title_es": "Fuga de aguas negras inunda casas y canchas en Ampliación Agustín Olachea, La Paz",
+      "date": "2026-09-24",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/23/huracan-polo-sigue-bajo-vigilancia-en-la-paz": {
+      "url": "https://diariohumano.com.mx/2026/09/23/huracan-polo-sigue-bajo-vigilancia-en-la-paz/",
+      "title_es": "Huracán Polo sigue bajo vigilancia en La Paz",
+      "date": "2026-09-23",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/23/retiran-mas-de-2-mil-toneladas-de-residuos-para-prevenir-inundaciones-en-la-paz": {
+      "url": "https://diariohumano.com.mx/2026/09/23/retiran-mas-de-2-mil-toneladas-de-residuos-para-prevenir-inundaciones-en-la-paz/",
+      "title_es": "Retiran más de 2 mil toneladas de residuos para prevenir inundaciones en La Paz",
+      "date": "2026-09-23",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/servicios-publicos-desazolve-vialidades-csl": {
+      "url": "https://tribunademexico.com/servicios-publicos-desazolve-vialidades-csl/",
+      "title_es": "Servicios Públicos mantiene desazolve permanente en vialidades de Cabo San Lucas",
+      "date": "2026-09-23",
+      "first_seen": "2026-10-08"
+    },
+    "u:nbcs.mx/?p=170686": {
+      "url": "https://nbcs.mx/?p=170686",
+      "title_es": "CFE anuncia 536 mdp para reforzar la red eléctrica de BCS y sumar 70 MVA",
+      "date": "2026-09-23",
+      "first_seen": "2026-10-08"
+    },
+    "u:hojaderutadigital.mx/el-gobierno-de-mexico-impulsa-proyectos-de-generacion-y-electrificacion-para-fortalecer-el-suministro-electrico-en-baja-california-sur": {
+      "url": "https://hojaderutadigital.mx/el-gobierno-de-mexico-impulsa-proyectos-de-generacion-y-electrificacion-para-fortalecer-el-suministro-electrico-en-baja-california-sur/",
+      "title_es": "CFE y gobierno revisan generación, redes y electrificación para BCS",
+      "date": "2026-09-22",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/capitania-puerto-cierre-navegacion": {
+      "url": "https://tribunademexico.com/capitania-puerto-cierre-navegacion/",
+      "title_es": "Capitanía de Cabo San Lucas prepara cierre a navegación ante Polo categoría 5",
+      "date": "2026-09-22",
+      "first_seen": "2026-10-08"
+    },
+    "u:diariohumano.com.mx/2026/09/22/casi-75-de-la-basura-retirada-de-playas-de-la-paz-fue-inorganica": {
+      "url": "https://diariohumano.com.mx/2026/09/22/casi-75-de-la-basura-retirada-de-playas-de-la-paz-fue-inorganica/",
+      "title_es": "Casi 75% de la basura retirada de playas de La Paz fue inorgánica",
+      "date": "2026-09-22",
+      "first_seen": "2026-10-08"
+    },
+    "u:energyandcommerce.com.mx/cfe-incorpora-128-mw-de-generacion-para-fortalecer-la-seguridad-energetica-de-baja-california-sur": {
+      "url": "https://energyandcommerce.com.mx/cfe-incorpora-128-mw-de-generacion-para-fortalecer-la-seguridad-energetica-de-baja-california-sur/",
+      "title_es": "CFE incorpora 128 MW de generación móvil en Los Cabos y Cabo Bello",
+      "date": "2026-09-21",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/desabasto-de-agua-en-78-colonias-de-la-paz-por-reparacion-en-acueducto-1-advierte-oomsapas": {
+      "url": "https://tribunademexico.com/desabasto-de-agua-en-78-colonias-de-la-paz-por-reparacion-en-acueducto-1-advierte-oomsapas/",
+      "title_es": "Desabasto de agua en 78 colonias de La Paz por reparación del acueducto 1",
+      "date": "2026-09-21",
+      "first_seen": "2026-10-08"
+    },
+    "u:tribunademexico.com/anuncio-sheinbaum-bcs": {
+      "url": "https://tribunademexico.com/anuncio-sheinbaum-bcs/",
+      "title_es": "Sheinbaum anuncia en BCS vivienda, agua, energía y nueva central en Los Cabos",
+      "date": "2026-09-20",
+      "first_seen": "2026-10-08"
+    },
+    "u:hoybcs.com/cfe-refuerza-el-suministro-electrico-en-los-cabos-con-128-megawatts-adicionales": {
+      "url": "https://hoybcs.com/cfe-refuerza-el-suministro-electrico-en-los-cabos-con-128-megawatts-adicionales/",
+      "title_es": "CFE refuerza el suministro eléctrico en Los Cabos con 128 MW adicionales",
+      "date": "2026-09-18",
+      "first_seen": "2026-10-08"
+    },
+    "u:trend-enlinea.com.mx/arranca-el-festival-internacional-de-las-aves-en-los-cabos-habra-actividades-hasta-el-sabado": {
+      "url": "https://trend-enlinea.com.mx/arranca-el-festival-internacional-de-las-aves-en-los-cabos-habra-actividades-hasta-el-sabado/",
+      "title_es": "Arranca el Festival Internacional de las Aves en Los Cabos con enfoque en conservación y aviturismo",
+      "date": "2026-10-09",
+      "first_seen": "2026-10-09"
+    },
+    "u:hoybcs.com/rachel-cambia-de-rumbo-y-regresa-hacia-la-peninsula-de-baja-california-preven-que-se-acerque-el-fin-de-semana": {
+      "url": "https://hoybcs.com/rachel-cambia-de-rumbo-y-regresa-hacia-la-peninsula-de-baja-california-preven-que-se-acerque-el-fin-de-semana/",
+      "title_es": "Rachel cambia de rumbo y regresa hacia la península; el SMN no prevé impacto directo en BCS",
+      "date": "2026-10-08",
+      "first_seen": "2026-10-09"
+    },
+    "u:tribunademexico.com/tormenta-tropical-simon-lluvias-los-cabos": {
+      "url": "https://tribunademexico.com/tormenta-tropical-simon-lluvias-los-cabos/",
+      "title_es": "Tormenta tropical Simón: Protección Civil de Los Cabos prevé lluvias fuertes este fin de semana",
+      "date": "2026-10-08",
+      "first_seen": "2026-10-09"
+    },
+    "u:diariohumano.com.mx/2026/10/08/proponen-restringir-botellas-y-recipientes-de-vidrio-en-areas-naturales-protegidas": {
+      "url": "https://diariohumano.com.mx/2026/10/08/proponen-restringir-botellas-y-recipientes-de-vidrio-en-areas-naturales-protegidas/",
+      "title_es": "Congreso de BCS avala iniciativa para restringir botellas de vidrio en áreas naturales protegidas",
+      "date": "2026-10-08",
+      "first_seen": "2026-10-09"
+    },
+    "u:meganoticias.mx/la-paz/noticia/al-menos-43-viviendas-con-pérdida-total-deja-polo-en-comondú/776415": {
+      "url": "https://www.meganoticias.mx/la-paz/noticia/al-menos-43-viviendas-con-p%C3%A9rdida-total-deja-polo-en-comond%C3%BA/776415",
+      "title_es": "Polo deja al menos 43 viviendas con pérdida total en Comondú",
+      "date": "2026-10-07",
+      "first_seen": "2026-10-09"
+    },
+    "u:bcsnoticias.com/es/n/huracan-simon-cierre-puertos-la-paz-los-cabos-2026-10-14": {
+      "url": "https://bcsnoticias.com/es/n/huracan-simon-cierre-puertos-la-paz-los-cabos-2026-10-14",
+      "title_es": "Cierran puertos de La Paz y Los Cabos a embarcaciones menores por el huracán Simon",
+      "date": "2026-10-14",
+      "first_seen": "2026-10-15"
+    },
+    "u:diarioelindependiente.mx/2026/10/oomsapas-la-paz-recupera-gradualmente-el-suministro-de-agua-tras-restablecimiento-de-energia-electrica": {
+      "url": "https://www.diarioelindependiente.mx/2026/10/oomsapas-la-paz-recupera-gradualmente-el-suministro-de-agua-tras-restablecimiento-de-energia-electrica",
+      "title_es": "OOMSAPAS La Paz recupera poco a poco el agua tras el corte eléctrico en pozos de El Carrizal",
+      "date": "2026-10-14",
+      "first_seen": "2026-10-15"
+    },
+    "u:bitacorabcs.mx/crean-herramienta-para-conocer-las-condiciones-energeticas-de-baja-california-sur": {
+      "url": "https://bitacorabcs.mx/crean-herramienta-para-conocer-las-condiciones-energeticas-de-baja-california-sur/",
+      "title_es": "Presentan el Atlas Energético de Baja California Sur, elaborado por SEPUIMM y la UABCS",
+      "date": "2026-10-14",
+      "first_seen": "2026-10-15"
+    },
+    "u:peninsulardigital.com/2026/10/13/sin-servicio-electrico-la-mayoria-de-las-delegaciones-de-la-paz": {
+      "url": "https://peninsulardigital.com/2026/10/13/sin-servicio-electrico-la-mayoria-de-las-delegaciones-de-la-paz/",
+      "title_es": "Sin luz la mayoría de las delegaciones de La Paz por una falla en una subestación",
+      "date": "2026-10-13",
+      "first_seen": "2026-10-15"
+    },
+    "u:hoybcs.com/asipona-aplicara-nuevas-tarifas-en-la-marina-de-cabo-san-lucas": {
+      "url": "https://hoybcs.com/asipona-aplicara-nuevas-tarifas-en-la-marina-de-cabo-san-lucas/",
+      "title_es": "Asipona aplicará nuevas tarifas portuarias en la Marina de Cabo San Lucas",
+      "date": "2026-10-13",
+      "first_seen": "2026-10-15"
+    },
+    "u:tribunademexico.com/congreso-bcs-contaminacion-luminica": {
+      "url": "https://tribunademexico.com/congreso-bcs-contaminacion-luminica/",
+      "title_es": "El Congreso de BCS pide a los cinco ayuntamientos reducir la contaminación lumínica",
+      "date": "2026-10-13",
+      "first_seen": "2026-10-15"
+    },
+    "u:heraldodemexico.com.mx/edicion-impresa/2026/10/12/croc-pide-al-cabildo-de-los-cabos-aprobar-el-plan-maestro-de-san-pablo-con-10-mil-viviendas-906798.html": {
+      "url": "https://heraldodemexico.com.mx/edicion-impresa/2026/10/12/croc-pide-al-cabildo-de-los-cabos-aprobar-el-plan-maestro-de-san-pablo-con-10-mil-viviendas-906798.html",
+      "title_es": "La CROC pide al Cabildo de Los Cabos aprobar el Plan Maestro de San Pablo, con más de 10 mil viviendas",
+      "date": "2026-10-12",
+      "first_seen": "2026-10-15"
+    },
+    "u:tribunademexico.com/hoteleros-cabos-aumento-dnr": {
+      "url": "https://tribunademexico.com/hoteleros-cabos-aumento-dnr/",
+      "title_es": "Hoteleros de Los Cabos rechazan el aumento al Derecho de No Residente para 2027",
+      "date": "2026-10-11",
+      "first_seen": "2026-10-15"
+    },
+    "u:bcsnoticias.com/es/n/huracan-simon-categoria-4-rachel-aviso-punta-eugenia-2026-10-10": {
+      "url": "https://bcsnoticias.com/es/n/huracan-simon-categoria-4-rachel-aviso-punta-eugenia-2026-10-10",
+      "title_es": "Simon llega a categoría 4 lejos de Los Cabos; Rachel mantiene aviso desde Punta Eugenia",
+      "date": "2026-10-10",
+      "first_seen": "2026-10-15"
+    },
+    "u:bcsnoticias.com/es/n/bcs-semarnat-desaladora-matancitas-comondu-permisos-ballena-2026-10-09": {
+      "url": "https://bcsnoticias.com/es/n/bcs-semarnat-desaladora-matancitas-comondu-permisos-ballena-2026-10-09",
+      "title_es": "El Gobierno de BCS presenta a SEMARNAT una desaladora para el ejido Matancitas, en Comondú",
+      "date": "2026-10-09",
+      "first_seen": "2026-10-15"
+    },
+    "u:bcsnoticias.com/es/n/simon-estacionario-435-km-cabo-san-lucas-noroeste-2026-10-15-pm": {
+      "url": "https://bcsnoticias.com/es/n/simon-estacionario-435-km-cabo-san-lucas-noroeste-2026-10-15-pm",
+      "title_es": "Simon, ya tormenta tropical, sigue estacionaria a 435 km de Cabo San Lucas y girará al noroeste",
+      "date": "2026-10-15",
+      "first_seen": "2026-10-16"
+    },
+    "u:diariohumano.com.mx/2026/10/15/no-vamos-a-autorizar-gobernador-rechaza-proyectos-que-danen-sierra-la-laguna": {
+      "url": "https://diariohumano.com.mx/2026/10/15/no-vamos-a-autorizar-gobernador-rechaza-proyectos-que-danen-sierra-la-laguna/",
+      "title_es": "El gobernador afirma que no autorizará proyectos que dañen Sierra La Laguna ni otras áreas naturales protegidas",
+      "date": "2026-10-15",
+      "first_seen": "2026-10-16"
+    },
+    "u:tribunademexico.com/congreso-bcs-marina-csl": {
+      "url": "https://tribunademexico.com/congreso-bcs-marina-csl/",
+      "title_es": "El Congreso de BCS pide a ASIPONA transparentar tarifas y recursos de la Marina de Cabo San Lucas",
+      "date": "2026-10-15",
+      "first_seen": "2026-10-16"
+    },
+    "u:tribunademexico.com/avanza-programa-de-bacheo-y-rehabilitacion-de-calles-tras-lluvias-anuncia-victor-castro-en-bcs": {
+      "url": "https://tribunademexico.com/avanza-programa-de-bacheo-y-rehabilitacion-de-calles-tras-lluvias-anuncia-victor-castro-en-bcs/",
+      "title_es": "Nueve brigadas retoman el bacheo en La Paz tras las lluvias; el estado destina 500 millones de pesos al año a obra pública",
+      "date": "2026-10-15",
+      "first_seen": "2026-10-16"
+    },
+    "u:palabrabcs.com/municipios/la-paz/concluye-coplade-revision-de-avances-para-el-quinto-informe-de-gobierno-de-bcs": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/concluye-coplade-revision-de-avances-para-el-quinto-informe-de-gobierno-de-bcs/",
+      "title_es": "Coplade concluye la revisión de avances para el Quinto Informe de Gobierno de BCS",
+      "date": "2026-10-14",
+      "first_seen": "2026-10-16"
+    },
+    "u:palabrabcs.com/municipios/la-paz/sin-publicarse-en-la-gaceta-oficial-usuarios-dicen-que-ya-se-cobra-nueva-tarifa-de-16-en-transporte-urbano-en-la-paz": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/sin-publicarse-en-la-gaceta-oficial-usuarios-dicen-que-ya-se-cobra-nueva-tarifa-de-16-en-transporte-urbano-en-la-paz/",
+      "title_es": "Usuarios de La Paz reportan el cobro de la nueva tarifa de 16 pesos en el transporte urbano antes de su publicación oficial",
+      "date": "2026-10-13",
+      "first_seen": "2026-10-16"
+    },
+    "u:tribunademexico.com/comunidad-maritima-protesta-csl": {
+      "url": "https://tribunademexico.com/comunidad-maritima-protesta-csl/",
+      "title_es": "La comunidad marítima de Cabo San Lucas protestará el 19 de octubre contra el alza de tarifas de ASIPONA",
+      "date": "2026-10-18",
+      "first_seen": "2026-10-19"
+    },
+    "u:peninsulardigital.com/2026/10/18/preparan-pescadores-y-prestadores-turisticos-de-los-cabos-amparo-contra-nuevas-tarifas-portuarias": {
+      "url": "https://peninsulardigital.com/2026/10/18/preparan-pescadores-y-prestadores-turisticos-de-los-cabos-amparo-contra-nuevas-tarifas-portuarias/",
+      "title_es": "Pescadores y prestadores turísticos de Los Cabos preparan un amparo contra las nuevas tarifas portuarias",
+      "date": "2026-10-18",
+      "first_seen": "2026-10-19"
+    },
+    "u:tribunademexico.com/oomsapas-la-paz-inicia-la-construccion-de-subcolecto": {
+      "url": "https://tribunademexico.com/oomsapas-la-paz-inicia-la-construccion-de-subcolecto/",
+      "title_es": "OOMSAPAS La Paz invierte más de 3.5 millones de pesos en un subcolector de drenaje en El Progreso",
+      "date": "2026-10-18",
+      "first_seen": "2026-10-19"
+    },
+    "u:peninsulardigital.com/2026/10/17/registra-bcs-325-casos-de-dengue": {
+      "url": "https://peninsulardigital.com/2026/10/17/registra-bcs-325-casos-de-dengue/",
+      "title_es": "BCS suma 325 casos de dengue; Salud intensifica fumigación y larvicida en Ciudad Constitución",
+      "date": "2026-10-17",
+      "first_seen": "2026-10-19"
+    },
+    "u:tribunademexico.com/lluvias-fuertes-bcs-simon": {
+      "url": "https://tribunademexico.com/lluvias-fuertes-bcs-simon/",
+      "title_es": "Simon se degrada, pero Protección Civil prevé lluvias fuertes en Los Cabos, La Paz y Comondú hasta el domingo",
+      "date": "2026-10-16",
+      "first_seen": "2026-10-19"
+    },
+    "u:hoybcs.com/reasume-milena-quiroga-presidencia-de-la-paz-inaugura-nueva-ruta-del-tiburon-urbano": {
+      "url": "https://hoybcs.com/reasume-milena-quiroga-presidencia-de-la-paz-inaugura-nueva-ruta-del-tiburon-urbano/",
+      "title_es": "Milena Quiroga reasume la alcaldía de La Paz tras el proceso interno de Morena e inaugura una nueva ruta del Tiburón Urbano",
+      "date": "2026-10-16",
+      "first_seen": "2026-10-19"
+    },
+    "u:palabrabcs.com/municipios/la-paz/gobernador-a-favor-de-desaladoras-siempre-y-cuando-no-danen-el-ambiente": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/gobernador-a-favor-de-desaladoras-siempre-y-cuando-no-danen-el-ambiente/",
+      "title_es": "El gobernador apoya las desaladoras si no dañan el ambiente; una planta privada para Comondú está en evaluación en Semarnat",
+      "date": "2026-10-15",
+      "first_seen": "2026-10-19"
+    },
+    "u:tribunademexico.com/comunidad-maritima-protesta-asipona": {
+      "url": "https://tribunademexico.com/comunidad-maritima-protesta-asipona/",
+      "title_es": "La comunidad marítima de Cabo San Lucas protesta y pide a ASIPONA eliminar el nuevo tarifario de la marina",
+      "date": "2026-10-19",
+      "first_seen": "2026-10-20"
+    },
+    "u:elmomentobcs.mx/2026/10/19/tormenta-tropical-trudy-genera-lluvias-puntuales-en-baja-california-sur": {
+      "url": "https://elmomentobcs.mx/2026/10/19/tormenta-tropical-trudy-genera-lluvias-puntuales-en-baja-california-sur/",
+      "title_es": "La tormenta tropical Trudy se aleja, pero deja lluvias puntuales en el sur de BCS",
+      "date": "2026-10-19",
+      "first_seen": "2026-10-20"
+    },
+    "u:peninsulardigital.com/2026/10/19/no-se-endeudara-la-paz-para-fin-de-ano-promete-milena-quiroga": {
+      "url": "https://peninsulardigital.com/2026/10/19/no-se-endeudara-la-paz-para-fin-de-ano-promete-milena-quiroga/",
+      "title_es": "Milena Quiroga descarta que La Paz se endeude para pagar las prestaciones de fin de año",
+      "date": "2026-10-19",
+      "first_seen": "2026-10-20"
+    },
+    "u:peninsulardigital.com/2026/10/18/convocan-a-hacerle-un-megaplanton-al-gobernador": {
+      "url": "https://peninsulardigital.com/2026/10/18/convocan-a-hacerle-un-megaplanton-al-gobernador/",
+      "title_es": "Activista convoca a un «megaplantón» al gobernador por los materiales que siguen en la Sierra La Laguna",
+      "date": "2026-10-18",
+      "first_seen": "2026-10-20"
+    },
+    "u:elmundodigital.com.mx/los-cabos-crece-pero-su-infraestructura-no-avanza-al-mismo-ritmo-advierten-desarrolladores-turisticos": {
+      "url": "https://elmundodigital.com.mx/los-cabos-crece-pero-su-infraestructura-no-avanza-al-mismo-ritmo-advierten-desarrolladores-turisticos/",
+      "title_es": "Desarrolladores turísticos advierten que la infraestructura de Los Cabos no crece al ritmo del destino",
+      "date": "2026-10-16",
+      "first_seen": "2026-10-20"
+    },
+    "u:gringogazette.com/los-cabos-developers-pitch-own-water-to-ease-shortage": {
+      "url": "https://gringogazette.com/los-cabos-developers-pitch-own-water-to-ease-shortage/",
+      "title_es": "Desarrolladores de Los Cabos proponen desalar su propia agua y enviar el excedente a la red municipal",
+      "date": "2026-10-16",
+      "first_seen": "2026-10-20"
+    },
+    "u:quepoca.com/articulo/actualidad/frenaran-bombeo-seis-dias-santo-domingo/20261015133314003889.html": {
+      "url": "https://www.quepoca.com/articulo/actualidad/frenaran-bombeo-seis-dias-santo-domingo/20261015133314003889.html",
+      "title_es": "Conagua suspende el bombeo en el acuífero Santo Domingo del 18 al 23 de octubre para medir niveles",
+      "date": "2026-10-15",
+      "first_seen": "2026-10-20"
+    },
+    "u:peninsulardigital.com/2026/10/20/dengue-satura-hospitales-en-los-cabos": {
+      "url": "https://peninsulardigital.com/2026/10/20/dengue-satura-hospitales-en-los-cabos/",
+      "title_es": "El dengue satura los hospitales de Los Cabos; el municipio refuerza la fumigación hasta diciembre",
+      "date": "2026-10-20",
+      "first_seen": "2026-10-21"
+    },
+    "u:palabrabcs.com/municipios/la-paz/atestigua-victor-castro-entrega-de-112-distintivos-para-actividades-de-avistamiento-y-nado-con-tiburon-ballena-en-la-paz": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/atestigua-victor-castro-entrega-de-112-distintivos-para-actividades-de-avistamiento-y-nado-con-tiburon-ballena-en-la-paz/",
+      "title_es": "Entregan 112 distintivos a embarcaciones autorizadas para el avistamiento y nado con tiburón ballena en La Paz",
+      "date": "2026-10-20",
+      "first_seen": "2026-10-21"
+    },
+    "u:informadorbcs.com/autoriza-congreso-donacion-de-predios-estatales-para-vivienda-en-comondu-y-mulege": {
+      "url": "https://informadorbcs.com/autoriza-congreso-donacion-de-predios-estatales-para-vivienda-en-comondu-y-mulege/",
+      "title_es": "El Congreso autoriza donar cuatro predios estatales para vivienda social en Ciudad Constitución y Santa Rosalía",
+      "date": "2026-10-20",
+      "first_seen": "2026-10-21"
+    },
+    "u:elmomentobcs.mx/2026/10/20/tarifas-del-transporte-publico-en-la-paz-ya-aumento-hasta-18-pesos": {
+      "url": "https://elmomentobcs.mx/2026/10/20/tarifas-del-transporte-publico-en-la-paz-ya-aumento-hasta-18-pesos/",
+      "title_es": "El Cabildo de La Paz aprueba la tarifa de 16 pesos en transporte urbano y hasta 18 pesos en rutas suburbanas",
+      "date": "2026-10-20",
+      "first_seen": "2026-10-21"
+    },
+    "u:tribunademexico.com/evacuan-planteles-escolares-en-la-paz-por-alerta-de-fuga-de-gas-analizan-reubicacion-de-empresa": {
+      "url": "https://tribunademexico.com/evacuan-planteles-escolares-en-la-paz-por-alerta-de-fuga-de-gas-analizan-reubicacion-de-empresa/",
+      "title_es": "Una fuga en la planta de Infra en Pueblo Nuevo obliga a evacuar escuelas en La Paz; analizan reubicar la empresa",
+      "date": "2026-10-20",
+      "first_seen": "2026-10-21"
+    },
+    "u:tribunademexico.com/perfiles-coordinaciones-municipales-morena-bcs": {
+      "url": "https://tribunademexico.com/perfiles-coordinaciones-municipales-morena-bcs/",
+      "title_es": "Rumbo a 2027: al menos 21 perfiles buscan las coordinaciones municipales de Morena en BCS",
+      "date": "2026-10-20",
+      "first_seen": "2026-10-21"
+    },
+    "u:buzos.com.mx/noticia/bcs-una-decada-de-proyectos-y-promesas-para-garantizar-electricidad": {
+      "url": "https://buzos.com.mx/noticia/bcs-una-decada-de-proyectos-y-promesas-para-garantizar-electricidad",
+      "title_es": "BCS sigue como sistema eléctrico aislado tras una década de proyectos y promesas",
+      "date": "2026-10-19",
+      "first_seen": "2026-10-21"
+    },
+    "u:diarioelindependiente.mx/2026/10/victor-castro-respalda-que-api-baja-california-sur-administre-puerto-de-cabo-san-lucas": {
+      "url": "https://www.diarioelindependiente.mx/2026/10/victor-castro-respalda-que-api-baja-california-sur-administre-puerto-de-cabo-san-lucas",
+      "title_es": "Víctor Castro respalda que la API estatal administre el puerto de Cabo San Lucas",
+      "date": "2026-10-21",
+      "first_seen": "2026-10-22"
+    },
+    "u:meganoticias.mx/los-cabos/noticia/pide-zatarain-reinvertir-recursos-turísticos-para-proteger-empleos-en-baja-california-sur/780974": {
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/pide-zatarain-reinvertir-recursos-tur%C3%ADsticos-para-proteger-empleos-en-baja-california-sur/780974",
+      "title_es": "La senadora Susana Zatarain alerta de menos turistas, menores ventas y cierres de restaurantes en Los Cabos",
+      "date": "2026-10-21",
+      "first_seen": "2026-10-22"
+    },
+    "u:palabrabcs.com/municipios/la-paz/acuerda-gobierno-de-bcs-comodato-por-30-anos-de-predio-a-la-guardia-nacional-y-donacion-de-inmuebles-para-salud": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/acuerda-gobierno-de-bcs-comodato-por-30-anos-de-predio-a-la-guardia-nacional-y-donacion-de-inmuebles-para-salud/",
+      "title_es": "El Gobierno de BCS cede en comodato por 30 años un predio en Comondú a la Guardia Nacional y dona inmuebles de salud",
+      "date": "2026-10-21",
+      "first_seen": "2026-10-22"
+    },
+    "u:meganoticias.mx/la-paz/noticia/sheinbaum-evaluará-el-sistema-de-salud-de-baja-california-sur/781352": {
+      "url": "https://www.meganoticias.mx/la-paz/noticia/sheinbaum-evaluar%C3%A1-el-sistema-de-salud-de-baja-california-sur/781352",
+      "title_es": "Sheinbaum visitará hospitales de BCS a finales de noviembre para evaluar el sistema de salud",
+      "date": "2026-10-21",
+      "first_seen": "2026-10-22"
+    },
+    "u:diariohumano.com.mx/2026/10/21/reportan-mas-de-13-mil-hectareas-fumigadas-contra-el-dengue-en-comondu": {
+      "url": "https://diariohumano.com.mx/2026/10/21/reportan-mas-de-13-mil-hectareas-fumigadas-contra-el-dengue-en-comondu/",
+      "title_es": "Más de 13 mil hectáreas fumigadas contra el dengue en Comondú; refuerzan la descacharrización en Ciudad Constitución",
+      "date": "2026-10-21",
+      "first_seen": "2026-10-22"
+    },
+    "u:diarioelindependiente.mx/2026/10/cambian-mando-de-proteccion-civil-tras-muerte-de-joven-en-juego-mecanico-de-cabo-san-lucas": {
+      "url": "https://www.diarioelindependiente.mx/2026/10/cambian-mando-de-proteccion-civil-tras-muerte-de-joven-en-juego-mecanico-de-cabo-san-lucas",
+      "title_es": "Los Cabos cambia el mando de Protección Civil tras la muerte de una joven en un juego mecánico de la feria de Cabo San Lucas",
+      "date": "2026-10-21",
+      "first_seen": "2026-10-22"
+    },
+    "u:diarioelindependiente.mx/2026/10/marchan-por-agua-en-cabo-san-lucas-protesta-llega-a-instalaciones-de-oomsapas": {
+      "url": "https://www.diarioelindependiente.mx/2026/10/marchan-por-agua-en-cabo-san-lucas-protesta-llega-a-instalaciones-de-oomsapas",
+      "title_es": "Vecinos de Cabo San Lucas marchan hasta OOMSAPAS Los Cabos para exigir agua regular",
+      "date": "2026-10-22",
+      "first_seen": "2026-10-23"
+    },
+    "u:tribunademexico.com/construccion-viviendas-bcs": {
+      "url": "https://tribunademexico.com/construccion-viviendas-bcs/",
+      "title_es": "BCS acuerda con la Federación buscar terrenos y simplificar trámites para la Vivienda para el Bienestar",
+      "date": "2026-10-22",
+      "first_seen": "2026-10-23"
+    },
+    "u:hoybcs.com/mas-de-8-mil-baches-reparados-en-la-paz-durante-temporada-de-lluvias-atienden-hasta-400-diarios": {
+      "url": "https://hoybcs.com/mas-de-8-mil-baches-reparados-en-la-paz-durante-temporada-de-lluvias-atienden-hasta-400-diarios/",
+      "title_es": "La Paz suma más de 8,200 baches reparados en la temporada de lluvias y atiende hasta 400 al día",
+      "date": "2026-10-22",
+      "first_seen": "2026-10-23"
+    },
+    "u:imagenradio.com.mx/programas/negocios-en-imagen/hoteleros-cabos-advierten-caida-turismo-norteamericano": {
+      "url": "https://www.imagenradio.com.mx/programas/negocios-en-imagen/hoteleros-cabos-advierten-caida-turismo-norteamericano",
+      "title_es": "Hoteleros de Los Cabos reportan una caída del 14% en turistas de Estados Unidos entre enero y agosto",
+      "date": "2026-10-19",
+      "first_seen": "2026-10-23"
+    },
+    "u:tribunademexico.com/hoteles-cabos-cierre-2026": {
+      "url": "https://tribunademexico.com/hoteles-cabos-cierre-2026/",
+      "title_es": "Hoteles de Los Cabos prevén repunte al cierre de 2026: 60% de ocupación en octubre y picos de más del 90% en fiestas",
+      "date": "2026-10-18",
+      "first_seen": "2026-10-23"
+    },
+    "u:tvaztecabajacalifornia.com/noticias/el-agua-llego-a-las-calles-reportan-inundaciones-en-varias-zonas-de-la-paz-este-domingo-video": {
+      "url": "https://www.tvaztecabajacalifornia.com/noticias/el-agua-llego-a-las-calles-reportan-inundaciones-en-varias-zonas-de-la-paz-este-domingo-video/",
+      "title_es": "La marea alta inunda calles de El Centenario, El Conchalito y El Esterito en La Paz",
+      "date": "2026-10-25",
+      "first_seen": "2026-10-26"
+    },
+    "u:hcn.mx/2026/10/25/emite-gobierno-de-los-cabos-aviso-preventivo-por-pronostico-de-lluvias-y-viento": {
+      "url": "https://hcn.mx/2026/10/25/emite-gobierno-de-los-cabos-aviso-preventivo-por-pronostico-de-lluvias-y-viento/",
+      "title_es": "Protección Civil de Los Cabos emite aviso preventivo por lluvias, tormentas eléctricas y rachas de viento",
+      "date": "2026-10-25",
+      "first_seen": "2026-10-26"
+    },
+    "u:palabrabcs.com/municipios/la-paz/atiende-gobernador-victor-castro-necesidades-de-comunidades-rurales-del-municipio-de-la-paz": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/atiende-gobernador-victor-castro-necesidades-de-comunidades-rurales-del-municipio-de-la-paz/",
+      "title_es": "Víctor Castro recorre ranchos de La Paz y pacta caminos, agua, empleo temporal y energía solar",
+      "date": "2026-10-25",
+      "first_seen": "2026-10-26"
+    },
+    "u:palabrabcs.com/municipios/la-paz/registra-60-de-avance-planta-purificadora-de-agua-para-el-bienestar-en-la-paz": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/registra-60-de-avance-planta-purificadora-de-agua-para-el-bienestar-en-la-paz/",
+      "title_es": "La planta purificadora Agua para el Bienestar en la colonia La Pasión, en La Paz, lleva 60% de avance",
+      "date": "2026-10-25",
+      "first_seen": "2026-10-26"
+    },
+    "u:diariohumano.com.mx/2026/10/24/dan-seguimiento-a-reportes-de-agua-potable-en-la-colonia-paraiso-del-sol": {
+      "url": "https://diariohumano.com.mx/2026/10/24/dan-seguimiento-a-reportes-de-agua-potable-en-la-colonia-paraiso-del-sol/",
+      "title_es": "El organismo de agua de La Paz revisa el tandeo en la colonia Paraíso del Sol",
+      "date": "2026-10-24",
+      "first_seen": "2026-10-26"
+    },
+    "u:bcsnoticias.com/es/n/dengue-comondu-los-cabos-refuerzan-brigadas-2026-10-24": {
+      "url": "https://bcsnoticias.com/es/n/dengue-comondu-los-cabos-refuerzan-brigadas-2026-10-24",
+      "title_es": "Salud refuerza con apoyo federal el combate al dengue en Comondú y Los Cabos, con transmisión activa",
+      "date": "2026-10-24",
+      "first_seen": "2026-10-26"
+    },
+    "u:sosrotativo.mx/cierres-intermitentes-en-la-cuesta-de-las-virgenes-afectaran-circulacion-en-carretera-transpeninsular": {
+      "url": "https://sosrotativo.mx/cierres-intermitentes-en-la-cuesta-de-las-virgenes-afectaran-circulacion-en-carretera-transpeninsular/",
+      "title_es": "Cierres intermitentes en la Cuesta de Las Vírgenes de la Transpeninsular por mantenimiento, en Mulegé",
+      "date": "2026-10-24",
+      "first_seen": "2026-10-26"
+    },
+    "u:momentocorporativo.com/2026/10/26/los-cabos-proyecta-su-estrategia-turistica-hacia-2036-con-foco-en-el-lujo-y-la-sostenibilidad": {
+      "url": "https://momentocorporativo.com/2026/10/26/los-cabos-proyecta-su-estrategia-turistica-hacia-2036-con-foco-en-el-lujo-y-la-sostenibilidad/",
+      "title_es": "FITURCA presenta la Visión 2036 de Los Cabos: turismo de lujo, sostenibilidad y crecimiento según la capacidad del territorio",
+      "date": "2026-10-26",
+      "first_seen": "2026-10-27"
+    },
+    "u:eleconomista.com.mx/empresas/cabos-anuncia-nueva-campana-digital-alcance-global-celebra-dos-decadas-vip-summit-20261026-840610.html": {
+      "url": "https://www.eleconomista.com.mx/empresas/cabos-anuncia-nueva-campana-digital-alcance-global-celebra-dos-decadas-vip-summit-20261026-840610.html",
+      "title_es": "Los Cabos anuncia una campaña digital global de unos 450 millones de pesos a partir de enero de 2027",
+      "date": "2026-10-26",
+      "first_seen": "2026-10-27"
+    },
+    "u:tribunademexico.com/vecinos-de-vinoramas-rechazan-entrega-de-agua": {
+      "url": "https://tribunademexico.com/vecinos-de-vinoramas-rechazan-entrega-de-agua/",
+      "title_es": "Vecinos de Vinoramas, en La Paz, rechazan el reparto de agua en pipas casa por casa y amagan con bloqueos",
+      "date": "2026-10-26",
+      "first_seen": "2026-10-27"
+    },
+    "u:tribunademexico.com/obras-proyectos-los-cabos-administracion": {
+      "url": "https://tribunademexico.com/obras-proyectos-los-cabos-administracion/",
+      "title_es": "Los Cabos hace balance de dos años: PDU aprobado, siete proyectos viales y regularización de 3,000 lotes",
+      "date": "2026-10-26",
+      "first_seen": "2026-10-27"
+    },
+    "u:palabrabcs.com/municipios/la-paz/inicia-salud-estatal-monitoreo-diario-a-pacientes-con-dengue-en-bcs": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/inicia-salud-estatal-monitoreo-diario-a-pacientes-con-dengue-en-bcs/",
+      "title_es": "Salud de BCS inicia el seguimiento diario a distancia de pacientes con dengue",
+      "date": "2026-10-26",
+      "first_seen": "2026-10-27"
+    },
+    "u:elmomentobcs.mx/2026/10/27/hoteleros-exigen-plan-ante-la-crisis-energetica-en-bcs": {
+      "url": "https://elmomentobcs.mx/2026/10/27/hoteleros-exigen-plan-ante-la-crisis-energetica-en-bcs/",
+      "title_es": "Hoteleros exigen plan ante la crisis energética en BCS",
+      "date": "2026-10-27",
+      "first_seen": "2026-10-28"
+    },
+    "u:imagenradio.com.mx/finanzas/baja-ocupacion-hoteleria-cabos-impacto-costos": {
+      "url": "https://www.imagenradio.com.mx/finanzas/baja-ocupacion-hoteleria-cabos-impacto-costos",
+      "title_es": "Ocupación hotelera de Los Cabos cae 5% en el segundo semestre",
+      "date": "2026-10-27",
+      "first_seen": "2026-10-28"
+    },
+    "u:diariohumano.com.mx/2026/10/27/inician-obras-en-el-bulevar-5-de-febrero-de-la-paz-habra-cambios-en-la-circulacion": {
+      "url": "https://diariohumano.com.mx/2026/10/27/inician-obras-en-el-bulevar-5-de-febrero-de-la-paz-habra-cambios-en-la-circulacion/",
+      "title_es": "Inicia rehabilitación del bulevar 5 de Febrero en La Paz",
+      "date": "2026-10-27",
+      "first_seen": "2026-10-28"
+    },
+    "u:heraldodemexico.com.mx/nacional/2026/10/27/sismo-de-magnitud-37-sacude-las-cercanias-de-santa-rosalia-baja-california-sur-917137.html": {
+      "url": "https://heraldodemexico.com.mx/nacional/2026/10/27/sismo-de-magnitud-37-sacude-las-cercanias-de-santa-rosalia-baja-california-sur-917137.html",
+      "title_es": "Sismo de magnitud 3.7 al noreste de Santa Rosalía",
+      "date": "2026-10-27",
+      "first_seen": "2026-10-28"
+    },
+    "u:reforma.com/azota-vance-los-cabos-agua-arrastra-autos-y-activan-ayuda/ar3303853": {
+      "url": "https://www.reforma.com/azota-vance-los-cabos-agua-arrastra-autos-y-activan-ayuda/ar3303853",
+      "title_es": "Tormenta tropical Vance inunda Los Cabos: arrastre de vehículos, rescates y cierre de puertos",
+      "date": "2026-10-28",
+      "first_seen": "2026-10-29"
+    },
+    "u:diariohumano.com.mx/2026/10/28/lluvias-de-hasta-60-milimetros-provocan-suspension-de-clases-en-los-cabos": {
+      "url": "https://diariohumano.com.mx/2026/10/28/lluvias-de-hasta-60-milimetros-provocan-suspension-de-clases-en-los-cabos/",
+      "title_es": "Lluvias de hasta 60 mm provocan suspensión de clases en Los Cabos",
+      "date": "2026-10-28",
+      "first_seen": "2026-10-29"
+    },
+    "u:palabrabcs.com/municipios/los-cabos/supervisan-afectaciones-viales-por-lluvias-recientes-en-csl": {
+      "url": "https://www.palabrabcs.com/municipios/los-cabos/supervisan-afectaciones-viales-por-lluvias-recientes-en-csl/",
+      "title_es": "Cabo San Lucas supervisa afectaciones viales y desazolve en siete zonas tras las lluvias",
+      "date": "2026-10-28",
+      "first_seen": "2026-10-29"
+    },
+    "u:meganoticias.mx/la-paz/noticia/el-cambio-climático-ya-alcanzó-a-bcs-reconoce-gobernador/783472": {
+      "url": "https://www.meganoticias.mx/la-paz/noticia/el-cambio-clim%C3%A1tico-ya-alcanz%C3%B3-a-bcs-reconoce-gobernador/783472",
+      "title_es": "Castro reconoce que el cambio climático ya alcanza viviendas y costas de BCS",
+      "date": "2026-10-28",
+      "first_seen": "2026-10-29"
+    },
+    "u:palabrabcs.com/municipios/los-cabos/realizara-sepuimm-campana-sobre-transicion-energetica-en-sjc": {
+      "url": "https://www.palabrabcs.com/municipios/los-cabos/realizara-sepuimm-campana-sobre-transicion-energetica-en-sjc/",
+      "title_es": "SEPUIMM lanza en San José del Cabo la campaña de transición energética",
+      "date": "2026-10-27",
+      "first_seen": "2026-10-29"
+    },
+    "u:tribunademexico.com/playas-los-cabos-cerradas-prohiben-banarse": {
+      "url": "https://tribunademexico.com/playas-los-cabos-cerradas-prohiben-banarse/",
+      "title_es": "Playas de Los Cabos siguen cerradas por segundo día: 26 con bandera negra y cinco con roja",
+      "date": "2026-10-29",
+      "first_seen": "2026-10-30"
+    },
+    "u:meganoticias.mx/los-cabos/noticia/tardaran-una-semana-en-regularizarse-los-servicios-públicos-en-los-cabos/783878": {
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/tardaran-una-semana-en-regularizarse-los-servicios-p%C3%BAblicos-en-los-cabos/783878",
+      "title_es": "Los Cabos tardará una semana en normalizar la recolección de basura por calles de terracería dañadas",
+      "date": "2026-10-29",
+      "first_seen": "2026-10-30"
+    },
+    "u:bitacorabcs.mx/en-medio-de-rechazo-a-tarifas-congreso-plantea-traspaso-de-asipona-al-gobierno": {
+      "url": "https://bitacorabcs.mx/en-medio-de-rechazo-a-tarifas-congreso-plantea-traspaso-de-asipona-al-gobierno/",
+      "title_es": "El Congreso de BCS pide explorar el traspaso de ASIPONA al Gobierno del Estado ante el rechazo a las nuevas tarifas",
+      "date": "2026-10-29",
+      "first_seen": "2026-10-30"
+    },
+    "u:meganoticias.mx/los-cabos/noticia/sector-privado-pide-una-planeación-urbana-ordenada-para-los-cabos/783836": {
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/sector-privado-pide-una-planeaci%C3%B3n-urbana-ordenada-para-los-cabos/783836",
+      "title_es": "El sector privado pide un PDU de Los Cabos con límites de densidad y respeto al camino costero de Cabo del Este",
+      "date": "2026-10-29",
+      "first_seen": "2026-10-30"
+    },
+    "u:hcn.mx/2026/10/29/proponen-fortalecer-las-facultades-municipales-para-la-conservacion-ambiental-en-bcs": {
+      "url": "https://hcn.mx/2026/10/29/proponen-fortalecer-las-facultades-municipales-para-la-conservacion-ambiental-en-bcs/",
+      "title_es": "Iniciativa para dar a los ayuntamientos de BCS más facultades en reservas ecológicas y zonas de conservación",
+      "date": "2026-10-29",
+      "first_seen": "2026-10-30"
+    },
+    "u:palabrabcs.com/municipios/la-paz/marchan-antorchistas-por-solucion-a-demandas-planteadas-en-pliego-petitorio-en-la-paz": {
+      "url": "https://www.palabrabcs.com/municipios/la-paz/marchan-antorchistas-por-solucion-a-demandas-planteadas-en-pliego-petitorio-en-la-paz/",
+      "title_es": "Antorchistas marchan en La Paz para exigir electrificación y servicios en colonias sin suministro estable",
+      "date": "2026-10-29",
+      "first_seen": "2026-10-30"
+    },
+    "u:tribunademexico.com/refuerza-bcs-combate-al-dengue-con-fumigaciones-brigadas-y-campana-masiva-de-limpieza": {
+      "url": "https://tribunademexico.com/refuerza-bcs-combate-al-dengue-con-fumigaciones-brigadas-y-campana-masiva-de-limpieza/",
+      "title_es": "BCS dobla las brigadas contra el dengue, con Comondú como foco, y anuncia apoyo financiero a Comondú y Mulegé",
+      "date": "2026-10-29",
+      "first_seen": "2026-10-30"
+    },
+    "u:diarioelindependiente.mx/2026/10/gobernador-defiende-asistencia-a-evento-durante-inundaciones-y-reconoce-danos-en-carretera": {
+      "url": "https://www.diarioelindependiente.mx/2026/10/gobernador-defiende-asistencia-a-evento-durante-inundaciones-y-reconoce-danos-en-carretera",
+      "title_es": "El gobernador reconoce socavación en la Transpeninsular entre Cabo San Lucas y San José tras las lluvias",
+      "date": "2026-10-28",
+      "first_seen": "2026-10-30"
+    },
+    "u:zetatijuana.com/2026/10/hoteleros-reclaman-estrategias-a-corto-plazo-para-combatir-la-crisis-energetica-de-bcs": {
+      "url": "https://zetatijuana.com/2026/10/hoteleros-reclaman-estrategias-a-corto-plazo-para-combatir-la-crisis-energetica-de-bcs/",
+      "title_es": "Hoteleros reclaman una estrategia a corto plazo ante el récord de 120 apagones en BCS",
+      "date": "2026-10-27",
+      "first_seen": "2026-10-30"
+    }
+  },
+  "removed": []
+}

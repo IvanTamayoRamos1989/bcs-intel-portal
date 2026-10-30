@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import fiscal from '../data/fiscal_docs.json';
+import munis from '../data/municipios.json';
+import { lakePath, fileName } from '../lib/paths';
+---
+<BaseLayout
+  title="Finanzas públicas · estado y municipios"
+  titleEn="Fiscal · state and municipalities"
+  description="Presupuesto, leyes de ingresos, Anexo I-33 y documentos fiscales TI"
+  descriptionEn="Budget, revenue laws, Anexo I-33 and TI fiscal documents"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Cifras oficiales reunidas en la Base de datos BCS 2050 — finanzas municipales, con los documentos fiscales listados abajo.
+      PE estatal 2026: <strong>${(fiscal.state_pe_2026/1e9).toFixed(1)} mil M MXN</strong>.
+    </span>
+    <span data-lang-en hidden>
+      Official figures gathered in the BCS 2050 database — municipal finances, with the fiscal documents listed below.
+      State budget 2026: <strong>${(fiscal.state_pe_2026/1e9).toFixed(1)} bn MXN</strong>.
+    </span>
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat"><span class="n">${(fiscal.state_pe_2026/1e9).toFixed(1)}B</span><span class="l">PE 2026</span></div>
+    <div class="stat"><span class="n">${(fiscal.state_pe_2025/1e9).toFixed(1)}B</span><span class="l">PE 2025</span></div>
+    <div class="stat"><span class="n">{fiscal.files.length}</span><span class="l"><span data-lang-es>Docs en fiscal/</span><span data-lang-en hidden>Docs in fiscal/</span></span></div>
+  </div>
+
+  <h2>
+    <span data-lang-es>Anexo I-33 2025 · transferencias / participaciones</span>
+    <span data-lang-en hidden>Anexo I-33 2025 · transfers / participaciones</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Municipio</span><span data-lang-en hidden>Municipality</span></th>
+          <th>Anexo I-33 2025</th>
+          <th><span data-lang-es>Ley ingresos 2026</span><span data-lang-en hidden>Revenue law 2026</span></th>
+          <th>POBTOT</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.keys(fiscal.anexo_i33_2025).map((name) => {
+          const m = (munis as any)[name] || {};
+          const ley = (fiscal.ley_ingresos_2026 as any)[name];
+          return (
+            <tr>
+              <td>{name}</td>
+              <td>${(fiscal.anexo_i33_2025 as any)[name].toLocaleString('es-MX')}</td>
+              <td>{ley ? `$${ley.toLocaleString('es-MX')}` : '— / ver DOC'}</td>
+              <td>{m.pob ? m.pob.toLocaleString('es-MX') : '—'}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span data-lang-es>Documentos fiscales</span><span data-lang-en hidden>Fiscal documents</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><span data-lang-es>Documento</span><span data-lang-en hidden>Document</span></th>
+          <th>Bytes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {fiscal.files.map((f: any) => (
+          <tr>
+            <td>{fileName(f.name)}</td>
+            <td>{(f.size/1024).toFixed(0)} KB</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="meta"><span data-lang-es>Fuente:</span><span data-lang-en hidden>Source:</span> {lakePath(fiscal.md)}</p>
+  <p class="cta-row">
+    <a class="btn secondary" href="/comunidades"><span data-lang-es>Comunidades</span><span data-lang-en hidden>Communities</span></a>
+    <a class="btn secondary" href="/catalogo?q=fiscal"><span data-lang-es>Catálogo fiscal</span><span data-lang-en hidden>Fiscal catalog</span></a>
+  </p>
+</BaseLayout>

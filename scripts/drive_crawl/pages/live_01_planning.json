@@ -1,0 +1,334 @@
+{
+  "path_guess": "01_planning",
+  "files": [
+    {
+      "id": "1LdqVy72gaO_7oRXeoIajH3iPJ7EbgiWz",
+      "title": "2025-12_Ayuntamiento-Comondu_PMDU-Vision-2025.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "63311337"
+    },
+    {
+      "id": "1lGio6thvEV5aold1eWnVrTUqV6gB18u9",
+      "title": "2024_Ayuntamiento-Comondu_Plan-Municipal-de-Desarrollo-2024-2027.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "3973665"
+    },
+    {
+      "id": "1yu725Vr6LHfyG1ciKLTp78f0HQLAm9fu",
+      "title": "2024_Ayuntamiento-Los-Cabos_Plan-Municipal-de-Desarrollo-2024-2027.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "7774121"
+    },
+    {
+      "id": "1j57O93u3EmowXCk1ErE-tG1sXuOnTErQ",
+      "title": "2024_Ayuntamiento-La-Paz_Plan-Municipal-de-Desarrollo-2024-2027.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "39806260"
+    },
+    {
+      "id": "1SzEdtjuNA6u04qD730hefjiFDiY6KQBP",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-Programacion.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "9949428"
+    },
+    {
+      "id": "1yZsCqyp0ZHEkvGYmWvFvD2VEhVmn-1AM",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-Uso-suelo-vegetacion.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "14221745"
+    },
+    {
+      "id": "1tgNlroEJgEFQJuQ70RStRJtim_SayefU",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-15-RIESGOS-Y-VULNERABILIDAD.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "7727179"
+    },
+    {
+      "id": "1x0_K3mLb_DPMlAi8TbeKCWnbhprOqqcT",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Vial.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "8912441"
+    },
+    {
+      "id": "17PNPgyslE_OwN6aEnEe4jC1b5yUk6wlj",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-13-DESARROLLO-TURISTICO.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "10225128"
+    },
+    {
+      "id": "1UZU_hqiE1Chi2Ca2ROSSSymSHK60fD93",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-14-SANEAMIENTO-AMBIENTAL.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "10185861"
+    },
+    {
+      "id": "1gLh3BZFHzz_qKJOCtUJEh4ntuep40T-_",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Los-Barriles.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "4226272"
+    },
+    {
+      "id": "148K2c6doUjcSf-voHSX5LfVZ23iaV54V",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-Regional.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "11396874"
+    },
+    {
+      "id": "1WjrnEb1iuGo297dOtpjX8wn3-G1YAHE6",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-El-Cardonal-Politicas-y-Estrategia.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "2344588"
+    },
+    {
+      "id": "1GO6axcqJzLCm20HEfW1k5lu3NhZMaEcf",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-12-ESTRUCTURA-VIAL.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "10244630"
+    },
+    {
+      "id": "1FKmO0FqnnL3Wbd2Wt5tBPXjjWVU2J__k",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-mapa-El-Cardonal.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "3482192"
+    },
+    {
+      "id": "1YfqfRr1rUtmLAdfxAiGC1FzV8iEdjImg",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-10-TENENCIA-DE-LA-TIERRA.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "14168117"
+    },
+    {
+      "id": "1XM9gi5bnQRe1JkEgCmGO-DEg99Kkrqgd",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-9-MODELO.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "18976867"
+    },
+    {
+      "id": "13XpgRCT5DzXkuWvO-o7ire4HJHF4ickF",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-1-AREA-DE-ESTUDIO.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "13923713"
+    },
+    {
+      "id": "1jHMxJTZDOg_CENF5HSyOUX1wsyEjG-2Y",
+      "title": "2026-01-21_BOGE-BCS_POERBCS-Decreto-Boletin-Oficial-No09.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "103164099"
+    },
+    {
+      "id": "1JyfogiYnZOhu-jTWjJaLqDumb8NK-vzM",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-2-AMBITO-REGIONAL.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "12353543"
+    },
+    {
+      "id": "1dGidqgFsty6v5AIQfVOXQzXYpXM7ctMS",
+      "title": "2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "2178790"
+    },
+    {
+      "id": "1Mf18yNdjzEbd5hmmcPsOoINu9U6WVuFR",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-d-0-PLANO-BASE.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "13971011"
+    },
+    {
+      "id": "1z1ijw8kcEeWPl4OCoAXuE-Gz7yDtKqos",
+      "title": "2025_SEPUIMM_POERBCS-UGA-Fichas.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "59159894"
+    },
+    {
+      "id": "10VHItOajkuKirW6n7sJeFO3mwVvqXm9R",
+      "title": "2025-01-15_BOGE-BCS_No04-Aviso-Consulta-POERBCS.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "5350085"
+    },
+    {
+      "id": "1QGKw7UCgnsps6Cv-h0A1nwOOOq63FRXD",
+      "title": "2022-03-23_Gobierno-BCS_Plan-Estatal-de-Desarrollo-2021-2027.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "14201885"
+    },
+    {
+      "id": "1qS6v7PlQQozI_nPtoKdpm68G6b7dncYy",
+      "title": "2025_SEPUIMM_POERBCS-Criterios-regulacion-ecologica.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "1097431"
+    },
+    {
+      "id": "1bKhM7a8OrGhLx3tmLhbawAjHa-RxPpLv",
+      "title": "2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "102981339"
+    },
+    {
+      "id": "1YwKvrm8x_KBCDIc3IAK8mxpYsWqn7RYp",
+      "title": "2025_SEPUIMM_POERBCS-Propuesta-consulta-publica.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "2500182"
+    },
+    {
+      "id": "1eAinopgLNA60rmAJAP3kV-cDeXO_FR1_",
+      "title": "2021-01_SEPUIMM_POEEBCS-Informe-pronostico.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "5698278"
+    },
+    {
+      "id": "1s9qnQ5Z5-cD3CxNk2VTKw8GMbdmb-byr",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e3.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "11920790"
+    },
+    {
+      "id": "1i5c4cdJJ3GpLn74eF7PRKlqJo_H6ijPU",
+      "title": "2014-06_SEPUIMM_POETBCS-Informe-diagnostico.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "24787831"
+    },
+    {
+      "id": "1-WbBJfZ8kKVPFM3HZyP06qea6iyNRB5v",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-Zonificacion.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "11542750"
+    },
+    {
+      "id": "1MgvbXMU0JtdXPpUxUXGjUBtzWif_Y9AY",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e1-estrategia.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "9998255"
+    },
+    {
+      "id": "1S7V7cGRZaApggqPYkjGHMvvATBfv92Nf",
+      "title": "2018_Ayuntamiento-La-Paz_PDUCP-Centro-de-Poblacion-La-Paz.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "7032516"
+    },
+    {
+      "id": "1BbzwuZPaT_fbcRwc09KunlW0DU3B9Yvn",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-Zonificacion-Normatividad.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "22045693"
+    },
+    {
+      "id": "1BEtUn-EFKsMIQikiI0beDI6SBGrTXJ_m",
+      "title": "2013_SEPUIMM_POETBCS-Informe-caracterizacion.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "48213535"
+    },
+    {
+      "id": "1l8rDwj6Afs1W99eZ4azghfOn0wj2HddG",
+      "title": "2012_Ayuntamiento-La-Paz_PSDU-Todos-Santos-e2.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "12931220"
+    },
+    {
+      "id": "1Gv83W0cLFWvMW2yBeqq942e8vO00d7ki",
+      "title": "2024_Contraloria-BCS_Lineamientos-programas-PED-2021-2027.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "948203"
+    },
+    {
+      "id": "1dd0SYtn6PQePfHlb6IHKad13nT4SsQGC",
+      "title": "2026_Ayuntamiento-Los-Cabos_POEL-Aviso-Consulta-Publica.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "749224"
+    },
+    {
+      "id": "1KmHiFPOqQ_nOpYM1oUGQCwgvS7GlcvWF",
+      "title": "2023-08_Ayuntamiento-Los-Cabos_Convocatoria-Consulta-Publica-PDU-2040.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "782300"
+    },
+    {
+      "id": "1Ow3g7BnqsMMghomuqXH3m_XV97A9sj4k",
+      "title": "2018-12-12_Contraloria-BCS_Ley-Equilibrio-Ecologico-y-Proteccion-del-Ambiente.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "994757"
+    },
+    {
+      "id": "1NPrvoKfim-bQXC9mQ4n4zsLAzWO92Pl0",
+      "title": "2015-05-31_Contraloria-BCS_Ley-de-Desarrollo-Urbano.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "426093"
+    },
+    {
+      "id": "1SP_fzNuwf8Bec4MqPMFQ6OdAmOMFVRSi",
+      "title": "2025_SEPUIMM_POERBCS-Estrategias.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "919501"
+    },
+    {
+      "id": "1T7ShR3x-v5Hkul6kwhq-vMBg-LpVdt2l",
+      "title": "2025-01-15_BOGE-BCS_POERBCS-Aviso-Consulta-Publica.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "710038"
+    },
+    {
+      "id": "1BHO-sWEgc9sTAl1mSgDiKKRrAnpNJnZg",
+      "title": "2025_SEPUIMM_POERBCS-Marco-normativo-estrategias.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "721279"
+    },
+    {
+      "id": "1-M9Fvi6jXQ6ThOsRYwQOk-mA5qczIKUf",
+      "title": "2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf",
+      "mimeType": "application/pdf",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "659839"
+    },
+    {
+      "id": "1RPhTxDU7pu8D0DG0MTiy4z7a3qF0PHh3",
+      "title": "README_planning.md",
+      "mimeType": "text/markdown",
+      "parentId": "1o1X4yxJZk-lLzBAg8GymhOEwYqgqfewv",
+      "fileSize": "437"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "checked_at": "2026-09-15",
+  "portals": [
+    {
+      "municipality": "La Paz",
+      "type": "catastro_map",
+      "url": "https://visorurbano.lapaz.gob.mx/",
+      "status": "live",
+      "notes": "Public Welcome SPA; /mapa redirects to login; /zonas public JSON; divulgación only"
+    },
+    {
+      "municipality": "La Paz",
+      "type": "catastro_tramites",
+      "url": "https://www.lapaz.gob.mx/catalogo-tramites-servicios/0034",
+      "status": "tramites-only",
+      "notes": "Dirección General de Catastro trámites catalog"
+    },
+    {
+      "municipality": "La Paz",
+      "type": "implan",
+      "url": "https://implan.lapaz.gob.mx/",
+      "status": "live",
+      "notes": "IMPLAN La Paz OPD"
+    },
+    {
+      "municipality": "La Paz",
+      "type": "pdu_downloads",
+      "url": "https://implan.lapaz.gob.mx/consulta-y-descarga-de-los-pdu",
+      "status": "live",
+      "notes": "Replaces 404 /consultaPDU; Google Drive folder of PDUs"
+    },
+    {
+      "municipality": "La Paz",
+      "type": "pdu_pdf",
+      "url": "https://www.lapaz.gob.mx/images/marco-normativo/PDUCP-La-Paz-2018.pdf",
+      "status": "live",
+      "notes": "PDUCP 2018 PDF downloaded"
+    },
+    {
+      "municipality": "La Paz",
+      "type": "pdu_maps",
+      "url": "https://www.dropbox.com/sh/gblsq02dd3ojhkz/AABd-ZMjTbPyG1YM5eUC_4ROa?dl=0",
+      "status": "live",
+      "notes": "PDU mapas Dropbox from ayuntamiento pdu-2018 page"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "catastro",
+      "url": "http://www.catastroloscabos.gob.mx/",
+      "status": "live",
+      "notes": "Dirección de Catastro; cartografía + trámites"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "catastro_map",
+      "url": "http://www.catastroloscabos.gob.mx/Mapas/Cartografia",
+      "status": "live",
+      "notes": "Cartografía / búsqueda por clave"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "catastro_map",
+      "url": "https://apps.catastroloscabos.gob.mx/ecarto/catastro",
+      "status": "live",
+      "notes": "eCarto public maps; optional login; root /ecarto/ is PageNotFound"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "predial",
+      "url": "https://www.tesoreria.loscabos.gob.mx/pagos-y-consultas/",
+      "status": "live",
+      "notes": "Adeudo/pago predial by clave"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "implan",
+      "url": "https://implanloscabos.mx/",
+      "status": "live",
+      "notes": "IMPLAN LC; PDU 2040 3rd update consulta pública Jun–Aug 2026"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "zoning_viewer",
+      "url": "https://implanloscabos.mx/visor-urbano/",
+      "status": "live",
+      "notes": "PDU 2040 zonificación secundaria via INEGI; orientative; old /consulta-urbanistica/ 404"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "risk_atlas",
+      "url": "https://implanloscabos.mx/visor-atlas-de-riesgos-los-cabos-2/",
+      "status": "live",
+      "notes": "Municipal atlas program page"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "risk_atlas_viewer",
+      "url": "http://www.atlasnacionalderiesgos.gob.mx/app/Estados/VisorLosCabos/",
+      "status": "live",
+      "notes": "CENAPRED Visor Los Cabos"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "open_data",
+      "url": "https://implanloscabos.mx/datos-abiertos/",
+      "status": "live",
+      "notes": "Habit(ando), refugios, transporte, sitios prioritarios, informes"
+    },
+    {
+      "municipality": "Los Cabos",
+      "type": "poel",
+      "url": "https://implanloscabos.mx/programa-de-ordenamiento-ecologico-local-poel-2/",
+      "status": "live",
+      "notes": "POEL vigente; Drive cartography downloaded"
+    },
+    {
+      "municipality": "Loreto",
+      "type": "predial",
+      "url": "https://predial.loreto.gob.mx/",
+      "status": "live",
+      "notes": "Predial consulta/pago by clave; not a map"
+    },
+    {
+      "municipality": "Loreto",
+      "type": "catastro_tramites",
+      "url": "https://loreto.gob.mx/tramites",
+      "status": "tramites-only",
+      "notes": "Catastro and uso de suelo trámites list"
+    },
+    {
+      "municipality": "Loreto",
+      "type": "implan",
+      "url": "",
+      "status": "no public portal found",
+      "notes": "No IMPLAN or mapa predial located"
+    },
+    {
+      "municipality": "Comondú",
+      "type": "catastro",
+      "url": "https://reportes.comondu.gob.mx/docs/catastro/",
+      "status": "tramites-only",
+      "notes": "Functional description of Dirección de Catastro; no map viewer"
+    },
+    {
+      "municipality": "Comondú",
+      "type": "pmdu",
+      "url": "https://reportes.comondu.gob.mx/docs/programa-municipal-de-desarrollo-urbano/",
+      "status": "live",
+      "notes": "PMDU page; PDF claim; box curl often blocked"
+    },
+    {
+      "municipality": "Comondú",
+      "type": "pmdu",
+      "url": "https://sites.google.com/view/pmdu-comondu",
+      "status": "live",
+      "notes": "PMDU 2023 consulta pública Google Site"
+    },
+    {
+      "municipality": "Comondú",
+      "type": "implan",
+      "url": "",
+      "status": "no public portal found",
+      "notes": "No IMPLAN; no public catastro map"
+    },
+    {
+      "municipality": "Mulegé",
+      "type": "ayuntamiento",
+      "url": "https://mulege.gob.mx/",
+      "status": "live",
+      "notes": "Institutional site only"
+    },
+    {
+      "municipality": "Mulegé",
+      "type": "pmdu",
+      "url": "https://mulege.gob.mx/sesiona-la-comision-consultiva-para-el-plan-de-desarrollo-urbano-de-mulege/",
+      "status": "live",
+      "notes": "2024 news on PMDU process; no published viewer/PDF portal found"
+    },
+    {
+      "municipality": "Mulegé",
+      "type": "catastro",
+      "url": "",
+      "status": "no public portal found",
+      "notes": "No catastro map or predial portal located"
+    },
+    {
+      "municipality": "Mulegé",
+      "type": "implan",
+      "url": "",
+      "status": "no public portal found",
+      "notes": "Dirección de Planeación mentioned in news only"
+    },
+    {
+      "municipality": "BCS (state)",
+      "type": "sig",
+      "url": "http://sig.bcs.gob.mx/seip/default/mapa_sigbcs.htm",
+      "status": "live",
+      "notes": "PDU La Paz & Los Cabos zoning layers, flood risk Cabos, RAN, etc."
+    },
+    {
+      "municipality": "BCS (state)",
+      "type": "legislation",
+      "url": "https://contraloria.bcs.gob.mx/wp-content/uploads/2021/08/LEY-DE-CATASTRO-PARA-LOS-MUNICIPIOS-DEL-ESTADO-DE-BAJA-CALIFORNIA-SUR.pdf",
+      "status": "live",
+      "notes": "Ley de Catastro para municipios BCS; downloaded"
+    }
+  ]
+}

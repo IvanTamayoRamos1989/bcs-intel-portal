@@ -1,0 +1,367 @@
+{
+  "updated": "2026-09-25",
+  "source": "Ivan Tamayo Ramos — explicit data-gap list for BCS portal",
+  "site": "https://bajacaliforniasur2050.com",
+  "note_es": "Backlog canónico de brechas. No inventar cifras. Citar fuentes oficiales SENER/CENACE/CFE/CRE/SGM/INEGI.",
+  "gaps": [
+    {
+      "id": "gap-energia-subestaciones",
+      "topic": "Subestaciones eléctricas SIBCS",
+      "detail_es": "Número exacto, nombres y capacidad individual (MVA) de subestaciones eléctricas en BCS.",
+      "priority": "high",
+      "status": "partial",
+      "sources_sought": [
+        "PRODESEN Anexo 1 infraestructura",
+        "PAMRNT",
+        "CFE Transmisión inventarios"
+      ],
+      "notes": "PRODESEN 2024-2038 Anexo 1 lista nodos troncales SIBCS numerados 85–98 (Insurgentes, Villa Constitución, Puerto San Carlos, Las Pilas, Olas Altas, La Paz, Punta Prieta II, Coromuel, El Triunfo, Santiago, San José del Cabo, El Palmar, Central Los Cabos, Cabo San Lucas Dos) más SE de distribución citadas en PAMRNT (Recreo, Bledales, Palmira, Camino Real, Loreto, Cabo Falso, Monte Real, etc.). Falta inventario completo con MVA por SE.",
+      "citations": [
+        {
+          "title": "PRODESEN 2024-2038 Anexo 1",
+          "url": "https://base.energia.gob.mx/PRODESEN2024/prodesen24-38A1.PDF",
+          "drive": "https://drive.google.com/file/d/1Kt5T4TWB3uQYDpYo121MxnjOsoWxwkn4/view"
+        },
+        {
+          "title": "PAMRNT 2025-2039 (Drive existente)",
+          "url": "https://www.cenace.gob.mx/Docs/10_PLANEACION/ProgramasAyM/Programas%20de%20Ampliaci%C3%B3n%20y%20Modernizaci%C3%B3n%20de%20la%20RNT%20y%20RGD%20del%20MEM%202025%20%E2%80%93%202039.pdf",
+          "drive": "https://drive.google.com/file/d/110gURMUFPdlVd3h31Db6GfCzjsJK7Ewc/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-energia-transmision-prodesen-pamrnt",
+      "topic": "Ampliación de transmisión — montos y financiamiento",
+      "detail_es": "Montos específicos y fuentes de financiamiento de expansión de líneas de transmisión por PRODESEN y PAMRNT (SIBCS).",
+      "priority": "high",
+      "status": "partial",
+      "sources_sought": [
+        "PAMRNT metas físicas + cuadros de inversión",
+        "PRODESEN Anexo 2",
+        "CFE Transmisión"
+      ],
+      "notes": "P23-BS1: Incremento confiabilidad transmisión La Paz–Los Cabos; LT Olas Altas–TG Los Cabos 230 kV, 2 circuitos, 140 km-c (primer circuito); fecha necesaria abr-28, factible dic-28; estado En Análisis, avance 0%. Otros PEM: P15-BS1/2, P17-BS1, P18-BS6 (Recreo MVAr en operación), P20-BS1/2/3. Montos MDP por proyecto y fuente de financiamiento NO publicados en extractos públicos hallados.",
+      "citations": [
+        {
+          "title": "PAMRNT 2025-2039 P23-BS1",
+          "url": "https://drive.google.com/file/d/110gURMUFPdlVd3h31Db6GfCzjsJK7Ewc/view"
+        },
+        {
+          "title": "PRODESEN Anexo 2 proyectos",
+          "url": "https://base.energia.gob.mx/PRODESEN2024/prodesen24-38A2.PDF",
+          "drive": "https://drive.google.com/file/d/1qFPWEvpu2zqQkVEG-dQfHWU7_tpK9Car/view"
+        },
+        {
+          "title": "PAMRNT Parte 3 (gob.mx)",
+          "drive": "https://drive.google.com/file/d/1Gds0-75YxLfdLeyifwCnMp2W8WWUViGe/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-energia-cfe-facturacion-bcs",
+      "topic": "Ingresos/facturación CFE BCS por año",
+      "detail_es": "Cifras exactas de ingresos/facturación de electricidad de CFE para BCS por año.",
+      "priority": "medium",
+      "status": "open",
+      "sources_sought": [
+        "CFE Informe Anual desglose estatal",
+        "CFE SSB ventas por entidad",
+        "transparencia CFE"
+      ],
+      "notes": "CFE Informe Anual 2024: facturación nacional SSB 496,948 MDP / 225,213 GWh — SIN desglose BCS. CERCA (secundario) cita ventas municipales 2019 La Paz ~1,711 MDP y Los Cabos ~3,625 MDP; no es serie oficial CFE por año. Gap permanece abierto.",
+      "citations": [
+        {
+          "title": "CFE Informe Anual 2024",
+          "url": "https://www.cfe.gob.mx/finanzas/reportes-financieros/Reportes%20Anuales%20Documentos/Informe%20Anual%202024.pdf",
+          "drive": "https://drive.google.com/file/d/1xvMzvFtd37Y0Atup1TE5VVgU69_8Q-bh/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-energia-diesel-litros",
+      "topic": "Consumo anual de diésel (litros) generación",
+      "detail_es": "Consumo anual de diésel en litros/galones para generación en planta La Paz o SIBCS.",
+      "priority": "high",
+      "status": "partial",
+      "sources_sought": [
+        "CFE generación combustible por central",
+        "SEMARNAT COA",
+        "transparencia CFE"
+      ],
+      "notes": "Oficial (CENACE PAMRNT): CE TG Los Cabos (diésel, emergencia) generó 282.7 GWh en 7,760 de 8,784 h (sep 2023–sep 2024). Litros NO publicados. CERCA 2021 (no CFE): combustóleo/diésel agregado CCI BCS + Punta Prieta 623,744.78 m³ (2018) y 448,989.15 m³ (2019) — sin separar diésel vs combustóleo; usar solo como pista, no como cifra oficial CFE.",
+      "citations": [
+        {
+          "title": "PAMRNT 2025-2039 § operación SIBCS",
+          "drive": "https://drive.google.com/file/d/110gURMUFPdlVd3h31Db6GfCzjsJK7Ewc/view"
+        },
+        {
+          "title": "CERCA propuestas energía (pista m³)",
+          "url": "https://www.cerca.org.mx/wp-content/uploads/2021/06/Valenzuela-et-al-propuestas_energia_28052021.pdf",
+          "drive": "https://drive.google.com/file/d/1FWdhuYaKRqq2XgGE_VtYLLj7m8Eb2oIy/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-energia-demanda-anual-kwh",
+      "topic": "Demanda/consumo eléctrico anual SIBCS",
+      "detail_es": "Demanda eléctrica anual total en kWh para estimaciones de combustible.",
+      "priority": "high",
+      "status": "partial",
+      "sources_sought": [
+        "PRODESEN Cap.3",
+        "PLADESE",
+        "PAMRNT Cap.5"
+      ],
+      "notes": "Cerrado en lo esencial con cifras oficiales (unidades GWh = 10^6 kWh): Consumo neto SIBCS 2023 = 3,257 GWh (PRODESEN Cap.3); crecimiento 9.9% vs 2022. Pico 2023 = 660 MWh/h neta; pico 2024 = 689 MWh/h / 688.5 MW instantáneo (PAMRNT). Consumo final 2024 = 3,079 GWh (PLADESE) — contabilidad distinta; no restar. Falta serie kWh homogénea multi-año en un solo cuadro si se requiere.",
+      "citations": [
+        {
+          "title": "PRODESEN Cap.3",
+          "url": "https://base.energia.gob.mx/PRODESEN2024/prodesen24-38cap3.PDF",
+          "drive": "https://drive.google.com/file/d/1evy250u5c7eyOdA_-WBNSfDdARyunjHT/view"
+        },
+        {
+          "title": "PLADESE 2025-2039",
+          "drive": "https://drive.google.com/file/d/1sdbKN6y3dQ3zhuaTufXXY0OK3S1M1OJv/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-energia-baterias-bess",
+      "topic": "Proyectos de almacenamiento en baterías",
+      "detail_es": "Proyectos BESS: capacidad, ubicación, empresas.",
+      "priority": "high",
+      "status": "partial",
+      "sources_sought": [
+        "CRE permisos",
+        "PAMRNT SAE",
+        "CFE Oasis",
+        "Gauss Aura III"
+      ],
+      "notes": "En operación (developer/CRE): Aura Solar III La Paz — BESS 10.5 MW (Gauss Energía, operación 2018). PAMRNT: tres SAE con baterías asociados a CE energía limpia en SIBCS (regulación primaria; no contados en Capacidad Instalada Cuadro 3.4.1). Planeación PVIRCE/PAMRNT Cuadro 3.13.1: adición SAE región 07-BAJA CALIFORNIA SUR 63 MW 2025–2030 (2+20+41 MW). Anunciado (evaluación, no COD): Oasis BCS Fase I Mulegé (SIM, no SIBCS) — FV 72 MW + BESS 20 MW + H2 (CFE 2026). Inventario completo de las otras 2 SAE SIBCS y empresas pendiente.",
+      "citations": [
+        {
+          "title": "Gauss Aura Solar III",
+          "url": "https://www.gauss.com.mx/esp/aura-solar.html"
+        },
+        {
+          "title": "SENER Apéndice 4.2 BCS almacenamiento",
+          "url": "https://www.gob.mx/cms/uploads/attachment/file/590038/19_D4_Apendice_4.2_Estudio_de_BCS_ESPANOL_CGMCC.pdf",
+          "drive": "https://drive.google.com/file/d/1CfACZzO5hC4Z6lJmpOJ6oyvJIO2qJtKv/view"
+        },
+        {
+          "title": "PAMRNT SAE Cuadro 3.13.1",
+          "drive": "https://drive.google.com/file/d/110gURMUFPdlVd3h31Db6GfCzjsJK7Ewc/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-energia-renovables-capacidad",
+      "topic": "Capacidad renovable instalada y plantas solares",
+      "detail_es": "Capacidad renovable exacta, nombres de empresas y MW por planta solar.",
+      "priority": "high",
+      "status": "partial",
+      "sources_sought": [
+        "CRE permisos",
+        "PRODESEN capacidad por tecnología SIBCS",
+        "Gauss",
+        "CFE"
+      ],
+      "notes": "Aura Solar I (Gauss, La Paz, COD 2013): 42 MWp / 30 MWac, PPA CFE. Aura Solar III (Gauss, La Paz, COD 2018): 32 MWp / 25 MWac + BESS 10.5 MW. Geotermia CFE ~10 MW (SEMARNAT/Inventario histórico). PAMRNT nota híbridas FV+SAE en SEN 2024. Inventario completo de todas las plantas (Eólica Coromuel, etc.) y MW exactos por permiso CRE aún incompleto — no inventar totales.",
+      "citations": [
+        {
+          "title": "Gauss Aura Solar",
+          "url": "https://www.gauss.com.mx/esp/aura-solar.html"
+        },
+        {
+          "title": "SENER Apéndice 4.2",
+          "url": "https://www.gob.mx/cms/uploads/attachment/file/590038/19_D4_Apendice_4.2_Estudio_de_BCS_ESPANOL_CGMCC.pdf",
+          "drive": "https://drive.google.com/file/d/1CfACZzO5hC4Z6lJmpOJ6oyvJIO2qJtKv/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-mineria-produccion-impacto",
+      "topic": "Producción minera, impacto económico y casos",
+      "detail_es": "Producción minera cuantitativa, impacto económico y casos de estudio en BCS.",
+      "priority": "medium",
+      "status": "partial",
+      "sources_sought": [
+        "SGM Anuario 2024",
+        "INEGI EIMM",
+        "SETUE"
+      ],
+      "notes": "SGM Anuario 2024 (ed. 2025) §6.3 BCS (preliminar 2024p): Sal 5,240,906 t; Fosforita 886,454 t; Yeso 1,499,540 t; Cobre 13,978 t. Valor producción minera BCS 2024p: 29,549 MDP (miles de pesos corrientes en tabla SGM). Posición nacional valor: 7° (2.76%). Casos de estudio empresa-por-empresa y empleo detallado aún abiertos.",
+      "citations": [
+        {
+          "title": "SGM Anuario Estadístico Minería Mexicana 2024",
+          "url": "https://www.sgm.gob.mx/productos/pdf/Anuario_2024_Edicion_2025.pdf",
+          "drive": "https://drive.google.com/file/d/1YZrbs_UQ9oIGFpvqc8D-zD6OD7o93-Rf/view"
+        },
+        {
+          "title": "INEGI EIMM boletin 2025-02",
+          "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/indminero/indminero2025_02.pdf",
+          "drive": "https://drive.google.com/file/d/1IXaMp_yol7_rN0uHq287a2DFJ40r9xAm/view"
+        }
+      ],
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "gap-re-cadastre-secondary",
+      "topic": "Transacciones inmobiliarias La Paz / Loreto / norte",
+      "detail_es": "Faltan series catastrales/notariales comparables a BCS MLS para La Paz, Loreto, Comondú y Mulegé (volumen, precio, tipología).",
+      "priority": "high",
+      "status": "open",
+      "sources_sought": [
+        "Catastro municipal",
+        "Registro Público de la Propiedad BCS",
+        "AMPI / MLS statewide closed datasets"
+      ],
+      "notes": "Portal /inmobiliario cubre bien Los Cabos vía JLL/Cabo RE; secundarios solo con MPI JLL y Coldwell Q1 2025.",
+      "updated": "2026-09-25"
+    },
+    {
+      "id": "gap-re-commercial-hospitality",
+      "topic": "Mercado comercial / hospitalidad / rents",
+      "detail_es": "Sin serie citada de rents de oficinas/locales, cap rates hoteleros ni transacciones de activos hospitality en BCS.",
+      "priority": "medium",
+      "status": "open",
+      "sources_sought": [
+        "CBRE/Colliers Mexico hospitality",
+        "JLL Hotels Mexico",
+        "SECTUR/DataTur asset sales"
+      ],
+      "notes": "FITURCA da RevPAR/ADR como proxy de demanda hotelera, no de valuación de activos.",
+      "updated": "2026-09-25"
+    },
+    {
+      "id": "gap-re-permits-pipeline",
+      "topic": "Permisos de construcción y pipeline por municipio",
+      "detail_es": "Falta inventario de permisos de construcción / uso de suelo / DUIS por municipio con montos y tipología.",
+      "priority": "medium",
+      "status": "open",
+      "sources_sought": [
+        "SEPUIMM / ayuntamientos",
+        "SIDUE",
+        "DUIS SEMARNAT"
+      ],
+      "updated": "2026-09-25"
+    },
+    {
+      "id": "gap-re-vivienda-bienestar-avance",
+      "topic": "Avance Vivienda para el Bienestar BCS",
+      "detail_es": "Meta convenio oct-2024: 37,500 acciones en 6 años. Falta reporte oficial de avance de obra/entregas por municipio.",
+      "priority": "high",
+      "status": "partial",
+      "sources_sought": [
+        "INFONAVIT reportes estatales",
+        "CONAVI",
+        "Gobierno BCS boletines"
+      ],
+      "citations": [
+        {
+          "title": "Convenio Vivienda para el Bienestar BCS oct 2024",
+          "path": "13_federal_projects/docs/housing/2024-10_BCS-gob_Convenio-Vivienda-para-el-Bienestar.pdf"
+        }
+      ],
+      "updated": "2026-09-25"
+    }
+  ],
+  "drive_uploads": {
+    "prodesen_cap3": "https://drive.google.com/file/d/1evy250u5c7eyOdA_-WBNSfDdARyunjHT/view",
+    "anexo1": "https://drive.google.com/file/d/1Kt5T4TWB3uQYDpYo121MxnjOsoWxwkn4/view",
+    "anexo2": "https://drive.google.com/file/d/1qFPWEvpu2zqQkVEG-dQfHWU7_tpK9Car/view",
+    "pamrnt_p3": "https://drive.google.com/file/d/1Gds0-75YxLfdLeyifwCnMp2W8WWUViGe/view",
+    "pamrnt_full": "https://drive.google.com/file/d/110gURMUFPdlVd3h31Db6GfCzjsJK7Ewc/view",
+    "cenace_anexos": "https://drive.google.com/file/d/1ePaEFs-H2IVR9FF_Ni97SnVR9XUHF76x/view",
+    "sae_apendice": "https://drive.google.com/file/d/1CfACZzO5hC4Z6lJmpOJ6oyvJIO2qJtKv/view",
+    "cfe_informe": "https://drive.google.com/file/d/1xvMzvFtd37Y0Atup1TE5VVgU69_8Q-bh/view",
+    "cerca_fuel": "https://drive.google.com/file/d/1FWdhuYaKRqq2XgGE_VtYLLj7m8Eb2oIy/view",
+    "cerca_cons": "https://drive.google.com/file/d/1OnI61PBE5J9f3BsjcCkMpnhnfCUmgIFg/view",
+    "sgm": "https://drive.google.com/file/d/1YZrbs_UQ9oIGFpvqc8D-zD6OD7o93-Rf/view",
+    "inegi_eimm": "https://drive.google.com/file/d/1IXaMp_yol7_rN0uHq287a2DFJ40r9xAm/view",
+    "pladese": "https://drive.google.com/file/d/1sdbKN6y3dQ3zhuaTufXXY0OK3S1M1OJv/view"
+  },
+  "drive_folder_energy": "https://drive.google.com/drive/folders/1WCOk146uvNMXUce05J9rjpVsbvOhPz6-",
+  "drive_folder_economy": "https://drive.google.com/drive/folders/1YEQq0vxgOYlpYFz_ZCLjUIIcphy-HHeJ",
+  "wishlist": [
+    {
+      "id": "wish-ppdu-los-planes-anexos",
+      "title": "PPDU Los Planes – Ensenada de Muertos – El Sargento: Anexo Documental y Anexo Cartográfico",
+      "presumed_source": "IMPLAN La Paz. Carpetas compartidas de Google Drive «Anexo Documental» (12CIMwJ…) y «Anexo Cartográfico» (1Np48D…), modificadas el 18 feb 2025, según el listado guardado de la carpeta del PPDU",
+      "why_it_matters": "Son los anexos técnicos y cartográficos del Programa Parcial de Desarrollo Urbano del corredor costero oriente de La Paz. El documento principal está en el acervo, pero sin los planos de zonificación y la memoria técnica no se puede verificar usos de suelo ni densidades.",
+      "where_to_request": "IMPLAN La Paz: pedir acceso de lectura a las dos carpetas compartidas de Drive, o solicitarlo por la Plataforma Nacional de Transparencia (sujeto obligado: H. Ayuntamiento de La Paz / IMPLAN).",
+      "url": "https://drive.google.com/drive/folders/12CIMwJksG0DbEo8gVo_InISloqYzZrvU",
+      "reason": "descarga fallida (0 bytes)",
+      "removed_paths": [
+        "01_planning/_acq_2026-09-21/apsdu_try/12CIMwJksG0DbEo8gVo_InISloqYzZrvU.bin",
+        "01_planning/_acq_2026-09-21/apsdu_try/1Np48DZTyIh51O6cHqpEuMv_IdhLCs-nM.bin",
+        "01_planning/_acq_2026-09-21b/anx_12CIMwJksG0DbEo8gVo_InISloqYzZrvU.bin",
+        "01_planning/_acq_2026-09-21b/anx_1Np48DZTyIh51O6cHqpEuMv_IdhLCs-nM.bin"
+      ],
+      "status": "por obtener",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "wish-setues-biblioteca-digital",
+      "title": "Documentos de la Biblioteca Digital de la SETUES BCS (IDs 318–330, 400 y 428): contenido aún no identificado",
+      "presumed_source": "Secretaría de Turismo y Economía de BCS (SETUES), Biblioteca Digital. Al descargarlos, el portal devolvió «No se encontró la página»",
+      "why_it_matters": "Se buscaron como instrumentos de planeación y estadística de turismo y economía estatal. Hoy no hay ningún contenido verificable; hacen falta para completar la serie turística oficial del estado.",
+      "where_to_request": "SETUES BCS, Biblioteca Digital (setues.bcs.gob.mx). Si los enlaces siguen rotos, pedirlos a la Unidad de Transparencia de la SETUES por la PNT, indicando los IDs.",
+      "reason": "No se encontró la página &#8211; Biblioteca Digital | Secretaría de Turismo y Economía",
+      "removed_paths": [
+        "01_planning/_acq_2026-09-21c/setues_318.pdf",
+        "01_planning/_acq_2026-09-21c/setues_319.pdf",
+        "01_planning/_acq_2026-09-21c/setues_320.pdf",
+        "01_planning/_acq_2026-09-21c/setues_321.pdf",
+        "01_planning/_acq_2026-09-21c/setues_322.pdf",
+        "01_planning/_acq_2026-09-21c/setues_323.pdf",
+        "01_planning/_acq_2026-09-21c/setues_324.pdf",
+        "01_planning/_acq_2026-09-21c/setues_325.pdf",
+        "01_planning/_acq_2026-09-21c/setues_326.pdf",
+        "01_planning/_acq_2026-09-21c/setues_327.pdf",
+        "01_planning/_acq_2026-09-21c/setues_328.pdf",
+        "01_planning/_acq_2026-09-21c/setues_329.pdf",
+        "01_planning/_acq_2026-09-21c/setues_330.pdf",
+        "01_planning/_acq_2026-09-21c/setues_400.pdf",
+        "01_planning/_acq_2026-09-21c/setues_428.pdf"
+      ],
+      "status": "por obtener",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "wish-estenografica-hospital-santa-rosalia",
+      "title": "Versión estenográfica, Presidencia de la República, 25 oct 2024: Hospital de Santa Rosalía",
+      "presumed_source": "Presidencia de la República (gob.mx/presidencia, versiones estenográficas). Se guardó una página de verificación anti-bot en lugar del texto",
+      "why_it_matters": "Es la fuente primaria de los anuncios federales sobre el hospital de Santa Rosalía (Mulegé) registrados en el inventario de proyectos federales.",
+      "where_to_request": "gob.mx/presidencia → Prensa → Versiones estenográficas, 25 oct 2024 (descarga manual desde un navegador).",
+      "reason": "Challenge Validation",
+      "removed_paths": [
+        "13_federal_projects/docs/health/2024-10-25_Presidencia_Estenografica-Hospital-Santa-Rosalia.html",
+        "13_federal_projects/docs/health/2024-10-25_Presidencia_Estenografica-Hospital-Santa-Rosalia.pdf"
+      ],
+      "status": "por obtener",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "wish-afac-estadistica-aeropuertos",
+      "title": "AFAC, Estadística operativa de aeropuertos 2006–2026 (hoja de cálculo)",
+      "presumed_source": "Agencia Federal de Aviación Civil (AFAC). Se guardó una página de verificación anti-bot en lugar del archivo .xlsx",
+      "why_it_matters": "Es la serie oficial de pasajeros y operaciones de los aeropuertos de SJD, La Paz y Loreto. Se usa en la lectura de conectividad y demanda turística.",
+      "where_to_request": "gob.mx/afac → Estadísticas → Estadística operativa de aeropuertos (descarga manual), o solicitud a la AFAC por la PNT.",
+      "reason": "Challenge Validation",
+      "removed_paths": [
+        "13_territorial_intelligence/ports_demand/_downloads/2026-07_AFAC_Estadistica-Operativa-Aeropuertos-2006-2026.xlsx"
+      ],
+      "status": "por obtener",
+      "added": "2026-10-05"
+    }
+  ],
+  "wishlist_note_es": "Documentos retirados del catálogo público porque el archivo o su contenido no se pudo obtener. Generado por scripts/build_wishlist.py a partir de Base de datos BCS 2050 — datos del portal."
+}

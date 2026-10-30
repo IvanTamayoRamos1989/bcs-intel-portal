@@ -1,0 +1,1660 @@
+{
+  "updated": "2026-09-20",
+  "title_es": "Dossiers de lugar — BCS 2050",
+  "title_en": "Place dossiers — BCS 2050",
+  "disclaimer_es": "Inteligencia interna. FACT = dato o archivo del portal. ASSUMPTION = lectura de diseño (lentes de diseño) sin métrica inventada. ; desequilibrios locales no se cancelan a escala estatal.",
+  "disclaimer_en": "Internal intelligence. FACT = portal datum or file. ASSUMPTION = design reading (design lenses) without invented metrics. ; local imbalances do not cancel statewide.",
+  "places": [
+    {
+      "id": "los_cabos",
+      "name_es": "Los Cabos / San José–Cabo San Lucas",
+      "name_en": "Los Cabos / San José–Cabo San Lucas",
+      "vocation": {
+        "statement_es": "Motor de crecimiento turístico y puerta internacional primaria del cabo.",
+        "statement_en": "Tourism–growth engine and primary international gateway of the cape.",
+        "strengths_es": "Marca reconocida; clúster aeropuerto SJD + hotelería; motor fiscal del sur (ficha municipal + inventario de vuelos del portal).",
+        "strengths_en": "Brand recognition; SJD airport + hospitality cluster; fiscal engine for the south (municipal sheet + portal flight inventory).",
+        "constraints_es": "Escasez hídrica y dependencia de desalación; carga pico eléctrica; especulación costera vs. capacidad de servicios; acuíferos en déficit (0317/0319).",
+        "constraints_en": "Water scarcity and desal dependency; peak energy load; coastal land speculation vs. service capacity; deficit aquifers (0317/0319).",
+        "sum_2050_es": "Aporta fondos y conectividad a la península — solo si deja de exportar escasez a East Cape y a la espina del Pacífico.",
+        "sum_2050_en": "Funds and connectivity for the peninsula — but only if it stops exporting scarcity to East Cape and the Pacific spine.",
+        "structure_note_es": "Motor turístico–aéreo: Cabo San Lucas–San José del Cabo como corredor, no enclave aislado; SJD amplifica demanda.",
+        "structure_note_en": "Tourism–air engine: Cabo San Lucas–San José del Cabo as corridor, not isolated enclave; SJD amplifies demand.",
+        "tag": "FACT",
+        "tag_note_es": "Vocación desde Base de datos BCS 2050 — prospectiva places[]; nota de estructura etiquetada aparte.",
+        "tag_note_en": "Vocation from Base de datos BCS 2050 — prospectiva places[]; structure note tagged separately."
+      },
+      "demand_supply": {
+        "balance_read": "constrained",
+        "balance_read_es": "Restringido: demanda aérea/turística dominante vs. acuíferos 0317/0319 en déficit y techo SIBCS/transmisión.",
+        "balance_read_en": "Constrained: dominant air/tourism demand vs. aquifers 0317/0319 in deficit and SIBCS/transmission ceiling.",
+        "vocation_es": "Motor de crecimiento turístico y puerta internacional primaria del cabo.",
+        "vocation_en": "Tourism–growth engine and primary international gateway of the cape.",
+        "cells_ok": 11,
+        "cells_gap": 2,
+        "href": "/crecimiento/?place=los_cabos#los_cabos",
+        "tag": "FACT",
+        "tag_note_es": "Solo celdas de Base de datos BCS 2050 — demanda y oferta de crecimiento — sin cifras inventadas.",
+        "tag_note_en": "Only cells from Base de datos BCS 2050 — demanda y oferta de crecimiento — no invented figures."
+      },
+      "contested_claims": [
+        {
+          "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+          "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "east_cape",
+            "todos_santos",
+            "la_paz",
+            "loreto",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "vision_spatial",
+              "label_es": "Visión y marco espacial",
+              "label_en": "Vision & spatial framework"
+            }
+          ],
+          "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+          "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+        },
+        {
+          "claim_es": "Agua y energía no son «servicios de después»: son la constricción vinculante de toda vocación costera (Cabos, East Cape, Pacífico, Loreto).",
+          "claim_en": "Water and energy are not utilities afterthoughts — they are the binding constraint on every coastal vocation (Cabos, East Cape, Pacific, Loreto).",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "east_cape",
+            "loreto",
+            "todos_santos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "energy_grid",
+              "label_es": "Energía y red",
+              "label_en": "Energy & grid"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            }
+          ],
+          "next_evidence_es": "Enlazar la señal de acoplamiento agua–energía con celdas gap de agua/energía en /crecimiento para Cabos y La Paz.",
+          "next_evidence_en": "Link the water–energy coupling signal to water/energy gap cells on /crecimiento for Cabos and La Paz."
+        },
+        {
+          "claim_es": "East Cape / Cabo Pulmo: techo de conservación vs. demanda de desborde desde el crecimiento de Cabos.",
+          "claim_en": "East Cape / Cabo Pulmo conservation ceiling vs. spillover demand from Cabos growth.",
+          "status": "contested",
+          "place_ids": [
+            "east_cape",
+            "los_cabos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "environment_anp",
+              "label_es": "Ambiente y ANPs",
+              "label_en": "Environment & ANPs"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Abrir ficha East Cape en /crecimiento y cruzar con instrumentos de planeación vigentes del East Cape / San José del Este (PDU/POEL / plan parcial).",
+          "next_evidence_en": "Open the East Cape /crecimiento card and cross-check in-force East Cape / San José del Este planning instruments (PDU/POEL / partial plan)."
+        },
+        {
+          "claim_es": "Migración de amenidad (Todos Santos–Pescadero) como diversificación vs. densificación no planeada sin infraestructura a escala Cabos.",
+          "claim_en": "Amenity migration (Todos Santos–Pescadero) as diversification vs. unplanned densification without cape-scale infrastructure.",
+          "status": "contested",
+          "place_ids": [
+            "todos_santos",
+            "los_cabos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "community_tenure",
+              "label_es": "Comunidad y tenencia",
+              "label_en": "Community & land tenure"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            }
+          ],
+          "next_evidence_es": "Revisar gaps de infraestructura en scorecard Todos Santos y stills / foresights para ese place_id.",
+          "next_evidence_en": "Review infrastructure gaps on the Todos Santos scorecard and stills/foresights for that place_id."
+        },
+        {
+          "claim_es": "Comondú inland agri/desal como segundo pilar real vs. el turismo costero como único motor fiscal.",
+          "claim_en": "Inland Comondú agri/desal as a true second pillar vs. coastal tourism as the only fiscal engine.",
+          "status": "contested",
+          "place_ids": [
+            "comondu",
+            "los_cabos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            }
+          ],
+          "next_evidence_es": "Marcar celdas gap agrícolas/DMA de Comondú en /crecimiento; no inventar hm³ — solo portal.",
+          "next_evidence_en": "Flag Comondú agri/DMA gap cells on /crecimiento; do not invent hm³ — portal only."
+        },
+        {
+          "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+          "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+          "status": "gap",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "loreto",
+            "east_cape",
+            "todos_santos",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+          "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+        }
+      ],
+      "watchlist": [
+        {
+          "item_es": "Avance e implicaciones del Plan Parcial / instrumentos de planeación East Cape / San José del Este.",
+          "item_en": "Progress and implications of East Cape / San José del Este partial plan and planning instruments."
+        },
+        {
+          "item_es": "Consulta e implementación POEL Los Cabos 2026 (obligaciones de agua/residuos).",
+          "item_en": "Los Cabos POEL 2026 consultation and implementation (water/waste obligations)."
+        },
+        {
+          "item_es": "Conectividad SJD: 56 destinos sin escalas (inventario portal vuelos).",
+          "item_en": "SJD connectivity: 56 non-stop destinations (portal flights inventory)."
+        }
+      ],
+      "instruments": [
+        {
+          "instrument": "PDU",
+          "status": "on_disk",
+          "label_es": "PDU en catálogo",
+          "label_en": "PDU in catalog",
+          "path": "01_planning/2013-05-06_BOGE-BCS_No19-PDU-2040-Los-Cabos.pdf",
+          "note_es": "2013-05-06_BOGE-BCS_No19-PDU-2040-Los-Cabos.pdf",
+          "note_en": "2013-05-06_BOGE-BCS_No19-PDU-2040-Los-Cabos.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "POEL",
+          "status": "on_disk",
+          "label_es": "POEL en catálogo",
+          "label_en": "POEL in catalog",
+          "path": "01_planning/2022_IMPLAN-Los-Cabos_Convenio-POELP.pdf",
+          "note_es": "2022_IMPLAN-Los-Cabos_Convenio-POELP.pdf",
+          "note_en": "2022_IMPLAN-Los-Cabos_Convenio-POELP.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "ANP",
+          "status": "on_disk",
+          "label_es": "ANP en catálogo",
+          "label_en": "ANP in catalog",
+          "path": "10_data_lake/_raw_downloads/conagua_conanp/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+          "note_es": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+          "note_en": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-Cabo-San-Lucas-0317.pdf",
+          "tag": "FACT"
+        }
+      ],
+      "mobility": {
+        "airport_facts": [
+          {
+            "es": "Aeropuerto SJD: 56 destinos sin escalas (FlightConnections, 2026-09-17).",
+            "en": "Airport SJD: 56 non-stop destinations (FlightConnections, 2026-09-17).",
+            "tag": "FACT",
+            "iata": "SJD",
+            "destinations": 56
+          }
+        ],
+        "corridor_es": "Puerta aérea SJD + corredor terrestre Cabo–SJD; dependencia desal/SIBCS (señales foresights).",
+        "corridor_en": "SJD air gate + Cabo–SJD land corridor; desal/SIBCS dependency (foresight signals).",
+        "tag": "FACT",
+        "schematic": "/lugares/los_cabos_structure.svg"
+      },
+      "tenure": {
+        "risk_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+        "risk_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities.",
+        "open_ask_es": "¿Puede el crecimiento seguir liderado por el turismo sin encerrar al cabo en estrés hídrico-eléctrico permanente?",
+        "open_ask_en": "Can growth stay tourism-led without locking the cape into permanent water–energy stress?",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Derivado del lente community_tenure (rol), no de un censo de tenencia por lugar.",
+        "tag_note_en": "From community_tenure role lens, not a place-level tenure census."
+      },
+      "structure": {
+        "role": "gateway",
+        "role_es": "Puerta / corredor",
+        "role_en": "Gateway / corridor",
+        "reading_es": "Motor turístico–aéreo: Cabo San Lucas–San José del Cabo como corredor, no enclave aislado; SJD amplifica demanda.",
+        "reading_en": "Tourism–air engine: Cabo San Lucas–San José del Cabo as corridor, not isolated enclave; SJD amplifies demand.",
+        "tag": "FACT",
+        "tag_note_es": "Vocación y conteos de vuelos SJD desde foresights/growth/flights.",
+        "tag_note_en": "Vocation and SJD flight counts from foresights/growth/flights.",
+        "schematic": "/lugares/los_cabos_structure.svg"
+      }
+    },
+    {
+      "id": "east_cape",
+      "name_es": "East Cape / Cabo del Este (San José del Este)",
+      "name_en": "East Cape / Cabo del Este (San José del Este)",
+      "vocation": {
+        "statement_es": "Frontera de crecimiento costero bajo presión de conservación (lógica Cabo Pulmo / ANP); piloto de realineación espacial.",
+        "statement_en": "Coastal growth frontier under conservation pressure (Cabo Pulmo / ANP logic); spatial realignment pilot.",
+        "strengths_es": "Ecología arrecifal/costera singular; amenidad de menor densidad; corredor Cabos–La Paz; decks 14 sep 2026 en 01_planning.",
+        "strengths_en": "Unique reef/coastal ecology; lower-density amenity appeal; Cabos–La Paz corridor; 14 Sep 2026 decks in 01_planning.",
+        "constraints_es": "Límites ANP y capacidad de carga; infraestructura delgada; agua/energía antes de hotelería masiva; riesgo de spillover no gestionado desde Cabos.",
+        "constraints_en": "ANP and carrying-capacity limits; thin infrastructure; water/energy before mass hospitality; unmanaged spillover risk from Cabos.",
+        "sum_2050_es": "Protege la marca ecológica que Cabos monetiza; si se sobreconstruye, el modelo sureño pierde legitimidad.",
+        "sum_2050_en": "Protects the ecological brand that Cabos monetizes; if overbuilt, the whole southern model loses legitimacy.",
+        "structure_note_es": "Techo de conservación (Cabo Pulmo / ANP) frente a desborde desde Cabos — zona de transición, no turismo residual.",
+        "structure_note_en": "Conservation ceiling (Cabo Pulmo / ANP) vs. spillover from Cabos — zona de transición, not residual tourism.",
+        "tag": "FACT",
+        "tag_note_es": "Vocación desde Base de datos BCS 2050 — prospectiva places[]; nota de estructura etiquetada aparte.",
+        "tag_note_en": "Vocation from Base de datos BCS 2050 — prospectiva places[]; structure note tagged separately."
+      },
+      "demand_supply": {
+        "balance_read": "contested",
+        "balance_read_es": "En disputa: resorts/masterplans (Costa Palmas et al.) vs. DMA 0318 Pulmo y techos ANP; evidencia cuantitativa de carga aún incompleta.",
+        "balance_read_en": "Contested: resorts/masterplans (Costa Palmas et al.) vs. DMA 0318 Pulmo and ANP ceilings; quantitative load evidence still incomplete.",
+        "vocation_es": "Frontera de crecimiento costero bajo presión de conservación (lógica Cabo Pulmo / ANP); piloto de realineación espacial.",
+        "vocation_en": "Coastal growth frontier under conservation pressure (Cabo Pulmo / ANP logic); spatial realignment pilot.",
+        "cells_ok": 5,
+        "cells_gap": 3,
+        "href": "/crecimiento/?place=east_cape#east_cape",
+        "tag": "FACT",
+        "tag_note_es": "Solo celdas de Base de datos BCS 2050 — demanda y oferta de crecimiento — sin cifras inventadas.",
+        "tag_note_en": "Only cells from Base de datos BCS 2050 — demanda y oferta de crecimiento — no invented figures."
+      },
+      "contested_claims": [
+        {
+          "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+          "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "east_cape",
+            "todos_santos",
+            "la_paz",
+            "loreto",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "vision_spatial",
+              "label_es": "Visión y marco espacial",
+              "label_en": "Vision & spatial framework"
+            }
+          ],
+          "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+          "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+        },
+        {
+          "claim_es": "Agua y energía no son «servicios de después»: son la constricción vinculante de toda vocación costera (Cabos, East Cape, Pacífico, Loreto).",
+          "claim_en": "Water and energy are not utilities afterthoughts — they are the binding constraint on every coastal vocation (Cabos, East Cape, Pacific, Loreto).",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "east_cape",
+            "loreto",
+            "todos_santos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "energy_grid",
+              "label_es": "Energía y red",
+              "label_en": "Energy & grid"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            }
+          ],
+          "next_evidence_es": "Enlazar la señal de acoplamiento agua–energía con celdas gap de agua/energía en /crecimiento para Cabos y La Paz.",
+          "next_evidence_en": "Link the water–energy coupling signal to water/energy gap cells on /crecimiento for Cabos and La Paz."
+        },
+        {
+          "claim_es": "East Cape / Cabo Pulmo: techo de conservación vs. demanda de desborde desde el crecimiento de Cabos.",
+          "claim_en": "East Cape / Cabo Pulmo conservation ceiling vs. spillover demand from Cabos growth.",
+          "status": "contested",
+          "place_ids": [
+            "east_cape",
+            "los_cabos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "environment_anp",
+              "label_es": "Ambiente y ANPs",
+              "label_en": "Environment & ANPs"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Abrir ficha East Cape en /crecimiento y cruzar con instrumentos de planeación vigentes del East Cape / San José del Este (PDU/POEL / plan parcial).",
+          "next_evidence_en": "Open the East Cape /crecimiento card and cross-check in-force East Cape / San José del Este planning instruments (PDU/POEL / partial plan)."
+        },
+        {
+          "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+          "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+          "status": "gap",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "loreto",
+            "east_cape",
+            "todos_santos",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+          "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+        }
+      ],
+      "watchlist": [
+        {
+          "item_es": "Avance e implicaciones del Plan Parcial / instrumentos de planeación East Cape / San José del Este.",
+          "item_en": "Progress and implications of East Cape / San José del Este partial plan and planning instruments."
+        }
+      ],
+      "instruments": [
+        {
+          "instrument": "PDU",
+          "status": "gap",
+          "label_es": "PDU — sin hallazgo claro",
+          "label_en": "PDU — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "POEL",
+          "status": "gap",
+          "label_es": "POEL — sin hallazgo claro",
+          "label_en": "POEL — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PSDU",
+          "status": "on_disk",
+          "label_es": "PSDU en catálogo",
+          "label_en": "PSDU in catalog",
+          "path": "01_planning/2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-El-Cardonal-Politicas-y-Estrategia.pdf",
+          "note_es": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-El-Cardonal-Politicas-y-Estrategia.pd",
+          "note_en": "2012_Ayuntamiento-La-Paz_PSDU-Los-Barriles-El-Cardonal-Politicas-y-Estrategia.pd",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "ANP",
+          "status": "on_disk",
+          "label_es": "ANP en catálogo",
+          "label_en": "ANP in catalog",
+          "path": "06_environment/2009-11-13_CONANP_Aviso_DOF_PM_PN_Cabo_Pulmo.pdf",
+          "note_es": "2009-11-13_CONANP_Aviso_DOF_PM_PN_Cabo_Pulmo.pdf",
+          "note_en": "2009-11-13_CONANP_Aviso_DOF_PM_PN_Cabo_Pulmo.pdf",
+          "tag": "FACT"
+        }
+      ],
+      "mobility": {
+        "airport_facts": [],
+        "corridor_es": "Acceso principalmente por corredor desde Los Cabos / La Paz; sin aeropuerto propio en el pack de vuelos.",
+        "corridor_en": "Access mainly via corridor from Los Cabos / La Paz; no own airport in the flights pack.",
+        "tag": "FACT",
+        "schematic": "/lugares/east_cape_structure.svg"
+      },
+      "tenure": {
+        "risk_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+        "risk_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities.",
+        "open_ask_es": "¿Es East Cape un borde gestionado conservación–turismo — o el próximo desborde no gestionado de Cabos?",
+        "open_ask_en": "Is East Cape a managed conservation–tourism edge — or the next unmanaged spillover from Cabos?",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Derivado del lente community_tenure (rol), no de un censo de tenencia por lugar.",
+        "tag_note_en": "From community_tenure role lens, not a place-level tenure census."
+      },
+      "structure": {
+        "role": "edge",
+        "role_es": "Borde / edge",
+        "role_en": "Transition zone",
+        "reading_es": "Techo de conservación (Cabo Pulmo / ANP) frente a desborde desde Cabos — zona de transición, no turismo residual.",
+        "reading_en": "Conservation ceiling (Cabo Pulmo / ANP) vs. spillover from Cabos — zona de transición, not residual tourism.",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Lectura semillas de consenso; no hay métrica de desborde inventada.",
+        "tag_note_en": "consensus-seed reading; no invented spillover metric.",
+        "schematic": "/lugares/east_cape_structure.svg"
+      }
+    },
+    {
+      "id": "todos_santos",
+      "name_es": "Todos Santos–El Pescadero",
+      "name_en": "Todos Santos–El Pescadero",
+      "vocation": {
+        "statement_es": "Espina de amenidad del Pacífico (cultura, turismo residencial, amenidades creativas/agro).",
+        "statement_en": "Pacific amenity spine (culture, residential tourism, creative/agro amenities).",
+        "strengths_es": "Identidad Pacífico distinta al corredor Cabos; imán de migración lifestyle; capital cultural; parte del corredor de foco Cabos–Todos Santos–La Paz.",
+        "strengths_en": "Distinct Pacific identity vs. Cabos corridor; lifestyle migration magnet; cultural capital; part of Cabos–Todos Santos–La Paz focus corridor.",
+        "constraints_es": "Estrés hídrico, septic/tenencia bajo crecimiento de amenidad; presión de acceso carretera/costa; acuífero 0313 en déficit (ficha La Paz).",
+        "constraints_en": "Water and septic/tenure stress under amenity growth; highway/coastal access pressure; aquifer 0313 in deficit (La Paz sheet).",
+        "sum_2050_es": "Diversifica la economía sureña hacia el Pacífico — válvula de presión solo si la planeación evita el sprawl de desborde.",
+        "sum_2050_en": "Diversifies the southern economy Pacific-ward — a pressure valve only if planning prevents spillover sprawl.",
+        "structure_note_es": "Amenidad Todos Santos–Pescadero: densificación vs. diversificación; morfología de pueblo a proteger hasta evidencia catastral.",
+        "structure_note_en": "Amenity Todos Santos–Pescadero: densification vs. diversification; pueblo morphology to protect until cadastral evidence.",
+        "tag": "FACT",
+        "tag_note_es": "Vocación desde Base de datos BCS 2050 — prospectiva places[]; nota de estructura etiquetada aparte.",
+        "tag_note_en": "Vocation from Base de datos BCS 2050 — prospectiva places[]; structure note tagged separately."
+      },
+      "demand_supply": {
+        "balance_read": "constrained",
+        "balance_read_es": "Restringido: amenidad/migración residencial sobre acuífero 0313 en déficit; remanente 0314 El Pescadero es mínimo y no compensa.",
+        "balance_read_en": "Constrained: amenity/residential migration on deficit aquifer 0313; 0314 El Pescadero remnant is tiny and non-transferable.",
+        "vocation_es": "Espina de amenidad del Pacífico (cultura, turismo residencial, amenidades creativas/agro).",
+        "vocation_en": "Pacific amenity spine (culture, residential tourism, creative/agro amenities).",
+        "cells_ok": 4,
+        "cells_gap": 5,
+        "href": "/crecimiento/?place=todos_santos#todos_santos",
+        "tag": "FACT",
+        "tag_note_es": "Solo celdas de Base de datos BCS 2050 — demanda y oferta de crecimiento — sin cifras inventadas.",
+        "tag_note_en": "Only cells from Base de datos BCS 2050 — demanda y oferta de crecimiento — no invented figures."
+      },
+      "contested_claims": [
+        {
+          "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+          "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "east_cape",
+            "todos_santos",
+            "la_paz",
+            "loreto",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "vision_spatial",
+              "label_es": "Visión y marco espacial",
+              "label_en": "Vision & spatial framework"
+            }
+          ],
+          "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+          "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+        },
+        {
+          "claim_es": "Agua y energía no son «servicios de después»: son la constricción vinculante de toda vocación costera (Cabos, East Cape, Pacífico, Loreto).",
+          "claim_en": "Water and energy are not utilities afterthoughts — they are the binding constraint on every coastal vocation (Cabos, East Cape, Pacific, Loreto).",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "east_cape",
+            "loreto",
+            "todos_santos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "energy_grid",
+              "label_es": "Energía y red",
+              "label_en": "Energy & grid"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            }
+          ],
+          "next_evidence_es": "Enlazar la señal de acoplamiento agua–energía con celdas gap de agua/energía en /crecimiento para Cabos y La Paz.",
+          "next_evidence_en": "Link the water–energy coupling signal to water/energy gap cells on /crecimiento for Cabos and La Paz."
+        },
+        {
+          "claim_es": "Migración de amenidad (Todos Santos–Pescadero) como diversificación vs. densificación no planeada sin infraestructura a escala Cabos.",
+          "claim_en": "Amenity migration (Todos Santos–Pescadero) as diversification vs. unplanned densification without cape-scale infrastructure.",
+          "status": "contested",
+          "place_ids": [
+            "todos_santos",
+            "los_cabos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "community_tenure",
+              "label_es": "Comunidad y tenencia",
+              "label_en": "Community & land tenure"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            }
+          ],
+          "next_evidence_es": "Revisar gaps de infraestructura en scorecard Todos Santos y stills / foresights para ese place_id.",
+          "next_evidence_en": "Review infrastructure gaps on the Todos Santos scorecard and stills/foresights for that place_id."
+        },
+        {
+          "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+          "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+          "status": "gap",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "loreto",
+            "east_cape",
+            "todos_santos",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+          "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+        }
+      ],
+      "watchlist": [],
+      "instruments": [
+        {
+          "instrument": "PDU",
+          "status": "gap",
+          "label_es": "PDU — sin hallazgo claro",
+          "label_en": "PDU — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "POEL",
+          "status": "gap",
+          "label_es": "POEL — sin hallazgo claro",
+          "label_en": "POEL — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PSDU",
+          "status": "on_disk",
+          "label_es": "PSDU en catálogo",
+          "label_en": "PSDU in catalog",
+          "path": "01_planning/2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+          "note_es": "2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+          "note_en": "2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "ANP",
+          "status": "on_disk",
+          "label_es": "ANP en catálogo",
+          "label_en": "ANP in catalog",
+          "path": "10_data_lake/_raw_downloads/conagua_conanp/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Pescadero-0314.pdf",
+          "note_es": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Pescadero-0314.pdf",
+          "note_en": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-El-Pescadero-0314.pdf",
+          "tag": "FACT"
+        }
+      ],
+      "mobility": {
+        "airport_facts": [],
+        "corridor_es": "Espina carretera Pacífico hacia Cabos/La Paz; sin aeropuerto propio en el pack de vuelos.",
+        "corridor_en": "Pacific highway spine toward Cabos/La Paz; no own airport in the flights pack.",
+        "tag": "FACT",
+        "schematic": "/lugares/todos_santos_structure.svg"
+      },
+      "tenure": {
+        "risk_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+        "risk_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities.",
+        "open_ask_es": "¿Puede densificarse la migración de amenidad sin convertir los pueblos del Pacífico en un segundo Cabos sin su infraestructura?",
+        "open_ask_en": "Can amenity migration densify without turning Pacific towns into a second Cabos without Cabos’ infrastructure?",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Derivado del lente community_tenure (rol), no de un censo de tenencia por lugar.",
+        "tag_note_en": "From community_tenure role lens, not a place-level tenure census."
+      },
+      "structure": {
+        "role": "spine",
+        "role_es": "Espina Pacífico",
+        "role_en": "Pacific spine",
+        "reading_es": "Amenidad Todos Santos–Pescadero: densificación vs. diversificación; morfología de pueblo a proteger hasta evidencia catastral.",
+        "reading_en": "Amenity Todos Santos–Pescadero: densification vs. diversification; pueblo morphology to protect until cadastral evidence.",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "La lectura de diseño marca morfología como ASSUMPTION hasta evidencia catastral.",
+        "tag_note_en": "Design reading marks morphology as ASSUMPTION until cadastral evidence.",
+        "schematic": "/lugares/todos_santos_structure.svg"
+      }
+    },
+    {
+      "id": "la_paz",
+      "name_es": "La Paz",
+      "name_en": "La Paz",
+      "vocation": {
+        "statement_es": "Capital de servicios, conocimiento, administración y logística del estado.",
+        "statement_en": "Capital of services, knowledge, administration, and logistics for the state.",
+        "strengths_es": "Base de gobierno + universidad/servicios; orientación bahía/puerto; bisagra inland–cape; pobreza municipal más baja (ficha); PDUCP 2018.",
+        "strengths_en": "Government + university/services base; bay/port orientation; inland–cape hinge; lowest municipal poverty (sheet); PDUCP 2018.",
+        "constraints_es": "Acoplamiento agua–energía de capital en crecimiento; expansión urbana vs. bahía; carga de coordinación intermunicipal; acuíferos 0324/0313 en déficit.",
+        "constraints_en": "Tight water–energy coupling for a growing capital; urban expansion vs. bay; inter-municipal coordination load; aquifers 0324/0313 in deficit.",
+        "sum_2050_es": "Cerebro de coordinación de BCS 2050; sin una La Paz capaz, las vocaciones de lugar quedan en proyectos fragmentados.",
+        "sum_2050_en": "The coordination brain of BCS 2050; without a capable La Paz, place vocations stay fragmented projects.",
+        "structure_note_es": "Capital de servicios/coordinación + acoplamiento agua–energía. Rol urbano = gobernanza, no segundo Cabos.",
+        "structure_note_en": "Services/coordination capital + water–energy coupling. Urban role = governance, not a second Cabos.",
+        "tag": "FACT",
+        "tag_note_es": "Vocación desde Base de datos BCS 2050 — prospectiva places[]; nota de estructura etiquetada aparte.",
+        "tag_note_en": "Vocation from Base de datos BCS 2050 — prospectiva places[]; structure note tagged separately."
+      },
+      "demand_supply": {
+        "balance_read": "constrained",
+        "balance_read_es": "Restringido: capital de servicios con DMA 0324 en déficit y acoplamiento agua–energía documentado en noticias; PDUCP 2018 como instrumento, no margen libre.",
+        "balance_read_en": "Constrained: service capital with DMA 0324 in deficit and documented water–energy coupling in news; PDUCP 2018 is an instrument, not free headroom.",
+        "vocation_es": "Capital de servicios, conocimiento, administración y logística del estado.",
+        "vocation_en": "Capital of services, knowledge, administration, and logistics for the state.",
+        "cells_ok": 10,
+        "cells_gap": 1,
+        "href": "/crecimiento/?place=la_paz#la_paz",
+        "tag": "FACT",
+        "tag_note_es": "Solo celdas de Base de datos BCS 2050 — demanda y oferta de crecimiento — sin cifras inventadas.",
+        "tag_note_en": "Only cells from Base de datos BCS 2050 — demanda y oferta de crecimiento — no invented figures."
+      },
+      "contested_claims": [
+        {
+          "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+          "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "east_cape",
+            "todos_santos",
+            "la_paz",
+            "loreto",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "vision_spatial",
+              "label_es": "Visión y marco espacial",
+              "label_en": "Vision & spatial framework"
+            }
+          ],
+          "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+          "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+        },
+        {
+          "claim_es": "Agua y energía no son «servicios de después»: son la constricción vinculante de toda vocación costera (Cabos, East Cape, Pacífico, Loreto).",
+          "claim_en": "Water and energy are not utilities afterthoughts — they are the binding constraint on every coastal vocation (Cabos, East Cape, Pacific, Loreto).",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "east_cape",
+            "loreto",
+            "todos_santos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "energy_grid",
+              "label_es": "Energía y red",
+              "label_en": "Energy & grid"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            }
+          ],
+          "next_evidence_es": "Enlazar la señal de acoplamiento agua–energía con celdas gap de agua/energía en /crecimiento para Cabos y La Paz.",
+          "next_evidence_en": "Link the water–energy coupling signal to water/energy gap cells on /crecimiento for Cabos and La Paz."
+        },
+        {
+          "claim_es": "La Paz debe permanecer como capital de servicios/gobernanza para que la suma estatal no se fragmente en proyectos locales.",
+          "claim_en": "La Paz must remain the services/governance capital so the statewide sum does not fragment into local projects.",
+          "status": "emerging",
+          "place_ids": [
+            "la_paz"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            }
+          ],
+          "next_evidence_es": "Usar roll-up estatal + scorecard La Paz en /crecimiento y conectividad LAP en /vuelos como evidencia de rol capital.",
+          "next_evidence_en": "Use state roll-up + La Paz scorecard on /crecimiento and LAP connectivity on /vuelos as capital-role evidence."
+        },
+        {
+          "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+          "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+          "status": "gap",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "loreto",
+            "east_cape",
+            "todos_santos",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+          "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+        }
+      ],
+      "watchlist": [],
+      "instruments": [
+        {
+          "instrument": "PDU",
+          "status": "gap",
+          "label_es": "PDU — sin hallazgo claro",
+          "label_en": "PDU — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PMDU",
+          "status": "gap",
+          "label_es": "PMDU en catálogo",
+          "label_en": "PMDU in catalog",
+          "path": "01_planning/2025_Ayuntamiento-La-Paz_Acta-Cabildo-aprobacion-PMDU.pdf",
+          "note_es": "Hay referencias en catálogo pero falta texto completo PMDU (hueco conocido).",
+          "note_en": "Catalog references exist but full PMDU text is a known hole.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "POEL",
+          "status": "gap",
+          "label_es": "POEL — sin hallazgo claro",
+          "label_en": "POEL — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PSDU",
+          "status": "on_disk",
+          "label_es": "PSDU en catálogo",
+          "label_en": "PSDU in catalog",
+          "path": "01_planning/2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+          "note_es": "2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+          "note_en": "2008-07_Ayuntamiento-La-Paz_PSDU-Todos-Santos-El-Pescadero-Consulta-Sintesis.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "ANP",
+          "status": "on_disk",
+          "label_es": "ANP en catálogo",
+          "label_en": "ANP in catalog",
+          "path": "10_data_lake/_raw_downloads/conagua_conanp/2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+          "note_es": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+          "note_en": "2024-01-01_CONAGUA_Actualizacion-DMA-Acuifero-La-Paz-0324.pdf",
+          "tag": "FACT"
+        }
+      ],
+      "mobility": {
+        "airport_facts": [
+          {
+            "es": "Aeropuerto LAP: 7 destinos sin escalas (FlightConnections, 2026-09-17).",
+            "en": "Airport LAP: 7 non-stop destinations (FlightConnections, 2026-09-17).",
+            "tag": "FACT",
+            "iata": "LAP",
+            "destinations": 7
+          }
+        ],
+        "corridor_es": "Puerta LAP (conteo en pack) + puerto/capital; rol de coordinación estatal.",
+        "corridor_en": "LAP gate (count in pack) + port/capital; statewide coordination role.",
+        "tag": "FACT",
+        "schematic": "/lugares/la_paz_structure.svg"
+      },
+      "tenure": {
+        "risk_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+        "risk_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities.",
+        "open_ask_es": "¿Lidera La Paz como capital de servicios inteligentes — o permanece como cuello de botella de agua, energía y gobernanza?",
+        "open_ask_en": "Does La Paz lead as the smart-services capital — or remain a bottleneck for water, power, and governance?",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Derivado del lente community_tenure (rol), no de un censo de tenencia por lugar.",
+        "tag_note_en": "From community_tenure role lens, not a place-level tenure census."
+      },
+      "structure": {
+        "role": "gateway",
+        "role_es": "Capital de gobernanza",
+        "role_en": "Governance capital",
+        "reading_es": "Capital de servicios/coordinación + acoplamiento agua–energía. Rol urbano = gobernanza, no segundo Cabos.",
+        "reading_en": "Services/coordination capital + water–energy coupling. Urban role = governance, not a second Cabos.",
+        "tag": "FACT",
+        "tag_note_es": "Alineado a tesis de edición y scorecard La Paz.",
+        "tag_note_en": "Aligned to edition thesis and La Paz scorecard.",
+        "schematic": "/lugares/la_paz_structure.svg"
+      }
+    },
+    {
+      "id": "loreto",
+      "name_es": "Loreto",
+      "name_en": "Loreto",
+      "vocation": {
+        "statement_es": "Nodo mid-península turismo + conservación (identidad bahía/ANP).",
+        "statement_en": "Mid-peninsula tourism + conservation node (bay/ANP identity).",
+        "strengths_es": "Marca natural fuerte; alternativa más quieta a Cabos; ancla mid-corredor; POEL 2014; PTAR 2ª etapa y acueducto Londó–Loreto en noticias.",
+        "strengths_en": "Strong natural brand; quieter alternative to Cabos; mid-corridor anchor; POEL 2014; WWTP stage 2 and Londó–Loreto aqueduct in news.",
+        "constraints_es": "Agua y carga turística estacional; techos de conservación; mercado laboral/servicios más delgado; PMDU en avance.",
+        "constraints_en": "Water and seasonal tourism load; conservation ceilings; thinner labor/services market; PMDU in progress.",
+        "sum_2050_es": "Cose el mid-BCS a la estrategia para que el estado no sea solo un mapa bipolar Cabos–La Paz.",
+        "sum_2050_en": "Stitches mid-BCS into the strategy so the state is not only a Cabos–La Paz bipolar map.",
+        "structure_note_es": "Crecimiento contestado vs. ANP/POEL; PTAR/acueducto como habilitador o demora del asentamiento.",
+        "structure_note_en": "Contested growth vs. ANP/POEL; WWTP/aqueduct as enabler or delay of settlement.",
+        "tag": "FACT",
+        "tag_note_es": "Vocación desde Base de datos BCS 2050 — prospectiva places[]; nota de estructura etiquetada aparte.",
+        "tag_note_en": "Vocation from Base de datos BCS 2050 — prospectiva places[]; structure note tagged separately."
+      },
+      "demand_supply": {
+        "balance_read": "contested",
+        "balance_read_es": "En disputa: turismo estacional + LTO pequeño vs. ANP Bahía de Loreto y POEL 2014; agua/PTAR en obras (noticias) sin DMA local consolidada en scorecard.",
+        "balance_read_en": "Contested: seasonal tourism + small LTO vs. Bahía de Loreto ANP and POEL 2014; water/WWTP works in news without a consolidated local DMA in this scorecard.",
+        "vocation_es": "Nodo mid-península turismo + conservación (identidad bahía/ANP).",
+        "vocation_en": "Mid-peninsula tourism + conservation node (bay/ANP identity).",
+        "cells_ok": 7,
+        "cells_gap": 3,
+        "href": "/crecimiento/?place=loreto#loreto",
+        "tag": "FACT",
+        "tag_note_es": "Solo celdas de Base de datos BCS 2050 — demanda y oferta de crecimiento — sin cifras inventadas.",
+        "tag_note_en": "Only cells from Base de datos BCS 2050 — demanda y oferta de crecimiento — no invented figures."
+      },
+      "contested_claims": [
+        {
+          "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+          "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "east_cape",
+            "todos_santos",
+            "la_paz",
+            "loreto",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "vision_spatial",
+              "label_es": "Visión y marco espacial",
+              "label_en": "Vision & spatial framework"
+            }
+          ],
+          "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+          "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+        },
+        {
+          "claim_es": "Agua y energía no son «servicios de después»: son la constricción vinculante de toda vocación costera (Cabos, East Cape, Pacífico, Loreto).",
+          "claim_en": "Water and energy are not utilities afterthoughts — they are the binding constraint on every coastal vocation (Cabos, East Cape, Pacific, Loreto).",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "east_cape",
+            "loreto",
+            "todos_santos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "energy_grid",
+              "label_es": "Energía y red",
+              "label_en": "Energy & grid"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            }
+          ],
+          "next_evidence_es": "Enlazar la señal de acoplamiento agua–energía con celdas gap de agua/energía en /crecimiento para Cabos y La Paz.",
+          "next_evidence_en": "Link the water–energy coupling signal to water/energy gap cells on /crecimiento for Cabos and La Paz."
+        },
+        {
+          "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+          "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+          "status": "gap",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "loreto",
+            "east_cape",
+            "todos_santos",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+          "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+        }
+      ],
+      "watchlist": [
+        {
+          "item_es": "Desaladora Comondú (MIA) y segunda etapa PTAR Loreto — vocaciones mid-península.",
+          "item_en": "Comondú desal (MIA) and Loreto WWTP stage 2 — mid-peninsula vocations."
+        }
+      ],
+      "instruments": [
+        {
+          "instrument": "PDU",
+          "status": "gap",
+          "label_es": "PDU — sin hallazgo claro",
+          "label_en": "PDU — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PMDU",
+          "status": "on_disk",
+          "label_es": "PMDU en catálogo",
+          "label_en": "PMDU in catalog",
+          "path": "01_planning/2024-02_Ayuntamiento-Loreto_PMDU.pdf",
+          "note_es": "2024-02_Ayuntamiento-Loreto_PMDU.pdf",
+          "note_en": "2024-02_Ayuntamiento-Loreto_PMDU.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "POEL",
+          "status": "on_disk",
+          "label_es": "POEL en catálogo",
+          "label_en": "POEL in catalog",
+          "path": "01_planning/2014-03-12_BOGE-BCS_No12-POEL-Loreto.pdf",
+          "note_es": "2014-03-12_BOGE-BCS_No12-POEL-Loreto.pdf",
+          "note_en": "2014-03-12_BOGE-BCS_No12-POEL-Loreto.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PMD",
+          "status": "gap",
+          "label_es": "PMD Loreto",
+          "label_en": "Loreto PMD",
+          "note_es": "Hueco conocido: PMD / cobertura incompleta.",
+          "note_en": "Known hole: PMD / incomplete coverage.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PSDU",
+          "status": "on_disk",
+          "label_es": "PSDU en catálogo",
+          "label_en": "PSDU in catalog",
+          "path": "01_planning/2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf",
+          "note_es": "2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf",
+          "note_en": "2024-07_Ayuntamiento-Loreto_PSDU-Memoria-Tecnica-Consulta-Publica.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "ANP",
+          "status": "on_disk",
+          "label_es": "ANP en catálogo",
+          "label_en": "ANP in catalog",
+          "path": "06_environment/2002-11-11_CONANP_Aviso_DOF_PM_PN_Bahia_de_Loreto.pdf",
+          "note_es": "2002-11-11_CONANP_Aviso_DOF_PM_PN_Bahia_de_Loreto.pdf",
+          "note_en": "2002-11-11_CONANP_Aviso_DOF_PM_PN_Bahia_de_Loreto.pdf",
+          "tag": "FACT"
+        }
+      ],
+      "mobility": {
+        "airport_facts": [
+          {
+            "es": "Aeropuerto LTO: 5 destinos sin escalas (FlightConnections, 2026-09-17).",
+            "en": "Airport LTO: 5 non-stop destinations (FlightConnections, 2026-09-17).",
+            "tag": "FACT",
+            "iata": "LTO",
+            "destinations": 5
+          }
+        ],
+        "corridor_es": "Puerta LTO (conteo en pack) + nodo mid-península; acceso limitado vs. SJD.",
+        "corridor_en": "LTO gate (count in pack) + mid-peninsula node; limited access vs. SJD.",
+        "tag": "FACT",
+        "schematic": "/lugares/loreto_structure.svg"
+      },
+      "tenure": {
+        "risk_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+        "risk_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities.",
+        "open_ask_es": "¿Puede Loreto crecer como nodo turismo–conservación sin copiar el modelo de volumen de Cabos?",
+        "open_ask_en": "Can Loreto grow as a conservation-first tourism node without copying Cabos’ volume model?",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Derivado del lente community_tenure (rol), no de un censo de tenencia por lugar.",
+        "tag_note_en": "From community_tenure role lens, not a place-level tenure census."
+      },
+      "structure": {
+        "role": "edge",
+        "role_es": "Nodo mid-península",
+        "role_en": "Mid-peninsula node",
+        "reading_es": "Crecimiento contestado vs. ANP/POEL; PTAR/acueducto como habilitador o demora del asentamiento.",
+        "reading_en": "Contested growth vs. ANP/POEL; WWTP/aqueduct as enabler or delay of settlement.",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Lectura de diseño; cifras PTAR no inventadas.",
+        "tag_note_en": "Design reading; WWTP figures not invented.",
+        "schematic": "/lugares/loreto_structure.svg"
+      }
+    },
+    {
+      "id": "comondu",
+      "name_es": "Ciudad Constitución / Comondú",
+      "name_en": "Ciudad Constitución / Comondú",
+      "vocation": {
+        "statement_es": "Hub agro / servicios inland; pilotos de desalación, riego y hinterland productivo.",
+        "statement_en": "Agri / inland service hub; pilots for desal, irrigation, and productive hinterland.",
+        "strengths_es": "Base agrícola y logística inland; espacio para inversión productiva (no solo amenidad); MIA desaladora limpia UABCS y obras de riego en noticias; PMDU Visión 2025 en datos.",
+        "strengths_en": "Agricultural base and inland logistics; space for productive (not only amenity) investment; UABCS clean desal MIA and irrigation works in news; PMDU Vision 2025 on disk.",
+        "constraints_es": "Estrés de riego y acuíferos; energía para bombeo/desal; exposición climática de rendimientos; sin visor catastral público.",
+        "constraints_en": "Irrigation water and aquifer stress; energy for pumping/desal; climate exposure of agri yields; no public cadastral viewer.",
+        "sum_2050_es": "Da a BCS un pilar económico no turístico; sin él, 2050 colapsa en dependencia de amenidad costera.",
+        "sum_2050_en": "Gives BCS a non-tourism economic pillar; without it, 2050 collapses into coastal amenity dependence.",
+        "structure_note_es": "Headroom agro/producción relativo — no usar el interior vacío como compensación del déficit sur (falacia ya marcada en GDS).",
+        "structure_note_en": "Relative agri/production headroom — do not treat empty interior as offset for southern deficit (fallacy already in GDS).",
+        "tag": "FACT",
+        "tag_note_es": "Vocación desde Base de datos BCS 2050 — prospectiva places[]; nota de estructura etiquetada aparte.",
+        "tag_note_en": "Vocation from Base de datos BCS 2050 — prospectiva places[]; structure note tagged separately."
+      },
+      "demand_supply": {
+        "balance_read": "headroom",
+        "balance_read_es": "Con margen relativo (lectura cualitativa): hub agro inland con menor presión aérea/turística; aún así riego/acuíferos y energía de bombeo/desal son candados — no «espacio vacío».",
+        "balance_read_en": "Relative headroom (qualitative read): inland agri hub with lower air/tourism pressure; irrigation/aquifers and pumping/desal energy remain locks — not empty space.",
+        "vocation_es": "Hub agro / servicios inland; pilotos de desalación, riego y hinterland productivo.",
+        "vocation_en": "Agri / inland service hub; pilots for desal, irrigation, and productive hinterland.",
+        "cells_ok": 5,
+        "cells_gap": 4,
+        "href": "/crecimiento/?place=comondu#comondu",
+        "tag": "FACT",
+        "tag_note_es": "Solo celdas de Base de datos BCS 2050 — demanda y oferta de crecimiento — sin cifras inventadas.",
+        "tag_note_en": "Only cells from Base de datos BCS 2050 — demanda y oferta de crecimiento — no invented figures."
+      },
+      "contested_claims": [
+        {
+          "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+          "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "east_cape",
+            "todos_santos",
+            "la_paz",
+            "loreto",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "vision_spatial",
+              "label_es": "Visión y marco espacial",
+              "label_en": "Vision & spatial framework"
+            }
+          ],
+          "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+          "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+        },
+        {
+          "claim_es": "Comondú inland agri/desal como segundo pilar real vs. el turismo costero como único motor fiscal.",
+          "claim_en": "Inland Comondú agri/desal as a true second pillar vs. coastal tourism as the only fiscal engine.",
+          "status": "contested",
+          "place_ids": [
+            "comondu",
+            "los_cabos"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            }
+          ],
+          "next_evidence_es": "Marcar celdas gap agrícolas/DMA de Comondú en /crecimiento; no inventar hm³ — solo portal.",
+          "next_evidence_en": "Flag Comondú agri/DMA gap cells on /crecimiento; do not invent hm³ — portal only."
+        },
+        {
+          "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+          "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+          "status": "gap",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "loreto",
+            "east_cape",
+            "todos_santos",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+          "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+        }
+      ],
+      "watchlist": [],
+      "instruments": [
+        {
+          "instrument": "PDU",
+          "status": "gap",
+          "label_es": "PDU — sin hallazgo claro",
+          "label_en": "PDU — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "PMDU",
+          "status": "on_disk",
+          "label_es": "PMDU en catálogo",
+          "label_en": "PMDU in catalog",
+          "path": "01_planning/2025-12_Ayuntamiento-Comondu_PMDU-Vision-2025.pdf",
+          "note_es": "2025-12_Ayuntamiento-Comondu_PMDU-Vision-2025.pdf",
+          "note_en": "2025-12_Ayuntamiento-Comondu_PMDU-Vision-2025.pdf",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "POEL",
+          "status": "gap",
+          "label_es": "POEL — sin hallazgo claro",
+          "label_en": "POEL — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "ANP",
+          "status": "gap",
+          "label_es": "ANP — sin hallazgo claro",
+          "label_en": "ANP — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        }
+      ],
+      "mobility": {
+        "airport_facts": [],
+        "corridor_es": "Acceso inland por corredor Ciudad Constitución; sin aeropuerto en pack SJD/LAP/LTO.",
+        "corridor_en": "Inland access via Ciudad Constitución corridor; no airport in SJD/LAP/LTO pack.",
+        "tag": "FACT",
+        "schematic": "/lugares/comondu_structure.svg"
+      },
+      "tenure": {
+        "risk_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+        "risk_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities.",
+        "open_ask_es": "¿Es Comondú el hinterland productivo que alimenta y equilibra la costa turística — o una zona agro varada bajo estrés hídrico?",
+        "open_ask_en": "Is Comondú the productive hinterland that feeds and balances the tourism coast — or a stranded agri zone under water stress?",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Derivado del lente community_tenure (rol), no de un censo de tenencia por lugar.",
+        "tag_note_en": "From community_tenure role lens, not a place-level tenure census."
+      },
+      "structure": {
+        "role": "working_landscape",
+        "role_es": "Paisaje productivo inland",
+        "role_en": "Inland working landscape",
+        "reading_es": "Headroom agro/producción relativo — no usar el interior vacío como compensación del déficit sur (falacia ya marcada en GDS).",
+        "reading_en": "Relative agri/production headroom — do not treat empty interior as offset for southern deficit (fallacy already in GDS).",
+        "tag": "FACT",
+        "tag_note_es": "Balance headroom en growth_demand_supply; falacia de compensación es lectura de método GDS / design method.",
+        "tag_note_en": "Headroom balance in growth_demand_supply; offset fallacy is GDS / design method method reading.",
+        "schematic": "/lugares/comondu_structure.svg"
+      }
+    },
+    {
+      "id": "mulege_north",
+      "name_es": "Mulegé / Santa Rosalía / Vizcaíno (norte)",
+      "name_en": "Mulegé / Santa Rosalía / Vizcaíno (north)",
+      "vocation": {
+        "statement_es": "Corredor disperso; señales de energía remota y logística de larga distancia (incl. narrativas H2 verde donde hay evidencia).",
+        "statement_en": "Sparse corridor; remote energy and long-haul logistics signals (incl. green-H2 narratives where evidenced).",
+        "strengths_es": "Tierra y aislamiento para experimentos energéticos/logísticos; lógica de puerta norte; anuncio CFE Oasis H2 Mulegé (sep 2026); PMD 2024–2027.",
+        "strengths_en": "Land and isolation for energy/logistics experiments; northern gateway logic; CFE Oasis H2 Mulegé announcement (Sep 2026); PMD 2024–2027.",
+        "constraints_es": "Extrema escasez de servicios y mano de obra; agua; distancia a mercados; ecosistemas frágiles.",
+        "constraints_en": "Extreme sparsity of services and labor; water; distance from markets; fragile ecosystems.",
+        "sum_2050_es": "Extiende BCS más allá del sur — solo si agua/energía sirven al sistema completo, no a enclaves.",
+        "sum_2050_en": "Extends BCS beyond the south — only if energy/water bets serve the whole system, not enclaves.",
+        "structure_note_es": "Balance unknown + señales Oasis H2. Marcar evidence desert: no inventar offset norte para el estado.",
+        "structure_note_en": "Unknown balance + Oasis H2 signals. Mark evidence desert: do not invent a northern statewide offset.",
+        "tag": "FACT",
+        "tag_note_es": "Vocación desde Base de datos BCS 2050 — prospectiva places[]; nota de estructura etiquetada aparte.",
+        "tag_note_en": "Vocation from Base de datos BCS 2050 — prospectiva places[]; structure note tagged separately."
+      },
+      "demand_supply": {
+        "balance_read": "unknown",
+        "balance_read_es": "Desconocido / especulativo: señales H2 verde y energía remota en noticias; servicios, agua y mercados delgados — evidencia de oferta/demanda aún fragmentaria.",
+        "balance_read_en": "Unknown / speculative: green-H2 and remote-energy signals in news; thin services, water and markets — demand/supply evidence still fragmentary.",
+        "vocation_es": "Corredor disperso; señales de energía remota y logística de larga distancia (incl. narrativas H2 verde donde hay evidencia).",
+        "vocation_en": "Sparse corridor; remote energy and long-haul logistics signals (incl. green-H2 narratives where evidenced).",
+        "cells_ok": 4,
+        "cells_gap": 4,
+        "href": "/crecimiento/?place=mulege_north#mulege_north",
+        "tag": "FACT",
+        "tag_note_es": "Solo celdas de Base de datos BCS 2050 — demanda y oferta de crecimiento — sin cifras inventadas.",
+        "tag_note_en": "Only cells from Base de datos BCS 2050 — demanda y oferta de crecimiento — no invented figures."
+      },
+      "contested_claims": [
+        {
+          "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+          "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+          "status": "emerging",
+          "place_ids": [
+            "los_cabos",
+            "east_cape",
+            "todos_santos",
+            "la_paz",
+            "loreto",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "territorial_development",
+              "label_es": "Desarrollo territorial",
+              "label_en": "Territorial development"
+            },
+            {
+              "role_id": "vision_spatial",
+              "label_es": "Visión y marco espacial",
+              "label_en": "Vision & spatial framework"
+            }
+          ],
+          "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+          "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+        },
+        {
+          "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+          "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+          "status": "gap",
+          "place_ids": [
+            "los_cabos",
+            "la_paz",
+            "loreto",
+            "east_cape",
+            "todos_santos",
+            "comondu",
+            "mulege_north"
+          ],
+          "opposing_lenses": [
+            {
+              "role_id": "sustainability_infra",
+              "label_es": "Sustentabilidad e infraestructura",
+              "label_en": "Sustainability & infrastructure"
+            },
+            {
+              "role_id": "water_security",
+              "label_es": "Seguridad hídrica",
+              "label_en": "Water security"
+            },
+            {
+              "role_id": "tourism_investment",
+              "label_es": "Turismo e inversión",
+              "label_en": "Tourism & investment"
+            },
+            {
+              "role_id": "municipal_planning",
+              "label_es": "Planeación municipal",
+              "label_en": "Municipal planning"
+            }
+          ],
+          "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+          "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+        }
+      ],
+      "watchlist": [],
+      "instruments": [
+        {
+          "instrument": "PDU",
+          "status": "gap",
+          "label_es": "PDU — sin hallazgo claro",
+          "label_en": "PDU — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "POEL",
+          "status": "gap",
+          "label_es": "POEL — sin hallazgo claro",
+          "label_en": "POEL — no clear find",
+          "note_es": "No se encontró instrumento claro en catalog_slim para este lugar.",
+          "note_en": "No clear instrument found in catalog_slim for this place.",
+          "tag": "FACT"
+        },
+        {
+          "instrument": "ANP",
+          "status": "on_disk",
+          "label_es": "ANP en catálogo",
+          "label_en": "ANP in catalog",
+          "path": "06_environment/2000-09-01_CONANP_Aviso_DOF_PM_RB_El_Vizcaino.pdf",
+          "note_es": "2000-09-01_CONANP_Aviso_DOF_PM_RB_El_Vizcaino.pdf",
+          "note_en": "2000-09-01_CONANP_Aviso_DOF_PM_RB_El_Vizcaino.pdf",
+          "tag": "FACT"
+        }
+      ],
+      "mobility": {
+        "airport_facts": [],
+        "corridor_es": "Corredor norte disperso (Mulegé / Santa Rosalía / Vizcaíno); sin aeropuerto en pack de tres.",
+        "corridor_en": "Dispersed northern corridor (Mulegé / Santa Rosalía / Vizcaíno); no airport in the three-pack.",
+        "tag": "FACT",
+        "schematic": "/lugares/mulege_north_structure.svg"
+      },
+      "tenure": {
+        "risk_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+        "risk_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities.",
+        "open_ask_es": "¿Qué apuestas del norte son infraestructura real para la península — vs. megaproyectos especulativos sin encaje territorial?",
+        "open_ask_en": "Which northern bets are real infrastructure for the peninsula — vs. speculative megaprojects with no territorial fit?",
+        "tag": "ASSUMPTION",
+        "tag_note_es": "Derivado del lente community_tenure (rol), no de un censo de tenencia por lugar.",
+        "tag_note_en": "From community_tenure role lens, not a place-level tenure census."
+      },
+      "structure": {
+        "role": "working_landscape",
+        "role_es": "Desierto de evidencia",
+        "role_en": "Evidence desert",
+        "reading_es": "Balance unknown + señales Oasis H2. Marcar evidence desert: no inventar offset norte para el estado.",
+        "reading_en": "Unknown balance + Oasis H2 signals. Mark evidence desert: do not invent a northern statewide offset.",
+        "tag": "FACT",
+        "tag_note_es": "balance_read=unknown en GDS; H2 aparece en noticias etiquetadas.",
+        "tag_note_en": "balance_read=unknown in GDS; H2 appears in tagged news.",
+        "schematic": "/lugares/mulege_north_structure.svg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+{
+  "source": "FlightConnections.com",
+  "retrieved": "2026-09-17",
+  "source_updated_note": "SJD page showed Last updated on: 09-02-2026",
+  "disclaimer": "Non-stop routes per FlightConnections.com (retrieved 2026-09-17). Schedules change; verify on source.",
+  "disclaimer_es": "Rutas sin escalas según FlightConnections.com (consultado 2026-09-17). Los horarios cambian; verificar en la fuente.",
+  "airports": [
+    {
+      "iata": "SJD",
+      "name": "Los Cabos International Airport",
+      "name_es": "Aeropuerto Internacional de Los Cabos",
+      "municipality": "San José del Cabo",
+      "municipality_es": "San José del Cabo",
+      "icao": "MMSD",
+      "source_url": "https://www.flightconnections.com/flights-from-san-jose-del-cabo-sjd",
+      "diagram": "/connectivity/sjd_flightconnections.png",
+      "destinations": [
+        {
+          "city": "Mexico City",
+          "iata": "MEX",
+          "country": "Mexico",
+          "flights_per_month": 206,
+          "duration": "2h 19m",
+          "duration_hours": 2.32
+        },
+        {
+          "city": "Los Angeles",
+          "iata": "LAX",
+          "country": "United States",
+          "flights_per_month": 106,
+          "duration": "2h 50m",
+          "duration_hours": 2.83
+        },
+        {
+          "city": "Tijuana",
+          "iata": "TIJ",
+          "country": "Mexico",
+          "flights_per_month": 90,
+          "duration": "2h 8m",
+          "duration_hours": 2.13
+        },
+        {
+          "city": "Guadalajara",
+          "iata": "GDL",
+          "country": "Mexico",
+          "flights_per_month": 90,
+          "duration": "1h 35m",
+          "duration_hours": 1.58
+        },
+        {
+          "city": "Dallas-Fort Worth",
+          "iata": "DFW",
+          "country": "United States",
+          "flights_per_month": 81,
+          "duration": "2h 56m",
+          "duration_hours": 2.93
+        },
+        {
+          "city": "Culiacán",
+          "iata": "CUL",
+          "country": "Mexico",
+          "flights_per_month": 68
+        },
+        {
+          "city": "Phoenix",
+          "iata": "PHX",
+          "country": "United States",
+          "flights_per_month": 64
+        },
+        {
+          "city": "Mexico City Santa Lucia",
+          "iata": "NLU",
+          "country": "Mexico",
+          "flights_per_month": 63
+        },
+        {
+          "city": "Mexico City / Toluca",
+          "iata": "TLC",
+          "country": "Mexico",
+          "flights_per_month": 59
+        },
+        {
+          "city": "Houston",
+          "iata": "IAH",
+          "country": "United States",
+          "flights_per_month": 57
+        },
+        {
+          "city": "San Francisco",
+          "iata": "SFO",
+          "country": "United States",
+          "flights_per_month": 53
+        },
+        {
+          "city": "Houston",
+          "iata": "HOU",
+          "country": "United States",
+          "flights_per_month": 50
+        },
+        {
+          "city": "Denver",
+          "iata": "DEN",
+          "country": "United States",
+          "flights_per_month": 40
+        },
+        {
+          "city": "Monterrey",
+          "iata": "MTY",
+          "country": "Mexico",
+          "flights_per_month": 37
+        },
+        {
+          "city": "Santa Ana",
+          "iata": "SNA",
+          "country": "United States",
+          "flights_per_month": 30
+        },
+        {
+          "city": "Atlanta",
+          "iata": "ATL",
+          "country": "United States",
+          "flights_per_month": 30
+        },
+        {
+          "city": "Seattle / Tacoma",
+          "iata": "SEA",
+          "country": "United States",
+          "flights_per_month": 20
+        },
+        {
+          "city": "San Diego",
+          "iata": "SAN",
+          "country": "United States",
+          "flights_per_month": 20
+        },
+        {
+          "city": "Salt Lake City",
+          "iata": "SLC",
+          "country": "United States",
+          "flights_per_month": 20
+        },
+        {
+          "city": "Puebla",
+          "iata": "PBC",
+          "country": "Mexico",
+          "flights_per_month": 17
+        },
+        {
+          "city": "Vancouver",
+          "iata": "YVR",
+          "country": "Canada",
+          "flights_per_month": 16
+        },
+        {
+          "city": "León",
+          "iata": "BJX",
+          "country": "Mexico",
+          "flights_per_month": 13
+        },
+        {
+          "city": "Panama City",
+          "iata": "PTY",
+          "country": "Panama",
+          "flights_per_month": 12
+        },
+        {
+          "city": "Chicago",
+          "iata": "ORD",
+          "country": "United States",
+          "flights_per_month": 11
+        },
+        {
+          "city": "Hermosillo",
+          "iata": "HMO",
+          "country": "Mexico",
+          "flights_per_month": 9
+        },
+        {
+          "city": "New York City",
+          "iata": "JFK",
+          "country": "United States",
+          "flights_per_month": 8
+        },
+        {
+          "city": "Mexicali",
+          "iata": "MXL",
+          "country": "Mexico",
+          "flights_per_month": 8
+        },
+        {
+          "city": "Querétaro",
+          "iata": "QRO",
+          "country": "Mexico",
+          "flights_per_month": 8
+        },
+        {
+          "city": "Calgary",
+          "iata": "YYC",
+          "country": "Canada",
+          "flights_per_month": 8
+        },
+        {
+          "city": "Torreón",
+          "iata": "TRC",
+          "country": "Mexico",
+          "flights_per_month": 8
+        },
+        {
+          "city": "Newark",
+          "iata": "EWR",
+          "country": "United States",
+          "flights_per_month": 5
+        },
+        {
+          "city": "Las Vegas",
+          "iata": "LAS",
+          "country": "United States",
+          "flights_per_month": 4
+        },
+        {
+          "city": "Toronto",
+          "iata": "YYZ",
+          "country": "Canada",
+          "flights_per_month": 4
+        },
+        {
+          "city": "Washington",
+          "iata": "IAD",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Oakland, East Bay",
+          "iata": "OAK",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Kelowna",
+          "iata": "YLW",
+          "country": "Canada",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Charlotte",
+          "iata": "CLT",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Detroit",
+          "iata": "DTW",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Chicago",
+          "iata": "MDW",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Portland",
+          "iata": "PDX",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Edmonton",
+          "iata": "YEG",
+          "country": "Canada",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Montreal",
+          "iata": "YUL",
+          "country": "Canada",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Victoria",
+          "iata": "YYJ",
+          "country": "Canada",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Sacramento",
+          "iata": "SMF",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Frankfurt",
+          "iata": "FRA",
+          "country": "Germany",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Nashville",
+          "iata": "BNA",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Indianapolis",
+          "iata": "IND",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Kansas City",
+          "iata": "MCI",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "St. Louis",
+          "iata": "STL",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Los Angeles",
+          "iata": "VNY",
+          "country": "United States",
+          "flights_per_month": 0,
+          "duration": "2h 50m",
+          "duration_hours": 2.83
+        },
+        {
+          "city": "Regina",
+          "iata": "YQR",
+          "country": "Canada",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Minneapolis",
+          "iata": "MSP",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Ottawa",
+          "iata": "YOW",
+          "country": "Canada",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Winnipeg",
+          "iata": "YWG",
+          "country": "Canada",
+          "flights_per_month": 0
+        },
+        {
+          "city": "San Jose",
+          "iata": "SJC",
+          "country": "United States",
+          "flights_per_month": 0
+        },
+        {
+          "city": "Austin",
+          "iata": "AUS",
+          "country": "United States",
+          "flights_per_month": 0
+        }
+      ],
+      "counts": {
+        "total": 56,
+        "us": 31,
+        "mx": 13,
+        "ca": 10,
+        "eu": 1,
+        "other": 1
+      },
+      "notes": "Non-stop destinations as listed on FlightConnections (Non-stop filter). Includes seasonal and announced routes with 0 flights/month this month."
+    },
+    {
+      "iata": "LAP",
+      "name": "Manuel Márquez de León International Airport",
+      "name_es": "Aeropuerto Internacional Manuel Márquez de León",
+      "municipality": "La Paz",
+      "municipality_es": "La Paz",
+      "icao": "MMLP",
+      "source_url": "https://www.flightconnections.com/flights-from-la-paz-lap",
+      "diagram": "/connectivity/lap_flightconnections.png",
+      "destinations": [
+        {
+          "city": "Mexico City",
+          "iata": "MEX",
+          "country": "Mexico",
+          "flights_per_month": 108
+        },
+        {
+          "city": "Tijuana",
+          "iata": "TIJ",
+          "country": "Mexico",
+          "flights_per_month": 87
+        },
+        {
+          "city": "Guadalajara",
+          "iata": "GDL",
+          "country": "Mexico",
+          "flights_per_month": 68
+        },
+        {
+          "city": "Mexico City Santa Lucia",
+          "iata": "NLU",
+          "country": "Mexico",
+          "flights_per_month": 29
+        },
+        {
+          "city": "Culiacán",
+          "iata": "CUL",
+          "country": "Mexico",
+          "flights_per_month": 21
+        },
+        {
+          "city": "Los Angeles",
+          "iata": "LAX",
+          "country": "United States",
+          "flights_per_month": 17
+        },
+        {
+          "city": "Monterrey",
+          "iata": "MTY",
+          "country": "Mexico",
+          "flights_per_month": 0
+        }
+      ],
+      "counts": {
+        "total": 7,
+        "us": 1,
+        "mx": 6,
+        "ca": 0,
+        "eu": 0,
+        "other": 0
+      },
+      "notes": "Non-stop destinations from FlightConnections popular non-stop list (7 planned)."
+    },
+    {
+      "iata": "LTO",
+      "name": "Loreto International Airport",
+      "name_es": "Aeropuerto Internacional de Loreto",
+      "municipality": "Loreto",
+      "municipality_es": "Loreto",
+      "icao": "MMLT",
+      "source_url": "https://www.flightconnections.com/flights-from-loreto-lto",
+      "diagram": "/connectivity/lto_flightconnections.png",
+      "destinations": [
+        {
+          "city": "Tijuana",
+          "iata": "TIJ",
+          "country": "Mexico",
+          "flights_per_month": 16
+        },
+        {
+          "city": "Los Angeles",
+          "iata": "LAX",
+          "country": "United States",
+          "flights_per_month": 12
+        },
+        {
+          "city": "Phoenix",
+          "iata": "PHX",
+          "country": "United States",
+          "flights_per_month": 4
+        },
+        {
+          "city": "Dallas-Fort Worth",
+          "iata": "DFW",
+          "country": "United States",
+          "flights_per_month": 4
+        },
+        {
+          "city": "Calgary",
+          "iata": "YYC",
+          "country": "Canada",
+          "flights_per_month": 0
+        }
+      ],
+      "counts": {
+        "total": 5,
+        "us": 3,
+        "mx": 1,
+        "ca": 1,
+        "eu": 0,
+        "other": 0
+      },
+      "notes": "Non-stop destinations from FlightConnections popular non-stop list (5 planned). Calgary listed with 0 flights/month (seasonal)."
+    }
+  ]
+}

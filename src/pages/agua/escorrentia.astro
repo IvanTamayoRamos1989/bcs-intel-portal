@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceCard from '../../components/SourceCard.astro';
+import PrintExpediente from '../../components/PrintExpediente.astro';
+import data from '../../data/escorrentia.json';
+
+const munis = Object.values(data.municipios);
+const sw = data.statewide;
+---
+<BaseLayout
+  title="Escorrentía y agua de lluvia"
+  titleEn="Runoff and stormwater"
+  description="Modelo de terreno de recorridos potenciales de escorrentía en BCS (HydroSHEDS / HydroRIVERS). No es un mapa oficial de inundación."
+  descriptionEn="Terrain-based potential runoff routes in BCS (HydroSHEDS / HydroRIVERS). Not an official flood map."
+  wide={true}
+>
+  <link
+    rel="stylesheet"
+    href="/vendor/leaflet/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <header class="esc-hero">
+    <p class="esc-kicker">
+      <span data-lang-es>Agua · modelo de terreno</span>
+      <span data-lang-en hidden>Water · terrain model</span>
+    </p>
+    <p class="lead">
+      <span data-lang-es>
+        Recorridos <strong>potenciales</strong> de escorrentía superficial a partir del relieve
+        (HydroSHEDS / HydroRIVERS), recortados a Baja California Sur y a los cinco municipios.
+        Entrega del 5 oct 2026.
+      </span>
+      <span data-lang-en hidden>
+        <strong>Potential</strong> surface-runoff routes from terrain (HydroSHEDS / HydroRIVERS),
+        clipped to Baja California Sur and the five municipalities. Package dated 5 Oct 2026.
+      </span>
+    </p>
+    <div class="esc-warn" role="note">
+      <strong data-lang-es>No es un mapa oficial de peligro por inundación.</strong>
+      <strong data-lang-en hidden>Not an official flood-hazard map.</strong>
+      <span data-lang-es>
+        No calcula profundidad, velocidad, caudal, tiempo de llegada ni superficie inundada.
+        La acumulación es número de celdas aportantes, no agua almacenada. Conteos de rutas muestreadas, no volúmenes.
+      </span>
+      <span data-lang-en hidden>
+        It does not compute depth, velocity, discharge, travel time or inundated area.
+        Accumulation is contributing-cell count, not stored water. Sampled-route counts, not volumes.
+      </span>
+    </div>
+    <PrintExpediente />
+  </header>
+
+  <section class="esc-kpis" aria-label="Statewide figures">
+    <div class="esc-kpi"><div class="n">{sw.tramos_unicos.toLocaleString('es-MX')}</div><div class="l" data-lang-es>Tramos de la red</div><div class="l" data-lang-en hidden>Network reaches</div></div>
+    <div class="esc-kpi"><div class="n">{sw.longitud_km.toLocaleString('es-MX')}</div><div class="l" data-lang-es>km de red</div><div class="l" data-lang-en hidden>km of network</div></div>
+    <div class="esc-kpi"><div class="n">{sw.seed_count.toLocaleString('es-MX')}</div><div class="l" data-lang-es>Semillas D8</div><div class="l" data-lang-en hidden>D8 seeds</div></div>
+    <div class="esc-kpi"><div class="n">{sw.salida_costera.toLocaleString('es-MX')}</div><div class="l" data-lang-es>Salidas costeras</div><div class="l" data-lang-en hidden>Coastal outlets</div></div>
+    <div class="esc-kpi"><div class="n">{sw.sumidero_interior.toLocaleString('es-MX')}</div><div class="l" data-lang-es>Sumideros interiores</div><div class="l" data-lang-en hidden>Inland sinks</div></div>
+  </section>
+
+  <SourceCard
+    source={data.source_es}
+    page="HydroSHEDS v1.1 DIR 3″ · HydroRIVERS v1 · paquete BCS_Escorrentia_2026"
+    date={data.package_date}
+    method={data.method_es}
+    caveat={data.caveat_es}
+    file="16_escorrentia/BCS_Escorrentia.zip"
+  />
+
+  <section class="esc-map-sec" aria-label="Runoff map">
+    <div class="esc-toolbar">
+      <label>
+        <span data-lang-es>Ámbito</span>
+        <span data-lang-en hidden>Extent</span>
+        <select id="esc-muni">
+          <option value="bcs">Baja California Sur</option>
+          {munis.map((m: any) => <option value={m.id}>{m.label_es}</option>)}
+        </select>
+      </label>
+      <label class="esc-check"><input type="checkbox" id="esc-relieve" checked /> <span data-lang-es>Relieve</span><span data-lang-en hidden>Relief</span></label>
+      <label class="esc-check"><input type="checkbox" id="esc-conc" checked /> <span data-lang-es>Concentración</span><span data-lang-en hidden>Concentration</span></label>
+      <label class="esc-check"><input type="checkbox" id="esc-red" checked /> <span data-lang-es>Red de drenaje</span><span data-lang-en hidden>Drainage network</span></label>
+      <label class="esc-check"><input type="checkbox" id="esc-tray" checked /> <span data-lang-es>Trayectorias</span><span data-lang-en hidden>Paths</span></label>
+      <label class="esc-check"><input type="checkbox" id="esc-anim" /> <span data-lang-es>Animar trayectorias</span><span data-lang-en hidden>Animate paths</span></label>
+      <a class="btn secondary" href="/mapas/?layers=escorrentia_red,escorrentia_trayectorias,escorrentia_concentracion">
+        <span data-lang-es>Ver en mapa principal</span>
+        <span data-lang-en hidden>Open in main map</span>
+      </a>
+    </div>
+    <div id="esc-map" class="esc-map" role="img" aria-label="Mapa de escorrentía BCS"></div>
+    <p class="meta" id="esc-status"></p>
+  </section>
+
+  <section class="esc-table-sec">
+    <h2>
+      <span data-lang-es>Resumen por municipio</span>
+      <span data-lang-en hidden>Summary by municipality</span>
+    </h2>
+    <p class="meta" data-lang-es>
+      Longitudes y tramos de la red HydroRIVERS recortada; trayectorias = rutas D8 distintas que cruzan el municipio (muestreo).
+    </p>
+    <p class="meta" data-lang-en hidden>
+      HydroRIVERS network length and reaches after clipping; trajectories = distinct D8 routes crossing the municipality (sample).
+    </p>
+    <div class="table-wrap">
+      <table class="esc-table">
+        <thead>
+          <tr>
+            <th data-lang-es>Municipio</th><th data-lang-en hidden>Municipality</th>
+            <th data-lang-es>Tramos</th><th data-lang-en hidden>Reaches</th>
+            <th data-lang-es>Longitud (km)</th><th data-lang-en hidden>Length (km)</th>
+            <th data-lang-es>Redes</th><th data-lang-en hidden>Networks</th>
+            <th data-lang-es>Trayectorias</th><th data-lang-en hidden>Paths</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {munis.map((m: any) => (
+            <tr>
+              <td>{m.label_es}</td>
+              <td class="num">{m.tramos_unicos.toLocaleString('es-MX')}</td>
+              <td class="num">{m.longitud_km.toLocaleString('es-MX')}</td>
+              <td class="num">{m.redes_conectadas.toLocaleString('es-MX')}</td>
+              <td class="num">{m.trayectorias_distintas.toLocaleString('es-MX')}</td>
+              <td><button type="button" class="btn secondary esc-zoom" data-muni={m.id}>
+                <span data-lang-es>Ver mapa</span><span data-lang-en hidden>View map</span>
+              </button></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="esc-method">
+    <h2><span data-lang-es>Método y alcance</span><span data-lang-en hidden>Method and scope</span></h2>
+    <p data-lang-es>{data.method_es}</p>
+    <p data-lang-en hidden>{data.method_en}</p>
+    <p data-lang-es>{data.caveat_es}</p>
+    <p data-lang-en hidden>{data.caveat_en}</p>
+    <ul class="esc-cites">
+      {data.citations.map((c: string) => (
+        <li>{c.startsWith('http') ? <a href={c} target="_blank" rel="noopener">{c}</a> : c}</li>
+      ))}
+    </ul>
+    <p class="meta">
+      <a href="/agua/">← Guía de agua</a> ·
+      <a href="/riesgos/">Riesgos</a> ·
+      <a href="/mapas/?layers=escorrentia_red,escorrentia_trayectorias">Mapas</a> ·
+      <a href="/escorrentia.json"><span data-lang-es>Datos del modelo (HydroSHEDS / HydroRIVERS)</span><span data-lang-en hidden>Model data (HydroSHEDS / HydroRIVERS)</span></a>
+    </p>
+  </section>
+
+  <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script is:inline define:vars={{ META: data }}>
+    (function () {
+      var BOUNDS = L.latLngBounds([META.bounds.south, META.bounds.west], [META.bounds.north, META.bounds.east]);
+      var PLACE = {
+        bcs: [[22.8, -115.2], [28.0, -109.3]],
+        los_cabos: [[22.85, -110.15], [23.7, -109.35]],
+        la_paz: [[23.4, -110.8], [24.95, -109.5]],
+        loreto: [[25.4, -111.85], [26.55, -110.85]],
+        comondu: [[24.5, -112.55], [26.35, -110.85]],
+        mulege: [[26.25, -113.55], [28.05, -111.55]],
+      };
+      var map = L.map('esc-map', { scrollWheelZoom: true, preferCanvas: true }).fitBounds(PLACE.bcs);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap', maxZoom: 14, opacity: 0.85,
+      }).addTo(map);
+      L.control.scale({ imperial: false }).addTo(map);
+
+      var overlays = {
+        relieve: L.imageOverlay('/gis/escorrentia/relieve.png', [[META.bounds.south, META.bounds.west], [META.bounds.north, META.bounds.east]], { opacity: 0.5, zIndex: 200 }),
+        conc: L.imageOverlay('/gis/escorrentia/concentracion.png', [[META.bounds.south, META.bounds.west], [META.bounds.north, META.bounds.east]], { opacity: 0.55, zIndex: 250 }),
+      };
+      overlays.relieve.addTo(map);
+      overlays.conc.addTo(map);
+
+      var layers = { red: null, tray: null };
+      var animTimer = null;
+      var statusEl = document.getElementById('esc-status');
+
+      function setStatus(msg) { if (statusEl) statusEl.textContent = msg; }
+
+      function styleRed(f) {
+        var ord = Number((f.properties || {}).ORD_STRA || 1);
+        var blues = ['#90e0ef', '#48cae4', '#00b4d8', '#0096c7', '#34607d', '#023e8a', '#03045e'];
+        return {
+          color: blues[Math.min(blues.length - 1, Math.max(0, ord - 1))],
+          weight: Math.max(0.7, Math.min(4, 0.5 + ord * 0.55)),
+          opacity: 0.7,
+        };
+      }
+      function styleTray() {
+        return { color: '#34607d', weight: 0.9, opacity: 0.55, className: 'esc-tray-line' };
+      }
+
+      function clearVec() {
+        ['red', 'tray'].forEach(function (k) {
+          if (layers[k]) { map.removeLayer(layers[k]); layers[k] = null; }
+        });
+        stopAnim();
+      }
+
+      function urlsFor(muni) {
+        if (muni === 'bcs') {
+          return { red: '/gis/escorrentia/red_drenaje.geojson', tray: '/gis/escorrentia/trayectorias.geojson' };
+        }
+        return {
+          red: '/gis/escorrentia/' + muni + '_red.geojson',
+          tray: '/gis/escorrentia/' + muni + '_tray.geojson',
+        };
+      }
+
+      function loadMuni(muni) {
+        clearVec();
+        var u = urlsFor(muni);
+        setStatus('Cargando… / Loading…');
+        var wantRed = document.getElementById('esc-red').checked;
+        var wantTray = document.getElementById('esc-tray').checked;
+        var jobs = [];
+        if (wantRed) {
+          jobs.push(fetch(u.red).then(function (r) { return r.json(); }).then(function (geo) {
+            layers.red = L.geoJSON(geo, { style: styleRed });
+            layers.red.addTo(map);
+            return (geo.features || []).length;
+          }));
+        } else jobs.push(Promise.resolve(0));
+        if (wantTray) {
+          jobs.push(fetch(u.tray).then(function (r) { return r.json(); }).then(function (geo) {
+            layers.tray = L.geoJSON(geo, { style: styleTray });
+            layers.tray.addTo(map);
+            if (document.getElementById('esc-anim').checked) startAnim();
+            return (geo.features || []).length;
+          }));
+        } else jobs.push(Promise.resolve(0));
+        Promise.all(jobs).then(function (counts) {
+          setStatus((muni === 'bcs' ? 'BCS' : (META.municipios[muni] || {}).label_es || muni) +
+            ' · red ' + counts[0] + ' · trayectorias ' + counts[1] +
+            ' · modelo de terreno (no mapa oficial de inundación)');
+          var b = PLACE[muni] || PLACE.bcs;
+          map.fitBounds(b, { padding: [24, 24] });
+        }).catch(function (e) {
+          setStatus('Error: ' + e);
+        });
+      }
+
+      function startAnim() {
+        stopAnim();
+        var el = document.getElementById('esc-map');
+        if (el) el.classList.add('esc-animating');
+        var dash = 0;
+        animTimer = setInterval(function () {
+          dash = (dash + 1) % 24;
+          if (!layers.tray) return;
+          layers.tray.eachLayer(function (lyr) {
+            if (lyr.setStyle) lyr.setStyle({ dashArray: '10 14', dashOffset: String(dash) });
+          });
+        }, 120);
+      }
+      function stopAnim() {
+        if (animTimer) { clearInterval(animTimer); animTimer = null; }
+        var el = document.getElementById('esc-map');
+        if (el) el.classList.remove('esc-animating');
+        if (layers.tray) {
+          layers.tray.eachLayer(function (lyr) {
+            if (lyr.setStyle) lyr.setStyle({ dashArray: null, dashOffset: null });
+          });
+        }
+      }
+
+      document.getElementById('esc-muni').addEventListener('change', function (e) {
+        loadMuni(e.target.value);
+      });
+      document.getElementById('esc-relieve').addEventListener('change', function (e) {
+        if (e.target.checked) overlays.relieve.addTo(map); else map.removeLayer(overlays.relieve);
+      });
+      document.getElementById('esc-conc').addEventListener('change', function (e) {
+        if (e.target.checked) overlays.conc.addTo(map); else map.removeLayer(overlays.conc);
+      });
+      document.getElementById('esc-red').addEventListener('change', function () {
+        loadMuni(document.getElementById('esc-muni').value);
+      });
+      document.getElementById('esc-tray').addEventListener('change', function () {
+        loadMuni(document.getElementById('esc-muni').value);
+      });
+      document.getElementById('esc-anim').addEventListener('change', function (e) {
+        if (e.target.checked) startAnim(); else stopAnim();
+      });
+      document.querySelectorAll('.esc-zoom').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.getAttribute('data-muni');
+          document.getElementById('esc-muni').value = id;
+          loadMuni(id);
+          document.getElementById('esc-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+
+      loadMuni('bcs');
+    })();
+  </script>
+
+  <style>
+    .esc-hero { margin-bottom: 1.25rem; }
+    .esc-kicker { color: #34607d; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 0.35rem; }
+    .esc-warn {
+      background: #f3e6cc; border: 1px solid #e2c27e; color: #6b4e00;
+      padding: 0.75rem 1rem; border-radius: 10px; margin: 0.75rem 0 1rem; font-size: 0.92rem; line-height: 1.45;
+    }
+    .esc-warn strong { display: block; margin-bottom: 0.25rem; }
+    .esc-kpis {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+      gap: 0.65rem; margin: 1rem 0 1.25rem;
+    }
+    .esc-kpi {
+      background: #f5f7fa; border: 1px solid #e2dccf; border-radius: 12px;
+      padding: 0.85rem 0.9rem;
+    }
+    .esc-kpi .n { font-size: 1.45rem; font-weight: 700; color: #34607d; line-height: 1.1; }
+    .esc-kpi .l { font-size: 0.78rem; color: #3c5163; margin-top: 0.2rem; }
+    .esc-toolbar {
+      display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: center;
+      margin: 0.75rem 0; font-size: 0.9rem;
+    }
+    .esc-toolbar select {
+      margin-left: 0.35rem; padding: 0.3rem 0.5rem; border-radius: 8px;
+      border: 1px solid #d0d5dd; background: #fbf8f1;
+    }
+    .esc-check { display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+    .esc-map {
+      height: min(72vh, 640px); width: 100%; border-radius: 14px;
+      border: 1px solid #e2dccf; background: #eef2f6; z-index: 0;
+    }
+    .esc-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .esc-table th, .esc-table td { padding: 0.55rem 0.65rem; border-bottom: 1px solid #e8eaed; text-align: left; }
+    .esc-table th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; color: #3c5163; }
+    .esc-table .num { font-variant-numeric: tabular-nums; text-align: right; }
+    .esc-method { margin: 1.75rem 0 2rem; }
+    .esc-method a { margin-right: 0.15rem; }
+    .esc-cites { font-size: 0.88rem; color: #3c5163; padding-left: 1.1rem; }
+    .esc-cites li { margin: 0.2rem 0; }
+    .table-wrap { overflow-x: auto; }
+    @media print {
+      .esc-toolbar, .ios-tabbar, .site-header, #bcs-chat { display: none !important; }
+      .esc-map { height: 420px; break-inside: avoid; }
+    }
+  </style>
+</BaseLayout>

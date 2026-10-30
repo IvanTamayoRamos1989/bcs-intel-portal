@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "name": "energy_assets_bcs",
+  "crs_note": "WGS84; mix of OSM-sourced and approximate/symbolic markers — see precision field",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.74569846,
+          25.1946455
+        ]
+      },
+      "properties": {
+        "id": "osm_sol_insurgentes",
+        "name": "Sol de Insurgentes",
+        "kind": "plant",
+        "precision": "osm_sourced",
+        "precision_es": "Coordenada OSM (power=plant)",
+        "precision_en": "OSM coordinate (power=plant)",
+        "source": "OpenStreetMap osm_power_nodes",
+        "ontology_id": "rc_plant_sol_insurgentes",
+        "studio_href": "/studio/comondu/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.311,
+          24.142
+        ]
+      },
+      "properties": {
+        "id": "p23_endpoint_lapaz",
+        "name": "P23-BS1 — extremo La Paz (aprox.)",
+        "kind": "transmission",
+        "precision": "approximate",
+        "precision_es": "Extremo aproximado del corredor de transmisión — no torre georreferenciada",
+        "precision_en": "Approximate transmission corridor end — not a surveyed tower",
+        "source": "Ontology proj_p23_bs1 / PAMRNT narrative",
+        "ontology_id": "proj_p23_bs1",
+        "studio_href": "/studio/la_paz/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.702,
+          23.063
+        ]
+      },
+      "properties": {
+        "id": "p23_endpoint_cabos",
+        "name": "P23-BS1 — extremo Los Cabos (aprox.)",
+        "kind": "transmission",
+        "precision": "approximate",
+        "precision_es": "Extremo aproximado del corredor de transmisión — no torre georreferenciada",
+        "precision_en": "Approximate transmission corridor end — not a surveyed tower",
+        "source": "Ontology proj_p23_bs1 / PAMRNT narrative",
+        "ontology_id": "proj_p23_bs1",
+        "studio_href": "/studio/los_cabos/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "sibcs_system",
+        "name": "SIBCS (sistema aislado)",
+        "kind": "system",
+        "precision": "symbolic",
+        "precision_es": "Marcador simbólico del sistema — no es una subestación",
+        "precision_en": "Symbolic system marker — not a substation",
+        "source": "Ontology rc_sibcs",
+        "ontology_id": "rc_sibcs",
+        "studio_href": "/studio/bcs/",
+        "note_es": "Inventario de subestaciones: brecha de datos (ver ontología rc_subestaciones_gap)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -110.311,
+            24.142
+          ],
+          [
+            -109.702,
+            23.063
+          ]
+        ]
+      },
+      "properties": {
+        "id": "p23_corridor_approx",
+        "name": "P23-BS1 La Paz–Los Cabos (trazo aproximado)",
+        "kind": "transmission_line",
+        "precision": "approximate",
+        "precision_es": "Trazo esquemático entre cabeceras — no alineamiento oficial",
+        "precision_en": "Schematic trace between cabeceras — not an official alignment",
+        "source": "Ontology proj_p23_bs1",
+        "ontology_id": "proj_p23_bs1"
+      }
+    }
+  ]
+}

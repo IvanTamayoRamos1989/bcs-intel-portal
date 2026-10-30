@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" role="img" aria-label="Structure east cape">
+  <rect width="420" height="200" fill="#f8fafc"/>
+  <text x="16" y="28" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#0f172a">east cape · Edge condition</text>
+  <rect x="24" y="56" width="100" height="56" rx="10" fill="#c2410c" opacity="0.9"/>
+  <text x="74" y="90" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">PRESSURE</text>
+  <rect x="160" y="56" width="100" height="56" rx="10" fill="#334155"/>
+  <text x="210" y="90" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">EDGE</text>
+  <rect x="296" y="56" width="100" height="56" rx="10" fill="#94a3b8"/>
+  <text x="346" y="90" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">PROTECT</text>
+  <path d="M124 84 H160" stroke="#0080C0" stroke-width="3"/>
+  <path d="M260 84 H296" stroke="#0080C0" stroke-width="3"/>
+  <text x="16" y="150" font-family="system-ui,sans-serif" font-size="11" fill="#475569">Conservation ceiling (Cabo Pulmo / ANP) vs. spillover from Cabos — edge condition, not res</text>
+  <text x="16" y="170" font-family="system-ui,sans-serif" font-size="10" fill="#94a3b8">Schematic · not a survey map · BCS 2050</text>
+</svg>

@@ -1,0 +1,1271 @@
+{
+ "municipio": "mulege",
+ "generated": "2026-10-30",
+ "studies": [
+  {
+   "study_id": "mulege-municipio-001",
+   "municipio": "mulege",
+   "status": "partial",
+   "status_reason_es": "Estado partial: hay superficie no excluida, pero no se estiman viviendas; checks no evaluables: growth_horizon_vs_dwelling_capacity, dwelling_capacity.",
+   "created": "2026-10-08",
+   "lod": "schematic",
+   "question_es": "Capacidad de vivienda esquemática del municipio bajo restricciones ambientales, de escorrentía y agua, sin catastro ni polígonos de zonificación.",
+   "narrative_es": "Se analizaron 125,876 celdas de 500 m que cubren 30,901.0 km² del municipio de Mulegé. Las capas de exclusión restan 21,884.7 km² sin doble conteo (concentración de flujo (clase ≥1,000 celdas aportantes) 729.1 km²; áreas naturales protegidas federales 21,634.5 km²; zona federal de cauces de la red de escurrimientos (15 m por lado) 223.4 km²). La zona federal de cauces agrega 46.7 km² que no estaban ya excluidos por otras capas. Quedan 9,016.3 km² no excluidos (29.2 %). No excluido no equivale a suelo urbanizable: es superficie sin restricción de estas capas, sin evaluar zonificación, tenencia, pendiente, servicios ni agua. Franja de cauces por decisión del cliente; sensibilidad por lado, sin doble conteo: 5 m: franja 74.5 km², exclusión total 21,853.6 km², no excluido 9,047.5 km²; 10 m: franja 149.0 km², exclusión total 21,869.1 km², no excluido 9,031.9 km²; 15 m (aplicado): franja 223.4 km², exclusión total 21,884.7 km², no excluido 9,016.3 km². Además, 1,376.5 km² de concentración de flujo menor se reportan como condición sin restar. Escenarios de población (sin elegir uno): Censo 2020 (INEGI): 64,022; CONAPO 2030: 69,351; CONAPO 2040: 68,315; Proyecto PEOTDU BCS 2050 (crecimiento óptimo): 91,919 habitantes. El acuífero 0332 Mulegé (0.48 hm³/año) tiene disponibilidad media anual positiva (CONAGUA, DOF 2023). La población 2020 demanda entre 4.44 y 8.46 hm³/año (190 a 362 L/(hab·día)). La mayor demanda adicional sobre 2020 es la del escenario Proyecto PEOTDU BCS 2050 (crecimiento óptimo): 1.93 a 3.69 hm³/año. Frente a la DMA positiva de 0.48 hm³/año, 2 checks de agua pasan y 4 fallan: fallan los escenarios y dotaciones cuya demanda adicional supera ese volumen. No se estiman superficie construida ni viviendas. Mulegé no tiene PMDU ni PDU aprobado en el acervo: no hay densidad, COS ni CUS con fuente para el municipio. No se usan las densidades de planes de otros municipios. La capacidad de vivienda no es evaluable.",
+   "caveat_es": "Las unidades son celdas de una retícula de análisis de 500 m, NO son predios: no hay catastro en el acervo. La concentración de flujo (flow_concentration) es un proxy de terreno derivado de HydroSHEDS, no una zona inundable oficial. Nivel de detalle esquemático (LOD schematic): no es dictamen ni expresa capacidad legal por predio, y no sustituye al plan de desarrollo urbano vigente. No excluido no equivale a suelo urbanizable: solo indica que estas capas no lo restringen. La franja de cauces de 15 m por lado es un criterio precautorio del cliente (E-RN-WIDTH-1), superior al mínimo legal de la LAN (5 m en cauces de 5 m de ancho o menos, 10 m en el resto); se mide desde el eje de la línea de cauce, no desde el NAMO como exige la ley, por lo que en cauces de más de 10 m de ancho puede quedar por debajo de la zona federal legal. Modelo de terreno (SRTM ~2000); solo cauces con cuenca aportante ≥ 10 km²; sin ancho de cauce ni NAMO; no es mapa oficial de inundación. Sin polígonos de zonificación, ZOFEMAT ni zonas inundables oficiales. La disponibilidad (DMA) es del acuífero completo y para todos los usos; sin polígonos de acuífero no se pueden confirmar otros acuíferos que intersecten el municipio. Mulegé no tiene PMDU ni PDU aprobado en el acervo: no hay densidad, COS ni CUS con fuente para el municipio. No se usan las densidades de planes de otros municipios. La capacidad de vivienda no es evaluable. Supuestos confirmados por BCS: E-ANP-1, E-FC-1, E-GEOM-1, E-LOC-1, E-POER-1, E-RN-WIDTH-1, E-RUNOFF-NETWORK-1, E-STATUS-1.",
+   "units_count": 125876,
+   "units_note_es": "Retícula de análisis, NO son predios: no hay catastro en el acervo. Las celdas de 500 m son unidades de cálculo, no lotes.",
+   "totals": {
+    "units_count": 125876,
+    "area_m2": 30901032169.1,
+    "excluded_area_m2": 21884701564.5,
+    "excluded_flow_concentration_m2": 729110420.4,
+    "excluded_protected_areas_m2": 21634517787.6,
+    "excluded_runoff_network_m2": 223419875.9,
+    "excluded_runoff_network_not_in_other_layers_m2": 46688403.9,
+    "runoff_network_length_m": 7448877.0,
+    "runoff_network_setback_applied_m": 15,
+    "buildable_area_m2": 9016330604.6,
+    "buildable_share_pct": 29.18,
+    "condition_flow_concentration_m2": 1376549315.5,
+    "excluded_runoff_network_5m_m2": 74483704.5,
+    "excluded_runoff_network_5m_not_in_other_layers_m2": 15556799.9,
+    "excluded_area_5m_m2": 21853569960.5,
+    "buildable_area_5m_m2": 9047462208.6,
+    "excluded_runoff_network_10m_m2": 148957148.6,
+    "excluded_runoff_network_10m_not_in_other_layers_m2": 31115994.2,
+    "excluded_area_10m_m2": 21869129154.8,
+    "buildable_area_10m_m2": 9031903014.3,
+    "units_fully_excluded": 85651,
+    "units_with_buildable_area": 40225,
+    "pop_2020_localities": 64022,
+    "pop_2020_localities_in_excluded_area": 57059,
+    "pop_2020_localities_in_flow_concentration": 2130,
+    "pop_2020_localities_in_protected_areas": 56869,
+    "pop_2020_localities_in_runoff_network": 21,
+    "gross_floor_m2": null,
+    "dwellings_est": null,
+    "water_demand_census_2020_low_hm3": 4.439926,
+    "water_demand_census_2020_high_hm3": 8.459227,
+    "water_demand_conapo_2030_low_hm3": 4.809492,
+    "water_demand_conapo_2030_high_hm3": 9.163348,
+    "water_demand_conapo_2040_low_hm3": 4.737645,
+    "water_demand_conapo_2040_high_hm3": 9.026461,
+    "water_demand_peotdu_2050_low_hm3": 6.374583,
+    "water_demand_peotdu_2050_high_hm3": 12.145257,
+    "source_refs": [
+     "grid",
+     "hydro_acc",
+     "conanp_anp",
+     "hydro_red",
+     "lan_2025",
+     "poer",
+     "inegi_iter2020",
+     "conagua_mapas_2015",
+     "conagua_apas_2024",
+     "inegi_serie",
+     "conapo_mun_2024",
+     "sepuimm_peotdu_2025",
+     "conagua_dma"
+    ],
+    "assumption_refs": [
+     "A-FC-1",
+     "A-FC-2",
+     "A-GRID-1",
+     "E-ANP-1",
+     "E-FC-1",
+     "E-POER-1",
+     "E-RN-WIDTH-1",
+     "E-RUNOFF-NETWORK-1"
+    ],
+    "note_es": "Las superficies excluidas por capa pueden traslaparse; excluded_area_m2 es la unión sin doble conteo. Las superficies de condición se reportan y no se restan. *_not_in_other_layers_m2 es lo que la zona federal de cauces agrega a las demás exclusiones. Los totales con sufijo de distancia (*_5m, *_10m) son sensibilidad del retiro de cauces, no el valor aplicado."
+   },
+   "null_reasons_es": {
+    "gross_floor_m2": "Mulegé no tiene PMDU ni PDU aprobado en el acervo: no hay densidad, COS ni CUS con fuente para el municipio. No se usan las densidades de planes de otros municipios. La capacidad de vivienda no es evaluable.",
+    "cos_assumed": "Mulegé no tiene PMDU ni PDU aprobado en el acervo: no hay densidad, COS ni CUS con fuente para el municipio. No se usan las densidades de planes de otros municipios. La capacidad de vivienda no es evaluable.",
+    "dwellings_est": "Mulegé no tiene PMDU ni PDU aprobado en el acervo: no hay densidad, COS ni CUS con fuente para el municipio. No se usan las densidades de planes de otros municipios. La capacidad de vivienda no es evaluable."
+   },
+   "layers_applied": [
+    {
+     "layer": "flow_concentration",
+     "role": "exclude_or_condition",
+     "use": "exclude",
+     "subset_es": "clase de umbral A-FC-1",
+     "source_ref": "hydro_acc",
+     "assumption_ref": [
+      "A-FC-1",
+      "E-FC-1"
+     ]
+    },
+    {
+     "layer": "protected_areas",
+     "role": "exclude",
+     "use": "exclude",
+     "source_ref": "conanp_anp",
+     "assumption_ref": "E-ANP-1"
+    },
+    {
+     "layer": "runoff_network",
+     "role": "exclude",
+     "use": "exclude_setback",
+     "subset_es": "franja de 15 m por lado del eje del cauce; sensibilidad con 5 m, 10 m",
+     "source_ref": "hydro_red",
+     "assumption_ref": [
+      "E-RN-WIDTH-1",
+      "E-RUNOFF-NETWORK-1"
+     ]
+    },
+    {
+     "layer": "flow_concentration",
+     "role": "exclude_or_condition",
+     "use": "condition_area_reported",
+     "subset_es": "resto de la capa (clase de umbral A-FC-2)",
+     "source_ref": "hydro_acc",
+     "assumption_ref": [
+      "A-FC-2",
+      "E-FC-1"
+     ]
+    },
+    {
+     "layer": "poer_ugas",
+     "role": "attribute",
+     "use": "attribute_dominant_value",
+     "field": "CLAVE_UGA",
+     "source_ref": "poer",
+     "assumption_ref": "E-POER-1"
+    },
+    {
+     "layer": "aquifer_deficit",
+     "role": "attribute",
+     "use": "checks_only",
+     "source_ref": "conagua_dma"
+    }
+   ],
+   "layers_not_applied": [
+    {
+     "layer": "runoff_paths",
+     "role": "context",
+     "reason_es": "Capa de contexto: no se resta ni condiciona.",
+     "source_ref": "hydro_tray"
+    },
+    {
+     "layer": "coastline",
+     "role": "reference",
+     "reason_es": "Capa de referencia sin regla de exclusión en la solicitud. La zona federal marítimo terrestre (ZOFEMAT) oficial no está en el acervo; no se aplica retiro costero.",
+     "source_ref": "osm_coast"
+    }
+   ],
+   "breakdowns": {
+    "by_runoff_network_setback_sensitivity": [
+     {
+      "value": "5 m por lado (sensibilidad)",
+      "area_m2": 74483704.5,
+      "buildable_area_m2": 9047462208.6,
+      "note_es": "Mínimo legal en cauces de 5 m de ancho o menos. area_m2 = franja de cauces; con esta franja la exclusión total sin doble conteo sería 21,853.57 km² (la franja agrega 15.56 km² no excluidos por otras capas) y lo no excluido 9,047.46 km².",
+      "source_refs": [
+       "hydro_red",
+       "lan_2025",
+       "grid"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "10 m por lado (sensibilidad)",
+      "area_m2": 148957148.6,
+      "buildable_area_m2": 9031903014.3,
+      "note_es": "Mínimo legal en el resto de los cauces. area_m2 = franja de cauces; con esta franja la exclusión total sin doble conteo sería 21,869.13 km² (la franja agrega 31.12 km² no excluidos por otras capas) y lo no excluido 9,031.90 km².",
+      "source_refs": [
+       "hydro_red",
+       "lan_2025",
+       "grid"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "15 m por lado (aplicado)",
+      "area_m2": 223419875.9,
+      "buildable_area_m2": 9016330604.6,
+      "note_es": "Criterio precautorio. area_m2 = franja de cauces; con esta franja la exclusión total sin doble conteo sería 21,884.70 km² (la franja agrega 46.69 km² no excluidos por otras capas) y lo no excluido 9,016.33 km².",
+      "source_refs": [
+       "hydro_red",
+       "lan_2025",
+       "grid"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     }
+    ],
+    "by_poer_ugas": [
+     {
+      "value": "01",
+      "area_m2": 21415824156.7,
+      "buildable_area_m2": 2416527.2,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "02",
+      "area_m2": 2048997877.7,
+      "buildable_area_m2": 1992278860.3,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "03",
+      "area_m2": 1965631322.0,
+      "buildable_area_m2": 1905173779.2,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "04",
+      "area_m2": 1332964323.2,
+      "buildable_area_m2": 1298334188.0,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "05",
+      "area_m2": 2623358696.0,
+      "buildable_area_m2": 2548577967.6,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "06",
+      "area_m2": 119649250.8,
+      "buildable_area_m2": 116838256.8,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "07",
+      "area_m2": 146993947.3,
+      "buildable_area_m2": 143778482.7,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "08",
+      "area_m2": 970436731.5,
+      "buildable_area_m2": 953164108.4,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "14",
+      "area_m2": 5327699.8,
+      "buildable_area_m2": 0.0,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "43",
+      "area_m2": 94315418.0,
+      "buildable_area_m2": 5.2,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "46",
+      "area_m2": 471358.4,
+      "buildable_area_m2": 457277.2,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "47",
+      "area_m2": 5052770.8,
+      "buildable_area_m2": 4862568.2,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "54_01",
+      "area_m2": 16406964.1,
+      "buildable_area_m2": 237219.2,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "54_46",
+      "area_m2": 3907.8,
+      "buildable_area_m2": 3781.4,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     },
+     {
+      "value": "54_47",
+      "area_m2": 755.2,
+      "buildable_area_m2": 755.2,
+      "source_refs": [
+       "grid",
+       "poer",
+       "hydro_acc",
+       "conanp_anp",
+       "hydro_red"
+      ],
+      "assumption_refs": [
+       "A-FC-1",
+       "A-GRID-1",
+       "E-ANP-1",
+       "E-FC-1",
+       "E-POER-1",
+       "E-RN-WIDTH-1",
+       "E-RUNOFF-NETWORK-1"
+      ]
+     }
+    ]
+   },
+   "checks": [
+    {
+     "id": "crs_projected_metres",
+     "label_es": "CRS de la solicitud proyectado en metros",
+     "result": "pass",
+     "measured": "EPSG:32612",
+     "threshold": "CRS proyectado",
+     "unit": null,
+     "source_ref": "grid"
+    },
+    {
+     "id": "layers_declare_request_crs",
+     "label_es": "Capas espaciales que declaran el CRS de la solicitud",
+     "result": "pass",
+     "measured": 9,
+     "threshold": 9,
+     "unit": "capas",
+     "source_ref": [
+      "grid",
+      "conanp_anp",
+      "poer",
+      "hydro_red",
+      "hydro_tray",
+      "hydro_acc",
+      "osm_coast",
+      "conagua_dma",
+      "inegi_mg2022",
+      "inegi_iter2020"
+     ]
+    },
+    {
+     "id": "input_checksums",
+     "label_es": "Sumas SHA-256 del paquete coinciden con el manifiesto",
+     "result": "pass",
+     "measured": 11,
+     "threshold": 11,
+     "unit": "archivos",
+     "source_ref": [
+      "grid",
+      "conanp_anp",
+      "poer",
+      "hydro_red",
+      "hydro_tray",
+      "hydro_acc",
+      "osm_coast",
+      "conagua_dma",
+      "inegi_mg2022",
+      "inegi_iter2020"
+     ],
+     "note_es": "Archivos verificados contra el manifiesto."
+    },
+    {
+     "id": "units_cover_municipal_area",
+     "label_es": "La suma de las celdas reproduce el área municipal del manifiesto (tolerancia: media unidad del último dígito publicado)",
+     "result": "pass",
+     "measured": 30901.032169,
+     "threshold": 30901.03,
+     "tolerance": 0.005,
+     "unit": "km²",
+     "source_ref": "inegi_mg2022"
+    },
+    {
+     "id": "unit_geometries_valid",
+     "label_es": "Geometrías de unidades válidas en el paquete",
+     "result": "fail",
+     "measured": 2,
+     "threshold": 0,
+     "unit": "geometrías inválidas",
+     "source_ref": "grid",
+     "note_es": "Celdas reparadas con make_valid antes del cálculo: G500-104500-3085000, G500-393000-3001500; el área se recalcula desde la geometría reparada."
+    },
+    {
+     "id": "buildable_area_positive",
+     "label_es": "Queda superficie no excluida tras restar las capas de exclusión",
+     "result": "pass",
+     "measured": 9016330604.6,
+     "threshold": 0,
+     "unit": "m²",
+     "source_ref": [
+      "grid",
+      "hydro_acc",
+      "conanp_anp",
+      "hydro_red",
+      "lan_2025"
+     ],
+     "assumption_ref": [
+      "A-FC-1",
+      "A-GRID-1",
+      "E-ANP-1",
+      "E-FC-1",
+      "E-RN-WIDTH-1",
+      "E-RUNOFF-NETWORK-1"
+     ],
+     "note_es": "Umbral 0: definición de inviabilidad geométrica (sin superficie restante)."
+    },
+    {
+     "id": "localities_population_matches_census_total",
+     "label_es": "Población 2020 de las localidades ITER suma el total municipal censal",
+     "result": "pass",
+     "measured": 64022,
+     "threshold": 64022,
+     "unit": "habitantes",
+     "source_ref": [
+      "inegi_iter2020",
+      "inegi_serie"
+     ]
+    },
+    {
+     "id": "aquifer_0332_availability",
+     "label_es": "Disponibilidad media anual (DMA) positiva en el acuífero 0332 Mulegé",
+     "result": "pass",
+     "measured": 0.482915,
+     "threshold": 0,
+     "unit": "hm³/año",
+     "source_ref": "conagua_dma",
+     "note_es": "Umbral 0 por definición de la NOM-011-CONAGUA-2015 (DMA = R − DNC − VEAS); DMA ≤ 0 indica que no hay volumen disponible para nuevas concesiones."
+    },
+    {
+     "id": "water_conapo_2030_low_vs_aquifer_availability",
+     "label_es": "Demanda adicional de agua, CONAPO 2030, con 190 L/(hab·día), frente al volumen disponible del acuífero",
+     "result": "pass",
+     "measured": 0.369566,
+     "threshold": 0.482915,
+     "unit": "hm³/año",
+     "source_ref": [
+      "conagua_dma",
+      "conapo_mun_2024",
+      "conagua_mapas_2015",
+      "inegi_serie"
+     ],
+     "note_es": "Demanda adicional = (población del escenario − 64,022 hab de 2020) × dotación × 365. Umbral = DMA positiva disponible (DMA de 0332: 0.48 hm³/año). La DMA ya descuenta las concesiones vigentes, por eso se compara solo la demanda adicional; la DMA es del acuífero completo y para todos los usos, no solo el público urbano; solo cuenta los acuíferos asignados al municipio."
+    },
+    {
+     "id": "water_conapo_2030_high_vs_aquifer_availability",
+     "label_es": "Demanda adicional de agua, CONAPO 2030, con 362 L/(hab·día), frente al volumen disponible del acuífero",
+     "result": "fail",
+     "measured": 0.704121,
+     "threshold": 0.482915,
+     "unit": "hm³/año",
+     "source_ref": [
+      "conagua_dma",
+      "conapo_mun_2024",
+      "conagua_apas_2024",
+      "inegi_serie"
+     ],
+     "note_es": "Demanda adicional = (población del escenario − 64,022 hab de 2020) × dotación × 365. Umbral = DMA positiva disponible (DMA de 0332: 0.48 hm³/año). La DMA ya descuenta las concesiones vigentes, por eso se compara solo la demanda adicional; la DMA es del acuífero completo y para todos los usos, no solo el público urbano; solo cuenta los acuíferos asignados al municipio."
+    },
+    {
+     "id": "water_conapo_2040_low_vs_aquifer_availability",
+     "label_es": "Demanda adicional de agua, CONAPO 2040, con 190 L/(hab·día), frente al volumen disponible del acuífero",
+     "result": "pass",
+     "measured": 0.29772,
+     "threshold": 0.482915,
+     "unit": "hm³/año",
+     "source_ref": [
+      "conagua_dma",
+      "conapo_mun_2024",
+      "conagua_mapas_2015",
+      "inegi_serie"
+     ],
+     "note_es": "Demanda adicional = (población del escenario − 64,022 hab de 2020) × dotación × 365. Umbral = DMA positiva disponible (DMA de 0332: 0.48 hm³/año). La DMA ya descuenta las concesiones vigentes, por eso se compara solo la demanda adicional; la DMA es del acuífero completo y para todos los usos, no solo el público urbano; solo cuenta los acuíferos asignados al municipio."
+    },
+    {
+     "id": "water_conapo_2040_high_vs_aquifer_availability",
+     "label_es": "Demanda adicional de agua, CONAPO 2040, con 362 L/(hab·día), frente al volumen disponible del acuífero",
+     "result": "fail",
+     "measured": 0.567234,
+     "threshold": 0.482915,
+     "unit": "hm³/año",
+     "source_ref": [
+      "conagua_dma",
+      "conapo_mun_2024",
+      "conagua_apas_2024",
+      "inegi_serie"
+     ],
+     "note_es": "Demanda adicional = (población del escenario − 64,022 hab de 2020) × dotación × 365. Umbral = DMA positiva disponible (DMA de 0332: 0.48 hm³/año). La DMA ya descuenta las concesiones vigentes, por eso se compara solo la demanda adicional; la DMA es del acuífero completo y para todos los usos, no solo el público urbano; solo cuenta los acuíferos asignados al municipio."
+    },
+    {
+     "id": "water_peotdu_2050_low_vs_aquifer_availability",
+     "label_es": "Demanda adicional de agua, Proyecto PEOTDU BCS 2050 (crecimiento óptimo), con 190 L/(hab·día), frente al volumen disponible del acuífero",
+     "result": "fail",
+     "measured": 1.934657,
+     "threshold": 0.482915,
+     "unit": "hm³/año",
+     "source_ref": [
+      "conagua_dma",
+      "sepuimm_peotdu_2025",
+      "conagua_mapas_2015",
+      "inegi_serie"
+     ],
+     "note_es": "Demanda adicional = (población del escenario − 64,022 hab de 2020) × dotación × 365. Umbral = DMA positiva disponible (DMA de 0332: 0.48 hm³/año). La DMA ya descuenta las concesiones vigentes, por eso se compara solo la demanda adicional; la DMA es del acuífero completo y para todos los usos, no solo el público urbano; solo cuenta los acuíferos asignados al municipio."
+    },
+    {
+     "id": "water_peotdu_2050_high_vs_aquifer_availability",
+     "label_es": "Demanda adicional de agua, Proyecto PEOTDU BCS 2050 (crecimiento óptimo), con 362 L/(hab·día), frente al volumen disponible del acuífero",
+     "result": "fail",
+     "measured": 3.686031,
+     "threshold": 0.482915,
+     "unit": "hm³/año",
+     "source_ref": [
+      "conagua_dma",
+      "sepuimm_peotdu_2025",
+      "conagua_apas_2024",
+      "inegi_serie"
+     ],
+     "note_es": "Demanda adicional = (población del escenario − 64,022 hab de 2020) × dotación × 365. Umbral = DMA positiva disponible (DMA de 0332: 0.48 hm³/año). La DMA ya descuenta las concesiones vigentes, por eso se compara solo la demanda adicional; la DMA es del acuífero completo y para todos los usos, no solo el público urbano; solo cuenta los acuíferos asignados al municipio."
+    },
+    {
+     "id": "growth_horizon_vs_dwelling_capacity",
+     "label_es": "Crecimiento de población al 2050 frente a capacidad de vivienda",
+     "result": "not_evaluable",
+     "measured": null,
+     "threshold": null,
+     "unit": "viviendas",
+     "source_ref": "inegi_serie",
+     "reason_es": "No evaluable: no hay proyección oficial municipal a 2050: la serie CONAPO termina en 2040 y Mulegé no tiene PMDU con proyección. La única cifra 2050 con fuente es la del proyecto de PEOTDU (Tabla 55, crecimiento óptimo, no oficial), que se reporta como escenario sin adoptarla; sin densidad o FAR con fuente no hay capacidad en viviendas que comparar; las viviendas requeridas por escenario sí se calculan (ver growth.scenarios), pero no hay capacidad con la que compararlas."
+    },
+    {
+     "id": "dwelling_capacity",
+     "label_es": "Capacidad de vivienda con densidad del plan municipal",
+     "result": "not_evaluable",
+     "measured": null,
+     "threshold": null,
+     "unit": "viviendas",
+     "source_ref": [
+      "inegi_iter2020",
+      "conapo_mun_2024",
+      "sepuimm_peotdu_2025"
+     ],
+     "reason_es": "No evaluable. Mulegé no tiene PMDU ni PDU aprobado en el acervo: no hay densidad, COS ni CUS con fuente para el municipio. No se usan las densidades de planes de otros municipios. La capacidad de vivienda no es evaluable. Las viviendas requeridas por cada escenario de población sí se reportan en growth.scenarios."
+    }
+   ],
+   "growth": {
+    "base_year": 2020,
+    "population": 64022,
+    "horizon_year": 2050,
+    "population_horizon": null,
+    "population_horizon_note_es": "No hay proyección oficial municipal a 2050: la serie CONAPO termina en 2040 y Mulegé no tiene PMDU con proyección. La única cifra 2050 con fuente es la del proyecto de PEOTDU (Tabla 55, crecimiento óptimo, no oficial), que se reporta como escenario sin adoptarla.",
+    "floating_population": null,
+    "floating_population_note_es": "Población flotante o turística sin cifra con fuente en el acervo",
+    "source_ref": "inegi_serie",
+    "note_es": "horizon_year es parámetro de la solicitud; population y base_year provienen de la serie censal. Los escenarios de población se listan sin elegir uno; los resultados por escenario están en los checks growth_* y water_*.",
+    "history": [
+     {
+      "year": 1990,
+      "population": 38528,
+      "source_ref": "inegi_serie"
+     },
+     {
+      "year": 2000,
+      "population": 45989,
+      "source_ref": "inegi_serie"
+     },
+     {
+      "year": 2010,
+      "population": 59114,
+      "source_ref": "inegi_serie"
+     },
+     {
+      "year": 2020,
+      "population": 64022,
+      "source_ref": "inegi_serie"
+     }
+    ],
+    "observed": {
+     "from_year": 2010,
+     "to_year": 2020,
+     "cagr_pct": 0.8,
+     "source_ref": "inegi_serie",
+     "note_es": "Tasa media anual observada entre censos, calculada aquí. NO es una proyección y no se extrapola al horizonte."
+    }
+   },
+   "water": {
+    "source_ref": "conagua_dma",
+    "note_es": "Acuíferos asignados a Mulegé en el archivo de acuíferos del portal (asignación solo cuando una ficha CONAGUA lo declara): 0332 Mulegé: Totalmente dentro del municipio de Mulegé. Sin polígonos de acuífero en el acervo: no se sabe qué parte del territorio municipal cubre cada acuífero.",
+    "method_es": "NOM-011-CONAGUA-2015: DMA = R − DNC − VEAS (VEAS = VCAS + VEALA + VAPTYR + VAPRH). Cifras en hm³/año.",
+    "per_capita_demand": {
+     "low": 190,
+     "high": 362,
+     "unit": "L/(hab·día)",
+     "low_label_es": "Consumo doméstico de referencia CONAGUA (MAPAS), clima seco o muy seco; Mulegé no tiene PMDU con dotación",
+     "high_label_es": "Agua producida por habitante, BCS 2023, incluye pérdidas (CONAGUA APAS 2024)",
+     "source_refs": [
+      "conagua_mapas_2015",
+      "conagua_apas_2024"
+     ]
+    },
+    "per_capita_demand_note_es": "Rango de dotación: bajo = Consumo doméstico de referencia CONAGUA (MAPAS), clima seco o muy seco; Mulegé no tiene PMDU con dotación. Alto = Agua producida por habitante, BCS 2023, incluye pérdidas (CONAGUA APAS 2024). Demanda anual = población × dotación × 365.",
+    "aquifers": [
+     {
+      "clave": "0332",
+      "nombre": "Mulegé",
+      "R_hm3": 10.1,
+      "DNC_hm3": 3.3,
+      "VCAS_hm3": 5.733535,
+      "VEALA_hm3": 0.0,
+      "VAPTYR_hm3": 0.577125,
+      "VAPRH_hm3": 0.006425,
+      "dma_hm3": 0.482915,
+      "status": "disponible",
+      "source_page": 3,
+      "source_ref": "conagua_dma"
+     }
+    ]
+   },
+   "assumptions": [
+    {
+     "id": "A-FC-1",
+     "text_es": "Umbral de concentración de flujo: celdas con ≥ 1,000 celdas aportantes",
+     "value": 1000,
+     "unit": "celdas aportantes",
+     "basis": "Supuesto de la solicitud (mismo valor que Los Cabos)",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "A-FC-2",
+     "text_es": "Segundo umbral (flujo concentrado menor): ≥ 100 celdas aportantes",
+     "value": 100,
+     "unit": "celdas aportantes",
+     "basis": "Supuesto de la solicitud (mismo valor que Los Cabos)",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "A-GRID-1",
+     "text_es": "Tamaño de celda de la retícula de análisis",
+     "value": 500,
+     "unit": "m",
+     "basis": "Escala municipal esquemática; no catastral",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-ANP-1",
+     "text_es": "Las ANP federales (todas las categorías y zonas) se excluyen completas.",
+     "basis": "Confirmado por BCS (Ivan Tamayo Ramos), 2026-10-08; mismo criterio que Comondú v0.2, aplicado a Mulegé",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-FC-1",
+     "text_es": "Se excluye solo la clase de flujo muy concentrado (≥ 1,000 celdas, A-FC-1); la clase ≥ 100 y < 1,000 (A-FC-2) se reporta como condición.",
+     "basis": "Confirmado por BCS (Ivan Tamayo Ramos), 2026-10-08; mismo criterio que Comondú v0.2, aplicado a Mulegé",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-GEOM-1",
+     "text_es": "El área de cada unidad se recalcula desde la geometría; geometrías inválidas se reparan con make_valid.",
+     "basis": "Confirmado por BCS (Ivan Tamayo Ramos), 2026-10-08; mismo criterio que Comondú v0.2, aplicado a Mulegé",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-LOC-1",
+     "text_es": "La población 2020 de cada localidad (punto ITER) se asigna a la celda que contiene el punto.",
+     "basis": "Confirmado por BCS (Ivan Tamayo Ramos), 2026-10-08; mismo criterio que Comondú v0.2, aplicado a Mulegé",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-POER-1",
+     "text_es": "Las UGA del POERBCS son solo atributo (UGA dominante por superficie en cada celda), no exclusión.",
+     "basis": "Confirmado por BCS (Ivan Tamayo Ramos), 2026-10-08; mismo criterio que Comondú v0.2, aplicado a Mulegé",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-RN-WIDTH-1",
+     "text_es": "Franja de exclusión de 15 m por lado de cada tramo de la red de escurrimientos, medida desde el eje de la línea de cauce. Revisión 2 adoptada en Comondú v0.2 y aplicada con el mismo criterio a Mulegé. Se reportan 5 m, 10 m y 15 m como sensibilidad; 15 m es el valor aplicado.",
+     "value": 15,
+     "unit": "m por lado",
+     "basis": "decisión del cliente (Iván Tamayo, BCS 2050, 8-oct-2026): 15 m por lado como criterio precautorio de buena práctica, superior al mínimo legal LAN art. 3 fr. XLVII (5 m en cauces ≤5 m de ancho, 10 m en el resto)",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-RUNOFF-NETWORK-1",
+     "text_es": "La red de escurrimientos se excluye con una franja de zona federal de cauces; el mínimo legal es el de la LAN art. 3 fr. XLVII (10 m por lado, o 5 m donde el cauce mide 5 m de ancho o menos). El ancho aplicado lo fija E-RN-WIDTH-1.",
+     "unit": "m",
+     "basis": "Confirmado por BCS (Ivan Tamayo Ramos), 2026-10-08; mismo criterio que Comondú v0.2, aplicado a Mulegé; fuente legal: Ley de Aguas Nacionales (texto vigente 2025)",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    },
+    {
+     "id": "E-STATUS-1",
+     "text_es": "Regla de estado: infeasible si no queda superficie tras exclusiones; partial si falta estimar viviendas o algún check es no evaluable; ok en otro caso. Los checks con resultado fail no cambian el estado por sí solos.",
+     "basis": "Confirmado por BCS (Ivan Tamayo Ramos), 2026-10-08; mismo criterio que Comondú v0.2, aplicado a Mulegé",
+     "origin": "request",
+     "used": true,
+     "requires_bcs_confirmation": false
+    }
+   ],
+   "data_gaps": [
+    {
+     "item": "Proyecto de PMDU de Mulegé",
+     "status": "no en el acervo; no hay PMDU ni PDU aprobado",
+     "where_es": "Titular: H. Ayuntamiento de Mulegé (Dirección de Desarrollo Urbano o equivalente) (titular confirmado; nombre exacto de la unidad por confirmar). Conjunto de datos: Proyecto de PMDU de Mulegé: documento, matriz de normas y capas SIG de zonificación (año y formato por confirmar). Vía: solicitud formal al Ayuntamiento o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: alta."
+    },
+    {
+     "item": "Subzonificación y programas de manejo de las ANP",
+     "status": "no en el acervo; la capa CONANP solo trae el polígono total",
+     "where_es": "Titular: CONANP (Dirección de la Reserva de la Biosfera El Vizcaíno) (titular confirmado; capa digital de subzonas por confirmar). Conjunto de datos: Programas de manejo publicados (DOF) y capas de subzonificación (por confirmar). Vía: solicitud formal a CONANP o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: alta."
+    },
+    {
+     "item": "Polígono del APFF Islas del Golfo de California",
+     "status": "no viene en la capa CONANP del acervo",
+     "where_es": "Titular: CONANP (confirmado; inclusión de cada isla del municipio por confirmar). Conjunto de datos: Polígonos de ANP federales (edición completa, por confirmar). Vía: descarga de datos abiertos de CONANP o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: alta."
+    },
+    {
+     "item": "Red hidrográfica de detalle (cauces con cuenca < 10 km²)",
+     "status": "fuera de la red disponible",
+     "where_es": "Titular: INEGI (confirmado). Conjunto de datos: Red Hidrográfica escala 1:50 000, edición 2.0. Vía: descarga en el portal de datos abiertos de INEGI. Prioridad: alta."
+    },
+    {
+     "item": "Zonas inundables oficiales",
+     "status": "no en el acervo como capa",
+     "where_es": "Titular: CENAPRED (Atlas Nacional de Riesgos); H. Ayuntamiento de Mulegé, Protección Civil (CENAPRED confirmado; Atlas de Riesgos municipal de Mulegé por confirmar). Conjunto de datos: Atlas Nacional de Riesgos (capas de inundación); Atlas de Riesgos del municipio de Mulegé (por confirmar). Vía: descarga en el Atlas Nacional de Riesgos; solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT) para el atlas municipal. Prioridad: alta."
+    },
+    {
+     "item": "Polígonos de acuíferos",
+     "status": "no en el acervo",
+     "where_es": "Titular: CONAGUA (confirmado). Conjunto de datos: Límites de acuíferos (SIGA; nombre exacto de la capa por confirmar). Vía: datos abiertos de CONAGUA o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: alta."
+    },
+    {
+     "item": "Producción de agua, pérdidas y dotación real de Mulegé",
+     "status": "sin cifra municipal en el acervo",
+     "where_es": "Titular: Organismo operador de agua potable de Mulegé (nombre oficial del organismo por confirmar). Conjunto de datos: Indicadores de gestión: volumen producido, facturado y usuarios (por confirmar). Vía: solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT) o solicitud formal al organismo. Prioridad: alta."
+    },
+    {
+     "item": "Concesiones de agua de los acuíferos de Mulegé (uso público urbano)",
+     "status": "no en el acervo",
+     "where_es": "Titular: CONAGUA (confirmado). Conjunto de datos: Registro Público de Derechos de Agua (REPDA). Vía: consulta pública del REPDA o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: alta."
+    },
+    {
+     "item": "Programas de desarrollo urbano de centros de población de Mulegé",
+     "status": "existencia y vigencia por confirmar; ninguno en el acervo",
+     "where_es": "Titular: H. Ayuntamiento de Mulegé; Gobierno del Estado de Baja California Sur (Boletín Oficial) (por confirmar). Conjunto de datos: Programas de desarrollo urbano de centro de población publicados en el Boletín Oficial (por confirmar). Vía: consulta del Boletín Oficial o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: media."
+    },
+    {
+     "item": "Ancho de cauce, NAMO y delimitaciones de zona federal",
+     "status": "no en el acervo",
+     "where_es": "Titular: CONAGUA, Organismo de Cuenca Península de Baja California (Dirección Local en BCS) (confirmado; existencia de delimitaciones en Mulegé por confirmar). Conjunto de datos: Estudios y planos de delimitación de zona federal de cauces (por confirmar). Vía: solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: media."
+    },
+    {
+     "item": "ZOFEMAT oficial",
+     "status": "no en el acervo",
+     "where_es": "Titular: SEMARNAT, Dirección General de Zona Federal Marítimo Terrestre y Ambientes Costeros (confirmado). Conjunto de datos: Delimitación de ZOFEMAT (planos o polígonos; formato por confirmar). Vía: solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: media."
+    },
+    {
+     "item": "Polígonos de localidades urbanas y AGEB urbanas",
+     "status": "no en el acervo (solo el límite municipal del Marco Geoestadístico)",
+     "where_es": "Titular: INEGI (confirmado). Conjunto de datos: Marco Geoestadístico (capas de localidades urbanas y AGEB urbanas). Vía: descarga en el portal de datos abiertos de INEGI. Prioridad: media."
+    },
+    {
+     "item": "Predios / catastro y tenencia",
+     "status": "no disponible en el acervo",
+     "where_es": "Titular: H. Ayuntamiento de Mulegé, Catastro municipal; Registro Agrario Nacional (RAN) (Catastro y RAN confirmados; formato de entrega por confirmar). Conjunto de datos: Cartografía catastral municipal; perímetros de núcleos agrarios del RAN. Vía: convenio o solicitud formal al Ayuntamiento; datos abiertos del RAN; solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: media."
+    },
+    {
+     "item": "Acuíferos con municipio por confirmar",
+     "status": "sin asignación municipal",
+     "where_es": "Titular: CONAGUA (confirmado). Conjunto de datos: Fichas de actualización de disponibilidad media anual por acuífero. Vía: consulta de las fichas publicadas por CONAGUA. Prioridad: media."
+    },
+    {
+     "item": "Proyección oficial de población municipal 2050",
+     "status": "CONAPO termina en 2040; la única cifra 2050 disponible es de un proyecto no aprobado",
+     "where_es": "Titular: CONAPO; Gobierno del Estado de BCS (SEPUIMM, PEOTDU definitivo) (CONAPO confirmado; publicación del PEOTDU definitivo por confirmar). Conjunto de datos: Proyecciones de población municipales (edición futura, por confirmar); PEOTDU BCS aprobado (por confirmar). Vía: solicitud formal a CONAPO y a SEPUIMM. Prioridad: media."
+    },
+    {
+     "item": "Criterio de pendiente y modelo de elevación de mayor resolución",
+     "status": "sin umbral con fuente; solo modelo de elevación grueso",
+     "where_es": "Titular: INEGI (Continuo de Elevaciones Mexicano) (confirmado). Conjunto de datos: Continuo de Elevaciones Mexicano 3.0 (CEM 3.0). Vía: descarga en el portal de INEGI. Prioridad: media."
+    },
+    {
+     "item": "Población flotante o turística",
+     "status": "sin cifra con fuente; las series hoteleras del acervo no incluyen Mulegé",
+     "where_es": "Titular: SECTUR (DataTur); INEGI (confirmado; cobertura de Mulegé por confirmar). Conjunto de datos: Ocupación hotelera y oferta de cuartos (DataTur). Vía: descarga en DataTur o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: baja."
+    },
+    {
+     "item": "Viviendas habitadas por localidad reservadas por confidencialidad",
+     "status": "reservado en la fuente",
+     "where_es": "Titular: INEGI (confirmado; acceso a microdatos por confirmar). Conjunto de datos: Censo de Población y Vivienda 2020, microdatos (por confirmar). Vía: solicitud al servicio de microdatos de INEGI (por confirmar). Prioridad: baja."
+    },
+    {
+     "item": "Fecha del decreto del POERBCS",
+     "status": "no consolidada en el acervo",
+     "where_es": "Titular: Gobierno del Estado de Baja California Sur; SEMARNAT (confirmado). Conjunto de datos: Programa de Ordenamiento Ecológico Regional de BCS (decreto). Vía: consulta del Boletín Oficial o solicitud de acceso a la información por la Plataforma Nacional de Transparencia (PNT). Prioridad: baja."
+    },
+    {
+     "item": "invalid_geometry:units",
+     "status": "2 geometría(s) inválida(s) en units (id: G500-104500-3085000, G500-393000-3001500), reparadas con make_valid."
+    },
+    {
+     "item": "invalid_geometry:protected_areas",
+     "status": "1 geometría(s) inválida(s) en protected_areas, reparadas con make_valid."
+    },
+    {
+     "item": "invalid_geometry:poer_ugas",
+     "status": "3 geometría(s) inválida(s) en poer_ugas, reparadas con make_valid."
+    },
+    {
+     "item": "localities_vivpar_null",
+     "status": "306 localidades sin VIVPAR_HAB 2020 (dato reservado o vacío en ITER); no se usan viviendas existentes."
+    },
+    {
+     "item": "unit_area_attribute",
+     "status": "El atributo area_m2 de las celdas difiere del área geométrica recalculada (redondeo de coordenadas); se usa el área geométrica."
+    }
+   ],
+   "sources": [
+    {
+     "ref": "conagua_apas_2024",
+     "title": "Situación del Subsector Agua Potable, Alcantarillado y Saneamiento, edición 2024",
+     "owner": "CONAGUA",
+     "dataset": "Situación del Subsector APAS 2024 (datos a diciembre de 2023)",
+     "year": "2024",
+     "source_date": "2024",
+     "licence": "Gobierno de México",
+     "url": "https://www.gob.mx/cms/uploads/attachment/file/960719/DSAPAS-2024-c.pdf",
+     "method": "Agua potable producida ÷ población total, Baja California Sur 2023: 362 L/(hab·día) (PDF p. 118)",
+     "caveat": "Promedio estatal que incluye pérdidas físicas; no es una cifra de Mulegé"
+    },
+    {
+     "ref": "conagua_dma",
+     "title": "Acuerdo de disponibilidad media anual de agua de los 653 acuíferos (DOF, 9 nov 2023) y fichas de actualización CONAGUA",
+     "owner": "CONAGUA / SEMARNAT",
+     "dataset": "Disponibilidad media anual de agua subterránea (DMA)",
+     "year": "2023",
+     "source_date": "2023-11-09",
+     "licence": "Gobierno de México",
+     "url": "https://www.dof.gob.mx/",
+     "method": "NOM-011-CONAGUA-2015: DMA = R − DNC − VEAS (hm³/año); cifras del Acuerdo DOF 2023, p. 3, tal como las recoge el portal",
+     "caveat": "Sin polígonos de acuífero en el acervo; DMA es un balance legal de volumen concesionable para todo el acuífero, no un aforo ni una cifra municipal"
+    },
+    {
+     "ref": "conagua_mapas_2015",
+     "title": "Manual de Agua Potable, Alcantarillado y Saneamiento (MAPAS), Libro 4: Datos Básicos",
+     "owner": "CONAGUA",
+     "dataset": "MAPAS Libro 4, Tabla 2.2 (consumo doméstico por clima)",
+     "year": "2015",
+     "source_date": "2015",
+     "licence": "Gobierno de México",
+     "url": "https://files.conagua.gob.mx/conagua/mapas/SGAPDS-1-15-Libro4.pdf",
+     "method": "Consumo doméstico de referencia para clima seco o muy seco: 190 L/(hab·día) (PDF p. 21)",
+     "caveat": "Consumo doméstico, no dotación total: no incluye usos no domésticos ni pérdidas; se usa como valor bajo porque Mulegé no tiene PMDU con dotación"
+    },
+    {
+     "ref": "conanp_anp",
+     "title": "Áreas Naturales Protegidas federales — Baja California Sur",
+     "owner": "CONANP",
+     "dataset": "Polígonos de ANP federales",
+     "year": "2025",
+     "source_date": "2025",
+     "licence": "Datos abiertos del Gobierno de México",
+     "url": "https://www.conanp.gob.mx/",
+     "method": "Polígonos ANP que intersectan el municipio, recortados al límite municipal",
+     "caveat": "Las reglas de manejo varían por zona y subzona (no modeladas); la superficie marina queda fuera del límite municipal"
+    },
+    {
+     "ref": "conapo_mun_2024",
+     "title": "Reconstrucción y proyecciones de la población de los municipios de México 1990–2040",
+     "owner": "CONAPO",
+     "dataset": "Proyecciones de población municipales 1990–2040",
+     "year": "2024",
+     "source_date": "2024-05-09",
+     "licence": "Datos abiertos del Gobierno de México",
+     "url": "https://www.datos.gob.mx/dataset/proyecciones-de-poblacion",
+     "method": "Suma de hombres y mujeres de la población total del municipio 03002 por año",
+     "caveat": "Serie oficial vigente; termina en 2040: no hay cifra municipal oficial para 2050"
+    },
+    {
+     "ref": "grid",
+     "title": "Retícula de análisis 500 m (generada para esta solicitud)",
+     "owner": "Equipo del portal BCS 2050",
+     "dataset": "Retícula de análisis",
+     "licence": "Interno",
+     "method": "Celdas cuadradas de 500 m en EPSG:32612 recortadas al límite municipal INEGI 2022",
+     "caveat": "Retícula de análisis (analysis grid, not parcels): NO son predios; no hay catastro en el acervo"
+    },
+    {
+     "ref": "hydro_acc",
+     "title": "Acumulación de flujo HydroSHEDS 3″, recortada a Baja California Sur",
+     "owner": "WWF HydroSHEDS; recorte del equipo del portal BCS 2050",
+     "dataset": "HydroSHEDS v1, acumulación de flujo 3″",
+     "year": "2026 (recorte)",
+     "source_date": "2026-10-05",
+     "licence": "HydroSHEDS — atribución requerida",
+     "url": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+     "method": "Celdas con acumulación ≥ 100 (A-FC-2) y ≥ 1,000 (A-FC-1) celdas aportantes, poligonizadas y recortadas al municipio (mismo método que Los Cabos)",
+     "caveat": "Concentración de flujo = celdas aportantes; NO es zona inundable oficial ni profundidad de agua"
+    },
+    {
+     "ref": "hydro_dem",
+     "title": "Modelo digital de elevación HydroSHEDS 3″, recortado a Baja California Sur",
+     "owner": "WWF HydroSHEDS; recorte del equipo del portal BCS 2050",
+     "dataset": "HydroSHEDS v1, elevación condicionada 3″",
+     "year": "2026 (recorte)",
+     "source_date": "2026-10-05",
+     "licence": "HydroSHEDS — atribución requerida",
+     "url": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+     "method": "Ráster de elevación de unos 90 m de resolución, presente en el paquete estatal de escorrentía; no se incluye en esta solicitud",
+     "caveat": "Elevación condicionada para hidrología (SRTM ~2000); resolución gruesa para pendientes a escala urbana"
+    },
+    {
+     "ref": "hydro_red",
+     "title": "Red de drenaje HydroRIVERS v1, recortada al municipio",
+     "owner": "WWF HydroSHEDS; recorte del equipo del portal BCS 2050",
+     "dataset": "HydroRIVERS v1",
+     "year": "2026 (recorte)",
+     "source_date": "2026-10-05",
+     "licence": "HydroSHEDS — atribución requerida",
+     "url": "https://www.hydrosheds.org/products/hydrorivers",
+     "method": "Tramos HydroRIVERS con orden de Strahler (ORD_STRA), geometría original, recortados al límite INEGI 2022",
+     "caveat": "Modelo de terreno (SRTM ~2000); solo cauces con cuenca aportante ≥ 10 km²; sin ancho de cauce ni NAMO; no es mapa oficial de inundación"
+    },
+    {
+     "ref": "hydro_tray",
+     "title": "Trayectorias potenciales de escorrentía (D8) derivadas de HydroSHEDS",
+     "owner": "WWF HydroSHEDS; cálculo del equipo del portal BCS 2050",
+     "dataset": "HydroSHEDS v1, dirección de flujo 3″",
+     "year": "2026 (cálculo)",
+     "source_date": "2026-10-05",
+     "licence": "HydroSHEDS — atribución requerida",
+     "url": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+     "method": "Rutas D8 sobre HydroSHEDS DIR 3″ desde retícula de semillas (~3.7–4.2 km), recortadas al límite INEGI 2022",
+     "caveat": "Rutas potenciales muestreadas, no volúmenes ni probabilidades"
+    },
+    {
+     "ref": "implan_pdu2040_lc",
+     "title": "Segunda Actualización del Plan Director de Desarrollo Urbano San José del Cabo y Cabo San Lucas 2040 (PDU 2040)",
+     "owner": "Ayuntamiento de Los Cabos / IMPLAN Los Cabos",
+     "dataset": "PDU 2040 Los Cabos, Tablas 163–168, columna Zona federal",
+     "year": "2013",
+     "source_date": "2013-05-06",
+     "licence": "Documento público municipal",
+     "method": "Restricción local de 10 m adicional a la ZOFEMAT en zonas turísticas, mixtas y ZEDEC (PDF pp. 279–283)",
+     "caveat": "Norma local de Los Cabos sobre la ZOFEMAT (no sobre cauces); no aplica a Mulegé"
+    },
+    {
+     "ref": "inegi_iter2020",
+     "title": "Censo de Población y Vivienda 2020 — Principales resultados por localidad (ITER), Baja California Sur",
+     "owner": "INEGI",
+     "dataset": "Censo de Población y Vivienda 2020, ITER",
+     "year": "2020",
+     "source_date": "2020-03-15",
+     "licence": "INEGI — Términos de libre uso",
+     "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+     "method": "Localidades con coordenadas ITER (grados-minutos-segundos → decimal), POBTOT y VIVPAR_HAB; PROM_OCUP del total municipal",
+     "caveat": "Puntos de localidad, no polígonos urbanos; población residente 2020 (sin flotante/turística)"
+    },
+    {
+     "ref": "inegi_mg2022",
+     "title": "Marco Geoestadístico 2022 — límites municipales de Baja California Sur",
+     "owner": "INEGI (distribución CONABIO)",
+     "dataset": "Marco Geoestadístico",
+     "year": "2022",
+     "source_date": "2022-12-01",
+     "licence": "INEGI — Términos de libre uso",
+     "url": "https://www.inegi.org.mx/temas/mg/",
+     "method": "Polígono municipal oficial (CVEGEO 03002), reproyectado de EPSG:4326 a EPSG:32612",
+     "caveat": "Límite geoestadístico, no deslinde legal; incluye islas del municipio"
+    },
+    {
+     "ref": "inegi_serie",
+     "title": "Población municipal de Baja California Sur 1990–2020 (censos de población)",
+     "owner": "INEGI",
+     "dataset": "Censos de Población y Vivienda 1990, 2000, 2010 y 2020",
+     "year": "1990–2020",
+     "source_date": "2020-03-15",
+     "licence": "INEGI — Términos de libre uso",
+     "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+     "method": "Totales municipales de cada censo",
+     "caveat": "Sin proyección: los censos no proyectan"
+    },
+    {
+     "ref": "lan_2025",
+     "title": "Ley de Aguas Nacionales (texto vigente, última reforma DOF 11-12-2025)",
+     "owner": "Congreso de la Unión (Cámara de Diputados)",
+     "dataset": "Ley de Aguas Nacionales, artículo 3, fracción XLVII (ribera o zona federal)",
+     "year": "2025",
+     "source_date": "2025-12-11",
+     "licence": "Gobierno de México",
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LAN.pdf",
+     "method": "Zona federal de 10 m contigua al cauce, medida desde el NAMO; 5 m en cauces de 5 m de ancho o menos (PDF p. 7)",
+     "caveat": "La ley mide desde el nivel de aguas máximas ordinarias (NAMO), no desde el eje del cauce; el ancho de cada cauce no está en el acervo"
+    },
+    {
+     "ref": "osm_coast",
+     "title": "Línea de costa OpenStreetMap",
+     "owner": "OpenStreetMap contributors",
+     "dataset": "OpenStreetMap natural=coastline",
+     "year": "2026",
+     "source_date": "2026-09",
+     "licence": "ODbL",
+     "url": "https://www.openstreetmap.org/copyright",
+     "method": "Líneas natural=coastline recortadas a 2 km del municipio",
+     "caveat": "No es la delimitación oficial de ZOFEMAT (SEMARNAT); la zona federal marítimo terrestre no está en el acervo"
+    },
+    {
+     "ref": "poer",
+     "title": "Programa de Ordenamiento Ecológico Regional de Baja California Sur (POERBCS) — Unidades de Gestión Ambiental (UGA)",
+     "owner": "Gobierno de Baja California Sur / SEMARNAT",
+     "dataset": "POERBCS, UGA",
+     "source_date": "(fecha del decreto no consolidada en el acervo)",
+     "licence": "Gobierno de Baja California Sur",
+     "url": "https://www.gob.mx/semarnat/acciones-y-programas/ordenamiento-ecologico-del-territorio",
+     "method": "UGA que intersectan el municipio, recortadas; atributos CLAVE_UGA y CLASIFICAC",
+     "caveat": "Política ambiental por UGA; criterios de uso no traducidos a reglas de exclusión; la capa no cubre todo el municipio"
+    },
+    {
+     "ref": "sepuimm_peotdu_2025",
+     "title": "Proyecto de Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de Baja California Sur (PEOTDU), Tomo 2",
+     "owner": "Gobierno del Estado de Baja California Sur / SEPUIMM",
+     "dataset": "PEOTDU BCS, versión de consulta, Tablas 54 y 55 (proyecciones municipales)",
+     "year": "2025",
+     "source_date": "2025",
+     "licence": "Documento público en consulta",
+     "url": "https://planbcs.mx/",
+     "method": "Población municipal 2050 del escenario de crecimiento óptimo (Tabla 55, PDF p. 169); la Tabla 54 (PDF pp. 166–167) solo se cita como contexto",
+     "caveat": "PROYECTO en consulta, no aprobado ni publicado; no es proyección oficial"
+    }
+   ]
+  }
+ ]
+}

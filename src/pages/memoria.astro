@@ -1,0 +1,309 @@
+---
+import { fileName } from '../lib/paths';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ui } from '../i18n/ui';
+import dataGaps from '../data/data_gaps.json';
+
+const gaps = Array.isArray(dataGaps.gaps) ? dataGaps.gaps : [];
+const wishlist: any[] = Array.isArray((dataGaps as any).wishlist) ? (dataGaps as any).wishlist : [];
+const statusLabel: Record<string, string> = {
+  open: 'Abierta',
+  partial: 'Parcial',
+  closed: 'Cerrada',
+};
+---
+<BaseLayout
+  title="Consultas al asistente"
+  titleEn="Chat memory"
+  description="Consultas recientes al chatbot y brechas de conocimiento (interno)"
+  descriptionEn="Recent chatbot questions and knowledge gaps (internal)"
+  wide={true}
+>
+  <p class="lead" data-i18n="memLead">{ui.es.memLead}</p>
+
+  <section class="gap-canonical" id="brechas-canonicas">
+    <h2>
+      <span data-lang-es>Brechas canónicas de datos (equipo)</span>
+      <span data-lang-en hidden>Canonical data gaps (team)</span>
+    </h2>
+    <p class="gap-canonical-meta">
+      <span data-lang-es>Actualizado {dataGaps.updated} · <a href="/data_gaps.json">descargar la lista de brechas (datos)</a> · ver también <a href="/energia">/energia</a></span>
+      <span data-lang-en hidden>Updated {dataGaps.updated} · <a href="/data_gaps.json">download the data-gap list (data)</a> · also <a href="/energia">/energia</a></span>
+    </p>
+    <div class="gap-canonical-table-wrap">
+      <table class="mem-table gap-canonical-table">
+        <thead>
+          <tr>
+            <th><span data-lang-es>ID</span><span data-lang-en hidden>ID</span></th>
+            <th><span data-lang-es>Tema</span><span data-lang-en hidden>Topic</span></th>
+            <th><span data-lang-es>Detalle</span><span data-lang-en hidden>Detail</span></th>
+            <th><span data-lang-es>Prioridad</span><span data-lang-en hidden>Priority</span></th>
+            <th><span data-lang-es>Estado</span><span data-lang-en hidden>Status</span></th>
+            <th><span data-lang-es>Notas / fuentes</span><span data-lang-en hidden>Notes / sources</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {gaps.map((g) => (
+            <tr>
+              <td><code>{g.id}</code></td>
+              <td>{g.topic}</td>
+              <td>{g.detail_es}</td>
+              <td>{g.priority}</td>
+              <td>
+                <span class={`gap-status gap-status-${g.status}`}>{statusLabel[g.status] || g.status}</span>
+              </td>
+              <td class="mem-preview">
+                <div>{g.notes}</div>
+                {(g.citations || []).length ? (
+                  <ul class="gap-cites">
+                    {g.citations.map((c: any) => (
+                      <li>
+                        {c.url ? <a href={c.url} target="_blank" rel="noopener">{c.title}</a> : c.title}
+                        {c.drive ? <> · <a href={c.drive} target="_blank" rel="noopener">Drive</a></> : null}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {wishlist.length > 0 && (
+    <section class="gap-canonical" id="wishlist">
+      <h2>
+        <span data-lang-es>Documentos por obtener (wishlist)</span>
+        <span data-lang-en hidden>Documents to obtain (wishlist)</span>
+      </h2>
+      <p class="gap-canonical-meta">
+        <span data-lang-es>Entradas retiradas del catálogo porque el archivo o su contenido no se pudo obtener (descarga fallida, página de error o escaneo ilegible). Cada fila indica la fuente presunta, por qué importa y dónde solicitarlo.</span>
+        <span data-lang-en hidden>Entries removed from the catalogue because the file or its content could not be obtained (failed download, error page or unreadable scan). Each row gives the presumed source, why it matters and where to request it.</span>
+      </p>
+      <div class="gap-canonical-table-wrap">
+        <table class="mem-table gap-canonical-table">
+          <thead>
+            <tr>
+              <th><span data-lang-es>Documento</span><span data-lang-en hidden>Document</span></th>
+              <th><span data-lang-es>Fuente presunta</span><span data-lang-en hidden>Presumed source</span></th>
+              <th><span data-lang-es>Por qué importa</span><span data-lang-en hidden>Why it matters</span></th>
+              <th><span data-lang-es>Dónde solicitarlo</span><span data-lang-en hidden>Where to request</span></th>
+              <th><span data-lang-es>Motivo de retiro</span><span data-lang-en hidden>Removal reason</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {wishlist.map((w: any) => (
+              <tr>
+                <td><strong>{w.title}</strong><div class="mem-preview">{fileName((w.removed_paths || [])[0])}{(w.removed_paths || []).length > 1 ? ` (+${w.removed_paths.length - 1} copias)` : ''}</div></td>
+                <td>{w.presumed_source}</td>
+                <td>{w.why_it_matters}</td>
+                <td>{w.where_to_request}{w.url ? <> · <a href={w.url} target="_blank" rel="noopener">enlace</a></> : null}</td>
+                <td class="mem-preview">{w.reason}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  <h2 class="mem-chat-h">
+    <span data-lang-es>Consultas recientes al asistente</span>
+    <span data-lang-en hidden>Chatbot memory (turns)</span>
+  </h2>
+
+  <div id="mem-app" class="mem-app">
+    <div class="mem-toolbar">
+      <label class="mem-lab">
+        <span data-i18n="memFilter">{ui.es.memFilter}</span>
+        <select id="mem-filter">
+          <option value="all" data-i18n="memAll">{ui.es.memAll}</option>
+          <option value="gaps" data-i18n="memGapsOnly">{ui.es.memGapsOnly}</option>
+        </select>
+      </label>
+      <label class="mem-lab">
+        <span data-i18n="memLimit">{ui.es.memLimit}</span>
+        <select id="mem-limit">
+          <option value="30">30</option>
+          <option value="50" selected>50</option>
+          <option value="100">100</option>
+        </select>
+      </label>
+      <div class="mem-actions">
+        <button type="button" class="btn" id="mem-refresh" data-i18n="memRefresh">{ui.es.memRefresh}</button>
+        <a class="btn secondary" id="mem-export-json" href="/api/chat-memory?export=gaps&amp;format=json&amp;limit=200" data-i18n="memExportJson">{ui.es.memExportJson}</a>
+        <a class="btn secondary" id="mem-export-csv" href="/api/chat-memory?export=gaps&amp;format=csv&amp;limit=200" data-i18n="memExportCsv">{ui.es.memExportCsv}</a>
+      </div>
+    </div>
+    <p class="mem-meta" id="mem-meta"></p>
+    <div class="mem-panels">
+      <section class="mem-card">
+        <h2 data-i18n="memThemes">{ui.es.memThemes}</h2>
+        <ul id="mem-themes" class="mem-list"></ul>
+      </section>
+      <section class="mem-card">
+        <h2 data-i18n="memTopQ">{ui.es.memTopQ}</h2>
+        <ul id="mem-topq" class="mem-list"></ul>
+      </section>
+    </div>
+    <div class="mem-table-wrap">
+      <table class="mem-table" id="mem-table">
+        <thead>
+          <tr>
+            <th data-i18n="memTs">{ui.es.memTs}</th>
+            <th data-i18n="memQ">{ui.es.memQ}</th>
+            <th data-i18n="memTheme">{ui.es.memTheme}</th>
+            <th data-i18n="memGap">{ui.es.memGap}</th>
+            <th data-i18n="memPreview">{ui.es.memPreview}</th>
+            <th data-i18n="memSources">{ui.es.memSources}</th>
+          </tr>
+        </thead>
+        <tbody id="mem-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <style is:global>
+    .mem-app { margin-top: 0.5rem; }
+    .mem-toolbar {
+      display: flex; flex-wrap: wrap; gap: 0.65rem 0.75rem; align-items: flex-end;
+      margin-bottom: 0.75rem;
+    }
+    .mem-lab { display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.78rem; color: var(--muted); }
+    .mem-lab select {
+      padding: 0.45rem 0.6rem; border: 1px solid var(--border); border-radius: 8px; font: inherit; background: var(--card, #fbf8f1);
+    }
+    .mem-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-left: auto; }
+    .mem-meta { font-size: 0.85rem; color: var(--muted); margin: 0 0 0.75rem; }
+    .mem-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+    @media (max-width: 800px) { .mem-panels { grid-template-columns: 1fr; } }
+    .mem-card {
+      border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem 0.9rem; background: var(--card, #fbf8f1);
+    }
+    .mem-card h2 { margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .mem-list { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; }
+    .mem-list li { margin: 0.25rem 0; }
+    .mem-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+    .mem-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    .mem-table th, .mem-table td {
+      text-align: left; padding: 0.55rem 0.65rem; border-bottom: 1px solid var(--border); vertical-align: top;
+    }
+    .mem-table th { background: rgba(35, 55, 74,0.03); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); }
+    .mem-gap-yes { color: #a8762a; font-weight: 600; }
+    .mem-gap-no { color: var(--muted); }
+    .mem-q { font-weight: 500; max-width: 28rem; }
+    .mem-preview, .mem-sources { max-width: 18rem; color: var(--muted); font-size: 0.8rem; }
+    .mem-err { color: #a8543f; }
+
+    .gap-canonical { margin: 0.5rem 0 1.5rem; }
+    .gap-canonical h2 { font-size: 1.15rem; margin: 0 0 0.35rem; }
+    .gap-canonical-meta { font-size: 0.85rem; color: var(--muted); margin: 0 0 0.75rem; }
+    .gap-canonical-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1rem; }
+    .gap-status { font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .gap-status-open { color: #a8543f; }
+    .gap-status-partial { color: #a8762a; }
+    .gap-status-closed { color: #047857; }
+    .gap-cites { margin: 0.35rem 0 0; padding-left: 1rem; font-size: 0.78rem; }
+    .mem-chat-h { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; }
+  </style>
+
+  <script is:inline>
+  (function () {
+    var meta = document.getElementById('mem-meta');
+    var body = document.getElementById('mem-body');
+    var themesEl = document.getElementById('mem-themes');
+    var topqEl = document.getElementById('mem-topq');
+    var filterEl = document.getElementById('mem-filter');
+    var limitEl = document.getElementById('mem-limit');
+    var refreshBtn = document.getElementById('mem-refresh');
+
+    function lang() {
+      return document.documentElement.getAttribute('data-lang') || 'es';
+    }
+    function t(es, en) { return lang() === 'en' ? en : es; }
+
+    function fmtTs(iso) {
+      if (!iso) return '—';
+      try {
+        var d = new Date(iso);
+        return d.toLocaleString('es-MX', { timeZone: 'Europe/Madrid', dateStyle: 'short', timeStyle: 'short' }) + ' (Madrid)';
+      } catch (e) { return iso; }
+    }
+
+    function load() {
+      var gapsOnly = filterEl && filterEl.value === 'gaps';
+      var limit = (limitEl && limitEl.value) || '50';
+      var url = '/api/chat-memory?limit=' + encodeURIComponent(limit) + (gapsOnly ? '&gaps_only=1' : '');
+      meta.textContent = t('Cargando…', 'Loading…');
+      body.innerHTML = '';
+      fetch(url, { credentials: 'same-origin' })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
+        .then(function (res) {
+          if (!res.ok) {
+            meta.innerHTML = '<span class="mem-err">' + t('No autorizado o error ', 'Unauthorized or error ') + res.status + '</span>';
+            return;
+          }
+          var j = res.j || {};
+          meta.textContent = t(
+            'Total: ' + (j.total || 0) + ' · Brechas: ' + (j.gaps_total || 0) + (j.updated ? ' · Actualizado: ' + fmtTs(j.updated) : ''),
+            'Total: ' + (j.total || 0) + ' · Gaps: ' + (j.gaps_total || 0) + (j.updated ? ' · Updated: ' + fmtTs(j.updated) : '')
+          );
+          themesEl.innerHTML = '';
+          (j.themes || []).slice(0, 12).forEach(function (th) {
+            var li = document.createElement('li');
+            li.textContent = th.theme + ' (' + th.count + ')';
+            themesEl.appendChild(li);
+          });
+          if (!(j.themes || []).length) themesEl.innerHTML = '<li>—</li>';
+          topqEl.innerHTML = '';
+          (j.top_questions || []).slice(0, 10).forEach(function (q) {
+            var li = document.createElement('li');
+            li.textContent = (q.count > 1 ? '(' + q.count + ') ' : '') + q.q + (q.gap ? ' ⚠' : '');
+            topqEl.appendChild(li);
+          });
+          if (!(j.top_questions || []).length) topqEl.innerHTML = '<li>—</li>';
+          (j.turns || []).forEach(function (turn) {
+            var tr = document.createElement('tr');
+            var gapCell = turn.gap
+              ? '<span class="mem-gap-yes">' + t('Sí', 'Yes') + '</span>'
+              : '<span class="mem-gap-no">' + t('No', 'No') + '</span>';
+            tr.innerHTML =
+              '<td>' + fmtTs(turn.ts) + '</td>' +
+              '<td class="mem-q"></td>' +
+              '<td>' + (turn.theme_guess || '—') + '</td>' +
+              '<td>' + gapCell + '</td>' +
+              '<td class="mem-preview"></td>' +
+              '<td class="mem-sources"></td>';
+            tr.querySelector('.mem-q').textContent = turn.q || '';
+            tr.querySelector('.mem-preview').textContent = turn.a_preview || '';
+            // Older logged turns stored file paths: show a plain label instead of a raw file name
+            var memFileRe = /\.(pdf|md|csv|tsv|xlsx?|json|geojson|zip|kml|kmz|docx?|pptx?|txt|py|mjs|ya?ml|shp|dbf|prj|esp|html?|jpe?g|png|webp)\b|_|^\d{4}(-\d{2}){0,2}[ _-]?_/i;
+            var memSrc = [];
+            (turn.sources || []).forEach(function (x) {
+              var lab = memFileRe.test(String(x)) ? 'Documento del acervo BCS 2050' : String(x);
+              if (memSrc.indexOf(lab) < 0) memSrc.push(lab);
+            });
+            tr.querySelector('.mem-sources').textContent = memSrc.slice(0, 3).join(' · ') || '—';
+            body.appendChild(tr);
+          });
+          if (!(j.turns || []).length) {
+            var empty = document.createElement('tr');
+            empty.innerHTML = '<td colspan="6">' + t('Sin turnos aún.', 'No turns yet.') + '</td>';
+            body.appendChild(empty);
+          }
+        })
+        .catch(function () {
+          meta.innerHTML = '<span class="mem-err">' + t('Error de red', 'Network error') + '</span>';
+        });
+    }
+
+    refreshBtn && refreshBtn.addEventListener('click', load);
+    filterEl && filterEl.addEventListener('change', load);
+    limitEl && limitEl.addEventListener('change', load);
+    document.addEventListener('bcs:lang', load);
+    load();
+  })();
+  </script>
+</BaseLayout>
