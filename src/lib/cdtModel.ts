@@ -1,0 +1,625 @@
+/**
+ * Phase-1 territorial twin view-model.
+ * Every figure is read from data already in the portal. Missing parses throw
+ * at build time so a broken extract cannot ship as a blank or invented KPI.
+ */
+import gds from '../data/growth_demand_supply.json';
+import scenariosDoc from '../data/scenarios.json';
+import municipios from '../data/municipios.json';
+import inmobiliario from '../data/inmobiliario_metrics.json';
+import ports from '../data/ports_demand.json';
+import federal from '../data/federal_projects.json';
+import foresights from '../data/foresights.json';
+import questionsDoc from '../data/strategic_questions.json';
+import gapsDoc from '../data/data_gaps.json';
+import layersDoc from '../../public/gis/layers.json';
+import ontology from '../../netlify/functions/ontology_graph.json';
+
+export type CdtThemeId = 'urbano' | 'economia' | 'investigacion' | 'movilidad' | 'vivienda';
+
+export type CdtKpi = {
+  value: string;
+  label_es: string;
+  label_en: string;
+  source_es: string;
+  source_en: string;
+  href: string;
+};
+
+export type CdtIndicatorId = 'pob' | 'sniiv_2025' | 'pobreza_pct';
+
+const MUNI_ORDER = ['Los Cabos', 'La Paz', 'Comondú', 'Mulegé', 'Loreto'] as const;
+
+const PLACE_BY_MUNI: Record<(typeof MUNI_ORDER)[number], string[]> = {
+  'Los Cabos': ['los_cabos', 'east_cape'],
+  'La Paz': ['la_paz', 'todos_santos'],
+  Comondú: ['comondu'],
+  Mulegé: ['mulege_north'],
+  Loreto: ['loreto'],
+};
+
+const THEME_LAYERS: Record<CdtThemeId, string[]> = {
+  urbano: ['settlements', 'osm_towns', 'poer_ugas', 'focus_corridor_cabos_lapaz'],
+  economia: ['federal_projects', 'settlements', 'focus_corridor_cabos_lapaz'],
+  investigacion: ['anp_federales', 'poer_ugas', 'rtp_conabio'],
+  movilidad: ['osm_highways', 'highway_nodes', 'osm_transport_nodes', 'focus_ports_air'],
+  vivienda: ['settlements', 'anp_federales', 'poer_ugas', 'focus_water_dmas'],
+};
+
+const BALANCE_RULE: Record<string, { es: string; en: string }> = {
+  constrained: {
+    es: 'No abrir más crecimiento turístico o residencial sin evidencia de margen de agua o de una fuente que no sea el acuífero. Ese margen no se transfiere desde otro municipio.',
+    en: 'Do not open more tourism or residential growth without evidence of water headroom or a source other than the aquifer. That headroom does not transfer from another municipality.',
+  },
+  contested: {
+    es: 'Respetar el techo de área protegida y de ordenamiento antes de escalar la hotelería.',
+    en: 'Respect the protected-area and zoning ceiling before scaling hospitality.',
+  },
+  headroom: {
+    es: 'El margen relativo de este lugar no compensa el déficit de otro. Puede sumar producción sin vaciar servicios ni áreas protegidas.',
+    en: 'Relative headroom here does not offset a deficit elsewhere. It can add production without emptying services or protected areas.',
+  },
+  unknown: {
+    es: 'Falta evidencia, sobre todo de agua. No asumir un escenario de crecimiento hasta cerrar esa brecha.',
+    en: 'Evidence is missing, especially on water. Do not assume a growth scenario until that gap is closed.',
+  },
+};
+
+const THEMES_BY_PLACE: Record<string, CdtThemeId[]> = {
+  los_cabos: ['urbano', 'economia', 'movilidad', 'vivienda'],
+  east_cape: ['urbano', 'economia', 'movilidad', 'vivienda'],
+  todos_santos: ['urbano', 'economia', 'vivienda'],
+  la_paz: ['urbano', 'economia', 'movilidad', 'vivienda'],
+  loreto: ['urbano', 'economia', 'movilidad', 'vivienda'],
+  comondu: ['urbano', 'economia', 'movilidad', 'vivienda'],
+  mulege_north: ['urbano', 'economia', 'movilidad', 'vivienda'],
+};
+
+function scenariosForPlace(placeId: string): string[] {
+  const ids = ['baseline'];
+  if (['los_cabos', 'east_cape', 'todos_santos', 'la_paz'].includes(placeId)) ids.push('corridor_intensify');
+  if (['los_cabos', 'east_cape', 'todos_santos', 'la_paz', 'loreto'].includes(placeId)) ids.push('water_first');
+  if (['los_cabos', 'la_paz', 'loreto', 'mulege_north', 'comondu'].includes(placeId)) ids.push('ports_air_hubs');
+  return ids;
+}
+
+function mustMatch(label: string, re: RegExp, text: string): string {
+  const m = text.match(re);
+  if (!m?.[1]) throw new Error(`CDT extract failed: ${label}`);
+  return m[1];
+}
+
+function parsePoverty(md: string): Record<string, { pct: number; people: number }> {
+  const section = md.split('### E1. Poverty')[1]?.split('### E2')[0] || '';
+  const re =
+    /\|\s*\**([^*|\n]+?)\**\s*\|\s*\**([0-9]+(?:\.[0-9]+)?)\**\s*\|\s*\**([0-9][0-9,]*)\**\s*\|/g;
+  const out: Record<string, { pct: number; people: number }> = {};
+  for (const m of section.matchAll(re)) {
+    const name = m[1].replace(/\*/g, '').trim();
+    out[name] = { pct: Number(m[2]), people: Number(m[3].replace(/,/g, '')) };
+  }
+  return out;
+}
+
+function fmtInt(n: number): string {
+  return n.toLocaleString('es-MX');
+}
+
+function fmtMxn(n: number): string {
+  const abs = Math.abs(n);
+  if (abs >= 1e9) return `${(n / 1e9).toLocaleString('es-MX', { maximumFractionDigits: 2 })} mil M MXN`;
+  if (abs >= 1e6) return `${(n / 1e6).toLocaleString('es-MX', { maximumFractionDigits: 1 })} M MXN`;
+  return `${fmtInt(n)} MXN`;
+}
+
+const poverty = parsePoverty(ports.markdown['demand_target_groups.md']);
+for (const name of MUNI_ORDER) {
+  if (!poverty[name] || !Number.isFinite(poverty[name].pct)) {
+    throw new Error(`CDT poverty missing for ${name}`);
+  }
+}
+
+const sniivByMuni = inmobiliario.sniiv_vivienda_bcs.registro_2025_by_municipio;
+for (const name of MUNI_ORDER) {
+  const v = sniivByMuni[name as keyof typeof sniivByMuni];
+  if (typeof v !== 'number') throw new Error(`CDT SNIIV missing for ${name}`);
+}
+
+const cruises = ports.markdown['cruises.md'];
+const cslCalls = Number(mustMatch('CSL calls', /\*\*Cabo San Lucas\*\* \| 221 \| \*\*(\d+)\*\*/, cruises));
+const cslPax = Number(
+  mustMatch('CSL pax', /\*\*Cabo San Lucas\*\* \| 788,537 \| \*\*([0-9,]+)\*\*/, cruises).replace(/,/g, ''),
+);
+const pichCalls = Number(mustMatch('Pichilingue calls', /\*\*Pichilingue\*\* \| 25 \| \*\*(\d+)\*\*/, cruises));
+const pichPax = Number(
+  mustMatch('Pichilingue pax', /\*\*Pichilingue\*\* \| 42,838 \| \*\*([0-9,]+)\*\*/, cruises).replace(/,/g, ''),
+);
+
+const paxByCode: Record<string, number> = {};
+for (const row of ports.airports) {
+  if (row.metric === 'passengers' && row.period === 'CY2025') {
+    const n = Number(row.value);
+    if (Number.isFinite(n)) paxByCode[row.airport_code] = n;
+  }
+}
+if (!paxByCode.SJD || !paxByCode.LAP || !paxByCode.BCS) throw new Error('CDT airport passengers missing');
+
+const flights = gds.metrics.flights;
+const dma = gds.metrics.dma_hm3;
+
+const places = gds.places;
+const placeById = Object.fromEntries(places.map((p) => [p.id, p]));
+
+type MuniName = (typeof MUNI_ORDER)[number];
+type MuniRow = (typeof municipios)[MuniName];
+
+export type CdtMuni = {
+  name: string;
+  short: string;
+  studio: string;
+  pob: number;
+  locs: number;
+  cab_pob: number;
+  cabecera: string;
+  ley: number | null;
+  anexo: number;
+  sniiv_2025: number;
+  pobreza_pct: number;
+  pobreza_personas: number;
+  locks_es: string;
+  locks_en: string;
+  strengths_es: string;
+  strengths_en: string;
+  subplaces: Array<{
+    id: string;
+    name_es: string;
+    name_en: string;
+    balance: string;
+    balance_es: string;
+    balance_en: string;
+  }>;
+};
+
+const munis: CdtMuni[] = MUNI_ORDER.map((name) => {
+  const row = municipios[name] as MuniRow;
+  const subs = PLACE_BY_MUNI[name].map((id) => {
+    const p = placeById[id];
+    if (!p) throw new Error(`CDT place missing: ${id}`);
+    return {
+      id,
+      name_es: p.name_es,
+      name_en: p.name_en,
+      balance: p.balance_read,
+      balance_es: p.balance_read_es,
+      balance_en: p.balance_read_en,
+    };
+  });
+  return {
+    name,
+    short: name === 'Los Cabos' ? 'Cabos' : name === 'Comondú' ? 'Comondú' : name,
+    studio: `/studio/${PLACE_BY_MUNI[name][0] === 'mulege_north' ? 'mulege' : PLACE_BY_MUNI[name][0]}/`,
+    pob: row.pob,
+    locs: row.locs,
+    cab_pob: row.cab_pob,
+    cabecera: row.cabecera,
+    ley: row.ley_ingresos_2026,
+    anexo: row.anexo_i33_2025,
+    sniiv_2025: sniivByMuni[name as keyof typeof sniivByMuni] as number,
+    pobreza_pct: poverty[name].pct,
+    pobreza_personas: poverty[name].people,
+    locks_es: row.locks_es,
+    locks_en: row.locks_en,
+    strengths_es: row.strengths_es,
+    strengths_en: row.strengths_en,
+    subplaces: subs,
+  };
+});
+
+const popSum = munis.reduce((s, m) => s + m.pob, 0);
+const locSum = munis.reduce((s, m) => s + m.locs, 0);
+if (popSum !== 798447) throw new Error(`CDT population sum ${popSum} != 798447`);
+if (locSum !== 2543) throw new Error(`CDT locality sum ${locSum} != 2543`);
+
+const leyKnown = munis.filter((m) => typeof m.ley === 'number') as Array<CdtMuni & { ley: number }>;
+const leyLine = leyKnown.map((m) => `${m.name} ${fmtMxn(m.ley)}`).join(' · ');
+const leyMissing = munis.filter((m) => m.ley == null).map((m) => m.name).join(' y ');
+
+const dmaLine = ['0317', '0319', '0324', '0313', '0318'].map((k) => `${k} ${dma[k as keyof typeof dma]}`).join(' · ');
+
+const layerIds = new Set<string>();
+for (const ids of Object.values(THEME_LAYERS)) ids.forEach((id) => layerIds.add(id));
+for (const sc of scenariosDoc.scenarios) sc.priority_layer_ids.forEach((id) => layerIds.add(id));
+
+const layerCatalog = (layersDoc as ReadonlyArray<{
+  id: string;
+  url: string;
+  type: string;
+  color?: string;
+  name_es: string;
+  name_en: string;
+}>)
+  .filter((l) => layerIds.has(l.id))
+  .map((l) => ({
+    id: l.id,
+    url: l.url,
+    type: l.type,
+    color: l.color || '#0083C4',
+    name_es: l.name_es,
+    name_en: l.name_en,
+  }));
+
+const found = new Set(layerCatalog.map((l) => l.id));
+for (const id of layerIds) {
+  if (!found.has(id)) throw new Error(`CDT layer missing from GIS catalog: ${id}`);
+}
+
+const indicators: Array<{
+  id: CdtIndicatorId;
+  label_es: string;
+  label_en: string;
+  unit_es: string;
+  unit_en: string;
+  source_es: string;
+  source_en: string;
+}> = [
+  {
+    id: 'pob',
+    label_es: 'Población 2020',
+    label_en: 'Population 2020',
+    unit_es: 'habitantes',
+    unit_en: 'people',
+    source_es: 'INEGI Censo 2020',
+    source_en: 'INEGI Census 2020',
+  },
+  {
+    id: 'sniiv_2025',
+    label_es: 'Registro de vivienda 2025',
+    label_en: 'Housing registry 2025',
+    unit_es: 'viviendas',
+    unit_en: 'homes',
+    source_es: 'SNIIV / SEDATU, registro 2025',
+    source_en: 'SNIIV / SEDATU, 2025 registry',
+  },
+  {
+    id: 'pobreza_pct',
+    label_es: 'Pobreza 2020',
+    label_en: 'Poverty 2020',
+    unit_es: '% de personas',
+    unit_en: '% of people',
+    source_es: 'CONEVAL, pobreza municipal 2020',
+    source_en: 'CONEVAL, municipal poverty 2020',
+  },
+];
+
+const themes: Array<{
+  id: CdtThemeId;
+  es: string;
+  en: string;
+  hint_es: string;
+  hint_en: string;
+  diagnostic_es: string;
+  diagnostic_en: string;
+  gap_es: string;
+  gap_en: string;
+  layers: string[];
+  kpis: CdtKpi[];
+}> = [
+  {
+    id: 'urbano',
+    es: 'Diseño urbano',
+    en: 'Urban design',
+    hint_es: 'Forma del asentamiento',
+    hint_en: 'Settlement form',
+    diagnostic_es:
+      'No hay capa por AGEB ni métricas de forma (dimensión fractal o centralidad de intermediación) en el acervo. La lectura de forma en esta fase es municipal: población y localidades del Censo 2020, asentamientos y unidades de gestión ambiental del ordenamiento. El corredor Cabos–La Paz concentra población; el norte queda disperso.',
+    diagnostic_en:
+      'There is no AGEB layer and no form metrics (fractal dimension or betweenness) in the archive. This phase reads form at municipal scale: 2020 Census population and localities, settlements, and ecological-zoning units. The Cabos–La Paz corridor concentrates population; the north stays sparse.',
+    gap_es: 'Fase 2: AGEB, mancha urbana y morfometría. Hoy el color del mapa compara municipios, no manzanas.',
+    gap_en: 'Phase 2: AGEB, urban footprint and morphometrics. Today the map color compares municipalities, not blocks.',
+    layers: THEME_LAYERS.urbano,
+    kpis: [
+      {
+        value: fmtInt(popSum),
+        label_es: 'Habitantes en los cinco municipios',
+        label_en: 'People in the five municipalities',
+        source_es: 'INEGI Censo 2020',
+        source_en: 'INEGI Census 2020',
+        href: '/comunidades/',
+      },
+      {
+        value: fmtInt(locSum),
+        label_es: 'Localidades',
+        label_en: 'Localities',
+        source_es: 'INEGI Censo 2020',
+        source_en: 'INEGI Census 2020',
+        href: '/territorio/',
+      },
+      {
+        value: '5',
+        label_es: 'Municipios (unidad de comparación)',
+        label_en: 'Municipalities (comparison unit)',
+        source_es: 'Límites municipales del mapa',
+        source_en: 'Municipal boundaries on the map',
+        href: '/mapas/',
+      },
+      {
+        value: dmaLine,
+        label_es: 'Disponibilidad de acuíferos en polos, hm³/año',
+        label_en: 'Aquifer availability at growth poles, hm³/year',
+        source_es: 'CONAGUA DMA 2024',
+        source_en: 'CONAGUA DMA 2024',
+        href: '/agua/',
+      },
+    ],
+  },
+  {
+    id: 'economia',
+    es: 'Desarrollo económico',
+    en: 'Economic development',
+    hint_es: 'Ingresos y proyectos',
+    hint_en: 'Revenue and projects',
+    diagnostic_es: `${gds.state_rollup.balance_read_es} Ley de Ingresos 2026 con cifra: ${leyLine}. Sin cifra en el portal: ${leyMissing}.`,
+    diagnostic_en: `${gds.state_rollup.balance_read_en} 2026 revenue law with a figure: ${leyLine}. No figure in the portal: ${leyMissing}.`,
+    gap_es: 'No hay producto interno por municipio ni empleo detallado en este tablero. Las celdas sin número siguen en Crecimiento.',
+    gap_en: 'This board has no municipal GDP and no detailed jobs series. Cells without numbers stay on Growth.',
+    layers: THEME_LAYERS.economia,
+    kpis: [
+      {
+        value: String(federal.count),
+        label_es: 'Proyectos federales en el inventario',
+        label_en: 'Federal projects in the inventory',
+        source_es: 'Inventario de proyectos federales',
+        source_en: 'Federal project inventory',
+        href: '/proyectos-federales/',
+      },
+      {
+        value: `${federal.by_sector.energy} energía · ${federal.by_sector.water} agua · ${federal.by_sector.roads} carreteras`,
+        label_es: 'Proyectos por sector (recorte)',
+        label_en: 'Projects by sector (slice)',
+        source_es: 'Inventario de proyectos federales',
+        source_en: 'Federal project inventory',
+        href: '/proyectos-federales/',
+      },
+      {
+        value: `${gds.metrics.balance_counts.constrained} restringidos · ${gds.metrics.balance_counts.contested} en disputa · ${gds.metrics.balance_counts.headroom} con margen · ${gds.metrics.balance_counts.unknown} sin evidencia`,
+        label_es: 'Lectura demanda–oferta por vocación',
+        label_en: 'Demand–supply read by vocation',
+        source_es: 'Crecimiento: demanda y oferta',
+        source_en: 'Growth: demand and supply',
+        href: '/crecimiento/',
+      },
+      {
+        value: `${gds.metrics.sibcs_peak_mw} MW`,
+        label_es: 'Pico del sistema eléctrico aislado',
+        label_en: 'Isolated grid peak',
+        source_es: 'Guía de energía del portal',
+        source_en: 'Portal energy guide',
+        href: '/energia/',
+      },
+    ],
+  },
+  {
+    id: 'investigacion',
+    es: 'Innovación e investigación',
+    en: 'Innovation and research',
+    hint_es: 'Relaciones, no universidades',
+    hint_en: 'Relationships, not universities',
+    diagnostic_es: `No hay red de colaboración entre escuelas o centros de investigación en el acervo, así que este tema no dibuja un grafo de universidades. Lo que sí hay: mapa de relaciones con ${ontology.nodes.length} nodos y ${ontology.edges.length} vínculos, ${questionsDoc.questions.length} preguntas estratégicas, prospectiva del ${foresights.updated} con ${foresights.signals.length} señales, y ${gapsDoc.gaps.length} brechas de datos abiertas.`,
+    diagnostic_en: `The archive has no research-collaboration network, so this theme does not draw a university graph. What exists: a relationship map with ${ontology.nodes.length} nodes and ${ontology.edges.length} links, ${questionsDoc.questions.length} strategic questions, foresight dated ${foresights.updated} with ${foresights.signals.length} signals, and ${gapsDoc.gaps.length} open data gaps.`,
+    gap_es: 'Fase 2: instituciones de investigación, patentes y colaboración, cuando haya una fuente. Hoy el enlace útil es el mapa de relaciones.',
+    gap_en: 'Phase 2: research institutions, patents and collaboration, once a source exists. Today the useful link is the relationship map.',
+    layers: THEME_LAYERS.investigacion,
+    kpis: [
+      {
+        value: `${ontology.nodes.length} / ${ontology.edges.length}`,
+        label_es: 'Nodos / vínculos del mapa de relaciones',
+        label_en: 'Relationship-map nodes / links',
+        source_es: 'Mapa de relaciones',
+        source_en: 'Relationship map',
+        href: '/ontologia/',
+      },
+      {
+        value: String(questionsDoc.questions.length),
+        label_es: 'Preguntas estratégicas',
+        label_en: 'Strategic questions',
+        source_es: 'Preguntas del portal',
+        source_en: 'Portal questions',
+        href: '/preguntas/',
+      },
+      {
+        value: String(foresights.signals.length),
+        label_es: `Señales de prospectiva (${foresights.updated})`,
+        label_en: `Foresight signals (${foresights.updated})`,
+        source_es: 'Prospectiva',
+        source_en: 'Foresight',
+        href: '/foresights/',
+      },
+      {
+        value: String(gapsDoc.gaps.length),
+        label_es: 'Brechas de datos abiertas',
+        label_en: 'Open data gaps',
+        source_es: 'Lista de brechas del portal',
+        source_en: 'Portal gap list',
+        href: '/memoria/',
+      },
+    ],
+  },
+  {
+    id: 'movilidad',
+    es: 'Movilidad y logística',
+    en: 'Mobility and logistics',
+    hint_es: 'Aire, carretera y puerto',
+    hint_en: 'Air, road and port',
+    diagnostic_es: `Tres aeropuertos con pasajeros 2025 publicados: SJD ${fmtInt(paxByCode.SJD)}, LAP ${fmtInt(paxByCode.LAP)}, total estatal ${fmtInt(paxByCode.BCS)}. Loreto no tiene cifra de pasajeros 2025 en el acervo. Cruceros DataTur 2025 (serie distinta a los pasajeros aéreos): Cabo San Lucas ${fmtInt(cslCalls)} arribos y ${fmtInt(cslPax)} pasajeros; Pichilingue ${fmtInt(pichCalls)} arribos y ${fmtInt(pichPax)} pasajeros.`,
+    diagnostic_en: `Three airports with published 2025 passengers: SJD ${fmtInt(paxByCode.SJD)}, LAP ${fmtInt(paxByCode.LAP)}, state total ${fmtInt(paxByCode.BCS)}. Loreto has no 2025 passenger figure in the archive. DataTur 2025 cruises (a different series from air passengers): Cabo San Lucas ${fmtInt(cslCalls)} calls and ${fmtInt(cslPax)} passengers; Pichilingue ${fmtInt(pichCalls)} calls and ${fmtInt(pichPax)} passengers.`,
+    gap_es: 'No hay capa de flujos origen-destino ni logística por AGEB. El mapa usa carreteras, nodos de transporte y anclas de puertos y aeropuertos.',
+    gap_en: 'There is no origin-destination flow layer and no AGEB logistics. The map uses highways, transport nodes, and port and airport anchors.',
+    layers: THEME_LAYERS.movilidad,
+    kpis: [
+      {
+        value: `${fmtInt(paxByCode.SJD)} · ${fmtInt(paxByCode.LAP)}`,
+        label_es: 'Pasajeros 2025 SJD · La Paz',
+        label_en: '2025 passengers SJD · La Paz',
+        source_es: 'SETUE, información estratégica 2026',
+        source_en: 'SETUE strategic brief 2026',
+        href: '/puertos/',
+      },
+      {
+        value: `${flights.SJD.destinations} · ${flights.LAP.destinations} · ${flights.LTO.destinations}`,
+        label_es: 'Destinos sin escalas SJD · LAP · LTO',
+        label_en: 'Non-stop destinations SJD · LAP · LTO',
+        source_es: 'FlightConnections, consulta 2026-09-17',
+        source_en: 'FlightConnections, retrieved 2026-09-17',
+        href: '/vuelos/',
+      },
+      {
+        value: `${fmtInt(cslCalls)} / ${fmtInt(cslPax)}`,
+        label_es: 'Cruceros Cabo San Lucas 2025: arribos / pasajeros',
+        label_en: 'Cabo San Lucas cruises 2025: calls / passengers',
+        source_es: 'SECTUR DataTur 2025',
+        source_en: 'SECTUR DataTur 2025',
+        href: '/puertos/',
+      },
+      {
+        value: `${federal.by_sector.roads} · ${federal.by_sector.ports} · ${federal.by_sector.airports}`,
+        label_es: 'Proyectos federales: carreteras · puertos · aeropuertos',
+        label_en: 'Federal projects: roads · ports · airports',
+        source_es: 'Inventario de proyectos federales',
+        source_en: 'Federal project inventory',
+        href: '/proyectos-federales/',
+      },
+    ],
+  },
+  {
+    id: 'vivienda',
+    es: 'Vivienda y nivel de vida',
+    en: 'Housing and living standard',
+    hint_es: 'Registro, rezago, pobreza',
+    hint_en: 'Registry, backlog, poverty',
+    diagnostic_es: `Rezago habitacional estatal ${inmobiliario.conavi_rezago_2024.bcs_pct_rezago}% (${fmtInt(inmobiliario.conavi_rezago_2024.bcs_viviendas_rezago)} de ${fmtInt(inmobiliario.conavi_rezago_2024.bcs_viviendas_total)} viviendas, CONAVI 2024). Registro SNIIV 2025: ${fmtInt(inmobiliario.sniiv_vivienda_bcs.registro_vivienda_entidad.find((r) => r.year === 2025)?.units || 0)} viviendas en el estado, repartidas por municipio en la comparación. Los Cabos, Comondú y Mulegé tienen además un estudio esquemático en celdas de 500 m: no son predios y esta ficha no lo convierte en cuota de vivienda. La Paz y Loreto no tienen ese estudio. Ninguna cifra de aquí es una puntuación de predio.`,
+    diagnostic_en: `Statewide housing backlog ${inmobiliario.conavi_rezago_2024.bcs_pct_rezago}% (${fmtInt(inmobiliario.conavi_rezago_2024.bcs_viviendas_rezago)} of ${fmtInt(inmobiliario.conavi_rezago_2024.bcs_viviendas_total)} homes, CONAVI 2024). SNIIV 2025 registry: ${fmtInt(inmobiliario.sniiv_vivienda_bcs.registro_vivienda_entidad.find((r) => r.year === 2025)?.units || 0)} homes statewide, split by municipality in the comparison. Los Cabos, Comondú and Mulegé also have a schematic 500 m grid study: those cells are not parcels, and this board does not turn them into a housing quota. La Paz and Loreto do not have that study. No figure here is a parcel score.`,
+    gap_es: 'No hay catastro de predios ni deseabilidad por lote. El registro SNIIV no es lo mismo que el rezago CONAVI ni que el mercado de alto valor de Los Cabos.',
+    gap_en: 'There is no parcel cadastre and no lot desirability score. The SNIIV registry is not the CONAVI backlog and not the Los Cabos high-value market.',
+    layers: THEME_LAYERS.vivienda,
+    kpis: [
+      {
+        value: `${inmobiliario.conavi_rezago_2024.bcs_pct_rezago}%`,
+        label_es: 'Rezago habitacional estatal',
+        label_en: 'Statewide housing backlog',
+        source_es: 'CONAVI, rezago 2024',
+        source_en: 'CONAVI backlog 2024',
+        href: '/inmobiliario/',
+      },
+      {
+        value: fmtInt(inmobiliario.sniiv_vivienda_bcs.registro_vivienda_entidad.find((r) => r.year === 2025)?.units || 0),
+        label_es: 'Viviendas registradas en 2025',
+        label_en: 'Homes registered in 2025',
+        source_es: 'SNIIV / SEDATU',
+        source_en: 'SNIIV / SEDATU',
+        href: '/inmobiliario/',
+      },
+      {
+        value: `${fmtInt(inmobiliario.jll_2025_bcs.units['2025'])} · US$${fmtInt(inmobiliario.jll_2025_bcs.volume_m_usd['2025'])} M`,
+        label_es: 'Mercado residencial BCS 2025: unidades · volumen',
+        label_en: 'BCS residential market 2025: units · volume',
+        source_es: 'JLL 2025',
+        source_en: 'JLL 2025',
+        href: '/inmobiliario/',
+      },
+      {
+        value: `${Math.min(...munis.map((m) => m.pobreza_pct))}% – ${Math.max(...munis.map((m) => m.pobreza_pct))}%`,
+        label_es: 'Rango de pobreza municipal 2020',
+        label_en: 'Municipal poverty range 2020',
+        source_es: 'CONEVAL, pobreza municipal 2020',
+        source_en: 'CONEVAL, municipal poverty 2020',
+        href: '/comunidades/',
+      },
+    ],
+  },
+];
+
+const recommendations = places.map((p) => {
+  const rule = BALANCE_RULE[p.balance_read];
+  if (!rule) throw new Error(`CDT unknown balance ${p.balance_read} on ${p.id}`);
+  return {
+    id: p.id,
+    name_es: p.name_es,
+    name_en: p.name_en,
+    balance: p.balance_read,
+    balance_label_es: { constrained: 'Restringido', contested: 'En disputa', headroom: 'Con margen', unknown: 'Sin evidencia suficiente' }[p.balance_read] || p.balance_read,
+    balance_label_en: { constrained: 'Constrained', contested: 'Contested', headroom: 'Has room', unknown: 'Not enough evidence' }[p.balance_read] || p.balance_read,
+    rule_es: rule.es,
+    rule_en: rule.en,
+    because_es: p.balance_read_es,
+    because_en: p.balance_read_en,
+    themes: THEMES_BY_PLACE[p.id] || ['urbano'],
+    scenarios: scenariosForPlace(p.id),
+    href: '/crecimiento/',
+  };
+});
+
+const researchRecs = [
+  {
+    id: 'research-graph',
+    name_es: 'Mapa de relaciones',
+    name_en: 'Relationship map',
+    balance: 'unknown',
+    balance_label_es: 'Sin red de investigación',
+    balance_label_en: 'No research network',
+    rule_es: 'No inventar clústeres universitarios. Usar el mapa de relaciones y las preguntas estratégicas como lectura de quién se conecta con qué lugar.',
+    rule_en: 'Do not invent university clusters. Use the relationship map and the strategic questions to see who connects to which place.',
+    because_es: `El acervo tiene ${ontology.nodes.length} nodos y ${ontology.edges.length} vínculos, y ${questionsDoc.questions.length} preguntas. No hay matriz de colaboración entre escuelas.`,
+    because_en: `The archive has ${ontology.nodes.length} nodes and ${ontology.edges.length} links, and ${questionsDoc.questions.length} questions. There is no school collaboration matrix.`,
+    themes: ['investigacion'] as CdtThemeId[],
+    scenarios: ['baseline', 'corridor_intensify', 'water_first', 'ports_air_hubs'],
+    href: '/ontologia/',
+  },
+  {
+    id: 'research-gaps',
+    name_es: 'Brechas antes de afinar',
+    name_en: 'Gaps before going finer',
+    balance: 'unknown',
+    balance_label_es: 'Evidencia incompleta',
+    balance_label_en: 'Incomplete evidence',
+    rule_es: 'Cerrar brechas de evidencia antes de pedir un escenario más fino o una recomendación por predio.',
+    rule_en: 'Close evidence gaps before asking for a finer scenario or a parcel recommendation.',
+    because_es: `Hay ${gapsDoc.gaps.length} brechas abiertas en la lista del portal. La prospectiva del ${foresights.updated} es lectura, no un plan.`,
+    because_en: `The portal lists ${gapsDoc.gaps.length} open gaps. Foresight dated ${foresights.updated} is a reading, not a plan.`,
+    themes: ['investigacion'] as CdtThemeId[],
+    scenarios: ['baseline', 'corridor_intensify', 'water_first', 'ports_air_hubs'],
+    href: '/foresights/',
+  },
+];
+
+export const cdtModel = {
+  themes,
+  indicators,
+  munis,
+  layerCatalog,
+  recommendations: [...recommendations, ...researchRecs],
+  stateRules: gds.state_rollup.must_be_true_es.map((es, i) => ({
+    es,
+    en: gds.state_rollup.must_be_true_en[i] || es,
+  })),
+  scenarios: scenariosDoc.scenarios.map((sc) => ({
+    id: sc.id,
+    title_es: sc.title_es,
+    title_en: sc.title_en,
+    blurb_es: sc.blurb_es,
+    blurb_en: sc.blurb_en,
+    priority_layer_ids: sc.priority_layer_ids,
+    focus_bbox: sc.focus_bbox,
+    questions_es: sc.decision_questions_es,
+    questions_en: sc.decision_questions_en,
+  })),
+  disclaimer_es:
+    'Apoyo a la decisión con reglas del portal (demanda y oferta de crecimiento, más el escenario elegido). No es un modelo de predios, ni una puntuación de deseabilidad por parcela, ni un plan oficial.',
+  disclaimer_en:
+    'Decision support from portal rules (growth demand and supply, plus the scenario you pick). It is not a parcel model, not a lot desirability score, and not an official plan.',
+  notMunicipal_es:
+    'East Cape está leído dentro de Los Cabos y Todos Santos–El Pescadero dentro de La Paz. La comparación pinta municipios completos: no hay capa AGEB para separarlos.',
+  notMunicipal_en:
+    'East Cape is read inside Los Cabos, and Todos Santos–El Pescadero inside La Paz. The comparison colors whole municipalities: there is no AGEB layer to split them.',
+};
+
+export type CdtModel = typeof cdtModel;

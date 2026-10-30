@@ -192,38 +192,38 @@
   force = true
 
 [[redirects]]
-  from = "/gemelo"
-  to = "/resumen/"
+  from = "/cdt"
+  to = "/gemelo/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/gemelo/"
-  to = "/resumen/"
+  from = "/cdt/"
+  to = "/gemelo/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/decision-twin"
-  to = "/resumen/"
+  to = "/gemelo/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/decision-twin/"
-  to = "/resumen/"
+  to = "/gemelo/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/decision"
-  to = "/resumen/"
+  to = "/gemelo/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/decision/"
-  to = "/resumen/"
+  to = "/gemelo/"
   status = 301
   force = true
 

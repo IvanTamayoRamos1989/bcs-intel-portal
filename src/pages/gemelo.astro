@@ -1,3 +1,708 @@
 ---
-return Astro.redirect('/resumen/', 301);
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { cdtModel } from '../lib/cdtModel';
+
+const model = cdtModel;
+const icon: Record<string, string> = {
+  urbano: '<path d="M4 20V9l5-3 5 3v11"/><path d="M9 20v-6h4v6"/><path d="M14 20V11l5-2v11"/>',
+  economia: '<path d="M4 19h16"/><path d="M7 16v-4"/><path d="M12 16V7"/><path d="M17 16v-6"/>',
+  investigacion: '<circle cx="7" cy="8" r="2"/><circle cx="17" cy="8" r="2"/><circle cx="12" cy="16" r="2"/><path d="M9 9l2 5M15 9l-2 5M9 8h6"/>',
+  movilidad: '<path d="M4 16h16"/><path d="M6 16V8h7l3 4h2v4"/><circle cx="8" cy="16" r="1.4"/><circle cx="16" cy="16" r="1.4"/>',
+  vivienda: '<path d="M4 11 12 4l8 7"/><path d="M7 10.5V20h10v-9.5"/>',
+};
 ---
+<BaseLayout
+  title="Gemelo territorial"
+  titleEn="Territorial twin"
+  description="Tablero por tema: mapa, cifras del portal, comparación municipal y escenarios."
+  descriptionEn="Theme board: map, portal figures, municipal comparison and scenarios."
+  section="Gemelo territorial"
+  sectionEn="Territorial twin"
+  wide={true}
+  hidePageHead={true}
+>
+  <link
+    rel="stylesheet"
+    href="/vendor/leaflet/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <div class="cdt">
+    <header class="cdt-top">
+      <div>
+        <p class="cdt-kicker">
+          <span data-lang-es>Fase 1 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 1 · decision support</span>
+        </p>
+        <h1>
+          <span data-lang-es>Gemelo territorial</span>
+          <span data-lang-en hidden>Territorial twin</span>
+        </h1>
+        <p class="cdt-lead">
+          <span data-lang-es>{model.disclaimer_es}</span>
+          <span data-lang-en hidden>{model.disclaimer_en}</span>
+        </p>
+      </div>
+      <div class="cdt-scenarios" role="group" aria-label="Escenario">
+        {model.scenarios.map((sc, i) => (
+          <button type="button" class="cdt-sc" data-scenario={sc.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+            <span data-lang-es>{sc.title_es}</span>
+            <span data-lang-en hidden>{sc.title_en}</span>
+          </button>
+        ))}
+      </div>
+    </header>
+
+    <div class="cdt-work">
+      <nav class="cdt-rail" aria-label="Temas del gemelo">
+        {model.themes.map((t, i) => (
+          <button type="button" class="cdt-theme-btn" data-theme={t.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" set:html={icon[t.id]} />
+            <span>
+              <span data-lang-es>{t.es}</span>
+              <span data-lang-en hidden>{t.en}</span>
+            </span>
+          </button>
+        ))}
+      </nav>
+
+      <div class="cdt-map-col">
+        <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial"></div>
+        <p class="cdt-map-note" id="cdt-status">
+          <span data-lang-es>Cargando capas del mapa…</span>
+          <span data-lang-en hidden>Loading map layers…</span>
+        </p>
+        <p class="cdt-layers" id="cdt-layer-names"></p>
+        <p class="cdt-open">
+          <a class="cdt-open-map" id="cdt-map-link" href="/mapas?scenario=baseline#gis">
+            <span data-lang-es>Abrir estas capas en Mapas</span>
+            <span data-lang-en hidden>Open these layers in Maps</span>
+          </a>
+          <a href="/explorar/">
+            <span data-lang-es>Ver el relieve en el atlas 3D</span>
+            <span data-lang-en hidden>See the terrain in the 3D atlas</span>
+          </a>
+        </p>
+      </div>
+
+      <aside class="cdt-panel" aria-label="Indicadores del tema">
+        {model.themes.map((t, i) => (
+          <section class="cdt-theme" data-theme-panel={t.id} hidden={i === 0 ? undefined : true}>
+            <h2>
+              <span data-lang-es>{t.es}</span>
+              <span data-lang-en hidden>{t.en}</span>
+            </h2>
+            <p class="cdt-diag">
+              <span data-lang-es>{t.diagnostic_es}</span>
+              <span data-lang-en hidden>{t.diagnostic_en}</span>
+            </p>
+            <div class="cdt-kpis">
+              {t.kpis.map((k) => (
+                <a class="cdt-kpi" href={k.href}>
+                  <strong>{k.value}</strong>
+                  <span>
+                    <span data-lang-es>{k.label_es}</span>
+                    <span data-lang-en hidden>{k.label_en}</span>
+                  </span>
+                  <small>
+                    <span data-lang-es>{k.source_es}</span>
+                    <span data-lang-en hidden>{k.source_en}</span>
+                  </small>
+                </a>
+              ))}
+            </div>
+            <p class="cdt-gap">
+              <span data-lang-es>{t.gap_es}</span>
+              <span data-lang-en hidden>{t.gap_en}</span>
+            </p>
+          </section>
+        ))}
+
+        {model.scenarios.map((sc, i) => (
+          <div class="cdt-sc-copy" data-scenario-copy={sc.id} hidden={i === 0 ? undefined : true}>
+            <h3>
+              <span data-lang-es>{sc.title_es}</span>
+              <span data-lang-en hidden>{sc.title_en}</span>
+            </h3>
+            <p>
+              <span data-lang-es>{sc.blurb_es}</span>
+              <span data-lang-en hidden>{sc.blurb_en}</span>
+            </p>
+            <ul>
+              {sc.questions_es.map((q, qi) => (
+                <li>
+                  <span data-lang-es>{q}</span>
+                  <span data-lang-en hidden>{sc.questions_en[qi]}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        <section class="cdt-compare" aria-label="Comparar municipios">
+          <h3>
+            <span data-lang-es>Comparar municipios</span>
+            <span data-lang-en hidden>Compare municipalities</span>
+          </h3>
+          <p class="cdt-fine">
+            <span data-lang-es>{model.notMunicipal_es}</span>
+            <span data-lang-en hidden>{model.notMunicipal_en}</span>
+          </p>
+          <div class="cdt-axes">
+            <label>
+              <span data-lang-es>Eje horizontal (color del mapa)</span>
+              <span data-lang-en hidden>Horizontal axis (map color)</span>
+              <select id="cdt-x"></select>
+            </label>
+            <label>
+              <span data-lang-es>Eje vertical</span>
+              <span data-lang-en hidden>Vertical axis</span>
+              <select id="cdt-y"></select>
+            </label>
+          </div>
+          <div id="cdt-scatter" class="cdt-scatter"></div>
+          <p class="cdt-fine" id="cdt-sources"></p>
+          <div class="cdt-table-wrap">
+            <table class="cdt-table">
+              <thead>
+                <tr>
+                  <th><span data-lang-es>Municipio</span><span data-lang-en hidden>Municipality</span></th>
+                  {model.indicators.map((ind) => (
+                    <th>
+                      <span data-lang-es>{ind.label_es}</span>
+                      <span data-lang-en hidden>{ind.label_en}</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {model.munis.map((m) => (
+                  <tr data-muni={m.name}>
+                    <th scope="row">
+                      <button type="button" class="cdt-muni" data-muni-btn={m.name}>{m.name}</button>
+                    </th>
+                    <td>{m.pob.toLocaleString('es-MX')}</td>
+                    <td>{m.sniiv_2025.toLocaleString('es-MX')}</td>
+                    <td>{m.pobreza_pct.toLocaleString('es-MX', { maximumFractionDigits: 2 })}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div id="cdt-muni-detail" class="cdt-detail"></div>
+        </section>
+
+        <section class="cdt-recs" aria-label="Recomendaciones">
+          <h3>
+            <span data-lang-es>Recomendaciones</span>
+            <span data-lang-en hidden>Recommendations</span>
+          </h3>
+          <p class="cdt-disclaimer">
+            <span data-lang-es>{model.disclaimer_es}</span>
+            <span data-lang-en hidden>{model.disclaimer_en}</span>
+          </p>
+          <ul class="cdt-rules">
+            {model.stateRules.map((r) => (
+              <li>
+                <span data-lang-es>{r.es}</span>
+                <span data-lang-en hidden>{r.en}</span>
+              </li>
+            ))}
+          </ul>
+          <div id="cdt-rec-list">
+            {model.recommendations.map((r) => (
+              <article
+                class="cdt-rec"
+                data-rec-themes={r.themes.join(' ')}
+                data-rec-scenarios={r.scenarios.join(' ')}
+              >
+                <p class="cdt-rec-kicker">
+                  <span data-lang-es>{r.balance_label_es}</span>
+                  <span data-lang-en hidden>{r.balance_label_en}</span>
+                  <span aria-hidden="true"> · </span>
+                  <span data-lang-es>{r.name_es}</span>
+                  <span data-lang-en hidden>{r.name_en}</span>
+                </p>
+                <p class="cdt-rec-rule">
+                  <span data-lang-es>{r.rule_es}</span>
+                  <span data-lang-en hidden>{r.rule_en}</span>
+                </p>
+                <p class="cdt-fine">
+                  <span data-lang-es>{r.because_es}</span>
+                  <span data-lang-en hidden>{r.because_en}</span>
+                </p>
+                <a href={r.href}>
+                  <span data-lang-es>Ver la evidencia</span>
+                  <span data-lang-en hidden>See the evidence</span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <style>
+    .cdt { --cdt: #0083C4; --cdt-dark: #006BA3; --cdt-ink: #1a1a1a; --cdt-muted: #5a5a5a; --cdt-line: #e0e0e0; color: var(--cdt-ink); }
+    .cdt-top { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: flex-end; justify-content: space-between; margin-bottom: 0.8rem; }
+    .cdt-kicker { margin: 0 0 0.2rem; color: var(--cdt); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .cdt h1 { margin: 0; font-size: 1.7rem; line-height: 1.15; color: var(--cdt-dark); }
+    .cdt-lead { margin: 0.35rem 0 0; max-width: 46rem; color: var(--cdt-muted); font-size: 0.95rem; line-height: 1.45; }
+    .cdt-scenarios { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .cdt-sc, .cdt-theme-btn, .cdt-muni { font: inherit; cursor: pointer; }
+    .cdt-sc { border: 1px solid var(--cdt-line); background: #fff; color: var(--cdt-ink); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; }
+    .cdt-sc[aria-pressed="true"] { background: var(--cdt); border-color: var(--cdt); color: #fff; }
+    .cdt-work { display: grid; grid-template-columns: 5.6rem minmax(0, 1.35fr) minmax(280px, 400px); gap: 0.7rem; align-items: start; }
+    .cdt-rail { display: flex; flex-direction: column; gap: 0.35rem; position: sticky; top: 0.6rem; }
+    .cdt-theme-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; text-align: left; border: 1px solid var(--cdt-line); background: #fff; border-radius: 12px; padding: 0.45rem 0.4rem; color: var(--cdt-dark); line-height: 1.15; }
+    .cdt-theme-btn svg { width: 1.35rem; height: 1.35rem; }
+    .cdt-theme-btn span { font-size: 0.68rem; font-weight: 650; }
+    .cdt-theme-btn[aria-pressed="true"] { background: var(--cdt); border-color: var(--cdt); color: #fff; }
+    .cdt-map-col { min-width: 0; }
+    #cdt-map { height: min(72vh, 760px); min-height: 420px; width: 100%; border: 1px solid var(--cdt-line); border-radius: 12px; background: #d7e3ea; }
+    .cdt-map-note, .cdt-layers, .cdt-open, .cdt-fine, .cdt-gap { color: var(--cdt-muted); font-size: 0.8rem; line-height: 1.4; }
+    .cdt-map-note { margin: 0.4rem 0 0.15rem; }
+    .cdt-layers { margin: 0; }
+    .cdt-open { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 0.35rem 0 0; }
+    .cdt-open a { color: var(--cdt); font-weight: 650; }
+    .cdt-panel { background: #fff; border: 1px solid var(--cdt-line); border-radius: 14px; padding: 0.9rem 0.95rem 1rem; max-height: calc(100vh - 9rem); overflow: auto; }
+    .cdt-panel h2 { margin: 0 0 0.35rem; font-size: 1.15rem; color: var(--cdt-dark); }
+    .cdt-panel h3 { margin: 1rem 0 0.35rem; font-size: 1rem; color: var(--cdt-dark); }
+    .cdt-diag { margin: 0 0 0.7rem; font-size: 0.92rem; line-height: 1.45; }
+    .cdt-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+    .cdt-kpi { display: flex; flex-direction: column; gap: 0.15rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 10px; padding: 0.5rem 0.55rem; text-decoration: none; color: inherit; background: #f7fbfd; }
+    .cdt-kpi strong { font-size: 0.95rem; color: var(--cdt-dark); line-height: 1.25; }
+    .cdt-kpi span { font-size: 0.78rem; line-height: 1.3; }
+    .cdt-kpi small { color: var(--cdt-muted); font-size: 0.7rem; }
+    .cdt-gap { margin: 0.55rem 0 0; }
+    .cdt-sc-copy { margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid var(--cdt-line); }
+    .cdt-sc-copy ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }
+    .cdt-sc-copy li { margin: 0.2rem 0; font-size: 0.88rem; }
+    .cdt-axes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+    .cdt-axes label { display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.75rem; color: var(--cdt-muted); }
+    .cdt-axes select { font: inherit; color: var(--cdt-ink); border: 1px solid var(--cdt-line); border-radius: 8px; padding: 0.3rem 0.4rem; background: #fff; }
+    .cdt-scatter { margin-top: 0.45rem; }
+    .cdt-scatter svg { width: 100%; height: auto; display: block; }
+    .cdt-table-wrap { overflow-x: auto; }
+    .cdt-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin-top: 0.4rem; }
+    .cdt-table th, .cdt-table td { border-bottom: 1px solid var(--cdt-line); padding: 0.28rem 0.3rem; text-align: right; }
+    .cdt-table th:first-child, .cdt-table td:first-child { text-align: left; }
+    .cdt-table thead th { color: #fff; background: var(--cdt); font-weight: 650; }
+    .cdt-table tr.is-on { background: #e7f4fb; }
+    .cdt-muni { border: 0; background: transparent; color: var(--cdt-dark); font-weight: 700; padding: 0; }
+    .cdt-detail { margin-top: 0.55rem; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-detail a { color: var(--cdt); }
+    .cdt-disclaimer { margin: 0; padding: 0.55rem 0.65rem; background: #e8f4fb; border-radius: 10px; color: var(--cdt-ink); font-size: 0.84rem; }
+    .cdt-rules { margin: 0.5rem 0; padding-left: 1.1rem; }
+    .cdt-rules li { margin: 0.25rem 0; font-size: 0.86rem; }
+    .cdt-rec { border-top: 1px solid var(--cdt-line); padding: 0.55rem 0 0.45rem 0.55rem; border-left: 3px solid var(--cdt); margin: 0.4rem 0; }
+    .cdt-rec[hidden] { display: none; }
+    .cdt-rec-kicker { margin: 0; font-size: 0.72rem; font-weight: 700; color: var(--cdt); text-transform: uppercase; letter-spacing: 0.03em; }
+    .cdt-rec-rule { margin: 0.2rem 0; font-size: 0.9rem; }
+    .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
+    @media (max-width: 980px) {
+      .cdt-work { grid-template-columns: 1fr; }
+      .cdt-rail { position: static; flex-direction: row; overflow-x: auto; }
+      .cdt-theme-btn { min-width: 7.2rem; }
+      .cdt-panel { max-height: none; }
+      .cdt-kpis, .cdt-axes { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script is:inline define:vars={{ model }}>
+    (function () {
+      var mapEl = document.getElementById('cdt-map');
+      if (!mapEl || typeof L === 'undefined') return;
+
+      var state = {
+        theme: 'urbano',
+        scenario: 'baseline',
+        x: 'pob',
+        y: 'sniiv_2025',
+        muni: 'Los Cabos',
+      };
+
+      function lang() {
+        return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
+      }
+      function tx(es, en) { return lang() === 'en' ? en : es; }
+      function themeById(id) {
+        for (var i = 0; i < model.themes.length; i++) if (model.themes[i].id === id) return model.themes[i];
+        return model.themes[0];
+      }
+      function scenarioById(id) {
+        for (var i = 0; i < model.scenarios.length; i++) if (model.scenarios[i].id === id) return model.scenarios[i];
+        return model.scenarios[0];
+      }
+      function indicatorById(id) {
+        for (var i = 0; i < model.indicators.length; i++) if (model.indicators[i].id === id) return model.indicators[i];
+        return model.indicators[0];
+      }
+      function muniByName(name) {
+        for (var i = 0; i < model.munis.length; i++) if (model.munis[i].name === name) return model.munis[i];
+        return model.munis[0];
+      }
+      function layerMeta(id) {
+        for (var i = 0; i < model.layerCatalog.length; i++) if (model.layerCatalog[i].id === id) return model.layerCatalog[i];
+        return null;
+      }
+      function plain(s) {
+        return String(s || '').replace(/\s+ON DISK/gi, '').replace(/\s{2,}/g, ' ').trim();
+      }
+      function fmt(id, n) {
+        if (id === 'pobreza_pct') return Number(n).toLocaleString('es-MX', { maximumFractionDigits: 2 }) + '%';
+        return Math.round(Number(n)).toLocaleString('es-MX');
+      }
+      function uniq(list) {
+        var seen = {};
+        var out = [];
+        list.forEach(function (id) {
+          if (!id || seen[id]) return;
+          seen[id] = 1;
+          out.push(id);
+        });
+        return out;
+      }
+
+      var params = new URLSearchParams(location.search);
+      if (params.get('theme') && themeById(params.get('theme')).id === params.get('theme')) state.theme = params.get('theme');
+      if (params.get('scenario') && scenarioById(params.get('scenario')).id === params.get('scenario')) state.scenario = params.get('scenario');
+      if (params.get('x') && indicatorById(params.get('x')).id === params.get('x')) state.x = params.get('x');
+      if (params.get('y') && indicatorById(params.get('y')).id === params.get('y')) state.y = params.get('y');
+      if (state.x === state.y) state.y = state.x === 'sniiv_2025' ? 'pobreza_pct' : 'sniiv_2025';
+
+      var map = L.map(mapEl, { scrollWheelZoom: true, maxZoom: 14 });
+      map.setView([25.6, -112.0], 6);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap',
+        maxZoom: 18,
+      }).addTo(map);
+      L.control.scale({ imperial: false, metric: true }).addTo(map);
+
+      var muniLayer = null;
+      var loaded = {};
+      var active = {};
+      var statusEl = document.getElementById('cdt-status');
+
+      function setStatus(es, en) {
+        if (statusEl) statusEl.textContent = tx(es, en);
+      }
+
+      function ramp(t) {
+        var a = [214, 232, 245];
+        var b = [0, 131, 196];
+        var c = a.map(function (v, i) { return Math.round(v + (b[i] - v) * t); });
+        return 'rgb(' + c.join(',') + ')';
+      }
+
+      function styleMuni(feature) {
+        var name = feature.properties && feature.properties.name;
+        var m = muniByName(name);
+        var ind = state.x;
+        var vals = model.munis.map(function (row) { return Number(row[ind]); });
+        var min = Math.min.apply(null, vals);
+        var max = Math.max.apply(null, vals);
+        var t = max === min ? 0.6 : (Number(m[ind]) - min) / (max - min);
+        var on = name === state.muni;
+        return {
+          color: on ? '#0b3a56' : '#006BA3',
+          weight: on ? 3 : 1.2,
+          fillColor: ramp(t),
+          fillOpacity: 0.5,
+        };
+      }
+
+      function refreshMuniStyle() {
+        if (!muniLayer) return;
+        muniLayer.setStyle(styleMuni);
+      }
+
+      function selectMuni(name) {
+        state.muni = name;
+        refreshMuniStyle();
+        document.querySelectorAll('.cdt-table tr[data-muni]').forEach(function (tr) {
+          tr.classList.toggle('is-on', tr.getAttribute('data-muni') === name);
+        });
+        renderDetail();
+        renderScatter();
+      }
+
+      function renderDetail() {
+        var el = document.getElementById('cdt-muni-detail');
+        if (!el) return;
+        var m = muniByName(state.muni);
+        var subs = (m.subplaces || []).map(function (s) {
+          return '<p><strong>' + tx(s.name_es, s.name_en) + '.</strong> ' + tx(s.balance_es, s.balance_en) + '</p>';
+        }).join('');
+        el.innerHTML =
+          '<p><strong>' + m.name + '</strong> · ' + tx('cabecera', 'seat') + ' ' + m.cabecera +
+          ' (' + fmt('pob', m.cab_pob) + ')</p>' +
+          '<p>' + plain(tx(m.strengths_es, m.strengths_en)) + '</p>' +
+          '<p>' + plain(tx(m.locks_es, m.locks_en)) + '</p>' +
+          subs +
+          '<p><a href="' + m.studio + '">' + tx('Ficha del municipio', 'Municipal page') + '</a></p>';
+      }
+
+      function renderScatter() {
+        var host = document.getElementById('cdt-scatter');
+        if (!host) return;
+        var xi = indicatorById(state.x);
+        var yi = indicatorById(state.y);
+        var W = 340, H = 230, Lft = 46, Bot = 36, Rgt = 12, Top = 14;
+        var xs = model.munis.map(function (m) { return Number(m[state.x]); });
+        var ys = model.munis.map(function (m) { return Number(m[state.y]); });
+        var xmin = Math.min.apply(null, xs), xmax = Math.max.apply(null, xs);
+        var ymin = Math.min.apply(null, ys), ymax = Math.max.apply(null, ys);
+        if (xmin === xmax) { xmin -= 1; xmax += 1; }
+        if (ymin === ymax) { ymin -= 1; ymax += 1; }
+        function px(v) { return Lft + (v - xmin) / (xmax - xmin) * (W - Lft - Rgt); }
+        function py(v) { return H - Bot - (v - ymin) / (ymax - ymin) * (H - Bot - Top); }
+        var dots = model.munis.map(function (m) {
+          var on = m.name === state.muni;
+          return '<g class="cdt-dot" data-dot="' + m.name + '" style="cursor:pointer">' +
+            '<circle cx="' + px(m[state.x]).toFixed(1) + '" cy="' + py(m[state.y]).toFixed(1) +
+            '" r="' + (on ? 7 : 5) + '" fill="#0083C4" stroke="' + (on ? '#0b3a56' : '#fff') + '" stroke-width="' + (on ? 2.5 : 1.2) + '"></circle>' +
+            '<text x="' + (px(m[state.x]) + 8).toFixed(1) + '" y="' + (py(m[state.y]) - 6).toFixed(1) +
+            '" font-size="10" fill="#1a1a1a">' + m.short + '</text></g>';
+        }).join('');
+        host.innerHTML =
+          '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + tx('Comparación municipal', 'Municipal comparison') + '">' +
+          '<line x1="' + Lft + '" y1="' + (H - Bot) + '" x2="' + (W - Rgt) + '" y2="' + (H - Bot) + '" stroke="#d0d0d0"/>' +
+          '<line x1="' + Lft + '" y1="' + Top + '" x2="' + Lft + '" y2="' + (H - Bot) + '" stroke="#d0d0d0"/>' +
+          '<text x="' + Lft + '" y="' + (H - 8) + '" font-size="10" fill="#5a5a5a">' + tx(xi.label_es, xi.label_en) + '</text>' +
+          '<text x="12" y="' + (Top + 8) + '" font-size="10" fill="#5a5a5a">' + tx(yi.label_es, yi.label_en) + '</text>' +
+          '<text x="' + Lft + '" y="' + (H - Bot + 12) + '" font-size="9" fill="#5a5a5a">' + fmt(state.x, xmin) + '</text>' +
+          '<text x="' + (W - Rgt - 36) + '" y="' + (H - Bot + 12) + '" font-size="9" fill="#5a5a5a">' + fmt(state.x, xmax) + '</text>' +
+          dots +
+          '</svg>';
+        host.querySelectorAll('[data-dot]').forEach(function (g) {
+          g.addEventListener('click', function () { selectMuni(g.getAttribute('data-dot')); });
+        });
+        var src = document.getElementById('cdt-sources');
+        if (src) {
+          src.textContent = tx(
+            xi.source_es + ' · ' + yi.source_es + '. Cada punto es un municipio. No hay línea de tendencia: no es un modelo.',
+            xi.source_en + ' · ' + yi.source_en + '. Each point is a municipality. There is no trend line: this is not a model.'
+          );
+        }
+      }
+
+      function fillSelects() {
+        ['cdt-x', 'cdt-y'].forEach(function (id) {
+          var sel = document.getElementById(id);
+          if (!sel) return;
+          var current = id === 'cdt-x' ? state.x : state.y;
+          sel.innerHTML = model.indicators.map(function (ind) {
+            return '<option value="' + ind.id + '"' + (ind.id === current ? ' selected' : '') + '>' +
+              tx(ind.label_es, ind.label_en) + '</option>';
+          }).join('');
+        });
+      }
+
+      function wantedLayers() {
+        var theme = themeById(state.theme);
+        var sc = scenarioById(state.scenario);
+        return uniq((theme.layers || []).concat(sc.priority_layer_ids || []));
+      }
+
+      function pointLayer(meta) {
+        return function (feat, latlng) {
+          return L.circleMarker(latlng, {
+            radius: 5,
+            color: meta.color,
+            weight: 1,
+            fillColor: meta.color,
+            fillOpacity: 0.85,
+          });
+        };
+      }
+
+      function popupHtml(feat) {
+        var p = feat.properties || {};
+        var name = p.name_es || p.name || p.proyecto || p.NOMBRE || p.NOM_NUC || p.ref || '';
+        return name ? String(name) : '';
+      }
+
+      function ensureLayer(id) {
+        if (loaded[id]) return Promise.resolve(loaded[id]);
+        var meta = layerMeta(id);
+        if (!meta) return Promise.resolve(null);
+        return fetch(meta.url).then(function (r) { return r.json(); }).then(function (geo) {
+          var isPoint = meta.type === 'point' || meta.type === 'points';
+          var layer = L.geoJSON(geo, {
+            interactive: isPoint,
+            style: function () {
+              if (meta.type === 'line') return { color: meta.color, weight: 1.6, opacity: 0.9 };
+              return { color: meta.color, weight: 1, fillColor: meta.color, fillOpacity: 0.16 };
+            },
+            pointToLayer: pointLayer(meta),
+            onEachFeature: function (feat, layer) {
+              var html = popupHtml(feat);
+              if (html && isPoint) layer.bindPopup(html);
+            },
+          });
+          layer._cdtPoint = isPoint;
+          loaded[id] = layer;
+          return layer;
+        }).catch(function () {
+          loaded[id] = null;
+          return null;
+        });
+      }
+
+      function syncLayers() {
+        var ids = wantedLayers();
+        var want = {};
+        ids.forEach(function (id) { want[id] = 1; });
+        Object.keys(active).forEach(function (id) {
+          if (!want[id]) {
+            map.removeLayer(active[id]);
+            delete active[id];
+          }
+        });
+        var names = ids.map(function (id) {
+          var meta = layerMeta(id);
+          return meta ? tx(meta.name_es, meta.name_en) : id;
+        });
+        var nameEl = document.getElementById('cdt-layer-names');
+        if (nameEl) nameEl.textContent = tx('Capas: ', 'Layers: ') + names.join(' · ');
+        return Promise.all(ids.map(function (id) {
+          return ensureLayer(id).then(function (layer) {
+            if (!layer || active[id]) return;
+            if (!want[id]) return;
+            layer.addTo(map);
+            active[id] = layer;
+          });
+        })).then(function () {
+          Object.keys(active).forEach(function (id) {
+            if (active[id] && !active[id]._cdtPoint) active[id].bringToBack();
+          });
+          if (muniLayer) muniLayer.bringToFront();
+          Object.keys(active).forEach(function (id) {
+            if (active[id] && active[id]._cdtPoint) active[id].bringToFront();
+          });
+          var failed = ids.filter(function (id) { return loaded[id] === null; });
+          if (failed.length) {
+            setStatus('Algunas capas no cargaron.', 'Some layers did not load.');
+          } else {
+            setStatus('Capas del tema y del escenario visibles. El color compara municipios.', 'Theme and scenario layers are on. Color compares municipalities.');
+          }
+        });
+      }
+
+      function fitScenario() {
+        var sc = scenarioById(state.scenario);
+        var b = sc.focus_bbox;
+        if (b && b.length === 4) {
+          map.fitBounds(L.latLngBounds([b[1], b[0]], [b[3], b[2]]), { padding: [18, 18], maxZoom: 10 });
+        }
+      }
+
+      function updateMapLink() {
+        var a = document.getElementById('cdt-map-link');
+        if (!a) return;
+        var ids = wantedLayers();
+        a.href = '/mapas?scenario=' + encodeURIComponent(state.scenario) + '&layers=' + encodeURIComponent(ids.join(',')) + '#gis';
+      }
+
+      function writeUrl() {
+        var q = new URLSearchParams();
+        q.set('theme', state.theme);
+        q.set('scenario', state.scenario);
+        q.set('x', state.x);
+        q.set('y', state.y);
+        history.replaceState(null, '', location.pathname + '?' + q.toString());
+      }
+
+      function applyChrome() {
+        document.querySelectorAll('[data-theme]').forEach(function (btn) {
+          btn.setAttribute('aria-pressed', btn.getAttribute('data-theme') === state.theme ? 'true' : 'false');
+        });
+        document.querySelectorAll('[data-theme-panel]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-theme-panel') !== state.theme;
+        });
+        document.querySelectorAll('[data-scenario]').forEach(function (btn) {
+          btn.setAttribute('aria-pressed', btn.getAttribute('data-scenario') === state.scenario ? 'true' : 'false');
+        });
+        document.querySelectorAll('[data-scenario-copy]').forEach(function (block) {
+          block.hidden = block.getAttribute('data-scenario-copy') !== state.scenario;
+        });
+        document.querySelectorAll('[data-rec-themes]').forEach(function (card) {
+          var themes = (card.getAttribute('data-rec-themes') || '').split(/\s+/);
+          var scenarios = (card.getAttribute('data-rec-scenarios') || '').split(/\s+/);
+          var show = themes.indexOf(state.theme) !== -1 && scenarios.indexOf(state.scenario) !== -1;
+          card.hidden = !show;
+        });
+        updateMapLink();
+        writeUrl();
+      }
+
+      function bootMunis() {
+        return fetch('/gis/osm_municipalities.geojson').then(function (r) { return r.json(); }).then(function (geo) {
+          muniLayer = L.geoJSON(geo, {
+            style: styleMuni,
+            onEachFeature: function (feat, layer) {
+              var name = feat.properties && feat.properties.name;
+              layer.on('click', function () { if (name) selectMuni(name); });
+              if (name) layer.bindTooltip(name, { sticky: true });
+            },
+          }).addTo(map);
+        });
+      }
+
+      document.querySelectorAll('[data-theme]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          state.theme = btn.getAttribute('data-theme');
+          applyChrome();
+          syncLayers();
+        });
+      });
+      document.querySelectorAll('[data-scenario]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          state.scenario = btn.getAttribute('data-scenario');
+          applyChrome();
+          syncLayers().then(fitScenario);
+        });
+      });
+      document.querySelectorAll('[data-muni-btn]').forEach(function (btn) {
+        btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-muni-btn')); });
+      });
+
+      var selX = document.getElementById('cdt-x');
+      var selY = document.getElementById('cdt-y');
+      function onAxis() {
+        state.x = selX.value;
+        state.y = selY.value;
+        if (state.x === state.y) {
+          state.y = model.indicators.map(function (i) { return i.id; }).filter(function (id) { return id !== state.x; })[0];
+          selY.value = state.y;
+        }
+        refreshMuniStyle();
+        renderScatter();
+        writeUrl();
+      }
+      if (selX) selX.addEventListener('change', onAxis);
+      if (selY) selY.addEventListener('change', onAxis);
+
+      document.addEventListener('bcs:lang', function () {
+        fillSelects();
+        renderScatter();
+        renderDetail();
+        syncLayers();
+      });
+
+      fillSelects();
+      applyChrome();
+      renderScatter();
+      selectMuni(state.muni);
+      bootMunis().then(function () {
+        return syncLayers();
+      }).then(fitScenario).catch(function () {
+        setStatus('No se pudo cargar el mapa municipal.', 'The municipal map could not load.');
+      });
+    })();
+  </script>
+</BaseLayout>
