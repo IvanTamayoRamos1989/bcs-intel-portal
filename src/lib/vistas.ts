@@ -74,6 +74,20 @@ function previewFor(mapas: string): { preview_es: string; preview_en: string } {
   };
 }
 
+/** Same frame the map fits: scenario focus_bbox, or the statewide frame when there is no scenario. */
+const STATE_FRAME = [-115.2, 22.8, -109.3, 28.0] as const;
+
+function googleMapsFor(mapas: string): string {
+  const { scenario } = mapQuery(mapas);
+  const box = scenario ? scenarioById.get(scenario)!.focus_bbox : STATE_FRAME;
+  const lon = (box[0] + box[2]) / 2;
+  const lat = (box[1] + box[3]) / 2;
+  const lonSpan = Math.abs(box[2] - box[0]);
+  const latSpan = Math.abs(box[3] - box[1]);
+  const zoom = Math.max(6, Math.min(11, Math.round(Math.min(Math.log2(360 / lonSpan), Math.log2(180 / latSpan)))));
+  return `https://www.google.com/maps/@${lat.toFixed(5)},${lon.toFixed(5)},${zoom}z`;
+}
+
 const VISTA_LINKS = [
   {
     id: 'agua-sur',
@@ -143,4 +157,5 @@ const VISTA_LINKS = [
 export const vistas = VISTA_LINKS.map((v) => ({
   ...v,
   ...previewFor(v.mapas),
+  gmaps: googleMapsFor(v.mapas),
 }));

@@ -77,6 +77,21 @@ const icon: Record<string, string> = {
             { es: 'Toque un municipio para leer su ficha, su demanda y oferta, y la vista que le corresponde.', en: 'Tap a municipality to read its page, its demand and supply, and the matching saved view.' },
           ]}
         />
+        <aside class="cdt-tip">
+          <p>
+            <span data-lang-es>Cómo leer el tablero: elija un tema, luego un escenario, y compare los municipios.</span>
+            <span data-lang-en hidden>How to read the board: pick a theme, then a scenario, and compare the municipalities.</span>
+          </p>
+          <p>
+            <span data-lang-es>Si una celda está en blanco, se queda en blanco. No se rellena en la reunión.</span>
+            <span data-lang-en hidden>If a cell is blank, it stays blank. It is not filled in during the meeting.</span>
+          </p>
+          <p>
+            <a href="/vistas/"><span data-lang-es>Vistas guardadas</span><span data-lang-en hidden>Saved views</span></a>
+            {' · '}
+            <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
+          </p>
+        </aside>
         <p class="cdt-fine"><a href="/vistas/"><span data-lang-es>Vistas guardadas para una reunión</span><span data-lang-en hidden>Saved views for a meeting</span></a> · <a href="/foro/"><span data-lang-es>Hoja para invitados</span><span data-lang-en hidden>Guest sheet</span></a></p>
         <div class="cdt-guides">
           {model.guides.map((g) => (
@@ -439,6 +454,9 @@ const icon: Record<string, string> = {
     .cdt-kicker { margin: 0 0 0.2rem; color: var(--cdt); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
     .cdt h1 { margin: 0; font-size: 1.7rem; line-height: 1.15; color: var(--cdt-dark); }
     .cdt-lead { margin: 0.35rem 0 0; max-width: 46rem; color: var(--cdt-muted); font-size: 0.95rem; line-height: 1.45; }
+    .cdt-tip { margin: 0.7rem 0 0.2rem; max-width: 40rem; border-left: 3px solid var(--cdt); background: #f4fbff; border-radius: 10px; padding: 0.55rem 0.75rem; }
+    .cdt-tip p { margin: 0.2rem 0; font-size: 0.92rem; line-height: 1.4; }
+    .cdt-tip a { color: var(--cdt-dark); font-weight: 650; }
     .cdt-scenarios { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .cdt-sc, .cdt-theme-btn, .cdt-muni { font: inherit; cursor: pointer; }
     .cdt-sc { border: 1px solid var(--cdt-line); background: #fff; color: var(--cdt-ink); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; }

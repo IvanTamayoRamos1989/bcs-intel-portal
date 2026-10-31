@@ -1066,6 +1066,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(path.id);
     }
   }
+  if (twinReadQuery(query)) {
+    const tip = corpus.find((c) => c.id === 'portal:gemelo-leer-p121');
+    if (tip && !usedId.has(tip.id)) {
+      picked.unshift(tip);
+      usedId.add(tip.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1466,6 +1473,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== path.id);
       picked.length = 0;
       picked.push(path, ...rest);
+    }
+  }
+  if (twinReadQuery(query)) {
+    const tip = corpus.find((c) => c.id === 'portal:gemelo-leer-p121');
+    if (tip) {
+      const rest = picked.filter((c) => c.id !== tip.id);
+      picked.length = 0;
+      picked.push(tip, ...rest);
     }
   }
 
@@ -2175,6 +2190,12 @@ function evidenceDepthQuery(message) {
   return /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/.test(q);
 }
 
+function twinReadQuery(message) {
+  if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message)) return false;
+  const q = normQ(message);
+  return /como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/.test(q);
+}
+
 function consultaPathQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message)) return false;
   const q = normQ(message);
@@ -2193,6 +2214,8 @@ function portalSurfaceBlocks(message, lang) {
   const en = lang === 'en';
   const surfaces = [
     { id: 'gemelo-air', re: /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, href: '/gemelo/?theme=movilidad&x=pob&y=aereo_2025', es: 'Eje aéreo 2025', en: '2025 air axis' }, // keep in sync with airAxisQuery
+    { id: 'gemelo-leer', re: /como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, href: '/gemelo/', es: 'Cómo leer el tablero', en: 'How to read the board' },
+    { id: 'gemelo-leer-vistas', re: /como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, href: '/vistas/', es: 'Vistas guardadas', en: 'Saved views' },
     { id: 'ev-desal', re: /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, href: '/aprendizaje/#evidencia', es: 'Evidencia: agua y costa', en: 'Evidence: water and coast' },
     { id: 'consulta-ev', re: /\bevidencia\b|casos de otras ciudades|cases from other cities/, href: '/aprendizaje/#evidencia', es: 'Evidencia de otras ciudades', en: 'Evidence from other cities' },
     { id: 'consulta-foro', re: /recorrido foro|hoja invitados/, href: '/foro/#recorrido', es: 'Recorrido del foro', en: 'Forum walk' },
@@ -2234,6 +2257,7 @@ function portalGuideBoost(message, chunk) {
     [/pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, /eje-aereo/],
     [/agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos|east cape/, /vistas-nombres/],
     [/desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, /evidencia-desal/],
+    [/como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, /gemelo-leer/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2603,6 +2627,9 @@ async function handlerInner(event) {
   const consultaGuide = consultaPathQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:consulta-ruta-p120')
     : null;
+  const twinGuide = twinReadQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-leer-p121')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2620,6 +2647,10 @@ async function handlerInner(event) {
   }
   if (consultaGuide && !evidence.some((c) => c.id === consultaGuide.id)) {
     evidence = [consultaGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (twinGuide && !evidence.some((c) => c.id === twinGuide.id)) {
+    evidence = [twinGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
