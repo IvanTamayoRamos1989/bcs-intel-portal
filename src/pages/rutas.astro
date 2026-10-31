@@ -11,6 +11,14 @@ const decision = [
   { href: '/metas', es: 'Preguntas abiertas', en: 'Open questions', d_es: 'Preguntas, señales y brechas', d_en: 'Questions, signals and gaps' },
   { href: '/foro', es: 'Foro', en: 'Guest sheet', d_es: 'Cuatro enlaces para la reunión', d_en: 'Four links for the meeting' },
 ];
+
+const foroPath = [
+  { href: '/foro/#recorrido', es: 'Recorrido de diez minutos', en: 'Ten-minute guest walk', d_es: 'El orden de la reunión para quien llega.', d_en: 'The meeting order for someone arriving.' },
+  { href: '/foro/#kit', es: 'Lista de quien conduce', en: 'Host checklist', d_es: 'Lo que se proyecta. Esta lista no trae la entrada del portal.', d_en: 'What to project. This list does not include the portal entrance.' },
+  { href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away', d_es: 'Cuatro direcciones públicas para reabrir después.', d_en: 'Four public addresses to reopen later.' },
+  { href: '/gemelo/#limites', es: 'Límites del gemelo', en: 'Twin limits', d_es: 'Qué puede y qué no puede la Fase 1.', d_en: 'What Phase 1 can and cannot do.' },
+  { href: '/inicio/', es: 'Antes de decidir', en: 'Before you decide', d_es: 'Vistas, gemelo, preguntas abiertas y evidencia.', d_en: 'Views, twin, open questions and evidence.' },
+];
 ---
 <BaseLayout
   title="Mapa del sitio"
@@ -31,6 +39,24 @@ const decision = [
       <h2><span data-lang-es>Ruta de decisión</span><span data-lang-en hidden>Decision path</span></h2>
       <ul>
         {decision.map((item) => (
+          <li>
+            <a href={item.href}><span data-lang-es>{item.es}</span><span data-lang-en hidden>{item.en}</span></a>
+            {' — '}
+            <span data-lang-es>{item.d_es}</span>
+            <span data-lang-en hidden>{item.d_en}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="foro-path" id="ruta-foro">
+      <h2><span data-lang-es>Ruta del foro</span><span data-lang-en hidden>Forum path</span></h2>
+      <p>
+        <span data-lang-es>Las anclas de la reunión, en un solo lugar.</span>
+        <span data-lang-en hidden>The meeting anchors, in one place.</span>
+      </p>
+      <ul>
+        {foroPath.map((item) => (
           <li>
             <a href={item.href}><span data-lang-es>{item.es}</span><span data-lang-en hidden>{item.en}</span></a>
             {' — '}
@@ -89,4 +115,9 @@ const decision = [
   .pt-rutas li { margin: 0.28rem 0; line-height: 1.45; }
   .pt-rutas a { color: #006BA3; font-weight: 700; }
   .pt-rutas a:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+  .foro-path { border-left: 3px solid #0083C4; padding-left: 0.85rem; scroll-margin-top: 8rem; }
+  @media (min-width: 900px) {
+    .foro-path { scroll-margin-top: 4.75rem; }
+  }
+  .foro-path p { margin: 0 0 0.35rem; }
 </style>

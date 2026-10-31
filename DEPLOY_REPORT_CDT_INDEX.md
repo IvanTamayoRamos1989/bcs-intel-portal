@@ -17,7 +17,7 @@ Password for the gate: `BCS2050`. The portal stays `noindex`. Guest path for ope
 | `/foro` | Guest sheet for the Mar de Cortés forum. Prints as one A4 page. |
 | `/studio` | Municipality pages: `/studio/los_cabos`, `/studio/la_paz`, `/studio/loreto`, `/studio/comondu`, `/studio/mulege`, `/studio/bcs`. `/lugares` opens this index. |
 | `/mapas` | Maps, with a link to saved views. |
-| `/rutas` | Site map inside the portal. |
+| `/rutas` | Site map inside the portal. The forum path lists the walk, the kit, the takeaway, the twin limits, and Antes de decidir. |
 | `/memoria` | Gap list, including Loreto 2025 air passengers and the Mulegé/Loreto 2026 revenue totals. |
 
 ## Still blank
@@ -59,3 +59,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 1.22 | `DEPLOY_REPORT_CDT_P1_22.md` | Printable meeting kit on `/foro`; the revenue-law gap names the catalogued decrees |
 | 1.23 | `DEPLOY_REPORT_CDT_P1_23.md` | Phase 1 limits on the twin; a before-you-decide path on Home |
 | 1.24 | `DEPLOY_REPORT_CDT_P1_24.md` | Guest takeaway on `/foro#cierre` with four public addresses |
+| 1.25 | `DEPLOY_REPORT_CDT_P1_25.md` | Forum path on the site map: walk, kit, takeaway, limits, Antes de decidir |
