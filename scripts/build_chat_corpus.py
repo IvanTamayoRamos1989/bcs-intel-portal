@@ -1993,6 +1993,36 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:foro-cierre-p124",
+        "title": "Qué me llevo del foro / What I take away from the forum",
+        "path": "portal/foro",
+        "href": "/foro/#cierre",
+        "theme": "planeacion",
+        "sum_es": (
+            "Al terminar la reunión, /foro#cierre deja cuatro direcciones públicas. "
+            "La consulta está en /inicio, con el camino «Antes de decidir». "
+            "Los límites del gemelo están en /gemelo#limites. "
+            "Las cinco vistas están en /vistas. "
+            "La evidencia de otras ciudades está en /aprendizaje#evidencia y sus cifras no son de Baja California Sur. "
+            "Esa hoja no trae la entrada del portal. "
+            "Pregunta de seguimiento: ¿abre la consulta, los límites del gemelo, o las vistas? "
+            "[que me llevo del foro enlaces despues de la reunion takeaway foro]"
+        ),
+        "sum_en": (
+            "At the end of the meeting, /foro#cierre leaves four public addresses. "
+            "The consultation is at /inicio, with the “Before you decide” path. "
+            "The twin limits are at /gemelo#limites. "
+            "The five views are at /vistas. "
+            "Evidence from other cities is at /aprendizaje#evidencia and those figures are not for Baja California Sur. "
+            "That sheet does not include the portal entrance. "
+            "Follow-up: do you open the consultation, the twin limits, or the views? "
+            "[what I take away links after the meeting forum takeaway]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

@@ -150,6 +150,38 @@ if (!aguaSur) throw new Error('foro water view missing');
       </li>
     </ol>
   </section>
+  <section class="foro-script foro-cierre" id="cierre">
+    <h2>
+      <span data-lang-es>Qué me llevo</span>
+      <span data-lang-en hidden>What I take away</span>
+    </h2>
+    <p>
+      <span data-lang-es>Para quien se va de la reunión. Cuatro direcciones públicas. Esta hoja no trae la entrada del portal.</span>
+      <span data-lang-en hidden>For someone leaving the meeting. Four public addresses. This sheet does not include the portal entrance.</span>
+    </p>
+    <ol>
+      <li>
+        <a href="/inicio/"><span data-lang-es>Consulta</span><span data-lang-en hidden>Consultation</span></a>
+        <span data-lang-es>. El chat queda primero. Debajo está «Antes de decidir»: vistas, gemelo, preguntas abiertas y evidencia.</span>
+        <span data-lang-en hidden>. The chat stays first. Under it is “Before you decide”: views, twin, open questions and evidence.</span>
+      </li>
+      <li>
+        <a href="/gemelo/#limites"><span data-lang-es>Límites del gemelo</span><span data-lang-en hidden>Twin limits</span></a>
+        <span data-lang-es>. Qué puede y qué no puede la Fase 1, antes de comparar cifras.</span>
+        <span data-lang-en hidden>. What Phase 1 can and cannot do, before comparing figures.</span>
+      </li>
+      <li>
+        <a href="/vistas/"><span data-lang-es>Vistas guardadas</span><span data-lang-en hidden>Saved views</span></a>
+        <span data-lang-es>. Cinco mapas con nombre para volver a abrir el mismo encuadre.</span>
+        <span data-lang-en hidden>. Five named maps, to reopen the same frame later.</span>
+      </li>
+      <li>
+        <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
+        <span data-lang-es>. Casos externos. Esas cifras no son de Baja California Sur.</span>
+        <span data-lang-en hidden>. External cases. Those figures are not for Baja California Sur.</span>
+      </li>
+    </ol>
+  </section>
   <style>
     .foro-list { list-style: none; padding: 0; margin: 0.5rem 0; }
     .foro-list li { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.55rem 0; background: #fff; }
@@ -157,7 +189,7 @@ if (!aguaSur) throw new Error('foro water view missing');
     .foro-list p { margin: 0.25rem 0 0; }
     .foro-why { color: #006BA3; font-size: 0.92rem; }
     .foro-script { margin: 1.2rem 0; scroll-margin-top: 8rem; }
-    .foro-kit { margin-bottom: 50vh; }
+    .foro-cierre { margin-bottom: 50vh; }
     @media (min-width: 900px) {
       .foro-script { scroll-margin-top: 4.75rem; }
     }
@@ -173,11 +205,12 @@ if (!aguaSur) throw new Error('foro water view missing');
       :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.ios-tabbar) { display: none !important; }
       body, body.has-chat-sidebar { padding: 0 !important; margin: 0 !important; background: #fff !important; }
       main { max-width: none !important; }
-      .foro-script, .foro-kit { margin-bottom: 0; break-before: page; page-break-before: always; }
+      .foro-script, .foro-kit, .foro-cierre { margin-bottom: 0; break-before: page; page-break-before: always; }
       .foro-list li, .foro-script li { break-inside: avoid; page-break-inside: avoid; border-radius: 0; box-shadow: none; }
       .foro-list a, .foro-script a { color: #000; text-decoration: none; }
       .foro-list a[href]::after, .foro-script a[href]::after { content: " — bajacaliforniasur2050.com" attr(href); display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.78rem; color: #333; word-break: break-all; }
       .foro-kit a[href^="https://"]::after { content: " — " attr(href); }
+      .foro-cierre a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); }
       h1, .foro-script h2 { break-after: avoid; page-break-after: avoid; }
     }
   </style>

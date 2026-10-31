@@ -58,3 +58,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 1.21 | `DEPLOY_REPORT_CDT_P1_21.md` | Google Maps on each saved view; a short tip for reading the twin |
 | 1.22 | `DEPLOY_REPORT_CDT_P1_22.md` | Printable meeting kit on `/foro`; the revenue-law gap names the catalogued decrees |
 | 1.23 | `DEPLOY_REPORT_CDT_P1_23.md` | Phase 1 limits on the twin; a before-you-decide path on Home |
+| 1.24 | `DEPLOY_REPORT_CDT_P1_24.md` | Guest takeaway on `/foro#cierre` with four public addresses |
