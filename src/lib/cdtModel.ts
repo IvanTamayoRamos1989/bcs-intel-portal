@@ -14,6 +14,7 @@ import questionsDoc from '../data/strategic_questions.json';
 import gapsDoc from '../data/data_gaps.json';
 import layersDoc from '../../public/gis/layers.json';
 import ontology from '../../netlify/functions/ontology_graph.json';
+import fiscal from '../data/fiscal_docs.json';
 
 export type CdtThemeId = 'urbano' | 'economia' | 'investigacion' | 'movilidad' | 'vivienda';
 
@@ -26,7 +27,15 @@ export type CdtKpi = {
   href: string;
 };
 
-export type CdtIndicatorId = 'pob' | 'sniiv_2025' | 'pobreza_pct';
+export type CdtIndicatorId =
+  | 'pob'
+  | 'sniiv_2025'
+  | 'pobreza_pct'
+  | 'anexo'
+  | 'locs'
+  | 'crucero_arribos'
+  | 'crucero_pax'
+  | 'ley';
 
 const MUNI_ORDER = ['Los Cabos', 'La Paz', 'Comondú', 'Mulegé', 'Loreto'] as const;
 
@@ -135,6 +144,18 @@ const pichPax = Number(
   mustMatch('Pichilingue pax', /\*\*Pichilingue\*\* \| 42,838 \| \*\*([0-9,]+)\*\*/, cruises).replace(/,/g, ''),
 );
 
+function cruise2025(start: string, end: string, needle: string): number {
+  const section = cruises.split(start)[1]?.split(end)[0] || '';
+  const line = section.split('\n').find((l) => l.includes(needle));
+  if (!line) throw new Error(`CDT cruise row missing: ${needle}`);
+  const cells = line.split('|').map((c) => c.replace(/\*/g, '').trim()).filter(Boolean);
+  const n = Number(String(cells[2] || '').replace(/,/g, ''));
+  if (!Number.isFinite(n)) throw new Error(`CDT cruise value missing: ${needle}`);
+  return n;
+}
+const cruiseCall = (needle: string) => cruise2025('## 1.', '## 2.', needle);
+const cruisePax = (needle: string) => cruise2025('## 2. Passengers', '## 3.', needle);
+
 const paxByCode: Record<string, number> = {};
 for (const row of ports.airports) {
   if (row.metric === 'passengers' && row.period === 'CY2025') {
@@ -153,6 +174,56 @@ const placeById = Object.fromEntries(places.map((p) => [p.id, p]));
 type MuniName = (typeof MUNI_ORDER)[number];
 type MuniRow = (typeof municipios)[MuniName];
 
+for (const name of MUNI_ORDER) {
+  if (fiscal.anexo_i33_2025[name] !== municipios[name].anexo_i33_2025) {
+    throw new Error(`CDT anexo mismatch ${name}`);
+  }
+}
+for (const name of ['Los Cabos', 'La Paz', 'Comondú'] as const) {
+  if (fiscal.ley_ingresos_2026[name] !== municipios[name].ley_ingresos_2026) {
+    throw new Error(`CDT revenue-law mismatch ${name}`);
+  }
+}
+if (municipios['Mulegé'].ley_ingresos_2026 != null || municipios.Loreto.ley_ingresos_2026 != null) {
+  throw new Error('CDT expected a blank 2026 revenue law for Mulegé and Loreto');
+}
+
+const cruiseByMuni: Record<MuniName, { calls: number; pax: number; ports_es: string; ports_en: string }> = {
+  'Los Cabos': {
+    calls: cruiseCall('Cabo San Lucas'),
+    pax: cruisePax('Cabo San Lucas'),
+    ports_es: 'Cabo San Lucas',
+    ports_en: 'Cabo San Lucas',
+  },
+  'La Paz': {
+    calls: cruiseCall('Pichilingue') + cruiseCall('| **La Paz** |'),
+    pax: cruisePax('Pichilingue') + cruisePax('| **La Paz** |'),
+    ports_es: 'Pichilingue y el puerto de La Paz',
+    ports_en: 'Pichilingue and the port of La Paz',
+  },
+  Comondú: {
+    calls: cruiseCall('San Carlos'),
+    pax: cruisePax('San Carlos'),
+    ports_es: 'San Carlos',
+    ports_en: 'San Carlos',
+  },
+  Mulegé: {
+    calls: cruiseCall('Santa Rosalía'),
+    pax: cruisePax('Santa Rosalía'),
+    ports_es: 'Santa Rosalía',
+    ports_en: 'Santa Rosalía',
+  },
+  Loreto: {
+    calls: cruiseCall('| **Loreto** |') + cruiseCall('Puerto Escondido (B.C.S.)'),
+    pax: cruisePax('| **Loreto** |') + cruisePax('Puerto Escondido BCS'),
+    ports_es: 'Loreto y Puerto Escondido',
+    ports_en: 'Loreto and Puerto Escondido',
+  },
+};
+if (cruiseByMuni['Los Cabos'].calls !== cslCalls || cruiseByMuni['La Paz'].calls < pichCalls) {
+  throw new Error('CDT cruise municipal sum failed the known Cabo San Lucas / Pichilingue check');
+}
+
 export type CdtMuni = {
   name: string;
   short: string;
@@ -162,6 +233,10 @@ export type CdtMuni = {
   cab_pob: number;
   cabecera: string;
   ley: number | null;
+  crucero_arribos: number;
+  crucero_pax: number;
+  crucero_ports_es: string;
+  crucero_ports_en: string;
   anexo: number;
   sniiv_2025: number;
   pobreza_pct: number;
@@ -203,6 +278,10 @@ const munis: CdtMuni[] = MUNI_ORDER.map((name) => {
     cab_pob: row.cab_pob,
     cabecera: row.cabecera,
     ley: row.ley_ingresos_2026,
+    crucero_arribos: cruiseByMuni[name].calls,
+    crucero_pax: cruiseByMuni[name].pax,
+    crucero_ports_es: cruiseByMuni[name].ports_es,
+    crucero_ports_en: cruiseByMuni[name].ports_en,
     anexo: row.anexo_i33_2025,
     sniiv_2025: sniivByMuni[name as keyof typeof sniivByMuni] as number,
     pobreza_pct: poverty[name].pct,
@@ -261,6 +340,9 @@ const indicators: Array<{
   unit_en: string;
   source_es: string;
   source_en: string;
+  quality_es: string;
+  quality_en: string;
+  complete: boolean;
 }> = [
   {
     id: 'pob',
@@ -270,6 +352,9 @@ const indicators: Array<{
     unit_en: 'people',
     source_es: 'INEGI Censo 2020',
     source_en: 'INEGI Census 2020',
+    quality_es: 'Serie completa en los cinco municipios. Escala municipal.',
+    quality_en: 'Complete series for all five municipalities. Municipal scale.',
+    complete: true,
   },
   {
     id: 'sniiv_2025',
@@ -279,6 +364,9 @@ const indicators: Array<{
     unit_en: 'homes',
     source_es: 'SNIIV / SEDATU, registro 2025',
     source_en: 'SNIIV / SEDATU, 2025 registry',
+    quality_es: 'Serie completa. No es el rezago CONAVI ni el mercado de alto valor.',
+    quality_en: 'Complete series. It is not the CONAVI backlog and not the high-value market.',
+    complete: true,
   },
   {
     id: 'pobreza_pct',
@@ -288,6 +376,69 @@ const indicators: Array<{
     unit_en: '% of people',
     source_es: 'CONEVAL, pobreza municipal 2020',
     source_en: 'CONEVAL, municipal poverty 2020',
+    quality_es: 'Serie completa. La base de personas CONEVAL no es la misma que el Censo.',
+    quality_en: 'Complete series. The CONEVAL person base is not the Census base.',
+    complete: true,
+  },
+  {
+    id: 'locs',
+    label_es: 'Localidades 2020',
+    label_en: 'Localities 2020',
+    unit_es: 'localidades',
+    unit_en: 'localities',
+    source_es: 'INEGI Censo 2020',
+    source_en: 'INEGI Census 2020',
+    quality_es: 'Serie completa. Cuenta localidades, no manzanas ni forma urbana.',
+    quality_en: 'Complete series. It counts localities, not blocks or urban form.',
+    complete: true,
+  },
+  {
+    id: 'anexo',
+    label_es: 'Anexo I.33 2025',
+    label_en: 'Annex I.33 2025',
+    unit_es: 'MXN',
+    unit_en: 'MXN',
+    source_es: 'Finanzas BCS, transferencias y participaciones 2025',
+    source_en: 'BCS finance, 2025 transfers and revenue shares',
+    quality_es: 'Serie completa. Es transferencia federal, no ingreso propio ni PIB.',
+    quality_en: 'Complete series. Federal transfers, not own-source revenue or GDP.',
+    complete: true,
+  },
+  {
+    id: 'crucero_arribos',
+    label_es: 'Arribos de crucero 2025',
+    label_en: 'Cruise calls 2025',
+    unit_es: 'arribos',
+    unit_en: 'calls',
+    source_es: 'SECTUR DataTur 2025, suma de puertos del municipio',
+    source_en: 'SECTUR DataTur 2025, sum of ports in the municipality',
+    quality_es: 'Serie completa. Cada municipio suma solo los puertos que le corresponden. No es pasaje aéreo.',
+    quality_en: 'Complete series. Each municipality sums only its own ports. Not air passengers.',
+    complete: true,
+  },
+  {
+    id: 'crucero_pax',
+    label_es: 'Pasajeros de crucero 2025',
+    label_en: 'Cruise passengers 2025',
+    unit_es: 'pasajeros',
+    unit_en: 'passengers',
+    source_es: 'SECTUR DataTur 2025, suma de puertos del municipio',
+    source_en: 'SECTUR DataTur 2025, sum of ports in the municipality',
+    quality_es: 'Serie completa y distinta de los pasajeros de avión. Visita de un día, no pernocta.',
+    quality_en: 'Complete series, separate from air passengers. Day visits, not overnight stays.',
+    complete: true,
+  },
+  {
+    id: 'ley',
+    label_es: 'Ley de Ingresos 2026',
+    label_en: 'Revenue law 2026',
+    unit_es: 'MXN',
+    unit_en: 'MXN',
+    source_es: 'Leyes de ingresos municipales 2026 en el portal',
+    source_en: '2026 municipal revenue laws in the portal',
+    quality_es: 'Serie incompleta: Mulegé y Loreto no tienen cifra. Esos puntos no entran al gráfico.',
+    quality_en: 'Incomplete series: Mulegé and Loreto have no figure. Those points stay off the chart.',
+    complete: false,
   },
 ];
 
@@ -591,12 +742,152 @@ const researchRecs = [
   },
 ];
 
+const QUESTION_THEMES: Record<string, CdtThemeId[]> = {
+  'sq-cabos-water-energy': ['urbano', 'economia', 'movilidad', 'vivienda'],
+  'sq-east-cape-edge': ['urbano', 'vivienda'],
+  'sq-la-paz-capital': ['economia', 'investigacion'],
+  'sq-loreto-anp': ['urbano', 'vivienda'],
+  'sq-comondu-non-offset': ['economia', 'vivienda'],
+  'sq-mulege-evidence-desert': ['investigacion', 'economia'],
+  'sq-todos-santos-amenity': ['urbano', 'vivienda'],
+  'sq-carrying-capacity-metrics': ['urbano', 'investigacion'],
+};
+
+const goals = questionsDoc.questions.map((q) => {
+  const themesForQ = QUESTION_THEMES[q.id];
+  if (!themesForQ) throw new Error(`CDT question missing a theme map: ${q.id}`);
+  return {
+    id: q.id,
+    href: `/preguntas/${q.id}/`,
+    places: q.places as string[],
+    themes: themesForQ,
+    question_es: q.question_es,
+    question_en: q.question_en,
+  };
+});
+
+const placeAims = foresights.places.map((p) => {
+  if (!p.open_question_es || !p.open_question_en) throw new Error(`CDT foresight question missing: ${p.id}`);
+  return {
+    id: p.id,
+    href: '/foresights/#places',
+    question_es: p.open_question_es,
+    question_en: p.open_question_en,
+  };
+});
+
+const couplings: Record<CdtThemeId, Array<{ to: CdtThemeId; es: string; en: string; href: string }>> = {
+  urbano: [
+    { to: 'vivienda', es: 'La forma del asentamiento y la vivienda se leen juntas: más presión costera sin agua no es margen urbanizable.', en: 'Settlement form and housing are read together: more coastal pressure without water is not buildable headroom.', href: '/crecimiento/' },
+    { to: 'movilidad', es: 'El corredor concentra población donde ya están el aeropuerto y la carretera. Intensificarlo empuja agua y energía.', en: 'The corridor concentrates population where the airport and highway already are. Intensifying it pushes water and energy.', href: '/mapas/?scenario=corridor_intensify#gis' },
+    { to: 'economia', es: 'El motor fiscal del sur no compensa el déficit de otro municipio.', en: 'The south’s fiscal engine does not offset another municipality’s deficit.', href: '/fiscal/' },
+    { to: 'investigacion', es: 'Sin AGEB ni morfometría, la pregunta útil es la de capacidad de carga, no un índice de forma.', en: 'Without AGEB or morphometrics, the useful question is carrying capacity, not a form index.', href: '/preguntas/sq-carrying-capacity-metrics/' },
+  ],
+  economia: [
+    { to: 'vivienda', es: 'Ingreso municipal y registro de vivienda no miden el mismo mercado. El rezago habitacional sigue siendo estatal.', en: 'Municipal revenue and the housing registry do not measure the same market. The housing backlog stays statewide.', href: '/inmobiliario/' },
+    { to: 'movilidad', es: 'La puerta aérea y el crucero son demanda. No son capacidad de agua ni de red.', en: 'The air gateway and the cruise pier are demand. They are not water or grid capacity.', href: '/puertos/' },
+    { to: 'urbano', es: 'Un proyecto federal en el municipio depende de la institución que lo reporta y de su estado, no de una fecha inventada.', en: 'A federal project in the municipality depends on the institution that reports it and on its status, not on an invented date.', href: '/proyectos-federales/' },
+    { to: 'investigacion', es: 'Donde falta la ley de ingresos, la lectura económica queda incompleta.', en: 'Where the revenue law is missing, the economic reading stays incomplete.', href: '/fiscal/' },
+  ],
+  investigacion: [
+    { to: 'urbano', es: 'El mapa de relaciones conecta lugares y proyectos. No sustituye una red de universidades.', en: 'The relationship map connects places and projects. It does not stand in for a university network.', href: '/ontologia/' },
+    { to: 'economia', es: 'Las brechas abiertas frenan un escenario más fino antes de pedir cifras nuevas.', en: 'Open gaps hold back a finer scenario before anyone asks for new figures.', href: '/memoria/' },
+    { to: 'vivienda', es: 'La pregunta de Loreto y de East Cape es de techo de conservación, no de un puntaje de lote.', en: 'The Loreto and East Cape question is a conservation ceiling, not a lot score.', href: '/preguntas/sq-loreto-anp/' },
+    { to: 'movilidad', es: 'Aprender de otras ciudades es un intercambio de casos, no una cifra de BCS.', en: 'Learning from other cities is a case exchange, not a BCS figure.', href: '/aprendizaje/' },
+  ],
+  movilidad: [
+    { to: 'economia', es: 'Pasajeros de avión y de crucero son series distintas. Sumarlas inventaría una demanda que el portal no publica.', en: 'Air passengers and cruise passengers are different series. Adding them would invent a demand figure the portal does not publish.', href: '/puertos/' },
+    { to: 'vivienda', es: 'Más arribos en un municipio con acuífero en déficit no abren vivienda nueva por sí solos.', en: 'More arrivals in a municipality with an aquifer deficit do not by themselves open new housing.', href: '/agua/' },
+    { to: 'urbano', es: 'El corredor Cabos–La Paz es el lugar donde carretera, asentamiento y anclas de viaje se tocan.', en: 'The Cabos–La Paz corridor is where the highway, settlement and travel anchors meet.', href: '/mapas/?scenario=corridor_intensify#gis' },
+    { to: 'investigacion', es: 'Loreto tiene arribos de crucero publicados y no tiene pasajeros aéreos 2025 en el acervo.', en: 'Loreto has published cruise calls and does not have 2025 air passengers in the archive.', href: '/vuelos/' },
+  ],
+  vivienda: [
+    { to: 'urbano', es: 'El registro SNIIV es municipal. El rezago CONAVI es estatal. No se reparte el rezago entre municipios.', en: 'The SNIIV registry is municipal. The CONAVI backlog is statewide. The backlog is not split across municipalities.', href: '/inmobiliario/' },
+    { to: 'economia', es: 'Pobreza y ley de ingresos cuentan cosas distintas. Donde falta la ley, se deja el hueco.', en: 'Poverty and the revenue law count different things. Where the law is missing, the cell stays blank.', href: '/comunidades/' },
+    { to: 'movilidad', es: 'La presión de viajes se lee en vuelos y cruceros, no como cuota de viviendas.', en: 'Travel pressure is read in flights and cruises, not as a housing quota.', href: '/crecimiento/' },
+    { to: 'investigacion', es: 'Las celdas de 500 m de algunos estudios no son predios y no entran como meta de vivienda.', en: 'The 500 m cells in some studies are not parcels and are not used as a housing target.', href: '/studio/' },
+  ],
+};
+
+const fedProjects = (federal.projects as ReadonlyArray<{
+  id: string;
+  proyecto: string;
+  dependencia: string;
+  sexenio: string;
+  estado: string;
+  'municipio(s)': string;
+}>).map((p) => ({
+  id: p.id,
+  name: p.proyecto,
+  owner: p.dependencia,
+  horizon: p.sexenio,
+  status: p.estado,
+  where: p['municipio(s)'],
+  href: '/proyectos-federales/',
+}));
+
+const guides = [
+  {
+    theme: 'vivienda',
+    scenario: 'water_first',
+    x: 'pob',
+    y: 'pobreza_pct',
+    es: 'Agua y nivel de vida en el sur',
+    en: 'Water and living standard in the south',
+  },
+  {
+    theme: 'movilidad',
+    scenario: 'corridor_intensify',
+    x: 'pob',
+    y: 'crucero_arribos',
+    es: 'Corredor y cruceros',
+    en: 'Corridor and cruises',
+  },
+  {
+    theme: 'economia',
+    scenario: 'baseline',
+    x: 'pob',
+    y: 'anexo',
+    es: 'Población y transferencias',
+    en: 'Population and transfers',
+  },
+  {
+    theme: 'urbano',
+    scenario: 'baseline',
+    x: 'pob',
+    y: 'locs',
+    es: 'Población y localidades',
+    en: 'Population and localities',
+  },
+] as const;
+
 export const cdtModel = {
   themes,
   indicators,
   munis,
   layerCatalog,
   recommendations: [...recommendations, ...researchRecs],
+  goals,
+  placeAims,
+  couplings,
+  fedProjects,
+  guides,
+  pedagogy_es:
+    'Esto es el tablero para mirar el territorio con calma. Elige un tema, luego un escenario, compara municipios y lee las recomendaciones. Complementa la consulta ciudadana de Inicio: aquí las cifras ya publicadas se ponen juntas. No calcula predios.',
+  pedagogy_en:
+    'This is the board for looking at the territory carefully. Pick a theme, then a scenario, compare municipalities and read the recommendations. It complements the citizen consultation on Home: figures already published are placed side by side. It does not score parcels.',
+  integrated_es:
+    'Solución integrada: el tema activo no se decide solo. Estas cuatro lecturas vienen de la demanda y oferta, de las preguntas y de los proyectos ya publicados. Es apoyo a la decisión, no una simulación calibrada.',
+  integrated_en:
+    'Integrated solution: the active theme is not decided on its own. These four readings come from demand and supply, from the questions and from projects already published. This is decision support, not a calibrated simulation.',
+  compareSkip_es:
+    'No entran a esta comparación: pasajeros aéreos 2025 (falta Loreto), rezago de vivienda CONAVI (solo estatal), pico eléctrico (un solo sistema) y déficit de acuíferos (va por acuífero, no por municipio).',
+  compareSkip_en:
+    'Left out of this comparison: 2025 air passengers (Loreto is missing), CONAVI housing backlog (statewide only), the power peak (one grid) and aquifer deficit (reported per aquifer, not per municipality).',
+  regional_es:
+    'Estas cifras son de Baja California Sur. No están alineadas a una serie regional. Para ver otras ciudades de América Latina, la referencia abierta es la Plataforma Urbana y de Ciudades de CEPAL. Este portal no copia números de esa plataforma.',
+  regional_en:
+    'These figures are for Baja California Sur. They are not aligned to a regional series. To see other Latin American cities, the open reference is ECLAC’s Urban and Cities Platform. This portal does not copy numbers from that platform.',
   stateRules: gds.state_rollup.must_be_true_es.map((es, i) => ({
     es,
     en: gds.state_rollup.must_be_true_en[i] || es,

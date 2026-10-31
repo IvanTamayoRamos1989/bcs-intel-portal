@@ -3,6 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { cdtModel } from '../lib/cdtModel';
 
 const model = cdtModel;
+function cellText(id: string, raw: number | null | undefined) {
+  if (raw === null || raw === undefined || Number.isNaN(Number(raw))) return '—';
+  if (id === 'pobreza_pct') return Number(raw).toLocaleString('es-MX', { maximumFractionDigits: 2 }) + '%';
+  return Math.round(Number(raw)).toLocaleString('es-MX');
+}
 const icon: Record<string, string> = {
   urbano: '<path d="M4 20V9l5-3 5 3v11"/><path d="M9 20v-6h4v6"/><path d="M14 20V11l5-2v11"/>',
   economia: '<path d="M4 19h16"/><path d="M7 16v-4"/><path d="M12 16V7"/><path d="M17 16v-6"/>',
@@ -32,17 +37,33 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 1 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 1 · decision support</span>
+          <span data-lang-es>Fase 1.5 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 1.5 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
           <span data-lang-en hidden>Territorial twin</span>
         </h1>
         <p class="cdt-lead">
+          <span data-lang-es>{model.pedagogy_es}</span>
+          <span data-lang-en hidden>{model.pedagogy_en}</span>
+        </p>
+        <p class="cdt-fine">
           <span data-lang-es>{model.disclaimer_es}</span>
           <span data-lang-en hidden>{model.disclaimer_en}</span>
+          {' '}
+          <a href="/inicio/"><span data-lang-es>Volver a la consulta</span><span data-lang-en hidden>Back to the consultation</span></a>
+          {' · '}
+          <a href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
         </p>
+        <div class="cdt-guides">
+          {model.guides.map((g) => (
+            <a class="cdt-guide" href={`/gemelo/?theme=${g.theme}&scenario=${g.scenario}&x=${g.x}&y=${g.y}`}>
+              <span data-lang-es>{g.es}</span>
+              <span data-lang-en hidden>{g.en}</span>
+            </a>
+          ))}
+        </div>
       </div>
       <div class="cdt-scenarios" role="group" aria-label="Escenario">
         {model.scenarios.map((sc, i) => (
@@ -51,6 +72,14 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>{sc.title_en}</span>
           </button>
         ))}
+        <button type="button" class="cdt-sc" id="cdt-share">
+          <span data-lang-es>Copiar enlace</span>
+          <span data-lang-en hidden>Copy link</span>
+        </button>
+        <button type="button" class="cdt-sc" id="cdt-print">
+          <span data-lang-es>Imprimir</span>
+          <span data-lang-en hidden>Print</span>
+        </button>
       </div>
     </header>
 
@@ -140,6 +169,78 @@ const icon: Record<string, string> = {
           </div>
         ))}
 
+        <section class="cdt-goals" aria-label="Qué tiene que ser verdad">
+          <h3>
+            <span data-lang-es>Qué tiene que ser verdad</span>
+            <span data-lang-en hidden>What has to be true</span>
+          </h3>
+          <p class="cdt-fine">
+            <span data-lang-es>Preguntas y metas ya escritas en el portal para el municipio y el tema activos. No son objetivos nuevos.</span>
+            <span data-lang-en hidden>Questions and aims already written in the portal for the active municipality and theme. They are not new targets.</span>
+          </p>
+          <ul id="cdt-goal-list">
+            {model.goals.map((g) => (
+              <li data-goal-places={g.places.join(' ')} data-goal-themes={g.themes.join(' ')} hidden>
+                <a href={g.href}>
+                  <span data-lang-es>{g.question_es}</span>
+                  <span data-lang-en hidden>{g.question_en}</span>
+                </a>
+              </li>
+            ))}
+            {model.placeAims.map((p) => (
+              <li data-aim={p.id} hidden>
+                <a href={p.href}>
+                  <span data-lang-es>{p.question_es}</span>
+                  <span data-lang-en hidden>{p.question_en}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="cdt-couple" aria-label="Solución integrada">
+          <h3>
+            <span data-lang-es>Cómo se junta con los otros temas</span>
+            <span data-lang-en hidden>How it joins the other themes</span>
+          </h3>
+          <p class="cdt-fine">
+            <span data-lang-es>{model.integrated_es}</span>
+            <span data-lang-en hidden>{model.integrated_en}</span>
+          </p>
+          {model.themes.map((t) => (
+            <ul data-couple={t.id} hidden>
+              {model.couplings[t.id].map((c) => (
+                <li>
+                  <a href={c.href}>
+                    <span data-lang-es>{c.es}</span>
+                    <span data-lang-en hidden>{c.en}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </section>
+
+        <section class="cdt-deps" aria-label="Proyectos e instituciones">
+          <h3>
+            <span data-lang-es>Proyectos, institución y horizonte</span>
+            <span data-lang-en hidden>Projects, institution and horizon</span>
+          </h3>
+          <p class="cdt-fine">
+            <span data-lang-es>Inventario federal ya publicado. El horizonte es el sexenio reportado, no una fecha de entrega calculada. México reparte la obra entre federación, estado y municipio.</span>
+            <span data-lang-en hidden>Federal inventory already published. The horizon is the reported administration, not a calculated delivery date. Mexico splits works across federation, state and municipality.</span>
+          </p>
+          <ul id="cdt-dep-list">
+            {model.fedProjects.map((p) => (
+              <li data-where={p.where} hidden>
+                <a href={p.href}>{p.name}</a>
+                <span class="cdt-fine"> · {p.owner} · {p.status} · {p.horizon}</span>
+              </li>
+            ))}
+          </ul>
+          <p><a href="/proyectos-federales/"><span data-lang-es>Ver el inventario</span><span data-lang-en hidden>See the inventory</span></a></p>
+        </section>
+
         <section class="cdt-compare" aria-label="Comparar municipios">
           <h3>
             <span data-lang-es>Comparar municipios</span>
@@ -163,6 +264,17 @@ const icon: Record<string, string> = {
           </div>
           <div id="cdt-scatter" class="cdt-scatter"></div>
           <p class="cdt-fine" id="cdt-sources"></p>
+          <p class="cdt-fine" id="cdt-quality"></p>
+          <p class="cdt-fine">
+            <span data-lang-es>{model.compareSkip_es}</span>
+            <span data-lang-en hidden>{model.compareSkip_en}</span>
+          </p>
+          <p class="cdt-fine">
+            <span data-lang-es>{model.regional_es}</span>
+            <span data-lang-en hidden>{model.regional_en}</span>
+            {' '}
+            <a href="https://plataformaurbana.cepal.org/es" rel="noopener noreferrer">CEPAL</a>
+          </p>
           <div class="cdt-table-wrap">
             <table class="cdt-table">
               <thead>
@@ -182,9 +294,9 @@ const icon: Record<string, string> = {
                     <th scope="row">
                       <button type="button" class="cdt-muni" data-muni-btn={m.name}>{m.name}</button>
                     </th>
-                    <td>{m.pob.toLocaleString('es-MX')}</td>
-                    <td>{m.sniiv_2025.toLocaleString('es-MX')}</td>
-                    <td>{m.pobreza_pct.toLocaleString('es-MX', { maximumFractionDigits: 2 })}%</td>
+                    {model.indicators.map((ind) => (
+                      <td>{cellText(ind.id, m[ind.id])}</td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
@@ -301,7 +413,18 @@ const icon: Record<string, string> = {
     .cdt-rec[hidden] { display: none; }
     .cdt-rec-kicker { margin: 0; font-size: 0.72rem; font-weight: 700; color: var(--cdt); text-transform: uppercase; letter-spacing: 0.03em; }
     .cdt-rec-rule { margin: 0.2rem 0; font-size: 0.9rem; }
+    .cdt-rec a, .cdt-goals a, .cdt-couple a, .cdt-deps a, .cdt-fine a { color: var(--cdt); }
+    .cdt-guides { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.55rem; }
+    .cdt-guide { border: 1px solid var(--cdt); color: var(--cdt-dark); border-radius: 999px; padding: 0.28rem 0.7rem; font-size: 0.78rem; font-weight: 650; text-decoration: none; background: #f4fbff; }
+    .cdt-goals ul, .cdt-couple ul, .cdt-deps ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
+    .cdt-goals li, .cdt-couple li, .cdt-deps li { margin: 0.28rem 0; font-size: 0.88rem; }
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
+    @media print {
+      .pt-top, .pt-sub, .site-footer, .bcs-chat, .pt-spec-note, .cdt-rail, .cdt-guides, #cdt-share, #cdt-print { display: none !important; }
+      body, body.has-chat-sidebar { padding: 0 !important; }
+      .cdt-panel { max-height: none !important; overflow: visible !important; border: 0; }
+      #cdt-map { height: 420px; min-height: 0; }
+    }
     @media (max-width: 980px) {
       .cdt-work { grid-template-columns: 1fr; }
       .cdt-rail { position: static; flex-direction: row; overflow-x: auto; }
@@ -372,6 +495,7 @@ const icon: Record<string, string> = {
       if (params.get('scenario') && scenarioById(params.get('scenario')).id === params.get('scenario')) state.scenario = params.get('scenario');
       if (params.get('x') && indicatorById(params.get('x')).id === params.get('x')) state.x = params.get('x');
       if (params.get('y') && indicatorById(params.get('y')).id === params.get('y')) state.y = params.get('y');
+      if (params.get('muni') && muniByName(params.get('muni')).name === params.get('muni')) state.muni = params.get('muni');
       if (state.x === state.y) state.y = state.x === 'sniiv_2025' ? 'pobreza_pct' : 'sniiv_2025';
 
       var map = L.map(mapEl, { scrollWheelZoom: true, maxZoom: 14 });
@@ -398,15 +522,20 @@ const icon: Record<string, string> = {
         return 'rgb(' + c.join(',') + ')';
       }
 
+      function hasNum(v) { return v !== null && v !== undefined && !isNaN(Number(v)); }
       function styleMuni(feature) {
         var name = feature.properties && feature.properties.name;
         var m = muniByName(name);
         var ind = state.x;
-        var vals = model.munis.map(function (row) { return Number(row[ind]); });
+        var vals = model.munis.map(function (row) { return row[ind]; }).filter(hasNum).map(Number);
+        var raw = m[ind];
+        var on = name === state.muni;
+        if (!hasNum(raw) || !vals.length) {
+          return { color: on ? '#0b3a56' : '#8aa0ad', weight: on ? 3 : 1.1, fillColor: '#e6eef2', fillOpacity: 0.55 };
+        }
         var min = Math.min.apply(null, vals);
         var max = Math.max.apply(null, vals);
-        var t = max === min ? 0.6 : (Number(m[ind]) - min) / (max - min);
-        var on = name === state.muni;
+        var t = max === min ? 0.6 : (Number(raw) - min) / (max - min);
         return {
           color: on ? '#0b3a56' : '#006BA3',
           weight: on ? 3 : 1.2,
@@ -428,6 +557,8 @@ const icon: Record<string, string> = {
         });
         renderDetail();
         renderScatter();
+        applyContext();
+        writeUrl();
       }
 
       function renderDetail() {
@@ -452,15 +583,20 @@ const icon: Record<string, string> = {
         var xi = indicatorById(state.x);
         var yi = indicatorById(state.y);
         var W = 340, H = 230, Lft = 46, Bot = 36, Rgt = 12, Top = 14;
-        var xs = model.munis.map(function (m) { return Number(m[state.x]); });
-        var ys = model.munis.map(function (m) { return Number(m[state.y]); });
+        var rows = model.munis.filter(function (m) { return hasNum(m[state.x]) && hasNum(m[state.y]); });
+        if (rows.length < 2) {
+          host.textContent = tx('No hay suficientes municipios con las dos cifras.', 'Not enough municipalities have both figures.');
+          return;
+        }
+        var xs = rows.map(function (m) { return Number(m[state.x]); });
+        var ys = rows.map(function (m) { return Number(m[state.y]); });
         var xmin = Math.min.apply(null, xs), xmax = Math.max.apply(null, xs);
         var ymin = Math.min.apply(null, ys), ymax = Math.max.apply(null, ys);
         if (xmin === xmax) { xmin -= 1; xmax += 1; }
         if (ymin === ymax) { ymin -= 1; ymax += 1; }
         function px(v) { return Lft + (v - xmin) / (xmax - xmin) * (W - Lft - Rgt); }
         function py(v) { return H - Bot - (v - ymin) / (ymax - ymin) * (H - Bot - Top); }
-        var dots = model.munis.map(function (m) {
+        var dots = rows.map(function (m) {
           var on = m.name === state.muni;
           return '<g class="cdt-dot" data-dot="' + m.name + '" style="cursor:pointer">' +
             '<circle cx="' + px(m[state.x]).toFixed(1) + '" cy="' + py(m[state.y]).toFixed(1) +
@@ -484,8 +620,8 @@ const icon: Record<string, string> = {
         var src = document.getElementById('cdt-sources');
         if (src) {
           src.textContent = tx(
-            xi.source_es + ' · ' + yi.source_es + '. Cada punto es un municipio. No hay línea de tendencia: no es un modelo.',
-            xi.source_en + ' · ' + yi.source_en + '. Each point is a municipality. There is no trend line: this is not a model.'
+            xi.source_es + ' · ' + yi.source_es + '. ' + xi.quality_es + ' ' + yi.quality_es + ' Cada punto es un municipio. No hay línea de tendencia.',
+            xi.source_en + ' · ' + yi.source_en + '. ' + xi.quality_en + ' ' + yi.quality_en + ' Each point is a municipality. There is no trend line.'
           );
         }
       }
@@ -614,7 +750,33 @@ const icon: Record<string, string> = {
         q.set('scenario', state.scenario);
         q.set('x', state.x);
         q.set('y', state.y);
+        q.set('muni', state.muni);
         history.replaceState(null, '', location.pathname + '?' + q.toString());
+      }
+
+      function applyContext() {
+        var m = muniByName(state.muni);
+        var placeIds = (m.subplaces || []).map(function (s) { return s.id; });
+        document.querySelectorAll('[data-goal-places]').forEach(function (li) {
+          var places = (li.getAttribute('data-goal-places') || '').split(/\s+/);
+          var themes = (li.getAttribute('data-goal-themes') || '').split(/\s+/);
+          var hit = themes.indexOf(state.theme) !== -1 && places.some(function (id) { return placeIds.indexOf(id) !== -1; });
+          li.hidden = !hit;
+        });
+        document.querySelectorAll('[data-aim]').forEach(function (li) {
+          li.hidden = placeIds.indexOf(li.getAttribute('data-aim')) === -1;
+        });
+        document.querySelectorAll('[data-couple]').forEach(function (ul) {
+          ul.hidden = ul.getAttribute('data-couple') !== state.theme;
+        });
+        var shown = 0;
+        document.querySelectorAll('#cdt-dep-list [data-where]').forEach(function (li) {
+          var where = li.getAttribute('data-where') || '';
+          var match = where.indexOf(m.name) !== -1;
+          var keep = match && shown < 6;
+          if (keep) shown += 1;
+          li.hidden = !keep;
+        });
       }
 
       function applyChrome() {
@@ -637,6 +799,7 @@ const icon: Record<string, string> = {
           card.hidden = !show;
         });
         updateMapLink();
+        applyContext();
         writeUrl();
       }
 
@@ -686,6 +849,16 @@ const icon: Record<string, string> = {
       }
       if (selX) selX.addEventListener('change', onAxis);
       if (selY) selY.addEventListener('change', onAxis);
+      var shareBtn = document.getElementById('cdt-share');
+      if (shareBtn) shareBtn.addEventListener('click', function () {
+        var url = location.href;
+        function done(ok) { setStatus(ok ? 'Enlace copiado.' : url, ok ? 'Link copied.' : url); }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function () { done(true); }).catch(function () { done(false); });
+        } else done(false);
+      });
+      var printBtn = document.getElementById('cdt-print');
+      if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
 
       document.addEventListener('bcs:lang', function () {
         fillSelects();

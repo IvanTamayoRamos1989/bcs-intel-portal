@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const networks = [
+  {
+    name: 'GPSC',
+    href: 'https://www.thegpsc.org/',
+    es: 'Plataforma del Banco Mundial y el GEF sobre planeación urbana integrada. La academia reciente trata infraestructura verde y turismo de naturaleza, un tema cercano a La Paz y Los Cabos.',
+    en: 'World Bank and GEF platform on integrated urban planning. A recent academy covers green infrastructure and nature tourism, close to La Paz and Los Cabos.',
+  },
+  {
+    name: 'UrbanShift',
+    href: 'https://www.shiftcities.org/',
+    href_es: 'https://es.shiftcities.org/',
+    es: 'Programa de ciudades del GEF (PNUMA, WRI, C40, ICLEI y otros). Hay proyectos en Costa Rica, Brasil y Argentina. El sitio dice que el programa está cerrando: se cita como archivo de aprendizaje entre pares.',
+    en: 'GEF cities program (UNEP, WRI, C40, ICLEI and others). It has projects in Costa Rica, Brazil and Argentina. The site says the program is closing: cite it as a peer-learning archive.',
+  },
+  {
+    name: 'C40 Knowledge Hub',
+    href: 'https://www.c40knowledgehub.org/',
+    es: 'Guías de acción climática para cualquier ciudad: agua, costa, edificios y transporte. Ciudad de México participa en C40. No es una cifra de BCS.',
+    en: 'Climate-action guides for any city: water, coast, buildings and transport. Mexico City takes part in C40. Not a BCS figure.',
+  },
+  {
+    name: 'ICLEI',
+    href: 'https://iclei.org/',
+    es: 'Red de gobiernos locales y regionales. Sirve para ver marcos de acción climática municipal. No sustituye el ordenamiento de BCS.',
+    en: 'Network of local and regional governments. Useful for municipal climate-action frameworks. It does not replace BCS zoning.',
+  },
+  {
+    name: 'Urban Sustainability Exchange',
+    href: 'https://use.metropolis.org/',
+    es: 'Casos de práctica urbana, buscables por tema. Úsalo para encontrar una ciudad parecida, y vuelve al portal para las cifras de BCS.',
+    en: 'Urban practice cases, searchable by topic. Use it to find a similar city, then come back to the portal for BCS figures.',
+  },
+  {
+    name: 'CEPAL · Plataforma Urbana y de Ciudades',
+    href: 'https://plataformaurbana.cepal.org/es',
+    es: 'Información urbana comparable de América Latina y el Caribe, en español. Este portal no copia sus números.',
+    en: 'Comparable urban information for Latin America and the Caribbean, in Spanish. This portal does not copy its numbers.',
+  },
+  {
+    name: 'Banco Mundial · desarrollo urbano',
+    href: 'https://www.bancomundial.org/es/topic/urbandevelopment/overview',
+    es: 'Panorama de desarrollo urbano. KPESIC fue una plataforma bilingüe de infraestructura sostenible en la región; su dominio ya no resuelve y aquí no se enlaza.',
+    en: 'Urban development overview. KPESIC was a bilingual regional platform on sustainable infrastructure; its domain no longer resolves and is not linked here.',
+  },
+];
+
+const cases = [
+  {
+    theme_es: 'Agua y turismo costero',
+    theme_en: 'Water and coastal tourism',
+    portal: '/agua/',
+    portal_es: 'Agua en el portal',
+    portal_en: 'Water in the portal',
+    items: [
+      {
+        name: 'IFC · agua en Los Cabos',
+        href: 'https://www.ifc.org/content/dam/ifc/doc/2023/2023-Mexico-Los-Cabos-Water-PPP.pdf',
+        es: 'Brief externo sobre desalación y agua no contabilizada en Los Cabos. Las cifras están en el PDF, no en este portal.',
+        en: 'External brief on desalination and unbilled water in Los Cabos. The figures are in the PDF, not in this portal.',
+      },
+      {
+        name: 'Water Alternatives · Cabo y La Paz',
+        href: 'https://www.water-alternatives.org/index.php/alldoc/articles/vol7/v7issue2/262-a7-3-5/file',
+        es: 'Lectura crítica de la desalación en Cabo San Lucas y La Paz. Fuente académica externa.',
+        en: 'Critical reading of desalination in Cabo San Lucas and La Paz. External academic source.',
+      },
+      {
+        name: 'C40 · Water Safe Cities',
+        href: 'https://www.c40knowledgehub.org/s/article/Water-Safe-Cities',
+        es: 'Guía sobre sequía e inundación hacia 2050. Sirve para comparar enfoques, no para medir los acuíferos de BCS.',
+        en: 'Guide on drought and flooding toward 2050. It compares approaches; it does not measure BCS aquifers.',
+      },
+    ],
+  },
+  {
+    theme_es: 'Costa y clima',
+    theme_en: 'Coast and climate',
+    portal: '/ambiente/',
+    portal_es: 'Ambiente en el portal',
+    portal_en: 'Environment in the portal',
+    items: [
+      {
+        name: 'C40 · adaptación costera',
+        href: 'https://www.c40knowledgehub.org/s/topic/0TO1Q0000002IZKWA2/coastal-adaptation-solutions?language=en_US',
+        es: 'Soluciones de adaptación costera. En BCS la evidencia local sigue siendo áreas protegidas, ordenamiento y acuíferos.',
+        en: 'Coastal adaptation solutions. In BCS the local evidence remains protected areas, zoning and aquifers.',
+      },
+      {
+        name: 'C40 · captación de lluvia en Ciudad de México',
+        href: 'https://www.c40.org/case-studies/rainwater-harvesting-in-mexico-city-as-a-measure-to-reduce-the-impacts-of-floods-increase-water-security-and-guarantee-rights-to-water-and-health/',
+        es: 'Caso de otra ciudad mexicana. No describe la escorrentía de BCS.',
+        en: 'A case from another Mexican city. It does not describe BCS runoff.',
+      },
+      {
+        name: 'C40 · Parque Lineal La Viga',
+        href: 'https://www.c40.org/case-studies/cities100-mexico-city-new-park-boosts-resilience-and-economic-potential/',
+        es: 'Parque de tormenta en Ciudad de México. Ejemplo de espacio público, no un proyecto de BCS.',
+        en: 'A stormwater park in Mexico City. An example of public space, not a BCS project.',
+      },
+    ],
+  },
+  {
+    theme_es: 'Planeación integrada',
+    theme_en: 'Integrated planning',
+    portal: '/gemelo/',
+    portal_es: 'Gemelo territorial',
+    portal_en: 'Territorial twin',
+    items: [
+      {
+        name: 'UrbanShift · Costa Rica',
+        href: 'https://www.shiftcities.org/projects/costa-rica',
+        es: 'Proyecto de país sobre soluciones basadas en la naturaleza. Archivo de pares, no un plan para BCS.',
+        en: 'Country project on nature-based solutions. A peer archive, not a plan for BCS.',
+      },
+      {
+        name: 'UrbanShift · Brasil',
+        href: 'https://www.shiftcities.org/projects/brazil',
+        es: 'Otro proyecto del mismo programa. Úsalo para ver cómo otras ciudades juntan temas.',
+        en: 'Another project from the same program. Use it to see how other cities join themes.',
+      },
+      {
+        name: 'UrbanShift · Argentina',
+        href: 'https://www.shiftcities.org/projects/argentina',
+        es: 'Tercer caso latinoamericano del archivo UrbanShift.',
+        en: 'A third Latin American case from the UrbanShift archive.',
+      },
+    ],
+  },
+  {
+    theme_es: 'Vivienda, movilidad y finanzas',
+    theme_en: 'Housing, mobility and finance',
+    portal: '/crecimiento/',
+    portal_es: 'Crecimiento en el portal',
+    portal_en: 'Growth in the portal',
+    items: [
+      {
+        name: 'CEPAL · plataforma urbana',
+        href: 'https://plataformaurbana.cepal.org/es',
+        es: 'Ahí se discuten suelo y vivienda en la región. El rezago y el registro de BCS están en Inmobiliario, con su propia fuente.',
+        en: 'Land and housing in the region are discussed there. The BCS backlog and registry are on Real estate, with their own source.',
+      },
+      {
+        name: 'USE · casos',
+        href: 'https://use.metropolis.org/',
+        es: 'Busca corredores, vivienda o capacidad fiscal. Trae el hallazgo de vuelta como pregunta, no como número de BCS.',
+        en: 'Search corridors, housing or fiscal capacity. Bring the finding back as a question, not as a BCS number.',
+      },
+      {
+        name: 'ICLEI',
+        href: 'https://iclei.org/',
+        es: 'Red de gobiernos locales. El presupuesto y las transferencias de BCS están en Finanzas públicas.',
+        en: 'Network of local governments. BCS budget and transfers are on Public finance.',
+      },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="Aprender de otras ciudades"
+  titleEn="Learn from other cities"
+  description="Casos y redes externas para comparar enfoques. Las cifras de BCS siguen en el portal."
+  descriptionEn="External cases and networks for comparing approaches. BCS figures stay in the portal."
+  section="Aprendizaje"
+  sectionEn="Learning"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Otras ciudades publican guías y casos. Sirven para hacer mejores preguntas, no para reemplazar los datos de Baja California Sur.
+      Cada ficha dice <strong>fuente externa</strong>. Si buscas un número del estado, vuelve a la consulta o al gemelo territorial.
+    </span>
+    <span data-lang-en hidden>
+      Other cities publish guides and cases. They help ask better questions. They do not replace Baja California Sur data.
+      Each card says <strong>external source</strong>. For a state figure, go back to the consultation or the territorial twin.
+    </span>
+  </p>
+  <p class="cta-row">
+    <a class="btn" href="/inicio/"><span data-lang-es>Consulta ciudadana</span><span data-lang-en hidden>Citizen consultation</span></a>
+    <a class="btn secondary" href="/gemelo/"><span data-lang-es>Gemelo territorial</span><span data-lang-en hidden>Territorial twin</span></a>
+    <a class="btn secondary" href="/biblioteca/"><span data-lang-es>Biblioteca</span><span data-lang-en hidden>Library</span></a>
+  </p>
+
+  <h2>
+    <span data-lang-es>Redes</span>
+    <span data-lang-en hidden>Networks</span>
+  </h2>
+  <div class="cdt-net">
+    {networks.map((n) => (
+      <article>
+        <p class="tag">
+          <span data-lang-es>Fuente externa</span>
+          <span data-lang-en hidden>External source</span>
+        </p>
+        <h3><a href={n.href} rel="noopener noreferrer">{n.name}</a></h3>
+        <p>
+          <span data-lang-es>{n.es}</span>
+          <span data-lang-en hidden>{n.en}</span>
+        </p>
+        {n.href_es && (
+          <p><a href={n.href_es} rel="noopener noreferrer"><span data-lang-es>Versión en español</span><span data-lang-en hidden>Spanish version</span></a></p>
+        )}
+      </article>
+    ))}
+  </div>
+
+  <h2>
+    <span data-lang-es>Temas y el dato local</span>
+    <span data-lang-en hidden>Themes and the local figure</span>
+  </h2>
+  {cases.map((block) => (
+    <section class="cdt-case">
+      <h3>
+        <span data-lang-es>{block.theme_es}</span>
+        <span data-lang-en hidden>{block.theme_en}</span>
+      </h3>
+      <p>
+        <a href={block.portal}><span data-lang-es>{block.portal_es}</span><span data-lang-en hidden>{block.portal_en}</span></a>
+      </p>
+      <ul>
+        {block.items.map((item) => (
+          <li>
+            <a href={item.href} rel="noopener noreferrer">{item.name}</a>
+            <span class="tag"><span data-lang-es>Fuente externa</span><span data-lang-en hidden>External source</span></span>
+            <span>
+              <span data-lang-es>{item.es}</span>
+              <span data-lang-en hidden>{item.en}</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <style>
+    .cdt-net { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem; }
+    .cdt-net article, .cdt-case { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.85rem; background: #fff; margin: 0.7rem 0; }
+    .cdt-net h3, .cdt-case h3 { margin: 0.2rem 0 0.35rem; color: #006BA3; }
+    .cdt-net p, .cdt-case li { color: #1a1a1a; font-size: 0.92rem; line-height: 1.45; }
+    .cdt-case ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }
+    .cdt-case li { margin: 0.45rem 0; }
+    .tag { display: inline-block; margin-left: 0.35rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #006BA3; }
+  </style>
+</BaseLayout>

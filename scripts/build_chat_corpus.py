@@ -1686,7 +1686,9 @@ def main():
             "agua primero, puertos y aeropuertos como anclas. Enlace al mapa: /mapas?scenario= y capas del tema. "
             "Comparación de los cinco municipios (población 2020, registro de vivienda 2025, pobreza 2020). "
             "East Cape se lee dentro de Los Cabos y Todos Santos dentro de La Paz. Recomendaciones por reglas de "
-            "demanda–oferta de crecimiento: no son puntuaciones por predio ni modelo catastral. Ver /crecimiento, "
+            "demanda–oferta de crecimiento: no son puntuaciones por predio ni modelo catastral. "
+            "Cómo usarlo: tema, escenario, comparar municipios, recomendaciones. Complementa la consulta en /inicio. "
+            "Casos de otras ciudades (fuente externa, sin cifras del portal): /aprendizaje. Ver /crecimiento, "
             "/mapas, /ontologia, /inmobiliario, /puertos. "
             "[gemelo territorial city digital twin cdt temas diseño urbano economía innovación movilidad vivienda escenarios comparar municipios]"
         ),
@@ -1703,8 +1705,45 @@ def main():
             "Map link: /mapas?scenario= plus the theme layers. Comparison of the five municipalities (2020 population, "
             "2025 housing registry, 2020 poverty). East Cape is read inside Los Cabos and Todos Santos inside La Paz. "
             "Recommendations are rules from growth demand and supply: not parcel scores and not a cadastre model. "
-            "See /crecimiento, /mapas, /ontologia, /inmobiliario, /puertos. "
+            "How to use it: theme, scenario, compare municipalities, recommendations. It complements the consultation at /inicio. "
+            "Cases from other cities (external source, no portal figures): /aprendizaje. See /crecimiento, "
+            "/mapas, /ontologia, /inmobiliario, /puertos. "
             "[gemelo territorial city digital twin cdt themes urban design economy innovation mobility housing scenarios compare municipalities]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
+        "id": "portal:aprendizaje-ciudades",
+        "title": "Aprender de otras ciudades / Learn from other cities",
+        "path": "portal/aprendizaje",
+        "theme": "planeacion",
+        "sum_es": (
+            "Página /aprendizaje (también intercambio de casos): casos y redes de otras ciudades para la consulta ciudadana. "
+            "Siempre son fuente externa: no traen cifras de Baja California Sur y no sustituyen al portal. "
+            "Redes: GPSC (thegpsc.org), UrbanShift (shiftcities.org y es.shiftcities.org; el programa está cerrando y se cita como archivo), "
+            "C40 Knowledge Hub, ICLEI, Urban Sustainability Exchange de Metropolis, Plataforma Urbana y de Ciudades de CEPAL, "
+            "y la panorámica de desarrollo urbano del Banco Mundial. KPESIC fue una plataforma bilingüe de infraestructura sostenible en América Latina; "
+            "su sitio ya no resuelve, así que no se enlaza. Casos: agua y turismo en Los Cabos (IFC y Water Alternatives), "
+            "ciudades hídricas y costa en C40, captación de lluvia y parque lineal en Ciudad de México, "
+            "y proyectos UrbanShift en Costa Rica, Brasil y Argentina. "
+            "El gemelo territorial está en /gemelo. La consulta conversacional está en /inicio. "
+            "Pregunta de seguimiento útil: ¿quieres ver el agua, la vivienda o la movilidad de un municipio de BCS? "
+            "[aprendizaje intercambio ciudades GPSC UrbanShift C40 ICLEI CEPAL casos externos]"
+        ),
+        "sum_en": (
+            "Page /aprendizaje (also a case exchange): cases and networks from other cities for the citizen consultation. "
+            "They are always an external source: they do not bring Baja California Sur figures and they do not replace the portal. "
+            "Networks: GPSC (thegpsc.org), UrbanShift (shiftcities.org and es.shiftcities.org; the program is closing and is cited as an archive), "
+            "C40 Knowledge Hub, ICLEI, Metropolis Urban Sustainability Exchange, ECLAC Urban and Cities Platform, "
+            "and the World Bank urban-development overview. KPESIC was a bilingual Latin American sustainable-infrastructure platform; "
+            "its site no longer resolves, so it is not linked. Cases: water and tourism in Los Cabos (IFC and Water Alternatives), "
+            "C40 water-safe cities and coastal adaptation, Mexico City rainwater harvesting and a linear park, "
+            "and UrbanShift projects in Costa Rica, Brazil and Argentina. "
+            "The territorial twin is at /gemelo. The conversational consultation is at /inicio. "
+            "A useful follow-up: do you want water, housing or mobility for a BCS municipality? "
+            "[aprendizaje case exchange cities GPSC UrbanShift C40 ICLEI CEPAL external cases]"
         ),
         "drive_url": None,
         "type": "guide",
