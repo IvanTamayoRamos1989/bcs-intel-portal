@@ -1993,6 +1993,30 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-leer-p121",
+        "title": "Cómo leer el tablero del gemelo / How to read the twin board",
+        "path": "portal/gemelo",
+        "href": "/gemelo/",
+        "theme": "planeacion",
+        "sum_es": (
+            "Para usar el gemelo: elija un tema, luego un escenario, y compare los municipios. "
+            "Si una celda está en blanco, se queda en blanco. No se rellena en la reunión. "
+            "Las vistas con nombre están en /vistas. Los casos de otras ciudades están en /aprendizaje#evidencia y sus cifras no son de Baja California Sur. "
+            "Pregunta de seguimiento: ¿abre el gemelo o una vista guardada? "
+            "[como usar el gemelo como leer el tablero]"
+        ),
+        "sum_en": (
+            "To use the twin: pick a theme, then a scenario, and compare the municipalities. "
+            "If a cell is blank, it stays blank. It is not filled in during the meeting. "
+            "The named views are at /vistas. Cases from other cities are at /aprendizaje#evidencia and their figures are not for Baja California Sur. "
+            "Follow-up: do you open the twin or a saved view? "
+            "[how to use the twin how to read the board]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:consulta-ruta-p120",
         "title": "Evidencia, vistas y recorrido del foro / Evidence, views and the forum walk",
         "path": "portal/inicio",

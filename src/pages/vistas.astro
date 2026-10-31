@@ -73,6 +73,8 @@ const stillByVista = vistaStills();
         <a class="btn" href={v.gemelo}><span data-lang-es>Abrir en el gemelo</span><span data-lang-en hidden>Open in the twin</span></a>
         {' '}
         <a class="btn secondary" href={v.mapas}><span data-lang-es>Abrir en mapas</span><span data-lang-en hidden>Open in maps</span></a>
+        {' '}
+        <a class="btn secondary vista-gmaps" href={v.gmaps} target="_blank" rel="noopener noreferrer"><span data-lang-es>Abrir en Google Maps</span><span data-lang-en hidden>Open in Google Maps</span></a>
       </p>
     </article>
   ))}
@@ -89,6 +91,15 @@ const stillByVista = vistaStills();
     .vista-still span { font-size: .92rem; font-weight: 650; }
     .vista-plain { font-size: 1rem; }
     .vista-open { color: #006BA3; font-size: 0.92rem; }
+    @page { size: A4; margin: 14mm; }
+    @media print {
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.ios-tabbar) { display: none !important; }
+      body, body.has-chat-sidebar { padding: 0 !important; margin: 0 !important; background: #fff !important; }
+      .vista, .vista:last-of-type { margin-bottom: 0.6rem; break-inside: avoid; page-break-inside: avoid; }
+      .vista-still img { display: none; }
+      .vista-gmaps { color: #000; text-decoration: none; }
+      .vista-gmaps::after { content: " " attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
+    }
   </style>
   <script>
     function showNamedView() {
