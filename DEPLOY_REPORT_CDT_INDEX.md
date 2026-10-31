@@ -11,3 +11,4 @@ Live paths on the Baja California Sur 2050 portal. Older reports stay as written
 | 1.8 | `DEPLOY_REPORT_CDT_P1_8.md` | Municipality ↔ twin links, growth anchors, guest sheet, how-to steps | `/studio/…` · `/foro` · `/gemelo` · `/crecimiento` |
 | 1.9 | `DEPLOY_REPORT_CDT_P1_9.md` | Narrow layout, shared decision path, blank-series chip | `/gemelo` · `/foro` · `/vistas` · `/metas` · `/coordinacion` · `/aprendizaje` |
 | 1.10 | `DEPLOY_REPORT_CDT_P1_10.md` | Site map, home specialist row, maps entry to saved views, English labels, three external references | `/rutas` · `/inicio` · `/mapas` · `/aprendizaje#evidencia` · `/gemelo` · `/metas` |
+| 1.11 | `DEPLOY_REPORT_CDT_P1_11.md` | Blank-series search, one-sentence theme reads, A4 guest print | `/gemelo` · `/foro` · `/aprendizaje` |

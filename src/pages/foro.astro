@@ -57,5 +57,15 @@ import PathBanner from '../components/PathBanner.astro';
     .foro-list li { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.55rem 0; background: #fff; }
     .foro-list a { font-weight: 700; color: #006BA3; font-size: 1.05rem; }
     .foro-list p { margin: 0.25rem 0 0; }
+    @page { size: A4; margin: 16mm; }
+    @media print {
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.ios-tabbar) { display: none !important; }
+      body, body.has-chat-sidebar { padding: 0 !important; margin: 0 !important; background: #fff !important; }
+      main { max-width: none !important; }
+      .foro-list li { break-inside: avoid; page-break-inside: avoid; border-radius: 0; box-shadow: none; }
+      .foro-list a { color: #000; text-decoration: none; }
+      .foro-list a[href]::after { content: " — bajacaliforniasur2050.com" attr(href); display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.82rem; color: #333; word-break: break-all; }
+      h1 { break-after: avoid; page-break-after: avoid; }
+    }
   </style>
 </BaseLayout>
