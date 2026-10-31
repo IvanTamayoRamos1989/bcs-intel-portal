@@ -1,0 +1,36 @@
+---
+interface Step { es: string; en: string }
+interface Props {
+  leadEs: string;
+  leadEn: string;
+  steps: Step[];
+}
+const { leadEs, leadEn, steps } = Astro.props;
+---
+<section class="how-use" aria-label="Cómo usar esta página">
+  <p>
+    <span data-lang-es>{leadEs}</span>
+    <span data-lang-en hidden>{leadEn}</span>
+  </p>
+  <ol>
+    {steps.map((s) => (
+      <li>
+        <span data-lang-es>{s.es}</span>
+        <span data-lang-en hidden>{s.en}</span>
+      </li>
+    ))}
+  </ol>
+</section>
+<style>
+  .how-use {
+    border: 1px solid #e0e0e0;
+    border-left: 3px solid #0083C4;
+    border-radius: 12px;
+    padding: 0.7rem 0.9rem;
+    margin: 0.6rem 0 0.9rem;
+    background: #f7fbfd;
+  }
+  .how-use p { margin: 0 0 0.35rem; }
+  .how-use ol { margin: 0; padding-left: 1.2rem; }
+  .how-use li { margin: 0.2rem 0; }
+</style>

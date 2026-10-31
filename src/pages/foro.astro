@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HowTo from '../components/HowTo.astro';
+---
+<BaseLayout
+  title="Hoja para invitados"
+  titleEn="Guest sheet"
+  description="Cuatro enlaces para seguir la reunión sin una cuenta nueva."
+  descriptionEn="Four links to follow the meeting without a new account."
+  section="Invitados"
+  sectionEn="Guests"
+  wide={true}
+>
+  <HowTo
+    leadEs="Esta hoja es para quien llega de lado en la reunión. No pide datos personales. Cada enlace abre una página pública del portal."
+    leadEn="This sheet is for someone joining from the side of the meeting. It asks for no personal data. Each link opens a public page of the portal."
+    steps={[
+      { es: 'Abra el gemelo si quiere comparar municipios.', en: 'Open the twin if you want to compare municipalities.' },
+      { es: 'Abra una vista guardada si el grupo ya eligió un mapa.', en: 'Open a saved view if the group already picked a map.' },
+      { es: 'Imprima Aprendizaje si necesita la lista de fuentes externas.', en: 'Print Learning if you need the external-source list.' },
+    ]}
+  />
+  <ul class="foro-list">
+    <li>
+      <a href="/gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct">
+        <span data-lang-es>Gemelo territorial</span>
+        <span data-lang-en hidden>Territorial twin</span>
+      </a>
+      <p><span data-lang-es>Tema, escenario, comparación y recomendaciones. Agua y nivel de vida ya elegidos.</span><span data-lang-en hidden>Theme, scenario, comparison and recommendations. Water and living standard are already selected.</span></p>
+    </li>
+    <li>
+      <a href="/vistas/">
+        <span data-lang-es>Vistas guardadas</span>
+        <span data-lang-en hidden>Saved views</span>
+      </a>
+      <p><span data-lang-es>Agua, corredor Cabos–La Paz, puertos, vivienda y East Cape.</span><span data-lang-en hidden>Water, Cabos–La Paz corridor, ports, housing and East Cape.</span></p>
+    </li>
+    <li>
+      <a href="/aprendizaje/">
+        <span data-lang-es>Aprendizaje para imprimir</span>
+        <span data-lang-en hidden>Learning, ready to print</span>
+      </a>
+      <p><span data-lang-es>Al imprimir queda solo la lista de fuentes externas.</span><span data-lang-en hidden>Printing leaves only the external-source list.</span></p>
+    </li>
+    <li>
+      <a href="/coordinacion/">
+        <span data-lang-es>Coordinación</span>
+        <span data-lang-en hidden>Coordination</span>
+      </a>
+      <p><span data-lang-es>Institución, obra y sexenio del inventario federal. Sin fecha de entrega calculada.</span><span data-lang-en hidden>Institution, work and administration from the federal inventory. No calculated delivery date.</span></p>
+    </li>
+  </ul>
+  <style>
+    .foro-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .foro-list li { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.55rem 0; background: #fff; }
+    .foro-list a { font-weight: 700; color: #006BA3; font-size: 1.05rem; }
+    .foro-list p { margin: 0.25rem 0 0; }
+  </style>
+</BaseLayout>

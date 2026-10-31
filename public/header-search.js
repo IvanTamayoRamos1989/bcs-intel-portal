@@ -21,6 +21,7 @@
     { href: '/coordinacion', es: 'Coordinación de proyectos', en: 'Project coordination', blurb_es: 'Institución, obra y sexenio · inventario federal', blurb_en: 'Institution, work and administration · federal inventory', boost: 44 },
     { href: '/vistas', es: 'Vistas guardadas', en: 'Saved views', blurb_es: 'Agua, corredor, puertos, vivienda, East Cape', blurb_en: 'Water, corridor, ports, housing, East Cape', boost: 47 },
     { href: '/metas', es: 'Preguntas abiertas', en: 'Open questions', blurb_es: 'Preguntas, señales y brechas · sin porcentaje', blurb_en: 'Questions, signals and gaps · no percentage', boost: 45 },
+    { href: '/foro', es: 'Hoja para invitados', en: 'Guest sheet', blurb_es: 'Gemelo, vistas, aprendizaje y coordinación', blurb_en: 'Twin, views, learning and coordination', boost: 48 },
     { href: '/foresights', es: 'Prospectiva', en: 'Foresights', blurb_es: 'Vocaciones de lugar · señales semanales BCS 2050', blurb_en: 'Place vocations · weekly BCS 2050 signals', boost: 45 },
     { href: '/crecimiento', es: 'Crecimiento: demanda y oferta', en: 'Growth: demand and supply', blurb_es: 'Presión frente a capacidad por vocación', blurb_en: 'Pressure vs capacity scorecard by vocation', boost: 44 },
     { href: '/inicio', es: 'Inicio', en: 'Home', blurb_es: 'Inicio del portal · temas y datos', blurb_en: 'Portal home · topics and data' },

@@ -1827,6 +1827,35 @@ def main():
         "type": "guide",
     })
 
+    chunks.append({
+        "id": "portal:foro-dossiers-p18",
+        "title": "Fichas municipales, gemelo y hoja para invitados / Municipal pages, twin and guest sheet",
+        "path": "portal/foro",
+        "theme": "planeacion",
+        "sum_es": (
+            "Desde la ficha de un municipio (/studio/los_cabos, /studio/la_paz, /studio/loreto, /studio/comondu, /studio/mulege; "
+            "/lugares lleva al mismo índice) hay enlaces al gemelo con ese municipio elegido (?muni=) y a la vista guardada que le corresponde. "
+            "En el gemelo, al tocar un municipio se abre su ficha, la vocación en /crecimiento#id y la vista. "
+            "Las recomendaciones de demanda y oferta enlazan a /crecimiento#los_cabos y anclas equivalentes. "
+            "La hoja para invitados está en /foro: gemelo, vistas, aprendizaje para imprimir y coordinación. "
+            "Cada página nueva explica en tres pasos cómo usarla. "
+            "Pregunta de seguimiento: ¿quieres la ficha de un municipio o la vista de puertos? "
+            "[foro gemelo studio lugares crecimiento vistas invitados]"
+        ),
+        "sum_en": (
+            "From a municipality page (/studio/los_cabos, /studio/la_paz, /studio/loreto, /studio/comondu, /studio/mulege; "
+            "/lugares opens the same index) there are links to the twin with that municipality selected (?muni=) and to the matching saved view. "
+            "In the twin, tapping a municipality opens its page, the vocation at /crecimiento#id and the view. "
+            "Demand-and-supply recommendations link to /crecimiento#los_cabos and the matching anchors. "
+            "The guest sheet is at /foro: twin, views, learning ready to print, and coordination. "
+            "Each new page explains in three steps how to use it. "
+            "Follow-up: do you want a municipality page or the ports view? "
+            "[guest sheet twin studio places growth views]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
     # 14_gobierno — Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027)
     try:
         n_gov = add_los_cabos_organigrama(chunks)
