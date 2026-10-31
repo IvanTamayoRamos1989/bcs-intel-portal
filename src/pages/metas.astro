@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
 import PathBanner from '../components/PathBanner.astro';
+import CdtPageTone from '../components/CdtPageTone.astro';
 import { cdtModel } from '../lib/cdtModel';
 import foresights from '../data/foresights.json';
 import gapsDoc from '../data/data_gaps.json';
@@ -59,6 +60,14 @@ const gapEn: Record<string, { topic: string; detail: string }> = {
     topic: 'Housing for Wellbeing progress in BCS',
     detail: 'October 2024 agreement target: 37,500 actions over 6 years. No official progress report of works or deliveries by municipality.',
   },
+  'gap-movilidad-loreto-pax-2025': {
+    topic: 'Loreto 2025 air passengers',
+    detail: 'There is no 2025 municipal passenger figure for Loreto airport. Los Cabos and La Paz do have the SETUE strategic-brief figure. The state total is not subtracted to invent Loreto. Where to look next: the SETUE strategic brief for Loreto, or the AFAC airport statistics for calendar year 2025.',
+  },
+  'gap-fiscal-ley-2026-mulege-loreto': {
+    topic: '2026 revenue law for Mulegé and Loreto',
+    detail: 'The Mulegé and Loreto decrees are catalogued, but the total is not copied into the comparison. Los Cabos, La Paz and Comondú do have an amount. Where to look next: the state official gazette and the municipal gazettes of Mulegé and Loreto, in the article for total estimated revenue.',
+  },
 };
 for (const g of gapsDoc.gaps) {
   if (!gapLabel[g.status]) throw new Error(`Unknown gap status: ${g.status}`);
@@ -82,6 +91,7 @@ const themeOrder = cdtModel.themes;
   sectionEn="Open questions"
   wide={true}
 >
+  <CdtPageTone />
   <PathBanner current="metas" />
   <HowTo
     leadEs="Aquí se ve qué sigue abierto. No hay una barra de avance."

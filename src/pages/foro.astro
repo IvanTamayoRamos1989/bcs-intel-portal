@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
 import PathBanner from '../components/PathBanner.astro';
+import CdtPageTone from '../components/CdtPageTone.astro';
 ---
 <BaseLayout
   title="Hoja para invitados"
@@ -12,6 +13,7 @@ import PathBanner from '../components/PathBanner.astro';
   sectionEn="Guests"
   wide={true}
 >
+  <CdtPageTone />
   <PathBanner current="foro" />
   <HowTo
     leadEs="Esta hoja es para quien llega de lado en la reunión. No pide datos personales. Cada enlace abre una página pública del portal."
@@ -28,6 +30,7 @@ import PathBanner from '../components/PathBanner.astro';
         <span data-lang-es>Gemelo territorial</span>
         <span data-lang-en hidden>Territorial twin</span>
       </a>
+      <p class="foro-why"><span data-lang-es>Por qué abrirlo: para comparar municipios con cifras que ya están en el portal, y dejar en blanco las que faltan.</span><span data-lang-en hidden>Why open this: to compare municipalities with figures already in the portal, and leave blank the ones that are missing.</span></p>
       <p><span data-lang-es>Tema, escenario, comparación y recomendaciones. Agua y nivel de vida ya elegidos.</span><span data-lang-en hidden>Theme, scenario, comparison and recommendations. Water and living standard are already selected.</span></p>
     </li>
     <li>
@@ -35,6 +38,7 @@ import PathBanner from '../components/PathBanner.astro';
         <span data-lang-es>Vistas guardadas</span>
         <span data-lang-en hidden>Saved views</span>
       </a>
+      <p class="foro-why"><span data-lang-es>Por qué abrirlo: para que todo el grupo del Foro Mar de Cortés mire el mismo mapa y el mismo tablero.</span><span data-lang-en hidden>Why open this: so the whole Mar de Cortés forum looks at the same map and the same board.</span></p>
       <p><span data-lang-es>Agua, corredor Cabos–La Paz, puertos, vivienda y East Cape.</span><span data-lang-en hidden>Water, Cabos–La Paz corridor, ports, housing and East Cape.</span></p>
     </li>
     <li>
@@ -42,6 +46,7 @@ import PathBanner from '../components/PathBanner.astro';
         <span data-lang-es>Aprendizaje para imprimir</span>
         <span data-lang-en hidden>Learning, ready to print</span>
       </a>
+      <p class="foro-why"><span data-lang-es>Por qué abrirlo: para llevar fuentes de otras ciudades sin mezclarlas con las cifras de Baja California Sur.</span><span data-lang-en hidden>Why open this: to bring sources from other cities without mixing them with Baja California Sur figures.</span></p>
       <p><span data-lang-es>Al imprimir queda solo la lista de fuentes externas.</span><span data-lang-en hidden>Printing leaves only the external-source list.</span></p>
     </li>
     <li>
@@ -49,6 +54,7 @@ import PathBanner from '../components/PathBanner.astro';
         <span data-lang-es>Coordinación</span>
         <span data-lang-en hidden>Coordination</span>
       </a>
+      <p class="foro-why"><span data-lang-es>Por qué abrirlo: para ver qué institución aparece con qué obra, sin una fecha de entrega calculada.</span><span data-lang-en hidden>Why open this: to see which institution appears with which work, with no calculated delivery date.</span></p>
       <p><span data-lang-es>Institución, obra y sexenio del inventario federal. Sin fecha de entrega calculada.</span><span data-lang-en hidden>Institution, work and administration from the federal inventory. No calculated delivery date.</span></p>
     </li>
   </ul>
@@ -57,6 +63,7 @@ import PathBanner from '../components/PathBanner.astro';
     .foro-list li { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.55rem 0; background: #fff; }
     .foro-list a { font-weight: 700; color: #006BA3; font-size: 1.05rem; }
     .foro-list p { margin: 0.25rem 0 0; }
+    .foro-why { color: #006BA3; font-size: 0.92rem; }
     @page { size: A4; margin: 16mm; }
     @media print {
       :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.ios-tabbar) { display: none !important; }

@@ -271,6 +271,33 @@
         }
       ],
       "updated": "2026-09-25"
+    },
+    {
+      "id": "gap-movilidad-loreto-pax-2025",
+      "topic": "Pasajeros aéreos 2025 de Loreto",
+      "detail_es": "No hay una cifra municipal de pasajeros de 2025 para el aeropuerto de Loreto. Los Cabos y La Paz sí tienen la cifra de la información estratégica de SETUE. No se resta el total estatal para inventar Loreto. Dónde mirar después: la información estratégica de SETUE para Loreto, o la estadística operativa de aeropuertos de la AFAC para el año calendario 2025.",
+      "priority": "high",
+      "status": "open",
+      "sources_sought": [
+        "SETUE, información estratégica de Loreto",
+        "AFAC, estadística operativa de aeropuertos, año calendario 2025"
+      ],
+      "notes": "Dónde mirar después: la información estratégica de SETUE para Loreto, o la estadística operativa de aeropuertos de la AFAC para el año calendario 2025.",
+      "updated": "2026-10-31"
+    },
+    {
+      "id": "gap-fiscal-ley-2026-mulege-loreto",
+      "topic": "Ley de Ingresos 2026 de Mulegé y Loreto",
+      "detail_es": "Los decretos de Mulegé y Loreto están catalogados, pero el monto total no está copiado a la comparación. Los Cabos, La Paz y Comondú sí tienen monto. Dónde mirar después: el boletín oficial del estado y la gaceta municipal de Mulegé y de Loreto, en el artículo del total de ingresos estimados.",
+      "priority": "high",
+      "status": "open",
+      "sources_sought": [
+        "Boletín oficial del Gobierno del Estado",
+        "Gaceta municipal de Mulegé",
+        "Gaceta municipal de Loreto"
+      ],
+      "notes": "Dónde mirar después: el boletín oficial del estado y la gaceta municipal de Mulegé y de Loreto, en el artículo del total de ingresos estimados.",
+      "updated": "2026-10-31"
     }
   ],
   "drive_uploads": {
