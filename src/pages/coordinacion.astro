@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
 import PathBanner from '../components/PathBanner.astro';
+import CdtPageTone from '../components/CdtPageTone.astro';
 import federal from '../data/federal_projects.json';
 
 type Row = {
@@ -49,6 +50,7 @@ const groups = [...new Set(rows.map((r) => r.dependencia))]
   sectionEn="Coordination"
   wide={true}
 >
+  <CdtPageTone />
   <PathBanner current="coordinacion" />
   <HowTo
     leadEs="Esta página dice qué institución aparece con qué obra en el inventario. No promete una fecha de entrega."

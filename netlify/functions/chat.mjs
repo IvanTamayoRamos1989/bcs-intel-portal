@@ -987,7 +987,7 @@ function retrieve(query, lang, k = 8) {
   const corpus = loadCorpus();
   const scored = [];
   for (const c of corpus) {
-    const s = scoreChunk(tokens, c, lang, intents, placeTokens);
+    const s = scoreChunk(tokens, c, lang, intents, placeTokens) + portalGuideBoost(message, c);
     if (s > 0.5) scored.push({ s, c });
   }
   scored.sort((a, b) => b.s - a.s);
@@ -2104,8 +2104,54 @@ function buildFollowUps({ message, lang, placeId, munis }) {
   else rot.push(en ? 'How many people live in each municipality?' : '¿Cuántas personas viven en cada municipio?');
   return rot;
 }
+function portalSurfaceBlocks(message, lang) {
+  const q = normQ(message);
+  const en = lang === 'en';
+  const surfaces = [
+    { id: 'gemelo-urbano', re: /\b(diseno urbano|urban design|forma del asentamiento)\b/, href: '/gemelo/?theme=urbano', es: 'Gemelo · diseño urbano', en: 'Twin · urban design' },
+    { id: 'gemelo-economia', re: /\b(desarrollo economico|economic development|ley de ingresos)\b/, href: '/gemelo/?theme=economia', es: 'Gemelo · desarrollo económico', en: 'Twin · economic development' },
+    { id: 'gemelo-invest', re: /\b(innovacion e investigacion|tema de investigacion|university network)\b/, href: '/gemelo/?theme=investigacion', es: 'Gemelo · investigación', en: 'Twin · research' },
+    { id: 'gemelo-mov', re: /\b(movilidad|logistica|pasajeros aereos|air passengers|cruceros)\b/, href: '/gemelo/?theme=movilidad', es: 'Gemelo · movilidad', en: 'Twin · mobility' },
+    { id: 'gemelo-viv', re: /\b(vivienda|nivel de vida|housing backlog|rezago habitacional)\b/, href: '/gemelo/?theme=vivienda', es: 'Gemelo · vivienda', en: 'Twin · housing' },
+    { id: 'gemelo', re: /\b(gemelo|territorial twin)\b|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities/, href: '/gemelo/', es: 'Gemelo territorial', en: 'Territorial twin' },
+    { id: 'vistas', re: /\b(vistas guardadas|saved views|vista guardada)\b|\bvistas\b(?! aereas)/, href: '/vistas/', es: 'Vistas guardadas', en: 'Saved views' },
+    { id: 'metas', re: /\b(preguntas abiertas|open questions|brechas de datos|data gaps)\b/, href: '/metas/', es: 'Preguntas abiertas', en: 'Open questions' },
+    { id: 'coord', re: /\b(coordinacion|project coordination)\b/, href: '/coordinacion/', es: 'Coordinación de proyectos', en: 'Project coordination' },
+    { id: 'apr-ev', re: /\b(evidencia externa|external evidence)\b/, href: '/aprendizaje/#evidencia', es: 'Evidencia externa', en: 'External evidence' },
+    { id: 'apr', re: /\b(aprender de otras ciudades|learn from other cities|otras ciudades|other cities|aprendizaje)\b/, href: '/aprendizaje/', es: 'Aprender de otras ciudades', en: 'Learn from other cities' },
+    { id: 'foro', re: /\b(hoja para invitados|guest sheet|foro mar de cortes|foro)\b/, href: '/foro/', es: 'Hoja para invitados', en: 'Guest sheet' },
+  ];
+  const hits = [];
+  for (const s of surfaces) {
+    if (!s.re.test(q)) continue;
+    if (s.id === 'gemelo' && hits.some((h) => String(h.href).includes('theme='))) continue;
+    hits.push({ type: 'link', kind: 'portal', label: en ? s.en : s.es, href: s.href });
+    if (hits.length >= 3) break;
+  }
+  return hits;
+}
+
+function portalGuideBoost(message, chunk) {
+  const q = normQ(message);
+  const hay = `${chunk?.id || ''} ${chunk?.path || ''}`;
+  if (!/^portal[:/]/.test(hay)) return 0;
+  const rules = [
+    [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
+    [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
+    [/preguntas abiertas|open questions|brechas de datos|data gaps/, /metas/],
+    [/\bcoordinacion\b|project coordination/, /coordinacion/],
+    [/aprender de otras ciudades|otras ciudades|learn from other cities|evidencia externa|external evidence|\baprendizaje\b/, /aprendizaje|evidencia/],
+    [/hoja para invitados|guest sheet|foro mar de cortes|\bforo\b/, /foro/],
+  ];
+  for (const [re, prefer] of rules) {
+    if (re.test(q) && prefer.test(hay)) return 48;
+  }
+  return 0;
+}
+
 function buildAnswerBlocks({ evidence, message, lang, noEvidence, primary_file, placeId, uiPlace }) {
-  if (noEvidence) return [];
+  const surfaces = portalSurfaceBlocks(message, lang);
+  if (noEvidence) return surfaces;
   const munis = targetMunis(message, uiPlace || placeId);
   const muniOk = (m) => !munis || (m && munis.includes(m));
   const en = lang === 'en';
@@ -2203,6 +2249,9 @@ function buildAnswerBlocks({ evidence, message, lang, noEvidence, primary_file, 
     blocks.push({ type: 'link', kind: 'document', label: primary_file.title || (en ? 'Source document' : 'Documento fuente'),
       href: primary_file.view_url || primary_file.catalog_url });
   }
+  for (const link of surfaces) {
+    if (!blocks.some((b) => b.type === 'link' && b.href === link.href)) blocks.push(link);
+  }
   return blocks.filter((b) => !/08_fp_team_research/i.test(JSON.stringify(b)));
 }
 
@@ -2219,7 +2268,16 @@ function evidenceSources(chunks, max = 5, newsFirst = false) {
     const key = (cardTitle(c) + (c.display_title ? '' : '|' + (c.path || ''))).toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: c.href || null, type: c.type || null };
+    const portalHref = {
+      gemelo: '/gemelo/',
+      aprendizaje: '/aprendizaje/',
+      coordinacion: '/coordinacion/',
+      vistas: '/vistas/',
+      metas: '/metas/',
+      foro: '/foro/',
+    };
+    const portalSlug = String(c.path || '').startsWith('portal/') ? String(c.path).slice(7).split('/')[0] : '';
+    const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: c.href || portalHref[portalSlug] || null, type: c.type || null };
     if (c.type === 'news') {
       Object.assign(card, {
         label: c.no_summary ? 'Noticia sin resumen' : 'Noticia',
@@ -2533,6 +2591,12 @@ async function handlerInner(event) {
 
   // ---- Conversational loop (2026-10-26): every reply ends with a question + clickable follow-up chips ----
   const followUps = buildFollowUps({ message, lang, placeId, munis: targetMunis(message, explicitPlace) });
+  const surfaceLead = portalSurfaceBlocks(message, lang)[0];
+  if (surfaceLead) {
+    followUps.unshift(lang === 'en'
+      ? `Do you want to open ${surfaceLead.label}, or ask about one municipality?`
+      : `¿Abres ${surfaceLead.label}, o preguntas por un municipio?`);
+  }
   try {
     const lines = String(answer).trim().split('\n');
     const last = (lines[lines.length - 1] || '').trim();
@@ -2604,4 +2668,4 @@ async function handlerInner(event) {
   };
 }
 
-export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk };
+export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk, portalSurfaceBlocks };
