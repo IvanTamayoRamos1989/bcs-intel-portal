@@ -4,6 +4,9 @@ import HowTo from '../components/HowTo.astro';
 import PathBanner from '../components/PathBanner.astro';
 import CdtPageTone from '../components/CdtPageTone.astro';
 import { vistas } from '../lib/vistas';
+import { vistaStills } from '../lib/vistaStills';
+
+const stillByVista = vistaStills();
 ---
 <BaseLayout
   title="Vistas guardadas"
@@ -48,6 +51,12 @@ import { vistas } from '../lib/vistas';
         <span data-lang-es>{v.es}</span>
         <span data-lang-en hidden>{v.en}</span>
       </h2>
+      {stillByVista[v.id] && (
+        <a class="vista-still" href="/stills/">
+          <img src={stillByVista[v.id]!.thumb} alt={stillByVista[v.id]!.name} width="176" height="99" loading="lazy" onerror="this.closest('a').remove()" />
+          <span>{stillByVista[v.id]!.name}</span>
+        </a>
+      )}
       <p class="vista-plain">
         <span data-lang-es>{v.plain_es}</span>
         <span data-lang-en hidden>{v.plain_en}</span>
@@ -75,6 +84,9 @@ import { vistas } from '../lib/vistas';
     }
     .vista h2 { margin: 0 0 0.35rem; color: #006BA3; font-size: 1.15rem; }
     .vista p { margin: 0.3rem 0; }
+    .vista-still { display: flex; align-items: center; gap: .65rem; margin: .45rem 0; text-decoration: none; color: #1a1a1a; }
+    .vista-still img { width: 176px; height: 99px; object-fit: cover; border-radius: 8px; background: #e8f1f7; }
+    .vista-still span { font-size: .92rem; font-weight: 650; }
     .vista-plain { font-size: 1rem; }
     .vista-open { color: #006BA3; font-size: 0.92rem; }
   </style>
