@@ -1951,6 +1951,48 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:evidencia-desal-p119",
+        "title": "Desalación, agua no contabilizada y casos externos / Desalination, uncounted water and external cases",
+        "path": "portal/aprendizaje",
+        "href": "/aprendizaje/#evidencia",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /aprendizaje#evidencia hay fichas externas, comprobadas el 31 de octubre de 2026. Sus cifras no son de Baja California Sur. "
+            "IFC, 2023: PDF sobre la asociación de agua en Los Cabos, que junta desalación y agua no contabilizada "
+            "(https://www.ifc.org/content/dam/ifc/doc/2023/2023-Mexico-Los-Cabos-Water-PPP.pdf). "
+            "McEvoy, 2014: artículo sobre desalación y seguridad hídrica en Cabo San Lucas "
+            "(https://www.water-alternatives.org/index.php/alldoc/articles/vol7/v7issue2/262-a7-3-5/file). "
+            "C40 Water Safe Cities mira sequía e inundación juntas "
+            "(https://www.c40knowledgehub.org/s/article/Water-Safe-Cities). "
+            "C40 tiene un tema de adaptación costera "
+            "(https://www.c40knowledgehub.org/s/topic/0TO1Q0000002IZKWA2/coastal-adaptation-solutions?language=en_US). "
+            "UrbanShift documenta el proyecto de Costa Rica "
+            "(https://www.shiftcities.org/projects/costa-rica). "
+            "Ninguna de esas páginas sustituye los acuíferos CONAGUA ni el gemelo. "
+            "Pregunta de seguimiento: ¿quieres la ficha de desalación en Los Cabos, o la vista de agua primero en el sur? "
+            "[desalacion los cabos agua no contabilizada c40 urbanshift evidencia]"
+        ),
+        "sum_en": (
+            "On /aprendizaje#evidencia there are external cards, checked on 31 October 2026. Their figures are not for Baja California Sur. "
+            "IFC, 2023: a PDF on the Los Cabos water partnership, pairing desalination and uncounted water "
+            "(https://www.ifc.org/content/dam/ifc/doc/2023/2023-Mexico-Los-Cabos-Water-PPP.pdf). "
+            "McEvoy, 2014: an article on desalination and water security in Cabo San Lucas "
+            "(https://www.water-alternatives.org/index.php/alldoc/articles/vol7/v7issue2/262-a7-3-5/file). "
+            "C40 Water Safe Cities looks at drought and flooding together "
+            "(https://www.c40knowledgehub.org/s/article/Water-Safe-Cities). "
+            "C40 has a coastal-adaptation topic "
+            "(https://www.c40knowledgehub.org/s/topic/0TO1Q0000002IZKWA2/coastal-adaptation-solutions?language=en_US). "
+            "UrbanShift documents the Costa Rica project "
+            "(https://www.shiftcities.org/projects/costa-rica). "
+            "None of those pages replaces the CONAGUA aquifers or the twin. "
+            "Follow-up: do you want the Los Cabos desalination card, or the water-first view in the south? "
+            "[desalination los cabos non-revenue water c40 urbanshift evidence]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:vistas-nombres-p118",
         "title": "Las cinco vistas por nombre / The five views by name",
         "path": "portal/vistas",

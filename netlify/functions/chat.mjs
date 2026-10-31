@@ -1052,6 +1052,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(views.id);
     }
   }
+  if (evidenceDepthQuery(query)) {
+    const ev = corpus.find((c) => c.id === 'portal:evidencia-desal-p119');
+    if (ev && !usedId.has(ev.id)) {
+      picked.unshift(ev);
+      usedId.add(ev.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1436,6 +1443,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== views.id);
       picked.length = 0;
       picked.push(views, ...rest);
+    }
+  }
+  if (evidenceDepthQuery(query)) {
+    const ev = corpus.find((c) => c.id === 'portal:evidencia-desal-p119');
+    if (ev) {
+      const rest = picked.filter((c) => c.id !== ev.id);
+      picked.length = 0;
+      picked.push(ev, ...rest);
     }
   }
 
@@ -2140,6 +2155,11 @@ function airAxisQuery(message) {
   return /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/.test(normQ(message));
 }
 
+function evidenceDepthQuery(message) {
+  const q = normQ(message);
+  return /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/.test(q);
+}
+
 function namedViewsQuery(message) {
   const q = normQ(message);
   return /agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos/.test(q)
@@ -2152,6 +2172,7 @@ function portalSurfaceBlocks(message, lang) {
   const en = lang === 'en';
   const surfaces = [
     { id: 'gemelo-air', re: /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, href: '/gemelo/?theme=movilidad&x=pob&y=aereo_2025', es: 'Eje aéreo 2025', en: '2025 air axis' }, // keep in sync with airAxisQuery
+    { id: 'ev-desal', re: /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, href: '/aprendizaje/#evidencia', es: 'Evidencia: agua y costa', en: 'Evidence: water and coast' },
     { id: 'vista-agua', re: /agua primero|water first/, href: '/vistas/#agua-sur', es: 'Agua primero en el sur', en: 'Water first in the south' },
     { id: 'vista-corredor', re: /crecimiento cabos|corredor cabos|cabos-la paz/, href: '/vistas/#corredor', es: 'Crecimiento Cabos–La Paz', en: 'Cabos–La Paz growth' },
     { id: 'vista-puertos', re: /puertos y aeropuertos|ports and airports/, href: '/vistas/#puertos', es: 'Puertos y aeropuertos', en: 'Ports and airports' },
@@ -2189,6 +2210,7 @@ function portalGuideBoost(message, chunk) {
   const rules = [
     [/pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, /eje-aereo/],
     [/agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos|east cape/, /vistas-nombres/],
+    [/desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, /evidencia-desal/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
     [/preguntas abiertas|open questions|brechas de datos|data gaps/, /metas/],
@@ -2551,6 +2573,9 @@ async function handlerInner(event) {
   const viewsGuide = namedViewsQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:vistas-nombres-p118')
     : null;
+  const evidenceGuide = evidenceDepthQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:evidencia-desal-p119')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2560,6 +2585,10 @@ async function handlerInner(event) {
   }
   if (viewsGuide && !evidence.some((c) => c.id === viewsGuide.id)) {
     evidence = [viewsGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (evidenceGuide && !evidence.some((c) => c.id === evidenceGuide.id)) {
+    evidence = [evidenceGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

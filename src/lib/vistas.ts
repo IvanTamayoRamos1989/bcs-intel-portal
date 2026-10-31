@@ -79,6 +79,8 @@ const VISTA_LINKS = [
     id: 'agua-sur',
     es: 'Agua primero en el sur',
     en: 'Water first in the south',
+    plain_es: 'Verá el sur del estado: la franja entre Cabos y La Paz, el East Cape y marcas de acuíferos que ya están en déficit.',
+    plain_en: 'You will see the south of the state: the belt between Cabos and La Paz, East Cape, and marks for aquifers already in deficit.',
     note_es:
       'Escenario «agua primero»: corredor, East Cape y marcadores de acuíferos en déficit. La comparación del gemelo usa población y pobreza, no un balance municipal de agua.',
     note_en:
@@ -90,6 +92,8 @@ const VISTA_LINKS = [
     id: 'corredor',
     es: 'Crecimiento Cabos–La Paz',
     en: 'Cabos–La Paz growth',
+    plain_es: 'Verá la carretera y los pueblos entre Los Cabos y La Paz, más la línea eléctrica y el ordenamiento del suelo.',
+    plain_en: 'You will see the highway and the towns between Los Cabos and La Paz, plus the power line and the land-use zoning.',
     note_es:
       'Escenario del corredor: carretera, asentamientos, transmisión y unidades de ordenamiento. East Cape queda dentro de Los Cabos.',
     note_en:
@@ -101,6 +105,8 @@ const VISTA_LINKS = [
     id: 'puertos',
     es: 'Puertos y aeropuertos',
     en: 'Ports and airports',
+    plain_es: 'Verá aeropuertos y puertos, de Los Cabos hasta Loreto y Ciudad Constitución.',
+    plain_en: 'You will see airports and ports, from Los Cabos up to Loreto and Ciudad Constitución.',
     note_es:
       'Anclas SJD, La Paz, Loreto y puertos, más Loreto y Ciudad Constitución. Los pasajeros de crucero del gráfico son la suma DataTur por municipio.',
     note_en:
@@ -112,6 +118,8 @@ const VISTA_LINKS = [
     id: 'vivienda',
     es: 'Contexto de vivienda',
     en: 'Housing context',
+    plain_es: 'Verá pueblos, el ordenamiento del suelo y marcas de acuíferos en déficit, sobre el estado entero.',
+    plain_en: 'You will see towns, land-use zoning and marks for aquifers in deficit, across the whole state.',
     note_es:
       'Asentamientos, ordenamiento y marcadores de acuíferos en déficit. El rezago CONAVI es estatal: esta vista no lo reparte por municipio.',
     note_en:
@@ -123,6 +131,8 @@ const VISTA_LINKS = [
     id: 'east-cape',
     es: 'East Cape y áreas protegidas',
     en: 'East Cape and protected areas',
+    plain_es: 'Verá la franja del East Cape, dentro de Los Cabos, y las áreas naturales protegidas de esa costa.',
+    plain_en: 'You will see the East Cape belt, inside Los Cabos, and the protected areas on that coast.',
     note_es: 'Franja de foco East Cape más áreas naturales protegidas. No es una capa de predios.',
     note_en: 'East Cape focus belt plus protected areas. It is not a parcel layer.',
     gemelo: '/gemelo/?theme=urbano&scenario=baseline&x=pob&y=locs&muni=Los%20Cabos',
