@@ -669,8 +669,8 @@ const themes: Array<{
         value: `${fmtInt(paxByCode.SJD)} · ${fmtInt(paxByCode.LAP)} · ${fmtInt(loretoAirTravelers2025)}`,
         label_es: 'Pasajeros 2025 Los Cabos · La Paz · Loreto',
         label_en: '2025 passengers Los Cabos · La Paz · Loreto',
-        source_es: 'Los Cabos y La Paz: SETUE, información estratégica 2026. Loreto: 89,600 viajeros, comunicado del Gobierno de BCS.',
-        source_en: 'Los Cabos and La Paz: SETUE strategic brief 2026. Loreto: 89,600 travelers, Baja California Sur government release.',
+        source_es: 'Los Cabos en esta ficha: 3,800,000 (información estratégica SETUE, redondeo de 3.8 millones). El comunicado del gobierno, el mismo que da Loreto 89,600, dice 3,765,000 para Los Cabos. No se sustituye una por la otra. La Paz coincide en ambas: 668,800.',
+        source_en: 'Los Cabos on this card: 3,800,000 (SETUE strategic brief, rounded from 3.8 million). The government release that states Loreto 89,600 says 3,765,000 for Los Cabos. One figure is not silently replaced by the other. La Paz matches in both: 668,800.',
         href: '/puertos/',
       },
       {

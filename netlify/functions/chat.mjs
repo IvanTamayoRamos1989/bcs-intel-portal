@@ -987,7 +987,7 @@ function retrieve(query, lang, k = 8) {
   const corpus = loadCorpus();
   const scored = [];
   for (const c of corpus) {
-    const s = scoreChunk(tokens, c, lang, intents, placeTokens) + portalGuideBoost(message, c);
+    const s = scoreChunk(tokens, c, lang, intents, placeTokens) + portalGuideBoost(query, c);
     if (s > 0.5) scored.push({ s, c });
   }
   scored.sort((a, b) => b.s - a.s);
@@ -1036,6 +1036,14 @@ function retrieve(query, lang, k = 8) {
     usedId.add(c.id);
     usedTitle.add((c.title || '').toLowerCase().replace(/\s+/g, ' ').trim());
     folderCounts.set('12_ontology', (folderCounts.get('12_ontology') || 0) + 1);
+  }
+
+  if (airAxisQuery(query)) {
+    const air = corpus.find((c) => c.id === 'portal:eje-aereo-p116');
+    if (air && !usedId.has(air.id)) {
+      picked.unshift(air);
+      usedId.add(air.id);
+    }
   }
 
   const docSlots = Math.max(k - picked.length, 6);
@@ -1404,6 +1412,15 @@ function retrieve(query, lang, k = 8) {
         picked.length = 0;
         picked.push(...out, ...libs);
       }
+    }
+  }
+
+  if (airAxisQuery(query)) {
+    const air = corpus.find((c) => c.id === 'portal:eje-aereo-p116');
+    if (air) {
+      const rest = picked.filter((c) => c.id !== air.id);
+      picked.length = 0;
+      picked.push(air, ...rest);
     }
   }
 
@@ -2104,10 +2121,15 @@ function buildFollowUps({ message, lang, placeId, munis }) {
   else rot.push(en ? 'How many people live in each municipality?' : '¿Cuántas personas viven en cada municipio?');
   return rot;
 }
+function airAxisQuery(message) {
+  return /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/.test(normQ(message));
+}
+
 function portalSurfaceBlocks(message, lang) {
   const q = normQ(message);
   const en = lang === 'en';
   const surfaces = [
+    { id: 'gemelo-air', re: /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, href: '/gemelo/?theme=movilidad&x=pob&y=aereo_2025', es: 'Eje aéreo 2025', en: '2025 air axis' }, // keep in sync with airAxisQuery
     { id: 'gemelo-urbano', re: /\b(diseno urbano|urban design|forma del asentamiento)\b/, href: '/gemelo/?theme=urbano', es: 'Gemelo · diseño urbano', en: 'Twin · urban design' },
     { id: 'gemelo-economia', re: /\b(desarrollo economico|economic development|ley de ingresos)\b/, href: '/gemelo/?theme=economia', es: 'Gemelo · desarrollo económico', en: 'Twin · economic development' },
     { id: 'gemelo-invest', re: /\b(innovacion e investigacion|tema de investigacion|university network)\b/, href: '/gemelo/?theme=investigacion', es: 'Gemelo · investigación', en: 'Twin · research' },
@@ -2136,6 +2158,7 @@ function portalGuideBoost(message, chunk) {
   const hay = `${chunk?.id || ''} ${chunk?.path || ''}`;
   if (!/^portal[:/]/.test(hay)) return 0;
   const rules = [
+    [/pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, /eje-aereo/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
     [/preguntas abiertas|open questions|brechas de datos|data gaps/, /metas/],
@@ -2492,9 +2515,16 @@ async function handlerInner(event) {
   const qIntents = expandQuery(message);
   const open = qIntents.isOpenIntent || qIntents.isGrowthConstraintIntent || qIntents.isScenarioIntent;
   const res = ragSearch(index, retrieveQuery, { k: open ? 10 : 8, place: placeId });
-  const noEvidence = !res.hits.length || res.weakTop;
+  const airGuide = airAxisQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:eje-aereo-p116')
+    : null;
+  let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
-  const evidence = hits.map((h) => h.c);
+  let evidence = hits.map((h) => h.c);
+  if (airGuide && !evidence.some((c) => c.id === airGuide.id)) {
+    evidence = [airGuide, ...evidence];
+    noEvidence = false;
+  }
   const topScore = hits.length ? hits[0].score : 0;
   // chips need stronger relevance than context
   const chipEvidence = hits.filter((h) => h.coverage >= 0.5 && h.score >= topScore * 0.45).map((h) => h.c);

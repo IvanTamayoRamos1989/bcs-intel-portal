@@ -1917,6 +1917,40 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:eje-aereo-p116",
+        "title": "Viajeros aéreos 2025 y eje del gemelo / 2025 air travelers and the twin axis",
+        "path": "portal/gemelo",
+        "href": "/gemelo/?theme=movilidad&x=pob&y=aereo_2025",
+        "theme": "planeacion",
+        "sum_es": (
+            "Pasajeros aéreos de Loreto en 2025: 89,600 viajeros. Lo informó el Gobierno de Baja California Sur "
+            "(https://www.bcs.gob.mx/supera-bcs-los-4-5-millones-de-pasajeros-aereos-en-2025-la-paz-crece-10-9/). "
+            "En esa misma nota Los Cabos son 3,765,000 pasajeros y La Paz 668,800, y los tres suman 4,523,400. "
+            "En el gemelo, la ficha de Los Cabos sigue en 3,800,000 porque así está redondeada la información estratégica de SETUE (3.8 millones). "
+            "No se reemplaza una cifra por la otra. "
+            "No confundir con 33,412: ese número es pasajeros de crucero del puerto de Loreto (DataTur 2025), no del aeropuerto. "
+            "Para comparar aeropuertos o usar el eje aéreo abra /gemelo/?theme=movilidad&x=pob&y=aereo_2025. "
+            "El gráfico dibuja Los Cabos, La Paz y Loreto. Comondú y Mulegé no tienen aeropuerto: no se ponen en cero. "
+            "Pregunta de seguimiento: ¿quieres ese eje aéreo o la ley de ingresos 2026 que sigue en blanco para Mulegé y Loreto? "
+            "[pasajeros loreto comparar aeropuertos eje aereo 89600]"
+        ),
+        "sum_en": (
+            "Loreto 2025 air passengers: 89,600 travelers, stated by the Baja California Sur government "
+            "(https://www.bcs.gob.mx/supera-bcs-los-4-5-millones-de-pasajeros-aereos-en-2025-la-paz-crece-10-9/). "
+            "On that same note Los Cabos is 3,765,000 passengers and La Paz 668,800, and the three add up to 4,523,400. "
+            "On the twin, the Los Cabos card stays at 3,800,000 because that is the rounded SETUE strategic brief (3.8 million). "
+            "One figure is not replaced by the other. "
+            "Do not confuse this with 33,412: that number is cruise passengers at the port of Loreto (DataTur 2025), not the airport. "
+            "To compare airports or use the air axis open /gemelo/?theme=movilidad&x=pob&y=aereo_2025. "
+            "The chart draws Los Cabos, La Paz and Loreto. Comondú and Mulegé have no airport: they are not set to zero. "
+            "Follow-up: do you want that air axis, or the 2026 revenue law that is still blank for Mulegé and Loreto? "
+            "[loreto passengers compare airports air axis 89600]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:sustancia-p111",
         "title": "Cifras en blanco y hoja para imprimir / Blank figures and the print sheet",
         "path": "portal/foro",
