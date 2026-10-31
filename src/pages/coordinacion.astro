@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
+import PathBanner from '../components/PathBanner.astro';
 import federal from '../data/federal_projects.json';
 
 type Row = {
@@ -48,6 +49,7 @@ const groups = [...new Set(rows.map((r) => r.dependencia))]
   sectionEn="Coordination"
   wide={true}
 >
+  <PathBanner current="coordinacion" />
   <HowTo
     leadEs="Esta página dice qué institución aparece con qué obra en el inventario. No promete una fecha de entrega."
     leadEn="This page says which institution appears with which work in the inventory. It does not promise a delivery date."
@@ -100,7 +102,7 @@ const groups = [...new Set(rows.map((r) => r.dependencia))]
 
   <style>
     .co-card { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.7rem 0; background: #fff; }
-    .co-card h2 { margin: 0 0 0.4rem; color: #006BA3; font-size: 1.05rem; }
+    .co-card h2 { margin: 0 0 0.4rem; color: #006BA3; font-size: 1.05rem; overflow-wrap: anywhere; }
     .co-n { display: inline-block; min-width: 1.4rem; text-align: center; border-radius: 999px; background: #e8f4fb; color: #006BA3; font-size: 0.78rem; padding: 0.05rem 0.4rem; }
     .co-card ul { margin: 0; padding-left: 1.1rem; }
     .co-card li { margin: 0.55rem 0; }

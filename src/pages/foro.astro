@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
+import PathBanner from '../components/PathBanner.astro';
 ---
 <BaseLayout
   title="Hoja para invitados"
@@ -11,6 +12,7 @@ import HowTo from '../components/HowTo.astro';
   sectionEn="Guests"
   wide={true}
 >
+  <PathBanner current="foro" />
   <HowTo
     leadEs="Esta hoja es para quien llega de lado en la reunión. No pide datos personales. Cada enlace abre una página pública del portal."
     leadEn="This sheet is for someone joining from the side of the meeting. It asks for no personal data. Each link opens a public page of the portal."

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
+import PathBanner from '../components/PathBanner.astro';
 import { cdtModel } from '../lib/cdtModel';
 
 const model = cdtModel;
@@ -41,6 +42,7 @@ const icon: Record<string, string> = {
     crossorigin=""
   />
 
+  <PathBanner current="gemelo" />
   <div class="cdt">
     <header class="cdt-top">
       <div>
@@ -163,6 +165,14 @@ const icon: Record<string, string> = {
               <span data-lang-es>{t.gap_es}</span>
               <span data-lang-en hidden>{t.gap_en}</span>
             </p>
+            {t.id === 'movilidad' && (
+              <p>
+                <a class="cdt-blank" href="/metas/">
+                  <span data-lang-es>Pasajeros aéreos 2025 de Loreto: sin serie municipal en el acervo</span>
+                  <span data-lang-en hidden>Loreto 2025 air passengers: no municipal series in the archive</span>
+                </a>
+              </p>
+            )}
           </section>
         ))}
 
@@ -493,12 +503,18 @@ const icon: Record<string, string> = {
       .cdt-kpi, .cdt-quality article, .cdt-rec { break-inside: avoid; }
       a { color: #000; text-decoration: none; }
     }
+    .cdt-blank { display: inline-block; margin: 0.35rem 0; padding: 0.25rem 0.55rem; border-radius: 999px; background: #f3e6cc; color: #6a4b12; font-size: 0.78rem; font-weight: 650; text-decoration: none; }
     @media (max-width: 980px) {
+      .cdt-top { flex-direction: column; align-items: stretch; }
       .cdt-work { grid-template-columns: 1fr; }
-      .cdt-rail { position: static; flex-direction: row; overflow-x: auto; }
-      .cdt-theme-btn { min-width: 7.2rem; }
+      .cdt-rail { position: static; flex-direction: row; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .cdt-theme-btn { min-width: 6.4rem; flex: 0 0 auto; }
       .cdt-panel { max-height: none; }
-      .cdt-kpis, .cdt-axes { grid-template-columns: 1fr; }
+      .cdt-kpis, .cdt-axes, .cdt-quality { grid-template-columns: 1fr; }
+      .cdt-scenarios { flex-wrap: nowrap; overflow-x: auto; }
+      .cdt-sc { flex: 0 0 auto; }
+      #cdt-map { height: 56vh; min-height: 240px; }
+      .cdt h1 { font-size: 1.35rem; }
     }
   </style>
 
@@ -664,6 +680,11 @@ const icon: Record<string, string> = {
               tx(ind.quality_es, ind.quality_en) + '</small></article>';
           }
           strip.innerHTML = card(xi) + card(yi);
+          if (!xi.complete || !yi.complete) {
+            strip.innerHTML += '<p><a class="cdt-blank" href="/metas/">' +
+              tx('Sin serie municipal en el acervo para al menos un eje. Ver preguntas abiertas.', 'No municipal series in the archive for at least one axis. See open questions.') +
+              '</a></p>';
+          }
         }
         var rows = model.munis.filter(function (m) { return hasNum(m[state.x]) && hasNum(m[state.y]); });
         if (rows.length < 2) {

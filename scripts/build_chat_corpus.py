@@ -1856,6 +1856,37 @@ def main():
         "type": "guide",
     })
 
+    chunks.append({
+        "id": "portal:ruta-decision-p19",
+        "title": "Ruta de decisión del portal / Portal decision path",
+        "path": "portal/foro",
+        "theme": "planeacion",
+        "sum_es": (
+            "Ruta para invitados, en este orden: 1) Aprender de otras ciudades en /aprendizaje (la impresión deja solo fuentes externas; "
+            "evidencia en /aprendizaje#evidencia: Aqueduct, MapBiomas, Resource Watch, DataMéxico, Data Commons). "
+            "2) Ver una vista guardada en /vistas (agua primero, corredor Cabos–La Paz, puertos y aeropuertos, contexto de vivienda, East Cape). "
+            "3) Comparar en el gemelo /gemelo. Si una serie no está (pasajeros aéreos 2025 de Loreto; Ley de Ingresos 2026 de Mulegé y Loreto) "
+            "el tablero dice «sin serie municipal en el acervo» y enlaza a /metas. No se inventa el número. "
+            "4) Coordinar proyectos en /coordinacion (institución, obra, sexenio; sin fecha de entrega calculada). "
+            "La hoja corta con esos cuatro enlaces está en /foro. "
+            "Pregunta de seguimiento: ¿empiezas por aprender de otras ciudades, por una vista, o por un municipio en el gemelo? "
+            "[foro vistas metas coordinacion aprendizaje gemelo ruta decision sin serie]"
+        ),
+        "sum_en": (
+            "Guest path, in this order: 1) Learn from other cities at /aprendizaje (printing leaves only external sources; "
+            "evidence at /aprendizaje#evidencia: Aqueduct, MapBiomas, Resource Watch, DataMéxico, Data Commons). "
+            "2) Open a saved view at /vistas (water first, Cabos–La Paz corridor, ports and airports, housing context, East Cape). "
+            "3) Compare on the twin /gemelo. If a series is missing (Loreto 2025 air passengers; 2026 revenue law for Mulegé and Loreto) "
+            "the board says there is no municipal series in the archive and links to /metas. The number is not invented. "
+            "4) Coordinate projects at /coordinacion (institution, work, administration; no calculated delivery date). "
+            "The short sheet with those four links is at /foro. "
+            "Follow-up: do you start by learning from other cities, by a saved view, or by a municipality on the twin? "
+            "[guest sheet views open questions coordination learning twin decision path missing series]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
     # 14_gobierno — Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027)
     try:
         n_gov = add_los_cabos_organigrama(chunks)
