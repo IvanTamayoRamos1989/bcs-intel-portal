@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
+import PathBanner from '../components/PathBanner.astro';
 
 const networks = [
   {
@@ -172,6 +173,7 @@ const cases = [
   sectionEn="Learning"
   wide={true}
 >
+  <PathBanner current="aprendizaje" />
   <HowTo
     leadEs="Esta página junta casos de otras ciudades. No mide Baja California Sur."
     leadEn="This page gathers cases from other cities. It does not measure Baja California Sur."
@@ -331,7 +333,7 @@ const cases = [
     @media print {
       .pt-top, .pt-sub, .site-footer, .bcs-chat, .pt-spec-note, .lead, .cta-row, .cdt-net, .cdt-case, h2:not(.apr-h) { display: none !important; }
       .apr-foro { display: block; border: 0; }
-      .how-use { display: none !important; }
+      .how-use, .path-banner { display: none !important; }
       .apr-foro ul { columns: 2; }
       body, body.has-chat-sidebar { padding: 0 !important; }
     }

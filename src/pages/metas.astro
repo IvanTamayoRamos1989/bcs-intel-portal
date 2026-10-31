@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
+import PathBanner from '../components/PathBanner.astro';
 import { cdtModel } from '../lib/cdtModel';
 import foresights from '../data/foresights.json';
 import gapsDoc from '../data/data_gaps.json';
@@ -24,6 +25,7 @@ const themeOrder = cdtModel.themes;
   sectionEn="Open questions"
   wide={true}
 >
+  <PathBanner current="metas" />
   <HowTo
     leadEs="Aquí se ve qué sigue abierto. No hay una barra de avance."
     leadEn="This shows what is still open. There is no progress bar."

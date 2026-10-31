@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
+import PathBanner from '../components/PathBanner.astro';
 import { vistas } from '../lib/vistas';
 ---
 <BaseLayout
@@ -12,6 +13,7 @@ import { vistas } from '../lib/vistas';
   sectionEn="Views"
   wide={true}
 >
+  <PathBanner current="vistas" />
   <HowTo
     leadEs="Una vista es un enlace con nombre. No guarda nada en su cuenta."
     leadEn="A view is a named link. It saves nothing to your account."
