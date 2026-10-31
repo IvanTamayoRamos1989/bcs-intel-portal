@@ -6,10 +6,11 @@ import dataGaps from '../data/data_gaps.json';
 
 const gaps = Array.isArray(dataGaps.gaps) ? dataGaps.gaps : [];
 const wishlist: any[] = Array.isArray((dataGaps as any).wishlist) ? (dataGaps as any).wishlist : [];
-const statusLabel: Record<string, string> = {
-  open: 'Abierta',
-  partial: 'Parcial',
-  closed: 'Cerrada',
+const statusLabel: Record<string, { es: string; en: string }> = {
+  open: { es: 'Abierta', en: 'Open' },
+  partial: { es: 'Parcial', en: 'Partial' },
+  closed: { es: 'Cerrada', en: 'Closed' },
+  filled: { es: 'Cubierta', en: 'Filled' },
 };
 ---
 <BaseLayout
@@ -50,7 +51,10 @@ const statusLabel: Record<string, string> = {
               <td>{g.detail_es}</td>
               <td>{g.priority}</td>
               <td>
-                <span class={`gap-status gap-status-${g.status}`}>{statusLabel[g.status] || g.status}</span>
+                <span class={`gap-status gap-status-${g.status}`}>
+                  <span data-lang-es>{statusLabel[g.status]?.es || g.status}</span>
+                  <span data-lang-en hidden>{statusLabel[g.status]?.en || g.status}</span>
+                </span>
               </td>
               <td class="mem-preview">
                 <div>{g.notes}</div>
@@ -204,7 +208,7 @@ const statusLabel: Record<string, string> = {
     .gap-status { font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
     .gap-status-open { color: #a8543f; }
     .gap-status-partial { color: #a8762a; }
-    .gap-status-closed { color: #047857; }
+    .gap-status-closed, .gap-status-filled { color: #047857; }
     .gap-cites { margin: 0.35rem 0 0; padding-left: 1rem; font-size: 0.78rem; }
     .mem-chat-h { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; }
   </style>
