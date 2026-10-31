@@ -953,6 +953,21 @@ const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
         }
       }
 
+      var urlFrame = null;
+      function applyUrlFrame() {
+        if (!urlFrame) return;
+        try {
+          map.invalidateSize();
+          var statewide = urlFrame === 'bcs';
+          var b = statewide
+            ? BCS_BOUNDS
+            : L.latLngBounds([urlFrame[1], urlFrame[0]], [urlFrame[3], urlFrame[2]]);
+          map.fitBounds(b, statewide
+            ? { padding: [20, 20], animate: false }
+            : { padding: [28, 28], maxZoom: 11, animate: false });
+        } catch (e) {}
+      }
+
       function applyScenarioFromUrl() {
         var sid = parseScenarioId();
         var layerOverride = parseLayerOverrides();
@@ -963,21 +978,29 @@ const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
           allMetas.forEach(function (m) {
             if (m.group === 'focus') setLayerVisible(m.id, false);
           });
+          var on = {};
           (ids || []).forEach(function (id) {
+            if (!loaded[id]) {
+              console.warn('Unknown layer: ' + id);
+              return;
+            }
             setLayerVisible(id, true);
+            on[id] = true;
           });
-          if (bbox && bbox.length === 4) {
-            try {
-              var b = L.latLngBounds(
-                [bbox[1], bbox[0]],
-                [bbox[3], bbox[2]]
-              );
-              map.fitBounds(b, { padding: [28, 28], maxZoom: 11 });
-            } catch (e) {}
+          urlFrame = (bbox && bbox.length === 4) ? bbox : 'bcs';
+          applyUrlFrame();
+          if (listEl) {
+            listEl.querySelectorAll('.gis-layer-group').forEach(function (block) {
+              var hit = false;
+              block.querySelectorAll('input[data-layer-id]').forEach(function (cb) {
+                if (on[cb.getAttribute('data-layer-id')]) hit = true;
+              });
+              if (hit) {
+                block.open = true;
+                block.setAttribute('data-pass4', '1');
+              }
+            });
           }
-          // Open focus group in panel
-          var block = listEl.querySelector('.gis-layer-group[data-group-id="focus"]');
-          if (block) block.open = (gid === "projects" || gid === "places"); block.setAttribute("data-pass4","1");
           setStatus('Focus layers on');
           try {
             var gis = document.getElementById('gis');
@@ -1063,10 +1086,13 @@ const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
             })
           ).then(function () {
             try {
-              map.fitBounds(BCS_BOUNDS, { padding: [20, 20] });
+              if (!parseScenarioId() && !parseLayerOverrides()) {
+                map.fitBounds(BCS_BOUNDS, { padding: [20, 20], animate: false });
+              }
             } catch (e) {}
             setTimeout(function () {
               map.invalidateSize();
+              applyUrlFrame();
             }, 100);
             setStatus(layers.length + ' layers');
             applyScenarioFromUrl();

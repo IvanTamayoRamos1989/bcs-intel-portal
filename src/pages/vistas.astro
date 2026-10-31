@@ -27,11 +27,11 @@ import { vistas } from '../lib/vistas';
   />
   <p class="lead">
     <span data-lang-es>
-      Cinco vistas con nombre para una reunión. Cada una abre capas y un escenario que ya existen.
+      Cinco vistas con nombre para una reunión. Cada tarjeta dice qué capas enciende el mapa y, si hay escenario, qué encuadre usa.
       Compartir el enlace basta: no hay una cuenta de usuario ni un mapa nuevo.
     </span>
     <span data-lang-en hidden>
-      Five named views for a meeting. Each one opens layers and a scenario that already exist.
+      Five named views for a meeting. Each card says which layers the map turns on and, when there is a scenario, which frame it uses.
       Sharing the link is enough: there is no user account and no new map.
     </span>
   </p>
@@ -52,6 +52,10 @@ import { vistas } from '../lib/vistas';
         <span data-lang-es>{v.note_es}</span>
         <span data-lang-en hidden>{v.note_en}</span>
       </p>
+      <p class="vista-open">
+        <span data-lang-es>{v.preview_es}</span>
+        <span data-lang-en hidden>{v.preview_en}</span>
+      </p>
       <p>
         <a class="btn" href={v.gemelo}><span data-lang-es>Abrir en el gemelo</span><span data-lang-en hidden>Open in the twin</span></a>
         {' '}
@@ -63,5 +67,6 @@ import { vistas } from '../lib/vistas';
     .vista { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.8rem 0.95rem; margin: 0.7rem 0; background: #fff; }
     .vista h2 { margin: 0 0 0.35rem; color: #006BA3; font-size: 1.15rem; }
     .vista p { margin: 0.3rem 0; }
+    .vista-open { color: #006BA3; font-size: 0.92rem; }
   </style>
 </BaseLayout>
