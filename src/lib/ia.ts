@@ -88,6 +88,7 @@ export const THEMES: IATheme[] = [
     d_en: 'More technical analysis tools: foresight, strategic questions, work sessions, growth and relationship map.',
     items: [
       { href: '/gemelo', es: 'Gemelo territorial', en: 'Territorial twin', d_es: 'Mapa, cifras y escenarios para comparar el territorio', d_en: 'Map, figures and scenarios to compare the territory' },
+      { href: '/coordinacion', es: 'Coordinación de proyectos', en: 'Project coordination', d_es: 'Institución, obra y sexenio del inventario federal', d_en: 'Institution, work and administration from the federal inventory' },
       { href: '/foresights', es: 'Prospectiva', en: 'Foresight', d_es: 'Tesis y señales de cada semana', d_en: 'Weekly theses and signals' },
       { href: '/preguntas', es: 'Preguntas estratégicas', en: 'Strategic questions', d_es: 'Lo que hay que decidir y con qué evidencia', d_en: 'What must be decided and on what evidence' },
       { href: '/sesion', es: 'Sesión de estrategia', en: 'Strategy session', d_es: 'Vista para reuniones de estrategia', d_en: 'View for strategy meetings' },

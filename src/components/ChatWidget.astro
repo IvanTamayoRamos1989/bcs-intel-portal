@@ -53,6 +53,10 @@ const { home = false } = Astro.props;
       <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
       <div class="bcs-chat-sugg" id="bcs-chat-sugg" aria-label="Preguntas sugeridas">
         <p class="bcs-chat-sugg-title"><span data-lang-es>Empieza a explorar</span><span data-lang-en hidden>Start exploring</span></p>
+        <div class="bcs-chat-cta-row">
+          <a class="bcs-chat-cta" href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
+          <a class="bcs-chat-cta" href="/gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct"><span data-lang-es>Gemelo: agua y nivel de vida</span><span data-lang-en hidden>Twin: water and living standard</span></a>
+        </div>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Cuánta agua hay disponible en mi municipio?" data-q-en="How much water is available in my municipality?"><img class="bcs-sugg-th" src="/maps/dma-la-paz-localizacion.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Cuánta agua hay disponible en mi municipio?</span><span data-lang-en hidden>How much water is available in my municipality?</span></span></button>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué áreas naturales protegidas hay en Baja California Sur?" data-q-en="Which protected natural areas are in Baja California Sur?"><img class="bcs-sugg-th" src="/maps/poer-ugas-56.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Medio ambiente</span><span data-lang-en hidden>Environment</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué áreas naturales protegidas hay en Baja California Sur?</span><span data-lang-en hidden>Which protected natural areas are in Baja California Sur?</span></span></button>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué proyectos federales hay en Los Cabos?" data-q-en="Which federal projects are in Los Cabos?"><img class="bcs-sugg-th" src="/stills/batch_01/thumbs/S0005_san_jose_del_cabo.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Inversión</span><span data-lang-en hidden>Investment</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué proyectos federales hay en Los Cabos?</span><span data-lang-en hidden>Which federal projects are in Los Cabos?</span></span></button>
@@ -99,6 +103,8 @@ const { home = false } = Astro.props;
 <style is:global>
   .bcs-chat-sugg { display: flex; flex-direction: column; gap: 6px; margin: 4px 0 10px; }
   .bcs-chat-sugg-title { margin: 0 0 2px; font-size: .8rem; color: #5c6e7b; }
+  .bcs-chat-cta-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
+  .bcs-chat-cta { display: inline-block; font: inherit; font-size: .84rem; font-weight: 700; line-height: 1.3; padding: 7px 12px; border-radius: 999px; border: 1px solid #0083C4; background: #e8f4fb; color: #006BA3; text-decoration: none; }
   .bcs-chat-sugg-btn { text-align: left; font: inherit; font-size: .84rem; line-height: 1.35; padding: 7px 10px; border-radius: 10px; border: 1px solid #e2dccf; background: #fbf8f1; color: #23374a; cursor: pointer; }
   .bcs-chat-sugg-btn:hover, .bcs-chat-sugg-btn:focus-visible { border-color: #34607d; background: #eef3f6; }
   .bcs-chat {

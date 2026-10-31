@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import federal from '../data/federal_projects.json';
+
+type Row = {
+  id: string;
+  proyecto: string;
+  dependencia: string;
+  sexenio: string;
+  estado: string;
+  where: string;
+  notas: string;
+  gap: string;
+};
+
+const rows: Row[] = (federal.projects as ReadonlyArray<Record<string, string>>).map((p) => {
+  const dependencia = p.dependencia;
+  const proyecto = p.proyecto;
+  const sexenio = p.sexenio;
+  const estado = p.estado;
+  const where = p['municipio(s)'];
+  if (!dependencia || !proyecto || !sexenio || !estado || !where) {
+    throw new Error(`CDT coordination row incomplete: ${p.id || proyecto}`);
+  }
+  return {
+    id: p.id,
+    proyecto,
+    dependencia,
+    sexenio,
+    estado,
+    where,
+    notas: p.notas || '',
+    gap: p.data_gap || '',
+  };
+});
+
+const groups = [...new Set(rows.map((r) => r.dependencia))]
+  .map((name) => ({ name, items: rows.filter((r) => r.dependencia === name) }))
+  .sort((a, b) => b.items.length - a.items.length || a.name.localeCompare(b.name, 'es'));
+---
+<BaseLayout
+  title="Coordinación de proyectos"
+  titleEn="Project coordination"
+  description="Institución, proyecto y horizonte ya publicados en el inventario federal."
+  descriptionEn="Institution, project and horizon already published in the federal inventory."
+  section="Coordinación"
+  sectionEn="Coordination"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Quién aparece con qué obra en el inventario federal ({rows.length} proyectos, {groups.length} líneas de institución tal como están escritas).
+      El horizonte es el sexenio reportado. No hay fecha de entrega calculada. Una línea como «CFE / SENER» se deja junta: el portal no parte instituciones que el inventario no partió.
+    </span>
+    <span data-lang-en hidden>
+      Who appears with which work in the federal inventory ({rows.length} projects, {groups.length} institution lines as written).
+      The horizon is the reported administration. No delivery date is calculated. A line such as “CFE / SENER” stays together: the portal does not split institutions the inventory did not split.
+    </span>
+  </p>
+  <p class="cta-row">
+    <a class="btn" href="/proyectos-federales/"><span data-lang-es>Inventario</span><span data-lang-en hidden>Inventory</span></a>
+    <a class="btn secondary" href="/gemelo/"><span data-lang-es>Gemelo territorial</span><span data-lang-en hidden>Territorial twin</span></a>
+    <a class="btn secondary" href="/stakeholders/"><span data-lang-es>Actores</span><span data-lang-en hidden>Stakeholders</span></a>
+    <a class="btn secondary" href="/ontologia/"><span data-lang-es>Mapa de relaciones</span><span data-lang-en hidden>Relationship map</span></a>
+  </p>
+
+  {groups.map((g) => (
+    <section class="co-card">
+      <h2>{g.name} <span class="co-n">{g.items.length}</span></h2>
+      <ul>
+        {g.items.map((item) => (
+          <li>
+            <a href="/proyectos-federales/">{item.proyecto}</a>
+            <p>
+              {item.where} · {item.estado} · {item.sexenio}
+            </p>
+            {item.notas && <p>{item.notas}</p>}
+            {item.gap && (
+              <p class="co-gap">
+                <span data-lang-es>Nota de evidencia: </span>
+                <span data-lang-en hidden>Evidence note: </span>
+                {item.gap}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <style>
+    .co-card { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.7rem 0; background: #fff; }
+    .co-card h2 { margin: 0 0 0.4rem; color: #006BA3; font-size: 1.05rem; }
+    .co-n { display: inline-block; min-width: 1.4rem; text-align: center; border-radius: 999px; background: #e8f4fb; color: #006BA3; font-size: 0.78rem; padding: 0.05rem 0.4rem; }
+    .co-card ul { margin: 0; padding-left: 1.1rem; }
+    .co-card li { margin: 0.55rem 0; }
+    .co-card p { margin: 0.15rem 0 0; color: #5a5a5a; font-size: 0.86rem; }
+    .co-gap { color: #6a4b12; }
+  </style>
+</BaseLayout>
