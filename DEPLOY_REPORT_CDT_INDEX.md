@@ -27,11 +27,12 @@ Password for the gate: `BCS2050`. The portal stays `noindex`. Guest path for ope
 
 ## Phase 2 — do not invent
 
-These are not in the archive. Leave them out until a real source is ingested:
+Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out until a real file is ingested:
 
 - AGEB polygons and block-level indicators
 - Morphometrics (fractal dimension, betweenness, urban-form scores)
 - Cadastre, parcel typologies, and lot desirability
+- Climate beyond the aquifer balance already on the twin
 
 ## Phase reports
 
@@ -49,3 +50,4 @@ These are not in the archive. Leave them out until a real source is ingested:
 | 1.13 | `DEPLOY_REPORT_CDT_P1_13.md` | Link audit, this sheet, focus rings |
 | 1.14 | `DEPLOY_REPORT_CDT_P1_14.md` | Loreto 2025 travelers from the state release; revenue laws still blank |
 | 1.15 | `DEPLOY_REPORT_CDT_P1_15.md` | Loreto gap filled; optional three-airport compare axis |
+| 1.16 | `DEPLOY_REPORT_CDT_P1_16.md` | Phase 2 checklist; chat answers for the air axis; both Los Cabos figures on the card |
