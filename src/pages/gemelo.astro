@@ -3,6 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { cdtModel } from '../lib/cdtModel';
 
 const model = cdtModel;
+const learnByTheme: Record<string, string> = {
+  urbano: '/aprendizaje/#planeacion',
+  economia: '/aprendizaje/#vivienda',
+  investigacion: '/aprendizaje/#planeacion',
+  movilidad: '/aprendizaje/#agua',
+  vivienda: '/aprendizaje/#costa',
+};
 function cellText(id: string, raw: number | null | undefined) {
   if (raw === null || raw === undefined || Number.isNaN(Number(raw))) return '—';
   if (id === 'pobreza_pct') return Number(raw).toLocaleString('es-MX', { maximumFractionDigits: 2 }) + '%';
@@ -217,6 +224,12 @@ const icon: Record<string, string> = {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href={learnByTheme[t.id]}>
+                  <span data-lang-es>Casos de otras ciudades sobre este cruce. Fuente externa, sin cifras de BCS.</span>
+                  <span data-lang-en hidden>Cases from other cities on this link. External source, no BCS figures.</span>
+                </a>
+              </li>
             </ul>
           ))}
         </section>

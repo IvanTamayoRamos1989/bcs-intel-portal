@@ -49,6 +49,7 @@ const networks = [
 
 const cases = [
   {
+    id: 'agua',
     theme_es: 'Agua y turismo costero',
     theme_en: 'Water and coastal tourism',
     portal: '/agua/',
@@ -76,6 +77,7 @@ const cases = [
     ],
   },
   {
+    id: 'costa',
     theme_es: 'Costa y clima',
     theme_en: 'Coast and climate',
     portal: '/ambiente/',
@@ -103,6 +105,7 @@ const cases = [
     ],
   },
   {
+    id: 'planeacion',
     theme_es: 'Planeación integrada',
     theme_en: 'Integrated planning',
     portal: '/gemelo/',
@@ -130,6 +133,7 @@ const cases = [
     ],
   },
   {
+    id: 'vivienda',
     theme_es: 'Vivienda, movilidad y finanzas',
     theme_en: 'Housing, mobility and finance',
     portal: '/crecimiento/',
@@ -211,7 +215,7 @@ const cases = [
     <span data-lang-en hidden>Themes and the local figure</span>
   </h2>
   {cases.map((block) => (
-    <section class="cdt-case">
+    <section class="cdt-case" id={block.id}>
       <h3>
         <span data-lang-es>{block.theme_es}</span>
         <span data-lang-en hidden>{block.theme_en}</span>
