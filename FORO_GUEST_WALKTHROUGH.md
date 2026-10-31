@@ -8,7 +8,7 @@ Para quien conduce la reunión. No es una página del portal. La contraseña de 
    Cuatro enlaces. Cada uno dice por qué abrirlo. Si hace falta papel, imprima esta página: queda en una hoja, con la dirección completa.
 
 2. **Vistas guardadas** — `/vistas`  
-   Elija la vista que el grupo va a mirar. Cada tarjeta abre el mismo escenario en el mapa y en el gemelo. Para agua y vivienda, use «Agua primero en el sur».
+   Elija la vista que el grupo va a mirar. Cada tarjeta dice qué capas enciende el mapa. Para agua y vivienda, use «Agua primero en el sur»: el enlace del gemelo es el mismo que el de la hoja de invitados.
 
 3. **Gemelo, agua y vivienda** — `/gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct`  
    Lea la frase de arriba. Compare los cinco municipios. Loreto tiene 89,600 viajeros aéreos en 2025, tomados del comunicado del gobierno del estado; no es la hoja de la AFAC. Mulegé y Loreto siguen sin monto de Ley de Ingresos 2026 en esta comparación.

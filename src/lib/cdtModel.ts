@@ -945,6 +945,44 @@ const foresightThemes = Object.entries(signalCounts).map(([id, n]) => ({
   en: signalLabel[id].en,
 }));
 
+const themeIds = new Set(themes.map((t) => t.id));
+const scenarioIds = new Set(scenariosDoc.scenarios.map((s) => s.id));
+const indicatorIds = new Set(indicators.map((i) => i.id));
+const muniNames = new Set(munis.map((m) => m.name));
+
+function assertGemeloHref(href: string, label: string) {
+  const params = new URLSearchParams(href.split('#')[0].split('?')[1] || '');
+  const theme = params.get('theme');
+  const scenario = params.get('scenario');
+  const x = params.get('x');
+  const y = params.get('y');
+  const muni = params.get('muni');
+  if (!theme || !themeIds.has(theme as CdtThemeId)) throw new Error(`${label} theme is not on the twin: ${theme}`);
+  if (scenario && !scenarioIds.has(scenario)) throw new Error(`${label} scenario is not on the twin: ${scenario}`);
+  if (!x || !indicatorIds.has(x as CdtIndicatorId)) throw new Error(`${label} x is not a compare axis: ${x}`);
+  if (!y || !indicatorIds.has(y as CdtIndicatorId)) throw new Error(`${label} y is not a compare axis: ${y}`);
+  if (x === y) throw new Error(`${label} uses the same axis twice; the twin would swap it`);
+  if (muni && !muniNames.has(muni)) throw new Error(`${label} municipality is not on the twin: ${muni}`);
+}
+
+for (const v of vistas) assertGemeloHref(v.gemelo, `vista ${v.id}`);
+for (const g of guides) {
+  assertGemeloHref(`/gemelo/?theme=${g.theme}&scenario=${g.scenario}&x=${g.x}&y=${g.y}`, `guide ${g.es}`);
+}
+
+const aguaSur = vistas.find((v) => v.id === 'agua-sur');
+if (!aguaSur) throw new Error('vista agua-sur missing');
+const aguaParams = new URLSearchParams(aguaSur.gemelo.split('?')[1] || '');
+const waterGuide = guides[0];
+if (
+  aguaParams.get('theme') !== waterGuide.theme ||
+  aguaParams.get('scenario') !== waterGuide.scenario ||
+  aguaParams.get('x') !== waterGuide.x ||
+  aguaParams.get('y') !== waterGuide.y
+) {
+  throw new Error('agua-sur drifted from the water-and-housing guide');
+}
+
 export const cdtModel = {
   themes,
   indicators: indicatorsDated,

@@ -51,3 +51,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 1.14 | `DEPLOY_REPORT_CDT_P1_14.md` | Loreto 2025 travelers from the state release; revenue laws still blank |
 | 1.15 | `DEPLOY_REPORT_CDT_P1_15.md` | Loreto gap filled; optional three-airport compare axis |
 | 1.16 | `DEPLOY_REPORT_CDT_P1_16.md` | Phase 2 checklist; chat answers for the air axis; both Los Cabos figures on the card |
+| 1.17 | `DEPLOY_REPORT_CDT_P1_17.md` | Saved-view map state matches `/mapas`; each card previews its layers |

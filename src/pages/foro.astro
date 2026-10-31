@@ -3,6 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
 import PathBanner from '../components/PathBanner.astro';
 import CdtPageTone from '../components/CdtPageTone.astro';
+import { vistas } from '../lib/vistas';
+
+const aguaSur = vistas.find((v) => v.id === 'agua-sur');
+if (!aguaSur) throw new Error('foro water view missing');
 ---
 <BaseLayout
   title="Hoja para invitados"
@@ -26,7 +30,7 @@ import CdtPageTone from '../components/CdtPageTone.astro';
   />
   <ul class="foro-list">
     <li>
-      <a href="/gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct">
+      <a href={aguaSur.gemelo}>
         <span data-lang-es>Gemelo territorial</span>
         <span data-lang-en hidden>Territorial twin</span>
       </a>
