@@ -98,6 +98,7 @@ export const THEMES: IATheme[] = [
 ];
 
 export const DOCS: IALink[] = [
+  { href: '/aprendizaje', es: 'Aprender de otras ciudades', en: 'Learn from other cities', d_es: 'Casos y redes externas, sin cifras de BCS', d_en: 'External cases and networks, with no BCS figures' },
   { href: '/catalogo', es: 'Catálogo de datos', en: 'Data catalog', d_es: 'Todos los archivos del proyecto, con enlace para ver o descargar', d_en: 'All project files, with view/download links' },
   { href: '/biblioteca', es: 'Biblioteca', en: 'Library', d_es: 'Referencias de planeación, agua, costa, transporte y finanzas', d_en: 'References on planning, water, coast, transport and finance' },
   { href: '/planes-archivo', es: 'Archivo de planes', en: 'Plans archive', d_es: 'Instrumentos de planeación, vigentes e históricos', d_en: 'Planning instruments, current and historical' },
