@@ -36,6 +36,7 @@ export type CdtIndicatorId =
   | 'locs'
   | 'crucero_arribos'
   | 'crucero_pax'
+  | 'aereo_2025'
   | 'ley';
 
 const MUNI_ORDER = ['Los Cabos', 'La Paz', 'Comondú', 'Mulegé', 'Loreto'] as const;
@@ -228,6 +229,17 @@ if (cruiseByMuni['Los Cabos'].calls !== cslCalls || cruiseByMuni['La Paz'].calls
   throw new Error('CDT cruise municipal sum failed the known Cabo San Lucas / Pichilingue check');
 }
 
+const airByMuni: Record<MuniName, number | null> = {
+  'Los Cabos': paxByCode.SJD,
+  'La Paz': paxByCode.LAP,
+  Comondú: null,
+  Mulegé: null,
+  Loreto: loretoAirTravelers2025,
+};
+if (Object.values(airByMuni).filter((n) => n == null).length !== 2) {
+  throw new Error('CDT air passengers must stay blank for the two municipalities without an airport');
+}
+
 export type CdtMuni = {
   name: string;
   short: string;
@@ -245,6 +257,7 @@ export type CdtMuni = {
   sniiv_2025: number;
   pobreza_pct: number;
   pobreza_personas: number;
+  aereo_2025: number | null;
   locks_es: string;
   locks_en: string;
   strengths_es: string;
@@ -302,6 +315,7 @@ const munis: CdtMuni[] = MUNI_ORDER.map((name) => {
     sniiv_2025: sniivByMuni[name as keyof typeof sniivByMuni] as number,
     pobreza_pct: poverty[name].pct,
     pobreza_personas: poverty[name].people,
+    aereo_2025: airByMuni[name],
     locks_es: row.locks_es,
     locks_en: row.locks_en,
     strengths_es: row.strengths_es,
@@ -448,6 +462,18 @@ const indicators: Array<{
     complete: true,
   },
   {
+    id: 'aereo_2025',
+    label_es: 'Viajeros aéreos 2025',
+    label_en: 'Air travelers 2025',
+    unit_es: 'viajeros',
+    unit_en: 'travelers',
+    source_es: 'Los Cabos y La Paz: SETUE, información estratégica 2026. Loreto: comunicado del Gobierno de BCS.',
+    source_en: 'Los Cabos and La Paz: SETUE strategic brief 2026. Loreto: Baja California Sur government release.',
+    quality_es: 'Tres aeropuertos. Comondú y Mulegé no tienen aeropuerto: no entran al gráfico y no se ponen en cero. Los Cabos es la cifra redondeada de la ficha (3,800,000), no los 3,765,000 del mismo comunicado que trae Loreto.',
+    quality_en: 'Three airports. Comondú and Mulegé have no airport: they stay off the chart and are not set to zero. Los Cabos is the rounded brief figure (3,800,000), not the 3,765,000 in the same release that states Loreto.',
+    complete: false,
+  },
+  {
     id: 'ley',
     label_es: 'Ley de Ingresos 2026',
     label_en: 'Revenue law 2026',
@@ -469,6 +495,7 @@ const indicatorYear: Record<CdtIndicatorId, string> = {
   anexo: '2025',
   crucero_arribos: '2025',
   crucero_pax: '2025',
+  aereo_2025: '2025',
   ley: '2026',
 };
 const indicatorsDated = indicators.map((i) => ({ ...i, year: indicatorYear[i.id] }));
@@ -940,9 +967,9 @@ export const cdtModel = {
   integrated_en:
     'Integrated solution: the active theme is not decided on its own. These four readings come from demand and supply, from the questions and from projects already published. This is decision support, not a calibrated simulation.',
   compareSkip_es:
-    'No entran a esta comparación: pasajeros aéreos 2025 (tres aeropuertos, no los cinco municipios), rezago de vivienda CONAVI (solo estatal), pico eléctrico (un solo sistema) y déficit de acuíferos (va por acuífero, no por municipio).',
+    'Viajeros aéreos 2025 es un eje opcional: dibuja Los Cabos, La Paz y Loreto. Comondú y Mulegé se omiten, sin cero. Siguen fuera: rezago de vivienda CONAVI (solo estatal), pico eléctrico (un solo sistema) y déficit de acuíferos (va por acuífero, no por municipio).',
   compareSkip_en:
-    'Left out of this comparison: 2025 air passengers (three airports, not the five municipalities), CONAVI housing backlog (statewide only), the power peak (one grid) and aquifer deficit (reported per aquifer, not per municipality).',
+    '2025 air travelers are an optional axis: it plots Los Cabos, La Paz and Loreto. Comondú and Mulegé are omitted, not set to zero. Still left out: CONAVI housing backlog (statewide only), the power peak (one grid) and aquifer deficit (reported per aquifer, not per municipality).',
   regional_es:
     'Estas cifras son de Baja California Sur. No están alineadas a una serie regional. Para ver otras ciudades de América Latina, la referencia abierta es la Plataforma Urbana y de Ciudades de CEPAL. Este portal no copia números de esa plataforma.',
   regional_en:

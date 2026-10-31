@@ -22,7 +22,7 @@ Password for the gate: `BCS2050`. The portal stays `noindex`. Guest path for ope
 
 ## Still blank
 
-- Loreto 2025 air travelers: **89,600**, from the state government release (the three airports on that page add up to 4,523,400). It is on the mobility card. It is not an AFAC spreadsheet row. Comondú and Mulegé have no airport, so air passengers stay off the five-municipality chart.
+- Loreto 2025 air travelers: **89,600**, filled from the state government release. Optional compare axis `aereo_2025` plots Los Cabos, La Paz and Loreto only. Comondú and Mulegé are omitted, not set to zero. Los Cabos on that axis stays 3,800,000 (rounded brief), not 3,765,000.
 - Mulegé and Loreto 2026 revenue-law totals. The decrees are catalogued. The totals are not copied. Where to look next is on `/metas`.
 
 ## Phase 2 — do not invent
@@ -48,3 +48,4 @@ These are not in the archive. Leave them out until a real source is ingested:
 | 1.12 | `DEPLOY_REPORT_CDT_P1_12.md` | Chat links, two open gaps, why-lines on `/foro` |
 | 1.13 | `DEPLOY_REPORT_CDT_P1_13.md` | Link audit, this sheet, focus rings |
 | 1.14 | `DEPLOY_REPORT_CDT_P1_14.md` | Loreto 2025 travelers from the state release; revenue laws still blank |
+| 1.15 | `DEPLOY_REPORT_CDT_P1_15.md` | Loreto gap filled; optional three-airport compare axis |

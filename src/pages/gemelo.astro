@@ -12,6 +12,7 @@ const learnByTheme: Record<string, string> = {
   movilidad: '/aprendizaje/#agua',
   vivienda: '/aprendizaje/#costa',
 };
+const loretoAirLabel = cdtModel.munis.find((m) => m.name === 'Loreto')?.aereo_2025?.toLocaleString('es-MX') ?? '';
 function cellText(id: string, raw: number | null | undefined) {
   if (raw === null || raw === undefined || Number.isNaN(Number(raw))) return '—';
   if (id === 'pobreza_pct') return Number(raw).toLocaleString('es-MX', { maximumFractionDigits: 2 }) + '%';
@@ -167,17 +168,21 @@ const icon: Record<string, string> = {
               <span data-lang-en hidden>{t.gap_en}</span>
             </p>
             {t.id === 'movilidad' && (
-              <p class="cdt-fine">
-                <a href="https://www.bcs.gob.mx/supera-bcs-los-4-5-millones-de-pasajeros-aereos-en-2025-la-paz-crece-10-9/" rel="noopener noreferrer">
-                  <span data-lang-es>Loreto 2025: 89,600 viajeros en el comunicado del gobierno del estado.</span>
-                  <span data-lang-en hidden>Loreto 2025: 89,600 travelers in the state government release.</span>
+              <div class="cdt-loreto-air">
+                <p class="cdt-loreto-n">{loretoAirLabel}</p>
+                <p>
+                  <span data-lang-es>viajeros en Loreto, 2025</span>
+                  <span data-lang-en hidden>travelers at Loreto, 2025</span>
+                </p>
+                <a class="cdt-source-chip" href="https://www.bcs.gob.mx/supera-bcs-los-4-5-millones-de-pasajeros-aereos-en-2025-la-paz-crece-10-9/" rel="noopener noreferrer">
+                  <span data-lang-es>Fuente: Gobierno de BCS</span>
+                  <span data-lang-en hidden>Source: BCS government</span>
                 </a>
-                {' '}
-                <a href="/metas/">
-                  <span data-lang-es>La hoja de la AFAC sigue fuera del acervo.</span>
-                  <span data-lang-en hidden>The AFAC spreadsheet is still outside the archive.</span>
+                <a href="/gemelo/?theme=movilidad&x=pob&y=aereo_2025">
+                  <span data-lang-es>Ver en el gráfico (sin Comondú ni Mulegé)</span>
+                  <span data-lang-en hidden>See on the chart (without Comondú or Mulegé)</span>
                 </a>
-              </p>
+              </div>
             )}
           </section>
         ))}
@@ -512,6 +517,11 @@ const icon: Record<string, string> = {
       a { color: #000; text-decoration: none; }
     }
     .cdt-blank { display: inline-block; margin: 0.35rem 0; padding: 0.25rem 0.55rem; border-radius: 999px; background: #f3e6cc; color: #6a4b12; font-size: 0.78rem; font-weight: 650; text-decoration: none; }
+    .cdt-loreto-air { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.75rem; margin: 0.7rem 0; padding: 0.75rem 0.9rem; border: 1px solid #0083C4; border-left: 4px solid #0083C4; border-radius: 12px; background: #e8f4fb; }
+    .cdt-loreto-n { margin: 0; font-size: 1.7rem; font-weight: 750; color: #006BA3; letter-spacing: -0.02em; line-height: 1; }
+    .cdt-loreto-air p { margin: 0; }
+    .cdt-source-chip { display: inline-block; border-radius: 999px; background: #0083C4; color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 700; padding: 0.28rem 0.7rem; }
+    .cdt-source-chip:focus-visible, .cdt-loreto-air a:focus-visible { outline: 3px solid #0b3a56; outline-offset: 2px; }
     @media (max-width: 980px) {
       .cdt-top { flex-direction: column; align-items: stretch; }
       .cdt-work { grid-template-columns: 1fr; }

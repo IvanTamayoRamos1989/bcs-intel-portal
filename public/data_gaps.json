@@ -275,13 +275,13 @@
     {
       "id": "gap-movilidad-loreto-pax-2025",
       "topic": "Pasajeros aéreos 2025 de Loreto",
-      "detail_es": "El gobierno del estado informó 89,600 viajeros en Loreto en 2025, en el mismo desglose por aeropuerto que suma el total estatal. La hoja de la AFAC no está en el acervo, así que no se usa otra cifra.",
+      "detail_es": "Cubierta: 89,600 viajeros en 2025, comunicado del Gobierno de Baja California Sur. Los Cabos y La Paz siguen con la cifra de la ficha estratégica. Comondú y Mulegé no tienen aeropuerto y no se ponen en cero.",
       "priority": "high",
-      "status": "partial",
+      "status": "filled",
       "sources_sought": [
-        "AFAC, estadística operativa de aeropuertos, año calendario 2025"
+        "Comunicado del Gobierno de BCS, Secretaría de Turismo y Economía, 2025"
       ],
-      "notes": "Cifra usada: comunicado del Gobierno de BCS, Secretaría de Turismo y Economía. Dónde mirar después: la estadística operativa de la AFAC, que no se abrió.",
+      "notes": "Fuente: https://www.bcs.gob.mx/supera-bcs-los-4-5-millones-de-pasajeros-aereos-en-2025-la-paz-crece-10-9/ — Los Cabos 3,765,000 + La Paz 668,800 + Loreto 89,600 = 4,523,400 en esa nota. El eje del gemelo usa 3,800,000 para Los Cabos (ficha redondeada).",
       "updated": "2026-10-31"
     },
     {

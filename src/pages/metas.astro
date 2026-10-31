@@ -10,6 +10,7 @@ import gapsDoc from '../data/data_gaps.json';
 const gapLabel: Record<string, { es: string; en: string }> = {
   partial: { es: 'Evidencia parcial', en: 'Partial evidence' },
   open: { es: 'Brecha abierta', en: 'Open gap' },
+  filled: { es: 'Cubierta', en: 'Filled' },
 };
 const gapEn: Record<string, { topic: string; detail: string }> = {
   'gap-energia-subestaciones': {
@@ -62,7 +63,7 @@ const gapEn: Record<string, { topic: string; detail: string }> = {
   },
   'gap-movilidad-loreto-pax-2025': {
     topic: 'Loreto 2025 air passengers',
-    detail: 'The state government reported 89,600 travelers at Loreto in 2025, in the same airport breakdown that adds up to the state total. The AFAC spreadsheet is not in the archive, so no other figure is used.',
+    detail: 'Filled: 89,600 travelers in 2025, from the Baja California Sur government release. Los Cabos and La Paz stay on the strategic-brief figures. Comondú and Mulegé have no airport and are not set to zero.',
   },
   'gap-fiscal-ley-2026-mulege-loreto': {
     topic: '2026 revenue law for Mulegé and Loreto',
