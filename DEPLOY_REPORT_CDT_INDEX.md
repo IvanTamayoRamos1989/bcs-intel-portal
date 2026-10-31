@@ -2,7 +2,7 @@
 
 Live site: https://bajacaliforniasur2050.com · Netlify: https://bcs-intel-portal.netlify.app
 
-Password for the gate: `BCS2050`. The portal stays `noindex`. Guest path for operators: `FORO_GUEST_WALKTHROUGH.md`.
+Password for the gate: `BCS2050`. The portal stays `noindex`. Guest path for operators: `FORO_GUEST_WALKTHROUGH.md`. `public/stills/` is gitignored and must stay on the deploy machine.
 
 ## Live paths
 
@@ -53,3 +53,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 1.16 | `DEPLOY_REPORT_CDT_P1_16.md` | Phase 2 checklist; chat answers for the air axis; both Los Cabos figures on the card |
 | 1.17 | `DEPLOY_REPORT_CDT_P1_17.md` | Saved-view map state matches `/mapas`; each card previews its layers |
 | 1.18 | `DEPLOY_REPORT_CDT_P1_18.md` | Ten-minute guest walk on `/foro`; the five views taught by name |
+| 1.19 | `DEPLOY_REPORT_CDT_P1_19.md` | Evidence cards for desalination, C40 and UrbanShift; plain lines on each saved view |

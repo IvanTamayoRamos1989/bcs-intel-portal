@@ -4,6 +4,44 @@ import HowTo from '../components/HowTo.astro';
 import PathBanner from '../components/PathBanner.astro';
 import CdtPageTone from '../components/CdtPageTone.astro';
 
+const evidenceDepth = [
+  {
+    name: 'IFC · agua en Los Cabos',
+    year: '2023',
+    href: 'https://www.ifc.org/content/dam/ifc/doc/2023/2023-Mexico-Los-Cabos-Water-PPP.pdf',
+    es: 'En una ciudad turística y árida, la desalación y el agua que se pierde en la red se miran juntas: producir más no corrige lo que no se contabiliza.',
+    en: 'In an arid tourist city, desalination and water lost in the network are read together: making more water does not fix what goes uncounted.',
+  },
+  {
+    name: 'McEvoy · desalación en Baja California Sur',
+    year: '2014',
+    href: 'https://www.water-alternatives.org/index.php/alldoc/articles/vol7/v7issue2/262-a7-3-5/file',
+    es: 'En Cabo San Lucas, la desalación puede dar agua a un barrio y dejar intactos los problemas de fondo de la red.',
+    en: 'In Cabo San Lucas, desalination can supply one neighborhood and still leave the deeper problems of the network untouched.',
+  },
+  {
+    name: 'C40 · Water Safe Cities',
+    year: '',
+    href: 'https://www.c40knowledgehub.org/s/article/Water-Safe-Cities',
+    es: 'Una ciudad costera se prepara a la vez para la sequía y para la inundación.',
+    en: 'A coastal city prepares for drought and for flooding at the same time.',
+  },
+  {
+    name: 'C40 · adaptación costera',
+    year: '',
+    href: 'https://www.c40knowledgehub.org/s/topic/0TO1Q0000002IZKWA2/coastal-adaptation-solutions?language=en_US',
+    es: 'La costa se adapta con obras y con la forma de vivir junto al mar; en Baja California Sur la evidencia local sigue siendo áreas protegidas, ordenamiento y acuíferos.',
+    en: 'A coast adapts with works and with how people live beside the sea; in Baja California Sur the local evidence remains protected areas, zoning and aquifers.',
+  },
+  {
+    name: 'UrbanShift · Costa Rica',
+    year: '',
+    href: 'https://www.shiftcities.org/projects/costa-rica',
+    es: 'Otro país junta naturaleza y ciudad en un mismo proyecto, como archivo de pares y no como plan para Baja California Sur.',
+    en: 'Another country joins nature and the city in one project, as a peer archive and not as a plan for Baja California Sur.',
+  },
+];
+
 const networks = [
   {
     name: 'GPSC',
@@ -212,6 +250,11 @@ const cases = [
       <li><a href="https://use.metropolis.org/">Urban Sustainability Exchange</a></li>
       <li><a href="https://plataformaurbana.cepal.org/es">CEPAL · Plataforma Urbana</a></li>
       <li><a href="https://www.bancomundial.org/es/topic/urbandevelopment/overview"><span data-lang-es>Banco Mundial · desarrollo urbano</span><span data-lang-en hidden>World Bank · urban development</span></a></li>
+      <li><a href="https://www.ifc.org/content/dam/ifc/doc/2023/2023-Mexico-Los-Cabos-Water-PPP.pdf">IFC · Los Cabos, 2023</a></li>
+      <li><a href="https://www.water-alternatives.org/index.php/alldoc/articles/vol7/v7issue2/262-a7-3-5/file"><span data-lang-es>McEvoy · desalación, 2014</span><span data-lang-en hidden>McEvoy · desalination, 2014</span></a></li>
+      <li><a href="https://www.c40knowledgehub.org/s/article/Water-Safe-Cities">C40 · Water Safe Cities</a></li>
+      <li><a href="https://www.c40knowledgehub.org/s/topic/0TO1Q0000002IZKWA2/coastal-adaptation-solutions?language=en_US"><span data-lang-es>C40 · adaptación costera</span><span data-lang-en hidden>C40 · coastal adaptation</span></a></li>
+      <li><a href="https://www.shiftcities.org/projects/costa-rica">UrbanShift · Costa Rica</a></li>
       <li><a href="https://www.wri.org/aqueduct">WRI Aqueduct 4.0</a></li>
       <li><a href="https://mexico.mapbiomas.org/">MapBiomas México</a></li>
       <li><a href="https://resourcewatch.org/">WRI Resource Watch</a></li>
@@ -248,6 +291,16 @@ const cases = [
     </span>
   </p>
   <div class="cdt-net">
+    {evidenceDepth.map((card) => (
+      <article>
+        <p class="tag"><span data-lang-es>Fuente externa</span><span data-lang-en hidden>External source</span></p>
+        <h3><a href={card.href} rel="noopener noreferrer">{card.name}{card.year ? ` (${card.year})` : ''}</a></h3>
+        <p>
+          <span data-lang-es>{card.es} Esas cifras no son de Baja California Sur.</span>
+          <span data-lang-en hidden>{card.en} Those figures are not for Baja California Sur.</span>
+        </p>
+      </article>
+    ))}
     <article>
       <p class="tag"><span data-lang-es>Fuente externa</span><span data-lang-en hidden>External source</span></p>
       <h3><a href="https://www.wri.org/aqueduct" rel="noopener noreferrer">WRI Aqueduct 4.0</a></h3>

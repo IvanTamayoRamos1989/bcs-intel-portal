@@ -48,6 +48,10 @@ import { vistas } from '../lib/vistas';
         <span data-lang-es>{v.es}</span>
         <span data-lang-en hidden>{v.en}</span>
       </h2>
+      <p class="vista-plain">
+        <span data-lang-es>{v.plain_es}</span>
+        <span data-lang-en hidden>{v.plain_en}</span>
+      </p>
       <p>
         <span data-lang-es>{v.note_es}</span>
         <span data-lang-en hidden>{v.note_en}</span>
@@ -71,6 +75,7 @@ import { vistas } from '../lib/vistas';
     }
     .vista h2 { margin: 0 0 0.35rem; color: #006BA3; font-size: 1.15rem; }
     .vista p { margin: 0.3rem 0; }
+    .vista-plain { font-size: 1rem; }
     .vista-open { color: #006BA3; font-size: 0.92rem; }
   </style>
   <script>
