@@ -1993,6 +1993,34 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-limites-p123",
+        "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#limites",
+        "theme": "planeacion",
+        "sum_es": (
+            "En la Fase 1 el gemelo puede comparar los cinco municipios, con cinco temas y escenarios. "
+            "Si una celda está en blanco, se queda en blanco. "
+            "Todavía no puede mostrar mapas por manzana (AGEB), forma de predios, lotes de catastro, ni inventar una cifra que falta. "
+            "Eso está escrito en /gemelo#limites. Las brechas abiertas están en /metas. "
+            "Los casos de otras ciudades están en /aprendizaje#evidencia y sus cifras no son de Baja California Sur. "
+            "Pregunta de seguimiento: ¿quiere ver las preguntas abiertas o un caso de otra ciudad? "
+            "[que no puede el gemelo limites del gemelo limites fase 1 ageb]"
+        ),
+        "sum_en": (
+            "In Phase 1 the twin can compare the five municipalities, with five themes and scenarios. "
+            "If a cell is blank, it stays blank. "
+            "It cannot yet show block maps (AGEB), parcel form, cadastre lots, or invent a missing figure. "
+            "That is written at /gemelo#limites. Open gaps are at /metas. "
+            "Cases from other cities are at /aprendizaje#evidencia and their figures are not for Baja California Sur. "
+            "Follow-up: do you want the open questions or a case from another city? "
+            "[what the twin cannot do twin limits phase 1 limits ageb]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-leer-p121",
         "title": "Cómo leer el tablero del gemelo / How to read the twin board",
         "path": "portal/gemelo",

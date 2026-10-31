@@ -1080,6 +1080,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(kit.id);
     }
   }
+  if (limitsQuery(query)) {
+    const limits = corpus.find((c) => c.id === 'portal:gemelo-limites-p123');
+    if (limits && !usedId.has(limits.id)) {
+      picked.unshift(limits);
+      usedId.add(limits.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1496,6 +1503,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== kit.id);
       picked.length = 0;
       picked.push(kit, ...rest);
+    }
+  }
+  if (limitsQuery(query)) {
+    const limits = corpus.find((c) => c.id === 'portal:gemelo-limites-p123');
+    if (limits) {
+      const rest = picked.filter((c) => c.id !== limits.id);
+      picked.length = 0;
+      picked.push(limits, ...rest);
     }
   }
 
@@ -2205,6 +2220,12 @@ function evidenceDepthQuery(message) {
   return /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/.test(q);
 }
 
+function limitsQuery(message) {
+  if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
+  const q = normQ(message);
+  return /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/.test(q);
+}
+
 function kitQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message)) return false;
   const q = normQ(message);
@@ -2235,6 +2256,9 @@ function portalSurfaceBlocks(message, lang) {
   const en = lang === 'en';
   const surfaces = [
     { id: 'gemelo-air', re: /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, href: '/gemelo/?theme=movilidad&x=pob&y=aereo_2025', es: 'Eje aéreo 2025', en: '2025 air axis' }, // keep in sync with airAxisQuery
+    { id: 'gemelo-limites', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
+    { id: 'gemelo-limites-metas', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, href: '/metas/', es: 'Preguntas abiertas', en: 'Open questions' },
+    { id: 'gemelo-limites-ev', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, href: '/aprendizaje/#evidencia', es: 'Evidencia de otras ciudades', en: 'Evidence from other cities' },
     { id: 'gemelo-leer', re: /como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, href: '/gemelo/', es: 'Cómo leer el tablero', en: 'How to read the board' },
     { id: 'gemelo-leer-vistas', re: /como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, href: '/vistas/', es: 'Vistas guardadas', en: 'Saved views' },
     { id: 'ev-desal', re: /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, href: '/aprendizaje/#evidencia', es: 'Evidencia: agua y costa', en: 'Evidence: water and coast' },
@@ -2280,6 +2304,7 @@ function portalGuideBoost(message, chunk) {
     [/agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos|east cape/, /vistas-nombres/],
     [/desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, /evidencia-desal/],
     [/como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, /gemelo-leer/],
+    [/que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, /gemelo-limites/],
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
@@ -2656,6 +2681,9 @@ async function handlerInner(event) {
   const kitGuide = kitQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:foro-kit-p122')
     : null;
+  const limitsGuide = limitsQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-limites-p123')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2681,6 +2709,10 @@ async function handlerInner(event) {
   }
   if (kitGuide && !evidence.some((c) => c.id === kitGuide.id)) {
     evidence = [kitGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (limitsGuide && !evidence.some((c) => c.id === limitsGuide.id)) {
+    evidence = [limitsGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
