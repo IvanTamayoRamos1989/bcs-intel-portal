@@ -64,9 +64,32 @@ import { vistas } from '../lib/vistas';
     </article>
   ))}
   <style>
-    .vista { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.8rem 0.95rem; margin: 0.7rem 0; background: #fff; }
+    .vista { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.8rem 0.95rem; margin: 0.7rem 0; background: #fff; scroll-margin-top: 7.25rem; }
+    .vista:last-of-type { margin-bottom: 70vh; }
+    @media (min-width: 900px) {
+      .vista { scroll-margin-top: 4.75rem; }
+    }
     .vista h2 { margin: 0 0 0.35rem; color: #006BA3; font-size: 1.15rem; }
     .vista p { margin: 0.3rem 0; }
     .vista-open { color: #006BA3; font-size: 0.92rem; }
   </style>
+  <script>
+    function showNamedView() {
+      var id = (location.hash || '').replace(/^#/, '');
+      var el = id && document.getElementById(id);
+      if (!el) return;
+      var top = el.getBoundingClientRect().top;
+      var root = document.documentElement;
+      var prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      if (top > 160 || top < 40) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+      root.style.scrollBehavior = prev;
+    }
+    function arm() {
+      showNamedView();
+      window.setTimeout(showNamedView, 400);
+    }
+    if (document.readyState === 'complete') arm();
+    else window.addEventListener('load', arm);
+  </script>
 </BaseLayout>
