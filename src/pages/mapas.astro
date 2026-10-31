@@ -989,6 +989,7 @@ const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
           });
           urlFrame = (bbox && bbox.length === 4) ? bbox : 'bcs';
           applyUrlFrame();
+          setTimeout(applyUrlFrame, 280);
           if (listEl) {
             listEl.querySelectorAll('.gis-layer-group').forEach(function (block) {
               var hit = false;

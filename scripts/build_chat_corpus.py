@@ -1951,6 +1951,44 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:vistas-nombres-p118",
+        "title": "Las cinco vistas por nombre / The five views by name",
+        "path": "portal/vistas",
+        "href": "/vistas/",
+        "theme": "planeacion",
+        "sum_es": (
+            "Hay cinco vistas con nombre en /vistas. Cada tarjeta dice qué capas enciende el mapa y, si hay escenario, qué encuadre usa. "
+            "1) Agua primero en el sur: escenario «Agua primero» (acuíferos en déficit, corredor, East Cape, cauces y costa) y encuadre del sur. "
+            "El gemelo abre /gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct, el mismo enlace de /foro. "
+            "2) Crecimiento Cabos–La Paz: escenario del corredor. Mapa /mapas?scenario=corridor_intensify#gis. "
+            "3) Puertos y aeropuertos: escenario de puertos y aeropuertos. Mapa /mapas?scenario=ports_air_hubs#gis. "
+            "4) Contexto de vivienda: sin escenario. Enciende asentamientos, ordenamiento y acuíferos en déficit, con encuadre de todo el estado. "
+            "Mapa /mapas?layers=settlements,poer_ugas,focus_water_dmas#gis. El rezago CONAVI no se reparte por municipio. "
+            "5) East Cape y áreas protegidas: encuadre del sur de «Trayectoria actual». Esas capas se sustituyen por East Cape y áreas protegidas federales. "
+            "Mapa /mapas?scenario=baseline&layers=focus_east_cape,anp_federales#gis. "
+            "El recorrido de 10 minutos está en /foro#recorrido: esta hoja, las vistas, el gemelo de agua y vivienda, aprendizaje para imprimir y coordinación. "
+            "Pregunta de seguimiento: ¿abres Agua primero en el sur, o el recorrido de 10 minutos? "
+            "[cinco vistas agua primero corredor puertos vivienda east cape recorrido]"
+        ),
+        "sum_en": (
+            "There are five named views at /vistas. Each card says which layers the map turns on and, when there is a scenario, which frame it uses. "
+            "1) Water first in the south: the “Water security first” scenario (deficit aquifers, corridor, East Cape, waterways and coastline) and the south frame. "
+            "The twin opens /gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct, the same link as /foro. "
+            "2) Cabos–La Paz growth: the corridor scenario. Map /mapas?scenario=corridor_intensify#gis. "
+            "3) Ports and airports: the ports-and-airports scenario. Map /mapas?scenario=ports_air_hubs#gis. "
+            "4) Housing context: no scenario. It turns on settlements, zoning and deficit aquifers, with a statewide frame. "
+            "Map /mapas?layers=settlements,poer_ugas,focus_water_dmas#gis. The CONAVI backlog is not split by municipality. "
+            "5) East Cape and protected areas: the south frame of “Current trajectory”. Those scenario layers are replaced by East Cape and federal protected areas. "
+            "Map /mapas?scenario=baseline&layers=focus_east_cape,anp_federales#gis. "
+            "The ten-minute walk is at /foro#recorrido: this sheet, the views, the water-and-housing twin, learning ready to print, and coordination. "
+            "Follow-up: do you open Water first in the south, or the ten-minute walk? "
+            "[five views water first corridor ports housing east cape ten-minute walk]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:sustancia-p111",
         "title": "Cifras en blanco y hoja para imprimir / Blank figures and the print sheet",
         "path": "portal/foro",
