@@ -116,7 +116,8 @@ const { home = false } = Astro.props;
   .bcs-chat-spec-title { margin: 0; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #006BA3; }
   .bcs-chat-spec-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem; }
   .bcs-chat-spec-link { font-size: .78rem; font-weight: 700; line-height: 1.2; padding: .28rem .65rem; border-radius: 999px; border: 1px solid #0083C4; background: #e8f4fb; color: #006BA3; text-decoration: none; }
-  .bcs-chat-spec-link:hover, .bcs-chat-spec-link:focus-visible { background: #0083C4; color: #fff; outline: 2px solid #006BA3; outline-offset: 2px; }
+  .bcs-chat-spec-link:hover { background: #0083C4; color: #fff; }
+  .bcs-chat-spec-link:focus-visible { background: #0083C4; color: #fff; outline: 3px solid #006BA3; outline-offset: 3px; }
   .bcs-chat-sugg-btn { text-align: left; font: inherit; font-size: .84rem; line-height: 1.35; padding: 7px 10px; border-radius: 10px; border: 1px solid #e2dccf; background: #fbf8f1; color: #23374a; cursor: pointer; }
   .bcs-chat-sugg-btn:hover, .bcs-chat-sugg-btn:focus-visible { border-color: #34607d; background: #eef3f6; }
   .bcs-chat {
@@ -898,7 +899,8 @@ const { home = false } = Astro.props;
   body.chat-home .bcs-chat-spec { border-top-color: rgba(255,255,255,.35); }
   body.chat-home .bcs-chat-spec-title { color: rgba(255,255,255,.88); }
   body.chat-home .bcs-chat-spec-link { border-color: #fff; }
-  body.chat-home .bcs-chat-spec-link:hover, body.chat-home .bcs-chat-spec-link:focus-visible { background: #fff; color: #006BA3; border-color: #fff; outline-color: #fff; }
+  body.chat-home .bcs-chat-spec-link:hover { background: #fff; color: #006BA3; border-color: #fff; }
+  body.chat-home .bcs-chat-spec-link:focus-visible { background: #fff; color: #006BA3; border-color: #fff; outline: 3px solid #fff; outline-offset: 3px; box-shadow: 0 0 0 6px #006BA3; }
   body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { background: #fff; border-color: transparent; color: #1a2b38; box-shadow: 0 6px 20px rgba(0,40,70,.18); }
   body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:hover, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:focus-visible { border-color: #fff; outline: 2px solid #fff; outline-offset: 2px; }
   body.chat-home .bcs-sugg-k { color: #0083C4 !important; }
