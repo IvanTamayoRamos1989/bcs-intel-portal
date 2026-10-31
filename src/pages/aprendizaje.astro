@@ -181,6 +181,35 @@ const cases = [
       Each card says <strong>external source</strong>. For a state figure, go back to the consultation or the territorial twin.
     </span>
   </p>
+  <section class="apr-foro">
+    <h2 class="apr-h">
+      <span data-lang-es>Lista corta para el foro</span>
+      <span data-lang-en hidden>Short list for the meeting</span>
+    </h2>
+    <p>
+      <span data-lang-es>Solo fuentes externas. Este portal no copia sus cifras. Imprima esta hoja y vuelva a Inicio o al gemelo para los datos de BCS.</span>
+      <span data-lang-en hidden>External sources only. This portal does not copy their figures. Print this sheet and return to Home or the twin for BCS data.</span>
+    </p>
+    <ul>
+      <li><a href="https://www.thegpsc.org/">GPSC</a></li>
+      <li><a href="https://www.shiftcities.org/">UrbanShift</a> · <a href="https://es.shiftcities.org/"><span data-lang-es>español</span><span data-lang-en hidden>Spanish</span></a></li>
+      <li><a href="https://www.c40knowledgehub.org/">C40 Knowledge Hub</a></li>
+      <li><a href="https://iclei.org/">ICLEI</a></li>
+      <li><a href="https://use.metropolis.org/">Urban Sustainability Exchange</a></li>
+      <li><a href="https://plataformaurbana.cepal.org/es">CEPAL · Plataforma Urbana</a></li>
+      <li><a href="https://www.bancomundial.org/es/topic/urbandevelopment/overview"><span data-lang-es>Banco Mundial · desarrollo urbano</span><span data-lang-en hidden>World Bank · urban development</span></a></li>
+      <li><a href="https://www.wri.org/aqueduct">WRI Aqueduct 4.0</a></li>
+      <li><a href="https://mexico.mapbiomas.org/">MapBiomas México</a></li>
+      <li><a href="https://resourcewatch.org/">WRI Resource Watch</a></li>
+      <li><a href="https://www.economia.gob.mx/datamexico/">DataMéxico</a></li>
+      <li><a href="https://datacommons.org/">Data Commons</a></li>
+    </ul>
+    <p>
+      <a href="/vistas/"><span data-lang-es>Vistas guardadas del territorio</span><span data-lang-en hidden>Saved territory views</span></a>
+      {' · '}
+      <a href="/inicio/"><span data-lang-es>Consulta</span><span data-lang-en hidden>Consultation</span></a>
+    </p>
+  </section>
   <p class="cta-row">
     <a class="btn" href="/inicio/"><span data-lang-es>Consulta ciudadana</span><span data-lang-en hidden>Citizen consultation</span></a>
     <a class="btn secondary" href="/gemelo/"><span data-lang-es>Gemelo territorial</span><span data-lang-en hidden>Territorial twin</span></a>
@@ -288,5 +317,12 @@ const cases = [
     .cdt-case ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }
     .cdt-case li { margin: 0.45rem 0; }
     .tag { display: inline-block; margin-left: 0.35rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #006BA3; }
+    .apr-foro { display: none; }
+    @media print {
+      .pt-top, .pt-sub, .site-footer, .bcs-chat, .pt-spec-note, .lead, .cta-row, .cdt-net, .cdt-case, h2:not(.apr-h) { display: none !important; }
+      .apr-foro { display: block; border: 0; }
+      .apr-foro ul { columns: 2; }
+      body, body.has-chat-sidebar { padding: 0 !important; }
+    }
   </style>
 </BaseLayout>

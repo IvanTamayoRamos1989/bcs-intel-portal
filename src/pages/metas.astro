@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { cdtModel } from '../lib/cdtModel';
+import foresights from '../data/foresights.json';
+import gapsDoc from '../data/data_gaps.json';
+
+const gapLabel: Record<string, { es: string; en: string }> = {
+  partial: { es: 'Evidencia parcial', en: 'Partial evidence' },
+  open: { es: 'Brecha abierta', en: 'Open gap' },
+};
+for (const g of gapsDoc.gaps) {
+  if (!gapLabel[g.status]) throw new Error(`Unknown gap status: ${g.status}`);
+}
+
+const themeOrder = cdtModel.themes;
+---
+<BaseLayout
+  title="Preguntas abiertas"
+  titleEn="Open questions"
+  description="Preguntas estratégicas, señales de prospectiva y brechas. Sin porcentaje de avance."
+  descriptionEn="Strategic questions, foresight signals and gaps. No progress percentage."
+  section="Preguntas abiertas"
+  sectionEn="Open questions"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Tablero de lo que sigue abierto. Una pregunta estratégica está abierta mientras no hay una respuesta cerrada en el portal.
+      Una señal de prospectiva ya está publicada. Una brecha usa el estado que trae la lista (parcial o abierta). No hay porcentaje de avance.
+    </span>
+    <span data-lang-en hidden>
+      A board of what is still open. A strategic question stays open until the portal has a closed answer.
+      A foresight signal is already published. A gap uses the status on the list (partial or open). There is no progress percentage.
+    </span>
+  </p>
+  <p>
+    <a href="/preguntas/"><span data-lang-es>Preguntas</span><span data-lang-en hidden>Questions</span></a>
+    {' · '}
+    <a href="/foresights/"><span data-lang-es>Prospectiva</span><span data-lang-en hidden>Foresight</span></a>
+    {' · '}
+    <a href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>
+    {' · '}
+    <a href="/vistas/"><span data-lang-es>Vistas</span><span data-lang-en hidden>Views</span></a>
+  </p>
+
+  <h2>
+    <span data-lang-es>Preguntas estratégicas por tema del gemelo</span>
+    <span data-lang-en hidden>Strategic questions by twin theme</span>
+  </h2>
+  <p class="meta">
+    <span data-lang-es>Estado: abierta. Una pregunta puede aparecer en más de un tema.</span>
+    <span data-lang-en hidden>Status: open. One question can appear under more than one theme.</span>
+  </p>
+  {themeOrder.map((t) => {
+    const list = cdtModel.goals.filter((g) => g.themes.includes(t.id));
+    return (
+      <section class="meta-card">
+        <h3>
+          <span data-lang-es>{t.es}</span>
+          <span data-lang-en hidden>{t.en}</span>
+          <span class="meta-n">{list.length}</span>
+        </h3>
+        <ul>
+          {list.map((g) => (
+            <li>
+              <span class="meta-tag"><span data-lang-es>Abierta</span><span data-lang-en hidden>Open</span></span>
+              <a href={g.href}>
+                <span data-lang-es>{g.question_es}</span>
+                <span data-lang-en hidden>{g.question_en}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  })}
+
+  <h2>
+    <span data-lang-es>Señales de prospectiva</span>
+    <span data-lang-en hidden>Foresight signals</span>
+  </h2>
+  <p class="meta">
+    <span data-lang-es>Estado: en el portal. El tema es el que ya trae la señal ({foresights.updated}).</span>
+    <span data-lang-en hidden>Status: in the portal. The theme is the one already on the signal ({foresights.updated}).</span>
+  </p>
+  <ul class="meta-list">
+    {foresights.signals.map((s) => (
+      <li>
+        <span class="meta-tag"><span data-lang-es>En el portal</span><span data-lang-en hidden>In the portal</span></span>
+        <a href={`/foresights/#signal-${s.id}`}>
+          <span data-lang-es>{s.title_es}</span>
+          <span data-lang-en hidden>{s.title_en}</span>
+        </a>
+        <span class="meta-theme">{s.theme}</span>
+      </li>
+    ))}
+  </ul>
+
+  <h2>
+    <span data-lang-es>Brechas de datos</span>
+    <span data-lang-en hidden>Data gaps</span>
+  </h2>
+  <ul class="meta-list">
+    {gapsDoc.gaps.map((g) => (
+      <li>
+        <span class="meta-tag">
+          <span data-lang-es>{gapLabel[g.status].es}</span>
+          <span data-lang-en hidden>{gapLabel[g.status].en}</span>
+        </span>
+        <strong>{g.topic}</strong>
+        <p>{g.detail_es}</p>
+      </li>
+    ))}
+  </ul>
+
+  <style>
+    .meta-card, .meta-list { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.65rem 0; background: #fff; }
+    .meta-card h3 { margin: 0 0 0.4rem; color: #006BA3; }
+    .meta-n { display: inline-block; margin-left: 0.4rem; background: #e8f4fb; color: #006BA3; border-radius: 999px; font-size: 0.78rem; padding: 0.05rem 0.45rem; }
+    .meta-card ul, .meta-list { margin: 0; padding-left: 0; list-style: none; }
+    .meta-card li, .meta-list li { margin: 0.45rem 0; }
+    .meta-tag { display: inline-block; margin-right: 0.35rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #006BA3; }
+    .meta-theme { margin-left: 0.35rem; color: #5a5a5a; font-size: 0.78rem; }
+    .meta-list p { margin: 0.2rem 0 0; color: #1a1a1a; font-size: 0.9rem; }
+    .meta { color: #5a5a5a; }
+  </style>
+</BaseLayout>

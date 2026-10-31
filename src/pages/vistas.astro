@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { vistas } from '../lib/vistas';
+---
+<BaseLayout
+  title="Vistas guardadas"
+  titleEn="Saved views"
+  description="Enlaces con nombre para abrir el mismo mapa y el mismo tablero."
+  descriptionEn="Named links that open the same map and the same board."
+  section="Vistas"
+  sectionEn="Views"
+  wide={true}
+>
+  <p class="lead">
+    <span data-lang-es>
+      Cinco vistas con nombre para una reunión. Cada una abre capas y un escenario que ya existen.
+      Compartir el enlace basta: no hay una cuenta de usuario ni un mapa nuevo.
+    </span>
+    <span data-lang-en hidden>
+      Five named views for a meeting. Each one opens layers and a scenario that already exist.
+      Sharing the link is enough: there is no user account and no new map.
+    </span>
+  </p>
+  <p>
+    <a href="/gemelo/"><span data-lang-es>Gemelo territorial</span><span data-lang-en hidden>Territorial twin</span></a>
+    {' · '}
+    <a href="/mapas/"><span data-lang-es>Mapas</span><span data-lang-en hidden>Maps</span></a>
+    {' · '}
+    <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
+  </p>
+  {vistas.map((v) => (
+    <article class="vista">
+      <h2>
+        <span data-lang-es>{v.es}</span>
+        <span data-lang-en hidden>{v.en}</span>
+      </h2>
+      <p>
+        <span data-lang-es>{v.note_es}</span>
+        <span data-lang-en hidden>{v.note_en}</span>
+      </p>
+      <p>
+        <a class="btn" href={v.gemelo}><span data-lang-es>Abrir en el gemelo</span><span data-lang-en hidden>Open in the twin</span></a>
+        {' '}
+        <a class="btn secondary" href={v.mapas}><span data-lang-es>Abrir en mapas</span><span data-lang-en hidden>Open in maps</span></a>
+      </p>
+    </article>
+  ))}
+  <style>
+    .vista { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.8rem 0.95rem; margin: 0.7rem 0; background: #fff; }
+    .vista h2 { margin: 0 0 0.35rem; color: #006BA3; font-size: 1.15rem; }
+    .vista p { margin: 0.3rem 0; }
+  </style>
+</BaseLayout>

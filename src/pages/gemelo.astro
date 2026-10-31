@@ -63,6 +63,7 @@ const icon: Record<string, string> = {
           {' · '}
           <a href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
         </p>
+        <p class="cdt-fine"><a href="/vistas/"><span data-lang-es>Vistas guardadas para una reunión</span><span data-lang-en hidden>Saved views for a meeting</span></a></p>
         <div class="cdt-guides">
           {model.guides.map((g) => (
             <a class="cdt-guide" href={`/gemelo/?theme=${g.theme}&scenario=${g.scenario}&x=${g.x}&y=${g.y}`}>
@@ -472,10 +473,14 @@ const icon: Record<string, string> = {
     .cdt-goals li, .cdt-couple li, .cdt-deps li { margin: 0.28rem 0; font-size: 0.88rem; }
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @media print {
-      .pt-top, .pt-sub, .site-footer, .bcs-chat, .pt-spec-note, .cdt-rail, .cdt-guides, #cdt-share, #cdt-print { display: none !important; }
-      body, body.has-chat-sidebar { padding: 0 !important; }
-      .cdt-panel { max-height: none !important; overflow: visible !important; border: 0; }
-      #cdt-map { height: 420px; min-height: 0; }
+      .pt-top, .pt-sub, .site-footer, .bcs-chat, .pt-spec-note, .cdt-rail, .cdt-guides, #cdt-share, #cdt-print, .leaflet-control-container { display: none !important; }
+      body, body.has-chat-sidebar { padding: 0 !important; background: #fff !important; }
+      .cdt { color: #000; }
+      .cdt-work { display: block; }
+      .cdt-panel { max-height: none !important; overflow: visible !important; border: 0; box-shadow: none; }
+      #cdt-map { height: 280px; min-height: 0; break-inside: avoid; }
+      .cdt-kpi, .cdt-quality article, .cdt-rec { break-inside: avoid; }
+      a { color: #000; text-decoration: none; }
     }
     @media (max-width: 980px) {
       .cdt-work { grid-template-columns: 1fr; }
