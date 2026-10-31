@@ -1,0 +1,48 @@
+/** Named views for guests. Every URL uses scenario and layer ids already on the map. */
+export const vistas = [
+  {
+    id: 'agua-sur',
+    es: 'Agua primero en el sur',
+    en: 'Water first in the south',
+    note_es: 'Escenario «agua primero»: corredor, East Cape y marcadores de acuíferos en déficit. La comparación del gemelo usa población y pobreza, no un balance municipal de agua.',
+    note_en: '“Water first” scenario: corridor, East Cape and deficit-aquifer markers. The twin comparison uses population and poverty, not a municipal water balance.',
+    gemelo: '/gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct',
+    mapas: '/mapas?scenario=water_first#gis',
+  },
+  {
+    id: 'corredor',
+    es: 'Crecimiento Cabos–La Paz',
+    en: 'Cabos–La Paz growth',
+    note_es: 'Escenario del corredor: carretera, asentamientos, transmisión y unidades de ordenamiento. East Cape queda dentro de Los Cabos.',
+    note_en: 'Corridor scenario: highway, settlements, transmission and zoning units. East Cape stays inside Los Cabos.',
+    gemelo: '/gemelo/?theme=movilidad&scenario=corridor_intensify&x=pob&y=crucero_arribos',
+    mapas: '/mapas?scenario=corridor_intensify#gis',
+  },
+  {
+    id: 'puertos',
+    es: 'Puertos y aeropuertos',
+    en: 'Ports and airports',
+    note_es: 'Anclas SJD, La Paz, Loreto y puertos, más Loreto y Ciudad Constitución. Los pasajeros de crucero del gráfico son la suma DataTur por municipio.',
+    note_en: 'SJD, La Paz and Loreto anchors plus ports, and Loreto and Ciudad Constitución. Cruise passengers on the chart are the DataTur sum by municipality.',
+    gemelo: '/gemelo/?theme=movilidad&scenario=ports_air_hubs&x=pob&y=crucero_pax',
+    mapas: '/mapas?scenario=ports_air_hubs#gis',
+  },
+  {
+    id: 'vivienda',
+    es: 'Contexto de vivienda',
+    en: 'Housing context',
+    note_es: 'Asentamientos, ordenamiento y marcadores de acuíferos en déficit. El rezago CONAVI es estatal: esta vista no lo reparte por municipio.',
+    note_en: 'Settlements, zoning and deficit-aquifer markers. The CONAVI backlog is statewide: this view does not split it by municipality.',
+    gemelo: '/gemelo/?theme=vivienda&scenario=baseline&x=sniiv_2025&y=pobreza_pct',
+    mapas: '/mapas?layers=settlements,poer_ugas,focus_water_dmas#gis',
+  },
+  {
+    id: 'east-cape',
+    es: 'East Cape y áreas protegidas',
+    en: 'East Cape and protected areas',
+    note_es: 'Franja de foco East Cape más áreas naturales protegidas. No es una capa de predios.',
+    note_en: 'East Cape focus belt plus protected areas. It is not a parcel layer.',
+    gemelo: '/gemelo/?theme=urbano&scenario=baseline&x=pob&y=locs&muni=Los%20Cabos',
+    mapas: '/mapas?scenario=baseline&layers=focus_east_cape,anp_federales#gis',
+  },
+] as const;

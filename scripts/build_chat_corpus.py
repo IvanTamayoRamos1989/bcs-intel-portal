@@ -1788,6 +1788,45 @@ def main():
         "type": "guide",
     })
 
+    chunks.append({
+        "id": "portal:vistas-metas-p17",
+        "title": "Vistas guardadas y preguntas abiertas / Saved views and open questions",
+        "path": "portal/vistas",
+        "theme": "planeacion",
+        "sum_es": (
+            "Página /vistas: cinco vistas con nombre para una reunión. Cada enlace abre capas y un escenario que ya existen. "
+            "1) Agua primero en el sur: /mapas?scenario=water_first#gis y el gemelo con tema vivienda. "
+            "2) Crecimiento Cabos–La Paz: /mapas?scenario=corridor_intensify#gis. "
+            "3) Puertos y aeropuertos: /mapas?scenario=ports_air_hubs#gis. "
+            "4) Contexto de vivienda: asentamientos, ordenamiento y acuíferos en déficit. El rezago CONAVI es estatal y no se reparte por municipio. "
+            "5) East Cape y áreas protegidas: /mapas?scenario=baseline&layers=focus_east_cape,anp_federales#gis. "
+            "Página /metas: preguntas estratégicas por tema del gemelo (estado abierta), señales de prospectiva (estado en el portal) "
+            "y brechas de datos (parcial o abierta, como viene en la lista). No hay porcentaje de avance. "
+            "/coordinacion sigue agrupando proyectos federales por institución. "
+            "/aprendizaje#evidencia lista Aqueduct, MapBiomas, Resource Watch, DataMéxico y Data Commons como fuente externa. "
+            "La lista corta para imprimir está en /aprendizaje. "
+            "Pregunta de seguimiento: ¿quieres abrir la vista de agua, la de puertos o una brecha concreta? "
+            "[vistas guardadas metas preguntas brechas foro gemelo mapas coordinacion evidencia]"
+        ),
+        "sum_en": (
+            "Page /vistas: five named views for a meeting. Each link opens layers and a scenario that already exist. "
+            "1) Water first in the south: /mapas?scenario=water_first#gis and the twin on the housing theme. "
+            "2) Cabos–La Paz growth: /mapas?scenario=corridor_intensify#gis. "
+            "3) Ports and airports: /mapas?scenario=ports_air_hubs#gis. "
+            "4) Housing context: settlements, zoning and deficit aquifers. The CONAVI backlog is statewide and is not split by municipality. "
+            "5) East Cape and protected areas: /mapas?scenario=baseline&layers=focus_east_cape,anp_federales#gis. "
+            "Page /metas: strategic questions by twin theme (status open), foresight signals (status in the portal) "
+            "and data gaps (partial or open, as the list already says). There is no progress percentage. "
+            "/coordinacion still groups federal projects by institution. "
+            "/aprendizaje#evidencia lists Aqueduct, MapBiomas, Resource Watch, DataMéxico and Data Commons as external sources. "
+            "The one-page print list is on /aprendizaje. "
+            "Follow-up: do you want the water view, the ports view, or a specific gap? "
+            "[saved views metas questions gaps forum twin maps coordination evidence]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
     # 14_gobierno — Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027)
     try:
         n_gov = add_los_cabos_organigrama(chunks)

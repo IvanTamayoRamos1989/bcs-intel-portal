@@ -89,6 +89,8 @@ export const THEMES: IATheme[] = [
     items: [
       { href: '/gemelo', es: 'Gemelo territorial', en: 'Territorial twin', d_es: 'Mapa, cifras y escenarios para comparar el territorio', d_en: 'Map, figures and scenarios to compare the territory' },
       { href: '/coordinacion', es: 'Coordinación de proyectos', en: 'Project coordination', d_es: 'Institución, obra y sexenio del inventario federal', d_en: 'Institution, work and administration from the federal inventory' },
+      { href: '/vistas', es: 'Vistas guardadas', en: 'Saved views', d_es: 'Enlaces con nombre para el mapa y el gemelo', d_en: 'Named links for the map and the twin' },
+      { href: '/metas', es: 'Preguntas abiertas', en: 'Open questions', d_es: 'Preguntas, señales y brechas, sin porcentaje de avance', d_en: 'Questions, signals and gaps, with no progress percentage' },
       { href: '/foresights', es: 'Prospectiva', en: 'Foresight', d_es: 'Tesis y señales de cada semana', d_en: 'Weekly theses and signals' },
       { href: '/preguntas', es: 'Preguntas estratégicas', en: 'Strategic questions', d_es: 'Lo que hay que decidir y con qué evidencia', d_en: 'What must be decided and on what evidence' },
       { href: '/sesion', es: 'Sesión de estrategia', en: 'Strategy session', d_es: 'Vista para reuniones de estrategia', d_en: 'View for strategy meetings' },
