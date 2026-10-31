@@ -1904,7 +1904,7 @@ def main():
         ),
         "sum_en": (
             "The site map is at /rutas and is summarized on /ayuda. It includes /gemelo, /vistas, /metas, /coordinacion, /aprendizaje and /foro. "
-            "On Home (/inicio) the citizen questions come first. Under them is a short row: Twin, Views, Questions, Coordination, Learning and Guest sheet. "
+            "On Home (/inicio) the citizen questions come first. Under them is a short row: Twin, Views, Questions, Coordination, Learning and Guests. "
             "On /mapas, Saved views opens /vistas. Each view still opens the map and the twin. "
             "On /aprendizaje#evidencia there are three more external cards, checked on 31 October 2026: "
             "Digital Twin Victoria (https://digitaltwin.vic.gov.au/public/), ClimateView (https://www.climateview.global/en) and Open SDG (https://open-sdg.org/). "
