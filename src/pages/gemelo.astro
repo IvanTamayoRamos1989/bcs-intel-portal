@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HowTo from '../components/HowTo.astro';
 import { cdtModel } from '../lib/cdtModel';
 
 const model = cdtModel;
@@ -63,7 +64,16 @@ const icon: Record<string, string> = {
           {' · '}
           <a href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
         </p>
-        <p class="cdt-fine"><a href="/vistas/"><span data-lang-es>Vistas guardadas para una reunión</span><span data-lang-en hidden>Saved views for a meeting</span></a></p>
+        <HowTo
+          leadEs="Elija un tema, luego un escenario, y compare dos cifras municipales. Las recomendaciones son reglas del portal, no un dictamen de predios."
+          leadEn="Pick a theme, then a scenario, and compare two municipal figures. Recommendations are portal rules, not a parcel ruling."
+          steps={[
+            { es: 'Pulse un tema en la columna izquierda.', en: 'Press a theme in the left column.' },
+            { es: 'Elija un escenario o una vista guardada.', en: 'Choose a scenario or a saved view.' },
+            { es: 'Toque un municipio para leer su ficha, su demanda y oferta, y la vista que le corresponde.', en: 'Tap a municipality to read its page, its demand and supply, and the matching saved view.' },
+          ]}
+        />
+        <p class="cdt-fine"><a href="/vistas/"><span data-lang-es>Vistas guardadas para una reunión</span><span data-lang-en hidden>Saved views for a meeting</span></a> · <a href="/foro/"><span data-lang-es>Hoja para invitados</span><span data-lang-en hidden>Guest sheet</span></a></p>
         <div class="cdt-guides">
           {model.guides.map((g) => (
             <a class="cdt-guide" href={`/gemelo/?theme=${g.theme}&scenario=${g.scenario}&x=${g.x}&y=${g.y}`}>
@@ -391,8 +401,8 @@ const icon: Record<string, string> = {
                   <span data-lang-en hidden>{r.because_en}</span>
                 </p>
                 <a href={r.href}>
-                  <span data-lang-es>Ver la evidencia</span>
-                  <span data-lang-en hidden>See the evidence</span>
+                  <span data-lang-es>{r.href.includes('/crecimiento/') ? 'Ver esta vocación en demanda y oferta' : 'Ver la evidencia'}</span>
+                  <span data-lang-en hidden>{r.href.includes('/crecimiento/') ? 'See this vocation in demand and supply' : 'See the evidence'}</span>
                 </a>
               </article>
             ))}
@@ -412,6 +422,7 @@ const icon: Record<string, string> = {
     .cdt-sc, .cdt-theme-btn, .cdt-muni { font: inherit; cursor: pointer; }
     .cdt-sc { border: 1px solid var(--cdt-line); background: #fff; color: var(--cdt-ink); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; }
     .cdt-sc[aria-pressed="true"] { background: var(--cdt); border-color: var(--cdt); color: #fff; }
+    .cdt-sc:focus-visible, .cdt-theme-btn:focus-visible, .cdt-muni:focus-visible, .cdt-guide:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
     .cdt-work { display: grid; grid-template-columns: 5.6rem minmax(0, 1.35fr) minmax(280px, 400px); gap: 0.7rem; align-items: start; }
     .cdt-rail { display: flex; flex-direction: column; gap: 0.35rem; position: sticky; top: 0.6rem; }
     .cdt-theme-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; text-align: left; border: 1px solid var(--cdt-line); background: #fff; border-radius: 12px; padding: 0.45rem 0.4rem; color: var(--cdt-dark); line-height: 1.15; }
@@ -631,7 +642,9 @@ const icon: Record<string, string> = {
           '<p>' + plain(tx(m.strengths_es, m.strengths_en)) + '</p>' +
           '<p>' + plain(tx(m.locks_es, m.locks_en)) + '</p>' +
           subs +
-          '<p><a href="' + m.studio + '">' + tx('Ficha del municipio', 'Municipal page') + '</a></p>';
+          '<p><a href="' + m.studio + '">' + tx('Ficha del municipio', 'Municipal page') + '</a>' +
+          ' · <a href="' + m.crecimiento + '">' + tx('Demanda y oferta', 'Demand and supply') + '</a>' +
+          ' · <a href="' + m.vista + '">' + tx('Vista: ', 'View: ') + tx(m.vista_es, m.vista_en) + '</a></p>';
       }
 
       function renderScatter() {

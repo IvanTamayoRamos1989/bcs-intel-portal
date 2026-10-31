@@ -15,6 +15,7 @@ import gapsDoc from '../data/data_gaps.json';
 import layersDoc from '../../public/gis/layers.json';
 import ontology from '../../netlify/functions/ontology_graph.json';
 import fiscal from '../data/fiscal_docs.json';
+import { vistas } from './vistas';
 
 export type CdtThemeId = 'urbano' | 'economia' | 'investigacion' | 'movilidad' | 'vivienda';
 
@@ -245,6 +246,10 @@ export type CdtMuni = {
   locks_en: string;
   strengths_es: string;
   strengths_en: string;
+  crecimiento: string;
+  vista: string;
+  vista_es: string;
+  vista_en: string;
   subplaces: Array<{
     id: string;
     name_es: string;
@@ -253,6 +258,14 @@ export type CdtMuni = {
     balance_es: string;
     balance_en: string;
   }>;
+};
+
+const VISTA_FOR_MUNI: Record<MuniName, (typeof vistas)[number]['id']> = {
+  'Los Cabos': 'corredor',
+  'La Paz': 'corredor',
+  Comondú: 'vivienda',
+  Mulegé: 'puertos',
+  Loreto: 'puertos',
 };
 
 const munis: CdtMuni[] = MUNI_ORDER.map((name) => {
@@ -290,6 +303,10 @@ const munis: CdtMuni[] = MUNI_ORDER.map((name) => {
     locks_en: row.locks_en,
     strengths_es: row.strengths_es,
     strengths_en: row.strengths_en,
+    crecimiento: `/crecimiento/#${PLACE_BY_MUNI[name][0]}`,
+    vista: `/vistas/#${VISTA_FOR_MUNI[name]}`,
+    vista_es: vistas.find((v) => v.id === VISTA_FOR_MUNI[name])!.es,
+    vista_en: vistas.find((v) => v.id === VISTA_FOR_MUNI[name])!.en,
     subplaces: subs,
   };
 });
@@ -717,7 +734,7 @@ const recommendations = places.map((p) => {
     because_en: p.balance_read_en,
     themes: THEMES_BY_PLACE[p.id] || ['urbano'],
     scenarios: scenariosForPlace(p.id),
-    href: '/crecimiento/',
+    href: `/crecimiento/#${p.id}`,
   };
 });
 

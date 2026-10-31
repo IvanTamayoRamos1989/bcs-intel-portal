@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HowTo from '../components/HowTo.astro';
 import { cdtModel } from '../lib/cdtModel';
 import foresights from '../data/foresights.json';
 import gapsDoc from '../data/data_gaps.json';
@@ -23,6 +24,15 @@ const themeOrder = cdtModel.themes;
   sectionEn="Open questions"
   wide={true}
 >
+  <HowTo
+    leadEs="Aquí se ve qué sigue abierto. No hay una barra de avance."
+    leadEn="This shows what is still open. There is no progress bar."
+    steps={[
+      { es: 'Lea las preguntas del tema que le importa.', en: 'Read the questions for the theme you care about.' },
+      { es: 'Distinga una señal ya publicada de una brecha.', en: 'Tell a published signal apart from a gap.' },
+      { es: 'Abra la pregunta o la prospectiva para ver la evidencia.', en: 'Open the question or the foresight to see the evidence.' },
+    ]}
+  />
   <p class="lead">
     <span data-lang-es>
       Tablero de lo que sigue abierto. Una pregunta estratégica está abierta mientras no hay una respuesta cerrada en el portal.

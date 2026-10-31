@@ -55,6 +55,24 @@ const crecimientoHref = unit.primaryPlace
 const foresightsHref = unit.primaryPlace
   ? `/foresights/?place=${unit.primaryPlace}`
   : '/foresights/';
+const gemeloMuni: Record<string, string> = {
+  los_cabos: 'Los Cabos',
+  la_paz: 'La Paz',
+  loreto: 'Loreto',
+  comondu: 'Comondú',
+  mulege: 'Mulegé',
+};
+const vistaFor: Record<string, string> = {
+  los_cabos: 'corredor',
+  la_paz: 'corredor',
+  loreto: 'puertos',
+  comondu: 'vivienda',
+  mulege: 'puertos',
+};
+const gemeloHref = gemeloMuni[unit.id]
+  ? `/gemelo/?muni=${encodeURIComponent(gemeloMuni[unit.id])}`
+  : '/gemelo/';
+const vistaHref = vistaFor[unit.id] ? `/vistas/#${vistaFor[unit.id]}` : '/vistas/';
 
 function placeLabel(id: string) {
   const p = PLACE_BY_ID[id];
@@ -313,6 +331,14 @@ function stView(st: any) {
       <a class="btn secondary" href={foresightsHref}>
         <span data-lang-es>Prospectiva</span>
         <span data-lang-en hidden>Foresights</span>
+      </a>
+      <a class="btn secondary" href={gemeloHref}>
+        <span data-lang-es>Ver en el gemelo</span>
+        <span data-lang-en hidden>Open in the twin</span>
+      </a>
+      <a class="btn secondary" href={vistaHref}>
+        <span data-lang-es>Vista guardada</span>
+        <span data-lang-en hidden>Saved view</span>
       </a>
     </div>
     <div class="su-export-row"><PrintExpediente title={unit.name_es} /></div>

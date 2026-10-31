@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HowTo from '../components/HowTo.astro';
 import federal from '../data/federal_projects.json';
 
 type Row = {
@@ -47,6 +48,15 @@ const groups = [...new Set(rows.map((r) => r.dependencia))]
   sectionEn="Coordination"
   wide={true}
 >
+  <HowTo
+    leadEs="Esta página dice qué institución aparece con qué obra en el inventario. No promete una fecha de entrega."
+    leadEn="This page says which institution appears with which work in the inventory. It does not promise a delivery date."
+    steps={[
+      { es: 'Busque la institución por su nombre publicado.', en: 'Find the institution by its published name.' },
+      { es: 'Lea municipio, estado y sexenio de cada obra.', en: 'Read the municipality, status and administration of each work.' },
+      { es: 'Si hay una nota de evidencia, es un hueco del inventario, no un retraso calculado.', en: 'If there is an evidence note, it is a gap in the inventory, not a calculated delay.' },
+    ]}
+  />
   <p class="lead">
     <span data-lang-es>
       Quién aparece con qué obra en el inventario federal ({rows.length} proyectos, {groups.length} líneas de institución tal como están escritas).

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HowTo from '../components/HowTo.astro';
 import { vistas } from '../lib/vistas';
 ---
 <BaseLayout
@@ -11,6 +12,15 @@ import { vistas } from '../lib/vistas';
   sectionEn="Views"
   wide={true}
 >
+  <HowTo
+    leadEs="Una vista es un enlace con nombre. No guarda nada en su cuenta."
+    leadEn="A view is a named link. It saves nothing to your account."
+    steps={[
+      { es: 'Elija la vista que el grupo está mirando.', en: 'Pick the view the group is looking at.' },
+      { es: 'Abra el gemelo para las cifras o el mapa para las capas.', en: 'Open the twin for the figures or the map for the layers.' },
+      { es: 'Comparta esa misma dirección si alguien llega tarde.', en: 'Share that same address if someone arrives late.' },
+    ]}
+  />
   <p class="lead">
     <span data-lang-es>
       Cinco vistas con nombre para una reunión. Cada una abre capas y un escenario que ya existen.
@@ -29,7 +39,7 @@ import { vistas } from '../lib/vistas';
     <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
   </p>
   {vistas.map((v) => (
-    <article class="vista">
+    <article class="vista" id={v.id}>
       <h2>
         <span data-lang-es>{v.es}</span>
         <span data-lang-en hidden>{v.en}</span>

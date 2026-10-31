@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HowTo from '../components/HowTo.astro';
 
 const networks = [
   {
@@ -171,6 +172,15 @@ const cases = [
   sectionEn="Learning"
   wide={true}
 >
+  <HowTo
+    leadEs="Esta página junta casos de otras ciudades. No mide Baja California Sur."
+    leadEn="This page gathers cases from other cities. It does not measure Baja California Sur."
+    steps={[
+      { es: 'Lea la etiqueta «fuente externa» antes de citar un enlace.', en: 'Read the “external source” label before citing a link.' },
+      { es: 'Vuelva al agua, al gemelo o a la consulta para las cifras del estado.', en: 'Return to water, the twin or the consultation for state figures.' },
+      { es: 'Imprima si necesita la lista corta del foro.', en: 'Print if you need the short meeting list.' },
+    ]}
+  />
   <p class="lead">
     <span data-lang-es>
       Otras ciudades publican guías y casos. Sirven para hacer mejores preguntas, no para reemplazar los datos de Baja California Sur.
@@ -321,6 +331,7 @@ const cases = [
     @media print {
       .pt-top, .pt-sub, .site-footer, .bcs-chat, .pt-spec-note, .lead, .cta-row, .cdt-net, .cdt-case, h2:not(.apr-h) { display: none !important; }
       .apr-foro { display: block; border: 0; }
+      .how-use { display: none !important; }
       .apr-foro ul { columns: 2; }
       body, body.has-chat-sidebar { padding: 0 !important; }
     }
