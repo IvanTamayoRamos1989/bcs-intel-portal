@@ -1749,6 +1749,45 @@ def main():
         "type": "guide",
     })
 
+    chunks.append({
+        "id": "portal:evidencia-coordinacion-p16",
+        "title": "Evidencia externa y coordinación de proyectos / External evidence and project coordination",
+        "path": "portal/coordinacion",
+        "theme": "planeacion",
+        "sum_es": (
+            "Fase 1.6. /aprendizaje incluye un bloque de evidencia externa (fuente externa, sin copiar cifras): "
+            "WRI Aqueduct 4.0 (wri.org/aqueduct), MapBiomas México (mexico.mapbiomas.org), "
+            "WRI Resource Watch (resourcewatch.org), DataMéxico en economia.gob.mx/datamexico "
+            "(datamexico.org redirige ahí) y Data Commons (datacommons.org). "
+            "No sustituyen acuíferos CONAGUA, censo ni el inventario del portal. "
+            "/coordinacion agrupa el inventario federal por la institución tal como está escrita "
+            "(44 proyectos). Muestra obra, municipio, estado y sexenio. No calcula fecha de entrega. "
+            "El gemelo /gemelo muestra en la comparación la fuente, el año y si la serie cubre los cinco municipios. "
+            "Las preguntas estratégicas se cuentan por tema del tablero; una pregunta puede estar en más de un tema. "
+            "La prospectiva conserva sus propios temas (agua, energía, turismo, ambiente, suelo, planeación). "
+            "Desde Inicio hay accesos a /aprendizaje y al gemelo con el escenario de agua. "
+            "Pregunta de seguimiento: ¿quieres la institución de un proyecto federal o la comparación de dos municipios? "
+            "[coordinacion evidencia Aqueduct MapBiomas DataMéxico Data Commons gemelo calidad]"
+        ),
+        "sum_en": (
+            "Phase 1.6. /aprendizaje has an external-evidence block (external source, figures not copied): "
+            "WRI Aqueduct 4.0 (wri.org/aqueduct), MapBiomas México (mexico.mapbiomas.org), "
+            "WRI Resource Watch (resourcewatch.org), DataMéxico at economia.gob.mx/datamexico "
+            "(datamexico.org redirects there) and Data Commons (datacommons.org). "
+            "They do not replace CONAGUA aquifers, the census or the portal inventory. "
+            "/coordinacion groups the federal inventory by the institution line as written "
+            "(44 projects). It shows the work, municipality, status and administration. It does not calculate a delivery date. "
+            "The twin /gemelo shows, on the comparison, the source, the year and whether the series covers five municipalities. "
+            "Strategic questions are counted by board theme; one question can sit in more than one theme. "
+            "Foresight keeps its own themes (water, energy, tourism, environment, land, planning). "
+            "Home links to /aprendizaje and to the twin on the water scenario. "
+            "Follow-up: do you want the institution behind a federal project, or a comparison of two municipalities? "
+            "[coordination evidence Aqueduct MapBiomas DataMexico Data Commons twin quality]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
     # 14_gobierno — Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027)
     try:
         n_gov = add_los_cabos_organigrama(chunks)

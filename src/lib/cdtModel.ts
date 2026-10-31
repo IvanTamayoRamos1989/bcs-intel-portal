@@ -442,6 +442,18 @@ const indicators: Array<{
   },
 ];
 
+const indicatorYear: Record<CdtIndicatorId, string> = {
+  pob: '2020',
+  sniiv_2025: '2025',
+  pobreza_pct: '2020',
+  locs: '2020',
+  anexo: '2025',
+  crucero_arribos: '2025',
+  crucero_pax: '2025',
+  ley: '2026',
+};
+const indicatorsDated = indicators.map((i) => ({ ...i, year: indicatorYear[i.id] }));
+
 const themes: Array<{
   id: CdtThemeId;
   es: string;
@@ -861,9 +873,37 @@ const guides = [
   },
 ] as const;
 
+const questionCounts = (['urbano', 'economia', 'investigacion', 'movilidad', 'vivienda'] as const).map((id) => ({
+  id,
+  n: goals.filter((g) => g.themes.includes(id)).length,
+}));
+if (questionCounts.some((c) => c.n < 1)) throw new Error('CDT theme missing strategic questions');
+
+const signalLabel: Record<string, { es: string; en: string }> = {
+  tourism: { es: 'turismo', en: 'tourism' },
+  water: { es: 'agua', en: 'water' },
+  energy: { es: 'energía', en: 'energy' },
+  environment: { es: 'ambiente', en: 'environment' },
+  land_use: { es: 'suelo', en: 'land use' },
+  planning: { es: 'planeación', en: 'planning' },
+};
+const signalCounts: Record<string, number> = {};
+for (const s of foresights.signals) {
+  if (!signalLabel[s.theme]) throw new Error(`CDT foresight theme unmapped: ${s.theme}`);
+  signalCounts[s.theme] = (signalCounts[s.theme] || 0) + 1;
+}
+const foresightThemes = Object.entries(signalCounts).map(([id, n]) => ({
+  id,
+  n,
+  es: signalLabel[id].es,
+  en: signalLabel[id].en,
+}));
+
 export const cdtModel = {
   themes,
-  indicators,
+  indicators: indicatorsDated,
+  questionCounts,
+  foresightThemes,
   munis,
   layerCatalog,
   recommendations: [...recommendations, ...researchRecs],

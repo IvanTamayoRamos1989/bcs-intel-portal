@@ -182,8 +182,33 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>What has to be true</span>
           </h3>
           <p class="cdt-fine">
-            <span data-lang-es>Preguntas y metas ya escritas en el portal para el municipio y el tema activos. No son objetivos nuevos.</span>
-            <span data-lang-en hidden>Questions and aims already written in the portal for the active municipality and theme. They are not new targets.</span>
+            <span data-lang-es>Preguntas y metas ya escritas en el portal para el municipio y el tema activos. No son objetivos nuevos. Una pregunta puede contarse en más de un tema.</span>
+            <span data-lang-en hidden>Questions and aims already written in the portal for the active municipality and theme. They are not new targets. One question can count in more than one theme.</span>
+          </p>
+          <p class="cdt-counts">
+            {model.questionCounts.map((c) => {
+              const theme = model.themes.find((t) => t.id === c.id);
+              return (
+                <span data-qcount={c.id}>
+                  <span data-lang-es>{theme?.es}</span>
+                  <span data-lang-en hidden>{theme?.en}</span>
+                  {' · '}{c.n}
+                </span>
+              );
+            })}
+          </p>
+          <p class="cdt-fine">
+            <span data-lang-es>Señales de la prospectiva, con el tema que ya trae cada una:</span>
+            <span data-lang-en hidden>Foresight archive, by the theme already on each signal:</span>
+            {' '}
+            {model.foresightThemes.map((s, i) => (
+              <span>
+                {i ? ' · ' : ''}
+                {s.n} <span data-lang-es>{s.es}</span><span data-lang-en hidden>{s.en}</span>
+              </span>
+            ))}
+            {' '}
+            <a href="/foresights/"><span data-lang-es>Ver prospectiva</span><span data-lang-en hidden>See foresight</span></a>
           </p>
           <ul id="cdt-goal-list">
             {model.goals.map((g) => (
@@ -251,7 +276,13 @@ const icon: Record<string, string> = {
               </li>
             ))}
           </ul>
-          <p><a href="/proyectos-federales/"><span data-lang-es>Ver el inventario</span><span data-lang-en hidden>See the inventory</span></a></p>
+          <p>
+            <a href="/coordinacion/"><span data-lang-es>Ver instituciones y horizontes</span><span data-lang-en hidden>See institutions and horizons</span></a>
+            {' · '}
+            <a href="/proyectos-federales/"><span data-lang-es>Inventario</span><span data-lang-en hidden>Inventory</span></a>
+            {' · '}
+            <a href="/stakeholders/"><span data-lang-es>Actores</span><span data-lang-en hidden>Stakeholders</span></a>
+          </p>
         </section>
 
         <section class="cdt-compare" aria-label="Comparar municipios">
@@ -275,6 +306,7 @@ const icon: Record<string, string> = {
               <select id="cdt-y"></select>
             </label>
           </div>
+          <div id="cdt-quality-strip" class="cdt-quality"></div>
           <div id="cdt-scatter" class="cdt-scatter"></div>
           <p class="cdt-fine" id="cdt-sources"></p>
           <p class="cdt-fine" id="cdt-quality"></p>
@@ -427,6 +459,13 @@ const icon: Record<string, string> = {
     .cdt-rec-kicker { margin: 0; font-size: 0.72rem; font-weight: 700; color: var(--cdt); text-transform: uppercase; letter-spacing: 0.03em; }
     .cdt-rec-rule { margin: 0.2rem 0; font-size: 0.9rem; }
     .cdt-rec a, .cdt-goals a, .cdt-couple a, .cdt-deps a, .cdt-fine a { color: var(--cdt); }
+    .cdt-counts { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.4rem 0; }
+    .cdt-counts span[data-qcount] { border: 1px solid var(--cdt-line); border-radius: 999px; padding: 0.15rem 0.55rem; font-size: 0.75rem; }
+    .cdt-counts span[data-qcount].is-on { background: #0083C4; color: #fff; border-color: #0083C4; }
+    .cdt-quality { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-top: 0.45rem; }
+    .cdt-quality article { border: 1px solid var(--cdt-line); border-top: 3px solid #0083C4; border-radius: 10px; padding: 0.45rem 0.55rem; background: #f7fbfd; }
+    .cdt-quality strong { display: block; color: #006BA3; font-size: 0.82rem; }
+    .cdt-quality small { display: block; color: var(--cdt-muted); font-size: 0.72rem; line-height: 1.35; }
     .cdt-guides { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.55rem; }
     .cdt-guide { border: 1px solid var(--cdt); color: var(--cdt-dark); border-radius: 999px; padding: 0.28rem 0.7rem; font-size: 0.78rem; font-weight: 650; text-decoration: none; background: #f4fbff; }
     .cdt-goals ul, .cdt-couple ul, .cdt-deps ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
@@ -596,6 +635,18 @@ const icon: Record<string, string> = {
         var xi = indicatorById(state.x);
         var yi = indicatorById(state.y);
         var W = 340, H = 230, Lft = 46, Bot = 36, Rgt = 12, Top = 14;
+        var strip = document.getElementById('cdt-quality-strip');
+        if (strip) {
+          function card(ind) {
+            var cov = ind.complete
+              ? tx('Cobertura: cinco municipios.', 'Coverage: five municipalities.')
+              : tx('Cobertura incompleta.', 'Incomplete coverage.');
+            return '<article><strong>' + tx(ind.label_es, ind.label_en) + '</strong><small>' +
+              tx('Año ', 'Year ') + ind.year + ' · ' + tx(ind.source_es, ind.source_en) + '. ' + cov + ' ' +
+              tx(ind.quality_es, ind.quality_en) + '</small></article>';
+          }
+          strip.innerHTML = card(xi) + card(yi);
+        }
         var rows = model.munis.filter(function (m) { return hasNum(m[state.x]) && hasNum(m[state.y]); });
         if (rows.length < 2) {
           host.textContent = tx('No hay suficientes municipios con las dos cifras.', 'Not enough municipalities have both figures.');
@@ -781,6 +832,9 @@ const icon: Record<string, string> = {
         });
         document.querySelectorAll('[data-couple]').forEach(function (ul) {
           ul.hidden = ul.getAttribute('data-couple') !== state.theme;
+        });
+        document.querySelectorAll('[data-qcount]').forEach(function (el) {
+          el.classList.toggle('is-on', el.getAttribute('data-qcount') === state.theme);
         });
         var shown = 0;
         document.querySelectorAll('#cdt-dep-list [data-where]').forEach(function (li) {
