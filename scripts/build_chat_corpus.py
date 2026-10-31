@@ -2017,6 +2017,32 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:foro-kit-p122",
+        "title": "Kit de la reunión en la hoja de invitados / Meeting kit on the guest sheet",
+        "path": "portal/foro",
+        "href": "/foro/#kit",
+        "theme": "planeacion",
+        "sum_es": (
+            "El kit de la reunión está en /foro#kit, después del recorrido de diez minutos. "
+            "Trae las cinco vistas por nombre, con su tarjeta en /vistas y el mismo centro de Google Maps, "
+            "más el gemelo de agua y vivienda, la evidencia de otras ciudades en /aprendizaje#evidencia y la coordinación. "
+            "Sirve para imprimir la lista. La entrada del portal no va en esa hoja. "
+            "Pregunta de seguimiento: ¿imprime el kit o abre una de las cinco vistas? "
+            "[kit reunion imprimir foro lista para la reunion]"
+        ),
+        "sum_en": (
+            "The meeting kit is at /foro#kit, after the ten-minute walk. "
+            "It lists the five views by name, with the card on /vistas and the same Google Maps center, "
+            "plus the water-and-housing twin, evidence from other cities at /aprendizaje#evidencia, and coordination. "
+            "It is there to print the list. The portal entrance is not on that sheet. "
+            "Follow-up: do you print the kit or open one of the five views? "
+            "[meeting kit print forum meeting list]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:consulta-ruta-p120",
         "title": "Evidencia, vistas y recorrido del foro / Evidence, views and the forum walk",
         "path": "portal/inicio",

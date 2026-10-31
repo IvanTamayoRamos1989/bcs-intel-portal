@@ -107,13 +107,52 @@ if (!aguaSur) throw new Error('foro water view missing');
       <span data-lang-en hidden>What not to promise. There are no block polygons, no form metrics, and no parcel cadastre. If a cell is blank, it stays blank in the meeting.</span>
     </p>
   </section>
+  <section class="foro-script foro-kit" id="kit">
+    <h2>
+      <span data-lang-es>Kit de la reunión</span>
+      <span data-lang-en hidden>Meeting kit</span>
+    </h2>
+    <p>
+      <span data-lang-es>Para quien conduce. Lista corta. La entrada del portal no va en esta hoja.</span>
+      <span data-lang-en hidden>For the person leading. A short list. The portal entrance is not on this sheet.</span>
+    </p>
+    <ol>
+      <li>
+        <span data-lang-es>Confirme que el grupo ya entró al portal antes de proyectar.</span>
+        <span data-lang-en hidden>Confirm the group is already inside the portal before you project.</span>
+      </li>
+      <li>
+        <span data-lang-es>Elija una vista. Cada nombre abre la tarjeta y el mismo centro en Google Maps.</span>
+        <span data-lang-en hidden>Pick a view. Each name opens the card and the same center in Google Maps.</span>
+        <ul>
+          {vistas.map((v) => (
+            <li>
+              <a href={`/vistas/#${v.id}`}><span data-lang-es>{v.es}</span><span data-lang-en hidden>{v.en}</span></a>
+              {' · '}
+              <a href={v.gmaps} target="_blank" rel="noopener noreferrer">Google Maps</a>
+            </li>
+          ))}
+        </ul>
+      </li>
+      <li>
+        <a href={aguaSur.gemelo}><span data-lang-es>Gemelo, agua y vivienda</span><span data-lang-en hidden>Twin, water and housing</span></a>
+      </li>
+      <li>
+        <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
+      </li>
+      <li>
+        <a href="/coordinacion/"><span data-lang-es>Coordinación</span><span data-lang-en hidden>Coordination</span></a>
+      </li>
+    </ol>
+  </section>
   <style>
     .foro-list { list-style: none; padding: 0; margin: 0.5rem 0; }
     .foro-list li { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.55rem 0; background: #fff; }
     .foro-list a { font-weight: 700; color: #006BA3; font-size: 1.05rem; }
     .foro-list p { margin: 0.25rem 0 0; }
     .foro-why { color: #006BA3; font-size: 0.92rem; }
-    .foro-script { margin: 1.2rem 0 50vh; scroll-margin-top: 8rem; }
+    .foro-script { margin: 1.2rem 0; scroll-margin-top: 8rem; }
+    .foro-kit { margin-bottom: 50vh; }
     @media (min-width: 900px) {
       .foro-script { scroll-margin-top: 4.75rem; }
     }
@@ -129,10 +168,11 @@ if (!aguaSur) throw new Error('foro water view missing');
       :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.ios-tabbar) { display: none !important; }
       body, body.has-chat-sidebar { padding: 0 !important; margin: 0 !important; background: #fff !important; }
       main { max-width: none !important; }
-      .foro-script { margin-bottom: 0; break-before: page; page-break-before: always; }
+      .foro-script, .foro-kit { margin-bottom: 0; break-before: page; page-break-before: always; }
       .foro-list li, .foro-script li { break-inside: avoid; page-break-inside: avoid; border-radius: 0; box-shadow: none; }
       .foro-list a, .foro-script a { color: #000; text-decoration: none; }
-      .foro-list a[href]::after, .foro-script a[href]::after { content: " — bajacaliforniasur2050.com" attr(href); display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.82rem; color: #333; word-break: break-all; }
+      .foro-list a[href]::after, .foro-script a[href]::after { content: " — bajacaliforniasur2050.com" attr(href); display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.78rem; color: #333; word-break: break-all; }
+      .foro-kit a[href^="https://"]::after { content: " — " attr(href); }
       h1, .foro-script h2 { break-after: avoid; page-break-after: avoid; }
     }
   </style>

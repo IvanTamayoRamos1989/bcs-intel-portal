@@ -67,7 +67,7 @@ const gapEn: Record<string, { topic: string; detail: string }> = {
   },
   'gap-fiscal-ley-2026-mulege-loreto': {
     topic: '2026 revenue law for Mulegé and Loreto',
-    detail: 'The Mulegé and Loreto decrees are catalogued, but the total is not copied into the comparison. Los Cabos, La Paz and Comondú do have an amount. Where to look next: the state official gazette and the municipal gazettes of Mulegé and Loreto, in the article for total estimated revenue.',
+    detail: 'The amount stays blank in the comparison. Los Cabos, La Paz and Comondú do have an amount. Next, open the decree published in the state official gazette, in the article for total estimated revenue: Mulegé on 31 December 2025 and Loreto on 24 December 2025. Those texts are in the portal catalog. There is no separate municipal gazette here.',
   },
 };
 for (const g of gapsDoc.gaps) {
@@ -198,6 +198,13 @@ const themeOrder = cdtModel.themes;
           <span data-lang-es>{g.detail_es}</span>
           <span data-lang-en hidden>{gapEn[g.id].detail}</span>
         </p>
+        {g.id === 'gap-fiscal-ley-2026-mulege-loreto' && (
+          <p>
+            <a href="/catalogo/?q=2025-12-31_Congreso-BCS_LIngresosMulege-2026.doc"><span data-lang-es>Decreto de Mulegé en el catálogo</span><span data-lang-en hidden>Mulegé decree in the catalog</span></a>
+            {' · '}
+            <a href="/catalogo/?q=2025-12-31_Congreso-BCS_LIngresosLoreto-2026.doc"><span data-lang-es>Decreto de Loreto en el catálogo</span><span data-lang-en hidden>Loreto decree in the catalog</span></a>
+          </p>
+        )}
       </li>
     ))}
   </ul>
