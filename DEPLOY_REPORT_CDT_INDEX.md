@@ -1,15 +1,49 @@
-# City Digital Twin — phase index
+# City Digital Twin — operator sheet
 
-Live paths on the Baja California Sur 2050 portal. Older reports stay as written.
+Live site: https://bajacaliforniasur2050.com · Netlify: https://bcs-intel-portal.netlify.app
 
-| Phase | Report | What it added | Paths |
-|---|---|---|---|
-| 1 | `DEPLOY_REPORT_CDT_P1.md` | Territorial twin: five themes, scenarios, three municipal indicators, rule-based recommendations | `/gemelo` · `/cdt` |
-| 1.5 | `DEPLOY_REPORT_CDT_P1_5.md` | More municipal indicators, goals, integrated cross-theme readings, city-learning page | `/gemelo` · `/aprendizaje` |
-| 1.6 | `DEPLOY_REPORT_CDT_P1_6.md` | External evidence landings, project coordination, KPI source/year/coverage | `/aprendizaje#evidencia` · `/coordinacion` · `/gemelo` |
-| 1.7 | `DEPLOY_REPORT_CDT_P1_7.md` | Five named views, open-questions board, print shortlist | `/vistas` · `/metas` · `/aprendizaje` |
-| 1.8 | `DEPLOY_REPORT_CDT_P1_8.md` | Municipality ↔ twin links, growth anchors, guest sheet, how-to steps | `/studio/…` · `/foro` · `/gemelo` · `/crecimiento` |
-| 1.9 | `DEPLOY_REPORT_CDT_P1_9.md` | Narrow layout, shared decision path, blank-series chip | `/gemelo` · `/foro` · `/vistas` · `/metas` · `/coordinacion` · `/aprendizaje` |
-| 1.10 | `DEPLOY_REPORT_CDT_P1_10.md` | Site map, home specialist row, maps entry to saved views, English labels, three external references | `/rutas` · `/inicio` · `/mapas` · `/aprendizaje#evidencia` · `/gemelo` · `/metas` |
-| 1.11 | `DEPLOY_REPORT_CDT_P1_11.md` | Blank-series search, one-sentence theme reads, A4 guest print | `/gemelo` · `/foro` · `/aprendizaje` |
-| 1.12 | `DEPLOY_REPORT_CDT_P1_12.md` | Chat links for the new pages, two open gaps, guest why-lines | `/foro` · `/metas` · `/memoria` · chat |
+Password for the gate: `BCS2050`. The portal stays `noindex`.
+
+## Live paths
+
+| Path | What it is |
+|---|---|
+| `/inicio` | Citizen chat. Specialist row sits under the questions. |
+| `/gemelo` | Territorial twin. Aliases `/cdt`, `/decision`, `/decision-twin` redirect here. |
+| `/vistas` | Five named views. Each opens the map and the twin. |
+| `/metas` | Open questions, foresight signals, and data gaps. No progress percentage. |
+| `/coordinacion` | Federal projects grouped by the institution line as written. |
+| `/aprendizaje` | External cases. Evidence cards at `/aprendizaje#evidencia`. |
+| `/foro` | Guest sheet for the Mar de Cortés forum. Prints as one A4 page. |
+| `/studio` | Municipality pages: `/studio/los_cabos`, `/studio/la_paz`, `/studio/loreto`, `/studio/comondu`, `/studio/mulege`, `/studio/bcs`. `/lugares` opens this index. |
+| `/mapas` | Maps, with a link to saved views. |
+| `/rutas` | Site map inside the portal. |
+| `/memoria` | Gap list, including Loreto 2025 air passengers and the Mulegé/Loreto 2026 revenue totals. |
+
+## Still blank
+
+- Loreto 2025 air passengers. SETUE 2026 has Los Cabos, La Paz, and a state total. It does not have a Loreto municipal row for 2025. Do not subtract the state total.
+- Mulegé and Loreto 2026 revenue-law totals. The decrees are catalogued. The totals are not copied. Where to look next is on `/metas`.
+
+## Phase 2 — do not invent
+
+These are not in the archive. Leave them out until a real source is ingested:
+
+- AGEB polygons and block-level indicators
+- Morphometrics (fractal dimension, betweenness, urban-form scores)
+- Cadastre, parcel typologies, and lot desirability
+
+## Phase reports
+
+| Phase | Report | What it added |
+|---|---|---|
+| 1 | `DEPLOY_REPORT_CDT_P1.md` | Twin: five themes, scenarios, municipal compare, rules |
+| 1.5 | `DEPLOY_REPORT_CDT_P1_5.md` | More indicators, goals, `/aprendizaje` |
+| 1.6 | `DEPLOY_REPORT_CDT_P1_6.md` | Evidence cards, `/coordinacion`, source and year |
+| 1.7 | `DEPLOY_REPORT_CDT_P1_7.md` | `/vistas`, `/metas`, print shortlist |
+| 1.8 | `DEPLOY_REPORT_CDT_P1_8.md` | Municipality links, `/foro`, how-to |
+| 1.9 | `DEPLOY_REPORT_CDT_P1_9.md` | Narrow layout, decision path, blank-series chip |
+| 1.10 | `DEPLOY_REPORT_CDT_P1_10.md` | Site map, home specialist row, three external references |
+| 1.11 | `DEPLOY_REPORT_CDT_P1_11.md` | One-sentence theme reads, A4 guest print |
+| 1.12 | `DEPLOY_REPORT_CDT_P1_12.md` | Chat links, two open gaps, why-lines on `/foro` |
+| 1.13 | `DEPLOY_REPORT_CDT_P1_13.md` | Link audit, this sheet, focus rings |

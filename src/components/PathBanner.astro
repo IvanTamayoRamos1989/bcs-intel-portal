@@ -35,7 +35,8 @@ const steps = [
   .path-n { display: inline-flex; width: 1.15rem; height: 1.15rem; align-items: center; justify-content: center; border-radius: 999px; background: #e8f4fb; color: #006BA3; font-size: 0.72rem; }
   .path-banner a[aria-current="page"] .path-n { background: #fff; color: #006BA3; }
   .path-arrow { color: #5a5a5a; font-size: 0.8rem; }
-  .path-banner a:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+  .path-banner a:focus-visible { outline: 3px solid #006BA3; outline-offset: 3px; }
+  .path-banner a[aria-current="page"]:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #0b3a56; }
   @media (max-width: 420px) {
     .path-banner a { font-size: 0.75rem; padding: 0.24rem 0.5rem; }
   }
