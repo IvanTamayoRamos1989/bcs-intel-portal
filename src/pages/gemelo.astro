@@ -35,6 +35,7 @@ const icon: Record<string, string> = {
   wide={true}
   hidePageHead={true}
 >
+  <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
   <link
     rel="stylesheet"
     href="/vendor/leaflet/leaflet.css"
@@ -85,7 +86,7 @@ const icon: Record<string, string> = {
           ))}
         </div>
       </div>
-      <div class="cdt-scenarios" role="group" aria-label="Escenario">
+      <div class="cdt-scenarios" role="group" aria-label="Escenario" data-aria-es="Escenario" data-aria-en="Scenario">
         {model.scenarios.map((sc, i) => (
           <button type="button" class="cdt-sc" data-scenario={sc.id} aria-pressed={i === 0 ? 'true' : 'false'}>
             <span data-lang-es>{sc.title_es}</span>
@@ -104,7 +105,7 @@ const icon: Record<string, string> = {
     </header>
 
     <div class="cdt-work">
-      <nav class="cdt-rail" aria-label="Temas del gemelo">
+      <nav class="cdt-rail" aria-label="Temas del gemelo" data-aria-es="Temas del gemelo" data-aria-en="Twin themes">
         {model.themes.map((t, i) => (
           <button type="button" class="cdt-theme-btn" data-theme={t.id} aria-pressed={i === 0 ? 'true' : 'false'}>
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" set:html={icon[t.id]} />
@@ -117,7 +118,7 @@ const icon: Record<string, string> = {
       </nav>
 
       <div class="cdt-map-col">
-        <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial"></div>
+        <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial" data-aria-es="Mapa del gemelo territorial" data-aria-en="Territorial twin map"></div>
         <p class="cdt-map-note" id="cdt-status">
           <span data-lang-es>Cargando capas del mapa…</span>
           <span data-lang-en hidden>Loading map layers…</span>
@@ -135,7 +136,7 @@ const icon: Record<string, string> = {
         </p>
       </div>
 
-      <aside class="cdt-panel" aria-label="Indicadores del tema">
+      <aside class="cdt-panel" aria-label="Indicadores del tema" data-aria-es="Indicadores del tema" data-aria-en="Theme indicators">
         {model.themes.map((t, i) => (
           <section class="cdt-theme" data-theme-panel={t.id} hidden={i === 0 ? undefined : true}>
             <h2>
@@ -197,7 +198,7 @@ const icon: Record<string, string> = {
           </div>
         ))}
 
-        <section class="cdt-goals" aria-label="Qué tiene que ser verdad">
+        <section class="cdt-goals" aria-label="Qué tiene que ser verdad" data-aria-es="Qué tiene que ser verdad" data-aria-en="What has to be true">
           <h3>
             <span data-lang-es>Qué tiene que ser verdad</span>
             <span data-lang-en hidden>What has to be true</span>
@@ -251,7 +252,7 @@ const icon: Record<string, string> = {
           </ul>
         </section>
 
-        <section class="cdt-couple" aria-label="Solución integrada">
+        <section class="cdt-couple" aria-label="Solución integrada" data-aria-es="Solución integrada" data-aria-en="Integrated solution">
           <h3>
             <span data-lang-es>Cómo se junta con los otros temas</span>
             <span data-lang-en hidden>How it joins the other themes</span>
@@ -280,7 +281,7 @@ const icon: Record<string, string> = {
           ))}
         </section>
 
-        <section class="cdt-deps" aria-label="Proyectos e instituciones">
+        <section class="cdt-deps" aria-label="Proyectos e instituciones" data-aria-es="Proyectos e instituciones" data-aria-en="Projects and institutions">
           <h3>
             <span data-lang-es>Proyectos, institución y horizonte</span>
             <span data-lang-en hidden>Projects, institution and horizon</span>
@@ -306,7 +307,7 @@ const icon: Record<string, string> = {
           </p>
         </section>
 
-        <section class="cdt-compare" aria-label="Comparar municipios">
+        <section class="cdt-compare" aria-label="Comparar municipios" data-aria-es="Comparar municipios" data-aria-en="Compare municipalities">
           <h3>
             <span data-lang-es>Comparar municipios</span>
             <span data-lang-en hidden>Compare municipalities</span>
@@ -371,7 +372,7 @@ const icon: Record<string, string> = {
           <div id="cdt-muni-detail" class="cdt-detail"></div>
         </section>
 
-        <section class="cdt-recs" aria-label="Recomendaciones">
+        <section class="cdt-recs" aria-label="Recomendaciones" data-aria-es="Recomendaciones" data-aria-en="Recommendations">
           <h3>
             <span data-lang-es>Recomendaciones</span>
             <span data-lang-en hidden>Recommendations</span>

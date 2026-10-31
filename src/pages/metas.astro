@@ -10,8 +10,65 @@ const gapLabel: Record<string, { es: string; en: string }> = {
   partial: { es: 'Evidencia parcial', en: 'Partial evidence' },
   open: { es: 'Brecha abierta', en: 'Open gap' },
 };
+const gapEn: Record<string, { topic: string; detail: string }> = {
+  'gap-energia-subestaciones': {
+    topic: 'Electric substations on the SIBCS',
+    detail: 'Exact count, names and individual capacity (MVA) of electric substations in BCS.',
+  },
+  'gap-energia-transmision-prodesen-pamrnt': {
+    topic: 'Transmission expansion — amounts and financing',
+    detail: 'Specific amounts and financing sources for transmission-line expansion under PRODESEN and PAMRNT (SIBCS).',
+  },
+  'gap-energia-cfe-facturacion-bcs': {
+    topic: 'CFE BCS revenue and billing by year',
+    detail: 'Exact CFE electricity revenue and billing figures for BCS by year.',
+  },
+  'gap-energia-diesel-litros': {
+    topic: 'Annual diesel use (litres) for generation',
+    detail: 'Annual diesel use in litres or gallons for generation at the La Paz plant or on the SIBCS.',
+  },
+  'gap-energia-demanda-anual-kwh': {
+    topic: 'Annual SIBCS electricity demand',
+    detail: 'Total annual electricity demand in kWh for fuel estimates.',
+  },
+  'gap-energia-baterias-bess': {
+    topic: 'Battery storage projects',
+    detail: 'BESS projects: capacity, location and companies.',
+  },
+  'gap-energia-renovables-capacidad': {
+    topic: 'Installed renewable capacity and solar plants',
+    detail: 'Exact renewable capacity, company names and MW per solar plant.',
+  },
+  'gap-mineria-produccion-impacto': {
+    topic: 'Mining output, economic impact and cases',
+    detail: 'Quantitative mining output, economic impact and case studies in BCS.',
+  },
+  'gap-re-cadastre-secondary': {
+    topic: 'Property transactions in La Paz, Loreto and the north',
+    detail: 'Comparable registry series are missing for La Paz, Loreto, Comondú and Mulegé (volume, price and type).',
+  },
+  'gap-re-commercial-hospitality': {
+    topic: 'Commercial and hospitality market',
+    detail: 'No cited series of office or shop rents, hotel cap rates, or hospitality-asset transactions in BCS.',
+  },
+  'gap-re-permits-pipeline': {
+    topic: 'Building permits and pipeline by municipality',
+    detail: 'No inventory of building permits or land use by municipality with amounts and type.',
+  },
+  'gap-re-vivienda-bienestar-avance': {
+    topic: 'Housing for Wellbeing progress in BCS',
+    detail: 'October 2024 agreement target: 37,500 actions over 6 years. No official progress report of works or deliveries by municipality.',
+  },
+};
 for (const g of gapsDoc.gaps) {
   if (!gapLabel[g.status]) throw new Error(`Unknown gap status: ${g.status}`);
+  if (!gapEn[g.id]) throw new Error(`Missing English for gap ${g.id}`);
+}
+const foresightLabel = Object.fromEntries(
+  cdtModel.foresightThemes.map((t) => [t.id, { es: t.es, en: t.en }]),
+);
+for (const s of foresights.signals) {
+  if (!foresightLabel[s.theme]) throw new Error(`Missing foresight label ${s.theme}`);
 }
 
 const themeOrder = cdtModel.themes;
@@ -103,7 +160,10 @@ const themeOrder = cdtModel.themes;
           <span data-lang-es>{s.title_es}</span>
           <span data-lang-en hidden>{s.title_en}</span>
         </a>
-        <span class="meta-theme">{s.theme}</span>
+        <span class="meta-theme">
+          <span data-lang-es>{foresightLabel[s.theme].es}</span>
+          <span data-lang-en hidden>{foresightLabel[s.theme].en}</span>
+        </span>
       </li>
     ))}
   </ul>
@@ -119,8 +179,14 @@ const themeOrder = cdtModel.themes;
           <span data-lang-es>{gapLabel[g.status].es}</span>
           <span data-lang-en hidden>{gapLabel[g.status].en}</span>
         </span>
-        <strong>{g.topic}</strong>
-        <p>{g.detail_es}</p>
+        <strong>
+          <span data-lang-es>{g.topic}</span>
+          <span data-lang-en hidden>{gapEn[g.id].topic}</span>
+        </strong>
+        <p>
+          <span data-lang-es>{g.detail_es}</span>
+          <span data-lang-en hidden>{gapEn[g.id].detail}</span>
+        </p>
       </li>
     ))}
   </ul>

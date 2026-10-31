@@ -1887,6 +1887,35 @@ def main():
         "type": "guide",
     })
 
+    chunks.append({
+        "id": "portal:descubrimiento-p110",
+        "title": "Mapa del sitio y fila de especialistas / Site map and specialist row",
+        "path": "portal/rutas",
+        "theme": "planeacion",
+        "sum_es": (
+            "El mapa del sitio está en /rutas y se resume en /ayuda. Incluye /gemelo, /vistas, /metas, /coordinacion, /aprendizaje y /foro. "
+            "En Inicio (/inicio) las preguntas ciudadanas van primero. Debajo hay una fila corta: Gemelo, Vistas, Metas, Coordinación, Aprendizaje y Foro. "
+            "En /mapas, el enlace «Vistas guardadas» abre /vistas. Cada vista sigue abriendo el mapa y el gemelo. "
+            "En /aprendizaje#evidencia hay tres fichas externas más, comprobadas el 31 de octubre de 2026: "
+            "Digital Twin Victoria (https://digitaltwin.vic.gov.au/public/), ClimateView (https://www.climateview.global/en) y Open SDG (https://open-sdg.org/). "
+            "Sirven como referencia de catálogo espacial, de metas sin porcentaje y de huecos visibles. No se copian sus cifras. "
+            "Pregunta de seguimiento: ¿quieres el mapa del sitio, una vista guardada o la evidencia externa? "
+            "[rutas mapa del sitio especialistas vistas mapas evidencia]"
+        ),
+        "sum_en": (
+            "The site map is at /rutas and is summarized on /ayuda. It includes /gemelo, /vistas, /metas, /coordinacion, /aprendizaje and /foro. "
+            "On Home (/inicio) the citizen questions come first. Under them is a short row: Twin, Views, Questions, Coordination, Learning and Guests. "
+            "On /mapas, Saved views opens /vistas. Each view still opens the map and the twin. "
+            "On /aprendizaje#evidencia there are three more external cards, checked on 31 October 2026: "
+            "Digital Twin Victoria (https://digitaltwin.vic.gov.au/public/), ClimateView (https://www.climateview.global/en) and Open SDG (https://open-sdg.org/). "
+            "They are references for a spatial catalogue, for targets without a percentage, and for gaps left in view. Their figures are not copied. "
+            "Follow-up: do you want the site map, a saved view, or the external evidence? "
+            "[site map specialist row saved views maps evidence]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
     # 14_gobierno — Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027)
     try:
         n_gov = add_los_cabos_organigrama(chunks)

@@ -60,6 +60,7 @@
     { href: '/memoria', es: 'Consultas al asistente', en: 'Assistant queries', blurb_es: 'Preguntas recientes y vacíos de información', blurb_en: 'Recent questions and information gaps' },
     { href: '/temas', es: 'Temas', en: 'Topics', blurb_es: 'Todo el portal en seis temas', blurb_en: 'The whole portal in six topics', boost: 30 },
     { href: '/ayuda', es: 'Ayuda y fuentes', en: 'Help and sources', blurb_es: 'Cómo moverse, preguntar y de dónde vienen los datos', blurb_en: 'Getting around, asking and data sources' },
+    { href: '/rutas', es: 'Mapa del sitio', en: 'Site map', blurb_es: 'Gemelo, vistas, metas, coordinación, aprendizaje y foro', blurb_en: 'Twin, views, questions, coordination, learning and guest sheet', boost: 40 },
     { href: '/noticias', es: 'Noticias', en: 'News', blurb_es: 'Notas BCS agua, energía, turismo, planeación', blurb_en: 'BCS water, energy, tourism, planning notes' },
   ];
 
