@@ -1993,6 +1993,32 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:consulta-ruta-p120",
+        "title": "Evidencia, vistas y recorrido del foro / Evidence, views and the forum walk",
+        "path": "portal/inicio",
+        "href": "/aprendizaje/#evidencia",
+        "theme": "planeacion",
+        "sum_es": (
+            "Desde Inicio hay tres atajos, debajo de las preguntas. "
+            "Evidencia: /aprendizaje#evidencia reúne casos de otras ciudades sobre agua y costa. Esas cifras no son de Baja California Sur. "
+            "Vistas: /vistas abre cinco mapas con nombre (agua, corredor, puertos, vivienda y East Cape). "
+            "Recorrido: /foro#recorrido es el orden de diez minutos. La hoja para invitados es /foro. "
+            "Pregunta de seguimiento: ¿abres la evidencia de otras ciudades, una vista, o el recorrido del foro? "
+            "[evidencia casos de otras ciudades recorrido foro hoja invitados]"
+        ),
+        "sum_en": (
+            "Home has three shortcuts under the questions. "
+            "Evidence: /aprendizaje#evidencia gathers cases from other cities on water and the coast. Those figures are not for Baja California Sur. "
+            "Views: /vistas opens five named maps (water, corridor, ports, housing and East Cape). "
+            "Walk: /foro#recorrido is the ten-minute order. The guest sheet is /foro. "
+            "Follow-up: do you open the evidence from other cities, a view, or the forum walk? "
+            "[evidence cases from other cities forum walk guest sheet]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:vistas-nombres-p118",
         "title": "Las cinco vistas por nombre / The five views by name",
         "path": "portal/vistas",
