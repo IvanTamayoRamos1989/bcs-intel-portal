@@ -494,14 +494,16 @@ const icon: Record<string, string> = {
     .cdt-goals ul, .cdt-couple ul, .cdt-deps ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
     .cdt-goals li, .cdt-couple li, .cdt-deps li { margin: 0.28rem 0; font-size: 0.88rem; }
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
+    @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      .pt-top, .pt-sub, .site-footer, .bcs-chat, .pt-spec-note, .cdt-rail, .cdt-guides, #cdt-share, #cdt-print, .leaflet-control-container { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, #cdt-share, #cdt-print { display: none !important; }
       body, body.has-chat-sidebar { padding: 0 !important; background: #fff !important; }
       .cdt { color: #000; }
       .cdt-work { display: block; }
-      .cdt-panel { max-height: none !important; overflow: visible !important; border: 0; box-shadow: none; }
-      #cdt-map { height: 280px; min-height: 0; break-inside: avoid; }
-      .cdt-kpi, .cdt-quality article, .cdt-rec { break-inside: avoid; }
+      .cdt-panel { max-height: none !important; overflow: visible !important; border: 0; box-shadow: none; width: auto; }
+      .cdt-theme, .cdt-compare, .cdt-recs, .cdt-goals, .cdt-couple, .cdt-deps { break-inside: avoid; page-break-inside: avoid; }
+      .cdt-kpi, .cdt-quality article, .cdt-rec { break-inside: avoid; page-break-inside: avoid; }
+      h1, h2 { break-after: avoid; page-break-after: avoid; }
       a { color: #000; text-decoration: none; }
     }
     .cdt-blank { display: inline-block; margin: 0.35rem 0; padding: 0.25rem 0.55rem; border-radius: 999px; background: #f3e6cc; color: #6a4b12; font-size: 0.78rem; font-weight: 650; text-decoration: none; }

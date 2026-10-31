@@ -1916,6 +1916,35 @@ def main():
         "type": "guide",
     })
 
+    chunks.append({
+        "id": "portal:sustancia-p111",
+        "title": "Cifras en blanco y hoja para imprimir / Blank figures and the print sheet",
+        "path": "portal/foro",
+        "theme": "planeacion",
+        "sum_es": (
+            "Pasajeros aéreos 2025 de Loreto siguen en blanco. El acervo tiene Los Cabos (3,800,000) y La Paz (668,800) en la información estratégica de SETUE 2026, "
+            "y un total estatal de 4,523,000, pero no una fila municipal de Loreto para 2025. Una nota marca el año 2025 de Loreto como desconocido. "
+            "No se resta el total estatal para inventar Loreto. La Ley de Ingresos 2026 de Mulegé y de Loreto también sigue en blanco: "
+            "los decretos están catalogados y el resumen no trae el monto total, así que no se copia un número. "
+            "Los Cabos, La Paz y Comondú sí tienen monto. "
+            "Para imprimir la hoja de invitados use /foro; al imprimir /aprendizaje queda la lista de fuentes externas con su dirección. "
+            "Pregunta de seguimiento: ¿quieres la hoja para imprimir o la comparación que deja Loreto en blanco? "
+            "[foro imprimir loreto pasajeros ley ingresos en blanco]"
+        ),
+        "sum_en": (
+            "Loreto 2025 air passengers stay blank. The archive has Los Cabos (3,800,000) and La Paz (668,800) in the SETUE 2026 strategic brief, "
+            "and a state total of 4,523,000, but no 2025 municipal row for Loreto. A note marks Loreto 2025 as unknown. "
+            "The state total is not subtracted to invent Loreto. The 2026 revenue laws for Mulegé and Loreto also stay blank: "
+            "the decrees are catalogued and the summary does not carry the total, so no number is copied. "
+            "Los Cabos, La Paz and Comondú do have an amount. "
+            "To print the guest sheet use /foro; printing /aprendizaje leaves the external-source list with each address. "
+            "Follow-up: do you want the sheet to print, or the comparison that leaves Loreto blank? "
+            "[guest sheet print loreto passengers revenue law blank]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
     # 14_gobierno — Organigrama General H. XV Ayuntamiento de Los Cabos (2024–2027)
     try:
         n_gov = add_los_cabos_organigrama(chunks)
