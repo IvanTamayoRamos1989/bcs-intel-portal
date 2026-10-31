@@ -1073,6 +1073,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(tip.id);
     }
   }
+  if (kitQuery(query)) {
+    const kit = corpus.find((c) => c.id === 'portal:foro-kit-p122');
+    if (kit && !usedId.has(kit.id)) {
+      picked.unshift(kit);
+      usedId.add(kit.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1481,6 +1488,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== tip.id);
       picked.length = 0;
       picked.push(tip, ...rest);
+    }
+  }
+  if (kitQuery(query)) {
+    const kit = corpus.find((c) => c.id === 'portal:foro-kit-p122');
+    if (kit) {
+      const rest = picked.filter((c) => c.id !== kit.id);
+      picked.length = 0;
+      picked.push(kit, ...rest);
     }
   }
 
@@ -2190,6 +2205,12 @@ function evidenceDepthQuery(message) {
   return /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/.test(q);
 }
 
+function kitQuery(message) {
+  if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message)) return false;
+  const q = normQ(message);
+  return /kit reunion|imprimir foro|lista para la reunion/.test(q);
+}
+
 function twinReadQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message)) return false;
   const q = normQ(message);
@@ -2219,6 +2240,7 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'ev-desal', re: /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, href: '/aprendizaje/#evidencia', es: 'Evidencia: agua y costa', en: 'Evidence: water and coast' },
     { id: 'consulta-ev', re: /\bevidencia\b|casos de otras ciudades|cases from other cities/, href: '/aprendizaje/#evidencia', es: 'Evidencia de otras ciudades', en: 'Evidence from other cities' },
     { id: 'consulta-foro', re: /recorrido foro|hoja invitados/, href: '/foro/#recorrido', es: 'Recorrido del foro', en: 'Forum walk' },
+    { id: 'foro-kit', re: /kit reunion|imprimir foro|lista para la reunion/, href: '/foro/#kit', es: 'Kit de la reunión', en: 'Meeting kit' },
     { id: 'vista-agua', re: /agua primero|water first/, href: '/vistas/#agua-sur', es: 'Agua primero en el sur', en: 'Water first in the south' },
     { id: 'vista-corredor', re: /crecimiento cabos|corredor cabos|cabos-la paz/, href: '/vistas/#corredor', es: 'Crecimiento Cabos–La Paz', en: 'Cabos–La Paz growth' },
     { id: 'vista-puertos', re: /puertos y aeropuertos|ports and airports/, href: '/vistas/#puertos', es: 'Puertos y aeropuertos', en: 'Ports and airports' },
@@ -2258,6 +2280,7 @@ function portalGuideBoost(message, chunk) {
     [/agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos|east cape/, /vistas-nombres/],
     [/desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, /evidencia-desal/],
     [/como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, /gemelo-leer/],
+    [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2630,6 +2653,9 @@ async function handlerInner(event) {
   const twinGuide = twinReadQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-leer-p121')
     : null;
+  const kitGuide = kitQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:foro-kit-p122')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2651,6 +2677,10 @@ async function handlerInner(event) {
   }
   if (twinGuide && !evidence.some((c) => c.id === twinGuide.id)) {
     evidence = [twinGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (kitGuide && !evidence.some((c) => c.id === kitGuide.id)) {
+    evidence = [kitGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
