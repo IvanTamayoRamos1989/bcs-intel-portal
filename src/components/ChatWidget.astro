@@ -51,17 +51,8 @@ const { home = false } = Astro.props;
         </div>
       )}
       <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
-      <div class="bcs-chat-sugg" id="bcs-chat-sugg" aria-label="Preguntas sugeridas">
+      <div class="bcs-chat-sugg" id="bcs-chat-sugg" aria-label="Preguntas sugeridas" data-aria-es="Preguntas sugeridas" data-aria-en="Suggested questions">
         <p class="bcs-chat-sugg-title"><span data-lang-es>Empieza a explorar</span><span data-lang-en hidden>Start exploring</span></p>
-        <div class="bcs-chat-cta-row">
-          <a class="bcs-chat-cta" href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
-          <a class="bcs-chat-cta" href="/gemelo/?theme=vivienda&scenario=water_first&x=pob&y=pobreza_pct"><span data-lang-es>Gemelo: agua y nivel de vida</span><span data-lang-en hidden>Twin: water and living standard</span></a>
-          <a class="bcs-chat-cta" href="/vistas/"><span data-lang-es>Vistas guardadas</span><span data-lang-en hidden>Saved views</span></a>
-          <a class="bcs-chat-cta" href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
-          <a class="bcs-chat-cta" href="/coordinacion/"><span data-lang-es>Coordinación</span><span data-lang-en hidden>Coordination</span></a>
-          <a class="bcs-chat-cta" href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia externa</span><span data-lang-en hidden>External evidence</span></a>
-          <a class="bcs-chat-cta" href="/foro/"><span data-lang-es>Hoja para invitados</span><span data-lang-en hidden>Guest sheet</span></a>
-        </div>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Cuánta agua hay disponible en mi municipio?" data-q-en="How much water is available in my municipality?"><img class="bcs-sugg-th" src="/maps/dma-la-paz-localizacion.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Cuánta agua hay disponible en mi municipio?</span><span data-lang-en hidden>How much water is available in my municipality?</span></span></button>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué áreas naturales protegidas hay en Baja California Sur?" data-q-en="Which protected natural areas are in Baja California Sur?"><img class="bcs-sugg-th" src="/maps/poer-ugas-56.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Medio ambiente</span><span data-lang-en hidden>Environment</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué áreas naturales protegidas hay en Baja California Sur?</span><span data-lang-en hidden>Which protected natural areas are in Baja California Sur?</span></span></button>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué proyectos federales hay en Los Cabos?" data-q-en="Which federal projects are in Los Cabos?"><img class="bcs-sugg-th" src="/stills/batch_01/thumbs/S0005_san_jose_del_cabo.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Inversión</span><span data-lang-en hidden>Investment</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué proyectos federales hay en Los Cabos?</span><span data-lang-en hidden>Which federal projects are in Los Cabos?</span></span></button>
@@ -69,6 +60,19 @@ const { home = false } = Astro.props;
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué plan urbano aplica en La Paz?" data-q-en="Which urban plan applies in La Paz?"><img class="bcs-sugg-th" src="/maps/psdu-todos-santos-zonificacion.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Ciudad</span><span data-lang-en hidden>City</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué plan urbano aplica en La Paz?</span><span data-lang-en hidden>Which urban plan applies in La Paz?</span></span></button>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Cuántas personas viven en cada municipio?" data-q-en="How many people live in each municipality?"><img class="bcs-sugg-th" src="/stills/batch_01/thumbs/S0004_la_paz.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Población</span><span data-lang-en hidden>Population</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Cuántas personas viven en cada municipio?</span><span data-lang-en hidden>How many people live in each municipality?</span></span></button>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Qué puedo aprender de otras ciudades sobre agua, vivienda o movilidad, y dónde veo los datos de BCS?" data-q-en="What can I learn from other cities about water, housing or mobility, and where are the BCS figures?"><span class="bcs-sugg-k"><span data-lang-es>Otras ciudades</span><span data-lang-en hidden>Other cities</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Qué puedo aprender de otras ciudades?</span><span data-lang-en hidden>What can I learn from other cities?</span></span></button>
+        {home && (
+          <div class="bcs-chat-spec" aria-label="Para especialistas" data-aria-es="Para especialistas" data-aria-en="For specialists">
+            <p class="bcs-chat-spec-title"><span data-lang-es>Para especialistas</span><span data-lang-en hidden>For specialists</span></p>
+            <div class="bcs-chat-spec-row">
+              <a class="bcs-chat-spec-link" href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>
+              <a class="bcs-chat-spec-link" href="/vistas/"><span data-lang-es>Vistas</span><span data-lang-en hidden>Views</span></a>
+              <a class="bcs-chat-spec-link" href="/metas/"><span data-lang-es>Metas</span><span data-lang-en hidden>Questions</span></a>
+              <a class="bcs-chat-spec-link" href="/coordinacion/"><span data-lang-es>Coordinación</span><span data-lang-en hidden>Coordination</span></a>
+              <a class="bcs-chat-spec-link" href="/aprendizaje/"><span data-lang-es>Aprendizaje</span><span data-lang-en hidden>Learning</span></a>
+              <a class="bcs-chat-spec-link" href="/foro/"><span data-lang-es>Foro</span><span data-lang-en hidden>Forum</span></a>
+            </div>
+          </div>
+        )}
       </div>
     </div>
     <form class="bcs-chat-form" id="bcs-chat-form">
@@ -108,8 +112,11 @@ const { home = false } = Astro.props;
 <style is:global>
   .bcs-chat-sugg { display: flex; flex-direction: column; gap: 6px; margin: 4px 0 10px; }
   .bcs-chat-sugg-title { margin: 0 0 2px; font-size: .8rem; color: #5c6e7b; }
-  .bcs-chat-cta-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
-  .bcs-chat-cta { display: inline-block; font: inherit; font-size: .84rem; font-weight: 700; line-height: 1.3; padding: 7px 12px; border-radius: 999px; border: 1px solid #0083C4; background: #e8f4fb; color: #006BA3; text-decoration: none; }
+  .bcs-chat-spec { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: .35rem; margin-top: .45rem; padding-top: .55rem; border-top: 1px solid rgba(0, 131, 196, .28); }
+  .bcs-chat-spec-title { margin: 0; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #006BA3; }
+  .bcs-chat-spec-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem; }
+  .bcs-chat-spec-link { font-size: .78rem; font-weight: 700; line-height: 1.2; padding: .28rem .65rem; border-radius: 999px; border: 1px solid #0083C4; background: #e8f4fb; color: #006BA3; text-decoration: none; }
+  .bcs-chat-spec-link:hover, .bcs-chat-spec-link:focus-visible { background: #0083C4; color: #fff; outline: 2px solid #006BA3; outline-offset: 2px; }
   .bcs-chat-sugg-btn { text-align: left; font: inherit; font-size: .84rem; line-height: 1.35; padding: 7px 10px; border-radius: 10px; border: 1px solid #e2dccf; background: #fbf8f1; color: #23374a; cursor: pointer; }
   .bcs-chat-sugg-btn:hover, .bcs-chat-sugg-btn:focus-visible { border-color: #34607d; background: #eef3f6; }
   .bcs-chat {
@@ -888,6 +895,10 @@ const { home = false } = Astro.props;
   body.chat-home .bcs-chat-welcome-p { color: rgba(255,255,255,.92) !important; }
   body.chat-home .bcs-fx-stats li, body.chat-home .bcs-fx-stats a, body.chat-home .bcs-fx-stats strong { color: #fff !important; }
   body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-title { color: rgba(255,255,255,.88) !important; }
+  body.chat-home .bcs-chat-spec { border-top-color: rgba(255,255,255,.35); }
+  body.chat-home .bcs-chat-spec-title { color: rgba(255,255,255,.88); }
+  body.chat-home .bcs-chat-spec-link { border-color: #fff; }
+  body.chat-home .bcs-chat-spec-link:hover, body.chat-home .bcs-chat-spec-link:focus-visible { background: #fff; color: #006BA3; border-color: #fff; outline-color: #fff; }
   body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn { background: #fff; border-color: transparent; color: #1a2b38; box-shadow: 0 6px 20px rgba(0,40,70,.18); }
   body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:hover, body.chat-home.has-chat-sidebar #bcs-chat .bcs-chat-sugg-btn:focus-visible { border-color: #fff; outline: 2px solid #fff; outline-offset: 2px; }
   body.chat-home .bcs-sugg-k { color: #0083C4 !important; }

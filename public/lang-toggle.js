@@ -40,6 +40,12 @@
       }
     });
 
+    document.querySelectorAll('[data-aria-es]').forEach(function (el) {
+      var es = el.getAttribute('data-aria-es') || '';
+      var en = el.getAttribute('data-aria-en') || es;
+      el.setAttribute('aria-label', lang === 'en' ? en : es);
+    });
+
     // document.title from bilingual map on <html> or <title>
     var titleEl = document.querySelector('title[data-title-es]');
     var root = document.documentElement;

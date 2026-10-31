@@ -29,7 +29,7 @@ const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
   descriptionEn="Interactive map and BCS thematic map gallery"
   wide={true}
 >
-  <section class="maps-entry" aria-label="Elige cómo ver el territorio">
+  <section class="maps-entry" aria-label="Elige cómo ver el territorio" data-aria-es="Elige cómo ver el territorio" data-aria-en="Choose how you want to see the territory">
     <p class="lead maps-entry-lead"><span data-lang-es>Elige cómo quieres ver Baja California Sur.</span><span data-lang-en hidden>Choose how you want to see Baja California Sur.</span></p>
     <div class="maps-entry-grid">
       <a class="maps-entry-card" href="/stills">
@@ -54,6 +54,11 @@ const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
         </span>
       </a>
     </div>
+    <p class="maps-vistas">
+      <a href="/vistas/"><span data-lang-es>Vistas guardadas</span><span data-lang-en hidden>Saved views</span></a>
+      <span data-lang-es> — agua, corredor Cabos–La Paz, puertos, vivienda y East Cape. Cada una abre el mapa y el gemelo.</span>
+      <span data-lang-en hidden> — water, the Cabos–La Paz corridor, ports, housing and East Cape. Each one opens the map and the twin.</span>
+    </p>
   </section>
 
   <section id="gis" class="maps-gis-section" aria-label="Interactive map">
@@ -182,6 +187,9 @@ const used = themeOrder.filter((t) => (byTheme[t.id] || []).length);
     .maps-entry-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: #e8eef2; }
     .maps-entry-txt { display: flex; flex-direction: column; gap: 4px; padding: .8rem 1rem 1rem; font-size: .9rem; line-height: 1.45; color: #3c5163; }
     .maps-entry-txt strong { font-size: 1.1rem; color: #23374a; }
+    .maps-vistas { margin: .85rem 0 0; font-size: .9rem; line-height: 1.45; color: #3c5163; }
+    .maps-vistas a { font-weight: 700; color: #006BA3; text-decoration: none; border-bottom: 1px solid #A0D0E0; }
+    .maps-vistas a:hover, .maps-vistas a:focus-visible { color: #0083C4; outline: 2px solid #0083C4; outline-offset: 2px; }
     @media (max-width: 760px) { .maps-entry-grid { grid-template-columns: 1fr; } }
     .maps-anchor { display: block; position: relative; top: -80px; visibility: hidden; }
     .maps-gis-h { margin: 0 0 .3rem; }

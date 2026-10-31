@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { DOCS, THEMES } from '../lib/ia';
+
+const decision = [
+  { href: '/aprendizaje', es: 'Aprendizaje', en: 'Learning', d_es: 'Casos y redes externas', d_en: 'External cases and networks' },
+  { href: '/vistas', es: 'Vistas', en: 'Views', d_es: 'Enlaces con nombre para el mapa y el gemelo', d_en: 'Named links for the map and the twin' },
+  { href: '/gemelo', es: 'Gemelo', en: 'Twin', d_es: 'Comparar municipios, temas y escenarios', d_en: 'Compare municipalities, themes and scenarios' },
+  { href: '/coordinacion', es: 'Coordinación', en: 'Coordination', d_es: 'Institución, obra y sexenio', d_en: 'Institution, work and administration' },
+  { href: '/metas', es: 'Preguntas abiertas', en: 'Open questions', d_es: 'Preguntas, señales y brechas', d_en: 'Questions, signals and gaps' },
+  { href: '/foro', es: 'Foro', en: 'Guest sheet', d_es: 'Cuatro enlaces para la reunión', d_en: 'Four links for the meeting' },
+];
+---
+<BaseLayout
+  title="Mapa del sitio"
+  titleEn="Site map"
+  description="Lista de páginas del portal, con la ruta de decisión al frente."
+  descriptionEn="List of portal pages, with the decision path first."
+  section="Mapa del sitio"
+  sectionEn="Site map"
+>
+  <div class="pt-rutas">
+    <p class="lead">
+      <span data-lang-es>Lista para quien ya está en el portal. No publica cifras nuevas.</span>
+      <span data-lang-en hidden>A list for someone already in the portal. It publishes no new figures.</span>
+    </p>
+
+    <section>
+      <h2><span data-lang-es>Ruta de decisión</span><span data-lang-en hidden>Decision path</span></h2>
+      <ul>
+        {decision.map((item) => (
+          <li>
+            <a href={item.href}><span data-lang-es>{item.es}</span><span data-lang-en hidden>{item.en}</span></a>
+            {' — '}
+            <span data-lang-es>{item.d_es}</span>
+            <span data-lang-en hidden>{item.d_en}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    {THEMES.map((theme) => (
+      <section id={theme.id}>
+        <h2><span data-lang-es>{theme.es}</span><span data-lang-en hidden>{theme.en}</span></h2>
+        <ul>
+          {theme.items.map((item) => (
+            <li>
+              <a href={item.href}><span data-lang-es>{item.es}</span><span data-lang-en hidden>{item.en}</span></a>
+              {item.d_es && (
+                <>
+                  {' — '}
+                  <span data-lang-es>{item.d_es}</span>
+                  <span data-lang-en hidden>{item.d_en}</span>
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <section id="documentos">
+      <h2><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></h2>
+      <ul>
+        {DOCS.map((item) => (
+          <li>
+            <a href={item.href}><span data-lang-es>{item.es}</span><span data-lang-en hidden>{item.en}</span></a>
+            {item.d_es && (
+              <>
+                {' — '}
+                <span data-lang-es>{item.d_es}</span>
+                <span data-lang-en hidden>{item.d_en}</span>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .pt-rutas { max-width: 860px; }
+  .pt-rutas section { margin: 0.9rem 0 1.1rem; }
+  .pt-rutas h2 { margin: 0 0 0.35rem; color: #006BA3; font-size: 1.15rem; }
+  .pt-rutas ul { margin: 0; padding-left: 1.15rem; }
+  .pt-rutas li { margin: 0.28rem 0; line-height: 1.45; }
+  .pt-rutas a { color: #006BA3; font-weight: 700; }
+  .pt-rutas a:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+</style>
