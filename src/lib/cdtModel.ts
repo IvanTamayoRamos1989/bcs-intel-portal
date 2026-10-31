@@ -159,6 +159,16 @@ for (const row of ports.airports) {
 }
 if (!paxByCode.SJD || !paxByCode.LAP || !paxByCode.BCS) throw new Error('CDT airport passengers missing');
 
+/** Gobierno de BCS, comunicado de la Secretaría de Turismo y Economía (2025).
+ *  https://www.bcs.gob.mx/supera-bcs-los-4-5-millones-de-pasajeros-aereos-en-2025-la-paz-crece-10-9/
+ *  The same page: Los Cabos 3,765,000 pasajeros + La Paz 668,800 + Loreto 89,600 viajeros = 4,523,400.
+ *  Los Cabos in the twin stays the rounded strategic-brief figure. The AFAC spreadsheet was not opened. */
+const loretoAirTravelers2025 = 89600;
+const setueRelease2025 = { cabos: 3765000, lap: 668800, loreto: loretoAirTravelers2025, state: 4523400 };
+if (setueRelease2025.cabos + setueRelease2025.lap + setueRelease2025.loreto !== setueRelease2025.state) {
+  throw new Error('CDT SETUE 2025 airport breakdown does not sum to the stated state total');
+}
+
 const flights = gds.metrics.flights;
 const dma = gds.metrics.dma_hm3;
 
@@ -622,18 +632,18 @@ const themes: Array<{
     en: 'Mobility and logistics',
     hint_es: 'Aire, carretera y puerto',
     hint_en: 'Air, road and port',
-    diagnostic_es: `En 2025 hay pasajeros aéreos para Los Cabos (${fmtInt(paxByCode.SJD)}) y La Paz (${fmtInt(paxByCode.LAP)}), no para Loreto, y los cruceros de DataTur son otra serie.`,
-    diagnostic_en: `2025 air passengers are published for Los Cabos (${fmtInt(paxByCode.SJD)}) and La Paz (${fmtInt(paxByCode.LAP)}), not for Loreto, and DataTur cruises are a different series.`,
+    diagnostic_es: `En 2025 Los Cabos tiene ${fmtInt(paxByCode.SJD)} pasajeros aéreos y La Paz ${fmtInt(paxByCode.LAP)}; el gobierno del estado informó ${fmtInt(loretoAirTravelers2025)} viajeros en Loreto, y los cruceros son otra serie.`,
+    diagnostic_en: `In 2025 Los Cabos has ${fmtInt(paxByCode.SJD)} air passengers and La Paz ${fmtInt(paxByCode.LAP)}; the state government reported ${fmtInt(loretoAirTravelers2025)} travelers at Loreto, and cruises are a different series.`,
     gap_es: 'No hay capa de flujos origen-destino ni logística por AGEB. El mapa usa carreteras, nodos de transporte y anclas de puertos y aeropuertos.',
     gap_en: 'There is no origin-destination flow layer and no AGEB logistics. The map uses highways, transport nodes, and port and airport anchors.',
     layers: THEME_LAYERS.movilidad,
     kpis: [
       {
-        value: `${fmtInt(paxByCode.SJD)} · ${fmtInt(paxByCode.LAP)}`,
-        label_es: 'Pasajeros 2025 SJD · La Paz',
-        label_en: '2025 passengers SJD · La Paz',
-        source_es: 'SETUE, información estratégica 2026',
-        source_en: 'SETUE strategic brief 2026',
+        value: `${fmtInt(paxByCode.SJD)} · ${fmtInt(paxByCode.LAP)} · ${fmtInt(loretoAirTravelers2025)}`,
+        label_es: 'Pasajeros 2025 Los Cabos · La Paz · Loreto',
+        label_en: '2025 passengers Los Cabos · La Paz · Loreto',
+        source_es: 'Los Cabos y La Paz: SETUE, información estratégica 2026. Loreto: 89,600 viajeros, comunicado del Gobierno de BCS.',
+        source_en: 'Los Cabos and La Paz: SETUE strategic brief 2026. Loreto: 89,600 travelers, Baja California Sur government release.',
         href: '/puertos/',
       },
       {
@@ -820,7 +830,7 @@ const couplings: Record<CdtThemeId, Array<{ to: CdtThemeId; es: string; en: stri
     { to: 'economia', es: 'Pasajeros de avión y de crucero son series distintas. Sumarlas inventaría una demanda que el portal no publica.', en: 'Air passengers and cruise passengers are different series. Adding them would invent a demand figure the portal does not publish.', href: '/puertos/' },
     { to: 'vivienda', es: 'Más arribos en un municipio con acuífero en déficit no abren vivienda nueva por sí solos.', en: 'More arrivals in a municipality with an aquifer deficit do not by themselves open new housing.', href: '/agua/' },
     { to: 'urbano', es: 'El corredor Cabos–La Paz es el lugar donde carretera, asentamiento y anclas de viaje se tocan.', en: 'The Cabos–La Paz corridor is where the highway, settlement and travel anchors meet.', href: '/mapas/?scenario=corridor_intensify#gis' },
-    { to: 'investigacion', es: 'Loreto tiene arribos de crucero publicados y no tiene pasajeros aéreos 2025 en el acervo.', en: 'Loreto has published cruise calls and does not have 2025 air passengers in the archive.', href: '/vuelos/' },
+    { to: 'investigacion', es: 'Loreto tiene arribos de crucero publicados y el gobierno del estado informó 89,600 viajeros aéreos en 2025. No es la hoja de la AFAC.', en: 'Loreto has published cruise calls, and the state government reported 89,600 air travelers in 2025. That is not the AFAC spreadsheet.', href: '/vuelos/' },
   ],
   vivienda: [
     { to: 'urbano', es: 'El registro SNIIV es municipal. El rezago CONAVI es estatal. No se reparte el rezago entre municipios.', en: 'The SNIIV registry is municipal. The CONAVI backlog is statewide. The backlog is not split across municipalities.', href: '/inmobiliario/' },
@@ -930,9 +940,9 @@ export const cdtModel = {
   integrated_en:
     'Integrated solution: the active theme is not decided on its own. These four readings come from demand and supply, from the questions and from projects already published. This is decision support, not a calibrated simulation.',
   compareSkip_es:
-    'No entran a esta comparación: pasajeros aéreos 2025 (falta Loreto), rezago de vivienda CONAVI (solo estatal), pico eléctrico (un solo sistema) y déficit de acuíferos (va por acuífero, no por municipio).',
+    'No entran a esta comparación: pasajeros aéreos 2025 (tres aeropuertos, no los cinco municipios), rezago de vivienda CONAVI (solo estatal), pico eléctrico (un solo sistema) y déficit de acuíferos (va por acuífero, no por municipio).',
   compareSkip_en:
-    'Left out of this comparison: 2025 air passengers (Loreto is missing), CONAVI housing backlog (statewide only), the power peak (one grid) and aquifer deficit (reported per aquifer, not per municipality).',
+    'Left out of this comparison: 2025 air passengers (three airports, not the five municipalities), CONAVI housing backlog (statewide only), the power peak (one grid) and aquifer deficit (reported per aquifer, not per municipality).',
   regional_es:
     'Estas cifras son de Baja California Sur. No están alineadas a una serie regional. Para ver otras ciudades de América Latina, la referencia abierta es la Plataforma Urbana y de Ciudades de CEPAL. Este portal no copia números de esa plataforma.',
   regional_en:

@@ -2,7 +2,7 @@
 
 Live site: https://bajacaliforniasur2050.com · Netlify: https://bcs-intel-portal.netlify.app
 
-Password for the gate: `BCS2050`. The portal stays `noindex`.
+Password for the gate: `BCS2050`. The portal stays `noindex`. Guest path for operators: `FORO_GUEST_WALKTHROUGH.md`.
 
 ## Live paths
 
@@ -22,7 +22,7 @@ Password for the gate: `BCS2050`. The portal stays `noindex`.
 
 ## Still blank
 
-- Loreto 2025 air passengers. SETUE 2026 has Los Cabos, La Paz, and a state total. It does not have a Loreto municipal row for 2025. Do not subtract the state total.
+- Loreto 2025 air travelers: **89,600**, from the state government release (the three airports on that page add up to 4,523,400). It is on the mobility card. It is not an AFAC spreadsheet row. Comondú and Mulegé have no airport, so air passengers stay off the five-municipality chart.
 - Mulegé and Loreto 2026 revenue-law totals. The decrees are catalogued. The totals are not copied. Where to look next is on `/metas`.
 
 ## Phase 2 — do not invent
@@ -47,3 +47,4 @@ These are not in the archive. Leave them out until a real source is ingested:
 | 1.11 | `DEPLOY_REPORT_CDT_P1_11.md` | One-sentence theme reads, A4 guest print |
 | 1.12 | `DEPLOY_REPORT_CDT_P1_12.md` | Chat links, two open gaps, why-lines on `/foro` |
 | 1.13 | `DEPLOY_REPORT_CDT_P1_13.md` | Link audit, this sheet, focus rings |
+| 1.14 | `DEPLOY_REPORT_CDT_P1_14.md` | Loreto 2025 travelers from the state release; revenue laws still blank |
