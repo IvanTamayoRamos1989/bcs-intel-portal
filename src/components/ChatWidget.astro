@@ -76,6 +76,18 @@ const { home = false } = Astro.props;
                 <strong><span data-lang-es>Recorrido</span><span data-lang-en hidden>Walk</span></strong>
                 <span><span data-lang-es>El orden de diez minutos para seguir la reunión.</span><span data-lang-en hidden>The ten-minute order for following the meeting.</span></span>
               </a>
+              <div class="bcs-chat-path-card bcs-chat-decide">
+                <strong><span data-lang-es>Antes de decidir</span><span data-lang-en hidden>Before you decide</span></strong>
+                <span class="bcs-chat-decide-path">
+                  <a href="/vistas/"><span data-lang-es>Vistas</span><span data-lang-en hidden>Views</span></a>
+                  <span aria-hidden="true"> → </span>
+                  <a href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>
+                  <span aria-hidden="true"> → </span>
+                  <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
+                  <span aria-hidden="true"> → </span>
+                  <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia</span><span data-lang-en hidden>Evidence</span></a>
+                </span>
+              </div>
             </div>
           </div>
         )}
@@ -138,6 +150,9 @@ const { home = false } = Astro.props;
   .bcs-chat-path-card strong { color: #006BA3; font-size: .86rem; }
   .bcs-chat-path-card span { font-size: .78rem; line-height: 1.35; font-weight: 450; }
   .bcs-chat-path-card:focus-visible { outline: 3px solid #006BA3; outline-offset: 3px; }
+  .bcs-chat-decide { grid-column: 1 / -1; }
+  .bcs-chat-decide-path { display: flex; flex-wrap: wrap; gap: .15rem .35rem; align-items: baseline; }
+  .bcs-chat-decide-path a { color: #006BA3; font-weight: 700; }
   @media (max-width: 720px) { .bcs-chat-path-row { grid-template-columns: 1fr; } }
   .bcs-chat-spec { display: flex; flex-direction: column; align-items: center; gap: .35rem; margin-top: .45rem; padding-top: .55rem; border-top: 1px solid rgba(0, 131, 196, .28); }
   .bcs-chat-spec-title { margin: 0; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #006BA3; }

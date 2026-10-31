@@ -92,6 +92,25 @@ const icon: Record<string, string> = {
             <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
           </p>
         </aside>
+        <section class="cdt-limits" id="limites">
+          <h2>
+            <span data-lang-es>Qué puede / qué no puede (Fase 1)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 1)</span>
+          </h2>
+          <p>
+            <span data-lang-es>Puede: los cinco municipios, los cinco temas, los escenarios y la comparación municipal. Si una celda está en blanco, se queda en blanco.</span>
+            <span data-lang-en hidden>It can: the five municipalities, the five themes, the scenarios and the municipal comparison. If a cell is blank, it stays blank.</span>
+          </p>
+          <p>
+            <span data-lang-es>Todavía no puede: mapas por manzana (AGEB), forma de predios, lotes de catastro, ni rellenar una cifra que falta.</span>
+            <span data-lang-en hidden>It cannot yet: block maps (AGEB), parcel form, cadastre lots, or filling in a missing figure.</span>
+          </p>
+          <p>
+            <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
+            {' · '}
+            <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
+          </p>
+        </section>
         <p class="cdt-fine"><a href="/vistas/"><span data-lang-es>Vistas guardadas para una reunión</span><span data-lang-en hidden>Saved views for a meeting</span></a> · <a href="/foro/"><span data-lang-es>Hoja para invitados</span><span data-lang-en hidden>Guest sheet</span></a></p>
         <div class="cdt-guides">
           {model.guides.map((g) => (
@@ -457,6 +476,10 @@ const icon: Record<string, string> = {
     .cdt-tip { margin: 0.7rem 0 0.2rem; max-width: 40rem; border-left: 3px solid var(--cdt); background: #f4fbff; border-radius: 10px; padding: 0.55rem 0.75rem; }
     .cdt-tip p { margin: 0.2rem 0; font-size: 0.92rem; line-height: 1.4; }
     .cdt-tip a { color: var(--cdt-dark); font-weight: 650; }
+    .cdt-limits { margin: 0.55rem 0 0.35rem; max-width: 40rem; scroll-margin-top: 5rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 10px; padding: 0.55rem 0.75rem; background: #fff; }
+    .cdt-limits h2 { margin: 0 0 0.3rem; color: var(--cdt-dark); font-size: 1.05rem; }
+    .cdt-limits p { margin: 0.25rem 0; font-size: 0.92rem; line-height: 1.4; }
+    .cdt-limits a { color: var(--cdt-dark); font-weight: 650; }
     .cdt-scenarios { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .cdt-sc, .cdt-theme-btn, .cdt-muni { font: inherit; cursor: pointer; }
     .cdt-sc { border: 1px solid var(--cdt-line); background: #fff; color: var(--cdt-ink); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; }
@@ -553,6 +576,32 @@ const icon: Record<string, string> = {
       .cdt h1 { font-size: 1.35rem; }
     }
   </style>
+  <script>
+    function showLimits() {
+      if ((location.hash || '') !== '#limites') return;
+      var el = document.getElementById('limites');
+      if (!el) return;
+      var header = document.querySelector('.pt-top');
+      var hb = header ? header.getBoundingClientRect().bottom : 62;
+      var top = el.getBoundingClientRect().top;
+      if (top < hb - 2 || top > hb + 48) {
+        var root = document.documentElement;
+        var prev = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        el.scrollIntoView({ block: 'start', behavior: 'auto' });
+        root.style.scrollBehavior = prev;
+      }
+    }
+    if (document.readyState === 'complete') {
+      showLimits();
+      window.setTimeout(showLimits, 400);
+    } else {
+      window.addEventListener('load', function () {
+        showLimits();
+        window.setTimeout(showLimits, 400);
+      });
+    }
+  </script>
 
   <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script is:inline define:vars={{ model }}>
@@ -896,7 +945,7 @@ const icon: Record<string, string> = {
         q.set('x', state.x);
         q.set('y', state.y);
         q.set('muni', state.muni);
-        history.replaceState(null, '', location.pathname + '?' + q.toString());
+        history.replaceState(null, '', location.pathname + '?' + q.toString() + location.hash);
       }
 
       function applyContext() {
