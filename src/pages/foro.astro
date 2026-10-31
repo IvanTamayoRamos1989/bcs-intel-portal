@@ -11,8 +11,8 @@ if (!aguaSur) throw new Error('foro water view missing');
 <BaseLayout
   title="Hoja para invitados"
   titleEn="Guest sheet"
-  description="Cuatro enlaces para seguir la reunión sin una cuenta nueva."
-  descriptionEn="Four links to follow the meeting without a new account."
+  description="Cuatro enlaces y un recorrido de diez minutos para seguir la reunión sin una cuenta nueva."
+  descriptionEn="Four links and a ten-minute walk to follow the meeting without a new account."
   section="Invitados"
   sectionEn="Guests"
   wide={true}
@@ -62,21 +62,101 @@ if (!aguaSur) throw new Error('foro water view missing');
       <p><span data-lang-es>Institución, obra y sexenio del inventario federal. Sin fecha de entrega calculada.</span><span data-lang-en hidden>Institution, work and administration from the federal inventory. No calculated delivery date.</span></p>
     </li>
   </ul>
+  <section class="foro-script" id="recorrido">
+    <h2>
+      <span data-lang-es>Recorrido de 10 minutos</span>
+      <span data-lang-en hidden>Ten-minute walk</span>
+    </h2>
+    <p>
+      <span data-lang-es>Para quien llega a la reunión del Foro Mar de Cortés. Diez minutos, en este orden.</span>
+      <span data-lang-en hidden>For someone joining the Mar de Cortés forum. Ten minutes, in this order.</span>
+    </p>
+    <ol>
+      <li>
+        <span data-lang-es>Esta hoja. Cuatro enlaces. Cada uno dice por qué abrirlo. Si hace falta papel, imprima: queda la dirección completa.</span>
+        <span data-lang-en hidden>This sheet. Four links. Each one says why to open it. If you need paper, print: the full address stays on the page.</span>
+      </li>
+      <li>
+        <a href="/vistas/"><span data-lang-es>Vistas guardadas</span><span data-lang-en hidden>Saved views</span></a>
+        <span data-lang-es>. Elija la que el grupo va a mirar. Cada tarjeta dice qué capas enciende el mapa. Para agua y vivienda, use «Agua primero en el sur»: el enlace del gemelo es el mismo que el de arriba.</span>
+        <span data-lang-en hidden>. Pick the one the group will look at. Each card says which layers the map turns on. For water and housing, use “Water first in the south”: the twin link is the same as the one above.</span>
+        <ul>
+          {vistas.map((v) => (
+            <li><a href={`/vistas/#${v.id}`}><span data-lang-es>{v.es}</span><span data-lang-en hidden>{v.en}</span></a></li>
+          ))}
+        </ul>
+      </li>
+      <li>
+        <a href={aguaSur.gemelo}><span data-lang-es>Gemelo, agua y vivienda</span><span data-lang-en hidden>Twin, water and housing</span></a>
+        <span data-lang-es>. Lea la frase de arriba. Compare los cinco municipios. Loreto tiene 89,600 viajeros aéreos en 2025, del comunicado del gobierno del estado. Mulegé y Loreto siguen sin monto de Ley de Ingresos 2026.</span>
+        <span data-lang-en hidden>. Read the line above. Compare the five municipalities. Loreto has 89,600 air travelers in 2025, from the state government release. Mulegé and Loreto still have no 2026 revenue-law total.</span>
+      </li>
+      <li>
+        <a href="/aprendizaje/"><span data-lang-es>Aprendizaje para imprimir</span><span data-lang-en hidden>Learning, ready to print</span></a>
+        <span data-lang-es>. Imprima. Queda la lista de fuentes externas. Esas cifras no son de Baja California Sur.</span>
+        <span data-lang-en hidden>. Print. The external-source list remains. Those figures are not for Baja California Sur.</span>
+      </li>
+      <li>
+        <a href="/coordinacion/"><span data-lang-es>Coordinación</span><span data-lang-en hidden>Coordination</span></a>
+        <span data-lang-es>. Institución, obra y sexenio, tal como están escritos. No hay fecha de entrega calculada.</span>
+        <span data-lang-en hidden>. Institution, work and administration, as written. There is no calculated delivery date.</span>
+      </li>
+    </ol>
+    <p class="foro-not">
+      <span data-lang-es>Qué no prometer. No hay polígonos por AGEB, ni métricas de forma, ni catastro de predios. Si una celda está en blanco, no se rellena en la reunión.</span>
+      <span data-lang-en hidden>What not to promise. There are no block polygons, no form metrics, and no parcel cadastre. If a cell is blank, it stays blank in the meeting.</span>
+    </p>
+  </section>
   <style>
     .foro-list { list-style: none; padding: 0; margin: 0.5rem 0; }
     .foro-list li { border: 1px solid #e0e0e0; border-left: 3px solid #0083C4; border-radius: 12px; padding: 0.75rem 0.9rem; margin: 0.55rem 0; background: #fff; }
     .foro-list a { font-weight: 700; color: #006BA3; font-size: 1.05rem; }
     .foro-list p { margin: 0.25rem 0 0; }
     .foro-why { color: #006BA3; font-size: 0.92rem; }
+    .foro-script { margin: 1.2rem 0 50vh; scroll-margin-top: 8rem; }
+    @media (min-width: 900px) {
+      .foro-script { scroll-margin-top: 4.75rem; }
+    }
+    .foro-script h2 { margin: 0 0 0.35rem; color: #006BA3; font-size: 1.2rem; }
+    .foro-script p { margin: 0.3rem 0; }
+    .foro-script ol { margin: 0.4rem 0 0.6rem; padding-left: 1.2rem; }
+    .foro-script li { margin: 0.35rem 0; }
+    .foro-script ul { margin: 0.25rem 0 0.2rem; padding-left: 1.1rem; }
+    .foro-script a { color: #006BA3; font-weight: 650; }
+    .foro-not { color: #006BA3; font-size: 0.92rem; }
     @page { size: A4; margin: 16mm; }
     @media print {
       :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.ios-tabbar) { display: none !important; }
       body, body.has-chat-sidebar { padding: 0 !important; margin: 0 !important; background: #fff !important; }
       main { max-width: none !important; }
-      .foro-list li { break-inside: avoid; page-break-inside: avoid; border-radius: 0; box-shadow: none; }
-      .foro-list a { color: #000; text-decoration: none; }
-      .foro-list a[href]::after { content: " — bajacaliforniasur2050.com" attr(href); display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.82rem; color: #333; word-break: break-all; }
-      h1 { break-after: avoid; page-break-after: avoid; }
+      .foro-script { margin-bottom: 0; break-before: page; page-break-before: always; }
+      .foro-list li, .foro-script li { break-inside: avoid; page-break-inside: avoid; border-radius: 0; box-shadow: none; }
+      .foro-list a, .foro-script a { color: #000; text-decoration: none; }
+      .foro-list a[href]::after, .foro-script a[href]::after { content: " — bajacaliforniasur2050.com" attr(href); display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.82rem; color: #333; word-break: break-all; }
+      h1, .foro-script h2 { break-after: avoid; page-break-after: avoid; }
     }
   </style>
+  <script>
+    function showWalk() {
+      var id = (location.hash || '').replace(/^#/, '');
+      var el = id && document.getElementById(id);
+      if (!el) return;
+      var header = document.querySelector('.pt-top');
+      var hb = header ? header.getBoundingClientRect().bottom : 62;
+      var top = el.getBoundingClientRect().top;
+      if (top < hb - 2 || top > hb + 40) {
+        var root = document.documentElement;
+        var prev = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        el.scrollIntoView({ block: 'start', behavior: 'auto' });
+        root.style.scrollBehavior = prev;
+      }
+    }
+    function armWalk() {
+      showWalk();
+      window.setTimeout(showWalk, 400);
+    }
+    if (document.readyState === 'complete') armWalk();
+    else window.addEventListener('load', armWalk);
+  </script>
 </BaseLayout>

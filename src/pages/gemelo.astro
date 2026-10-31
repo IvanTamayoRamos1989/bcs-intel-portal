@@ -853,9 +853,15 @@ const icon: Record<string, string> = {
       function fitScenario() {
         var sc = scenarioById(state.scenario);
         var b = sc.focus_bbox;
-        if (b && b.length === 4) {
-          map.fitBounds(L.latLngBounds([b[1], b[0]], [b[3], b[2]]), { padding: [18, 18], maxZoom: 10 });
+        if (!b || b.length !== 4) return;
+        function fit() {
+          try {
+            map.invalidateSize();
+            map.fitBounds(L.latLngBounds([b[1], b[0]], [b[3], b[2]]), { padding: [18, 18], maxZoom: 10, animate: false });
+          } catch (e) {}
         }
+        fit();
+        setTimeout(fit, 280);
       }
 
       function updateMapLink() {

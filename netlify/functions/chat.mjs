@@ -1045,6 +1045,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(air.id);
     }
   }
+  if (namedViewsQuery(query)) {
+    const views = corpus.find((c) => c.id === 'portal:vistas-nombres-p118');
+    if (views && !usedId.has(views.id)) {
+      picked.unshift(views);
+      usedId.add(views.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1421,6 +1428,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== air.id);
       picked.length = 0;
       picked.push(air, ...rest);
+    }
+  }
+  if (namedViewsQuery(query)) {
+    const views = corpus.find((c) => c.id === 'portal:vistas-nombres-p118');
+    if (views) {
+      const rest = picked.filter((c) => c.id !== views.id);
+      picked.length = 0;
+      picked.push(views, ...rest);
     }
   }
 
@@ -2125,11 +2140,25 @@ function airAxisQuery(message) {
   return /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/.test(normQ(message));
 }
 
+function namedViewsQuery(message) {
+  const q = normQ(message);
+  return /agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos/.test(q)
+    || (/east cape/.test(q) && /vista|view|capa|mapa|proteg/.test(q))
+    || (/corredor/.test(q) && /cabos|vista|view|crecimiento/.test(q));
+}
+
 function portalSurfaceBlocks(message, lang) {
   const q = normQ(message);
   const en = lang === 'en';
   const surfaces = [
     { id: 'gemelo-air', re: /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, href: '/gemelo/?theme=movilidad&x=pob&y=aereo_2025', es: 'Eje aéreo 2025', en: '2025 air axis' }, // keep in sync with airAxisQuery
+    { id: 'vista-agua', re: /agua primero|water first/, href: '/vistas/#agua-sur', es: 'Agua primero en el sur', en: 'Water first in the south' },
+    { id: 'vista-corredor', re: /crecimiento cabos|corredor cabos|cabos-la paz/, href: '/vistas/#corredor', es: 'Crecimiento Cabos–La Paz', en: 'Cabos–La Paz growth' },
+    { id: 'vista-puertos', re: /puertos y aeropuertos|ports and airports/, href: '/vistas/#puertos', es: 'Puertos y aeropuertos', en: 'Ports and airports' },
+    { id: 'vista-vivienda', re: /contexto de vivienda|housing context/, href: '/vistas/#vivienda', es: 'Contexto de vivienda', en: 'Housing context' },
+    { id: 'vista-east', re: /east cape.{0,40}(vista|view|capa|mapa|proteg)|(vista|view).{0,40}east cape/, href: '/vistas/#east-cape', es: 'East Cape y áreas protegidas', en: 'East Cape and protected areas' },
+    { id: 'foro-10', re: /recorrido de 10|ten-minute walk|10 minutos/, href: '/foro/#recorrido', es: 'Recorrido de 10 minutos', en: 'Ten-minute walk' },
+    { id: 'vistas-cinco', re: /cinco vistas|five named views|five saved views/, href: '/vistas/', es: 'Las cinco vistas', en: 'The five views' },
     { id: 'gemelo-urbano', re: /\b(diseno urbano|urban design|forma del asentamiento)\b/, href: '/gemelo/?theme=urbano', es: 'Gemelo · diseño urbano', en: 'Twin · urban design' },
     { id: 'gemelo-economia', re: /\b(desarrollo economico|economic development|ley de ingresos)\b/, href: '/gemelo/?theme=economia', es: 'Gemelo · desarrollo económico', en: 'Twin · economic development' },
     { id: 'gemelo-invest', re: /\b(innovacion e investigacion|tema de investigacion|university network)\b/, href: '/gemelo/?theme=investigacion', es: 'Gemelo · investigación', en: 'Twin · research' },
@@ -2159,6 +2188,7 @@ function portalGuideBoost(message, chunk) {
   if (!/^portal[:/]/.test(hay)) return 0;
   const rules = [
     [/pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, /eje-aereo/],
+    [/agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos|east cape/, /vistas-nombres/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
     [/preguntas abiertas|open questions|brechas de datos|data gaps/, /metas/],
@@ -2518,11 +2548,18 @@ async function handlerInner(event) {
   const airGuide = airAxisQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:eje-aereo-p116')
     : null;
+  const viewsGuide = namedViewsQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:vistas-nombres-p118')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
   if (airGuide && !evidence.some((c) => c.id === airGuide.id)) {
     evidence = [airGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (viewsGuide && !evidence.some((c) => c.id === viewsGuide.id)) {
+    evidence = [viewsGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
