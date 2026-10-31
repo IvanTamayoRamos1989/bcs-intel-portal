@@ -2023,6 +2023,38 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:foro-ruta-p125",
+        "title": "Ruta del foro en el mapa del sitio / Forum path on the site map",
+        "path": "portal/rutas",
+        "href": "/rutas/#ruta-foro",
+        "theme": "planeacion",
+        "sum_es": (
+            "La ruta del foro está en /rutas#ruta-foro, para no memorizar las anclas. "
+            "El recorrido de diez minutos está en /foro#recorrido. "
+            "La lista de quien conduce está en /foro#kit. "
+            "Lo que se lleva al salir está en /foro#cierre. "
+            "Los límites de la Fase 1 están en /gemelo#limites. "
+            "En /inicio, «Antes de decidir» sigue vistas, gemelo, preguntas abiertas y evidencia. "
+            "Ninguna de esas líneas trae la entrada del portal. "
+            "Pregunta de seguimiento: ¿abre el recorrido, la lista de quien conduce, o lo que se lleva al salir? "
+            "[ruta del foro mapa del foro como seguir el foro]"
+        ),
+        "sum_en": (
+            "The forum path is on /rutas#ruta-foro, so the anchors do not have to be memorized. "
+            "The ten-minute walk is at /foro#recorrido. "
+            "The host checklist is at /foro#kit. "
+            "What you take away is at /foro#cierre. "
+            "The Phase 1 limits are at /gemelo#limites. "
+            "On /inicio, “Before you decide” follows views, twin, open questions and evidence. "
+            "None of those lines includes the portal entrance. "
+            "Follow-up: do you open the walk, the host list, or what you take away? "
+            "[forum route forum map how to follow the forum]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

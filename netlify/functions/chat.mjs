@@ -1094,6 +1094,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(cierre.id);
     }
   }
+  if (rutaQuery(query)) {
+    const ruta = corpus.find((c) => c.id === 'portal:foro-ruta-p125');
+    if (ruta && !usedId.has(ruta.id)) {
+      picked.unshift(ruta);
+      usedId.add(ruta.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1526,6 +1533,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== cierre.id);
       picked.length = 0;
       picked.push(cierre, ...rest);
+    }
+  }
+  if (rutaQuery(query)) {
+    const ruta = corpus.find((c) => c.id === 'portal:foro-ruta-p125');
+    if (ruta) {
+      const rest = picked.filter((c) => c.id !== ruta.id);
+      picked.length = 0;
+      picked.push(ruta, ...rest);
     }
   }
 
@@ -2241,6 +2256,12 @@ function cierreQuery(message) {
   return /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/.test(q);
 }
 
+function rutaQuery(message) {
+  if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message) || limitsQuery(message) || cierreQuery(message)) return false;
+  const q = normQ(message);
+  return /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2287,6 +2308,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'consulta-foro', re: /recorrido foro|hoja invitados/, href: '/foro/#recorrido', es: 'Recorrido del foro', en: 'Forum walk' },
     { id: 'foro-kit', re: /kit reunion|imprimir foro|lista para la reunion/, href: '/foro/#kit', es: 'Kit de la reunión', en: 'Meeting kit' },
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
+    { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'vista-agua', re: /agua primero|water first/, href: '/vistas/#agua-sur', es: 'Agua primero en el sur', en: 'Water first in the south' },
     { id: 'vista-corredor', re: /crecimiento cabos|corredor cabos|cabos-la paz/, href: '/vistas/#corredor', es: 'Crecimiento Cabos–La Paz', en: 'Cabos–La Paz growth' },
     { id: 'vista-puertos', re: /puertos y aeropuertos|ports and airports/, href: '/vistas/#puertos', es: 'Puertos y aeropuertos', en: 'Ports and airports' },
@@ -2329,6 +2352,7 @@ function portalGuideBoost(message, chunk) {
     [/que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, /gemelo-limites/],
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
+    [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2710,6 +2734,9 @@ async function handlerInner(event) {
   const cierreGuide = cierreQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:foro-cierre-p124')
     : null;
+  const rutaGuide = rutaQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:foro-ruta-p125')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2743,6 +2770,10 @@ async function handlerInner(event) {
   }
   if (cierreGuide && !evidence.some((c) => c.id === cierreGuide.id)) {
     evidence = [cierreGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (rutaGuide && !evidence.some((c) => c.id === rutaGuide.id)) {
+    evidence = [rutaGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
