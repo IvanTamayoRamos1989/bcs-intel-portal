@@ -1143,6 +1143,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(side.id);
     }
   }
+  if (presetQuery(query)) {
+    const preset = corpus.find((c) => c.id === 'portal:gemelo-presets-p26');
+    if (preset && !usedId.has(preset.id)) {
+      picked.unshift(preset);
+      usedId.add(preset.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1631,6 +1638,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== side.id);
       picked.length = 0;
       picked.push(side, ...rest);
+    }
+  }
+  if (presetQuery(query)) {
+    const preset = corpus.find((c) => c.id === 'portal:gemelo-presets-p26');
+    if (preset) {
+      const rest = picked.filter((c) => c.id !== preset.id);
+      picked.length = 0;
+      picked.push(preset, ...rest);
     }
   }
 
@@ -2388,6 +2403,12 @@ function sideQuery(message) {
   return /comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/.test(q);
 }
 
+function presetQuery(message) {
+  if (kitQuery(message) || sideQuery(message)) return false;
+  const q = normQ(message);
+  return /presets del gemelo|reunion gemelo|para la reunion|meeting presets|twin meeting|for the meeting/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2436,6 +2457,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-preset', re: /presets del gemelo|reunion gemelo|para la reunion|meeting presets|twin meeting|for the meeting/, href: '/gemelo/#presets', es: 'Para la reunión', en: 'For the meeting' },
+    { id: 'gemelo-preset-agua', re: /presets del gemelo|reunion gemelo|para la reunion|meeting presets|twin meeting|for the meeting/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
     { id: 'gemelo-lado', re: /comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/, href: '/gemelo/?scenario=baseline&compare=water_first', es: 'Comparar lado a lado', en: 'Compare side by side' },
     { id: 'gemelo-lado-b', re: /comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/, href: '/gemelo/?path=escenario', es: 'Qué cambia', en: 'What changes' },
     { id: 'gemelo-3d', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/', es: 'Gemelo 3D', en: '3D twin' },
@@ -2498,6 +2521,7 @@ function portalGuideBoost(message, chunk) {
     [/impacto entre temas|efectos cruzados|ontologia del escenario|cross-theme impact|cross effects|scenario ontology/, /gemelo-cruce/],
     [/ficha municipal|demanda y oferta gemelo|municipal fiche|twin demand and supply/, /gemelo-ficha/],
     [/comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/, /gemelo-lado/],
+    [/presets del gemelo|reunion gemelo|para la reunion|meeting presets|twin meeting|for the meeting/, /gemelo-preset/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2900,6 +2924,9 @@ async function handlerInner(event) {
   const sideGuide = sideQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-lado-p25')
     : null;
+  const presetGuide = presetQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-presets-p26')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2961,6 +2988,10 @@ async function handlerInner(event) {
   }
   if (sideGuide && !evidence.some((c) => c.id === sideGuide.id)) {
     evidence = [sideGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (presetGuide && !evidence.some((c) => c.id === presetGuide.id)) {
+    evidence = [presetGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

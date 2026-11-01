@@ -2235,6 +2235,36 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-presets-p26",
+        "title": "Aperturas para la reunión / Meeting openings for the twin",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#presets",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo#presets hay cuatro aperturas listas para la reunión. Son puntos de partida, no pronósticos, y no añaden cifras. "
+            "Agua primero abre el diagnóstico de vivienda, con la altura del registro SNIIV y la palanca del acuífero en déficit. "
+            "Corredor y trayectoria compara el corredor con la trayectoria actual. "
+            "Puertos y aire abre la recomendación de movilidad, con la palanca de demanda aérea. "
+            "Ficha Los Cabos abre el diagnóstico con ese municipio. "
+            "La misma lista está en /foro#kit. Esa hoja no trae la entrada del portal. "
+            "Pregunta de seguimiento: ¿abre agua primero, el corredor comparado, o la ficha de Los Cabos? "
+            "[presets del gemelo reunion gemelo para la reunion]"
+        ),
+        "sum_en": (
+            "At /gemelo#presets there are four ready openings for the meeting. They are starting points, not forecasts, and they add no figures. "
+            "Water first opens the housing diagnosis, with the SNIIV registry height and the aquifer-deficit lever. "
+            "Corridor and trajectory compares the corridor with the current trajectory. "
+            "Ports and air opens the mobility recommendation, with the air-demand lever. "
+            "The Los Cabos fiche opens the diagnosis with that municipality. "
+            "The same list is on /foro#kit. That sheet does not include the portal entrance. "
+            "Follow-up: do you open water first, the compared corridor, or the Los Cabos fiche? "
+            "[meeting presets twin meeting for the meeting]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

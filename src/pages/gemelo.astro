@@ -50,8 +50,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.5 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.5 · decision support</span>
+          <span data-lang-es>Fase 2.6 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.6 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -69,6 +69,24 @@ const icon: Record<string, string> = {
           {' · '}
           <a href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
         </p>
+        <nav class="cdt-presets" id="presets" aria-label="Para la reunión" data-aria-es="Para la reunión" data-aria-en="Meeting presets">
+          <p>
+            <span data-lang-es>Para la reunión. Puntos de partida, no pronósticos.</span>
+            <span data-lang-en hidden>For the meeting. Starting points, not forecasts.</span>
+          </p>
+          <a data-preset href="/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025#presets">
+            <span data-lang-es>Agua primero</span><span data-lang-en hidden>Water first</span>
+          </a>
+          <a data-preset href="/gemelo/?theme=urbano&scenario=corridor_intensify&compare=baseline&path=escenario&lever=corredor#presets">
+            <span data-lang-es>Corredor y trayectoria</span><span data-lang-en hidden>Corridor and trajectory</span>
+          </a>
+          <a data-preset href="/gemelo/?theme=movilidad&scenario=ports_air_hubs&path=recomendacion&lever=aereo&z=aereo_2025#presets">
+            <span data-lang-es>Puertos y aire</span><span data-lang-en hidden>Ports and air</span>
+          </a>
+          <a data-preset href="/gemelo/?theme=urbano&scenario=baseline&path=diagnostico&muni=Los%20Cabos&z=pob#presets">
+            <span data-lang-es>Ficha Los Cabos</span><span data-lang-en hidden>Los Cabos fiche</span>
+          </a>
+        </nav>
         <nav class="cdt-path" id="cdt-path" aria-label="Camino de decisión" data-aria-es="Camino de decisión" data-aria-en="Decision path">
           <button type="button" data-path="diagnostico">
             <span data-lang-es>1 · Diagnóstico</span><span data-lang-en hidden>1 · Diagnosis</span>
@@ -92,6 +110,7 @@ const icon: Record<string, string> = {
             { es: 'Escenario: el botón, la palanca, qué cambia y, si quiere, la comparación.', en: 'Scenario: the button, the lever, what changes and, if you want, the comparison.' },
             { es: 'Recomendación: la regla del portal para el municipio y el escenario. Imprima esa hoja para la reunión.', en: 'Recommendation: the portal rule for the municipality and the scenario. Print that sheet for the meeting.' },
             { es: 'Toque un municipio: la ficha muestra la cifra elegida, la demanda y oferta ya escritas, y la recomendación. Si falta la cifra, se lee —.', en: 'Tap a municipality: the fiche shows the chosen figure, the demand and supply already written, and the recommendation. If the figure is missing, it reads —.' },
+            { es: 'Para la reunión hay cuatro aperturas listas. Son puntos de partida, no pronósticos.', en: 'For the meeting there are four ready openings. They are starting points, not forecasts.' },
           ]}
         />
         <aside class="cdt-tip">
@@ -111,8 +130,8 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.5)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.5)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.6)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.6)</span>
           </h2>
           <p>
             <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
@@ -133,6 +152,10 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>Comparar muestra los dos escenarios a la vez en pantalla ancha, o Ver A y Ver B en pantalla estrecha. Son las mismas capas. No es un modelo nuevo.</span>
             <span data-lang-en hidden>Compare shows both scenarios at once on a wide screen, or View A and View B on a narrow one. They are the same layers. It is not a new model.</span>
+          </p>
+          <p>
+            <span data-lang-es>Para la reunión son cuatro aperturas listas. Son puntos de partida, no pronósticos.</span>
+            <span data-lang-en hidden>For the meeting there are four ready openings. They are starting points, not forecasts.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -563,6 +586,10 @@ const icon: Record<string, string> = {
   <style>
     .cdt { --cdt: #0083C4; --cdt-dark: #006BA3; --cdt-ink: #1a1a1a; --cdt-muted: #5a5a5a; --cdt-line: #e0e0e0; color: var(--cdt-ink); }
     .cdt-top { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: flex-end; justify-content: space-between; margin-bottom: 0.8rem; }
+    .cdt-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.8rem 0 0.2rem; scroll-margin-top: 5rem; }
+    .cdt-presets p { width: 100%; margin: 0 0 0.15rem; color: var(--cdt-dark); font-size: 0.82rem; font-weight: 700; }
+    .cdt-presets a { border: 1px solid var(--cdt); color: var(--cdt-dark); background: #f4fbff; border-radius: 999px; padding: 0.32rem 0.7rem; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
+    .cdt-presets a:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
     .cdt-path { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0 0.2rem; }
     .cdt-path button { font: inherit; cursor: pointer; text-align: left; border: 1px solid var(--cdt); background: #fff; color: var(--cdt-dark); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; font-weight: 700; }
     .cdt-path button[aria-pressed="true"] { background: var(--cdt); color: #fff; }
@@ -698,7 +725,7 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-tip, .cdt-limits, #cdt-share, #cdt-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, #cdt-share, #cdt-print { display: none !important; }
       body, body.has-chat-sidebar { padding: 0 !important; background: #fff !important; }
       body[data-cdt-path] [data-step] { opacity: 1; box-shadow: none; }
       .cdt { color: #000; }
@@ -1752,6 +1779,36 @@ const icon: Record<string, string> = {
       if (printBtn) printBtn.addEventListener('click', function () {
         renderSheet();
         window.print();
+      });
+      document.querySelectorAll('[data-preset]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          e.preventDefault();
+          var p = new URL(a.href, location.origin).searchParams;
+          state.theme = 'urbano';
+          state.scenario = 'baseline';
+          state.compare = '';
+          state.lever = '';
+          state.path = '';
+          state.z = 'pob';
+          state.x = 'pob';
+          state.y = 'sniiv_2025';
+          state.muni = 'Los Cabos';
+          state.ab = 'both';
+          if (p.get('theme') && themeById(p.get('theme')).id === p.get('theme')) state.theme = p.get('theme');
+          if (p.get('scenario') && scenarioById(p.get('scenario')).id === p.get('scenario')) state.scenario = p.get('scenario');
+          if (p.get('compare') && scenarioById(p.get('compare')).id === p.get('compare') && p.get('compare') !== state.scenario) state.compare = p.get('compare');
+          if (p.get('z') && indicatorById(p.get('z')).id === p.get('z')) state.z = p.get('z');
+          if (p.get('path') && /^(diagnostico|meta|escenario|recomendacion)$/.test(p.get('path'))) state.path = p.get('path');
+          if (p.get('lever')) state.lever = p.get('lever');
+          if (p.get('muni') && muniByName(p.get('muni')).name === p.get('muni')) state.muni = p.get('muni');
+          resetLayerPins();
+          applyChrome();
+          ensureGlB().then(function () { return syncLayers(); }).then(fitScenario);
+          selectMuni(state.muni);
+          focusPath(!!state.path);
+          history.replaceState(null, '', location.pathname + location.search + '#presets');
+        });
       });
       document.querySelectorAll('[data-path]').forEach(function (btn) {
         btn.addEventListener('click', function () {
