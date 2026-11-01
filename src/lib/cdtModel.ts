@@ -1147,6 +1147,14 @@ const foresightThemes = Object.entries(signalCounts).map(([id, n]) => ({
   en: signalLabel[id].en,
 }));
 
+const NODE_MUNI: Record<string, string> = {
+  terr_los_cabos: 'Los Cabos',
+  terr_la_paz: 'La Paz',
+  terr_loreto: 'Loreto',
+};
+const ontologyNodes = ontology.nodes as Array<{ id: string; label: string; label_en?: string; type: string }>;
+const nodeById = new Map(ontologyNodes.map((n) => [n.id, n]));
+
 const themeIds = new Set(themes.map((t) => t.id));
 const scenarioIds = new Set(scenariosDoc.scenarios.map((s) => s.id));
 const indicatorIds = new Set(indicators.map((i) => i.id));
@@ -1232,6 +1240,18 @@ export const cdtModel = {
     note_es: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).note_es,
     note_en: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).note_en,
     levers: SCENARIO_LEVERS[sc.id] || missingScenario(sc.id),
+    nodes: sc.ontology_node_ids.map((id) => {
+      const node = nodeById.get(id);
+      if (!node) throw new Error(`CDT scenario node missing from the ontology: ${id}`);
+      return {
+        id: node.id,
+        label: node.label,
+        label_en: node.label_en || node.label,
+        type: node.type,
+        href: `/ontologia/#${node.id}`,
+        muni: NODE_MUNI[node.id] || '',
+      };
+    }),
   })),
   layerGroups: (['urbano', 'economia', 'investigacion', 'movilidad', 'vivienda'] as CdtThemeId[]).map((id) => ({
     id,

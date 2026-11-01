@@ -2147,6 +2147,34 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-cruce-p23",
+        "title": "Impacto entre temas del gemelo / Cross-theme impact on the twin",
+        "path": "portal/gemelo",
+        "href": "/gemelo/?path=escenario",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo el impacto entre temas es una lectura cualitativa de las reglas ya escritas. No es un motor de simulación y no crea cifras. "
+            "El tema activo dice cómo presiona a los otros cuatro. El escenario y la palanca, si hay una, ponen delante una frase que ya estaba en el portal. "
+            "Si una celda está en blanco, se queda en blanco. "
+            "Los nodos del escenario salen de la ontología. No traen coordenada propia: el enlace abre el nombre en /ontologia. "
+            "Si el nodo es un municipio del tablero, se puede ver ese municipio en el mapa que ya existe. "
+            "Pregunta de seguimiento: ¿abre el cruce de temas o los nodos del escenario? "
+            "[impacto entre temas efectos cruzados ontologia del escenario]"
+        ),
+        "sum_en": (
+            "On /gemelo the cross-theme impact is a qualitative reading of rules already written. It is not a simulation engine and it creates no figures. "
+            "The active theme says how it presses the other four. The scenario and the lever, if one is set, put in front a sentence that was already in the portal. "
+            "If a cell is blank, it stays blank. "
+            "The scenario nodes come from the ontology. They have no coordinate of their own: the link opens the name at /ontologia. "
+            "If the node is a municipality on the board, that municipality can be seen on the map that already exists. "
+            "Follow-up: do you open the cross-theme reading or the scenario nodes? "
+            "[cross-theme impact cross effects scenario ontology]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
