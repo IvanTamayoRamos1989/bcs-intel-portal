@@ -2419,6 +2419,32 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-consulta-p213",
+        "title": "Consulta ciudadana en el gemelo / Citizen consultation on the twin",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#consulta",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo#consulta hay una pregunta para el gobierno, el sector privado y la sociedad civil. "
+            "Cambian con el paso del camino: diagnóstico, meta, escenario o recomendación. "
+            "Usan el tema, el escenario y el municipio que ya están en pantalla. No añaden cifras. "
+            "Copiar vista guarda esa consulta en un enlace. "
+            "Pregunta de seguimiento: ¿pregunta en el diagnóstico, en el escenario, o en la recomendación? "
+            "[consulta ciudadana gemelo preguntas para la mesa]"
+        ),
+        "sum_en": (
+            "At /gemelo#consulta there is one question for government, the private sector and civil society. "
+            "They change with the path step: diagnosis, goal, scenario or recommendation. "
+            "They use the theme, scenario and municipality already on screen. They add no figures. "
+            "Copy view saves that consultation in a link. "
+            "Follow-up: do you ask at diagnosis, at the scenario, or at the recommendation? "
+            "[citizen consultation twin questions for the table twin consultation]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
