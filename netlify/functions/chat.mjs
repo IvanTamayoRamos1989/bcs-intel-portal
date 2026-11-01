@@ -1115,6 +1115,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(ext.id);
     }
   }
+  if (caminoQuery(query)) {
+    const camino = corpus.find((c) => c.id === 'portal:gemelo-camino-p22');
+    if (camino && !usedId.has(camino.id)) {
+      picked.unshift(camino);
+      usedId.add(camino.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1571,6 +1578,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== ext.id);
       picked.length = 0;
       picked.push(ext, ...rest);
+    }
+  }
+  if (caminoQuery(query)) {
+    const camino = corpus.find((c) => c.id === 'portal:gemelo-camino-p22');
+    if (camino) {
+      const rest = picked.filter((c) => c.id !== camino.id);
+      picked.length = 0;
+      picked.push(camino, ...rest);
     }
   }
 
@@ -2304,6 +2319,12 @@ function extrusionQuery(message) {
   return /extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/.test(q);
 }
 
+function caminoQuery(message) {
+  if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message) || limitsQuery(message) || cierreQuery(message) || rutaQuery(message) || gemelo3dQuery(message) || extrusionQuery(message)) return false;
+  const q = normQ(message);
+  return /camino de decision|diagnostico gemelo|recomendacion gemelo|decision path|twin diagnosis|twin recommendation/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2356,6 +2377,9 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'gemelo-3d-limites', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
     { id: 'gemelo-extrusion', re: /extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/, href: '/gemelo/?z=pob', es: 'Altura municipal', en: 'Municipal height' },
     { id: 'gemelo-extrusion-limites', re: /extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
+    { id: 'gemelo-camino-rec', re: /recomendacion gemelo|twin recommendation/, href: '/gemelo/?path=recomendacion', es: 'Recomendación', en: 'Recommendation' },
+    { id: 'gemelo-camino', re: /camino de decision|diagnostico gemelo|decision path|twin diagnosis/, href: '/gemelo/?path=diagnostico', es: 'Camino de decisión', en: 'Decision path' },
+    { id: 'gemelo-camino-meta', re: /camino de decision|decision path/, href: '/gemelo/?path=meta', es: 'Meta', en: 'Goal' },
     { id: 'vista-agua', re: /agua primero|water first/, href: '/vistas/#agua-sur', es: 'Agua primero en el sur', en: 'Water first in the south' },
     { id: 'vista-corredor', re: /crecimiento cabos|corredor cabos|cabos-la paz/, href: '/vistas/#corredor', es: 'Crecimiento Cabos–La Paz', en: 'Cabos–La Paz growth' },
     { id: 'vista-puertos', re: /puertos y aeropuertos|ports and airports/, href: '/vistas/#puertos', es: 'Puertos y aeropuertos', en: 'Ports and airports' },
@@ -2401,6 +2425,7 @@ function portalGuideBoost(message, chunk) {
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
     [/gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, /gemelo-3d/],
     [/extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/, /gemelo-extrusion/],
+    [/camino de decision|diagnostico gemelo|recomendacion gemelo|decision path|twin diagnosis|twin recommendation/, /gemelo-camino/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2791,6 +2816,9 @@ async function handlerInner(event) {
   const extrusionGuide = extrusionQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-extrusion-p21')
     : null;
+  const caminoGuide = caminoQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-camino-p22')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2836,6 +2864,10 @@ async function handlerInner(event) {
   }
   if (extrusionGuide && !evidence.some((c) => c.id === extrusionGuide.id)) {
     evidence = [extrusionGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (caminoGuide && !evidence.some((c) => c.id === caminoGuide.id)) {
+    evidence = [caminoGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
