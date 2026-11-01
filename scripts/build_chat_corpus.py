@@ -2467,6 +2467,32 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-fuentes-p215",
+        "title": "Fuentes de las capas del gemelo / Sources for the twin layers",
+        "path": "portal/gemelo-fuentes",
+        "href": "/gemelo/#fuentes-capas",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo#fuentes-capas cada capa encendida nombra la fuente y el año que ya trae el catálogo. "
+            "La altura municipal usa la fuente de la cifra elegida. "
+            "El relieve usa las teselas locales del atlas y, si faltan, las teselas públicas de elevación. "
+            "Lo que aún no tiene archivo no entra en esa lista: está en /gemelo#listo. "
+            "Pregunta de seguimiento: ¿mira las fuentes del tema de vivienda, o qué falta? "
+            "[fuentes del gemelo de donde salen las capas]"
+        ),
+        "sum_en": (
+            "At /gemelo#fuentes-capas each layer that is on names the source and year already in the catalog. "
+            "Municipal height uses the source of the figure you chose. "
+            "Terrain uses the local atlas tiles and, where those are missing, the public elevation tiles. "
+            "What still has no file stays off that list: it is at /gemelo#listo. "
+            "Follow-up: do you look at the housing theme sources, or at what is missing? "
+            "[twin layer sources where the layers come from layer sources twin sources for these layers]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

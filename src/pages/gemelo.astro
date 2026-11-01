@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.14 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.14 · decision support</span>
+          <span data-lang-es>Fase 2.15 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.15 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -305,6 +305,8 @@ const icon: Record<string, string> = {
             {' · '}
             <a href="/gemelo/#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
             {' · '}
+            <a href="/gemelo/#fuentes-capas"><span data-lang-es>Fuentes de estas capas</span><span data-lang-en hidden>Sources for these layers</span></a>
+            {' · '}
             <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
           </p>
         </section>
@@ -316,6 +318,11 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>Nada de esto está cargado. No hay polígonos de muestra. Una celda en blanco sigue en blanco.</span>
             <span data-lang-en hidden>None of this is loaded. There are no sample polygons. A blank cell stays blank.</span>
+          </p>
+          <p>
+            <a href="#fuentes-capas"><span data-lang-es>Fuentes de estas capas</span><span data-lang-en hidden>Sources for these layers</span></a>
+            <span data-lang-es> nombra lo que sí está encendido.</span>
+            <span data-lang-en hidden> names what is actually on.</span>
           </p>
           <div class="cdt-listo-grid">
             <article>
@@ -472,6 +479,18 @@ const icon: Record<string, string> = {
           <input id="cdt-capas-q" class="cdt-capas-q" type="search" autocomplete="off" />
           <div id="cdt-capas-body"></div>
         </details>
+        <section class="cdt-fuentes" id="fuentes-capas" aria-labelledby="cdt-fuentes-title">
+          <h2 id="cdt-fuentes-title">
+            <span data-lang-es>Fuentes de estas capas</span>
+            <span data-lang-en hidden>Sources for these layers</span>
+          </h2>
+          <div id="cdt-fuentes-body"></div>
+          <p>
+            <a href="#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
+            <span data-lang-es> recoge lo que aún no tiene archivo. No está en esta lista.</span>
+            <span data-lang-en hidden> lists what still has no file. It is not on this list.</span>
+          </p>
+        </section>
       </div>
 
       <aside class="cdt-panel" aria-label="Indicadores del tema" data-aria-es="Indicadores del tema" data-aria-en="Theme indicators">
@@ -920,6 +939,12 @@ const icon: Record<string, string> = {
     .cdt-capas h3 { margin: 0.45rem 0 0.15rem; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cdt); }
     .cdt-capas label { display: flex; gap: 0.4rem; align-items: flex-start; margin: 0.22rem 0; font-size: 0.8rem; line-height: 1.3; }
     .cdt-capas small { display: block; color: var(--cdt-muted); font-weight: 400; }
+    .cdt-fuentes { margin-top: 0.45rem; scroll-margin-top: 5rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.55rem 0.75rem; background: #fff; }
+    .cdt-fuentes h2 { margin: 0 0 0.3rem; color: var(--cdt-dark); font-size: 0.95rem; }
+    .cdt-fuentes ul { margin: 0.15rem 0 0.35rem; padding-left: 1.1rem; }
+    .cdt-fuentes li { margin: 0.22rem 0; font-size: 0.8rem; line-height: 1.35; }
+    .cdt-fuentes p { margin: 0.2rem 0 0; font-size: 0.8rem; line-height: 1.35; }
+    .cdt-fuentes a { color: var(--cdt-dark); font-weight: 650; }
     .cdt-cambia { margin-top: 0.75rem; padding: 0.55rem 0.7rem; border-radius: 10px; background: #f4fbff; border-left: 3px solid var(--cdt); }
     .cdt-cambia h3 { margin: 0 0 0.3rem; font-size: 1rem; color: var(--cdt-dark); }
     .cdt-cambia p, .cdt-cambia li { margin: 0.2rem 0; font-size: 0.86rem; line-height: 1.4; }
@@ -999,7 +1024,7 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, .cdt-copy-tip, .cdt-consulta, .cdt-recetas, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, .cdt-copy-tip, .cdt-consulta, .cdt-recetas, .cdt-fuentes, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
       .cdt-walk { break-inside: avoid; }
       .cdt-walk a { color: #000; text-decoration: none; }
       .cdt-walk a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
@@ -1035,7 +1060,7 @@ const icon: Record<string, string> = {
   <script>
     function showHash() {
       var hash = location.hash || '';
-      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets' && hash !== '#consulta' && hash !== '#recetas') return;
+      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets' && hash !== '#consulta' && hash !== '#recetas' && hash !== '#fuentes-capas') return;
       var el = document.getElementById(hash.slice(1));
       if (!el) return;
       var header = document.querySelector('.pt-top');
@@ -1141,6 +1166,7 @@ const icon: Record<string, string> = {
 
       var map = null;
       var gl = null;
+      var fuentesIds = [];
       var muniLayer = null;
       function ensure2d() {
         if (map || typeof L === 'undefined') return;
@@ -1542,6 +1568,10 @@ const icon: Record<string, string> = {
         });
         var nameEl = document.getElementById('cdt-layer-names');
         if (nameEl) nameEl.textContent = tx('Capas: ', 'Layers: ') + names.join(' · ');
+        var fuenteIds = ids.slice();
+        if (state.compare && splitNow) fuenteIds = uniq(idsOf(partNow.A).concat(idsOf(partNow.B)));
+        fuentesIds = fuenteIds;
+        renderFuentes(fuenteIds);
         renderCapas(ids, cmp);
         if (gl) {
           var part = partition();
@@ -1935,6 +1965,7 @@ const icon: Record<string, string> = {
           refreshMuniStyle();
           renderDetail();
           renderCambia();
+          renderFuentes(fuentesIds);
           writeUrl();
         });
       }
@@ -2068,6 +2099,41 @@ const icon: Record<string, string> = {
           renderSplitChrome();
           return null;
         });
+      }
+
+      function renderFuentes(ids) {
+        var host = document.getElementById('cdt-fuentes-body');
+        if (!host) return;
+        var lines = '';
+        (ids || []).forEach(function (id) {
+          var meta = layerMeta(id);
+          if (!meta || !meta.source_es) return;
+          lines += '<li><strong>' + esc(tx(meta.name_es, meta.name_en)) + '.</strong> ' +
+            esc(tx(meta.source_es, meta.source_en)) + ' · ' + esc(tx(meta.year_es, meta.year_en)) + '</li>';
+        });
+        lines += '<li><strong>' + esc(tx('Límites municipales', 'Municipal boundaries')) + '.</strong> ' +
+          esc(tx('OpenStreetMap — límites municipales', 'OpenStreetMap — municipal boundaries')) + ' · ' +
+          esc(tx('año no registrado en el catálogo GIS', 'year not recorded in the GIS catalog')) + '</li>';
+        var theme = themeById(state.theme);
+        (theme.kpis || []).forEach(function (k) {
+          var src = tx(k.source_es, k.source_en);
+          if (src.indexOf('CONAGUA') === -1) return;
+          lines += '<li><strong>' + esc(tx(k.label_es, k.label_en)) + '.</strong> ' + esc(src) + '</li>';
+        });
+        var ind = indicatorById(state.z);
+        lines += '<li><strong>' + esc(tx('Altura municipal', 'Municipal height')) + ' · ' +
+          esc(tx(ind.label_es, ind.label_en)) + '.</strong> ' +
+          esc(tx(ind.source_es, ind.source_en)) + (ind.year ? ' · ' + esc(String(ind.year)) : '') + '</li>';
+        if (gl) {
+          lines += '<li><strong>' + esc(tx('Relieve', 'Terrain')) + '.</strong> ' +
+            esc(tx(
+              'Teselas locales del atlas y, si faltan, las teselas públicas de elevación.',
+              'Local atlas tiles and, where those are missing, the public elevation tiles.'
+            )) + '</li>';
+        }
+        host.innerHTML = lines
+          ? '<ul>' + lines + '</ul>'
+          : '<p>' + esc(tx('Ninguna capa está encendida.', 'No layer is on.')) + '</p>';
       }
 
       function renderCapas(onIds, cmp) {

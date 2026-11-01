@@ -17,3 +17,4 @@
 | 2.12 | Copy view writes the current twin state into a link |
 | 2.13 | One consultation question per audience on each path step |
 | 2.14 | Scenario recipes that apply combinations the twin already knows |
+| 2.15 | Sources for the layers that are on, under Capas |
