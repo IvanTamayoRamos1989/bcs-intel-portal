@@ -89,6 +89,12 @@ const { home = false } = Astro.props;
                   <span aria-hidden="true"> · </span>
                   <a href="/gemelo/?path=recomendacion"><span data-lang-es>Recomendación</span><span data-lang-en hidden>Recommendation</span></a>
                 </span>
+                <p class="bcs-chat-new">
+                  <span data-lang-es>El gemelo 3D ya tiene capas, escenarios lado a lado, ficha municipal y aperturas para la reunión.</span>
+                  <span data-lang-en hidden>The 3D twin now has layers, scenarios side by side, a municipal fiche and meeting openings.</span>
+                  <a href="/gemelo/?path=diagnostico"><span data-lang-es>Diagnóstico</span><span data-lang-en hidden>Diagnosis</span></a>
+                  <a href="/gemelo/#presets"><span data-lang-es>Para la reunión</span><span data-lang-en hidden>For the meeting</span></a>
+                </p>
               </div>
             </div>
           </div>
@@ -155,6 +161,8 @@ const { home = false } = Astro.props;
   .bcs-chat-decide { grid-column: 1 / -1; }
   .bcs-chat-decide-path { display: flex; flex-wrap: wrap; gap: .15rem .35rem; align-items: baseline; }
   .bcs-chat-decide-path a { color: #006BA3; font-weight: 700; }
+  .bcs-chat-new { margin: .4rem 0 0; font-size: .78rem; line-height: 1.35; font-weight: 450; }
+  .bcs-chat-new a { color: #006BA3; font-weight: 700; margin-right: .55rem; }
   @media (max-width: 720px) { .bcs-chat-path-row { grid-template-columns: 1fr; } }
   .bcs-chat-spec { display: flex; flex-direction: column; align-items: center; gap: .35rem; margin-top: .45rem; padding-top: .55rem; border-top: 1px solid rgba(0, 131, 196, .28); }
   .bcs-chat-spec-title { margin: 0; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #006BA3; }

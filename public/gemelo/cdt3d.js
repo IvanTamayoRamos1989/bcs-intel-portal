@@ -10,6 +10,10 @@
     '7/25/53': 1, '7/25/54': 1, '7/25/55': 1,
   };
   var memory = new Map();
+  var demWait = new Map();
+  var baseWait = null;
+  var geoReady = {};
+  var geoWait = {};
 
   function hasWebGL() {
     try {
@@ -41,21 +45,61 @@
   function registerDem() {
     if (window.__cdtDem) return;
     window.__cdtDem = true;
-    maplibregl.addProtocol('bcsdem', async function (p, ctrl) {
+    maplibregl.addProtocol('bcsdem', function (p) {
       var key = p.url.replace('bcsdem://', '').replace(/\.png$/, '');
-      if (memory.has(key)) return { data: memory.get(key).slice(0) };
+      if (memory.has(key)) return Promise.resolve({ data: memory.get(key).slice(0) });
+      if (demWait.has(key)) return demWait.get(key).then(function (flat) { return { data: flat.slice(0) }; });
       var url = TILES[key]
         ? '/explorar/terrain/' + key + '.png'
         : 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/' + key + '.png';
-      var r = await fetch(url, { signal: ctrl.signal });
-      if (!r.ok) throw new Error('dem');
-      var raw = await r.arrayBuffer();
-      var flat = raw;
-      try { flat = await flatten(raw); } catch (e) { flat = raw; }
-      if (memory.size > 280) memory.delete(memory.keys().next().value);
-      memory.set(key, flat);
-      return { data: flat.slice(0) };
+      var job = fetch(url).then(function (r) {
+        if (!r.ok) throw new Error('dem');
+        return r.arrayBuffer();
+      }).then(function (raw) {
+        return flatten(raw).catch(function () { return raw; });
+      }).then(function (flat) {
+        if (memory.size > 280) memory.delete(memory.keys().next().value);
+        memory.set(key, flat);
+        demWait.delete(key);
+        return flat;
+      }).catch(function (err) {
+        demWait.delete(key);
+        throw err;
+      });
+      demWait.set(key, job);
+      return job.then(function (flat) { return { data: flat.slice(0) }; });
     });
+  }
+
+  function loadBase() {
+    if (!baseWait) {
+      baseWait = fetch('/explorar/data/base.json').then(function (r) {
+        if (!r.ok) throw new Error('base');
+        return r.json();
+      }).catch(function () {
+        baseWait = null;
+        return null;
+      });
+    }
+    return baseWait;
+  }
+
+  function loadGeo(meta) {
+    if (Object.prototype.hasOwnProperty.call(geoReady, meta.id)) return Promise.resolve(geoReady[meta.id]);
+    if (geoWait[meta.id]) return geoWait[meta.id];
+    geoWait[meta.id] = fetch(meta.url).then(function (r) {
+      if (!r.ok) throw new Error(meta.id);
+      return r.json();
+    }).then(function (geo) {
+      geoReady[meta.id] = geo;
+      delete geoWait[meta.id];
+      return geo;
+    }).catch(function () {
+      geoReady[meta.id] = null;
+      delete geoWait[meta.id];
+      return null;
+    });
+    return geoWait[meta.id];
   }
 
   function styleSpec(base) {
@@ -126,10 +170,7 @@
     var reduced = !!opts.reduced;
     var pitch0 = reduced ? 0 : 50;
     var bearing0 = reduced ? 0 : -16;
-    return fetch('/explorar/data/base.json').then(function (r) {
-      if (!r.ok) throw new Error('base');
-      return r.json();
-    }).catch(function () { return null; }).then(function (base) {
+    return loadBase().then(function (base) {
       var map = new maplibregl.Map({
         container: opts.container,
         style: styleSpec(base),
@@ -235,15 +276,9 @@
       }
       function load(meta) {
         if (cache[meta.id]) return Promise.resolve(cache[meta.id]);
-        return fetch(meta.url).then(function (r) {
-          if (!r.ok) throw new Error(meta.id);
-          return r.json();
-        }).then(function (geo) {
+        return loadGeo(meta).then(function (geo) {
           cache[meta.id] = geo;
           return geo;
-        }).catch(function () {
-          cache[meta.id] = null;
-          return null;
         });
       }
       function label(btn, es, en, pressed) {
@@ -285,6 +320,7 @@
       map.on('click', 'cdt-muni-extrude', onMuniClick);
       map.on('mouseenter', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = ''; });
+      var removed = false;
       return new Promise(function (resolve, reject) {
         var settled = false;
         map.on('load', function () {
@@ -313,10 +349,14 @@
               return { lng: c.lng, lat: c.lat, zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
             },
             jumpCamera: function (cam) {
-              if (!cam) return;
+              if (removed || !cam) return;
               map.jumpTo({ center: [cam.lng, cam.lat], zoom: cam.zoom, bearing: cam.bearing, pitch: cam.pitch });
             },
             watchMove: function (fn) { map.on('move', fn); },
+            destroy: function () {
+              removed = true;
+              try { map.remove(); } catch (e) {}
+            },
           });
         });
         function fail(err) {

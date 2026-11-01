@@ -2319,6 +2319,32 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-novedades-p29",
+        "title": "Novedades del gemelo / What is new on the twin",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#presets",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /inicio, debajo de Antes de decidir, hay una línea con lo nuevo del gemelo 3D: capas, escenarios lado a lado, ficha municipal y aperturas para la reunión. "
+            "Para la reunión abre /gemelo#presets. El diagnóstico abre /gemelo con el camino en diagnóstico. "
+            "La segunda vista del mapa aparece solo al comparar, y en pantalla ancha. "
+            "Una capa que no está en el tema ni en el escenario no se descarga hasta que se enciende. "
+            "Pregunta de seguimiento: ¿abre las aperturas de la reunión, o el diagnóstico? "
+            "[novedades gemelo gemelo mas rapido]"
+        ),
+        "sum_en": (
+            "On /inicio, under Before you decide, one line lists what is new on the 3D twin: layers, scenarios side by side, a municipal fiche and meeting openings. "
+            "For the meeting opens /gemelo#presets. Diagnosis opens /gemelo with the path on diagnosis. "
+            "The second map view appears only while comparing, and only on a wide screen. "
+            "A layer that is not in the theme or the scenario is not downloaded until it is turned on. "
+            "Follow-up: do you open the meeting openings, or the diagnosis? "
+            "[twin news faster twin]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
