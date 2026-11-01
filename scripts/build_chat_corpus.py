@@ -2445,6 +2445,28 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-recetas-p214",
+        "title": "Recetas de escenario / Scenario recipes",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#recetas",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo#recetas hay recetas que el gemelo ya sabe aplicar: agua primero, el corredor comparado con la trayectoria actual, puertos y aire, Los Cabos en vivienda, la trayectoria con margen de agua, y agua primero junto a la trayectoria. "
+            "Aplicar deja el tema, el escenario, el paso, la palanca, la comparación o el municipio. No son pronósticos y no añaden cifras. "
+            "Pregunta de seguimiento: ¿aplica agua primero, el corredor comparado, o Los Cabos en vivienda? "
+            "[recetas de escenario generar escenario]"
+        ),
+        "sum_en": (
+            "At /gemelo#recetas there are recipes the twin already knows how to apply: water first, the corridor compared with the current trajectory, ports and air, Los Cabos in housing, the trajectory with water headroom, and water first beside the trajectory. "
+            "Apply sets the theme, scenario, step, lever, comparison or municipality. They are not forecasts and they add no figures. "
+            "Follow-up: do you apply water first, the compared corridor, or Los Cabos in housing? "
+            "[scenario recipes generate scenario scenario recipe]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

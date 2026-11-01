@@ -74,3 +74,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 2.11 | `DEPLOY_REPORT_CDT_P2_11.md` | Ten-minute host script for the twin |
 | 2.12 | `DEPLOY_REPORT_CDT_P2_12.md` | Copy view writes the current twin state into a link |
 | 2.13 | `DEPLOY_REPORT_CDT_P2_13.md` | One consultation question per audience on each path step |
+| 2.14 | `DEPLOY_REPORT_CDT_P2_14.md` | Scenario recipes that apply combinations the twin already knows |

@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.13 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.13 · decision support</span>
+          <span data-lang-es>Fase 2.14 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.14 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -84,6 +84,8 @@ const icon: Record<string, string> = {
             <a href="#cdt-share"><span data-lang-es>Copiar vista</span><span data-lang-en hidden>Copy view</span></a>
             <span data-lang-es> guarda esta pantalla.</span>
             <span data-lang-en hidden> saves this screen.</span>
+            {' '}
+            <a href="#recetas"><span data-lang-es>Recetas</span><span data-lang-en hidden>Recipes</span></a>
           </p>
           <a data-preset href="/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025#presets">
             <span data-lang-es>Agua primero</span><span data-lang-en hidden>Water first</span>
@@ -181,7 +183,52 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>One question for government, the private sector and civil society. It follows the path step. It adds no figures.</span>
           </p>
           <div id="cdt-consulta-body"></div>
-          <p><a href="#cdt-share"><span data-lang-es>Copiar vista</span><span data-lang-en hidden>Copy view</span></a></p>
+          <p><a href="#cdt-share"><span data-lang-es>Copiar vista</span><span data-lang-en hidden>Copy view</span></a>
+            {' · '}
+            <a href="#recetas"><span data-lang-es>Recetas de escenario</span><span data-lang-en hidden>Scenario recipes</span></a>
+          </p>
+        </section>
+        <section class="cdt-recetas" id="recetas" aria-labelledby="cdt-recetas-title">
+          <h2 id="cdt-recetas-title">
+            <span data-lang-es>Recetas de escenario</span>
+            <span data-lang-en hidden>Scenario recipes</span>
+          </h2>
+          <p>
+            <span data-lang-es>Combinaciones que el gemelo ya sabe aplicar. No son pronósticos.</span>
+            <span data-lang-en hidden>Combinations the twin already knows how to apply. They are not forecasts.</span>
+          </p>
+          <div class="cdt-recetas-grid">
+            <article>
+              <h3><span data-lang-es>Agua primero</span><span data-lang-en hidden>Water first</span></h3>
+              <p><span data-lang-es>Prioriza el agua antes de abrir más crecimiento.</span><span data-lang-en hidden>Puts water ahead of opening more growth.</span></p>
+              <a data-preset href="/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025#recetas"><span data-lang-es>Aplicar</span><span data-lang-en hidden>Apply</span></a>
+            </article>
+            <article>
+              <h3><span data-lang-es>Corredor y trayectoria</span><span data-lang-en hidden>Corridor and trajectory</span></h3>
+              <p><span data-lang-es>Compara el corredor con la trayectoria actual.</span><span data-lang-en hidden>Compares the corridor with the current trajectory.</span></p>
+              <a data-preset href="/gemelo/?theme=urbano&scenario=corridor_intensify&compare=baseline&path=escenario&lever=corredor#recetas"><span data-lang-es>Aplicar</span><span data-lang-en hidden>Apply</span></a>
+            </article>
+            <article>
+              <h3><span data-lang-es>Puertos y aire</span><span data-lang-en hidden>Ports and air</span></h3>
+              <p><span data-lang-es>Ancla el crecimiento en puertos y aeropuertos.</span><span data-lang-en hidden>Anchors growth on ports and airports.</span></p>
+              <a data-preset href="/gemelo/?theme=movilidad&scenario=ports_air_hubs&path=recomendacion&lever=aereo&z=aereo_2025#recetas"><span data-lang-es>Aplicar</span><span data-lang-en hidden>Apply</span></a>
+            </article>
+            <article>
+              <h3><span data-lang-es>Los Cabos en vivienda</span><span data-lang-en hidden>Los Cabos in housing</span></h3>
+              <p><span data-lang-es>Abre la ficha de Los Cabos en el tema de vivienda.</span><span data-lang-en hidden>Opens the Los Cabos fiche on the housing theme.</span></p>
+              <a data-preset href="/gemelo/?theme=vivienda&scenario=baseline&path=diagnostico&muni=Los%20Cabos&z=pob#recetas"><span data-lang-es>Aplicar</span><span data-lang-en hidden>Apply</span></a>
+            </article>
+            <article>
+              <h3><span data-lang-es>Trayectoria y margen de agua</span><span data-lang-en hidden>Trajectory and water headroom</span></h3>
+              <p><span data-lang-es>Deja la palanca de margen de agua sobre la trayectoria actual.</span><span data-lang-en hidden>Leaves the water-headroom lever on the current trajectory.</span></p>
+              <a data-preset href="/gemelo/?theme=urbano&scenario=baseline&path=diagnostico&lever=agua#recetas"><span data-lang-es>Aplicar</span><span data-lang-en hidden>Apply</span></a>
+            </article>
+            <article>
+              <h3><span data-lang-es>Agua junto a la trayectoria</span><span data-lang-en hidden>Water beside the trajectory</span></h3>
+              <p><span data-lang-es>Deja ver agua primero junto a la trayectoria actual.</span><span data-lang-en hidden>Shows water first beside the current trajectory.</span></p>
+              <a data-preset href="/gemelo/?theme=vivienda&scenario=water_first&compare=baseline&path=escenario&lever=deficit#recetas"><span data-lang-es>Aplicar</span><span data-lang-en hidden>Apply</span></a>
+            </article>
+          </div>
         </section>
         <HowTo
           leadEs="Siga el camino: diagnóstico, meta, escenario y recomendación. Cada paso usa cifras y reglas que ya están en el portal."
@@ -503,6 +550,7 @@ const icon: Record<string, string> = {
             <span data-lang-es>Qué cambia</span>
             <span data-lang-en hidden>What changes</span>
           </h3>
+          <p class="cdt-recipe-jump"><a href="#recetas"><span data-lang-es>Recetas de escenario</span><span data-lang-en hidden>Scenario recipes</span></a></p>
           <div id="cdt-cambia-body"></div>
         </section>
 
@@ -750,6 +798,20 @@ const icon: Record<string, string> = {
     .cdt-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.8rem 0 0.2rem; scroll-margin-top: 5rem; }
     .cdt-presets p { width: 100%; margin: 0 0 0.15rem; color: var(--cdt-dark); font-size: 0.82rem; font-weight: 700; }
     .cdt-presets a { border: 1px solid var(--cdt); color: var(--cdt-dark); background: #f4fbff; border-radius: 999px; padding: 0.32rem 0.7rem; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
+    .cdt-recetas { margin: 0.8rem 0 0.4rem; scroll-margin-top: 5rem; }
+    .cdt-recetas h2 { margin: 0 0 0.3rem; font-size: 1.05rem; color: var(--cdt-dark); }
+    .cdt-recetas > p { margin: 0 0 0.4rem; font-size: 0.86rem; }
+    .cdt-recetas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .cdt-recetas article { border: 1px solid var(--cdt-line); border-top: 3px solid #0083C4; border-radius: 12px; padding: 0.55rem 0.65rem; background: #fff; }
+    .cdt-recetas h3 { margin: 0 0 0.2rem; font-size: 0.92rem; color: #006BA3; }
+    .cdt-recetas p { margin: 0 0 0.4rem; font-size: 0.82rem; line-height: 1.35; }
+    .cdt-recetas a { display: inline-block; border: 1px solid var(--cdt); border-radius: 999px; padding: 0.22rem 0.65rem; color: var(--cdt-dark); font-weight: 700; font-size: 0.8rem; text-decoration: none; background: #f4fbff; }
+    .cdt-recetas a:focus-visible, .cdt-recipe-jump a:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
+    .cdt-recipe-jump { margin: 0 0 0.35rem; font-size: 0.82rem; }
+    .cdt-recipe-jump a { color: #006BA3; font-weight: 700; }
+    @media (max-width: 720px) {
+      .cdt-recetas-grid { grid-template-columns: 1fr; }
+    }
     .cdt-consulta { margin: 0.7rem 0 0.4rem; scroll-margin-top: 5rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.7rem 0.85rem; background: #f7fbfd; }
     .cdt-consulta h2 { margin: 0 0 0.3rem; font-size: 1.05rem; color: var(--cdt-dark); }
     .cdt-consulta p, .cdt-consulta li { margin: 0.28rem 0; font-size: 0.86rem; line-height: 1.4; }
@@ -937,7 +999,7 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, .cdt-copy-tip, .cdt-consulta, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, .cdt-copy-tip, .cdt-consulta, .cdt-recetas, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
       .cdt-walk { break-inside: avoid; }
       .cdt-walk a { color: #000; text-decoration: none; }
       .cdt-walk a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
@@ -973,7 +1035,7 @@ const icon: Record<string, string> = {
   <script>
     function showHash() {
       var hash = location.hash || '';
-      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets' && hash !== '#consulta') return;
+      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets' && hash !== '#consulta' && hash !== '#recetas') return;
       var el = document.getElementById(hash.slice(1));
       if (!el) return;
       var header = document.querySelector('.pt-top');
