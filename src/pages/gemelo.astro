@@ -50,8 +50,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.1 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.1 · decision support</span>
+          <span data-lang-es>Fase 2.2 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.2 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -69,13 +69,28 @@ const icon: Record<string, string> = {
           {' · '}
           <a href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
         </p>
+        <nav class="cdt-path" id="cdt-path" aria-label="Camino de decisión" data-aria-es="Camino de decisión" data-aria-en="Decision path">
+          <button type="button" data-path="diagnostico">
+            <span data-lang-es>1 · Diagnóstico</span><span data-lang-en hidden>1 · Diagnosis</span>
+          </button>
+          <button type="button" data-path="meta">
+            <span data-lang-es>2 · Meta</span><span data-lang-en hidden>2 · Goal</span>
+          </button>
+          <button type="button" data-path="escenario">
+            <span data-lang-es>3 · Escenario</span><span data-lang-en hidden>3 · Scenario</span>
+          </button>
+          <button type="button" data-path="recomendacion">
+            <span data-lang-es>4 · Recomendación</span><span data-lang-en hidden>4 · Recommendation</span>
+          </button>
+        </nav>
         <HowTo
-          leadEs="Elija un tema, una cifra para la altura municipal y una palanca del escenario. Las recomendaciones son reglas del portal, no un dictamen de predios."
-          leadEn="Pick a theme, a figure for the municipal height, and a scenario lever. Recommendations are portal rules, not a parcel ruling."
+          leadEs="Siga el camino: diagnóstico, meta, escenario y recomendación. Cada paso usa cifras y reglas que ya están en el portal."
+          leadEn="Follow the path: diagnosis, goal, scenario and recommendation. Each step uses figures and rules already in the portal."
           steps={[
-            { es: 'Elija la cifra de la altura. Si un municipio no tiene esa cifra, no se levanta.', en: 'Pick the figure for the height. If a municipality lacks that figure, it does not rise.' },
-            { es: 'Pulse una palanca. «Qué cambia» pone delante una lectura que ya está en el portal.', en: 'Press a lever. “What changes” puts an existing portal reading in front.' },
-            { es: 'Compare con otro escenario si quiere. Toque un municipio para su ficha.', en: 'Compare with another scenario if you want. Tap a municipality for its page.' },
+            { es: 'Diagnóstico: el tema, la altura municipal y las capas de ese tema.', en: 'Diagnosis: the theme, the municipal height and that theme’s layers.' },
+            { es: 'Meta: las preguntas ya escritas para el municipio y el tema.', en: 'Goal: the questions already written for the municipality and the theme.' },
+            { es: 'Escenario: el botón, la palanca, qué cambia y, si quiere, la comparación.', en: 'Scenario: the button, the lever, what changes and, if you want, the comparison.' },
+            { es: 'Recomendación: la regla del portal para el municipio y el escenario. Imprima esa hoja para la reunión.', en: 'Recommendation: the portal rule for the municipality and the scenario. Print that sheet for the meeting.' },
           ]}
         />
         <aside class="cdt-tip">
@@ -95,12 +110,12 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.1)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.1)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.2)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.2)</span>
           </h2>
           <p>
-            <span data-lang-es>Puede ahora: el relieve del estado, la altura de cada municipio según una cifra que usted elige, las capas por tema, y una palanca por escenario que adelanta una lectura ya escrita. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
-            <span data-lang-en hidden>It can now: the state’s terrain, a height for each municipality from a figure you choose, layers by theme, and one lever per scenario that brings an existing reading forward. If a cell is blank, that municipality does not rise and the cell stays blank.</span>
+            <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
+            <span data-lang-en hidden>It can now: walk diagnosis, goal, scenario and recommendation; raise each municipality with a figure you choose; and print the sheet for that scenario. If a cell is blank, that municipality does not rise and the cell stays blank.</span>
           </p>
           <p>
             <span data-lang-es>Todavía no puede: mapas por manzana (AGEB), forma de predios, lotes de catastro, métricas de forma, ni rellenar una cifra que falta. La altura es relativa a la cifra elegida. No es un edificio ni un metro de terreno.</span>
@@ -122,7 +137,7 @@ const icon: Record<string, string> = {
           ))}
         </div>
       </div>
-      <div class="cdt-scenarios" role="group" aria-label="Escenario" data-aria-es="Escenario" data-aria-en="Scenario">
+      <div class="cdt-scenarios" data-step="escenario" role="group" aria-label="Escenario" data-aria-es="Escenario" data-aria-en="Scenario">
         {model.scenarios.map((sc, i) => (
           <button type="button" class="cdt-sc" data-scenario={sc.id} aria-pressed={i === 0 ? 'true' : 'false'}>
             <span data-lang-es>{sc.title_es}</span>
@@ -166,7 +181,7 @@ const icon: Record<string, string> = {
         ))}
       </nav>
 
-      <div class="cdt-map-col">
+      <div class="cdt-map-col" data-step="diagnostico">
         <div class="cdt-map-frame">
           <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial" data-aria-es="Mapa del gemelo territorial" data-aria-en="Territorial twin map"></div>
           <div class="cdt-map-tools" id="cdt-map-tools">
@@ -201,7 +216,7 @@ const icon: Record<string, string> = {
 
       <aside class="cdt-panel" aria-label="Indicadores del tema" data-aria-es="Indicadores del tema" data-aria-en="Theme indicators">
         {model.themes.map((t, i) => (
-          <section class="cdt-theme" data-theme-panel={t.id} hidden={i === 0 ? undefined : true}>
+          <section class="cdt-theme" data-step="diagnostico" data-theme-panel={t.id} hidden={i === 0 ? undefined : true}>
             <h2>
               <span data-lang-es>{t.es}</span>
               <span data-lang-en hidden>{t.en}</span>
@@ -250,7 +265,7 @@ const icon: Record<string, string> = {
         ))}
 
         {model.scenarios.map((sc, i) => (
-          <div class="cdt-sc-copy" data-scenario-copy={sc.id} hidden={i === 0 ? undefined : true}>
+          <div class="cdt-sc-copy" data-step="escenario" data-scenario-copy={sc.id} hidden={i === 0 ? undefined : true}>
             <h3>
               <span data-lang-es>{sc.title_es}</span>
               <span data-lang-en hidden>{sc.title_en}</span>
@@ -270,7 +285,7 @@ const icon: Record<string, string> = {
           </div>
         ))}
 
-        <section class="cdt-cambia" id="cdt-cambia" aria-label="Qué cambia" data-aria-es="Qué cambia" data-aria-en="What changes">
+        <section class="cdt-cambia" id="cdt-cambia" data-step="escenario" aria-label="Qué cambia" data-aria-es="Qué cambia" data-aria-en="What changes">
           <h3>
             <span data-lang-es>Qué cambia</span>
             <span data-lang-en hidden>What changes</span>
@@ -278,7 +293,7 @@ const icon: Record<string, string> = {
           <div id="cdt-cambia-body"></div>
         </section>
 
-        <section class="cdt-goals" aria-label="Qué tiene que ser verdad" data-aria-es="Qué tiene que ser verdad" data-aria-en="What has to be true">
+        <section class="cdt-goals" id="paso-meta" data-step="meta" aria-label="Qué tiene que ser verdad" data-aria-es="Qué tiene que ser verdad" data-aria-en="What has to be true">
           <h3>
             <span data-lang-es>Qué tiene que ser verdad</span>
             <span data-lang-en hidden>What has to be true</span>
@@ -311,6 +326,8 @@ const icon: Record<string, string> = {
             ))}
             {' '}
             <a href="/foresights/"><span data-lang-es>Ver prospectiva</span><span data-lang-en hidden>See foresight</span></a>
+            {' · '}
+            <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
           </p>
           <ul id="cdt-goal-list">
             {model.goals.map((g) => (
@@ -452,7 +469,7 @@ const icon: Record<string, string> = {
           <div id="cdt-muni-detail" class="cdt-detail"></div>
         </section>
 
-        <section class="cdt-recs" aria-label="Recomendaciones" data-aria-es="Recomendaciones" data-aria-en="Recommendations">
+        <section class="cdt-recs" id="paso-recomendacion" data-step="recomendacion" aria-label="Recomendaciones" data-aria-es="Recomendaciones" data-aria-en="Recommendations">
           <h3>
             <span data-lang-es>Recomendaciones</span>
             <span data-lang-en hidden>Recommendations</span>
@@ -502,11 +519,19 @@ const icon: Record<string, string> = {
         </section>
       </aside>
     </div>
+    <article class="cdt-sheet" id="cdt-sheet"></article>
   </div>
 
   <style>
     .cdt { --cdt: #0083C4; --cdt-dark: #006BA3; --cdt-ink: #1a1a1a; --cdt-muted: #5a5a5a; --cdt-line: #e0e0e0; color: var(--cdt-ink); }
     .cdt-top { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: flex-end; justify-content: space-between; margin-bottom: 0.8rem; }
+    .cdt-path { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0 0.2rem; }
+    .cdt-path button { font: inherit; cursor: pointer; text-align: left; border: 1px solid var(--cdt); background: #fff; color: var(--cdt-dark); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; font-weight: 700; }
+    .cdt-path button[aria-pressed="true"] { background: var(--cdt); color: #fff; }
+    .cdt-path button:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+    body[data-cdt-path] [data-step] { opacity: 0.38; }
+    body[data-cdt-path] [data-step].is-step { opacity: 1; box-shadow: inset 3px 0 0 #0083C4; border-radius: 8px; }
+    .cdt-sheet { display: none; }
     .cdt-kicker { margin: 0 0 0.2rem; color: var(--cdt); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
     .cdt h1 { margin: 0; font-size: 1.7rem; line-height: 1.15; color: var(--cdt-dark); }
     .cdt-lead { margin: 0.35rem 0 0; max-width: 46rem; color: var(--cdt-muted); font-size: 0.95rem; line-height: 1.45; }
@@ -608,15 +633,15 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, #cdt-share, #cdt-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-tip, .cdt-limits, #cdt-share, #cdt-print { display: none !important; }
       body, body.has-chat-sidebar { padding: 0 !important; background: #fff !important; }
+      body[data-cdt-path] [data-step] { opacity: 1; box-shadow: none; }
       .cdt { color: #000; }
-      .cdt-work { display: block; }
-      .cdt-panel { max-height: none !important; overflow: visible !important; border: 0; box-shadow: none; width: auto; }
-      .cdt-theme, .cdt-compare, .cdt-recs, .cdt-goals, .cdt-couple, .cdt-deps { break-inside: avoid; page-break-inside: avoid; }
-      .cdt-kpi, .cdt-quality article, .cdt-rec { break-inside: avoid; page-break-inside: avoid; }
+      .cdt-sheet { display: block; max-width: 170mm; }
+      .cdt-sheet h2 { margin: 0 0 0.4rem; font-size: 1.15rem; }
+      .cdt-sheet p, .cdt-sheet li { font-size: 0.92rem; line-height: 1.35; }
+      .cdt-sheet a { color: #000; }
       h1, h2 { break-after: avoid; page-break-after: avoid; }
-      a { color: #000; text-decoration: none; }
     }
     .cdt-blank { display: inline-block; margin: 0.35rem 0; padding: 0.25rem 0.55rem; border-radius: 999px; background: #f3e6cc; color: #6a4b12; font-size: 0.78rem; font-weight: 650; text-decoration: none; }
     .cdt-loreto-air { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.75rem; margin: 0.7rem 0; padding: 0.75rem 0.9rem; border: 1px solid #0083C4; border-left: 4px solid #0083C4; border-radius: 12px; background: #e8f4fb; }
@@ -677,6 +702,7 @@ const icon: Record<string, string> = {
         scenario: 'baseline',
         compare: '',
         lever: '',
+        path: '',
         z: 'pob',
         x: 'pob',
         y: 'sniiv_2025',
@@ -737,6 +763,7 @@ const icon: Record<string, string> = {
       if (params.get('muni') && muniByName(params.get('muni')).name === params.get('muni')) state.muni = params.get('muni');
       if (params.get('compare') && scenarioById(params.get('compare')).id === params.get('compare') && params.get('compare') !== state.scenario) state.compare = params.get('compare');
       if (params.get('z') && indicatorById(params.get('z')).id === params.get('z')) state.z = params.get('z');
+      if (params.get('path') && /^(diagnostico|meta|escenario|recomendacion)$/.test(params.get('path'))) state.path = params.get('path');
       if (params.get('lever')) state.lever = params.get('lever');
       if (state.x === state.y) state.y = state.x === 'sniiv_2025' ? 'pobreza_pct' : 'sniiv_2025';
 
@@ -1131,6 +1158,7 @@ const icon: Record<string, string> = {
         if (state.compare && state.compare !== state.scenario) q.set('compare', state.compare);
         if (state.lever && currentLever()) q.set('lever', state.lever);
         if (state.z) q.set('z', state.z);
+        if (state.path) q.set('path', state.path);
         q.set('x', state.x);
         q.set('y', state.y);
         q.set('muni', state.muni);
@@ -1201,9 +1229,56 @@ const icon: Record<string, string> = {
           var on = !!(lever && !card.hidden && card.getAttribute('data-balance') === lever.balance);
           card.classList.toggle('is-lever', on);
         });
+        focusPath(false);
+        renderSheet();
         updateMapLink();
         applyContext();
         writeUrl();
+      }
+
+      function focusPath(scroll) {
+        document.body.dataset.cdtPath = state.path || '';
+        document.querySelectorAll('[data-path]').forEach(function (btn) {
+          btn.setAttribute('aria-pressed', btn.getAttribute('data-path') === state.path ? 'true' : 'false');
+        });
+        document.querySelectorAll('[data-step]').forEach(function (el) {
+          el.classList.toggle('is-step', !!state.path && el.getAttribute('data-step') === state.path);
+        });
+        if (!scroll || !state.path) return;
+        var target = document.querySelector('[data-step="' + state.path + '"].is-step');
+        if (!target) return;
+        var root = document.documentElement;
+        var prev = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        target.scrollIntoView({ block: 'start', behavior: 'auto' });
+        root.style.scrollBehavior = prev;
+      }
+
+      function renderSheet() {
+        var host = document.getElementById('cdt-sheet');
+        if (!host) return;
+        var theme = themeById(state.theme);
+        var sc = scenarioById(state.scenario);
+        var lever = currentLever();
+        var ind = indicatorById(state.z);
+        var missing = model.munis.filter(function (m) { return !hasNum(m[state.z]); }).map(function (m) { return m.name; });
+        var recs = [];
+        document.querySelectorAll('#cdt-rec-list .cdt-rec').forEach(function (card) {
+          if (card.hidden || recs.length >= 4) return;
+          var name = card.querySelector('.cdt-rec-kicker');
+          var rule = card.querySelector('.cdt-rec-rule');
+          recs.push('<li><strong>' + (name ? name.innerText.trim() : '') + '.</strong> ' + (rule ? rule.innerText.trim() : '') + '</li>');
+        });
+        host.innerHTML =
+          '<h2>' + tx('Hoja del escenario', 'Scenario sheet') + '</h2>' +
+          '<p><strong>' + tx('Tema. ', 'Theme. ') + '</strong>' + tx(theme.es, theme.en) + '</p>' +
+          '<p><strong>' + tx('Escenario. ', 'Scenario. ') + '</strong>' + tx(sc.title_es, sc.title_en) + '. ' + tx(sc.blurb_es, sc.blurb_en) + '</p>' +
+          '<p><strong>' + tx('Palanca. ', 'Lever. ') + '</strong>' + (lever ? tx(lever.label_es, lever.label_en) + '. ' + tx(lever.read_es, lever.read_en) : tx('Ninguna.', 'None.')) + '</p>' +
+          '<p><strong>' + tx('Municipios en tensión. ', 'Municipalities under stress. ') + '</strong>' + (sc.stress || []).join(' · ') + '</p>' +
+          '<p><strong>' + tx('Altura. ', 'Height. ') + '</strong>' + tx(ind.label_es, ind.label_en) + ' · ' + tx(ind.source_es, ind.source_en) + '. ' +
+          (missing.length ? tx('Sin cifra: ', 'No figure: ') + missing.join(' · ') + '.' : tx('Los cinco municipios tienen cifra.', 'All five municipalities have a figure.')) + '</p>' +
+          '<p><strong>' + tx('Recomendación. ', 'Recommendation. ') + '</strong></p><ul>' + recs.join('') + '</ul>' +
+          '<p>' + location.href + '</p>';
       }
 
       function renderLevers() {
@@ -1274,7 +1349,11 @@ const icon: Record<string, string> = {
           '<p><strong>' + tx('Altura: ', 'Height: ') + '</strong>' + tx(ind.label_es, ind.label_en) + ' · ' + tx(ind.source_es, ind.source_en) + '. ' +
           (missing.length ? tx('Sin volumen: ', 'No volume: ') + missing.join(' · ') + '.' : tx('Los cinco municipios tienen cifra.', 'All five municipalities have a figure.')) + '</p>' +
           '<p><strong>' + tx('Municipios en tensión: ', 'Municipalities under stress: ') + '</strong>' + (sc.stress || []).join(' · ') + '</p>' +
-          (other ? '<p>' + tx('Comparado con ', 'Compared with ') + tx(other.title_es, other.title_en) + '.</p>' : '') +
+          (other ? '<p><strong>' + tx('Comparado con ', 'Compared with ') + tx(other.title_es, other.title_en) + '.</strong> ' +
+            (Object.keys(cmp).length
+              ? tx('Se suman capas que este escenario no trae: ', 'Layers this scenario does not already include: ') + Object.keys(cmp).map(function (id) { var meta = layerMeta(id); return meta ? tx(meta.name_es, meta.name_en) : id; }).join(' · ') + '.'
+              : tx('Este escenario ya incluye las capas del otro.', 'This scenario already includes the other scenario’s layers.')) +
+            '</p>' : '') +
           '<ul>' + lines + '</ul>';
       }
 
@@ -1393,7 +1472,19 @@ const icon: Record<string, string> = {
         } else done(false);
       });
       var printBtn = document.getElementById('cdt-print');
-      if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+      if (printBtn) printBtn.addEventListener('click', function () {
+        renderSheet();
+        window.print();
+      });
+      document.querySelectorAll('[data-path]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.getAttribute('data-path');
+          state.path = state.path === id ? '' : id;
+          focusPath(true);
+          renderSheet();
+          writeUrl();
+        });
+      });
 
       document.addEventListener('bcs:lang', function () {
         fillSelects();
@@ -1407,6 +1498,7 @@ const icon: Record<string, string> = {
 
       fillSelects();
       applyChrome();
+      if (state.path) window.setTimeout(function () { focusPath(true); }, 350);
       renderScatter();
       selectMuni(state.muni);
       var reduceMotion = false;

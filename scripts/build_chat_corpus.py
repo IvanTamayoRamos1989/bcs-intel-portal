@@ -2115,6 +2115,38 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-camino-p22",
+        "title": "Camino de decisión del gemelo / Twin decision path",
+        "path": "portal/gemelo",
+        "href": "/gemelo/?path=diagnostico",
+        "theme": "planeacion",
+        "sum_es": (
+            "El gemelo en /gemelo se recorre en cuatro pasos: diagnóstico, meta, escenario y recomendación. "
+            "El diagnóstico muestra el tema, la altura municipal y las capas de ese tema. "
+            "La meta muestra las preguntas ya escritas para el municipio y el tema, y enlaza con /metas. "
+            "El escenario muestra el botón, la palanca, qué cambia y la comparación. "
+            "La recomendación muestra la regla del portal para ese municipio y ese escenario. "
+            "Imprimir deja una hoja con el tema, el escenario, la palanca, los municipios en tensión y la recomendación. No añade cifras. "
+            "El enlace guarda el paso en path. "
+            "Pregunta de seguimiento: ¿abre el diagnóstico, la meta, o la recomendación? "
+            "[camino de decision diagnostico gemelo recomendacion gemelo]"
+        ),
+        "sum_en": (
+            "The twin at /gemelo is walked in four steps: diagnosis, goal, scenario and recommendation. "
+            "Diagnosis shows the theme, the municipal height and that theme’s layers. "
+            "The goal shows the questions already written for the municipality and the theme, and links to /metas. "
+            "The scenario shows the button, the lever, what changes and the comparison. "
+            "The recommendation shows the portal rule for that municipality and that scenario. "
+            "Print leaves a sheet with the theme, the scenario, the lever, the municipalities under stress and the recommendation. It adds no figures. "
+            "The link keeps the step in path. "
+            "Follow-up: do you open the diagnosis, the goal, or the recommendation? "
+            "[decision path twin diagnosis twin recommendation]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
