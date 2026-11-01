@@ -122,6 +122,10 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>It cannot yet: block maps (AGEB), parcel form, cadastre lots, form metrics, or filling in a missing figure. The height is relative to the chosen figure. It is not a building and not a meter of terrain.</span>
           </p>
           <p>
+            <span data-lang-es>El cruce entre temas es una lectura cualitativa de las reglas del portal. No es un motor de simulación.</span>
+            <span data-lang-en hidden>The cross-theme reading is qualitative, from the portal’s rules. It is not a simulation engine.</span>
+          </p>
+          <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
             {' · '}
             <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
@@ -291,6 +295,14 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>What changes</span>
           </h3>
           <div id="cdt-cambia-body"></div>
+        </section>
+
+        <section class="cdt-cruce" id="cdt-cruce" data-step="escenario" aria-label="Impacto entre temas" data-aria-es="Impacto entre temas" data-aria-en="Cross-theme impact">
+          <h3>
+            <span data-lang-es>Impacto entre temas</span>
+            <span data-lang-en hidden>Cross-theme impact</span>
+          </h3>
+          <div id="cdt-cruce-body"></div>
         </section>
 
         <section class="cdt-goals" id="paso-meta" data-step="meta" aria-label="Qué tiene que ser verdad" data-aria-es="Qué tiene que ser verdad" data-aria-en="What has to be true">
@@ -567,6 +579,14 @@ const icon: Record<string, string> = {
     .cdt-cambia h3 { margin: 0 0 0.3rem; font-size: 1rem; color: var(--cdt-dark); }
     .cdt-cambia p, .cdt-cambia li { margin: 0.2rem 0; font-size: 0.86rem; line-height: 1.4; }
     .cdt-cambia ul { margin: 0.2rem 0 0; padding-left: 1.1rem; }
+    .cdt-cruce { margin-top: 0.75rem; padding: 0.55rem 0.7rem; border-radius: 10px; background: #fff; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); }
+    .cdt-cruce h3 { margin: 0 0 0.3rem; font-size: 1rem; color: var(--cdt-dark); }
+    .cdt-cruce p, .cdt-cruce li { margin: 0.22rem 0; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-cruce ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+    .cdt-cruce li.is-front { background: #e8f4fb; border-radius: 8px; padding: 0.2rem 0.35rem; }
+    .cdt-nodes { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+    .cdt-node { display: inline-flex; align-items: center; gap: 0.25rem; border: 1px solid var(--cdt); border-radius: 999px; padding: 0.15rem 0.55rem; color: var(--cdt-dark); font-size: 0.75rem; font-weight: 650; text-decoration: none; background: #f4fbff; }
+    .cdt-node-btn { font: inherit; font-size: 0.72rem; border: 0; background: transparent; color: var(--cdt); cursor: pointer; text-decoration: underline; }
     .cdt-sc, .cdt-theme-btn, .cdt-muni { font: inherit; cursor: pointer; }
     .cdt-sc { border: 1px solid var(--cdt-line); background: #fff; color: var(--cdt-ink); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; }
     .cdt-sc[aria-pressed="true"] { background: var(--cdt); border-color: var(--cdt); color: #fff; }
@@ -1229,6 +1249,7 @@ const icon: Record<string, string> = {
           var on = !!(lever && !card.hidden && card.getAttribute('data-balance') === lever.balance);
           card.classList.toggle('is-lever', on);
         });
+        renderCruce();
         focusPath(false);
         renderSheet();
         updateMapLink();
@@ -1278,7 +1299,38 @@ const icon: Record<string, string> = {
           '<p><strong>' + tx('Altura. ', 'Height. ') + '</strong>' + tx(ind.label_es, ind.label_en) + ' · ' + tx(ind.source_es, ind.source_en) + '. ' +
           (missing.length ? tx('Sin cifra: ', 'No figure: ') + missing.join(' · ') + '.' : tx('Los cinco municipios tienen cifra.', 'All five municipalities have a figure.')) + '</p>' +
           '<p><strong>' + tx('Recomendación. ', 'Recommendation. ') + '</strong></p><ul>' + recs.join('') + '</ul>' +
+          '<p>' + tx('El cruce con los otros temas es cualitativo. No es una simulación.', 'The cross-theme reading is qualitative. It is not a simulation.') + '</p>' +
           '<p>' + location.href + '</p>';
+      }
+
+      function renderCruce() {
+        var host = document.getElementById('cdt-cruce-body');
+        if (!host) return;
+        var sc = scenarioById(state.scenario);
+        var lever = currentLever();
+        var lines = (model.couplings[state.theme] || []).map(function (c) {
+          var other = themeById(c.to);
+          var front = !!(lever && lever.read_es === c.es);
+          return '<li' + (front ? ' class="is-front"' : '') + '><strong>' + tx(other.es, other.en) + '.</strong> ' + tx(c.es, c.en) + '</li>';
+        }).join('');
+        var nodes = (sc.nodes || []).map(function (n) {
+          var see = n.muni
+            ? ' <button type="button" class="cdt-node-btn" data-node-muni="' + n.muni + '">' + tx('Ver en el mapa', 'See on the map') + '</button>'
+            : '';
+          return '<span><a class="cdt-node" href="' + n.href + '">' + tx(n.label, n.label_en) + '</a>' + see + '</span>';
+        }).join('');
+        host.innerHTML =
+          '<p>' + tx('Lectura cualitativa de las reglas del portal. No es un motor de simulación.', 'A qualitative reading of the portal’s rules. It is not a simulation engine.') + '</p>' +
+          (lever
+            ? '<p><strong>' + tx('Palanca delante: ', 'Lever in front: ') + tx(lever.label_es, lever.label_en) + '.</strong> ' + tx(lever.read_es, lever.read_en) + '</p>'
+            : '<p>' + tx(sc.note_es, sc.note_en) + '</p>') +
+          '<ul>' + lines + '</ul>' +
+          '<p><strong>' + tx('Nodos del escenario.', 'Scenario nodes.') + '</strong> ' +
+          tx('No traen coordenada propia. El enlace abre el nombre en la ontología.', 'They have no coordinate of their own. The link opens the name in the ontology.') + '</p>' +
+          '<p class="cdt-nodes">' + nodes + '</p>';
+        host.querySelectorAll('[data-node-muni]').forEach(function (btn) {
+          btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-node-muni')); });
+        });
       }
 
       function renderLevers() {

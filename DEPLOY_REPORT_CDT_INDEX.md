@@ -63,3 +63,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 2.0 | `DEPLOY_REPORT_CDT_P2_0.md` | 3D terrain on `/gemelo`, theme layer stacks, and what each scenario changes |
 | 2.1 | `DEPLOY_REPORT_CDT_P2_1.md` | Municipal height from an existing figure, and scenario levers |
 | 2.2 | `DEPLOY_REPORT_CDT_P2_2.md` | Four-step decision path and a printable scenario sheet |
+| 2.3 | `DEPLOY_REPORT_CDT_P2_3.md` | Qualitative cross-theme reading and scenario ontology chips |
