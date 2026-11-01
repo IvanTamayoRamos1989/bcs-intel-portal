@@ -1192,6 +1192,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(share.id);
     }
   }
+  if (consultaMesaQuery(query)) {
+    const mesa = corpus.find((c) => c.id === 'portal:gemelo-consulta-p213');
+    if (mesa && !usedId.has(mesa.id)) {
+      picked.unshift(mesa);
+      usedId.add(mesa.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1736,6 +1743,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== share.id);
       picked.length = 0;
       picked.push(share, ...rest);
+    }
+  }
+  if (consultaMesaQuery(query)) {
+    const mesa = corpus.find((c) => c.id === 'portal:gemelo-consulta-p213');
+    if (mesa) {
+      const rest = picked.filter((c) => c.id !== mesa.id);
+      picked.length = 0;
+      picked.push(mesa, ...rest);
     }
   }
 
@@ -2535,6 +2550,12 @@ function shareQuery(message) {
   return /compartir gemelo|copiar vista|share twin|copy view|share the twin/.test(q);
 }
 
+function consultaMesaQuery(message) {
+  if (shareQuery(message) || walkQuery(message) || namedViewsQuery(message) || kitQuery(message) || presetQuery(message) || readinessQuery(message) || novedadesQuery(message) || atlasQuery(message)) return false;
+  const q = normQ(message);
+  return /consulta ciudadana gemelo|preguntas para la mesa|citizen consultation twin|questions for the table|twin consultation/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2586,6 +2607,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-consulta', re: /consulta ciudadana gemelo|preguntas para la mesa|citizen consultation twin|questions for the table|twin consultation/, href: '/gemelo/#consulta', es: 'Consulta ciudadana', en: 'Citizen consultation' },
+    { id: 'gemelo-consulta-diag', re: /consulta ciudadana gemelo|preguntas para la mesa|citizen consultation twin|questions for the table|twin consultation/, href: '/gemelo/?path=diagnostico#consulta', es: 'Preguntas del diagnóstico', en: 'Diagnosis questions' },
     { id: 'gemelo-copia', re: /compartir gemelo|copiar vista|share twin|copy view|share the twin/, href: '/gemelo/#cdt-share', es: 'Copiar vista', en: 'Copy view' },
     { id: 'gemelo-copia-agua', re: /compartir gemelo|copiar vista|share twin|copy view|share the twin/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
     { id: 'gemelo-recorrido', re: /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, href: '/gemelo/#recorrido-gemelo', es: 'Guión de diez minutos', en: 'Ten-minute script' },
@@ -2654,6 +2677,7 @@ function portalGuideBoost(message, chunk) {
     [/que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/, /gemelo-listo/],
     [/recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, /gemelo-recorrido/],
     [/compartir gemelo|copiar vista|share twin|copy view|share the twin/, /gemelo-copia/],
+    [/consulta ciudadana gemelo|preguntas para la mesa|citizen consultation twin|questions for the table|twin consultation/, /gemelo-consulta/],
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
@@ -3090,6 +3114,9 @@ async function handlerInner(event) {
   const shareGuide = shareQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-copia-p212')
     : null;
+  const mesaGuide = consultaMesaQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-consulta-p213')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -3179,6 +3206,10 @@ async function handlerInner(event) {
   }
   if (shareGuide && !evidence.some((c) => c.id === shareGuide.id)) {
     evidence = [shareGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (mesaGuide && !evidence.some((c) => c.id === mesaGuide.id)) {
+    evidence = [mesaGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

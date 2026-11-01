@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.12 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.12 · decision support</span>
+          <span data-lang-es>Fase 2.13 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.13 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -151,6 +151,11 @@ const icon: Record<string, string> = {
               <span data-lang-en hidden> <a href="#cdt-share">Copy view</a> saves the same link for whoever arrives later.</span>
             </li>
           </ol>
+          <p>
+            <a href="#consulta"><span data-lang-es>Consulta ciudadana</span><span data-lang-en hidden>Citizen consultation</span></a>
+            <span data-lang-es>. Una pregunta por mesa, según el paso del camino.</span>
+            <span data-lang-en hidden>. One question per table, according to the path step.</span>
+          </p>
         </section>
         <nav class="cdt-path" id="cdt-path" aria-label="Camino de decisión" data-aria-es="Camino de decisión" data-aria-en="Decision path">
           <button type="button" data-path="diagnostico">
@@ -166,6 +171,18 @@ const icon: Record<string, string> = {
             <span data-lang-es>4 · Recomendación</span><span data-lang-en hidden>4 · Recommendation</span>
           </button>
         </nav>
+        <section class="cdt-consulta" id="consulta" aria-labelledby="cdt-consulta-title">
+          <h2 id="cdt-consulta-title">
+            <span data-lang-es>Consulta ciudadana</span>
+            <span data-lang-en hidden>Citizen consultation</span>
+          </h2>
+          <p>
+            <span data-lang-es>Una pregunta para el gobierno, el sector privado y la sociedad civil. Sigue el paso del camino. No añade cifras.</span>
+            <span data-lang-en hidden>One question for government, the private sector and civil society. It follows the path step. It adds no figures.</span>
+          </p>
+          <div id="cdt-consulta-body"></div>
+          <p><a href="#cdt-share"><span data-lang-es>Copiar vista</span><span data-lang-en hidden>Copy view</span></a></p>
+        </section>
         <HowTo
           leadEs="Siga el camino: diagnóstico, meta, escenario y recomendación. Cada paso usa cifras y reglas que ya están en el portal."
           leadEn="Follow the path: diagnosis, goal, scenario and recommendation. Each step uses figures and rules already in the portal."
@@ -733,7 +750,17 @@ const icon: Record<string, string> = {
     .cdt-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.8rem 0 0.2rem; scroll-margin-top: 5rem; }
     .cdt-presets p { width: 100%; margin: 0 0 0.15rem; color: var(--cdt-dark); font-size: 0.82rem; font-weight: 700; }
     .cdt-presets a { border: 1px solid var(--cdt); color: var(--cdt-dark); background: #f4fbff; border-radius: 999px; padding: 0.32rem 0.7rem; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
-    #cdt-share { scroll-margin-top: 5rem; }
+    .cdt-consulta { margin: 0.7rem 0 0.4rem; scroll-margin-top: 5rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.7rem 0.85rem; background: #f7fbfd; }
+    .cdt-consulta h2 { margin: 0 0 0.3rem; font-size: 1.05rem; color: var(--cdt-dark); }
+    .cdt-consulta p, .cdt-consulta li { margin: 0.28rem 0; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-consulta a { color: #006BA3; font-weight: 700; }
+    .cdt-consulta a:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
+    .cdt-consulta-grid { display: grid; grid-template-columns: 1fr; gap: 0.4rem; margin-top: 0.35rem; }
+    @media (min-width: 800px) {
+      .cdt-consulta-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .cdt-consulta article { background: #fff; border: 1px solid var(--cdt-line); border-radius: 10px; padding: 0.5rem 0.6rem; }
+    .cdt-consulta h3 { margin: 0 0 0.2rem; font-size: 0.82rem; color: #006BA3; }
     .cdt-copy-tip { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; margin: 0.45rem 0 0; padding: 0.45rem 0.65rem; border-radius: 10px; background: #e8f4fb; color: var(--cdt-ink); font-size: 0.82rem; }
     .cdt-copy-tip[hidden] { display: none; }
     .cdt-copy-tip button { font: inherit; cursor: pointer; border: 1px solid var(--cdt); background: #fff; color: var(--cdt-dark); border-radius: 999px; padding: 0.2rem 0.6rem; font-weight: 700; }
@@ -910,7 +937,7 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, .cdt-copy-tip, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, .cdt-copy-tip, .cdt-consulta, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
       .cdt-walk { break-inside: avoid; }
       .cdt-walk a { color: #000; text-decoration: none; }
       .cdt-walk a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
@@ -946,7 +973,7 @@ const icon: Record<string, string> = {
   <script>
     function showHash() {
       var hash = location.hash || '';
-      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets') return;
+      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets' && hash !== '#consulta') return;
       var el = document.getElementById(hash.slice(1));
       if (!el) return;
       var header = document.querySelector('.pt-top');
@@ -1683,6 +1710,7 @@ const icon: Record<string, string> = {
         document.querySelectorAll('[data-step]').forEach(function (el) {
           el.classList.toggle('is-step', !!state.path && el.getAttribute('data-step') === state.path);
         });
+        renderConsulta();
         if (!scroll || !state.path) return;
         var target = document.querySelector('[data-step="' + state.path + '"].is-step');
         if (!target) return;
@@ -1691,6 +1719,49 @@ const icon: Record<string, string> = {
         root.style.scrollBehavior = 'auto';
         target.scrollIntoView({ block: 'start', behavior: 'auto' });
         root.style.scrollBehavior = prev;
+      }
+
+      function renderConsulta() {
+        var host = document.getElementById('cdt-consulta-body');
+        if (!host) return;
+        var theme = themeById(state.theme);
+        var sc = scenarioById(state.scenario);
+        var tema = tx(theme.es, theme.en);
+        var escenario = tx(sc.title_es, sc.title_en);
+        var muni = muniByName(state.muni).name;
+        function fill(pair) {
+          return tx(pair[0], pair[1]).replace('{tema}', tema).replace('{escenario}', escenario).replace('{muni}', muni);
+        }
+        var book = {
+          diagnostico: [
+            ['Gobierno', 'Government', '¿Qué cifra ya publicada de «{tema}» cambia la lectura de {muni}?', 'Which published figure for “{tema}” changes the reading of {muni}?'],
+            ['Sector privado', 'Private sector', '¿Qué demanda de «{escenario}» ya está escrita, y qué oferta no se da por hecha?', 'Which demand in “{escenario}” is already written, and which supply is not taken for granted?'],
+            ['Sociedad civil', 'Civil society', '¿Qué celda de esta ficha está en blanco y por eso no se decide?', 'Which cell on this fiche is blank, and so is not decided?']
+          ],
+          meta: [
+            ['Gobierno', 'Government', '¿Qué pregunta abierta de {muni}, en «{tema}», sigue sin respuesta?', 'Which open question for {muni}, in “{tema}”, is still unanswered?'],
+            ['Sector privado', 'Private sector', '¿Qué meta de este lugar depende de un servicio que «{escenario}» no da por hecho?', 'Which goal for this place depends on a service “{escenario}” does not take for granted?'],
+            ['Sociedad civil', 'Civil society', '¿A quién le falta evidencia antes de aceptar más crecimiento?', 'Who is missing evidence before accepting more growth?']
+          ],
+          escenario: [
+            ['Gobierno', 'Government', '¿Qué cambia entre «{escenario}» y la comparación, con las capas que ya están?', 'What changes between “{escenario}” and the comparison, with the layers already on?'],
+            ['Sector privado', 'Private sector', '¿La palanca de «{escenario}» adelanta una regla ya escrita, o solo un deseo?', 'Does the lever of “{escenario}” bring forward a rule already written, or only a wish?'],
+            ['Sociedad civil', 'Civil society', '¿El cruce con los otros temas sigue siendo una lectura, no una simulación?', 'Does the cross-theme reading stay a reading, not a simulation?']
+          ],
+          recomendacion: [
+            ['Gobierno', 'Government', '¿Qué regla del portal se aplica a {muni} en «{escenario}»?', 'Which portal rule applies to {muni} in “{escenario}”?'],
+            ['Sector privado', 'Private sector', '¿Qué no se abre en «{tema}» si falta una cifra o una oferta?', 'What does not open in “{tema}” if a figure or a supply is missing?'],
+            ['Sociedad civil', 'Civil society', '¿Qué se lleva la mesa si una celda de {muni} sigue en blanco?', 'What does the table take away if a cell for {muni} stays blank?']
+          ]
+        };
+        var rows = book[state.path];
+        if (!rows) {
+          host.innerHTML = '<p>' + tx('Elija diagnóstico, meta, escenario o recomendación. Las preguntas siguen ese paso.', 'Choose diagnosis, goal, scenario or recommendation. The questions follow that step.') + '</p>';
+          return;
+        }
+        host.innerHTML = '<div class="cdt-consulta-grid">' + rows.map(function (row) {
+          return '<article><h3>' + tx(row[0], row[1]) + '</h3><p>' + esc(fill([row[2], row[3]])) + '</p></article>';
+        }).join('') + '</div>';
       }
 
       function renderSheet() {
@@ -2152,6 +2223,7 @@ const icon: Record<string, string> = {
         renderCambia();
         renderExtrudeLegend();
         renderLevers();
+        renderConsulta();
         syncLayers();
       });
 

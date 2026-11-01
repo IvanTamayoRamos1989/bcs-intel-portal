@@ -15,3 +15,4 @@
 | 2.10 | Readiness panel for the four files the twin does not have yet |
 | 2.11 | Ten-minute host script for the twin |
 | 2.12 | Copy view writes the current twin state into a link |
+| 2.13 | One consultation question per audience on each path step |
