@@ -50,8 +50,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.2 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.2 · decision support</span>
+          <span data-lang-es>Fase 2.4 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.4 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -91,6 +91,7 @@ const icon: Record<string, string> = {
             { es: 'Meta: las preguntas ya escritas para el municipio y el tema.', en: 'Goal: the questions already written for the municipality and the theme.' },
             { es: 'Escenario: el botón, la palanca, qué cambia y, si quiere, la comparación.', en: 'Scenario: the button, the lever, what changes and, if you want, the comparison.' },
             { es: 'Recomendación: la regla del portal para el municipio y el escenario. Imprima esa hoja para la reunión.', en: 'Recommendation: the portal rule for the municipality and the scenario. Print that sheet for the meeting.' },
+            { es: 'Toque un municipio: la ficha muestra la cifra elegida, la demanda y oferta ya escritas, y la recomendación. Si falta la cifra, se lee —.', en: 'Tap a municipality: the fiche shows the chosen figure, the demand and supply already written, and the recommendation. If the figure is missing, it reads —.' },
           ]}
         />
         <aside class="cdt-tip">
@@ -110,8 +111,8 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.2)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.2)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.4)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.4)</span>
           </h2>
           <p>
             <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
@@ -124,6 +125,10 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>El cruce entre temas es una lectura cualitativa de las reglas del portal. No es un motor de simulación.</span>
             <span data-lang-en hidden>The cross-theme reading is qualitative, from the portal’s rules. It is not a simulation engine.</span>
+          </p>
+          <p>
+            <span data-lang-es>Al tocar un municipio se abre su ficha, sin salir de esta página: la cifra elegida, la demanda y oferta ya escritas, y la recomendación del escenario. Si falta la cifra, se lee —.</span>
+            <span data-lang-en hidden>Tapping a municipality opens its fiche, without leaving this page: the chosen figure, the demand and supply already written, and the scenario recommendation. If the figure is missing, it reads —.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -188,6 +193,7 @@ const icon: Record<string, string> = {
       <div class="cdt-map-col" data-step="diagnostico">
         <div class="cdt-map-frame">
           <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial" data-aria-es="Mapa del gemelo territorial" data-aria-en="Territorial twin map"></div>
+          <aside id="cdt-3d-tip" class="cdt-3d-tip" hidden></aside>
           <div class="cdt-map-tools" id="cdt-map-tools">
             <button type="button" id="cdt-pitch"><span data-lang-es>Vista cenital</span><span data-lang-en hidden>Top view</span></button>
             <button type="button" id="cdt-rot"><span data-lang-es>Girar</span><span data-lang-en hidden>Rotate</span></button>
@@ -196,6 +202,7 @@ const icon: Record<string, string> = {
           </div>
         </div>
         <div id="cdt-extrude" class="cdt-extrude"></div>
+        <aside id="cdt-fiche" class="cdt-fiche" aria-live="polite"></aside>
         <p class="cdt-map-note" id="cdt-status">
           <span data-lang-es>Cargando capas del mapa…</span>
           <span data-lang-en hidden>Loading map layers…</span>
@@ -502,6 +509,7 @@ const icon: Record<string, string> = {
             {model.recommendations.map((r) => (
               <article
                 class="cdt-rec"
+                data-rec-id={r.id}
                 data-rec-themes={r.themes.join(' ')}
                 data-rec-scenarios={r.scenarios.join(' ')}
                 data-balance={r.balance}
@@ -544,6 +552,13 @@ const icon: Record<string, string> = {
     body[data-cdt-path] [data-step] { opacity: 0.38; }
     body[data-cdt-path] [data-step].is-step { opacity: 1; box-shadow: inset 3px 0 0 #0083C4; border-radius: 8px; }
     .cdt-sheet { display: none; }
+    .cdt-3d-tip { position: absolute; z-index: 3; left: 0.45rem; right: 3.2rem; top: 2.6rem; background: #fff; border: 1px solid #0083C4; border-left: 4px solid #0083C4; border-radius: 12px; padding: 0.55rem 0.7rem; box-shadow: 0 8px 24px rgba(0, 40, 70, 0.12); }
+    .cdt-3d-tip p { margin: 0 0 0.4rem; font-size: 0.84rem; line-height: 1.4; color: #1a1a1a; }
+    .cdt-3d-tip button { font: inherit; font-weight: 700; background: #0083C4; color: #fff; border: 0; border-radius: 999px; padding: 0.28rem 0.7rem; cursor: pointer; }
+    .cdt-fiche { margin-top: 0.45rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.65rem 0.75rem; background: #fff; }
+    .cdt-fiche h2 { margin: 0 0 0.25rem; font-size: 1.05rem; color: var(--cdt-dark); }
+    .cdt-fiche p { margin: 0.28rem 0; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-fiche a { color: var(--cdt-dark); font-weight: 650; }
     .cdt-kicker { margin: 0 0 0.2rem; color: var(--cdt); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
     .cdt h1 { margin: 0; font-size: 1.7rem; line-height: 1.15; color: var(--cdt-dark); }
     .cdt-lead { margin: 0.35rem 0 0; max-width: 46rem; color: var(--cdt-muted); font-size: 0.95rem; line-height: 1.45; }
@@ -712,7 +727,7 @@ const icon: Record<string, string> = {
   <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
   <script is:inline src="/gemelo/cdt3d.js"></script>
   <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script is:inline define:vars={{ model }}>
+  <script is:inline define:vars={{ model, learnByTheme }}>
     (function () {
       var mapEl = document.getElementById('cdt-map');
       if (!mapEl) return;
@@ -917,21 +932,45 @@ const icon: Record<string, string> = {
       }
 
       function renderDetail() {
-        var el = document.getElementById('cdt-muni-detail');
-        if (!el) return;
+        var el = document.getElementById('cdt-fiche');
+        var side = document.getElementById('cdt-muni-detail');
         var m = muniByName(state.muni);
-        var subs = (m.subplaces || []).map(function (s) {
-          return '<p><strong>' + tx(s.name_es, s.name_en) + '.</strong> ' + tx(s.balance_es, s.balance_en) + '</p>';
+        var ind = indicatorById(state.z);
+        var raw = m[state.z];
+        var figure = hasNum(raw) ? fmt(state.z, raw) + ' ' + tx(ind.unit_es, ind.unit_en) : '—';
+        var offer = plain(tx(m.strengths_es, m.strengths_en));
+        var demand = plain(tx(m.locks_es, m.locks_en));
+        var balances = (m.subplaces || []).map(function (s) {
+          var text = plain(tx(s.balance_es, s.balance_en));
+          if (!text) return '';
+          return '<p><strong>' + tx(s.name_es, s.name_en) + '.</strong> ' + text + '</p>';
         }).join('');
-        el.innerHTML =
-          '<p><strong>' + m.name + '</strong> · ' + tx('cabecera', 'seat') + ' ' + m.cabecera +
-          ' (' + fmt('pob', m.cab_pob) + ')</p>' +
-          '<p>' + plain(tx(m.strengths_es, m.strengths_en)) + '</p>' +
-          '<p>' + plain(tx(m.locks_es, m.locks_en)) + '</p>' +
-          subs +
-          '<p><a href="' + m.studio + '">' + tx('Ficha del municipio', 'Municipal page') + '</a>' +
-          ' · <a href="' + m.crecimiento + '">' + tx('Demanda y oferta', 'Demand and supply') + '</a>' +
-          ' · <a href="' + m.vista + '">' + tx('Vista: ', 'View: ') + tx(m.vista_es, m.vista_en) + '</a></p>';
+        var placeIds = (m.subplaces || []).map(function (s) { return s.id; });
+        var recs = '';
+        document.querySelectorAll('#cdt-rec-list .cdt-rec').forEach(function (card) {
+          if (card.hidden) return;
+          if (placeIds.indexOf(card.getAttribute('data-rec-id')) === -1) return;
+          var name = card.querySelector('.cdt-rec-kicker');
+          var rule = card.querySelector('.cdt-rec-rule');
+          recs += '<p><strong>' + (name ? name.innerText.trim() : '') + '.</strong> ' + (rule ? rule.innerText.trim() : '') + '</p>';
+        });
+        var lever = currentLever();
+        var leverOn = lever && (m.subplaces || []).some(function (s) { return s.balance === lever.balance; });
+        var learn = (typeof learnByTheme !== 'undefined' && learnByTheme[state.theme]) || '';
+        var html =
+          '<h2>' + m.name + '</h2>' +
+          '<p><strong>' + tx(ind.label_es, ind.label_en) + '.</strong> ' + figure + '. ' +
+          tx(ind.source_es, ind.source_en) + ' · ' + ind.year + '.</p>' +
+          (offer ? '<p><strong>' + tx('Oferta. ', 'Supply. ') + '</strong>' + offer + '</p>' : '') +
+          (demand ? '<p><strong>' + tx('Demanda. ', 'Demand. ') + '</strong>' + demand + '</p>' : '') +
+          (balances ? '<p><strong>' + tx('Balance. ', 'Balance. ') + '</strong></p>' + balances : '') +
+          (leverOn ? '<p><strong>' + tx('Palanca. ', 'Lever. ') + '</strong>' + tx(lever.read_es, lever.read_en) + '</p>' : '') +
+          (recs ? '<p><strong>' + tx('Recomendación. ', 'Recommendation. ') + '</strong></p>' + recs : '') +
+          '<p><a href="' + m.vista + '">' + tx('Vista: ', 'View: ') + tx(m.vista_es, m.vista_en) + '</a>' +
+          (learn ? ' · <a href="' + learn + '">' + tx('Aprendizaje de este tema', 'Learning for this theme') + '</a>' : '') +
+          ' · <a href="' + m.crecimiento + '">' + tx('Demanda y oferta', 'Demand and supply') + '</a></p>';
+        if (el) el.innerHTML = html;
+        if (side) side.innerHTML = '<p><a href="#cdt-fiche">' + m.name + '</a> · ' + figure + '</p>';
       }
 
       function renderScatter() {
@@ -1250,6 +1289,7 @@ const icon: Record<string, string> = {
           card.classList.toggle('is-lever', on);
         });
         renderCruce();
+        renderDetail();
         focusPath(false);
         renderSheet();
         updateMapLink();
@@ -1295,6 +1335,8 @@ const icon: Record<string, string> = {
           '<p><strong>' + tx('Tema. ', 'Theme. ') + '</strong>' + tx(theme.es, theme.en) + '</p>' +
           '<p><strong>' + tx('Escenario. ', 'Scenario. ') + '</strong>' + tx(sc.title_es, sc.title_en) + '. ' + tx(sc.blurb_es, sc.blurb_en) + '</p>' +
           '<p><strong>' + tx('Palanca. ', 'Lever. ') + '</strong>' + (lever ? tx(lever.label_es, lever.label_en) + '. ' + tx(lever.read_es, lever.read_en) : tx('Ninguna.', 'None.')) + '</p>' +
+          '<p><strong>' + tx('Municipio. ', 'Municipality. ') + '</strong>' + muniByName(state.muni).name + '. ' +
+          tx(ind.label_es, ind.label_en) + ': ' + (hasNum(muniByName(state.muni)[state.z]) ? fmt(state.z, muniByName(state.muni)[state.z]) : '—') + '.</p>' +
           '<p><strong>' + tx('Municipios en tensión. ', 'Municipalities under stress. ') + '</strong>' + (sc.stress || []).join(' · ') + '</p>' +
           '<p><strong>' + tx('Altura. ', 'Height. ') + '</strong>' + tx(ind.label_es, ind.label_en) + ' · ' + tx(ind.source_es, ind.source_en) + '. ' +
           (missing.length ? tx('Sin cifra: ', 'No figure: ') + missing.join(' · ') + '.' : tx('Los cinco municipios tienen cifra.', 'All five municipalities have a figure.')) + '</p>' +
@@ -1561,11 +1603,35 @@ const icon: Record<string, string> = {
         reduced: reduceMotion,
         onMunicipality: function (name) { selectMuni(name); },
       }) : Promise.reject();
+      function armTip(is3d) {
+        var tip = document.getElementById('cdt-3d-tip');
+        if (!tip) return;
+        try { if (localStorage.getItem('bcs-gemelo-3d-tip') === '1') return; } catch (e) {}
+        var reduce = false;
+        try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+        var es, en;
+        if (is3d && !reduce) {
+          es = 'Para mirar el relieve: pulse Vista 3D para inclinar, Girar para rotar, y Estado para encuadrar el estado. Capas enciende el tema. El camino es diagnóstico, meta, escenario y recomendación. Toque un municipio para su ficha.';
+          en = 'To look at the terrain: press 3D view to tilt, Rotate to turn, and State to frame the state. Layers turns the theme on. The path is diagnosis, goal, scenario and recommendation. Tap a municipality for its fiche.';
+        } else {
+          es = 'La vista queda quieta. Capas enciende el tema. El camino es diagnóstico, meta, escenario y recomendación. Toque un municipio para su ficha. Estado encuadra el estado.';
+          en = 'The view stays still. Layers turns the theme on. The path is diagnosis, goal, scenario and recommendation. Tap a municipality for its fiche. State frames the state.';
+        }
+        tip.hidden = false;
+        tip.innerHTML = '<p>' + tx(es, en) + '</p><button type="button" id="cdt-3d-tip-ok">' + tx('Entendido', 'Got it') + '</button>';
+        var ok = document.getElementById('cdt-3d-tip-ok');
+        if (ok) ok.addEventListener('click', function () {
+          try { localStorage.setItem('bcs-gemelo-3d-tip', '1'); } catch (e) {}
+          tip.hidden = true;
+        });
+      }
       boot3d.then(function (eng) {
         gl = eng;
         refreshMuniStyle();
+        armTip(true);
       }).catch(function () {
         ensure2d();
+        armTip(false);
         return bootMunis();
       }).then(function () {
         return syncLayers();

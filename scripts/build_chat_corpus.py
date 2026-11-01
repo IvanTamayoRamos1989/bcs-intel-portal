@@ -2175,6 +2175,36 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-ficha-p24",
+        "title": "Ficha municipal del gemelo / Municipal fiche on the twin",
+        "path": "portal/gemelo",
+        "href": "/gemelo/?muni=Los%20Cabos",
+        "theme": "planeacion",
+        "sum_es": (
+            "Al tocar un municipio en /gemelo se abre su ficha, sin salir de la página. "
+            "Trae el nombre, la cifra elegida para la altura con su unidad, fuente y año, o un — si esa cifra no existe. "
+            "La demanda, la oferta y el balance son los textos ya escritos para ese lugar. "
+            "La recomendación es la regla del escenario y de la palanca, si aplica a ese municipio. "
+            "La ficha enlaza la vista guardada y el aprendizaje del tema. "
+            "El enlace guarda muni junto con tema, escenario, camino, palanca, altura y comparación. "
+            "Pregunta de seguimiento: ¿abre la ficha de Los Cabos o la de Loreto? "
+            "[ficha municipal demanda y oferta gemelo]"
+        ),
+        "sum_en": (
+            "Tapping a municipality on /gemelo opens its fiche, without leaving the page. "
+            "It shows the name, the figure chosen for the height with its unit, source and year, or an em dash if that figure does not exist. "
+            "Demand, supply and balance are the texts already written for that place. "
+            "The recommendation is the scenario and lever rule, when it applies to that municipality. "
+            "The fiche links the saved view and the theme’s learning page. "
+            "The link keeps muni together with theme, scenario, path, lever, height and comparison. "
+            "Follow-up: do you open the Los Cabos fiche or the Loreto one? "
+            "[municipal fiche twin demand and supply]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
