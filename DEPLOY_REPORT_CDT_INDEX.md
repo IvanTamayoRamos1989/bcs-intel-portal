@@ -65,3 +65,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 2.2 | `DEPLOY_REPORT_CDT_P2_2.md` | Four-step decision path and a printable scenario sheet |
 | 2.3 | `DEPLOY_REPORT_CDT_P2_3.md` | Qualitative cross-theme reading and scenario ontology chips |
 | 2.4 | `DEPLOY_REPORT_CDT_P2_4.md` | Municipality decision fiche and a first-visit guide to the 3D view |
+| 2.5 | `DEPLOY_REPORT_CDT_P2_5.md` | Side-by-side scenario compare from the layers each scenario already uses |

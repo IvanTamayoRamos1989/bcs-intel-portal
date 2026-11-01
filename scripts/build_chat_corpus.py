@@ -2205,6 +2205,36 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-lado-p25",
+        "title": "Comparar escenarios lado a lado / Compare scenarios side by side",
+        "path": "portal/gemelo",
+        "href": "/gemelo/?scenario=baseline&compare=water_first",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo, Comparar con deja ver dos escenarios a la vez. "
+            "En pantalla ancha hay dos mapas con el mismo encuadre: A es el escenario elegido y B es la comparación. "
+            "En pantalla estrecha, Ver A, Ambos y Ver B cambian las capas sin mover la cámara. "
+            "Qué cambia dice en una frase la diferencia y lista solo en A, solo en B y en ambos. "
+            "Esas capas ya están en los escenarios. No se inventan. "
+            "El enlace guarda compare. "
+            "Pregunta de seguimiento: ¿compara agua primero con la trayectoria actual, o el corredor con los puertos? "
+            "[comparar escenarios lado a lado escenario a y b]"
+        ),
+        "sum_en": (
+            "On /gemelo, Compare with shows two scenarios at once. "
+            "On a wide screen there are two maps with the same frame: A is the chosen scenario and B is the comparison. "
+            "On a narrow screen, View A, Both and View B change the layers without moving the camera. "
+            "What changes says the difference in one sentence and lists only in A, only in B and in both. "
+            "Those layers are already in the scenarios. None are invented. "
+            "The link keeps compare. "
+            "Follow-up: do you compare water first with the current trajectory, or the corridor with the ports? "
+            "[compare scenarios side by side scenario A and B]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

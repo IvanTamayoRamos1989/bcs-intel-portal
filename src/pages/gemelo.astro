@@ -50,8 +50,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.4 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.4 · decision support</span>
+          <span data-lang-es>Fase 2.5 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.5 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -111,8 +111,8 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.4)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.4)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.5)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.5)</span>
           </h2>
           <p>
             <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
@@ -129,6 +129,10 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>Al tocar un municipio se abre su ficha, sin salir de esta página: la cifra elegida, la demanda y oferta ya escritas, y la recomendación del escenario. Si falta la cifra, se lee —.</span>
             <span data-lang-en hidden>Tapping a municipality opens its fiche, without leaving this page: the chosen figure, the demand and supply already written, and the scenario recommendation. If the figure is missing, it reads —.</span>
+          </p>
+          <p>
+            <span data-lang-es>Comparar muestra los dos escenarios a la vez en pantalla ancha, o Ver A y Ver B en pantalla estrecha. Son las mismas capas. No es un modelo nuevo.</span>
+            <span data-lang-en hidden>Compare shows both scenarios at once on a wide screen, or View A and View B on a narrow one. They are the same layers. It is not a new model.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -191,6 +195,14 @@ const icon: Record<string, string> = {
       </nav>
 
       <div class="cdt-map-col" data-step="diagnostico">
+        <div class="cdt-ab" id="cdt-ab" hidden>
+          <button type="button" data-ab="a"><span data-lang-es>Ver A</span><span data-lang-en hidden>View A</span></button>
+          <button type="button" data-ab="both" aria-pressed="true"><span data-lang-es>Ambos</span><span data-lang-en hidden>Both</span></button>
+          <button type="button" data-ab="b"><span data-lang-es>Ver B</span><span data-lang-en hidden>View B</span></button>
+        </div>
+        <div class="cdt-stage" id="cdt-stage">
+        <div class="cdt-pane">
+          <p class="cdt-pane-kicker" id="cdt-pane-a" hidden></p>
         <div class="cdt-map-frame">
           <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial" data-aria-es="Mapa del gemelo territorial" data-aria-en="Territorial twin map"></div>
           <aside id="cdt-3d-tip" class="cdt-3d-tip" hidden></aside>
@@ -199,6 +211,12 @@ const icon: Record<string, string> = {
             <button type="button" id="cdt-rot"><span data-lang-es>Girar</span><span data-lang-en hidden>Rotate</span></button>
             <button type="button" id="cdt-north"><span data-lang-es>Norte</span><span data-lang-en hidden>North</span></button>
             <button type="button" id="cdt-fit"><span data-lang-es>Estado</span><span data-lang-en hidden>State</span></button>
+          </div>
+        </div>
+        </div>
+          <div class="cdt-pane" id="cdt-map-b-frame" hidden>
+            <p class="cdt-pane-kicker" id="cdt-pane-b"></p>
+            <div id="cdt-map-b" class="cdt-map-b" role="application" aria-label="Mapa del escenario comparado" data-aria-es="Mapa del escenario comparado" data-aria-en="Comparison scenario map"></div>
           </div>
         </div>
         <div id="cdt-extrude" class="cdt-extrude"></div>
@@ -572,7 +590,18 @@ const icon: Record<string, string> = {
     .cdt-scenarios { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
     .cdt-compare-pick { display: flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; color: var(--cdt-muted); }
     .cdt-compare-pick select { font: inherit; color: var(--cdt-ink); border: 1px solid var(--cdt-line); border-radius: 999px; padding: 0.3rem 0.6rem; background: #fff; }
+    .cdt-stage.is-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; align-items: start; }
+    .cdt-pane-kicker { margin: 0 0 0.25rem; color: var(--cdt-dark); font-size: 0.78rem; font-weight: 700; }
+    .cdt-map-b { height: min(52vh, 520px); min-height: 240px; width: 100%; border: 1px solid var(--cdt-line); border-radius: 12px; background: #d7e3ea; }
+    .cdt-ab { display: none; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 0.35rem; }
+    .cdt-ab.is-on { display: flex; }
+    .cdt-ab button { font: inherit; cursor: pointer; border: 1px solid var(--cdt); background: #fff; color: var(--cdt-dark); border-radius: 999px; padding: 0.28rem 0.7rem; font-size: 0.8rem; font-weight: 700; }
+    .cdt-ab button[aria-pressed="true"] { background: var(--cdt); color: #fff; }
     .cdt-map-frame { position: relative; }
+    @media (max-width: 979px) {
+      .cdt-stage.is-split { display: block; }
+      #cdt-map-b-frame { display: none !important; }
+    }
     .cdt-map-tools { position: absolute; z-index: 2; top: 0.45rem; left: 0.45rem; display: flex; flex-wrap: wrap; gap: 0.28rem; max-width: calc(100% - 0.9rem); }
     .cdt-map-tools button { font: inherit; font-size: 0.75rem; font-weight: 650; background: #fff; border: 1px solid #0083C4; color: #006BA3; border-radius: 999px; padding: 0.22rem 0.55rem; cursor: pointer; }
     .cdt-map-tools button:focus-visible, .cdt-compare-pick select:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
@@ -614,6 +643,7 @@ const icon: Record<string, string> = {
     .cdt-theme-btn[aria-pressed="true"] { background: var(--cdt); border-color: var(--cdt); color: #fff; }
     .cdt-map-col { min-width: 0; }
     #cdt-map { height: min(72vh, 760px); min-height: 420px; width: 100%; border: 1px solid var(--cdt-line); border-radius: 12px; background: #d7e3ea; }
+    .cdt-stage.is-split #cdt-map, .cdt-stage.is-split .cdt-map-b { height: min(52vh, 520px); min-height: 280px; }
     .cdt-map-note, .cdt-layers, .cdt-open, .cdt-fine, .cdt-gap { color: var(--cdt-muted); font-size: 0.8rem; line-height: 1.4; }
     .cdt-map-note { margin: 0.4rem 0 0.15rem; }
     .cdt-layers { margin: 0; }
@@ -738,6 +768,7 @@ const icon: Record<string, string> = {
         compare: '',
         lever: '',
         path: '',
+        ab: 'both',
         z: 'pob',
         x: 'pob',
         y: 'sniiv_2025',
@@ -1061,6 +1092,32 @@ const icon: Record<string, string> = {
       function wantedLayers() {
         return uniq(presetIds().filter(function (id) { return !layerOff[id]; }).concat(Object.keys(layerExtra)));
       }
+      function partition() {
+        var theme = (themeById(state.theme).layers || []).slice();
+        var aList = theme.concat(scenarioById(state.scenario).priority_layer_ids || []);
+        var bList = state.compare ? theme.concat(scenarioById(state.compare).priority_layer_ids || []) : theme.slice();
+        function bag(list) {
+          var o = {};
+          list.forEach(function (id) { if (id && !layerOff[id]) o[id] = 1; });
+          Object.keys(layerExtra).forEach(function (id) { o[id] = 1; });
+          return o;
+        }
+        var A = bag(aList);
+        var B = state.compare ? bag(bList) : {};
+        var onlyA = [];
+        var onlyB = [];
+        var both = [];
+        Object.keys(A).forEach(function (id) {
+          if (!state.compare || B[id]) both.push(id);
+          else onlyA.push(id);
+        });
+        if (state.compare) Object.keys(B).forEach(function (id) { if (!A[id]) onlyB.push(id); });
+        return { onlyA: onlyA, onlyB: onlyB, both: both, A: A, B: B };
+      }
+      function idsOf(bag) { return Object.keys(bag); }
+      function wideScreen() {
+        try { return window.matchMedia('(min-width: 980px)').matches; } catch (e) { return true; }
+      }
       function compareOnly() {
         var only = {};
         if (!state.compare) return only;
@@ -1124,7 +1181,12 @@ const icon: Record<string, string> = {
       }
 
       function syncLayers() {
+        var partNow = partition();
+        var splitNow = !!(state.compare && glB && wideScreen());
         var ids = wantedLayers();
+        if (state.compare && splitNow) ids = idsOf(partNow.A);
+        else if (state.compare && state.ab === 'a') ids = idsOf(partNow.A);
+        else if (state.compare && state.ab === 'b') ids = idsOf(partNow.B);
         var want = {};
         ids.forEach(function (id) { want[id] = 1; });
         var cmp = compareOnly();
@@ -1137,18 +1199,50 @@ const icon: Record<string, string> = {
         if (nameEl) nameEl.textContent = tx('Capas: ', 'Layers: ') + names.join(' · ');
         renderCapas(ids, cmp);
         if (gl) {
+          var part = partition();
+          var split = !!(state.compare && glB && wideScreen());
+          var showIds = ids;
+          var hi = cmp;
+          if (state.compare && !split) {
+            if (state.ab === 'a') { showIds = idsOf(part.A); hi = {}; }
+            else if (state.ab === 'b') { showIds = idsOf(part.B); hi = {}; }
+          } else if (split) {
+            showIds = idsOf(part.A);
+            hi = {};
+          }
+          var showSet = {};
+          showIds.forEach(function (id) { showSet[id] = 1; });
           model.layerCatalog.forEach(function (meta) {
-            if (!want[meta.id] && gl.hide) gl.hide(meta.id);
+            if (!showSet[meta.id] && gl.hide) gl.hide(meta.id);
           });
-          return Promise.all(ids.map(function (id) {
+          var jobs = showIds.map(function (id) {
             var meta = layerMeta(id);
-            if (!meta) return 'fail';
+            if (!meta) return Promise.resolve('fail');
             return gl.load(meta).then(function (geo) {
               if (!geo) return 'fail';
-              gl.show(id, geo, meta, cmp[id] ? 'compare' : 'on');
+              gl.show(id, geo, meta, hi[id] ? 'compare' : 'on');
               return 'ok';
             });
-          })).then(function (flags) {
+          });
+          if (split) {
+            var bSet = {};
+            idsOf(part.B).forEach(function (id) { bSet[id] = 1; });
+            model.layerCatalog.forEach(function (meta) {
+              if (!bSet[meta.id] && glB.hide) glB.hide(meta.id);
+            });
+            idsOf(part.B).forEach(function (id) {
+              var meta = layerMeta(id);
+              if (!meta) return;
+              jobs.push(glB.load(meta).then(function (geo) {
+                if (!geo) return 'fail';
+                glB.show(id, geo, meta, 'on');
+                if (glB.paintMunis) glB.paintMunis(muniColors());
+                if (glB.setExtrusion) glB.setExtrusion(extrusionHeights());
+                return 'ok';
+              }));
+            });
+          }
+          return Promise.all(jobs).then(function (flags) {
             var failed = flags.filter(function (f) { return f === 'fail'; });
             if (failed.length) setStatus('Algunas capas no cargaron.', 'Some layers did not load.');
             else setStatus(
@@ -1192,6 +1286,7 @@ const icon: Record<string, string> = {
             if (gl) {
               gl.resize();
               gl.fitBox(b && b.length === 4 ? b : null);
+              if (glB && gl.readCamera) glB.jumpCamera(gl.readCamera());
               return;
             }
             if (!map || !b || b.length !== 4) return;
@@ -1289,6 +1384,7 @@ const icon: Record<string, string> = {
           card.classList.toggle('is-lever', on);
         });
         renderCruce();
+        renderSplitChrome();
         renderDetail();
         focusPath(false);
         renderSheet();
@@ -1333,7 +1429,9 @@ const icon: Record<string, string> = {
         host.innerHTML =
           '<h2>' + tx('Hoja del escenario', 'Scenario sheet') + '</h2>' +
           '<p><strong>' + tx('Tema. ', 'Theme. ') + '</strong>' + tx(theme.es, theme.en) + '</p>' +
-          '<p><strong>' + tx('Escenario. ', 'Scenario. ') + '</strong>' + tx(sc.title_es, sc.title_en) + '. ' + tx(sc.blurb_es, sc.blurb_en) + '</p>' +
+          '<p><strong>' + tx('Escenario. ', 'Scenario. ') + '</strong>' + tx(sc.title_es, sc.title_en) +
+          (state.compare ? ' · ' + tx('comparado con ', 'compared with ') + tx(scenarioById(state.compare).title_es, scenarioById(state.compare).title_en) : '') +
+          '. ' + tx(sc.blurb_es, sc.blurb_en) + '</p>' +
           '<p><strong>' + tx('Palanca. ', 'Lever. ') + '</strong>' + (lever ? tx(lever.label_es, lever.label_en) + '. ' + tx(lever.read_es, lever.read_en) : tx('Ninguna.', 'None.')) + '</p>' +
           '<p><strong>' + tx('Municipio. ', 'Municipality. ') + '</strong>' + muniByName(state.muni).name + '. ' +
           tx(ind.label_es, ind.label_en) + ': ' + (hasNum(muniByName(state.muni)[state.z]) ? fmt(state.z, muniByName(state.muni)[state.z]) : '—') + '.</p>' +
@@ -1434,6 +1532,7 @@ const icon: Record<string, string> = {
           return '<li>' + name + (cmp[id] ? ' · ' + tx('solo en la comparación', 'only in the comparison') : '') + '</li>';
         }).join('');
         var other = state.compare ? scenarioById(state.compare) : null;
+        var part = partition();
         var lever = currentLever();
         var ind = indicatorById(state.z);
         var missing = model.munis.filter(function (m) { return !hasNum(m[state.z]); }).map(function (m) { return m.name; });
@@ -1444,11 +1543,94 @@ const icon: Record<string, string> = {
           (missing.length ? tx('Sin volumen: ', 'No volume: ') + missing.join(' · ') + '.' : tx('Los cinco municipios tienen cifra.', 'All five municipalities have a figure.')) + '</p>' +
           '<p><strong>' + tx('Municipios en tensión: ', 'Municipalities under stress: ') + '</strong>' + (sc.stress || []).join(' · ') + '</p>' +
           (other ? '<p><strong>' + tx('Comparado con ', 'Compared with ') + tx(other.title_es, other.title_en) + '.</strong> ' +
-            (Object.keys(cmp).length
-              ? tx('Se suman capas que este escenario no trae: ', 'Layers this scenario does not already include: ') + Object.keys(cmp).map(function (id) { var meta = layerMeta(id); return meta ? tx(meta.name_es, meta.name_en) : id; }).join(' · ') + '.'
+            (part.onlyB.length
+              ? tx('Se suman capas que este escenario no trae: ', 'Layers this scenario does not already include: ') + layerNames(part.onlyB) + '.'
               : tx('Este escenario ya incluye las capas del otro.', 'This scenario already includes the other scenario’s layers.')) +
-            '</p>' : '') +
-          '<ul>' + lines + '</ul>';
+            '</p>' +
+            '<p><strong>' + tx('Solo en A. ', 'Only in A. ') + '</strong>' + layerNames(part.onlyA) + '</p>' +
+            '<p><strong>' + tx('Solo en B. ', 'Only in B. ') + '</strong>' + layerNames(part.onlyB) + '</p>' +
+            '<p><strong>' + tx('En ambos. ', 'In both. ') + '</strong>' + layerNames(part.both) + '</p>'
+            : '<ul>' + lines + '</ul>');
+      }
+
+      function layerNames(ids) {
+        if (!ids || !ids.length) return tx('Ninguna.', 'None.');
+        return ids.map(function (id) {
+          var meta = layerMeta(id);
+          return meta ? tx(meta.name_es, meta.name_en) : id;
+        }).join(' · ');
+      }
+
+      function renderSplitChrome() {
+        var on = !!state.compare;
+        var stage = document.getElementById('cdt-stage');
+        var frameB = document.getElementById('cdt-map-b-frame');
+        var bar = document.getElementById('cdt-ab');
+        var split = on && wideScreen() && !!gl;
+        if (stage) stage.classList.toggle('is-split', split);
+        if (frameB) frameB.hidden = !split;
+        if (bar) {
+          bar.classList.toggle('is-on', on && !split);
+          bar.hidden = !(on && !split);
+          bar.querySelectorAll('[data-ab]').forEach(function (btn) {
+            btn.setAttribute('aria-pressed', btn.getAttribute('data-ab') === state.ab ? 'true' : 'false');
+          });
+        }
+        var aTitle = document.getElementById('cdt-pane-a');
+        var bTitle = document.getElementById('cdt-pane-b');
+        var sc = scenarioById(state.scenario);
+        var other = state.compare ? scenarioById(state.compare) : null;
+        if (aTitle) {
+          aTitle.hidden = !on;
+          aTitle.textContent = on ? 'A · ' + tx(sc.title_es, sc.title_en) : '';
+        }
+        if (bTitle && other) bTitle.textContent = 'B · ' + tx(other.title_es, other.title_en);
+      }
+
+      var glB = null;
+      var camerasLinked = false;
+      function linkCameras() {
+        if (!gl || !glB || camerasLinked || !gl.watchMove) return;
+        camerasLinked = true;
+        var lock = false;
+        function follow(src, dst) {
+          src.watchMove(function () {
+            if (lock) return;
+            lock = true;
+            dst.jumpCamera(src.readCamera());
+            lock = false;
+          });
+        }
+        follow(gl, glB);
+        follow(glB, gl);
+      }
+      function ensureGlB() {
+        renderSplitChrome();
+        if (!state.compare || !gl || !wideScreen() || !window.CDT3D) {
+          return Promise.resolve(null);
+        }
+        if (glB) {
+          linkCameras();
+          if (gl.readCamera) glB.jumpCamera(gl.readCamera());
+          return Promise.resolve(glB);
+        }
+        var reduce = false;
+        try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+        return CDT3D.start({
+          container: 'cdt-map-b',
+          reduced: reduce,
+          tools: false,
+          onMunicipality: function (name) { selectMuni(name); },
+        }).then(function (eng) {
+          glB = eng;
+          if (gl.readCamera) eng.jumpCamera(gl.readCamera());
+          linkCameras();
+          return eng;
+        }).catch(function () {
+          glB = null;
+          renderSplitChrome();
+          return null;
+        });
       }
 
       function renderCapas(onIds, cmp) {
@@ -1529,9 +1711,10 @@ const icon: Record<string, string> = {
       var cmpSel = document.getElementById('cdt-compare');
       if (cmpSel) cmpSel.addEventListener('change', function () {
         state.compare = cmpSel.value && cmpSel.value !== state.scenario ? cmpSel.value : '';
+        state.ab = 'both';
         resetLayerPins();
         applyChrome();
-        syncLayers();
+        ensureGlB().then(function () { return syncLayers(); }).then(fitScenario);
       });
       document.querySelectorAll('[data-muni-btn]').forEach(function (btn) {
         btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-muni-btn')); });
@@ -1577,6 +1760,13 @@ const icon: Record<string, string> = {
           focusPath(true);
           renderSheet();
           writeUrl();
+        });
+      });
+      document.querySelectorAll('#cdt-ab [data-ab]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          state.ab = btn.getAttribute('data-ab') || 'both';
+          renderSplitChrome();
+          syncLayers();
         });
       });
 
@@ -1629,6 +1819,7 @@ const icon: Record<string, string> = {
         gl = eng;
         refreshMuniStyle();
         armTip(true);
+        return ensureGlB();
       }).catch(function () {
         ensure2d();
         armTip(false);

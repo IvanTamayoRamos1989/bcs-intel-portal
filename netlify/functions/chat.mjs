@@ -1136,6 +1136,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(ficha.id);
     }
   }
+  if (sideQuery(query)) {
+    const side = corpus.find((c) => c.id === 'portal:gemelo-lado-p25');
+    if (side && !usedId.has(side.id)) {
+      picked.unshift(side);
+      usedId.add(side.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1616,6 +1623,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== ficha.id);
       picked.length = 0;
       picked.push(ficha, ...rest);
+    }
+  }
+  if (sideQuery(query)) {
+    const side = corpus.find((c) => c.id === 'portal:gemelo-lado-p25');
+    if (side) {
+      const rest = picked.filter((c) => c.id !== side.id);
+      picked.length = 0;
+      picked.push(side, ...rest);
     }
   }
 
@@ -2338,6 +2353,7 @@ function rutaQuery(message) {
 }
 
 function gemelo3dQuery(message) {
+  if (sideQuery(message)) return false;
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message) || limitsQuery(message) || cierreQuery(message) || rutaQuery(message)) return false;
   const q = normQ(message);
   return /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/.test(q);
@@ -2365,6 +2381,11 @@ function fichaQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message) || limitsQuery(message) || cierreQuery(message) || rutaQuery(message) || gemelo3dQuery(message) || extrusionQuery(message) || caminoQuery(message) || cruceQuery(message)) return false;
   const q = normQ(message);
   return /ficha municipal|demanda y oferta gemelo|municipal fiche|twin demand and supply/.test(q);
+}
+
+function sideQuery(message) {
+  const q = normQ(message);
+  return /comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/.test(q);
 }
 
 function limitsQuery(message) {
@@ -2415,6 +2436,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-lado', re: /comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/, href: '/gemelo/?scenario=baseline&compare=water_first', es: 'Comparar lado a lado', en: 'Compare side by side' },
+    { id: 'gemelo-lado-b', re: /comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/, href: '/gemelo/?path=escenario', es: 'Qué cambia', en: 'What changes' },
     { id: 'gemelo-3d', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/', es: 'Gemelo 3D', en: '3D twin' },
     { id: 'gemelo-3d-limites', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
     { id: 'gemelo-extrusion', re: /extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/, href: '/gemelo/?z=pob', es: 'Altura municipal', en: 'Municipal height' },
@@ -2474,6 +2497,7 @@ function portalGuideBoost(message, chunk) {
     [/camino de decision|diagnostico gemelo|recomendacion gemelo|decision path|twin diagnosis|twin recommendation/, /gemelo-camino/],
     [/impacto entre temas|efectos cruzados|ontologia del escenario|cross-theme impact|cross effects|scenario ontology/, /gemelo-cruce/],
     [/ficha municipal|demanda y oferta gemelo|municipal fiche|twin demand and supply/, /gemelo-ficha/],
+    [/comparar escenarios lado a lado|escenario a y b|compare scenarios side by side|scenario a and b/, /gemelo-lado/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2873,6 +2897,9 @@ async function handlerInner(event) {
   const fichaGuide = fichaQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-ficha-p24')
     : null;
+  const sideGuide = sideQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-lado-p25')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2930,6 +2957,10 @@ async function handlerInner(event) {
   }
   if (fichaGuide && !evidence.some((c) => c.id === fichaGuide.id)) {
     evidence = [fichaGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (sideGuide && !evidence.some((c) => c.id === sideGuide.id)) {
+    evidence = [sideGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

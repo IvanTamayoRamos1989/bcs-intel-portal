@@ -145,7 +145,7 @@
         touchPitch: !reduced,
         cooperativeGestures: false,
       });
-      map.addControl(new maplibregl.NavigationControl({ visualizePitch: true, showCompass: true }), 'top-right');
+      if (opts.tools !== false) map.addControl(new maplibregl.NavigationControl({ visualizePitch: true, showCompass: true }), 'top-right');
       var stateBox = (base && base.bounds)
         ? [base.bounds[0][0], base.bounds[0][1], base.bounds[1][0], base.bounds[1][1]]
         : STATE;
@@ -255,6 +255,7 @@
         btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
       }
       function bindTools() {
+        if (opts.tools === false) return;
         var pitchBtn = document.getElementById('cdt-pitch');
         var rot = document.getElementById('cdt-rot');
         var north = document.getElementById('cdt-north');
@@ -307,6 +308,15 @@
             show: show,
             hide: hide,
             load: load,
+            readCamera: function () {
+              var c = map.getCenter();
+              return { lng: c.lng, lat: c.lat, zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
+            },
+            jumpCamera: function (cam) {
+              if (!cam) return;
+              map.jumpTo({ center: [cam.lng, cam.lat], zoom: cam.zoom, bearing: cam.bearing, pitch: cam.pitch });
+            },
+            watchMove: function (fn) { map.on('move', fn); },
           });
         });
         function fail(err) {
