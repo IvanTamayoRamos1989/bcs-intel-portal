@@ -225,6 +225,7 @@
     showFicha(html, { type: 'muni', key: `muni-${name}`, name, munis: [name] });
     setSelectionHighlight(f);
     if (fly) frame(f.geometry, { maxZoom: 9 });
+    refreshGemeloLink();
   }
   function itemLi(i) {
     const href = i.url || i.href;

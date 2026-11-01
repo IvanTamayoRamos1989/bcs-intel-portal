@@ -94,6 +94,8 @@ const v = Date.now().toString(36);
       <p class="ex-flag" id="ex-relief-flag" hidden>Relieve exagerado 2.5× para leer la forma; las alturas no son reales</p>
 
       <div class="ex-toolbar" role="toolbar" aria-label="Controles del mapa">
+        <a class="ex-tool" id="ex-gemelo" href="/gemelo/?path=diagnostico"><span data-lang-es>Gemelo territorial</span><span data-lang-en hidden>Decision twin</span></a>
+        <span class="ex-sep" aria-hidden="true"></span>
         <button type="button" class="ex-tool" id="ex-home">Ver todo BCS</button>
         <span class="ex-sep" aria-hidden="true"></span>
         <button type="button" class="ex-tool icon" id="ex-zout" aria-label="Alejar">−</button>
@@ -260,6 +262,7 @@ const v = Date.now().toString(36);
     </dialog>
 
     <ChatWidget />
+    <script is:inline src="/lang-toggle.js"></script>
     <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
     <script is:inline src={`/explorar/explorer.js?v=${v}`}></script>
   </body>
