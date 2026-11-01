@@ -3,8 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HowTo from '../components/HowTo.astro';
 import PathBanner from '../components/PathBanner.astro';
 import { cdtModel } from '../lib/cdtModel';
+import { ficheStills } from '../lib/vistaStills';
 
-const model = cdtModel;
+const stillsByMuni = ficheStills();
+const model = {
+  ...cdtModel,
+  munis: cdtModel.munis.map((m) => ({ ...m, stills: stillsByMuni[m.name] || [] })),
+};
 const learnByTheme: Record<string, string> = {
   urbano: '/aprendizaje/#planeacion',
   economia: '/aprendizaje/#vivienda',
@@ -50,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.6 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.6 · decision support</span>
+          <span data-lang-es>Fase 2.7 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.7 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -111,6 +116,7 @@ const icon: Record<string, string> = {
             { es: 'Recomendación: la regla del portal para el municipio y el escenario. Imprima esa hoja para la reunión.', en: 'Recommendation: the portal rule for the municipality and the scenario. Print that sheet for the meeting.' },
             { es: 'Toque un municipio: la ficha muestra la cifra elegida, la demanda y oferta ya escritas, y la recomendación. Si falta la cifra, se lee —.', en: 'Tap a municipality: the fiche shows the chosen figure, the demand and supply already written, and the recommendation. If the figure is missing, it reads —.' },
             { es: 'Para la reunión hay cuatro aperturas listas. Son puntos de partida, no pronósticos.', en: 'For the meeting there are four ready openings. They are starting points, not forecasts.' },
+            { es: 'La ficha puede mostrar hasta tres fotogramas que ya están en la vista de ese municipio. La leyenda de la altura dice la cifra. Sin cifra, el municipio queda plano.', en: 'The fiche can show up to three frames already in that municipality’s view. The height legend names the figure. With no figure, the municipality stays flat.' },
           ]}
         />
         <aside class="cdt-tip">
@@ -130,8 +136,8 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.6)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.6)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.7)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.7)</span>
           </h2>
           <p>
             <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
@@ -156,6 +162,10 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>Para la reunión son cuatro aperturas listas. Son puntos de partida, no pronósticos.</span>
             <span data-lang-en hidden>For the meeting there are four ready openings. They are starting points, not forecasts.</span>
+          </p>
+          <p>
+            <span data-lang-es>La ficha puede mostrar hasta tres fotogramas del territorio que ya están en la vista de ese municipio. Si no hay foto, esa franja no aparece. La leyenda de la altura dice la cifra, la unidad y la fuente. Sin cifra, el municipio queda plano. No es cero.</span>
+            <span data-lang-en hidden>The fiche can show up to three territory frames already in that municipality’s view. If there is no photo, that strip does not appear. The height legend names the figure, the unit and the source. With no figure, the municipality stays flat. It is not zero.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -243,7 +253,13 @@ const icon: Record<string, string> = {
           </div>
         </div>
         <div id="cdt-extrude" class="cdt-extrude"></div>
-        <aside id="cdt-fiche" class="cdt-fiche" aria-live="polite"></aside>
+        <details class="cdt-fiche-wrap" id="cdt-fiche-wrap">
+          <summary id="cdt-fiche-sum">
+            <span data-lang-es>Ficha del municipio</span>
+            <span data-lang-en hidden>Municipality fiche</span>
+          </summary>
+          <div id="cdt-fiche" class="cdt-fiche" aria-live="polite"></div>
+        </details>
         <p class="cdt-map-note" id="cdt-status">
           <span data-lang-es>Cargando capas del mapa…</span>
           <span data-lang-en hidden>Loading map layers…</span>
@@ -600,10 +616,25 @@ const icon: Record<string, string> = {
     .cdt-3d-tip { position: absolute; z-index: 3; left: 0.45rem; right: 3.2rem; top: 2.6rem; background: #fff; border: 1px solid #0083C4; border-left: 4px solid #0083C4; border-radius: 12px; padding: 0.55rem 0.7rem; box-shadow: 0 8px 24px rgba(0, 40, 70, 0.12); }
     .cdt-3d-tip p { margin: 0 0 0.4rem; font-size: 0.84rem; line-height: 1.4; color: #1a1a1a; }
     .cdt-3d-tip button { font: inherit; font-weight: 700; background: #0083C4; color: #fff; border: 0; border-radius: 999px; padding: 0.28rem 0.7rem; cursor: pointer; }
-    .cdt-fiche { margin-top: 0.45rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.65rem 0.75rem; background: #fff; }
+    .cdt-fiche-wrap { margin-top: 0.45rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.55rem 0.75rem 0.65rem; background: #fff; scroll-margin-top: 5rem; }
+    .cdt-fiche-wrap > summary { cursor: pointer; color: var(--cdt-dark); font-weight: 750; }
+    .cdt-fiche-wrap > summary:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+    .cdt-fiche { margin: 0; border: 0; padding: 0.35rem 0 0; background: transparent; }
     .cdt-fiche h2 { margin: 0 0 0.25rem; font-size: 1.05rem; color: var(--cdt-dark); }
     .cdt-fiche p { margin: 0.28rem 0; font-size: 0.86rem; line-height: 1.4; }
     .cdt-fiche a { color: var(--cdt-dark); font-weight: 650; }
+    .cdt-stills { display: flex; gap: 0.4rem; overflow-x: auto; margin: 0.35rem 0 0.15rem; padding-bottom: 0.15rem; }
+    .cdt-stills figure { margin: 0; flex: 0 0 7.4rem; }
+    .cdt-stills a { display: block; color: inherit; text-decoration: none; }
+    .cdt-stills img { width: 7.4rem; height: 4.2rem; object-fit: cover; border-radius: 8px; background: #e8f1f7; display: block; }
+    .cdt-stills figcaption { margin-top: 0.2rem; font-size: 0.72rem; line-height: 1.25; font-weight: 650; }
+    .cdt-still-credit { color: var(--cdt-muted); font-size: 0.75rem; }
+    @media (min-width: 981px) {
+      .cdt-fiche-wrap > summary { display: none; }
+    }
+    @media (max-width: 980px) {
+      .cdt-fiche-wrap[open] .cdt-fiche { max-height: 46vh; overflow: auto; }
+    }
     .cdt-kicker { margin: 0 0 0.2rem; color: var(--cdt); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
     .cdt h1 { margin: 0; font-size: 1.7rem; line-height: 1.15; color: var(--cdt-dark); }
     .cdt-lead { margin: 0.35rem 0 0; max-width: 46rem; color: var(--cdt-muted); font-size: 0.95rem; line-height: 1.45; }
@@ -639,6 +670,8 @@ const icon: Record<string, string> = {
     .cdt-extrude select { font: inherit; margin-left: 0.35rem; border: 1px solid var(--cdt-line); border-radius: 999px; padding: 0.2rem 0.5rem; background: #fff; }
     .cdt-extrude small, .cdt-extrude li { color: var(--cdt-muted); font-size: 0.78rem; }
     .cdt-extrude ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+    .cdt-legend { display: flex; gap: 0.45rem; align-items: flex-start; margin: 0.35rem 0 0.15rem; font-size: 0.78rem; line-height: 1.35; color: var(--cdt-ink); }
+    .cdt-legend-swatch { flex: 0 0 auto; width: 0.7rem; height: 2.4rem; border-radius: 3px; background: linear-gradient(#0083C4, #d7e3ea); border: 1px solid #c5d7e2; }
     .cdt-capas { margin-top: 0.45rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.4rem 0.7rem 0.55rem; background: #fff; }
     .cdt-capas summary { cursor: pointer; color: var(--cdt-dark); font-weight: 700; }
     .cdt-capas-q { width: 100%; margin: 0.4rem 0 0.15rem; font: inherit; border: 1px solid var(--cdt-line); border-radius: 8px; padding: 0.3rem 0.45rem; }
@@ -977,7 +1010,23 @@ const icon: Record<string, string> = {
         return null;
       }
 
-      function selectMuni(name) {
+      function esc(s) {
+        return String(s || '').replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function openFicheSheet() {
+        var wrap = document.getElementById('cdt-fiche-wrap');
+        if (!wrap) return;
+        wrap.open = true;
+        if (!window.matchMedia('(max-width: 980px)').matches) return;
+        var root = document.documentElement;
+        var prev = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        wrap.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+        root.style.scrollBehavior = prev;
+      }
+      function selectMuni(name, sheet) {
         state.muni = name;
         refreshMuniStyle();
         document.querySelectorAll('.cdt-table tr[data-muni]').forEach(function (tr) {
@@ -987,6 +1036,7 @@ const icon: Record<string, string> = {
         renderScatter();
         applyContext();
         writeUrl();
+        if (sheet) openFicheSheet();
       }
 
       function renderDetail() {
@@ -1015,8 +1065,29 @@ const icon: Record<string, string> = {
         var lever = currentLever();
         var leverOn = lever && (m.subplaces || []).some(function (s) { return s.balance === lever.balance; });
         var learn = (typeof learnByTheme !== 'undefined' && learnByTheme[state.theme]) || '';
+        var catLabel = {
+          cabecera: ['Cabecera', 'Municipal seat'],
+          localidad: ['Localidad', 'Locality'],
+          puerto: ['Puerto', 'Port'],
+          carretera: ['Carretera', 'Highway'],
+          anp: ['ANP', 'Protected area'],
+          turismo: ['Turismo', 'Tourism'],
+          tenencia: ['Propiedad del suelo', 'Land ownership'],
+        };
+        var stills = (m.stills || []).filter(function (s) { return s && typeof s.thumb === 'string' && s.thumb.indexOf('/stills/') === 0; });
+        var photos = '';
+        if (stills.length) {
+          photos = '<div class="cdt-stills">' + stills.map(function (s) {
+            var pair = catLabel[s.category];
+            var cat = pair ? tx(pair[0], pair[1]) : '';
+            return '<figure><a href="/vistas/#' + esc(s.vista) + '"><img src="' + esc(s.thumb) + '" alt="' + esc(s.name) + '" width="160" height="90" loading="lazy" onerror="var box=this.closest(\'.cdt-stills\'); var f=this.closest(\'figure\'); if(f) f.remove(); if(box && !box.querySelector(\'img\')){ var n=box.nextElementSibling; if(n && n.classList.contains(\'cdt-still-credit\')) n.remove(); box.remove(); }" /><figcaption>' + esc(s.name) + (cat ? ' · ' + esc(cat) : '') + '</figcaption></a></figure>';
+          }).join('') + '</div><p class="cdt-still-credit">' + tx('Fotograma territorial. No es una cifra. ', 'Territory frame. It is not a figure. ') + '<a href="/stills/">' + tx('Fotos del territorio', 'Territory photos') + '</a></p>';
+        }
+        var sum = document.getElementById('cdt-fiche-sum');
+        if (sum) sum.textContent = tx('Ficha · ', 'Fiche · ') + m.name;
         var html =
           '<h2>' + m.name + '</h2>' +
+          photos +
           '<p><strong>' + tx(ind.label_es, ind.label_en) + '.</strong> ' + figure + '. ' +
           tx(ind.source_es, ind.source_en) + ' · ' + ind.year + '.</p>' +
           (offer ? '<p><strong>' + tx('Oferta. ', 'Supply. ') + '</strong>' + offer + '</p>' : '') +
@@ -1086,7 +1157,7 @@ const icon: Record<string, string> = {
           dots +
           '</svg>';
         host.querySelectorAll('[data-dot]').forEach(function (g) {
-          g.addEventListener('click', function () { selectMuni(g.getAttribute('data-dot')); });
+          g.addEventListener('click', function () { selectMuni(g.getAttribute('data-dot'), true); });
         });
         var src = document.getElementById('cdt-sources');
         if (src) {
@@ -1496,7 +1567,7 @@ const icon: Record<string, string> = {
           tx('No traen coordenada propia. El enlace abre el nombre en la ontología.', 'They have no coordinate of their own. The link opens the name in the ontology.') + '</p>' +
           '<p class="cdt-nodes">' + nodes + '</p>';
         host.querySelectorAll('[data-node-muni]').forEach(function (btn) {
-          btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-node-muni')); });
+          btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-node-muni'), true); });
         });
       }
 
@@ -1525,7 +1596,7 @@ const icon: Record<string, string> = {
         var ind = indicatorById(state.z);
         var rows = model.munis.map(function (m) {
           var raw = m[state.z];
-          var value = hasNum(raw) ? fmt(state.z, raw) : tx('sin cifra, no se levanta', 'no figure, it does not rise');
+          var value = hasNum(raw) ? fmt(state.z, raw) : tx('sin cifra, queda plano', 'no figure, it stays flat');
           return '<li>' + m.name + ' · ' + value + '</li>';
         }).join('');
         var opts = model.indicators.map(function (item) {
@@ -1534,14 +1605,18 @@ const icon: Record<string, string> = {
         host.innerHTML =
           '<p><strong>' + tx('Altura municipal', 'Municipal height') + '</strong> ' +
           '<select id="cdt-z" aria-label="' + tx('Cifra de la altura', 'Height figure') + '">' + opts + '</select></p>' +
-          '<p><small>' + tx(ind.source_es, ind.source_en) + ' · ' + tx(ind.unit_es, ind.unit_en) + ' · ' + ind.year + '. ' +
+          '<p class="cdt-legend"><span class="cdt-legend-swatch" aria-hidden="true"></span><span>' +
+          tx(ind.label_es, ind.label_en) + ' · ' + tx(ind.unit_es, ind.unit_en) + ' · ' +
+          tx(ind.source_es, ind.source_en) + ' · ' + ind.year + '. ' +
+          tx('Sin cifra, el municipio queda plano. No es cero. ', 'With no figure, the municipality stays flat. It is not zero. ') +
           tx('La altura es relativa a la cifra más alta. No son metros de terreno ni edificios.', 'Height is relative to the highest figure. These are not meters of terrain or buildings.') +
           (gl ? '' : ' ' + tx('Sin mapa 3D, el círculo usa la misma cifra.', 'Without the 3D map, the circle uses the same figure.')) +
-          '</small></p><ul>' + rows + '</ul>';
+          '</span></p><ul>' + rows + '</ul>';
         var sel = document.getElementById('cdt-z');
         if (sel) sel.addEventListener('change', function () {
           state.z = sel.value;
           refreshMuniStyle();
+          renderDetail();
           renderCambia();
           writeUrl();
         });
@@ -1647,7 +1722,7 @@ const icon: Record<string, string> = {
           container: 'cdt-map-b',
           reduced: reduce,
           tools: false,
-          onMunicipality: function (name) { selectMuni(name); },
+          onMunicipality: function (name) { selectMuni(name, true); },
         }).then(function (eng) {
           glB = eng;
           if (gl.readCamera) eng.jumpCamera(gl.readCamera());
@@ -1711,7 +1786,7 @@ const icon: Record<string, string> = {
             style: styleMuni,
             onEachFeature: function (feat, layer) {
               var name = feat.properties && feat.properties.name;
-              layer.on('click', function () { if (name) selectMuni(name); });
+              layer.on('click', function () { if (name) selectMuni(name, true); });
               if (name) layer.bindTooltip(name, { sticky: true });
             },
           }).addTo(map);
@@ -1744,7 +1819,7 @@ const icon: Record<string, string> = {
         ensureGlB().then(function () { return syncLayers(); }).then(fitScenario);
       });
       document.querySelectorAll('[data-muni-btn]').forEach(function (btn) {
-        btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-muni-btn')); });
+        btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-muni-btn'), true); });
       });
 
       var selX = document.getElementById('cdt-x');
@@ -1805,7 +1880,7 @@ const icon: Record<string, string> = {
           resetLayerPins();
           applyChrome();
           ensureGlB().then(function () { return syncLayers(); }).then(fitScenario);
-          selectMuni(state.muni);
+          selectMuni(state.muni, true);
           focusPath(!!state.path);
           history.replaceState(null, '', location.pathname + location.search + '#presets');
         });
@@ -1841,6 +1916,11 @@ const icon: Record<string, string> = {
       applyChrome();
       if (state.path) window.setTimeout(function () { focusPath(true); }, 350);
       renderScatter();
+      var ficheWrap = document.getElementById('cdt-fiche-wrap');
+      if (ficheWrap && window.matchMedia('(min-width: 981px)').matches) ficheWrap.open = true;
+      window.addEventListener('resize', function () {
+        if (ficheWrap && window.matchMedia('(min-width: 981px)').matches) ficheWrap.open = true;
+      });
       selectMuni(state.muni);
       var reduceMotion = false;
       try { reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
@@ -1848,7 +1928,7 @@ const icon: Record<string, string> = {
       var boot3d = want3d ? CDT3D.start({
         container: mapEl,
         reduced: reduceMotion,
-        onMunicipality: function (name) { selectMuni(name); },
+        onMunicipality: function (name) { selectMuni(name, true); },
       }) : Promise.reject();
       function armTip(is3d) {
         var tip = document.getElementById('cdt-3d-tip');

@@ -2265,6 +2265,32 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-stills-p27",
+        "title": "Fotos en la ficha y leyenda de la altura / Photos on the fiche and the height legend",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#cdt-fiche-wrap",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo la ficha del municipio puede mostrar hasta tres fotogramas que ya están en la vista de ese lugar. "
+            "El nombre de la foto es el del lugar. Un toque abre esa vista. Si no hay foto para el municipio, la franja no aparece. "
+            "Junto al control de altura, la leyenda dice la cifra, la unidad, la fuente y el año. "
+            "Sin cifra, el municipio queda plano. No es cero. "
+            "Pregunta de seguimiento: ¿abre la ficha de Los Cabos, o la leyenda de la altura? "
+            "[fotos del municipio still gemelo leyenda extrusion]"
+        ),
+        "sum_en": (
+            "On /gemelo the municipality fiche can show up to three frames already in that place’s view. "
+            "The photo name is the place name. A tap opens that view. If the municipality has no photo, the strip does not appear. "
+            "Next to the height control, the legend names the figure, the unit, the source and the year. "
+            "With no figure, the municipality stays flat. It is not zero. "
+            "Follow-up: do you open the Los Cabos fiche, or the height legend? "
+            "[municipality photos twin still extrusion legend]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
