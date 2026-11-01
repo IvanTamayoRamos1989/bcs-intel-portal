@@ -1101,6 +1101,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(ruta.id);
     }
   }
+  if (gemelo3dQuery(query)) {
+    const twin3 = corpus.find((c) => c.id === 'portal:gemelo-3d-p20');
+    if (twin3 && !usedId.has(twin3.id)) {
+      picked.unshift(twin3);
+      usedId.add(twin3.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1541,6 +1548,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== ruta.id);
       picked.length = 0;
       picked.push(ruta, ...rest);
+    }
+  }
+  if (gemelo3dQuery(query)) {
+    const twin3 = corpus.find((c) => c.id === 'portal:gemelo-3d-p20');
+    if (twin3) {
+      const rest = picked.filter((c) => c.id !== twin3.id);
+      picked.length = 0;
+      picked.push(twin3, ...rest);
     }
   }
 
@@ -2262,6 +2277,12 @@ function rutaQuery(message) {
   return /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/.test(q);
 }
 
+function gemelo3dQuery(message) {
+  if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message) || limitsQuery(message) || cierreQuery(message) || rutaQuery(message)) return false;
+  const q = normQ(message);
+  return /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2310,6 +2331,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-3d', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/', es: 'Gemelo 3D', en: '3D twin' },
+    { id: 'gemelo-3d-limites', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
     { id: 'vista-agua', re: /agua primero|water first/, href: '/vistas/#agua-sur', es: 'Agua primero en el sur', en: 'Water first in the south' },
     { id: 'vista-corredor', re: /crecimiento cabos|corredor cabos|cabos-la paz/, href: '/vistas/#corredor', es: 'Crecimiento Cabos–La Paz', en: 'Cabos–La Paz growth' },
     { id: 'vista-puertos', re: /puertos y aeropuertos|ports and airports/, href: '/vistas/#puertos', es: 'Puertos y aeropuertos', en: 'Ports and airports' },
@@ -2353,6 +2376,7 @@ function portalGuideBoost(message, chunk) {
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
+    [/gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, /gemelo-3d/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2737,6 +2761,9 @@ async function handlerInner(event) {
   const rutaGuide = rutaQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:foro-ruta-p125')
     : null;
+  const gemelo3dGuide = gemelo3dQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-3d-p20')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2774,6 +2801,10 @@ async function handlerInner(event) {
   }
   if (rutaGuide && !evidence.some((c) => c.id === rutaGuide.id)) {
     evidence = [rutaGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (gemelo3dGuide && !evidence.some((c) => c.id === gemelo3dGuide.id)) {
+    evidence = [gemelo3dGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

@@ -9,7 +9,7 @@ Password for the gate: `BCS2050`. The portal stays `noindex`. Guest path for ope
 | Path | What it is |
 |---|---|
 | `/inicio` | Citizen chat. Specialist row sits under the questions. |
-| `/gemelo` | Territorial twin. Aliases `/cdt`, `/decision`, `/decision-twin` redirect here. |
+| `/gemelo` | Territorial twin with state terrain, theme layers and scenarios. Aliases `/cdt`, `/decision`, `/decision-twin` redirect here. |
 | `/vistas` | Five named views. Each opens the map and the twin. |
 | `/metas` | Open questions, foresight signals, and data gaps. No progress percentage. |
 | `/coordinacion` | Federal projects grouped by the institution line as written. |
@@ -60,3 +60,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 1.23 | `DEPLOY_REPORT_CDT_P1_23.md` | Phase 1 limits on the twin; a before-you-decide path on Home |
 | 1.24 | `DEPLOY_REPORT_CDT_P1_24.md` | Guest takeaway on `/foro#cierre` with four public addresses |
 | 1.25 | `DEPLOY_REPORT_CDT_P1_25.md` | Forum path on the site map: walk, kit, takeaway, limits, Antes de decidir |
+| 2.0 | `DEPLOY_REPORT_CDT_P2_0.md` | 3D terrain on `/gemelo`, theme layer stacks, and what each scenario changes |
