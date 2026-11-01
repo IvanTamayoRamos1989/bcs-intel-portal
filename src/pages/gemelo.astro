@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.7 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.7 · decision support</span>
+          <span data-lang-es>Fase 2.8 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.8 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -117,6 +117,7 @@ const icon: Record<string, string> = {
             { es: 'Toque un municipio: la ficha muestra la cifra elegida, la demanda y oferta ya escritas, y la recomendación. Si falta la cifra, se lee —.', en: 'Tap a municipality: the fiche shows the chosen figure, the demand and supply already written, and the recommendation. If the figure is missing, it reads —.' },
             { es: 'Para la reunión hay cuatro aperturas listas. Son puntos de partida, no pronósticos.', en: 'For the meeting there are four ready openings. They are starting points, not forecasts.' },
             { es: 'La ficha puede mostrar hasta tres fotogramas que ya están en la vista de ese municipio. La leyenda de la altura dice la cifra. Sin cifra, el municipio queda plano.', en: 'The fiche can show up to three frames already in that municipality’s view. The height legend names the figure. With no figure, the municipality stays flat.' },
+            { es: 'El atlas es el inventario para explorar. El gemelo es el lugar de los escenarios y la decisión. Abrir en el atlas lleva las capas del tema que el atlas ya conoce.', en: 'The atlas is the inventory for exploring. The twin is where scenarios and the decision live. Open in atlas carries the theme layers the atlas already knows.' },
           ]}
         />
         <aside class="cdt-tip">
@@ -136,8 +137,8 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.7)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.7)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.8)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.8)</span>
           </h2>
           <p>
             <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
@@ -166,6 +167,10 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>La ficha puede mostrar hasta tres fotogramas del territorio que ya están en la vista de ese municipio. Si no hay foto, esa franja no aparece. La leyenda de la altura dice la cifra, la unidad y la fuente. Sin cifra, el municipio queda plano. No es cero.</span>
             <span data-lang-en hidden>The fiche can show up to three territory frames already in that municipality’s view. If there is no photo, that strip does not appear. The height legend names the figure, the unit and the source. With no figure, the municipality stays flat. It is not zero.</span>
+          </p>
+          <p>
+            <span data-lang-es>El atlas es el inventario para explorar el territorio. El gemelo es el lugar de los escenarios y la decisión. Abrir en el atlas lleva las capas del tema que el atlas ya conoce, y el municipio si está elegido.</span>
+            <span data-lang-en hidden>The atlas is the inventory for exploring the territory. The twin is where scenarios and the decision live. Open in atlas carries the theme layers the atlas already knows, and the municipality when one is chosen.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -270,9 +275,9 @@ const icon: Record<string, string> = {
             <span data-lang-es>Abrir estas capas en Mapas</span>
             <span data-lang-en hidden>Open these layers in Maps</span>
           </a>
-          <a href="/explorar/">
-            <span data-lang-es>Abrir el atlas 3D completo</span>
-            <span data-lang-en hidden>Open the full 3D atlas</span>
+          <a id="cdt-atlas" href="/explorar/?tema=urbano&amp;capas=cities,zoning&amp;muni=Los%20Cabos">
+            <span data-lang-es>Abrir en el atlas</span>
+            <span data-lang-en hidden>Open in atlas</span>
           </a>
         </p>
         <details class="cdt-capas" open>
@@ -1035,6 +1040,7 @@ const icon: Record<string, string> = {
         renderDetail();
         renderScatter();
         applyContext();
+        updateMapLink();
         writeUrl();
         if (sheet) openFicheSheet();
       }
@@ -1396,11 +1402,37 @@ const icon: Record<string, string> = {
         setTimeout(fit, 280);
       }
 
+      var ATLAS_LAYER = {
+        settlements: 'cities',
+        osm_towns: 'cities',
+        poer_ugas: 'zoning',
+        anp_federales: 'protected',
+        rtp_conabio: 'priority',
+        osm_highways: 'roads',
+        highway_nodes: 'roads',
+        osm_transport_nodes: 'transport'
+      };
       function updateMapLink() {
         var a = document.getElementById('cdt-map-link');
-        if (!a) return;
-        var ids = wantedLayers();
-        a.href = '/mapas?scenario=' + encodeURIComponent(state.scenario) + '&layers=' + encodeURIComponent(ids.join(',')) + '#gis';
+        if (a) {
+          var ids = wantedLayers();
+          a.href = '/mapas?scenario=' + encodeURIComponent(state.scenario) + '&layers=' + encodeURIComponent(ids.join(',')) + '#gis';
+        }
+        var atlas = document.getElementById('cdt-atlas');
+        if (!atlas) return;
+        var seen = {};
+        var capas = [];
+        (themeById(state.theme).layers || []).forEach(function (id) {
+          var name = ATLAS_LAYER[id];
+          if (!name || seen[name]) return;
+          seen[name] = 1;
+          capas.push(name);
+        });
+        var q = new URLSearchParams();
+        q.set('tema', state.theme);
+        if (capas.length) q.set('capas', capas.join(','));
+        if (state.muni) q.set('muni', state.muni);
+        atlas.href = '/explorar/?' + q.toString();
       }
 
       function writeUrl() {

@@ -7,6 +7,38 @@
     if (act.length) u.searchParams.set('capas', act.join(',')); else u.searchParams.delete('capas');
     if (S.style !== 'ilustrado') u.searchParams.set('base', S.style); else u.searchParams.delete('base');
     history.replaceState(null, '', u.pathname + (u.searchParams.toString() ? '?' + u.searchParams.toString().replace(/%2C/g, ',') : '') + u.hash);
+    refreshGemeloLink();
+  }
+  function refreshGemeloLink() {
+    const a = $('#ex-gemelo'); if (!a || !S.order) return;
+    const themes = ['urbano', 'economia', 'investigacion', 'movilidad', 'vivienda'];
+    const vote = {
+      cities: 'urbano', roads: 'urbano', zoning: 'urbano', agrarian: 'urbano',
+      protected: 'investigacion', priority: 'investigacion', transport: 'movilidad',
+      rivers: 'vivienda', runoff: 'vivienda',
+      plants: 'economia', substations: 'economia', transmission: 'economia', generators: 'economia'
+    };
+    const q = new URLSearchParams();
+    q.set('path', 'diagnostico');
+    let theme = params.get('tema');
+    if (!themes.includes(theme)) {
+      const votes = {};
+      for (const id of S.order) {
+        if (!S.layers.get(id)?.active) continue;
+        const t = vote[id];
+        if (!t) continue;
+        votes[t] = (votes[t] || 0) + 1;
+      }
+      theme = Object.entries(votes).sort((x, y) => y[1] - x[1])[0]?.[0] || '';
+    }
+    if (themes.includes(theme)) q.set('theme', theme);
+    let muni = S.selection?.type === 'muni' ? S.selection.name : '';
+    if (!muni) {
+      const hinted = params.get('muni');
+      if (hinted && (S.base?.municipalities?.features || []).some(f => f.properties.name === hinted)) muni = hinted;
+    }
+    if (muni) q.set('muni', muni);
+    a.href = '/gemelo/?' + q.toString();
   }
 
   // ---------- map controls ----------
@@ -246,10 +278,13 @@
       for (const f of S.base.majorCities.features) if (!map.hasImage(`lbl-${f.properties._k}`)) map.addImage(`lbl-${f.properties._k}`, labelImage(f.properties._n, labelStyle(26)), { pixelRatio: 2 });
       getJSON('bands.json').then(b => map.getSource('bands').setData(b)).catch(() => {});
       applyBaseStyle(style, { quiet: true }); setLight('day'); setExaggeration(1);
-      viewAll();
+      const placeName = params.get('muni');
+      const placeFeat = placeName && (S.base.municipalities.features || []).find(x => x.properties.name === placeName);
+      if (!placeFeat) viewAll();
       for (const L of S.layers.values()) if (L.data) addMapLayers(L);
       const first = wanted.length ? wanted : (S.manifest.presets.basico || S.manifest.presets.esencial);
       await Promise.all(first.map((id, i) => setActive(id, true, { delay: 500 + i * 160, silent: true })));
+      if (placeFeat) selectMunicipality(placeName);
       $('#ex-loading').hidden = true;
       setStatus('Listo. Pulsa un elemento del mapa o busca un lugar.');
       syncPitchBtn();

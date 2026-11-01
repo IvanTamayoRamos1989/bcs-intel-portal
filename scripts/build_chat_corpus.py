@@ -2291,6 +2291,34 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-atlas-p28",
+        "title": "Del gemelo al atlas / From the twin to the atlas",
+        "path": "portal/gemelo",
+        "href": "/explorar/?tema=urbano&capas=cities,zoning",
+        "theme": "planeacion",
+        "sum_es": (
+            "El atlas en /explorar es el inventario para explorar el territorio. "
+            "El gemelo en /gemelo es el lugar de los escenarios y la decisión. "
+            "Abrir en el atlas lleva las capas del tema que el atlas ya conoce, y el municipio si está elegido. "
+            "Una capa del gemelo sin equivalente en el atlas no se inventa. "
+            "Desde el atlas, Gemelo territorial abre el diagnóstico. "
+            "Pregunta de seguimiento: ¿abre el atlas con vivienda, o vuelve al diagnóstico del gemelo? "
+            "[abrir en el atlas del gemelo al atlas]"
+        ),
+        "sum_en": (
+            "The atlas at /explorar is the inventory for exploring the territory. "
+            "The twin at /gemelo is where scenarios and the decision live. "
+            "Open in atlas carries the theme layers the atlas already knows, and the municipality when one is chosen. "
+            "A twin layer with no atlas counterpart is left out. "
+            "From the atlas, Decision twin opens the diagnosis. "
+            "Follow-up: do you open the atlas with housing, or return to the twin diagnosis? "
+            "[open in the atlas from the twin to the atlas]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
