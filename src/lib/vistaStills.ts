@@ -6,11 +6,20 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import scenariosDoc from '../data/scenarios.json';
+import stillsCatalog from '../data/stills.json';
 
 export type VistaStill = {
   id: string;
   name: string;
   thumb: string;
+};
+
+export type FicheStill = {
+  id: string;
+  name: string;
+  thumb: string;
+  category: string;
+  vista: string;
 };
 
 type Still = {
@@ -145,10 +154,64 @@ const MUNI_FOR: Record<string, string> = {
   'east-cape': 'Los Cabos',
 };
 
+/** Same saved view the twin already attaches to each municipality. */
+const VISTA_FOR_MUNI: Record<string, string> = {
+  'Los Cabos': 'corredor',
+  'La Paz': 'corredor',
+  Comondú: 'vivienda',
+  Mulegé: 'puertos',
+  Loreto: 'puertos',
+};
+
+function loadCatalog(): Still[] {
+  const rows = stillsCatalog as Array<Record<string, unknown>>;
+  const out: Still[] = [];
+  for (const p of rows) {
+    const thumb = safeThumb(p.thumb);
+    const lon = Number(p.lon);
+    const lat = Number(p.lat);
+    if (!thumb || !Number.isFinite(lon) || !Number.isFinite(lat)) continue;
+    if (p.category === 'grid') continue;
+    const name = typeof p.name === 'string' ? p.name.trim() : '';
+    const id = typeof p.id === 'string' ? p.id : '';
+    if (!name || !id) continue;
+    out.push({
+      id,
+      name,
+      lat,
+      lon,
+      category: typeof p.category === 'string' ? p.category : '',
+      municipio: typeof p.municipio === 'string' ? p.municipio : '',
+      thumb,
+    });
+  }
+  return out;
+}
+
 export function vistaStills(): Record<string, VistaStill | null> {
   const stills = loadStills();
   const rings = eastCapeRings();
   const out: Record<string, VistaStill | null> = {};
   for (const id of Object.keys(PREFER)) out[id] = stills.length ? pick(id, stills, rings, MUNI_FOR[id] || '') : null;
+  return out;
+}
+
+/** Up to three frames already catalogued for that municipality’s saved view. Empty when none match. */
+export function ficheStills(): Record<string, FicheStill[]> {
+  const fromDisk = loadStills();
+  const stills = fromDisk.length ? fromDisk : loadCatalog();
+  const out: Record<string, FicheStill[]> = {};
+  for (const [muni, vistaId] of Object.entries(VISTA_FOR_MUNI)) {
+    const prefs = PREFER[vistaId] || [];
+    const pool = stills.filter((still) => still.municipio === muni && prefs.includes(still.category));
+    pool.sort((a, b) => prefs.indexOf(a.category) - prefs.indexOf(b.category) || a.id.localeCompare(b.id));
+    out[muni] = pool.slice(0, 3).map((still) => ({
+      id: still.id,
+      name: still.name,
+      thumb: still.thumb,
+      category: still.category,
+      vista: vistaId,
+    }));
+  }
   return out;
 }
