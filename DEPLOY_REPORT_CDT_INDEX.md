@@ -71,3 +71,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 2.8 | `DEPLOY_REPORT_CDT_P2_8.md` | Jump between the twin and the atlas with the same theme and place |
 | 2.9 | `DEPLOY_REPORT_CDT_P2_9.md` | Second map only while comparing; a short what’s-new line on Home |
 | 2.10 | `DEPLOY_REPORT_CDT_P2_10.md` | Readiness panel for the four files the twin does not have yet |
+| 2.11 | `DEPLOY_REPORT_CDT_P2_11.md` | Ten-minute host script for the twin |

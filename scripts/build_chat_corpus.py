@@ -2371,6 +2371,30 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-recorrido-p211",
+        "title": "Guión de diez minutos del gemelo / Ten-minute script for the twin",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#recorrido-gemelo",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo#recorrido-gemelo hay un guión de ocho pasos para quien conduce. "
+            "Cada enlace deja un estado que el gemelo ya tiene: encuadre del estado, capas de vivienda, agua primero, el corredor comparado, la ficha de Los Cabos, qué cambia, qué falta y la hoja impresa. "
+            "No añade cifras. La misma línea está en /foro#kit y en /rutas#ruta-foro. Esas hojas no traen la entrada del portal. "
+            "Pregunta de seguimiento: ¿empieza por agua primero, por el corredor, o por la ficha de Los Cabos? "
+            "[recorrido del gemelo demo gemelo guion 10 minutos]"
+        ),
+        "sum_en": (
+            "At /gemelo#recorrido-gemelo there is an eight-step script for the person leading. "
+            "Each link leaves a state the twin already has: the state frame, housing layers, water first, the compared corridor, the Los Cabos fiche, what changes, what is missing and the printed sheet. "
+            "It adds no figures. The same line is on /foro#kit and on /rutas#ruta-foro. Those sheets do not include the portal entrance. "
+            "Follow-up: do you start with water first, the corridor, or the Los Cabos fiche? "
+            "[twin walkthrough twin demo ten-minute twin]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
