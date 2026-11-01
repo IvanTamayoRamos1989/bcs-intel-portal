@@ -76,3 +76,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 2.13 | `DEPLOY_REPORT_CDT_P2_13.md` | One consultation question per audience on each path step |
 | 2.14 | `DEPLOY_REPORT_CDT_P2_14.md` | Scenario recipes that apply combinations the twin already knows |
 | 2.15 | `DEPLOY_REPORT_CDT_P2_15.md` | Sources for the layers that are on, under Capas |
+| 2.16 | `DEPLOY_REPORT_CDT_P2_16.md` | Afternoon digest on Home, and a printable host checklist |

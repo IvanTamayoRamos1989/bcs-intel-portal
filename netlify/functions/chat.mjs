@@ -1213,6 +1213,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(fuentes.id);
     }
   }
+  if (checklistQuery(query)) {
+    const check = corpus.find((c) => c.id === 'portal:gemelo-checklist-p216');
+    if (check && !usedId.has(check.id)) {
+      picked.unshift(check);
+      usedId.add(check.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1781,6 +1788,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== fuentes.id);
       picked.length = 0;
       picked.push(fuentes, ...rest);
+    }
+  }
+  if (checklistQuery(query)) {
+    const check = corpus.find((c) => c.id === 'portal:gemelo-checklist-p216');
+    if (check) {
+      const rest = picked.filter((c) => c.id !== check.id);
+      picked.length = 0;
+      picked.push(check, ...rest);
     }
   }
 
@@ -2559,7 +2574,7 @@ function atlasQuery(message) {
 function novedadesQuery(message) {
   if (kitQuery(message) || sideQuery(message) || presetQuery(message) || stillFicheQuery(message) || atlasQuery(message) || fichaQuery(message) || extrusionQuery(message) || gemelo3dQuery(message) || namedViewsQuery(message)) return false;
   const q = normQ(message);
-  return /novedades gemelo|gemelo mas rapido|twin news|faster twin/.test(q);
+  return /gemelo mas rapido|faster twin/.test(q);
 }
 
 function readinessQuery(message) {
@@ -2596,6 +2611,12 @@ function fuentesQuery(message) {
   if (recipeQuery(message) || consultaMesaQuery(message) || shareQuery(message) || walkQuery(message) || namedViewsQuery(message) || kitQuery(message) || presetQuery(message) || readinessQuery(message) || novedadesQuery(message) || atlasQuery(message) || gemelo3dQuery(message)) return false;
   const q = normQ(message);
   return /fuentes del gemelo|de donde salen las capas|twin layer sources|where the layers come from|layer sources twin|sources for these layers/.test(q);
+}
+
+function checklistQuery(message) {
+  if (fuentesQuery(message) || recipeQuery(message) || consultaMesaQuery(message) || shareQuery(message) || walkQuery(message) || namedViewsQuery(message) || kitQuery(message) || presetQuery(message) || readinessQuery(message) || novedadesQuery(message) || atlasQuery(message) || gemelo3dQuery(message)) return false;
+  const q = normQ(message);
+  return /novedades gemelo|checklist anfitrion|que hay de nuevo en el gemelo|host checklist|what's new on the twin|what's new in the twin|twin news/.test(q);
 }
 
 function limitsQuery(message) {
@@ -2660,8 +2681,11 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'gemelo-copia-agua', re: /compartir gemelo|copiar vista|share twin|copy view|share the twin/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
     { id: 'gemelo-recorrido', re: /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, href: '/gemelo/#recorrido-gemelo', es: 'Guión de diez minutos', en: 'Ten-minute script' },
     { id: 'gemelo-recorrido-agua', re: /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
-    { id: 'gemelo-novedades', re: /novedades gemelo|gemelo mas rapido|twin news|faster twin/, href: '/gemelo/#presets', es: 'Novedades del gemelo', en: 'What is new on the twin' },
-    { id: 'gemelo-novedades-diag', re: /novedades gemelo|gemelo mas rapido|twin news|faster twin/, href: '/gemelo/?path=diagnostico', es: 'Diagnóstico', en: 'Diagnosis' },
+    { id: 'gemelo-checklist', re: /novedades gemelo|checklist anfitrion|que hay de nuevo en el gemelo|host checklist|what's new on the twin|what's new in the twin|twin news/, href: '/gemelo/#checklist-anfitrion', es: 'Checklist del anfitrión', en: 'Host checklist' },
+    { id: 'gemelo-checklist-inicio', re: /novedades gemelo|checklist anfitrion|que hay de nuevo en el gemelo|host checklist|what's new on the twin|what's new in the twin|twin news/, href: '/inicio/', es: 'Novedades en inicio', en: 'What’s new on Home' },
+    { id: 'gemelo-checklist-recorrido', re: /novedades gemelo|checklist anfitrion|que hay de nuevo en el gemelo|host checklist|what's new on the twin|what's new in the twin|twin news/, href: '/gemelo/#recorrido-gemelo', es: 'Guión de diez minutos', en: 'Ten-minute script' },
+    { id: 'gemelo-novedades', re: /gemelo mas rapido|faster twin/, href: '/gemelo/#presets', es: 'Gemelo más rápido', en: 'Faster twin' },
+    { id: 'gemelo-novedades-diag', re: /gemelo mas rapido|faster twin/, href: '/gemelo/?path=diagnostico', es: 'Diagnóstico', en: 'Diagnosis' },
     { id: 'gemelo-atlas', re: /abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/, href: '/explorar/?tema=urbano&capas=cities,zoning', es: 'Abrir en el atlas', en: 'Open in atlas' },
     { id: 'gemelo-atlas-back', re: /abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/, href: '/gemelo/?path=diagnostico&theme=urbano', es: 'Gemelo territorial', en: 'Decision twin' },
     { id: 'gemelo-still', re: /fotos del municipio|still gemelo|leyenda extrusion|municipality photos|twin still|extrusion legend/, href: '/gemelo/#cdt-fiche-wrap', es: 'Fotos en la ficha', en: 'Photos on the fiche' },
@@ -2739,7 +2763,8 @@ function portalGuideBoost(message, chunk) {
     [/presets del gemelo|reunion gemelo|para la reunion|meeting presets|twin meeting|for the meeting/, /gemelo-preset/],
     [/fotos del municipio|still gemelo|leyenda extrusion|municipality photos|twin still|extrusion legend/, /gemelo-stills/],
     [/abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/, /gemelo-atlas/],
-    [/novedades gemelo|gemelo mas rapido|twin news|faster twin/, /gemelo-novedades/],
+    [/novedades gemelo|checklist anfitrion|que hay de nuevo en el gemelo|host checklist|what's new on the twin|what's new in the twin|twin news/, /gemelo-checklist/],
+    [/gemelo mas rapido|faster twin/, /gemelo-novedades/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -3172,6 +3197,9 @@ async function handlerInner(event) {
   const fuentesGuide = fuentesQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-fuentes-p215')
     : null;
+  const checklistGuide = checklistQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-checklist-p216')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -3273,6 +3301,10 @@ async function handlerInner(event) {
   }
   if (fuentesGuide && !evidence.some((c) => c.id === fuentesGuide.id)) {
     evidence = [fuentesGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (checklistGuide && !evidence.some((c) => c.id === checklistGuide.id)) {
+    evidence = [checklistGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

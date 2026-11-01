@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.15 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.15 · decision support</span>
+          <span data-lang-es>Fase 2.16 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.16 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -158,6 +158,79 @@ const icon: Record<string, string> = {
             <span data-lang-es>. Una pregunta por mesa, según el paso del camino.</span>
             <span data-lang-en hidden>. One question per table, according to the path step.</span>
           </p>
+          <p>
+            <a href="#checklist-anfitrion"><span data-lang-es>Checklist del anfitrión</span><span data-lang-en hidden>Host checklist</span></a>
+            <span data-lang-es>. El orden corto: guión, recetas, consulta, copiar vista, fuentes y qué falta.</span>
+            <span data-lang-en hidden>. The short order: script, recipes, consultation, copy view, sources and what is missing.</span>
+          </p>
+        </section>
+        <section class="cdt-check" id="checklist-anfitrion" aria-labelledby="cdt-check-title">
+          <h2 id="cdt-check-title">
+            <span data-lang-es>Checklist del anfitrión</span>
+            <span data-lang-en hidden>Host checklist</span>
+          </h2>
+          <p>
+            <span data-lang-es>Para quien conduce. Una casilla por enlace. No añade cifras.</span>
+            <span data-lang-en hidden>For the person leading. One box per link. It adds no figures.</span>
+          </p>
+          <ol>
+            <li>
+              <label>
+                <input type="checkbox">
+                <span data-lang-es>Abra las aperturas de la reunión. Son puntos de partida, no pronósticos.</span>
+                <span data-lang-en hidden>Open the meeting openings. They are starting points, not forecasts.</span>
+              </label>
+              <a href="#presets"><span data-lang-es>Para la reunión</span><span data-lang-en hidden>For the meeting</span></a>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox">
+                <span data-lang-es>Siga el guión con los estados que ya existen.</span>
+                <span data-lang-en hidden>Follow the script with the states that already exist.</span>
+              </label>
+              <a href="#recorrido-gemelo"><span data-lang-es>Guión de diez minutos</span><span data-lang-en hidden>Ten-minute script</span></a>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox">
+                <span data-lang-es>Elija una receta que el gemelo ya sabe aplicar.</span>
+                <span data-lang-en hidden>Pick a recipe the twin already knows how to apply.</span>
+              </label>
+              <a href="#recetas"><span data-lang-es>Recetas</span><span data-lang-en hidden>Recipes</span></a>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox">
+                <span data-lang-es>Lea la pregunta de cada mesa, según el paso del camino.</span>
+                <span data-lang-en hidden>Read the question for each table, according to the path step.</span>
+              </label>
+              <a href="#consulta"><span data-lang-es>Consulta</span><span data-lang-en hidden>Consultation</span></a>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox">
+                <span data-lang-es>Guarde esta pantalla en un enlace.</span>
+                <span data-lang-en hidden>Save this screen in a link.</span>
+              </label>
+              <a href="#cdt-share"><span data-lang-es>Copiar vista</span><span data-lang-en hidden>Copy view</span></a>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox">
+                <span data-lang-es>Nombre la fuente de lo que está encendido.</span>
+                <span data-lang-en hidden>Name the source of what is on.</span>
+              </label>
+              <a href="#fuentes-capas"><span data-lang-es>Fuentes de estas capas</span><span data-lang-en hidden>Sources for these layers</span></a>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox">
+                <span data-lang-es>Diga qué aún no tiene archivo.</span>
+                <span data-lang-en hidden>Say what still has no file.</span>
+              </label>
+              <a href="#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
+            </li>
+          </ol>
         </section>
         <nav class="cdt-path" id="cdt-path" aria-label="Camino de decisión" data-aria-es="Camino de decisión" data-aria-en="Decision path">
           <button type="button" data-path="diagnostico">
@@ -854,6 +927,14 @@ const icon: Record<string, string> = {
     .cdt-walk a { display: inline-block; margin-top: 0.15rem; }
     .cdt-walk button { font: inherit; cursor: pointer; border: 1px solid var(--cdt); background: #f4fbff; border-radius: 999px; padding: 0.28rem 0.7rem; margin-top: 0.15rem; }
     .cdt-walk a:focus-visible, .cdt-walk button:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
+    .cdt-check { margin: 0.8rem 0 0.4rem; scroll-margin-top: 5rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.7rem 0.85rem; background: #fff; }
+    .cdt-check h2 { margin: 0 0 0.3rem; font-size: 1.05rem; color: var(--cdt-dark); }
+    .cdt-check p, .cdt-check li { margin: 0.35rem 0; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-check ol { margin: 0.35rem 0 0; padding-left: 0; list-style: none; }
+    .cdt-check label { display: flex; gap: 0.45rem; align-items: flex-start; }
+    .cdt-check input { width: 1rem; height: 1rem; margin-top: 0.15rem; accent-color: #0083C4; flex: 0 0 auto; }
+    .cdt-check a { color: #006BA3; font-weight: 700; display: inline-block; margin: 0.15rem 0 0 1.45rem; }
+    .cdt-check a:focus-visible, .cdt-check input:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
     .cdt-listo { margin: 0.9rem 0 0.4rem; scroll-margin-top: 5rem; }
     .cdt-listo h2 { margin: 0 0 0.35rem; font-size: 1.15rem; color: var(--cdt-dark); }
     .cdt-listo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
@@ -1028,6 +1109,10 @@ const icon: Record<string, string> = {
       .cdt-walk { break-inside: avoid; }
       .cdt-walk a { color: #000; text-decoration: none; }
       .cdt-walk a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
+      .cdt-check { break-before: page; page-break-before: always; }
+      .cdt-check a { color: #000; text-decoration: none; }
+      .cdt-check a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
+      .cdt-check input { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
       .cdt-sheet { display: block; max-width: 170mm; break-before: page; page-break-before: always; }
       body, body.has-chat-sidebar { padding: 0 !important; background: #fff !important; }
       body[data-cdt-path] [data-step] { opacity: 1; box-shadow: none; }
@@ -1060,7 +1145,7 @@ const icon: Record<string, string> = {
   <script>
     function showHash() {
       var hash = location.hash || '';
-      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets' && hash !== '#consulta' && hash !== '#recetas' && hash !== '#fuentes-capas') return;
+      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets' && hash !== '#consulta' && hash !== '#recetas' && hash !== '#fuentes-capas' && hash !== '#checklist-anfitrion') return;
       var el = document.getElementById(hash.slice(1));
       if (!el) return;
       var header = document.querySelector('.pt-top');
