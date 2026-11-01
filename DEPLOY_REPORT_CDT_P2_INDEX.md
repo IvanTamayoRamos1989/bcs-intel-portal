@@ -14,3 +14,4 @@
 | 2.9 | Second map only while comparing; a short what’s-new line on Home |
 | 2.10 | Readiness panel for the four files the twin does not have yet |
 | 2.11 | Ten-minute host script for the twin |
+| 2.12 | Copy view writes the current twin state into a link |

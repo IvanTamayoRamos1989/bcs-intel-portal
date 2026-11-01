@@ -1185,6 +1185,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(walk.id);
     }
   }
+  if (shareQuery(query)) {
+    const share = corpus.find((c) => c.id === 'portal:gemelo-copia-p212');
+    if (share && !usedId.has(share.id)) {
+      picked.unshift(share);
+      usedId.add(share.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1721,6 +1728,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== walk.id);
       picked.length = 0;
       picked.push(walk, ...rest);
+    }
+  }
+  if (shareQuery(query)) {
+    const share = corpus.find((c) => c.id === 'portal:gemelo-copia-p212');
+    if (share) {
+      const rest = picked.filter((c) => c.id !== share.id);
+      picked.length = 0;
+      picked.push(share, ...rest);
     }
   }
 
@@ -2514,6 +2529,12 @@ function walkQuery(message) {
   return /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/.test(q);
 }
 
+function shareQuery(message) {
+  if (walkQuery(message) || namedViewsQuery(message) || kitQuery(message) || presetQuery(message) || readinessQuery(message) || novedadesQuery(message) || atlasQuery(message)) return false;
+  const q = normQ(message);
+  return /compartir gemelo|copiar vista|share twin|copy view|share the twin/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2565,6 +2586,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-copia', re: /compartir gemelo|copiar vista|share twin|copy view|share the twin/, href: '/gemelo/#cdt-share', es: 'Copiar vista', en: 'Copy view' },
+    { id: 'gemelo-copia-agua', re: /compartir gemelo|copiar vista|share twin|copy view|share the twin/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
     { id: 'gemelo-recorrido', re: /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, href: '/gemelo/#recorrido-gemelo', es: 'Guión de diez minutos', en: 'Ten-minute script' },
     { id: 'gemelo-recorrido-agua', re: /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
     { id: 'gemelo-novedades', re: /novedades gemelo|gemelo mas rapido|twin news|faster twin/, href: '/gemelo/#presets', es: 'Novedades del gemelo', en: 'What is new on the twin' },
@@ -2630,6 +2653,7 @@ function portalGuideBoost(message, chunk) {
     [/que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits/, /gemelo-limites/],
     [/que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/, /gemelo-listo/],
     [/recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, /gemelo-recorrido/],
+    [/compartir gemelo|copiar vista|share twin|copy view|share the twin/, /gemelo-copia/],
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
@@ -3063,6 +3087,9 @@ async function handlerInner(event) {
   const walkGuide = walkQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-recorrido-p211')
     : null;
+  const shareGuide = shareQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-copia-p212')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -3148,6 +3175,10 @@ async function handlerInner(event) {
   }
   if (walkGuide && !evidence.some((c) => c.id === walkGuide.id)) {
     evidence = [walkGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (shareGuide && !evidence.some((c) => c.id === shareGuide.id)) {
+    evidence = [shareGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

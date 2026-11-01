@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.11 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.11 · decision support</span>
+          <span data-lang-es>Fase 2.12 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.12 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -80,6 +80,10 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>For the meeting. Starting points, not forecasts.</span>
             {' '}
             <a href="#recorrido-gemelo"><span data-lang-es>Guión de diez minutos</span><span data-lang-en hidden>Ten-minute script</span></a>
+            {' '}
+            <a href="#cdt-share"><span data-lang-es>Copiar vista</span><span data-lang-en hidden>Copy view</span></a>
+            <span data-lang-es> guarda esta pantalla.</span>
+            <span data-lang-en hidden> saves this screen.</span>
           </p>
           <a data-preset href="/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025#presets">
             <span data-lang-es>Agua primero</span><span data-lang-en hidden>Water first</span>
@@ -143,6 +147,8 @@ const icon: Record<string, string> = {
               <span data-lang-es>Diga: la hoja imprime el escenario que está en pantalla. No añade cifras.</span>
               <span data-lang-en hidden>Say: the sheet prints the scenario on screen. It adds no figures.</span>
               <button type="button" class="cdt-walk-print" id="cdt-walk-print"><span data-lang-es>Imprimir la hoja</span><span data-lang-en hidden>Print the sheet</span></button>
+              <span data-lang-es> <a href="#cdt-share">Copiar vista</a> guarda el mismo enlace para quien llegue después.</span>
+              <span data-lang-en hidden> <a href="#cdt-share">Copy view</a> saves the same link for whoever arrives later.</span>
             </li>
           </ol>
         </section>
@@ -321,14 +327,19 @@ const icon: Record<string, string> = {
           </select>
         </label>
         <button type="button" class="cdt-sc" id="cdt-share">
-          <span data-lang-es>Copiar enlace</span>
-          <span data-lang-en hidden>Copy link</span>
+          <span data-lang-es>Copiar vista</span>
+          <span data-lang-en hidden>Copy view</span>
         </button>
         <button type="button" class="cdt-sc" id="cdt-print">
           <span data-lang-es>Imprimir</span>
           <span data-lang-en hidden>Print</span>
         </button>
       </div>
+      <p class="cdt-copy-tip" id="cdt-copy-tip" hidden>
+        <span data-lang-es>Vista copiada. Quien abra el enlace ve el mismo tema, escenario, paso y municipio.</span>
+        <span data-lang-en hidden>View copied. Whoever opens the link sees the same theme, scenario, step and municipality.</span>
+        <button type="button" id="cdt-copy-tip-ok"><span data-lang-es>Entendido</span><span data-lang-en hidden>Got it</span></button>
+      </p>
     </header>
 
     <div class="cdt-work">
@@ -722,7 +733,11 @@ const icon: Record<string, string> = {
     .cdt-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.8rem 0 0.2rem; scroll-margin-top: 5rem; }
     .cdt-presets p { width: 100%; margin: 0 0 0.15rem; color: var(--cdt-dark); font-size: 0.82rem; font-weight: 700; }
     .cdt-presets a { border: 1px solid var(--cdt); color: var(--cdt-dark); background: #f4fbff; border-radius: 999px; padding: 0.32rem 0.7rem; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
-    .cdt-presets a:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
+    #cdt-share { scroll-margin-top: 5rem; }
+    .cdt-copy-tip { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; margin: 0.45rem 0 0; padding: 0.45rem 0.65rem; border-radius: 10px; background: #e8f4fb; color: var(--cdt-ink); font-size: 0.82rem; }
+    .cdt-copy-tip[hidden] { display: none; }
+    .cdt-copy-tip button { font: inherit; cursor: pointer; border: 1px solid var(--cdt); background: #fff; color: var(--cdt-dark); border-radius: 999px; padding: 0.2rem 0.6rem; font-weight: 700; }
+    .cdt-copy-tip button:focus-visible, #cdt-share:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
     .cdt-walk { margin: 0.8rem 0 0.4rem; scroll-margin-top: 5rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.7rem 0.85rem; background: #fff; }
     .cdt-walk h2 { margin: 0 0 0.3rem; font-size: 1.05rem; color: var(--cdt-dark); }
     .cdt-walk p, .cdt-walk li { margin: 0.28rem 0; font-size: 0.86rem; line-height: 1.4; }
@@ -895,7 +910,7 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, .cdt-copy-tip, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
       .cdt-walk { break-inside: avoid; }
       .cdt-walk a { color: #000; text-decoration: none; }
       .cdt-walk a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
@@ -931,7 +946,7 @@ const icon: Record<string, string> = {
   <script>
     function showHash() {
       var hash = location.hash || '';
-      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo') return;
+      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo' && hash !== '#cdt-share' && hash !== '#presets') return;
       var el = document.getElementById(hash.slice(1));
       if (!el) return;
       var header = document.querySelector('.pt-top');
@@ -2031,11 +2046,24 @@ const icon: Record<string, string> = {
       if (selY) selY.addEventListener('change', onAxis);
       var shareBtn = document.getElementById('cdt-share');
       if (shareBtn) shareBtn.addEventListener('click', function () {
+        writeUrl();
         var url = location.href;
-        function done(ok) { setStatus(ok ? 'Enlace copiado.' : url, ok ? 'Link copied.' : url); }
+        function done(ok) {
+          setStatus(ok ? 'Vista copiada.' : url, ok ? 'View copied.' : url);
+          if (!ok) return;
+          var tip = document.getElementById('cdt-copy-tip');
+          try { if (localStorage.getItem('bcs-gemelo-copy-tip') === '1') return; } catch (e) {}
+          if (tip) tip.hidden = false;
+        }
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(url).then(function () { done(true); }).catch(function () { done(false); });
         } else done(false);
+      });
+      var copyOk = document.getElementById('cdt-copy-tip-ok');
+      if (copyOk) copyOk.addEventListener('click', function () {
+        try { localStorage.setItem('bcs-gemelo-copy-tip', '1'); } catch (e) {}
+        var tip = document.getElementById('cdt-copy-tip');
+        if (tip) tip.hidden = true;
       });
       var printBtn = document.getElementById('cdt-print');
       if (printBtn) printBtn.addEventListener('click', function () {
