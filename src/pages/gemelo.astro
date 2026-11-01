@@ -37,6 +37,7 @@ const icon: Record<string, string> = {
   hidePageHead={true}
 >
   <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
+  <link rel="stylesheet" href="/explorar/vendor/maplibre-gl.css" />
   <link
     rel="stylesheet"
     href="/vendor/leaflet/leaflet.css"
@@ -49,8 +50,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 1.5 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 1.5 · decision support</span>
+          <span data-lang-es>Fase 2.0 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.0 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -69,12 +70,12 @@ const icon: Record<string, string> = {
           <a href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
         </p>
         <HowTo
-          leadEs="Elija un tema, luego un escenario, y compare dos cifras municipales. Las recomendaciones son reglas del portal, no un dictamen de predios."
-          leadEn="Pick a theme, then a scenario, and compare two municipal figures. Recommendations are portal rules, not a parcel ruling."
+          leadEs="Elija un tema, luego un escenario, y lea qué cambia en el relieve. Las recomendaciones son reglas del portal, no un dictamen de predios."
+          leadEn="Pick a theme, then a scenario, and read what changes on the terrain. Recommendations are portal rules, not a parcel ruling."
           steps={[
-            { es: 'Pulse un tema en la columna izquierda.', en: 'Press a theme in the left column.' },
-            { es: 'Elija un escenario o una vista guardada.', en: 'Choose a scenario or a saved view.' },
-            { es: 'Toque un municipio para leer su ficha, su demanda y oferta, y la vista que le corresponde.', en: 'Tap a municipality to read its page, its demand and supply, and the matching saved view.' },
+            { es: 'Pulse un tema. El mapa enciende las capas de ese tema, sin apagar las del escenario.', en: 'Press a theme. The map turns on that theme’s layers, and keeps the scenario layers on.' },
+            { es: 'Elija un escenario y lea «Qué cambia»: capas, municipios y el cruce con otros temas.', en: 'Choose a scenario and read “What changes”: layers, municipalities and the cross-theme note.' },
+            { es: 'Si quiere, compare con otro escenario. Toque un municipio para su ficha.', en: 'If you want, compare with another scenario. Tap a municipality for its page.' },
           ]}
         />
         <aside class="cdt-tip">
@@ -94,16 +95,16 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 1)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 1)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.0)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.0)</span>
           </h2>
           <p>
-            <span data-lang-es>Puede: los cinco municipios, los cinco temas, los escenarios y la comparación municipal. Si una celda está en blanco, se queda en blanco.</span>
-            <span data-lang-en hidden>It can: the five municipalities, the five themes, the scenarios and the municipal comparison. If a cell is blank, it stays blank.</span>
+            <span data-lang-es>Puede ahora: el relieve del estado, las capas públicas agrupadas en los cinco temas, y los cuatro escenarios con lo que cambia entre ellos. Si una celda está en blanco, se queda en blanco.</span>
+            <span data-lang-en hidden>It can now: the state’s terrain, public layers grouped in the five themes, and the four scenarios with what changes between them. If a cell is blank, it stays blank.</span>
           </p>
           <p>
-            <span data-lang-es>Todavía no puede: mapas por manzana (AGEB), forma de predios, lotes de catastro, ni rellenar una cifra que falta.</span>
-            <span data-lang-en hidden>It cannot yet: block maps (AGEB), parcel form, cadastre lots, or filling in a missing figure.</span>
+            <span data-lang-es>Todavía no puede: mapas por manzana (AGEB), forma de predios, lotes de catastro, métricas de forma, ni rellenar una cifra que falta. El relieve no es un modelo de edificios.</span>
+            <span data-lang-en hidden>It cannot yet: block maps (AGEB), parcel form, cadastre lots, form metrics, or filling in a missing figure. The terrain is not a model of buildings.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -128,6 +129,18 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>{sc.title_en}</span>
           </button>
         ))}
+        <label class="cdt-compare-pick">
+          <span data-lang-es>Comparar con</span>
+          <span data-lang-en hidden>Compare with</span>
+          <select id="cdt-compare">
+            <option value="">
+              —
+            </option>
+            {model.scenarios.map((sc) => (
+              <option value={sc.id}>{sc.title_es}</option>
+            ))}
+          </select>
+        </label>
         <button type="button" class="cdt-sc" id="cdt-share">
           <span data-lang-es>Copiar enlace</span>
           <span data-lang-en hidden>Copy link</span>
@@ -153,7 +166,15 @@ const icon: Record<string, string> = {
       </nav>
 
       <div class="cdt-map-col">
-        <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial" data-aria-es="Mapa del gemelo territorial" data-aria-en="Territorial twin map"></div>
+        <div class="cdt-map-frame">
+          <div id="cdt-map" role="application" aria-label="Mapa del gemelo territorial" data-aria-es="Mapa del gemelo territorial" data-aria-en="Territorial twin map"></div>
+          <div class="cdt-map-tools" id="cdt-map-tools">
+            <button type="button" id="cdt-pitch"><span data-lang-es>Vista cenital</span><span data-lang-en hidden>Top view</span></button>
+            <button type="button" id="cdt-rot"><span data-lang-es>Girar</span><span data-lang-en hidden>Rotate</span></button>
+            <button type="button" id="cdt-north"><span data-lang-es>Norte</span><span data-lang-en hidden>North</span></button>
+            <button type="button" id="cdt-fit"><span data-lang-es>Estado</span><span data-lang-en hidden>State</span></button>
+          </div>
+        </div>
         <p class="cdt-map-note" id="cdt-status">
           <span data-lang-es>Cargando capas del mapa…</span>
           <span data-lang-en hidden>Loading map layers…</span>
@@ -165,10 +186,14 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>Open these layers in Maps</span>
           </a>
           <a href="/explorar/">
-            <span data-lang-es>Ver el relieve en el atlas 3D</span>
-            <span data-lang-en hidden>See the terrain in the 3D atlas</span>
+            <span data-lang-es>Abrir el atlas 3D completo</span>
+            <span data-lang-en hidden>Open the full 3D atlas</span>
           </a>
         </p>
+        <details class="cdt-capas" open>
+          <summary><span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span></summary>
+          <div id="cdt-capas-body"></div>
+        </details>
       </div>
 
       <aside class="cdt-panel" aria-label="Indicadores del tema" data-aria-es="Indicadores del tema" data-aria-en="Theme indicators">
@@ -241,6 +266,14 @@ const icon: Record<string, string> = {
             </ul>
           </div>
         ))}
+
+        <section class="cdt-cambia" id="cdt-cambia" aria-label="Qué cambia" data-aria-es="Qué cambia" data-aria-en="What changes">
+          <h3>
+            <span data-lang-es>Qué cambia</span>
+            <span data-lang-en hidden>What changes</span>
+          </h3>
+          <div id="cdt-cambia-body"></div>
+        </section>
 
         <section class="cdt-goals" aria-label="Qué tiene que ser verdad" data-aria-es="Qué tiene que ser verdad" data-aria-en="What has to be true">
           <h3>
@@ -480,7 +513,22 @@ const icon: Record<string, string> = {
     .cdt-limits h2 { margin: 0 0 0.3rem; color: var(--cdt-dark); font-size: 1.05rem; }
     .cdt-limits p { margin: 0.25rem 0; font-size: 0.92rem; line-height: 1.4; }
     .cdt-limits a { color: var(--cdt-dark); font-weight: 650; }
-    .cdt-scenarios { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .cdt-scenarios { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+    .cdt-compare-pick { display: flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; color: var(--cdt-muted); }
+    .cdt-compare-pick select { font: inherit; color: var(--cdt-ink); border: 1px solid var(--cdt-line); border-radius: 999px; padding: 0.3rem 0.6rem; background: #fff; }
+    .cdt-map-frame { position: relative; }
+    .cdt-map-tools { position: absolute; z-index: 2; top: 0.45rem; left: 0.45rem; display: flex; flex-wrap: wrap; gap: 0.28rem; max-width: calc(100% - 0.9rem); }
+    .cdt-map-tools button { font: inherit; font-size: 0.75rem; font-weight: 650; background: #fff; border: 1px solid #0083C4; color: #006BA3; border-radius: 999px; padding: 0.22rem 0.55rem; cursor: pointer; }
+    .cdt-map-tools button:focus-visible, .cdt-compare-pick select:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+    .cdt-capas { margin-top: 0.45rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.4rem 0.7rem 0.55rem; background: #fff; }
+    .cdt-capas summary { cursor: pointer; color: var(--cdt-dark); font-weight: 700; }
+    .cdt-capas h3 { margin: 0.45rem 0 0.15rem; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cdt); }
+    .cdt-capas label { display: flex; gap: 0.4rem; align-items: flex-start; margin: 0.22rem 0; font-size: 0.8rem; line-height: 1.3; }
+    .cdt-capas small { display: block; color: var(--cdt-muted); font-weight: 400; }
+    .cdt-cambia { margin-top: 0.75rem; padding: 0.55rem 0.7rem; border-radius: 10px; background: #f4fbff; border-left: 3px solid var(--cdt); }
+    .cdt-cambia h3 { margin: 0 0 0.3rem; font-size: 1rem; color: var(--cdt-dark); }
+    .cdt-cambia p, .cdt-cambia li { margin: 0.2rem 0; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-cambia ul { margin: 0.2rem 0 0; padding-left: 1.1rem; }
     .cdt-sc, .cdt-theme-btn, .cdt-muni { font: inherit; cursor: pointer; }
     .cdt-sc { border: 1px solid var(--cdt-line); background: #fff; color: var(--cdt-ink); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; }
     .cdt-sc[aria-pressed="true"] { background: var(--cdt); border-color: var(--cdt); color: #fff; }
@@ -603,19 +651,24 @@ const icon: Record<string, string> = {
     }
   </script>
 
+  <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
+  <script is:inline src="/gemelo/cdt3d.js"></script>
   <script is:inline src="/vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script is:inline define:vars={{ model }}>
     (function () {
       var mapEl = document.getElementById('cdt-map');
-      if (!mapEl || typeof L === 'undefined') return;
+      if (!mapEl) return;
 
       var state = {
         theme: 'urbano',
         scenario: 'baseline',
+        compare: '',
         x: 'pob',
         y: 'sniiv_2025',
         muni: 'Los Cabos',
       };
+      var layerOff = {};
+      var layerExtra = {};
 
       function lang() {
         return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
@@ -665,17 +718,30 @@ const icon: Record<string, string> = {
       if (params.get('x') && indicatorById(params.get('x')).id === params.get('x')) state.x = params.get('x');
       if (params.get('y') && indicatorById(params.get('y')).id === params.get('y')) state.y = params.get('y');
       if (params.get('muni') && muniByName(params.get('muni')).name === params.get('muni')) state.muni = params.get('muni');
+      if (params.get('compare') && scenarioById(params.get('compare')).id === params.get('compare') && params.get('compare') !== state.scenario) state.compare = params.get('compare');
       if (state.x === state.y) state.y = state.x === 'sniiv_2025' ? 'pobreza_pct' : 'sniiv_2025';
 
-      var map = L.map(mapEl, { scrollWheelZoom: true, maxZoom: 14 });
-      map.setView([25.6, -112.0], 6);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap',
-        maxZoom: 18,
-      }).addTo(map);
-      L.control.scale({ imperial: false, metric: true }).addTo(map);
-
+      var map = null;
+      var gl = null;
       var muniLayer = null;
+      function ensure2d() {
+        if (map || typeof L === 'undefined') return;
+        map = L.map(mapEl, { scrollWheelZoom: true, maxZoom: 14 });
+        map.setView([25.6, -112.0], 6);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap',
+          maxZoom: 18,
+        }).addTo(map);
+        L.control.scale({ imperial: false, metric: true }).addTo(map);
+        var pitchBtn = document.getElementById('cdt-pitch');
+        var rotBtn = document.getElementById('cdt-rot');
+        if (pitchBtn) pitchBtn.hidden = true;
+        if (rotBtn) rotBtn.hidden = true;
+        var fitBtn = document.getElementById('cdt-fit');
+        if (fitBtn) fitBtn.addEventListener('click', function () {
+          map.fitBounds(L.latLngBounds([22.87, -115.22], [28.0, -109.41]), { padding: [18, 18], maxZoom: 7, animate: false });
+        });
+      }
       var loaded = {};
       var active = {};
       var statusEl = document.getElementById('cdt-status');
@@ -713,9 +779,17 @@ const icon: Record<string, string> = {
         };
       }
 
+      function muniColors() {
+        var out = {};
+        model.munis.forEach(function (m) {
+          var s = styleMuni({ properties: { name: m.name } });
+          out[m.name] = { fill: s.fillColor, line: s.color, weight: s.weight };
+        });
+        return out;
+      }
       function refreshMuniStyle() {
-        if (!muniLayer) return;
-        muniLayer.setStyle(styleMuni);
+        if (gl) gl.paintMunis(muniColors());
+        if (muniLayer) muniLayer.setStyle(styleMuni);
       }
 
       function selectMuni(name) {
@@ -826,10 +900,31 @@ const icon: Record<string, string> = {
         });
       }
 
-      function wantedLayers() {
+      function presetIds() {
         var theme = themeById(state.theme);
         var sc = scenarioById(state.scenario);
-        return uniq((theme.layers || []).concat(sc.priority_layer_ids || []));
+        var ids = (theme.layers || []).concat(sc.priority_layer_ids || []);
+        if (state.compare) ids = ids.concat(scenarioById(state.compare).priority_layer_ids || []);
+        return uniq(ids);
+      }
+      function wantedLayers() {
+        return uniq(presetIds().filter(function (id) { return !layerOff[id]; }).concat(Object.keys(layerExtra)));
+      }
+      function compareOnly() {
+        var only = {};
+        if (!state.compare) return only;
+        var keep = {};
+        var theme = themeById(state.theme);
+        var sc = scenarioById(state.scenario);
+        (theme.layers || []).concat(sc.priority_layer_ids || []).forEach(function (id) { keep[id] = 1; });
+        (scenarioById(state.compare).priority_layer_ids || []).forEach(function (id) {
+          if (!keep[id]) only[id] = 1;
+        });
+        return only;
+      }
+      function resetLayerPins() {
+        layerOff = {};
+        layerExtra = {};
       }
 
       function pointLayer(meta) {
@@ -881,21 +976,45 @@ const icon: Record<string, string> = {
         var ids = wantedLayers();
         var want = {};
         ids.forEach(function (id) { want[id] = 1; });
+        var cmp = compareOnly();
+        var names = ids.map(function (id) {
+          var meta = layerMeta(id);
+          var label = meta ? tx(meta.name_es, meta.name_en) : id;
+          return cmp[id] ? label + (lang() === 'en' ? ' (compare)' : ' (comparar)') : label;
+        });
+        var nameEl = document.getElementById('cdt-layer-names');
+        if (nameEl) nameEl.textContent = tx('Capas: ', 'Layers: ') + names.join(' · ');
+        renderCapas(ids, cmp);
+        if (gl) {
+          model.layerCatalog.forEach(function (meta) {
+            if (!want[meta.id] && gl.hide) gl.hide(meta.id);
+          });
+          return Promise.all(ids.map(function (id) {
+            var meta = layerMeta(id);
+            if (!meta) return 'fail';
+            return gl.load(meta).then(function (geo) {
+              if (!geo) return 'fail';
+              gl.show(id, geo, meta, cmp[id] ? 'compare' : 'on');
+              return 'ok';
+            });
+          })).then(function (flags) {
+            var failed = flags.filter(function (f) { return f === 'fail'; });
+            if (failed.length) setStatus('Algunas capas no cargaron.', 'Some layers did not load.');
+            else setStatus(
+              'Relieve del estado. El color compara municipios. Las capas del tema y del escenario están encendidas.',
+              'State terrain. Color compares municipalities. Theme and scenario layers are on.'
+            );
+          });
+        }
         Object.keys(active).forEach(function (id) {
-          if (!want[id]) {
+          if (!want[id] && map) {
             map.removeLayer(active[id]);
             delete active[id];
           }
         });
-        var names = ids.map(function (id) {
-          var meta = layerMeta(id);
-          return meta ? tx(meta.name_es, meta.name_en) : id;
-        });
-        var nameEl = document.getElementById('cdt-layer-names');
-        if (nameEl) nameEl.textContent = tx('Capas: ', 'Layers: ') + names.join(' · ');
         return Promise.all(ids.map(function (id) {
           return ensureLayer(id).then(function (layer) {
-            if (!layer || active[id]) return;
+            if (!layer || active[id] || !map) return;
             if (!want[id]) return;
             layer.addTo(map);
             active[id] = layer;
@@ -909,20 +1028,22 @@ const icon: Record<string, string> = {
             if (active[id] && active[id]._cdtPoint) active[id].bringToFront();
           });
           var failed = ids.filter(function (id) { return loaded[id] === null; });
-          if (failed.length) {
-            setStatus('Algunas capas no cargaron.', 'Some layers did not load.');
-          } else {
-            setStatus('Capas del tema y del escenario visibles. El color compara municipios.', 'Theme and scenario layers are on. Color compares municipalities.');
-          }
+          if (failed.length) setStatus('Algunas capas no cargaron. El mapa queda en plano.', 'Some layers did not load. The map stays flat.');
+          else setStatus('Sin mapa 3D en este navegador. Las capas siguen en el plano y el color compara municipios.', 'No 3D map in this browser. Layers stay on the flat map and color compares municipalities.');
         });
       }
 
       function fitScenario() {
         var sc = scenarioById(state.scenario);
         var b = sc.focus_bbox;
-        if (!b || b.length !== 4) return;
         function fit() {
           try {
+            if (gl) {
+              gl.resize();
+              gl.fitBox(b && b.length === 4 ? b : null);
+              return;
+            }
+            if (!map || !b || b.length !== 4) return;
             map.invalidateSize();
             map.fitBounds(L.latLngBounds([b[1], b[0]], [b[3], b[2]]), { padding: [18, 18], maxZoom: 10, animate: false });
           } catch (e) {}
@@ -942,6 +1063,7 @@ const icon: Record<string, string> = {
         var q = new URLSearchParams();
         q.set('theme', state.theme);
         q.set('scenario', state.scenario);
+        if (state.compare && state.compare !== state.scenario) q.set('compare', state.compare);
         q.set('x', state.x);
         q.set('y', state.y);
         q.set('muni', state.muni);
@@ -995,9 +1117,70 @@ const icon: Record<string, string> = {
           var show = themes.indexOf(state.theme) !== -1 && scenarios.indexOf(state.scenario) !== -1;
           card.hidden = !show;
         });
+        var cmpSel = document.getElementById('cdt-compare');
+        if (cmpSel) {
+          var cur = state.compare;
+          cmpSel.innerHTML = '<option value="">' + tx('Ninguno', 'None') + '</option>' +
+            model.scenarios.map(function (sc) {
+              if (sc.id === state.scenario) return '';
+              return '<option value="' + sc.id + '"' + (sc.id === cur ? ' selected' : '') + '>' + tx(sc.title_es, sc.title_en) + '</option>';
+            }).join('');
+        }
+        renderCambia();
         updateMapLink();
         applyContext();
         writeUrl();
+      }
+
+      function renderCambia() {
+        var host = document.getElementById('cdt-cambia-body');
+        if (!host) return;
+        var sc = scenarioById(state.scenario);
+        var ids = presetIds();
+        var cmp = compareOnly();
+        var lines = ids.map(function (id) {
+          var meta = layerMeta(id);
+          var name = meta ? tx(meta.name_es, meta.name_en) : id;
+          return '<li>' + name + (cmp[id] ? ' · ' + tx('solo en la comparación', 'only in the comparison') : '') + '</li>';
+        }).join('');
+        var other = state.compare ? scenarioById(state.compare) : null;
+        host.innerHTML =
+          '<p>' + tx(sc.note_es, sc.note_en) + '</p>' +
+          '<p><strong>' + tx('Municipios en tensión: ', 'Municipalities under stress: ') + '</strong>' + (sc.stress || []).join(' · ') + '</p>' +
+          (other ? '<p>' + tx('Comparado con ', 'Compared with ') + tx(other.title_es, other.title_en) + '.</p>' : '') +
+          '<ul>' + lines + '</ul>';
+      }
+
+      function renderCapas(onIds, cmp) {
+        var host = document.getElementById('cdt-capas-body');
+        if (!host) return;
+        var on = {};
+        (onIds || wantedLayers()).forEach(function (id) { on[id] = 1; });
+        cmp = cmp || compareOnly();
+        var html = '<section class="cdt-capas-group"><h3>' + tx('Base', 'Base') + '</h3>' +
+          '<p>' + tx('Municipios: el color compara la cifra del eje horizontal. El relieve es el del atlas.', 'Municipalities: color compares the horizontal-axis figure. The terrain is the atlas terrain.') + '</p></section>';
+        (model.layerGroups || []).forEach(function (g) {
+          var theme = themeById(g.id);
+          html += '<section class="cdt-capas-group"><h3>' + tx(theme.es, theme.en) + '</h3>';
+          (g.layers || []).forEach(function (id) {
+            var meta = layerMeta(id);
+            if (!meta) return;
+            html += '<label><input type="checkbox" data-layer="' + id + '"' + (on[id] ? ' checked' : '') + '> <span>' +
+              tx(meta.name_es, meta.name_en) +
+              (cmp[id] ? ' · ' + tx('comparar', 'compare') : '') +
+              '<small>' + tx(meta.source_es, meta.source_en) + ' · ' + tx(meta.year_es, meta.year_en) + '</small></span></label>';
+          });
+          html += '</section>';
+        });
+        host.innerHTML = html;
+        host.querySelectorAll('[data-layer]').forEach(function (box) {
+          box.addEventListener('change', function () {
+            var id = box.getAttribute('data-layer');
+            if (box.checked) { layerExtra[id] = 1; delete layerOff[id]; }
+            else { layerOff[id] = 1; delete layerExtra[id]; }
+            syncLayers();
+          });
+        });
       }
 
       function bootMunis() {
@@ -1016,6 +1199,7 @@ const icon: Record<string, string> = {
       document.querySelectorAll('[data-theme]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           state.theme = btn.getAttribute('data-theme');
+          resetLayerPins();
           applyChrome();
           syncLayers();
         });
@@ -1023,9 +1207,18 @@ const icon: Record<string, string> = {
       document.querySelectorAll('[data-scenario]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           state.scenario = btn.getAttribute('data-scenario');
+          if (state.compare === state.scenario) state.compare = '';
+          resetLayerPins();
           applyChrome();
           syncLayers().then(fitScenario);
         });
+      });
+      var cmpSel = document.getElementById('cdt-compare');
+      if (cmpSel) cmpSel.addEventListener('change', function () {
+        state.compare = cmpSel.value && cmpSel.value !== state.scenario ? cmpSel.value : '';
+        resetLayerPins();
+        applyChrome();
+        syncLayers();
       });
       document.querySelectorAll('[data-muni-btn]').forEach(function (btn) {
         btn.addEventListener('click', function () { selectMuni(btn.getAttribute('data-muni-btn')); });
@@ -1061,6 +1254,7 @@ const icon: Record<string, string> = {
         fillSelects();
         renderScatter();
         renderDetail();
+        renderCambia();
         syncLayers();
       });
 
@@ -1068,10 +1262,24 @@ const icon: Record<string, string> = {
       applyChrome();
       renderScatter();
       selectMuni(state.muni);
-      bootMunis().then(function () {
+      var reduceMotion = false;
+      try { reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+      var want3d = window.CDT3D && CDT3D.hasWebGL() && typeof maplibregl !== 'undefined';
+      var boot3d = want3d ? CDT3D.start({
+        container: mapEl,
+        reduced: reduceMotion,
+        onMunicipality: function (name) { selectMuni(name); },
+      }) : Promise.reject();
+      boot3d.then(function (eng) {
+        gl = eng;
+        refreshMuniStyle();
+      }).catch(function () {
+        ensure2d();
+        return bootMunis();
+      }).then(function () {
         return syncLayers();
       }).then(fitScenario).catch(function () {
-        setStatus('No se pudo cargar el mapa municipal.', 'The municipal map could not load.');
+        setStatus('No se pudo cargar el mapa.', 'The map could not load.');
       });
     })();
   </script>

@@ -2055,6 +2055,38 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-3d-p20",
+        "title": "Gemelo 3D, capas y escenarios / 3D twin, layers and scenarios",
+        "path": "portal/gemelo",
+        "href": "/gemelo/",
+        "theme": "planeacion",
+        "sum_es": (
+            "El gemelo en /gemelo muestra el relieve del estado y las capas públicas, agrupadas en los cinco temas. "
+            "Al cambiar de tema se encienden las capas de ese tema y se mantienen las del escenario. "
+            "Cada capa dice su fuente y su año, o que el año no está registrado. "
+            "Los escenarios son trayectoria actual, corredor Cabos–La Paz, agua primero, y puertos y aeropuertos. "
+            "«Qué cambia» dice qué capas se encienden, qué municipios quedan en tensión y cómo se cruzan agua, vivienda y movilidad. "
+            "Se puede comparar con otro escenario: el enlace guarda tema, escenario y comparación. "
+            "Sigue sin poder mapas por manzana (AGEB), predios, catastro o métricas de forma. Si una celda está en blanco, se queda en blanco. "
+            "Pregunta de seguimiento: ¿abre el relieve, las capas del tema, o qué cambia en un escenario? "
+            "[gemelo 3d capas del gemelo escenarios]"
+        ),
+        "sum_en": (
+            "The twin at /gemelo shows the state’s terrain and the public layers, grouped in the five themes. "
+            "Changing theme turns on that theme’s layers and keeps the scenario layers. "
+            "Each layer names its source and year, or says the year is not recorded. "
+            "The scenarios are current trajectory, the Cabos–La Paz corridor, water first, and ports and airports. "
+            "“What changes” says which layers turn on, which municipalities are under stress, and how water, housing and mobility meet. "
+            "You can compare with another scenario: the link keeps theme, scenario and comparison. "
+            "It still cannot do block maps (AGEB), parcels, cadastre or form metrics. If a cell is blank, it stays blank. "
+            "Follow-up: do you open the terrain, the theme layers, or what changes in a scenario? "
+            "[3d twin twin layers gemelo scenarios]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

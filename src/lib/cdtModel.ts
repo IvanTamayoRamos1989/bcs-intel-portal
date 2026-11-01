@@ -342,6 +342,123 @@ const layerIds = new Set<string>();
 for (const ids of Object.values(THEME_LAYERS)) ids.forEach((id) => layerIds.add(id));
 for (const sc of scenariosDoc.scenarios) sc.priority_layer_ids.forEach((id) => layerIds.add(id));
 
+const LAYER_PROVENANCE: Record<string, { source_es: string; source_en: string; year_es: string; year_en: string }> = {
+  anp_federales: {
+    source_es: 'CONANP / CONABIO',
+    source_en: 'CONANP / CONABIO',
+    year_es: '2025',
+    year_en: '2025',
+  },
+  rtp_conabio: {
+    source_es: 'CONABIO · regiones terrestres prioritarias',
+    source_en: 'CONABIO · terrestrial priority regions',
+    year_es: '2004',
+    year_en: '2004',
+  },
+  poer_ugas: {
+    source_es: 'POERBCS · Gobierno de BCS / SEMARNAT',
+    source_en: 'POERBCS · BCS government / SEMARNAT',
+    year_es: 'año de la capa sin registrar',
+    year_en: 'layer year not recorded',
+  },
+  federal_projects: {
+    source_es: 'Inventario de proyectos federales del portal',
+    source_en: 'Portal inventory of federal projects',
+    year_es: 'sexenio en cada punto, sin un año único',
+    year_en: 'administration on each point, no single year',
+  },
+  settlements: {
+    source_es: 'Selección del portal · población INEGI donde está publicada',
+    source_en: 'Portal selection · INEGI population where published',
+    year_es: '2020',
+    year_en: '2020',
+  },
+  osm_towns: osmProv(),
+  osm_highways: osmProv(),
+  highway_nodes: osmProv(),
+  osm_transport_nodes: osmProv(),
+  osm_power_lines: osmProv(),
+  osm_waterways: osmProv(),
+  osm_coastline: osmProv(),
+  focus_corridor_cabos_lapaz: focusProv(),
+  focus_east_cape: focusProv(),
+  focus_water_dmas: focusProv(),
+  focus_ports_air: focusProv(),
+  focus_places_loreto_constitucion: focusProv(),
+};
+
+function missingScenario(id: string): never {
+  throw new Error(`CDT scenario read missing: ${id}`);
+}
+
+function osmProv() {
+  return {
+    source_es: 'OpenStreetMap',
+    source_en: 'OpenStreetMap',
+    year_es: 'año no registrado en el catálogo GIS',
+    year_en: 'year not recorded in the GIS catalog',
+  };
+}
+function focusProv() {
+  return {
+    source_es: 'Marco de foco del gemelo (indicativo, no es un límite oficial)',
+    source_en: 'Twin focus frame (indicative, not an official boundary)',
+    year_es: '2026',
+    year_en: '2026',
+  };
+}
+
+const LAYER_GROUP: Record<string, CdtThemeId> = {
+  settlements: 'urbano',
+  osm_towns: 'urbano',
+  poer_ugas: 'urbano',
+  focus_corridor_cabos_lapaz: 'urbano',
+  focus_east_cape: 'urbano',
+  federal_projects: 'economia',
+  osm_power_lines: 'economia',
+  anp_federales: 'investigacion',
+  rtp_conabio: 'investigacion',
+  osm_highways: 'movilidad',
+  highway_nodes: 'movilidad',
+  osm_transport_nodes: 'movilidad',
+  focus_ports_air: 'movilidad',
+  focus_places_loreto_constitucion: 'movilidad',
+  focus_water_dmas: 'vivienda',
+  osm_waterways: 'vivienda',
+  osm_coastline: 'vivienda',
+};
+
+const SCENARIO_READ: Record<string, { stress: string[]; note_es: string; note_en: string }> = {
+  baseline: {
+    stress: ['Los Cabos', 'Loreto'],
+    note_es:
+      'Agua, vivienda y movilidad se cruzan en los polos costeros: el turismo y la vivienda nueva se leen contra acuíferos ya en déficit. No se inventa un margen.',
+    note_en:
+      'Water, housing and mobility meet at the coastal poles: tourism and new housing are read against aquifers already in deficit. No headroom is invented.',
+  },
+  corridor_intensify: {
+    stress: ['Los Cabos', 'La Paz'],
+    note_es:
+      'Intensificar el corredor junta carretera, asentamiento y servicios. East Cape sigue dentro de Los Cabos. El agua de un municipio no se transfiere a otro.',
+    note_en:
+      'Intensifying the corridor joins the highway, settlement and services. East Cape stays inside Los Cabos. Water is not transferred from one municipality to another.',
+  },
+  water_first: {
+    stress: ['Los Cabos', 'La Paz', 'Loreto'],
+    note_es:
+      'El agua manda sobre vivienda y viajes: donde el acuífero está en déficit, más arribos no abren vivienda nueva. Las celdas sin cifra siguen en blanco.',
+    note_en:
+      'Water leads housing and travel: where the aquifer is in deficit, more arrivals do not open new housing. Cells without a figure stay blank.',
+  },
+  ports_air_hubs: {
+    stress: ['Los Cabos', 'La Paz', 'Loreto'],
+    note_es:
+      'Los anclas de viaje son demanda: Los Cabos 3,800,000, La Paz 668,800 y Loreto 89,600 viajeros aéreos en 2025. No son capacidad de agua. Comondú y Mulegé no tienen esa serie: no se ponen en cero.',
+    note_en:
+      'Travel anchors are demand: Los Cabos 3,800,000, La Paz 668,800 and Loreto 89,600 air travelers in 2025. They are not water capacity. Comondú and Mulegé have no such series: they are not set to zero.',
+  },
+};
+
 const layerCatalog = (layersDoc as ReadonlyArray<{
   id: string;
   url: string;
@@ -351,14 +468,24 @@ const layerCatalog = (layersDoc as ReadonlyArray<{
   name_en: string;
 }>)
   .filter((l) => layerIds.has(l.id))
-  .map((l) => ({
-    id: l.id,
-    url: l.url,
-    type: l.type,
-    color: l.color || '#0083C4',
-    name_es: l.name_es,
-    name_en: l.name_en,
-  }));
+  .map((l) => {
+    const prov = LAYER_PROVENANCE[l.id];
+    const group = LAYER_GROUP[l.id];
+    if (!prov || !group) throw new Error(`CDT layer provenance missing: ${l.id}`);
+    return {
+      id: l.id,
+      url: l.url,
+      type: l.type,
+      color: l.color || '#0083C4',
+      name_es: l.name_es,
+      name_en: l.name_en,
+      group,
+      source_es: prov.source_es,
+      source_en: prov.source_en,
+      year_es: prov.year_es,
+      year_en: prov.year_en,
+    };
+  });
 
 const found = new Set(layerCatalog.map((l) => l.id));
 for (const id of layerIds) {
@@ -997,9 +1124,9 @@ export const cdtModel = {
   fedProjects,
   guides,
   pedagogy_es:
-    'Esto es el tablero para mirar el territorio con calma. Elige un tema, luego un escenario, compara municipios y lee las recomendaciones. Complementa la consulta ciudadana de Inicio: aquí las cifras ya publicadas se ponen juntas. No calcula predios.',
+    'Esto es el tablero para mirar el territorio con calma. El mapa muestra el relieve del estado y las capas públicas del tema. Elige un escenario, lee qué cambia, compara municipios y lee las recomendaciones. Complementa la consulta ciudadana de Inicio. No calcula predios ni manzanas.',
   pedagogy_en:
-    'This is the board for looking at the territory carefully. Pick a theme, then a scenario, compare municipalities and read the recommendations. It complements the citizen consultation on Home: figures already published are placed side by side. It does not score parcels.',
+    'This is the board for looking at the territory carefully. The map shows the state’s terrain and the theme’s public layers. Pick a scenario, read what changes, compare municipalities and read the recommendations. It complements the citizen consultation on Home. It does not score parcels or blocks.',
   integrated_es:
     'Solución integrada: el tema activo no se decide solo. Estas cuatro lecturas vienen de la demanda y oferta, de las preguntas y de los proyectos ya publicados. Es apoyo a la decisión, no una simulación calibrada.',
   integrated_en:
@@ -1026,6 +1153,13 @@ export const cdtModel = {
     focus_bbox: sc.focus_bbox,
     questions_es: sc.decision_questions_es,
     questions_en: sc.decision_questions_en,
+    stress: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).stress,
+    note_es: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).note_es,
+    note_en: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).note_en,
+  })),
+  layerGroups: (['urbano', 'economia', 'investigacion', 'movilidad', 'vivienda'] as CdtThemeId[]).map((id) => ({
+    id,
+    layers: layerCatalog.filter((l) => l.group === id).map((l) => l.id),
   })),
   disclaimer_es:
     'Apoyo a la decisión con reglas del portal (demanda y oferta de crecimiento, más el escenario elegido). No es un modelo de predios, ni una puntuación de deseabilidad por parcela, ni un plan oficial.',
