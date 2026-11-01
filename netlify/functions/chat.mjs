@@ -1171,6 +1171,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(news.id);
     }
   }
+  if (readinessQuery(query)) {
+    const ready = corpus.find((c) => c.id === 'portal:gemelo-listo-p210');
+    if (ready && !usedId.has(ready.id)) {
+      picked.unshift(ready);
+      usedId.add(ready.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1691,6 +1698,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== news.id);
       picked.length = 0;
       picked.push(news, ...rest);
+    }
+  }
+  if (readinessQuery(query)) {
+    const ready = corpus.find((c) => c.id === 'portal:gemelo-listo-p210');
+    if (ready) {
+      const rest = picked.filter((c) => c.id !== ready.id);
+      picked.length = 0;
+      picked.push(ready, ...rest);
     }
   }
 
@@ -2472,10 +2487,16 @@ function novedadesQuery(message) {
   return /novedades gemelo|gemelo mas rapido|twin news|faster twin/.test(q);
 }
 
+function readinessQuery(message) {
+  if (kitQuery(message) || sideQuery(message) || presetQuery(message) || stillFicheQuery(message) || atlasQuery(message) || novedadesQuery(message) || fichaQuery(message) || extrusionQuery(message) || gemelo3dQuery(message) || namedViewsQuery(message)) return false;
+  const q = normQ(message);
+  return /que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
-  return /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/.test(q);
+  return /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits/.test(q);
 }
 
 function kitQuery(message) {
@@ -2508,9 +2529,12 @@ function portalSurfaceBlocks(message, lang) {
   const en = lang === 'en';
   const surfaces = [
     { id: 'gemelo-air', re: /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/, href: '/gemelo/?theme=movilidad&x=pob&y=aereo_2025', es: 'Eje aéreo 2025', en: '2025 air axis' }, // keep in sync with airAxisQuery
-    { id: 'gemelo-limites', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
-    { id: 'gemelo-limites-metas', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, href: '/metas/', es: 'Preguntas abiertas', en: 'Open questions' },
-    { id: 'gemelo-limites-ev', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, href: '/aprendizaje/#evidencia', es: 'Evidencia de otras ciudades', en: 'Evidence from other cities' },
+    { id: 'gemelo-listo', re: /que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/, href: '/gemelo/#listo', es: 'Qué falta', en: 'What is missing' },
+    { id: 'gemelo-listo-metas', re: /que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/, href: '/metas/', es: 'Preguntas abiertas', en: 'Open questions' },
+    { id: 'gemelo-listo-catastro', re: /que falta en el gemelo|listo para fase 3|catastro|cadastre|data readiness|ready for phase 3|what the twin is missing/, href: '/catastro/', es: 'Oficinas de catastro', en: 'Cadastre offices' },
+    { id: 'gemelo-limites', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
+    { id: 'gemelo-limites-metas', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits/, href: '/metas/', es: 'Preguntas abiertas', en: 'Open questions' },
+    { id: 'gemelo-limites-ev', re: /que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits/, href: '/aprendizaje/#evidencia', es: 'Evidencia de otras ciudades', en: 'Evidence from other cities' },
     { id: 'gemelo-leer', re: /como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, href: '/gemelo/', es: 'Cómo leer el tablero', en: 'How to read the board' },
     { id: 'gemelo-leer-vistas', re: /como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, href: '/vistas/', es: 'Vistas guardadas', en: 'Saved views' },
     { id: 'ev-desal', re: /desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, href: '/aprendizaje/#evidencia', es: 'Evidencia: agua y costa', en: 'Evidence: water and coast' },
@@ -2580,7 +2604,8 @@ function portalGuideBoost(message, chunk) {
     [/agua primero|water first|cinco vistas|five named views|five saved views|contexto de vivienda|housing context|recorrido de 10|ten-minute walk|puertos y aeropuertos|east cape/, /vistas-nombres/],
     [/desalaci|desalinat|agua no contabilizada|non-revenue water|uncounted water|unbilled water|\bc40\b|urbanshift|urban shift/, /evidencia-desal/],
     [/como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, /gemelo-leer/],
-    [/que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits|\bageb\b/, /gemelo-limites/],
+    [/que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits/, /gemelo-limites/],
+    [/que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/, /gemelo-listo/],
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
@@ -3008,6 +3033,9 @@ async function handlerInner(event) {
   const novedadesGuide = novedadesQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-novedades-p29')
     : null;
+  const readinessGuide = readinessQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-listo-p210')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -3085,6 +3113,10 @@ async function handlerInner(event) {
   }
   if (novedadesGuide && !evidence.some((c) => c.id === novedadesGuide.id)) {
     evidence = [novedadesGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (readinessGuide && !evidence.some((c) => c.id === readinessGuide.id)) {
+    evidence = [readinessGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
