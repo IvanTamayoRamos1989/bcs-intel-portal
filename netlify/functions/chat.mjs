@@ -1164,6 +1164,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(atlas.id);
     }
   }
+  if (novedadesQuery(query)) {
+    const news = corpus.find((c) => c.id === 'portal:gemelo-novedades-p29');
+    if (news && !usedId.has(news.id)) {
+      picked.unshift(news);
+      usedId.add(news.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1676,6 +1683,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== atlas.id);
       picked.length = 0;
       picked.push(atlas, ...rest);
+    }
+  }
+  if (novedadesQuery(query)) {
+    const news = corpus.find((c) => c.id === 'portal:gemelo-novedades-p29');
+    if (news) {
+      const rest = picked.filter((c) => c.id !== news.id);
+      picked.length = 0;
+      picked.push(news, ...rest);
     }
   }
 
@@ -2451,6 +2466,12 @@ function atlasQuery(message) {
   return /abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/.test(q);
 }
 
+function novedadesQuery(message) {
+  if (kitQuery(message) || sideQuery(message) || presetQuery(message) || stillFicheQuery(message) || atlasQuery(message) || fichaQuery(message) || extrusionQuery(message) || gemelo3dQuery(message) || namedViewsQuery(message)) return false;
+  const q = normQ(message);
+  return /novedades gemelo|gemelo mas rapido|twin news|faster twin/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2499,6 +2520,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-novedades', re: /novedades gemelo|gemelo mas rapido|twin news|faster twin/, href: '/gemelo/#presets', es: 'Novedades del gemelo', en: 'What is new on the twin' },
+    { id: 'gemelo-novedades-diag', re: /novedades gemelo|gemelo mas rapido|twin news|faster twin/, href: '/gemelo/?path=diagnostico', es: 'Diagnóstico', en: 'Diagnosis' },
     { id: 'gemelo-atlas', re: /abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/, href: '/explorar/?tema=urbano&capas=cities,zoning', es: 'Abrir en el atlas', en: 'Open in atlas' },
     { id: 'gemelo-atlas-back', re: /abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/, href: '/gemelo/?path=diagnostico&theme=urbano', es: 'Gemelo territorial', en: 'Decision twin' },
     { id: 'gemelo-still', re: /fotos del municipio|still gemelo|leyenda extrusion|municipality photos|twin still|extrusion legend/, href: '/gemelo/#cdt-fiche-wrap', es: 'Fotos en la ficha', en: 'Photos on the fiche' },
@@ -2570,6 +2593,7 @@ function portalGuideBoost(message, chunk) {
     [/presets del gemelo|reunion gemelo|para la reunion|meeting presets|twin meeting|for the meeting/, /gemelo-preset/],
     [/fotos del municipio|still gemelo|leyenda extrusion|municipality photos|twin still|extrusion legend/, /gemelo-stills/],
     [/abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/, /gemelo-atlas/],
+    [/novedades gemelo|gemelo mas rapido|twin news|faster twin/, /gemelo-novedades/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2981,6 +3005,9 @@ async function handlerInner(event) {
   const atlasGuide = atlasQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-atlas-p28')
     : null;
+  const novedadesGuide = novedadesQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-novedades-p29')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -3054,6 +3081,10 @@ async function handlerInner(event) {
   }
   if (atlasGuide && !evidence.some((c) => c.id === atlasGuide.id)) {
     evidence = [atlasGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (novedadesGuide && !evidence.some((c) => c.id === novedadesGuide.id)) {
+    evidence = [novedadesGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

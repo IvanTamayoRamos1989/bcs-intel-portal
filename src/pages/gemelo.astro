@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.8 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.8 · decision support</span>
+          <span data-lang-es>Fase 2.9 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.9 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -137,8 +137,8 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.8)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.8)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.9)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.9)</span>
           </h2>
           <p>
             <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
@@ -171,6 +171,10 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>El atlas es el inventario para explorar el territorio. El gemelo es el lugar de los escenarios y la decisión. Abrir en el atlas lleva las capas del tema que el atlas ya conoce, y el municipio si está elegido.</span>
             <span data-lang-en hidden>The atlas is the inventory for exploring the territory. The twin is where scenarios and the decision live. Open in atlas carries the theme layers the atlas already knows, and the municipality when one is chosen.</span>
+          </p>
+          <p>
+            <span data-lang-es>La segunda vista del mapa aparece solo al comparar, y en pantalla ancha. Una capa que no está en el tema ni en el escenario no se descarga hasta que se enciende.</span>
+            <span data-lang-en hidden>The second map view appears only while comparing, and only on a wide screen. A layer that is not in the theme or the scenario is not downloaded until it is turned on.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -1722,29 +1726,40 @@ const icon: Record<string, string> = {
       }
 
       var glB = null;
-      var camerasLinked = false;
-      function linkCameras() {
-        if (!gl || !glB || camerasLinked || !gl.watchMove) return;
-        camerasLinked = true;
-        var lock = false;
-        function follow(src, dst) {
-          src.watchMove(function () {
-            if (lock) return;
-            lock = true;
-            dst.jumpCamera(src.readCamera());
-            lock = false;
-          });
-        }
-        follow(gl, glB);
-        follow(glB, gl);
+      var camLock = false;
+      var aLinked = false;
+      function linkA() {
+        if (!gl || aLinked || !gl.watchMove) return;
+        aLinked = true;
+        gl.watchMove(function () {
+          if (!glB || camLock) return;
+          camLock = true;
+          glB.jumpCamera(gl.readCamera());
+          camLock = false;
+        });
+      }
+      function linkB(eng) {
+        if (!eng || !eng.watchMove) return;
+        eng.watchMove(function () {
+          if (!gl || camLock) return;
+          camLock = true;
+          gl.jumpCamera(eng.readCamera());
+          camLock = false;
+        });
+      }
+      function dropGlB() {
+        if (glB && glB.destroy) glB.destroy();
+        glB = null;
       }
       function ensureGlB() {
-        renderSplitChrome();
         if (!state.compare || !gl || !wideScreen() || !window.CDT3D) {
+          dropGlB();
+          renderSplitChrome();
           return Promise.resolve(null);
         }
+        renderSplitChrome();
         if (glB) {
-          linkCameras();
+          linkA();
           if (gl.readCamera) glB.jumpCamera(gl.readCamera());
           return Promise.resolve(glB);
         }
@@ -1756,9 +1771,16 @@ const icon: Record<string, string> = {
           tools: false,
           onMunicipality: function (name) { selectMuni(name, true); },
         }).then(function (eng) {
+          if (!state.compare || !wideScreen()) {
+            if (eng && eng.destroy) eng.destroy();
+            glB = null;
+            renderSplitChrome();
+            return null;
+          }
           glB = eng;
+          linkA();
+          linkB(eng);
           if (gl.readCamera) eng.jumpCamera(gl.readCamera());
-          linkCameras();
           return eng;
         }).catch(function () {
           glB = null;
@@ -1839,7 +1861,7 @@ const icon: Record<string, string> = {
           if (state.compare === state.scenario) state.compare = '';
           resetLayerPins();
           applyChrome();
-          syncLayers().then(fitScenario);
+          ensureGlB().then(function () { return syncLayers(); }).then(fitScenario);
         });
       });
       var cmpSel = document.getElementById('cdt-compare');
@@ -1952,6 +1974,14 @@ const icon: Record<string, string> = {
       if (ficheWrap && window.matchMedia('(min-width: 981px)').matches) ficheWrap.open = true;
       window.addEventListener('resize', function () {
         if (ficheWrap && window.matchMedia('(min-width: 981px)').matches) ficheWrap.open = true;
+      });
+      var splitTimer = 0;
+      window.addEventListener('resize', function () {
+        clearTimeout(splitTimer);
+        splitTimer = setTimeout(function () {
+          if (!gl) return;
+          ensureGlB().then(function () { return syncLayers(); });
+        }, 180);
       });
       selectMuni(state.muni);
       var reduceMotion = false;

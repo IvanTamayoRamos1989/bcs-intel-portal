@@ -69,3 +69,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 2.6 | `DEPLOY_REPORT_CDT_P2_6.md` | Four meeting openings for the twin, linked from the host kit |
 | 2.7 | `DEPLOY_REPORT_CDT_P2_7.md` | Territory frames on the municipality fiche, and a height legend |
 | 2.8 | `DEPLOY_REPORT_CDT_P2_8.md` | Jump between the twin and the atlas with the same theme and place |
+| 2.9 | `DEPLOY_REPORT_CDT_P2_9.md` | Second map only while comparing; a short what’s-new line on Home |
