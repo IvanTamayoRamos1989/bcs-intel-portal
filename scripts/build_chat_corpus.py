@@ -2087,6 +2087,34 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-extrusion-p21",
+        "title": "Altura municipal y palancas del escenario / Municipal height and scenario levers",
+        "path": "portal/gemelo",
+        "href": "/gemelo/?z=pob",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo la altura de cada municipio sigue una cifra que ya está en el tablero: población, registro de vivienda, viajeros aéreos, pasajeros de crucero o pobreza, entre otras. "
+            "La altura es relativa a la cifra más alta. No son metros de terreno ni edificios. "
+            "Si un municipio no tiene esa cifra, no se levanta: Comondú y Mulegé se quedan fuera de los viajeros aéreos 2025, y Mulegé y Loreto fuera de la ley de ingresos 2026. Un cero publicado sí se dibuja. "
+            "Cada escenario tiene palancas que adelantan una lectura ya escrita, por ejemplo el margen de agua o la demanda aérea. "
+            "La palanca entra en «Qué cambia» y en el enlace. "
+            "Pregunta de seguimiento: ¿quiere la altura por población, o la palanca de agua? "
+            "[extrusion municipal palancas del escenario]"
+        ),
+        "sum_en": (
+            "On /gemelo the height of each municipality follows a figure already on the board: population, the housing registry, air travelers, cruise passengers or poverty, among others. "
+            "Height is relative to the highest figure. These are not meters of terrain or buildings. "
+            "If a municipality has no such figure, it does not rise: Comondú and Mulegé stay off 2025 air travelers, and Mulegé and Loreto stay off the 2026 revenue law. A published zero is drawn. "
+            "Each scenario has levers that bring forward a reading already written, for example water headroom or air demand. "
+            "The lever is part of “What changes” and of the link. "
+            "Follow-up: do you want the height by population, or the water lever? "
+            "[municipal extrusion scenario levers]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

@@ -50,8 +50,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.0 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.0 · decision support</span>
+          <span data-lang-es>Fase 2.1 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.1 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -70,12 +70,12 @@ const icon: Record<string, string> = {
           <a href="/aprendizaje/"><span data-lang-es>Aprender de otras ciudades</span><span data-lang-en hidden>Learn from other cities</span></a>
         </p>
         <HowTo
-          leadEs="Elija un tema, luego un escenario, y lea qué cambia en el relieve. Las recomendaciones son reglas del portal, no un dictamen de predios."
-          leadEn="Pick a theme, then a scenario, and read what changes on the terrain. Recommendations are portal rules, not a parcel ruling."
+          leadEs="Elija un tema, una cifra para la altura municipal y una palanca del escenario. Las recomendaciones son reglas del portal, no un dictamen de predios."
+          leadEn="Pick a theme, a figure for the municipal height, and a scenario lever. Recommendations are portal rules, not a parcel ruling."
           steps={[
-            { es: 'Pulse un tema. El mapa enciende las capas de ese tema, sin apagar las del escenario.', en: 'Press a theme. The map turns on that theme’s layers, and keeps the scenario layers on.' },
-            { es: 'Elija un escenario y lea «Qué cambia»: capas, municipios y el cruce con otros temas.', en: 'Choose a scenario and read “What changes”: layers, municipalities and the cross-theme note.' },
-            { es: 'Si quiere, compare con otro escenario. Toque un municipio para su ficha.', en: 'If you want, compare with another scenario. Tap a municipality for its page.' },
+            { es: 'Elija la cifra de la altura. Si un municipio no tiene esa cifra, no se levanta.', en: 'Pick the figure for the height. If a municipality lacks that figure, it does not rise.' },
+            { es: 'Pulse una palanca. «Qué cambia» pone delante una lectura que ya está en el portal.', en: 'Press a lever. “What changes” puts an existing portal reading in front.' },
+            { es: 'Compare con otro escenario si quiere. Toque un municipio para su ficha.', en: 'Compare with another scenario if you want. Tap a municipality for its page.' },
           ]}
         />
         <aside class="cdt-tip">
@@ -95,16 +95,16 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.0)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.0)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.1)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.1)</span>
           </h2>
           <p>
-            <span data-lang-es>Puede ahora: el relieve del estado, las capas públicas agrupadas en los cinco temas, y los cuatro escenarios con lo que cambia entre ellos. Si una celda está en blanco, se queda en blanco.</span>
-            <span data-lang-en hidden>It can now: the state’s terrain, public layers grouped in the five themes, and the four scenarios with what changes between them. If a cell is blank, it stays blank.</span>
+            <span data-lang-es>Puede ahora: el relieve del estado, la altura de cada municipio según una cifra que usted elige, las capas por tema, y una palanca por escenario que adelanta una lectura ya escrita. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
+            <span data-lang-en hidden>It can now: the state’s terrain, a height for each municipality from a figure you choose, layers by theme, and one lever per scenario that brings an existing reading forward. If a cell is blank, that municipality does not rise and the cell stays blank.</span>
           </p>
           <p>
-            <span data-lang-es>Todavía no puede: mapas por manzana (AGEB), forma de predios, lotes de catastro, métricas de forma, ni rellenar una cifra que falta. El relieve no es un modelo de edificios.</span>
-            <span data-lang-en hidden>It cannot yet: block maps (AGEB), parcel form, cadastre lots, form metrics, or filling in a missing figure. The terrain is not a model of buildings.</span>
+            <span data-lang-es>Todavía no puede: mapas por manzana (AGEB), forma de predios, lotes de catastro, métricas de forma, ni rellenar una cifra que falta. La altura es relativa a la cifra elegida. No es un edificio ni un metro de terreno.</span>
+            <span data-lang-en hidden>It cannot yet: block maps (AGEB), parcel form, cadastre lots, form metrics, or filling in a missing figure. The height is relative to the chosen figure. It is not a building and not a meter of terrain.</span>
           </p>
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
@@ -129,6 +129,7 @@ const icon: Record<string, string> = {
             <span data-lang-en hidden>{sc.title_en}</span>
           </button>
         ))}
+        <div id="cdt-levers" class="cdt-levers" role="group" aria-label="Palancas del escenario" data-aria-es="Palancas del escenario" data-aria-en="Scenario levers"></div>
         <label class="cdt-compare-pick">
           <span data-lang-es>Comparar con</span>
           <span data-lang-en hidden>Compare with</span>
@@ -175,6 +176,7 @@ const icon: Record<string, string> = {
             <button type="button" id="cdt-fit"><span data-lang-es>Estado</span><span data-lang-en hidden>State</span></button>
           </div>
         </div>
+        <div id="cdt-extrude" class="cdt-extrude"></div>
         <p class="cdt-map-note" id="cdt-status">
           <span data-lang-es>Cargando capas del mapa…</span>
           <span data-lang-en hidden>Loading map layers…</span>
@@ -191,7 +193,8 @@ const icon: Record<string, string> = {
           </a>
         </p>
         <details class="cdt-capas" open>
-          <summary><span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span></summary>
+          <summary id="cdt-capas-count"><span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span></summary>
+          <input id="cdt-capas-q" class="cdt-capas-q" type="search" autocomplete="off" />
           <div id="cdt-capas-body"></div>
         </details>
       </div>
@@ -472,6 +475,7 @@ const icon: Record<string, string> = {
                 class="cdt-rec"
                 data-rec-themes={r.themes.join(' ')}
                 data-rec-scenarios={r.scenarios.join(' ')}
+                data-balance={r.balance}
               >
                 <p class="cdt-rec-kicker">
                   <span data-lang-es>{r.balance_label_es}</span>
@@ -520,8 +524,17 @@ const icon: Record<string, string> = {
     .cdt-map-tools { position: absolute; z-index: 2; top: 0.45rem; left: 0.45rem; display: flex; flex-wrap: wrap; gap: 0.28rem; max-width: calc(100% - 0.9rem); }
     .cdt-map-tools button { font: inherit; font-size: 0.75rem; font-weight: 650; background: #fff; border: 1px solid #0083C4; color: #006BA3; border-radius: 999px; padding: 0.22rem 0.55rem; cursor: pointer; }
     .cdt-map-tools button:focus-visible, .cdt-compare-pick select:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+    .cdt-levers { display: flex; flex-wrap: wrap; gap: 0.35rem; width: 100%; }
+    .cdt-lever[aria-pressed="true"] { background: #006BA3; border-color: #006BA3; color: #fff; }
+    .cdt-extrude { margin: 0.45rem 0 0; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.5rem 0.7rem; background: #f7fbfd; }
+    .cdt-extrude strong { color: var(--cdt-dark); }
+    .cdt-extrude select { font: inherit; margin-left: 0.35rem; border: 1px solid var(--cdt-line); border-radius: 999px; padding: 0.2rem 0.5rem; background: #fff; }
+    .cdt-extrude small, .cdt-extrude li { color: var(--cdt-muted); font-size: 0.78rem; }
+    .cdt-extrude ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
     .cdt-capas { margin-top: 0.45rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.4rem 0.7rem 0.55rem; background: #fff; }
     .cdt-capas summary { cursor: pointer; color: var(--cdt-dark); font-weight: 700; }
+    .cdt-capas-q { width: 100%; margin: 0.4rem 0 0.15rem; font: inherit; border: 1px solid var(--cdt-line); border-radius: 8px; padding: 0.3rem 0.45rem; }
+    .cdt-rec.is-lever { background: #e8f4fb; }
     .cdt-capas h3 { margin: 0.45rem 0 0.15rem; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cdt); }
     .cdt-capas label { display: flex; gap: 0.4rem; align-items: flex-start; margin: 0.22rem 0; font-size: 0.8rem; line-height: 1.3; }
     .cdt-capas small { display: block; color: var(--cdt-muted); font-weight: 400; }
@@ -663,10 +676,14 @@ const icon: Record<string, string> = {
         theme: 'urbano',
         scenario: 'baseline',
         compare: '',
+        lever: '',
+        z: 'pob',
         x: 'pob',
         y: 'sniiv_2025',
         muni: 'Los Cabos',
       };
+      var capasQ = '';
+      var extrudeLayer = null;
       var layerOff = {};
       var layerExtra = {};
 
@@ -719,6 +736,8 @@ const icon: Record<string, string> = {
       if (params.get('y') && indicatorById(params.get('y')).id === params.get('y')) state.y = params.get('y');
       if (params.get('muni') && muniByName(params.get('muni')).name === params.get('muni')) state.muni = params.get('muni');
       if (params.get('compare') && scenarioById(params.get('compare')).id === params.get('compare') && params.get('compare') !== state.scenario) state.compare = params.get('compare');
+      if (params.get('z') && indicatorById(params.get('z')).id === params.get('z')) state.z = params.get('z');
+      if (params.get('lever')) state.lever = params.get('lever');
       if (state.x === state.y) state.y = state.x === 'sniiv_2025' ? 'pobreza_pct' : 'sniiv_2025';
 
       var map = null;
@@ -787,9 +806,55 @@ const icon: Record<string, string> = {
         });
         return out;
       }
+      function extrusionHeights() {
+        var id = state.z;
+        var vals = model.munis.map(function (m) { return m[id]; }).filter(hasNum).map(Number);
+        if (!vals.length) return {};
+        var min = Math.min.apply(null, vals);
+        var max = Math.max.apply(null, vals);
+        var out = {};
+        model.munis.forEach(function (m) {
+          var raw = m[id];
+          if (!hasNum(raw)) return;
+          var t = max === min ? 1 : (Number(raw) - min) / (max - min);
+          out[m.name] = Math.round(2500 + t * 20000);
+        });
+        return out;
+      }
+      function paintExtrude2d() {
+        if (!map || !muniLayer || typeof L === 'undefined') return;
+        if (extrudeLayer) map.removeLayer(extrudeLayer);
+        var heights = extrusionHeights();
+        var names = Object.keys(heights);
+        if (!names.length) { extrudeLayer = null; return; }
+        var maxH = Math.max.apply(null, names.map(function (n) { return heights[n]; }));
+        extrudeLayer = L.layerGroup();
+        muniLayer.eachLayer(function (layer) {
+          var name = layer.feature && layer.feature.properties && layer.feature.properties.name;
+          if (!name || !heights[name]) return;
+          var t = heights[name] / maxH;
+          L.circleMarker(layer.getBounds().getCenter(), {
+            radius: 7 + t * 14,
+            color: '#006BA3',
+            weight: 1,
+            fillColor: '#0083C4',
+            fillOpacity: 0.9,
+          }).bindTooltip(name, { sticky: true }).addTo(extrudeLayer);
+        });
+        extrudeLayer.addTo(map);
+      }
       function refreshMuniStyle() {
+        if (gl && gl.setExtrusion) gl.setExtrusion(extrusionHeights());
         if (gl) gl.paintMunis(muniColors());
         if (muniLayer) muniLayer.setStyle(styleMuni);
+        paintExtrude2d();
+        renderExtrudeLegend();
+      }
+      function currentLever() {
+        var sc = scenarioById(state.scenario);
+        var list = sc.levers || [];
+        for (var i = 0; i < list.length; i++) if (list[i].id === state.lever) return list[i];
+        return null;
       }
 
       function selectMuni(name) {
@@ -1064,6 +1129,8 @@ const icon: Record<string, string> = {
         q.set('theme', state.theme);
         q.set('scenario', state.scenario);
         if (state.compare && state.compare !== state.scenario) q.set('compare', state.compare);
+        if (state.lever && currentLever()) q.set('lever', state.lever);
+        if (state.z) q.set('z', state.z);
         q.set('x', state.x);
         q.set('y', state.y);
         q.set('muni', state.muni);
@@ -1126,10 +1193,64 @@ const icon: Record<string, string> = {
               return '<option value="' + sc.id + '"' + (sc.id === cur ? ' selected' : '') + '>' + tx(sc.title_es, sc.title_en) + '</option>';
             }).join('');
         }
+        renderLevers();
         renderCambia();
+        renderExtrudeLegend();
+        document.querySelectorAll('[data-balance]').forEach(function (card) {
+          var lever = currentLever();
+          var on = !!(lever && !card.hidden && card.getAttribute('data-balance') === lever.balance);
+          card.classList.toggle('is-lever', on);
+        });
         updateMapLink();
         applyContext();
         writeUrl();
+      }
+
+      function renderLevers() {
+        var host = document.getElementById('cdt-levers');
+        if (!host) return;
+        var sc = scenarioById(state.scenario);
+        if (state.lever && !currentLever()) state.lever = '';
+        host.innerHTML = (sc.levers || []).map(function (lv) {
+          var on = lv.id === state.lever;
+          return '<button type="button" class="cdt-sc cdt-lever" data-lever="' + lv.id + '" aria-pressed="' + (on ? 'true' : 'false') + '">' +
+            tx(lv.label_es, lv.label_en) + '</button>';
+        }).join('');
+        host.querySelectorAll('[data-lever]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-lever');
+            state.lever = state.lever === id ? '' : id;
+            applyChrome();
+          });
+        });
+      }
+
+      function renderExtrudeLegend() {
+        var host = document.getElementById('cdt-extrude');
+        if (!host) return;
+        var ind = indicatorById(state.z);
+        var rows = model.munis.map(function (m) {
+          var raw = m[state.z];
+          var value = hasNum(raw) ? fmt(state.z, raw) : tx('sin cifra, no se levanta', 'no figure, it does not rise');
+          return '<li>' + m.name + ' · ' + value + '</li>';
+        }).join('');
+        var opts = model.indicators.map(function (item) {
+          return '<option value="' + item.id + '"' + (item.id === state.z ? ' selected' : '') + '>' + tx(item.label_es, item.label_en) + '</option>';
+        }).join('');
+        host.innerHTML =
+          '<p><strong>' + tx('Altura municipal', 'Municipal height') + '</strong> ' +
+          '<select id="cdt-z" aria-label="' + tx('Cifra de la altura', 'Height figure') + '">' + opts + '</select></p>' +
+          '<p><small>' + tx(ind.source_es, ind.source_en) + ' · ' + tx(ind.unit_es, ind.unit_en) + ' · ' + ind.year + '. ' +
+          tx('La altura es relativa a la cifra más alta. No son metros de terreno ni edificios.', 'Height is relative to the highest figure. These are not meters of terrain or buildings.') +
+          (gl ? '' : ' ' + tx('Sin mapa 3D, el círculo usa la misma cifra.', 'Without the 3D map, the circle uses the same figure.')) +
+          '</small></p><ul>' + rows + '</ul>';
+        var sel = document.getElementById('cdt-z');
+        if (sel) sel.addEventListener('change', function () {
+          state.z = sel.value;
+          refreshMuniStyle();
+          renderCambia();
+          writeUrl();
+        });
       }
 
       function renderCambia() {
@@ -1144,8 +1265,14 @@ const icon: Record<string, string> = {
           return '<li>' + name + (cmp[id] ? ' · ' + tx('solo en la comparación', 'only in the comparison') : '') + '</li>';
         }).join('');
         var other = state.compare ? scenarioById(state.compare) : null;
+        var lever = currentLever();
+        var ind = indicatorById(state.z);
+        var missing = model.munis.filter(function (m) { return !hasNum(m[state.z]); }).map(function (m) { return m.name; });
         host.innerHTML =
+          (lever ? '<p><strong>' + tx('Palanca: ', 'Lever: ') + tx(lever.label_es, lever.label_en) + '.</strong> ' + tx(lever.read_es, lever.read_en) + '</p>' : '') +
           '<p>' + tx(sc.note_es, sc.note_en) + '</p>' +
+          '<p><strong>' + tx('Altura: ', 'Height: ') + '</strong>' + tx(ind.label_es, ind.label_en) + ' · ' + tx(ind.source_es, ind.source_en) + '. ' +
+          (missing.length ? tx('Sin volumen: ', 'No volume: ') + missing.join(' · ') + '.' : tx('Los cinco municipios tienen cifra.', 'All five municipalities have a figure.')) + '</p>' +
           '<p><strong>' + tx('Municipios en tensión: ', 'Municipalities under stress: ') + '</strong>' + (sc.stress || []).join(' · ') + '</p>' +
           (other ? '<p>' + tx('Comparado con ', 'Compared with ') + tx(other.title_es, other.title_en) + '.</p>' : '') +
           '<ul>' + lines + '</ul>';
@@ -1154,24 +1281,37 @@ const icon: Record<string, string> = {
       function renderCapas(onIds, cmp) {
         var host = document.getElementById('cdt-capas-body');
         if (!host) return;
+        var ids = onIds || wantedLayers();
         var on = {};
-        (onIds || wantedLayers()).forEach(function (id) { on[id] = 1; });
+        ids.forEach(function (id) { on[id] = 1; });
         cmp = cmp || compareOnly();
-        var html = '<section class="cdt-capas-group"><h3>' + tx('Base', 'Base') + '</h3>' +
-          '<p>' + tx('Municipios: el color compara la cifra del eje horizontal. El relieve es el del atlas.', 'Municipalities: color compares the horizontal-axis figure. The terrain is the atlas terrain.') + '</p></section>';
+        var q = capasQ.toLowerCase();
+        var countEl = document.getElementById('cdt-capas-count');
+        if (countEl) countEl.textContent = tx(ids.length + ' capas activas', ids.length + ' layers on');
+        var search = document.getElementById('cdt-capas-q');
+        if (search && document.activeElement !== search) {
+          search.placeholder = tx('Filtrar capas', 'Filter layers');
+          search.value = capasQ;
+        }
+        var html = '';
         (model.layerGroups || []).forEach(function (g) {
           var theme = themeById(g.id);
-          html += '<section class="cdt-capas-group"><h3>' + tx(theme.es, theme.en) + '</h3>';
+          var items = '';
           (g.layers || []).forEach(function (id) {
             var meta = layerMeta(id);
             if (!meta) return;
-            html += '<label><input type="checkbox" data-layer="' + id + '"' + (on[id] ? ' checked' : '') + '> <span>' +
-              tx(meta.name_es, meta.name_en) +
+            var label = tx(meta.name_es, meta.name_en);
+            var blob = (label + ' ' + tx(meta.source_es, meta.source_en)).toLowerCase();
+            if (q && blob.indexOf(q) === -1) return;
+            items += '<label><input type="checkbox" data-layer="' + id + '"' + (on[id] ? ' checked' : '') + '> <span>' +
+              label +
               (cmp[id] ? ' · ' + tx('comparar', 'compare') : '') +
               '<small>' + tx(meta.source_es, meta.source_en) + ' · ' + tx(meta.year_es, meta.year_en) + '</small></span></label>';
           });
-          html += '</section>';
+          if (!items) return;
+          html += '<section class="cdt-capas-group"><h3>' + tx(theme.es, theme.en) + '</h3>' + items + '</section>';
         });
+        if (!html) html = '<p>' + tx('Ninguna capa coincide con el filtro.', 'No layer matches the filter.') + '</p>';
         host.innerHTML = html;
         host.querySelectorAll('[data-layer]').forEach(function (box) {
           box.addEventListener('change', function () {
@@ -1237,6 +1377,11 @@ const icon: Record<string, string> = {
         renderScatter();
         writeUrl();
       }
+      var capasSearch = document.getElementById('cdt-capas-q');
+      if (capasSearch) capasSearch.addEventListener('input', function () {
+        capasQ = capasSearch.value || '';
+        renderCapas(wantedLayers(), compareOnly());
+      });
       if (selX) selX.addEventListener('change', onAxis);
       if (selY) selY.addEventListener('change', onAxis);
       var shareBtn = document.getElementById('cdt-share');
@@ -1255,6 +1400,8 @@ const icon: Record<string, string> = {
         renderScatter();
         renderDetail();
         renderCambia();
+        renderExtrudeLegend();
+        renderLevers();
         syncLayers();
       });
 

@@ -61,3 +61,4 @@ Checklist, file formats, and sources: `PHASE2_DATA_NEEDS.md`. Leave these out un
 | 1.24 | `DEPLOY_REPORT_CDT_P1_24.md` | Guest takeaway on `/foro#cierre` with four public addresses |
 | 1.25 | `DEPLOY_REPORT_CDT_P1_25.md` | Forum path on the site map: walk, kit, takeaway, limits, Antes de decidir |
 | 2.0 | `DEPLOY_REPORT_CDT_P2_0.md` | 3D terrain on `/gemelo`, theme layer stacks, and what each scenario changes |
+| 2.1 | `DEPLOY_REPORT_CDT_P2_1.md` | Municipal height from an existing figure, and scenario levers |

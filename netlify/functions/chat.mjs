@@ -1108,6 +1108,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(twin3.id);
     }
   }
+  if (extrusionQuery(query)) {
+    const ext = corpus.find((c) => c.id === 'portal:gemelo-extrusion-p21');
+    if (ext && !usedId.has(ext.id)) {
+      picked.unshift(ext);
+      usedId.add(ext.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1556,6 +1563,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== twin3.id);
       picked.length = 0;
       picked.push(twin3, ...rest);
+    }
+  }
+  if (extrusionQuery(query)) {
+    const ext = corpus.find((c) => c.id === 'portal:gemelo-extrusion-p21');
+    if (ext) {
+      const rest = picked.filter((c) => c.id !== ext.id);
+      picked.length = 0;
+      picked.push(ext, ...rest);
     }
   }
 
@@ -2283,6 +2298,12 @@ function gemelo3dQuery(message) {
   return /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/.test(q);
 }
 
+function extrusionQuery(message) {
+  if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message) || limitsQuery(message) || cierreQuery(message) || rutaQuery(message) || gemelo3dQuery(message)) return false;
+  const q = normQ(message);
+  return /extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2333,6 +2354,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'gemelo-3d', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/', es: 'Gemelo 3D', en: '3D twin' },
     { id: 'gemelo-3d-limites', re: /gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
+    { id: 'gemelo-extrusion', re: /extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/, href: '/gemelo/?z=pob', es: 'Altura municipal', en: 'Municipal height' },
+    { id: 'gemelo-extrusion-limites', re: /extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/, href: '/gemelo/#limites', es: 'Qué puede y qué no puede', en: 'What it can and cannot do' },
     { id: 'vista-agua', re: /agua primero|water first/, href: '/vistas/#agua-sur', es: 'Agua primero en el sur', en: 'Water first in the south' },
     { id: 'vista-corredor', re: /crecimiento cabos|corredor cabos|cabos-la paz/, href: '/vistas/#corredor', es: 'Crecimiento Cabos–La Paz', en: 'Cabos–La Paz growth' },
     { id: 'vista-puertos', re: /puertos y aeropuertos|ports and airports/, href: '/vistas/#puertos', es: 'Puertos y aeropuertos', en: 'Ports and airports' },
@@ -2377,6 +2400,7 @@ function portalGuideBoost(message, chunk) {
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
     [/gemelo 3d|capas del gemelo|3d twin|twin layers|\bescenarios\b/, /gemelo-3d/],
+    [/extrusion municipal|extrusion del municipio|palancas del escenario|scenario levers|municipal extrusion/, /gemelo-extrusion/],
     [/\bevidencia\b|casos de otras ciudades|cases from other cities|recorrido foro|hoja invitados/, /consulta-ruta/],
     [/\bgemelo\b|territorial twin|compar(?:ar|o)\b.{0,24}\bmunicipios|compare municipalities|diseno urbano|urban design|desarrollo economico|ley de ingresos|movilidad|pasajeros aereos|vivienda|nivel de vida/, /gemelo/],
     [/vistas guardadas|saved views|\bvistas\b/, /vistas/],
@@ -2764,6 +2788,9 @@ async function handlerInner(event) {
   const gemelo3dGuide = gemelo3dQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-3d-p20')
     : null;
+  const extrusionGuide = extrusionQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-extrusion-p21')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -2805,6 +2832,10 @@ async function handlerInner(event) {
   }
   if (gemelo3dGuide && !evidence.some((c) => c.id === gemelo3dGuide.id)) {
     evidence = [gemelo3dGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (extrusionGuide && !evidence.some((c) => c.id === extrusionGuide.id)) {
+    evidence = [extrusionGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;

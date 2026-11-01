@@ -459,6 +459,81 @@ const SCENARIO_READ: Record<string, { stress: string[]; note_es: string; note_en
   },
 };
 
+const SCENARIO_LEVERS: Record<string, Array<{ id: string; label_es: string; label_en: string; read_es: string; read_en: string; balance: string }>> = {
+  baseline: [
+    {
+      id: 'agua',
+      label_es: 'Margen de agua',
+      label_en: 'Water headroom',
+      read_es: BALANCE_RULE.constrained.es,
+      read_en: BALANCE_RULE.constrained.en,
+      balance: 'constrained',
+    },
+    {
+      id: 'costa',
+      label_es: 'Techo de conservación',
+      label_en: 'Conservation ceiling',
+      read_es: BALANCE_RULE.contested.es,
+      read_en: BALANCE_RULE.contested.en,
+      balance: 'contested',
+    },
+  ],
+  corridor_intensify: [
+    {
+      id: 'corredor',
+      label_es: 'Presión del corredor',
+      label_en: 'Corridor pressure',
+      read_es: 'El corredor concentra población donde ya están el aeropuerto y la carretera. Intensificarlo empuja agua y energía.',
+      read_en: 'The corridor concentrates population where the airport and highway already are. Intensifying it pushes water and energy.',
+      balance: 'constrained',
+    },
+    {
+      id: 'sur',
+      label_es: 'El sur no compensa',
+      label_en: 'The south does not offset',
+      read_es: 'El motor fiscal del sur no compensa el déficit de otro municipio.',
+      read_en: 'The south’s fiscal engine does not offset another municipality’s deficit.',
+      balance: 'headroom',
+    },
+  ],
+  water_first: [
+    {
+      id: 'deficit',
+      label_es: 'Acuífero en déficit',
+      label_en: 'Aquifer in deficit',
+      read_es: BALANCE_RULE.constrained.es,
+      read_en: BALANCE_RULE.constrained.en,
+      balance: 'constrained',
+    },
+    {
+      id: 'viajes',
+      label_es: 'Arribos y vivienda',
+      label_en: 'Arrivals and housing',
+      read_es: 'Más arribos en un municipio con acuífero en déficit no abren vivienda nueva por sí solos.',
+      read_en: 'More arrivals in a municipality with an aquifer deficit do not by themselves open new housing.',
+      balance: 'constrained',
+    },
+  ],
+  ports_air_hubs: [
+    {
+      id: 'aereo',
+      label_es: 'Demanda aérea',
+      label_en: 'Air demand',
+      read_es: 'Los anclas de viaje son demanda: Los Cabos 3,800,000, La Paz 668,800 y Loreto 89,600 viajeros aéreos en 2025. No son capacidad de agua. Comondú y Mulegé no tienen esa serie: no se ponen en cero.',
+      read_en: 'Travel anchors are demand: Los Cabos 3,800,000, La Paz 668,800 and Loreto 89,600 air travelers in 2025. They are not water capacity. Comondú and Mulegé have no such series: they are not set to zero.',
+      balance: 'constrained',
+    },
+    {
+      id: 'crucero',
+      label_es: 'Crucero aparte',
+      label_en: 'Cruise kept apart',
+      read_es: 'Pasajeros de avión y de crucero son series distintas. Sumarlas inventaría una demanda que el portal no publica.',
+      read_en: 'Air passengers and cruise passengers are different series. Adding them would invent a demand figure the portal does not publish.',
+      balance: 'unknown',
+    },
+  ],
+};
+
 const layerCatalog = (layersDoc as ReadonlyArray<{
   id: string;
   url: string;
@@ -1156,6 +1231,7 @@ export const cdtModel = {
     stress: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).stress,
     note_es: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).note_es,
     note_en: (SCENARIO_READ[sc.id] || missingScenario(sc.id)).note_en,
+    levers: SCENARIO_LEVERS[sc.id] || missingScenario(sc.id),
   })),
   layerGroups: (['urbano', 'economia', 'investigacion', 'movilidad', 'vivienda'] as CdtThemeId[]).map((id) => ({
     id,
