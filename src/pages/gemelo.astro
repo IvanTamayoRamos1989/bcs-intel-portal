@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.10 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.10 · decision support</span>
+          <span data-lang-es>Fase 2.11 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.11 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -78,6 +78,8 @@ const icon: Record<string, string> = {
           <p>
             <span data-lang-es>Para la reunión. Puntos de partida, no pronósticos.</span>
             <span data-lang-en hidden>For the meeting. Starting points, not forecasts.</span>
+            {' '}
+            <a href="#recorrido-gemelo"><span data-lang-es>Guión de diez minutos</span><span data-lang-en hidden>Ten-minute script</span></a>
           </p>
           <a data-preset href="/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025#presets">
             <span data-lang-es>Agua primero</span><span data-lang-en hidden>Water first</span>
@@ -92,6 +94,58 @@ const icon: Record<string, string> = {
             <span data-lang-es>Ficha Los Cabos</span><span data-lang-en hidden>Los Cabos fiche</span>
           </a>
         </nav>
+        <section class="cdt-walk" id="recorrido-gemelo" aria-labelledby="cdt-walk-title">
+          <h2 id="cdt-walk-title">
+            <span data-lang-es>Guión de diez minutos</span>
+            <span data-lang-en hidden>Ten-minute script</span>
+          </h2>
+          <p>
+            <span data-lang-es>Para quien conduce. Ocho pasos. Cada enlace deja el gemelo en un estado que ya existe. No añade cifras.</span>
+            <span data-lang-en hidden>For the person leading. Eight steps. Each link leaves the twin in a state it already has. It adds no figures.</span>
+          </p>
+          <ol>
+            <li>
+              <span data-lang-es>Diga: el relieve es el del estado. Pulse Vista 3D si quiere inclinar, y Estado para encuadrar.</span>
+              <span data-lang-en hidden>Say: the terrain is the state’s. Press 3D view if you want to tilt, and State to frame it.</span>
+              <a data-preset data-after="fit" href="/gemelo/?theme=urbano&scenario=baseline&path=diagnostico#recorrido-gemelo"><span data-lang-es>Encuadrar el estado</span><span data-lang-en hidden>Frame the state</span></a>
+            </li>
+            <li>
+              <span data-lang-es>Diga: Capas enciende el tema. Esta apertura deja vivienda.</span>
+              <span data-lang-en hidden>Say: Layers turns the theme on. This opening leaves housing.</span>
+              <a data-preset data-after="capas" href="/gemelo/?theme=vivienda&scenario=baseline&path=diagnostico#recorrido-gemelo"><span data-lang-es>Capas de vivienda</span><span data-lang-en hidden>Housing layers</span></a>
+            </li>
+            <li>
+              <span data-lang-es>Diga: agua primero es el diagnóstico de vivienda, con la altura del registro y la palanca del acuífero. No es un pronóstico.</span>
+              <span data-lang-en hidden>Say: water first is the housing diagnosis, with the registry height and the aquifer lever. It is not a forecast.</span>
+              <a data-preset href="/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025#recorrido-gemelo"><span data-lang-es>Agua primero</span><span data-lang-en hidden>Water first</span></a>
+            </li>
+            <li>
+              <span data-lang-es>Diga: aquí se ven el corredor y la trayectoria actual a la vez. En pantalla estrecha, Ver A y Ver B.</span>
+              <span data-lang-en hidden>Say: here you see the corridor and the current trajectory at once. On a narrow screen, View A and View B.</span>
+              <a data-preset href="/gemelo/?theme=urbano&scenario=corridor_intensify&compare=baseline&path=escenario&lever=corredor#recorrido-gemelo"><span data-lang-es>Comparar el corredor</span><span data-lang-en hidden>Compare the corridor</span></a>
+            </li>
+            <li>
+              <span data-lang-es>Diga: la ficha lee la cifra elegida y la demanda y oferta ya escritas. Si falta la cifra, se lee —.</span>
+              <span data-lang-en hidden>Say: the fiche reads the chosen figure and the demand and supply already written. If the figure is missing, it reads —.</span>
+              <a data-preset href="/gemelo/?theme=urbano&scenario=baseline&path=diagnostico&muni=Los%20Cabos&z=pob#recorrido-gemelo"><span data-lang-es>Ficha Los Cabos</span><span data-lang-en hidden>Los Cabos fiche</span></a>
+            </li>
+            <li>
+              <span data-lang-es>Diga: Qué cambia es una frase. El cruce con otros temas es cualitativo. No es una simulación.</span>
+              <span data-lang-en hidden>Say: What changes is one sentence. The cross-theme reading is qualitative. It is not a simulation.</span>
+              <a data-preset data-after="cambia" href="/gemelo/?theme=urbano&scenario=corridor_intensify&compare=baseline&path=escenario&lever=corredor#recorrido-gemelo"><span data-lang-es>Qué cambia</span><span data-lang-en hidden>What changes</span></a>
+            </li>
+            <li>
+              <span data-lang-es>Diga: Qué falta lista lo que aún no tiene archivo. Nada de eso está dibujado.</span>
+              <span data-lang-en hidden>Say: What is missing lists what still has no file. None of that is drawn.</span>
+              <a href="#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
+            </li>
+            <li>
+              <span data-lang-es>Diga: la hoja imprime el escenario que está en pantalla. No añade cifras.</span>
+              <span data-lang-en hidden>Say: the sheet prints the scenario on screen. It adds no figures.</span>
+              <button type="button" class="cdt-walk-print" id="cdt-walk-print"><span data-lang-es>Imprimir la hoja</span><span data-lang-en hidden>Print the sheet</span></button>
+            </li>
+          </ol>
+        </section>
         <nav class="cdt-path" id="cdt-path" aria-label="Camino de decisión" data-aria-es="Camino de decisión" data-aria-en="Decision path">
           <button type="button" data-path="diagnostico">
             <span data-lang-es>1 · Diagnóstico</span><span data-lang-en hidden>1 · Diagnosis</span>
@@ -668,8 +722,15 @@ const icon: Record<string, string> = {
     .cdt-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.8rem 0 0.2rem; scroll-margin-top: 5rem; }
     .cdt-presets p { width: 100%; margin: 0 0 0.15rem; color: var(--cdt-dark); font-size: 0.82rem; font-weight: 700; }
     .cdt-presets a { border: 1px solid var(--cdt); color: var(--cdt-dark); background: #f4fbff; border-radius: 999px; padding: 0.32rem 0.7rem; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
-    .cdt-presets a:focus-visible,
-    .cdt-path button:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
+    .cdt-presets a:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
+    .cdt-walk { margin: 0.8rem 0 0.4rem; scroll-margin-top: 5rem; border: 1px solid var(--cdt-line); border-left: 3px solid var(--cdt); border-radius: 12px; padding: 0.7rem 0.85rem; background: #fff; }
+    .cdt-walk h2 { margin: 0 0 0.3rem; font-size: 1.05rem; color: var(--cdt-dark); }
+    .cdt-walk p, .cdt-walk li { margin: 0.28rem 0; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-walk ol { margin: 0.35rem 0 0; padding-left: 1.2rem; }
+    .cdt-walk a, .cdt-walk button { color: #006BA3; font-weight: 700; }
+    .cdt-walk a { display: inline-block; margin-top: 0.15rem; }
+    .cdt-walk button { font: inherit; cursor: pointer; border: 1px solid var(--cdt); background: #f4fbff; border-radius: 999px; padding: 0.28rem 0.7rem; margin-top: 0.15rem; }
+    .cdt-walk a:focus-visible, .cdt-walk button:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
     .cdt-listo { margin: 0.9rem 0 0.4rem; scroll-margin-top: 5rem; }
     .cdt-listo h2 { margin: 0 0 0.35rem; font-size: 1.15rem; color: var(--cdt-dark); }
     .cdt-listo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
@@ -834,7 +895,11 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, #cdt-share, #cdt-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, #cdt-share, #cdt-print, .cdt-walk-print { display: none !important; }
+      .cdt-walk { break-inside: avoid; }
+      .cdt-walk a { color: #000; text-decoration: none; }
+      .cdt-walk a[href]::after { content: " — https://bajacaliforniasur2050.com" attr(href); display: block; font-weight: 400; font-size: 0.78rem; word-break: break-all; }
+      .cdt-sheet { display: block; max-width: 170mm; break-before: page; page-break-before: always; }
       body, body.has-chat-sidebar { padding: 0 !important; background: #fff !important; }
       body[data-cdt-path] [data-step] { opacity: 1; box-shadow: none; }
       .cdt { color: #000; }
@@ -866,7 +931,7 @@ const icon: Record<string, string> = {
   <script>
     function showHash() {
       var hash = location.hash || '';
-      if (hash !== '#limites' && hash !== '#listo') return;
+      if (hash !== '#limites' && hash !== '#listo' && hash !== '#recorrido-gemelo') return;
       var el = document.getElementById(hash.slice(1));
       if (!el) return;
       var header = document.querySelector('.pt-top');
@@ -2009,8 +2074,31 @@ const icon: Record<string, string> = {
           ensureGlB().then(function () { return syncLayers(); }).then(fitScenario);
           selectMuni(state.muni, true);
           focusPath(!!state.path);
-          history.replaceState(null, '', location.pathname + location.search + '#presets');
+          var after = a.getAttribute('data-after');
+          if (after === 'fit') {
+            window.setTimeout(function () {
+              var fit = document.getElementById('cdt-fit');
+              if (fit) fit.click();
+            }, 350);
+          }
+          if (after === 'capas') {
+            var capas = document.querySelector('.cdt-capas');
+            if (capas) capas.open = true;
+          }
+          if (after === 'cambia') {
+            var cambia = document.getElementById('cdt-cambia');
+            if (cambia) {
+              window.setTimeout(function () { cambia.scrollIntoView({ block: 'nearest', behavior: 'auto' }); }, 200);
+            }
+          }
+          var hash = new URL(a.href, location.origin).hash || '#presets';
+          history.replaceState(null, '', location.pathname + location.search + hash);
         });
+      });
+      var walkPrint = document.getElementById('cdt-walk-print');
+      if (walkPrint) walkPrint.addEventListener('click', function () {
+        var printBtn = document.getElementById('cdt-print');
+        if (printBtn) printBtn.click();
       });
       document.querySelectorAll('[data-path]').forEach(function (btn) {
         btn.addEventListener('click', function () {

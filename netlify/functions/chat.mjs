@@ -1178,6 +1178,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(ready.id);
     }
   }
+  if (walkQuery(query)) {
+    const walk = corpus.find((c) => c.id === 'portal:gemelo-recorrido-p211');
+    if (walk && !usedId.has(walk.id)) {
+      picked.unshift(walk);
+      usedId.add(walk.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1706,6 +1713,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== ready.id);
       picked.length = 0;
       picked.push(ready, ...rest);
+    }
+  }
+  if (walkQuery(query)) {
+    const walk = corpus.find((c) => c.id === 'portal:gemelo-recorrido-p211');
+    if (walk) {
+      const rest = picked.filter((c) => c.id !== walk.id);
+      picked.length = 0;
+      picked.push(walk, ...rest);
     }
   }
 
@@ -2493,6 +2508,12 @@ function readinessQuery(message) {
   return /que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/.test(q);
 }
 
+function walkQuery(message) {
+  if (namedViewsQuery(message) || consultaPathQuery(message) || kitQuery(message) || presetQuery(message) || readinessQuery(message) || novedadesQuery(message) || atlasQuery(message)) return false;
+  const q = normQ(message);
+  return /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2544,6 +2565,8 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-recorrido', re: /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, href: '/gemelo/#recorrido-gemelo', es: 'Guión de diez minutos', en: 'Ten-minute script' },
+    { id: 'gemelo-recorrido-agua', re: /recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
     { id: 'gemelo-novedades', re: /novedades gemelo|gemelo mas rapido|twin news|faster twin/, href: '/gemelo/#presets', es: 'Novedades del gemelo', en: 'What is new on the twin' },
     { id: 'gemelo-novedades-diag', re: /novedades gemelo|gemelo mas rapido|twin news|faster twin/, href: '/gemelo/?path=diagnostico', es: 'Diagnóstico', en: 'Diagnosis' },
     { id: 'gemelo-atlas', re: /abrir en el atlas|del gemelo al atlas|open in the atlas|from the twin to the atlas/, href: '/explorar/?tema=urbano&capas=cities,zoning', es: 'Abrir en el atlas', en: 'Open in atlas' },
@@ -2606,6 +2629,7 @@ function portalGuideBoost(message, chunk) {
     [/como usar el gemelo|como leer el tablero|how to use the twin|how to read the twin|how to read the board/, /gemelo-leer/],
     [/que no puede el gemelo|limites del gemelo|limites fase 1|what the twin cannot|twin limits|phase 1 limits/, /gemelo-limites/],
     [/que falta en el gemelo|listo para fase 3|\bageb\b|data readiness|ready for phase 3|what the twin is missing|what is missing from the twin/, /gemelo-listo/],
+    [/recorrido del gemelo|demo gemelo|guion 10 minutos|twin walkthrough|twin demo|ten-minute twin/, /gemelo-recorrido/],
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
@@ -3036,6 +3060,9 @@ async function handlerInner(event) {
   const readinessGuide = readinessQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-listo-p210')
     : null;
+  const walkGuide = walkQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-recorrido-p211')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -3117,6 +3144,10 @@ async function handlerInner(event) {
   }
   if (readinessGuide && !evidence.some((c) => c.id === readinessGuide.id)) {
     evidence = [readinessGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (walkGuide && !evidence.some((c) => c.id === walkGuide.id)) {
+    evidence = [walkGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
