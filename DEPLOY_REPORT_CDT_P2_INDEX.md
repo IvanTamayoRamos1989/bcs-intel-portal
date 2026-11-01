@@ -16,3 +16,4 @@
 | 2.11 | Ten-minute host script for the twin |
 | 2.12 | Copy view writes the current twin state into a link |
 | 2.13 | One consultation question per audience on each path step |
+| 2.14 | Scenario recipes that apply combinations the twin already knows |
