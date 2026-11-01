@@ -1206,6 +1206,13 @@ function retrieve(query, lang, k = 8) {
       usedId.add(recipe.id);
     }
   }
+  if (fuentesQuery(query)) {
+    const fuentes = corpus.find((c) => c.id === 'portal:gemelo-fuentes-p215');
+    if (fuentes && !usedId.has(fuentes.id)) {
+      picked.unshift(fuentes);
+      usedId.add(fuentes.id);
+    }
+  }
 
   const docSlots = Math.max(k - picked.length, 6);
   let docsAdded = 0;
@@ -1766,6 +1773,14 @@ function retrieve(query, lang, k = 8) {
       const rest = picked.filter((c) => c.id !== recipe.id);
       picked.length = 0;
       picked.push(recipe, ...rest);
+    }
+  }
+  if (fuentesQuery(query)) {
+    const fuentes = corpus.find((c) => c.id === 'portal:gemelo-fuentes-p215');
+    if (fuentes) {
+      const rest = picked.filter((c) => c.id !== fuentes.id);
+      picked.length = 0;
+      picked.push(fuentes, ...rest);
     }
   }
 
@@ -2577,6 +2592,12 @@ function recipeQuery(message) {
   return /recetas de escenario|generar escenario|scenario recipes|generate scenario|scenario recipe/.test(q);
 }
 
+function fuentesQuery(message) {
+  if (recipeQuery(message) || consultaMesaQuery(message) || shareQuery(message) || walkQuery(message) || namedViewsQuery(message) || kitQuery(message) || presetQuery(message) || readinessQuery(message) || novedadesQuery(message) || atlasQuery(message) || gemelo3dQuery(message)) return false;
+  const q = normQ(message);
+  return /fuentes del gemelo|de donde salen las capas|twin layer sources|where the layers come from|layer sources twin|sources for these layers/.test(q);
+}
+
 function limitsQuery(message) {
   if (airAxisQuery(message) || evidenceDepthQuery(message) || namedViewsQuery(message) || consultaPathQuery(message) || twinReadQuery(message) || kitQuery(message)) return false;
   const q = normQ(message);
@@ -2628,6 +2649,9 @@ function portalSurfaceBlocks(message, lang) {
     { id: 'foro-cierre', re: /que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
     { id: 'foro-ruta', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/rutas/#ruta-foro', es: 'Ruta del foro', en: 'Forum path' },
     { id: 'foro-ruta-cierre', re: /ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, href: '/foro/#cierre', es: 'Qué me llevo', en: 'What I take away' },
+    { id: 'gemelo-fuentes', re: /fuentes del gemelo|de donde salen las capas|twin layer sources|where the layers come from|layer sources twin|sources for these layers/, href: '/gemelo/#fuentes-capas', es: 'Fuentes de estas capas', en: 'Sources for these layers' },
+    { id: 'gemelo-fuentes-listo', re: /fuentes del gemelo|de donde salen las capas|twin layer sources|where the layers come from|layer sources twin|sources for these layers/, href: '/gemelo/#listo', es: 'Qué falta', en: 'What is missing' },
+    { id: 'gemelo-fuentes-viv', re: /fuentes del gemelo|de donde salen las capas|twin layer sources|where the layers come from|layer sources twin|sources for these layers/, href: '/gemelo/?theme=vivienda#fuentes-capas', es: 'Fuentes del tema de vivienda', en: 'Housing theme sources' },
     { id: 'gemelo-recetas', re: /recetas de escenario|generar escenario|scenario recipes|generate scenario|scenario recipe/, href: '/gemelo/#recetas', es: 'Recetas de escenario', en: 'Scenario recipes' },
     { id: 'gemelo-recetas-agua', re: /recetas de escenario|generar escenario|scenario recipes|generate scenario|scenario recipe/, href: '/gemelo/?theme=vivienda&scenario=water_first&path=diagnostico&lever=deficit&z=sniiv_2025', es: 'Agua primero', en: 'Water first' },
     { id: 'gemelo-consulta', re: /consulta ciudadana gemelo|preguntas para la mesa|citizen consultation twin|questions for the table|twin consultation/, href: '/gemelo/#consulta', es: 'Consulta ciudadana', en: 'Citizen consultation' },
@@ -2702,6 +2726,7 @@ function portalGuideBoost(message, chunk) {
     [/compartir gemelo|copiar vista|share twin|copy view|share the twin/, /gemelo-copia/],
     [/consulta ciudadana gemelo|preguntas para la mesa|citizen consultation twin|questions for the table|twin consultation/, /gemelo-consulta/],
     [/recetas de escenario|generar escenario|scenario recipes|generate scenario|scenario recipe/, /gemelo-recetas/],
+    [/fuentes del gemelo|de donde salen las capas|twin layer sources|where the layers come from|layer sources twin|sources for these layers/, /gemelo-fuentes/],
     [/kit reunion|imprimir foro|lista para la reunion/, /foro-kit/],
     [/que me llevo del foro|enlaces despues de la reunion|takeaway foro|what i take away|links after the meeting|forum takeaway/, /foro-cierre/],
     [/ruta del foro|mapa del foro|como seguir el foro|forum route|forum map|how to follow the forum/, /foro-ruta/],
@@ -3144,6 +3169,9 @@ async function handlerInner(event) {
   const recipeGuide = recipeQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:gemelo-recetas-p214')
     : null;
+  const fuentesGuide = fuentesQuery(message)
+    ? CORPUS.find((c) => c.id === 'portal:gemelo-fuentes-p215')
+    : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
   let evidence = hits.map((h) => h.c);
@@ -3241,6 +3269,10 @@ async function handlerInner(event) {
   }
   if (recipeGuide && !evidence.some((c) => c.id === recipeGuide.id)) {
     evidence = [recipeGuide, ...evidence];
+    noEvidence = false;
+  }
+  if (fuentesGuide && !evidence.some((c) => c.id === fuentesGuide.id)) {
+    evidence = [fuentesGuide, ...evidence];
     noEvidence = false;
   }
   const topScore = hits.length ? hits[0].score : 0;
