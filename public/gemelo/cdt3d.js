@@ -90,6 +90,13 @@
           'hillshade-accent-color': '#8ea0a4',
         } },
         { id: 'cdt-muni-fill', type: 'fill', source: 'munis', paint: { 'fill-color': '#d6e8f5', 'fill-opacity': 0.42 } },
+        { id: 'cdt-muni-extrude', type: 'fill-extrusion', source: 'munis', filter: ['>', ['get', 'h'], 0], paint: {
+          'fill-extrusion-color': ['interpolate', ['linear'], ['get', 'h'], 2500, '#9fd0ea', 25000, '#006BA3'],
+          'fill-extrusion-height': ['get', 'h'],
+          'fill-extrusion-base': 0,
+          'fill-extrusion-opacity': 0.78,
+          'fill-extrusion-vertical-gradient': true,
+        } },
         { id: 'cdt-muni-line', type: 'line', source: 'munis', paint: { 'line-color': '#006BA3', 'line-width': 1.3 } },
         { id: 'coast', type: 'line', source: 'bcs', paint: { 'line-color': '#5f7f8c', 'line-width': 1.1 } },
       ],
@@ -153,6 +160,18 @@
           duration: reduced ? 0 : 650,
           maxZoom: 10,
         });
+      }
+      var muniBase = (base && base.municipalities) || { type: 'FeatureCollection', features: [] };
+      var lastHeights = {};
+      function applyHeights(heights) {
+        lastHeights = heights || {};
+        var fc = JSON.parse(JSON.stringify(muniBase));
+        (fc.features || []).forEach(function (f) {
+          if (!f.properties) f.properties = {};
+          var h = lastHeights[f.properties.name];
+          f.properties.h = h > 0 ? h : 0;
+        });
+        if (map.getSource('munis')) map.getSource('munis').setData(fc);
       }
       function paintMunis(colors) {
         if (!map.getLayer('cdt-muni-fill')) return;
@@ -256,11 +275,13 @@
         map.on('pitchend', syncPitch);
         syncPitch();
       }
-      map.on('click', 'cdt-muni-fill', function (e) {
+      function onMuniClick(e) {
         var f = e.features && e.features[0];
         var name = f && f.properties && f.properties.name;
         if (name && opts.onMunicipality) opts.onMunicipality(name);
-      });
+      }
+      map.on('click', 'cdt-muni-fill', onMuniClick);
+      map.on('click', 'cdt-muni-extrude', onMuniClick);
       map.on('mouseenter', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = ''; });
       return new Promise(function (resolve, reject) {
@@ -271,14 +292,18 @@
           bindTools();
           if (!base || !base.municipalities) {
             fetch('/gis/osm_municipalities.geojson').then(function (r) { return r.json(); }).then(function (geo) {
-              if (map.getSource('munis')) map.getSource('munis').setData(geo);
+              muniBase = geo;
+              applyHeights(lastHeights);
             }).catch(function () {});
+          } else {
+            applyHeights(lastHeights);
           }
           resolve({
             kind: '3d',
             fitBox: fitBox,
             resize: function () { map.resize(); },
             paintMunis: paintMunis,
+            setExtrusion: applyHeights,
             show: show,
             hide: hide,
             load: load,
