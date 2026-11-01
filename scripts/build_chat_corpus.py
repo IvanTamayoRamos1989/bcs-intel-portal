@@ -2395,6 +2395,30 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-copia-p212",
+        "title": "Copiar la vista del gemelo / Copy the twin view",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#cdt-share",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo, Copiar vista escribe en el enlace el tema, el escenario, la comparación, el paso, la palanca, la altura y el municipio que están en pantalla. "
+            "Quien abre ese enlace ve la misma vista cuando el mapa está listo. "
+            "El guión y las aperturas de la reunión apuntan a ese botón. "
+            "Pregunta de seguimiento: ¿copia agua primero, el corredor comparado, o la ficha de Los Cabos? "
+            "[compartir gemelo copiar vista]"
+        ),
+        "sum_en": (
+            "On /gemelo, Copy view writes into the link the theme, scenario, comparison, step, lever, height and municipality on screen. "
+            "Whoever opens that link sees the same view when the map is ready. "
+            "The script and the meeting openings point at that button. "
+            "Follow-up: do you copy water first, the compared corridor, or the Los Cabos fiche? "
+            "[share twin copy view share the twin]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",
