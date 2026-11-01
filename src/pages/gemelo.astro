@@ -55,8 +55,8 @@ const icon: Record<string, string> = {
     <header class="cdt-top">
       <div>
         <p class="cdt-kicker">
-          <span data-lang-es>Fase 2.9 · apoyo a la decisión</span>
-          <span data-lang-en hidden>Phase 2.9 · decision support</span>
+          <span data-lang-es>Fase 2.10 · apoyo a la decisión</span>
+          <span data-lang-en hidden>Phase 2.10 · decision support</span>
         </p>
         <h1>
           <span data-lang-es>Gemelo territorial</span>
@@ -137,8 +137,8 @@ const icon: Record<string, string> = {
         </aside>
         <section class="cdt-limits" id="limites">
           <h2>
-            <span data-lang-es>Qué puede / qué no puede (Fase 2.9)</span>
-            <span data-lang-en hidden>What it can / cannot do (Phase 2.9)</span>
+            <span data-lang-es>Qué puede / qué no puede (Fase 2.10)</span>
+            <span data-lang-en hidden>What it can / cannot do (Phase 2.10)</span>
           </h2>
           <p>
             <span data-lang-es>Puede ahora: recorrer diagnóstico, meta, escenario y recomendación; levantar cada municipio con una cifra que usted elige; y imprimir la hoja de ese escenario. Si una celda está en blanco, ese municipio no se levanta y la celda sigue en blanco.</span>
@@ -179,8 +179,62 @@ const icon: Record<string, string> = {
           <p>
             <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
             {' · '}
+            <a href="/gemelo/#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
+            {' · '}
             <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia de otras ciudades</span><span data-lang-en hidden>Evidence from other cities</span></a>
           </p>
+        </section>
+        <section class="cdt-listo" id="listo" aria-labelledby="cdt-listo-title">
+          <h2 id="cdt-listo-title">
+            <span data-lang-es>Qué falta para la siguiente capa</span>
+            <span data-lang-en hidden>What is missing for the next layer</span>
+          </h2>
+          <p>
+            <span data-lang-es>Nada de esto está cargado. No hay polígonos de muestra. Una celda en blanco sigue en blanco.</span>
+            <span data-lang-en hidden>None of this is loaded. There are no sample polygons. A blank cell stays blank.</span>
+          </p>
+          <div class="cdt-listo-grid">
+            <article>
+              <h3><span data-lang-es>Manzanas (AGEB)</span><span data-lang-en hidden>Blocks (AGEB)</span></h3>
+              <p>
+                <span data-lang-es>Permitiría un mapa por debajo del municipio, para que Cabo del Este y Todos Santos siguieran las manzanas que les tocan, en vez de quedar dentro de Los Cabos y La Paz.</span>
+                <span data-lang-en hidden>It would allow a map below the municipality, so East Cape and Todos Santos could follow the blocks that fall there, instead of staying inside Los Cabos and La Paz.</span>
+              </p>
+              <p class="cdt-listo-status"><span data-lang-es>Pendiente de archivo real</span><span data-lang-en hidden>Waiting on a real file</span></p>
+              <p><a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a></p>
+            </article>
+            <article>
+              <h3><span data-lang-es>Forma de calles y manzanas</span><span data-lang-en hidden>Street and block form</span></h3>
+              <p>
+                <span data-lang-es>Permitiría una medida de la red de calles sobre la manzana que se midió. No es un promedio municipal inventado.</span>
+                <span data-lang-en hidden>It would allow a street-network measure on the block that was measured. It is not an invented municipal average.</span>
+              </p>
+              <p class="cdt-listo-status"><span data-lang-es>Pendiente de archivo real</span><span data-lang-en hidden>Waiting on a real file</span></p>
+              <p><a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a></p>
+            </article>
+            <article>
+              <h3><span data-lang-es>Catastro y predios</span><span data-lang-en hidden>Cadastre and parcels</span></h3>
+              <p>
+                <span data-lang-es>Permitiría tocar un lote y leer los atributos que vinieran en el archivo. Un mapa de deseabilidad solo donde esa columna exista.</span>
+                <span data-lang-en hidden>It would allow a tap on a lot to read the attributes that came in the file. A desirability map only where that column exists.</span>
+              </p>
+              <p class="cdt-listo-status"><span data-lang-es>Pendiente de archivo real</span><span data-lang-en hidden>Waiting on a real file</span></p>
+              <p>
+                <a href="/catastro/"><span data-lang-es>Oficinas de catastro</span><span data-lang-en hidden>Cadastre offices</span></a>
+                {' · '}
+                <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
+              </p>
+            </article>
+            <article>
+              <h3><span data-lang-es>Clima, además del acuífero</span><span data-lang-en hidden>Climate, besides the aquifer</span></h3>
+              <p>
+                <span data-lang-es>Permitiría una capa de clima con año y unidad, junto a la lectura del acuífero, sin convertir el déficit en lluvia ni en una profundidad de inundación.</span>
+                <span data-lang-en hidden>It would allow a climate layer with a year and a unit, next to the aquifer reading, without turning the deficit into rainfall or a flood depth.</span>
+              </p>
+              <p class="cdt-listo-status"><span data-lang-es>Pendiente de archivo real</span><span data-lang-en hidden>Waiting on a real file</span></p>
+              <p><a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a></p>
+            </article>
+          </div>
         </section>
         <p class="cdt-fine"><a href="/vistas/"><span data-lang-es>Vistas guardadas para una reunión</span><span data-lang-en hidden>Saved views for a meeting</span></a> · <a href="/foro/"><span data-lang-es>Hoja para invitados</span><span data-lang-en hidden>Guest sheet</span></a></p>
         <div class="cdt-guides">
@@ -614,11 +668,24 @@ const icon: Record<string, string> = {
     .cdt-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.8rem 0 0.2rem; scroll-margin-top: 5rem; }
     .cdt-presets p { width: 100%; margin: 0 0 0.15rem; color: var(--cdt-dark); font-size: 0.82rem; font-weight: 700; }
     .cdt-presets a { border: 1px solid var(--cdt); color: var(--cdt-dark); background: #f4fbff; border-radius: 999px; padding: 0.32rem 0.7rem; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
-    .cdt-presets a:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+    .cdt-presets a:focus-visible,
+    .cdt-path button:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
+    .cdt-listo { margin: 0.9rem 0 0.4rem; scroll-margin-top: 5rem; }
+    .cdt-listo h2 { margin: 0 0 0.35rem; font-size: 1.15rem; color: var(--cdt-dark); }
+    .cdt-listo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+    .cdt-listo article { border: 1px solid var(--cdt-line); border-top: 3px solid #0083C4; border-radius: 12px; padding: 0.65rem 0.75rem; background: #fff; }
+    .cdt-listo h3 { margin: 0 0 0.25rem; font-size: 0.95rem; color: #006BA3; }
+    .cdt-listo p { margin: 0.28rem 0; font-size: 0.86rem; line-height: 1.4; }
+    .cdt-listo a { color: #006BA3; font-weight: 700; }
+    .cdt-listo a:focus-visible { outline: 3px solid #0083C4; outline-offset: 2px; }
+    .cdt-listo-status { display: inline-block; margin: 0.2rem 0; padding: 0.15rem 0.5rem; border-radius: 999px; background: #f3e6cc; color: #6a4b12; font-size: 0.75rem; font-weight: 700; }
+    @media (max-width: 720px) {
+      .cdt-listo-grid { grid-template-columns: 1fr; }
+    }
     .cdt-path { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0 0.2rem; }
     .cdt-path button { font: inherit; cursor: pointer; text-align: left; border: 1px solid var(--cdt); background: #fff; color: var(--cdt-dark); border-radius: 999px; padding: 0.35rem 0.75rem; font-size: 0.82rem; font-weight: 700; }
     .cdt-path button[aria-pressed="true"] { background: var(--cdt); color: #fff; }
-    .cdt-path button:focus-visible { outline: 2px solid #0083C4; outline-offset: 2px; }
+    .cdt-path button:focus-visible { outline: 3px solid #0083C4; outline-offset: 3px; }
     body[data-cdt-path] [data-step] { opacity: 0.38; }
     body[data-cdt-path] [data-step].is-step { opacity: 1; box-shadow: inset 3px 0 0 #0083C4; border-radius: 8px; }
     .cdt-sheet { display: none; }
@@ -767,7 +834,7 @@ const icon: Record<string, string> = {
     .cdt-rec a { color: var(--cdt); font-size: 0.82rem; font-weight: 650; }
     @page { size: A4; margin: 14mm 16mm; }
     @media print {
-      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, #cdt-share, #cdt-print { display: none !important; }
+      :global(.pt-top), :global(.pt-sub), :global(.pt-crumbs), :global(.site-footer), :global(.bcs-chat), :global(.bcs-place-strip), :global(.pt-spec-note), :global(.path-banner), :global(.how-use), :global(.leaflet-control-container), :global(.ios-tabbar), .cdt-rail, .cdt-guides, .cdt-scenarios, .cdt-map-col, .cdt-work, .cdt-path, .cdt-presets, .cdt-tip, .cdt-limits, .cdt-listo, #cdt-share, #cdt-print { display: none !important; }
       body, body.has-chat-sidebar { padding: 0 !important; background: #fff !important; }
       body[data-cdt-path] [data-step] { opacity: 1; box-shadow: none; }
       .cdt { color: #000; }
@@ -797,9 +864,10 @@ const icon: Record<string, string> = {
     }
   </style>
   <script>
-    function showLimits() {
-      if ((location.hash || '') !== '#limites') return;
-      var el = document.getElementById('limites');
+    function showHash() {
+      var hash = location.hash || '';
+      if (hash !== '#limites' && hash !== '#listo') return;
+      var el = document.getElementById(hash.slice(1));
       if (!el) return;
       var header = document.querySelector('.pt-top');
       var hb = header ? header.getBoundingClientRect().bottom : 62;
@@ -813,12 +881,12 @@ const icon: Record<string, string> = {
       }
     }
     if (document.readyState === 'complete') {
-      showLimits();
-      window.setTimeout(showLimits, 400);
+      showHash();
+      window.setTimeout(showHash, 400);
     } else {
       window.addEventListener('load', function () {
-        showLimits();
-        window.setTimeout(showLimits, 400);
+        showHash();
+        window.setTimeout(showHash, 400);
       });
     }
   </script>
@@ -1910,6 +1978,11 @@ const icon: Record<string, string> = {
         window.print();
       });
       document.querySelectorAll('[data-preset]').forEach(function (a) {
+        a.addEventListener('keydown', function (e) {
+          if (e.key !== ' ' && e.key !== 'Spacebar') return;
+          e.preventDefault();
+          a.click();
+        });
         a.addEventListener('click', function (e) {
           if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
           e.preventDefault();

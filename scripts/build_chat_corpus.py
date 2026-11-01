@@ -2345,6 +2345,32 @@ def main():
     })
 
     chunks.append({
+        "id": "portal:gemelo-listo-p210",
+        "title": "Qué falta en el gemelo / What the twin is still missing",
+        "path": "portal/gemelo",
+        "href": "/gemelo/#listo",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /gemelo#listo hay cuatro bloques pendientes: manzanas (AGEB), forma de calles, catastro y clima además del acuífero. "
+            "Ninguno está cargado. No hay polígonos de muestra. El estado dice pendiente de archivo real. "
+            "Las manzanas permitirían un mapa por debajo del municipio. El catastro permitiría leer un lote. El clima no convierte el déficit del acuífero en lluvia. "
+            "Las preguntas abiertas están en /metas. Las oficinas de catastro están en /catastro. "
+            "Pregunta de seguimiento: ¿mira manzanas, catastro, o el clima? "
+            "[que falta en el gemelo ageb listo para fase 3]"
+        ),
+        "sum_en": (
+            "At /gemelo#listo there are four pending blocks: blocks (AGEB), street form, cadastre and climate besides the aquifer. "
+            "None of them is loaded. There are no sample polygons. The status says waiting on a real file. "
+            "Blocks would allow a map below the municipality. Cadastre would allow reading a lot. Climate does not turn the aquifer deficit into rainfall. "
+            "Open questions are on /metas. Cadastre offices are on /catastro. "
+            "Follow-up: do you look at blocks, cadastre, or climate? "
+            "[data readiness ready for phase 3 what the twin is missing]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
         "id": "portal:gemelo-limites-p123",
         "title": "Qué puede y qué no puede el gemelo en la Fase 1 / What the twin can and cannot do in Phase 1",
         "path": "portal/gemelo",

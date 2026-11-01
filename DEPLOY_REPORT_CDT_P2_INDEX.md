@@ -12,3 +12,4 @@
 | 2.7 | Territory frames on the municipality fiche, and a height legend |
 | 2.8 | Jump between the twin and the atlas with the same theme and place |
 | 2.9 | Second map only while comparing; a short what’s-new line on Home |
+| 2.10 | Readiness panel for the four files the twin does not have yet |
