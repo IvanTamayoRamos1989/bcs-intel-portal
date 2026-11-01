@@ -2325,20 +2325,18 @@ def main():
         "href": "/gemelo/#presets",
         "theme": "planeacion",
         "sum_es": (
-            "En /inicio, debajo de Antes de decidir, hay una línea con lo nuevo del gemelo 3D: capas, escenarios lado a lado, ficha municipal y aperturas para la reunión. "
-            "Para la reunión abre /gemelo#presets. El diagnóstico abre /gemelo con el camino en diagnóstico. "
             "La segunda vista del mapa aparece solo al comparar, y en pantalla ancha. "
             "Una capa que no está en el tema ni en el escenario no se descarga hasta que se enciende. "
-            "Pregunta de seguimiento: ¿abre las aperturas de la reunión, o el diagnóstico? "
-            "[novedades gemelo gemelo mas rapido]"
+            "El diagnóstico abre /gemelo con el camino en diagnóstico. Para la reunión abre /gemelo#presets. "
+            "Pregunta de seguimiento: ¿abre el diagnóstico, o las aperturas de la reunión? "
+            "[gemelo mas rapido]"
         ),
         "sum_en": (
-            "On /inicio, under Before you decide, one line lists what is new on the 3D twin: layers, scenarios side by side, a municipal fiche and meeting openings. "
-            "For the meeting opens /gemelo#presets. Diagnosis opens /gemelo with the path on diagnosis. "
             "The second map view appears only while comparing, and only on a wide screen. "
             "A layer that is not in the theme or the scenario is not downloaded until it is turned on. "
-            "Follow-up: do you open the meeting openings, or the diagnosis? "
-            "[twin news faster twin]"
+            "Diagnosis opens /gemelo with the path on diagnosis. For the meeting opens /gemelo#presets. "
+            "Follow-up: do you open the diagnosis, or the meeting openings? "
+            "[faster twin]"
         ),
         "drive_url": None,
         "type": "guide",
@@ -2487,6 +2485,30 @@ def main():
             "What still has no file stays off that list: it is at /gemelo#listo. "
             "Follow-up: do you look at the housing theme sources, or at what is missing? "
             "[twin layer sources where the layers come from layer sources twin sources for these layers]"
+        ),
+        "drive_url": None,
+        "type": "guide",
+    })
+
+    chunks.append({
+        "id": "portal:gemelo-checklist-p216",
+        "title": "Novedades del gemelo y checklist del anfitrión / Twin news and host checklist",
+        "path": "portal/gemelo-checklist",
+        "href": "/gemelo/#checklist-anfitrion",
+        "theme": "planeacion",
+        "sum_es": (
+            "En /inicio, debajo de Antes de decidir, cada línea nombra algo que el gemelo ya tiene: qué falta, el guión de diez minutos, copiar vista, la consulta, las recetas y las fuentes de las capas. "
+            "En /gemelo#checklist-anfitrion hay una casilla por enlace para quien conduce: las aperturas de la reunión, el guión, las recetas, la consulta, copiar vista, las fuentes y qué falta. "
+            "Se puede imprimir. No añade cifras. "
+            "Pregunta de seguimiento: ¿abre el checklist del anfitrión, o las novedades en inicio? "
+            "[novedades gemelo checklist anfitrion que hay de nuevo en el gemelo]"
+        ),
+        "sum_en": (
+            "On /inicio, under Before you decide, each line names something the twin already has: what is missing, the ten-minute script, copy view, the consultation, the recipes and the layer sources. "
+            "At /gemelo#checklist-anfitrion there is one box per link for the person leading: the meeting openings, the script, the recipes, the consultation, copy view, the sources and what is missing. "
+            "It can be printed. It adds no figures. "
+            "Follow-up: do you open the host checklist, or what is new on Home? "
+            "[twin news host checklist what's new on the twin what's new in the twin]"
         ),
         "drive_url": None,
         "type": "guide",
