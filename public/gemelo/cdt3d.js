@@ -102,6 +102,21 @@
     return geoWait[meta.id];
   }
 
+  function bcsMask(base) {
+    var fc = base && base.boundary;
+    var feat = fc && fc.features && fc.features[0];
+    var g = feat && feat.geometry;
+    var empty = { type: 'FeatureCollection', features: [] };
+    if (!g) return empty;
+    var polys = g.type === 'MultiPolygon' ? g.coordinates : [g.coordinates];
+    var holes = [];
+    polys.forEach(function (poly) {
+      if (poly && poly[0] && poly[0].length > 3) holes.push(poly[0].slice().reverse());
+    });
+    var world = [[-130, 14], [-90, 14], [-90, 40], [-130, 40], [-130, 14]];
+    return { type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [world].concat(holes) } };
+  }
+
   function styleSpec(base) {
     var empty = { type: 'FeatureCollection', features: [] };
     var dem = {
@@ -121,6 +136,7 @@
         land: { type: 'geojson', data: (base && base.land) || empty },
         bcs: { type: 'geojson', data: (base && base.boundary) || empty },
         munis: { type: 'geojson', data: (base && base.municipalities) || empty },
+        mask: { type: 'geojson', data: bcsMask(base) },
         osm: {
           type: 'raster',
           tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
@@ -149,6 +165,7 @@
           'hillshade-highlight-color': '#fbf8ee',
           'hillshade-accent-color': '#8ea0a4',
         } },
+        { id: 'bcs-mask', type: 'fill', source: 'mask', paint: { 'fill-color': '#c5d5de', 'fill-opacity': 1 } },
         { id: 'cdt-muni-fill', type: 'fill', source: 'munis', paint: { 'fill-color': '#d6e8f5', 'fill-opacity': 0.42 } },
         { id: 'cdt-muni-extrude', type: 'fill-extrusion', source: 'munis', filter: ['>', ['get', 'h'], 0], paint: {
           'fill-extrusion-color': ['interpolate', ['linear'], ['get', 'h'], 2500, '#9fd0ea', 25000, '#006BA3'],
@@ -184,19 +201,23 @@
   function start(opts) {
     registerDem();
     var reduced = !!opts.reduced;
-    var pitch0 = reduced ? 0 : 50;
+    var pitch0 = opts.pitch != null ? opts.pitch : (reduced ? 0 : 50);
     var bearing0 = reduced ? 0 : -16;
     return loadBase().then(function (base) {
+      var stateBounds = base && base.bounds ? base.bounds : [[STATE[0], STATE[1]], [STATE[2], STATE[3]]];
+      var pad = 0.45;
       var map = new maplibregl.Map({
         container: opts.container,
         style: styleSpec(base),
-        bounds: base && base.bounds ? base.bounds : [[STATE[0], STATE[1]], [STATE[2], STATE[3]]],
+        bounds: stateBounds,
         fitBoundsOptions: { padding: 24, pitch: pitch0, bearing: bearing0 },
         pitch: pitch0,
         bearing: bearing0,
         maxPitch: 70,
-        minZoom: 4.4,
+        minZoom: 6.15,
         maxZoom: 13,
+        maxBounds: [[stateBounds[0][0] - pad, stateBounds[0][1] - pad], [stateBounds[1][0] + pad, stateBounds[1][1] + pad]],
+        maxBoundsViscosity: 0.85,
         attributionControl: true,
         dragRotate: !reduced,
         touchPitch: !reduced,
@@ -380,6 +401,10 @@
             load: load,
             setBasemap: setBasemap,
             mark: mark,
+            getBounds: function () {
+              var b = map.getBounds();
+              return [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
+            },
             readCamera: function () {
               var c = map.getCenter();
               return { lng: c.lng, lat: c.lat, zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };

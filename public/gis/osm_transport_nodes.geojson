@@ -1,1 +1,815 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","id":303097479,"geometry":{"type":"Point","coordinates":[-112.9382,27.2966]},"properties":{"name":"San Ignacio Airfield","kind":"aerodrome","icao":"MM26","iata":"SGM","osm_id":303097479}},{"type":"Feature","id":388752603,"geometry":{"type":"Point","coordinates":[-115.1653499,27.8568154]},"properties":{"name":"Isla Natividad Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":388752603}},{"type":"Feature","id":389146163,"geometry":{"type":"Point","coordinates":[-113.5597,26.7272]},"properties":{"name":"Punta Abreojos Airstrip","kind":"aerodrome","icao":"","iata":"AJS","osm_id":389146163}},{"type":"Feature","id":389146261,"geometry":{"type":"Point","coordinates":[-111.9558001,26.8944001]},"properties":{"name":"El Gallito Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389146261}},{"type":"Feature","id":389148151,"geometry":{"type":"Point","coordinates":[-113.4764,26.8056]},"properties":{"name":"Bahía Ballenas Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389148151}},{"type":"Feature","id":389148153,"geometry":{"type":"Point","coordinates":[-113.1400904,26.8527302]},"properties":{"name":"Laguna San Ignacio Airstrip","kind":"aerodrome","icao":"MRCX","iata":"","osm_id":389148153}},{"type":"Feature","id":389301631,"geometry":{"type":"Point","coordinates":[-112.1071611,26.1494313]},"properties":{"name":"Palo Blanco Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389301631}},{"type":"Feature","id":389301632,"geometry":{"type":"Point","coordinates":[-112.0521329,26.896555]},"properties":{"name":"Rancho Chávez Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389301632}},{"type":"Feature","id":389337983,"geometry":{"type":"Point","coordinates":[-111.8253655,24.4749902]},"properties":{"name":"Puerto Cortés Naval Airstrip","kind":"aerodrome","icao":"MMPT","iata":"","osm_id":389337983}},{"type":"Feature","id":389337985,"geometry":{"type":"Point","coordinates":[-112.1146,26.1777]},"properties":{"name":"Río de Agua de Vida Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389337985}},{"type":"Feature","id":389337986,"geometry":{"type":"Point","coordinates":[-112.120757,25.1973786]},"properties":{"name":"Puerto Adolfo López Mateos Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389337986}},{"type":"Feature","id":389347493,"geometry":{"type":"Point","coordinates":[-111.8836376,26.8168409]},"properties":{"name":"Punta San Pedro Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389347493}},{"type":"Feature","id":389347495,"geometry":{"type":"Point","coordinates":[-112.1912985,25.993483]},"properties":{"name":"Las Barrancas Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":389347495}},{"type":"Feature","id":389903106,"geometry":{"type":"Point","coordinates":[-113.3298437,27.5161478]},"properties":{"name":"Rancho El Caracol Airfield","kind":"aerodrome","icao":"","iata":"","osm_id":389903106}},{"type":"Feature","id":390091827,"geometry":{"type":"Point","coordinates":[-112.2182787,27.2089628]},"properties":{"name":"Aeródromo Militar de San Lucas","kind":"aerodrome","icao":"","iata":"","osm_id":390091827}},{"type":"Feature","id":390147003,"geometry":{"type":"Point","coordinates":[-112.8844,27.2917]},"properties":{"name":"San Ignacio Downtown Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":390147003}},{"type":"Feature","id":390147008,"geometry":{"type":"Point","coordinates":[-112.3056855,27.3939162]},"properties":{"name":"Santa María de Mulegé Airport","kind":"aerodrome","icao":"","iata":"","osm_id":390147008}},{"type":"Feature","id":390147012,"geometry":{"type":"Point","coordinates":[-112.0693342,27.1865438]},"properties":{"name":"Isla San Marcos Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":390147012}},{"type":"Feature","id":390152865,"geometry":{"type":"Point","coordinates":[-109.4318819,23.3656196]},"properties":{"name":"Los Frailes Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":390152865}},{"type":"Feature","id":390152866,"geometry":{"type":"Point","coordinates":[-110.4422,23.6672]},"properties":{"name":"Melitón Albáñez Domínguez Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":390152866}},{"type":"Feature","id":390152870,"geometry":{"type":"Point","coordinates":[-110.2020287,23.4997168]},"properties":{"name":"Todos Santos Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":390152870}},{"type":"Feature","id":390158186,"geometry":{"type":"Point","coordinates":[-109.7074677,23.8033577]},"properties":{"name":"Punta Pescadero Airstrip","kind":"aerodrome","icao":"MMPP","iata":"","osm_id":390158186}},{"type":"Feature","id":390161005,"geometry":{"type":"Point","coordinates":[-109.5356443,23.5748434]},"properties":{"name":"Punta Colorada Airstrip","kind":"aerodrome","icao":"MMPL","iata":"PCO","osm_id":390161005}},{"type":"Feature","id":390166393,"geometry":{"type":"Point","coordinates":[-110.0841678,24.2067747]},"properties":{"name":"Rancho Las Cruces Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":390166393}},{"type":"Feature","id":390167643,"geometry":{"type":"Point","coordinates":[-109.8365499,24.028427]},"properties":{"name":"Punta Arena Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":390167643}},{"type":"Feature","id":393218542,"geometry":{"type":"Point","coordinates":[-112.5129424,26.3702605]},"properties":{"name":"Cadejé Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":393218542}},{"type":"Feature","id":393218550,"geometry":{"type":"Point","coordinates":[-114.2778436,27.183457]},"properties":{"name":"Bahía Asunción Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":393218550}},{"type":"Feature","id":736973140,"geometry":{"type":"Point","coordinates":[-110.327032,24.1548699]},"properties":{"name":"Marina La Paz","kind":"harbour","icao":"","iata":"","osm_id":736973140}},{"type":"Feature","id":736973435,"geometry":{"type":"Point","coordinates":[-110.302498,24.1837639]},"properties":{"name":"Marina Palmira","kind":"harbour","icao":"","iata":"","osm_id":736973435}},{"type":"Feature","id":1042048850,"geometry":{"type":"Point","coordinates":[-109.9280014,27.4073009]},"properties":{"name":"El Crucero Airport","kind":"aerodrome","icao":"","iata":"","osm_id":1042048850}},{"type":"Feature","id":1042048859,"geometry":{"type":"Point","coordinates":[-111.961998,27.0692005]},"properties":{"name":"Punta Chivato Airport","kind":"aerodrome","icao":"","iata":"PCV","osm_id":1042048859}},{"type":"Feature","id":1689544745,"geometry":{"type":"Point","coordinates":[-112.0847189,27.1911248]},"properties":{"name":"","kind":"ferry_terminal","icao":"","iata":"","osm_id":1689544745}},{"type":"Feature","id":1691606533,"geometry":{"type":"Point","coordinates":[-112.2643193,27.3414608]},"properties":{"name":"","kind":"ferry_terminal","icao":"","iata":"","osm_id":1691606533}},{"type":"Feature","id":2416776584,"geometry":{"type":"Point","coordinates":[-110.8679098,27.9246308]},"properties":{"name":"Guaymas - Santa Rosalia Ferry Terminal ","kind":"ferry_terminal","icao":"","iata":"","osm_id":2416776584}},{"type":"Feature","id":4581982752,"geometry":{"type":"Point","coordinates":[-110.332757,24.1513345]},"properties":{"name":"","kind":"harbour","icao":"","iata":"","osm_id":4581982752}},{"type":"Feature","id":5811022306,"geometry":{"type":"Point","coordinates":[-109.967332,27.4951522]},"properties":{"name":"Andador o muelle flotante","kind":"harbour","icao":"","iata":"","osm_id":5811022306}},{"type":"Feature","id":8462616312,"geometry":{"type":"Point","coordinates":[-110.327151,24.2750857]},"properties":{"name":"Ferry La Paz","kind":"ferry_terminal","icao":"","iata":"","osm_id":8462616312}},{"type":"Feature","id":8476997830,"geometry":{"type":"Point","coordinates":[-110.32909,24.2770763]},"properties":{"name":"Ferry La Paz","kind":"ferry_terminal","icao":"","iata":"","osm_id":8476997830}},{"type":"Feature","id":9284297817,"geometry":{"type":"Point","coordinates":[-110.3194,24.1610824]},"properties":{"name":"","kind":"ferry_terminal","icao":"","iata":"","osm_id":9284297817}},{"type":"Feature","id":9468497677,"geometry":{"type":"Point","coordinates":[-109.9084336,22.8807271]},"properties":{"name":"","kind":"ferry_terminal","icao":"","iata":"","osm_id":9468497677}},{"type":"Feature","id":10895126032,"geometry":{"type":"Point","coordinates":[-109.9721576,23.9824263]},"properties":{"name":"VIP Baja","kind":"aerodrome","icao":"","iata":"","osm_id":10895126032}},{"type":"Feature","id":10895284088,"geometry":{"type":"Point","coordinates":[-110.2878777,23.7112466]},"properties":{"name":"Carrizal","kind":"aerodrome","icao":"","iata":"","osm_id":10895284088}},{"type":"Feature","id":10895296929,"geometry":{"type":"Point","coordinates":[-109.4804884,23.5111418]},"properties":{"name":"Cabo Cortes","kind":"aerodrome","icao":"","iata":"","osm_id":10895296929}},{"type":"Feature","id":11005802393,"geometry":{"type":"Point","coordinates":[-113.2224741,27.3548815]},"properties":{"name":"Los Martires","kind":"aerodrome","icao":"","iata":"","osm_id":11005802393}},{"type":"Feature","id":11006313596,"geometry":{"type":"Point","coordinates":[-113.4434615,27.6149373]},"properties":{"name":"Rancho El Piloto","kind":"aerodrome","icao":"","iata":"REP","osm_id":11006313596}},{"type":"Feature","id":11123828700,"geometry":{"type":"Point","coordinates":[-112.0847914,27.1911619]},"properties":{"name":"","kind":"ferry_terminal","icao":"","iata":"","osm_id":11123828700}},{"type":"Feature","id":11296427420,"geometry":{"type":"Point","coordinates":[-113.2905459,27.4647398]},"properties":{"name":"Vizcaíno","kind":"aerodrome","icao":"","iata":"","osm_id":11296427420}},{"type":"Feature","id":11648471008,"geometry":{"type":"Point","coordinates":[-112.4974375,26.2580164]},"properties":{"name":"Scorpion Bay Airstrip","kind":"aerodrome","icao":"","iata":"","osm_id":11648471008}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 303097479,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.9382,
+          27.2966
+        ]
+      },
+      "properties": {
+        "name": "San Ignacio Airfield",
+        "kind": "aerodrome",
+        "icao": "MM26",
+        "iata": "SGM",
+        "osm_id": 303097479
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 388752603,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1653499,
+          27.8568154
+        ]
+      },
+      "properties": {
+        "name": "Isla Natividad Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 388752603
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389146163,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.5597,
+          26.7272
+        ]
+      },
+      "properties": {
+        "name": "Punta Abreojos Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "AJS",
+        "osm_id": 389146163
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389146261,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9558001,
+          26.8944001
+        ]
+      },
+      "properties": {
+        "name": "El Gallito Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389146261
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389148151,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.4764,
+          26.8056
+        ]
+      },
+      "properties": {
+        "name": "Bahía Ballenas Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389148151
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389148153,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.1400904,
+          26.8527302
+        ]
+      },
+      "properties": {
+        "name": "Laguna San Ignacio Airstrip",
+        "kind": "aerodrome",
+        "icao": "MRCX",
+        "iata": "",
+        "osm_id": 389148153
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389301631,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1071611,
+          26.1494313
+        ]
+      },
+      "properties": {
+        "name": "Palo Blanco Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389301631
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389301632,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0521329,
+          26.896555
+        ]
+      },
+      "properties": {
+        "name": "Rancho Chávez Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389301632
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389337983,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8253655,
+          24.4749902
+        ]
+      },
+      "properties": {
+        "name": "Puerto Cortés Naval Airstrip",
+        "kind": "aerodrome",
+        "icao": "MMPT",
+        "iata": "",
+        "osm_id": 389337983
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389337985,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1146,
+          26.1777
+        ]
+      },
+      "properties": {
+        "name": "Río de Agua de Vida Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389337985
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389337986,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.120757,
+          25.1973786
+        ]
+      },
+      "properties": {
+        "name": "Puerto Adolfo López Mateos Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389337986
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389347493,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8836376,
+          26.8168409
+        ]
+      },
+      "properties": {
+        "name": "Punta San Pedro Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389347493
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389347495,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1912985,
+          25.993483
+        ]
+      },
+      "properties": {
+        "name": "Las Barrancas Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389347495
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 389903106,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.3298437,
+          27.5161478
+        ]
+      },
+      "properties": {
+        "name": "Rancho El Caracol Airfield",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 389903106
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390091827,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2182787,
+          27.2089628
+        ]
+      },
+      "properties": {
+        "name": "Aeródromo Militar de San Lucas",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390091827
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390147003,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.8844,
+          27.2917
+        ]
+      },
+      "properties": {
+        "name": "San Ignacio Downtown Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390147003
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390147008,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3056855,
+          27.3939162
+        ]
+      },
+      "properties": {
+        "name": "Santa María de Mulegé Airport",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390147008
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390147012,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0693342,
+          27.1865438
+        ]
+      },
+      "properties": {
+        "name": "Isla San Marcos Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390147012
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390152865,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.4318819,
+          23.3656196
+        ]
+      },
+      "properties": {
+        "name": "Los Frailes Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390152865
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390152866,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.4422,
+          23.6672
+        ]
+      },
+      "properties": {
+        "name": "Melitón Albáñez Domínguez Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390152866
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390152870,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.2020287,
+          23.4997168
+        ]
+      },
+      "properties": {
+        "name": "Todos Santos Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390152870
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390158186,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.7074677,
+          23.8033577
+        ]
+      },
+      "properties": {
+        "name": "Punta Pescadero Airstrip",
+        "kind": "aerodrome",
+        "icao": "MMPP",
+        "iata": "",
+        "osm_id": 390158186
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390161005,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.5356443,
+          23.5748434
+        ]
+      },
+      "properties": {
+        "name": "Punta Colorada Airstrip",
+        "kind": "aerodrome",
+        "icao": "MMPL",
+        "iata": "PCO",
+        "osm_id": 390161005
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390166393,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.0841678,
+          24.2067747
+        ]
+      },
+      "properties": {
+        "name": "Rancho Las Cruces Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390166393
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 390167643,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.8365499,
+          24.028427
+        ]
+      },
+      "properties": {
+        "name": "Punta Arena Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 390167643
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 393218542,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.5129424,
+          26.3702605
+        ]
+      },
+      "properties": {
+        "name": "Cadejé Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 393218542
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 393218550,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.2778436,
+          27.183457
+        ]
+      },
+      "properties": {
+        "name": "Bahía Asunción Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 393218550
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 736973140,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.327032,
+          24.1548699
+        ]
+      },
+      "properties": {
+        "name": "Marina La Paz",
+        "kind": "harbour",
+        "icao": "",
+        "iata": "",
+        "osm_id": 736973140
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 736973435,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.302498,
+          24.1837639
+        ]
+      },
+      "properties": {
+        "name": "Marina Palmira",
+        "kind": "harbour",
+        "icao": "",
+        "iata": "",
+        "osm_id": 736973435
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1042048859,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.961998,
+          27.0692005
+        ]
+      },
+      "properties": {
+        "name": "Punta Chivato Airport",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "PCV",
+        "osm_id": 1042048859
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1689544745,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0847189,
+          27.1911248
+        ]
+      },
+      "properties": {
+        "name": "",
+        "kind": "ferry_terminal",
+        "icao": "",
+        "iata": "",
+        "osm_id": 1689544745
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1691606533,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2643193,
+          27.3414608
+        ]
+      },
+      "properties": {
+        "name": "",
+        "kind": "ferry_terminal",
+        "icao": "",
+        "iata": "",
+        "osm_id": 1691606533
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4581982752,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.332757,
+          24.1513345
+        ]
+      },
+      "properties": {
+        "name": "",
+        "kind": "harbour",
+        "icao": "",
+        "iata": "",
+        "osm_id": 4581982752
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8462616312,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.327151,
+          24.2750857
+        ]
+      },
+      "properties": {
+        "name": "Ferry La Paz",
+        "kind": "ferry_terminal",
+        "icao": "",
+        "iata": "",
+        "osm_id": 8462616312
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8476997830,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.32909,
+          24.2770763
+        ]
+      },
+      "properties": {
+        "name": "Ferry La Paz",
+        "kind": "ferry_terminal",
+        "icao": "",
+        "iata": "",
+        "osm_id": 8476997830
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9284297817,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.3194,
+          24.1610824
+        ]
+      },
+      "properties": {
+        "name": "",
+        "kind": "ferry_terminal",
+        "icao": "",
+        "iata": "",
+        "osm_id": 9284297817
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9468497677,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.9084336,
+          22.8807271
+        ]
+      },
+      "properties": {
+        "name": "",
+        "kind": "ferry_terminal",
+        "icao": "",
+        "iata": "",
+        "osm_id": 9468497677
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10895126032,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.9721576,
+          23.9824263
+        ]
+      },
+      "properties": {
+        "name": "VIP Baja",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 10895126032
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10895284088,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.2878777,
+          23.7112466
+        ]
+      },
+      "properties": {
+        "name": "Carrizal",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 10895284088
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10895296929,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.4804884,
+          23.5111418
+        ]
+      },
+      "properties": {
+        "name": "Cabo Cortes",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 10895296929
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11005802393,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.2224741,
+          27.3548815
+        ]
+      },
+      "properties": {
+        "name": "Los Martires",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 11005802393
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11006313596,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.4434615,
+          27.6149373
+        ]
+      },
+      "properties": {
+        "name": "Rancho El Piloto",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "REP",
+        "osm_id": 11006313596
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11123828700,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0847914,
+          27.1911619
+        ]
+      },
+      "properties": {
+        "name": "",
+        "kind": "ferry_terminal",
+        "icao": "",
+        "iata": "",
+        "osm_id": 11123828700
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11296427420,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.2905459,
+          27.4647398
+        ]
+      },
+      "properties": {
+        "name": "Vizcaíno",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 11296427420
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11648471008,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4974375,
+          26.2580164
+        ]
+      },
+      "properties": {
+        "name": "Scorpion Bay Airstrip",
+        "kind": "aerodrome",
+        "icao": "",
+        "iata": "",
+        "osm_id": 11648471008
+      }
+    }
+  ]
+}

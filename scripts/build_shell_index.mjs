@@ -68,6 +68,14 @@ function hint(text) {
   return String(text || '').replace(/\s+/g, ' ').trim().slice(0, 180);
 }
 
+const OTHER_STATE = /\b(sinaloa|hermosillo|los mochis|culiac[aá]n|navojoa|guasave)\b/i;
+const BCS_WORD = /\b(baja california sur|\bbcs\b|los cabos|la paz|loreto|comond[uú]|muleg[eé]|guerrero negro|todos santos)\b/i;
+function keepFile(name, extra) {
+  const blob = `${name} ${extra || ''}`;
+  if (OTHER_STATE.test(blob) && !BCS_WORD.test(blob)) return false;
+  return true;
+}
+
 const files = [];
 const seen = new Set();
 const slim = readJson('src/data/catalog_slim.json');
@@ -78,13 +86,18 @@ for (const row of slim) {
   if (seen.has(key)) continue;
   seen.add(key);
   const folder = FOLDER_OF[row.f] || 'otros';
-  files.push([niceName(row.n), folder, row.e || '', href, 'd', hint(row.sum_es)]);
+  const name = niceName(row.n);
+  const note = hint(row.sum_es);
+  if (!keepFile(name, note)) continue;
+  files.push([name, folder, row.e || '', href, 'd', note]);
 }
 
 const news = readJson('src/data/news.json');
 for (const item of news.items || []) {
   if (!item.url || !item.title_es) continue;
-  files.push([item.title_es, 'noticias', 'web', item.url, 'w', hint(item.blurb_es)]);
+  const note = hint(item.blurb_es);
+  if (!keepFile(item.title_es, note)) continue;
+  files.push([item.title_es, 'noticias', 'web', item.url, 'w', note]);
 }
 
 const stills = readJson('src/data/stills.json');
