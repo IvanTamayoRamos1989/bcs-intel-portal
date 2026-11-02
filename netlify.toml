@@ -55,6 +55,11 @@
   to = "/.netlify/functions/stakeholders-api"
   status = 200
 
+[[redirects]]
+  from = "/api/icluster-wms"
+  to = "/.netlify/functions/icluster-wms"
+  status = 200
+
 [functions.stakeholders-api]
   included_files = ["netlify/functions/stakeholders_seed.json"]
   external_node_modules = ["@netlify/blobs"]
