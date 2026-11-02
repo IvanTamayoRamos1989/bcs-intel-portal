@@ -453,7 +453,7 @@
   },
   "gap_politica_uga_leyenda": {
     "label_en": "Gap: AS/PR/PT/RT and CODE_PA legend",
-    "summary_en": "sin dato en corpus for the letter-to-policy table and for the meaning of CODE_PA (the layer uses 2, 3 and 4 with no name). The names do appear in extracts: Sustainable Use, Preservation, Protection and, only in the lineamientos, Restoration. Do not assert that AS, PR, PT or RT equal those names, except the loose map OCR «aprovechamiento sustentable AS», which is not a decree. RT is not in the 69-polygon layer."
+    "summary_en": "sin dato en corpus for the letter-to-policy table and for the meaning of CODE_PA (the layer uses 2, 3 and 4 with no name). The MOE56 technical sheet (SEPUIMM — POERBCS Ficha tecnica MOE56 01 (2025)) names the field «UGA number key, environmental-policy initials» and does not publish the glossary. Names seen: Sustainable Use, Preservation, Protection and, only in the lineamientos, Restoration. RT is not assigned to Restoration. RT is not in the 69-polygon layer."
   },
   "gap_riesgo_capas_vector": {
     "label_en": "Gap: CENAPRED/SSN hazard vector layers",
@@ -510,5 +510,49 @@
   "gap_mulege_agua_energia": {
     "label_en": "Gap: Mulegé water–energy balance",
     "summary_en": "sin dato en corpus for a municipal water–energy balance. terr_mulege already says that capacity is not claimed beyond TI. The mulege_north scorecard is an unknown reading: the H2 signal (sig-mulege-oasis-h2) has no project node and no MW on the graph. Do not invent the Oasis plant."
+  },
+  "dq_comparar_polos": {
+    "label_en": "How do the poles compare on water, energy and land?",
+    "summary_en": "Comparison across poles already encoded (Los Cabos, La Paz, Comondú and whichever the question names). Use each place's aquifers, DMA, SIBCS, PDU and demand drivers. Do not move the Cabos deficit onto Comondú or invent a balance that cancels the other."
+  },
+  "ev_esc_baseline": {
+    "label_en": "Scenario: current trajectory",
+    "summary_en": "baseline scenario in Base de datos BCS 2050 — datos del portal, not a new forecast. Text: tourism and coastal growth (Cabos, East Cape, Loreto) with growth-pole DMAs already in deficit, hotel–residential pressure and ANP interfaces. Does not replace official DMA."
+  },
+  "ev_esc_corridor": {
+    "label_en": "Scenario: intensify Cabos–La Paz corridor",
+    "summary_en": "corridor_intensify scenario in Base de datos BCS 2050 — datos del portal. Text: strengthen mobility and services on Los Cabos–Todos Santos–La Paz, with East Cape as a flank under ANP/Pulmo tension. Not a construction permit."
+  },
+  "ev_esc_water_first": {
+    "label_en": "Scenario: water first",
+    "summary_en": "water_first scenario in Base de datos BCS 2050 — datos del portal. Text: prioritise water security on aquifers already in deficit (0313/0317/0319/0324 and 0318) and desalination or demand management before unlocking more growth. It does not create new availability."
+  },
+  "ev_esc_ports": {
+    "label_en": "Scenario: ports and airports as anchors",
+    "summary_en": "ports_air_hubs scenario in Base de datos BCS 2050 — datos del portal. Text: anchor growth on SJD, LAP, LTO and ports (CSL, Pichilingue, Santa Rosalía), tied to territorial capacity. Not a decreed expansion programme."
+  },
+  "ev_sig_water_energy": {
+    "label_en": "Signal: water–energy coupling",
+    "summary_en": "Signal sig-water-energy-coupling in Base de datos BCS 2050 — prospectiva, not a capacity. Title: desal plants and outages in Cabos and La Paz; urban supply depends on the grid. Adds no MW or hm³."
+  },
+  "ev_sig_hurricanes": {
+    "label_en": "Signal: hurricanes Polo and Rachel",
+    "summary_en": "Signal sig-hurricanes-polo-rachel in Base de datos BCS 2050 — prospectiva, not a new atlas. Text: shared hydrometeorological risk (Comondú, Mulegé, Los Cabos, Loreto, La Paz), including the power grid. Does not replace the state risk atlas."
+  },
+  "ev_sig_tourism_fdi": {
+    "label_en": "Signal: tourism FDI versus water scarcity",
+    "summary_en": "Signal sig-tourism-fdi-vs-water in Base de datos BCS 2050 — prospectiva, not a new investment figure. Title: leading tourism FDI versus a brake from lack of water in Cabos. A vocation tension, not a water balance."
+  },
+  "ev_sig_sibcs": {
+    "label_en": "Signal: SIBCS as an energy island",
+    "summary_en": "Signal sig-sibcs-island-grid in Base de datos BCS 2050 — prospectiva, not a plant inventory. Title: CFE reliability and investment on the isolated system. The grid ceiling remains rc_sibcs and const_red_aislada."
+  },
+  "ev_sig_mulege_oasis": {
+    "label_en": "Signal: Oasis hydrogen in Mulegé",
+    "summary_en": "Signal sig-mulege-oasis-h2 in Base de datos BCS 2050 — prospectiva. The text asks whether it is a remote energy corridor or only transit, and says it must be tested against local water. There is no project node and no MW on the graph."
+  },
+  "ev_sig_comondu_loreto": {
+    "label_en": "Signal: Comondú desal and Loreto WWTP",
+    "summary_en": "Signal sig-comondu-desal-loreto-ptar in Base de datos BCS 2050 — prospectiva, not an hm³ of supply. Text: a desalination MIA in Comondú and WWTP/aqueduct in Loreto as vocations outside the tourism south. Cross with gap_loreto_dma and dd_agro_santo_domingo."
   }
 }

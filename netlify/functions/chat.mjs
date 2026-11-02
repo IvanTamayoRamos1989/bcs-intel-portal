@@ -540,6 +540,9 @@ function expandQuery(query) {
   if (LANDUSE_RE.test(qn)) factorKinds.push('landuse');
   if (RISK_RE.test(qn)) factorKinds.push('risk');
   if (OPPORTUNITY_RE.test(qn)) factorKinds.push('opportunity');
+  const whoFactor = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
+  if (whoFactor && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
     isOpenIntent = true;
@@ -966,19 +969,22 @@ function factorPredBase(pred) {
 function factorPlaceFlags(qn) {
   const east = /\b(east cape|cabo del este|cabo pulmo|la ribera)\b/.test(qn);
   const cabos = /\b(los cabos|cabo san lucas|san jose del cabo|\bsjd\b)\b/.test(qn);
-  const paz = /\bla paz\b/.test(qn) && !cabos;
+  const paz = /\bla paz\b/.test(qn);
   const loreto = /\bloreto\b/.test(qn);
   const comondu = /\b(comondu|constitucion)\b/.test(qn);
   const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
   const todos = /\b(todos santos|pescadero)\b/.test(qn);
+  const nPlaces = [cabos, paz, loreto, comondu, mulege, todos, east].filter(Boolean).length;
+  const compare = nPlaces >= 2 && /\b(compar\w*|versus|\bvs\b|diferencia entre)\b/.test(qn);
+  const who = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
   return {
-    cabos, paz, loreto, comondu, mulege, todos, east,
-    any: cabos || paz || loreto || comondu || mulege || todos || east,
+    cabos, paz, loreto, comondu, mulege, todos, east, compare, who,
+    any: nPlaces > 0,
   };
 }
 
 function factorExcluded(id, place) {
-  if (!place.any) return false;
+  if (!place.any || place.compare) return false;
   const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id);
   const pazId = /lapaz|la_paz|0324|turismo_lapaz|aeropuerto_lap/.test(id) && !/tx_lapaz/.test(id);
   if (place.east && pazId) return true;
@@ -1056,6 +1062,32 @@ function factorSeedIds(qn, kinds) {
     for (const id of ids) if (id && !seeds.includes(id)) seeds.push(id);
   };
   const kindHit = PROJECT_KIND_RE.test(qn);
+  if (p.who) {
+    add('ev_mesas_trabajo', 'actor_sepuimm', 'actor_conagua', 'actor_cea', 'actor_cfe');
+    if (kinds.includes('landuse')) add('dq_cambio_uso_suelo', 'inst_poerbcs', 'inst_poer_politicas');
+    if (p.cabos || p.east) add('actor_oomsapas_cabos', 'actor_implan_cabos', 'actor_ayunt_cabos');
+    if (p.paz) add('actor_ayunt_lapaz');
+    if (p.comondu) add('actor_ayunt_comondu');
+    if (p.mulege) add('actor_ayunt_mulege');
+    if (!p.any) add('actor_oomsapas_cabos', 'actor_implan_cabos', 'actor_ayunt_cabos', 'actor_ayunt_lapaz');
+  }
+  if (p.compare) {
+    add('dq_comparar_polos', 'rc_sibcs', 'const_dma_deficit', 'const_red_aislada', 'ev_esc_baseline', 'ev_mesas_trabajo');
+    if (p.cabos) add('terr_los_cabos', 'rc_acuifero_0317', 'rc_acuifero_0319', 'dd_turismo_cabos', 'inst_pdu_cabos', 'proj_desal_cabos');
+    if (p.paz) add('terr_la_paz', 'rc_acuifero_0324', 'dd_turismo_lapaz', 'inst_pdu_lapaz');
+    if (p.comondu) add('terr_comondu', 'dd_agro_santo_domingo');
+    if (p.loreto) add('terr_loreto', 'proj_fed_agu_005', 'terr_anp_loreto');
+    if (p.mulege) add('terr_mulege', 'terr_anp_vizcaino');
+  }
+  if (/\bescenario\b|\bscenario\b/.test(qn)) {
+    if (/\bagua primero\b|\bwater first\b|\bseguridad hidr/.test(qn)) add('ev_esc_water_first');
+    else if (/\bcorredor\b|\bintensif/.test(qn)) add('ev_esc_corridor');
+    else if (/\bpuerto|\baeropuerto|\bairport|\bport\b/.test(qn)) add('ev_esc_ports');
+    else add('ev_esc_baseline', 'ev_esc_water_first');
+  }
+  if (/\bhuracan|\bhurricane|\bpolo\b|\brachel\b/.test(qn)) add('ev_sig_hurricanes');
+  if (/\bacoplamiento\b|\bagua[\s-]*energia|\bwater[\s-]*energy\b|\bapagon/.test(qn)) add('ev_sig_water_energy');
+  if (/\bhidrogen|\boasis\b/.test(qn)) add('ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
   if (p.east) {
     add(
       'dq_pack_east_cape', 'rc_acuifero_0318', 'terr_anp_cabo_pulmo', 'terr_obs_east_cape',
@@ -1191,13 +1223,15 @@ function libraryHits(corpus, kinds, seen) {
   const out = [];
   for (const kind of kinds) {
     const folders = LIB_FOLDERS[kind] || [];
-    const hit = corpus.find((c) => {
+    const pickLib = (wantPage) => corpus.find((c) => {
       if (!c || seen.has(c.id) || c.type !== 'library') return false;
       const id = String(c.id || '');
-      if (id.includes(':p')) return false;
+      const isPage = id.includes(':p');
+      if (wantPage !== isPage) return false;
       const path = String(c.path || '');
       return folders.some((f) => path.includes(f));
     });
+    const hit = pickLib(true) || pickLib(false);
     if (!hit) continue;
     seen.add(hit.id);
     out.push(hit);
@@ -1270,7 +1304,7 @@ function buildFactorEvidence(query, intents) {
     : (expandQuery(query).factorKinds || []);
   if (!kinds.length) return [];
   const place = factorPlaceFlags(qn);
-  const ids = walkFactorBundle(factorSeedIds(qn, kinds), place, 16);
+  const ids = walkFactorBundle(factorSeedIds(qn, kinds), place, place.compare ? 18 : 16);
   const onto = ontologyChunksForIds(ids);
   const docs = factorDocChunks(kinds, place);
   const seen = new Set();
@@ -2790,7 +2824,7 @@ MULTI-FACTOR REASONING (this question is about project viability, land-use chang
 - Walk the factor bundle in CONTEXT together: water (DMA / aquifers / desal), energy (SIBCS / CFE), instruments (POER / PDU), constraints (ANP, coast, tenure, hazards), demand drivers, actors or working tables, and gaps.
 - Name trade-offs between factors (for example desalination against the power ceiling, or a PDU against a UGA / ANP). Do not recommend a zoning code that is not written in CONTEXT.
 - If a critical factor is missing, or a fragment says "sin dato en corpus", say so in "Data gap:" — do not invent land-use codes, parcels, or figures.
-- Cite each factor with the fragment title. Library extracts are reference material, not BCS statistics. News items are press (outlet and date): they do not replace an official figure. For this class you may use up to about 220 words so the trade-offs fit.
+- Cite each factor with the fragment title. Library extracts are reference material, not BCS statistics; page-level extracts are still reference. News items are press (outlet and date): they do not replace an official figure. Scenarios and foresight signals are readings, not new capacity. If two places are compared, keep each place's own ceiling. For this class you may use up to about 220 words so the trade-offs fit.
 `;
   }
   return `
@@ -2798,7 +2832,7 @@ RAZONAMIENTO MULTIFACTOR (esta pregunta es de viabilidad de proyecto, cambio de 
 - Recorre junto el paquete de factores del CONTEXTO: agua (DMA / acuíferos / desal), energía (SIBCS / CFE), instrumentos (POER / PDU), restricciones (ANP, costa, tenencia, peligros), motores de demanda, actores o mesas, y brechas.
 - Nombra trade-offs entre factores (por ejemplo desalación frente al techo eléctrico, o un PDU frente a una UGA / ANP). No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
 - Si falta un factor crítico, o un fragmento dice "sin dato en corpus", dilo en "Dato faltante:" — no inventes códigos de uso de suelo, predios ni cifras.
-- Cita cada factor con el título del fragmento. Los extractos de biblioteca son referencia, no estadística de BCS. Las noticias son prensa (medio y fecha): no sustituyen una cifra oficial. En esta clase puedes usar hasta unas 220 palabras para que quepan los trade-offs.
+- Cita cada factor con el título del fragmento. Los extractos de biblioteca son referencia, no estadística de BCS; una página citada sigue siendo referencia. Las noticias son prensa (medio y fecha): no sustituyen una cifra oficial. Escenarios y señales de prospectiva son lecturas, no capacidad nueva. Si comparas dos lugares, conserva el techo de cada uno. En esta clase puedes usar hasta unas 220 palabras para que quepan los trade-offs.
 `;
 }
 

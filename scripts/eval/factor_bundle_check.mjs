@@ -64,6 +64,44 @@ const CASES = [
     needTypes: ['Project', 'Constraint', 'Territory', 'Instrument'],
   },
   {
+    q: 'Compara la viabilidad de Los Cabos y La Paz',
+    kind: 'viability',
+    needIds: ['dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'rc_acuifero_0317', 'rc_acuifero_0324'],
+    needTypes: ['Territory', 'ResourceCapacity', 'DecisionQuestion'],
+  },
+  {
+    q: 'Compara oportunidades de Los Cabos y Comondú',
+    kind: 'opportunity',
+    needIds: ['dq_comparar_polos', 'terr_los_cabos', 'terr_comondu', 'dd_turismo_cabos', 'dd_agro_santo_domingo'],
+    needTypes: ['Territory', 'DemandDriver'],
+  },
+  {
+    q: '¿Quién opera el agua de un hotel en Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_mesas_trabajo', 'actor_oomsapas_cabos', 'actor_cea', 'actor_conagua'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: '¿Quién decide un cambio de uso de suelo?',
+    kind: 'landuse',
+    also: 'viability',
+    needIds: ['actor_sepuimm', 'dq_cambio_uso_suelo', 'inst_poerbcs', 'ev_mesas_trabajo'],
+    needTypes: ['Actor', 'Instrument'],
+  },
+  {
+    q: 'En el escenario agua primero, ¿es viable una desaladora en Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_esc_water_first', 'proj_desal_cabos', 'dq_viabilidad_proyecto', 'rc_acuifero_0317'],
+    needTypes: ['Evidence', 'Project', 'ResourceCapacity'],
+  },
+  {
+    q: 'Riesgos principales de huracanes en el estado',
+    kind: 'risk',
+    needIds: ['ev_sig_hurricanes', 'dq_riesgos_principales'],
+    needTypes: ['Evidence', 'Constraint'],
+    libraryPage: true,
+  },
+  {
     q: 'Riesgos principales y oportunidades en Mulegé y el Vizcaíno',
     kind: 'opportunity',
     also: 'risk',
@@ -111,6 +149,11 @@ for (const c of CASES) {
     if (!/restauraci[oó]n/i.test(text)) fail(`${c.q} restoration policy name missing`);
     if (/RT\s*=\s*Restaur|RT significa|sigla RT equivale/i.test(text)) fail(`${c.q} invented RT equivalence`);
     if (!ev.some((x) => x.type === 'library')) fail(`${c.q} expected a library reference chunk`);
+  }
+  if (c.libraryPage) {
+    const pages = ev.filter((x) => x.type === 'library' && String(x.id || '').includes(':p'));
+    console.log(`   libpages=${pages.map((x) => x.id).join(' ') || '(none)'}`);
+    if (!pages.length) fail(`${c.q} expected a page-level library extract`);
   }
   if (c.newsPlace) {
     const news = ev.filter((x) => x.type === 'news' && x.outlet && x.date && (x.place_ids || []).includes(c.newsPlace));
