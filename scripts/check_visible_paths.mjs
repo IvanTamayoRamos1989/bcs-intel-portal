@@ -6,7 +6,8 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
-const ROOT = new URL('..', import.meta.url).pathname;
+import { fileURLToPath } from 'node:url';
+const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const DIST = join(ROOT, process.argv[2] || 'dist');
 const BAD = /src\/data|BCSFP[\/\\]|11_bcs_hub|(?<![\w/.-])\/?[\w.-]+\.json\b|\b[\w-]+\.json\b|\bscripts\/\w+|\b[\w-]+\.py\b/gi;
 

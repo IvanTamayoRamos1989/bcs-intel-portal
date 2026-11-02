@@ -7,7 +7,8 @@ import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { join, extname, relative } from 'node:path';
 
-const ROOT = new URL('..', import.meta.url).pathname;
+import { fileURLToPath } from 'node:url';
+const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const DEFAULT_HASHES = [
   'e509dc8b2493027f47eca0d365050fe7bffb0c776e56538e6057af2d70853172',
 ];

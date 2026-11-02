@@ -12,3 +12,5 @@ foresights_swarm/
 *.pdf
 .env
 .env.*
+.finance-archive/
+scripts/finance_archive/__pycache__/
