@@ -1,5 +1,5 @@
 {
-  "version": "1.12",
+  "version": "1.13",
   "updated": "2026-11-02",
   "entity_types": [
     {
@@ -1996,6 +1996,33 @@
       "summary": "El dossier de East Cape marca en catálogo, como FACT, el programa subregional Los Barriles–El Cardonal del Ayuntamiento de La Paz (2012). No es un PDU ni un POEL de Cabo del Este o La Ribera, y no trae zonificación ni carga. sin dato en corpus para ese instrumento consolidado y para la carga cuantitativa de East Cape. La tenencia del dossier está etiquetada como supuesto y no se copia.",
       "summary_en": "The East Cape dossier catalogues, as FACT, the Los Barriles–El Cardonal subregional programme of the La Paz council (2012). It is not a PDU or POEL for East Cape or La Ribera, and it carries no zoning and no load. sin dato en corpus for that consolidated instrument and for East Cape quantitative load. The dossier tenure lens is tagged as an assumption and is not copied.",
       "evidence_path": "src/data/place_dossiers.json#east_cape-psdu"
+    },
+    {
+      "id": "ev_jll_zonas_2025",
+      "type": "Evidence",
+      "label": "JLL 2025 — zonas y cierres ya en la ficha",
+      "label_en": "JLL 2025 — zone shares and closings already on the sheet",
+      "summary": "JLL 2025, cifras de zona ya en la ficha. No es consejo de inversión ni una serie nueva de pasajeros. Loreto: 42 millones USD de volumen MLS y participación de 1% a 3%; +41 casas frente a 2024. Pacífico (Todos Santos, Pescadero, Cerritos): de 16% a 18%. East Cape: 4% del volumen MLS, no una carga territorial. Los Cabos cerró 1112 unidades con precio medio de 1137 mil USD. BCS: 262 días en mercado; volumen por tipo 919 casas, 449 departamentos y 201 tierra, en millones de USD. No es renta hotelera, permiso ni pasaje.",
+      "summary_en": "JLL 2025 zone figures already on the sheet. Not investment advice and not a new passenger series. Loreto: USD 42 million MLS volume and share from 1% to 3%; +41 houses versus 2024. Pacific (Todos Santos, Pescadero, Cerritos): 16% to 18%. East Cape: 4% of MLS volume, not a territorial load. Los Cabos closed 1112 units at an average price of USD 1137 thousand. BCS: 262 days on market; volume by type USD 919 million houses, 449 condos and 201 land. Not hotel rent, a permit, or passengers.",
+      "evidence_path": "src/data/inmobiliario_metrics.json#jll_2025_zones"
+    },
+    {
+      "id": "ev_sniiv_vivienda",
+      "type": "Evidence",
+      "label": "Registro y rezago de vivienda ya publicados",
+      "label_en": "Housing registrations and backlog already published",
+      "summary": "SNIIV / SEDATU, descarga 31 ago 2026. Registro de vivienda en BCS: 2022 812, 2023 1079, 2024 990, 2025 776; 2026 va en 345 y es año parcial. Registro 2025 por municipio: La Paz 588, Los Cabos 142, Comondú 31, Mulegé 10, Loreto 5. Financiamiento 2025: 8993 acciones y 6559687559.52 pesos (INFONAVIT 6604, banca 1180, FOVISSSTE 616, CONAVI 569). Rezago CONAVI 2024: 58987 de 275159 viviendas (21.4%). El convenio de Vivienda para el Bienestar cita 37500 acciones en seis años. sin dato en corpus para el avance ejecutado, la renta hotelera y los permisos de obra.",
+      "summary_en": "SNIIV / SEDATU, download 31 Aug 2026. BCS housing registrations: 2022 812, 2023 1079, 2024 990, 2025 776; 2026 is at 345 and is a partial year. 2025 registrations by municipality: La Paz 588, Los Cabos 142, Comondú 31, Mulegé 10, Loreto 5. 2025 financing: 8993 actions and 6559687559.52 pesos (INFONAVIT 6604, banks 1180, FOVISSSTE 616, CONAVI 569). CONAVI 2024 backlog: 58987 of 275159 homes (21.4%). The Housing for Wellbeing agreement cites 37500 actions over six years. sin dato en corpus for executed progress, hotel rents, and building permits.",
+      "evidence_path": "src/data/inmobiliario_metrics.json#sniiv_vivienda_bcs"
+    },
+    {
+      "id": "ev_dossiers_movilidad",
+      "type": "Evidence",
+      "label": "Movilidad ya escrita en los dossiers",
+      "label_en": "Mobility already written in the place dossiers",
+      "summary": "Hechos de movilidad ya escritos en los dossiers, sin serie nueva de pasajeros. East Cape: sin aeropuerto propio; el acceso es por el corredor Los Cabos–La Paz; la carga cuantitativa sigue sin dato. Loreto: LTO tiene 5 destinos sin escala (17 sep 2026); el pasaje 2025 no se reconcilia y no hay DMA local. Mulegé, Santa Rosalía y Vizcaíno: sin aeropuerto en el paquete de tres; el dossier lo marca como desierto de evidencia, no como offset norte. Oasis sigue sin MW. El acuífero 0302 no se asigna a Mulegé.",
+      "summary_en": "Mobility facts already written in the dossiers, with no new passenger series. East Cape: no airport of its own; access is along the Los Cabos–La Paz corridor; quantitative load remains sin dato. Loreto: LTO has 5 nonstop destinations (17 Sep 2026); 2025 passengers are not reconciled and there is no local DMA. Mulegé, Santa Rosalía and Vizcaíno: no airport in the three-airport pack; the dossier marks an evidence desert, not a northern offset. Oasis still has no MW. Aquifer 0302 is not assigned to Mulegé.",
+      "evidence_path": "src/data/place_dossiers.json#mobility"
     }
   ],
   "edges": [
@@ -6553,6 +6580,226 @@
       "from": "const_tenencia",
       "to": "ev_psdu_barriles",
       "predicate": "risks"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "ev_sig_asipona",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "proj_fed_pue_002",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_aereo_setue",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vuelos",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_aeropuerto_sjd",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "rc_aeropuerto_sjd",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_aeropuerto_lap",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_aeropuerto_lap",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_tx_lapaz_cabos",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "rc_tx_lapaz_cabos",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "rc_tx_lapaz_cabos",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_tx_lapaz_cabos",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_tx_lapaz_cabos",
+      "to": "const_red_aislada",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_p23_bs1",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_p23_bs1",
+      "to": "dq_oportunidades",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_p23_bs1",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_p23_bs1",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_sibcs",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_sibcs",
+      "to": "rc_tx_lapaz_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_jll_zonas_2025",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "ev_jll_zonas_2025",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_jll_zonas_2025",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_jll_zonas_2025",
+      "to": "dq_pack_east_cape",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_jll_zonas_2025",
+      "to": "dd_residencial_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sniiv_vivienda",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sniiv_vivienda",
+      "to": "dq_oportunidades",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sniiv_vivienda",
+      "to": "proj_fed_viv_001",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sniiv_vivienda",
+      "to": "gap_permisos_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sniiv_vivienda",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sniiv_vivienda",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "terr_obs_east_cape",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "gap_east_cape_carga",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "gap_loreto_dma",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "gap_mulege_agua_energia",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "ev_sig_vuelos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "ev_sig_mulege_oasis",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_dossiers_movilidad",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
     }
   ]
 }
