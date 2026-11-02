@@ -177,10 +177,10 @@
         } },
         { id: 'cdt-muni-line', type: 'line', source: 'munis', paint: { 'line-color': '#006BA3', 'line-width': 1.3 } },
         { id: 'cdt-bars', type: 'fill-extrusion', source: 'bars', filter: ['==', ['geometry-type'], 'Polygon'], paint: {
-          'fill-extrusion-color': ['interpolate', ['linear'], ['get', 'h'], 8000, '#9fd0ea', 28000, '#0083C4'],
+          'fill-extrusion-color': ['interpolate', ['linear'], ['get', 'h'], 8000, '#f59e0b', 28000, '#b45309'],
           'fill-extrusion-height': ['get', 'h'],
           'fill-extrusion-base': 0,
-          'fill-extrusion-opacity': 0.72,
+          'fill-extrusion-opacity': 0.85,
           'fill-extrusion-vertical-gradient': true,
         } },
         { id: 'coast', type: 'line', source: 'bcs', paint: { 'line-color': '#5f7f8c', 'line-width': 1.1 } },
@@ -224,7 +224,7 @@
         bearing: bearing0,
         maxPitch: 70,
         minZoom: 6.15,
-        maxZoom: 13,
+        maxZoom: 14,
         maxBounds: [[stateBounds[0][0] - pad, stateBounds[0][1] - pad], [stateBounds[1][0] + pad, stateBounds[1][1] + pad]],
         maxBoundsViscosity: 0.85,
         attributionControl: true,
@@ -245,11 +245,12 @@
           pitch: map.getPitch(),
           bearing: reduced ? 0 : map.getBearing(),
           duration: reduced ? 0 : 650,
-          maxZoom: 10,
+          maxZoom: 10.5,
         });
       }
       var muniBase = (base && base.municipalities) || { type: 'FeatureCollection', features: [] };
       var lastHeights = {};
+      var barsEnabled = false;
       function applyHeights(heights) {
         lastHeights = heights || {};
         var fc = JSON.parse(JSON.stringify(muniBase));
@@ -259,6 +260,7 @@
           f.properties.h = h > 0 ? h : 0;
         });
         if (map.getSource('munis')) map.getSource('munis').setData(fc);
+        if (barsEnabled) setPopulationBars(lastHeights);
       }
       function pointInRing(ring, x, y) {
         var inside = false;
@@ -357,20 +359,73 @@
         map.setPaintProperty('cdt-muni-line', 'line-color', matchExpr(colors, 'line', '#8aa0ad'));
         map.setPaintProperty('cdt-muni-line', 'line-width', matchExpr(colors, 'weight', 1.1));
       }
+      function buildListingPrisms(geo) {
+        var feats = [];
+        ((geo && geo.features) || []).forEach(function (f) {
+          var g = f && f.geometry;
+          if (!g || g.type !== 'Point' || !Array.isArray(g.coordinates)) return;
+          var lng = Number(g.coordinates[0]);
+          var lat = Number(g.coordinates[1]);
+          if (!isFinite(lng) || !isFinite(lat)) return;
+          var p = Object.assign({}, f.properties || {});
+          p.height_m = Number(p.height_m) > 0 ? Number(p.height_m) : 120;
+          var d = 0.0038;
+          feats.push({
+            type: 'Feature',
+            properties: p,
+            geometry: {
+              type: 'Polygon',
+              coordinates: [[
+                [lng - d, lat - d],
+                [lng + d, lat - d],
+                [lng + d, lat + d],
+                [lng - d, lat + d],
+                [lng - d, lat - d],
+              ]],
+            },
+          });
+        });
+        return { type: 'FeatureCollection', features: feats };
+      }
+      var listingTypeColor = [
+        'match', ['get', 'propertyType'],
+        'RESIDENTIAL', '#f59e0b',
+        'CONDO', '#0ea5e9',
+        'LAND', '#10b981',
+        'MULTI_FAMILY', '#8b5cf6',
+        '#ec4899'
+      ];
       function ensure(id, geo, meta) {
         var src = 'cdt-src-' + id;
         var lid = 'cdt-ly-' + id;
         if (!map.getSource(src)) map.addSource(src, { type: 'geojson', data: geo });
+        if (id === 'bcs_market_listings' && !map.getSource(src + '-3d')) {
+          map.addSource(src + '-3d', { type: 'geojson', data: buildListingPrisms(geo) });
+        }
         if (map.getLayer(lid)) return lid;
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
         if (point) {
+          if (id === 'bcs_market_listings' && !map.getLayer(lid + '-3d')) {
+            map.addLayer({
+              id: lid + '-3d',
+              type: 'fill-extrusion',
+              source: src + '-3d',
+              paint: {
+                'fill-extrusion-color': listingTypeColor,
+                'fill-extrusion-height': ['coalesce', ['get', 'height_m'], 120],
+                'fill-extrusion-base': 0,
+                'fill-extrusion-opacity': 0.86,
+                'fill-extrusion-vertical-gradient': true,
+              },
+            });
+          }
           map.addLayer({
             id: lid, type: 'circle', source: src,
             paint: {
-              'circle-radius': 5.5,
-              'circle-color': meta.color || '#0083C4',
-              'circle-stroke-width': 1,
+              'circle-radius': id === 'bcs_market_listings' ? 6.5 : 5.5,
+              'circle-color': id === 'bcs_market_listings' ? listingTypeColor : (meta.color || '#0083C4'),
+              'circle-stroke-width': 1.4,
               'circle-stroke-color': '#ffffff',
               'circle-pitch-alignment': 'map',
             },
@@ -397,6 +452,10 @@
         }
         map.on('mouseenter', lid, function () { map.getCanvas().style.cursor = 'pointer'; });
         map.on('mouseleave', lid, function () { map.getCanvas().style.cursor = ''; });
+        if (map.getLayer(lid + '-3d')) {
+          map.on('mouseenter', lid + '-3d', function () { map.getCanvas().style.cursor = 'pointer'; });
+          map.on('mouseleave', lid + '-3d', function () { map.getCanvas().style.cursor = ''; });
+        }
         if (map.getLayer(lid + '-edge')) {
           map.on('mouseenter', lid + '-edge', function () { map.getCanvas().style.cursor = 'pointer'; });
           map.on('mouseleave', lid + '-edge', function () { map.getCanvas().style.cursor = ''; });
@@ -406,6 +465,7 @@
       function hide(id) {
         var lid = 'cdt-ly-' + id;
         if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
+        if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', 'none');
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', 'none');
       }
       function tagPoer(geo) {
@@ -422,13 +482,17 @@
         if (id === 'poer_ugas') geo = tagPoer(geo);
         var lid = ensure(id, geo, meta);
         if (id === 'poer_ugas' && map.getSource('cdt-src-' + id)) map.getSource('cdt-src-' + id).setData(geo);
+        if (id === 'bcs_market_listings' && map.getSource('cdt-src-' + id + '-3d')) {
+          map.getSource('cdt-src-' + id + '-3d').setData(buildListingPrisms(geo));
+        }
         var vis = mode === 'off' ? 'none' : 'visible';
         map.setLayoutProperty(lid, 'visibility', vis);
+        if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', vis);
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', vis);
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
         if (point) {
-          map.setPaintProperty(lid, 'circle-radius', 6);
+          map.setPaintProperty(lid, 'circle-radius', id === 'bcs_market_listings' ? 6.5 : 6);
           map.setPaintProperty(lid, 'circle-stroke-width', mode === 'compare' ? 3 : 1.4);
           map.setPaintProperty(lid, 'circle-stroke-color', mode === 'compare' ? '#0b3a56' : '#ffffff');
         } else if (line) {
@@ -464,19 +528,69 @@
         var rot = document.getElementById('cdt-rot');
         var north = document.getElementById('cdt-north');
         var fit = document.getElementById('cdt-fit');
+        var basemapBtn = document.getElementById('cdt-basemap');
+        var reliefBtn = document.getElementById('cdt-relief');
+        var barsBtn = document.getElementById('cdt-bars-btn');
+        var flyBtn = document.getElementById('cdt-fly');
         function syncPitch() {
           label(pitchBtn, map.getPitch() > 8 ? 'Vista cenital' : 'Vista 3D', map.getPitch() > 8 ? 'Top view' : '3D view', map.getPitch() > 8);
         }
         if (pitchBtn) pitchBtn.onclick = function () {
           var flat = map.getPitch() > 8;
-          map.easeTo({ pitch: flat ? 0 : 52, duration: reduced ? 0 : 600 });
+          map.easeTo({ pitch: flat ? 0 : 54, duration: reduced ? 0 : 600 });
         };
         if (rot && !reduced) rot.onclick = function () {
-          map.easeTo({ bearing: map.getBearing() + 22, duration: 450 });
+          map.easeTo({ bearing: map.getBearing() + 25, duration: 450 });
         };
         if (rot && reduced) rot.hidden = true;
         if (north) north.onclick = function () { map.easeTo({ bearing: 0, duration: reduced ? 0 : 400 }); };
         if (fit) fit.onclick = function () { fitBox(null); };
+        var bmModes = ['default', 'satellite', 'streets'];
+        var bmIdx = 0;
+        if (basemapBtn) basemapBtn.onclick = function () {
+          bmIdx = (bmIdx + 1) % bmModes.length;
+          var m = bmModes[bmIdx];
+          setBasemap(m);
+          var es = m === 'satellite' ? 'Base: Satélite' : m === 'streets' ? 'Base: Calles' : 'Base: Relieve';
+          var en = m === 'satellite' ? 'Base: Satellite' : m === 'streets' ? 'Base: Streets' : 'Base: Terrain';
+          label(basemapBtn, es, en, m !== 'default');
+        };
+        var exModes = [1.35, 2.5, 0];
+        var exIdx = 0;
+        if (reliefBtn) reliefBtn.onclick = function () {
+          exIdx = (exIdx + 1) % exModes.length;
+          var ex = exModes[exIdx];
+          setTerrain(ex > 0, ex || 1.35);
+          var es = ex === 0 ? 'Relieve: Plano' : 'Relieve: ' + ex + '×';
+          var en = ex === 0 ? 'Relief: Flat' : 'Relief: ' + ex + '×';
+          label(reliefBtn, es, en, ex > 1.35);
+        };
+        if (barsBtn) barsBtn.onclick = function () {
+          barsEnabled = !barsEnabled;
+          setPopulationBars(barsEnabled ? lastHeights : null);
+          label(barsBtn, barsEnabled ? 'Columnas 3D: Sí' : 'Columnas 3D', barsEnabled ? '3D Columns: On' : '3D Columns', barsEnabled);
+        };
+        var flySpots = [
+          { es: 'Vuelo: Cabo San Lucas', en: 'Fly: Cabo San Lucas', center: [-109.916, 22.892], zoom: 11.4, pitch: 60, bearing: -28 },
+          { es: 'Vuelo: Corredor / SJD', en: 'Fly: Corridor / SJD', center: [-109.735, 23.025], zoom: 11.1, pitch: 58, bearing: 18 },
+          { es: 'Vuelo: East Cape', en: 'Fly: East Cape', center: [-109.585, 23.485], zoom: 10.2, pitch: 56, bearing: -15 },
+          { es: 'Vuelo: Todos Santos', en: 'Fly: Todos Santos', center: [-110.215, 23.425], zoom: 11.2, pitch: 58, bearing: 32 },
+          { es: 'Vuelo: La Paz', en: 'Fly: La Paz', center: [-110.325, 24.155], zoom: 11.0, pitch: 56, bearing: -20 },
+          { es: 'Vuelo: Loreto', en: 'Fly: Loreto', center: [-111.345, 25.985], zoom: 10.8, pitch: 58, bearing: -12 },
+        ];
+        var flyIdx = -1;
+        if (flyBtn) flyBtn.onclick = function () {
+          flyIdx = (flyIdx + 1) % flySpots.length;
+          var sp = flySpots[flyIdx];
+          map.flyTo({
+            center: sp.center,
+            zoom: sp.zoom,
+            pitch: reduced ? 0 : sp.pitch,
+            bearing: reduced ? 0 : sp.bearing,
+            duration: reduced ? 0 : 1400,
+          });
+          label(flyBtn, sp.es, sp.en, true);
+        };
         map.on('pitchend', syncPitch);
         syncPitch();
       }
@@ -569,11 +683,72 @@
         el.textContent = label || '';
         marker = new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat([lng, lat]).addTo(map);
       }
+      var activePopup = null;
+      function escHtml(s) {
+        return String(s || '').replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function buildFeaturePopupHtml(feat) {
+        var p = (feat && feat.properties) || {};
+        var lid = (feat && feat.layer && feat.layer.id) || '';
+        if (lid.indexOf('bcs_market_listings') !== -1 || p.propertyType) {
+          var typeBadges = {
+            RESIDENTIAL: 'Residencial / Casa',
+            CONDO: 'Condominio',
+            LAND: 'Lote / Terreno',
+            MULTI_FAMILY: 'Multifamiliar',
+            OTHER: 'Comercial / Otro',
+          };
+          var badge = typeBadges[p.propertyType] || p.propertyType || 'Propiedad';
+          var specs = [];
+          if (p.bedrooms) specs.push(escHtml(p.bedrooms) + ' rec.');
+          if (p.bathrooms) specs.push(escHtml(p.bathrooms) + ' baños');
+          if (p.livingAreaSqft) specs.push(Number(p.livingAreaSqft).toLocaleString('en-US') + ' sq ft');
+          var loc = [p.subdivision, p.city, p.municipality].filter(Boolean).join(' · ');
+          return (
+            '<div style="font-family:system-ui,sans-serif;max-width:250px;line-height:1.35;color:#102a3a">' +
+            '<div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#006BA3;margin-bottom:2px">' + escHtml(badge) + ' · ' + escHtml(p.status || 'Active') + '</div>' +
+            '<div style="font-size:14px;font-weight:700;margin-bottom:4px">' + escHtml(p.title || p.name || 'Propiedad BCS') + '</div>' +
+            '<div style="font-size:15px;font-weight:800;color:#b45309;margin-bottom:4px">' + escHtml(p.priceFormatted || (p.price ? '$' + Number(p.price).toLocaleString('en-US') + ' USD' : 'Consultar')) + '</div>' +
+            (loc ? '<div style="font-size:12px;color:#476273;margin-bottom:4px">' + escHtml(loc) + '</div>' : '') +
+            (specs.length ? '<div style="font-size:12px;color:#1e3a4c;background:#f0f7fb;padding:3px 6px;border-radius:6px;margin-bottom:4px">' + specs.join(' · ') + '</div>' : '') +
+            '<div style="font-size:11px;color:#64748b">ID: ' + escHtml(p.mlsId || p.id || '') + ' · <a href="/inmobiliario/#catalogo-mls" style="color:#006BA3;font-weight:600">Ver en Inmobiliario</a></div>' +
+            '</div>'
+          );
+        }
+        var title = p.name_es || p.name || p.proyecto || p.NOMBRE || p.NOM_NUC || p.UGA_CLAVE || p.ref || '';
+        if (!title) return '';
+        var sub = p.sector || p.CLASIFICAC || p.CATEG_MANE || p.municipality || p.municipio || '';
+        return (
+          '<div style="font-family:system-ui,sans-serif;max-width:240px;line-height:1.35;color:#102a3a">' +
+          '<div style="font-size:13px;font-weight:700">' + escHtml(title) + '</div>' +
+          (sub ? '<div style="font-size:12px;color:#476273;margin-top:2px">' + escHtml(sub) + '</div>' : '') +
+          '</div>'
+        );
+      }
       map.on('click', function (e) {
         var layers = featureLayers();
         var feats = layers.length ? map.queryRenderedFeatures(e.point, { layers: layers }) : [];
         if (opts.onFeature) {
           opts.onFeature(feats, { lng: e.lngLat.lng, lat: e.lngLat.lat, zoom: map.getZoom() });
+          return;
+        }
+        var overlayHit = feats.filter(function (f) {
+          var id = f.layer && f.layer.id;
+          return id && id.indexOf('cdt-ly-') === 0;
+        })[0];
+        if (overlayHit && typeof maplibregl !== 'undefined' && maplibregl.Popup) {
+          var html = buildFeaturePopupHtml(overlayHit);
+          if (html) {
+            if (activePopup) activePopup.remove();
+            activePopup = new maplibregl.Popup({ closeButton: true, maxWidth: '280px' })
+              .setLngLat(e.lngLat)
+              .setHTML(html)
+              .addTo(map);
+          }
+          var hitMuni = overlayHit.properties && (overlayHit.properties.municipality || overlayHit.properties.municipio);
+          if (hitMuni && opts.onMunicipality) opts.onMunicipality(hitMuni);
           return;
         }
         var muniHit = feats.filter(function (f) {

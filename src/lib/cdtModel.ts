@@ -51,10 +51,10 @@ const PLACE_BY_MUNI: Record<(typeof MUNI_ORDER)[number], string[]> = {
 
 const THEME_LAYERS: Record<CdtThemeId, string[]> = {
   urbano: ['settlements', 'osm_towns', 'poer_ugas', 'focus_corridor_cabos_lapaz'],
-  economia: ['federal_projects', 'settlements', 'focus_corridor_cabos_lapaz'],
+  economia: ['federal_projects', 'bcs_market_listings', 'settlements', 'focus_corridor_cabos_lapaz'],
   investigacion: ['anp_federales', 'poer_ugas', 'rtp_conabio'],
   movilidad: ['osm_highways', 'highway_nodes', 'osm_transport_nodes', 'focus_ports_air'],
-  vivienda: ['settlements', 'anp_federales', 'poer_ugas', 'focus_water_dmas'],
+  vivienda: ['bcs_market_listings', 'settlements', 'anp_federales', 'poer_ugas', 'focus_water_dmas'],
 };
 
 const BALANCE_RULE: Record<string, { es: string; en: string }> = {
@@ -385,6 +385,12 @@ const LAYER_PROVENANCE: Record<string, { source_es: string; source_en: string; y
   focus_water_dmas: focusProv(),
   focus_ports_air: focusProv(),
   focus_places_loreto_constitucion: focusProv(),
+  bcs_market_listings: {
+    source_es: 'Catálogo MLS regional BCS',
+    source_en: 'BCS regional MLS catalog',
+    year_es: '2026',
+    year_en: '2026',
+  },
 };
 
 function missingScenario(id: string): never {
@@ -426,6 +432,7 @@ const LAYER_GROUP: Record<string, CdtThemeId> = {
   focus_water_dmas: 'vivienda',
   osm_waterways: 'vivienda',
   osm_coastline: 'vivienda',
+  bcs_market_listings: 'vivienda',
 };
 
 const SCENARIO_READ: Record<string, { stress: string[]; note_es: string; note_en: string }> = {

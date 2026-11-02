@@ -2,8 +2,8 @@
   "as_of": "2026-09-25",
   "disclaimer_es": "Síntesis factual con fuentes nombradas. No es recomendación de inversión.",
   "disclaimer_en": "Factual synthesis with named sources. Not investment advice.",
-  "scope_note_es": "La mayor parte de la serie residencial de alto valor (Cabo RE) cubre el municipio de Los Cabos (CSL, SJD, Corredor, Pacific/East Cape overlaps) vía BCS MLS casas+condos bajo contrato; excluye ventas off-MLS de desarrolladores y, en la serie Cabo RE, no reporta tierra. JLL 2025 es anual BCS/Los Cabos e incluye tierra. Coldwell Banker Q1 2025 es estatal y tipología ampliada.",
-  "scope_note_en": "Most high-value residential series (Cabo RE) covers Los Cabos municipality (CSL, SJD, Corridor, Pacific/East Cape overlaps) via BCS MLS houses+condos under contract; excludes off-MLS developer sales and, in the Cabo RE series, does not report land. JLL 2025 is annual BCS/Los Cabos and includes land. Coldwell Banker Q1 2025 is statewide with broader property types.",
+  "scope_note_es": "La mayor parte de la serie residencial de alto valor (Cabo RE) cubre el municipio de Los Cabos (CSL, SJD, Corredor, Pacific/East Cape overlaps) vía BCS MLS casas+condos bajo contrato; excluye ventas off-MLS de desarrolladores y, en la serie Cabo RE, no reporta tierra. JLL 2025 es anual BCS/Los Cabos e incluye tierra. MLS BCS Q1 2025 es estatal y tipología ampliada.",
+  "scope_note_en": "Most high-value residential series (Cabo RE) covers Los Cabos municipality (CSL, SJD, Corridor, Pacific/East Cape overlaps) via BCS MLS houses+condos under contract; excludes off-MLS developer sales and, in the Cabo RE series, does not report land. JLL 2025 is annual BCS/Los Cabos and includes land. MLS BCS Q1 2025 is statewide with broader property types.",
   "catalog_count": 28,
   "jll_2025_bcs": {
     "source": "JLL Reporte Anual Mercado Residencial Los Cabos 2025 (BCS MLS)",
@@ -268,7 +268,7 @@
     "revpar_usd": 369
   },
   "coldwell_bcs_2025_q1": {
-    "source": "Coldwell Banker / BCS MLS — Reporte del Mercado Inmobiliario BCS Primer Trimestre 2025",
+    "source": "MLS BCS — Reporte del Mercado Inmobiliario BCS Primer Trimestre 2025",
     "drive_view": "https://drive.google.com/file/d/1E6BSr3GptxY8gYMJla7pmjFrw7bAKqjk/view",
     "path": "other/2025_Q1_ColdwellBanker_Reporte_Mercado_Inmobiliario_BCS.pdf",
     "as_of": "2025 Q1",
