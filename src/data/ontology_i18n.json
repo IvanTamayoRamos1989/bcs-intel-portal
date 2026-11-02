@@ -398,5 +398,65 @@
   "actor_cabos_delegaciones": {
     "label_en": "Los Cabos municipal delegations",
     "summary_en": "Delegations of Cabo San Lucas (C. Karina de la O Uribe), Santiago (C. Aracely Cota Ruiz), Miraflores (C. Aremy García García) and La Ribera (C. Linda Maribel Silva Cosío); report to the Mayor's Office."
+  },
+  "dq_viabilidad_proyecto": {
+    "label_en": "Is this project viable across coupled factors?",
+    "summary_en": "Viability pack (hotel, desalination, industrial park, housing, road, energy). Families to consult, with no new figures: water (DMA / aquifers / desal), energy (SIBCS / CFE / PRODESEN / PAMRNT), instruments (POERBCS, PDU/PSDU), constraints (ANP, coast, tenure, intrusion), demand drivers (tourism, residential, agriculture), actors and working tables, and gaps marked sin dato en corpus. Does not approve a project: it names trade-offs."
+  },
+  "dq_cambio_uso_suelo": {
+    "label_en": "What does the ordinance say about a land-use change?",
+    "summary_en": "Land-use change pack. Consult POERBCS (56 UGAs; policies named in the proposal report: Sustainable Use, Preservation, Protection), urban deferrals in the planning guide (BCS40AS, BCS41AS, BCS32AS, BCS31AS, BCS30AS) and the local PDU/PSDU. Do not invent municipal zoning codes or parcel polygons. If the local instrument is a gap (Cabos PDU 3rd update, La Paz PMDU, Mulegé PDU, Loreto PSDU gazette, DUIS permits), say sin dato en corpus."
+  },
+  "dq_riesgos_principales": {
+    "label_en": "What are the main risks for this territory?",
+    "summary_en": "Risk pack. Families: capacity locks (DMA, water scarcity, isolated SIBCS grid), ANP and coastal pressure, tenure, marine intrusion, political cycle, and evidence already in the risks guide (SSN seismicity, state atlas, RAN ejidos). Not a substitute for microzonation. CENAPRED/SSN vector layers for geoprocessing: sin dato en corpus."
+  },
+  "dq_oportunidades": {
+    "label_en": "Which opportunities are already documented?",
+    "summary_en": "Opportunity pack. Only what is already encoded: demand drivers, federal or PPP projects on the graph (Cabos desal, La Paz desal, P23-BS1 transmission, CFE combined cycle, housing programme, Pueblos Mágicos), airports as access, Santo Domingo agriculture as Comondú vocation, and the portal's strategic questions. An opportunity does not erase a DMA or SIBCS lock. An industrial park with site and load: sin dato en corpus."
+  },
+  "inst_poer_politicas": {
+    "label_en": "UGA environmental policies (POERBCS)",
+    "summary_en": "The POERBCS proposal report (SEPUIMM; portal extract) names Sustainable Use, Preservation and Protection policies; the extract cuts off at Protection. The portal's 69-polygon layer (clave_MOE) uses suffixes AS (32), PT (27) and PR (10). RT does not appear in that layer. Full letter-to-name glossary and CODE_PA (2, 3 and 4): sin dato en corpus. Urban deferrals in the planning guide, not parcel zoning: BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; BCS32AS PSDU Todos Santos–El Pescadero–Las Playitas; BCS31AS PSDU Los Barriles–El Cardonal; BCS30AS PSDU Loreto (2007 gazette marked GAP)."
+  },
+  "ev_mesas_trabajo": {
+    "label_en": "Programme working tables",
+    "summary_en": "Tables in Base de datos BCS 2050 — datos del portal (notes 30 Sep 2026): Hospitality; Foreign investment; Transit-oriented development; State politics; Los Cabos urbanisation; Regeneration and biodiversity; Infrastructure and energy (SEPUIMM); Water (CEA and CONAGUA); Architecture and urbanism Los Cabos (IMPLAN); Conservation. Programme tables, not an official org chart or a construction permit."
+  },
+  "ev_riesgos_documentados": {
+    "label_en": "Documented hazards (SSN, atlas, RAN)",
+    "summary_en": "Risks guide: Loreto sequence Apr 2024, peak M5.6 (SSN); swarm south of San José del Cabo (Jul 2024–Oct 2025), 10,340 events, peaks M4.6 and M4.3 (SSN). BCS State Risk Atlas 2024 (state government / UABCS / civil protection) includes fault hazard; POERBCS is not a seismic layer. Ejidos in the RAN KML: 96 (La Paz 31, Mulegé 26, Los Cabos 19, Comondú 18, Loreto 2). CENAPRED/SSN vector layers for geoprocessing: not consolidated."
+  },
+  "gap_parque_industrial": {
+    "label_en": "Gap: industrial park (site and load)",
+    "summary_en": "sin dato en corpus. No industrial park with site, electrical load or water allocation is on the graph or in the packaged federal inventory. Industrial viability can only lean on ceilings already encoded (SIBCS, DMA, POER/PDU) without inventing the park's MW or hm³ demand."
+  },
+  "gap_pdu_cabos_3a": {
+    "label_en": "Gap: PDU 2040 Los Cabos 3rd update",
+    "summary_en": "sin dato en corpus for the third-update decree. Planning guide: 2023 consultation, no final BOGE on disk, not SEPUIMM-validated on the timeline. The 2nd update (council 23 Apr 2013; BOGE No. 19, 6 May 2013) is the one that guide marks as operative."
+  },
+  "gap_pmdu_lapaz_texto": {
+    "label_en": "Gap: La Paz PMDU text and parcel zoning",
+    "summary_en": "sin dato en corpus for the full PMDU and for secondary or parcel zoning codes. Planning guide: La Paz council approves a PMDU on 20 Dec 2024; full text (~356 pp.) marked GAP (minutes only). PDUCP 2018 is the population-centre plan cited as the latest update on disk. Los Planes PPDU map annexes: wishlist, not verified."
+  },
+  "gap_pdu_mulege": {
+    "label_en": "Gap: Mulegé PDU",
+    "summary_en": "sin dato en corpus. The planning guide marks a Mulegé PDU as GAP. A 2024–2027 PMD is on disk. Do not invent municipal zoning."
+  },
+  "gap_psdu_loreto_gazette": {
+    "label_en": "Gap: Loreto PSDU 2007 gazette",
+    "summary_en": "sin dato en corpus for the full historical decree. Planning guide: 2024 PSDU update consultation and PMDU on disk; 2007 PSDU gazette and Loreto PMD marked GAP. Cited POER deferral: BCS30AS (Loreto–Nopoló–Notrí–Puerto Escondido–Ligüí–Ensenada Blanca corridor)."
+  },
+  "gap_permisos_uso_suelo": {
+    "label_en": "Gap: land-use permits and DUIS",
+    "summary_en": "sin dato en corpus. Base de datos BCS 2050 — brechas de datos gap-re-permits-pipeline (open): no inventory of building permits, land-use permits and DUIS by municipality with amounts and typology."
+  },
+  "gap_politica_uga_leyenda": {
+    "label_en": "Gap: AS/PR/PT/RT and CODE_PA legend",
+    "summary_en": "sin dato en corpus for the full letter-to-policy table and for the meaning of CODE_PA. Observed: AS, PT and PR suffixes on clave_MOE; RT is absent from the 69-polygon layer. Do not assert that RT means Restoration or translate CODE_PA 2/3/4 into a name the extract does not give."
+  },
+  "gap_riesgo_capas_vector": {
+    "label_en": "Gap: CENAPRED/SSN hazard vector layers",
+    "summary_en": "sin dato en corpus. The risks guide says CENAPRED/SSN vector layers for geoprocessing are not consolidated. Do not invent a seismic, flood or cyclone grid beyond the maps already cited (atlas / gallery)."
   }
 }
