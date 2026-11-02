@@ -56,18 +56,51 @@
     });
     return hits.slice(0, 4);
   }
+  var GAPS = {
+    land: ['Catastro, permisos y predios: próximo / sin datos. El mapa no registra propiedad ni trámites.', 'Cadastre, permits and parcels: upcoming / no data. The map does not register ownership or permit workflows.'],
+    bim: ['BIM e IoT de obra: próximo / sin datos. No hay huella de edificio ni sensor.', 'Construction BIM and IoT: upcoming / no data. There is no building footprint and no sensor.'],
+    water: ['Agua inteligente: próximo / sin datos. No hay sensores ni pronóstico de avenida. Lo publicado son acuíferos en déficit y cauces.', 'Smart water: upcoming / no data. There are no sensors and no flood forecast. What is published is deficit aquifers and channels.'],
+    mobility: ['Movilidad en vivo: próximo / sin datos. No hay flujo de vehículos. El mapa muestra carreteras, puertos y aeropuertos publicados.', 'Live mobility: upcoming / no data. There is no vehicle flow. The map shows published roads, ports and airports.'],
+  };
+  var PILLARS = [
+    { re: /catastro|predio|parcela|permiso|lot\b|parcel|cadastre|tenencia/, id: 'land', title: ['Suelo y permisos', 'Land and permits'], layers: ['poer_ugas'] },
+    { re: /\bbim\b|\biot\b|sensor|huella de edificio|building footprint/, id: 'bim', title: ['Obra y sensores', 'Construction and sensors'], layers: [] },
+    { re: /acuifer|agua|water|inund|flood|novillo|oomsapas/, id: 'water', title: ['Agua', 'Water'], layers: ['focus_water_dmas', 'osm_waterways'] },
+    { re: /trafico|tráfico|congestion|movilidad|carretera|highway|aeropuerto|puerto|airport|port/, id: 'mobility', title: ['Movilidad', 'Mobility'], layers: ['osm_highways', 'osm_transport_nodes', 'focus_ports_air'] },
+  ];
+  function pillarOf(text) {
+    var q = norm(text || '');
+    for (var i = 0; i < PILLARS.length; i++) if (PILLARS[i].re.test(q)) return PILLARS[i];
+    return null;
+  }
+  function scenarioActs() {
+    return (model.scenarios || []).map(function (s) {
+      return '<a href="' + esc(s.href) + '">' + esc(tx(s.es, s.en)) + '</a>';
+    }).join('');
+  }
   function openFiche(info) {
     if (!ficheEl || !info) return;
     var rows = (info.rows || []).filter(function (row) { return row && row.value != null && row.value !== ''; });
     var files = info.files || [];
     var html = '<button type="button" class="shell-fiche-x">' + tx('Cerrar', 'Close') + '</button>';
     html += '<p class="shell-fiche-kicker">' + esc(tx(info.kind_es, info.kind_en)) + '</p>';
-    html += '<h2>' + esc(info.title) + '</h2><dl>';
-    rows.forEach(function (row) {
-      html += '<dt>' + esc(tx(row.es, row.en)) + '</dt><dd>' + esc(row.value) + '</dd>';
-    });
-    html += '</dl>';
+    html += '<h2>' + esc(info.title) + '</h2>';
+    if (rows.length) {
+      html += '<dl>';
+      rows.forEach(function (row) {
+        html += '<dt>' + esc(tx(row.es, row.en)) + '</dt><dd>' + esc(row.value) + '</dd>';
+      });
+      html += '</dl>';
+    }
     if (info.href) html += '<p><a href="' + esc(info.href) + '">' + esc(tx(info.href_es || 'Abrir ficha', info.href_en || 'Open page')) + '</a></p>';
+    if (info.foresight) {
+      html += '<p class="shell-fiche-kicker">' + tx('Escenarios publicados', 'Published scenarios') + '</p>';
+      html += '<div class="shell-fiche-acts">' + scenarioActs() + '</div>';
+    }
+    (info.gaps || []).forEach(function (id) {
+      var gap = GAPS[id];
+      if (gap) html += '<p class="shell-fiche-gap">' + esc(tx(gap[0], gap[1])) + '</p>';
+    });
     if (files.length) {
       html += '<p class="shell-fiche-kicker">' + tx('Archivos', 'Files') + '</p><div class="shell-fiche-files">';
       files.forEach(function (row, i) {
@@ -88,7 +121,7 @@
   function muniRow(name) {
     return (model.munis || []).filter(function (m) { return m.name === name; })[0];
   }
-  function openMuniFiche(name, note) {
+  function openMuniFiche(name, note, extraGaps) {
     var row = muniRow(name);
     if (!name) return;
     var rows = [];
@@ -99,6 +132,8 @@
     }
     if (note) rows.push({ es: 'Lectura', en: 'Reading', value: tx(note[0], note[1]) });
     if (extrudeOn) rows.push({ es: 'Columna', en: 'Column', value: tx('La columna compara esta población. No es el relieve ni un edificio.', 'The column compares this population. It is not the relief or a building.') });
+    var gaps = ['land'];
+    (extraGaps || []).forEach(function (id) { if (gaps.indexOf(id) === -1) gaps.push(id); });
     openFiche({
       title: name,
       kind_es: 'Municipio',
@@ -107,6 +142,8 @@
       href: row && row.studio ? row.studio : '',
       href_es: 'Ficha del municipio',
       href_en: 'Municipality page',
+      foresight: true,
+      gaps: gaps,
       files: filesFor(name),
     });
     paintMuni(name);
@@ -157,6 +194,10 @@
     if (meta && meta.source_es) rows.push({ es: 'Origen de la capa', en: 'Layer source', value: lang() === 'en' ? meta.source_en : meta.source_es });
     if (note) rows.push({ es: 'Lectura', en: 'Reading', value: tx(note[0], note[1]) });
     var href = typeof p.studio_href === 'string' && p.studio_href.charAt(0) === '/' ? p.studio_href : '';
+    var gap = meta && (meta.id === 'focus_water_dmas' || meta.id === 'osm_waterways') ? 'water'
+      : meta && (meta.id === 'osm_highways' || meta.id === 'osm_transport_nodes' || meta.id === 'focus_ports_air' || meta.id === 'highway_nodes') ? 'mobility'
+      : meta && (meta.id === 'poer_ugas' || meta.id === 'anp_federales') ? 'land'
+      : '';
     openFiche({
       title: title,
       kind_es: meta ? meta.name_es : 'Elemento del mapa',
@@ -165,6 +206,7 @@
       href: href,
       href_es: 'Página relacionada',
       href_en: 'Related page',
+      gaps: gap ? [gap] : [],
       files: filesFor(title),
     });
     if (lngLat && engine && engine.mark) engine.mark(lngLat.lng, lngLat.lat, title);
@@ -361,18 +403,21 @@
   function executeJob(question, sources, answer) {
     var q = norm((question || '') + ' ' + (answer || ''));
     var jobs = [];
+    var pillar = pillarOf(question || '');
     THEME_RULES.forEach(function (rule) {
       if (!rule.re.test(q)) return;
       rule.layers.forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
     });
+    if (pillar) pillar.layers.forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
     var place = pickRule(question) || pickRule(answer);
+    var gaps = pillar ? [pillar.id] : [];
     if (place) {
       var useMuni = place.muniIf && place.muniIf.test(norm(question || '') + ' ' + norm(answer || ''));
       (place.layers || []).forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
       if (useMuni && place.muni) {
         jobs.push(focusMuni(place.muni, true).then(function () {
           if (place.noteIf) setStatus(place.noteIf[0], place.noteIf[1]);
-          openMuniFiche(place.muni, place.noteIf);
+          openMuniFiche(place.muni, place.noteIf, gaps);
         }));
       } else if (place.layer && byId[place.layer]) {
         jobs.push(showLayer(place.layer, true).then(function (geo) {
@@ -382,9 +427,19 @@
             flyPoint(pt.lng, pt.lat, place.pin || hit.name);
             if (place.note) setStatus(place.note[0], place.note[1]);
             openFeatureFiche(hit.feature, { lng: pt.lng, lat: pt.lat }, byId[place.layer], place.note);
-          } else if (place.muni) return focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note); });
+          } else if (place.muni) return focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note, gaps); });
         }));
-      } else if (place.muni) jobs.push(focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note); }));
+      } else if (place.muni) jobs.push(focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note, gaps); }));
+    } else if (pillar) {
+      openFiche({
+        title: tx(pillar.title[0], pillar.title[1]),
+        kind_es: 'Lectura del gemelo',
+        kind_en: 'Twin reading',
+        rows: [{ es: 'En el mapa', en: 'On the map', value: tx('Se enciende solo lo que el portal ya publica.', 'Only what the portal already publishes is turned on.') }],
+        foresight: pillar.id === 'land' || pillar.id === 'water',
+        gaps: gaps,
+      });
+      setStatus(GAPS[pillar.id][0], GAPS[pillar.id][1]);
     } else if (jobs.length) {
       setStatus('El mapa encendió las capas de esa respuesta.', 'The map turned on the layers for that answer.');
     }
