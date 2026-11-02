@@ -161,8 +161,8 @@ const shellModel = {
             </button>
           </div>
           <p class="shell-hud" id="shell-hud">
-            <span data-lang-es>Terreno 3D activo · altura = población 2020</span>
-            <span data-lang-en hidden>3D terrain on · height = 2020 population</span>
+            <span data-lang-es>Terreno 3D activo</span>
+            <span data-lang-en hidden>3D terrain on</span>
           </p>
           <div class="shell-scrim" id="shell-scrim" hidden></div>
           <div class="shell-sheet" id="shell-sheet">
@@ -204,9 +204,9 @@ const shellModel = {
                   <span class="shell-n">1</span>
                   <div>
                     <strong><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></strong>
-                    <small><span data-lang-es>No hay BIM ni huellas. La extrusión compara los cinco municipios.</span><span data-lang-en hidden>No BIM and no footprints. Extrusion compares the five municipalities.</span></small>
+                    <small><span data-lang-es>Apagada al entrar. Si la enciendes, son columnas de población sobre el relieve, no el terreno.</span><span data-lang-en hidden>Off on arrival. When on, population columns sit on the relief. They are not the terrain.</span></small>
                   </div>
-                  <button type="button" data-stack-toggle="l1" aria-pressed="true"><span data-lang-es>Extrusión</span><span data-lang-en hidden>Extrusion</span></button>
+                  <button type="button" data-stack-toggle="l1" aria-pressed="false"><span data-lang-es>Extrusión</span><span data-lang-en hidden>Extrusion</span></button>
                 </header>
                 <ul class="shell-bars">
                   {munis.map((m) => (
@@ -217,7 +217,7 @@ const shellModel = {
                     </li>
                   ))}
                 </ul>
-                <p class="shell-note"><span data-lang-es>Altura = población 2020, INEGI. No es la altura de un inmueble.</span><span data-lang-en hidden>Height = 2020 population, INEGI. It is not a building height.</span></p>
+                <p class="shell-note"><span data-lang-es>La columna compara población 2020, INEGI. No es la altura del terreno ni de un inmueble.</span><span data-lang-en hidden>The column compares 2020 population, INEGI. It is not terrain height and not a building height.</span></p>
                 <p class="shell-gap-note"><span data-lang-es>BIM de edificios: próximo / sin datos.</span><span data-lang-en hidden>Building BIM: upcoming / no data.</span></p>
               </li>
               <li>
