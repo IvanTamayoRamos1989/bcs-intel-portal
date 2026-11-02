@@ -626,5 +626,33 @@
   "ev_orientacion_aerea": {
     "label_en": "Aerial and map orientation (paths, not new layers)",
     "summary_en": "Orientation paths only, not a new GIS layer. Base de datos BCS 2050 — datos del portal: stills_master at Base de datos BCS 2050 — inteligencia territorial (1000 stills in the index). Gallery: /maps/atlas-ciclones.jpg, /maps/poer-ugas-56.jpg, /maps/poer-politica-ambiental-ugas.jpg, /maps/pdu2040-carta-sintesis.jpg. Does not replace DMA, POER, or cadastre."
+  },
+  "ev_pob_censo_2020": {
+    "label_en": "Municipal population, 2020 Census",
+    "summary_en": "INEGI 2020 Census, municipal totals already on the municipality sheet and the growth scorecard. Not an AGEB layer, not a water balance, and not a new state total. Los Cabos 351111 (seat San José del Cabo 136285); La Paz 292241 (seat La Paz 250141); Comondú 73021 (Ciudad Constitución 43805); Mulegé 64022 (Santa Rosalía 14357); Loreto 18052 (seat Loreto 16311). Seats are localities on that sheet, not AGEB polygons. Creates no DMA, hotel rent, or permits."
+  },
+  "ev_sig_vivienda_social": {
+    "label_en": "Signal: social housing in Comondú and Mulegé",
+    "summary_en": "Signal already published as of 26 Oct 2026, no new text. On 20 October Congress approved donating three plots in Brisas del Valle, Ciudad Constitución (27335, 17881 and 13576 m²) to INSUS and one of 15550 m² in Los Frayles, Santa Rosalía, to INFONAVIT, only for federal social housing with CONAVI. A deputy mentioned 35000 homes planned in BCS: a remark, not capacity. On 22 October land and a one-stop window were agreed, with no figures or calendar. sin dato en corpus for delivered progress, calendar, and parcel permits."
+  },
+  "ev_sig_asipona": {
+    "label_en": "Signal: ASIPONA operates Cabo San Lucas port",
+    "summary_en": "Signal already published, no new text and no new passenger series. ASIPONA operates the Cabo San Lucas marina and port under a 50-year federal concession granted in February 2024. New fees were published in the DOF on 1 October. Congress asked for transparency and the governor said he will ask for API BCS to run that port: a political intention, not a transfer. API BCS already operates Pichilingue, Loreto and San Carlos; its federal concession is cited through 2047. Published cruise figures are not recalculated."
+  },
+  "ev_sig_vuelos": {
+    "label_en": "Signal: SJD, LAP and LTO air destinations",
+    "summary_en": "Signal already published (nonstop-route inventory, 17 Sep 2026): SJD about 56 destinations, LAP 7, LTO 5. Destinations, not passengers. SJD and LAP remain under the GAP concession; SJD is cited through about 2048. The federal frame is AFAC and SICT, with no new megaproject catalogued. No passenger series is added and Loreto passengers are not reconciled."
+  },
+  "ev_sig_poel_cabos": {
+    "label_en": "Signal: Los Cabos POEL and developer water",
+    "summary_en": "Signal already published, no new text. 2026 POEL consultation and rules requiring developers to provide desalination, treatment and waste handling; Punta Nayu in consultation. A municipal instrument in consultation, not a permit inventory and not new water availability."
+  },
+  "ev_peotdu_instrumentos": {
+    "label_en": "Instruments in force cited in the state urban programme",
+    "summary_en": "Page already extracted from the BCS state territorial and urban development programme (state government, 2024). When it was drafted, in force and operating: La Paz population-centre urban plan of 2018; Todos Santos–Pescadero–Las Playitas subregional urban programme of 2008; San Juan de La Costa urban plan of 1980. Los Cabos is described as the territory with the greatest urban growth. Not a permit, parcel, or AGEB inventory."
+  },
+  "ev_news_pdu_este": {
+    "label_en": "News: PDU update and East Cape",
+    "summary_en": "Meganoticias, 29 Oct 2026. The private sector asked to speed the Los Cabos urban-plan update, with density limits, infrastructure and beach access on East Cape. The same note says the 2025 update was not published in the Official Bulletin and the process restarted without final approval. A press request, not a decreed instrument. sin dato en corpus for East Cape quantitative load and for the third-update decree."
   }
 }

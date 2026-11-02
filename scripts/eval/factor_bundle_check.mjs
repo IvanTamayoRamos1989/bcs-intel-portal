@@ -174,6 +174,39 @@ const CASES = [
     needTypes: ['Territory', 'Constraint'],
     newsPlace: 'mulege_north',
   },
+  {
+    q: '¿Cuáles son los riesgos de la señal de huracanes Polo y Rachel?',
+    kind: 'risk',
+    needIds: ['ev_sig_hurricanes', 'dq_riesgos_principales', 'terr_comondu', 'const_red_aislada'],
+    needTypes: ['Evidence', 'Constraint', 'Territory'],
+  },
+  {
+    q: '¿La señal de acoplamiento agua-energía hace viable una desaladora en La Paz?',
+    kind: 'viability',
+    needIds: ['ev_sig_water_energy', 'dq_viabilidad_proyecto', 'rc_sibcs', 'rc_acuifero_0324'],
+    needTypes: ['Evidence', 'ResourceCapacity', 'Project'],
+  },
+  {
+    q: '¿La población del Censo 2020 de Los Cabos condiciona la viabilidad?',
+    kind: 'viability',
+    needIds: ['ev_pob_censo_2020', 'terr_los_cabos', 'const_dma_deficit', 'rc_acuifero_0317'],
+    needTypes: ['Evidence', 'Territory', 'Constraint'],
+    census: true,
+  },
+  {
+    q: '¿Quién opera el puerto de Cabo San Lucas?',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona', 'proj_fed_pue_001', 'ev_cruceros_datatur'],
+    needTypes: ['Evidence', 'Project'],
+    portOperator: true,
+  },
+  {
+    q: 'Compara la viabilidad y la población de Loreto y Mulegé',
+    kind: 'viability',
+    needIds: ['ev_pob_censo_2020', 'dq_comparar_polos', 'gap_loreto_dma', 'gap_mulege_agua_energia'],
+    needTypes: ['Evidence', 'DecisionQuestion', 'Constraint'],
+    noInvent: true,
+  },
 ];
 
 const NEGATIVES = [
@@ -236,6 +269,17 @@ for (const c of CASES) {
     const pages = ev.filter((x) => x.type === 'library' && String(x.id || '').includes(':p'));
     console.log(`   libpages=${pages.map((x) => x.id).join(' ') || '(none)'}`);
     if (!pages.length) fail(`${c.q} expected a page-level library extract`);
+  }
+  if (c.census) {
+    const pob = ev.find((x) => (x.onto_id || '') === 'ev_pob_censo_2020');
+    const text = `${pob?.sum_es || ''} ${pob?.sum_en || ''}`;
+    if (!/351111/.test(text) || !/18052/.test(text)) fail(`${c.q} census figures missing`);
+    if (/\bageb\b/i.test(text) && !/no es ageb|not an ageb/i.test(text)) fail(`${c.q} AGEB invented`);
+  }
+  if (c.portOperator) {
+    const op = ev.find((x) => (x.onto_id || '') === 'ev_sig_asipona');
+    const text = `${op?.sum_es || ''} ${op?.sum_en || ''}`;
+    if (!/no es una transferencia|not a transfer/i.test(text)) fail(`${c.q} must keep the ASIPONA transfer as intention`);
   }
   if (c.newsPlace) {
     const news = ev.filter((x) => x.type === 'news' && x.outlet && x.date && (x.place_ids || []).includes(c.newsPlace));

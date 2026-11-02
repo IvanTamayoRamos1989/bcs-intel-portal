@@ -532,6 +532,69 @@
       "summary": "Solo rutas de orientación, no una capa SIG nueva. Base de datos BCS 2050 — datos del portal: stills_master en Base de datos BCS 2050 — inteligencia territorial (1000 stills en el índice). Galería: /maps/atlas-ciclones.jpg, /maps/poer-ugas-56.jpg, /maps/poer-politica-ambiental-ugas.jpg, /maps/pdu2040-carta-sintesis.jpg. No sustituye DMA, POER ni catastro.",
       "summary_en": "Orientation paths only, not a new GIS layer. Base de datos BCS 2050 — datos del portal: stills_master at Base de datos BCS 2050 — inteligencia territorial (1000 stills in the index). Gallery: /maps/atlas-ciclones.jpg, /maps/poer-ugas-56.jpg, /maps/poer-politica-ambiental-ugas.jpg, /maps/pdu2040-carta-sintesis.jpg. Does not replace DMA, POER, or cadastre.",
       "evidence_path": "src/data/earth_studio.json"
+    },
+    {
+      "id": "ev_pob_censo_2020",
+      "type": "Evidence",
+      "label": "Población municipal Censo 2020",
+      "label_en": "Municipal population, 2020 Census",
+      "summary": "INEGI Censo 2020, totales municipales ya en la ficha de municipios y en el scorecard de crecimiento. No es AGEB, no es un balance de agua y no se suma aquí un total estatal nuevo. Los Cabos 351111 habitantes (cabecera San José del Cabo 136285); La Paz 292241 (cabecera La Paz 250141); Comondú 73021 (Ciudad Constitución 43805); Mulegé 64022 (Santa Rosalía 14357); Loreto 18052 (cabecera Loreto 16311). Las cabeceras son localidades de esa ficha, no polígonos AGEB. No crea DMA, renta hotelera ni permisos.",
+      "summary_en": "INEGI 2020 Census, municipal totals already on the municipality sheet and the growth scorecard. Not an AGEB layer, not a water balance, and not a new state total. Los Cabos 351111 (seat San José del Cabo 136285); La Paz 292241 (seat La Paz 250141); Comondú 73021 (Ciudad Constitución 43805); Mulegé 64022 (Santa Rosalía 14357); Loreto 18052 (seat Loreto 16311). Seats are localities on that sheet, not AGEB polygons. Creates no DMA, hotel rent, or permits.",
+      "evidence_path": "src/data/municipios.json"
+    },
+    {
+      "id": "ev_sig_vivienda_social",
+      "type": "Evidence",
+      "label": "Señal: vivienda social en Comondú y Mulegé",
+      "label_en": "Signal: social housing in Comondú and Mulegé",
+      "summary": "Señal ya publicada al 26 oct 2026, sin texto nuevo. El 20 de octubre el Congreso aprobó donar tres predios en Brisas del Valle, Ciudad Constitución (27335, 17881 y 13576 m²) al INSUS y uno de 15550 m² en Los Frayles, Santa Rosalía, al INFONAVIT, solo para vivienda social federal con CONAVI. Un diputado mencionó 35000 viviendas previstas en BCS: es un dicho, no capacidad. El 22 de octubre se acordó buscar suelo y una ventanilla, sin cifras ni calendario. sin dato en corpus para avance entregado, calendario y permiso predial.",
+      "summary_en": "Signal already published as of 26 Oct 2026, no new text. On 20 October Congress approved donating three plots in Brisas del Valle, Ciudad Constitución (27335, 17881 and 13576 m²) to INSUS and one of 15550 m² in Los Frayles, Santa Rosalía, to INFONAVIT, only for federal social housing with CONAVI. A deputy mentioned 35000 homes planned in BCS: a remark, not capacity. On 22 October land and a one-stop window were agreed, with no figures or calendar. sin dato en corpus for delivered progress, calendar, and parcel permits.",
+      "evidence_path": "src/data/foresights.json#sig-social-housing-land"
+    },
+    {
+      "id": "ev_sig_asipona",
+      "type": "Evidence",
+      "label": "Señal: ASIPONA opera el puerto de Cabo San Lucas",
+      "label_en": "Signal: ASIPONA operates Cabo San Lucas port",
+      "summary": "Señal ya publicada, sin texto nuevo y sin serie nueva de pasajeros. ASIPONA opera la marina y el puerto de Cabo San Lucas con concesión federal de 50 años otorgada en febrero de 2024. Tarifas nuevas publicadas en el DOF el 1 de octubre. El Congreso pidió transparencia y el gobernador dijo que pedirá que API BCS administre ese puerto: es intención política, no una transferencia. API BCS ya opera Pichilingue, Loreto y San Carlos; su concesión federal se cita hasta 2047. Los cruceros publicados no se recalculan.",
+      "summary_en": "Signal already published, no new text and no new passenger series. ASIPONA operates the Cabo San Lucas marina and port under a 50-year federal concession granted in February 2024. New fees were published in the DOF on 1 October. Congress asked for transparency and the governor said he will ask for API BCS to run that port: a political intention, not a transfer. API BCS already operates Pichilingue, Loreto and San Carlos; its federal concession is cited through 2047. Published cruise figures are not recalculated.",
+      "evidence_path": "src/data/foresights.json#sig-csl-marina-asipona-tariffs"
+    },
+    {
+      "id": "ev_sig_vuelos",
+      "type": "Evidence",
+      "label": "Señal: destinos aéreos SJD, LAP y LTO",
+      "label_en": "Signal: SJD, LAP and LTO air destinations",
+      "summary": "Señal ya publicada (inventario de rutas sin escala, 17 sep 2026): SJD unos 56 destinos, LAP 7, LTO 5. Son destinos, no pasajeros. SJD y LAP siguen bajo concesión GAP; SJD se cita hasta cerca de 2048. El marco federal es AFAC y SICT, sin megaproyecto nuevo catalogado. No se añade serie de pasajeros ni se reconcilia el pasaje de Loreto.",
+      "summary_en": "Signal already published (nonstop-route inventory, 17 Sep 2026): SJD about 56 destinations, LAP 7, LTO 5. Destinations, not passengers. SJD and LAP remain under the GAP concession; SJD is cited through about 2048. The federal frame is AFAC and SICT, with no new megaproject catalogued. No passenger series is added and Loreto passengers are not reconciled.",
+      "evidence_path": "src/data/foresights.json#sig-flight-connectivity-sjd"
+    },
+    {
+      "id": "ev_sig_poel_cabos",
+      "type": "Evidence",
+      "label": "Señal: POEL Los Cabos y agua del desarrollador",
+      "label_en": "Signal: Los Cabos POEL and developer water",
+      "summary": "Señal ya publicada, sin texto nuevo. Consulta del POEL 2026 y reglas que exigen a desarrolladores desalación, tratamiento y residuos; Punta Nayu en consulta. Es un instrumento municipal en consulta, no un inventario de permisos ni una disponibilidad nueva de agua.",
+      "summary_en": "Signal already published, no new text. 2026 POEL consultation and rules requiring developers to provide desalination, treatment and waste handling; Punta Nayu in consultation. A municipal instrument in consultation, not a permit inventory and not new water availability.",
+      "evidence_path": "src/data/foresights.json#sig-poel-developer-water"
+    },
+    {
+      "id": "ev_peotdu_instrumentos",
+      "type": "Evidence",
+      "label": "Instrumentos vigentes citados en el PEOTDU",
+      "label_en": "Instruments in force cited in the state urban programme",
+      "summary": "Página ya extraída del Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano de BCS (Gobierno del Estado, 2024). Al elaborarse, vigentes y en operación: Plan de Desarrollo Urbano de Centro de Población de La Paz de 2018; Programa subregional de Desarrollo Urbano Todos Santos–Pescadero–Las Playitas de 2008; Plan de Desarrollo Urbano de San Juan de La Costa de 1980. Los Cabos se describe como el territorio de mayor crecimiento urbano. No es inventario de permisos, predios ni AGEB.",
+      "summary_en": "Page already extracted from the BCS state territorial and urban development programme (state government, 2024). When it was drafted, in force and operating: La Paz population-centre urban plan of 2018; Todos Santos–Pescadero–Las Playitas subregional urban programme of 2008; San Juan de La Costa urban plan of 1980. Los Cabos is described as the territory with the greatest urban growth. Not a permit, parcel, or AGEB inventory.",
+      "evidence_path": "13_library/11_MEXICO_BCS/11_T1_2024_BCS_POETDU.pdf#p15"
+    },
+    {
+      "id": "ev_news_pdu_este",
+      "type": "Evidence",
+      "label": "Nota: actualización del PDU y Cabo del Este",
+      "label_en": "News: PDU update and East Cape",
+      "summary": "Meganoticias, 29 oct 2026. El sector privado pidió acelerar la actualización del Plan de Desarrollo Urbano de Los Cabos, con límites de densidad, infraestructura y accesos a playa en Cabo del Este. La misma nota dice que la actualización de 2025 no se publicó en el Boletín Oficial y que el proceso se retomó sin aprobación definitiva. Es petición de prensa, no un instrumento decretado. sin dato en corpus para la carga cuantitativa de East Cape y para el decreto de la tercera actualización.",
+      "summary_en": "Meganoticias, 29 Oct 2026. The private sector asked to speed the Los Cabos urban-plan update, with density limits, infrastructure and beach access on East Cape. The same note says the 2025 update was not published in the Official Bulletin and the process restarted without final approval. A press request, not a decreed instrument. sin dato en corpus for East Cape quantitative load and for the third-update decree.",
+      "evidence_path": "src/data/news.json#pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29"
     }
   ],
   "edges": [
@@ -2012,6 +2075,421 @@
     },
     {
       "from": "ev_orientacion_aerea",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_hurricanes",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_hurricanes",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_hurricanes",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_hurricanes",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_hurricanes",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_hurricanes",
+      "to": "const_red_aislada",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_hurricanes",
+      "to": "actor_cfe",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_water_energy",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_water_energy",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_water_energy",
+      "to": "rc_sibcs",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_water_energy",
+      "to": "actor_oomsapas_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_tourism_fdi",
+      "to": "dd_turismo_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_tourism_fdi",
+      "to": "const_dma_deficit",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_tourism_fdi",
+      "to": "rc_acuifero_0317",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_sibcs",
+      "to": "rc_sibcs",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_sibcs",
+      "to": "const_red_aislada",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_sibcs",
+      "to": "actor_cfe",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_mulege_oasis",
+      "to": "gap_mulege_agua_energia",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_mulege_oasis",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_mulege_oasis",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_comondu_loreto",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_comondu_loreto",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_comondu_loreto",
+      "to": "gap_loreto_dma",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_comondu_loreto",
+      "to": "proj_fed_agu_005",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_comondu_loreto",
+      "to": "dd_agro_santo_domingo",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_baseline",
+      "to": "const_dma_deficit",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_esc_baseline",
+      "to": "const_coast_anp_pressure",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_esc_baseline",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_corridor",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_corridor",
+      "to": "terr_todos_santos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_corridor",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_water_first",
+      "to": "rc_acuifero_0317",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_water_first",
+      "to": "rc_acuifero_0319",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_water_first",
+      "to": "rc_acuifero_0324",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_water_first",
+      "to": "rc_acuifero_0313",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_water_first",
+      "to": "rc_acuifero_0318",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_ports",
+      "to": "rc_aeropuerto_sjd",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_ports",
+      "to": "rc_aeropuerto_lap",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_ports",
+      "to": "ev_cruceros_datatur",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "ev_esc_ports",
+      "to": "ev_aereo_setue",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_ports",
+      "to": "proj_fed_pue_001",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_esc_ports",
+      "to": "proj_fed_pue_002",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_fed_aer_001",
+      "to": "rc_aeropuerto_lap",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_fed_pue_001",
+      "to": "ev_cruceros_datatur",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_fed_pue_002",
+      "to": "ev_cruceros_datatur",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "dq_capacidad_carga",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "dq_comparar_polos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_pob_censo_2020",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vivienda_social",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "ev_sig_vivienda_social",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vivienda_social",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vivienda_social",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vivienda_social",
+      "to": "proj_fed_viv_001",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vivienda_social",
+      "to": "gap_permisos_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_vivienda_social",
+      "to": "gap_catastro_secundario",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_sig_asipona",
+      "to": "proj_fed_pue_001",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_asipona",
+      "to": "proj_fed_pue_002",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_asipona",
+      "to": "ev_cruceros_datatur",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_asipona",
+      "to": "dq_oportunidades",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_asipona",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vuelos",
+      "to": "rc_aeropuerto_sjd",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vuelos",
+      "to": "rc_aeropuerto_lap",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vuelos",
+      "to": "ev_aereo_setue",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_vuelos",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "ev_sig_vuelos",
+      "to": "proj_fed_aer_001",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_poel_cabos",
+      "to": "inst_poel_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_poel_cabos",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_poel_cabos",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_sig_poel_cabos",
+      "to": "gap_permisos_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_peotdu_instrumentos",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_peotdu_instrumentos",
+      "to": "inst_pdu_lapaz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_peotdu_instrumentos",
+      "to": "terr_todos_santos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_peotdu_instrumentos",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_peotdu_instrumentos",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_news_pdu_este",
+      "to": "gap_east_cape_carga",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_news_pdu_este",
+      "to": "gap_east_cape_instrumento",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_news_pdu_este",
+      "to": "gap_pdu_cabos_3a",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_news_pdu_este",
       "to": "dq_cambio_uso_suelo",
       "predicate": "influences"
     }

@@ -1063,6 +1063,10 @@ function factorSeedIds(qn, kinds) {
     for (const id of ids) if (id && !seeds.includes(id)) seeds.push(id);
   };
   const kindHit = PROJECT_KIND_RE.test(qn);
+  if (/\b(poblacion|habitantes|censo|demograf)\b/.test(qn)) add('ev_pob_censo_2020');
+  if (p.who && /\b(puerto|asipona|marina)\b/.test(qn)) {
+    add('ev_sig_asipona', 'proj_fed_pue_001', 'proj_fed_pue_002', 'ev_cruceros_datatur');
+  }
   if (p.who) {
     add('ev_mesas_trabajo', 'actor_sepuimm', 'actor_conagua', 'actor_cea', 'actor_cfe');
     if (kinds.includes('landuse')) add('dq_cambio_uso_suelo', 'inst_poerbcs', 'inst_poer_politicas');
@@ -1097,9 +1101,26 @@ function factorSeedIds(qn, kinds) {
     else if (/\bpuerto|\baeropuerto|\bairport|\bport\b/.test(qn)) add('ev_esc_ports');
     else add('ev_esc_baseline', 'ev_esc_water_first');
   }
-  if (/\bhuracan|\bhurricane|\bpolo\b|\brachel\b/.test(qn)) add('ev_sig_hurricanes');
-  if (/\bacoplamiento\b|\bagua[\s-]*energia|\bwater[\s-]*energy\b|\bapagon/.test(qn)) add('ev_sig_water_energy');
+  if (/\bhuracan|\bhurricane|\bpolo\b|\brachel\b/.test(qn)) {
+    add('ev_sig_hurricanes', 'terr_comondu', 'const_red_aislada', 'actor_cfe');
+  }
+  if (/\bacoplamiento\b|\bagua[\s-]*energia|\bwater[\s-]*energy\b|\bapagon/.test(qn)) {
+    add('ev_sig_water_energy', 'rc_sibcs');
+  }
   if (/\bhidrogen|\boasis\b/.test(qn)) add('ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
+  if (/\b(conectividad|destinos sin escala|flightconnections)\b/.test(qn)) {
+    add('ev_sig_vuelos', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap', 'ev_aereo_setue');
+  }
+  if (/\b(vivienda social|insus|infonavit|brisas del valle)\b/.test(qn)) {
+    add('ev_sig_vivienda_social', 'proj_fed_viv_001', 'terr_comondu', 'terr_mulege', 'gap_permisos_uso_suelo');
+  }
+  if (/\b(poel\b|punta nayu)\b/.test(qn) && (p.cabos || !p.any)) add('ev_sig_poel_cabos', 'inst_poel_cabos', 'gap_permisos_uso_suelo');
+  if (/\b(peotdu|poetdu|san juan de la costa|playitas|programa subregional)\b/.test(qn)) {
+    add('ev_peotdu_instrumentos', 'inst_pdu_lapaz', 'terr_todos_santos');
+  }
+  if (p.east && /\b(pdu|densidad|boletin|sector privado)\b/.test(qn)) {
+    add('ev_news_pdu_este', 'gap_east_cape_carga', 'gap_east_cape_instrumento', 'gap_pdu_cabos_3a');
+  }
   if (/\bacuifer|\b0313\b|\b0314\b|\b0317\b|\b0318\b|\b0319\b|\b0320\b|\b0324\b|\b0302\b/.test(qn)) {
     add('ev_acuiferos_dma');
     if (/\b0317\b|cabo san lucas/.test(qn)) add('rc_acuifero_0317');
