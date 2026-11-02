@@ -159,6 +159,7 @@ const themeLabels: Record<string, [string, string]> = {
     import { docTitle, cleanSourceText } from '../lib/sourceLabel';
     (function () {
       var rows = [];
+      var loaded = false;
       var eng = engagement || { groups: [], exclude_from_downloads: {} };
       var subgroupIndex = {};
       (eng.groups || []).forEach(function (g) {
@@ -324,6 +325,7 @@ const themeLabels: Record<string, [string, string]> = {
         return true;
       }
       function render() {
+        if(!loaded){meta.textContent=isEn()?'Loading documents…':'Cargando documentos…';return;}
         var qq = (qEl.value || '').toLowerCase().trim();
         var ee = engSel ? engSel.value : '';
         var tt = th.value;
@@ -474,8 +476,8 @@ const themeLabels: Record<string, [string, string]> = {
         .then(function(data){
           rows=data[0];var known=new Set(rows.map(function(r){return r.dv;}));
           (data[1].records||[]).filter(function(r){return r.kind==='document'&&r.status==='ok'&&!known.has(r.url);}).forEach(function(r){
-            rows.push({n:r.title,p:'finanzas/'+r.id,e:r.format,t:'finanzas',s:r.bytes,dv:r.url,dd:r.url,sum_es:r.category+' · '+(r.years||[]).join(', ')+' · Secretaría de Finanzas de Baja California Sur. Documento original; consulta el periodo y alcance en la fuente.',sum_en:r.category+' · '+(r.years||[]).join(', ')+' · Baja California Sur Finance Secretariat. Original source document.'});
-          });updateEngCounts();render();
+            rows.push({n:r.title,p:'finanzas/'+r.id,e:r.format,t:'finanzas',y:Math.max.apply(null,(r.years||[]).map(Number).filter(Number.isFinite).concat([0])),s:r.bytes,dv:r.url,dd:r.url,sum_es:r.category+' · '+(r.years||[]).join(', ')+' · Secretaría de Finanzas de Baja California Sur. Documento original; consulta el periodo y alcance en la fuente.',sum_en:r.category+' · '+(r.years||[]).join(', ')+' · Baja California Sur Finance Secretariat. Original source document.'});
+          });loaded=true;updateEngCounts();render();
         })
         .catch(function(){ meta.textContent = isEn() ? 'The documents could not be loaded. Please reload this page to try again.' : 'No se pudieron cargar los documentos. Recarga esta página para intentarlo de nuevo.'; });
     })();
