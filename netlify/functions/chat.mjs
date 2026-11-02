@@ -2958,25 +2958,93 @@ function formatEvidence(chunks, lang) {
     .join('\n\n');
 }
 
+function factorCardLabel(c) {
+  const title = String(c.title || '');
+  const mark = title.indexOf(': ');
+  return (mark >= 0 ? title.slice(mark + 2) : title).trim() || c.onto_id || 'factor';
+}
+
+function factorCardBody(c, lang) {
+  const label = factorCardLabel(c);
+  let text = String(lang === 'en' ? (c.sum_en || c.sum_es || '') : (c.sum_es || c.sum_en || ''))
+    .replace(/^Ontolog[ií]a\s+\S+\s+\[[^\]]+\]\s*/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (label && text.startsWith(label)) text = text.slice(label.length).replace(/^[.\s]+/, '');
+  text = text.split(/\s+Relaciones:/)[0].split(/\s+Relations:/)[0].trim();
+  return text.slice(0, 240);
+}
+
+function isFactorGapCard(c) {
+  const id = String(c.onto_id || '');
+  if (id.startsWith('gap_') || id === 'ev_sig_mulege_oasis') return true;
+  return false;
+}
+
+/** Labeled brief of ontology cards already retrieved. No new figures. */
+function composeFactorBrief(evidence, lang = 'es') {
+  const cards = (evidence || []).filter((c) => c && (c.type === 'ontology' || c.onto_id));
+  if (!cards.length) return '';
+  const en = lang === 'en';
+  const buckets = [
+    ['huecos', en ? 'GAPS — sin dato (do not fill)' : 'HUECOS — sin dato (no rellenar)', isFactorGapCard],
+    ['viabilidad', en ? 'Viability' : 'Viabilidad', (c) => /viabilidad/.test(c.onto_id || '')],
+    ['riesgos', en ? 'Risks and constraints' : 'Riesgos y restricciones', (c) => c.onto_type === 'Constraint' || /riesgo/.test(c.onto_id || '')],
+    ['oportunidades', en ? 'Opportunities' : 'Oportunidades', (c) => /oportunidad/.test(c.onto_id || '') || c.onto_type === 'DemandDriver'],
+    ['quien', en ? 'Who decides' : 'Quién decide', (c) => c.onto_type === 'Actor'],
+    ['capacidades', en ? 'Capacities' : 'Capacidades', (c) => c.onto_type === 'ResourceCapacity'],
+    ['instrumentos', en ? 'Instruments' : 'Instrumentos', (c) => c.onto_type === 'Instrument'],
+    ['proyectos', en ? 'Projects' : 'Proyectos', (c) => c.onto_type === 'Project'],
+    ['lugares', en ? 'Places' : 'Lugares', (c) => c.onto_type === 'Territory'],
+    ['evidencia', en ? 'Evidence' : 'Evidencia', (c) => c.onto_type === 'Evidence'],
+  ];
+  const used = new Set();
+  const lines = [en ? 'FACTOR BRIEF (retrieved cards only; do not add figures):' : 'RESUMEN DE FACTORES (solo fichas recuperadas; no añadas cifras):'];
+  for (const [, heading, match] of buckets) {
+    const rows = [];
+    for (const c of cards) {
+      const id = c.onto_id || c.id;
+      if (used.has(id) || !match(c)) continue;
+      used.add(id);
+      rows.push(c);
+      if (heading.indexOf('sin dato') < 0 && rows.length >= 4) break;
+    }
+    if (!rows.length) continue;
+    lines.push('');
+    lines.push(heading);
+    for (const c of rows) {
+      const body = factorCardBody(c, lang);
+      if (heading.indexOf('sin dato') >= 0) {
+        lines.push(`- HUECO — sin dato: ${factorCardLabel(c)}. ${body}`);
+      } else {
+        lines.push(`- ${factorCardLabel(c)}. ${body}`);
+      }
+    }
+  }
+  return lines.join('\n');
+}
+
 function factorPromptNote(lang, kinds) {
   if (!kinds || !kinds.length) return '';
   if (lang === 'en') {
     return `
 MULTI-FACTOR REASONING (this question is about project viability, land-use change, principal risks, or opportunities):
-- Walk the factor bundle in CONTEXT together: water (DMA / aquifers / desal), energy (SIBCS / CFE), instruments (POER / PDU), constraints (ANP, coast, tenure, hazards), demand drivers, actors or working tables, and gaps.
-- Name trade-offs between factors (for example desalination against the power ceiling, or a PDU against a UGA / ANP). Do not recommend a zoning code that is not written in CONTEXT.
-- If a critical factor is missing, or a fragment says "sin dato en corpus", say so in "Data gap:" — do not invent land-use codes, parcels, or figures.
-- Structure the answer in this order, short bullets: 1) Capacidades 2) Restricciones 3) Instrumentos 4) Actores 5) Huecos 6) Fuente. Use only CONTEXT.
-- Cite each factor with the fragment title. Library page extracts are reference, not BCS statistics. News is press (outlet and date). Scenarios and foresight signals are readings, not new capacity. If two of the five municipalities are compared, keep each place's own ceiling and name its gap (Loreto DMA, Mulegé water–energy, East Cape load, Oasis MW, and RT=Restauración stay unfilled). For this class you may use up to about 220 words.
+- CONTEXT opens with a labeled FACTOR BRIEF. Follow that order. Use only those cards and the fragments under them.
+- If two or more sections are present (viability, risks, opportunities, who decides, capacities, instruments), the answer must name at least two of them.
+- Every line that says "HUECO — sin dato" must be repeated as its own "Data gap:" line. Do not fill it with a number, a rent, a megawatt, a parcel, or a passenger total.
+- Name trade-offs that the cards already state. Do not recommend a zoning code that is not written in CONTEXT.
+- Cite each factor with the fragment title. Library page extracts are reference, not BCS statistics. News is press (outlet and date). Scenarios and foresight signals are readings, not new capacity.
+- Close with ONE follow-up on its own last line, starting with "👉 ", about a factor or gap already named in the brief. Do not ask for a series the brief marks as sin dato. For this class you may use up to about 220 words.
 `;
   }
   return `
 RAZONAMIENTO MULTIFACTOR (esta pregunta es de viabilidad de proyecto, cambio de uso de suelo, riesgos principales u oportunidades):
-- Recorre junto el paquete de factores del CONTEXTO: agua (DMA / acuíferos / desal), energía (SIBCS / CFE), instrumentos (POER / PDU), restricciones (ANP, costa, tenencia, peligros), motores de demanda, actores o mesas, y brechas.
-- Nombra trade-offs entre factores (por ejemplo desalación frente al techo eléctrico, o un PDU frente a una UGA / ANP). No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
-- Si falta un factor crítico, o un fragmento dice "sin dato en corpus", dilo en "Dato faltante:" — no inventes códigos de uso de suelo, predios ni cifras.
-- Estructura la respuesta en este orden, con viñetas cortas: 1) Capacidades 2) Restricciones 3) Instrumentos 4) Actores 5) Huecos 6) Fuente. Solo con el CONTEXTO.
-- Cita cada factor con el título del fragmento. Las páginas de biblioteca son referencia, no estadística de BCS. Las noticias son prensa (medio y fecha). Escenarios y señales son lecturas, no capacidad nueva. Si comparas dos de los cinco municipios, conserva el techo de cada uno y nombra su hueco (DMA de Loreto, agua–energía de Mulegé, carga de East Cape, MW de Oasis y RT=Restauración siguen sin dato). En esta clase puedes usar hasta unas 220 palabras.
+- El CONTEXTO abre con un RESUMEN DE FACTORES etiquetado. Sigue ese orden. Usa solo esas fichas y los fragmentos que van debajo.
+- Si hay dos o más secciones (viabilidad, riesgos, oportunidades, quién decide, capacidades, instrumentos), la respuesta debe nombrar al menos dos.
+- Cada línea que dice "HUECO — sin dato" se repite como su propia línea "Dato faltante:". No la completes con una cifra, una renta, un megawatt, un predio ni un total de pasajeros.
+- Nombra los trade-offs que las fichas ya dicen. No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
+- Cita cada factor con el título del fragmento. Las páginas de biblioteca son referencia, no estadística de BCS. Las noticias son prensa (medio y fecha). Escenarios y señales son lecturas, no capacidad nueva.
+- Cierra con UNA pregunta 👉 en su propia última línea, sobre un factor o hueco ya nombrado en el resumen. No pidas una serie que el resumen marca como sin dato. En esta clase puedes usar hasta unas 220 palabras.
 `;
 }
 
@@ -3912,11 +3980,15 @@ async function handlerInner(event) {
   // chips need stronger relevance than context
   const chipEvidence = hits.filter((h) => h.coverage >= 0.5 && h.score >= topScore * 0.45).map((h) => h.c);
 
-  const contextBlock = noEvidence
+  let contextBlock = noEvidence
     ? (lang === 'en'
         ? '(no relevant evidence in the portal for this question)'
         : '(sin evidencia relevante en el portal para esta pregunta)')
     : formatEvidence(evidence, lang);
+  if (qIntents.isFactorIntent && !noEvidence) {
+    const brief = composeFactorBrief(evidence, lang);
+    if (brief) contextBlock = `${brief}\n\n${contextBlock}`;
+  }
 
   const messages = [
     {
@@ -4082,4 +4154,4 @@ async function handlerInner(event) {
   };
 }
 
-export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk, buildFactorEvidence, portalSurfaceBlocks };
+export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk, buildFactorEvidence, composeFactorBrief, portalSurfaceBlocks };
