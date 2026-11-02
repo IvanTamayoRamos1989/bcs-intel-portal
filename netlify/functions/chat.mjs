@@ -543,6 +543,7 @@ function expandQuery(query) {
   const whoFactor = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
   if (whoFactor && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (/\bcompens\w*\b|\boffset\b/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (/\brenta hotel|\bcap rate/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1064,6 +1065,17 @@ function factorSeedIds(qn, kinds) {
   };
   const kindHit = PROJECT_KIND_RE.test(qn);
   if (/\b(poblacion|habitantes|censo|demograf)\b/.test(qn)) add('ev_pob_censo_2020');
+  if (/\brenta hotel|\bcap rate/.test(qn)) add('gap_rentas_hoteleras', 'ev_news_ocupacion');
+  if (/\b(128|generacion movil|turbogas|cabo bello)\b/.test(qn)) {
+    add('ev_news_cfe_128', 'rc_sibcs', 'const_red_aislada');
+  }
+  if (p.loreto && /\b(pasajer|pax|viajer|total de pasajeros)\b/.test(qn)) {
+    add('gap_loreto_pax', 'ev_aereo_setue', 'ev_dossiers_movilidad');
+  }
+  if (/\b0302\b/.test(qn)) add('gap_acuifero_0302', 'ev_acuiferos_dma');
+  if ((/\btitular\b|\bobras publicas\b/.test(qn)) && (p.cabos || !p.any)) {
+    add('gap_org_obras_cabos', 'ev_org_cabos_2024');
+  }
   if (/\b(ley de ingresos|presupuesto de egresos|participacion|anexo)\b/.test(qn)) {
     add('ev_fiscal_ley_2026', 'ev_fiscal_anexo_2025', 'gap_fiscal_ingresos_2026');
   }
