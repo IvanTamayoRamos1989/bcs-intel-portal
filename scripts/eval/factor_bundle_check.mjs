@@ -394,6 +394,63 @@ const CASES = [
     needIds: ['dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'terr_loreto', 'terr_comondu', 'terr_mulege'],
     needTypes: ['DecisionQuestion', 'Territory'],
   },
+  {
+    q: '¿Cuántos pasajeros de crucero llegaron a Cabo San Lucas?',
+    kind: 'opportunity',
+    needIds: ['ev_cruceros_datatur', 'ev_sig_asipona'],
+    needTypes: ['Evidence'],
+    cruiseSeries: true,
+  },
+  {
+    q: '¿Qué dice JLL de la vivienda en Loreto?',
+    kind: 'opportunity',
+    needIds: ['ev_jll_zonas_2025', 'terr_loreto', 'gap_loreto_dma'],
+    needTypes: ['Evidence', 'Territory', 'Constraint'],
+    jllZones: true,
+  },
+  {
+    q: '¿Cuántas viviendas registró SNIIV en La Paz?',
+    kind: 'opportunity',
+    needIds: ['ev_sniiv_vivienda'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: '¿La Sierra La Laguna impide un hotel?',
+    kind: 'viability',
+    needIds: ['terr_anp_sierra_laguna', 'const_anp_nucleos'],
+    needTypes: ['Territory', 'Constraint'],
+  },
+  {
+    q: '¿El parque Bahía de Loreto limita el crecimiento?',
+    kind: 'viability',
+    needIds: ['terr_anp_loreto', 'const_anp_nucleos', 'gap_loreto_dma'],
+    needTypes: ['Territory', 'Constraint'],
+    sinDatoIds: ['gap_loreto_dma'],
+  },
+  {
+    q: '¿API BCS opera Pichilingue?',
+    kind: 'viability',
+    needIds: ['proj_fed_pue_002', 'ev_cruceros_datatur'],
+    needTypes: ['Project', 'Evidence'],
+  },
+  {
+    q: '¿Quién opera el aeropuerto de Los Cabos?',
+    kind: 'viability',
+    needIds: ['rc_aeropuerto_sjd', 'proj_fed_aer_001'],
+    needTypes: ['ResourceCapacity', 'Project'],
+  },
+  {
+    q: 'Concesión GAP de los aeropuertos de Los Cabos y La Paz',
+    kind: 'viability',
+    needIds: ['rc_aeropuerto_sjd', 'rc_aeropuerto_lap', 'proj_fed_aer_001'],
+    needTypes: ['ResourceCapacity', 'Project'],
+  },
+  {
+    q: 'En el escenario agua primero, ¿qué se prioriza?',
+    kind: 'viability',
+    needIds: ['ev_esc_water_first', 'dq_viabilidad_proyecto'],
+    needTypes: ['Evidence', 'DecisionQuestion'],
+  },
 ];
 
 const NEGATIVES = [
