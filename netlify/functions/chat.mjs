@@ -550,6 +550,20 @@ function expandQuery(query) {
   if (/\b(0302|acuifero vizcaino)\b/.test(qn) && /\b(mulege|pertenece|asign)\b/.test(qn) && !factorKinds.includes('viability')) {
     factorKinds.push('viability');
   }
+  if (/\bcabo pulmo\b/.test(qn) && /\bhotel/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (/\bcabo pulmo\b/.test(qn) && /\b(construc\w*|cierra|obra)\b/.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
+  if (/\basipona\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if ((/\bcompuerta\b/.test(qn) || (/\b237\b/.test(qn) && /\bmw\b/.test(qn))) && !factorKinds.includes('viability') && !factorKinds.includes('risk')) {
+    factorKinds.push(/\briesgo/.test(qn) ? 'risk' : 'viability');
+  }
+  if ((/\bley de ingresos\b/.test(qn) || (/\b(ingresos|ingresa)\b/.test(qn) && /\b2026\b/.test(qn))) && !factorKinds.includes('viability')) {
+    factorKinds.push('viability');
+  }
+  if (/\bdesal\w*/.test(qn) && /\b(250|litros|l\/s)\b/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (/\bcomondu\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && /\b(deficit|cubrir|compens\w*|offset)\b/.test(qn) && !factorKinds.includes('viability')) {
+    factorKinds.push('viability');
+  }
+  if (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -983,7 +997,8 @@ function factorPlaceFlags(qn) {
   const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
   const todos = /\b(todos santos|pescadero)\b/.test(qn);
   const nPlaces = [cabos, paz, loreto, comondu, mulege, todos, east].filter(Boolean).length;
-  const compare = nPlaces >= 2 && /\b(compar\w*|versus|\bvs\b|diferencia entre)\b/.test(qn);
+  const compare = (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn))
+    || (nPlaces >= 2 && /\b(compar\w*|versus|\bvs\b|diferencia entre)\b/.test(qn));
   const who = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
   return {
     cabos, paz, loreto, comondu, mulege, todos, east, compare, who,
@@ -993,7 +1008,7 @@ function factorPlaceFlags(qn) {
 
 function factorExcluded(id, place) {
   if (!place.any || place.compare) return false;
-  const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id);
+  const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id) && !/tx_lapaz/.test(id);
   const pazId = /lapaz|la_paz|0324|turismo_lapaz|aeropuerto_lap/.test(id) && !/tx_lapaz/.test(id);
   if (place.east && pazId) return true;
   if (place.cabos && pazId) return true;
@@ -1085,10 +1100,18 @@ function factorSeedIds(qn, kinds) {
   if ((/\btitular\b|\bobras publicas\b/.test(qn)) && (p.cabos || !p.any)) {
     add('gap_org_obras_cabos', 'ev_org_cabos_2024');
   }
-  if (/\b(ley de ingresos|presupuesto de egresos|participacion|anexo)\b/.test(qn)) {
+  if (/\b(ley de ingresos|presupuesto de egresos|participacion|anexo)\b/.test(qn) || (/\b(ingresos|ingresa)\b/.test(qn) && /\b2026\b/.test(qn))) {
     add('ev_fiscal_ley_2026', 'ev_fiscal_anexo_2025', 'gap_fiscal_ingresos_2026');
   }
-  if (p.who && /\b(agua|desal|mesa)\b/.test(qn)) {
+  if (/\basipona\b/.test(qn)) add('ev_sig_asipona', 'proj_fed_pue_001', 'ev_cruceros_datatur');
+  if (/\bdesal\w*/.test(qn) && /\b(250|litros|l\/s)\b/.test(qn)) add('proj_fed_agu_001', 'proj_desal_cabos', 'ev_mesa_agua');
+  if (p.comondu && p.cabos && /\b(deficit|cubrir|compens\w*|offset)\b/.test(qn)) {
+    add('ev_preguntas_estrategicas', 'terr_comondu', 'const_dma_deficit', 'dd_agro_santo_domingo');
+  }
+  if (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn)) {
+    add('dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'terr_loreto', 'terr_comondu', 'terr_mulege', 'ev_gds_cinco_polos');
+  }
+  if (p.who && /\b(agua|desal\w*|mesa)\b/.test(qn)) {
     add('ev_mesa_agua', 'actor_cea', 'actor_conagua', 'proj_fed_agu_001', 'proj_desal_cabos');
   }
   if (p.who && /\b(energi|sibcs|cfe)\b/.test(qn)) {

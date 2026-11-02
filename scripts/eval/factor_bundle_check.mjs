@@ -344,6 +344,56 @@ const CASES = [
     sinDatoIds: ['gap_acuifero_0302'],
     noAssign0302: true,
   },
+  {
+    q: '¿Puede un hotel junto a Cabo Pulmo?',
+    kind: 'viability',
+    needIds: ['terr_anp_cabo_pulmo', 'const_anp_nucleos', 'ev_anp_avisos'],
+    needTypes: ['Territory', 'Constraint', 'Evidence'],
+  },
+  {
+    q: '¿Cabo Pulmo cierra la construcción?',
+    kind: 'landuse',
+    needIds: ['terr_anp_cabo_pulmo', 'dq_cambio_uso_suelo', 'const_anp_nucleos'],
+    needTypes: ['Territory', 'DecisionQuestion', 'Constraint'],
+  },
+  {
+    q: '¿ASIPONA administra la marina de Cabo San Lucas?',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona', 'proj_fed_pue_001', 'ev_cruceros_datatur'],
+    needTypes: ['Evidence', 'Project'],
+  },
+  {
+    q: '¿Qué pasa con los 237 MW de transmisión entre La Paz y Los Cabos?',
+    kind: 'viability',
+    needIds: ['rc_tx_lapaz_cabos', 'proj_p23_bs1', 'const_red_aislada'],
+    needTypes: ['ResourceCapacity', 'Project', 'Constraint'],
+  },
+  {
+    q: '¿Cuánto ingresa Los Cabos en 2026?',
+    kind: 'viability',
+    needIds: ['ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026'],
+    needTypes: ['Evidence', 'Constraint'],
+    sinDatoIds: ['gap_fiscal_ingresos_2026'],
+    fiscal2026: true,
+  },
+  {
+    q: '¿Quién decide la desaladora de 250 litros por segundo en Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_mesa_agua', 'proj_fed_agu_001', 'proj_desal_cabos', 'actor_conagua'],
+    needTypes: ['Evidence', 'Project', 'Actor'],
+  },
+  {
+    q: '¿Comondú puede cubrir el déficit de agua de Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_preguntas_estrategicas', 'terr_comondu', 'const_dma_deficit', 'dd_agro_santo_domingo'],
+    needTypes: ['Evidence', 'Territory', 'Constraint', 'DemandDriver'],
+  },
+  {
+    q: 'Compara los cinco municipios',
+    kind: 'viability',
+    needIds: ['dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'terr_loreto', 'terr_comondu', 'terr_mulege'],
+    needTypes: ['DecisionQuestion', 'Territory'],
+  },
 ];
 
 const NEGATIVES = [
