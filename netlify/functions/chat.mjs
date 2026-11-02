@@ -968,7 +968,7 @@ function factorPredBase(pred) {
 }
 
 function factorPlaceFlags(qn) {
-  const east = /\b(east cape|cabo del este|cabo pulmo|la ribera)\b/.test(qn);
+  const east = /\b(east cape|cabo del este|cabo pulmo|la ribera|los barriles|barriles)\b/.test(qn);
   const cabos = /\b(los cabos|cabo san lucas|san jose del cabo|\bsjd\b)\b/.test(qn);
   const paz = /\bla paz\b/.test(qn);
   const loreto = /\bloreto\b/.test(qn);
@@ -1064,6 +1064,15 @@ function factorSeedIds(qn, kinds) {
   };
   const kindHit = PROJECT_KIND_RE.test(qn);
   if (/\b(poblacion|habitantes|censo|demograf)\b/.test(qn)) add('ev_pob_censo_2020');
+  if (/\b(ley de ingresos|presupuesto de egresos|participacion|anexo)\b/.test(qn)) {
+    add('ev_fiscal_ley_2026', 'ev_fiscal_anexo_2025', 'gap_fiscal_ingresos_2026');
+  }
+  if (p.who && /\b(agua|desal|mesa)\b/.test(qn)) {
+    add('ev_mesa_agua', 'actor_cea', 'actor_conagua', 'proj_fed_agu_001', 'proj_desal_cabos');
+  }
+  if (p.who && /\b(energi|sibcs|cfe)\b/.test(qn)) {
+    add('ev_mesa_energia', 'actor_cfe', 'rc_sibcs', 'proj_p23_bs1');
+  }
   if (p.who && /\b(puerto|asipona|marina)\b/.test(qn)) {
     add('ev_sig_asipona', 'proj_fed_pue_001', 'proj_fed_pue_002', 'ev_cruceros_datatur');
   }
@@ -1092,6 +1101,18 @@ function factorSeedIds(qn, kinds) {
     add('ev_gds_cinco_polos');
   }
   if (/\b(vivienda|housing|hotel\w*|inmobiliari\w*|jll\b)\b/.test(qn)) add('ev_inmob_jll_2025', 'dd_residencial_cabos');
+  if (/\bhotel/.test(qn) && (p.cabos || p.east || !p.any)) {
+    add('terr_anp_cabo_pulmo', 'const_anp_nucleos', 'rc_acuifero_0317', 'ev_anp_avisos');
+  }
+  if ((kinds.includes('landuse') || /\bcambio de uso\b/.test(qn)) && (p.east || /\bpulmo\b/.test(qn))) {
+    add('terr_anp_cabo_pulmo', 'const_anp_nucleos', 'ev_anp_avisos', 'dq_cambio_uso_suelo', 'inst_poerbcs');
+  }
+  if ((kinds.includes('landuse') || /\bcambio de uso\b/.test(qn)) && p.mulege) {
+    add('terr_anp_vizcaino', 'const_anp_nucleos', 'ev_anp_avisos', 'proj_transpeninsular', 'dq_cambio_uso_suelo');
+  }
+  if (/\b(barriles|cardonal)\b/.test(qn)) {
+    add('ev_psdu_barriles', 'gap_east_cape_instrumento', 'gap_east_cape_carga');
+  }
   if (/\b(crucero\w*|cruise|aeropuerto\w*|airport|puerto\w*|port\b)\b/.test(qn) || kinds.includes('opportunity')) {
     add('ev_cruceros_datatur', 'ev_aereo_setue', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap');
   }
