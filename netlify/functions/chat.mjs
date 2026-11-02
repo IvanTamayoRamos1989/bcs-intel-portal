@@ -1101,6 +1101,10 @@ function factorSeedIds(qn, kinds) {
     add('ev_gds_cinco_polos');
   }
   if (/\b(vivienda|housing|hotel\w*|inmobiliari\w*|jll\b)\b/.test(qn)) add('ev_inmob_jll_2025', 'dd_residencial_cabos');
+  if (/\bjll\b/.test(qn) || (/\bvivienda\b/.test(qn) && !/\bhotel/.test(qn))) add('ev_jll_zonas_2025');
+  if (/\b(sniiv|rezago|registro de vivienda)\b/.test(qn) || (/\bvivienda\b/.test(qn) && !/\bhotel/.test(qn))) {
+    add('ev_sniiv_vivienda', 'proj_fed_viv_001', 'rc_acuifero_0317');
+  }
   if (/\bhotel/.test(qn) && (p.cabos || p.east || !p.any)) {
     add('terr_anp_cabo_pulmo', 'const_anp_nucleos', 'rc_acuifero_0317', 'ev_anp_avisos');
   }
@@ -1115,6 +1119,17 @@ function factorSeedIds(qn, kinds) {
   }
   if (/\b(crucero\w*|cruise|aeropuerto\w*|airport|puerto\w*|port\b)\b/.test(qn) || kinds.includes('opportunity')) {
     add('ev_cruceros_datatur', 'ev_aereo_setue', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap');
+  }
+  if (/\bcrucero/.test(qn)) add('ev_sig_asipona', 'proj_fed_pue_001', 'ev_cruceros_datatur');
+  if (/\b(compuerta|transmision|\b237\b|p23)\b/.test(qn)) {
+    add('rc_tx_lapaz_cabos', 'proj_p23_bs1', 'rc_sibcs', 'const_red_aislada');
+  }
+  if (p.east && /\b(aeropuerto|hotel|vuelo)\b/.test(qn)) add('ev_dossiers_movilidad', 'gap_east_cape_carga');
+  if (p.loreto && /\b(vuelo|destino|aeropuerto|\blto\b)\b/.test(qn)) {
+    add('ev_dossiers_movilidad', 'ev_sig_vuelos', 'gap_loreto_dma');
+  }
+  if (p.mulege && /\b(offset|oasis|aeropuerto)\b/.test(qn)) {
+    add('ev_dossiers_movilidad', 'ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
   }
   if (/\bescenario\b|\bscenario\b/.test(qn)) {
     if (/\bagua primero\b|\bwater first\b|\bseguridad hidr/.test(qn)) add('ev_esc_water_first');

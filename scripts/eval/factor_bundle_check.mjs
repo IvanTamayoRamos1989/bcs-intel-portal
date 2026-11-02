@@ -239,6 +239,42 @@ const CASES = [
     needTypes: ['Territory', 'Constraint', 'Project', 'Evidence'],
     vizcainoGap: true,
   },
+  {
+    q: '¿Qué oportunidades hay en los cruceros de Cabo San Lucas y la concesión de ASIPONA?',
+    kind: 'opportunity',
+    needIds: ['ev_cruceros_datatur', 'ev_sig_asipona', 'proj_fed_pue_001', 'dq_oportunidades', 'rc_aeropuerto_sjd'],
+    needTypes: ['Evidence', 'Project', 'ResourceCapacity'],
+    cruiseSeries: true,
+  },
+  {
+    q: '¿Qué oportunidad de vivienda muestra el reporte JLL 2025 en Loreto?',
+    kind: 'opportunity',
+    needIds: ['ev_jll_zonas_2025', 'ev_sniiv_vivienda', 'terr_loreto', 'dq_oportunidades', 'gap_loreto_dma'],
+    needTypes: ['Evidence', 'Territory', 'Constraint'],
+    jllZones: true,
+  },
+  {
+    q: '¿Cuáles son los riesgos de la compuerta de transmisión de 237 MW?',
+    kind: 'risk',
+    needIds: ['rc_tx_lapaz_cabos', 'proj_p23_bs1', 'const_red_aislada', 'dq_riesgos_principales', 'rc_sibcs'],
+    needTypes: ['ResourceCapacity', 'Project', 'Constraint'],
+  },
+  {
+    q: '¿Es viable un hotel en East Cape sin vuelo propio?',
+    kind: 'viability',
+    needIds: ['ev_dossiers_movilidad', 'gap_east_cape_carga', 'terr_anp_cabo_pulmo', 'dq_viabilidad_proyecto'],
+    needTypes: ['Evidence', 'Constraint', 'Territory'],
+    noAirport: true,
+  },
+  {
+    q: '¿Cuáles son los riesgos de usar Mulegé como offset energético?',
+    kind: 'risk',
+    also: 'viability',
+    needIds: ['ev_dossiers_movilidad', 'ev_sig_mulege_oasis', 'gap_mulege_agua_energia', 'terr_mulege'],
+    needTypes: ['Evidence', 'Constraint', 'Territory'],
+    sinDatoIds: ['gap_mulege_agua_energia', 'ev_sig_mulege_oasis'],
+    noAirport: true,
+  },
 ];
 
 const NEGATIVES = [
@@ -314,6 +350,24 @@ for (const c of CASES) {
     if (!/7421559352/.test(text)) fail(`${c.q} Cabos 2026 revenue-law amount missing`);
     if (!/sin dato/i.test(text)) fail(`${c.q} Mulegé/Loreto revenue-law gap missing`);
     if (/muleg[eé][^.]{0,40}\d{7,}/i.test(text)) fail(`${c.q} invented a Mulegé revenue amount`);
+  }
+  if (c.cruiseSeries) {
+    const cru = ev.find((x) => (x.onto_id || '') === 'ev_cruceros_datatur');
+    const text = `${cru?.sum_es || ''} ${cru?.sum_en || ''}`;
+    if (!/1,057,758|1057758/.test(text)) fail(`${c.q} published cruise series missing`);
+    if (/loreto[^.]{0,40}89,?600/i.test(text)) fail(`${c.q} reconciled Loreto passengers into cruises`);
+  }
+  if (c.jllZones) {
+    const z = ev.find((x) => (x.onto_id || '') === 'ev_jll_zonas_2025');
+    const text = `${z?.sum_es || ''} ${z?.sum_en || ''}`;
+    if (!/\b42\b/.test(text)) fail(`${c.q} Loreto MLS volume missing`);
+    if (!/no es renta hotelera|not hotel rent/i.test(text)) fail(`${c.q} must keep hotel rents out`);
+  }
+  if (c.noAirport) {
+    const mob = ev.find((x) => (x.onto_id || '') === 'ev_dossiers_movilidad');
+    const text = `${mob?.sum_es || ''} ${mob?.sum_en || ''}`;
+    if (!/sin aeropuerto propio|no airport of its own/i.test(text)) fail(`${c.q} East Cape airport fact missing`);
+    if (!/no se reconcilia|not reconciled/i.test(text)) fail(`${c.q} Loreto passengers must stay unreconciled`);
   }
   if (c.vizcainoGap) {
     const avisos = ev.find((x) => (x.onto_id || '') === 'ev_anp_avisos');

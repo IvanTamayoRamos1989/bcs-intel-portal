@@ -56,7 +56,7 @@ def main() -> None:
         seen_edges.add(key)
         added_edges += 1
 
-    graph["version"] = "1.12"
+    graph["version"] = "1.13"
     graph["updated"] = "2026-11-02"
     GRAPH.write_text(json.dumps(graph, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
