@@ -334,12 +334,28 @@ const shellModel = {
                   <li><i style="background:#8d99ae"></i><span data-lang-es>Otra clave de CLASIFICAC</span><span data-lang-en hidden>Other CLASIFICAC code</span></li>
                 </ul>
                 <p class="shell-note"><span data-lang-es>Nombres tomados de la simbología de la carta publicada del modelo de ordenamiento (AS, PR, PT, RT).</span><span data-lang-en hidden>Names taken from the legend of the published ordering-model map (AS, PR, PT, RT).</span></p>
+                <div class="shell-layer-group">
+                  <label>
+                    <input type="checkbox" data-icluster="uso" />
+                    <span>
+                      <span data-lang-es>iCluster — IMPLAN Los Cabos, uso de suelo</span><span data-lang-en hidden>iCluster — IMPLAN Los Cabos land use</span>
+                      <small><span data-lang-es>SIG BCS, capa cimp100. Se ve al acercar a Los Cabos. No es el POER.</span><span data-lang-en hidden>SIG BCS, layer cimp100. It shows when you zoom to Los Cabos. It is not the POER.</span></small>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="checkbox" data-icluster="parcelas" />
+                    <span>
+                      <span data-lang-es>iCluster — parcelas</span><span data-lang-en hidden>iCluster — parcels</span>
+                      <small><span data-lang-es>Secretaría de Turismo, Economía y Sustentabilidad, capa cspyde100. No es el catastro del estado.</span><span data-lang-en hidden>Tourism, Economy and Sustainability secretariat, layer cspyde100. It is not the state cadastre.</span></small>
+                    </span>
+                  </label>
+                </div>
                 <div class="shell-scenarios">
                   <button type="button" data-suelo="pdu"><span data-lang-es>PDU 2040 Los Cabos</span><span data-lang-en hidden>PDU 2040 Los Cabos</span></button>
                   <button type="button" data-suelo="pducp"><span data-lang-es>PDU La Paz</span><span data-lang-en hidden>La Paz PDU</span></button>
-                  <button type="button" data-suelo="icluster"><span data-lang-es>iCluster</span><span data-lang-en hidden>iCluster</span></button>
+                  <a href="http://sig.bcs.gob.mx/iclusterbcs/" target="_blank" rel="noopener noreferrer"><span data-lang-es>Abrir visor iCluster</span><span data-lang-en hidden>Open the iCluster viewer</span></a>
                 </div>
-                <p class="shell-gap-note"><span data-lang-es>PDU 2040 y PDU La Paz: cartas o nota de entrega, sin polígonos en el portal. iCluster: próximo / sin datos. El ZIP Foster de octubre es INEGI, no zonificación.</span><span data-lang-en hidden>PDU 2040 and the La Paz PDU: published maps or a delivery note, no polygons in the portal. iCluster: upcoming / no data. The October Foster ZIP is INEGI, not zoning.</span></p>
+                <p class="shell-gap-note"><span data-lang-es>PDU 2040 y PDU La Paz: cartas o nota de entrega, sin polígonos en el portal. El ZIP Foster de octubre es INEGI, no zonificación.</span><span data-lang-en hidden>PDU 2040 and the La Paz PDU: published maps or a delivery note, no polygons in the portal. The October Foster ZIP is INEGI, not zoning.</span></p>
               </li>
             </ol>
             <p class="shell-status" id="shell-status" aria-live="polite"></p>
