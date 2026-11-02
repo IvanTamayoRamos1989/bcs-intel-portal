@@ -1394,6 +1394,83 @@ def main():
                 "[opportunities demand project growth]"
             ),
         ),
+        (
+            "factor:poer-politicas",
+            "Glosario POER: nombres de política frente a siglas y CODE_PA",
+            "POER glossary: policy names versus suffixes and CODE_PA",
+            (
+                "Glosario honesto del POERBCS (sin tabla nueva). "
+                "Informe de propuesta 01_planning/2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf nombra "
+                "Aprovechamiento Sustentable, Preservación y Protección; el extracto corta en Protección. "
+                "Lineamientos 01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf "
+                "escriben POLÍTICA DE PRESERVACIÓN, DE PROTECCIÓN y DE RESTAURACIÓN. "
+                "Capa clave_MOE: AS, PT, PR; RT ausente. CODE_PA 2/3/4 sin nombre: gap_politica_uga_leyenda. "
+                "Nodos: inst_pa_aprovechamiento, inst_pa_preservacion, inst_pa_proteccion, inst_pa_restauracion. "
+                "No se asigna RT a Restauración. "
+                "[poer uga politica ambiental aprovechamiento preservacion proteccion restauracion code_pa]"
+            ),
+            (
+                "Honest POERBCS glossary (no new table). "
+                "Proposal report 01_planning/2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf names "
+                "Sustainable Use, Preservation and Protection; the extract cuts off at Protection. "
+                "Lineamientos 01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf "
+                "write preservation, protection and restoration policies. "
+                "clave_MOE layer: AS, PT, PR; RT absent. CODE_PA 2/3/4 unnamed: gap_politica_uga_leyenda. "
+                "Nodes: inst_pa_aprovechamiento, inst_pa_preservacion, inst_pa_proteccion, inst_pa_restauracion. "
+                "RT is not assigned to Restoration. "
+                "[poer uga environmental policy code_pa restoration]"
+            ),
+        ),
+        (
+            "factor:municipios",
+            "Paquetes municipales delgados: East Cape, Loreto, Mulegé",
+            "Thin municipal packs: East Cape, Loreto, Mulegé",
+            (
+                "Paquetes de factores ya soportados por el grafo y el scorecard, sin cifras nuevas. "
+                "East Cape (dq_pack_east_cape): rc_acuifero_0318, terr_anp_cabo_pulmo, acceso SJD, "
+                "gap_east_cape_instrumento (sin PSDU La Ribera), gap_east_cape_carga. "
+                "Loreto (dq_pack_loreto): inst_poel_loreto (BOGE 2014), proj_fed_agu_005, "
+                "gap_psdu_loreto_gazette, gap_loreto_dma, gap_loreto_energia_local, terr_anp_loreto. "
+                "Mulegé (dq_pack_mulege): terr_anp_vizcaino, proj_transpeninsular, gap_pdu_mulege, "
+                "gap_mulege_agua_energia. La señal sig-mulege-oasis-h2 no es un nodo de MW. "
+                "[east cape cabo pulmo loreto mulege vizcaino ptar]"
+            ),
+            (
+                "Factor packs already supported by the graph and the scorecard, with no new figures. "
+                "East Cape (dq_pack_east_cape): rc_acuifero_0318, terr_anp_cabo_pulmo, SJD access, "
+                "gap_east_cape_instrumento (no La Ribera PSDU), gap_east_cape_carga. "
+                "Loreto (dq_pack_loreto): inst_poel_loreto (BOGE 2014), proj_fed_agu_005, "
+                "gap_psdu_loreto_gazette, gap_loreto_dma, gap_loreto_energia_local, terr_anp_loreto. "
+                "Mulegé (dq_pack_mulege): terr_anp_vizcaino, proj_transpeninsular, gap_pdu_mulege, "
+                "gap_mulege_agua_energia. Signal sig-mulege-oasis-h2 is not an MW node. "
+                "[east cape cabo pulmo loreto mulege vizcaino wastewater]"
+            ),
+        ),
+        (
+            "factor:biblioteca",
+            "Biblioteca de referencia para el paquete de factores",
+            "Reference library for the factor pack",
+            (
+                "Lecturas de referencia (Biblioteca BCS2050), no cifras de BCS. "
+                "Agua: 13_library/08_WATER_STRESSED_REGIONS/08_T1_2006_WHO_WastewaterReuse.pdf (lib:WS009). "
+                "Costa y ANP: 13_library/07_COASTAL_DEVELOPMENT/07_T1_2017_OECD_MPA.pdf (lib:CD010) y "
+                "07_T1_2019_IPCC_SROCC.pdf (lib:CD003). "
+                "Ordenamiento: 13_library/01_REGIONAL_PLANNING/01_T1_2001_MontesLira_OrdenamientoTerritorial.pdf (lib:RP009). "
+                "PDU Cabos en biblioteca: 13_library/11_MEXICO_BCS/11_T1_2013_LosCabos_PDU2040.pdf (lib:MX003). "
+                "El modelo debe resumir solo el extracto recuperado. "
+                "[biblioteca library referencia ordenamiento agua costa]"
+            ),
+            (
+                "Reference readings (BCS2050 Library), not BCS figures. "
+                "Water: 13_library/08_WATER_STRESSED_REGIONS/08_T1_2006_WHO_WastewaterReuse.pdf (lib:WS009). "
+                "Coast and MPA: 13_library/07_COASTAL_DEVELOPMENT/07_T1_2017_OECD_MPA.pdf (lib:CD010) and "
+                "07_T1_2019_IPCC_SROCC.pdf (lib:CD003). "
+                "Planning: 13_library/01_REGIONAL_PLANNING/01_T1_2001_MontesLira_OrdenamientoTerritorial.pdf (lib:RP009). "
+                "Cabos PDU in the library: 13_library/11_MEXICO_BCS/11_T1_2013_LosCabos_PDU2040.pdf (lib:MX003). "
+                "The model should summarise only the retrieved extract. "
+                "[library reference planning water coast]"
+            ),
+        ),
     ]
     for fid, title_es, title_en, body_es, body_en in factor_cards:
         chunks.append({

@@ -964,21 +964,26 @@ function factorPredBase(pred) {
 }
 
 function factorPlaceFlags(qn) {
+  const east = /\b(east cape|cabo del este|cabo pulmo|la ribera)\b/.test(qn);
   const cabos = /\b(los cabos|cabo san lucas|san jose del cabo|\bsjd\b)\b/.test(qn);
   const paz = /\bla paz\b/.test(qn) && !cabos;
   const loreto = /\bloreto\b/.test(qn);
   const comondu = /\b(comondu|constitucion)\b/.test(qn);
   const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
   const todos = /\b(todos santos|pescadero)\b/.test(qn);
-  return { cabos, paz, loreto, comondu, mulege, todos, any: cabos || paz || loreto || comondu || mulege || todos };
+  return {
+    cabos, paz, loreto, comondu, mulege, todos, east,
+    any: cabos || paz || loreto || comondu || mulege || todos || east,
+  };
 }
 
 function factorExcluded(id, place) {
   if (!place.any) return false;
   const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id);
   const pazId = /lapaz|la_paz|0324|turismo_lapaz|aeropuerto_lap/.test(id) && !/tx_lapaz/.test(id);
+  if (place.east && pazId) return true;
   if (place.cabos && pazId) return true;
-  if (place.paz && cabosId) return true;
+  if (place.paz && cabosId && !place.east) return true;
   if (place.todos && cabosId) return true;
   if ((place.loreto || place.mulege || place.comondu) && (cabosId || pazId)) return true;
   return false;
@@ -1051,6 +1056,24 @@ function factorSeedIds(qn, kinds) {
     for (const id of ids) if (id && !seeds.includes(id)) seeds.push(id);
   };
   const kindHit = PROJECT_KIND_RE.test(qn);
+  if (p.east) {
+    add(
+      'dq_pack_east_cape', 'rc_acuifero_0318', 'terr_anp_cabo_pulmo', 'terr_obs_east_cape',
+      'gap_east_cape_instrumento', 'gap_east_cape_carga', 'const_coast_anp_pressure', 'rc_aeropuerto_sjd',
+    );
+  }
+  if (p.loreto) {
+    add(
+      'dq_pack_loreto', 'terr_loreto', 'terr_anp_loreto', 'proj_fed_agu_005', 'inst_poel_loreto',
+      'gap_psdu_loreto_gazette', 'gap_loreto_dma', 'gap_loreto_energia_local', 'terr_obs_loreto_bay',
+    );
+  }
+  if (p.mulege) {
+    add(
+      'dq_pack_mulege', 'terr_mulege', 'terr_anp_vizcaino', 'gap_pdu_mulege', 'gap_mulege_agua_energia',
+      'dq_vizcaino_corridor', 'terr_obs_vizcaino_spine', 'proj_transpeninsular',
+    );
+  }
   if (kinds.includes('viability')) {
     add('dq_viabilidad_proyecto', 'ev_mesas_trabajo', 'inst_poerbcs', 'rc_sibcs', 'const_dma_deficit', 'const_red_aislada', 'const_anp_nucleos');
     if (/\b(hotel\w*|turism|tourism)\b/.test(qn)) {
@@ -1088,7 +1111,9 @@ function factorSeedIds(qn, kinds) {
   }
   if (kinds.includes('landuse')) {
     add(
-      'dq_cambio_uso_suelo', 'inst_poerbcs', 'inst_poer_politicas', 'gap_politica_uga_leyenda',
+      'dq_cambio_uso_suelo', 'inst_poerbcs', 'inst_poer_politicas',
+      'inst_pa_aprovechamiento', 'inst_pa_preservacion', 'inst_pa_proteccion', 'inst_pa_restauracion',
+      'gap_politica_uga_leyenda',
       'const_anp_nucleos', 'const_tenencia', 'const_dma_deficit', 'gap_permisos_uso_suelo', 'dq_coherencia_instrumentos',
     );
     if (!p.any || p.cabos) add('inst_pdu_cabos', 'gap_pdu_cabos_3a', 'inst_poel_cabos', 'terr_los_cabos');
@@ -1149,20 +1174,89 @@ const FACTOR_DOC_RULES = {
   ],
 };
 
-function factorDocChunks(kinds) {
+const LIB_FOLDERS = {
+  viability: ['08_WATER_STRESSED_REGIONS', '05_INFRASTRUCTURE_DEVELOPMENT', '11_MEXICO_BCS'],
+  landuse: ['01_REGIONAL_PLANNING', '02_URBAN_PLANNING_DESIGN', '11_MEXICO_BCS'],
+  risk: ['09_CLIMATE_RESILIENCE_SUSTAINABILITY', '07_COASTAL_DEVELOPMENT', '08_WATER_STRESSED_REGIONS'],
+  opportunity: ['04_URBAN_REGIONAL_ECONOMICS', '07_COASTAL_DEVELOPMENT', '11_MEXICO_BCS'],
+};
+const NEWS_TOPICS = {
+  viability: ['water', 'energy', 'planning', 'tourism', 'land_use'],
+  landuse: ['land_use', 'planning', 'environment'],
+  risk: ['environment', 'water', 'energy', 'planning'],
+  opportunity: ['tourism', 'energy', 'planning', 'land_use', 'water'],
+};
+
+function libraryHits(corpus, kinds, seen) {
+  const out = [];
+  for (const kind of kinds) {
+    const folders = LIB_FOLDERS[kind] || [];
+    const hit = corpus.find((c) => {
+      if (!c || seen.has(c.id) || c.type !== 'library') return false;
+      const id = String(c.id || '');
+      if (id.includes(':p')) return false;
+      const path = String(c.path || '');
+      return folders.some((f) => path.includes(f));
+    });
+    if (!hit) continue;
+    seen.add(hit.id);
+    out.push(hit);
+    if (out.length >= 2) break;
+  }
+  return out;
+}
+
+function newsPlaceIds(place) {
+  const ids = [];
+  if (place.cabos) ids.push('los_cabos');
+  if (place.east) ids.push('east_cape');
+  if (place.paz) ids.push('la_paz');
+  if (place.loreto) ids.push('loreto');
+  if (place.comondu) ids.push('comondu');
+  if (place.mulege) ids.push('mulege_north');
+  if (place.todos) ids.push('todos_santos', 'la_paz');
+  return ids;
+}
+
+function newsHits(corpus, kinds, place, seen) {
+  const places = newsPlaceIds(place);
+  const wantNews = places.length > 0 || kinds.some((k) => k === 'risk' || k === 'opportunity');
+  if (!wantNews) return [];
+  const topics = new Set(kinds.flatMap((k) => NEWS_TOPICS[k] || []));
+  const rows = corpus.filter((c) => {
+    if (!c || c.type !== 'news' || seen.has(c.id)) return false;
+    if (!c.outlet || !c.date) return false;
+    const tops = c.topics || [];
+    if (topics.size && tops.length && !tops.some((t) => topics.has(t))) return false;
+    if (places.length) {
+      const cp = c.place_ids || [];
+      if (!cp.some((id) => places.includes(id))) return false;
+    }
+    return true;
+  });
+  rows.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  return rows.slice(0, 2);
+}
+
+function factorDocChunks(kinds, place) {
   const corpus = loadCorpus();
   const out = [];
   const seen = new Set();
+  const push = (c) => {
+    if (!c || out.some((x) => x.id === c.id)) return;
+    seen.add(c.id);
+    out.push(c);
+  };
   for (const kind of kinds) {
     for (const rule of FACTOR_DOC_RULES[kind] || []) {
       const hit = corpus.find((c) => c && !seen.has(c.id) && rule(c));
-      if (!hit) continue;
-      seen.add(hit.id);
-      out.push(hit);
-      if (out.length >= 5) return out;
+      if (hit) push(hit);
     }
   }
-  return out;
+  const libs = libraryHits(corpus, kinds, seen);
+  const news = newsHits(corpus, kinds, place || {}, seen);
+  const guides = out.slice(0, 4);
+  return [...guides, ...libs.slice(0, 2), ...news.slice(0, 2)];
 }
 
 /** Ontology factor bundle + a few guide/spine chunks for viability, land use, risks, opportunities. */
@@ -1178,7 +1272,7 @@ function buildFactorEvidence(query, intents) {
   const place = factorPlaceFlags(qn);
   const ids = walkFactorBundle(factorSeedIds(qn, kinds), place, 16);
   const onto = ontologyChunksForIds(ids);
-  const docs = factorDocChunks(kinds);
+  const docs = factorDocChunks(kinds, place);
   const seen = new Set();
   const out = [];
   for (const c of [...onto, ...docs]) {
@@ -2696,7 +2790,7 @@ MULTI-FACTOR REASONING (this question is about project viability, land-use chang
 - Walk the factor bundle in CONTEXT together: water (DMA / aquifers / desal), energy (SIBCS / CFE), instruments (POER / PDU), constraints (ANP, coast, tenure, hazards), demand drivers, actors or working tables, and gaps.
 - Name trade-offs between factors (for example desalination against the power ceiling, or a PDU against a UGA / ANP). Do not recommend a zoning code that is not written in CONTEXT.
 - If a critical factor is missing, or a fragment says "sin dato en corpus", say so in "Data gap:" — do not invent land-use codes, parcels, or figures.
-- Cite each factor with the fragment title. For this class you may use up to about 220 words so the trade-offs fit.
+- Cite each factor with the fragment title. Library extracts are reference material, not BCS statistics. News items are press (outlet and date): they do not replace an official figure. For this class you may use up to about 220 words so the trade-offs fit.
 `;
   }
   return `
@@ -2704,7 +2798,7 @@ RAZONAMIENTO MULTIFACTOR (esta pregunta es de viabilidad de proyecto, cambio de 
 - Recorre junto el paquete de factores del CONTEXTO: agua (DMA / acuíferos / desal), energía (SIBCS / CFE), instrumentos (POER / PDU), restricciones (ANP, costa, tenencia, peligros), motores de demanda, actores o mesas, y brechas.
 - Nombra trade-offs entre factores (por ejemplo desalación frente al techo eléctrico, o un PDU frente a una UGA / ANP). No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
 - Si falta un factor crítico, o un fragmento dice "sin dato en corpus", dilo en "Dato faltante:" — no inventes códigos de uso de suelo, predios ni cifras.
-- Cita cada factor con el título del fragmento. En esta clase puedes usar hasta unas 220 palabras para que quepan los trade-offs.
+- Cita cada factor con el título del fragmento. Los extractos de biblioteca son referencia, no estadística de BCS. Las noticias son prensa (medio y fecha): no sustituyen una cifra oficial. En esta clase puedes usar hasta unas 220 palabras para que quepan los trade-offs.
 `;
 }
 
@@ -3629,7 +3723,7 @@ async function handlerInner(event) {
         seen.add(c.id);
         merged.push(c);
       }
-      evidence = merged.slice(0, 18);
+      evidence = merged.slice(0, 24);
       noEvidence = false;
     }
   }
