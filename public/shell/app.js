@@ -24,6 +24,8 @@
   var mapReady = false;
   var pendingMuni = '';
   var pendingJob = null;
+  var iclusterOn = { uso: false, parcelas: false };
+  var identifyToken = 0;
 
   function lang() {
     return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
@@ -228,11 +230,123 @@
     });
     if (lngLat && engine && engine.mark) engine.mark(lngLat.lng, lngLat.lat, title);
   }
+  function dmsPart(base) {
+    var abs = Math.abs(base);
+    var degrees = Math.floor(abs);
+    var t = (abs - degrees) * 60;
+    var minutes = Math.floor(t);
+    var seconds = Math.round((t - minutes) * 6000) / 100;
+    if (seconds >= 60) { seconds = 0; minutes += 1; }
+    if (minutes >= 60) { minutes = 0; degrees += 1; }
+    return degrees + '° ' + minutes + "' " + seconds.toFixed(2) + '"';
+  }
+  function dmsPair(lng, lat) {
+    return dmsPart(lng) + (lng < 0 ? ' W' : ' E') + ', ' + dmsPart(lat) + (lat < 0 ? ' S' : ' N');
+  }
+  function washOnly(feature) {
+    var id = feature && feature.layer && feature.layer.id || '';
+    return id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-muni-line' || id === 'cdt-bars';
+  }
+  function openIclusterFiche(data, lngLat) {
+    var hit = data && data.hit;
+    var parcel = data && data.parcel;
+    var rows = [];
+    var title = tx('Punto', 'Point');
+    var kindEs = 'iCluster';
+    var kindEn = 'iCluster';
+    if (hit && hit.code) {
+      title = hit.code;
+      kindEs = hit.table || 'Uso de suelo';
+      kindEn = 'Land use';
+    } else if (parcel && (parcel.code || parcel.nombre)) {
+      title = parcel.code || parcel.nombre;
+      kindEs = parcel.table || 'Parcelas';
+      kindEn = 'Parcels';
+    } else if (data && data.locality) title = data.locality;
+    if (hit && hit.uso) rows.push({ es: 'Uso de suelo', en: 'Land use', value: String(hit.uso) });
+    else if (iclusterOn.uso) rows.push({ es: 'Uso de suelo', en: 'Land use', value: tx('La capa no devolvió un polígono en este punto.', 'The layer returned no polygon at this point.') });
+    if (parcel && (parcel.code || parcel.nombre)) rows.push({ es: 'Parcela', en: 'Parcel', value: String(parcel.code || parcel.nombre) });
+    else if (iclusterOn.parcelas) rows.push({ es: 'Parcela', en: 'Parcel', value: tx('La capa no devolvió una parcela en este punto.', 'The layer returned no parcel at this point.') });
+    if (data && data.locality) rows.push({ es: 'Localidad', en: 'Locality', value: data.locality });
+    if (data && data.municipality) rows.push({ es: 'Municipio', en: 'Municipality', value: data.municipality });
+    if (data && data.state) rows.push({ es: 'Entidad', en: 'State', value: data.state });
+    if (lngLat) rows.push({ es: 'Coordenadas', en: 'Coordinates', value: dmsPair(lngLat.lng, lngLat.lat) });
+    rows.push({ es: 'Fuente', en: 'Source', value: 'IMPLAN Los Cabos / SIG BCS' });
+    var attrs = [];
+    if (hit && hit.attributes) attrs = attrs.concat(hit.attributes);
+    if (parcel && parcel.attributes) attrs = attrs.concat(parcel.attributes);
+    attrs.forEach(function (row) {
+      if (!row || row.value == null || row.value === '') return;
+      rows.push({ es: String(row.label), en: String(row.label), value: String(row.value) });
+    });
+    openFiche({ title: title, kind_es: kindEs, kind_en: kindEn, rows: rows });
+    if (lngLat && engine && engine.mark) engine.mark(lngLat.lng, lngLat.lat, title);
+  }
+  function identifyIcluster(lngLat, token) {
+    var layers = [];
+    if (iclusterOn.uso) layers.push('cimp100');
+    if (iclusterOn.parcelas) layers.push('cspyde100');
+    if (!layers.length || !lngLat) return;
+    openFiche({
+      title: tx('Consultando iCluster', 'Asking iCluster'),
+      kind_es: 'Identify',
+      kind_en: 'Identify',
+      rows: [{ es: 'Punto', en: 'Point', value: dmsPair(lngLat.lng, lngLat.lat) }],
+    });
+    var zoom = lngLat.zoom != null ? lngLat.zoom : 16;
+    var url = '/api/icluster-wms?op=identify&layers=' + layers.join(',')
+      + '&lng=' + encodeURIComponent(lngLat.lng) + '&lat=' + encodeURIComponent(lngLat.lat)
+      + '&zoom=' + encodeURIComponent(zoom);
+    fetch(url).then(function (res) { return res.json(); }).then(function (data) {
+      if (token !== identifyToken) return;
+      if (!data || !data.ok) {
+        openFiche({
+          title: tx('Sin respuesta', 'No response'),
+          kind_es: 'iCluster',
+          kind_en: 'iCluster',
+          rows: [
+            { es: 'Identify', en: 'Identify', value: tx('iCluster no respondió. No hay atributos de este punto.', 'iCluster did not respond. There are no attributes for this point.') },
+            { es: 'Coordenadas', en: 'Coordinates', value: dmsPair(lngLat.lng, lngLat.lat) },
+            { es: 'Fuente', en: 'Source', value: 'IMPLAN Los Cabos / SIG BCS' },
+          ],
+        });
+        return;
+      }
+      openIclusterFiche(data, lngLat);
+    }).catch(function () {
+      if (token !== identifyToken) return;
+      openFiche({
+        title: tx('Sin respuesta', 'No response'),
+        kind_es: 'iCluster',
+        kind_en: 'iCluster',
+        rows: [
+          { es: 'Identify', en: 'Identify', value: tx('iCluster no respondió. No hay atributos de este punto.', 'iCluster did not respond. There are no attributes for this point.') },
+          { es: 'Coordenadas', en: 'Coordinates', value: dmsPair(lngLat.lng, lngLat.lat) },
+          { es: 'Fuente', en: 'Source', value: 'IMPLAN Los Cabos / SIG BCS' },
+        ],
+      });
+    });
+  }
   function onMapFeature(feats, lngLat) {
-    if (!feats || !feats.length) { closeFiche(); return; }
-    var feature = feats[0];
-    var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-edge$/, '');
-    openFeatureFiche(feature, lngLat, byId[id]);
+    identifyToken += 1;
+    var specific = (feats || []).filter(function (feature) { return !washOnly(feature); });
+    if (specific.length) {
+      var feature = specific[0];
+      var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-edge$/, '');
+      openFeatureFiche(feature, lngLat, byId[id]);
+      return;
+    }
+    if (iclusterOn.uso || iclusterOn.parcelas) {
+      identifyIcluster(lngLat, identifyToken);
+      return;
+    }
+    if (feats && feats.length) {
+      var wash = feats[0];
+      var washId = String(wash.layer && wash.layer.id || '').replace(/^cdt-ly-/, '').replace(/-edge$/, '');
+      openFeatureFiche(wash, lngLat, byId[washId]);
+      return;
+    }
+    closeFiche();
   }
   function boundsOf(feature) {
     var b = [180, 90, -180, -90];
@@ -486,6 +600,7 @@
     });
   }
   function setIcluster(kind, on) {
+    if (iclusterOn[kind] != null) iclusterOn[kind] = !!on;
     if (engine && engine.setIcluster) engine.setIcluster(kind, on);
     document.querySelectorAll('[data-icluster="' + kind + '"]').forEach(function (box) { box.checked = !!on; });
     if (on && kind === 'uso' && engine && engine.jumpCamera) {
