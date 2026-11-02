@@ -76,7 +76,7 @@ for (const group of stack) {
   }
 }
 const munis = [...cdtModel.munis]
-  .map((m) => ({ name: m.name, pob: m.pob }))
+  .map((m) => ({ name: m.name, pob: m.pob, studio: m.studio }))
   .sort((a, b) => b.pob - a.pob);
 const maxPob = munis[0]?.pob || 1;
 const twinScenarios = ['baseline', 'corridor_intensify', 'water_first', 'ports_air_hubs']
@@ -142,14 +142,17 @@ const shellModel = {
       </div>
       <section class="shell-map-wrap" aria-label="Mapa">
         <div id="shell-map"></div>
-        <div class="shell-tools">
-          <div class="shell-brand">
-            <strong>BCS2050</strong>
-            <button type="button" id="lang-toggle" aria-pressed="false">
-              <span data-side="es">ES</span><span aria-hidden="true"> · </span><span data-side="en">EN</span>
-            </button>
-            <a href="/portal"><span data-lang-es>Resto del portal</span><span data-lang-en hidden>Rest of the portal</span></a>
-          </div>
+        <div class="shell-brand">
+          <strong>BCS2050</strong>
+          <button type="button" id="lang-toggle" aria-pressed="false">
+            <span data-side="es">ES</span><span aria-hidden="true"> · </span><span data-side="en">EN</span>
+          </button>
+          <a href="/portal"><span data-lang-es>Resto del portal</span><span data-lang-en hidden>Rest of the portal</span></a>
+        </div>
+        <aside id="shell-fiche" class="shell-fiche" hidden></aside>
+      </section>
+      <footer class="shell-dock" id="shell-dock">
+        <div class="shell-dock-bar">
           <div class="shell-base" role="group" aria-label="Mapa base" data-aria-es="Mapa base" data-aria-en="Basemap">
             <button type="button" data-base="streets" aria-pressed="true"><span data-lang-es>Calles</span><span data-lang-en hidden>Streets</span></button>
             <button type="button" data-base="satellite" aria-pressed="false"><span data-lang-es>Satélite</span><span data-lang-en hidden>Satellite</span></button>
@@ -164,6 +167,15 @@ const shellModel = {
             <span data-lang-es>Terreno 3D activo</span>
             <span data-lang-en hidden>3D terrain on</span>
           </p>
+          <div class="shell-dock-chips" role="tablist" aria-label="Capas">
+            <button type="button" data-dock="l0" aria-selected="false"><span class="shell-n">0</span><span data-lang-es>Terreno</span><span data-lang-en hidden>Terrain</span></button>
+            <button type="button" data-dock="l1" aria-selected="false"><span class="shell-n">1</span><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></button>
+            <button type="button" data-dock="l2" aria-selected="false"><span class="shell-n">2</span><span data-lang-es>Infraestructura</span><span data-lang-en hidden>Infrastructure</span></button>
+            <button type="button" data-dock="l3" aria-selected="false"><span class="shell-n">3</span><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></button>
+            <button type="button" data-dock="l4" aria-selected="false"><span class="shell-n">4</span><span data-lang-es>Ciudad</span><span data-lang-en hidden>City</span></button>
+            <button type="button" data-dock="l5" aria-selected="false"><span class="shell-n">5</span><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></button>
+          </div>
+        </div>
           <div class="shell-scrim" id="shell-scrim" hidden></div>
           <div class="shell-sheet" id="shell-sheet">
             <button type="button" class="shell-sheet-x" id="shell-sheet-x">
@@ -174,7 +186,7 @@ const shellModel = {
               <span data-lang-en hidden>Six twin layers, from the base to the scenario. Published data only.</span>
             </p>
             <ol class="shell-stack">
-              <li>
+              <li data-dock-panel="l0">
                 <header>
                   <span class="shell-n">0</span>
                   <div>
@@ -199,7 +211,7 @@ const shellModel = {
                   })}
                 </div>
               </li>
-              <li>
+              <li data-dock-panel="l1">
                 <header>
                   <span class="shell-n">1</span>
                   <div>
@@ -220,7 +232,7 @@ const shellModel = {
                 <p class="shell-note"><span data-lang-es>La columna compara población 2020, INEGI. No es la altura del terreno ni de un inmueble.</span><span data-lang-en hidden>The column compares 2020 population, INEGI. It is not terrain height and not a building height.</span></p>
                 <p class="shell-gap-note"><span data-lang-es>BIM de edificios: próximo / sin datos.</span><span data-lang-en hidden>Building BIM: upcoming / no data.</span></p>
               </li>
-              <li>
+              <li data-dock-panel="l2">
                 <header>
                   <span class="shell-n">2</span>
                   <div>
@@ -245,7 +257,7 @@ const shellModel = {
                   })}
                 </div>
               </li>
-              <li>
+              <li data-dock-panel="l3">
                 <header>
                   <span class="shell-n">3</span>
                   <div>
@@ -271,7 +283,7 @@ const shellModel = {
                 </div>
                 <p class="shell-note"><span data-lang-es>El corredor es un marco de análisis, no un límite oficial.</span><span data-lang-en hidden>The corridor is an analysis frame, not an official boundary.</span></p>
               </li>
-              <li class="is-gap">
+              <li class="is-gap" data-dock-panel="l4">
                 <header>
                   <span class="shell-n">4</span>
                   <div>
@@ -282,7 +294,7 @@ const shellModel = {
                 <p class="shell-gap-note"><span data-lang-es>Próximo / sin datos. El portal no tiene sensores ni un tablero de monitoreo. No se inventa esa capa.</span><span data-lang-en hidden>Upcoming / no data. The portal has no sensors and no monitoring board. That layer is not invented.</span></p>
                 <p class="shell-flow"><span data-lang-es>Datos ↑ al gemelo · Información ↓ en escenarios</span><span data-lang-en hidden>Data ↑ to the twin · Information ↓ as scenarios</span></p>
               </li>
-              <li>
+              <li data-dock-panel="l5">
                 <header>
                   <span class="shell-n">5</span>
                   <div>
@@ -305,8 +317,7 @@ const shellModel = {
               <a href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>.
             </p>
           </div>
-        </div>
-      </section>
+      </footer>
       <div class="shell-split" id="split-r" role="separator" aria-orientation="vertical" aria-label="Ancho de los archivos">
         <button type="button" class="shell-fold" data-fold="files" aria-pressed="false">
           <span data-lang-es>Archivos</span><span data-lang-en hidden>Files</span>
@@ -339,26 +350,37 @@ const shellModel = {
       html, body.shell-app { margin: 0; height: 100%; background: #fbf8f1; color: #1a1a1a; overflow: hidden; }
       body.shell-app { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
       .shell {
-        --chat-w: 320px;
-        --files-w: 320px;
+        --chat-w: 2fr;
+        --map-w: 7fr;
+        --files-w: 1fr;
         display: grid;
-        grid-template-columns: var(--chat-w) 6px minmax(0, 1fr) 6px var(--files-w);
+        grid-template-columns: minmax(0, var(--chat-w)) 6px minmax(0, var(--map-w)) 6px minmax(0, var(--files-w));
+        grid-template-rows: minmax(0, 1fr) 10%;
         height: 100%;
         min-height: 0;
       }
+      .shell-chat { grid-column: 1; grid-row: 1; }
+      #split-l { grid-column: 2; grid-row: 1; }
+      .shell-map-wrap { grid-column: 3; grid-row: 1; }
+      #split-r { grid-column: 4; grid-row: 1; }
+      .shell-files { grid-column: 5; grid-row: 1; }
+      .shell-dock { grid-column: 1 / -1; grid-row: 2; }
+      body.shell-dock-open .shell { grid-template-rows: minmax(0, 1fr) minmax(10%, 36%); }
       .shell-chat, .shell-files, .shell-map-wrap { min-width: 0; min-height: 0; height: 100%; }
+      .shell-chat { overflow: hidden; }
       .shell-chat { background: #fbf8f1; border-right: 1px solid #e0e0e0; }
       .shell-files { display: flex; flex-direction: column; background: #fff; border-left: 1px solid #e0e0e0; }
-      .shell-files header { display: flex; flex-direction: column; gap: .35rem; padding: .65rem .75rem .4rem; border-bottom: 1px solid #e0e0e0; }
-      .shell-files header strong { color: #006BA3; }
-      .shell-files input { width: 100%; font: inherit; border: 1px solid #d5d5d5; border-radius: 8px; padding: .4rem .55rem; }
+      .shell-files header { display: flex; flex-direction: column; gap: .3rem; padding: .4rem .4rem .3rem; border-bottom: 1px solid #e0e0e0; min-width: 0; }
+      .shell-files header strong { color: #006BA3; font-size: .72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .shell-files input { width: 100%; min-width: 0; font: inherit; font-size: .75rem; border: 1px solid #d5d5d5; border-radius: 8px; padding: .28rem .4rem; }
       #shell-tree, #shell-related { overflow: auto; padding: .35rem .55rem .6rem; }
       #shell-tree { flex: 1; }
       #shell-related { border-bottom: 1px solid #e7eef3; max-height: 34%; }
       .shell-tree-label { margin: .35rem .2rem; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: #0083C4; font-weight: 700; }
       .shell-files details { margin: .15rem 0; }
-      .shell-files summary { cursor: pointer; font-weight: 650; color: #1a1a1a; padding: .2rem 0; }
-      .shell-file { display: block; width: 100%; text-align: left; font: inherit; font-size: .8rem; line-height: 1.3; border: 0; background: transparent; color: #1a1a1a; padding: .28rem .2rem; border-radius: 6px; cursor: pointer; }
+      .shell-files summary { cursor: pointer; font-weight: 650; color: #1a1a1a; padding: .2rem 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .72rem; }
+      .shell-file { display: block; width: 100%; text-align: left; font: inherit; font-size: .72rem; line-height: 1.3; border: 0; background: transparent; color: #1a1a1a; padding: .28rem .2rem .28rem 1.05rem; border-radius: 6px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; position: relative; }
+      .shell-file::before { content: ""; position: absolute; left: .15rem; top: .38rem; width: .55rem; height: .68rem; border: 1.5px solid #0083C4; border-radius: 1px; }
       .shell-file:hover, .shell-file:focus-visible { background: #e8f4fb; outline: none; }
       #shell-preview { border-top: 1px solid #e0e0e0; padding: .55rem .7rem .7rem; max-height: 38%; overflow: auto; }
       #shell-preview p { margin: 0 0 .35rem; font-size: .82rem; }
@@ -373,22 +395,42 @@ const shellModel = {
         border-radius: 999px; padding: .45rem .15rem; cursor: pointer;
       }
       .shell-fold[aria-pressed="true"] { background: #0083C4; color: #fff; }
-      body.shell-fold-chat .shell { grid-template-columns: 0 2.2rem minmax(0, 1fr) 6px var(--files-w); }
-      body.shell-fold-files .shell { grid-template-columns: var(--chat-w) 6px minmax(0, 1fr) 2.2rem 0; }
+      body.shell-fold-chat .shell { grid-template-columns: 0 2.2rem minmax(0, 7fr) 6px var(--files-w); }
+      body.shell-fold-files .shell { grid-template-columns: var(--chat-w) 6px minmax(0, 7fr) 2.2rem 0; }
       body.shell-fold-chat.shell-fold-files .shell { grid-template-columns: 0 2.2rem minmax(0, 1fr) 2.2rem 0; }
       body.shell-fold-chat .shell-chat, body.shell-fold-files .shell-files { overflow: hidden; visibility: hidden; }
       .shell-more { display: block; margin: .4rem .2rem .6rem; font: inherit; font-size: .78rem; font-weight: 700; color: #006BA3; background: #fff; border: 1px solid #0083C4; border-radius: 999px; padding: .28rem .7rem; cursor: pointer; }
       .shell-map-wrap { position: relative; background: #d5e2ea; }
       #shell-map { position: absolute; inset: 0; }
-      .shell-tools {
-        position: absolute; z-index: 2; top: .6rem; left: .6rem;
-        width: min(340px, calc(100% - 4.5rem));
-        max-height: calc(100% - 1.2rem); overflow: auto;
-        background: rgba(251, 248, 241, .95);
-        border: 1px solid #e0e0e0; border-left: 3px solid #0083C4;
-        border-radius: 12px; padding: .55rem .7rem .65rem;
+      .shell-dock {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        min-height: 0;
+        background: #f7f4ee;
+        border-top: 3px solid #0083C4;
+        overflow: hidden;
       }
-      .shell-brand { display: flex; flex-wrap: wrap; gap: .35rem .6rem; align-items: center; margin-bottom: .4rem; }
+      .shell-dock-bar { display: flex; align-items: center; gap: .45rem; padding: .3rem .55rem; min-width: 0; }
+      .shell-dock-chips { display: flex; gap: .28rem; overflow-x: auto; flex: 1; min-width: 0; }
+      .shell-dock-chips button {
+        display: inline-flex; align-items: center; gap: .28rem; font: inherit; font-size: .74rem; font-weight: 750;
+        border: 1px solid #c5d5de; background: #fff; color: #1a1a1a; border-radius: 999px;
+        padding: .16rem .55rem .16rem .2rem; cursor: pointer; white-space: nowrap;
+      }
+      .shell-dock-chips button[aria-selected="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
+      .shell-dock-chips button[aria-selected="true"] .shell-n { background: #fff; color: #0083C4; }
+      .shell-sheet { display: none; flex: 1; min-height: 0; overflow: auto; padding: .15rem .7rem .5rem; }
+      body.shell-dock-open .shell-sheet { display: block; }
+      .shell-stack > li { display: none; }
+      body.shell-dock-open .shell-stack > li.is-open { display: block; }
+      body.shell-dock-open .shell-scenarios { flex-direction: row; flex-wrap: wrap; }
+      .shell-brand {
+        position: absolute; z-index: 3; top: .45rem; left: .45rem;
+        display: flex; flex-wrap: wrap; gap: .35rem .55rem; align-items: center;
+        margin: 0; background: rgba(251, 248, 241, .94); border: 1px solid #e0e0e0; border-radius: 999px;
+        padding: .15rem .55rem .15rem .7rem;
+      }
       .shell-brand strong { color: #0083C4; }
       .shell-brand a, .shell-gap a { color: #006BA3; font-weight: 700; }
       #lang-toggle { font: inherit; border: 1px solid #0083C4; background: #fff; color: #006BA3; border-radius: 999px; padding: .15rem .5rem; cursor: pointer; }
@@ -400,9 +442,29 @@ const shellModel = {
       }
       .shell-base button[aria-pressed="true"], .shell-stack header button[aria-pressed="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
       .shell-hud {
-        margin: .15rem 0 .35rem; padding: .35rem .55rem; border-radius: 10px;
-        background: rgba(0, 131, 196, .1); color: #0b3a56; font-size: .75rem; font-weight: 700; line-height: 1.35;
+        margin: 0; padding: .28rem .55rem; border-radius: 10px; max-width: 16rem;
+        background: rgba(0, 131, 196, .1); color: #0b3a56; font-size: .72rem; font-weight: 700; line-height: 1.3;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       }
+      .shell-fiche {
+        position: absolute; z-index: 5; top: .55rem; right: 3.2rem; width: min(320px, calc(100% - 5rem));
+        max-height: calc(100% - 1.2rem); overflow: auto; background: rgba(251, 248, 241, .97);
+        border: 1px solid #e0e0e0; border-top: 3px solid #0083C4; border-radius: 12px; padding: .5rem .7rem .65rem;
+        box-shadow: 0 8px 24px rgba(11, 58, 86, .12);
+      }
+      .shell-fiche[hidden] { display: none !important; }
+      .shell-fiche h2 { margin: .1rem 0 .35rem; font-size: 1rem; color: #0b3a56; }
+      .shell-fiche-kicker { margin: 0; font-size: .68rem; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; color: #0083C4; }
+      .shell-fiche dl { margin: .2rem 0; }
+      .shell-fiche dt { font-size: .68rem; color: #5a5a5a; }
+      .shell-fiche dd { margin: 0 0 .35rem; font-size: .82rem; }
+      .shell-fiche-x { font: inherit; font-size: .75rem; font-weight: 750; color: #006BA3; background: #fff; border: 1px solid #0083C4; border-radius: 999px; padding: .15rem .55rem; cursor: pointer; }
+      .shell-fiche a { color: #006BA3; font-weight: 700; }
+      .shell-fiche-files { display: flex; flex-direction: column; gap: .2rem; margin-top: .3rem; }
+      .shell-fiche-files button { text-align: left; font: inherit; font-size: .75rem; color: #0b3a56; background: #fff; border: 1px solid #d5e2ea; border-radius: 8px; padding: .25rem .4rem; cursor: pointer; }
+      .shell-fiche-gap { margin: .4rem 0 0; padding: .4rem .5rem; border-radius: 8px; background: rgba(0, 131, 196, .08); color: #0b3a56; font-size: .75rem; line-height: 1.35; }
+      .shell-fiche-acts { display: flex; flex-wrap: wrap; gap: .28rem; margin: .35rem 0 0; }
+      .shell-fiche-acts a { color: #006BA3; font-weight: 700; font-size: .72rem; text-decoration: none; border: 1px solid rgba(0, 131, 196, .4); border-radius: 999px; padding: .22rem .5rem; background: #fff; }
       .shell-stack-lead, .shell-note, .shell-flow { margin: .25rem 0; font-size: .72rem; line-height: 1.35; color: #3c5163; }
       .shell-stack { list-style: none; margin: .2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
       .shell-stack > li {
@@ -468,7 +530,9 @@ const shellModel = {
         }
         body.shell-fold-chat .shell-chat,
         body.shell-fold-files .shell-files { visibility: visible; overflow: hidden; }
-        .shell { display: block; flex: 1; height: auto; min-height: 0; width: 100%; max-width: 100%; overflow: hidden; }
+        .shell { position: relative; display: block; flex: 1; height: auto; min-height: 0; width: 100%; max-width: 100%; overflow: hidden; grid-template-rows: none; }
+        body.shell-dock-open .shell { grid-template-rows: none; }
+        body.shell-app:not([data-pane="map"]) .shell-dock { display: none; }
         .shell-split { display: none; }
         .shell-chat, .shell-map-wrap, .shell-files {
           display: none;
@@ -489,7 +553,11 @@ const shellModel = {
         .shell-file, #shell-preview, .shell-files summary, .shell-tree-label {
           overflow-wrap: anywhere;
           word-break: break-word;
+          white-space: normal;
+          text-overflow: unset;
+          font-size: 1rem;
         }
+        .shell-files header strong { font-size: 1rem; }
         #shell-tree, #shell-related, #shell-preview { max-width: 100%; overflow-x: hidden; }
         #shell-preview { max-height: 42%; }
         #shell-preview img { max-width: 100%; height: auto; }
@@ -531,23 +599,28 @@ const shellModel = {
           border: 1px solid #0083C4;
           border-radius: 999px;
         }
-        .shell-tools {
-          top: auto;
-          left: .5rem;
-          right: .5rem;
-          bottom: .5rem;
-          width: auto;
-          max-height: min(46vh, 360px);
-          border-left-width: 1px;
-          border-radius: 16px;
-          padding: .55rem .7rem .65rem;
+        .shell-dock {
+          position: absolute;
+          inset: 0;
+          z-index: 4;
+          display: block;
+          height: auto;
+          background: transparent;
+          border: 0;
+          overflow: visible;
+          pointer-events: none;
         }
+        .shell-dock-bar { display: block; padding: 0; pointer-events: none; }
+        .shell-dock-chips { display: none; }
+        .shell-base, .shell-sheet, .shell-hud, .shell-scrim, .shell-capas-btn { pointer-events: auto; }
         .shell-brand { gap: .4rem .7rem; }
         #lang-toggle, .shell-base button, .shell-stack header button, .shell-sheet-x {
           min-height: 44px;
           font-size: .95rem;
           padding: .4rem .75rem;
         }
+        .shell-stack > li,
+        body.shell-dock-open .shell-stack > li { display: block; }
         .shell-layer-group label { min-height: 44px; align-items: center; font-size: .95rem; }
         .shell-layer-group input { width: 1.25rem; height: 1.25rem; flex: 0 0 auto; }
         .shell-hud {
@@ -572,15 +645,7 @@ const shellModel = {
         #shell-map, .maplibregl-canvas, .leaflet-container { touch-action: none; }
         .shell-brand { position: absolute; top: .35rem; left: .45rem; z-index: 4; margin: 0; background: rgba(251, 248, 241, .92); border-radius: 999px; padding: .15rem .35rem .15rem .55rem; }
         .shell-brand strong, .shell-brand a { display: none; }
-        .shell-tools {
-          position: static;
-          width: auto;
-          max-height: none;
-          overflow: visible;
-          padding: 0;
-          border: 0;
-          background: transparent;
-        }
+        .shell-fiche { top: auto; right: .45rem; left: .45rem; bottom: 4.8rem; width: auto; max-height: 42%; }
         .shell-base {
           position: absolute;
           z-index: 4;
@@ -657,42 +722,42 @@ const shellModel = {
           font-weight: 750;
           vertical-align: middle;
         }
-        .shell-map-wrap.is-sat .shell-tools,
-        .shell-map-wrap.is-sat .shell-brand,
-        .shell-map-wrap.is-sat .shell-hud,
-        .shell-map-wrap.is-sat .shell-sheet {
+        body.is-sat .shell-dock,
+        body.is-sat .shell-brand,
+        body.is-sat .shell-hud,
+        body.is-sat .shell-sheet {
           background: rgba(8, 22, 34, .9);
           color: #fff;
           border-color: rgba(255, 255, 255, .72);
         }
-        .shell-map-wrap.is-sat .shell-base button,
-        .shell-map-wrap.is-sat .shell-stack header button,
-        .shell-map-wrap.is-sat #lang-toggle,
-        .shell-map-wrap.is-sat .shell-sheet-x,
-        .shell-map-wrap.is-sat .shell-scenarios a {
+        body.is-sat .shell-base button,
+        body.is-sat .shell-stack header button,
+        body.is-sat #lang-toggle,
+        body.is-sat .shell-sheet-x,
+        body.is-sat .shell-scenarios a {
           background: rgba(8, 22, 34, .55);
           color: #fff;
           border-color: #fff;
         }
-        .shell-map-wrap.is-sat .shell-base button[aria-pressed="true"],
-        .shell-map-wrap.is-sat .shell-stack header button[aria-pressed="true"] {
+        body.is-sat .shell-base button[aria-pressed="true"],
+        body.is-sat .shell-stack header button[aria-pressed="true"] {
           background: #0083C4;
           color: #fff;
           border-color: #fff;
         }
-        .shell-map-wrap.is-sat .shell-status,
-        .shell-map-wrap.is-sat .shell-gap,
-        .shell-map-wrap.is-sat .shell-stack-lead,
-        .shell-map-wrap.is-sat .shell-note,
-        .shell-map-wrap.is-sat .shell-layer-group label,
-        .shell-map-wrap.is-sat .shell-stack header small,
-        .shell-map-wrap.is-sat .shell-bars b { color: #fff; }
-        .shell-map-wrap.is-sat .shell-stack > li { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .28); }
-        .shell-map-wrap.is-sat .shell-stack header strong,
-        .shell-map-wrap.is-sat .shell-gap a,
-        .shell-map-wrap.is-sat .shell-flow,
-        .shell-map-wrap.is-sat .shell-gap-note { color: #9fd0ea; }
-        .shell-map-wrap.is-sat .shell-gap-note { background: rgba(159, 208, 234, .12); }
+        body.is-sat .shell-status,
+        body.is-sat .shell-gap,
+        body.is-sat .shell-stack-lead,
+        body.is-sat .shell-note,
+        body.is-sat .shell-layer-group label,
+        body.is-sat .shell-stack header small,
+        body.is-sat .shell-bars b { color: #fff; }
+        body.is-sat .shell-stack > li { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .28); }
+        body.is-sat .shell-stack header strong,
+        body.is-sat .shell-gap a,
+        body.is-sat .shell-flow,
+        body.is-sat .shell-gap-note { color: #9fd0ea; }
+        body.is-sat .shell-gap-note { background: rgba(159, 208, 234, .12); }
       }
       @media (max-width: 900px) and (orientation: landscape) {
         body.shell-app { flex-direction: row; padding-top: 0; padding-left: env(safe-area-inset-left, 0px); }

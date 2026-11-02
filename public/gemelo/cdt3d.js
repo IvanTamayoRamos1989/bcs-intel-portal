@@ -395,6 +395,12 @@
             paint: { 'line-color': meta.color || '#0083C4', 'line-width': 1.6, 'line-opacity': 0.95 },
           });
         }
+        map.on('mouseenter', lid, function () { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', lid, function () { map.getCanvas().style.cursor = ''; });
+        if (map.getLayer(lid + '-edge')) {
+          map.on('mouseenter', lid + '-edge', function () { map.getCanvas().style.cursor = 'pointer'; });
+          map.on('mouseleave', lid + '-edge', function () { map.getCanvas().style.cursor = ''; });
+        }
         return lid;
       }
       function hide(id) {
@@ -461,6 +467,15 @@
         var name = f && f.properties && f.properties.name;
         if (name && opts.onMunicipality) opts.onMunicipality(name);
       }
+      function featureLayers() {
+        var style = map.getStyle();
+        var ids = [];
+        ((style && style.layers) || []).forEach(function (layer) {
+          var id = layer.id;
+          if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0) ids.push(id);
+        });
+        return ids.filter(function (id) { return map.getLayer(id); });
+      }
       var marker = null;
       var reliefOn = true;
       function syncHills() {
@@ -505,8 +520,19 @@
         el.textContent = label || '';
         marker = new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat([lng, lat]).addTo(map);
       }
-      map.on('click', 'cdt-muni-fill', onMuniClick);
-      map.on('click', 'cdt-muni-extrude', onMuniClick);
+      map.on('click', function (e) {
+        var layers = featureLayers();
+        var feats = layers.length ? map.queryRenderedFeatures(e.point, { layers: layers }) : [];
+        if (opts.onFeature) {
+          opts.onFeature(feats, { lng: e.lngLat.lng, lat: e.lngLat.lat });
+          return;
+        }
+        var muniHit = feats.filter(function (f) {
+          var id = f.layer && f.layer.id;
+          return id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars';
+        })[0];
+        if (muniHit) onMuniClick({ features: [muniHit] });
+      });
       map.on('mouseenter', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = ''; });
       var removed = false;
