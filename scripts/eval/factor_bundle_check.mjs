@@ -53,6 +53,37 @@ const CASES = [
     sinDatoIds: ['gap_mulege_agua_energia', 'ev_sig_mulege_oasis'],
   },
   {
+    q: '¿Qué restringe la viabilidad junto al acuífero 0317?',
+    kind: 'viability',
+    needIds: ['ev_acuiferos_dma', 'rc_acuifero_0317', 'const_dma_deficit', 'dq_viabilidad_proyecto'],
+    needTypes: ['Evidence', 'ResourceCapacity', 'Constraint'],
+  },
+  {
+    q: '¿Cuáles son los riesgos del acuífero 0318 Cabo Pulmo?',
+    kind: 'risk',
+    needIds: ['ev_acuiferos_dma', 'rc_acuifero_0318', 'terr_anp_cabo_pulmo'],
+    needTypes: ['Evidence', 'ResourceCapacity', 'Territory'],
+  },
+  {
+    q: 'Riesgos de escorrentía en Los Cabos',
+    kind: 'risk',
+    needIds: ['ev_escorrentia', 'terr_los_cabos', 'dq_riesgos_principales'],
+    needTypes: ['Evidence', 'Territory'],
+  },
+  {
+    q: '¿Quién decide el desarrollo urbano en Los Cabos según el organigrama?',
+    kind: 'viability',
+    needIds: ['ev_org_cabos_2024', 'gap_org_obras_cabos', 'actor_implan_cabos', 'ev_mesa_urbanismo'],
+    needTypes: ['Evidence', 'Constraint', 'Actor'],
+    sinDatoIds: ['gap_org_obras_cabos'],
+  },
+  {
+    q: '¿Puede Comondú compensar el déficit de agua de Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_preguntas_estrategicas', 'terr_comondu', 'const_dma_deficit', 'dd_agro_santo_domingo'],
+    needTypes: ['Evidence', 'Territory', 'Constraint', 'DemandDriver'],
+  },
+  {
     q: '¿Es viable un hotel en Los Cabos con el dossier del lugar?',
     kind: 'viability',
     needIds: ['ev_dossiers_lugar', 'ev_fiscal_anexo_2025', 'terr_los_cabos', 'rc_acuifero_0317', 'const_dma_deficit'],
