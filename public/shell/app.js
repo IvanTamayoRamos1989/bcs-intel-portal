@@ -35,6 +35,146 @@
   function setStatus(es, en) {
     if (statusEl) statusEl.textContent = tx(es, en);
   }
+  var ficheEl = document.getElementById('shell-fiche');
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function closeFiche() {
+    if (!ficheEl) return;
+    ficheEl.hidden = true;
+    ficheEl.innerHTML = '';
+  }
+  function filesFor(text) {
+    if (!index || !text) return [];
+    var q = norm(text);
+    if (q.length < 4) return [];
+    var hits = [];
+    (index.files || []).forEach(function (row) {
+      if (fileBlob(row).indexOf(q) !== -1) hits.push(row);
+    });
+    return hits.slice(0, 4);
+  }
+  function openFiche(info) {
+    if (!ficheEl || !info) return;
+    var rows = (info.rows || []).filter(function (row) { return row && row.value != null && row.value !== ''; });
+    var files = info.files || [];
+    var html = '<button type="button" class="shell-fiche-x">' + tx('Cerrar', 'Close') + '</button>';
+    html += '<p class="shell-fiche-kicker">' + esc(tx(info.kind_es, info.kind_en)) + '</p>';
+    html += '<h2>' + esc(info.title) + '</h2><dl>';
+    rows.forEach(function (row) {
+      html += '<dt>' + esc(tx(row.es, row.en)) + '</dt><dd>' + esc(row.value) + '</dd>';
+    });
+    html += '</dl>';
+    if (info.href) html += '<p><a href="' + esc(info.href) + '">' + esc(tx(info.href_es || 'Abrir ficha', info.href_en || 'Open page')) + '</a></p>';
+    if (files.length) {
+      html += '<p class="shell-fiche-kicker">' + tx('Archivos', 'Files') + '</p><div class="shell-fiche-files">';
+      files.forEach(function (row, i) {
+        html += '<button type="button" data-fiche-file="' + i + '">' + esc(fileName(row)) + '</button>';
+      });
+      html += '</div>';
+    }
+    ficheEl.innerHTML = html;
+    ficheEl.hidden = false;
+    var x = ficheEl.querySelector('.shell-fiche-x');
+    if (x) x.addEventListener('click', closeFiche);
+    ficheEl.querySelectorAll('[data-fiche-file]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        renderPreview(files[Number(btn.getAttribute('data-fiche-file'))]);
+      });
+    });
+  }
+  function muniRow(name) {
+    return (model.munis || []).filter(function (m) { return m.name === name; })[0];
+  }
+  function openMuniFiche(name, note) {
+    var row = muniRow(name);
+    if (!name) return;
+    var rows = [];
+    if (row && row.pob) {
+      var n = Number(row.pob).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX');
+      rows.push({ es: 'Población 2020', en: 'Population 2020', value: n + (lang() === 'en' ? ' people' : ' habitantes') });
+      rows.push({ es: 'Fuente', en: 'Source', value: 'INEGI Censo 2020' });
+    }
+    if (note) rows.push({ es: 'Lectura', en: 'Reading', value: tx(note[0], note[1]) });
+    if (extrudeOn) rows.push({ es: 'Columna', en: 'Column', value: tx('La columna compara esta población. No es el relieve ni un edificio.', 'The column compares this population. It is not the relief or a building.') });
+    openFiche({
+      title: name,
+      kind_es: 'Municipio',
+      kind_en: 'Municipality',
+      rows: rows,
+      href: row && row.studio ? row.studio : '',
+      href_es: 'Ficha del municipio',
+      href_en: 'Municipality page',
+      files: filesFor(name),
+    });
+    paintMuni(name);
+  }
+  function featureLabel(p) {
+    return p.name || p.name_es || p.NOM_LOC || p.NOM_NUC || p.NOMBRE_UGA || p.proyecto || p.ref || '';
+  }
+  function openFeatureFiche(feature, lngLat, meta, note) {
+    var p = (feature && feature.properties) || {};
+    var layerId = feature && feature.layer && feature.layer.id || '';
+    if (layerId === 'cdt-muni-fill' || layerId === 'cdt-muni-extrude' || layerId === 'cdt-muni-line' || layerId === 'cdt-bars') {
+      if (p.name) openMuniFiche(p.name);
+      return;
+    }
+    var title = featureLabel(p) || (meta ? (lang() === 'en' ? meta.name_en : meta.name_es) : '');
+    if (!title) return;
+    var rows = [];
+    if (meta) rows.push({ es: 'Capa', en: 'Layer', value: lang() === 'en' ? meta.name_en : meta.name_es });
+    var fields = [
+      ['place', 'Tipo en el mapa', 'Map type'],
+      ['kind', 'Clase', 'Kind'],
+      ['population', 'Población publicada', 'Published population'],
+      ['pobtot', 'Población publicada', 'Published population'],
+      ['municipio', 'Municipio', 'Municipality'],
+      ['tier', 'Jerarquía', 'Tier'],
+      ['sector', 'Sector', 'Sector'],
+      ['dependencia', 'Dependencia', 'Agency'],
+      ['estado', 'Estado del proyecto', 'Project status'],
+      ['sexenio', 'Sexenio', 'Administration'],
+      ['monto_MXN', 'Monto publicado (MXN)', 'Published amount (MXN)'],
+      ['precision_es', 'Precisión', 'Precision', 'precision_en'],
+      ['fact_es', 'Dato publicado', 'Published figure', 'fact_en'],
+      ['fuente', 'Fuente', 'Source'],
+      ['source', 'Fuente', 'Source'],
+      ['NOMBRE_UGA', 'Zona', 'Zone'],
+      ['CLAVE_UGA', 'Clave', 'Code'],
+      ['icao', 'ICAO', 'ICAO'],
+      ['iata', 'IATA', 'IATA'],
+    ];
+    fields.forEach(function (field) {
+      var key = lang() === 'en' && field[3] && p[field[3]] != null && p[field[3]] !== '' ? field[3] : field[0];
+      var raw = p[key];
+      if (raw == null || raw === '' || typeof raw === 'object') return;
+      var value = String(raw);
+      if (field[0] === 'monto_MXN' && !isNaN(Number(raw))) value = Number(raw).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX');
+      rows.push({ es: field[1], en: field[2], value: value });
+    });
+    if (meta && meta.source_es) rows.push({ es: 'Origen de la capa', en: 'Layer source', value: lang() === 'en' ? meta.source_en : meta.source_es });
+    if (note) rows.push({ es: 'Lectura', en: 'Reading', value: tx(note[0], note[1]) });
+    var href = typeof p.studio_href === 'string' && p.studio_href.charAt(0) === '/' ? p.studio_href : '';
+    openFiche({
+      title: title,
+      kind_es: meta ? meta.name_es : 'Elemento del mapa',
+      kind_en: meta ? meta.name_en : 'Map feature',
+      rows: rows,
+      href: href,
+      href_es: 'Página relacionada',
+      href_en: 'Related page',
+      files: filesFor(title),
+    });
+    if (lngLat && engine && engine.mark) engine.mark(lngLat.lng, lngLat.lat, title);
+  }
+  function onMapFeature(feats, lngLat) {
+    if (!feats || !feats.length) { closeFiche(); return; }
+    var feature = feats[0];
+    var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-edge$/, '');
+    openFeatureFiche(feature, lngLat, byId[id]);
+  }
   function boundsOf(feature) {
     var b = [180, 90, -180, -90];
     var found = false;
@@ -101,7 +241,10 @@
       var box = boundsOf(feat);
       paintMuni(name);
       if (box) flyBox(box);
-      if (!quiet) setStatus('Encuadre: ' + name + '.', 'Frame: ' + name + '.');
+      if (!quiet) {
+        setStatus('Encuadre: ' + name + '.', 'Frame: ' + name + '.');
+        openMuniFiche(name);
+      }
     });
   }
   function markReady() {
@@ -164,6 +307,7 @@
     basemap = mode === 'satellite' ? 'satellite' : 'streets';
     var wrap = document.querySelector('.shell-map-wrap');
     if (wrap) wrap.classList.toggle('is-sat', basemap === 'satellite');
+    document.body.classList.toggle('is-sat', basemap === 'satellite');
     document.querySelectorAll('[data-base]').forEach(function (btn) {
       btn.setAttribute('aria-pressed', btn.getAttribute('data-base') === basemap ? 'true' : 'false');
     });
@@ -228,6 +372,7 @@
       if (useMuni && place.muni) {
         jobs.push(focusMuni(place.muni, true).then(function () {
           if (place.noteIf) setStatus(place.noteIf[0], place.noteIf[1]);
+          openMuniFiche(place.muni, place.noteIf);
         }));
       } else if (place.layer && byId[place.layer]) {
         jobs.push(showLayer(place.layer, true).then(function (geo) {
@@ -236,11 +381,14 @@
           if (pt) {
             flyPoint(pt.lng, pt.lat, place.pin || hit.name);
             if (place.note) setStatus(place.note[0], place.note[1]);
-          } else if (place.muni) return focusMuni(place.muni);
+            openFeatureFiche(hit.feature, { lng: pt.lng, lat: pt.lat }, byId[place.layer], place.note);
+          } else if (place.muni) return focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note); });
         }));
-      } else if (place.muni) jobs.push(focusMuni(place.muni));
+      } else if (place.muni) jobs.push(focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note); }));
+    } else if (jobs.length) {
+      setStatus('El mapa encendió las capas de esa respuesta.', 'The map turned on the layers for that answer.');
     }
-    return Promise.all(jobs).then(function () { syncThemePressed(); });
+    return Promise.all(jobs).then(function () { syncThemePressed(); syncStackToggles(); });
   }
   function applyText(question, sources, answer) {
     pendingJob = { question: question, sources: sources || [], answer: answer || '' };
@@ -282,15 +430,7 @@
       pitch: pitched ? PITCH_ON : 0,
       bearing: pitched ? BEARING_ON : 0,
       exaggeration: TERRAIN_EX,
-      onMunicipality: function (name) {
-        var row = (model.munis || []).filter(function (m) { return m.name === name; })[0];
-        if (!row) return;
-        var n = Number(row.pob).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX');
-        setStatus(
-          name + ': ' + n + ' habitantes (INEGI 2020). La altura compara municipios; no es un edificio.',
-          name + ': ' + n + ' people (INEGI 2020). Height compares municipalities; it is not a building.'
-        );
-      },
+      onFeature: onMapFeature,
     }).then(function (eng) {
       engine = eng;
       setBasemap(basemap);
@@ -346,6 +486,7 @@
     btn.type = 'button';
     btn.className = 'shell-file';
     btn.textContent = fileName(row);
+    btn.title = fileName(row);
     btn.addEventListener('click', function () { renderPreview(row); });
     return btn;
   }
@@ -483,7 +624,7 @@
   function applyExtrusion() {
     if (!engine) return;
     if (engine.setExtrusion) engine.setExtrusion({});
-    if (engine.setMuniWash) engine.setMuniWash(0);
+    if (engine.setMuniWash) engine.setMuniWash(0.02);
     if (engine.setPopulationBars) engine.setPopulationBars(extrudeOn ? extrusionHeights() : null);
   }
   function applyTerrain() {
@@ -642,16 +783,18 @@
   });
 
   var shell = document.querySelector('.shell');
-  function drag(handle, key, sign) {
+  function drag(handle, key, sign, minW, probeSel) {
     if (!handle || !shell) return;
     handle.addEventListener('pointerdown', function (e) {
       if (window.matchMedia('(max-width: 900px)').matches) return;
       e.preventDefault();
+      var probe = shell.querySelector(probeSel);
       var startX = e.clientX;
-      var start = parseFloat(getComputedStyle(shell).getPropertyValue(key)) || (key === '--chat-w' ? 320 : 320);
+      var start = probe ? probe.getBoundingClientRect().width : 240;
       function move(ev) {
-        var next = Math.max(240, Math.min(480, start + sign * (ev.clientX - startX)));
+        var next = Math.max(minW, Math.min(window.innerWidth * 0.42, start + sign * (ev.clientX - startX)));
         shell.style.setProperty(key, next + 'px');
+        shell.style.setProperty('--map-w', '1fr');
         if (engine && engine.resize) engine.resize();
         if (leafletMap) leafletMap.invalidateSize();
       }
@@ -663,8 +806,30 @@
       window.addEventListener('pointerup', up);
     });
   }
-  drag(document.getElementById('split-l'), '--chat-w', 1);
-  drag(document.getElementById('split-r'), '--files-w', -1);
+  drag(document.getElementById('split-l'), '--chat-w', 1, 200, '.shell-chat');
+  drag(document.getElementById('split-r'), '--files-w', -1, 96, '.shell-files');
+  function resizeMapSoon() {
+    setTimeout(function () {
+      if (engine && engine.resize) engine.resize();
+      if (leafletMap) leafletMap.invalidateSize();
+    }, 40);
+  }
+  function setDock(id) {
+    var same = document.body.classList.contains('shell-dock-open') && document.body.getAttribute('data-dock') === id;
+    document.querySelectorAll('.shell-stack > li').forEach(function (li) {
+      li.classList.toggle('is-open', !same && li.getAttribute('data-dock-panel') === id);
+    });
+    document.querySelectorAll('.shell-dock-chips [data-dock]').forEach(function (btn) {
+      btn.setAttribute('aria-selected', !same && btn.getAttribute('data-dock') === id ? 'true' : 'false');
+    });
+    document.body.classList.toggle('shell-dock-open', !same);
+    if (same) document.body.removeAttribute('data-dock');
+    else document.body.setAttribute('data-dock', id);
+    resizeMapSoon();
+  }
+  document.querySelectorAll('.shell-dock-chips [data-dock]').forEach(function (btn) {
+    btn.addEventListener('click', function () { setDock(btn.getAttribute('data-dock')); });
+  });
   document.querySelectorAll('[data-fold]').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
