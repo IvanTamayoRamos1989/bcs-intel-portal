@@ -589,6 +589,22 @@ function expandQuery(query) {
   if (/\b(peotdu|poetdu)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bbarriles\b/.test(qn) && /\b(plan|psdu|pdu)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\b(cabo del este|east cape)\b/.test(qn) && /\b(boletin|pdu)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(segunda residencia|segundas residencias|second homes?)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bturismo\b/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\boomsapas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsepuimm\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bconanp\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if ((/\bcomision estatal del agua\b/.test(qn) || /\bcea\b/.test(qn)) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpoel\b/.test(qn) && /\b(desarrollador|exige agua)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bvivienda social\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(huracan|polo|rachel)\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\btrayectoria actual\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btodos santos\b/.test(qn) && /\b(amenidad|0313|acuifer)/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(east cape|cabo del este)\b/.test(qn) && /\b(desborde|spillover)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btranspeninsular\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bimplan\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpoer\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(oasis|hidrogen)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1143,7 +1159,15 @@ function factorSeedIds(qn, kinds) {
   if (/\bdesal\w*/.test(qn) && p.paz) add('proj_fed_agu_002', 'rc_acuifero_0324');
   if (/\bptar\b/.test(qn) && p.loreto) add('proj_fed_agu_005', 'terr_loreto', 'gap_loreto_dma');
   if (/\bmesa de agua\b/.test(qn)) add('ev_mesa_agua', 'actor_cea', 'actor_conagua');
-  if (/\bimplan\b/.test(qn)) add('actor_implan_cabos', 'ev_mesa_urbanismo', 'inst_pdu_cabos');
+  if (/\bimplan\b/.test(qn)) add('actor_implan_cabos', 'ev_mesa_urbanismo', 'inst_pdu_cabos', 'ev_org_cabos_2024');
+  if (/\b(segunda residencia|segundas residencias|second homes?)\b/.test(qn)) add('dd_residencial_cabos', 'ev_inmob_jll_2025');
+  if (/\bturismo\b/.test(qn) && p.paz) add('dd_turismo_lapaz', 'rc_acuifero_0324');
+  if (/\boomsapas\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_mesa_agua');
+  if (/\bsepuimm\b/.test(qn)) add('actor_sepuimm', 'inst_poerbcs');
+  if (/\bconanp\b/.test(qn)) add('actor_conanp', 'terr_anp_cabo_pulmo', 'const_anp_nucleos');
+  if (/\bcea\b/.test(qn) || /\bcomision estatal del agua\b/.test(qn)) add('actor_cea', 'ev_mesa_agua');
+  if (p.comondu && p.loreto && /\b(desal|ptar)\b/.test(qn)) add('ev_sig_comondu_loreto', 'proj_fed_agu_005', 'gap_loreto_dma');
+  if (/\btrayectoria actual\b/.test(qn)) add('ev_esc_baseline', 'dq_viabilidad_proyecto');
   if (/\bied\b/.test(qn)) add('ev_sig_tourism_fdi', 'const_dma_deficit');
   if (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn)) {
     add('dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'terr_loreto', 'terr_comondu', 'terr_mulege', 'ev_gds_cinco_polos');
