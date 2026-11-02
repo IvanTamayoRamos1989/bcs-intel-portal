@@ -67,7 +67,15 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
           <div class="shell-base" role="group" aria-label="Mapa base" data-aria-es="Mapa base" data-aria-en="Basemap">
             <button type="button" data-base="streets" aria-pressed="true"><span data-lang-es>Calles</span><span data-lang-en hidden>Streets</span></button>
             <button type="button" data-base="satellite" aria-pressed="false"><span data-lang-es>Satélite</span><span data-lang-en hidden>Satellite</span></button>
+            <button type="button" class="shell-capas-btn" id="shell-capas" aria-expanded="false">
+              <span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span>
+            </button>
           </div>
+          <div class="shell-scrim" id="shell-scrim" hidden></div>
+          <div class="shell-sheet" id="shell-sheet">
+            <button type="button" class="shell-sheet-x" id="shell-sheet-x">
+              <span data-lang-es>Cerrar capas</span><span data-lang-en hidden>Close layers</span>
+            </button>
           <div class="shell-themes" role="group" aria-label="Temas" data-aria-es="Temas" data-aria-en="Themes">
             {shellModel.themes.map((t) => (
               <button type="button" data-theme={t.id} aria-pressed="false">
@@ -103,6 +111,7 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
             <span data-lang-en hidden> stays off the map. The long board is at </span>
             <a href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>.
           </p>
+          </div>
         </div>
       </section>
       <div class="shell-split" id="split-r" role="separator" aria-orientation="vertical" aria-label="Ancho de los archivos">
@@ -120,6 +129,7 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
         <div id="shell-preview" hidden></div>
       </section>
     </div>
+    <p class="shell-toast" id="shell-toast" hidden role="status"></p>
     <nav class="shell-tabs" aria-label="Paneles">
       <button type="button" data-pane="chat" aria-pressed="false"><span data-lang-es>Consulta</span><span data-lang-en hidden>Chat</span></button>
       <button type="button" data-pane="map" aria-pressed="true"><span data-lang-es>Mapa</span><span data-lang-en hidden>Map</span></button>
@@ -189,6 +199,7 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
       .shell-brand strong { color: #0083C4; }
       .shell-brand a, .shell-gap a { color: #006BA3; font-weight: 700; }
       #lang-toggle { font: inherit; border: 1px solid #0083C4; background: #fff; color: #006BA3; border-radius: 999px; padding: .15rem .5rem; cursor: pointer; }
+      .shell-capas-btn, .shell-scrim, .shell-sheet-x, .shell-toast { display: none; }
       .shell-base, .shell-themes { display: flex; flex-wrap: wrap; gap: .3rem; margin: .35rem 0; }
       .shell-base button, .shell-themes button {
         font: inherit; font-size: .75rem; font-weight: 650; border: 1px solid #c5d5de; background: #fff; color: #1a1a1a;
@@ -302,6 +313,137 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
         .maplibregl-ctrl-top-right { top: .45rem; right: .35rem; }
         .maplibregl-ctrl-group button { width: 44px !important; height: 44px !important; }
         .cdt-pin { max-width: 68vw; white-space: normal; }
+        html, body.shell-app { overscroll-behavior: none; }
+        #shell-map, .maplibregl-canvas, .leaflet-container { touch-action: none; }
+        .shell-brand { position: absolute; top: .35rem; left: .45rem; z-index: 4; margin: 0; background: rgba(251, 248, 241, .92); border-radius: 999px; padding: .15rem .35rem .15rem .55rem; }
+        .shell-brand strong, .shell-brand a { display: none; }
+        .shell-tools {
+          position: static;
+          width: auto;
+          max-height: none;
+          overflow: visible;
+          padding: 0;
+          border: 0;
+          background: transparent;
+        }
+        .shell-base {
+          position: absolute;
+          z-index: 4;
+          left: .45rem;
+          bottom: .45rem;
+          margin: 0;
+          flex-wrap: nowrap;
+          background: rgba(251, 248, 241, .95);
+          border: 1px solid #e0e0e0;
+          border-radius: 16px;
+          padding: .35rem;
+        }
+        .shell-capas-btn { display: inline-flex; align-items: center; }
+        .shell-scrim { position: absolute; inset: 0; z-index: 3; background: transparent; }
+        body.shell-sheet-open .shell-scrim { display: block; }
+        .shell-sheet {
+          display: none;
+          position: absolute;
+          z-index: 4;
+          left: .45rem;
+          right: .45rem;
+          bottom: 4.2rem;
+          max-height: 42%;
+          overflow: auto;
+          background: rgba(251, 248, 241, .97);
+          border: 1px solid #e0e0e0;
+          border-radius: 16px;
+          padding: .45rem .7rem .7rem;
+        }
+        body.shell-sheet-open .shell-sheet { display: block; }
+        .shell-sheet-x {
+          display: block;
+          width: 100%;
+          min-height: 44px;
+          margin: 0 0 .25rem;
+          font: inherit;
+          font-weight: 750;
+          color: #006BA3;
+          background: #fff;
+          border: 1px solid #0083C4;
+          border-radius: 999px;
+        }
+        .shell-toast {
+          display: block;
+          position: absolute;
+          z-index: 6;
+          left: 50%;
+          bottom: calc(4.6rem + env(safe-area-inset-bottom, 0px));
+          transform: translateX(-50%);
+          max-width: calc(100% - 1.5rem);
+          margin: 0;
+          padding: .45rem .75rem;
+          border-radius: 999px;
+          background: #0b3a56;
+          color: #fff;
+          font-size: .9rem;
+          font-weight: 650;
+          text-align: center;
+        }
+        .shell-toast[hidden] { display: none !important; }
+        .shell-badge {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 1.15rem;
+          height: 1.15rem;
+          margin-left: .3rem;
+          padding: 0 .28rem;
+          border-radius: 999px;
+          background: #0083C4;
+          color: #fff;
+          font-size: .72rem;
+          font-weight: 750;
+          vertical-align: middle;
+        }
+        .shell-map-wrap.is-sat .shell-tools,
+        .shell-map-wrap.is-sat .shell-brand,
+        .shell-map-wrap.is-sat .shell-sheet {
+          background: rgba(8, 22, 34, .9);
+          color: #fff;
+          border-color: rgba(255, 255, 255, .72);
+        }
+        .shell-map-wrap.is-sat .shell-base button,
+        .shell-map-wrap.is-sat .shell-themes button,
+        .shell-map-wrap.is-sat #lang-toggle,
+        .shell-map-wrap.is-sat .shell-sheet-x {
+          background: rgba(8, 22, 34, .55);
+          color: #fff;
+          border-color: #fff;
+        }
+        .shell-map-wrap.is-sat .shell-base button[aria-pressed="true"],
+        .shell-map-wrap.is-sat .shell-themes button[aria-pressed="true"] {
+          background: #0083C4;
+          color: #fff;
+          border-color: #fff;
+        }
+        .shell-map-wrap.is-sat .shell-layers summary,
+        .shell-map-wrap.is-sat .shell-status,
+        .shell-map-wrap.is-sat .shell-gap,
+        .shell-map-wrap.is-sat .shell-layer-group p,
+        .shell-map-wrap.is-sat .shell-layers label { color: #fff; }
+        .shell-map-wrap.is-sat .shell-gap a,
+        .shell-map-wrap.is-sat .shell-layers summary { color: #9fd0ea; }
+      }
+      @media (max-width: 900px) and (orientation: landscape) {
+        body.shell-app { flex-direction: row; padding-top: 0; padding-left: env(safe-area-inset-left, 0px); }
+        .shell-tabs {
+          display: flex;
+          flex-direction: column;
+          width: 4.75rem;
+          border-top: 0;
+          border-right: 1px solid #d5e2ea;
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .shell-tabs button { min-height: 44px; font-size: .78rem; padding: .35rem .15rem; }
+        .shell-tabs button[aria-pressed="true"] { box-shadow: inset 3px 0 0 #0083C4; }
+        .shell-toast { bottom: .6rem; }
+        .shell-sheet { bottom: 3.6rem; max-height: 70%; }
       }
     </style>
   </body>

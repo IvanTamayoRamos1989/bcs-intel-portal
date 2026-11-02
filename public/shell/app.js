@@ -162,6 +162,8 @@
 
   function setBasemap(mode) {
     basemap = mode === 'satellite' ? 'satellite' : 'streets';
+    var wrap = document.querySelector('.shell-map-wrap');
+    if (wrap) wrap.classList.toggle('is-sat', basemap === 'satellite');
     document.querySelectorAll('[data-base]').forEach(function (btn) {
       btn.setAttribute('aria-pressed', btn.getAttribute('data-base') === basemap ? 'true' : 'false');
     });
@@ -242,9 +244,9 @@
   }
   function applyText(question, sources, answer) {
     pendingJob = { question: question, sources: sources || [], answer: answer || '' };
-    focusFiles(question, sources, answer);
-    if (mapReady) return executeJob(question, sources, answer);
-    return Promise.resolve();
+    var n = focusFiles(question, sources, answer) || 0;
+    if (mapReady) executeJob(question, sources, answer);
+    return n;
   }
 
   function syncThemePressed() {
@@ -423,6 +425,7 @@
     relatedEl.appendChild(label);
     scored.slice(0, 8).forEach(function (item) { relatedEl.appendChild(rowButton(item.row)); });
     renderPreview(scored[0].row);
+    return Math.min(scored.length, 8);
   }
 
   function readBoot() {
@@ -467,7 +470,18 @@
     var d = ev.detail || {};
     var cited = (d.sources || []).slice();
     if (d.primary_file) cited.push(d.primary_file);
-    applyText(d.question || '', cited, d.answer || '');
+    var n = applyText(d.question || '', cited, d.answer || '');
+    if (!window.matchMedia('(max-width: 900px)').matches) return;
+    setBadge('files', n);
+    var pane = document.body.getAttribute('data-pane') || 'map';
+    if (pane === 'chat') {
+      showPane('map');
+      toast('El mapa ya muestra ese lugar.', 'The map now shows that place.');
+    } else if (pane === 'files') {
+      setBadge('map', 1);
+    } else {
+      toast('Listo en el mapa.', 'Ready on the map.');
+    }
   });
   window.addEventListener('bcs:placechange', function (ev) {
     var id = ev.detail && ev.detail.place;
@@ -513,16 +527,72 @@
     });
   });
 
+  var gesture = { x: 0, y: 0, moved: false };
+  document.addEventListener('pointerdown', function (e) {
+    gesture.x = e.clientX;
+    gesture.y = e.clientY;
+    gesture.moved = false;
+  }, true);
+  document.addEventListener('pointermove', function (e) {
+    if (Math.abs(e.clientX - gesture.x) + Math.abs(e.clientY - gesture.y) > 16) gesture.moved = true;
+  }, true);
+  function showPane(name) {
+    document.body.setAttribute('data-pane', name);
+    document.querySelectorAll('[data-pane]').forEach(function (b) {
+      var on = b.getAttribute('data-pane') === name;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on) {
+        var badge = b.querySelector('.shell-badge');
+        if (badge && name === 'map') badge.hidden = true;
+      }
+    });
+    setTimeout(function () {
+      if (engine && engine.resize) engine.resize();
+      if (leafletMap) leafletMap.invalidateSize();
+    }, 60);
+  }
+  function setBadge(name, count) {
+    var btn = document.querySelector('.shell-tabs [data-pane="' + name + '"]');
+    if (!btn) return;
+    var badge = btn.querySelector('.shell-badge');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.className = 'shell-badge';
+      btn.appendChild(badge);
+    }
+    if (!count) { badge.hidden = true; return; }
+    badge.hidden = false;
+    badge.textContent = count > 9 ? '9+' : String(count);
+  }
+  var toastTimer = 0;
+  function toast(es, en) {
+    var el = document.getElementById('shell-toast');
+    if (!el || !window.matchMedia('(max-width: 900px)').matches) return;
+    el.hidden = false;
+    el.textContent = tx(es, en);
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.hidden = true; }, 2400);
+  }
+  function setSheet(open) {
+    document.body.classList.toggle('shell-sheet-open', !!open);
+    var scrim = document.getElementById('shell-scrim');
+    var btn = document.getElementById('shell-capas');
+    if (scrim) scrim.hidden = !open;
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  var capasBtn = document.getElementById('shell-capas');
+  if (capasBtn) capasBtn.addEventListener('click', function () {
+    setSheet(!document.body.classList.contains('shell-sheet-open'));
+  });
+  var sheetX = document.getElementById('shell-sheet-x');
+  if (sheetX) sheetX.addEventListener('click', function () { setSheet(false); });
+  var scrim = document.getElementById('shell-scrim');
+  if (scrim) scrim.addEventListener('click', function () { setSheet(false); });
+
   document.querySelectorAll('[data-pane]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      document.body.setAttribute('data-pane', btn.getAttribute('data-pane'));
-      document.querySelectorAll('[data-pane]').forEach(function (b) {
-        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-      });
-      setTimeout(function () {
-        if (engine && engine.resize) engine.resize();
-        if (leafletMap) leafletMap.invalidateSize();
-      }, 60);
+      if (gesture.moved) return;
+      showPane(btn.getAttribute('data-pane'));
     });
   });
 
