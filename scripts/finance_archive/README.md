@@ -9,6 +9,7 @@ Definir `BCS_FINANCE_ARCHIVE` como ruta del archivo local. Si no se define, se u
 ```text
 python scripts/finance_archive/collect.py --workers 6
 python scripts/finance_archive/enrich_pdf.py
+python scripts/finance_archive/prepare_portal.py
 python scripts/finance_archive/test_collect.py
 node scripts/check_finanzas.mjs
 ```
@@ -22,6 +23,8 @@ La cola es reanudable. `--retry-errors` vuelve a intentar los errores. `progress
 Solo se incluyen documentos descargados y con contenido legible; la primera entrega contiene PDF con extractos automáticos de la primera página. Los extractos pueden contener errores OCR. Tema y años se detectan en título/URL, sin atribuirles automáticamente un ejercicio fiscal. No se geolocalizan importes ni se distribuyen entre municipios.
 
 `catalog.json`, su equivalente de carga `catalog.js` y `catalog.csv` deben regenerarse conjuntamente desde la base de archivo, conservando identidad URL, SHA-256 y fuentes. Nunca convertir candidatos o errores en documentos disponibles. El registro local conserva todos los formatos y los pendientes; el portal presenta la fecha y límites de la entrega.
+
+`prepare_portal.py` regenera estos tres archivos sin sobrescribir la interfaz ni los importes previamente verificados. Requiere `pypdf` para la extracción previa. El inventario completo se exporta a `BCS_FINANCE_ARCHIVE/catalog`; revisar los cambios y ejecutar los controles antes de publicar una nueva entrega.
 
 `budget-2026-q2.json` y `budget.js` contienen exclusivamente la fila **Total de Egresos**, página 2, del informe LDF de clasificación funcional del Gobierno de BCS, 1 de enero–30 de junio de 2026, en pesos. Se revisó la página renderizada. Conciliaciones: aprobado + ajustes = modificado; modificado − devengado = subejercicio. El aprobado coincide con `fiscal_docs.state_pe_2026`. El porcentaje mostrado no es evaluación de desempeño. Los demás importes del catálogo no están validados.
 
