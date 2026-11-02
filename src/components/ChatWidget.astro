@@ -1,9 +1,9 @@
 ---
 import { ui } from '../i18n/ui';
 import PlaceStrip from './PlaceStrip.astro';
-const { home = false } = Astro.props;
+const { home = false, shell = false } = Astro.props;
 ---
-<aside id="bcs-chat" class="bcs-chat" data-open="false" aria-label={ui.es.chatTitle}>
+<aside id="bcs-chat" class:list={['bcs-chat', shell && 'bcs-chat-shell']} data-open={shell ? 'true' : 'false'} aria-label={ui.es.chatTitle}>
   <div class="bcs-chat-backdrop" id="bcs-chat-backdrop" hidden></div>
   <button type="button" class="bcs-chat-tab" id="bcs-chat-open" aria-expanded="false" aria-controls="bcs-chat-panel">
     <span class="bcs-chat-tab-label" data-i18n="chatOpen">{ui.es.chatOpen}</span>
@@ -50,7 +50,14 @@ const { home = false } = Astro.props;
           </ul>
         </div>
       )}
-      <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
+      {shell ? (
+        <p class="shell-chat-lead">
+          <span data-lang-es>Pregunta por un lugar o un tema. El mapa y los archivos siguen la respuesta.</span>
+          <span data-lang-en hidden>Ask about a place or a theme. The map and the files follow the answer.</span>
+        </p>
+      ) : (
+        <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
+      )}
       <div class="bcs-chat-sugg" id="bcs-chat-sugg" aria-label="Preguntas sugeridas" data-aria-es="Preguntas sugeridas" data-aria-en="Suggested questions">
         <p class="bcs-chat-sugg-title"><span data-lang-es>Empieza a explorar</span><span data-lang-en hidden>Start exploring</span></p>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Cuánta agua hay disponible en mi municipio?" data-q-en="How much water is available in my municipality?"><img class="bcs-sugg-th" src="/maps/dma-la-paz-localizacion.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Cuánta agua hay disponible en mi municipio?</span><span data-lang-en hidden>How much water is available in my municipality?</span></span></button>
@@ -1027,6 +1034,38 @@ const { home = false } = Astro.props;
     body.chat-home .bcs-sugg-k { padding: .45rem .6rem 0 !important; }
     body.chat-home .bcs-sugg-q { padding: .2rem .6rem .6rem !important; font-size: .8rem; -webkit-line-clamp: 3; }
   }
+  body.shell-app #bcs-chat.bcs-chat {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    pointer-events: auto;
+    z-index: 1;
+  }
+  body.shell-app #bcs-chat .bcs-chat-tab,
+  body.shell-app #bcs-chat .bcs-chat-x,
+  body.shell-app #bcs-chat .bcs-chat-backdrop,
+  body.shell-app #bcs-chat .bcs-chat-sheet-controls { display: none !important; }
+  body.shell-app #bcs-chat .bcs-chat-panel {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: flex !important;
+  }
+  body.shell-app #bcs-chat .shell-chat-lead { margin: 0; color: #3c5163; font-size: .84rem; line-height: 1.4; }
+  body.shell-app #bcs-chat .bcs-chat-sugg { display: flex; flex-direction: column; }
+  body.shell-app #bcs-chat .bcs-sugg-th { display: none; }
 </style>
 
 <script is:inline src="/js/bcs-chat-render.js"></script>
@@ -1043,7 +1082,8 @@ const { home = false } = Astro.props;
   var msgs = document.getElementById('bcs-chat-msgs');
   var history = [];
   var CHAT_HOME = document.body.classList.contains('chat-home');
-  var MQ = CHAT_HOME ? { matches: false, addEventListener: function () {} } : window.matchMedia('(max-width: 900px)');
+  var SHELL = document.body.classList.contains('shell-app');
+  var MQ = (CHAT_HOME || SHELL) ? { matches: false, addEventListener: function () {} } : window.matchMedia('(max-width: 900px)');
   var SESSION_KEY = 'bcs_chat_sid';
   function chatSessionId() {
     try {
@@ -1652,7 +1692,7 @@ const { home = false } = Astro.props;
         } catch (e) {}
         try {
           // Hook for pages that extend the chat (e.g. /explorar adds map "Localizar" chips). No effect elsewhere.
-          document.dispatchEvent(new CustomEvent('bcs:chat-answer', { detail: { answer: answer, bubble: bubble, sources: j.sources || [], grounded: j.grounded, question: message } }));
+          document.dispatchEvent(new CustomEvent('bcs:chat-answer', { detail: { answer: answer, bubble: bubble, sources: j.sources || [], grounded: j.grounded, question: message, place: j.place || null, primary_file: j.primary_file || null } }));
         } catch (e) {}
         history.push({ role: 'assistant', content: answer });
         lastSpokenText = String(answer || '').replace(/\s+/g, ' ').trim().slice(0, 1200);
