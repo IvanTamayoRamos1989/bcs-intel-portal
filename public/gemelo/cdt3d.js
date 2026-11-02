@@ -408,8 +408,20 @@
         if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', 'none');
       }
+      function tagPoer(geo) {
+        if (!geo || !geo.features) return geo;
+        geo.features.forEach(function (f) {
+          if (!f.properties) f.properties = {};
+          var clas = String(f.properties.CLASIFICAC || '');
+          var m = clas.match(/_(AS|PT|PR|RT)$/);
+          f.properties.politica = m ? m[1] : 'OTRA';
+        });
+        return geo;
+      }
       function show(id, geo, meta, mode) {
+        if (id === 'poer_ugas') geo = tagPoer(geo);
         var lid = ensure(id, geo, meta);
+        if (id === 'poer_ugas' && map.getSource('cdt-src-' + id)) map.getSource('cdt-src-' + id).setData(geo);
         var vis = mode === 'off' ? 'none' : 'visible';
         map.setLayoutProperty(lid, 'visibility', vis);
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', vis);
@@ -421,6 +433,12 @@
           map.setPaintProperty(lid, 'circle-stroke-color', mode === 'compare' ? '#0b3a56' : '#ffffff');
         } else if (line) {
           map.setPaintProperty(lid, 'line-width', mode === 'compare' ? 3.4 : 2.2);
+        } else if (id === 'poer_ugas') {
+          var poerColor = ['match', ['get', 'politica'], 'AS', '#2d6a4f', 'PT', '#6b3fa0', 'PR', '#d4a017', 'RT', '#c0392b', '#8d99ae'];
+          map.setPaintProperty(lid, 'fill-color', poerColor);
+          map.setPaintProperty(lid, 'fill-opacity', mode === 'compare' ? 0.62 : 0.5);
+          map.setPaintProperty(lid, 'fill-outline-color', poerColor);
+          if (map.getLayer(lid + '-edge')) map.setPaintProperty(lid + '-edge', 'line-color', '#1a1a1a');
         } else {
           map.setPaintProperty(lid, 'fill-opacity', mode === 'compare' ? 0.4 : 0.28);
         }

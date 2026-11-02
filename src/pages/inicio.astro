@@ -174,6 +174,7 @@ const shellModel = {
             <button type="button" data-dock="l3" aria-selected="false"><span class="shell-n">3</span><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></button>
             <button type="button" data-dock="l4" aria-selected="false"><span class="shell-n">4</span><span data-lang-es>Ciudad</span><span data-lang-en hidden>City</span></button>
             <button type="button" data-dock="l5" aria-selected="false"><span class="shell-n">5</span><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></button>
+            <button type="button" data-dock="suelo" aria-selected="false"><span class="shell-n">S</span><span data-lang-es>Uso de suelo</span><span data-lang-en hidden>Land use</span></button>
           </div>
         </div>
           <div class="shell-scrim" id="shell-scrim" hidden></div>
@@ -307,6 +308,38 @@ const shellModel = {
                     <a href={s.href}><span data-lang-es>{s.es}</span><span data-lang-en hidden>{s.en}</span></a>
                   ))}
                 </div>
+              </li>
+              <li data-dock-panel="suelo">
+                <header>
+                  <span class="shell-n">S</span>
+                  <div>
+                    <strong><span data-lang-es>Uso de suelo</span><span data-lang-en hidden>Land use</span></strong>
+                    <small><span data-lang-es>Tres instrumentos. Solo se dibuja el que tiene polígonos publicados.</span><span data-lang-en hidden>Three instruments. Only the one with published polygons is drawn.</span></small>
+                  </div>
+                </header>
+                <div class="shell-layer-group">
+                  <label>
+                    <input type="checkbox" data-layer="poer_ugas" />
+                    <span>
+                      <span data-lang-es>POERBCS — política ambiental (69 UGA)</span><span data-lang-en hidden>POERBCS — environmental policy (69 UGAs)</span>
+                      <small><span data-lang-es>SEPUIMM / POERBCS. Polígonos reales. El color sigue el sufijo de CLASIFICAC.</span><span data-lang-en hidden>SEPUIMM / POERBCS. Real polygons. Color follows the CLASIFICAC suffix.</span></small>
+                    </span>
+                  </label>
+                </div>
+                <ul class="shell-legend">
+                  <li><i style="background:#2d6a4f"></i><span data-lang-es>AS aprovechamiento sustentable</span><span data-lang-en hidden>AS sustainable use</span></li>
+                  <li><i style="background:#d4a017"></i><span data-lang-es>PR preservación</span><span data-lang-en hidden>PR preservation</span></li>
+                  <li><i style="background:#6b3fa0"></i><span data-lang-es>PT protección</span><span data-lang-en hidden>PT protection</span></li>
+                  <li><i style="background:#c0392b"></i><span data-lang-es>RT restauración</span><span data-lang-en hidden>RT restoration</span></li>
+                  <li><i style="background:#8d99ae"></i><span data-lang-es>Otra clave de CLASIFICAC</span><span data-lang-en hidden>Other CLASIFICAC code</span></li>
+                </ul>
+                <p class="shell-note"><span data-lang-es>Nombres tomados de la simbología de la carta publicada del modelo de ordenamiento (AS, PR, PT, RT).</span><span data-lang-en hidden>Names taken from the legend of the published ordering-model map (AS, PR, PT, RT).</span></p>
+                <div class="shell-scenarios">
+                  <button type="button" data-suelo="pdu"><span data-lang-es>PDU 2040 Los Cabos</span><span data-lang-en hidden>PDU 2040 Los Cabos</span></button>
+                  <button type="button" data-suelo="pducp"><span data-lang-es>PDU La Paz</span><span data-lang-en hidden>La Paz PDU</span></button>
+                  <button type="button" data-suelo="icluster"><span data-lang-es>iCluster</span><span data-lang-en hidden>iCluster</span></button>
+                </div>
+                <p class="shell-gap-note"><span data-lang-es>PDU 2040 y PDU La Paz: cartas o nota de entrega, sin polígonos en el portal. iCluster: próximo / sin datos. El ZIP Foster de octubre es INEGI, no zonificación.</span><span data-lang-en hidden>PDU 2040 and the La Paz PDU: published maps or a delivery note, no polygons in the portal. iCluster: upcoming / no data. The October Foster ZIP is INEGI, not zoning.</span></p>
               </li>
             </ol>
             <p class="shell-status" id="shell-status" aria-live="polite"></p>
@@ -460,6 +493,7 @@ const shellModel = {
       .shell-fiche dd { margin: 0 0 .35rem; font-size: .82rem; }
       .shell-fiche-x { font: inherit; font-size: .75rem; font-weight: 750; color: #006BA3; background: #fff; border: 1px solid #0083C4; border-radius: 999px; padding: .15rem .55rem; cursor: pointer; }
       .shell-fiche a { color: #006BA3; font-weight: 700; }
+      .shell-fiche img { width: 100%; height: auto; border-radius: 8px; margin: .25rem 0 .45rem; background: #eef3f6; }
       .shell-fiche-files { display: flex; flex-direction: column; gap: .2rem; margin-top: .3rem; }
       .shell-fiche-files button { text-align: left; font: inherit; font-size: .75rem; color: #0b3a56; background: #fff; border: 1px solid #d5e2ea; border-radius: 8px; padding: .25rem .4rem; cursor: pointer; }
       .shell-fiche-gap { margin: .4rem 0 0; padding: .4rem .5rem; border-radius: 8px; background: rgba(0, 131, 196, .08); color: #0b3a56; font-size: .75rem; line-height: 1.35; }
@@ -492,7 +526,11 @@ const shellModel = {
         background: rgba(0, 131, 196, .08); color: #0b3a56; font-size: .72rem; line-height: 1.35;
       }
       .shell-flow { font-weight: 750; color: #006BA3; }
+      .shell-legend { list-style: none; margin: .35rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .35rem .7rem; }
+      .shell-legend li { display: flex; align-items: center; gap: .3rem; font-size: .72rem; }
+      .shell-legend i { width: .7rem; height: .7rem; border-radius: 2px; display: inline-block; }
       .shell-scenarios { display: flex; flex-direction: column; gap: .28rem; margin-top: .35rem; }
+      .shell-scenarios button { font: inherit; font-size: .75rem; font-weight: 700; color: #006BA3; background: #fff; border: 1px solid rgba(0, 131, 196, .35); border-radius: 999px; padding: .28rem .6rem; cursor: pointer; text-align: left; }
       .shell-scenarios a {
         display: block; color: #006BA3; font-weight: 700; font-size: .75rem; text-decoration: none;
         border: 1px solid rgba(0, 131, 196, .35); border-radius: 999px; padding: .28rem .6rem; background: #fff;

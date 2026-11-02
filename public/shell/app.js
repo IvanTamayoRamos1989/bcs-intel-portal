@@ -93,6 +93,13 @@
       html += '</dl>';
     }
     if (info.href) html += '<p><a href="' + esc(info.href) + '">' + esc(tx(info.href_es || 'Abrir ficha', info.href_en || 'Open page')) + '</a></p>';
+    if (info.maps && info.maps.length) {
+      html += '<p class="shell-fiche-kicker">' + tx('Cartas publicadas, no georreferenciadas', 'Published maps, not georeferenced') + '</p>';
+      info.maps.forEach(function (item) {
+        html += '<p><a href="' + esc(item[0]) + '" target="_blank" rel="noopener noreferrer">' + esc(tx(item[1], item[2] || item[1])) + '</a></p>';
+        html += '<img src="' + esc(item[0]) + '" alt="' + esc(tx(item[1], item[2] || item[1])) + '">';
+      });
+    }
     if (info.foresight) {
       html += '<p class="shell-fiche-kicker">' + tx('Escenarios publicados', 'Published scenarios') + '</p>';
       html += '<div class="shell-fiche-acts">' + scenarioActs() + '</div>';
@@ -180,6 +187,11 @@
       ['source', 'Fuente', 'Source'],
       ['NOMBRE_UGA', 'Zona', 'Zone'],
       ['CLAVE_UGA', 'Clave', 'Code'],
+      ['CLASIFICAC', 'Clasificación', 'Classification'],
+      ['politica', 'Política (sufijo)', 'Policy suffix'],
+      ['UGA_MUN', 'Municipio de la UGA', 'UGA municipality'],
+      ['sup_Ha', 'Superficie de origen (ha)', 'Source area (ha)'],
+      ['CODE_PA', 'Código de política', 'Policy code'],
       ['icao', 'ICAO', 'ICAO'],
       ['iata', 'IATA', 'IATA'],
     ];
@@ -189,6 +201,11 @@
       if (raw == null || raw === '' || typeof raw === 'object') return;
       var value = String(raw);
       if (field[0] === 'monto_MXN' && !isNaN(Number(raw))) value = Number(raw).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX');
+      if (field[0] === 'sup_Ha' && !isNaN(Number(raw))) value = Number(raw).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX', { maximumFractionDigits: 1 });
+      if (field[0] === 'politica') {
+        var names = { AS: ['Aprovechamiento sustentable', 'Sustainable use'], PT: ['Protección', 'Protection'], PR: ['Preservación', 'Preservation'], RT: ['Restauración', 'Restoration'], OTRA: ['Otra clave', 'Other code'] };
+        if (names[value]) value = value + ' — ' + tx(names[value][0], names[value][1]);
+      }
       rows.push({ es: field[1], en: field[2], value: value });
     });
     if (meta && meta.source_es) rows.push({ es: 'Origen de la capa', en: 'Layer source', value: lang() === 'en' ? meta.source_en : meta.source_es });
@@ -395,6 +412,65 @@
     { re: /proyecto federal|federal project/, layers: ['federal_projects'] },
   ];
 
+  function sueloAsk(text) {
+    var q = norm(text || '');
+    if (/icluster|i-cluster|cluster economico|clusteres econom/.test(q)) return 'icluster';
+    if (/pducp|pdu la paz|pdu de la paz/.test(q)) return 'pducp';
+    if (/pdu\s*2040|pdu2040|implan los cabos/.test(q)) return 'pdu';
+    if (/poer|poerbcs|\buga\b|politica ambiental|uso de suelo|usos del suelo|zonific/.test(q)) return 'poer';
+    return '';
+  }
+  function openSuelo(kind) {
+    if (kind === 'poer') {
+      openFiche({
+        title: 'POERBCS',
+        kind_es: 'Uso de suelo publicado',
+        kind_en: 'Published land use',
+        rows: [
+          { es: 'Qué se dibuja', en: 'What is drawn', value: tx('69 polígonos de unidades de gestión ambiental. El color es el sufijo de CLASIFICAC: AS, PR, PT o RT.', '69 environmental management unit polygons. Color is the CLASIFICAC suffix: AS, PR, PT or RT.') },
+          { es: 'Fuente', en: 'Source', value: 'SEPUIMM — POERBCS' },
+        ],
+        gaps: [],
+      });
+      return;
+    }
+    if (kind === 'pdu') {
+      openFiche({
+        title: 'PDU 2040 Los Cabos',
+        kind_es: 'Instrumento publicado',
+        kind_en: 'Published instrument',
+        rows: [
+          { es: 'Polígonos', en: 'Polygons', value: tx('Próximo / sin datos. Hay cartas JPG y PDF del IMPLAN, sin archivo de georreferencia. No se inventa la zonificación.', 'Upcoming / no data. IMPLAN map images and PDFs exist, with no georeference file. Zoning is not invented.') },
+          { es: 'Fuente', en: 'Source', value: 'IMPLAN Los Cabos — PDU 2040' },
+        ],
+        maps: [
+          ['/maps/pdu2040-et-401-zonificacion-primaria.jpg', 'Zonificación primaria', 'Primary zoning'],
+          ['/maps/pdu2040-et-403-zonificacion-secundaria.jpg', 'Zonificación secundaria', 'Secondary zoning'],
+          ['/maps/pdu2040-carta-sintesis.jpg', 'Carta síntesis', 'Synthesis map'],
+        ],
+      });
+      return;
+    }
+    if (kind === 'pducp') {
+      openFiche({
+        title: 'PDU de La Paz',
+        kind_es: 'Instrumento descrito, no cargado',
+        kind_en: 'Instrument described, not loaded',
+        rows: [
+          { es: 'Polígonos', en: 'Polygons', value: tx('Próximo / sin datos. La nota de entrega cita zonificacion_pducp del Visor Urbano, pero ese GeoPackage no está en el portal.', 'Upcoming / no data. The delivery note cites Visor Urbano zonificacion_pducp, but that GeoPackage is not in the portal.') },
+        ],
+      });
+      return;
+    }
+    openFiche({
+      title: 'iCluster',
+      kind_es: 'Sin geometría en el portal',
+      kind_en: 'No geometry in the portal',
+      rows: [
+        { es: 'Capa', en: 'Layer', value: tx('Próximo / sin datos. No hay polígonos iCluster. El paquete Foster del 29 de octubre es marco INEGI, manzanas, AGEB, DENUE y red vial; deja el POER fuera. No se fabrica un clúster con esos puntos.', 'Upcoming / no data. There are no iCluster polygons. The 29 October Foster package is the INEGI framework, blocks, AGEB, DENUE and roads; it leaves POER out. A cluster is not built from those points.') },
+      ],
+    });
+  }
   function pickRule(text) {
     var q = norm(text || '');
     for (var i = 0; i < RULES.length; i++) if (RULES[i].re.test(q)) return RULES[i];
@@ -403,6 +479,8 @@
   function executeJob(question, sources, answer) {
     var q = norm((question || '') + ' ' + (answer || ''));
     var jobs = [];
+    var suelo = sueloAsk(question || '');
+    if (suelo === 'poer' && byId.poer_ugas) jobs.push(showLayer('poer_ugas', true));
     var pillar = pillarOf(question || '');
     THEME_RULES.forEach(function (rule) {
       if (!rule.re.test(q)) return;
@@ -440,10 +518,16 @@
         gaps: gaps,
       });
       setStatus(GAPS[pillar.id][0], GAPS[pillar.id][1]);
-    } else if (jobs.length) {
+    } else if (jobs.length && !suelo) {
       setStatus('El mapa encendió las capas de esa respuesta.', 'The map turned on the layers for that answer.');
     }
-    return Promise.all(jobs).then(function () { syncThemePressed(); syncStackToggles(); });
+    if (suelo === 'pdu') jobs.push(focusMuni('Los Cabos', true));
+    if (suelo === 'pducp') jobs.push(focusMuni('La Paz', true));
+    return Promise.all(jobs).then(function () {
+      syncThemePressed();
+      syncStackToggles();
+      if (suelo) openSuelo(suelo);
+    });
   }
   function applyText(question, sources, answer) {
     pendingJob = { question: question, sources: sources || [], answer: answer || '' };
@@ -884,6 +968,15 @@
   }
   document.querySelectorAll('.shell-dock-chips [data-dock]').forEach(function (btn) {
     btn.addEventListener('click', function () { setDock(btn.getAttribute('data-dock')); });
+  });
+  document.querySelectorAll('[data-suelo]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var kind = btn.getAttribute('data-suelo');
+      if (kind === 'poer') showLayer('poer_ugas', true);
+      if (kind === 'pdu') focusMuni('Los Cabos', true);
+      if (kind === 'pducp') focusMuni('La Paz', true);
+      openSuelo(kind);
+    });
   });
   document.querySelectorAll('[data-fold]').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
