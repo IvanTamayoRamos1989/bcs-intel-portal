@@ -573,7 +573,7 @@
         var layers = featureLayers();
         var feats = layers.length ? map.queryRenderedFeatures(e.point, { layers: layers }) : [];
         if (opts.onFeature) {
-          opts.onFeature(feats, { lng: e.lngLat.lng, lat: e.lngLat.lat });
+          opts.onFeature(feats, { lng: e.lngLat.lng, lat: e.lngLat.lat, zoom: map.getZoom() });
           return;
         }
         var muniHit = feats.filter(function (f) {
