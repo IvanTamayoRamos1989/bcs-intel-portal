@@ -1526,6 +1526,60 @@ def main():
             })
             print("factor_library_pages=1")
 
+    gaps_path = ROOT / "src" / "data" / "data_gaps.json"
+    if gaps_path.is_file():
+        gaps_doc = json.loads(gaps_path.read_text(encoding="utf-8"))
+        gap_rows = [g for g in (gaps_doc.get("gaps") or []) if isinstance(g, dict) and g.get("id")]
+        lines = []
+        for g in gap_rows:
+            if g.get("status") == "filled":
+                continue
+            lines.append(
+                f"{g.get('id')} [{g.get('status') or 'open'}]: {g.get('topic') or ''}. {g.get('detail_es') or ''}"
+            )
+        if lines:
+            chunks.append({
+                "id": "factor:huecos",
+                "title": "Huecos de datos ya listados para factores territoriales",
+                "path": "src/data/data_gaps.json#factor",
+                "theme": "ontologia",
+                "sum_es": clip(
+                    "Brechas canónicas (data_gaps.json). No rellenar con cifras nuevas. "
+                    + " | ".join(lines)
+                    + " [hueco gap sin dato dma energia permisos subestaciones]",
+                    950,
+                ),
+                "sum_en": clip(
+                    "Canonical gaps (data_gaps.json). Do not fill them with new figures. "
+                    + " | ".join(lines)
+                    + " [gap missing data dma energy permits substations]",
+                    950,
+                ),
+                "drive_url": None,
+                "type": "guide",
+                "display_title": "Huecos de datos del portal para factores acoplados",
+            })
+            n_gapcards = 0
+            for g in gap_rows:
+                body = (
+                    f"Hueco {g.get('id')} ({g.get('status') or 'open'}, prioridad {g.get('priority') or 's/d'}): "
+                    f"{g.get('topic') or ''}. {g.get('detail_es') or ''} {g.get('notes') or ''} "
+                    "sin inventar el dato que falta."
+                )
+                chunks.append({
+                    "id": f"gapcard:{g.get('id')}",
+                    "title": f"Hueco: {g.get('topic') or g.get('id')}"[:120],
+                    "path": f"src/data/data_gaps.json#{g.get('id')}",
+                    "theme": "ontologia",
+                    "sum_es": clip(body + " [hueco gap sin dato]", 700),
+                    "sum_en": clip(body + " [gap missing data]", 700),
+                    "drive_url": None,
+                    "type": "guide",
+                    "display_title": f"Hueco de datos: {g.get('topic') or g.get('id')}"[:120],
+                })
+                n_gapcards += 1
+            print(f"factor_gap_cards={n_gapcards}")
+
     # Curated bilingual DMA snapshot (documented deficits — not official statewide consumption)
     dma_es = (
         "Snapshot agua BCS — déficits DMA documentados (CONAGUA 2024 / guía agua / ontología), "
