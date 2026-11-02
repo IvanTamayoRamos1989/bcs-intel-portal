@@ -417,7 +417,7 @@
   },
   "inst_poer_politicas": {
     "label_en": "UGA environmental policies (POERBCS)",
-    "summary_en": "The POERBCS proposal report (SEPUIMM; portal extract) names Sustainable Use, Preservation and Protection policies; the extract cuts off at Protection. The portal's 69-polygon layer (clave_MOE) uses suffixes AS (32), PT (27) and PR (10). RT does not appear in that layer. Full letter-to-name glossary and CODE_PA (2, 3 and 4): sin dato en corpus. Urban deferrals in the planning guide, not parcel zoning: BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; BCS32AS PSDU Todos Santos–El Pescadero–Las Playitas; BCS31AS PSDU Los Barriles–El Cardonal; BCS30AS PSDU Loreto (2007 gazette marked GAP)."
+    "summary_en": "POERBCS environmental policies from extracts already on the portal, not a new table. Proposal-report contents (SEPUIMM — POERBCS Informe propuesta modelo (2025)): Sustainable Use, Preservation and Protection (the extract cuts off at Protection). OCR table in the lineamientos PDF: Preservation, Protection and Restoration. 69-polygon layer (clave_MOE): suffixes AS 32, PT 27, PR 10; RT absent. CODE_PA 2, 3 and 4 have no name. See inst_pa_* nodes and gap_politica_uga_leyenda."
   },
   "ev_mesas_trabajo": {
     "label_en": "Programme working tables",
@@ -453,10 +453,62 @@
   },
   "gap_politica_uga_leyenda": {
     "label_en": "Gap: AS/PR/PT/RT and CODE_PA legend",
-    "summary_en": "sin dato en corpus for the full letter-to-policy table and for the meaning of CODE_PA. Observed: AS, PT and PR suffixes on clave_MOE; RT is absent from the 69-polygon layer. Do not assert that RT means Restoration or translate CODE_PA 2/3/4 into a name the extract does not give."
+    "summary_en": "sin dato en corpus for the letter-to-policy table and for the meaning of CODE_PA (the layer uses 2, 3 and 4 with no name). The names do appear in extracts: Sustainable Use, Preservation, Protection and, only in the lineamientos, Restoration. Do not assert that AS, PR, PT or RT equal those names, except the loose map OCR «aprovechamiento sustentable AS», which is not a decree. RT is not in the 69-polygon layer."
   },
   "gap_riesgo_capas_vector": {
     "label_en": "Gap: CENAPRED/SSN hazard vector layers",
     "summary_en": "sin dato en corpus. The risks guide says CENAPRED/SSN vector layers for geoprocessing are not consolidated. Do not invent a seismic, flood or cyclone grid beyond the maps already cited (atlas / gallery)."
+  },
+  "inst_pa_aprovechamiento": {
+    "label_en": "Sustainable-use environmental policy",
+    "summary_en": "Named in the POERBCS proposal-report contents (portal extract, p. 18 section). Map OCR shows «aprovechamiento sustentable AS»; that is not an official letter-to-code table. The clave_MOE layer has 32 AS suffixes. CODE_PA is not translated."
+  },
+  "inst_pa_preservacion": {
+    "label_en": "Preservation environmental policy",
+    "summary_en": "Named in the proposal-report contents (extract p. 19) and in the lineamientos OCR table («POLÍTICA DE PRESERVACIÓN»). The extract does not say the suffix PR is that policy. The layer has 10 PR suffixes."
+  },
+  "inst_pa_proteccion": {
+    "label_en": "Protection environmental policy",
+    "summary_en": "The proposal contents cut off at «Política de Protección»; the lineamientos OCR table writes «POLÍTICA DE PROTECCIÓN». UGA sheet 01 Vizcaíno uses PT (BCS01PT) with no glossary. PT = Protection is not asserted as a portal table."
+  },
+  "inst_pa_restauracion": {
+    "label_en": "Restoration environmental policy",
+    "summary_en": "Appears in the lineamientos OCR table («POLÍTICA DE RESTAURACIÓN»), not in the truncated proposal contents. The suffix RT is not in the 69-polygon layer. RT is not assigned to this policy. sin dato en corpus for an official suffix."
+  },
+  "dq_pack_east_cape": {
+    "label_en": "Which coupled factors apply to East Cape / Cabo Pulmo?",
+    "summary_en": "East Cape pack. Consult aquifer 0318, Cabo Pulmo ANP, coastal pressure, air access via SJD (no own airport in the scorecard), POERBCS, and the local-instrument and quantitative-load gaps. Do not invent rooms or a Cabo del Este PDU."
+  },
+  "gap_east_cape_instrumento": {
+    "label_en": "Gap: East Cape / La Ribera instrument",
+    "summary_en": "sin dato en corpus. The East Cape scorecard marks land_instruments_gap: no consolidated PDU/POEL/partial plan for East Cape or San José del Este. The planning guide: no PSDU named La Ribera. Do not invent zoning."
+  },
+  "gap_east_cape_carga": {
+    "label_en": "Gap: East Cape quantitative load",
+    "summary_en": "sin dato en corpus. The scorecard marks settlement pressure and local jobs as gaps, and says quantitative load evidence is still incomplete. DMA 0318 and the ANP are on the graph; no room ceiling is invented."
+  },
+  "dq_pack_loreto": {
+    "label_en": "Which coupled factors apply to Loreto?",
+    "summary_en": "Loreto pack. Consult Bahía de Loreto ANP, the 2014 POEL (planning guide), the federal WWTP inventory, the PSDU gazette gap, and the scorecard gaps for local DMA and local electric margin. The WWTP does not replace a DMA figure the portal does not have."
+  },
+  "inst_poel_loreto": {
+    "label_en": "Loreto POEL (2014)",
+    "summary_en": "The planning guide marks it in force (BOGE 2014, 12 Mar). The growth scorecard repeats the 2014 POEL in force and the 2024 PSDU update in consultation. It does not close the 2007 PSDU gazette gap."
+  },
+  "gap_loreto_dma": {
+    "label_en": "Gap: Loreto local DMA",
+    "summary_en": "sin dato en corpus. The Loreto scorecard (water_dma_local_gap) says the focus GIS layer covers the southern pack 0313–0325 and has no Loreto DMA marker. The WWTP (proj_fed_agu_005) does not replace that figure."
+  },
+  "gap_loreto_energia_local": {
+    "label_en": "Gap: Loreto local electric margin",
+    "summary_en": "sin dato en corpus. The scorecard does not split Loreto electric demand inside the SIBCS peak. The state ceiling remains rc_sibcs / const_red_aislada."
+  },
+  "dq_pack_mulege": {
+    "label_en": "Which coupled factors apply to Mulegé / Vizcaíno?",
+    "summary_en": "Mulegé–Vizcaíno pack. Consult El Vizcaíno ANP, the desert-spine stills observation, the Transpeninsular highway, the municipal PDU gap, and the water–energy balance gap. The hydrogen signal (foresight sig-mulege-oasis-h2) is not a capacity or MW node."
+  },
+  "gap_mulege_agua_energia": {
+    "label_en": "Gap: Mulegé water–energy balance",
+    "summary_en": "sin dato en corpus for a municipal water–energy balance. terr_mulege already says that capacity is not claimed beyond TI. The mulege_north scorecard is an unknown reading: the H2 signal (sig-mulege-oasis-h2) has no project node and no MW on the graph. Do not invent the Oasis plant."
   }
 }

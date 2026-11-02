@@ -1,5 +1,5 @@
 {
-  "version_note": "Factor pack v1 (2026-11-02). Source for scripts/apply_factor_ontology.py. Merges into src/data/graph.json. No invented series: gap nodes say sin dato en corpus.",
+  "version_note": "Factor pack v1.6 (2026-11-02). Phase 2: POER policy names vs letter-code gap, East Cape / Loreto / Mulegé packs. No invented series.",
   "relation_types": [
     {
       "id": "influences",
@@ -65,8 +65,8 @@
       "type": "Instrument",
       "label": "Políticas ambientales de UGA (POERBCS)",
       "label_en": "UGA environmental policies (POERBCS)",
-      "summary": "Informe de propuesta POERBCS (SEPUIMM; extracto en el portal) nombra Política de Aprovechamiento Sustentable, Política de Preservación y Política de Protección; el extracto corta en Protección. La capa de 69 polígonos del portal (clave_MOE) usa sufijos AS (32), PT (27) y PR (10). RT no aparece en esa capa. Glosario letra→nombre completo y CODE_PA (2, 3 y 4): sin dato en corpus. Deferencias urbanas en la guía de planeación, no zonificación predial: BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; BCS32AS PSDU Todos Santos–El Pescadero–Las Playitas; BCS31AS PSDU Los Barriles–El Cardonal; BCS30AS PSDU Loreto (gazette 2007 marcada GAP).",
-      "summary_en": "The POERBCS proposal report (SEPUIMM; portal extract) names Sustainable Use, Preservation and Protection policies; the extract cuts off at Protection. The portal's 69-polygon layer (clave_MOE) uses suffixes AS (32), PT (27) and PR (10). RT does not appear in that layer. Full letter-to-name glossary and CODE_PA (2, 3 and 4): sin dato en corpus. Urban deferrals in the planning guide, not parcel zoning: BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; BCS32AS PSDU Todos Santos–El Pescadero–Las Playitas; BCS31AS PSDU Los Barriles–El Cardonal; BCS30AS PSDU Loreto (2007 gazette marked GAP).",
+      "summary": "Políticas ambientales del POERBCS según extractos ya en el portal, no una tabla nueva. Índice del informe de propuesta (SEPUIMM — POERBCS Informe propuesta modelo (2025)): Aprovechamiento Sustentable, Preservación y Protección (el extracto corta en Protección). Tabla OCR de lineamientos (2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf): Preservación, Protección y Restauración. Capa de 69 polígonos (clave_MOE): sufijos AS 32, PT 27, PR 10; RT ausente. CODE_PA 2, 3 y 4 sin nombre. Ver nodos inst_pa_* y gap_politica_uga_leyenda.",
+      "summary_en": "POERBCS environmental policies from extracts already on the portal, not a new table. Proposal-report contents (SEPUIMM — POERBCS Informe propuesta modelo (2025)): Sustainable Use, Preservation and Protection (the extract cuts off at Protection). OCR table in the lineamientos PDF: Preservation, Protection and Restoration. 69-polygon layer (clave_MOE): suffixes AS 32, PT 27, PR 10; RT absent. CODE_PA 2, 3 and 4 have no name. See inst_pa_* nodes and gap_politica_uga_leyenda.",
       "evidence_path": "guides/planeacion.md"
     },
     {
@@ -146,8 +146,8 @@
       "type": "Constraint",
       "label": "Brecha: leyenda AS/PR/PT/RT y CODE_PA",
       "label_en": "Gap: AS/PR/PT/RT and CODE_PA legend",
-      "summary": "sin dato en corpus para la tabla completa letra→política y para el significado de CODE_PA. Observado: sufijos AS, PT y PR en clave_MOE; RT ausente en la capa de 69 polígonos. No afirmar que RT significa Restauración ni traducir CODE_PA 2/3/4 a un nombre que el extracto no da.",
-      "summary_en": "sin dato en corpus for the full letter-to-policy table and for the meaning of CODE_PA. Observed: AS, PT and PR suffixes on clave_MOE; RT is absent from the 69-polygon layer. Do not assert that RT means Restoration or translate CODE_PA 2/3/4 into a name the extract does not give.",
+      "summary": "sin dato en corpus para la tabla letra→política y para el significado de CODE_PA (la capa usa 2, 3 y 4 sin nombre). Los nombres sí aparecen en extractos: Aprovechamiento Sustentable, Preservación, Protección y, solo en lineamientos, Restauración. No afirmar que AS, PR, PT o RT equivalen a esos nombres, salvo el OCR suelto del mapa «aprovechamiento sustentable AS», que no es un decreto. RT no está en la capa de 69 polígonos.",
+      "summary_en": "sin dato en corpus for the letter-to-policy table and for the meaning of CODE_PA (the layer uses 2, 3 and 4 with no name). The names do appear in extracts: Sustainable Use, Preservation, Protection and, only in the lineamientos, Restoration. Do not assert that AS, PR, PT or RT equal those names, except the loose map OCR «aprovechamiento sustentable AS», which is not a decree. RT is not in the 69-polygon layer.",
       "evidence_path": "public/explorar/data/layer-zoning.json"
     },
     {
@@ -158,6 +158,120 @@
       "summary": "sin dato en corpus. La guía de riesgos dice que las capas vectoriales CENAPRED/SSN para geoproceso no están consolidadas. No inventar malla sísmica, de inundación o de ciclón más allá de los mapas ya citados (atlas / galería).",
       "summary_en": "sin dato en corpus. The risks guide says CENAPRED/SSN vector layers for geoprocessing are not consolidated. Do not invent a seismic, flood or cyclone grid beyond the maps already cited (atlas / gallery).",
       "evidence_path": "guides/riesgos.md"
+    },
+    {
+      "id": "inst_pa_aprovechamiento",
+      "type": "Instrument",
+      "label": "Política de Aprovechamiento Sustentable",
+      "label_en": "Sustainable-use environmental policy",
+      "summary": "Nombrada en el índice del informe de propuesta POERBCS (extracto del portal, sección de p. 18). El OCR del mapa de política ambiental muestra «aprovechamiento sustentable AS»; no es una tabla oficial letra→código. La capa clave_MOE tiene 32 sufijos AS. CODE_PA no se traduce.",
+      "summary_en": "Named in the POERBCS proposal-report contents (portal extract, p. 18 section). Map OCR shows «aprovechamiento sustentable AS»; that is not an official letter-to-code table. The clave_MOE layer has 32 AS suffixes. CODE_PA is not translated.",
+      "evidence_path": "01_planning/2025_SEPUIMM_POERBCS-Informe-propuesta-modelo.pdf"
+    },
+    {
+      "id": "inst_pa_preservacion",
+      "type": "Instrument",
+      "label": "Política de Preservación",
+      "label_en": "Preservation environmental policy",
+      "summary": "Nombrada en el índice del informe de propuesta (p. 19 del extracto) y en la tabla OCR de lineamientos («POLÍTICA DE PRESERVACIÓN»). El extracto no dice que la sigla PR sea esa política. La capa trae 10 sufijos PR.",
+      "summary_en": "Named in the proposal-report contents (extract p. 19) and in the lineamientos OCR table («POLÍTICA DE PRESERVACIÓN»). The extract does not say the suffix PR is that policy. The layer has 10 PR suffixes.",
+      "evidence_path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf"
+    },
+    {
+      "id": "inst_pa_proteccion",
+      "type": "Instrument",
+      "label": "Política de Protección",
+      "label_en": "Protection environmental policy",
+      "summary": "El índice del informe corta en «Política de Protección»; la tabla OCR de lineamientos escribe «POLÍTICA DE PROTECCIÓN». La ficha UGA 01 Vizcaíno usa PT (BCS01PT) sin glosario. No se afirma PT = Protección como tabla del portal.",
+      "summary_en": "The proposal contents cut off at «Política de Protección»; the lineamientos OCR table writes «POLÍTICA DE PROTECCIÓN». UGA sheet 01 Vizcaíno uses PT (BCS01PT) with no glossary. PT = Protection is not asserted as a portal table.",
+      "evidence_path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf"
+    },
+    {
+      "id": "inst_pa_restauracion",
+      "type": "Instrument",
+      "label": "Política de Restauración",
+      "label_en": "Restoration environmental policy",
+      "summary": "Aparece en la tabla OCR de lineamientos («POLÍTICA DE RESTAURACIÓN»), no en el índice truncado del informe de propuesta. La sigla RT no está en la capa de 69 polígonos. No se asigna RT a esta política. sin dato en corpus para una sigla oficial.",
+      "summary_en": "Appears in the lineamientos OCR table («POLÍTICA DE RESTAURACIÓN»), not in the truncated proposal contents. The suffix RT is not in the 69-polygon layer. RT is not assigned to this policy. sin dato en corpus for an official suffix.",
+      "evidence_path": "01_planning/2025_SEPUIMM_POERBCS-Proyectos-programas-sectores-lineamientos.pdf"
+    },
+    {
+      "id": "dq_pack_east_cape",
+      "type": "DecisionQuestion",
+      "label": "¿Qué factores acoplados aplican a East Cape / Cabo Pulmo?",
+      "label_en": "Which coupled factors apply to East Cape / Cabo Pulmo?",
+      "summary": "Paquete East Cape. Consultar acuífero 0318, ANP Cabo Pulmo, presión costera, acceso aéreo vía SJD (no hay aeropuerto propio en el scorecard), POERBCS y las brechas de instrumento local y de carga cuantitativa. No inventar cuartos ni un PDU de Cabo del Este.",
+      "summary_en": "East Cape pack. Consult aquifer 0318, Cabo Pulmo ANP, coastal pressure, air access via SJD (no own airport in the scorecard), POERBCS, and the local-instrument and quantitative-load gaps. Do not invent rooms or a Cabo del Este PDU."
+    },
+    {
+      "id": "gap_east_cape_instrumento",
+      "type": "Constraint",
+      "label": "Brecha: instrumento East Cape / La Ribera",
+      "label_en": "Gap: East Cape / La Ribera instrument",
+      "summary": "sin dato en corpus. El scorecard East Cape marca land_instruments_gap: PDU/POEL/plan parcial de East Cape o San José del Este no consolidado. La guía de planeación: no hay PSDU nombrado La Ribera. No inventar zonificación.",
+      "summary_en": "sin dato en corpus. The East Cape scorecard marks land_instruments_gap: no consolidated PDU/POEL/partial plan for East Cape or San José del Este. The planning guide: no PSDU named La Ribera. Do not invent zoning.",
+      "evidence_path": "src/data/growth_demand_supply.json#east_cape"
+    },
+    {
+      "id": "gap_east_cape_carga",
+      "type": "Constraint",
+      "label": "Brecha: carga cuantitativa East Cape",
+      "label_en": "Gap: East Cape quantitative load",
+      "summary": "sin dato en corpus. El scorecard marca settlement_pressure y empleo local como gap, y dice que la evidencia cuantitativa de carga sigue incompleta. DMA 0318 y el ANP sí están en el grafo; no se inventa un techo de cuartos.",
+      "summary_en": "sin dato en corpus. The scorecard marks settlement pressure and local jobs as gaps, and says quantitative load evidence is still incomplete. DMA 0318 and the ANP are on the graph; no room ceiling is invented.",
+      "evidence_path": "src/data/growth_demand_supply.json#east_cape"
+    },
+    {
+      "id": "dq_pack_loreto",
+      "type": "DecisionQuestion",
+      "label": "¿Qué factores acoplados aplican a Loreto?",
+      "label_en": "Which coupled factors apply to Loreto?",
+      "summary": "Paquete Loreto. Consultar ANP Bahía de Loreto, POEL 2014 (guía de planeación), PTAR en el inventario federal, brecha de gazette PSDU, y las brechas de DMA local y de margen eléctrico local del scorecard. La PTAR no sustituye una cifra DMA que el portal no trae.",
+      "summary_en": "Loreto pack. Consult Bahía de Loreto ANP, the 2014 POEL (planning guide), the federal WWTP inventory, the PSDU gazette gap, and the scorecard gaps for local DMA and local electric margin. The WWTP does not replace a DMA figure the portal does not have."
+    },
+    {
+      "id": "inst_poel_loreto",
+      "type": "Instrument",
+      "label": "POEL Loreto (2014)",
+      "label_en": "Loreto POEL (2014)",
+      "summary": "La guía de planeación lo marca vigente (BOGE 2014, 12 mar). El scorecard de crecimiento repite POEL 2014 en vigor y la actualización PSDU 2024 en consulta. No cierra la brecha del gazette PSDU 2007.",
+      "summary_en": "The planning guide marks it in force (BOGE 2014, 12 Mar). The growth scorecard repeats the 2014 POEL in force and the 2024 PSDU update in consultation. It does not close the 2007 PSDU gazette gap.",
+      "evidence_path": "guides/planeacion.md"
+    },
+    {
+      "id": "gap_loreto_dma",
+      "type": "Constraint",
+      "label": "Brecha: DMA local de Loreto",
+      "label_en": "Gap: Loreto local DMA",
+      "summary": "sin dato en corpus. El scorecard Loreto (water_dma_local_gap) dice que la capa SIG foco cubre el pack sur 0313–0325 y no trae un marcador DMA de Loreto. La PTAR (proj_fed_agu_005) no sustituye esa cifra.",
+      "summary_en": "sin dato en corpus. The Loreto scorecard (water_dma_local_gap) says the focus GIS layer covers the southern pack 0313–0325 and has no Loreto DMA marker. The WWTP (proj_fed_agu_005) does not replace that figure.",
+      "evidence_path": "src/data/growth_demand_supply.json#loreto"
+    },
+    {
+      "id": "gap_loreto_energia_local",
+      "type": "Constraint",
+      "label": "Brecha: margen eléctrico local de Loreto",
+      "label_en": "Gap: Loreto local electric margin",
+      "summary": "sin dato en corpus. El scorecard no desglosa la demanda eléctrica de Loreto dentro del pico SIBCS. El techo estatal sigue siendo rc_sibcs / const_red_aislada.",
+      "summary_en": "sin dato en corpus. The scorecard does not split Loreto electric demand inside the SIBCS peak. The state ceiling remains rc_sibcs / const_red_aislada.",
+      "evidence_path": "src/data/growth_demand_supply.json#loreto"
+    },
+    {
+      "id": "dq_pack_mulege",
+      "type": "DecisionQuestion",
+      "label": "¿Qué factores acoplados aplican a Mulegé / Vizcaíno?",
+      "label_en": "Which coupled factors apply to Mulegé / Vizcaíno?",
+      "summary": "Paquete Mulegé–Vizcaíno. Consultar ANP El Vizcaíno, observación de stills de la espina desértica, carretera Transpeninsular, brecha de PDU municipal, y la brecha de balance agua–energía. La señal de hidrógeno (foresight sig-mulege-oasis-h2) no es un nodo de capacidad ni de MW.",
+      "summary_en": "Mulegé–Vizcaíno pack. Consult El Vizcaíno ANP, the desert-spine stills observation, the Transpeninsular highway, the municipal PDU gap, and the water–energy balance gap. The hydrogen signal (foresight sig-mulege-oasis-h2) is not a capacity or MW node."
+    },
+    {
+      "id": "gap_mulege_agua_energia",
+      "type": "Constraint",
+      "label": "Brecha: balance agua–energía de Mulegé",
+      "label_en": "Gap: Mulegé water–energy balance",
+      "summary": "sin dato en corpus para un balance agua–energía municipal. terr_mulege ya dice que esa capacidad no se reclama más allá de TI. El scorecard mulege_north está en lectura desconocida: la señal H2 (sig-mulege-oasis-h2) no tiene nodo de proyecto ni MW en el grafo. No inventar la planta Oasis.",
+      "summary_en": "sin dato en corpus for a municipal water–energy balance. terr_mulege already says that capacity is not claimed beyond TI. The mulege_north scorecard is an unknown reading: the H2 signal (sig-mulege-oasis-h2) has no project node and no MW on the graph. Do not invent the Oasis plant.",
+      "evidence_path": "src/data/growth_demand_supply.json#mulege_north"
     }
   ],
   "edges": [
@@ -749,6 +863,241 @@
     {
       "from": "const_anp_nucleos",
       "to": "proj_fed_car_003",
+      "predicate": "risks"
+    },
+    {
+      "from": "inst_pa_aprovechamiento",
+      "to": "inst_poer_politicas",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "inst_pa_preservacion",
+      "to": "inst_poer_politicas",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "inst_pa_proteccion",
+      "to": "inst_poer_politicas",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "inst_pa_restauracion",
+      "to": "inst_poer_politicas",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_pa_aprovechamiento",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_pa_preservacion",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_pa_proteccion",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_pa_restauracion",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "gap_politica_uga_leyenda",
+      "to": "inst_pa_aprovechamiento",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_politica_uga_leyenda",
+      "to": "inst_pa_preservacion",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_politica_uga_leyenda",
+      "to": "inst_pa_proteccion",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_politica_uga_leyenda",
+      "to": "inst_pa_restauracion",
+      "predicate": "risks"
+    },
+    {
+      "from": "dq_pack_east_cape",
+      "to": "rc_acuifero_0318",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "dq_pack_east_cape",
+      "to": "rc_aeropuerto_sjd",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "dq_pack_east_cape",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "dq_pack_east_cape",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "dq_pack_east_cape",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_coast_anp_pressure",
+      "to": "dq_pack_east_cape",
+      "predicate": "risks"
+    },
+    {
+      "from": "terr_anp_cabo_pulmo",
+      "to": "dq_pack_east_cape",
+      "predicate": "constrains"
+    },
+    {
+      "from": "terr_obs_east_cape",
+      "to": "dq_pack_east_cape",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_east_cape_instrumento",
+      "to": "dq_pack_east_cape",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_east_cape_carga",
+      "to": "dq_pack_east_cape",
+      "predicate": "risks"
+    },
+    {
+      "from": "dd_turismo_cabos",
+      "to": "dq_pack_east_cape",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_east_cape_instrumento",
+      "to": "inst_pdu_cabos",
+      "predicate": "constrains"
+    },
+    {
+      "from": "dq_pack_loreto",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "dq_pack_loreto",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_pack_loreto",
+      "to": "inst_poel_loreto",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "inst_poel_loreto",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "proj_fed_agu_005",
+      "to": "dq_pack_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "terr_anp_loreto",
+      "to": "dq_pack_loreto",
+      "predicate": "constrains"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "dq_pack_loreto",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_psdu_loreto_gazette",
+      "to": "dq_pack_loreto",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_loreto_dma",
+      "to": "dq_pack_loreto",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_loreto_energia_local",
+      "to": "dq_pack_loreto",
+      "predicate": "risks"
+    },
+    {
+      "from": "terr_obs_loreto_bay",
+      "to": "dq_pack_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "dq_pack_loreto",
+      "predicate": "risks"
+    },
+    {
+      "from": "dq_pack_mulege",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_pack_mulege",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "gap_pdu_mulege",
+      "to": "dq_pack_mulege",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_mulege_agua_energia",
+      "to": "dq_pack_mulege",
+      "predicate": "risks"
+    },
+    {
+      "from": "terr_anp_vizcaino",
+      "to": "dq_pack_mulege",
+      "predicate": "constrains"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "dq_pack_mulege",
+      "predicate": "risks"
+    },
+    {
+      "from": "terr_obs_vizcaino_spine",
+      "to": "dq_pack_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "dq_vizcaino_corridor",
+      "to": "dq_pack_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_transpeninsular",
+      "to": "dq_pack_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "actor_ayunt_mulege",
+      "to": "dq_pack_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "dq_pack_mulege",
       "predicate": "risks"
     }
   ]
