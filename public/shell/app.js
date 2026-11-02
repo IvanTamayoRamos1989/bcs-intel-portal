@@ -168,6 +168,7 @@
       btn.setAttribute('aria-pressed', btn.getAttribute('data-base') === basemap ? 'true' : 'false');
     });
     if (engine && engine.setBasemap) engine.setBasemap(basemap);
+    if (engine && engine.setExtrudeOpacity) engine.setExtrudeOpacity(basemap === 'satellite' ? 0.38 : 0.74);
     if (leafletMap && streetsLayer && satLayer) {
       if (leafletMap.hasLayer(streetsLayer)) leafletMap.removeLayer(streetsLayer);
       if (leafletMap.hasLayer(satLayer)) leafletMap.removeLayer(satLayer);
@@ -275,9 +276,29 @@
 
   function boot3d() {
     if (!window.CDT3D || !CDT3D.hasWebGL()) { boot2d(); return; }
-    CDT3D.start({ container: mapEl, tools: true, reduced: false, pitch: 28 }).then(function (eng) {
+    CDT3D.start({
+      container: mapEl,
+      tools: true,
+      reduced: reduceMotion,
+      pitch: pitched ? PITCH_ON : 0,
+      bearing: pitched ? BEARING_ON : 0,
+      exaggeration: TERRAIN_EX,
+      onMunicipality: function (name) {
+        var row = (model.munis || []).filter(function (m) { return m.name === name; })[0];
+        if (!row) return;
+        var n = Number(row.pob).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX');
+        setStatus(
+          name + ': ' + n + ' habitantes (INEGI 2020). La altura compara municipios; no es un edificio.',
+          name + ': ' + n + ' people (INEGI 2020). Height compares municipalities; it is not a building.'
+        );
+      },
+    }).then(function (eng) {
       engine = eng;
-      engine.setBasemap(basemap);
+      setBasemap(basemap);
+      applyTerrain();
+      applyExtrusion();
+      syncPitchBtn();
+      syncHud();
       var ids = Object.keys(on).filter(function (id) { return on[id]; });
       return Promise.all(ids.map(function (id) { return showLayer(id, true); })).then(markReady);
     }).catch(function () { boot2d(); });
@@ -436,17 +457,97 @@
     return Math.min(scored.length, 8);
   }
 
+  var TERRAIN_EX = 1.7;
+  var PITCH_ON = 56;
+  var BEARING_ON = -22;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var terrainOn = true;
+  var extrudeOn = true;
+  var pitched = !reduceMotion;
+
+  function extrusionHeights() {
+    var rows = model.munis || [];
+    var vals = rows.map(function (m) { return Number(m.pob); }).filter(function (n) { return n > 0; });
+    if (!vals.length) return {};
+    var min = Math.min.apply(null, vals);
+    var max = Math.max.apply(null, vals);
+    var out = {};
+    rows.forEach(function (m) {
+      var raw = Number(m.pob);
+      if (!(raw > 0)) return;
+      var t = max === min ? 1 : (raw - min) / (max - min);
+      out[m.name] = Math.round(2800 + t * 20000);
+    });
+    return out;
+  }
+  function applyExtrusion() {
+    if (!engine || !engine.setExtrusion) return;
+    engine.setExtrusion(extrudeOn ? extrusionHeights() : {});
+    if (engine.setMuniWash) engine.setMuniWash(0.07);
+  }
+  function applyTerrain() {
+    if (engine && engine.setTerrain) engine.setTerrain(terrainOn, TERRAIN_EX);
+  }
+  function applyPitch() {
+    if (!engine || !engine.setPitch) return;
+    var show3d = pitched && terrainOn;
+    engine.setPitch(show3d ? PITCH_ON : 0, show3d ? BEARING_ON : 0);
+  }
+  function syncPitchBtn() {
+    var btn = document.getElementById('shell-pitch');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', pitched && terrainOn ? 'true' : 'false');
+  }
+  function syncStackToggles() {
+    document.querySelectorAll('[data-stack-toggle]').forEach(function (btn) {
+      var id = btn.getAttribute('data-stack-toggle');
+      var pressed = false;
+      if (id === 'l0') pressed = terrainOn;
+      else if (id === 'l1') pressed = extrudeOn;
+      else {
+        var stack = (model.stack || []).filter(function (s) { return s.id === id; })[0];
+        var ids = (stack && stack.layers) || [];
+        pressed = ids.length > 0 && ids.every(function (lid) { return on[lid]; });
+      }
+      btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    });
+    syncPitchBtn();
+  }
+  function syncHud() {
+    var es = document.querySelector('#shell-hud [data-lang-es]');
+    var en = document.querySelector('#shell-hud [data-lang-en]');
+    var esText = !terrainOn
+      ? 'Terreno apagado'
+      : (pitched ? 'Terreno 3D activo' : 'Terreno en planta');
+    var enText = !terrainOn
+      ? 'Terrain off'
+      : (pitched ? '3D terrain on' : 'Terrain in plan');
+    if (extrudeOn) {
+      esText += ' · altura = población 2020';
+      enText += ' · height = 2020 population';
+    }
+    if (es) es.textContent = esText;
+    if (en) en.textContent = enText;
+  }
+  function stackById(id) {
+    return (model.stack || []).filter(function (s) { return s.id === id; })[0];
+  }
+
   function readBoot() {
     var params = new URLSearchParams(location.search);
     var base = params.get('base');
     if (base === 'satellite' || base === 'streets') basemap = base;
+    (model.defaults || ['osm_towns', 'osm_highways']).forEach(function (id) { if (byId[id]) on[id] = true; });
     var theme = params.get('theme') || params.get('tema');
-    if (theme && themeById[theme]) setTheme(theme, true);
-    else (themeById.urbano && themeById.urbano.layers || ['settlements']).forEach(function (id) { if (byId[id]) on[id] = true; });
+    if (theme && themeById[theme]) {
+      (themeById[theme].layers || []).forEach(function (id) { if (byId[id]) on[id] = true; });
+    }
     document.querySelectorAll('[data-layer]').forEach(function (box) {
       box.checked = !!on[box.getAttribute('data-layer')];
     });
     syncThemePressed();
+    syncStackToggles();
+    syncHud();
     var muni = params.get('muni');
     if (muni) focusMuni(muni);
     var q = params.get('q');
@@ -457,7 +558,39 @@
     box.addEventListener('change', function () {
       showLayer(box.getAttribute('data-layer'), box.checked);
       syncThemePressed();
+      syncStackToggles();
     });
+  });
+  document.querySelectorAll('[data-stack-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-stack-toggle');
+      if (id === 'l0') {
+        terrainOn = !terrainOn;
+        applyTerrain();
+        applyPitch();
+      } else if (id === 'l1') {
+        extrudeOn = !extrudeOn;
+        applyExtrusion();
+      } else {
+        var stack = stackById(id);
+        var ids = (stack && stack.layers) || [];
+        var turnOn = ids.some(function (lid) { return !on[lid]; });
+        ids.forEach(function (lid) { showLayer(lid, turnOn); });
+      }
+      syncStackToggles();
+      syncHud();
+    });
+  });
+  var pitchBtn = document.getElementById('shell-pitch');
+  if (pitchBtn) pitchBtn.addEventListener('click', function () {
+    pitched = !(pitched && terrainOn);
+    if (pitched && !terrainOn) {
+      terrainOn = true;
+      applyTerrain();
+    }
+    applyPitch();
+    syncStackToggles();
+    syncHud();
   });
   document.querySelectorAll('[data-theme]').forEach(function (btn) {
     btn.addEventListener('click', function () { setTheme(btn.getAttribute('data-theme')); });
@@ -598,7 +731,10 @@
     var scrim = document.getElementById('shell-scrim');
     var btn = document.getElementById('shell-capas');
     if (scrim) scrim.hidden = !open;
-    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (btn) {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-pressed', open ? 'true' : 'false');
+    }
   }
   var capasBtn = document.getElementById('shell-capas');
   if (capasBtn) capasBtn.addEventListener('click', function () {
@@ -656,5 +792,6 @@
     setBasemap: setBasemap,
     focusMuni: focusMuni,
     getBounds: function () { return engine && engine.getBounds ? engine.getBounds() : null; },
+    getPitch: function () { return engine && engine.getPitch ? engine.getPitch() : null; },
   };
 })();

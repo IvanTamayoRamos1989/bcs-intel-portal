@@ -3,29 +3,104 @@ import '../styles/global.css';
 import ChatWidget from '../components/ChatWidget.astro';
 import { ui } from '../i18n/ui';
 import { cdtModel } from '../lib/cdtModel';
+import gisLayers from '../../public/gis/layers.json';
+
+type GisLayer = {
+  id: string;
+  url: string;
+  type: string;
+  color?: string;
+  name_es: string;
+  name_en: string;
+};
+
+const gisById = Object.fromEntries((gisLayers as GisLayer[]).map((l) => [l.id, l]));
+
+function extraLayer(id: string) {
+  const raw = gisById[id];
+  if (!raw) throw new Error(`Shell stack layer missing from GIS catalog: ${id}`);
+  return {
+    id: raw.id,
+    url: raw.url,
+    type: raw.type,
+    color: raw.color || '#0083C4',
+    name_es: raw.name_es,
+    name_en: raw.name_en,
+    group: 'infra',
+    source_es: 'OpenStreetMap',
+    source_en: 'OpenStreetMap',
+    year_es: 'año no registrado en el catálogo GIS',
+    year_en: 'year not recorded in the GIS catalog',
+  };
+}
+
+const catalogLayers = cdtModel.layerCatalog.map((l) => ({
+  id: l.id,
+  url: l.url,
+  type: l.type,
+  color: l.color,
+  name_es: l.name_es,
+  name_en: l.name_en,
+  group: l.group,
+  source_es: l.source_es,
+  source_en: l.source_en,
+  year_es: l.year_es,
+  year_en: l.year_en,
+}));
+const catalogIds = new Set(catalogLayers.map((l) => l.id));
+const stack = [
+  { id: 'l0', layers: ['osm_towns', 'settlements'] },
+  {
+    id: 'l2',
+    layers: [
+      'osm_highways',
+      'osm_power_lines',
+      'osm_power_nodes',
+      'osm_waterways',
+      'focus_water_dmas',
+      'focus_ports_air',
+      'federal_projects',
+      'poer_ugas',
+      'anp_federales',
+      'rtp_conabio',
+    ],
+  },
+  { id: 'l3', layers: ['osm_transport_nodes', 'highway_nodes', 'focus_corridor_cabos_lapaz'] },
+];
+const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
+const shellLayers = [...catalogLayers, ...extras];
+const layersById = Object.fromEntries(shellLayers.map((l) => [l.id, l]));
+for (const group of stack) {
+  for (const id of group.layers) {
+    if (!layersById[id]) throw new Error(`Shell stack layer not resolvable: ${id}`);
+  }
+}
+const munis = [...cdtModel.munis]
+  .map((m) => ({ name: m.name, pob: m.pob }))
+  .sort((a, b) => b.pob - a.pob);
+const maxPob = munis[0]?.pob || 1;
+const twinScenarios = ['baseline', 'corridor_intensify', 'water_first', 'ports_air_hubs']
+  .map((id) => cdtModel.scenarios.find((s) => s.id === id))
+  .filter((s): s is NonNullable<typeof s> => !!s);
 
 const shellModel = {
-  layers: cdtModel.layerCatalog.map((l) => ({
-    id: l.id,
-    url: l.url,
-    type: l.type,
-    color: l.color,
-    name_es: l.name_es,
-    name_en: l.name_en,
-    group: l.group,
-    source_es: l.source_es,
-    source_en: l.source_en,
-    year_es: l.year_es,
-    year_en: l.year_en,
-  })),
+  layers: shellLayers,
   themes: cdtModel.themes.map((t) => ({
     id: t.id,
     es: t.es,
     en: t.en,
     layers: t.layers,
   })),
+  stack,
+  defaults: ['osm_towns', 'osm_highways'],
+  munis,
+  scenarios: twinScenarios.map((s) => ({
+    id: s.id,
+    es: s.title_es,
+    en: s.title_en,
+    href: `/gemelo/?scenario=${s.id}`,
+  })),
 };
-const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
 ---
 <!doctype html>
 <html lang="es" data-lang="es" data-title-es="Consulta" data-title-en="Consultation" data-title-suffix=" · BCS 2050">
@@ -78,50 +153,157 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
           <div class="shell-base" role="group" aria-label="Mapa base" data-aria-es="Mapa base" data-aria-en="Basemap">
             <button type="button" data-base="streets" aria-pressed="true"><span data-lang-es>Calles</span><span data-lang-en hidden>Streets</span></button>
             <button type="button" data-base="satellite" aria-pressed="false"><span data-lang-es>Satélite</span><span data-lang-en hidden>Satellite</span></button>
+            <button type="button" id="shell-pitch" aria-pressed="true">
+              <span data-lang-es>3D</span><span data-lang-en hidden>3D</span>
+            </button>
             <button type="button" class="shell-capas-btn" id="shell-capas" aria-expanded="false">
               <span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span>
             </button>
           </div>
+          <p class="shell-hud" id="shell-hud">
+            <span data-lang-es>Terreno 3D activo · altura = población 2020</span>
+            <span data-lang-en hidden>3D terrain on · height = 2020 population</span>
+          </p>
           <div class="shell-scrim" id="shell-scrim" hidden></div>
           <div class="shell-sheet" id="shell-sheet">
             <button type="button" class="shell-sheet-x" id="shell-sheet-x">
               <span data-lang-es>Cerrar capas</span><span data-lang-en hidden>Close layers</span>
             </button>
-          <div class="shell-themes" role="group" aria-label="Temas" data-aria-es="Temas" data-aria-en="Themes">
-            {shellModel.themes.map((t) => (
-              <button type="button" data-theme={t.id} aria-pressed="false">
-                <span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span>
-              </button>
-            ))}
-          </div>
-          <details class="shell-layers">
-            <summary><span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span></summary>
-            {shellModel.themes.map((t) => (
-              <div class="shell-layer-group">
-                <p><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></p>
-                {(t.layers || []).map((id) => {
-                  const layer = layersById[id];
-                  if (!layer) return null;
-                  return (
-                    <label>
-                      <input type="checkbox" data-layer={layer.id} />
-                      <span>
-                        <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
-                        <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span> · <span data-lang-es>{layer.year_es}</span><span data-lang-en hidden>{layer.year_en}</span></small>
-                      </span>
-                    </label>
-                  );
-                })}
-              </div>
-            ))}
-          </details>
-          <p class="shell-status" id="shell-status" aria-live="polite"></p>
-          <p class="shell-gap">
-            <a href="/gemelo/#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
-            <span data-lang-es> sigue fuera del mapa. El tablero largo está en </span>
-            <span data-lang-en hidden> stays off the map. The long board is at </span>
-            <a href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>.
-          </p>
+            <p class="shell-stack-lead">
+              <span data-lang-es>Seis capas del gemelo, de la base al escenario. Solo datos ya publicados.</span>
+              <span data-lang-en hidden>Six twin layers, from the base to the scenario. Published data only.</span>
+            </p>
+            <ol class="shell-stack">
+              <li>
+                <header>
+                  <span class="shell-n">0</span>
+                  <div>
+                    <strong><span data-lang-es>Terreno</span><span data-lang-en hidden>Terrain</span></strong>
+                    <small><span data-lang-es>Relieve del estado y geografía básica. El botón 3D inclina la vista.</span><span data-lang-en hidden>State relief and basic geography. The 3D button pitches the view.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l0" aria-pressed="true"><span data-lang-es>Relieve</span><span data-lang-en hidden>Relief</span></button>
+                </header>
+                <div class="shell-layer-group">
+                  {stack[0].layers.map((id) => {
+                    const layer = layersById[id];
+                    return (
+                      <label>
+                        <input type="checkbox" data-layer={layer.id} checked={shellModel.defaults.includes(layer.id)} />
+                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
+                        <span>
+                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+              </li>
+              <li>
+                <header>
+                  <span class="shell-n">1</span>
+                  <div>
+                    <strong><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></strong>
+                    <small><span data-lang-es>No hay BIM ni huellas. La extrusión compara los cinco municipios.</span><span data-lang-en hidden>No BIM and no footprints. Extrusion compares the five municipalities.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l1" aria-pressed="true"><span data-lang-es>Extrusión</span><span data-lang-en hidden>Extrusion</span></button>
+                </header>
+                <ul class="shell-bars">
+                  {munis.map((m) => (
+                    <li>
+                      <span>{m.name}</span>
+                      <span class="shell-bar" style={`width:${Math.max(8, Math.round((m.pob / maxPob) * 100))}%`}></span>
+                      <b>{m.pob.toLocaleString('es-MX')}</b>
+                    </li>
+                  ))}
+                </ul>
+                <p class="shell-note"><span data-lang-es>Altura = población 2020, INEGI. No es la altura de un inmueble.</span><span data-lang-en hidden>Height = 2020 population, INEGI. It is not a building height.</span></p>
+                <p class="shell-gap-note"><span data-lang-es>BIM de edificios: próximo / sin datos.</span><span data-lang-en hidden>Building BIM: upcoming / no data.</span></p>
+              </li>
+              <li>
+                <header>
+                  <span class="shell-n">2</span>
+                  <div>
+                    <strong><span data-lang-es>Infraestructura</span><span data-lang-en hidden>Infrastructure</span></strong>
+                    <small><span data-lang-es>Vías, energía, agua, puertos y ordenamiento publicado.</span><span data-lang-en hidden>Roads, energy, water, ports and published zoning.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l2" aria-pressed="false"><span data-lang-es>Todas</span><span data-lang-en hidden>All</span></button>
+                </header>
+                <div class="shell-layer-group">
+                  {stack[1].layers.map((id) => {
+                    const layer = layersById[id];
+                    return (
+                      <label>
+                        <input type="checkbox" data-layer={layer.id} checked={shellModel.defaults.includes(layer.id)} />
+                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
+                        <span>
+                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+              </li>
+              <li>
+                <header>
+                  <span class="shell-n">3</span>
+                  <div>
+                    <strong><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></strong>
+                    <small><span data-lang-es>Movimiento de personas y bienes con las capas de transporte que ya existen.</span><span data-lang-en hidden>Movement of people and goods from transport layers that already exist.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l3" aria-pressed="false"><span data-lang-es>Todas</span><span data-lang-en hidden>All</span></button>
+                </header>
+                <div class="shell-layer-group">
+                  {stack[2].layers.map((id) => {
+                    const layer = layersById[id];
+                    return (
+                      <label>
+                        <input type="checkbox" data-layer={layer.id} />
+                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
+                        <span>
+                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+                <p class="shell-note"><span data-lang-es>El corredor es un marco de análisis, no un límite oficial.</span><span data-lang-en hidden>The corridor is an analysis frame, not an official boundary.</span></p>
+              </li>
+              <li class="is-gap">
+                <header>
+                  <span class="shell-n">4</span>
+                  <div>
+                    <strong><span data-lang-es>Ciudad inteligente</span><span data-lang-en hidden>Smart city</span></strong>
+                    <small><span data-lang-es>Sensores, IoT y monitoreo en vivo.</span><span data-lang-en hidden>Sensors, IoT and live monitoring.</span></small>
+                  </div>
+                </header>
+                <p class="shell-gap-note"><span data-lang-es>Próximo / sin datos. El portal no tiene sensores ni un tablero de monitoreo. No se inventa esa capa.</span><span data-lang-en hidden>Upcoming / no data. The portal has no sensors and no monitoring board. That layer is not invented.</span></p>
+                <p class="shell-flow"><span data-lang-es>Datos ↑ al gemelo · Información ↓ en escenarios</span><span data-lang-en hidden>Data ↑ to the twin · Information ↓ as scenarios</span></p>
+              </li>
+              <li>
+                <header>
+                  <span class="shell-n">5</span>
+                  <div>
+                    <strong><span data-lang-es>Gemelo digital</span><span data-lang-en hidden>Digital twin</span></strong>
+                    <small><span data-lang-es>Escenarios ya publicados. No simulan edificios.</span><span data-lang-en hidden>Scenarios already published. They do not simulate buildings.</span></small>
+                  </div>
+                </header>
+                <div class="shell-scenarios">
+                  {shellModel.scenarios.map((s) => (
+                    <a href={s.href}><span data-lang-es>{s.es}</span><span data-lang-en hidden>{s.en}</span></a>
+                  ))}
+                </div>
+              </li>
+            </ol>
+            <p class="shell-status" id="shell-status" aria-live="polite"></p>
+            <p class="shell-gap">
+              <a href="/gemelo/#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
+              <span data-lang-es> sigue fuera del mapa. El tablero largo está en </span>
+              <span data-lang-en hidden> stays off the map. The long board is at </span>
+              <a href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>.
+            </p>
           </div>
         </div>
       </section>
@@ -211,17 +393,48 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
       .shell-brand a, .shell-gap a { color: #006BA3; font-weight: 700; }
       #lang-toggle { font: inherit; border: 1px solid #0083C4; background: #fff; color: #006BA3; border-radius: 999px; padding: .15rem .5rem; cursor: pointer; }
       .shell-capas-btn, .shell-scrim, .shell-sheet-x, .shell-toast { display: none; }
-      .shell-base, .shell-themes { display: flex; flex-wrap: wrap; gap: .3rem; margin: .35rem 0; }
-      .shell-base button, .shell-themes button {
+      .shell-base { display: flex; flex-wrap: wrap; gap: .3rem; margin: .35rem 0; }
+      .shell-base button, .shell-stack header button {
         font: inherit; font-size: .75rem; font-weight: 650; border: 1px solid #c5d5de; background: #fff; color: #1a1a1a;
         border-radius: 999px; padding: .22rem .55rem; cursor: pointer;
       }
-      .shell-base button[aria-pressed="true"], .shell-themes button[aria-pressed="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
-      .shell-layers { margin-top: .25rem; }
-      .shell-layers summary { cursor: pointer; font-weight: 700; color: #006BA3; }
-      .shell-layer-group p { margin: .45rem 0 .15rem; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; color: #0083C4; }
-      .shell-layers label { display: flex; gap: .35rem; align-items: flex-start; margin: .2rem 0; font-size: .78rem; line-height: 1.3; }
-      .shell-layers small { display: block; color: #5a5a5a; font-weight: 400; }
+      .shell-base button[aria-pressed="true"], .shell-stack header button[aria-pressed="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
+      .shell-hud {
+        margin: .15rem 0 .35rem; padding: .35rem .55rem; border-radius: 10px;
+        background: rgba(0, 131, 196, .1); color: #0b3a56; font-size: .75rem; font-weight: 700; line-height: 1.35;
+      }
+      .shell-stack-lead, .shell-note, .shell-flow { margin: .25rem 0; font-size: .72rem; line-height: 1.35; color: #3c5163; }
+      .shell-stack { list-style: none; margin: .2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+      .shell-stack > li {
+        margin: 0; padding: .4rem .45rem .5rem; border: 1px solid rgba(0, 131, 196, .28);
+        border-radius: 12px; background: rgba(255, 255, 255, .72);
+      }
+      .shell-stack header { display: flex; gap: .4rem; align-items: flex-start; }
+      .shell-stack header div { flex: 1; min-width: 0; }
+      .shell-stack header strong { display: block; color: #0b3a56; font-size: .82rem; }
+      .shell-stack header small { display: block; color: #3c5163; font-weight: 450; line-height: 1.3; }
+      .shell-stack header button { flex: 0 0 auto; }
+      .shell-n {
+        width: 1.35rem; height: 1.35rem; border-radius: 6px; background: #0083C4; color: #fff;
+        font-size: .75rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto;
+      }
+      .shell-layer-group label { display: flex; gap: .35rem; align-items: flex-start; margin: .28rem 0; font-size: .78rem; line-height: 1.3; }
+      .shell-layer-group small, .shell-note { display: block; color: #5a5a5a; font-weight: 400; }
+      .shell-swatch { width: .7rem; height: .7rem; border-radius: 2px; margin-top: .2rem; flex: 0 0 auto; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
+      .shell-bars { list-style: none; margin: .4rem 0 0; padding: 0; }
+      .shell-bars li { display: grid; grid-template-columns: 4.6rem 1fr auto; gap: .35rem; align-items: center; margin: .18rem 0; font-size: .68rem; }
+      .shell-bar { display: block; height: 7px; border-radius: 99px; background: linear-gradient(90deg, #9fd0ea, #0083C4); justify-self: stretch; }
+      .shell-bars b { font-weight: 700; color: #0b3a56; }
+      .shell-gap-note {
+        margin: .35rem 0 0; padding: .35rem .5rem; border-radius: 8px;
+        background: rgba(0, 131, 196, .08); color: #0b3a56; font-size: .72rem; line-height: 1.35;
+      }
+      .shell-flow { font-weight: 750; color: #006BA3; }
+      .shell-scenarios { display: flex; flex-direction: column; gap: .28rem; margin-top: .35rem; }
+      .shell-scenarios a {
+        display: block; color: #006BA3; font-weight: 700; font-size: .75rem; text-decoration: none;
+        border: 1px solid rgba(0, 131, 196, .35); border-radius: 999px; padding: .28rem .6rem; background: #fff;
+      }
       .shell-status, .shell-gap { margin: .4rem 0 0; font-size: .75rem; line-height: 1.35; color: #3c5163; }
       .shell-tabs { display: none; }
       .cdt-pin {
@@ -330,15 +543,28 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
           padding: .55rem .7rem .65rem;
         }
         .shell-brand { gap: .4rem .7rem; }
-        #lang-toggle, .shell-base button, .shell-themes button, .shell-layers summary {
+        #lang-toggle, .shell-base button, .shell-stack header button, .shell-sheet-x {
           min-height: 44px;
           font-size: .95rem;
           padding: .4rem .75rem;
         }
-        .shell-themes { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: .15rem; }
-        .shell-themes button { flex: 0 0 auto; }
-        .shell-layers label { min-height: 44px; align-items: center; font-size: .95rem; }
-        .shell-layers input { width: 1.25rem; height: 1.25rem; flex: 0 0 auto; }
+        .shell-layer-group label { min-height: 44px; align-items: center; font-size: .95rem; }
+        .shell-layer-group input { width: 1.25rem; height: 1.25rem; flex: 0 0 auto; }
+        .shell-hud {
+          position: absolute;
+          z-index: 4;
+          top: 2.75rem;
+          left: .45rem;
+          right: 3.5rem;
+          transform: none;
+          width: auto;
+          max-width: none;
+          margin: 0;
+          text-align: left;
+          background: rgba(251, 248, 241, .92);
+          border: 1px solid rgba(0, 131, 196, .35);
+        }
+        .maplibregl-ctrl-bottom-right { bottom: 4.5rem; }
         .maplibregl-ctrl-top-right { top: .45rem; right: .35rem; }
         .maplibregl-ctrl-group button { width: 44px !important; height: 44px !important; }
         .cdt-pin { max-width: 68vw; white-space: normal; }
@@ -368,16 +594,17 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
           padding: .35rem;
         }
         .shell-capas-btn { display: inline-flex; align-items: center; }
+        .shell-capas-btn[aria-expanded="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
         .shell-scrim { position: absolute; inset: 0; z-index: 3; background: transparent; }
         body.shell-sheet-open .shell-scrim { display: block; }
         .shell-sheet {
           display: none;
           position: absolute;
-          z-index: 4;
+          z-index: 6;
           left: .45rem;
           right: .45rem;
           bottom: 4.2rem;
-          max-height: 42%;
+          max-height: min(68%, 560px);
           overflow: auto;
           background: rgba(251, 248, 241, .97);
           border: 1px solid #e0e0e0;
@@ -432,32 +659,40 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
         }
         .shell-map-wrap.is-sat .shell-tools,
         .shell-map-wrap.is-sat .shell-brand,
+        .shell-map-wrap.is-sat .shell-hud,
         .shell-map-wrap.is-sat .shell-sheet {
           background: rgba(8, 22, 34, .9);
           color: #fff;
           border-color: rgba(255, 255, 255, .72);
         }
         .shell-map-wrap.is-sat .shell-base button,
-        .shell-map-wrap.is-sat .shell-themes button,
+        .shell-map-wrap.is-sat .shell-stack header button,
         .shell-map-wrap.is-sat #lang-toggle,
-        .shell-map-wrap.is-sat .shell-sheet-x {
+        .shell-map-wrap.is-sat .shell-sheet-x,
+        .shell-map-wrap.is-sat .shell-scenarios a {
           background: rgba(8, 22, 34, .55);
           color: #fff;
           border-color: #fff;
         }
         .shell-map-wrap.is-sat .shell-base button[aria-pressed="true"],
-        .shell-map-wrap.is-sat .shell-themes button[aria-pressed="true"] {
+        .shell-map-wrap.is-sat .shell-stack header button[aria-pressed="true"] {
           background: #0083C4;
           color: #fff;
           border-color: #fff;
         }
-        .shell-map-wrap.is-sat .shell-layers summary,
         .shell-map-wrap.is-sat .shell-status,
         .shell-map-wrap.is-sat .shell-gap,
-        .shell-map-wrap.is-sat .shell-layer-group p,
-        .shell-map-wrap.is-sat .shell-layers label { color: #fff; }
+        .shell-map-wrap.is-sat .shell-stack-lead,
+        .shell-map-wrap.is-sat .shell-note,
+        .shell-map-wrap.is-sat .shell-layer-group label,
+        .shell-map-wrap.is-sat .shell-stack header small,
+        .shell-map-wrap.is-sat .shell-bars b { color: #fff; }
+        .shell-map-wrap.is-sat .shell-stack > li { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .28); }
+        .shell-map-wrap.is-sat .shell-stack header strong,
         .shell-map-wrap.is-sat .shell-gap a,
-        .shell-map-wrap.is-sat .shell-layers summary { color: #9fd0ea; }
+        .shell-map-wrap.is-sat .shell-flow,
+        .shell-map-wrap.is-sat .shell-gap-note { color: #9fd0ea; }
+        .shell-map-wrap.is-sat .shell-gap-note { background: rgba(159, 208, 234, .12); }
       }
       @media (max-width: 900px) and (orientation: landscape) {
         body.shell-app { flex-direction: row; padding-top: 0; padding-left: env(safe-area-inset-left, 0px); }
