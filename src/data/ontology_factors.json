@@ -1,5 +1,5 @@
 {
-  "version_note": "Factor pack v1.8 (2026-11-02). Phase 4: five-municipio comparison, sourced market/port/air facts, gaps stay gaps.",
+  "version_note": "Factor pack v1.9 (2026-11-02). Phase 5: dossiers, fiscal, cadastre gap, mesas by agency. No new blocked figures.",
   "relation_types": [
     {
       "id": "influences",
@@ -358,8 +358,8 @@
       "type": "Evidence",
       "label": "Señal: Oasis hidrógeno en Mulegé",
       "label_en": "Signal: Oasis hydrogen in Mulegé",
-      "summary": "Señal sig-mulege-oasis-h2 en Base de datos BCS 2050 — prospectiva. El texto pregunta si es corredor energético remoto o solo tránsito, y dice que debe probarse contra agua local. No hay nodo de proyecto ni MW en el grafo.",
-      "summary_en": "Signal sig-mulege-oasis-h2 in Base de datos BCS 2050 — prospectiva. The text asks whether it is a remote energy corridor or only transit, and says it must be tested against local water. There is no project node and no MW on the graph.",
+      "summary": "Señal sig-mulege-oasis-h2 en Base de datos BCS 2050 — prospectiva. El texto pregunta si es corredor energético remoto o solo tránsito, y dice que debe probarse contra agua local. No hay nodo de proyecto ni MW en el grafo. sin dato en corpus para MW y sitio.",
+      "summary_en": "Signal sig-mulege-oasis-h2 in Base de datos BCS 2050 — prospectiva. The text asks whether it is a remote energy corridor or only transit, and says it must be tested against local water. There is no project node and no MW on the graph. sin dato en corpus for MW and site.",
       "evidence_path": "src/data/foresights.json#sig-mulege-oasis-h2"
     },
     {
@@ -406,6 +406,69 @@
       "summary": "Base de datos BCS 2050 — puertos y demanda Base de datos BCS 2050 — nota de trabajo, OCR de SETUE IE 2026. SJD 2025: 3.8 millones de pasajeros (+0.6%), 83.2% de las llegadas aéreas estatales. LAP 2025: 668,800 (+10.9%). El mismo archivo marca el pasajero 2025 de LTO como UNKNOWN en el IE de Loreto. data_gaps gap-movilidad-loreto-pax-2025 está filled con 89,600 según comunicado del Gobierno de BCS (no es el IE SETUE). No se suman esas cifras en un total nuevo.",
       "summary_en": "Base de datos BCS 2050 — puertos y demanda Base de datos BCS 2050 — nota de trabajo, OCR of SETUE IE 2026. SJD 2025: 3.8 million passengers (+0.6%), 83.2% of state air arrivals. LAP 2025: 668,800 (+10.9%). That file marks LTO 2025 passengers as UNKNOWN in the Loreto IE. data_gaps gap-movilidad-loreto-pax-2025 is filled with 89,600 from a BCS government communique (not the SETUE IE). Those figures are not added into a new total.",
       "evidence_path": "src/data/ports_demand.json#airports"
+    },
+    {
+      "id": "ev_dossiers_lugar",
+      "type": "Evidence",
+      "label": "Dossiers de lugar (vocación y candados FACT)",
+      "label_en": "Place dossiers (FACT vocation and locks)",
+      "summary": "Base de datos BCS 2050 — datos del portal, solo el campo vocation.constraints etiquetado FACT; no se copian lentes ASSUMPTION de tenencia. Los Cabos: escasez hídrica, desalación, pico eléctrico, 0317/0319. East Cape: ANP, infraestructura delgada, spillover desde Cabos; carga cuantitativa no está en el dossier. Todos Santos: 0313 en déficit. La Paz: acoplamiento agua–energía, 0324/0313. Loreto: techos de conservación y servicios delgados; sin DMA local. Comondú: riego y energía de bombeo, sin visor catastral público. Mulegé: escasez de servicios, agua y distancia a mercados.",
+      "summary_en": "Base de datos BCS 2050 — datos del portal, only the FACT vocation.constraints field; ASSUMPTION tenure lenses are not copied. Los Cabos: water scarcity, desalination, power peak, 0317/0319. East Cape: ANP, thin infrastructure, spillover from Cabos; quantitative load is not in the dossier. Todos Santos: 0313 in deficit. La Paz: water–energy coupling, 0324/0313. Loreto: conservation ceilings and thin services; no local DMA. Comondú: irrigation and pumping energy, no public cadastral viewer. Mulegé: thin services, water, and distance to markets.",
+      "evidence_path": "src/data/place_dossiers.json"
+    },
+    {
+      "id": "ev_fiscal_anexo_2025",
+      "type": "Evidence",
+      "label": "Participaciones municipales Anexo I.33 2025",
+      "label_en": "Municipal revenue shares, Annex I.33 2025",
+      "summary": "Base de datos BCS 2050 — datos del portal anexo_i33_2025 (pesos, no es capacidad de obra). Los Cabos 1,282,611,261; La Paz 837,464,432; Comondú 369,189,086; Mulegé 357,354,826; Loreto 263,961,262. Ley de ingresos 2026 en el mismo archivo trae monto para Los Cabos, La Paz y Comondú. Mulegé y Loreto siguen en gap-fiscal-ley-2026-mulege-loreto.",
+      "summary_en": "Base de datos BCS 2050 — datos del portal anexo_i33_2025 (pesos, not construction capacity). Los Cabos 1,282,611,261; La Paz 837,464,432; Comondú 369,189,086; Mulegé 357,354,826; Loreto 263,961,262. The 2026 revenue law in the same file has amounts for Los Cabos, La Paz and Comondú. Mulegé and Loreto remain in gap-fiscal-ley-2026-mulege-loreto.",
+      "evidence_path": "src/data/fiscal_docs.json#anexo_i33_2025"
+    },
+    {
+      "id": "gap_catastro_secundario",
+      "type": "Constraint",
+      "label": "Brecha: catastro y transacciones fuera de Los Cabos",
+      "label_en": "Gap: cadastre and transactions outside Los Cabos",
+      "summary": "sin dato en corpus para predios o transacciones comparables en La Paz, Loreto, Comondú y Mulegé (data_gaps gap-re-cadastre-secondary, abierto). Base de datos BCS 2050 — datos del portal: el visor de La Paz redirige a login; no hay identify catastral en el grafo. No inventar claves prediales.",
+      "summary_en": "sin dato en corpus for parcels or comparable transactions in La Paz, Loreto, Comondú and Mulegé (data_gaps gap-re-cadastre-secondary, open). Base de datos BCS 2050 — datos del portal: the La Paz viewer redirects to login; there is no cadastral identify on the graph. Do not invent parcel keys.",
+      "evidence_path": "src/data/data_gaps.json#gap-re-cadastre-secondary"
+    },
+    {
+      "id": "gap_fiscal_ingresos_2026",
+      "type": "Constraint",
+      "label": "Brecha: Ley de Ingresos 2026 Mulegé y Loreto",
+      "label_en": "Gap: 2026 revenue law for Mulegé and Loreto",
+      "summary": "sin dato en corpus para el monto de la Ley de Ingresos 2026 de Mulegé y Loreto (data_gaps gap-fiscal-ley-2026-mulege-loreto, abierto). Los Cabos, La Paz y Comondú sí tienen monto en Base de datos BCS 2050 — datos del portal. No se copia un monto en blanco.",
+      "summary_en": "sin dato en corpus for the 2026 revenue-law amount for Mulegé and Loreto (data_gaps gap-fiscal-ley-2026-mulege-loreto, open). Los Cabos, La Paz and Comondú do have an amount in Base de datos BCS 2050 — datos del portal. A blank amount is not copied.",
+      "evidence_path": "src/data/data_gaps.json#gap-fiscal-ley-2026-mulege-loreto"
+    },
+    {
+      "id": "ev_mesa_agua",
+      "type": "Evidence",
+      "label": "Mesa Agua (CEA y CONAGUA)",
+      "label_en": "Water table (CEA and CONAGUA)",
+      "summary": "Base de datos BCS 2050 — datos del portal mesa agua. Instituciones: Comisión Estatal del Agua y Dirección Local de CONAGUA. No es un organigrama ni personal de consultoría. Opera el marco hídrico junto con la Ley de Aguas estatal.",
+      "summary_en": "Base de datos BCS 2050 — datos del portal water table. Institutions: State Water Commission and the local CONAGUA office. Not an org chart and not consultancy staff. Operates the water framework together with the state water law.",
+      "evidence_path": "src/data/mesas_trabajo.json#agua"
+    },
+    {
+      "id": "ev_mesa_energia",
+      "type": "Evidence",
+      "label": "Mesa Infraestructura y energía (SEPUIMM)",
+      "label_en": "Infrastructure and energy table (SEPUIMM)",
+      "summary": "Base de datos BCS 2050 — datos del portal mesa infraestructura-energia. Institución: SEPUIMM (planeación urbana, infraestructura, movilidad, medio ambiente y energía). No sustituye a CFE ni a CENACE en la red.",
+      "summary_en": "Base de datos BCS 2050 — datos del portal infrastructure-and-energy table. Institution: SEPUIMM (urban planning, infrastructure, mobility, environment and energy). Does not replace CFE or CENACE on the grid.",
+      "evidence_path": "src/data/mesas_trabajo.json#infraestructura-energia"
+    },
+    {
+      "id": "ev_mesa_urbanismo",
+      "type": "Evidence",
+      "label": "Mesa Arquitectura y urbanismo Los Cabos (IMPLAN)",
+      "label_en": "Architecture and urbanism table, Los Cabos (IMPLAN)",
+      "summary": "Base de datos BCS 2050 — datos del portal mesa arquitectura-urbanismo-los-cabos. Institución: IMPLAN Los Cabos, autoridad técnica del PDU 2040. No decreta por sí sola un cambio de uso de suelo.",
+      "summary_en": "Base de datos BCS 2050 — datos del portal Los Cabos architecture-and-urbanism table. Institution: IMPLAN Los Cabos, technical authority for PDU 2040. It does not by itself decree a land-use change.",
+      "evidence_path": "src/data/mesas_trabajo.json#arquitectura-urbanismo-los-cabos"
     }
   ],
   "edges": [
@@ -1587,6 +1650,136 @@
     {
       "from": "proj_fed_aer_001",
       "to": "rc_aeropuerto_sjd",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_dossiers_lugar",
+      "to": "dq_pack_east_cape",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_fiscal_anexo_2025",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_fiscal_anexo_2025",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_fiscal_anexo_2025",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_fiscal_anexo_2025",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_fiscal_anexo_2025",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_fiscal_anexo_2025",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_fiscal_ingresos_2026",
+      "to": "terr_mulege",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_fiscal_ingresos_2026",
+      "to": "terr_loreto",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_fiscal_ingresos_2026",
+      "to": "dq_comparar_polos",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_catastro_secundario",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_mesa_agua",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesa_agua",
+      "to": "actor_cea",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesa_agua",
+      "to": "actor_conagua",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesa_energia",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesa_energia",
+      "to": "actor_sepuimm",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesa_energia",
+      "to": "actor_cfe",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesa_urbanismo",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesa_urbanismo",
+      "to": "actor_implan_cabos",
       "predicate": "influences"
     }
   ]

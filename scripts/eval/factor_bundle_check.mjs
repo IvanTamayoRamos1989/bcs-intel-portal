@@ -43,6 +43,20 @@ const CASES = [
     kind: 'viability',
     needIds: ['gap_parque_industrial', 'rc_sibcs'],
     needTypes: ['Constraint', 'ResourceCapacity'],
+    sinDatoIds: ['gap_parque_industrial'],
+  },
+  {
+    q: '¿Es viable el hidrógeno Oasis en Mulegé?',
+    kind: 'viability',
+    needIds: ['ev_sig_mulege_oasis', 'gap_mulege_agua_energia', 'dq_pack_mulege', 'terr_mulege'],
+    needTypes: ['Evidence', 'Constraint', 'Territory'],
+    sinDatoIds: ['gap_mulege_agua_energia', 'ev_sig_mulege_oasis'],
+  },
+  {
+    q: '¿Es viable un hotel en Los Cabos con el dossier del lugar?',
+    kind: 'viability',
+    needIds: ['ev_dossiers_lugar', 'ev_fiscal_anexo_2025', 'terr_los_cabos', 'rc_acuifero_0317', 'const_dma_deficit'],
+    needTypes: ['Evidence', 'ResourceCapacity', 'Constraint'],
   },
   {
     q: '¿Qué dice el POER sobre el cambio de uso de suelo y las políticas AS, PR, PT y RT?',
@@ -78,7 +92,7 @@ const CASES = [
   {
     q: '¿Quién opera el agua de un hotel en Los Cabos?',
     kind: 'viability',
-    needIds: ['ev_mesas_trabajo', 'actor_oomsapas_cabos', 'actor_cea', 'actor_conagua'],
+    needIds: ['ev_mesas_trabajo', 'ev_mesa_agua', 'actor_oomsapas_cabos', 'actor_cea', 'actor_conagua'],
     needTypes: ['Actor', 'Evidence'],
   },
   {
@@ -169,6 +183,14 @@ for (const c of CASES) {
     if (!/restauraci[oó]n/i.test(text)) fail(`${c.q} restoration policy name missing`);
     if (/RT\s*=\s*Restaur|RT significa|sigla RT equivale/i.test(text)) fail(`${c.q} invented RT equivalence`);
     if (!ev.some((x) => x.type === 'library')) fail(`${c.q} expected a library reference chunk`);
+  }
+  if (c.sinDatoIds) {
+    for (const id of c.sinDatoIds) {
+      const node = ev.find((x) => (x.onto_id || '') === id);
+      const text = `${node?.sum_es || ''} ${node?.sum_en || ''}`;
+      if (!/sin dato/i.test(text)) fail(`${c.q} ${id} must say sin dato`);
+      if (/\b\d+\s*mw\b/i.test(text)) fail(`${c.q} ${id} must not invent MW`);
+    }
   }
   if (c.noInvent) {
     const dma = ev.find((x) => (x.onto_id || '') === 'gap_loreto_dma');

@@ -1065,6 +1065,8 @@ function factorSeedIds(qn, kinds) {
   if (p.who) {
     add('ev_mesas_trabajo', 'actor_sepuimm', 'actor_conagua', 'actor_cea', 'actor_cfe');
     if (kinds.includes('landuse')) add('dq_cambio_uso_suelo', 'inst_poerbcs', 'inst_poer_politicas');
+    add('ev_mesa_agua', 'ev_mesa_energia');
+    if (p.cabos || p.east || !p.any) add('ev_mesa_urbanismo');
     if (p.cabos || p.east) add('actor_oomsapas_cabos', 'actor_implan_cabos', 'actor_ayunt_cabos');
     if (p.paz) add('actor_ayunt_lapaz');
     if (p.comondu) add('actor_ayunt_comondu');
@@ -1116,6 +1118,9 @@ function factorSeedIds(qn, kinds) {
     );
   }
   if (kinds.includes('viability')) {
+    if (p.any) add('ev_dossiers_lugar', 'ev_fiscal_anexo_2025');
+    if (p.cabos) add('terr_los_cabos');
+    if (p.paz) add('terr_la_paz');
     add('dq_viabilidad_proyecto', 'ev_mesas_trabajo', 'inst_poerbcs', 'rc_sibcs', 'const_dma_deficit', 'const_red_aislada', 'const_anp_nucleos');
     if (/\b(hotel\w*|turism|tourism)\b/.test(qn)) {
       add('dd_turismo_cabos', 'dd_residencial_cabos', 'proj_desal_cabos', 'const_coast_anp_pressure', 'rc_acuifero_0317', 'rc_acuifero_0319', 'inst_pdu_cabos', 'actor_oomsapas_cabos', 'rc_aeropuerto_sjd');
@@ -1131,6 +1136,8 @@ function factorSeedIds(qn, kinds) {
     }
     if (/\b(vivienda|housing)\b/.test(qn)) {
       add('proj_fed_viv_001', 'const_tenencia', 'gap_permisos_uso_suelo', 'rc_vivienda_cabos');
+      if (p.cabos || !p.any) add('rc_acuifero_0317');
+      if (p.paz) add('rc_acuifero_0324');
     }
     if (/\b(carretera|highway|transpeninsular)\b/.test(qn)) {
       add('proj_transpeninsular', 'proj_fed_car_003', 'const_anp_nucleos', 'terr_anp_vizcaino', 'dq_vizcaino_corridor');
@@ -1152,6 +1159,7 @@ function factorSeedIds(qn, kinds) {
   }
   if (kinds.includes('landuse')) {
     add(
+      'const_tenencia', 'gap_catastro_secundario', 'const_anp_nucleos',
       'dq_cambio_uso_suelo', 'inst_poerbcs', 'inst_poer_politicas',
       'inst_pa_aprovechamiento', 'inst_pa_preservacion', 'inst_pa_proteccion', 'inst_pa_restauracion',
       'gap_politica_uga_leyenda',
@@ -1164,6 +1172,7 @@ function factorSeedIds(qn, kinds) {
     if (p.comondu) add('terr_comondu');
   }
   if (kinds.includes('risk')) {
+    if (p.any) add('ev_dossiers_lugar', 'ev_fiscal_anexo_2025');
     add(
       'dq_riesgos_principales', 'ev_riesgos_documentados', 'gap_riesgo_capas_vector',
       'const_dma_deficit', 'const_escasez_agua', 'const_red_aislada', 'const_anp_nucleos',
@@ -1341,7 +1350,7 @@ function buildFactorEvidence(query, intents) {
     : (expandQuery(query).factorKinds || []);
   if (!kinds.length) return [];
   const place = factorPlaceFlags(qn);
-  const ids = walkFactorBundle(factorSeedIds(qn, kinds), place, place.compare ? 18 : 16);
+  const ids = walkFactorBundle(factorSeedIds(qn, kinds), place, place.compare ? 20 : 18);
   const onto = ontologyChunksForIds(ids);
   const docs = factorDocChunks(kinds, { ...place, query });
   const seen = new Set();
@@ -3790,9 +3799,11 @@ async function handlerInner(event) {
     const bundle = buildFactorEvidence(message, qIntents);
     if (bundle.length) {
       const seen = new Set();
+      const bundleIds = new Set(bundle.map((c) => c.id));
       const merged = [];
       for (const c of [...bundle, ...evidence]) {
         if (!c || seen.has(c.id)) continue;
+        if (c.type === 'still' && !bundleIds.has(c.id)) continue;
         seen.add(c.id);
         merged.push(c);
       }
