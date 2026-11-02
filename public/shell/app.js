@@ -160,6 +160,26 @@
   function featureLabel(p) {
     return p.name || p.name_es || p.NOM_LOC || p.NOM_NUC || p.NOMBRE_UGA || p.proyecto || p.ref || '';
   }
+  function openBuildingFiche(p) {
+    var loc = lang() === 'en' ? 'en-US' : 'es-MX';
+    function n(v, d) { return Number(v).toLocaleString(loc, { maximumFractionDigits: d || 0 }); }
+    var est = p.hm == null ? tx('Sin estimación', 'No estimate') : n(p.hm, 1) + ' m';
+    var drawn = n(p.h, 1) + ' m' + ((p.hm == null || p.hm < 3) ? tx(' (dibujada como una planta: la estimación es menor de 3 m)', ' (drawn as one storey: the estimate is under 3 m)') : '');
+    openFiche({
+      kind_es: 'Edificio · huella y altura estimada', kind_en: 'Building · footprint and estimated height',
+      title: tx('Edificio', 'Building') + ' · ' + n(p.a) + ' m²',
+      rows: [
+        { es: 'Altura estimada (media)', en: 'Estimated height (mean)', value: est },
+        { es: 'Altura estimada (máxima)', en: 'Estimated height (max)', value: p.hx == null ? '' : n(p.hx, 1) + ' m' },
+        { es: 'Altura dibujada', en: 'Height drawn', value: drawn },
+        { es: 'Plantas aproximadas', en: 'Approximate storeys', value: String(p.n) },
+        { es: 'Superficie de la huella', en: 'Footprint area', value: n(p.a) + ' m²' },
+        { es: 'Manzana INEGI 2020', en: 'INEGI 2020 block', value: p.mz || tx('Fuera de manzanas urbanas', 'Outside urban blocks') },
+        { es: 'Fuente', en: 'Source', value: tx('Huella: Google Open Buildings v3 (imagen de 50 cm). Altura: Google Open Buildings 2.5D, 2023 (Sentinel-2, resolución efectiva 4 m).', 'Footprint: Google Open Buildings v3 (50 cm imagery). Height: Google Open Buildings 2.5D, 2023 (Sentinel-2, effective 4 m).') },
+        { es: 'Lectura', en: 'Reading', value: tx('La altura es una estimación de modelo: distingue casas de una a tres plantas de torres, no da el metro exacto. No es un levantamiento ni catastro.', 'Height is a model estimate: it tells one-to-three-storey houses from towers, not the exact metre. It is not a survey or cadastre.') },
+      ],
+    });
+  }
   function openBlockFiche(p) {
     var loc = lang() === 'en' ? 'en-US' : 'es-MX';
     function n(v, d) { return v == null ? tx('Celda en blanco en el censo', 'Blank cell in the census') : Number(v).toLocaleString(loc, { maximumFractionDigits: d || 0 }); }
@@ -186,6 +206,7 @@
       return;
     }
     if (layerId === 'cdt-ly-manzanas_2020') { openBlockFiche(p); return; }
+    if (layerId.indexOf('cdt-bld-') === 0) { openBuildingFiche(p); return; }
     var title = featureLabel(p) || (meta ? (lang() === 'en' ? meta.name_en : meta.name_es) : '');
     if (!title) return;
     var rows = [];
@@ -1003,6 +1024,14 @@
     if (q && searchEl) { searchEl.value = q; }
   }
 
+  var bldBox = document.querySelector('[data-buildings]');
+  if (bldBox) bldBox.addEventListener('change', function () {
+    if (!engine || !engine.setBuildings) return;
+    engine.setBuildings(bldBox.checked);
+    if (bldBox.checked && engine.getZoom && engine.getZoom() < 12) {
+      setStatus('Los edificios aparecen al acercarse a una ciudad.', 'Buildings appear when you zoom into a town.');
+    }
+  });
   document.querySelectorAll('[data-layer]').forEach(function (box) {
     box.addEventListener('change', function () {
       if (box.checked && box.getAttribute('data-layer') === 'manzanas_2020' && engine && engine.getZoom && engine.getZoom() < 9) {

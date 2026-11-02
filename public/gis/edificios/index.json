@@ -1,0 +1,92 @@
+{
+ "source": "Google Open Buildings v3 (footprints, 50 cm imagery, confidence >= 0.70) and Open Buildings 2.5D Temporal v1 (building_height, 2023), via Earth Engine",
+ "height_rule": "Drawn height is the estimated mean inside the footprint, floored at 3.0 m (one storey).",
+ "limits": "Height is a model estimate from Sentinel-2 (effective 4 m). Good to tell one, two or three storeys from towers; not exact to the metre.",
+ "cities": [
+  {
+   "id": "corredor_turistico",
+   "name": "Corredor turístico",
+   "url": "/gis/edificios/corredor_turistico.geojson",
+   "bbox": [
+    -109.86027,
+    22.89982,
+    -109.71966,
+    23.03965
+   ],
+   "buildings": 9873,
+   "floored_to_one_storey": 3731,
+   "h_p50": 4.0,
+   "h_p90": 9.4,
+   "h_max": 40.2,
+   "mb": 3.1
+  },
+  {
+   "id": "guerrero_negro",
+   "name": "Guerrero Negro",
+   "url": "/gis/edificios/guerrero_negro.geojson",
+   "bbox": [
+    -114.07178,
+    27.94719,
+    -114.01972,
+    27.98871
+   ],
+   "buildings": 9500,
+   "floored_to_one_storey": 7503,
+   "h_p50": 3.0,
+   "h_p90": 3.6,
+   "h_max": 19.1,
+   "mb": 2.9
+  },
+  {
+   "id": "loreto",
+   "name": "Loreto",
+   "url": "/gis/edificios/loreto.geojson",
+   "bbox": [
+    -111.37013,
+    25.98051,
+    -111.338,
+    26.03011
+   ],
+   "buildings": 12023,
+   "floored_to_one_storey": 7255,
+   "h_p50": 3.0,
+   "h_p90": 4.2,
+   "h_max": 14.4,
+   "mb": 3.6
+  },
+  {
+   "id": "santa_rosalia",
+   "name": "Santa Rosalía",
+   "url": "/gis/edificios/santa_rosalia.geojson",
+   "bbox": [
+    -112.2889,
+    27.31285,
+    -112.24943,
+    27.36034
+   ],
+   "buildings": 8005,
+   "floored_to_one_storey": 4167,
+   "h_p50": 3.0,
+   "h_p90": 4.9,
+   "h_max": 21.6,
+   "mb": 2.4
+  },
+  {
+   "id": "todos_santos",
+   "name": "Todos Santos",
+   "url": "/gis/edificios/todos_santos.geojson",
+   "bbox": [
+    -110.26943,
+    23.41379,
+    -110.189,
+    23.49072
+   ],
+   "buildings": 10423,
+   "floored_to_one_storey": 7000,
+   "h_p50": 3.0,
+   "h_p90": 4.3,
+   "h_max": 13.5,
+   "mb": 3.1
+  }
+ ]
+}

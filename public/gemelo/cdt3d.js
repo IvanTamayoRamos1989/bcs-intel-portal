@@ -378,7 +378,9 @@
         maxZoom: 17,
         // Sharp on high-density screens, smooth volume edges.
         pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
-        canvasContextAttributes: { antialias: true },
+        // MSAA only where it pays: desktop screens at normal density. High-DPI and touch screens are already
+        // sharp at pixelRatio 2, and MSAA costs real time on modest GPUs.
+        canvasContextAttributes: { antialias: (window.devicePixelRatio || 1) < 2 && !(window.matchMedia && window.matchMedia('(pointer: coarse)').matches) },
         fadeDuration: 180,
         maxBounds: [[stateBounds[0][0] - pad, stateBounds[0][1] - pad], [stateBounds[1][0] + pad, stateBounds[1][1] + pad]],
         maxBoundsViscosity: 0.85,
@@ -733,7 +735,7 @@
         var ids = [];
         ((style && style.layers) || []).forEach(function (layer) {
           var id = layer.id;
-          if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0) ids.push(id);
+          if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0 || id.indexOf('cdt-bld-') === 0) ids.push(id);
         });
         return ids.filter(function (id) { return map.getLayer(id); });
       }
@@ -901,6 +903,53 @@
           map.on('zoomend', declutter);
         }).catch(function () {});
       }
+      // Real buildings: one GeoJSON per city, added only when the view reaches it.
+      var bld = { on: false, index: null, added: {} };
+      var BLD_MINZ = 12.5;
+      function bldColor() {
+        return ['step', ['get', 'n'], '#ebe4d3', 2, '#ddd0b5', 3, '#cbb795', 5, '#ad916c', 10, '#7d6650'];
+      }
+      function bldSync() {
+        if (!bld.on || !bld.index) return;
+        var b = map.getBounds();
+        var z = map.getZoom();
+        bld.index.cities.forEach(function (c) {
+          var hit = !(c.bbox[2] < b.getWest() || c.bbox[0] > b.getEast() || c.bbox[3] < b.getSouth() || c.bbox[1] > b.getNorth());
+          var lid = 'cdt-bld-' + c.id;
+          if (hit && z >= BLD_MINZ - 0.5 && !bld.added[c.id]) {
+            bld.added[c.id] = true;
+            map.addSource('bld-' + c.id, { type: 'geojson', data: c.url });
+            map.addLayer({
+              id: lid, type: 'fill-extrusion', source: 'bld-' + c.id, minzoom: BLD_MINZ,
+              paint: {
+                'fill-extrusion-color': bldColor(),
+                'fill-extrusion-height': ['get', 'h'],
+                'fill-extrusion-base': 0,
+                'fill-extrusion-opacity': ['interpolate', ['linear'], ['zoom'], BLD_MINZ, 0, BLD_MINZ + 0.6, 0.96],
+                'fill-extrusion-vertical-gradient': true,
+              },
+            });
+            map.on('mouseenter', lid, function () { map.getCanvas().style.cursor = 'pointer'; });
+            map.on('mouseleave', lid, function () { map.getCanvas().style.cursor = ''; });
+          }
+          if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'visible');
+        });
+      }
+      function setBuildings(on) {
+        bld.on = !!on;
+        if (!on) {
+          Object.keys(bld.added).forEach(function (id) { if (map.getLayer('cdt-bld-' + id)) map.setLayoutProperty('cdt-bld-' + id, 'visibility', 'none'); });
+          return Promise.resolve(null);
+        }
+        var wait = bld.index ? Promise.resolve(bld.index) : fetch('/gis/edificios/index.json').then(function (r) { return r.ok ? r.json() : null; });
+        return wait.then(function (ix) {
+          if (!ix) return null;
+          bld.index = ix;
+          bldSync();
+          return ix;
+        }).catch(function () { return null; });
+      }
+      map.on('moveend', bldSync);
       var removed = false;
       return new Promise(function (resolve, reject) {
         var settled = false;
@@ -946,6 +995,7 @@
               return [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
             },
             getZoom: function () { return map.getZoom(); },
+            setBuildings: setBuildings,
             readCamera: function () {
               var c = map.getCenter();
               return { lng: c.lng, lat: c.lat, zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
@@ -971,7 +1021,7 @@
           var msg = String(ev && ev.error && ev.error.message || '');
           if (/WebGL|failed to initialize/i.test(msg)) fail(ev.error || new Error(msg));
         });
-        setTimeout(function () { if (!settled) fail(new Error('timeout')); }, 20000);
+        setTimeout(function () { if (!settled) fail(new Error('timeout')); }, 35000);
       });
     });
   }
