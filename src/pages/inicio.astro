@@ -1,12 +1,212 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+import ChatWidget from '../components/ChatWidget.astro';
+import { ui } from '../i18n/ui';
+import { cdtModel } from '../lib/cdtModel';
+
+const shellModel = {
+  layers: cdtModel.layerCatalog.map((l) => ({
+    id: l.id,
+    url: l.url,
+    type: l.type,
+    color: l.color,
+    name_es: l.name_es,
+    name_en: l.name_en,
+    group: l.group,
+    source_es: l.source_es,
+    source_en: l.source_en,
+    year_es: l.year_es,
+    year_en: l.year_en,
+  })),
+  themes: cdtModel.themes.map((t) => ({
+    id: t.id,
+    es: t.es,
+    en: t.en,
+    layers: t.layers,
+  })),
+};
+const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
 ---
-<BaseLayout
-  title="BCS 2050"
-  titleEn="BCS 2050"
-  description="Consulta ciudadana conversacional sobre Baja California Sur."
-  descriptionEn="Conversational citizen consultation on Baja California Sur."
-  home={true}
-  hidePageHead={true}
-  chatHome={true}
-></BaseLayout>
+<!doctype html>
+<html lang="es" data-lang="es" data-title-es="Consulta" data-title-en="Consultation" data-title-suffix=" · BCS 2050">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#fbf8f1" />
+    <title data-title-es="Consulta" data-title-en="Consultation" data-title-suffix=" · BCS 2050">Consulta · BCS 2050</title>
+    <link rel="stylesheet" href="/explorar/vendor/maplibre-gl.css" />
+    <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
+    <script is:inline define:vars={{ uiObj: ui }}>
+      window.__BCS_UI__ = uiObj;
+    </script>
+    <script is:inline src="/lang-toggle.js"></script>
+    <script is:inline src="/auth-gate.js"></script>
+    <script is:inline src="/place-strip.js" defer></script>
+  </head>
+  <body class="shell-app" data-pane="map">
+    <div class="shell">
+      <section class="shell-chat" aria-label="Consulta">
+        <ChatWidget shell={true} />
+      </section>
+      <div class="shell-split" id="split-l" role="separator" aria-orientation="vertical" aria-label="Ancho de la consulta"></div>
+      <section class="shell-map-wrap" aria-label="Mapa">
+        <div id="shell-map"></div>
+        <div class="shell-tools">
+          <div class="shell-brand">
+            <strong>BCS2050</strong>
+            <button type="button" id="lang-toggle" aria-pressed="false">
+              <span data-side="es">ES</span><span aria-hidden="true"> · </span><span data-side="en">EN</span>
+            </button>
+            <a href="/portal"><span data-lang-es>Resto del portal</span><span data-lang-en hidden>Rest of the portal</span></a>
+          </div>
+          <div class="shell-base" role="group" aria-label="Mapa base" data-aria-es="Mapa base" data-aria-en="Basemap">
+            <button type="button" data-base="streets" aria-pressed="true"><span data-lang-es>Calles</span><span data-lang-en hidden>Streets</span></button>
+            <button type="button" data-base="satellite" aria-pressed="false"><span data-lang-es>Satélite</span><span data-lang-en hidden>Satellite</span></button>
+          </div>
+          <div class="shell-themes" role="group" aria-label="Temas" data-aria-es="Temas" data-aria-en="Themes">
+            {shellModel.themes.map((t) => (
+              <button type="button" data-theme={t.id} aria-pressed="false">
+                <span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span>
+              </button>
+            ))}
+          </div>
+          <details class="shell-layers">
+            <summary><span data-lang-es>Capas</span><span data-lang-en hidden>Layers</span></summary>
+            {shellModel.themes.map((t) => (
+              <div class="shell-layer-group">
+                <p><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></p>
+                {(t.layers || []).map((id) => {
+                  const layer = layersById[id];
+                  if (!layer) return null;
+                  return (
+                    <label>
+                      <input type="checkbox" data-layer={layer.id} />
+                      <span>
+                        <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                        <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span> · <span data-lang-es>{layer.year_es}</span><span data-lang-en hidden>{layer.year_en}</span></small>
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+            ))}
+          </details>
+          <p class="shell-status" id="shell-status" aria-live="polite"></p>
+          <p class="shell-gap">
+            <a href="/gemelo/#listo"><span data-lang-es>Qué falta</span><span data-lang-en hidden>What is missing</span></a>
+            <span data-lang-es> sigue fuera del mapa. El tablero largo está en </span>
+            <span data-lang-en hidden> stays off the map. The long board is at </span>
+            <a href="/gemelo/"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>.
+          </p>
+        </div>
+      </section>
+      <div class="shell-split" id="split-r" role="separator" aria-orientation="vertical" aria-label="Ancho de los archivos"></div>
+      <section class="shell-files" aria-label="Archivos">
+        <header>
+          <strong><span data-lang-es>Archivos</span><span data-lang-en hidden>Files</span></strong>
+          <input id="shell-q" type="search" autocomplete="off" placeholder="Buscar" data-lang-placeholder-es="Buscar" data-lang-placeholder-en="Search" />
+        </header>
+        <div id="shell-related" hidden></div>
+        <div id="shell-tree"></div>
+        <div id="shell-preview" hidden></div>
+      </section>
+    </div>
+    <nav class="shell-tabs" aria-label="Paneles">
+      <button type="button" data-pane="chat" aria-pressed="false"><span data-lang-es>Consulta</span><span data-lang-en hidden>Chat</span></button>
+      <button type="button" data-pane="map" aria-pressed="true"><span data-lang-es>Mapa</span><span data-lang-en hidden>Map</span></button>
+      <button type="button" data-pane="files" aria-pressed="false"><span data-lang-es>Archivos</span><span data-lang-en hidden>Files</span></button>
+    </nav>
+    <script is:inline define:vars={{ shellModel }}>
+      window.__SHELL_MODEL__ = shellModel;
+    </script>
+    <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
+    <script is:inline src="/gemelo/cdt3d.js"></script>
+    <script is:inline src="/vendor/leaflet/leaflet.js"></script>
+    <script is:inline src="/shell/app.js"></script>
+    <style is:global>
+      html, body.shell-app { margin: 0; height: 100%; background: #fbf8f1; color: #1a1a1a; overflow: hidden; }
+      body.shell-app { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+      .shell {
+        --chat-w: 320px;
+        --files-w: 320px;
+        display: grid;
+        grid-template-columns: var(--chat-w) 6px minmax(0, 1fr) 6px var(--files-w);
+        height: 100%;
+        min-height: 0;
+      }
+      .shell-chat, .shell-files, .shell-map-wrap { min-width: 0; min-height: 0; height: 100%; }
+      .shell-chat { background: #fbf8f1; border-right: 1px solid #e0e0e0; }
+      .shell-files { display: flex; flex-direction: column; background: #fff; border-left: 1px solid #e0e0e0; }
+      .shell-files header { display: flex; flex-direction: column; gap: .35rem; padding: .65rem .75rem .4rem; border-bottom: 1px solid #e0e0e0; }
+      .shell-files header strong { color: #006BA3; }
+      .shell-files input { width: 100%; font: inherit; border: 1px solid #d5d5d5; border-radius: 8px; padding: .4rem .55rem; }
+      #shell-tree, #shell-related { overflow: auto; padding: .35rem .55rem .6rem; }
+      #shell-tree { flex: 1; }
+      #shell-related { border-bottom: 1px solid #e7eef3; max-height: 34%; }
+      .shell-tree-label { margin: .35rem .2rem; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: #0083C4; font-weight: 700; }
+      .shell-files details { margin: .15rem 0; }
+      .shell-files summary { cursor: pointer; font-weight: 650; color: #1a1a1a; padding: .2rem 0; }
+      .shell-file { display: block; width: 100%; text-align: left; font: inherit; font-size: .8rem; line-height: 1.3; border: 0; background: transparent; color: #1a1a1a; padding: .28rem .2rem; border-radius: 6px; cursor: pointer; }
+      .shell-file:hover, .shell-file:focus-visible { background: #e8f4fb; outline: none; }
+      #shell-preview { border-top: 1px solid #e0e0e0; padding: .55rem .7rem .7rem; max-height: 38%; overflow: auto; }
+      #shell-preview p { margin: 0 0 .35rem; font-size: .82rem; }
+      #shell-preview a { color: #006BA3; font-weight: 700; }
+      #shell-preview img { width: 100%; height: auto; border-radius: 8px; background: #eef3f6; }
+      .shell-split { cursor: col-resize; background: #e7eef2; }
+      .shell-split:hover, .shell-split:focus-visible { background: #0083C4; outline: none; }
+      .shell-map-wrap { position: relative; background: #d5e2ea; }
+      #shell-map { position: absolute; inset: 0; }
+      .shell-tools {
+        position: absolute; z-index: 2; top: .6rem; left: .6rem;
+        width: min(340px, calc(100% - 4.5rem));
+        max-height: calc(100% - 1.2rem); overflow: auto;
+        background: rgba(251, 248, 241, .95);
+        border: 1px solid #e0e0e0; border-left: 3px solid #0083C4;
+        border-radius: 12px; padding: .55rem .7rem .65rem;
+      }
+      .shell-brand { display: flex; flex-wrap: wrap; gap: .35rem .6rem; align-items: center; margin-bottom: .4rem; }
+      .shell-brand strong { color: #0083C4; }
+      .shell-brand a, .shell-gap a { color: #006BA3; font-weight: 700; }
+      #lang-toggle { font: inherit; border: 1px solid #0083C4; background: #fff; color: #006BA3; border-radius: 999px; padding: .15rem .5rem; cursor: pointer; }
+      .shell-base, .shell-themes { display: flex; flex-wrap: wrap; gap: .3rem; margin: .35rem 0; }
+      .shell-base button, .shell-themes button {
+        font: inherit; font-size: .75rem; font-weight: 650; border: 1px solid #c5d5de; background: #fff; color: #1a1a1a;
+        border-radius: 999px; padding: .22rem .55rem; cursor: pointer;
+      }
+      .shell-base button[aria-pressed="true"], .shell-themes button[aria-pressed="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
+      .shell-layers { margin-top: .25rem; }
+      .shell-layers summary { cursor: pointer; font-weight: 700; color: #006BA3; }
+      .shell-layer-group p { margin: .45rem 0 .15rem; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; color: #0083C4; }
+      .shell-layers label { display: flex; gap: .35rem; align-items: flex-start; margin: .2rem 0; font-size: .78rem; line-height: 1.3; }
+      .shell-layers small { display: block; color: #5a5a5a; font-weight: 400; }
+      .shell-status, .shell-gap { margin: .4rem 0 0; font-size: .75rem; line-height: 1.35; color: #3c5163; }
+      .shell-tabs { display: none; }
+      .cdt-pin {
+        background: #0083C4; color: #fff; font: 700 12px/1.2 system-ui, sans-serif;
+        padding: .25rem .5rem; border-radius: 999px; border: 2px solid #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,.25); white-space: nowrap;
+      }
+      .maplibregl-ctrl-top-right { top: .4rem; }
+      @media (max-width: 900px) {
+        body.shell-app { display: flex; flex-direction: column; }
+        .shell { display: block; flex: 1; height: auto; min-height: 0; }
+        .shell-split { display: none; }
+        .shell-chat, .shell-map-wrap, .shell-files { display: none; height: 100%; }
+        body.shell-app[data-pane="chat"] .shell-chat,
+        body.shell-app[data-pane="map"] .shell-map-wrap,
+        body.shell-app[data-pane="files"] .shell-files { display: flex; }
+        body.shell-app[data-pane="map"] .shell-map-wrap { display: block; }
+        .shell-files { width: 100%; }
+        .shell-tabs {
+          display: grid; grid-template-columns: 1fr 1fr 1fr; flex: 0 0 auto;
+          border-top: 1px solid #e0e0e0; background: #fff;
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .shell-tabs button { font: inherit; font-weight: 700; border: 0; background: transparent; padding: .7rem .2rem; color: #3c5163; }
+        .shell-tabs button[aria-pressed="true"] { color: #0083C4; }
+        .shell-tools { width: min(300px, calc(100% - 1.2rem)); }
+      }
+    </style>
+  </body>
+</html>

@@ -121,9 +121,25 @@
         land: { type: 'geojson', data: (base && base.land) || empty },
         bcs: { type: 'geojson', data: (base && base.boundary) || empty },
         munis: { type: 'geojson', data: (base && base.municipalities) || empty },
+        osm: {
+          type: 'raster',
+          tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+          tileSize: 256,
+          attribution: '© OpenStreetMap',
+          maxzoom: 19,
+        },
+        sat: {
+          type: 'raster',
+          tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+          tileSize: 256,
+          attribution: 'Esri',
+          maxzoom: 18,
+        },
       },
       layers: [
         { id: 'ocean', type: 'background', paint: { 'background-color': '#c5d5de' } },
+        { id: 'basemap-sat', type: 'raster', source: 'sat', layout: { visibility: 'none' } },
+        { id: 'basemap-osm', type: 'raster', source: 'osm', layout: { visibility: 'none' } },
         { id: 'land', type: 'fill', source: 'land', paint: { 'fill-color': '#e7e2d4', 'fill-opacity': 0.9 } },
         { id: 'bcs-land', type: 'fill', source: 'bcs', paint: { 'fill-color': '#ece6d4' } },
         { id: 'hills', type: 'hillshade', source: 'shade', paint: {
@@ -316,6 +332,24 @@
         var name = f && f.properties && f.properties.name;
         if (name && opts.onMunicipality) opts.onMunicipality(name);
       }
+      var marker = null;
+      function setBasemap(mode) {
+        var sat = mode === 'satellite';
+        var streets = mode === 'streets';
+        if (map.getLayer('basemap-sat')) map.setLayoutProperty('basemap-sat', 'visibility', sat ? 'visible' : 'none');
+        if (map.getLayer('basemap-osm')) map.setLayoutProperty('basemap-osm', 'visibility', streets ? 'visible' : 'none');
+        if (map.getLayer('land')) map.setPaintProperty('land', 'fill-opacity', sat ? 0 : streets ? 0.16 : 0.9);
+        if (map.getLayer('bcs-land')) map.setPaintProperty('bcs-land', 'fill-opacity', sat ? 0.04 : streets ? 0.18 : 1);
+        if (map.getLayer('hills')) map.setLayoutProperty('hills', 'visibility', sat ? 'none' : 'visible');
+      }
+      function mark(lng, lat, label) {
+        if (marker) { marker.remove(); marker = null; }
+        if (lng == null || lat == null) return;
+        var el = document.createElement('div');
+        el.className = 'cdt-pin';
+        el.textContent = label || '';
+        marker = new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat([lng, lat]).addTo(map);
+      }
       map.on('click', 'cdt-muni-fill', onMuniClick);
       map.on('click', 'cdt-muni-extrude', onMuniClick);
       map.on('mouseenter', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = 'pointer'; });
@@ -344,6 +378,8 @@
             show: show,
             hide: hide,
             load: load,
+            setBasemap: setBasemap,
+            mark: mark,
             readCamera: function () {
               var c = map.getCenter();
               return { lng: c.lng, lat: c.lat, zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
