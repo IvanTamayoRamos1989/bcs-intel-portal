@@ -177,7 +177,7 @@
         { id: 'cdt-muni-line', type: 'line', source: 'munis', paint: { 'line-color': '#006BA3', 'line-width': 1.3 } },
         { id: 'coast', type: 'line', source: 'bcs', paint: { 'line-color': '#5f7f8c', 'line-width': 1.1 } },
       ],
-      terrain: { source: 'dem', exaggeration: 1.15 },
+      terrain: { source: 'dem', exaggeration: 1.35 },
       sky: {
         'sky-color': '#d7e5ea',
         'horizon-color': '#f3f0e6',
@@ -201,8 +201,9 @@
   function start(opts) {
     registerDem();
     var reduced = !!opts.reduced;
-    var pitch0 = opts.pitch != null ? opts.pitch : (reduced ? 0 : 50);
-    var bearing0 = reduced ? 0 : -16;
+    var pitch0 = opts.pitch != null ? opts.pitch : (reduced ? 0 : 52);
+    var bearing0 = opts.bearing != null ? opts.bearing : (reduced ? 0 : -18);
+    var exaggeration = opts.exaggeration != null ? opts.exaggeration : 1.35;
     return loadBase().then(function (base) {
       var stateBounds = base && base.bounds ? base.bounds : [[STATE[0], STATE[1]], [STATE[2], STATE[3]]];
       var pad = 0.45;
@@ -279,36 +280,44 @@
           map.addLayer({
             id: lid, type: 'line', source: src,
             layout: { 'line-join': 'round', 'line-cap': 'round' },
-            paint: { 'line-color': meta.color || '#0083C4', 'line-width': 1.5, 'line-opacity': 0.9 },
-          }, 'cdt-muni-fill');
+            paint: { 'line-color': meta.color || '#0083C4', 'line-width': 2.2, 'line-opacity': 0.95 },
+          });
         } else {
           map.addLayer({
             id: lid, type: 'fill', source: src,
             paint: {
               'fill-color': meta.color || '#0083C4',
-              'fill-opacity': 0.22,
+              'fill-opacity': 0.28,
               'fill-outline-color': meta.color || '#0083C4',
             },
           }, 'cdt-muni-fill');
+          map.addLayer({
+            id: lid + '-edge', type: 'line', source: src,
+            paint: { 'line-color': meta.color || '#0083C4', 'line-width': 1.6, 'line-opacity': 0.95 },
+          });
         }
         return lid;
       }
       function hide(id) {
         var lid = 'cdt-ly-' + id;
         if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
+        if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', 'none');
       }
       function show(id, geo, meta, mode) {
         var lid = ensure(id, geo, meta);
-        map.setLayoutProperty(lid, 'visibility', mode === 'off' ? 'none' : 'visible');
+        var vis = mode === 'off' ? 'none' : 'visible';
+        map.setLayoutProperty(lid, 'visibility', vis);
+        if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', vis);
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
         if (point) {
-          map.setPaintProperty(lid, 'circle-stroke-width', mode === 'compare' ? 3 : 1);
+          map.setPaintProperty(lid, 'circle-radius', 6);
+          map.setPaintProperty(lid, 'circle-stroke-width', mode === 'compare' ? 3 : 1.4);
           map.setPaintProperty(lid, 'circle-stroke-color', mode === 'compare' ? '#0b3a56' : '#ffffff');
         } else if (line) {
-          map.setPaintProperty(lid, 'line-width', mode === 'compare' ? 3.2 : 1.5);
+          map.setPaintProperty(lid, 'line-width', mode === 'compare' ? 3.4 : 2.2);
         } else {
-          map.setPaintProperty(lid, 'fill-opacity', mode === 'compare' ? 0.42 : 0.22);
+          map.setPaintProperty(lid, 'fill-opacity', mode === 'compare' ? 0.4 : 0.28);
         }
       }
       function load(meta) {
@@ -354,6 +363,32 @@
         if (name && opts.onMunicipality) opts.onMunicipality(name);
       }
       var marker = null;
+      var reliefOn = true;
+      function syncHills() {
+        if (!map.getLayer('hills')) return;
+        var sat = map.getLayer('basemap-sat') && map.getLayoutProperty('basemap-sat', 'visibility') === 'visible';
+        map.setLayoutProperty('hills', 'visibility', reliefOn ? 'visible' : 'none');
+        map.setPaintProperty('hills', 'hillshade-exaggeration', sat ? 0.38 : 0.62);
+      }
+      function setTerrain(on, ex) {
+        reliefOn = !!on;
+        if (on) map.setTerrain({ source: 'dem', exaggeration: ex || exaggeration });
+        else map.setTerrain(null);
+        syncHills();
+      }
+      function setMuniWash(opacity) {
+        if (map.getLayer('cdt-muni-fill')) map.setPaintProperty('cdt-muni-fill', 'fill-opacity', opacity);
+      }
+      function setExtrudeOpacity(opacity) {
+        if (map.getLayer('cdt-muni-extrude')) map.setPaintProperty('cdt-muni-extrude', 'fill-extrusion-opacity', opacity);
+      }
+      function setPitch(pitch, bearing) {
+        map.easeTo({
+          pitch: pitch,
+          bearing: bearing != null ? bearing : map.getBearing(),
+          duration: reduced ? 0 : 700,
+        });
+      }
       function setBasemap(mode) {
         var sat = mode === 'satellite';
         var streets = mode === 'streets';
@@ -361,7 +396,7 @@
         if (map.getLayer('basemap-osm')) map.setLayoutProperty('basemap-osm', 'visibility', streets ? 'visible' : 'none');
         if (map.getLayer('land')) map.setPaintProperty('land', 'fill-opacity', sat ? 0 : streets ? 0.16 : 0.9);
         if (map.getLayer('bcs-land')) map.setPaintProperty('bcs-land', 'fill-opacity', sat ? 0.04 : streets ? 0.18 : 1);
-        if (map.getLayer('hills')) map.setLayoutProperty('hills', 'visibility', sat ? 'none' : 'visible');
+        syncHills();
       }
       function mark(lng, lat, label) {
         if (marker) { marker.remove(); marker = null; }
@@ -382,6 +417,7 @@
           if (settled) return;
           settled = true;
           bindTools();
+          if (exaggeration !== 1.35) map.setTerrain({ source: 'dem', exaggeration: exaggeration });
           if (!base || !base.municipalities) {
             fetch('/gis/osm_municipalities.geojson').then(function (r) { return r.json(); }).then(function (geo) {
               muniBase = geo;
@@ -400,6 +436,11 @@
             hide: hide,
             load: load,
             setBasemap: setBasemap,
+            setTerrain: setTerrain,
+            setMuniWash: setMuniWash,
+            setExtrudeOpacity: setExtrudeOpacity,
+            setPitch: setPitch,
+            getPitch: function () { return map.getPitch(); },
             mark: mark,
             getBounds: function () {
               var b = map.getBounds();
