@@ -522,5 +522,24 @@
     "label_ciudadano_en": "Rainwater paths (model)",
     "que_significa_en": "Where rainwater would flow given the terrain; not a flood map.",
     "basico": false
+  },
+  {
+    "id": "bcs_market_listings",
+    "url": "/gis/bcs_market_listings.geojson",
+    "name_es": "Oferta inmobiliaria georreferenciada (MLS BCS)",
+    "name_en": "Geolocated real estate listings (BCS MLS)",
+    "type": "points",
+    "defaultOn": true,
+    "color": "#f59e0b",
+    "group": "vivienda",
+    "group_es": "Vivienda y mercado inmobiliario",
+    "group_en": "Housing and real estate market",
+    "legend_es": "Propiedades residenciales, condominios, lotes y multifamiliares en mercado (USD)",
+    "legend_en": "Residential, condo, land, and multi-family market listings (USD)",
+    "label_ciudadano": "Propiedades en mercado (MLS BCS)",
+    "que_significa": "Oferta inmobiliaria geolocalizada en Baja California Sur con precios de lista en USD y tipología.",
+    "label_ciudadano_en": "Market listings (BCS MLS)",
+    "que_significa_en": "Geolocated real estate listings across Baja California Sur with USD list prices and property type.",
+    "basico": true
   }
 ]

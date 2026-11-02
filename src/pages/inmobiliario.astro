@@ -188,11 +188,11 @@ const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFracti
   <p>
     <span data-lang-es>
       Lenguaje de hubs alineado a <a href="/studio">/studio</a>.
-      <strong>Bandera:</strong> la serie Cabo RE es Cabo-only (municipio Los Cabos). JLL aporta MPI estatal por zona; Coldwell Banker Q1 2025 da cortes zonales estatales (incl. La Paz / Pacífico).
+      <strong>Bandera:</strong> la serie Cabo RE es Cabo-only (municipio Los Cabos). JLL aporta MPI estatal por zona; MLS BCS Q1 2025 da cortes zonales estatales (incl. La Paz / Pacífico).
     </span>
     <span data-lang-en hidden>
       Hub language aligned with <a href="/studio">/studio</a>.
-      <strong>Flag:</strong> Cabo RE series is Cabo-only (Los Cabos municipality). JLL provides statewide zone MPI; Coldwell Banker Q1 2025 gives statewide zonal cuts (incl. La Paz / Pacific).
+      <strong>Flag:</strong> Cabo RE series is Cabo-only (Los Cabos municipality). JLL provides statewide zone MPI; MLS BCS Q1 2025 gives statewide zonal cuts (incl. La Paz / Pacific).
     </span>
   </p>
   <div class="table-wrap">
@@ -225,16 +225,16 @@ const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFracti
           <td>La Paz</td>
           <td>{zones.zone_share_volume_pct_2025.la_paz}%</td>
           <td>
-            <span data-lang-es>Estable; nicho cultura/producto diverso (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.la_paz/1e6).toFixed(1)}M · {cb.by_zone_units.la_paz} u.</span>
-            <span data-lang-en hidden>Stable; culture/diverse-product niche (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.la_paz/1e6).toFixed(1)}M · {cb.by_zone_units.la_paz} units.</span>
+            <span data-lang-es>Estable; nicho cultura/producto diverso (JLL). MLS BCS Q1 2025: US${(cb.by_zone_volume_usd.la_paz/1e6).toFixed(1)}M · {cb.by_zone_units.la_paz} u.</span>
+            <span data-lang-en hidden>Stable; culture/diverse-product niche (JLL). MLS BCS Q1 2025: US${(cb.by_zone_volume_usd.la_paz/1e6).toFixed(1)}M · {cb.by_zone_units.la_paz} units.</span>
           </td>
         </tr>
         <tr>
           <td>East Cape</td>
           <td>{zones.zone_share_volume_pct_2025.east_cape}%</td>
           <td>
-            <span data-lang-es>Costa Palmas como ancla ultra-premium (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.east_cape/1e6).toFixed(1)}M · {cb.by_zone_units.east_cape} u.</span>
-            <span data-lang-en hidden>Costa Palmas as ultra-premium anchor (JLL). Coldwell Q1 2025: US${(cb.by_zone_volume_usd.east_cape/1e6).toFixed(1)}M · {cb.by_zone_units.east_cape} units.</span>
+            <span data-lang-es>Costa Palmas como ancla ultra-premium (JLL). MLS BCS Q1 2025: US${(cb.by_zone_volume_usd.east_cape/1e6).toFixed(1)}M · {cb.by_zone_units.east_cape} u.</span>
+            <span data-lang-en hidden>Costa Palmas as ultra-premium anchor (JLL). MLS BCS Q1 2025: US${(cb.by_zone_volume_usd.east_cape/1e6).toFixed(1)}M · {cb.by_zone_units.east_cape} units.</span>
           </td>
         </tr>
         <tr>
@@ -258,8 +258,8 @@ const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFracti
   </div>
 
   <h3>
-    <span data-lang-es>Coldwell Banker / BCS MLS — Q1 2025 (estatal)</span>
-    <span data-lang-en hidden>Coldwell Banker / BCS MLS — Q1 2025 (statewide)</span>
+    <span data-lang-es>MLS BCS — Q1 2025 (corte zonal estatal)</span>
+    <span data-lang-en hidden>BCS MLS — Q1 2025 (statewide zonal cut)</span>
   </h3>
   <div class="stat-grid">
     <div class="stat"><span class="n">US${fmtM(cb.volume_m_usd)}M</span><span class="l">Volumen Q1 2025</span></div>
@@ -291,6 +291,147 @@ const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFracti
     <span data-lang-en hidden>{cb.note_en}</span>
     · <a href={cb.drive_view} target="_blank" rel="noopener">Drive</a>
   </p>
+
+  
+  <!-- 3B. Catálogo Georreferenciado MLS BCS -->
+  <section id="catalogo-mls" style="margin: 2.2rem 0; padding: 1.25rem; border: 1px solid #cbd5e1; border-left: 4px solid #0083C4; border-radius: 12px; background: #f8fafc;">
+    <h3 style="margin-top: 0;">
+      <span data-lang-es>Catálogo georreferenciado de propiedades en mercado (MLS BCS)</span>
+      <span data-lang-en hidden>Geolocated market property catalog (BCS MLS)</span>
+    </h3>
+    <p style="margin: 0.35rem 0 0.9rem; font-size: 0.92rem; color: #334155;">
+      <span data-lang-es>
+        Inventario georreferenciado de propiedades residenciales, condominios, lotes y multifamiliares en Baja California Sur, integrado directamente como capa 3D en el Gemelo Territorial y en el visor de Mapas.
+      </span>
+      <span data-lang-en hidden>
+        Geolocated inventory of residential, condo, land, and multi-family listings across Baja California Sur, integrated directly as a 3D layer in the Territorial Twin and in the Maps viewer.
+      </span>
+    </p>
+    <div class="stat-grid" id="mls-live-kpis" style="margin-bottom: 1rem;">
+      <div class="stat"><span class="n" id="mls-kpi-count">—</span><span class="l"><span data-lang-es>Propiedades georreferenciadas</span><span data-lang-en hidden>Geolocated listings</span></span></div>
+      <div class="stat"><span class="n" id="mls-kpi-vol">—</span><span class="l"><span data-lang-es>Valor de lista acumulado</span><span data-lang-en hidden>Total list value</span></span></div>
+      <div class="stat"><span class="n" id="mls-kpi-med">—</span><span class="l"><span data-lang-es>Precio mediano (USD)</span><span data-lang-en hidden>Median price (USD)</span></span></div>
+      <div class="stat"><span class="n" id="mls-kpi-avg">—</span><span class="l"><span data-lang-es>Precio promedio (USD)</span><span data-lang-en hidden>Average price (USD)</span></span></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 0.9rem;">
+      <label style="font-size: 0.85rem; font-weight: 600;">
+        <span data-lang-es>Municipio:</span><span data-lang-en hidden>Municipality:</span>
+        <select id="mls-filter-muni" style="margin-left: 0.35rem; padding: 0.3rem 0.6rem; border-radius: 999px; border: 1px solid #94a3b8;">
+          <option value="">Todos</option>
+          <option value="Los Cabos">Los Cabos</option>
+          <option value="La Paz">La Paz</option>
+          <option value="Loreto">Loreto</option>
+          <option value="Comondú">Comondú</option>
+          <option value="Mulegé">Mulegé</option>
+        </select>
+      </label>
+      <label style="font-size: 0.85rem; font-weight: 600;">
+        <span data-lang-es>Tipología:</span><span data-lang-en hidden>Property type:</span>
+        <select id="mls-filter-type" style="margin-left: 0.35rem; padding: 0.3rem 0.6rem; border-radius: 999px; border: 1px solid #94a3b8;">
+          <option value="">Todas</option>
+          <option value="RESIDENTIAL">Residencial / Casa</option>
+          <option value="CONDO">Condominio</option>
+          <option value="LAND">Lote / Terreno</option>
+          <option value="MULTI_FAMILY">Multifamiliar</option>
+          <option value="OTHER">Otro</option>
+        </select>
+      </label>
+      <a class="btn" href="/gemelo/?theme=vivienda&scenario=baseline&muni=Los%20Cabos" style="margin-left: auto;">
+        <span data-lang-es>Explorar en Gemelo 3D</span><span data-lang-en hidden>Explore in 3D Twin</span>
+      </a>
+      <a class="btn secondary" href="/mapas/?layers=bcs_market_listings#gis">
+        <span data-lang-es>Abrir en Mapas GIS</span><span data-lang-en hidden>Open in GIS Maps</span>
+      </a>
+    </div>
+    <div class="table-wrap" style="max-height: 420px; overflow-y: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th><span data-lang-es>Propiedad / Zona</span><span data-lang-en hidden>Property / Zone</span></th>
+            <th><span data-lang-es>Municipio</span><span data-lang-en hidden>Municipality</span></th>
+            <th><span data-lang-es>Tipo</span><span data-lang-en hidden>Type</span></th>
+            <th><span data-lang-es>Precio (USD)</span><span data-lang-en hidden>Price (USD)</span></th>
+            <th><span data-lang-es>Rec / Baños / Área</span><span data-lang-en hidden>Beds / Baths / Area</span></th>
+            <th><span data-lang-es>Coordenadas</span><span data-lang-en hidden>Coordinates</span></th>
+          </tr>
+        </thead>
+        <tbody id="mls-live-tbody">
+          <tr><td colspan="6">Cargando catálogo georreferenciado…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var tbody = document.getElementById('mls-live-tbody');
+      var selMuni = document.getElementById('mls-filter-muni');
+      var selType = document.getElementById('mls-filter-type');
+      var elCount = document.getElementById('mls-kpi-count');
+      var elVol = document.getElementById('mls-kpi-vol');
+      var elMed = document.getElementById('mls-kpi-med');
+      var elAvg = document.getElementById('mls-kpi-avg');
+      var allItems = [];
+      function esc(s) {
+        return String(s || '').replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function fmtUsd(n) {
+        if (!n || !isFinite(n)) return '—';
+        if (n >= 1e9) return 'US$' + (n / 1e9).toFixed(2) + 'B';
+        if (n >= 1e6) return 'US$' + (n / 1e6).toFixed(2) + 'M';
+        return 'US$' + Math.round(n).toLocaleString('en-US');
+      }
+      function render() {
+        var m = selMuni ? selMuni.value : '';
+        var t = selType ? selType.value : '';
+        var rows = allItems.filter(function (p) {
+          if (m && p.municipality !== m) return false;
+          if (t && p.propertyType !== t) return false;
+          return true;
+        });
+        var priced = rows.filter(function (p) { return p.price > 0; }).map(function (p) { return Number(p.price); }).sort(function (a, b) { return a - b; });
+        var vol = priced.reduce(function (s, v) { return s + v; }, 0);
+        var med = priced.length ? priced[Math.floor(priced.length / 2)] : 0;
+        var avg = priced.length ? Math.round(vol / priced.length) : 0;
+        if (elCount) elCount.textContent = rows.length.toLocaleString('en-US');
+        if (elVol) elVol.textContent = fmtUsd(vol);
+        if (elMed) elMed.textContent = fmtUsd(med);
+        if (elAvg) elAvg.textContent = fmtUsd(avg);
+        if (!tbody) return;
+        if (!rows.length) {
+          tbody.innerHTML = '<tr><td colspan="6">Sin propiedades para este filtro.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = rows.slice(0, 200).map(function (p) {
+          var specs = [];
+          if (p.bedrooms) specs.push(p.bedrooms + ' rec');
+          if (p.bathrooms) specs.push(p.bathrooms + ' baños');
+          if (p.livingAreaSqft) specs.push(Number(p.livingAreaSqft).toLocaleString('en-US') + ' sq ft');
+          var sub = [p.subdivision, p.city].filter(Boolean).join(' · ');
+          return '<tr>' +
+            '<td><strong>' + esc(p.title || p.name) + '</strong>' + (sub ? '<br><small class="meta">' + esc(sub) + '</small>' : '') + '</td>' +
+            '<td>' + esc(p.municipality || '—') + '</td>' +
+            '<td><span class="tag chip">' + esc(p.propertyType || 'RESIDENTIAL') + '</span></td>' +
+            '<td><strong>' + esc(p.priceFormatted || fmtUsd(p.price)) + '</strong></td>' +
+            '<td>' + esc(specs.join(' · ') || '—') + '</td>' +
+            '<td><small>' + Number(p.lat).toFixed(4) + ', ' + Number(p.lng).toFixed(4) + '</small></td>' +
+          '</tr>';
+        }).join('');
+      }
+      fetch('/gis/bcs_market_listings.geojson')
+        .then(function (r) { return r.json(); })
+        .then(function (geo) {
+          allItems = ((geo && geo.features) || []).map(function (f) { return f.properties || {}; });
+          render();
+        })
+        .catch(function () {
+          if (tbody) tbody.innerHTML = '<tr><td colspan="6">No se pudo cargar /gis/bcs_market_listings.geojson</td></tr>';
+        });
+      if (selMuni) selMuni.addEventListener('change', render);
+      if (selType) selType.addEventListener('change', render);
+    })();
+  </script>
 
   <!-- 4. Supply & pipeline -->
   <h2 id="oferta">
@@ -517,12 +658,12 @@ const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFracti
       <tbody>
         <tr>
           <td><span data-lang-es>Tierra (residencial MLS)</span><span data-lang-en hidden>Land (residential MLS)</span></td>
-          <td>JLL BCS 2025: US${j25.by_type_volume_m_usd_2025.land}M · {j25.by_type_units_2025.land} u. · Coldwell Q1 2025: {cb.by_type_units.land} u. / US${(cb.by_type_volume_usd.land/1e6).toFixed(1)}M</td>
+          <td>JLL BCS 2025: US${j25.by_type_volume_m_usd_2025.land}M · {j25.by_type_units_2025.land} u. · MLS BCS Q1 2025: {cb.by_type_units.land} u. / US${(cb.by_type_volume_usd.land/1e6).toFixed(1)}M</td>
           <td><span data-lang-es>Cabo RE no reporta tierra</span><span data-lang-en hidden>Cabo RE does not report land</span></td>
         </tr>
         <tr>
           <td><span data-lang-es>Comercial (MLS)</span><span data-lang-en hidden>Commercial (MLS)</span></td>
-          <td>Coldwell Q1 2025: {cb.by_type_units.commercial} u. / US${(cb.by_type_volume_usd.commercial/1e6).toFixed(1)}M</td>
+          <td>MLS BCS Q1 2025: {cb.by_type_units.commercial} u. / US${(cb.by_type_volume_usd.commercial/1e6).toFixed(1)}M</td>
           <td><span data-lang-es>Sin serie de rents / vacancia</span><span data-lang-en hidden>No rents / vacancy series</span></td>
         </tr>
         <tr>
@@ -608,8 +749,8 @@ const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFracti
     <span data-lang-en hidden>9. Sources appendix — {reps.length} reports</span>
   </h2>
   <p>
-    <span data-lang-es>Cabo RE · JLL · FITURCA · Coldwell Banker · INEGI ENEC. Conjunto: Base de datos BCS 2050 — mercado inmobiliario.</span>
-    <span data-lang-en hidden>Cabo RE · JLL · FITURCA · Coldwell Banker · INEGI ENEC. Pack: BCS 2050 database — real estate market.</span>
+    <span data-lang-es>Cabo RE · JLL · FITURCA · MLS BCS · INEGI ENEC. Conjunto: Base de datos BCS 2050 — mercado inmobiliario.</span>
+    <span data-lang-en hidden>Cabo RE · JLL · FITURCA · MLS BCS · INEGI ENEC. Pack: BCS 2050 database — real estate market.</span>
   </p>
   <div class="table-wrap">
     <table>
@@ -646,7 +787,7 @@ const fmtMxnM = (n: number) => (n / 1e6).toLocaleString('es-MX', { maximumFracti
       <li>JLL Reporte Anual Mercado Residencial Los Cabos 2025</li>
       <li>Cabo Real Estate Services — quarterly 2025 Q1–2026 Q2</li>
       <li>FITURCA Observatorio FEB 2026</li>
-      <li>Coldwell Banker / BCS MLS Q1 2025</li>
+      <li>MLS BCS Q1 2025</li>
       <li>SNIIV/SEDATU Cubo API · CONAVI Rezago 2024 · INEGI ENEC</li>
       <li>SRE — fideicomiso zona restringida</li>
       <li>Gobierno BCS — Convenio Vivienda para el Bienestar (oct 2024)</li>
