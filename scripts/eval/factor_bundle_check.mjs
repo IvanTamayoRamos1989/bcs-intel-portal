@@ -3,7 +3,7 @@
  * Retrieval check for the factor pack. No LLM.
  * Asserts intents and that the ontology bundle covers several factor families.
  */
-import { expandQuery, buildFactorEvidence } from '../../netlify/functions/chat.mjs';
+import { expandQuery, buildFactorEvidence, composeFactorBrief } from '../../netlify/functions/chat.mjs';
 
 const CASES = [
   {
@@ -491,6 +491,23 @@ const dma0302 = expandQuery('¿Cuál es la DMA del acuífero 0302?');
 if (!dma0302.isWaterIntent || dma0302.isFactorIntent) fail('bare DMA 0302 became a factor intent');
 const pop = expandQuery('¿Cuánta gente vive en La Paz?');
 if (!pop.isDemoIntent || pop.isFactorIntent) fail('population query lost demo intent');
+
+function briefOf(q) {
+  const intents = expandQuery(q);
+  return composeFactorBrief(buildFactorEvidence(q, intents), 'es');
+}
+const SECTION = /^(Viabilidad|Riesgos y restricciones|Oportunidades|Quién decide|Capacidades|Instrumentos|HUECOS — sin dato)/;
+function sectionCount(text) {
+  return text.split('\n').filter((line) => SECTION.test(line)).length;
+}
+const hotelBrief = briefOf('¿Es viable un hotel en Los Cabos?');
+if (sectionCount(hotelBrief) < 2) fail(`hotel brief names fewer than two factor sections\n${hotelBrief.slice(0, 400)}`);
+const rentBrief = briefOf('¿Cuál es la renta hotelera y el cap rate de un hotel en Los Cabos?');
+if (!/HUECO — sin dato:/.test(rentBrief) || !/sin dato/i.test(rentBrief)) fail('rent brief hid the sin-dato gap');
+const multiBrief = briefOf('Riesgos principales y oportunidades en Mulegé y el Vizcaíno');
+if (sectionCount(multiBrief) < 2) fail(`multi-factor brief names fewer than two sections\n${multiBrief.slice(0, 400)}`);
+const oasisBrief = briefOf('¿Las turbinas móviles de CFE en Los Cabos son el proyecto Oasis?');
+if (!/HUECO — sin dato:/.test(oasisBrief) || !/\b128\b/.test(oasisBrief)) fail('turbine brief lost the gap or the 128 MW card');
 
 if (failed) {
   console.error(`\n${failed} failure(s)`);
