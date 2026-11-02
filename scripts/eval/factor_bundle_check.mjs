@@ -275,6 +275,51 @@ const CASES = [
     sinDatoIds: ['gap_mulege_agua_energia', 'ev_sig_mulege_oasis'],
     noAirport: true,
   },
+  {
+    q: '¿Cuál es la renta hotelera y el cap rate de un hotel en Los Cabos?',
+    kind: 'viability',
+    needIds: ['gap_rentas_hoteleras', 'ev_news_ocupacion', 'dq_viabilidad_proyecto'],
+    needTypes: ['Constraint', 'Evidence'],
+    sinDatoIds: ['gap_rentas_hoteleras'],
+    noRent: true,
+  },
+  {
+    q: '¿Es viable Loreto con un solo total de pasajeros 2025?',
+    kind: 'viability',
+    needIds: ['gap_loreto_pax', 'ev_aereo_setue', 'terr_loreto', 'gap_loreto_dma'],
+    needTypes: ['Constraint', 'Evidence', 'Territory'],
+    sinDatoIds: ['gap_loreto_pax', 'gap_loreto_dma'],
+    noPaxTotal: true,
+  },
+  {
+    q: '¿El acuífero 0302 hace viable a Mulegé?',
+    kind: 'viability',
+    needIds: ['gap_acuifero_0302', 'ev_acuiferos_dma', 'terr_mulege'],
+    needTypes: ['Constraint', 'Evidence', 'Territory'],
+    sinDatoIds: ['gap_acuifero_0302'],
+    noAssign0302: true,
+  },
+  {
+    q: '¿Es viable un desarrollo en East Cape si no conocemos su carga?',
+    kind: 'viability',
+    needIds: ['gap_east_cape_carga', 'dq_pack_east_cape', 'rc_acuifero_0318'],
+    needTypes: ['Constraint', 'ResourceCapacity'],
+    sinDatoIds: ['gap_east_cape_carga'],
+  },
+  {
+    q: '¿Quién es el titular de Obras Públicas en Los Cabos?',
+    kind: 'viability',
+    needIds: ['gap_org_obras_cabos', 'ev_org_cabos_2024'],
+    needTypes: ['Constraint', 'Evidence'],
+    sinDatoIds: ['gap_org_obras_cabos'],
+  },
+  {
+    q: '¿Los 128 MW móviles de CFE hacen viable a Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_news_cfe_128', 'rc_sibcs', 'const_red_aislada', 'dq_viabilidad_proyecto'],
+    needTypes: ['Evidence', 'ResourceCapacity', 'Constraint'],
+    mobileMw: true,
+  },
 ];
 
 const NEGATIVES = [
@@ -368,6 +413,29 @@ for (const c of CASES) {
     const text = `${mob?.sum_es || ''} ${mob?.sum_en || ''}`;
     if (!/sin aeropuerto propio|no airport of its own/i.test(text)) fail(`${c.q} East Cape airport fact missing`);
     if (!/no se reconcilia|not reconciled/i.test(text)) fail(`${c.q} Loreto passengers must stay unreconciled`);
+  }
+  if (c.noRent) {
+    const news = ev.find((x) => (x.onto_id || '') === 'ev_news_ocupacion');
+    const text = `${news?.sum_es || ''} ${news?.sum_en || ''}`;
+    if (!/no son renta|are not rents/i.test(text)) fail(`${c.q} occupancy notes must not become rents`);
+    if (/\b\d+\s*(usd|dolares|pesos)\s+por noche\b/i.test(text)) fail(`${c.q} invented a nightly rate`);
+  }
+  if (c.noPaxTotal) {
+    const gap = ev.find((x) => (x.onto_id || '') === 'gap_loreto_pax');
+    const text = `${gap?.sum_es || ''} ${gap?.sum_en || ''}`;
+    if (!/89600/.test(text) || !/no se suman|not added/i.test(text)) fail(`${c.q} Loreto passengers must stay unreconciled`);
+  }
+  if (c.noAssign0302) {
+    const gap = ev.find((x) => (x.onto_id || '') === 'gap_acuifero_0302');
+    const text = `${gap?.sum_es || ''} ${gap?.sum_en || ''}`;
+    if (!/no se asigna a muleg|not assigned to muleg/i.test(text)) fail(`${c.q} 0302 must stay unassigned`);
+  }
+  if (c.mobileMw) {
+    const news = ev.find((x) => (x.onto_id || '') === 'ev_news_cfe_128');
+    const text = `${news?.sum_es || ''} ${news?.sum_en || ''}`;
+    if (!/128/.test(text) || !/no es el proyecto oasis|not the oasis project/i.test(text)) {
+      fail(`${c.q} mobile megawatts must stay separate from Oasis`);
+    }
   }
   if (c.vizcainoGap) {
     const avisos = ev.find((x) => (x.onto_id || '') === 'ev_anp_avisos');

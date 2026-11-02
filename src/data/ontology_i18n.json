@@ -678,5 +678,25 @@
   "ev_dossiers_movilidad": {
     "label_en": "Mobility already written in the place dossiers",
     "summary_en": "Mobility facts already written in the dossiers, with no new passenger series. East Cape: no airport of its own; access is along the Los Cabos–La Paz corridor; quantitative load remains sin dato. Loreto: LTO has 5 nonstop destinations (17 Sep 2026); 2025 passengers are not reconciled and there is no local DMA. Mulegé, Santa Rosalía and Vizcaíno: no airport in the three-airport pack; the dossier marks an evidence desert, not a northern offset. Oasis still has no MW. Aquifer 0302 is not assigned to Mulegé."
+  },
+  "ev_news_cfe_128": {
+    "label_en": "News: 128 MW of mobile CFE generation in Los Cabos",
+    "summary_en": "Press of 18 Sep 2026 (HOY BCS) and 21 Sep 2026 (Energy & Commerce). CFE reports five mobile gas turbines already operating in Los Cabos and Cabo Bello, 128 MW. The note compares them with the consumption of nearly 89 thousand homes; that comparison is the outlet's, not a census. BCS remains isolated from the national grid. This is not the Oasis project, not a hydrogen MW figure, and it does not erase the isolated-grid ceiling."
+  },
+  "ev_news_ocupacion": {
+    "label_en": "Hotel-occupancy notes that are not rents",
+    "summary_en": "Press from the Los Cabos Hotel Association; the figures do not agree with each other and are not rents. Imagen Radio, 27 Oct 2026: occupancy −5.0% in the second half of 2026. Imagen Radio, 19 Oct 2026: −14% US tourists from January to August. Tribuna de México, 18 Oct 2026: October at 60% and peaks forecast above 90% on holidays. Tribuna de México, 2 Oct 2026: October projected at 76%, one point above 2025. sin dato en corpus for hotel rent, cap rate, and hospitality-asset sales."
+  },
+  "gap_rentas_hoteleras": {
+    "label_en": "Gap: hotel rents and cap rates",
+    "summary_en": "sin dato en corpus for hotel rents, cap rates, and hospitality-asset sales. Occupancy published in the press is not a rent and not a rate card. A nightly price is not invented."
+  },
+  "gap_loreto_pax": {
+    "label_en": "Gap: unreconciled Loreto passengers for 2025",
+    "summary_en": "sin dato en corpus for a single 2025 Loreto air-passenger total. The SETUE report marks LTO as unknown. A BCS government communique cites 89600 travelers and is not that report. They are not added and no official total is declared."
+  },
+  "gap_acuifero_0302": {
+    "label_en": "Gap: municipality of Vizcaíno aquifer 0302",
+    "summary_en": "sin dato en corpus for the municipality of aquifer 0302 Vizcaíno. The 9 Nov 2023 DOF publishes −0.497182 hm³/year and the sheet marks the municipality as unconfirmed. It is not assigned to Mulegé."
   }
 }

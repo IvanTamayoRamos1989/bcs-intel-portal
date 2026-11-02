@@ -649,6 +649,51 @@
       "summary": "Hechos de movilidad ya escritos en los dossiers, sin serie nueva de pasajeros. East Cape: sin aeropuerto propio; el acceso es por el corredor Los Cabos–La Paz; la carga cuantitativa sigue sin dato. Loreto: LTO tiene 5 destinos sin escala (17 sep 2026); el pasaje 2025 no se reconcilia y no hay DMA local. Mulegé, Santa Rosalía y Vizcaíno: sin aeropuerto en el paquete de tres; el dossier lo marca como desierto de evidencia, no como offset norte. Oasis sigue sin MW. El acuífero 0302 no se asigna a Mulegé.",
       "summary_en": "Mobility facts already written in the dossiers, with no new passenger series. East Cape: no airport of its own; access is along the Los Cabos–La Paz corridor; quantitative load remains sin dato. Loreto: LTO has 5 nonstop destinations (17 Sep 2026); 2025 passengers are not reconciled and there is no local DMA. Mulegé, Santa Rosalía and Vizcaíno: no airport in the three-airport pack; the dossier marks an evidence desert, not a northern offset. Oasis still has no MW. Aquifer 0302 is not assigned to Mulegé.",
       "evidence_path": "src/data/place_dossiers.json#mobility"
+    },
+    {
+      "id": "ev_news_cfe_128",
+      "type": "Evidence",
+      "label": "Nota: 128 MW móviles de CFE en Los Cabos",
+      "label_en": "News: 128 MW of mobile CFE generation in Los Cabos",
+      "summary": "Prensa del 18 sep 2026 (HOY BCS) y del 21 sep 2026 (Energy & Commerce). CFE reporta cinco unidades turbogás móviles ya operando en Los Cabos y Cabo Bello, 128 MW. La nota las compara con el consumo de casi 89 mil hogares; esa comparación es del medio, no un censo. BCS sigue aislado del sistema nacional. No es el proyecto Oasis, no es un MW de hidrógeno y no borra el techo de la red aislada.",
+      "summary_en": "Press of 18 Sep 2026 (HOY BCS) and 21 Sep 2026 (Energy & Commerce). CFE reports five mobile gas turbines already operating in Los Cabos and Cabo Bello, 128 MW. The note compares them with the consumption of nearly 89 thousand homes; that comparison is the outlet's, not a census. BCS remains isolated from the national grid. This is not the Oasis project, not a hydrogen MW figure, and it does not erase the isolated-grid ceiling.",
+      "evidence_path": "src/data/news.json#cfe-128-mw-moviles"
+    },
+    {
+      "id": "ev_news_ocupacion",
+      "type": "Evidence",
+      "label": "Notas de ocupación hotelera que no son renta",
+      "label_en": "Hotel-occupancy notes that are not rents",
+      "summary": "Prensa de la Asociación de Hoteles de Los Cabos, cifras que no coinciden entre sí y no son renta. Imagen Radio, 27 oct 2026: ocupación −5.0% en la segunda mitad de 2026. Imagen Radio, 19 oct 2026: −14% de turistas de Estados Unidos de enero a agosto. Tribuna de México, 18 oct 2026: octubre en 60% y picos previstos arriba de 90% en fiestas. Tribuna de México, 2 oct 2026: octubre proyectado en 76%, un punto más que en 2025. sin dato en corpus para renta hotelera, cap rate y venta de activos de hospitalidad.",
+      "summary_en": "Press from the Los Cabos Hotel Association; the figures do not agree with each other and are not rents. Imagen Radio, 27 Oct 2026: occupancy −5.0% in the second half of 2026. Imagen Radio, 19 Oct 2026: −14% US tourists from January to August. Tribuna de México, 18 Oct 2026: October at 60% and peaks forecast above 90% on holidays. Tribuna de México, 2 Oct 2026: October projected at 76%, one point above 2025. sin dato en corpus for hotel rent, cap rate, and hospitality-asset sales.",
+      "evidence_path": "src/data/news.json#ocupacion-hotelera-cabos"
+    },
+    {
+      "id": "gap_rentas_hoteleras",
+      "type": "Constraint",
+      "label": "Brecha: rentas hoteleras y cap rates",
+      "label_en": "Gap: hotel rents and cap rates",
+      "summary": "sin dato en corpus para rentas de hotel, cap rates y transacciones de activos de hospitalidad. La ocupación que publica la prensa no es una renta ni un inventario de tarifas. No se inventa un precio por noche.",
+      "summary_en": "sin dato en corpus for hotel rents, cap rates, and hospitality-asset sales. Occupancy published in the press is not a rent and not a rate card. A nightly price is not invented.",
+      "evidence_path": "src/data/data_gaps.json#gap-re-commercial-hospitality"
+    },
+    {
+      "id": "gap_loreto_pax",
+      "type": "Constraint",
+      "label": "Brecha: pasajeros 2025 de Loreto sin conciliar",
+      "label_en": "Gap: unreconciled Loreto passengers for 2025",
+      "summary": "sin dato en corpus para un total único de pasajeros aéreos 2025 en Loreto. El informe SETUE marca LTO como desconocido. Un comunicado del Gobierno de BCS cita 89600 viajeros y no es ese informe. No se suman ni se declara un total oficial.",
+      "summary_en": "sin dato en corpus for a single 2025 Loreto air-passenger total. The SETUE report marks LTO as unknown. A BCS government communique cites 89600 travelers and is not that report. They are not added and no official total is declared.",
+      "evidence_path": "src/data/ports_demand.json#airports"
+    },
+    {
+      "id": "gap_acuifero_0302",
+      "type": "Constraint",
+      "label": "Brecha: municipio del acuífero Vizcaíno 0302",
+      "label_en": "Gap: municipality of Vizcaíno aquifer 0302",
+      "summary": "sin dato en corpus para el municipio del acuífero 0302 Vizcaíno. El DOF del 9 nov 2023 publica −0.497182 hm³/año y la ficha marca el municipio por confirmar. No se asigna a Mulegé.",
+      "summary_en": "sin dato en corpus for the municipality of aquifer 0302 Vizcaíno. The 9 Nov 2023 DOF publishes −0.497182 hm³/year and the sheet marks the municipality as unconfirmed. It is not assigned to Mulegé.",
+      "evidence_path": "src/data/aquifers_bcs.json#0302"
     }
   ],
   "edges": [
@@ -2966,6 +3011,106 @@
       "from": "ev_dossiers_movilidad",
       "to": "dq_viabilidad_proyecto",
       "predicate": "influences"
+    },
+    {
+      "from": "ev_news_cfe_128",
+      "to": "rc_sibcs",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_news_cfe_128",
+      "to": "const_red_aislada",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_news_cfe_128",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_news_cfe_128",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_news_cfe_128",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_news_ocupacion",
+      "to": "gap_rentas_hoteleras",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_news_ocupacion",
+      "to": "dd_turismo_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_news_ocupacion",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_news_ocupacion",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_rentas_hoteleras",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_rentas_hoteleras",
+      "to": "dd_turismo_cabos",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_inmob_jll_2025",
+      "to": "gap_rentas_hoteleras",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_loreto_pax",
+      "to": "terr_loreto",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_loreto_pax",
+      "to": "ev_aereo_setue",
+      "predicate": "constrains"
+    },
+    {
+      "from": "gap_loreto_pax",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_loreto_pax",
+      "to": "ev_dossiers_movilidad",
+      "predicate": "constrains"
+    },
+    {
+      "from": "gap_acuifero_0302",
+      "to": "terr_mulege",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_acuifero_0302",
+      "to": "terr_anp_vizcaino",
+      "predicate": "constrains"
+    },
+    {
+      "from": "gap_acuifero_0302",
+      "to": "dq_pack_mulege",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_acuifero_0302",
+      "to": "ev_acuiferos_dma",
+      "predicate": "constrains"
     }
   ]
 }
