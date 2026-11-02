@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "updated": "2026-11-02",
   "entity_types": [
     {
@@ -1652,8 +1652,8 @@
       "type": "DecisionQuestion",
       "label": "¿Cómo se comparan los polos en agua, energía y suelo?",
       "label_en": "How do the poles compare on water, energy and land?",
-      "summary": "Comparación entre polos ya codificados (Los Cabos, La Paz, Comondú y los que nombre la pregunta). Usar acuíferos, DMA, SIBCS, PDU y motores de demanda de cada lugar. No trasladar el déficit de Cabos a Comondú ni inventar un saldo que cancele el otro.",
-      "summary_en": "Comparison across poles already encoded (Los Cabos, La Paz, Comondú and whichever the question names). Use each place's aquifers, DMA, SIBCS, PDU and demand drivers. Do not move the Cabos deficit onto Comondú or invent a balance that cancels the other."
+      "summary": "Comparación entre los cinco municipios ya codificados: Los Cabos (0317/0319, turismo, PDU 2040), La Paz (0324, PDUCP), Comondú (agro Santo Domingo, sin DMA inventada aquí), Loreto (POEL 2014, PTAR federal, gap_loreto_dma) y Mulegé/Vizcaíno (ANP, gap_pdu_mulege, gap_mulege_agua_energia). Si la pregunta nombra dos, conservar el techo de cada uno. No inventar DMA de Loreto, carga de East Cape ni MW de Oasis.",
+      "summary_en": "Comparison across the five municipalities already encoded: Los Cabos (0317/0319, tourism, PDU 2040), La Paz (0324, PDUCP), Comondú (Santo Domingo agriculture, no DMA invented here), Loreto (2014 POEL, federal WWTP, gap_loreto_dma) and Mulegé/Vizcaíno (ANP, gap_pdu_mulege, gap_mulege_agua_energia). If the question names two, keep each ceiling. Do not invent Loreto DMA, East Cape load, or Oasis MW."
     },
     {
       "id": "ev_esc_baseline",
@@ -1744,6 +1744,42 @@
       "summary": "Señal sig-comondu-desal-loreto-ptar en Base de datos BCS 2050 — prospectiva, no un hm³ de oferta. Texto: MIA de desalación en Comondú y PTAR/acueducto en Loreto como vocaciones fuera del sur turístico. Cruzar con gap_loreto_dma y dd_agro_santo_domingo.",
       "summary_en": "Signal sig-comondu-desal-loreto-ptar in Base de datos BCS 2050 — prospectiva, not an hm³ of supply. Text: a desalination MIA in Comondú and WWTP/aqueduct in Loreto as vocations outside the tourism south. Cross with gap_loreto_dma and dd_agro_santo_domingo.",
       "evidence_path": "src/data/foresights.json#sig-comondu-desal-loreto-ptar"
+    },
+    {
+      "id": "ev_inmob_jll_2025",
+      "type": "Evidence",
+      "label": "JLL 2025 — mercado residencial Los Cabos / BCS",
+      "label_en": "JLL 2025 — Los Cabos / BCS residential market",
+      "summary": "Base de datos BCS 2050 — datos del portal, JLL Reporte Anual 2025 (BCS MLS), no es consejo de inversión. BCS 2025: volumen 1,570 millones USD (1,492 en 2024), 1,840 unidades, precio medio 853 mil USD. Los Cabos (CSL+SJD+Corredor): 1,264 millones USD y 81% del volumen BCS / 60% de unidades. Participación por zona en el texto del reporte: Los Cabos 69%, Pacífico 18%, La Paz 6%, East Cape 4%, Loreto 3%. No cubre renta hotelera ni permisos (ver gap-re-commercial-hospitality y gap-re-permits-pipeline).",
+      "summary_en": "Base de datos BCS 2050 — datos del portal, JLL 2025 annual report (BCS MLS), not investment advice. BCS 2025: volume USD 1,570 million (1,492 in 2024), 1,840 units, average price USD 853 thousand. Los Cabos (CSL+SJD+Corridor): USD 1,264 million and 81% of BCS volume / 60% of units. Zone shares in the report text: Los Cabos 69%, Pacific 18%, La Paz 6%, East Cape 4%, Loreto 3%. Does not cover hotel rents or permits.",
+      "evidence_path": "src/data/inmobiliario_metrics.json#jll_2025"
+    },
+    {
+      "id": "ev_gds_cinco_polos",
+      "type": "Evidence",
+      "label": "Lecturas de balance del scorecard de crecimiento",
+      "label_en": "Growth scorecard balance readings",
+      "summary": "Base de datos BCS 2050 — demanda y oferta de crecimiento, lecturas cualitativas, sin cifras nuevas. Los Cabos restringido (0317/0319 y techo SIBCS). La Paz restringida (0324 y acoplamiento agua–energía; PDUCP 2018 no es margen libre). Comondú con margen relativo agro, no espacio vacío. Loreto en disputa: ANP y POEL 2014, sin DMA local en el scorecard. Mulegé desconocido/especulativo (señal H2, evidencia fragmentaria). East Cape en disputa: DMA 0318 y ANP; carga cuantitativa incompleta.",
+      "summary_en": "Base de datos BCS 2050 — demanda y oferta de crecimiento, qualitative readings, no new figures. Los Cabos constrained (0317/0319 and SIBCS ceiling). La Paz constrained (0324 and water–energy coupling; PDUCP 2018 is not free headroom). Comondú relative agricultural margin, not empty space. Loreto contested: ANP and 2014 POEL, no local DMA on the scorecard. Mulegé unknown/speculative (H2 signal, fragmentary evidence). East Cape contested: DMA 0318 and ANP; quantitative load incomplete.",
+      "evidence_path": "src/data/growth_demand_supply.json"
+    },
+    {
+      "id": "ev_cruceros_datatur",
+      "type": "Evidence",
+      "label": "Cruceros DataTur 2025 (puertos BCS)",
+      "label_en": "DataTur 2025 cruises (BCS ports)",
+      "summary": "Base de datos BCS 2050 — puertos y demanda, SECTUR DataTur ene–dic 2025, cifras preliminares. Cabo San Lucas: 285 arribos y 1,057,758 pasajeros. Pichilingue: 50 arribos y 133,269 pasajeros. Loreto: 20 arribos y 33,412 pasajeros. Santa Rosalía: 7 arribos y 594 pasajeros. Crucero no es hotel ni carga. Presión de excursión sobre turismo de Cabos.",
+      "summary_en": "Base de datos BCS 2050 — puertos y demanda, SECTUR DataTur full-year 2025, preliminary. Cabo San Lucas: 285 calls and 1,057,758 passengers. Pichilingue: 50 calls and 133,269 passengers. Loreto: 20 calls and 33,412 passengers. Santa Rosalía: 7 calls and 594 passengers. Cruise is not hotel nights or cargo. Excursion pressure on Cabos tourism.",
+      "evidence_path": "src/data/ports_demand.json#cruises"
+    },
+    {
+      "id": "ev_aereo_setue",
+      "type": "Evidence",
+      "label": "Pasajeros aéreos SJD y LAP (SETUE IE 2026)",
+      "label_en": "SJD and LAP air passengers (SETUE IE 2026)",
+      "summary": "Base de datos BCS 2050 — puertos y demanda Base de datos BCS 2050 — nota de trabajo, OCR de SETUE IE 2026. SJD 2025: 3.8 millones de pasajeros (+0.6%), 83.2% de las llegadas aéreas estatales. LAP 2025: 668,800 (+10.9%). El mismo archivo marca el pasajero 2025 de LTO como UNKNOWN en el IE de Loreto. data_gaps gap-movilidad-loreto-pax-2025 está filled con 89,600 según comunicado del Gobierno de BCS (no es el IE SETUE). No se suman esas cifras en un total nuevo.",
+      "summary_en": "Base de datos BCS 2050 — puertos y demanda Base de datos BCS 2050 — nota de trabajo, OCR of SETUE IE 2026. SJD 2025: 3.8 million passengers (+0.6%), 83.2% of state air arrivals. LAP 2025: 668,800 (+10.9%). That file marks LTO 2025 passengers as UNKNOWN in the Loreto IE. data_gaps gap-movilidad-loreto-pax-2025 is filled with 89,600 from a BCS government communique (not the SETUE IE). Those figures are not added into a new total.",
+      "evidence_path": "src/data/ports_demand.json#airports"
     }
   ],
   "edges": [
@@ -5270,6 +5306,121 @@
     {
       "from": "ev_mesas_trabajo",
       "to": "dq_comparar_polos",
+      "predicate": "influences"
+    },
+    {
+      "from": "terr_loreto",
+      "to": "dq_comparar_polos",
+      "predicate": "influences"
+    },
+    {
+      "from": "terr_mulege",
+      "to": "dq_comparar_polos",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_loreto_dma",
+      "to": "dq_comparar_polos",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_loreto_energia_local",
+      "to": "dq_comparar_polos",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_psdu_loreto_gazette",
+      "to": "dq_comparar_polos",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_pdu_mulege",
+      "to": "dq_comparar_polos",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_mulege_agua_energia",
+      "to": "dq_comparar_polos",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_agu_005",
+      "to": "dq_comparar_polos",
+      "predicate": "influences"
+    },
+    {
+      "from": "terr_anp_loreto",
+      "to": "dq_comparar_polos",
+      "predicate": "constrains"
+    },
+    {
+      "from": "terr_anp_vizcaino",
+      "to": "dq_comparar_polos",
+      "predicate": "constrains"
+    },
+    {
+      "from": "ev_inmob_jll_2025",
+      "to": "dd_residencial_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_inmob_jll_2025",
+      "to": "dd_turismo_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_inmob_jll_2025",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_gds_cinco_polos",
+      "to": "dq_comparar_polos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_gds_cinco_polos",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "dd_turismo_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_cruceros_datatur",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "ev_aereo_setue",
+      "to": "rc_aeropuerto_sjd",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_aereo_setue",
+      "to": "rc_aeropuerto_lap",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_aereo_setue",
+      "to": "dq_oportunidades",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_aereo_setue",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_fed_pue_001",
+      "to": "dd_turismo_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_fed_aer_001",
+      "to": "rc_aeropuerto_sjd",
       "predicate": "influences"
     }
   ]

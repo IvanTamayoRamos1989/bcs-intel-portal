@@ -95,6 +95,26 @@ const CASES = [
     needTypes: ['Evidence', 'Project', 'ResourceCapacity'],
   },
   {
+    q: 'Compara riesgos de Loreto y Mulegé',
+    kind: 'risk',
+    needIds: ['dq_comparar_polos', 'terr_loreto', 'terr_mulege', 'gap_loreto_dma', 'gap_pdu_mulege', 'gap_mulege_agua_energia'],
+    needTypes: ['Territory', 'Constraint'],
+    noInvent: true,
+  },
+  {
+    q: '¿Es viable vivienda turística en Los Cabos según el mercado?',
+    kind: 'viability',
+    needIds: ['ev_inmob_jll_2025', 'dd_residencial_cabos', 'rc_acuifero_0317', 'dq_viabilidad_proyecto'],
+    needTypes: ['Evidence', 'DemandDriver', 'ResourceCapacity'],
+    gaps: true,
+  },
+  {
+    q: 'Oportunidades de cruceros y aeropuertos en BCS',
+    kind: 'opportunity',
+    needIds: ['ev_cruceros_datatur', 'ev_aereo_setue', 'rc_aeropuerto_sjd', 'dq_oportunidades'],
+    needTypes: ['Evidence', 'ResourceCapacity'],
+  },
+  {
     q: 'Riesgos principales de huracanes en el estado',
     kind: 'risk',
     needIds: ['ev_sig_hurricanes', 'dq_riesgos_principales'],
@@ -149,6 +169,15 @@ for (const c of CASES) {
     if (!/restauraci[oó]n/i.test(text)) fail(`${c.q} restoration policy name missing`);
     if (/RT\s*=\s*Restaur|RT significa|sigla RT equivale/i.test(text)) fail(`${c.q} invented RT equivalence`);
     if (!ev.some((x) => x.type === 'library')) fail(`${c.q} expected a library reference chunk`);
+  }
+  if (c.noInvent) {
+    const dma = ev.find((x) => (x.onto_id || '') === 'gap_loreto_dma');
+    const mule = ev.find((x) => (x.onto_id || '') === 'gap_mulege_agua_energia');
+    const text = `${dma?.sum_es || ''} ${mule?.sum_es || ''}`;
+    if (!/sin dato/i.test(text)) fail(`${c.q} Loreto/Mulegé gaps must stay sin dato`);
+  }
+  if (c.gaps && !ev.some((x) => String(x.id || '').startsWith('gapcard:') || x.id === 'factor:huecos')) {
+    fail(`${c.q} expected a data_gaps card`);
   }
   if (c.libraryPage) {
     const pages = ev.filter((x) => x.type === 'library' && String(x.id || '').includes(':p'));

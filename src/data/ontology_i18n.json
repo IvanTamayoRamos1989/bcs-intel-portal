@@ -513,7 +513,7 @@
   },
   "dq_comparar_polos": {
     "label_en": "How do the poles compare on water, energy and land?",
-    "summary_en": "Comparison across poles already encoded (Los Cabos, La Paz, Comondú and whichever the question names). Use each place's aquifers, DMA, SIBCS, PDU and demand drivers. Do not move the Cabos deficit onto Comondú or invent a balance that cancels the other."
+    "summary_en": "Comparison across the five municipalities already encoded: Los Cabos (0317/0319, tourism, PDU 2040), La Paz (0324, PDUCP), Comondú (Santo Domingo agriculture, no DMA invented here), Loreto (2014 POEL, federal WWTP, gap_loreto_dma) and Mulegé/Vizcaíno (ANP, gap_pdu_mulege, gap_mulege_agua_energia). If the question names two, keep each ceiling. Do not invent Loreto DMA, East Cape load, or Oasis MW."
   },
   "ev_esc_baseline": {
     "label_en": "Scenario: current trajectory",
@@ -554,5 +554,21 @@
   "ev_sig_comondu_loreto": {
     "label_en": "Signal: Comondú desal and Loreto WWTP",
     "summary_en": "Signal sig-comondu-desal-loreto-ptar in Base de datos BCS 2050 — prospectiva, not an hm³ of supply. Text: a desalination MIA in Comondú and WWTP/aqueduct in Loreto as vocations outside the tourism south. Cross with gap_loreto_dma and dd_agro_santo_domingo."
+  },
+  "ev_inmob_jll_2025": {
+    "label_en": "JLL 2025 — Los Cabos / BCS residential market",
+    "summary_en": "Base de datos BCS 2050 — datos del portal, JLL 2025 annual report (BCS MLS), not investment advice. BCS 2025: volume USD 1,570 million (1,492 in 2024), 1,840 units, average price USD 853 thousand. Los Cabos (CSL+SJD+Corridor): USD 1,264 million and 81% of BCS volume / 60% of units. Zone shares in the report text: Los Cabos 69%, Pacific 18%, La Paz 6%, East Cape 4%, Loreto 3%. Does not cover hotel rents or permits."
+  },
+  "ev_gds_cinco_polos": {
+    "label_en": "Growth scorecard balance readings",
+    "summary_en": "Base de datos BCS 2050 — demanda y oferta de crecimiento, qualitative readings, no new figures. Los Cabos constrained (0317/0319 and SIBCS ceiling). La Paz constrained (0324 and water–energy coupling; PDUCP 2018 is not free headroom). Comondú relative agricultural margin, not empty space. Loreto contested: ANP and 2014 POEL, no local DMA on the scorecard. Mulegé unknown/speculative (H2 signal, fragmentary evidence). East Cape contested: DMA 0318 and ANP; quantitative load incomplete."
+  },
+  "ev_cruceros_datatur": {
+    "label_en": "DataTur 2025 cruises (BCS ports)",
+    "summary_en": "Base de datos BCS 2050 — puertos y demanda, SECTUR DataTur full-year 2025, preliminary. Cabo San Lucas: 285 calls and 1,057,758 passengers. Pichilingue: 50 calls and 133,269 passengers. Loreto: 20 calls and 33,412 passengers. Santa Rosalía: 7 calls and 594 passengers. Cruise is not hotel nights or cargo. Excursion pressure on Cabos tourism."
+  },
+  "ev_aereo_setue": {
+    "label_en": "SJD and LAP air passengers (SETUE IE 2026)",
+    "summary_en": "Base de datos BCS 2050 — puertos y demanda Base de datos BCS 2050 — nota de trabajo, OCR of SETUE IE 2026. SJD 2025: 3.8 million passengers (+0.6%), 83.2% of state air arrivals. LAP 2025: 668,800 (+10.9%). That file marks LTO 2025 passengers as UNKNOWN in the Loreto IE. data_gaps gap-movilidad-loreto-pax-2025 is filled with 89,600 from a BCS government communique (not the SETUE IE). Those figures are not added into a new total."
   }
 }

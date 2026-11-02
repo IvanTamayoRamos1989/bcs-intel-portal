@@ -1076,8 +1076,17 @@ function factorSeedIds(qn, kinds) {
     if (p.cabos) add('terr_los_cabos', 'rc_acuifero_0317', 'rc_acuifero_0319', 'dd_turismo_cabos', 'inst_pdu_cabos', 'proj_desal_cabos');
     if (p.paz) add('terr_la_paz', 'rc_acuifero_0324', 'dd_turismo_lapaz', 'inst_pdu_lapaz');
     if (p.comondu) add('terr_comondu', 'dd_agro_santo_domingo');
-    if (p.loreto) add('terr_loreto', 'proj_fed_agu_005', 'terr_anp_loreto');
-    if (p.mulege) add('terr_mulege', 'terr_anp_vizcaino');
+    if (p.loreto) {
+      add('terr_loreto', 'proj_fed_agu_005', 'terr_anp_loreto', 'inst_poel_loreto', 'gap_loreto_dma', 'gap_loreto_energia_local', 'gap_psdu_loreto_gazette', 'dq_pack_loreto');
+    }
+    if (p.mulege) {
+      add('terr_mulege', 'terr_anp_vizcaino', 'gap_pdu_mulege', 'gap_mulege_agua_energia', 'dq_pack_mulege', 'ev_sig_mulege_oasis');
+    }
+    add('ev_gds_cinco_polos');
+  }
+  if (/\b(vivienda|housing|hotel\w*|inmobiliari\w*|jll\b)\b/.test(qn)) add('ev_inmob_jll_2025', 'dd_residencial_cabos');
+  if (/\b(crucero\w*|cruise|aeropuerto\w*|airport|puerto\w*|port\b)\b/.test(qn) || kinds.includes('opportunity')) {
+    add('ev_cruceros_datatur', 'ev_aereo_setue', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap');
   }
   if (/\bescenario\b|\bscenario\b/.test(qn)) {
     if (/\bagua primero\b|\bwater first\b|\bseguridad hidr/.test(qn)) add('ev_esc_water_first');
@@ -1219,25 +1228,52 @@ const NEWS_TOPICS = {
   opportunity: ['tourism', 'energy', 'planning', 'land_use', 'water'],
 };
 
-function libraryHits(corpus, kinds, seen) {
+function libraryHits(corpus, kinds, seen, query) {
+  const folders = [...new Set(kinds.flatMap((k) => LIB_FOLDERS[k] || []))];
+  const tokens = tokenize(query || '').filter((t) => t.length > 3);
+  const pool = corpus.filter((c) => {
+    if (!c || seen.has(c.id) || c.type !== 'library') return false;
+    if (!String(c.id || '').includes(':p')) return false;
+    const path = String(c.path || '');
+    return folders.some((f) => path.includes(f));
+  });
+  const scored = pool.map((c) => {
+    const hay = `${c.id} ${c.title || ''} ${c.path || ''} ${c.sum_es || ''} ${c.sum_en || ''}`.toLowerCase();
+    let score = 0;
+    for (const t of tokens) if (hay.includes(t)) score += 2;
+    if (kinds.includes('viability') && /water|desal|infra|08_water|05_infra/.test(hay)) score += 3;
+    if (kinds.includes('landuse') && /ordenamiento|planning|pdu|urban|01_regional|02_urban|11_mexico/.test(hay)) score += 3;
+    if (kinds.includes('risk') && /climate|coast|hurricane|ocean|hazard|09_climate|07_coastal/.test(hay)) score += 3;
+    if (kinds.includes('opportunity') && /econom|tourism|coast|airport|04_urban|07_coastal/.test(hay)) score += 3;
+    return { c, score };
+  });
+  scored.sort((a, b) => b.score - a.score || String(a.c.id).localeCompare(String(b.c.id)));
+  const picked = (scored.some((x) => x.score > 0) ? scored.filter((x) => x.score > 0) : scored).slice(0, 2);
+  for (const row of picked) seen.add(row.c.id);
+  return picked.map((row) => row.c);
+}
+
+function gapCardHits(corpus, query, seen) {
+  const tokens = tokenize(query || '').filter((t) => t.length > 3);
+  const pool = corpus.filter((c) => c && !seen.has(c.id) && (String(c.id || '').startsWith('gapcard:') || c.id === 'factor:huecos'));
+  const scored = pool.map((c) => {
+    const hay = `${c.id} ${c.title || ''} ${c.sum_es || ''}`.toLowerCase();
+    let score = c.id === 'factor:huecos' ? 1 : 0;
+    for (const t of tokens) if (hay.includes(t)) score += 2;
+    return { c, score };
+  });
+  scored.sort((a, b) => b.score - a.score);
   const out = [];
-  for (const kind of kinds) {
-    const folders = LIB_FOLDERS[kind] || [];
-    const pickLib = (wantPage) => corpus.find((c) => {
-      if (!c || seen.has(c.id) || c.type !== 'library') return false;
-      const id = String(c.id || '');
-      const isPage = id.includes(':p');
-      if (wantPage !== isPage) return false;
-      const path = String(c.path || '');
-      return folders.some((f) => path.includes(f));
-    });
-    const hit = pickLib(true) || pickLib(false);
-    if (!hit) continue;
-    seen.add(hit.id);
-    out.push(hit);
+  const spine = pool.find((c) => c.id === 'factor:huecos');
+  if (spine) out.push(spine);
+  for (const row of scored) {
+    if (out.some((c) => c.id === row.c.id)) continue;
+    if (row.score <= 0 && row.c.id !== 'factor:huecos') continue;
+    out.push(row.c);
     if (out.length >= 2) break;
   }
-  return out;
+  for (const c of out) seen.add(c.id);
+  return out.slice(0, 2);
 }
 
 function newsPlaceIds(place) {
@@ -1287,10 +1323,11 @@ function factorDocChunks(kinds, place) {
       if (hit) push(hit);
     }
   }
-  const libs = libraryHits(corpus, kinds, seen);
+  const libs = libraryHits(corpus, kinds, seen, place && place.query);
+  const gaps = gapCardHits(corpus, place && place.query, seen);
   const news = newsHits(corpus, kinds, place || {}, seen);
-  const guides = out.slice(0, 4);
-  return [...guides, ...libs.slice(0, 2), ...news.slice(0, 2)];
+  const guides = out.slice(0, 3);
+  return [...gaps.slice(0, 2), ...guides, ...libs.slice(0, 2), ...news.slice(0, 2)];
 }
 
 /** Ontology factor bundle + a few guide/spine chunks for viability, land use, risks, opportunities. */
@@ -1306,7 +1343,7 @@ function buildFactorEvidence(query, intents) {
   const place = factorPlaceFlags(qn);
   const ids = walkFactorBundle(factorSeedIds(qn, kinds), place, place.compare ? 18 : 16);
   const onto = ontologyChunksForIds(ids);
-  const docs = factorDocChunks(kinds, place);
+  const docs = factorDocChunks(kinds, { ...place, query });
   const seen = new Set();
   const out = [];
   for (const c of [...onto, ...docs]) {
@@ -2824,7 +2861,8 @@ MULTI-FACTOR REASONING (this question is about project viability, land-use chang
 - Walk the factor bundle in CONTEXT together: water (DMA / aquifers / desal), energy (SIBCS / CFE), instruments (POER / PDU), constraints (ANP, coast, tenure, hazards), demand drivers, actors or working tables, and gaps.
 - Name trade-offs between factors (for example desalination against the power ceiling, or a PDU against a UGA / ANP). Do not recommend a zoning code that is not written in CONTEXT.
 - If a critical factor is missing, or a fragment says "sin dato en corpus", say so in "Data gap:" — do not invent land-use codes, parcels, or figures.
-- Cite each factor with the fragment title. Library extracts are reference material, not BCS statistics; page-level extracts are still reference. News items are press (outlet and date): they do not replace an official figure. Scenarios and foresight signals are readings, not new capacity. If two places are compared, keep each place's own ceiling. For this class you may use up to about 220 words so the trade-offs fit.
+- Structure the answer in this order, short bullets: 1) Capacidades 2) Restricciones 3) Instrumentos 4) Actores 5) Huecos 6) Fuente. Use only CONTEXT.
+- Cite each factor with the fragment title. Library page extracts are reference, not BCS statistics. News is press (outlet and date). Scenarios and foresight signals are readings, not new capacity. If two of the five municipalities are compared, keep each place's own ceiling and name its gap (Loreto DMA, Mulegé water–energy, East Cape load, Oasis MW, and RT=Restauración stay unfilled). For this class you may use up to about 220 words.
 `;
   }
   return `
@@ -2832,7 +2870,8 @@ RAZONAMIENTO MULTIFACTOR (esta pregunta es de viabilidad de proyecto, cambio de 
 - Recorre junto el paquete de factores del CONTEXTO: agua (DMA / acuíferos / desal), energía (SIBCS / CFE), instrumentos (POER / PDU), restricciones (ANP, costa, tenencia, peligros), motores de demanda, actores o mesas, y brechas.
 - Nombra trade-offs entre factores (por ejemplo desalación frente al techo eléctrico, o un PDU frente a una UGA / ANP). No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
 - Si falta un factor crítico, o un fragmento dice "sin dato en corpus", dilo en "Dato faltante:" — no inventes códigos de uso de suelo, predios ni cifras.
-- Cita cada factor con el título del fragmento. Los extractos de biblioteca son referencia, no estadística de BCS; una página citada sigue siendo referencia. Las noticias son prensa (medio y fecha): no sustituyen una cifra oficial. Escenarios y señales de prospectiva son lecturas, no capacidad nueva. Si comparas dos lugares, conserva el techo de cada uno. En esta clase puedes usar hasta unas 220 palabras para que quepan los trade-offs.
+- Estructura la respuesta en este orden, con viñetas cortas: 1) Capacidades 2) Restricciones 3) Instrumentos 4) Actores 5) Huecos 6) Fuente. Solo con el CONTEXTO.
+- Cita cada factor con el título del fragmento. Las páginas de biblioteca son referencia, no estadística de BCS. Las noticias son prensa (medio y fecha). Escenarios y señales son lecturas, no capacidad nueva. Si comparas dos de los cinco municipios, conserva el techo de cada uno y nombra su hueco (DMA de Loreto, agua–energía de Mulegé, carga de East Cape, MW de Oasis y RT=Restauración siguen sin dato). En esta clase puedes usar hasta unas 220 palabras.
 `;
 }
 
