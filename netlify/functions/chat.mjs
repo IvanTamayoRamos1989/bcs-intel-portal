@@ -605,6 +605,29 @@ function expandQuery(query) {
   if (/\bimplan\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpoer\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\b(oasis|hidrogen)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bturismo\b/.test(qn) && /\b(los cabos|cabo san lucas|san jose del cabo)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bforo\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(playitas|san juan de la costa|programa subregional)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bveda\b/.test(qn) && /\b1954\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bintrusion marina\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\btenencia\b/.test(qn) && /\b(barriles|cardonal|los barriles)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bcabo pulmo\b/.test(qn) && /\bbahia de loreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdossier\b/.test(qn) && /\b(mulege|loreto)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdesierto de evidencia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\borientacion aerea\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (
+    /\b(los cabos|cabo san lucas)\b/.test(qn) &&
+    /\bdirige\b/.test(qn) &&
+    /\b(ecologia|catastro|presidencia|desarrollo urbano|fomento economico|desarrollo social|servicios publicos|seguridad publica)\b/.test(qn) &&
+    !factorKinds.length
+  ) {
+    factorKinds.push('viability');
+  }
+  if (/\bpresidencia municipal\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1032,11 +1055,11 @@ function factorPredBase(pred) {
 function factorPlaceFlags(qn) {
   const east = /\b(east cape|cabo del este|cabo pulmo|la ribera|los barriles|barriles)\b/.test(qn);
   const cabos = /\b(los cabos|cabo san lucas|san jose del cabo|\bsjd\b)\b/.test(qn);
-  const paz = /\bla paz\b/.test(qn);
+  const paz = /\bla paz\b/.test(qn) || /\bsan juan de la costa\b/.test(qn);
   const loreto = /\bloreto\b/.test(qn);
   const comondu = /\b(comondu|constitucion)\b/.test(qn);
   const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
-  const todos = /\b(todos santos|pescadero)\b/.test(qn);
+  const todos = /\b(todos santos|pescadero|playitas)\b/.test(qn);
   const nPlaces = [cabos, paz, loreto, comondu, mulege, todos, east].filter(Boolean).length;
   const compare = (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn))
     || (nPlaces >= 2 && /\b(compar\w*|versus|\bvs\b|diferencia entre)\b/.test(qn));
@@ -1052,11 +1075,11 @@ function factorExcluded(id, place) {
   if (place.cabos && place.paz && /aeropuerto_(sjd|lap)/.test(id)) return false;
   const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id) && !/tx_lapaz/.test(id);
   const pazId = /lapaz|la_paz|0324|turismo_lapaz|aeropuerto_lap/.test(id) && !/tx_lapaz/.test(id);
-  if (place.east && pazId) return true;
-  if (place.cabos && pazId) return true;
-  if (place.paz && cabosId && !place.east) return true;
-  if (place.todos && cabosId) return true;
-  if ((place.loreto || place.mulege || place.comondu) && (cabosId || pazId)) return true;
+  const otherThanPaz = place.east || place.cabos || place.loreto || place.mulege || place.comondu;
+  const otherThanCabos = place.paz || place.todos || place.loreto || place.mulege || place.comondu;
+  // Naming both sides keeps each side. A single-place question still drops the other coast.
+  if (pazId && !place.paz && otherThanPaz) return true;
+  if (cabosId && !place.cabos && !place.east && otherThanCabos) return true;
   return false;
 }
 
@@ -1162,6 +1185,46 @@ function factorSeedIds(qn, kinds) {
   if (/\bimplan\b/.test(qn)) add('actor_implan_cabos', 'ev_mesa_urbanismo', 'inst_pdu_cabos', 'ev_org_cabos_2024');
   if (/\b(segunda residencia|segundas residencias|second homes?)\b/.test(qn)) add('dd_residencial_cabos', 'ev_inmob_jll_2025');
   if (/\bturismo\b/.test(qn) && p.paz) add('dd_turismo_lapaz', 'rc_acuifero_0324');
+  if (/\bturismo\b/.test(qn) && p.cabos) add('dd_turismo_cabos', 'const_dma_deficit');
+  if (/\bforo\b/.test(qn)) add('dd_eventos_foro', 'dq_oportunidades');
+  if (/\bjll\b/.test(qn) && (p.todos || /\bpacifico\b/.test(qn))) add('terr_todos_santos', 'ev_jll_zonas_2025');
+  if (/\b(playitas|san juan de la costa|programa subregional)\b/.test(qn)) {
+    add('ev_peotdu_instrumentos', 'inst_pdu_lapaz', 'terr_todos_santos');
+  }
+  if (/\bveda\b/.test(qn) && /\b1954\b/.test(qn)) add('inst_veda_1954');
+  if (/\bintrusion marina\b/.test(qn)) add('const_intrusion_marina', 'rc_acuifero_0324');
+  if (/\btenencia\b/.test(qn) && /\b(barriles|cardonal)\b/.test(qn)) add('const_tenencia', 'ev_psdu_barriles');
+  if (/\bcabo pulmo\b/.test(qn) && /\bbahia de loreto\b/.test(qn)) {
+    add('terr_anp_cabo_pulmo', 'terr_anp_loreto', 'const_anp_nucleos');
+  }
+  if (/\bdossier\b/.test(qn) && p.mulege) add('ev_dossiers_lugar', 'terr_mulege', 'gap_mulege_agua_energia');
+  if (/\bdossier\b/.test(qn) && p.loreto) add('ev_dossiers_lugar', 'terr_loreto', 'gap_loreto_dma');
+  if (/\bdesierto de evidencia\b/.test(qn)) add('ev_dossiers_movilidad', 'terr_mulege', 'gap_mulege_agua_energia');
+  if (/\borientacion aerea\b/.test(qn)) add('ev_orientacion_aerea', 'dq_riesgos_principales', 'dq_cambio_uso_suelo');
+  if (p.cabos && /\bdirige\b/.test(qn) && /\becologia\b/.test(qn)) {
+    add('actor_cabos_dg_ecologia', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'inst_poel_cabos', 'terr_los_cabos');
+  }
+  if (p.cabos && /\bdirige\b/.test(qn) && /\bcatastro\b/.test(qn)) {
+    add('ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos', 'inst_pdu_cabos');
+  }
+  if (p.cabos && /\bdirige\b/.test(qn) && /\bdesarrollo urbano\b/.test(qn)) {
+    add('actor_cabos_dg_desarrollo_urbano', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'inst_pdu_cabos', 'actor_ayunt_cabos', 'terr_los_cabos');
+  }
+  if (p.cabos && /\bdirige\b/.test(qn) && /\bfomento economico\b/.test(qn)) {
+    add('actor_cabos_dg_fomento_economico', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
+  }
+  if (p.cabos && /\bdirige\b/.test(qn) && /\bdesarrollo social\b/.test(qn)) {
+    add('actor_cabos_dg_desarrollo_social', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
+  }
+  if (p.cabos && /\bdirige\b/.test(qn) && /\bservicios publicos\b/.test(qn)) {
+    add('actor_cabos_dg_servicios_publicos', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
+  }
+  if (p.cabos && /\bdirige\b/.test(qn) && /\bseguridad publica\b/.test(qn)) {
+    add('actor_cabos_dg_seguridad_publica', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
+  }
+  if (p.cabos && /\bpresidencia\b/.test(qn)) {
+    add('actor_cabos_presidencia', 'ev_org_cabos_2024', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos', 'actor_oomsapas_cabos');
+  }
   if (/\boomsapas\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_mesa_agua');
   if (/\bsepuimm\b/.test(qn)) add('actor_sepuimm', 'inst_poerbcs');
   if (/\bconanp\b/.test(qn)) add('actor_conanp', 'terr_anp_cabo_pulmo', 'const_anp_nucleos');
