@@ -186,6 +186,13 @@
       ['population', 'Población publicada', 'Published population'],
       ['pobtot', 'Población publicada', 'Published population'],
       ['municipio', 'Municipio', 'Municipality'],
+      ['municipality', 'Municipio', 'Municipality'],
+      ['priceFormatted', 'Precio anunciado', 'Asking price'],
+      ['currency', 'Moneda', 'Currency'],
+      ['propertyType', 'Tipo de propiedad', 'Property type'],
+      ['bedrooms', 'Recámaras', 'Bedrooms'],
+      ['bathrooms', 'Baños', 'Bathrooms'],
+      ['coordPrecision', 'Precisión de ubicación', 'Location precision'],
       ['tier', 'Jerarquía', 'Tier'],
       ['sector', 'Sector', 'Sector'],
       ['dependencia', 'Dependencia', 'Agency'],
@@ -211,6 +218,7 @@
       var raw = p[key];
       if (raw == null || raw === '' || typeof raw === 'object') return;
       var value = String(raw);
+      if(field[0]==='propertyType'&&lang()!=='en')value=({RESIDENTIAL:'Casa',CONDO:'Departamento',LAND:'Terreno',MULTI_FAMILY:'Vivienda multifamiliar'})[value]||value;
       if (field[0] === 'monto_MXN' && !isNaN(Number(raw))) value = Number(raw).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX');
       if (field[0] === 'sup_Ha' && !isNaN(Number(raw))) value = Number(raw).toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX', { maximumFractionDigits: 1 });
       if (field[0] === 'politica') {
@@ -341,7 +349,7 @@
     var specific = (feats || []).filter(function (feature) { return !washOnly(feature); });
     if (specific.length) {
       var feature = specific[0];
-      var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-edge$/, '');
+      var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d)$/, '');
       openFeatureFiche(feature, lngLat, byId[id]);
       return;
     }
@@ -351,7 +359,7 @@
     }
     if (feats && feats.length) {
       var wash = feats[0];
-      var washId = String(wash.layer && wash.layer.id || '').replace(/^cdt-ly-/, '').replace(/-edge$/, '');
+      var washId = String(wash.layer && wash.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d)$/, '');
       openFeatureFiche(wash, lngLat, byId[washId]);
       return;
     }
@@ -532,6 +540,7 @@
     { re: /mulege|santa rosalia/, muni: 'Mulegé', layers: ['focus_ports_air'] },
   ];
   var THEME_RULES = [
+    { re: /\bmls\b|oferta inmobiliaria|real estate listings|propiedades en (?:venta|mercado)/, layers: ['bcs_market_listings'] },
     { re: /acuifer|agua|water|novillo|oomsapas|santo domingo|\b0306\b/, layers: ['focus_water_dmas', 'osm_waterways'] },
     { re: /termosolar|el crucero|\bcfe\b/, layers: ['federal_projects'] },
     { re: /proteg|anp|natural area|area natural/, layers: ['anp_federales', 'rtp_conabio'] },
