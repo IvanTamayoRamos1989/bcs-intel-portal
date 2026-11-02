@@ -234,7 +234,7 @@
       out.push({
         type: 'folder',
         title: title,
-        blurb: f.id + (f.n ? ' · ' + f.n + ' ' + t('files') : ''),
+        blurb: f.n ? f.n + ' ' + t('files') : '',
         href: '/catalogo?folder=' + encodeURIComponent(f.id),
         score: sc,
       });
@@ -259,8 +259,8 @@
       var href = f.dv || (f.gid ? 'https://drive.google.com/file/d/' + f.gid + '/view' : '/catalogo?q=' + encodeURIComponent(f.n || ''));
       out.push({
         type: 'file',
-        title: f.n || f.p || 'file',
-        blurb: (f.f || '') + (sum ? ' — ' + String(sum).slice(0, 90) : ''),
+        title: String(f.n || f.p || 'Documento').split(/[\\/]/).pop().replace(/\.[a-z0-9]{2,5}$/i, '').replace(/[_-]+/g, ' ').trim(),
+        blurb: sum ? String(sum).slice(0, 120) : (lang() === 'en' ? 'Open the source document' : 'Abrir el documento original'),
         href: href,
         external: !!(f.dv || f.gid),
         score: sc,
