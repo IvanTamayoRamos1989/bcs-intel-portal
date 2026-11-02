@@ -1,0 +1,755 @@
+{
+  "version_note": "Factor pack v1 (2026-11-02). Source for scripts/apply_factor_ontology.py. Merges into src/data/graph.json. No invented series: gap nodes say sin dato en corpus.",
+  "relation_types": [
+    {
+      "id": "influences",
+      "label_es": "influye_en",
+      "label_en": "influences"
+    },
+    {
+      "id": "risks",
+      "label_es": "arriesga",
+      "label_en": "risks"
+    },
+    {
+      "id": "opportunity_for",
+      "label_es": "oportunidad_para",
+      "label_en": "opportunity_for"
+    },
+    {
+      "id": "requires_capacity",
+      "label_es": "requiere_capacidad",
+      "label_en": "requires_capacity"
+    },
+    {
+      "id": "governed_by",
+      "label_es": "regido_por",
+      "label_en": "governed_by"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "dq_viabilidad_proyecto",
+      "type": "DecisionQuestion",
+      "label": "¿Es viable este proyecto con los factores acoplados?",
+      "label_en": "Is this project viable across coupled factors?",
+      "summary": "Paquete de viabilidad (hotel, desaladora, parque industrial, vivienda, carretera, energía). Familias a consultar, sin cifras nuevas: agua (DMA / acuíferos / desal), energía (SIBCS / CFE / PRODESEN / PAMRNT), instrumentos (POERBCS, PDU/PSDU), restricciones (ANP, costa, tenencia, intrusión), motores de demanda (turismo, residencial, agro), actores y mesas, y brechas marcadas sin dato en corpus. No autoriza un proyecto: nombra trade-offs.",
+      "summary_en": "Viability pack (hotel, desalination, industrial park, housing, road, energy). Families to consult, with no new figures: water (DMA / aquifers / desal), energy (SIBCS / CFE / PRODESEN / PAMRNT), instruments (POERBCS, PDU/PSDU), constraints (ANP, coast, tenure, intrusion), demand drivers (tourism, residential, agriculture), actors and working tables, and gaps marked sin dato en corpus. Does not approve a project: it names trade-offs."
+    },
+    {
+      "id": "dq_cambio_uso_suelo",
+      "type": "DecisionQuestion",
+      "label": "¿Qué dice el ordenamiento sobre un cambio de uso de suelo?",
+      "label_en": "What does the ordinance say about a land-use change?",
+      "summary": "Paquete de cambio de uso de suelo. Consultar POERBCS (56 UGAs; políticas nombradas en el informe de propuesta: Aprovechamiento Sustentable, Preservación, Protección), deferencias urbanas de la guía de planeación (BCS40AS, BCS41AS, BCS32AS, BCS31AS, BCS30AS) y el PDU/PSDU del lugar. No inventar códigos de zonificación municipal ni polígonos de predio. Si el instrumento local está en brecha (3ª act. PDU Cabos, PMDU La Paz, PDU Mulegé, gazette PSDU Loreto, permisos DUIS), decir sin dato en corpus.",
+      "summary_en": "Land-use change pack. Consult POERBCS (56 UGAs; policies named in the proposal report: Sustainable Use, Preservation, Protection), urban deferrals in the planning guide (BCS40AS, BCS41AS, BCS32AS, BCS31AS, BCS30AS) and the local PDU/PSDU. Do not invent municipal zoning codes or parcel polygons. If the local instrument is a gap (Cabos PDU 3rd update, La Paz PMDU, Mulegé PDU, Loreto PSDU gazette, DUIS permits), say sin dato en corpus."
+    },
+    {
+      "id": "dq_riesgos_principales",
+      "type": "DecisionQuestion",
+      "label": "¿Cuáles son los riesgos principales de este territorio?",
+      "label_en": "What are the main risks for this territory?",
+      "summary": "Paquete de riesgos. Familias: candados de capacidad (DMA, escasez hídrica, red SIBCS aislada), ANP y presión costera, tenencia, intrusión marina, ciclo político, y la evidencia ya escrita en la guía de riesgos (sismicidad SSN, atlas estatal, ejidos RAN). No sustituye microzonificación. Capas vectoriales CENAPRED/SSN para geoproceso: sin dato en corpus.",
+      "summary_en": "Risk pack. Families: capacity locks (DMA, water scarcity, isolated SIBCS grid), ANP and coastal pressure, tenure, marine intrusion, political cycle, and evidence already in the risks guide (SSN seismicity, state atlas, RAN ejidos). Not a substitute for microzonation. CENAPRED/SSN vector layers for geoprocessing: sin dato en corpus."
+    },
+    {
+      "id": "dq_oportunidades",
+      "type": "DecisionQuestion",
+      "label": "¿Qué oportunidades ya están documentadas?",
+      "label_en": "Which opportunities are already documented?",
+      "summary": "Paquete de oportunidades. Solo lo ya codificado: motores de demanda, proyectos federales o APP en el grafo (desal Cabos, desal La Paz, transmisión P23-BS1, ciclo combinado CFE, vivienda para el bienestar, pueblos mágicos), aeropuertos como acceso, agro de Santo Domingo como vocación de Comondú, y preguntas estratégicas del portal. Una oportunidad no borra un candado DMA o SIBCS. Parque industrial con sitio y carga: sin dato en corpus.",
+      "summary_en": "Opportunity pack. Only what is already encoded: demand drivers, federal or PPP projects on the graph (Cabos desal, La Paz desal, P23-BS1 transmission, CFE combined cycle, housing programme, Pueblos Mágicos), airports as access, Santo Domingo agriculture as Comondú vocation, and the portal's strategic questions. An opportunity does not erase a DMA or SIBCS lock. An industrial park with site and load: sin dato en corpus."
+    },
+    {
+      "id": "inst_poer_politicas",
+      "type": "Instrument",
+      "label": "Políticas ambientales de UGA (POERBCS)",
+      "label_en": "UGA environmental policies (POERBCS)",
+      "summary": "Informe de propuesta POERBCS (SEPUIMM; extracto en el portal) nombra Política de Aprovechamiento Sustentable, Política de Preservación y Política de Protección; el extracto corta en Protección. La capa de 69 polígonos del portal (clave_MOE) usa sufijos AS (32), PT (27) y PR (10). RT no aparece en esa capa. Glosario letra→nombre completo y CODE_PA (2, 3 y 4): sin dato en corpus. Deferencias urbanas en la guía de planeación, no zonificación predial: BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; BCS32AS PSDU Todos Santos–El Pescadero–Las Playitas; BCS31AS PSDU Los Barriles–El Cardonal; BCS30AS PSDU Loreto (gazette 2007 marcada GAP).",
+      "summary_en": "The POERBCS proposal report (SEPUIMM; portal extract) names Sustainable Use, Preservation and Protection policies; the extract cuts off at Protection. The portal's 69-polygon layer (clave_MOE) uses suffixes AS (32), PT (27) and PR (10). RT does not appear in that layer. Full letter-to-name glossary and CODE_PA (2, 3 and 4): sin dato en corpus. Urban deferrals in the planning guide, not parcel zoning: BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; BCS32AS PSDU Todos Santos–El Pescadero–Las Playitas; BCS31AS PSDU Los Barriles–El Cardonal; BCS30AS PSDU Loreto (2007 gazette marked GAP).",
+      "evidence_path": "guides/planeacion.md"
+    },
+    {
+      "id": "ev_mesas_trabajo",
+      "type": "Evidence",
+      "label": "Mesas de trabajo del programa",
+      "label_en": "Programme working tables",
+      "summary": "Mesas en Base de datos BCS 2050 — datos del portal (notas 30 sep 2026): Hospitalidad; Inversión extranjera; Desarrollo orientado al transporte; Política estatal; Urbanización Los Cabos; Regeneración y biodiversidad; Infraestructura y energía (SEPUIMM); Agua (CEA y CONAGUA); Arquitectura y urbanismo Los Cabos (IMPLAN); Conservación. Son mesas del programa, no un organigrama oficial ni una autorización de obra.",
+      "summary_en": "Tables in Base de datos BCS 2050 — datos del portal (notes 30 Sep 2026): Hospitality; Foreign investment; Transit-oriented development; State politics; Los Cabos urbanisation; Regeneration and biodiversity; Infrastructure and energy (SEPUIMM); Water (CEA and CONAGUA); Architecture and urbanism Los Cabos (IMPLAN); Conservation. Programme tables, not an official org chart or a construction permit.",
+      "evidence_path": "src/data/mesas_trabajo.json"
+    },
+    {
+      "id": "ev_riesgos_documentados",
+      "type": "Evidence",
+      "label": "Riesgos documentados (SSN, atlas, RAN)",
+      "label_en": "Documented hazards (SSN, atlas, RAN)",
+      "summary": "Guía de riesgos: secuencia Loreto abr 2024, máximo M5.6 (SSN); enjambre al sur de San José del Cabo (jul 2024–oct 2025), 10,340 eventos, máximos M4.6 y M4.3 (SSN). Atlas Estatal de Riesgo BCS 2024 (Gobierno BCS / UABCS / Protección Civil) incluye peligrosidad por fallas; el POERBCS no es capa sísmica. Ejidos en KML RAN: 96 (La Paz 31, Mulegé 26, Los Cabos 19, Comondú 18, Loreto 2). Capas vectoriales CENAPRED/SSN para geoproceso: dato no consolidado.",
+      "summary_en": "Risks guide: Loreto sequence Apr 2024, peak M5.6 (SSN); swarm south of San José del Cabo (Jul 2024–Oct 2025), 10,340 events, peaks M4.6 and M4.3 (SSN). BCS State Risk Atlas 2024 (state government / UABCS / civil protection) includes fault hazard; POERBCS is not a seismic layer. Ejidos in the RAN KML: 96 (La Paz 31, Mulegé 26, Los Cabos 19, Comondú 18, Loreto 2). CENAPRED/SSN vector layers for geoprocessing: not consolidated.",
+      "evidence_path": "guides/riesgos.md"
+    },
+    {
+      "id": "gap_parque_industrial",
+      "type": "Constraint",
+      "label": "Brecha: parque industrial (sitio y carga)",
+      "label_en": "Gap: industrial park (site and load)",
+      "summary": "sin dato en corpus. No hay parque industrial con sitio, carga eléctrica ni dotación de agua en el grafo ni en el inventario federal empaquetado. La viabilidad industrial solo puede apoyarse en techos ya codificados (SIBCS, DMA, POER/PDU) sin inventar MW ni hm³ de demanda del parque.",
+      "summary_en": "sin dato en corpus. No industrial park with site, electrical load or water allocation is on the graph or in the packaged federal inventory. Industrial viability can only lean on ceilings already encoded (SIBCS, DMA, POER/PDU) without inventing the park's MW or hm³ demand.",
+      "evidence_path": "src/data/graph.json"
+    },
+    {
+      "id": "gap_pdu_cabos_3a",
+      "type": "Constraint",
+      "label": "Brecha: 3ª actualización PDU 2040 Los Cabos",
+      "label_en": "Gap: PDU 2040 Los Cabos 3rd update",
+      "summary": "sin dato en corpus para el decreto de la tercera actualización. La guía de planeación: consulta 2023, sin BOGE final en disco, no validada SEPUIMM en la timeline. La 2ª actualización (Cabildo 23 abr 2013; BOGE No. 19, 6 may 2013) es la que esa guía marca operativa.",
+      "summary_en": "sin dato en corpus for the third-update decree. Planning guide: 2023 consultation, no final BOGE on disk, not SEPUIMM-validated on the timeline. The 2nd update (council 23 Apr 2013; BOGE No. 19, 6 May 2013) is the one that guide marks as operative.",
+      "evidence_path": "guides/planeacion.md"
+    },
+    {
+      "id": "gap_pmdu_lapaz_texto",
+      "type": "Constraint",
+      "label": "Brecha: texto PMDU La Paz y zonificación predial",
+      "label_en": "Gap: La Paz PMDU text and parcel zoning",
+      "summary": "sin dato en corpus para el PMDU completo y para códigos de zonificación secundaria o predial. La guía de planeación: Cabildo La Paz aprueba PMDU el 20 dic 2024; texto completo (~356 pp.) marcado GAP (solo acta). PDUCP 2018 es el plan de centro de población citado como última actualización en disco. Anexos cartográficos PPDU Los Planes: wishlist, no verificados.",
+      "summary_en": "sin dato en corpus for the full PMDU and for secondary or parcel zoning codes. Planning guide: La Paz council approves a PMDU on 20 Dec 2024; full text (~356 pp.) marked GAP (minutes only). PDUCP 2018 is the population-centre plan cited as the latest update on disk. Los Planes PPDU map annexes: wishlist, not verified.",
+      "evidence_path": "guides/planeacion.md"
+    },
+    {
+      "id": "gap_pdu_mulege",
+      "type": "Constraint",
+      "label": "Brecha: PDU de Mulegé",
+      "label_en": "Gap: Mulegé PDU",
+      "summary": "sin dato en corpus. La guía de planeación marca PDU Mulegé como GAP. Sí hay PMD 2024–2027. No inventar zonificación municipal.",
+      "summary_en": "sin dato en corpus. The planning guide marks a Mulegé PDU as GAP. A 2024–2027 PMD is on disk. Do not invent municipal zoning.",
+      "evidence_path": "guides/planeacion.md"
+    },
+    {
+      "id": "gap_psdu_loreto_gazette",
+      "type": "Constraint",
+      "label": "Brecha: gazette PSDU Loreto 2007",
+      "label_en": "Gap: Loreto PSDU 2007 gazette",
+      "summary": "sin dato en corpus para el decreto histórico completo. La guía de planeación: consulta de actualización PSDU 2024 y PMDU en disco; gazette PSDU 2007 y PMD Loreto marcados GAP. Deferencia POER citada: BCS30AS (corredor Loreto–Nopoló–Notrí–Puerto Escondido–Ligüí–Ensenada Blanca).",
+      "summary_en": "sin dato en corpus for the full historical decree. Planning guide: 2024 PSDU update consultation and PMDU on disk; 2007 PSDU gazette and Loreto PMD marked GAP. Cited POER deferral: BCS30AS (Loreto–Nopoló–Notrí–Puerto Escondido–Ligüí–Ensenada Blanca corridor).",
+      "evidence_path": "guides/planeacion.md"
+    },
+    {
+      "id": "gap_permisos_uso_suelo",
+      "type": "Constraint",
+      "label": "Brecha: permisos de uso de suelo y DUIS",
+      "label_en": "Gap: land-use permits and DUIS",
+      "summary": "sin dato en corpus. Base de datos BCS 2050 — brechas de datos gap-re-permits-pipeline (abierto): falta inventario de permisos de construcción, uso de suelo y DUIS por municipio con montos y tipología.",
+      "summary_en": "sin dato en corpus. Base de datos BCS 2050 — brechas de datos gap-re-permits-pipeline (open): no inventory of building permits, land-use permits and DUIS by municipality with amounts and typology.",
+      "evidence_path": "src/data/data_gaps.json#gap-re-permits-pipeline"
+    },
+    {
+      "id": "gap_politica_uga_leyenda",
+      "type": "Constraint",
+      "label": "Brecha: leyenda AS/PR/PT/RT y CODE_PA",
+      "label_en": "Gap: AS/PR/PT/RT and CODE_PA legend",
+      "summary": "sin dato en corpus para la tabla completa letra→política y para el significado de CODE_PA. Observado: sufijos AS, PT y PR en clave_MOE; RT ausente en la capa de 69 polígonos. No afirmar que RT significa Restauración ni traducir CODE_PA 2/3/4 a un nombre que el extracto no da.",
+      "summary_en": "sin dato en corpus for the full letter-to-policy table and for the meaning of CODE_PA. Observed: AS, PT and PR suffixes on clave_MOE; RT is absent from the 69-polygon layer. Do not assert that RT means Restoration or translate CODE_PA 2/3/4 into a name the extract does not give.",
+      "evidence_path": "public/explorar/data/layer-zoning.json"
+    },
+    {
+      "id": "gap_riesgo_capas_vector",
+      "type": "Constraint",
+      "label": "Brecha: capas vectoriales de peligro CENAPRED/SSN",
+      "label_en": "Gap: CENAPRED/SSN hazard vector layers",
+      "summary": "sin dato en corpus. La guía de riesgos dice que las capas vectoriales CENAPRED/SSN para geoproceso no están consolidadas. No inventar malla sísmica, de inundación o de ciclón más allá de los mapas ya citados (atlas / galería).",
+      "summary_en": "sin dato en corpus. The risks guide says CENAPRED/SSN vector layers for geoprocessing are not consolidated. Do not invent a seismic, flood or cyclone grid beyond the maps already cited (atlas / gallery).",
+      "evidence_path": "guides/riesgos.md"
+    }
+  ],
+  "edges": [
+    {
+      "from": "const_dma_deficit",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_tenencia",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_coast_anp_pressure",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "dq_viabilidad_proyecto",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "dq_viabilidad_proyecto",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_viabilidad_proyecto",
+      "to": "inst_ley_aguas",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dd_turismo_cabos",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "dd_residencial_cabos",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "dd_turismo_lapaz",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "dd_agro_santo_domingo",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_mesas_trabajo",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_parque_industrial",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "risks"
+    },
+    {
+      "from": "actor_sepuimm",
+      "to": "inst_poerbcs",
+      "predicate": "influences"
+    },
+    {
+      "from": "actor_implan_cabos",
+      "to": "inst_pdu_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "actor_oomsapas_cabos",
+      "to": "proj_desal_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "actor_cea",
+      "to": "proj_desal_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "actor_conagua",
+      "to": "proj_desal_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "actor_cfe",
+      "to": "proj_fed_ene_002",
+      "predicate": "influences"
+    },
+    {
+      "from": "actor_conanp",
+      "to": "const_anp_nucleos",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "rc_acuifero_0317",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "rc_acuifero_0319",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "inst_pdu_cabos",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "inst_ley_aguas",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "proj_desal_cabos",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "proj_desal_cabos",
+      "predicate": "risks"
+    },
+    {
+      "from": "dd_turismo_cabos",
+      "to": "proj_desal_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "dd_turismo_cabos",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "proj_fed_agu_001",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "proj_fed_agu_001",
+      "to": "inst_pdu_cabos",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "proj_fed_agu_001",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_agu_002",
+      "to": "rc_acuifero_0324",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "proj_fed_agu_002",
+      "to": "inst_pdu_lapaz",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "proj_fed_agu_002",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_intrusion_marina",
+      "to": "proj_fed_agu_002",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_viv_001",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "proj_fed_viv_001",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_tenencia",
+      "to": "proj_fed_viv_001",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "proj_fed_viv_001",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_permisos_uso_suelo",
+      "to": "proj_fed_viv_001",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_viv_001",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "proj_transpeninsular",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "proj_transpeninsular",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_ene_002",
+      "to": "inst_prodesen",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "proj_fed_ene_002",
+      "to": "inst_pamrnt",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "proj_fed_ene_002",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_ene_002",
+      "to": "rc_sibcs",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "rc_bess_gap",
+      "to": "proj_fed_ene_002",
+      "predicate": "risks"
+    },
+    {
+      "from": "rc_subestaciones_gap",
+      "to": "rc_sibcs",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_p23_bs1",
+      "to": "rc_tx_lapaz_cabos",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "proj_p23_bs1",
+      "to": "inst_pamrnt",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "proj_p23_bs1",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_parque_industrial",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "gap_parque_industrial",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "gap_parque_industrial",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "gap_parque_industrial",
+      "predicate": "risks"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_poer_politicas",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_pdu_cabos",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_pdu_lapaz",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_cambio_uso_suelo",
+      "to": "inst_poel_cabos",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "inst_poer_politicas",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "constrains"
+    },
+    {
+      "from": "const_tenencia",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_coast_anp_pressure",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_escasez_agua",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_pdu_cabos_3a",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_pmdu_lapaz_texto",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_pdu_mulege",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_psdu_loreto_gazette",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_permisos_uso_suelo",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_politica_uga_leyenda",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_pdu_cabos_3a",
+      "to": "inst_pdu_cabos",
+      "predicate": "constrains"
+    },
+    {
+      "from": "gap_pmdu_lapaz_texto",
+      "to": "inst_pdu_lapaz",
+      "predicate": "constrains"
+    },
+    {
+      "from": "gap_pdu_mulege",
+      "to": "terr_mulege",
+      "predicate": "constrains"
+    },
+    {
+      "from": "gap_psdu_loreto_gazette",
+      "to": "terr_loreto",
+      "predicate": "constrains"
+    },
+    {
+      "from": "dd_turismo_cabos",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "influences"
+    },
+    {
+      "from": "inst_pdu_cabos",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "constrains"
+    },
+    {
+      "from": "inst_pdu_lapaz",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "constrains"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_escasez_agua",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_tenencia",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_intrusion_marina",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_coast_anp_pressure",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "const_ciclo_politico",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "dq_riesgos_principales",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "dq_riesgos_principales",
+      "to": "rc_acuifero_0317",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "ev_riesgos_documentados",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_riesgo_capas_vector",
+      "to": "dq_riesgos_principales",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_desal_cabos",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "proj_fed_agu_002",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "proj_p23_bs1",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "proj_fed_ene_002",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "proj_fed_tur_001",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "dd_turismo_cabos",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "dd_turismo_lapaz",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "dd_agro_santo_domingo",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "dd_residencial_cabos",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "dd_eventos_foro",
+      "to": "dq_oportunidades",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "rc_aeropuerto_sjd",
+      "to": "dd_turismo_cabos",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "rc_aeropuerto_lap",
+      "to": "dd_turismo_lapaz",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "dd_agro_santo_domingo",
+      "to": "terr_comondu",
+      "predicate": "opportunity_for"
+    },
+    {
+      "from": "gap_parque_industrial",
+      "to": "dq_oportunidades",
+      "predicate": "risks"
+    },
+    {
+      "from": "dq_oportunidades",
+      "to": "inst_poerbcs",
+      "predicate": "governed_by"
+    },
+    {
+      "from": "dq_oportunidades",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "const_dma_deficit",
+      "to": "dq_oportunidades",
+      "predicate": "risks"
+    },
+    {
+      "from": "ev_mesas_trabajo",
+      "to": "dq_oportunidades",
+      "predicate": "influences"
+    },
+    {
+      "from": "rc_bess_gap",
+      "to": "dq_oportunidades",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_ene_005",
+      "to": "rc_sibcs",
+      "predicate": "requires_capacity"
+    },
+    {
+      "from": "const_red_aislada",
+      "to": "proj_fed_ene_005",
+      "predicate": "risks"
+    },
+    {
+      "from": "proj_fed_car_003",
+      "to": "proj_transpeninsular",
+      "predicate": "influences"
+    },
+    {
+      "from": "const_anp_nucleos",
+      "to": "proj_fed_car_003",
+      "predicate": "risks"
+    }
+  ]
+}

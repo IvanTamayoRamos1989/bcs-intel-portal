@@ -1275,6 +1275,140 @@ def main():
         fn_graph.write_text(json.dumps(slim, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         print(f"ontology_graph_copied={fn_graph} from={graph_src}")
 
+    # Factor-framework spine — points at ontology ids, no new statistics.
+    factor_cards = [
+        (
+            "factor:marco",
+            "Marco de factores acoplados (viabilidad, uso de suelo, riesgos, oportunidades)",
+            "Coupled factor framework (viability, land use, risks, opportunities)",
+            (
+                "Marco de lectura del portal (ontología v1.5, sin cifras nuevas). "
+                "Cuatro preguntas: dq_viabilidad_proyecto, dq_cambio_uso_suelo, dq_riesgos_principales, dq_oportunidades. "
+                "Familias a cruzar: agua (DMA, acuíferos, desal), energía (SIBCS, CFE, PRODESEN, PAMRNT), "
+                "instrumentos (POERBCS, PDU/PSDU), restricciones (ANP, costa, tenencia), motores de demanda, actores y mesas, brechas. "
+                "Predicados de recorrido: influences, constrains, enables, risks, opportunity_for, requires_capacity, governed_by. "
+                "Si un nodo dice «sin dato en corpus», ese factor falta: no se inventa. "
+                "[factor viabilidad uso de suelo riesgos oportunidades poer pdu dma sibcs]"
+            ),
+            (
+                "Portal reading frame (ontology v1.5, no new figures). "
+                "Four questions: dq_viabilidad_proyecto, dq_cambio_uso_suelo, dq_riesgos_principales, dq_oportunidades. "
+                "Families to cross: water (DMA, aquifers, desal), energy (SIBCS, CFE, PRODESEN, PAMRNT), "
+                "instruments (POERBCS, PDU/PSDU), constraints (ANP, coast, tenure), demand drivers, actors and working tables, gaps. "
+                "Walk predicates: influences, constrains, enables, risks, opportunity_for, requires_capacity, governed_by. "
+                "If a node says «sin dato en corpus», that factor is missing: do not invent it. "
+                "[factor viability land use risks opportunities poer pdu dma sibcs]"
+            ),
+        ),
+        (
+            "factor:viabilidad",
+            "Viabilidad de proyecto — familias de factores",
+            "Project viability — factor families",
+            (
+                "Viabilidad (dq_viabilidad_proyecto). Para hotel, desaladora, parque industrial, vivienda, carretera o energía, "
+                "cruzar: agua (const_dma_deficit, rc_acuifero_*, proj_desal_cabos / proj_fed_agu_*), "
+                "energía (rc_sibcs, const_red_aislada, proj_fed_ene_002, inst_prodesen, inst_pamrnt), "
+                "suelo (inst_poerbcs, inst_pdu_cabos, inst_pdu_lapaz), "
+                "restricciones (const_anp_nucleos, const_coast_anp_pressure, const_tenencia), "
+                "demanda (dd_turismo_cabos, dd_residencial_cabos, dd_turismo_lapaz, dd_agro_santo_domingo) y mesas (ev_mesas_trabajo). "
+                "Parque industrial con sitio y carga: gap_parque_industrial — sin dato en corpus. "
+                "La desalación no borra el candado DMA ni el techo SIBCS. "
+                "[viabilidad factibilidad proyecto hotel desaladora vivienda carretera energia]"
+            ),
+            (
+                "Viability (dq_viabilidad_proyecto). For a hotel, desalination plant, industrial park, housing, road or energy project, "
+                "cross: water (const_dma_deficit, rc_acuifero_*, proj_desal_cabos / proj_fed_agu_*), "
+                "energy (rc_sibcs, const_red_aislada, proj_fed_ene_002, inst_prodesen, inst_pamrnt), "
+                "land (inst_poerbcs, inst_pdu_cabos, inst_pdu_lapaz), "
+                "constraints (const_anp_nucleos, const_coast_anp_pressure, const_tenencia), "
+                "demand (dd_turismo_cabos, dd_residencial_cabos, dd_turismo_lapaz, dd_agro_santo_domingo) and tables (ev_mesas_trabajo). "
+                "Industrial park with site and load: gap_parque_industrial — sin dato en corpus. "
+                "Desalination does not erase the DMA lock or the SIBCS ceiling. "
+                "[viability feasibility project hotel desalination housing road energy]"
+            ),
+        ),
+        (
+            "factor:uso-suelo",
+            "Cambio de uso de suelo — instrumentos y brechas",
+            "Land-use change — instruments and gaps",
+            (
+                "Cambio de uso de suelo (dq_cambio_uso_suelo, inst_poer_politicas). "
+                "POERBCS fija 56 UGAs; el informe de propuesta nombra Aprovechamiento Sustentable, Preservación y Protección. "
+                "La capa de 69 polígonos trae sufijos de clave_MOE AS, PT y PR; RT no aparece. Leyenda letra→nombre completa y CODE_PA: gap_politica_uga_leyenda, sin dato en corpus. "
+                "Deferencias urbanas de la guía de planeación (no predios): BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; "
+                "BCS32AS PSDU Todos Santos; BCS31AS PSDU Barriles; BCS30AS PSDU Loreto. "
+                "Brechas: gap_pdu_cabos_3a (3ª act. sin BOGE), gap_pmdu_lapaz_texto, gap_pdu_mulege, gap_psdu_loreto_gazette, gap_permisos_uso_suelo. "
+                "No inventar códigos de zonificación municipal. "
+                "[uso de suelo zonificacion uga poer pdu cambio de uso]"
+            ),
+            (
+                "Land-use change (dq_cambio_uso_suelo, inst_poer_politicas). "
+                "POERBCS sets 56 UGAs; the proposal report names Sustainable Use, Preservation and Protection. "
+                "The 69-polygon layer has clave_MOE suffixes AS, PT and PR; RT does not appear. Full letter-to-name legend and CODE_PA: gap_politica_uga_leyenda, sin dato en corpus. "
+                "Urban deferrals in the planning guide (not parcels): BCS40AS PDU SJC–CSL; BCS41AS PDUCP La Paz; "
+                "BCS32AS PSDU Todos Santos; BCS31AS PSDU Barriles; BCS30AS PSDU Loreto. "
+                "Gaps: gap_pdu_cabos_3a (3rd update, no BOGE), gap_pmdu_lapaz_texto, gap_pdu_mulege, gap_psdu_loreto_gazette, gap_permisos_uso_suelo. "
+                "Do not invent municipal zoning codes. "
+                "[land use zoning uga poer pdu land-use change]"
+            ),
+        ),
+        (
+            "factor:riesgos",
+            "Riesgos principales — candados y evidencia ya escrita",
+            "Principal risks — locks and evidence already written",
+            (
+                "Riesgos principales (dq_riesgos_principales). Candados: const_dma_deficit, const_escasez_agua, const_red_aislada, "
+                "const_anp_nucleos, const_coast_anp_pressure, const_tenencia, const_intrusion_marina, const_ciclo_politico. "
+                "Techo de red: rc_sibcs. Evidencia de la guía de riesgos (ev_riesgos_documentados): sismicidad SSN y ejidos RAN; el POER no es capa sísmica. "
+                "Capas vectoriales CENAPRED/SSN: gap_riesgo_capas_vector, sin dato en corpus. "
+                "[riesgos principales hazard amenaza dma sibcs anp sismicidad]"
+            ),
+            (
+                "Principal risks (dq_riesgos_principales). Locks: const_dma_deficit, const_escasez_agua, const_red_aislada, "
+                "const_anp_nucleos, const_coast_anp_pressure, const_tenencia, const_intrusion_marina, const_ciclo_politico. "
+                "Grid ceiling: rc_sibcs. Evidence from the risks guide (ev_riesgos_documentados): SSN seismicity and RAN ejidos; POER is not a seismic layer. "
+                "CENAPRED/SSN vector layers: gap_riesgo_capas_vector, sin dato en corpus. "
+                "[principal risks hazard dma sibcs anp seismicity]"
+            ),
+        ),
+        (
+            "factor:oportunidades",
+            "Oportunidades documentadas — demanda, proyectos y techos",
+            "Documented opportunities — demand, projects and ceilings",
+            (
+                "Oportunidades (dq_oportunidades). Solo lo ya codificado: motores dd_turismo_cabos, dd_residencial_cabos, dd_turismo_lapaz, "
+                "dd_agro_santo_domingo, dd_eventos_foro; proyectos proj_desal_cabos, proj_fed_agu_002, proj_p23_bs1, proj_fed_ene_002, "
+                "proj_fed_viv_001, proj_fed_tur_001; acceso rc_aeropuerto_sjd y rc_aeropuerto_lap. "
+                "Una oportunidad no borra const_dma_deficit ni const_red_aislada. "
+                "Almacenamiento y subestaciones siguen en brecha (rc_bess_gap, rc_subestaciones_gap). Parque industrial: gap_parque_industrial, sin dato en corpus. "
+                "Preguntas estratégicas del portal (strategic_questions.json) acompañan la lectura; no añaden cifras. "
+                "[oportunidades opportunity demanda proyecto crecimiento]"
+            ),
+            (
+                "Opportunities (dq_oportunidades). Only what is already encoded: drivers dd_turismo_cabos, dd_residencial_cabos, dd_turismo_lapaz, "
+                "dd_agro_santo_domingo, dd_eventos_foro; projects proj_desal_cabos, proj_fed_agu_002, proj_p23_bs1, proj_fed_ene_002, "
+                "proj_fed_viv_001, proj_fed_tur_001; access rc_aeropuerto_sjd and rc_aeropuerto_lap. "
+                "An opportunity does not erase const_dma_deficit or const_red_aislada. "
+                "Storage and substations remain gaps (rc_bess_gap, rc_subestaciones_gap). Industrial park: gap_parque_industrial, sin dato en corpus. "
+                "The portal's strategic questions (strategic_questions.json) accompany the reading; they add no figures. "
+                "[opportunities demand project growth]"
+            ),
+        ),
+    ]
+    for fid, title_es, title_en, body_es, body_en in factor_cards:
+        chunks.append({
+            "id": fid,
+            "title": title_es[:120],
+            "path": f"12_ontology/graph.json#{fid}",
+            "theme": "ontologia",
+            "sum_es": clip(body_es, 950),
+            "sum_en": clip(body_en, 950),
+            "drive_url": None,
+            "type": "guide",
+            "display_title": title_es,
+        })
+    print(f"factor_spine_added={len(factor_cards)}")
+
     # Curated bilingual DMA snapshot (documented deficits — not official statewide consumption)
     dma_es = (
         "Snapshot agua BCS — déficits DMA documentados (CONAGUA 2024 / guía agua / ontología), "

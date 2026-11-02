@@ -201,6 +201,28 @@ const STOP = new Set(
 
 /** Spanish/English query expansion for thematic retrieval */
 
+/** Factor-pack intents (viability / land use / risks / opportunities). Folded, no accents. */
+const VIABILITY_RE = /\b(viabilidad|viable|factibilidad|factible|feasib\w*|viability)\b/;
+const PROJECT_KIND_RE =
+  /\b(hotel\w*|desal\w*|desalin\w*|parque\s+industrial|industrial\s+park|vivienda|housing|carretera|highway|transpeninsular|energi\w*|energy|sibcs)\b/;
+const LANDUSE_RE =
+  /\b(cambio\s+de\s+uso|uso\s+de\s+suelo|usos\s+de\s+suelo|zonific\w*|land[\s-]?use|zoning|reclasific\w*|\bugas?\b|politica\s+ambiental)\b/;
+const RISK_RE =
+  /\b(riesgos?\s+principales|principales\s+riesgos|que\s+riesgos|cuales\s+son\s+los\s+riesgos|main\s+risks|principal\s+risks|key\s+risks|riesgos?\s+(del|de|en|para)|hazard|hazards|amenazas?)\b/;
+const OPPORTUNITY_RE = /\b(oportunidad(?:es)?|opportunit(?:y|ies)|capacidad\s+ociosa|underused)\b/;
+
+/** Walk predicates for the factor bundle. located_in / informs_decision are hubs and stay out. */
+const FACTOR_WALK = new Set([
+  'influences',
+  'constrains',
+  'enables',
+  'risks',
+  'opportunity_for',
+  'requires_capacity',
+  'governed_by',
+  'demands',
+]);
+
 /** Spanish facet words → ontology node types (portal language ≠ graph enums). */
 const FACET_TYPE_MAP = [
   { re: /\bvocacion(?:es)?\b|\bdemand\s*driver/, types: ['DemandDriver'] },
@@ -511,10 +533,33 @@ function expandQuery(query) {
     }
   }
 
+  const factorKinds = [];
+  if (VIABILITY_RE.test(qn) || (/\b(proyecto|project)\b/.test(qn) && PROJECT_KIND_RE.test(qn))) {
+    factorKinds.push('viability');
+  }
+  if (LANDUSE_RE.test(qn)) factorKinds.push('landuse');
+  if (RISK_RE.test(qn)) factorKinds.push('risk');
+  if (OPPORTUNITY_RE.test(qn)) factorKinds.push('opportunity');
+  const isFactorIntent = factorKinds.length > 0;
+  if (isFactorIntent) {
+    isOpenIntent = true;
+    if (!/\b(cuant[oa]|cifra|hm3|hm\s|pib|pibe|mdp|porcentaje)\b/.test(qn)) {
+      isFactIntent = false;
+    }
+    for (const e of [
+      'viabilidad', 'factibilidad', 'uso', 'suelo', 'zonificacion', 'riesgo', 'riesgos',
+      'oportunidad', 'oportunidades', 'poer', 'pdu', 'dma', 'sibcs', 'anp', 'factor',
+    ]) {
+      set.add(e);
+    }
+  }
+
   const isLibraryIntent = LIB_INTENT_RE.test(qn);
   return {
     tokens: [...set],
     isLibraryIntent,
+    isFactorIntent,
+    factorKinds,
     isDemoIntent,
     isWaterIntent,
     isWaterQuantityIntent,
@@ -912,6 +957,236 @@ function pickOntologyNodeIds(tokens, placeTokens, reserved = 4, facetTypes = nul
     }
   }
   return out.slice(0, cap);
+}
+
+function factorPredBase(pred) {
+  return String(pred || '').replace(/_of$/, '');
+}
+
+function factorPlaceFlags(qn) {
+  const cabos = /\b(los cabos|cabo san lucas|san jose del cabo|\bsjd\b)\b/.test(qn);
+  const paz = /\bla paz\b/.test(qn) && !cabos;
+  const loreto = /\bloreto\b/.test(qn);
+  const comondu = /\b(comondu|constitucion)\b/.test(qn);
+  const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
+  const todos = /\b(todos santos|pescadero)\b/.test(qn);
+  return { cabos, paz, loreto, comondu, mulege, todos, any: cabos || paz || loreto || comondu || mulege || todos };
+}
+
+function factorExcluded(id, place) {
+  if (!place.any) return false;
+  const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id);
+  const pazId = /lapaz|la_paz|0324|turismo_lapaz|aeropuerto_lap/.test(id) && !/tx_lapaz/.test(id);
+  if (place.cabos && pazId) return true;
+  if (place.paz && cabosId) return true;
+  if (place.todos && cabosId) return true;
+  if ((place.loreto || place.mulege || place.comondu) && (cabosId || pazId)) return true;
+  return false;
+}
+
+function diversifyOntologyIds(ids, cap) {
+  const buckets = new Map();
+  for (const id of ids) {
+    const t = (NODE_BY_ID.get(id) || {}).type || 'Other';
+    if (!buckets.has(t)) buckets.set(t, []);
+    buckets.get(t).push(id);
+  }
+  const order = [
+    'DecisionQuestion', 'Constraint', 'ResourceCapacity', 'Instrument',
+    'DemandDriver', 'Project', 'Territory', 'Actor', 'Evidence',
+  ];
+  const out = [];
+  let progressed = true;
+  while (out.length < cap && progressed) {
+    progressed = false;
+    for (const t of order) {
+      const b = buckets.get(t);
+      if (b && b.length) {
+        out.push(b.shift());
+        progressed = true;
+        if (out.length >= cap) break;
+      }
+    }
+    if (!progressed) {
+      for (const b of buckets.values()) {
+        while (b.length && out.length < cap) out.push(b.shift());
+      }
+    }
+  }
+  return out;
+}
+
+/** Seeds + 2-hop along factor predicates. Depth-0 seeds are kept; neighbors fill remaining slots by type. */
+function walkFactorBundle(seedIds, place, cap = 14) {
+  const seeds = [];
+  const seen = new Set();
+  const queue = [];
+  for (const id of seedIds) {
+    if (!NODE_BY_ID.has(id) || seen.has(id) || factorExcluded(id, place)) continue;
+    seen.add(id);
+    queue.push({ id, depth: 0 });
+  }
+  const extra = [];
+  while (queue.length) {
+    const { id, depth } = queue.shift();
+    if (depth === 0) seeds.push(id);
+    else extra.push(id);
+    if (depth >= 2) continue;
+    for (const { pred, id: nid } of ADJ.get(id) || []) {
+      if (!FACTOR_WALK.has(factorPredBase(pred))) continue;
+      if (seen.has(nid) || !NODE_BY_ID.has(nid) || factorExcluded(nid, place)) continue;
+      seen.add(nid);
+      queue.push({ id: nid, depth: depth + 1 });
+    }
+  }
+  const kept = seeds.slice(0, cap);
+  const rest = diversifyOntologyIds(extra.filter((id) => !kept.includes(id)), Math.max(0, cap - kept.length));
+  return [...kept, ...rest];
+}
+
+function factorSeedIds(qn, kinds) {
+  const p = factorPlaceFlags(qn);
+  const seeds = [];
+  const add = (...ids) => {
+    for (const id of ids) if (id && !seeds.includes(id)) seeds.push(id);
+  };
+  const kindHit = PROJECT_KIND_RE.test(qn);
+  if (kinds.includes('viability')) {
+    add('dq_viabilidad_proyecto', 'ev_mesas_trabajo', 'inst_poerbcs', 'rc_sibcs', 'const_dma_deficit', 'const_red_aislada', 'const_anp_nucleos');
+    if (/\b(hotel\w*|turism|tourism)\b/.test(qn)) {
+      add('dd_turismo_cabos', 'dd_residencial_cabos', 'proj_desal_cabos', 'const_coast_anp_pressure', 'rc_acuifero_0317', 'rc_acuifero_0319', 'inst_pdu_cabos', 'actor_oomsapas_cabos', 'rc_aeropuerto_sjd');
+      if (p.paz) add('dd_turismo_lapaz', 'inst_pdu_lapaz', 'rc_acuifero_0324');
+    }
+    if (/\b(desal\w*|desalin\w*)\b/.test(qn)) {
+      add('dq_desal_vs_crecimiento', 'inst_ley_aguas', 'actor_cea', 'actor_conagua');
+      if (p.paz) add('proj_fed_agu_002', 'rc_acuifero_0324', 'inst_pdu_lapaz', 'const_intrusion_marina');
+      else add('proj_desal_cabos', 'proj_fed_agu_001', 'rc_acuifero_0317', 'rc_acuifero_0319', 'actor_oomsapas_cabos');
+    }
+    if (/\b(parque\s+industrial|industrial\s+park)\b/.test(qn)) {
+      add('gap_parque_industrial', 'const_red_aislada', 'inst_poerbcs', 'rc_bess_gap');
+    }
+    if (/\b(vivienda|housing)\b/.test(qn)) {
+      add('proj_fed_viv_001', 'const_tenencia', 'gap_permisos_uso_suelo', 'rc_vivienda_cabos');
+    }
+    if (/\b(carretera|highway|transpeninsular)\b/.test(qn)) {
+      add('proj_transpeninsular', 'proj_fed_car_003', 'const_anp_nucleos', 'terr_anp_vizcaino', 'dq_vizcaino_corridor');
+    }
+    if (/\b(energi\w*|energy|sibcs|cfe)\b/.test(qn)) {
+      add('proj_fed_ene_002', 'proj_fed_ene_005', 'proj_p23_bs1', 'inst_prodesen', 'inst_pamrnt', 'rc_bess_gap', 'rc_subestaciones_gap', 'rc_tx_lapaz_cabos', 'actor_cfe');
+    }
+    if (!kindHit && p.cabos) {
+      add('terr_los_cabos', 'inst_pdu_cabos', 'dd_turismo_cabos', 'rc_acuifero_0317', 'rc_acuifero_0319', 'proj_desal_cabos', 'gap_pdu_cabos_3a');
+    }
+    if (!kindHit && p.paz) {
+      add('terr_la_paz', 'inst_pdu_lapaz', 'rc_acuifero_0324', 'gap_pmdu_lapaz_texto', 'proj_fed_agu_002', 'dd_turismo_lapaz');
+    }
+    if (!kindHit && p.loreto) add('terr_loreto', 'terr_anp_loreto', 'gap_psdu_loreto_gazette', 'proj_fed_agu_005');
+    if (!kindHit && p.comondu) add('terr_comondu', 'dd_agro_santo_domingo');
+    if (!kindHit && p.mulege) add('terr_mulege', 'terr_anp_vizcaino', 'gap_pdu_mulege');
+    if (!kindHit && p.todos) add('terr_todos_santos', 'rc_acuifero_0313', 'gap_pmdu_lapaz_texto');
+    if (!kindHit && !p.any) add('dd_turismo_cabos', 'proj_desal_cabos', 'inst_pdu_cabos', 'inst_pdu_lapaz');
+  }
+  if (kinds.includes('landuse')) {
+    add(
+      'dq_cambio_uso_suelo', 'inst_poerbcs', 'inst_poer_politicas', 'gap_politica_uga_leyenda',
+      'const_anp_nucleos', 'const_tenencia', 'const_dma_deficit', 'gap_permisos_uso_suelo', 'dq_coherencia_instrumentos',
+    );
+    if (!p.any || p.cabos) add('inst_pdu_cabos', 'gap_pdu_cabos_3a', 'inst_poel_cabos', 'terr_los_cabos');
+    if (!p.any || p.paz || p.todos) add('inst_pdu_lapaz', 'gap_pmdu_lapaz_texto', 'terr_la_paz');
+    if (!p.any || p.loreto) add('gap_psdu_loreto_gazette', 'terr_loreto', 'terr_anp_loreto');
+    if (!p.any || p.mulege) add('gap_pdu_mulege', 'terr_mulege', 'terr_anp_vizcaino');
+    if (p.comondu) add('terr_comondu');
+  }
+  if (kinds.includes('risk')) {
+    add(
+      'dq_riesgos_principales', 'ev_riesgos_documentados', 'gap_riesgo_capas_vector',
+      'const_dma_deficit', 'const_escasez_agua', 'const_red_aislada', 'const_anp_nucleos',
+      'const_tenencia', 'const_intrusion_marina', 'const_coast_anp_pressure', 'const_ciclo_politico', 'rc_sibcs',
+    );
+    if (!p.any || p.cabos) add('rc_acuifero_0317', 'rc_acuifero_0319', 'terr_los_cabos', 'const_coast_anp_pressure');
+    if (!p.any || p.paz) add('rc_acuifero_0324', 'terr_la_paz');
+    if (p.loreto) add('terr_loreto', 'terr_anp_loreto');
+    if (p.mulege) add('terr_mulege', 'terr_anp_vizcaino');
+    if (p.todos) add('rc_acuifero_0313', 'terr_todos_santos');
+    if (p.comondu) add('terr_comondu', 'dd_agro_santo_domingo');
+  }
+  if (kinds.includes('opportunity')) {
+    add('dq_oportunidades', 'inst_poerbcs', 'rc_sibcs', 'const_dma_deficit', 'ev_mesas_trabajo', 'gap_parque_industrial', 'rc_bess_gap');
+    if (!p.any || p.cabos) add('dd_turismo_cabos', 'dd_residencial_cabos', 'proj_desal_cabos', 'rc_aeropuerto_sjd', 'proj_p23_bs1');
+    if (!p.any || p.paz) add('dd_turismo_lapaz', 'proj_fed_agu_002', 'rc_aeropuerto_lap');
+    if (!p.any || p.comondu) add('dd_agro_santo_domingo', 'terr_comondu');
+    if (p.loreto) add('terr_loreto', 'proj_fed_agu_005', 'terr_anp_loreto');
+    if (p.mulege) add('terr_mulege', 'gap_pdu_mulege');
+    if (!p.any) add('proj_fed_ene_002', 'proj_fed_viv_001', 'proj_fed_tur_001', 'dd_eventos_foro');
+  }
+  return seeds;
+}
+
+const FACTOR_DOC_RULES = {
+  viability: [
+    (c) => (c.path || '').startsWith('guides/agua'),
+    (c) => (c.path || '').startsWith('guides/energia'),
+    (c) => (c.path || '').startsWith('guides/planeacion'),
+    (c) => c.id === 'portal:crecimiento-demand-supply',
+    (c) => c.id === 'mesas:agua' || c.id === 'mesas:overview',
+    (c) => String(c.id || '').startsWith('factor:'),
+  ],
+  landuse: [
+    (c) => (c.path || '').startsWith('guides/planeacion'),
+    (c) => (c.path || '').startsWith('guides/ambiente'),
+    (c) => String(c.id || '').startsWith('factor:uso') || String(c.id || '').startsWith('factor:marco'),
+  ],
+  risk: [
+    (c) => (c.path || '').startsWith('guides/riesgos'),
+    (c) => (c.path || '').startsWith('guides/agua'),
+    (c) => (c.path || '').startsWith('guides/energia'),
+    (c) => String(c.id || '').startsWith('factor:riesgos') || String(c.id || '').startsWith('factor:marco'),
+  ],
+  opportunity: [
+    (c) => c.id === 'portal:crecimiento-demand-supply',
+    (c) => c.id === 'portal:foresights',
+    (c) => String(c.id || '').startsWith('factor:oportun') || String(c.id || '').startsWith('factor:marco'),
+  ],
+};
+
+function factorDocChunks(kinds) {
+  const corpus = loadCorpus();
+  const out = [];
+  const seen = new Set();
+  for (const kind of kinds) {
+    for (const rule of FACTOR_DOC_RULES[kind] || []) {
+      const hit = corpus.find((c) => c && !seen.has(c.id) && rule(c));
+      if (!hit) continue;
+      seen.add(hit.id);
+      out.push(hit);
+      if (out.length >= 5) return out;
+    }
+  }
+  return out;
+}
+
+/** Ontology factor bundle + a few guide/spine chunks for viability, land use, risks, opportunities. */
+function buildFactorEvidence(query, intents) {
+  const qn = String(query || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+  const kinds = (intents && intents.factorKinds && intents.factorKinds.length)
+    ? intents.factorKinds
+    : (expandQuery(query).factorKinds || []);
+  if (!kinds.length) return [];
+  const place = factorPlaceFlags(qn);
+  const ids = walkFactorBundle(factorSeedIds(qn, kinds), place, 16);
+  const onto = ontologyChunksForIds(ids);
+  const docs = factorDocChunks(kinds);
+  const seen = new Set();
+  const out = [];
+  for (const c of [...onto, ...docs]) {
+    if (!c || seen.has(c.id)) continue;
+    seen.add(c.id);
+    out.push(c);
+  }
+  return out;
 }
 
 
@@ -1799,6 +2074,22 @@ function retrieve(query, lang, k = 8) {
     }
   }
 
+  if (intents.isFactorIntent) {
+    const bundle = buildFactorEvidence(query, intents);
+    if (bundle.length) {
+      const seen = new Set();
+      const merged = [];
+      for (const c of [...bundle, ...picked]) {
+        if (!c || seen.has(c.id)) continue;
+        seen.add(c.id);
+        merged.push(c);
+      }
+      picked.length = 0;
+      picked.push(...merged);
+      if (k < 16) k = 16;
+    }
+  }
+
   return picked.slice(0, k);
 }
 
@@ -2397,7 +2688,28 @@ function formatEvidence(chunks, lang) {
     .join('\n\n');
 }
 
-function groundedPrompt(lang, contextBlock, { placeLabel = null, noEvidence = false } = {}) {
+function factorPromptNote(lang, kinds) {
+  if (!kinds || !kinds.length) return '';
+  if (lang === 'en') {
+    return `
+MULTI-FACTOR REASONING (this question is about project viability, land-use change, principal risks, or opportunities):
+- Walk the factor bundle in CONTEXT together: water (DMA / aquifers / desal), energy (SIBCS / CFE), instruments (POER / PDU), constraints (ANP, coast, tenure, hazards), demand drivers, actors or working tables, and gaps.
+- Name trade-offs between factors (for example desalination against the power ceiling, or a PDU against a UGA / ANP). Do not recommend a zoning code that is not written in CONTEXT.
+- If a critical factor is missing, or a fragment says "sin dato en corpus", say so in "Data gap:" — do not invent land-use codes, parcels, or figures.
+- Cite each factor with the fragment title. For this class you may use up to about 220 words so the trade-offs fit.
+`;
+  }
+  return `
+RAZONAMIENTO MULTIFACTOR (esta pregunta es de viabilidad de proyecto, cambio de uso de suelo, riesgos principales u oportunidades):
+- Recorre junto el paquete de factores del CONTEXTO: agua (DMA / acuíferos / desal), energía (SIBCS / CFE), instrumentos (POER / PDU), restricciones (ANP, costa, tenencia, peligros), motores de demanda, actores o mesas, y brechas.
+- Nombra trade-offs entre factores (por ejemplo desalación frente al techo eléctrico, o un PDU frente a una UGA / ANP). No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
+- Si falta un factor crítico, o un fragmento dice "sin dato en corpus", dilo en "Dato faltante:" — no inventes códigos de uso de suelo, predios ni cifras.
+- Cita cada factor con el título del fragmento. En esta clase puedes usar hasta unas 220 palabras para que quepan los trade-offs.
+`;
+}
+
+function groundedPrompt(lang, contextBlock, { placeLabel = null, noEvidence = false, factorKinds = null } = {}) {
+  const factorNote = factorPromptNote(lang, factorKinds);
   if (lang === 'en') {
     return `You are the assistant of the BCS 2050 portal (territorial intelligence for Baja California Sur).
 
@@ -2412,7 +2724,7 @@ EVIDENCE RULES (mandatory):
 STYLE: direct, short (≤150 words unless detail is requested), do not repeat the question, no process narration. Reply in English. Use simple markdown: **bold** for key ideas, short bullet lists, and a compact pipe table (| a | b |) when comparing municipalities or metrics — only with figures from CONTEXT. The interface will show related maps, photos and documents next to your answer: if the question is about a place, the coast, risks or a map you may say "see the map below", but never write URLs or image links yourself. When the answer is incomplete, add a short line "Data gap: …" naming the missing metric/source. ALWAYS close with ONE short follow-up question on its own last line, starting with "👉 ", inviting the user to keep exploring a related topic or place the portal covers (e.g. water, protected areas, risks, urban plans, population, energy, another municipality). Never end with a bare fact.${placeLabel ? `\nActive place in the UI: ${placeLabel} (use only if the question is ambiguous).` : ''}${noEvidence ? '\nCONTEXT IS EMPTY: say the portal has no evidence on this, then still close with the 👉 follow-up question suggesting a topic the portal does cover (you may suggest the official source to consult, without figures). For greetings or questions about what the portal does, answer briefly.' : ''}
 
 CONTEXT:
-${contextBlock}`;
+${contextBlock}${factorNote}`;
   }
   return `Eres el asistente del portal BCS 2050 (inteligencia territorial de Baja California Sur).
 
@@ -2427,7 +2739,7 @@ REGLAS DE EVIDENCIA (obligatorias):
 ESTILO: directo, breve (≤150 palabras salvo que pidan detalle), sin repetir la pregunta ni narrar el proceso. Responde en español. Usa markdown sencillo: **negritas** para ideas clave, listas cortas y una tabla compacta con barras (| a | b |) cuando compares municipios o indicadores — solo con cifras del CONTEXTO. La interfaz mostrará junto a tu respuesta mapas, fotos y documentos relacionados: si la pregunta trata de un lugar, la costa, riesgos o un mapa puedes decir "mira el mapa abajo", pero nunca escribas URLs ni enlaces de imagen. Si la respuesta queda incompleta, agrega una línea breve "Dato faltante: …" que nombre el indicador o la fuente que falta. SIEMPRE cierra con UNA pregunta breve de seguimiento en su propia última línea, que empiece con "👉 ", invitando a seguir explorando un tema o lugar relacionado que cubre el portal (agua, áreas naturales protegidas, riesgos, planes urbanos, población, energía, otro municipio). Nunca termines con un dato suelto.${placeLabel ? `\nLugar activo en la interfaz: ${placeLabel} (úsalo solo si la pregunta es ambigua).` : ''}${noEvidence ? '\nEL CONTEXTO ESTÁ VACÍO: di que el portal no tiene evidencia sobre esto y aun así cierra con la pregunta 👉 sugiriendo un tema que el portal sí cubre (puedes sugerir la fuente oficial a consultar, sin cifras). Si es un saludo o una pregunta sobre qué hace el portal, responde brevemente.' : ''}
 
 CONTEXTO:
-${contextBlock}`;
+${contextBlock}${factorNote}`;
 }
 
 
@@ -3120,8 +3432,8 @@ async function handlerInner(event) {
   const placeId =
     ragInferPlace(message) || (isFollowUp ? ragInferPlace(String(lastUser.content)) : null) || explicitPlace;
   const qIntents = expandQuery(message);
-  const open = qIntents.isOpenIntent || qIntents.isGrowthConstraintIntent || qIntents.isScenarioIntent;
-  const res = ragSearch(index, retrieveQuery, { k: open ? 10 : 8, place: placeId });
+  const open = qIntents.isOpenIntent || qIntents.isGrowthConstraintIntent || qIntents.isScenarioIntent || qIntents.isFactorIntent;
+  const res = ragSearch(index, retrieveQuery, { k: qIntents.isFactorIntent ? 12 : open ? 10 : 8, place: placeId });
   const airGuide = airAxisQuery(message)
     ? CORPUS.find((c) => c.id === 'portal:eje-aereo-p116')
     : null;
@@ -3307,6 +3619,21 @@ async function handlerInner(event) {
     evidence = [checklistGuide, ...evidence];
     noEvidence = false;
   }
+  if (qIntents.isFactorIntent) {
+    const bundle = buildFactorEvidence(message, qIntents);
+    if (bundle.length) {
+      const seen = new Set();
+      const merged = [];
+      for (const c of [...bundle, ...evidence]) {
+        if (!c || seen.has(c.id)) continue;
+        seen.add(c.id);
+        merged.push(c);
+      }
+      evidence = merged.slice(0, 18);
+      noEvidence = false;
+    }
+  }
+
   const topScore = hits.length ? hits[0].score : 0;
   // chips need stronger relevance than context
   const chipEvidence = hits.filter((h) => h.coverage >= 0.5 && h.score >= topScore * 0.45).map((h) => h.c);
@@ -3323,6 +3650,7 @@ async function handlerInner(event) {
       content: groundedPrompt(lang, contextBlock, {
         placeLabel: placeId ? (PLACE_SPINE[placeId][lang] || PLACE_SPINE[placeId].es) : null,
         noEvidence,
+        factorKinds: qIntents.isFactorIntent ? qIntents.factorKinds : null,
       }),
     },
     ...history
@@ -3384,7 +3712,7 @@ async function handlerInner(event) {
   // ---- Chips: only from gated evidence, never fallbacks ----
   const sources = evidenceSources(hits.filter((h) => h.coverage >= 0.34).map((h) => h.c), 5, !!res.newsIntent);
   const primary_file = noEvidence ? null : evidencePrimaryFile(chipEvidence);
-  const ontology = noEvidence ? [] : buildOntologyLinks(evidence.filter((c) => c.type === 'ontology'), message, qIntents, 2, true);
+  const ontology = noEvidence ? [] : buildOntologyLinks(evidence.filter((c) => c.type === 'ontology'), message, qIntents, qIntents.isFactorIntent ? 6 : 2, true);
   const stakeholder = noEvidence ? null : stakeholderFromEvidence(chipEvidence);
   const foresight_signals = noEvidence || !open ? [] : relevantSignals(index, message, placeId, 2);
   const foresight_signal = foresight_signals[0] || null;
@@ -3480,4 +3808,4 @@ async function handlerInner(event) {
   };
 }
 
-export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk, portalSurfaceBlocks };
+export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk, buildFactorEvidence, portalSurfaceBlocks };
