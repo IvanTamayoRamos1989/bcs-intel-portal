@@ -49,7 +49,11 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
       <section class="shell-chat" aria-label="Consulta">
         <ChatWidget shell={true} />
       </section>
-      <div class="shell-split" id="split-l" role="separator" aria-orientation="vertical" aria-label="Ancho de la consulta"></div>
+      <div class="shell-split" id="split-l" role="separator" aria-orientation="vertical" aria-label="Ancho de la consulta">
+        <button type="button" class="shell-fold" data-fold="chat" aria-pressed="false">
+          <span data-lang-es>Consulta</span><span data-lang-en hidden>Chat</span>
+        </button>
+      </div>
       <section class="shell-map-wrap" aria-label="Mapa">
         <div id="shell-map"></div>
         <div class="shell-tools">
@@ -101,7 +105,11 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
           </p>
         </div>
       </section>
-      <div class="shell-split" id="split-r" role="separator" aria-orientation="vertical" aria-label="Ancho de los archivos"></div>
+      <div class="shell-split" id="split-r" role="separator" aria-orientation="vertical" aria-label="Ancho de los archivos">
+        <button type="button" class="shell-fold" data-fold="files" aria-pressed="false">
+          <span data-lang-es>Archivos</span><span data-lang-en hidden>Files</span>
+        </button>
+      </div>
       <section class="shell-files" aria-label="Archivos">
         <header>
           <strong><span data-lang-es>Archivos</span><span data-lang-en hidden>Files</span></strong>
@@ -153,8 +161,20 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
       #shell-preview p { margin: 0 0 .35rem; font-size: .82rem; }
       #shell-preview a { color: #006BA3; font-weight: 700; }
       #shell-preview img { width: 100%; height: auto; border-radius: 8px; background: #eef3f6; }
-      .shell-split { cursor: col-resize; background: #e7eef2; }
+      .shell-split { position: relative; cursor: col-resize; background: #e7eef2; }
       .shell-split:hover, .shell-split:focus-visible { background: #0083C4; outline: none; }
+      .shell-fold {
+        position: absolute; top: .6rem; left: 50%; transform: translateX(-50%);
+        writing-mode: vertical-rl; font: inherit; font-size: .68rem; font-weight: 700;
+        letter-spacing: .04em; color: #006BA3; background: #fff; border: 1px solid #0083C4;
+        border-radius: 999px; padding: .45rem .15rem; cursor: pointer;
+      }
+      .shell-fold[aria-pressed="true"] { background: #0083C4; color: #fff; }
+      body.shell-fold-chat .shell { grid-template-columns: 0 2.2rem minmax(0, 1fr) 6px var(--files-w); }
+      body.shell-fold-files .shell { grid-template-columns: var(--chat-w) 6px minmax(0, 1fr) 2.2rem 0; }
+      body.shell-fold-chat.shell-fold-files .shell { grid-template-columns: 0 2.2rem minmax(0, 1fr) 2.2rem 0; }
+      body.shell-fold-chat .shell-chat, body.shell-fold-files .shell-files { overflow: hidden; visibility: hidden; }
+      .shell-more { display: block; margin: .4rem .2rem .6rem; font: inherit; font-size: .78rem; font-weight: 700; color: #006BA3; background: #fff; border: 1px solid #0083C4; border-radius: 999px; padding: .28rem .7rem; cursor: pointer; }
       .shell-map-wrap { position: relative; background: #d5e2ea; }
       #shell-map { position: absolute; inset: 0; }
       .shell-tools {

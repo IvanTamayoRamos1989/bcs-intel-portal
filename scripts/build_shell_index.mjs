@@ -64,6 +64,10 @@ function niceName(filename) {
     .trim();
 }
 
+function hint(text) {
+  return String(text || '').replace(/\s+/g, ' ').trim().slice(0, 180);
+}
+
 const files = [];
 const seen = new Set();
 const slim = readJson('src/data/catalog_slim.json');
@@ -74,20 +78,20 @@ for (const row of slim) {
   if (seen.has(key)) continue;
   seen.add(key);
   const folder = FOLDER_OF[row.f] || 'otros';
-  files.push([niceName(row.n), folder, row.e || '', href, 'd']);
+  files.push([niceName(row.n), folder, row.e || '', href, 'd', hint(row.sum_es)]);
 }
 
 const news = readJson('src/data/news.json');
 for (const item of news.items || []) {
   if (!item.url || !item.title_es) continue;
-  files.push([item.title_es, 'noticias', 'web', item.url, 'w']);
+  files.push([item.title_es, 'noticias', 'web', item.url, 'w', hint(item.blurb_es)]);
 }
 
 const stills = readJson('src/data/stills.json');
 for (const s of stills) {
   if (!s.image || !s.name) continue;
   const label = s.municipio ? `${s.name} · ${s.municipio}` : s.name;
-  files.push([label, 'fotogramas', 'jpg', s.image, 'i']);
+  files.push([label, 'fotogramas', 'jpg', s.image, 'i', s.category || '']);
 }
 
 mkdirSync(dirname(out), { recursive: true });

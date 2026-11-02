@@ -91,7 +91,7 @@
     }
   }
 
-  function focusMuni(name) {
+  function focusMuni(name, quiet) {
     pendingMuni = name || '';
     return loadMunis().then(function (geo) {
       if (!mapReady || !name) return;
@@ -101,14 +101,14 @@
       var box = boundsOf(feat);
       paintMuni(name);
       if (box) flyBox(box);
-      setStatus('Encuadre: ' + name + '.', 'Frame: ' + name + '.');
+      if (!quiet) setStatus('Encuadre: ' + name + '.', 'Frame: ' + name + '.');
     });
   }
   function markReady() {
     mapReady = true;
     var ids = Object.keys(on).filter(function (id) { return on[id]; });
     Promise.all(ids.map(function (id) { return showLayer(id, true); })).then(function () {
-      if (pendingJob) executeJob(pendingJob.question, pendingJob.sources);
+      if (pendingJob) executeJob(pendingJob.question, pendingJob.sources, pendingJob.answer);
       else if (pendingMuni) focusMuni(pendingMuni);
       if (engine && engine.resize) engine.resize();
       if (leafletMap) leafletMap.invalidateSize();
@@ -177,14 +177,19 @@
     var feats = (geo && geo.features) || [];
     for (var i = 0; i < feats.length; i++) {
       var p = feats[i].properties || {};
-      var name = p.name || p.name_es || p.proyecto || p.NOM_NUC || p.ref || '';
-      if (re.test(norm(name))) return { feature: feats[i], name: String(name) };
+      var name = [p.name, p.name_es, p.proyecto, p.dependencia, p.NOM_NUC, p.NOM_LOC, p.ref].filter(Boolean).join(' ');
+      var label = String(p.name || p.name_es || p.NOM_LOC || name);
+      if (re.test(norm(name))) return { feature: feats[i], name: label };
     }
     return null;
   }
 
   var RULES = [
     { re: /novillo/, layer: 'federal_projects', hit: /novillo/, note: ['Presa El Novillo, en el punto del municipio de La Paz. No es la coordenada de la obra.', 'El Novillo dam, at the La Paz municipality point. It is not the worksite coordinate.'] },
+    { re: /santo domingo|\b0306\b/, layer: 'settlements', hit: /^santo domingo$/, layers: ['settlements'], pin: 'Santo Domingo', note: ['Santo Domingo es un pueblo de Comondú. El acuífero 0306 no tiene polígono: el mapa marca el pueblo, no el acuífero.', 'Santo Domingo is a town in Comondú. Aquifer 0306 has no polygon: the map marks the town, not the aquifer.'] },
+    { re: /\bbordos?\b/, layer: 'settlements', hit: /puerto san carlos/, layers: ['settlements'], pin: 'Puerto San Carlos', note: ['No hay capa de bordos. El archivo habla del bordo de Puerto San Carlos, y el mapa marca ese pueblo.', 'There is no levee layer. The archive mentions the Puerto San Carlos levee, and the map marks that town.'] },
+    { re: /termosolar|el crucero/, layer: 'federal_projects', hit: /termosolar/, layers: ['federal_projects'], pin: 'Termosolares CFE', note: ['Las termosolares de CFE no tienen sitio publicado, ni El Crucero. El punto es el marcador del inventario, no la obra.', 'The CFE solar plants have no published site, including El Crucero. The point is the inventory marker, not the worksite.'] },
+    { re: /oomsapas/, layer: 'federal_projects', hit: /oomsapas/, layers: ['federal_projects'], pin: 'OOMSAPAS Los Cabos', muniIf: /la paz/, muni: 'La Paz', noteIf: ['OOMSAPAS La Paz no tiene una coordenada de planta. El encuadre es el municipio.', 'OOMSAPAS La Paz has no plant coordinate. The frame is the municipality.'], note: ['OOMSAPAS Los Cabos aparece en la desaladora del inventario. El punto es del municipio, no es la puerta de la oficina.', 'OOMSAPAS Los Cabos appears on the inventory desalination plant. The point is the municipality, not the office door.'] },
     { re: /east cape|cabo del este/, muni: 'Los Cabos', layers: ['focus_east_cape', 'anp_federales'] },
     { re: /todos santos|pescadero/, muni: 'La Paz', layers: ['focus_corridor_cabos_lapaz', 'settlements'] },
     { re: /los cabos|san jose del cabo|cabo san lucas/, muni: 'Los Cabos', layers: ['settlements', 'osm_towns'] },
@@ -194,33 +199,40 @@
     { re: /mulege|santa rosalia/, muni: 'Mulegé', layers: ['focus_ports_air'] },
   ];
   var THEME_RULES = [
-    { re: /acuifer|agua|water|novillo/, layers: ['focus_water_dmas', 'osm_waterways'] },
+    { re: /acuifer|agua|water|novillo|oomsapas|santo domingo|\b0306\b/, layers: ['focus_water_dmas', 'osm_waterways'] },
+    { re: /termosolar|el crucero|\bcfe\b/, layers: ['federal_projects'] },
     { re: /proteg|anp|natural area|area natural/, layers: ['anp_federales', 'rtp_conabio'] },
     { re: /carretera|highway|movilidad|aeropuerto|puerto|airport|port/, layers: ['osm_highways', 'osm_transport_nodes', 'focus_ports_air'] },
     { re: /vivienda|housing|sniiv/, layers: ['settlements', 'focus_water_dmas'] },
     { re: /proyecto federal|federal project/, layers: ['federal_projects'] },
   ];
 
-  function executeJob(question, sources) {
-    var q = norm(question || '');
-    (sources || []).forEach(function (s) { if (s && s.title) q += ' ' + norm(s.title); });
+  function pickRule(text) {
+    var q = norm(text || '');
+    for (var i = 0; i < RULES.length; i++) if (RULES[i].re.test(q)) return RULES[i];
+    return null;
+  }
+  function executeJob(question, sources, answer) {
+    var q = norm((question || '') + ' ' + (answer || ''));
     var jobs = [];
     THEME_RULES.forEach(function (rule) {
       if (!rule.re.test(q)) return;
       rule.layers.forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
     });
-    var place = null;
-    for (var i = 0; i < RULES.length; i++) {
-      if (RULES[i].re.test(q)) { place = RULES[i]; break; }
-    }
+    var place = pickRule(question) || pickRule(answer);
     if (place) {
+      var useMuni = place.muniIf && place.muniIf.test(norm(question || '') + ' ' + norm(answer || ''));
       (place.layers || []).forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
-      if (place.layer && byId[place.layer]) {
+      if (useMuni && place.muni) {
+        jobs.push(focusMuni(place.muni, true).then(function () {
+          if (place.noteIf) setStatus(place.noteIf[0], place.noteIf[1]);
+        }));
+      } else if (place.layer && byId[place.layer]) {
         jobs.push(showLayer(place.layer, true).then(function (geo) {
           var hit = geo && place.hit ? findNamed(geo, place.hit) : null;
           var pt = hit ? pointOf(hit.feature) : null;
           if (pt) {
-            flyPoint(pt.lng, pt.lat, hit.name);
+            flyPoint(pt.lng, pt.lat, place.pin || hit.name);
             if (place.note) setStatus(place.note[0], place.note[1]);
           } else if (place.muni) return focusMuni(place.muni);
         }));
@@ -228,10 +240,10 @@
     }
     return Promise.all(jobs).then(function () { syncThemePressed(); });
   }
-  function applyText(question, sources) {
-    pendingJob = { question: question, sources: sources || [] };
-    focusFiles(question, sources);
-    if (mapReady) return executeJob(question, sources);
+  function applyText(question, sources, answer) {
+    pendingJob = { question: question, sources: sources || [], answer: answer || '' };
+    focusFiles(question, sources, answer);
+    if (mapReady) return executeJob(question, sources, answer);
     return Promise.resolve();
   }
 
@@ -268,6 +280,7 @@
   function fileFolder(row) { return row[1]; }
   function fileHref(row) { return row[3]; }
   function fileKind(row) { return row[4]; }
+  function fileBlob(row) { return norm(fileName(row) + ' ' + (row[5] || '')); }
 
   function renderPreview(row) {
     if (!previewEl) return;
@@ -302,20 +315,56 @@
     return btn;
   }
 
+  function fillList(host, rows) {
+    rows.forEach(function (row) { host.appendChild(rowButton(row)); });
+  }
+  function folderDetails(label, rows, nestStills) {
+    var det = document.createElement('details');
+    var sum = document.createElement('summary');
+    sum.textContent = label + ' · ' + rows.length;
+    det.appendChild(sum);
+    det.addEventListener('toggle', function () {
+      if (!det.open || det.getAttribute('data-built')) return;
+      det.setAttribute('data-built', '1');
+      if (!nestStills) { fillList(det, rows); return; }
+      var byTown = {};
+      rows.forEach(function (row) {
+        var parts = fileName(row).split(' · ');
+        var town = parts.length > 1 ? parts[parts.length - 1] : tx('Sin municipio', 'No municipality');
+        (byTown[town] || (byTown[town] = [])).push(row);
+      });
+      Object.keys(byTown).sort().forEach(function (town) {
+        det.appendChild(folderDetails(town, byTown[town], false));
+      });
+    });
+    return det;
+  }
   function renderTree(filter) {
     if (!treeEl || !index) return;
     var q = norm(filter || '');
     treeEl.innerHTML = '';
     if (q) {
       var hits = [];
-      for (var i = 0; i < index.files.length && hits.length < 80; i++) {
-        if (norm(fileName(index.files[i])).indexOf(q) !== -1) hits.push(index.files[i]);
+      for (var i = 0; i < index.files.length; i++) {
+        if (fileBlob(index.files[i]).indexOf(q) !== -1) hits.push(index.files[i]);
       }
       var title = document.createElement('p');
       title.className = 'shell-tree-label';
-      title.textContent = hits.length ? tx('Resultados', 'Results') : tx('Ningún archivo coincide.', 'No file matches.');
+      title.textContent = hits.length ? tx('Resultados', 'Results') + ' · ' + hits.length : tx('Ningún archivo coincide.', 'No file matches.');
       treeEl.appendChild(title);
-      hits.forEach(function (row) { treeEl.appendChild(rowButton(row)); });
+      var shown = hits.slice(0, 60);
+      fillList(treeEl, shown);
+      if (hits.length > shown.length) {
+        var more = document.createElement('button');
+        more.type = 'button';
+        more.className = 'shell-more';
+        more.textContent = tx('Ver los ' + (hits.length - shown.length) + ' restantes', 'Show the other ' + (hits.length - shown.length));
+        more.addEventListener('click', function () {
+          fillList(treeEl, hits.slice(shown.length));
+          more.remove();
+        });
+        treeEl.appendChild(more);
+      }
       return;
     }
     var groups = {};
@@ -326,43 +375,38 @@
     (index.folders || []).forEach(function (f) {
       var rows = groups[f[0]];
       if (!rows || !rows.length) return;
-      var det = document.createElement('details');
-      var sum = document.createElement('summary');
-      sum.textContent = (lang() === 'en' ? f[2] : f[1]) + ' · ' + rows.length;
-      det.appendChild(sum);
-      det.addEventListener('toggle', function () {
-        if (!det.open || det.getAttribute('data-built')) return;
-        det.setAttribute('data-built', '1');
-        var list = document.createElement('div');
-        rows.slice(0, 400).forEach(function (row) { list.appendChild(rowButton(row)); });
-        if (rows.length > 400) {
-          var more = document.createElement('p');
-          more.className = 'shell-tree-label';
-          more.textContent = tx('Hay más archivos en esta carpeta. Usa la búsqueda.', 'This folder has more files. Use search.');
-          list.appendChild(more);
-        }
-        det.appendChild(list);
-      });
-      treeEl.appendChild(det);
+      treeEl.appendChild(folderDetails((lang() === 'en' ? f[2] : f[1]), rows, f[0] === 'fotogramas'));
     });
   }
 
-  function focusFiles(question, sources) {
+  var STOP = { esta: 1, este: 1, estos: 1, estas: 1, sobre: 1, desde: 1, donde: 1, cuando: 1, porque: 1, tiene: 1, tienen: 1, estan: 1, entre: 1, segun: 1, cual: 1, cuales: 1, estado: 1, municipal: 1, municipio: 1, proyecto: 1, fuente: 1, datos: 1, portal: 1, personas: 1, sigue: 1, puede: 1, tambien: 1, about: 1, there: 1, their: 1, which: 1, where: 1, from: 1, with: 1, that: 1, this: 1 };
+  function wordsOf(text) {
+    return norm(text || '').split(/[^a-z0-9]+/).filter(function (w) {
+      if (STOP[w]) return false;
+      return w.length > 4 || /^\d{4}$/.test(w);
+    });
+  }
+  function focusFiles(question, sources, answer) {
     if (!index || !relatedEl) return;
     var urls = {};
-    var qWords = norm(question || '').split(/[^a-z0-9]+/).filter(function (w) { return w.length > 4; });
+    var qWords = wordsOf(question);
+    var ev = wordsOf(answer || '');
     (sources || []).forEach(function (s) {
       if (!s) return;
       if (s.drive_url) urls[s.drive_url] = 1;
-      if (s.href) urls[s.href] = 1;
+      if (s.href && /^https?:/.test(s.href)) urls[s.href] = 1;
+      wordsOf(s.title).forEach(function (w) { ev.push(w); });
     });
     var scored = [];
     index.files.forEach(function (row) {
       var href = fileHref(row);
-      var score = urls[href] ? 20 : 0;
-      var name = norm(fileName(row)).split(/[^a-z0-9]+/);
-      qWords.forEach(function (w) { if (name.indexOf(w) !== -1) score += 5; });
-      if (score >= 5) scored.push({ score: score, row: row });
+      var score = urls[href] ? 30 : 0;
+      var blob = fileBlob(row).split(/[^a-z0-9]+/);
+      var qHits = 0;
+      qWords.forEach(function (w) { if (blob.indexOf(w) !== -1) { score += 8; qHits += 1; } });
+      ev.forEach(function (w) { if (blob.indexOf(w) !== -1) score += 3; });
+      if (qHits >= 2) score += 4;
+      if (score >= 8) scored.push({ score: score, row: row });
     });
     scored.sort(function (a, b) { return b.score - a.score; });
     relatedEl.innerHTML = '';
@@ -416,7 +460,9 @@
   });
   document.addEventListener('bcs:chat-answer', function (ev) {
     var d = ev.detail || {};
-    applyText(d.question || '', d.sources || []);
+    var cited = (d.sources || []).slice();
+    if (d.primary_file) cited.push(d.primary_file);
+    applyText(d.question || '', cited, d.answer || '');
   });
   window.addEventListener('bcs:placechange', function (ev) {
     var id = ev.detail && ev.detail.place;
@@ -449,6 +495,18 @@
   }
   drag(document.getElementById('split-l'), '--chat-w', 1);
   drag(document.getElementById('split-r'), '--files-w', -1);
+  document.querySelectorAll('[data-fold]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var which = btn.getAttribute('data-fold') === 'files' ? 'shell-fold-files' : 'shell-fold-chat';
+      var onFold = document.body.classList.toggle(which);
+      btn.setAttribute('aria-pressed', onFold ? 'true' : 'false');
+      setTimeout(function () {
+        if (engine && engine.resize) engine.resize();
+        if (leafletMap) leafletMap.invalidateSize();
+      }, 40);
+    });
+  });
 
   document.querySelectorAll('[data-pane]').forEach(function (btn) {
     btn.addEventListener('click', function () {
