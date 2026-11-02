@@ -564,6 +564,15 @@ function expandQuery(query) {
     factorKinds.push('viability');
   }
   if (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (/\bcrucero/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bjll\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(sniiv|rezago habitacional)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bsierra la laguna\b/.test(qn) && /\b(hotel|impide|cierra|construc)/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bbahia de loreto\b/.test(qn) && /\b(limita|crecimiento|hotel|parque|anp)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(api bcs|pichilingue)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\baeropuerto/.test(qn) && /\b(gap|concesion|sjd|la paz|los cabos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcompar/.test(qn) && /\baeropuerto/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bescenario\b/.test(qn) && /\bagua primero\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1008,6 +1017,7 @@ function factorPlaceFlags(qn) {
 
 function factorExcluded(id, place) {
   if (!place.any || place.compare) return false;
+  if (place.cabos && place.paz && /aeropuerto_(sjd|lap)/.test(id)) return false;
   const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id) && !/tx_lapaz/.test(id);
   const pazId = /lapaz|la_paz|0324|turismo_lapaz|aeropuerto_lap/.test(id) && !/tx_lapaz/.test(id);
   if (place.east && pazId) return true;
@@ -1111,6 +1121,12 @@ function factorSeedIds(qn, kinds) {
   if (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn)) {
     add('dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'terr_loreto', 'terr_comondu', 'terr_mulege', 'ev_gds_cinco_polos');
   }
+  if (/\bcrucero/.test(qn)) add('ev_cruceros_datatur', 'ev_sig_asipona');
+  if (/\bsierra la laguna\b/.test(qn)) add('terr_anp_sierra_laguna', 'const_anp_nucleos');
+  if (/\bbahia de loreto\b/.test(qn)) add('terr_anp_loreto', 'const_anp_nucleos');
+  if (/\b(api bcs|pichilingue)\b/.test(qn)) add('proj_fed_pue_002', 'ev_cruceros_datatur');
+  if (/\baeropuerto/.test(qn) && (p.who || p.cabos || /\b(gap|concesion|sjd)\b/.test(qn))) add('rc_aeropuerto_sjd', 'proj_fed_aer_001');
+  if (/\baeropuerto/.test(qn) && (p.paz || /\blap\b/.test(qn) || /\bconcesion gap\b/.test(qn))) add('rc_aeropuerto_lap', 'proj_fed_aer_001');
   if (p.who && /\b(agua|desal\w*|mesa)\b/.test(qn)) {
     add('ev_mesa_agua', 'actor_cea', 'actor_conagua', 'proj_fed_agu_001', 'proj_desal_cabos');
   }
