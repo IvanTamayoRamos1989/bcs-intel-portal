@@ -526,10 +526,26 @@
     });
   });
 
-  window.addEventListener('resize', function () {
+  function fitViewport() {
+    var narrow = window.matchMedia('(max-width: 900px)').matches;
+    var vv = window.visualViewport;
+    if (!narrow || !vv) {
+      document.documentElement.style.removeProperty('--shell-vvh');
+      document.documentElement.style.removeProperty('--shell-vvt');
+    } else {
+      document.documentElement.style.setProperty('--shell-vvh', Math.round(vv.height) + 'px');
+      document.documentElement.style.setProperty('--shell-vvt', Math.round(vv.offsetTop) + 'px');
+    }
     if (engine && engine.resize) engine.resize();
     if (leafletMap) leafletMap.invalidateSize();
-  });
+  }
+  window.addEventListener('resize', fitViewport);
+  window.addEventListener('orientationchange', function () { setTimeout(fitViewport, 180); });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', fitViewport);
+    window.visualViewport.addEventListener('scroll', fitViewport);
+  }
+  fitViewport();
 
   readBoot();
   setBasemap(basemap);
