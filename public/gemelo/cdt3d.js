@@ -136,6 +136,7 @@
         land: { type: 'geojson', data: (base && base.land) || empty },
         bcs: { type: 'geojson', data: (base && base.boundary) || empty },
         munis: { type: 'geojson', data: (base && base.municipalities) || empty },
+        bars: { type: 'geojson', data: empty },
         mask: { type: 'geojson', data: bcsMask(base) },
         osm: {
           type: 'raster',
@@ -175,6 +176,13 @@
           'fill-extrusion-vertical-gradient': true,
         } },
         { id: 'cdt-muni-line', type: 'line', source: 'munis', paint: { 'line-color': '#006BA3', 'line-width': 1.3 } },
+        { id: 'cdt-bars', type: 'fill-extrusion', source: 'bars', filter: ['==', ['geometry-type'], 'Polygon'], paint: {
+          'fill-extrusion-color': ['interpolate', ['linear'], ['get', 'h'], 8000, '#9fd0ea', 28000, '#0083C4'],
+          'fill-extrusion-height': ['get', 'h'],
+          'fill-extrusion-base': 0,
+          'fill-extrusion-opacity': 0.72,
+          'fill-extrusion-vertical-gradient': true,
+        } },
         { id: 'coast', type: 'line', source: 'bcs', paint: { 'line-color': '#5f7f8c', 'line-width': 1.1 } },
       ],
       terrain: { source: 'dem', exaggeration: 1.35 },
@@ -251,6 +259,97 @@
           f.properties.h = h > 0 ? h : 0;
         });
         if (map.getSource('munis')) map.getSource('munis').setData(fc);
+      }
+      function pointInRing(ring, x, y) {
+        var inside = false;
+        for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          var xi = ring[i][0];
+          var yi = ring[i][1];
+          var xj = ring[j][0];
+          var yj = ring[j][1];
+          if (((yi > y) !== (yj > y)) && (x < ((xj - xi) * (y - yi)) / ((yj - yi) || 1e-12) + xi)) inside = !inside;
+        }
+        return inside;
+      }
+      function pointInFeature(feature, x, y) {
+        var g = feature && feature.geometry;
+        if (!g) return false;
+        var polys = g.type === 'MultiPolygon' ? g.coordinates : g.type === 'Polygon' ? [g.coordinates] : [];
+        for (var p = 0; p < polys.length; p++) {
+          var poly = polys[p];
+          if (!poly || !poly[0] || !pointInRing(poly[0], x, y)) continue;
+          var hole = false;
+          for (var h = 1; h < poly.length; h++) if (pointInRing(poly[h], x, y)) hole = true;
+          if (!hole) return true;
+        }
+        return false;
+      }
+      function anchorOf(feature) {
+        var g = feature && feature.geometry;
+        if (!g) return null;
+        var polys = g.type === 'MultiPolygon' ? g.coordinates : g.type === 'Polygon' ? [g.coordinates] : [];
+        var ring = null;
+        var best = 0;
+        polys.forEach(function (poly) {
+          var outer = poly && poly[0];
+          if (outer && outer.length > best) { best = outer.length; ring = outer; }
+        });
+        if (!ring || ring.length < 4) return null;
+        var minX = 180;
+        var minY = 90;
+        var maxX = -180;
+        var maxY = -90;
+        ring.forEach(function (c) {
+          if (c[0] < minX) minX = c[0];
+          if (c[1] < minY) minY = c[1];
+          if (c[0] > maxX) maxX = c[0];
+          if (c[1] > maxY) maxY = c[1];
+        });
+        var pick = null;
+        var pickD = -1;
+        var steps = 22;
+        for (var iy = 1; iy < steps; iy++) {
+          for (var ix = 1; ix < steps; ix++) {
+            var x = minX + (maxX - minX) * ix / steps;
+            var y = minY + (maxY - minY) * iy / steps;
+            if (!pointInFeature(feature, x, y)) continue;
+            var dMin = 1e9;
+            for (var k = 0; k < ring.length; k += 4) {
+              var dx = ring[k][0] - x;
+              var dy = ring[k][1] - y;
+              var d = dx * dx + dy * dy;
+              if (d < dMin) dMin = d;
+            }
+            if (dMin > pickD) { pickD = dMin; pick = [x, y]; }
+          }
+        }
+        return pick;
+      }
+      function setPopulationBars(heights) {
+        var feats = [];
+        if (heights) {
+          (muniBase.features || []).forEach(function (f) {
+            var name = f.properties && f.properties.name;
+            var h = name ? heights[name] : 0;
+            if (!(h > 0)) return;
+            var c = anchorOf(f);
+            if (!c) return;
+            var d = 0.055;
+            feats.push({
+              type: 'Feature',
+              properties: { name: name, h: h },
+              geometry: { type: 'Polygon', coordinates: [[
+                [c[0] - d, c[1] - d],
+                [c[0] + d, c[1] - d],
+                [c[0] + d, c[1] + d],
+                [c[0] - d, c[1] + d],
+                [c[0] - d, c[1] - d],
+              ]] },
+            });
+          });
+        }
+        var src = map.getSource('bars');
+        if (src) src.setData({ type: 'FeatureCollection', features: feats });
       }
       function paintMunis(colors) {
         if (!map.getLayer('cdt-muni-fill')) return;
@@ -368,7 +467,7 @@
         if (!map.getLayer('hills')) return;
         var sat = map.getLayer('basemap-sat') && map.getLayoutProperty('basemap-sat', 'visibility') === 'visible';
         map.setLayoutProperty('hills', 'visibility', reliefOn ? 'visible' : 'none');
-        map.setPaintProperty('hills', 'hillshade-exaggeration', sat ? 0.38 : 0.62);
+        map.setPaintProperty('hills', 'hillshade-exaggeration', sat ? 0.5 : 0.9);
       }
       function setTerrain(on, ex) {
         reliefOn = !!on;
@@ -432,6 +531,7 @@
             resize: function () { map.resize(); },
             paintMunis: paintMunis,
             setExtrusion: applyHeights,
+            setPopulationBars: setPopulationBars,
             show: show,
             hide: hide,
             load: load,

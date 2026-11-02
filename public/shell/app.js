@@ -168,7 +168,6 @@
       btn.setAttribute('aria-pressed', btn.getAttribute('data-base') === basemap ? 'true' : 'false');
     });
     if (engine && engine.setBasemap) engine.setBasemap(basemap);
-    if (engine && engine.setExtrudeOpacity) engine.setExtrudeOpacity(basemap === 'satellite' ? 0.38 : 0.74);
     if (leafletMap && streetsLayer && satLayer) {
       if (leafletMap.hasLayer(streetsLayer)) leafletMap.removeLayer(streetsLayer);
       if (leafletMap.hasLayer(satLayer)) leafletMap.removeLayer(satLayer);
@@ -457,12 +456,12 @@
     return Math.min(scored.length, 8);
   }
 
-  var TERRAIN_EX = 1.7;
-  var PITCH_ON = 56;
-  var BEARING_ON = -22;
+  var TERRAIN_EX = 2.15;
+  var PITCH_ON = 50;
+  var BEARING_ON = -18;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var terrainOn = true;
-  var extrudeOn = true;
+  var extrudeOn = false;
   var pitched = !reduceMotion;
 
   function extrusionHeights() {
@@ -476,14 +475,16 @@
       var raw = Number(m.pob);
       if (!(raw > 0)) return;
       var t = max === min ? 1 : (raw - min) / (max - min);
-      out[m.name] = Math.round(2800 + t * 20000);
+      // Narrow columns, not the municipality polygon. Meters, for comparison only.
+      out[m.name] = Math.round(9000 + t * 18000);
     });
     return out;
   }
   function applyExtrusion() {
-    if (!engine || !engine.setExtrusion) return;
-    engine.setExtrusion(extrudeOn ? extrusionHeights() : {});
-    if (engine.setMuniWash) engine.setMuniWash(0.07);
+    if (!engine) return;
+    if (engine.setExtrusion) engine.setExtrusion({});
+    if (engine.setMuniWash) engine.setMuniWash(0);
+    if (engine.setPopulationBars) engine.setPopulationBars(extrudeOn ? extrusionHeights() : null);
   }
   function applyTerrain() {
     if (engine && engine.setTerrain) engine.setTerrain(terrainOn, TERRAIN_EX);
@@ -523,8 +524,8 @@
       ? 'Terrain off'
       : (pitched ? '3D terrain on' : 'Terrain in plan');
     if (extrudeOn) {
-      esText += ' · altura = población 2020';
-      enText += ' · height = 2020 population';
+      esText += ' · columnas de población 2020';
+      enText += ' · 2020 population columns';
     }
     if (es) es.textContent = esText;
     if (en) en.textContent = enText;
