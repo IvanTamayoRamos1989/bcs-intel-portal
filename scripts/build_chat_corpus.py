@@ -1486,6 +1486,46 @@ def main():
         })
     print(f"factor_spine_added={len(factor_cards)}")
 
+    # Paragraph-level library pages already extracted — cite path#page, do not copy the PDF.
+    lib_pages = ROOT / "src" / "data" / "library_chunks.json"
+    page_ids = ("lib:RP007:p51", "lib:CD003:p120", "lib:CD009:p29", "lib:MX003:p16")
+    if lib_pages.is_file():
+        lib_rows = {row.get("id"): row for row in json.loads(lib_pages.read_text(encoding="utf-8")) if isinstance(row, dict)}
+        bits_es, bits_en = [], []
+        for pid in page_ids:
+            row = lib_rows.get(pid)
+            if not row:
+                continue
+            path = row.get("path") or pid
+            snip = re.sub(r"\s+", " ", (row.get("sum_es") or "")).strip()
+            m = re.search(r"p\.\s*\d+.{0,220}", snip)
+            bit = (m.group(0) if m else snip[:220]).strip()
+            bits_es.append(f"{pid} ({path}): {bit}")
+            bits_en.append(f"{pid} ({path}): {bit}")
+        if bits_es:
+            chunks.append({
+                "id": "factor:biblioteca-paginas",
+                "title": "Páginas de biblioteca para el paquete de factores",
+                "path": "13_library/#factor-pages",
+                "theme": "biblioteca",
+                "sum_es": clip(
+                    "Extractos de página ya en la biblioteca (referencia, no estadística de BCS). "
+                    + " ".join(bits_es)
+                    + " [biblioteca pagina agua energia clima ordenamiento]",
+                    950,
+                ),
+                "sum_en": clip(
+                    "Page extracts already in the library (reference, not BCS statistics). "
+                    + " ".join(bits_en)
+                    + " [library page water energy climate planning]",
+                    950,
+                ),
+                "drive_url": None,
+                "type": "library",
+                "display_title": "Páginas de biblioteca para factores acoplados",
+            })
+            print("factor_library_pages=1")
+
     # Curated bilingual DMA snapshot (documented deficits — not official statewide consumption)
     dma_es = (
         "Snapshot agua BCS — déficits DMA documentados (CONAGUA 2024 / guía agua / ontología), "
