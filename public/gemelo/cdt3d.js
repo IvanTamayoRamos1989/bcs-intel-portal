@@ -521,6 +521,37 @@
           duration: reduced ? 0 : 700,
         });
       }
+      var ICLUSTER = {
+        uso: 'cimp100',
+        parcelas: 'cspyde100',
+      };
+      function iclusterTiles(layer) {
+        return ['/api/icluster-wms?layers=' + layer + '&bbox={bbox-epsg-3857}'];
+      }
+      function setIcluster(kind, on) {
+        var layer = ICLUSTER[kind];
+        if (!layer) return;
+        var src = 'icluster-src-' + kind;
+        var lid = 'icluster-ly-' + kind;
+        if (!map.getSource(src)) {
+          map.addSource(src, {
+            type: 'raster',
+            tiles: iclusterTiles(layer),
+            tileSize: 256,
+            attribution: 'IMPLAN Los Cabos / SIG BCS / INEGI',
+          });
+        }
+        if (!map.getLayer(lid)) {
+          var before = map.getLayer('cdt-muni-line') ? 'cdt-muni-line' : undefined;
+          map.addLayer({
+            id: lid,
+            type: 'raster',
+            source: src,
+            paint: { 'raster-opacity': kind === 'parcelas' ? 0.95 : 0.82 },
+          }, before);
+        }
+        map.setLayoutProperty(lid, 'visibility', on ? 'visible' : 'none');
+      }
       function setBasemap(mode) {
         var sat = mode === 'satellite';
         var streets = mode === 'streets';
@@ -580,6 +611,7 @@
             hide: hide,
             load: load,
             setBasemap: setBasemap,
+            setIcluster: setIcluster,
             setTerrain: setTerrain,
             setMuniWash: setMuniWash,
             setExtrudeOpacity: setExtrudeOpacity,

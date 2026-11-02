@@ -462,14 +462,35 @@
       });
       return;
     }
+    if (kind === 'parcelas') {
+      openFiche({
+        title: 'iCluster — parcelas',
+        kind_es: 'Capa publicada del visor estatal',
+        kind_en: 'Published state-viewer layer',
+        rows: [
+          { es: 'Qué se dibuja', en: 'What is drawn', value: tx('Parcelas de la Secretaría de Turismo, Economía y Sustentabilidad (capa cspyde100). No es el catastro del estado.', 'Parcels from the Tourism, Economy and Sustainability secretariat (layer cspyde100). It is not the state cadastre.') },
+          { es: 'Fuente', en: 'Source', value: 'SIG BCS — http://sig.bcs.gob.mx/iclusterbcs/' },
+        ],
+      });
+      return;
+    }
     openFiche({
-      title: 'iCluster',
-      kind_es: 'Sin geometría en el portal',
-      kind_en: 'No geometry in the portal',
+      title: 'iCluster — uso de suelo IMPLAN',
+      kind_es: 'Capa publicada del visor estatal',
+      kind_en: 'Published state-viewer layer',
       rows: [
-        { es: 'Capa', en: 'Layer', value: tx('Próximo / sin datos. No hay polígonos iCluster. El paquete Foster del 29 de octubre es marco INEGI, manzanas, AGEB, DENUE y red vial; deja el POER fuera. No se fabrica un clúster con esos puntos.', 'Upcoming / no data. There are no iCluster polygons. The 29 October Foster package is the INEGI framework, blocks, AGEB, DENUE and roads; it leaves POER out. A cluster is not built from those points.') },
+        { es: 'Qué se dibuja', en: 'What is drawn', value: tx('Uso de suelo de IMPLAN Los Cabos (capa cimp100) del visor iCluster. Aparece al acercar la costa de Los Cabos.', 'IMPLAN Los Cabos land use (layer cimp100) from the iCluster viewer. It appears when you zoom to the Los Cabos coast.') },
+        { es: 'Fuente', en: 'Source', value: 'IMPLAN Los Cabos / SIG BCS — http://sig.bcs.gob.mx/iclusterbcs/' },
+        { es: 'Parcelas', en: 'Parcels', value: tx('Opcional: capa cspyde100, Secretaría de Turismo, Economía y Sustentabilidad. No es el catastro del estado.', 'Optional: layer cspyde100, Tourism, Economy and Sustainability secretariat. It is not the state cadastre.') },
       ],
     });
+  }
+  function setIcluster(kind, on) {
+    if (engine && engine.setIcluster) engine.setIcluster(kind, on);
+    document.querySelectorAll('[data-icluster="' + kind + '"]').forEach(function (box) { box.checked = !!on; });
+    if (on && kind === 'uso' && engine && engine.jumpCamera) {
+      engine.jumpCamera({ lng: -109.78, lat: 22.99, zoom: 11, bearing: -18, pitch: engine.getPitch ? engine.getPitch() : 50 });
+    }
   }
   function pickRule(text) {
     var q = norm(text || '');
@@ -523,6 +544,7 @@
     }
     if (suelo === 'pdu') jobs.push(focusMuni('Los Cabos', true));
     if (suelo === 'pducp') jobs.push(focusMuni('La Paz', true));
+    if (suelo === 'icluster') setIcluster('uso', true);
     return Promise.all(jobs).then(function () {
       syncThemePressed();
       syncStackToggles();
@@ -976,6 +998,13 @@
       if (kind === 'pdu') focusMuni('Los Cabos', true);
       if (kind === 'pducp') focusMuni('La Paz', true);
       openSuelo(kind);
+    });
+  });
+  document.querySelectorAll('[data-icluster]').forEach(function (box) {
+    box.addEventListener('change', function () {
+      var kind = box.getAttribute('data-icluster');
+      setIcluster(kind, box.checked);
+      if (box.checked) openSuelo(kind === 'parcelas' ? 'parcelas' : 'icluster');
     });
   });
   document.querySelectorAll('[data-fold]').forEach(function (btn) {
