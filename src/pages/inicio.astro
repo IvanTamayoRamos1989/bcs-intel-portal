@@ -45,6 +45,17 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
     <script is:inline src="/place-strip.js" defer></script>
   </head>
   <body class="shell-app" data-pane="map">
+    <script is:inline>
+      (function () {
+        try {
+          if (!window.matchMedia('(max-width: 900px)').matches) return;
+          var pane = sessionStorage.getItem('bcs-shell-pane');
+          if (pane === 'chat' || pane === 'map' || pane === 'files') {
+            document.body.setAttribute('data-pane', pane);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div class="shell">
       <section class="shell-chat" aria-label="Consulta">
         <ChatWidget shell={true} />
@@ -289,6 +300,24 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
           color: #3c5163;
         }
         .shell-tabs button[aria-pressed="true"] { color: #0083C4; box-shadow: inset 0 3px 0 #0083C4; }
+        .shell-tabs button.is-arrived { animation: shell-arrive .7s ease; }
+        @keyframes shell-arrive {
+          0% { background: #e8f4fb; }
+          100% { background: transparent; }
+        }
+        #shell-tree, #shell-related, #shell-preview, .shell-sheet, .bcs-chat-msgs { overscroll-behavior: contain; }
+        .shell-preview-x {
+          display: block;
+          width: 100%;
+          min-height: 44px;
+          margin: 0 0 .4rem;
+          font: inherit;
+          font-weight: 750;
+          color: #006BA3;
+          background: #fff;
+          border: 1px solid #0083C4;
+          border-radius: 999px;
+        }
         .shell-tools {
           top: auto;
           left: .5rem;
