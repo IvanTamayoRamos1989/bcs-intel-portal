@@ -320,6 +320,30 @@ const CASES = [
     needTypes: ['Evidence', 'ResourceCapacity', 'Constraint'],
     mobileMw: true,
   },
+  {
+    q: '¿Las turbinas móviles de CFE en Los Cabos son el proyecto Oasis?',
+    kind: 'viability',
+    needIds: ['ev_news_cfe_128', 'ev_sig_mulege_oasis', 'gap_mulege_agua_energia', 'rc_sibcs'],
+    needTypes: ['Evidence', 'Constraint', 'ResourceCapacity'],
+    sinDatoIds: ['gap_mulege_agua_energia', 'ev_sig_mulege_oasis'],
+    mobileMw: true,
+  },
+  {
+    q: '¿La ocupación hotelera de Los Cabos es una renta?',
+    kind: 'viability',
+    needIds: ['gap_rentas_hoteleras', 'ev_news_ocupacion'],
+    needTypes: ['Constraint', 'Evidence'],
+    sinDatoIds: ['gap_rentas_hoteleras'],
+    noRent: true,
+  },
+  {
+    q: '¿El acuífero Vizcaíno pertenece a Mulegé?',
+    kind: 'viability',
+    needIds: ['gap_acuifero_0302', 'ev_acuiferos_dma', 'terr_mulege'],
+    needTypes: ['Constraint', 'Evidence', 'Territory'],
+    sinDatoIds: ['gap_acuifero_0302'],
+    noAssign0302: true,
+  },
 ];
 
 const NEGATIVES = [
@@ -462,9 +486,11 @@ for (const q of NEGATIVES) {
   if (intents.isFactorIntent) fail(`${q} should not be a factor intent`);
 }
 const dma = expandQuery('¿Cuál es la DMA del acuífero 0317?');
-if (!dma.isWaterIntent) fail('DMA query lost water intent');
+if (!dma.isWaterIntent || dma.isFactorIntent) fail('DMA query lost water intent');
+const dma0302 = expandQuery('¿Cuál es la DMA del acuífero 0302?');
+if (!dma0302.isWaterIntent || dma0302.isFactorIntent) fail('bare DMA 0302 became a factor intent');
 const pop = expandQuery('¿Cuánta gente vive en La Paz?');
-if (!pop.isDemoIntent) fail('population query lost demo intent');
+if (!pop.isDemoIntent || pop.isFactorIntent) fail('population query lost demo intent');
 
 if (failed) {
   console.error(`\n${failed} failure(s)`);
