@@ -295,8 +295,9 @@
     var href = fileHref(row);
     var kind = fileKind(row);
     previewEl.hidden = false;
+    var closeBtn = '<button type="button" class="shell-preview-x">' + tx('Cerrar vista', 'Close preview') + '</button>';
     if (kind === 'i') {
-      previewEl.innerHTML = '<p><strong></strong></p><img alt="">';
+      previewEl.innerHTML = closeBtn + '<p><strong></strong></p><img alt="">';
       previewEl.querySelector('strong').textContent = name;
       var img = previewEl.querySelector('img');
       img.alt = name;
@@ -306,11 +307,18 @@
       });
       return;
     }
-    previewEl.innerHTML = '<p><strong></strong></p><a target="_blank" rel="noopener noreferrer"></a>';
+    previewEl.innerHTML = closeBtn + '<p><strong></strong></p><a target="_blank" rel="noopener noreferrer"></a>';
     previewEl.querySelector('strong').textContent = name;
     var a = previewEl.querySelector('a');
     a.href = href;
     a.textContent = tx('Abrir', 'Open');
+  }
+  if (previewEl) {
+    previewEl.addEventListener('click', function (e) {
+      if (!e.target.closest || !e.target.closest('.shell-preview-x')) return;
+      previewEl.hidden = true;
+      previewEl.innerHTML = '';
+    });
   }
 
   function rowButton(row) {
@@ -473,14 +481,23 @@
     var n = applyText(d.question || '', cited, d.answer || '');
     if (!window.matchMedia('(max-width: 900px)').matches) return;
     setBadge('files', n);
+    var place = pickRule(d.question) || pickRule(d.answer);
+    if (!place) return;
     var pane = document.body.getAttribute('data-pane') || 'map';
+    var mapBtn = document.querySelector('.shell-tabs [data-pane="map"]');
+    function arrived() {
+      if (!mapBtn) return;
+      mapBtn.classList.remove('is-arrived');
+      void mapBtn.offsetWidth;
+      mapBtn.classList.add('is-arrived');
+    }
     if (pane === 'chat') {
       showPane('map');
+      arrived();
       toast('El mapa ya muestra ese lugar.', 'The map now shows that place.');
     } else if (pane === 'files') {
       setBadge('map', 1);
-    } else {
-      toast('Listo en el mapa.', 'Ready on the map.');
+      arrived();
     }
   });
   window.addEventListener('bcs:placechange', function (ev) {
@@ -538,6 +555,9 @@
   }, true);
   function showPane(name) {
     document.body.setAttribute('data-pane', name);
+    try {
+      if (window.matchMedia('(max-width: 900px)').matches) sessionStorage.setItem('bcs-shell-pane', name);
+    } catch (e) {}
     document.querySelectorAll('[data-pane]').forEach(function (b) {
       var on = b.getAttribute('data-pane') === name;
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
@@ -595,6 +615,9 @@
       showPane(btn.getAttribute('data-pane'));
     });
   });
+  if (window.matchMedia('(max-width: 900px)').matches) {
+    showPane(document.body.getAttribute('data-pane') || 'map');
+  }
 
   function fitViewport() {
     var narrow = window.matchMedia('(max-width: 900px)').matches;

@@ -1080,6 +1080,14 @@ const { home = false, shell = false } = Astro.props;
     body.shell-app #bcs-chat .bcs-chat-msgs { overflow-x: hidden; }
     body.shell-app #bcs-chat .bcs-ps-chip { min-height: 44px; }
     body.shell-app #bcs-chat .bcs-chat-bubble { overflow-wrap: anywhere; }
+    body.shell-app #bcs-chat .bcs-chat-sugg-btn:nth-of-type(n + 4) { display: none; }
+    body.shell-app #bcs-chat .bcs-sugg-q {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    body.shell-app #bcs-chat .bcs-chat-voice-hint { display: none; }
   }
 </style>
 
