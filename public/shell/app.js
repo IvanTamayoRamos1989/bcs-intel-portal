@@ -257,7 +257,12 @@
 
   function boot2d() {
     if (!window.L || !mapEl) return;
-    leafletMap = L.map(mapEl, { scrollWheelZoom: true, maxZoom: 14 }).setView([25.6, -112.0], 6);
+    leafletMap = L.map(mapEl, {
+      scrollWheelZoom: true,
+      maxZoom: 14,
+      minZoom: 6.15,
+      maxBounds: [[22.4, -115.7], [28.5, -108.95]],
+    }).fitBounds([[22.87, -115.22], [28.0, -109.41]]);
     streetsLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap', maxZoom: 18 });
     satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Esri', maxZoom: 18 });
     setBasemap(basemap);
@@ -268,7 +273,7 @@
 
   function boot3d() {
     if (!window.CDT3D || !CDT3D.hasWebGL()) { boot2d(); return; }
-    CDT3D.start({ container: mapEl, tools: true, reduced: false }).then(function (eng) {
+    CDT3D.start({ container: mapEl, tools: true, reduced: false, pitch: 28 }).then(function (eng) {
       engine = eng;
       engine.setBasemap(basemap);
       var ids = Object.keys(on).filter(function (id) { return on[id]; });
@@ -541,5 +546,6 @@
     showLayer: showLayer,
     setBasemap: setBasemap,
     focusMuni: focusMuni,
+    getBounds: function () { return engine && engine.getBounds ? engine.getBounds() : null; },
   };
 })();
