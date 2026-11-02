@@ -24,8 +24,21 @@
   var mapReady = false;
   var pendingMuni = '';
   var pendingJob = null;
+  var pendingPoint = null;
   var iclusterOn = { uso: false, parcelas: false };
   var identifyToken = 0;
+  var answerLayers = {};
+  var latestAnswer = null;
+  var basicGroups = { places:['osm_towns'], roads:['osm_highways'], water:['focus_water_dmas','osm_waterways'], nature:['anp_federales'] };
+  function syncBasic() {
+    document.querySelectorAll('[data-basic]').forEach(function(btn) {
+      var ids = basicGroups[btn.getAttribute('data-basic')] || [];
+      btn.setAttribute('aria-pressed', ids.length && ids.every(function(id){return !!on[id];}) ? 'true' : 'false');
+    });
+  }
+  function mapSummary(es,en) { var node=document.getElementById('twin-map-summary'); if(node)node.textContent=tx(es,en); }
+  function autoLayer(id) { if(!on[id])answerLayers[id]=true; return showLayer(id,true); }
+
 
   function lang() {
     return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
@@ -101,10 +114,6 @@
         html += '<p><a href="' + esc(item[0]) + '" target="_blank" rel="noopener noreferrer">' + esc(tx(item[1], item[2] || item[1])) + '</a></p>';
         html += '<img src="' + esc(item[0]) + '" alt="' + esc(tx(item[1], item[2] || item[1])) + '">';
       });
-    }
-    if (info.foresight) {
-      html += '<p class="shell-fiche-kicker">' + tx('Escenarios publicados', 'Published scenarios') + '</p>';
-      html += '<div class="shell-fiche-acts">' + scenarioActs() + '</div>';
     }
     (info.gaps || []).forEach(function (id) {
       var gap = GAPS[id];
@@ -424,8 +433,10 @@
     mapReady = true;
     var ids = Object.keys(on).filter(function (id) { return on[id]; });
     Promise.all(ids.map(function (id) { return showLayer(id, true); })).then(function () {
-      if (pendingJob) executeJob(pendingJob.question, pendingJob.sources, pendingJob.answer);
+      if (pendingPoint) { flyPoint(pendingPoint[0],pendingPoint[1],pendingPoint[2]);pendingPoint=null; }
+      else if (pendingJob) executeJob(pendingJob.question, pendingJob.sources, pendingJob.answer);
       else if (pendingMuni) focusMuni(pendingMuni);
+      else if (engine && engine.fitBox) engine.fitBox(null);
       if (engine && engine.resize) engine.resize();
       if (leafletMap) leafletMap.invalidateSize();
     });
@@ -435,11 +446,13 @@
     var meta = byId[id];
     if (!meta) return Promise.resolve();
     on[id] = !!visible;
+    syncBasic();
     document.querySelectorAll('[data-layer="' + id + '"]').forEach(function (box) { box.checked = !!visible; });
     if (engine) {
       if (!visible) { engine.hide(id); return Promise.resolve(); }
       return engine.load(meta).then(function (geo) {
-        if (geo) engine.show(id, geo, meta, 'on');
+        if (geo && on[id]) engine.show(id, geo, meta, 'on');
+        if (!geo) { on[id]=false; syncBasic(); setStatus('No se pudo cargar una capa. Intenta activarla de nuevo.', 'A layer could not be loaded. Try enabling it again.'); }
         return geo;
       });
     }
@@ -449,6 +462,7 @@
         return Promise.resolve();
       }
       return fetch(meta.url).then(function (r) { return r.json(); }).then(function (geo) {
+        if (!on[id]) return geo;
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
         leafletLayers[id] = L.geoJSON(geo, {
           style: function () { return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
@@ -467,7 +481,7 @@
     if (!theme) return;
     var ids = theme.layers || [];
     var turnOn = forceOn != null ? forceOn : ids.some(function (lid) { return !on[lid]; });
-    ids.forEach(function (lid) { showLayer(lid, turnOn); });
+    ids.forEach(function (lid) { delete answerLayers[lid]; showLayer(lid, turnOn); });
     document.querySelectorAll('[data-theme]').forEach(function (btn) {
       var tid = btn.getAttribute('data-theme');
       var t = themeById[tid];
@@ -614,45 +628,43 @@
   }
   function executeJob(question, sources, answer) {
     var q = norm((question || '') + ' ' + (answer || ''));
+    Object.keys(answerLayers).forEach(function(id){showLayer(id,false);});
+    answerLayers={};
+    closeFiche();
     var jobs = [];
     var suelo = sueloAsk(question || '');
-    if (suelo === 'poer' && byId.poer_ugas) jobs.push(showLayer('poer_ugas', true));
+    if (suelo === 'poer' && byId.poer_ugas) jobs.push(autoLayer('poer_ugas'));
     var pillar = pillarOf(question || '');
     THEME_RULES.forEach(function (rule) {
       if (!rule.re.test(q)) return;
-      rule.layers.forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
+      rule.layers.forEach(function (id) { if (byId[id]) jobs.push(autoLayer(id)); });
     });
-    if (pillar) pillar.layers.forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
-    var place = pickRule(question) || pickRule(answer);
+    if (pillar) pillar.layers.forEach(function (id) { if (byId[id]) jobs.push(autoLayer(id)); });
+    var place = pickRule(question);
+    var statewide = !place && /cada municipio|por municipio|municipalities|estado|state|baja california sur/i.test(question||'');
+    if (!place && !statewide) place=pickRule(answer);
+    if(statewide){pendingMuni='';if(engine&&engine.fitBox)engine.fitBox(null);}
     var gaps = pillar ? [pillar.id] : [];
     if (place) {
       var useMuni = place.muniIf && place.muniIf.test(norm(question || '') + ' ' + norm(answer || ''));
-      (place.layers || []).forEach(function (id) { if (byId[id]) jobs.push(showLayer(id, true)); });
+      (place.layers || []).forEach(function (id) { if (byId[id]) jobs.push(autoLayer(id)); });
       if (useMuni && place.muni) {
         jobs.push(focusMuni(place.muni, true).then(function () {
           if (place.noteIf) setStatus(place.noteIf[0], place.noteIf[1]);
-          openMuniFiche(place.muni, place.noteIf, gaps);
+
         }));
       } else if (place.layer && byId[place.layer]) {
-        jobs.push(showLayer(place.layer, true).then(function (geo) {
+        jobs.push(autoLayer(place.layer).then(function (geo) {
           var hit = geo && place.hit ? findNamed(geo, place.hit) : null;
           var pt = hit ? pointOf(hit.feature) : null;
           if (pt) {
             flyPoint(pt.lng, pt.lat, place.pin || hit.name);
             if (place.note) setStatus(place.note[0], place.note[1]);
-            openFeatureFiche(hit.feature, { lng: pt.lng, lat: pt.lat }, byId[place.layer], place.note);
-          } else if (place.muni) return focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note, gaps); });
+
+          } else if (place.muni) return focusMuni(place.muni, true);
         }));
-      } else if (place.muni) jobs.push(focusMuni(place.muni, true).then(function () { openMuniFiche(place.muni, place.note, gaps); }));
+      } else if (place.muni) jobs.push(focusMuni(place.muni, true));
     } else if (pillar) {
-      openFiche({
-        title: tx(pillar.title[0], pillar.title[1]),
-        kind_es: 'Lectura del gemelo',
-        kind_en: 'Twin reading',
-        rows: [{ es: 'En el mapa', en: 'On the map', value: tx('Se enciende solo lo que el portal ya publica.', 'Only what the portal already publishes is turned on.') }],
-        foresight: pillar.id === 'land' || pillar.id === 'water',
-        gaps: gaps,
-      });
       setStatus(GAPS[pillar.id][0], GAPS[pillar.id][1]);
     } else if (jobs.length && !suelo) {
       setStatus('El mapa encendió las capas de esa respuesta.', 'The map turned on the layers for that answer.');
@@ -663,7 +675,9 @@
     return Promise.all(jobs).then(function () {
       syncThemePressed();
       syncStackToggles();
-      if (suelo) openSuelo(suelo);
+
+      mapSummary(place || jobs.length || suelo ? 'Capas y lugares relacionados con tu consulta.' : 'Esta respuesta no tiene una ubicación cartográfica identificada.', place || jobs.length || suelo ? 'Layers and places related to your question.' : 'No mapped location was identified for this answer.');
+      syncBasic();
     });
   }
   function applyText(question, sources, answer) {
@@ -719,7 +733,7 @@
     }).catch(function () { boot2d(); });
   }
 
-  function fileName(row) { return row[0]; }
+  function fileName(row) { return String(row[0] || '').replace(/\.[a-z0-9]{2,5}$/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim(); }
   function fileFolder(row) { return row[1]; }
   function fileHref(row) { return row[3]; }
   function fileKind(row) { return row[4]; }
@@ -739,7 +753,7 @@
       img.alt = name;
       img.src = href;
       img.addEventListener('error', function () {
-        img.replaceWith(document.createTextNode(tx('El fotograma no está en este equipo.', 'This frame is not on this machine.')));
+        img.replaceWith(document.createTextNode(tx('No se pudo cargar esta imagen.', 'This image could not be loaded.')));
       });
       return;
     }
@@ -747,7 +761,8 @@
     previewEl.querySelector('strong').textContent = name;
     var a = previewEl.querySelector('a');
     a.href = href;
-    a.textContent = tx('Abrir', 'Open');
+    a.textContent = tx('Abrir documento ↗', 'Open document ↗');
+    if (row[5]) { var note=document.createElement('p');note.textContent=row[5];previewEl.insertBefore(note,a); }
   }
   if (previewEl) {
     previewEl.addEventListener('click', function (e) {
@@ -763,6 +778,7 @@
     btn.className = 'shell-file';
     btn.textContent = fileName(row);
     btn.title = fileName(row);
+    btn.setAttribute('aria-label',tx('Ver fuente: ','View source: ')+fileName(row));
     btn.addEventListener('click', function () { renderPreview(row); });
     return btn;
   }
@@ -839,38 +855,39 @@
     });
   }
   function focusFiles(question, sources, answer) {
-    if (!index || !relatedEl) return;
-    var urls = {};
-    var qWords = wordsOf(question);
-    var ev = wordsOf(answer || '');
-    (sources || []).forEach(function (s) {
-      if (!s) return;
-      if (s.drive_url) urls[s.drive_url] = 1;
-      if (s.href && /^https?:/.test(s.href)) urls[s.href] = 1;
-      wordsOf(s.title).forEach(function (w) { ev.push(w); });
-    });
-    var scored = [];
-    index.files.forEach(function (row) {
-      var href = fileHref(row);
-      var score = urls[href] ? 30 : 0;
-      var blob = fileBlob(row).split(/[^a-z0-9]+/);
-      var qHits = 0;
-      qWords.forEach(function (w) { if (blob.indexOf(w) !== -1) { score += 8; qHits += 1; } });
-      ev.forEach(function (w) { if (blob.indexOf(w) !== -1) score += 3; });
-      if (qHits >= 2) score += 4;
-      if (score >= 8) scored.push({ score: score, row: row });
-    });
-    scored.sort(function (a, b) { return b.score - a.score; });
-    relatedEl.innerHTML = '';
-    if (!scored.length) { relatedEl.hidden = true; return; }
+    if (!relatedEl) return 0;
+    var citations = window.ShellEvidence.sources(sources);
+    var citedUrls = {};
+    citations.forEach(function(s){citedUrls[s.href]=true;});
     relatedEl.hidden = false;
-    var label = document.createElement('p');
-    label.className = 'shell-tree-label';
-    label.textContent = tx('De esta respuesta', 'From this answer');
+    relatedEl.innerHTML = '';
+    var label = document.createElement('p'); label.className='shell-tree-label';
+    label.textContent=tx('Fuentes de esta respuesta','Sources for this answer')+' · '+citations.length;
     relatedEl.appendChild(label);
-    scored.slice(0, 8).forEach(function (item) { relatedEl.appendChild(rowButton(item.row)); });
-    renderPreview(scored[0].row);
-    return Math.min(scored.length, 8);
+    if(!citations.length) {
+      var empty=document.createElement('p');empty.className='twin-source-note';
+      empty.textContent=tx('Esta respuesta no incluye fuentes consultables. Puedes explorar el archivo.','This answer includes no linked sources. You can browse the archive.');relatedEl.appendChild(empty);
+    }
+    citations.forEach(function(s){
+      s.row[5]=s.direct ? tx('Fuente citada por el asistente. Abre el original para comprobar el dato y su fecha.','Source cited by the assistant. Open the original to check the figure and its date.') : tx('Referencia citada. El enlace busca el documento en el catálogo.','Cited reference. The link searches for the document in the catalog.');
+      var btn=rowButton(s.row); var sub=document.createElement('small');sub.textContent=s.direct ? tx('Fuente citada · ver documento','Cited source · view document') : tx('Referencia citada · buscar en el catálogo','Cited reference · search catalog');btn.appendChild(sub);relatedEl.appendChild(btn);
+    });
+    if(index) {
+      var qWords=wordsOf(question), scored=[];
+      index.files.forEach(function(row){
+        if(citedUrls[fileHref(row)])return;
+        var blob=fileBlob(row).split(/[^a-z0-9]+/);var score=qWords.filter(function(w){return blob.indexOf(w)!==-1;}).length;
+        if(score>=2)scored.push({score:score,row:row});
+      });
+      scored.sort(function(a,b){return b.score-a.score;});
+      if(scored.length){
+        var more=document.createElement('details');more.className='twin-related-more';
+        var summary=document.createElement('summary');summary.textContent=tx('Otros archivos relacionados','Other related files');more.appendChild(summary);
+        var note=document.createElement('p');note.textContent=tx('Sugeridos por el tema de tu pregunta; no son fuentes citadas en esta respuesta.','Suggested by the topic of your question; these are not sources cited in this answer.');more.appendChild(note);
+        scored.slice(0,6).forEach(function(item){more.appendChild(rowButton(item.row));});relatedEl.appendChild(more);
+      }
+    }
+    return citations.length;
   }
 
   var TERRAIN_EX = 2.15;
@@ -974,6 +991,7 @@
 
   document.querySelectorAll('[data-layer]').forEach(function (box) {
     box.addEventListener('change', function () {
+      delete answerLayers[box.getAttribute('data-layer')];
       showLayer(box.getAttribute('data-layer'), box.checked);
       syncThemePressed();
       syncStackToggles();
@@ -993,7 +1011,7 @@
         var stack = stackById(id);
         var ids = (stack && stack.layers) || [];
         var turnOn = ids.some(function (lid) { return !on[lid]; });
-        ids.forEach(function (lid) { showLayer(lid, turnOn); });
+        ids.forEach(function (lid) { delete answerLayers[lid]; showLayer(lid, turnOn); });
       }
       syncStackToggles();
       syncHud();
@@ -1017,38 +1035,38 @@
     btn.addEventListener('click', function () { setBasemap(btn.getAttribute('data-base')); });
   });
   if (searchEl) {
-    searchEl.addEventListener('input', function () { renderTree(searchEl.value); });
+    searchEl.addEventListener('input', function () { var archive=document.getElementById('twin-archive');if(archive)archive.open=!!searchEl.value;renderTree(searchEl.value); });
   }
   document.addEventListener('bcs:lang', function () {
     if (searchEl) {
       searchEl.placeholder = tx(searchEl.getAttribute('data-lang-placeholder-es') || 'Buscar', searchEl.getAttribute('data-lang-placeholder-en') || 'Search');
     }
     renderTree(searchEl ? searchEl.value : '');
+    if(latestAnswer)focusFiles(latestAnswer.question,latestAnswer.sources,latestAnswer.answer);
   });
-  document.addEventListener('bcs:chat-answer', function (ev) {
-    var d = ev.detail || {};
-    var cited = (d.sources || []).slice();
-    if (d.primary_file) cited.push(d.primary_file);
-    var n = applyText(d.question || '', cited, d.answer || '');
-    if (!window.matchMedia('(max-width: 900px)').matches) return;
-    setBadge('files', n);
-    var place = pickRule(d.question) || pickRule(d.answer);
-    if (!place) return;
-    var pane = document.body.getAttribute('data-pane') || 'map';
-    var mapBtn = document.querySelector('.shell-tabs [data-pane="map"]');
-    function arrived() {
-      if (!mapBtn) return;
-      mapBtn.classList.remove('is-arrived');
-      void mapBtn.offsetWidth;
-      mapBtn.classList.add('is-arrived');
-    }
-    if (pane === 'chat') {
-      showPane('map');
-      arrived();
-      toast('El mapa ya muestra ese lugar.', 'The map now shows that place.');
-    } else if (pane === 'files') {
-      setBadge('map', 1);
-      arrived();
+  document.addEventListener('bcs:chat-start', function(){
+    pendingJob=null;latestAnswer=null;
+    mapSummary('Consultando las fuentes… El mapa conserva tu vista.','Checking sources… Your map view is unchanged.');
+    if(previewEl){previewEl.hidden=true;previewEl.innerHTML='';}
+    if(relatedEl){relatedEl.hidden=false;relatedEl.textContent=tx('Buscando fuentes para tu pregunta…','Finding sources for your question…');}
+    setBadge('files',0);setBadge('map',0);
+  });
+  document.addEventListener('bcs:chat-error', function(){
+    mapSummary('No se pudo completar la consulta. Puedes intentarlo de nuevo.','The question could not be completed. Please try again.');
+    if(relatedEl)relatedEl.textContent=tx('No se obtuvieron fuentes. Intenta enviar la pregunta de nuevo.','No sources were retrieved. Try sending the question again.');
+  });
+  document.addEventListener('bcs:chat-answer', function(ev){
+    var d=ev.detail||{};
+    if(d.ok===false){document.dispatchEvent(new CustomEvent('bcs:chat-error'));return;}
+    var cited=(d.sources||[]).slice();if(d.primary_file)cited.push(d.primary_file);
+    latestAnswer={question:d.question||'',sources:cited,answer:d.answer||''};
+    var n;
+    if(d.grounded===false){n=focusFiles(d.question,cited,d.answer);mapSummary('No hay evidencia suficiente para actualizar el mapa.','There is insufficient evidence to update the map.');}
+    else n=applyText(d.question||'',cited,d.answer||'');
+    setBadge('files',n);
+    // Keep the answer readable on mobile; indicate available map context instead of changing panes.
+    if(window.matchMedia('(max-width: 900px)').matches && d.grounded!==false){
+      setBadge('map',1);toast('Respuesta lista. Puedes abrir Mapa o Fuentes.','Answer ready. You can open Map or Sources.');
     }
   });
   window.addEventListener('bcs:placechange', function (ev) {
@@ -1145,16 +1163,18 @@
     if (Math.abs(e.clientX - gesture.x) + Math.abs(e.clientY - gesture.y) > 16) gesture.moved = true;
   }, true);
   function showPane(name) {
+    if(document.body.classList.contains('map-page'))name='map';
+    if (name !== 'map') setSheet(false);
     document.body.setAttribute('data-pane', name);
     try {
       if (window.matchMedia('(max-width: 900px)').matches) sessionStorage.setItem('bcs-shell-pane', name);
     } catch (e) {}
-    document.querySelectorAll('[data-pane]').forEach(function (b) {
+    document.querySelectorAll('button[data-pane]').forEach(function (b) {
       var on = b.getAttribute('data-pane') === name;
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
       if (on) {
         var badge = b.querySelector('.shell-badge');
-        if (badge && name === 'map') badge.hidden = true;
+        if (badge) badge.hidden = true;
       }
     });
     setTimeout(function () {
@@ -1186,9 +1206,12 @@
   }
   function setSheet(open) {
     document.body.classList.toggle('shell-sheet-open', !!open);
+    if (!open) document.body.classList.remove('shell-dock-open');
     var scrim = document.getElementById('shell-scrim');
     var btn = document.getElementById('shell-capas');
-    if (scrim) scrim.hidden = !open;
+    if (scrim) scrim.hidden = true;
+    if(open){setDock(document.body.getAttribute('data-dock')||'l0');var closer=document.getElementById('shell-sheet-x');if(closer)closer.focus();}
+    else if(document.getElementById('shell-sheet').contains(document.activeElement)&&btn)btn.focus();
     if (btn) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.setAttribute('aria-pressed', open ? 'true' : 'false');
@@ -1203,7 +1226,7 @@
   var scrim = document.getElementById('shell-scrim');
   if (scrim) scrim.addEventListener('click', function () { setSheet(false); });
 
-  document.querySelectorAll('[data-pane]').forEach(function (btn) {
+  document.querySelectorAll('button[data-pane]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       if (gesture.moved) return;
       showPane(btn.getAttribute('data-pane'));
@@ -1234,12 +1257,41 @@
   }
   fitViewport();
 
+  document.querySelectorAll('[data-basic]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ids=basicGroups[btn.getAttribute('data-basic')]||[];
+      var enable=ids.some(function(id){return !on[id];});
+      ids.forEach(function(id){delete answerLayers[id];showLayer(id,enable);});
+      syncBasic();
+      mapSummary(enable?'Capas activadas. Selecciona un elemento para ver su información.':'Capas desactivadas.',enable?'Layers enabled. Select a feature to view its information.':'Layers disabled.');
+    });
+  });
+  var help=document.getElementById('twin-help'),guide=document.getElementById('twin-guide');
+  function closeGuide(){if(!guide)return;guide.hidden=true;help.setAttribute('aria-expanded','false');help.focus();}
+  if(help)help.addEventListener('click',function(){guide.hidden=!guide.hidden;help.setAttribute('aria-expanded',String(!guide.hidden));if(!guide.hidden)document.getElementById('twin-help-close').focus();});
+  document.getElementById('twin-help-close').addEventListener('click',closeGuide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(guide&&!guide.hidden)closeGuide();else if(document.body.classList.contains('shell-sheet-open'))setSheet(false);else closeFiche();}});
+  document.getElementById('twin-reset-map').addEventListener('click',function(){
+    closeFiche();if(engine&&engine.fitBox)engine.fitBox(null);if(leafletMap)leafletMap.fitBounds([[22.87,-115.22],[28,-109.41]]);
+    mapSummary('Vista de todo Baja California Sur.','View of all Baja California Sur.');
+  });
+  // Home hands off a user-submitted question once, without putting its text into the URL.
+  if(new URLSearchParams(location.search).get('conversation')==='1'){
+    showPane('chat');
+    try{var requestedQuestion=sessionStorage.getItem('bcs-twin-question');sessionStorage.removeItem('bcs-twin-question');
+      if(requestedQuestion&&window.BCSChat)window.BCSChat.send(requestedQuestion);
+    }catch(e){}
+  }
   readBoot();
+  try{var contextId=new URLSearchParams(location.search).get('context');if(contextId&&/^c[a-z0-9]+$/.test(contextId)){var context=JSON.parse(sessionStorage.getItem('bcs-map-'+contextId)||'null');if(context&&context.grounded!==false)applyText(context.question,context.sources,context.answer);}}catch(_){}
+  syncBasic();
   setBasemap(basemap);
   boot3d();
   fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
     index = data;
     renderTree(searchEl ? searchEl.value : '');
+    if(latestAnswer)focusFiles(latestAnswer.question,latestAnswer.sources,latestAnswer.answer);
+    if(searchEl&&searchEl.value)document.getElementById('twin-archive').open=true;
   }).catch(function () {
     if (treeEl) treeEl.textContent = tx('No se pudo cargar el índice de archivos.', 'The file index could not be loaded.');
   });
@@ -1249,6 +1301,7 @@
     showLayer: showLayer,
     setBasemap: setBasemap,
     focusMuni: focusMuni,
+    focusPoint: function(lng,lat,label){pendingJob=null;pendingMuni='';if(!mapReady)pendingPoint=[lng,lat,label];else flyPoint(lng,lat,label);mapSummary('Lugar: '+label,'Place: '+label);},
     getBounds: function () { return engine && engine.getBounds ? engine.getBounds() : null; },
     getPitch: function () { return engine && engine.getPitch ? engine.getPitch() : null; },
   };

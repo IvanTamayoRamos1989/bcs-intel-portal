@@ -1,0 +1,17 @@
+---
+const { active = 'ask' } = Astro.props;
+const links = [
+  { id:'ask', href:'/inicio/', es:'Preguntar', en:'Ask' },
+  { id:'map', href:'/consulta/', es:'Mapa 3D', en:'3D map' },
+  { id:'docs', href:'/catalogo/', es:'Documentos', en:'Documents' },
+];
+---
+<header class="three-header">
+  <a class="three-brand" href="/inicio/" aria-label="BCS 2050 · Inicio">BCS <strong>2050</strong></a>
+  <nav aria-label="Navegación principal">{links.map(l=><a href={l.href} data-destination={l.id} aria-current={active===l.id?'page':undefined}><span data-lang-es>{l.es}</span><span data-lang-en hidden>{l.en}</span></a>)}</nav>
+  <button id="lang-toggle" type="button" aria-label="Cambiar idioma" aria-pressed="false"><span data-side="es" class="active">ES</span><span aria-hidden="true"> · </span><span data-side="en">EN</span></button>
+</header>
+<link rel="stylesheet" href="/three-pages.css?v=20261102" />
+<script is:inline>
+  try{var lastContext=sessionStorage.getItem('bcs-last-map');var destination=document.querySelector('[data-destination="map"]');if(destination&&lastContext&&/^c[a-z0-9]+$/.test(lastContext)&&!destination.hasAttribute('aria-current'))destination.href='/consulta/?context='+lastContext;}catch(_){}
+</script>

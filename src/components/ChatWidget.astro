@@ -1104,6 +1104,8 @@ const { home = false, shell = false } = Astro.props;
   var input = document.getElementById('bcs-chat-input');
   var msgs = document.getElementById('bcs-chat-msgs');
   var history = [];
+  var savedTurns = [];
+  var rememberConversation = document.body.classList.contains("conversation-page");
   var CHAT_HOME = document.body.classList.contains('chat-home');
   var SHELL = document.body.classList.contains('shell-app');
   var MQ = (CHAT_HOME || SHELL) ? { matches: false, addEventListener: function () {} } : window.matchMedia('(max-width: 900px)');
@@ -1431,7 +1433,7 @@ const { home = false, shell = false } = Astro.props;
     var hint = msgs.querySelector('.bcs-chat-hint');
     if (hint) hint.remove();
     var sugg = msgs.querySelector('.bcs-chat-sugg');
-    if (sugg) sugg.remove();
+    if (sugg) { if(rememberConversation)sugg.hidden=true;else sugg.remove(); }
     var wel = msgs.querySelector('.bcs-chat-welcome');
     if (wel) wel.remove();
     root.classList.add('has-msgs');
@@ -1470,7 +1472,9 @@ const { home = false, shell = false } = Astro.props;
       appendSourcesDeemph(div, payload);
     }
     msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
+    if (role.indexOf('bot') === 0 && role.indexOf('thinking') < 0) {
+      msgs.scrollTop += div.getBoundingClientRect().top - msgs.getBoundingClientRect().top - 12;
+    } else msgs.scrollTop = msgs.scrollHeight;
     return div;
   }
 
@@ -1651,7 +1655,8 @@ const { home = false, shell = false } = Astro.props;
   form && form.addEventListener('submit', function (e) {
     e.preventDefault();
     var message = (input.value || '').trim();
-    if (!message) return;
+    if (!message || (form.querySelector('.bcs-chat-send') && form.querySelector('.bcs-chat-send').disabled)) return;
+    document.dispatchEvent(new CustomEvent('bcs:chat-start', {detail:{question:message}}));
     /* Typed chat stays independent of Grok voice session */
     input.value = '';
     addBubble('user', message);
@@ -1661,7 +1666,10 @@ const { home = false, shell = false } = Astro.props;
     if (sendBtn) sendBtn.disabled = true;
 
     var lang = document.documentElement.getAttribute('data-lang') || 'es';
+    var requestController=new AbortController();
+    var requestTimer=setTimeout(function(){requestController.abort();},100000);
     fetch('/api/chat', {
+      signal:requestController.signal,
       method: 'POST',
       credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json' },
@@ -1716,13 +1724,15 @@ const { home = false, shell = false } = Astro.props;
         } catch (e) {}
         try {
           // Hook for pages that extend the chat (e.g. /explorar adds map "Localizar" chips). No effect elsewhere.
-          document.dispatchEvent(new CustomEvent('bcs:chat-answer', { detail: { answer: answer, bubble: bubble, sources: j.sources || [], grounded: j.grounded, question: message, place: j.place || null, primary_file: j.primary_file || null } }));
+          document.dispatchEvent(new CustomEvent('bcs:chat-answer', { detail: { ok: res.ok, blocks: j.blocks || [], answer: answer, bubble: bubble, sources: j.sources || [], grounded: j.grounded, question: message, place: j.place || null, primary_file: j.primary_file || null } }));
         } catch (e) {}
         history.push({ role: 'assistant', content: answer });
+        if(rememberConversation && res.ok){savedTurns.push({question:message,payload:j});savedTurns=savedTurns.slice(-12);try{sessionStorage.setItem('bcs-conversation',JSON.stringify(savedTurns));}catch(_){}}
         lastSpokenText = String(answer || '').replace(/\s+/g, ' ').trim().slice(0, 1200);
         syncVoiceChrome();
       })
       .catch(function () {
+        document.dispatchEvent(new CustomEvent('bcs:chat-error'));
         thinking.remove();
         addBubble('bot', t('chatError'), {
           primary_file: null,
@@ -1732,6 +1742,7 @@ const { home = false, shell = false } = Astro.props;
         });
       })
       .finally(function () {
+        clearTimeout(requestTimer);
         if (sendBtn) sendBtn.disabled = false;
       });
   });
@@ -1739,11 +1750,22 @@ const { home = false, shell = false } = Astro.props;
   // Small public API so a page can dock the chat and prefill a question (used by /explorar).
   window.BCSChat = {
     root: root,
+    reset: function(){history=[];savedTurns=[];try{sessionStorage.removeItem('bcs-conversation');sessionStorage.removeItem('bcs-last-map');}catch(_){}msgs.querySelectorAll('.bcs-chat-bubble').forEach(function(b){b.remove();});var sug=document.getElementById('bcs-chat-sugg');if(sug)sug.hidden=false;if(input)input.focus();},
     open: function () { setOpen(true, getSheet()); rememberDock(true); },
     close: function () { setOpen(false); rememberDock(false); },
     prefill: function (text) { if (input) { input.value = String(text || '').slice(0, 2000); try { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } catch (e) {} } },
     send: function (text) { if (!input || !form) return; input.value = String(text || '').slice(0, 2000); form.requestSubmit(); }
   };
+
+  if(rememberConversation)window.addEventListener('DOMContentLoaded',function(){
+    try{var previous=JSON.parse(sessionStorage.getItem('bcs-conversation')||'[]');if(!Array.isArray(previous))return;
+      var restored=[];previous.slice(-12).forEach(function(turn){if(!turn||typeof turn.question!=='string'||!turn.payload||typeof turn.payload.answer!=='string')return;
+        var j=turn.payload;addBubble('user',turn.question);var bubble=addBubble('bot',j.answer,j);
+        history.push({role:'user',content:turn.question},{role:'assistant',content:j.answer});savedTurns.push(turn);
+        restored.push({question:turn.question,answer:j.answer,sources:j.sources||[],blocks:j.blocks||[],grounded:j.grounded,place:j.place,bubble:bubble});
+      });if(restored.length)document.dispatchEvent(new CustomEvent('bcs:chat-restored',{detail:restored}));
+    }catch(_){}
+  });
 
   input && input.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' && !e.shiftKey) {

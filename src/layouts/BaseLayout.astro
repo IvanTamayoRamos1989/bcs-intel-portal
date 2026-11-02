@@ -5,6 +5,7 @@ import '../styles/portal-ux.css';
 import { ui } from '../i18n/ui';
 import { breadcrumbs, topSection } from '../lib/ia';
 import ChatWidget from '../components/ChatWidget.astro';
+import ThreeNav from '../components/ThreeNav.astro';
 import PlaceStrip from '../components/PlaceStrip.astro';
 
 interface Props {
@@ -39,12 +40,12 @@ const {
   chatHome = false,
 } = Astro.props;
 const simpleNav = [
-  { href: '/inicio', es: 'Inicio', en: 'Home' },
-  { href: '/temas', es: 'Temas', en: 'Topics' },
-  { href: '/explorar', es: 'Mapa', en: 'Map' },
+  { href: '/inicio', es: 'Preguntar', en: 'Ask' },
+  { href: '/consulta', es: 'Mapa 3D', en: '3D map' },
   { href: '/catalogo', es: 'Documentos', en: 'Documents' },
 ];
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const threePage = path === '/catalogo';
 const deployCtx = (typeof process !== 'undefined' && process.env && (process.env.CONTEXT || process.env.NETLIFY_CONTEXT)) || '';
 const isProdDeploy = deployCtx === 'production';
 
@@ -121,12 +122,13 @@ const pageSubEn = home
       </>
     )}
   </head>
-  <body class:list={[landing && 'landing-body', !landing && 'has-chat-sidebar', !landing && 'ios-shell portal-simple', home && 'portal-home', chatHome && 'chat-home']}>
+  <body class:list={[landing && 'landing-body', !landing && 'has-chat-sidebar', !landing && 'ios-shell portal-simple', home && 'portal-home', threePage && 'documents-page', chatHome && 'chat-home']}>
     {landing ? (
       null
     ) : (
       <>
         <a class="portal-skip" href="#contenido"><span data-lang-es>Ir al contenido</span><span data-lang-en hidden>Skip to content</span></a>
+        {threePage ? <ThreeNav active="docs" /> : <>
         <header class="pt-top site-header" id="site-header">
           <a class="pt-brand" href="/inicio" title="Inicio del portal">
             <strong>BCS2050</strong>
@@ -203,10 +205,11 @@ const pageSubEn = home
             <button type="button" class="lang-toggle" data-lang-mirror aria-label={ui.es.toggleAria}><span data-lang-es>English</span><span data-lang-en hidden>Español</span></button>
           </div>
         </nav>
+        </>}
       </>
     )}
 
-    {!landing && (
+    {!landing && !threePage && (
       <div class:list={["pt-sub", wide && "wide"]}>
         {crumbs.length > 0 && (
           <nav class="pt-crumbs" aria-label="Ruta">
@@ -251,7 +254,7 @@ const pageSubEn = home
       <slot />
     </main>
 
-    {!landing && (
+    {!landing && !threePage && (
       <footer class="site-footer">
         <hr class="footer-rule" />
         <nav class="pt-foot-links" aria-label="Pie de página">
@@ -282,7 +285,7 @@ const pageSubEn = home
       </footer>
     )}
 
-    {!landing && <ChatWidget home={chatHome} />}
+    {!landing && !threePage && <ChatWidget home={chatHome} />}
 
     {!landing && (
       <script is:inline>

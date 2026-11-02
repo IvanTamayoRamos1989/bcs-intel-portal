@@ -1,0 +1,8 @@
+.three-header{height:72px;flex:0 0 72px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 30px;border-bottom:1px solid #d8ded7;background:#f7f6ef;color:#294554;position:relative;z-index:40;font-family:system-ui,sans-serif}
+.three-brand{text-decoration:none;color:inherit;font-size:21px;white-space:nowrap;letter-spacing:.5px}
+.three-header nav{display:flex;gap:8px}.three-header nav a{padding:11px 20px;border-radius:24px;text-decoration:none;font-size:14px;color:#526569;white-space:nowrap}
+.three-header nav a[aria-current=page]{background:#e3eae3;color:#244e60;font-weight:650}.three-header nav a:hover{background:#eaf0ea}
+.three-header button{border:1px solid #ccd5cd;background:transparent;border-radius:24px;min-height:40px;padding:8px 12px;color:#34515c;font:inherit;font-size:12px;cursor:pointer}
+.three-header #lang-toggle{border:1px solid #ccd5cd;background:transparent;border-radius:24px;padding:8px 12px;color:#34515c;font:inherit;font-size:12px}
+.three-header :is(a,button):focus-visible{outline:3px solid #285d72;outline-offset:3px}
+@media(max-width:600px){.three-header{height:104px;flex-basis:104px;flex-wrap:wrap;padding:10px 16px 7px;gap:4px}.three-brand{font-size:18px}.three-header nav{order:3;width:100%;justify-content:center;gap:4px}.three-header nav a{font-size:13px;padding:9px 18px}.three-header button{min-height:32px;padding:5px 10px}}

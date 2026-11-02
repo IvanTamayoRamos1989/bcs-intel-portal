@@ -141,7 +141,7 @@
         wrap.appendChild(chartEl(b, en));
       } else if ((b.type === 'image' || b.type === 'map') && safeHref(b.thumb || b.src)) {
         var fig = el('figure', 'bcs-rb-card bcs-rb-' + b.type);
-        var href = safeHref(b.full || b.href) || safeHref(b.thumb || b.src);
+        var href = safeHref(b.full || b.src || b.thumb) || safeHref(b.href);
         var ia = el('a', 'bcs-rb-img'); ia.href = href; if (b.full) { ia.target = '_blank'; ia.rel = 'noopener'; }
         var img = el('img'); img.src = b.thumb || b.src; img.alt = b.alt || b.title || ''; img.loading = 'lazy'; img.decoding = 'async';
         img.onerror = function () { fig.remove(); };

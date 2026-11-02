@@ -1,52 +1,33 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { STUDIO_UNITS } from '../lib/studio';
-const tasks = [
-  { n:'01', href:'#municipios', es:'Conocer mi municipio', en:'Know my municipality', d:'Población, agua, economía y planes de cada lugar.', de:'Population, water, economy and plans for each place.', icon:'◎' },
-  { n:'02', href:'/explorar/', es:'Explorar el mapa', en:'Explore the map', d:'Ubica localidades, servicios y áreas naturales.', de:'Find towns, services and natural areas.', icon:'↗' },
-  { n:'03', href:'/finanzas-publicas/', es:'Entender el presupuesto', en:'Understand the budget', d:'Consulta cuánto se aprueba y cómo se reporta el gasto.', de:'See approved budgets and reported spending.', icon:'≋' },
-  { n:'04', href:'/catalogo/', es:'Encontrar un documento', en:'Find a document', d:'Busca planes, informes y sus fuentes originales.', de:'Find plans, reports and their original sources.', icon:'≡' },
-];
-const topics = [
-  ['/agua/','Agua','Water'], ['/energia/','Energía','Energy'], ['/economia/','Economía','Economy'],
-  ['/planeacion/','Planes y territorio','Plans and land'], ['/riesgos/','Riesgos naturales','Natural hazards'], ['/noticias/','Noticias','News'],
-];
+import '../styles/global.css';
+import ThreeNav from './ThreeNav.astro';
+import ChatWidget from './ChatWidget.astro';
+import { ui } from '../i18n/ui';
 ---
-<BaseLayout title="Inicio" titleEn="Home" home hidePageHead wide description="Conoce Baja California Sur: municipios, mapas, presupuesto y documentos en un solo lugar." descriptionEn="Discover Baja California Sur: places, maps, budgets and documents in one place.">
+<!doctype html>
+<html lang="es" data-lang="es" data-title-es="Preguntar" data-title-en="Ask" data-title-suffix=" · BCS 2050">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" /><meta name="theme-color" content="#f7f6ef" />
+  <title>Preguntar · BCS 2050</title>
+  <script is:inline define:vars={{uiObj:ui}}>window.__BCS_UI__=uiObj;</script>
+  <script is:inline src="/auth-gate.js"></script><script is:inline src="/lang-toggle.js?v=20261102-ux"></script>
   <script is:inline>
-    // Keep existing map and document deep links working after the home redesign.
-    var oldView = new URLSearchParams(location.search);
-    if (['base','theme','tema','muni','q'].some(function(k){ return oldView.has(k); })) {
-      location.replace('/consulta/' + location.search + location.hash);
-    }
+    var oldView=new URLSearchParams(location.search);
+    if(['base','theme','tema','muni','q'].some(function(k){return oldView.has(k);}))location.replace('/consulta/'+location.search+location.hash);
   </script>
-  <section class="welcome" aria-labelledby="welcome-title">
-    <p class="welcome-kicker">BAJA CALIFORNIA SUR / 2050</p>
-    <h1 id="welcome-title"><span data-lang-es>Conoce tu estado.<br><em>Encuentra respuestas.</em></span><span data-lang-en hidden>Know your state.<br><em>Find answers.</em></span></h1>
-    <p class="welcome-intro"><span data-lang-es>Mapas, cifras y documentos para entender lo que pasa en Baja California Sur. Empieza por lo que quieres conocer.</span><span data-lang-en hidden>Maps, data and documents to understand Baja California Sur. Start with what you want to know.</span></p>
-    <form class="welcome-ask" id="welcome-ask">
-      <label for="welcome-question"><span data-lang-es>¿Qué te gustaría saber?</span><span data-lang-en hidden>What would you like to know?</span></label>
-      <div><input id="welcome-question" name="question" type="text" maxlength="2000" required placeholder="Por ejemplo: ¿de dónde viene el agua de La Paz?" data-placeholder-es="Por ejemplo: ¿de dónde viene el agua de La Paz?" data-placeholder-en="For example: where does La Paz get its water?" aria-describedby="welcome-hint"><button type="submit"><span data-lang-es>Preguntar →</span><span data-lang-en hidden>Ask →</span></button></div>
-      <p id="welcome-hint"><span data-lang-es>El asistente consulta la información del portal y te muestra sus fuentes.</span><span data-lang-en hidden>The assistant uses the portal's information and shows its sources.</span></p>
-      <p id="welcome-error" hidden role="status"><span data-lang-es>No se pudo abrir el asistente. Inténtalo con el botón «Preguntar» de la barra superior.</span><span data-lang-en hidden>Could not open the assistant. Try the “Ask” button in the top bar.</span></p>
-    </form>
-  </section>
-  <section class="welcome-tasks" aria-label="Por dónde empezar">
-    {tasks.map(t => <a href={t.href} class="welcome-task"><span class="task-top"><span>{t.n}</span><span aria-hidden="true">{t.icon}</span></span><h2><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></h2><p><span data-lang-es>{t.d}</span><span data-lang-en hidden>{t.de}</span></p><span class="task-arrow" aria-hidden="true">↗</span></a>)}
-  </section>
-  <section class="welcome-places" id="municipios" aria-labelledby="places-title">
-    <div><p class="welcome-kicker"><span data-lang-es>CERCA DE TI</span><span data-lang-en hidden>NEAR YOU</span></p><h2 id="places-title"><span data-lang-es>Elige un lugar</span><span data-lang-en hidden>Choose a place</span></h2><p><span data-lang-es>Una página con sus datos y temas principales.</span><span data-lang-en hidden>A page with its key data and topics.</span></p></div>
-    <div class="welcome-place-links">{STUDIO_UNITS.map(u => <a href={`/studio/${u.id}/`}><span data-lang-es>{u.id === 'bcs' ? 'Todo el estado' : u.name_es}</span><span data-lang-en hidden>{u.id === 'bcs' ? 'The whole state' : u.name_en}</span><span aria-hidden="true">→</span></a>)}</div>
-  </section>
-  <section class="welcome-topics" aria-labelledby="topics-title"><h2 id="topics-title"><span data-lang-es>También puedes explorar por tema</span><span data-lang-en hidden>You can also explore by topic</span></h2><div>{topics.map(t => <a href={t[0]}><span data-lang-es>{t[1]}</span><span data-lang-en hidden>{t[2]}</span></a>)}<a href="/temas/"><span data-lang-es>Todos los temas →</span><span data-lang-en hidden>All topics →</span></a></div></section>
-  <details class="welcome-more"><summary><span data-lang-es>Más herramientas para profundizar</span><span data-lang-en hidden>More tools to explore in depth</span></summary><p><span data-lang-es>Abre la mesa de trabajo para consultar el mapa, el asistente y los archivos juntos, o recorre las herramientas de análisis.</span><span data-lang-en hidden>Open the workspace to use the map, assistant and files together, or browse the analysis tools.</span></p><div><a href="/consulta/"><span data-lang-es>Mesa de trabajo →</span><span data-lang-en hidden>Workspace →</span></a><a href="/gemelo/"><span data-lang-es>Gemelo digital →</span><span data-lang-en hidden>Digital twin →</span></a><a href="/temas/#especialistas"><span data-lang-es>Herramientas de análisis →</span><span data-lang-en hidden>Analysis tools →</span></a><a href="/portal/"><span data-lang-es>Resumen del estado →</span><span data-lang-en hidden>State overview →</span></a><a href="/ayuda/"><span data-lang-es>Cómo usar el portal →</span><span data-lang-en hidden>How to use the portal →</span></a></div></details>
-  <script is:inline>
-    document.getElementById('welcome-ask').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var question = document.getElementById('welcome-question').value.trim();
-      if (!question) return;
-      if (!window.BCSChat) { document.getElementById('welcome-error').hidden = false; return; }
-      window.BCSChat.open(); window.BCSChat.send(question);
-    });
-  </script>
-</BaseLayout>
+</head>
+<body class="shell-app conversation-page">
+  <ThreeNav active="ask" />
+  <main id="conversation-main">
+    <section class="conversation-welcome" id="conversation-welcome">
+      <p>BAJA CALIFORNIA SUR</p>
+      <h1><span data-lang-es>¿Qué quieres conocer?</span><span data-lang-en hidden>What would you like to know?</span></h1>
+      <div><span data-lang-es>Pregunta sobre el estado. Explora sus datos, lugares y documentos.</span><span data-lang-en hidden>Ask about the state. Explore its data, places and documents.</span></div>
+    </section>
+    <button type="button" id="conversation-new" hidden><span data-lang-es>＋ Nueva conversación</span><span data-lang-en hidden>＋ New conversation</span></button>
+    <ChatWidget shell={true} />
+  </main>
+  <script is:inline src="/conversation.js?v=20261102" defer></script>
+  <link rel="stylesheet" href="/conversation.css?v=20261102" />
+</body></html>
