@@ -549,7 +549,7 @@
   },
   "ev_sig_mulege_oasis": {
     "label_en": "Signal: Oasis hydrogen in Mulegé",
-    "summary_en": "Signal sig-mulege-oasis-h2 in Base de datos BCS 2050 — prospectiva. The text asks whether it is a remote energy corridor or only transit, and says it must be tested against local water. There is no project node and no MW on the graph."
+    "summary_en": "Signal sig-mulege-oasis-h2 in Base de datos BCS 2050 — prospectiva. The text asks whether it is a remote energy corridor or only transit, and says it must be tested against local water. There is no project node and no MW on the graph. sin dato en corpus for MW and site."
   },
   "ev_sig_comondu_loreto": {
     "label_en": "Signal: Comondú desal and Loreto WWTP",
@@ -570,5 +570,33 @@
   "ev_aereo_setue": {
     "label_en": "SJD and LAP air passengers (SETUE IE 2026)",
     "summary_en": "Base de datos BCS 2050 — puertos y demanda Base de datos BCS 2050 — nota de trabajo, OCR of SETUE IE 2026. SJD 2025: 3.8 million passengers (+0.6%), 83.2% of state air arrivals. LAP 2025: 668,800 (+10.9%). That file marks LTO 2025 passengers as UNKNOWN in the Loreto IE. data_gaps gap-movilidad-loreto-pax-2025 is filled with 89,600 from a BCS government communique (not the SETUE IE). Those figures are not added into a new total."
+  },
+  "ev_dossiers_lugar": {
+    "label_en": "Place dossiers (FACT vocation and locks)",
+    "summary_en": "Base de datos BCS 2050 — datos del portal, only the FACT vocation.constraints field; ASSUMPTION tenure lenses are not copied. Los Cabos: water scarcity, desalination, power peak, 0317/0319. East Cape: ANP, thin infrastructure, spillover from Cabos; quantitative load is not in the dossier. Todos Santos: 0313 in deficit. La Paz: water–energy coupling, 0324/0313. Loreto: conservation ceilings and thin services; no local DMA. Comondú: irrigation and pumping energy, no public cadastral viewer. Mulegé: thin services, water, and distance to markets."
+  },
+  "ev_fiscal_anexo_2025": {
+    "label_en": "Municipal revenue shares, Annex I.33 2025",
+    "summary_en": "Base de datos BCS 2050 — datos del portal anexo_i33_2025 (pesos, not construction capacity). Los Cabos 1,282,611,261; La Paz 837,464,432; Comondú 369,189,086; Mulegé 357,354,826; Loreto 263,961,262. The 2026 revenue law in the same file has amounts for Los Cabos, La Paz and Comondú. Mulegé and Loreto remain in gap-fiscal-ley-2026-mulege-loreto."
+  },
+  "gap_catastro_secundario": {
+    "label_en": "Gap: cadastre and transactions outside Los Cabos",
+    "summary_en": "sin dato en corpus for parcels or comparable transactions in La Paz, Loreto, Comondú and Mulegé (data_gaps gap-re-cadastre-secondary, open). Base de datos BCS 2050 — datos del portal: the La Paz viewer redirects to login; there is no cadastral identify on the graph. Do not invent parcel keys."
+  },
+  "gap_fiscal_ingresos_2026": {
+    "label_en": "Gap: 2026 revenue law for Mulegé and Loreto",
+    "summary_en": "sin dato en corpus for the 2026 revenue-law amount for Mulegé and Loreto (data_gaps gap-fiscal-ley-2026-mulege-loreto, open). Los Cabos, La Paz and Comondú do have an amount in Base de datos BCS 2050 — datos del portal. A blank amount is not copied."
+  },
+  "ev_mesa_agua": {
+    "label_en": "Water table (CEA and CONAGUA)",
+    "summary_en": "Base de datos BCS 2050 — datos del portal water table. Institutions: State Water Commission and the local CONAGUA office. Not an org chart and not consultancy staff. Operates the water framework together with the state water law."
+  },
+  "ev_mesa_energia": {
+    "label_en": "Infrastructure and energy table (SEPUIMM)",
+    "summary_en": "Base de datos BCS 2050 — datos del portal infrastructure-and-energy table. Institution: SEPUIMM (urban planning, infrastructure, mobility, environment and energy). Does not replace CFE or CENACE on the grid."
+  },
+  "ev_mesa_urbanismo": {
+    "label_en": "Architecture and urbanism table, Los Cabos (IMPLAN)",
+    "summary_en": "Base de datos BCS 2050 — datos del portal Los Cabos architecture-and-urbanism table. Institution: IMPLAN Los Cabos, technical authority for PDU 2040. It does not by itself decree a land-use change."
   }
 }
