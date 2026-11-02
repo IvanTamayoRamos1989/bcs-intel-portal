@@ -207,6 +207,38 @@ const CASES = [
     needTypes: ['Evidence', 'DecisionQuestion', 'Constraint'],
     noInvent: true,
   },
+  {
+    q: '¿Qué cambio de uso de suelo cierra el Parque Nacional Cabo Pulmo?',
+    kind: 'landuse',
+    needIds: ['terr_anp_cabo_pulmo', 'const_anp_nucleos', 'dq_cambio_uso_suelo', 'inst_poerbcs', 'ev_anp_avisos'],
+    needTypes: ['Territory', 'Constraint', 'Instrument', 'Evidence'],
+  },
+  {
+    q: '¿Es viable un hotel en Los Cabos con el candado de Cabo Pulmo?',
+    kind: 'viability',
+    needIds: ['terr_anp_cabo_pulmo', 'const_anp_nucleos', 'dq_viabilidad_proyecto', 'rc_acuifero_0317', 'ev_anp_avisos'],
+    needTypes: ['Territory', 'Constraint', 'ResourceCapacity', 'Evidence'],
+  },
+  {
+    q: '¿Es viable Los Cabos según la Ley de Ingresos 2026?',
+    kind: 'viability',
+    needIds: ['ev_fiscal_ley_2026', 'ev_fiscal_anexo_2025', 'terr_los_cabos', 'dq_viabilidad_proyecto', 'gap_fiscal_ingresos_2026'],
+    needTypes: ['Evidence', 'Territory', 'Constraint'],
+    fiscal2026: true,
+  },
+  {
+    q: '¿Quién decide el agua de la desaladora de Los Cabos en la mesa?',
+    kind: 'viability',
+    needIds: ['ev_mesa_agua', 'actor_conagua', 'actor_cea', 'proj_fed_agu_001', 'proj_desal_cabos'],
+    needTypes: ['Evidence', 'Actor', 'Project'],
+  },
+  {
+    q: '¿Qué cambio de uso de suelo condiciona la reserva El Vizcaíno?',
+    kind: 'landuse',
+    needIds: ['terr_anp_vizcaino', 'const_anp_nucleos', 'dq_cambio_uso_suelo', 'proj_transpeninsular', 'ev_anp_avisos'],
+    needTypes: ['Territory', 'Constraint', 'Project', 'Evidence'],
+    vizcainoGap: true,
+  },
 ];
 
 const NEGATIVES = [
@@ -275,6 +307,20 @@ for (const c of CASES) {
     const text = `${pob?.sum_es || ''} ${pob?.sum_en || ''}`;
     if (!/351111/.test(text) || !/18052/.test(text)) fail(`${c.q} census figures missing`);
     if (/\bageb\b/i.test(text) && !/no es ageb|not an ageb/i.test(text)) fail(`${c.q} AGEB invented`);
+  }
+  if (c.fiscal2026) {
+    const ley = ev.find((x) => (x.onto_id || '') === 'ev_fiscal_ley_2026');
+    const text = `${ley?.sum_es || ''} ${ley?.sum_en || ''}`;
+    if (!/7421559352/.test(text)) fail(`${c.q} Cabos 2026 revenue-law amount missing`);
+    if (!/sin dato/i.test(text)) fail(`${c.q} Mulegé/Loreto revenue-law gap missing`);
+    if (/muleg[eé][^.]{0,40}\d{7,}/i.test(text)) fail(`${c.q} invented a Mulegé revenue amount`);
+  }
+  if (c.vizcainoGap) {
+    const avisos = ev.find((x) => (x.onto_id || '') === 'ev_anp_avisos');
+    const text = `${avisos?.sum_es || ''} ${avisos?.sum_en || ''}`;
+    if (!/no asigna el acu[ií]fero 0302|does not assign aquifer 0302/i.test(text)) {
+      fail(`${c.q} Vizcaíno notice must keep 0302 unassigned`);
+    }
   }
   if (c.portOperator) {
     const op = ev.find((x) => (x.onto_id || '') === 'ev_sig_asipona');
