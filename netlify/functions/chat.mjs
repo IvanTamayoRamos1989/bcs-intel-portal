@@ -542,6 +542,7 @@ function expandQuery(query) {
   if (OPPORTUNITY_RE.test(qn)) factorKinds.push('opportunity');
   const whoFactor = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
   if (whoFactor && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (/\bcompens\w*\b|\boffset\b/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1099,6 +1100,23 @@ function factorSeedIds(qn, kinds) {
   if (/\bhuracan|\bhurricane|\bpolo\b|\brachel\b/.test(qn)) add('ev_sig_hurricanes');
   if (/\bacoplamiento\b|\bagua[\s-]*energia|\bwater[\s-]*energy\b|\bapagon/.test(qn)) add('ev_sig_water_energy');
   if (/\bhidrogen|\boasis\b/.test(qn)) add('ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
+  if (/\bacuifer|\b0313\b|\b0314\b|\b0317\b|\b0318\b|\b0319\b|\b0320\b|\b0324\b|\b0302\b/.test(qn)) {
+    add('ev_acuiferos_dma');
+    if (/\b0317\b|cabo san lucas/.test(qn)) add('rc_acuifero_0317');
+    if (/\b0318\b|pulmo/.test(qn)) add('rc_acuifero_0318', 'terr_anp_cabo_pulmo');
+    if (/\b0319\b|san jose del cabo/.test(qn)) add('rc_acuifero_0319');
+    if (/\b0324\b/.test(qn) && p.paz) add('rc_acuifero_0324');
+    if (/\b0313\b|todos santos/.test(qn)) add('rc_acuifero_0313');
+    if (/\b0320\b|santiago/.test(qn)) add('rc_acuifero_0320');
+  }
+  if (/\bescorrent|\bhidrosheds|\bcauces?\b/.test(qn)) add('ev_escorrentia');
+  if (/\borganigrama|\bdesarrollo urbano\b/.test(qn) && (p.cabos || p.who || !p.any)) {
+    add('ev_org_cabos_2024', 'gap_org_obras_cabos', 'actor_implan_cabos', 'actor_oomsapas_cabos');
+  }
+  if (/\bhistoria|\bfonatur\b|\b1974\b/.test(qn)) add('ev_historia_bcs');
+  if (/\bpregunta estrategica|\bcompens\w*\b|\boffset\b/.test(qn)) {
+    add('ev_preguntas_estrategicas', 'terr_comondu', 'const_dma_deficit', 'dd_agro_santo_domingo');
+  }
   if (p.east) {
     add(
       'dq_pack_east_cape', 'rc_acuifero_0318', 'terr_anp_cabo_pulmo', 'terr_obs_east_cape',

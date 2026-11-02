@@ -598,5 +598,33 @@
   "ev_mesa_urbanismo": {
     "label_en": "Architecture and urbanism table, Los Cabos (IMPLAN)",
     "summary_en": "Base de datos BCS 2050 — datos del portal Los Cabos architecture-and-urbanism table. Institution: IMPLAN Los Cabos, technical authority for PDU 2040. It does not by itself decree a land-use change."
+  },
+  "ev_acuiferos_dma": {
+    "label_en": "Aquifer DMA where municipality is on the sheet or DOF",
+    "summary_en": "CONAGUA — disponibilidad media anual de acuíferos (DOF 2023), NOM-011, hm³/year. DMA is a legal balance, not a gauging; a remainder does not offset another deficit. 0313 Todos Santos -2.964513 hm³/año (deficit; municipios ['La Paz']); 0314 El Pescadero 0.107682 hm³/año (disponible; municipios ['La Paz', 'Los Cabos']); 0317 Cabo San Lucas -24.06961 hm³/año (deficit; municipios ['Los Cabos']); 0318 Cabo Pulmo -2.286941 hm³/año (deficit; municipios ['Los Cabos']); 0319 San José del Cabo -12.493828 hm³/año (deficit; municipios ['Los Cabos']); 0320 Santiago 0.298386 hm³/año (disponible; municipios ['Los Cabos']); 0324 La Paz -13.488404 hm³/año (deficit; municipios ['La Paz']). 0302 Vizcaíno -0.497182 hm³/year is in the 9 Nov 2023 DOF but municipio_por_confirmar: not assigned to Mulegé. For 0324 the file warns that the 17 Aug 2023 DOF publishes −27.83 hm³ and is not averaged with this table."
+  },
+  "ev_escorrentia": {
+    "label_en": "Potential runoff (terrain model)",
+    "summary_en": "Modelo de terreno HydroSHEDS / HydroRIVERS: clipped HydroRIVERS, 2900 reaches and 16588.1 km; 4428 coastal outlets and 146 inland sinks. Route counts, not discharge and not an official flood map. By municipality (reaches / km): Mulegé 1251 / 7455.69; Comondú 730 / 4149.35; La Paz 643 / 3303.4; Loreto 203 / 879.09; Los Cabos 152 / 800.58."
+  },
+  "ev_historia_bcs": {
+    "label_en": "Administrative milestones already cited in the historical notes",
+    "summary_en": "Base de datos BCS 2050 — datos del portal, dates sourced to INEGI/DOF/CONANP; [UNVERIFIED] lines are not copied. BCS statehood: 8 Oct 1974. Los Cabos: Decree 181, 10 Apr 1980, seat San José del Cabo. Loreto re-established: Decree 872, 20 Aug 1992. Cabo Pulmo National Park: DOF 6 Jun 1995. El Vizcaíno Reserve: decree 30 Nov 1988. FONATUR CIPs are named without new room counts."
+  },
+  "ev_preguntas_estrategicas": {
+    "label_en": "Strategic questions already curated",
+    "summary_en": "Base de datos BCS 2050 — datos del portal ids already curated; they pull the factor neighborhood and add no figures. sq-cabos-water-energy | sq-east-cape-edge | sq-la-paz-capital | sq-loreto-anp | sq-comondu-non-offset | sq-mulege-evidence-desert | sq-todos-santos-amenity | sq-carrying-capacity-metrics"
+  },
+  "ev_org_cabos_2024": {
+    "label_en": "Los Cabos org chart 2024–2027 (legible units)",
+    "summary_en": "Base de datos BCS 2050 — datos del portal, BOGE #14, 29 Feb 2024. OOMSAPAS: Ing. Ramón Edgardo Rubio Apodaca. IMPLAN: Arq. Beatriz González Gilbert. Urban Development: C. Roberto Flores Rivera. Ecology: C. Rosa Esther Natali Cruz Ocampo. Cadastre: C. Judith Díaz Espíndola. Mayor: Arq. Christian Agúndez Gómez. Municipal Public Works: the box says '[Nombre del titular]' — sin dato, not inferred."
+  },
+  "gap_org_obras_cabos": {
+    "label_en": "Gap: Los Cabos municipal public-works head",
+    "summary_en": "sin dato en corpus. On the 2024–2027 org chart, Municipal Public Works shows '[Nombre del titular]'. The name is not guessed."
+  },
+  "ev_orientacion_aerea": {
+    "label_en": "Aerial and map orientation (paths, not new layers)",
+    "summary_en": "Orientation paths only, not a new GIS layer. Base de datos BCS 2050 — datos del portal: stills_master at Base de datos BCS 2050 — inteligencia territorial (1000 stills in the index). Gallery: /maps/atlas-ciclones.jpg, /maps/poer-ugas-56.jpg, /maps/poer-politica-ambiental-ugas.jpg, /maps/pdu2040-carta-sintesis.jpg. Does not replace DMA, POER, or cadastre."
   }
 }

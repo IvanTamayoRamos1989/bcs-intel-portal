@@ -1,5 +1,5 @@
 {
-  "version_note": "Factor pack v1.9 (2026-11-02). Phase 5: dossiers, fiscal, cadastre gap, mesas by agency. No new blocked figures.",
+  "version_note": "Factor pack v1.10 (2026-11-02). Phase 6: aquifers, runoff, histories, strategic questions, Cabos organigrama. No invented DMA/MW/codes.",
   "relation_types": [
     {
       "id": "influences",
@@ -469,6 +469,69 @@
       "summary": "Base de datos BCS 2050 — datos del portal mesa arquitectura-urbanismo-los-cabos. Institución: IMPLAN Los Cabos, autoridad técnica del PDU 2040. No decreta por sí sola un cambio de uso de suelo.",
       "summary_en": "Base de datos BCS 2050 — datos del portal Los Cabos architecture-and-urbanism table. Institution: IMPLAN Los Cabos, technical authority for PDU 2040. It does not by itself decree a land-use change.",
       "evidence_path": "src/data/mesas_trabajo.json#arquitectura-urbanismo-los-cabos"
+    },
+    {
+      "id": "ev_acuiferos_dma",
+      "type": "Evidence",
+      "label": "DMA de acuíferos con municipio en ficha o DOF",
+      "label_en": "Aquifer DMA where municipality is on the sheet or DOF",
+      "summary": "CONAGUA — disponibilidad media anual de acuíferos (DOF 2023), NOM-011, hm³/año. DMA es balance legal, no aforo; un remanente no compensa otro déficit. 0313 Todos Santos -2.964513 hm³/año (deficit; municipios ['La Paz']); 0314 El Pescadero 0.107682 hm³/año (disponible; municipios ['La Paz', 'Los Cabos']); 0317 Cabo San Lucas -24.06961 hm³/año (deficit; municipios ['Los Cabos']); 0318 Cabo Pulmo -2.286941 hm³/año (deficit; municipios ['Los Cabos']); 0319 San José del Cabo -12.493828 hm³/año (deficit; municipios ['Los Cabos']); 0320 Santiago 0.298386 hm³/año (disponible; municipios ['Los Cabos']); 0324 La Paz -13.488404 hm³/año (deficit; municipios ['La Paz']). 0302 Vizcaíno -0.497182 hm³/año está en el DOF 9 nov 2023 pero municipio_por_confirmar: no se asigna a Mulegé. Para 0324 el archivo advierte que el Acuerdo DOF 17 ago 2023 publica −27.83 hm³ y no se promedia con la cifra de esta tabla.",
+      "summary_en": "CONAGUA — disponibilidad media anual de acuíferos (DOF 2023), NOM-011, hm³/year. DMA is a legal balance, not a gauging; a remainder does not offset another deficit. 0313 Todos Santos -2.964513 hm³/año (deficit; municipios ['La Paz']); 0314 El Pescadero 0.107682 hm³/año (disponible; municipios ['La Paz', 'Los Cabos']); 0317 Cabo San Lucas -24.06961 hm³/año (deficit; municipios ['Los Cabos']); 0318 Cabo Pulmo -2.286941 hm³/año (deficit; municipios ['Los Cabos']); 0319 San José del Cabo -12.493828 hm³/año (deficit; municipios ['Los Cabos']); 0320 Santiago 0.298386 hm³/año (disponible; municipios ['Los Cabos']); 0324 La Paz -13.488404 hm³/año (deficit; municipios ['La Paz']). 0302 Vizcaíno -0.497182 hm³/year is in the 9 Nov 2023 DOF but municipio_por_confirmar: not assigned to Mulegé. For 0324 the file warns that the 17 Aug 2023 DOF publishes −27.83 hm³ and is not averaged with this table.",
+      "evidence_path": "src/data/aquifers_bcs.json"
+    },
+    {
+      "id": "ev_escorrentia",
+      "type": "Evidence",
+      "label": "Escorrentía potencial (modelo de terreno)",
+      "label_en": "Potential runoff (terrain model)",
+      "summary": "Modelo de terreno HydroSHEDS / HydroRIVERS: HydroRIVERS recortado, 2900 tramos y 16588.1 km; 4428 salidas costeras y 146 sumideros interiores. Conteos de rutas, no caudales ni mapa oficial de inundación. Por municipio (tramos / km): Mulegé 1251 / 7455.69; Comondú 730 / 4149.35; La Paz 643 / 3303.4; Loreto 203 / 879.09; Los Cabos 152 / 800.58.",
+      "summary_en": "Modelo de terreno HydroSHEDS / HydroRIVERS: clipped HydroRIVERS, 2900 reaches and 16588.1 km; 4428 coastal outlets and 146 inland sinks. Route counts, not discharge and not an official flood map. By municipality (reaches / km): Mulegé 1251 / 7455.69; Comondú 730 / 4149.35; La Paz 643 / 3303.4; Loreto 203 / 879.09; Los Cabos 152 / 800.58.",
+      "evidence_path": "src/data/escorrentia.json"
+    },
+    {
+      "id": "ev_historia_bcs",
+      "type": "Evidence",
+      "label": "Hitos administrativos ya citados en las notas históricas",
+      "label_en": "Administrative milestones already cited in the historical notes",
+      "summary": "Base de datos BCS 2050 — datos del portal, fechas con fuente INEGI/DOF/CONANP; no se copian líneas [UNVERIFIED]. Estado de BCS: 8 oct 1974. Los Cabos: Decreto 181, 10 abr 1980, cabecera San José del Cabo. Loreto reerigido: Decreto 872, 20 ago 1992. Parque Nacional Cabo Pulmo: DOF 6 jun 1995. Reserva El Vizcaíno: decreto 30 nov 1988. FONATUR CIP Cabos y Loreto se mencionan sin cifras nuevas de cuartos.",
+      "summary_en": "Base de datos BCS 2050 — datos del portal, dates sourced to INEGI/DOF/CONANP; [UNVERIFIED] lines are not copied. BCS statehood: 8 Oct 1974. Los Cabos: Decree 181, 10 Apr 1980, seat San José del Cabo. Loreto re-established: Decree 872, 20 Aug 1992. Cabo Pulmo National Park: DOF 6 Jun 1995. El Vizcaíno Reserve: decree 30 Nov 1988. FONATUR CIPs are named without new room counts.",
+      "evidence_path": "src/data/histories.json"
+    },
+    {
+      "id": "ev_preguntas_estrategicas",
+      "type": "Evidence",
+      "label": "Preguntas estratégicas ya curadas",
+      "label_en": "Strategic questions already curated",
+      "summary": "Base de datos BCS 2050 — datos del portal. sq-cabos-water-energy: ¿Cuánto crecimiento turístico adicional cabe en Los Cabos si el agua desalada y el techo SIBCS no reescriben e | sq-east-cape-edge: ¿Debe East Cape tratarse como edge de conservación (Cabo Pulmo / ANP) frente al desborde de Cabos, o como exte | sq-la-paz-capital: ¿Cómo se asegura que La Paz permanezca como capital de servicios/gobernanza y no se convierta en un segundo Ca | sq-loreto-anp: ¿El crecimiento de Loreto debe subordinarse a techos ANP/POEL, con PTAR/acueducto como habilitador o demora? | sq-comondu-non-offset: ¿Puede el headroom agro/producción de Comondú compensar el déficit sur (Cabos), o eso es una falacia de cancel | sq-mulege-evidence-desert: ¿Qué evidencia mínima debe existir antes de usar Mulegé/norte como offset energético o de crecimiento estatal  | sq-todos-santos-amenity: ¿La migración de amenidad en Todos Santos–Pescadero diversifica BCS o densifica sin infraestructura a escala C | sq-carrying-capacity-metrics: ¿Qué métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar se necesitan para arbitrar IED vs. f",
+      "summary_en": "Base de datos BCS 2050 — datos del portal ids already curated; they pull the factor neighborhood and add no figures. sq-cabos-water-energy | sq-east-cape-edge | sq-la-paz-capital | sq-loreto-anp | sq-comondu-non-offset | sq-mulege-evidence-desert | sq-todos-santos-amenity | sq-carrying-capacity-metrics",
+      "evidence_path": "src/data/strategic_questions.json"
+    },
+    {
+      "id": "ev_org_cabos_2024",
+      "type": "Evidence",
+      "label": "Organigrama Los Cabos 2024–2027 (unidades legibles)",
+      "label_en": "Los Cabos org chart 2024–2027 (legible units)",
+      "summary": "Base de datos BCS 2050 — datos del portal, BOGE #14, 29 feb 2024. OOMSAPAS: Ing. Ramón Edgardo Rubio Apodaca. IMPLAN: Arq. Beatriz González Gilbert. Dirección General de Desarrollo Urbano: C. Roberto Flores Rivera. Ecología y Medio Ambiente: C. Rosa Esther Natali Cruz Ocampo. Catastro: C. Judith Díaz Espíndola. Presidencia Municipal: Arq. Christian Agúndez Gómez. Dirección Municipal de Obras Públicas: el recuadro dice '[Nombre del titular]' — sin dato, no se infiere.",
+      "summary_en": "Base de datos BCS 2050 — datos del portal, BOGE #14, 29 Feb 2024. OOMSAPAS: Ing. Ramón Edgardo Rubio Apodaca. IMPLAN: Arq. Beatriz González Gilbert. Urban Development: C. Roberto Flores Rivera. Ecology: C. Rosa Esther Natali Cruz Ocampo. Cadastre: C. Judith Díaz Espíndola. Mayor: Arq. Christian Agúndez Gómez. Municipal Public Works: the box says '[Nombre del titular]' — sin dato, not inferred.",
+      "evidence_path": "src/data/los_cabos_organigrama.json"
+    },
+    {
+      "id": "gap_org_obras_cabos",
+      "type": "Constraint",
+      "label": "Brecha: titular de Obras Públicas municipales Los Cabos",
+      "label_en": "Gap: Los Cabos municipal public-works head",
+      "summary": "sin dato en corpus. En el organigrama 2024–2027 la Dirección Municipal de Obras Públicas trae el marcador '[Nombre del titular]'. No se adivina el nombre.",
+      "summary_en": "sin dato en corpus. On the 2024–2027 org chart, Municipal Public Works shows '[Nombre del titular]'. The name is not guessed.",
+      "evidence_path": "src/data/los_cabos_organigrama.json#obras-publicas"
+    },
+    {
+      "id": "ev_orientacion_aerea",
+      "type": "Evidence",
+      "label": "Orientación aérea y mapas (rutas, no capas nuevas)",
+      "label_en": "Aerial and map orientation (paths, not new layers)",
+      "summary": "Solo rutas de orientación, no una capa SIG nueva. Base de datos BCS 2050 — datos del portal: stills_master en Base de datos BCS 2050 — inteligencia territorial (1000 stills en el índice). Galería: /maps/atlas-ciclones.jpg, /maps/poer-ugas-56.jpg, /maps/poer-politica-ambiental-ugas.jpg, /maps/pdu2040-carta-sintesis.jpg. No sustituye DMA, POER ni catastro.",
+      "summary_en": "Orientation paths only, not a new GIS layer. Base de datos BCS 2050 — datos del portal: stills_master at Base de datos BCS 2050 — inteligencia territorial (1000 stills in the index). Gallery: /maps/atlas-ciclones.jpg, /maps/poer-ugas-56.jpg, /maps/poer-politica-ambiental-ugas.jpg, /maps/pdu2040-carta-sintesis.jpg. Does not replace DMA, POER, or cadastre.",
+      "evidence_path": "src/data/earth_studio.json"
     }
   ],
   "edges": [
@@ -1780,6 +1843,176 @@
     {
       "from": "ev_mesa_urbanismo",
       "to": "actor_implan_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "rc_acuifero_0313",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "rc_acuifero_0317",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "rc_acuifero_0318",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "rc_acuifero_0319",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "rc_acuifero_0320",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_acuiferos_dma",
+      "to": "rc_acuifero_0324",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_escorrentia",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_escorrentia",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_escorrentia",
+      "to": "terr_la_paz",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_escorrentia",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_escorrentia",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_escorrentia",
+      "to": "terr_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_historia_bcs",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_historia_bcs",
+      "to": "dq_oportunidades",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_historia_bcs",
+      "to": "terr_los_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_historia_bcs",
+      "to": "terr_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_preguntas_estrategicas",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_preguntas_estrategicas",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_preguntas_estrategicas",
+      "to": "dq_oportunidades",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_preguntas_estrategicas",
+      "to": "dq_pack_east_cape",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_preguntas_estrategicas",
+      "to": "dq_pack_loreto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_preguntas_estrategicas",
+      "to": "dq_pack_mulege",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_preguntas_estrategicas",
+      "to": "terr_comondu",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_org_cabos_2024",
+      "to": "dq_viabilidad_proyecto",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_org_cabos_2024",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_org_cabos_2024",
+      "to": "actor_oomsapas_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_org_cabos_2024",
+      "to": "actor_implan_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_org_cabos_2024",
+      "to": "actor_ayunt_cabos",
+      "predicate": "influences"
+    },
+    {
+      "from": "gap_org_obras_cabos",
+      "to": "dq_cambio_uso_suelo",
+      "predicate": "risks"
+    },
+    {
+      "from": "gap_org_obras_cabos",
+      "to": "ev_org_cabos_2024",
+      "predicate": "constrains"
+    },
+    {
+      "from": "ev_orientacion_aerea",
+      "to": "dq_riesgos_principales",
+      "predicate": "influences"
+    },
+    {
+      "from": "ev_orientacion_aerea",
+      "to": "dq_cambio_uso_suelo",
       "predicate": "influences"
     }
   ]
