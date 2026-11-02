@@ -44,6 +44,33 @@ const CASES = [
     needIds: ['gap_parque_industrial', 'rc_sibcs'],
     needTypes: ['Constraint', 'ResourceCapacity'],
   },
+  {
+    q: '¿Qué dice el POER sobre el cambio de uso de suelo y las políticas AS, PR, PT y RT?',
+    kind: 'landuse',
+    needIds: ['dq_cambio_uso_suelo', 'inst_pa_aprovechamiento', 'inst_pa_preservacion', 'inst_pa_proteccion', 'inst_pa_restauracion', 'gap_politica_uga_leyenda'],
+    needTypes: ['Instrument', 'Constraint'],
+    glossary: true,
+  },
+  {
+    q: '¿Es viable un desarrollo en East Cape frente a Cabo Pulmo?',
+    kind: 'viability',
+    needIds: ['dq_pack_east_cape', 'rc_acuifero_0318', 'terr_anp_cabo_pulmo', 'gap_east_cape_instrumento', 'gap_east_cape_carga'],
+    needTypes: ['ResourceCapacity', 'Territory', 'Constraint'],
+  },
+  {
+    q: '¿Cuáles son los riesgos principales en Loreto?',
+    kind: 'risk',
+    needIds: ['dq_pack_loreto', 'proj_fed_agu_005', 'gap_loreto_dma', 'gap_psdu_loreto_gazette', 'terr_anp_loreto', 'inst_poel_loreto'],
+    needTypes: ['Project', 'Constraint', 'Territory', 'Instrument'],
+  },
+  {
+    q: 'Riesgos principales y oportunidades en Mulegé y el Vizcaíno',
+    kind: 'opportunity',
+    also: 'risk',
+    needIds: ['dq_pack_mulege', 'terr_anp_vizcaino', 'gap_pdu_mulege', 'gap_mulege_agua_energia'],
+    needTypes: ['Territory', 'Constraint'],
+    newsPlace: 'mulege_north',
+  },
 ];
 
 const NEGATIVES = [
@@ -59,7 +86,7 @@ function fail(msg) {
 
 for (const c of CASES) {
   const intents = expandQuery(c.q);
-  if (!intents.isFactorIntent || !intents.factorKinds.includes(c.kind)) {
+  if (!intents.isFactorIntent || !intents.factorKinds.includes(c.kind) || (c.also && !intents.factorKinds.includes(c.also))) {
     fail(`${c.q} → kinds=${intents.factorKinds.join('+') || '(none)'}`);
     continue;
   }
@@ -78,6 +105,18 @@ for (const c of CASES) {
   if (missingTypes.length) fail(`${c.q} missing types: ${missingTypes.join(', ')}`);
   if (forbidden.length) fail(`${c.q} place leak: ${forbidden.join(', ')}`);
   if (ids.length < 6) fail(`${c.q} ontology bundle too small (${ids.length})`);
+  if (c.glossary) {
+    const resto = ev.find((x) => (x.onto_id || '') === 'inst_pa_restauracion');
+    const text = `${resto?.sum_es || ''} ${resto?.sum_en || ''}`;
+    if (!/restauraci[oó]n/i.test(text)) fail(`${c.q} restoration policy name missing`);
+    if (/RT\s*=\s*Restaur|RT significa|sigla RT equivale/i.test(text)) fail(`${c.q} invented RT equivalence`);
+    if (!ev.some((x) => x.type === 'library')) fail(`${c.q} expected a library reference chunk`);
+  }
+  if (c.newsPlace) {
+    const news = ev.filter((x) => x.type === 'news' && x.outlet && x.date && (x.place_ids || []).includes(c.newsPlace));
+    console.log(`   news=${news.map((n) => `${n.outlet} ${n.date}`).join(' | ') || '(none)'}`);
+    if (!news.length) fail(`${c.q} expected sourced news for ${c.newsPlace}`);
+  }
 }
 
 for (const q of NEGATIVES) {
