@@ -2,11 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { STUDIO_UNITS } from '../../lib/studio';
 ---
-<BaseLayout hidePageHead={false}
+<BaseLayout hidePageHead={true}
   title="Municipios"
   titleEn="Places"
-  description="Hub municipal y estatal BCS 2050 — una página por municipio + síntesis estatal"
-  descriptionEn="BCS 2050 municipal and state hub — one page per municipality + statewide synthesis"
+  description="Elige un municipio para conocer sus datos, sus recursos y sus planes."
+  descriptionEn="Choose a municipality to discover its data, resources and plans."
   wide={true}
 >
   <nav class="su-crumb" aria-label="Breadcrumb">
@@ -16,17 +16,17 @@ import { STUDIO_UNITS } from '../../lib/studio';
   </nav>
   <div class="st-hero">
     <h1>
-      <span data-lang-es>Lugares del territorio</span>
-      <span data-lang-en hidden>Places of the territory</span>
+      <span data-lang-es>Conoce tu municipio</span>
+      <span data-lang-en hidden>Know your municipality</span>
     </h1>
     <p class="lead">
       <span data-lang-es>
-        Seis unidades claras: el estado y cinco municipios. Cada página reúne vocación,
-        demanda–oferta, preguntas estratégicas y señales — sin repetir cinco módulos sueltos.
+        Elige un lugar para conocer sus actividades, recursos, necesidades y planes.
+        También puedes consultar una visión de todo Baja California Sur.
       </span>
       <span data-lang-en hidden>
-        Six clear units: the state and five municipalities. Each page gathers vocation,
-        demand–supply, strategic questions and signals — without five separate modules.
+        Choose a place to learn about its activities, resources, needs and plans.
+        You can also explore an overview of Baja California Sur.
       </span>
     </p>
     <p>

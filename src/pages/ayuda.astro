@@ -12,26 +12,15 @@ import { THEMES } from '../lib/ia';
 >
   <div class="pt-help">
     <section class="pt-theme">
-      <h2><span data-lang-es>Cómo moverse</span><span data-lang-en hidden>Getting around</span></h2>
-      <ul class="pt-help-list">
-        <li><a href="/explorar"><strong><span data-lang-es>Explorar</span><span data-lang-en hidden>Explore</span></strong></a> — <span data-lang-es>el atlas 3D: capas sobre el relieve de todo el estado.</span><span data-lang-en hidden>the 3D atlas: layers on the terrain of the whole state.</span></li>
-        <li><a href="/temas"><strong><span data-lang-es>Temas</span><span data-lang-en hidden>Topics</span></strong></a> — <span data-lang-es>todas las páginas agrupadas en siete temas:</span><span data-lang-en hidden>every page grouped into seven topics:</span>
-          {THEMES.map((t, i) => (<>{i > 0 ? ', ' : ' '}<a href={`/temas#${t.id}`}><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></a></>))}.
-        </li>
-        <li><a href="/temas#documentos"><strong><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></strong></a> — <span data-lang-es>catálogo de datos, biblioteca, archivo de planes y mapa de relaciones.</span><span data-lang-en hidden>data catalog, library, plans archive and relationship map.</span></li>
-        <li><a href="/noticias"><strong><span data-lang-es>Noticias</span><span data-lang-en hidden>News</span></strong></a> — <span data-lang-es>notas recientes sobre Baja California Sur.</span><span data-lang-en hidden>recent news about Baja California Sur.</span></li>
-        <li><a href="/rutas"><strong><span data-lang-es>Mapa del sitio</span><span data-lang-en hidden>Site map</span></strong></a> — <span data-lang-es>la lista completa. La ruta de decisión es</span><span data-lang-en hidden>the full list. The decision path is</span>
-          {' '}<a href="/aprendizaje"><span data-lang-es>Aprendizaje</span><span data-lang-en hidden>Learning</span></a>,
-          {' '}<a href="/vistas"><span data-lang-es>Vistas</span><span data-lang-en hidden>Views</span></a>,
-          {' '}<a href="/gemelo"><span data-lang-es>Gemelo</span><span data-lang-en hidden>Twin</span></a>,
-          {' '}<a href="/coordinacion"><span data-lang-es>Coordinación</span><span data-lang-en hidden>Coordination</span></a>,
-          {' '}<a href="/metas"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
-          {' '}<span data-lang-es>y</span><span data-lang-en hidden>and</span>
-          {' '}<a href="/foro"><span data-lang-es>Foro</span><span data-lang-en hidden>Guest sheet</span></a>.
-        </li>
-        <li><strong><span data-lang-es>Buscador</span><span data-lang-en hidden>Search</span></strong> — <span data-lang-es>en la barra superior; busca páginas y archivos por nombre. Atajo: Ctrl+K (⌘K en Mac).</span><span data-lang-en hidden>in the top bar; finds pages and files by name. Shortcut: Ctrl+K (⌘K on Mac).</span></li>
-        <li><strong><span data-lang-es>Ruta</span><span data-lang-en hidden>Breadcrumbs</span></strong> — <span data-lang-es>debajo de la barra superior verás dónde estás (Inicio › Tema › Página); cada paso es un enlace para volver.</span><span data-lang-en hidden>under the top bar you see where you are (Home › Topic › Page); each step links back.</span></li>
-      </ul>
+      <h2><span data-lang-es>Empieza por una tarea</span><span data-lang-en hidden>Start with a task</span></h2>
+      <ol class="pt-help-list">
+        <li><a href="/inicio/"><span data-lang-es>Inicio</span><span data-lang-en hidden>Home</span></a> — <span data-lang-es>escribe una pregunta o elige uno de los cuatro accesos principales.</span><span data-lang-en hidden>ask a question or choose one of the four main tasks.</span></li>
+        <li><a href="/studio/"><span data-lang-es>Tu municipio</span><span data-lang-en hidden>Your municipality</span></a> — <span data-lang-es>reúne los datos y los temas de cada lugar.</span><span data-lang-en hidden>brings together data and topics for each place.</span></li>
+        <li><a href="/explorar/"><span data-lang-es>Mapa</span><span data-lang-en hidden>Map</span></a> — <span data-lang-es>busca un lugar y activa los temas que te interesen. Una capa es información que se coloca sobre el mapa.</span><span data-lang-en hidden>find a place and turn on topics of interest. A layer is information displayed on the map.</span></li>
+        <li><a href="/finanzas-publicas/"><span data-lang-es>Presupuesto</span><span data-lang-en hidden>Budget</span></a> — <span data-lang-es>consulta los importes publicados y abre el informe original para conocer su periodo y alcance.</span><span data-lang-en hidden>view published amounts and open the source report for its period and scope.</span></li>
+        <li><a href="/catalogo/"><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></a> — <span data-lang-es>escribe una palabra, filtra por tema y abre un resultado.</span><span data-lang-en hidden>enter a keyword, filter by topic and open a result.</span></li>
+      </ol>
+      <p><span data-lang-es>Para profundizar, abre</span><span data-lang-en hidden>To go further, open</span> <a href="/temas/#especialistas"><span data-lang-es>las herramientas de análisis</span><span data-lang-en hidden>the analysis tools</span></a> <span data-lang-es>o la</span><span data-lang-en hidden>or the</span> <a href="/consulta/"><span data-lang-es>mesa de trabajo</span><span data-lang-en hidden>workspace</span></a>.</p>
     </section>
 
     <section class="pt-theme">

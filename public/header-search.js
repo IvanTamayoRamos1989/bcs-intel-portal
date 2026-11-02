@@ -25,6 +25,8 @@
     { href: '/foresights', es: 'Prospectiva', en: 'Foresights', blurb_es: 'Vocaciones de lugar · señales semanales BCS 2050', blurb_en: 'Place vocations · weekly BCS 2050 signals', boost: 45 },
     { href: '/crecimiento', es: 'Crecimiento: demanda y oferta', en: 'Growth: demand and supply', blurb_es: 'Presión frente a capacidad por vocación', blurb_en: 'Pressure vs capacity scorecard by vocation', boost: 44 },
     { href: '/inicio', es: 'Inicio', en: 'Home', blurb_es: 'Inicio del portal · temas y datos', blurb_en: 'Portal home · topics and data' },
+    { href: '/consulta', es: 'Mesa de trabajo', en: 'Workspace', blurb_es: 'Mapa, asistente y archivos juntos · herramientas avanzadas', blurb_en: 'Map, assistant and files together · advanced tools' },
+    { href: '/finanzas-publicas/', es: 'Presupuesto y gasto público', en: 'Public budget and spending', blurb_es: 'Presupuestos, cuentas públicas, informes y documentos oficiales', blurb_en: 'Budgets, public accounts, reports and official documents' },
     { href: '/explorar', es: 'Explorar · atlas 3D', en: 'Explore · 3D atlas', blurb_es: 'Atlas territorial 3D: capas, inventario y fuentes', blurb_en: '3D territorial atlas: layers, inventory and sources' },
     { href: '/catalogo', es: 'Catálogo de datos', en: 'Data catalog', blurb_es: 'Inventario y descargas · subir contribución', blurb_en: 'Inventory and Drive downloads · upload contribution' },
     { href: '/mapas', es: 'Mapas', en: 'Maps', blurb_es: 'Mapa interactivo GIS + galería por tema', blurb_en: 'Interactive GIS map + gallery by theme', boost: 50 },

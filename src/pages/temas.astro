@@ -5,8 +5,8 @@ import { THEMES, DOCS } from '../lib/ia';
 <BaseLayout
   title="Temas"
   titleEn="Topics"
-  description="Todo el portal, ordenado en siete temas y los documentos."
-  descriptionEn="The whole portal, in seven topics plus the documents."
+  description="Elige lo que quieres conocer. Abre cada tema para ver más opciones."
+  descriptionEn="Choose what you want to know. Open each topic for more options."
   section="Temas"
   sectionEn="Topics"
   wide={true}
@@ -24,7 +24,7 @@ import { THEMES, DOCS } from '../lib/ia';
         <h2><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></h2>
         <p><span data-lang-es>{t.d_es}</span><span data-lang-en hidden>{t.d_en}</span></p>
         <ul>
-          {t.items.map((i) => (
+          {t.items.slice(0, 1).map((i) => (
             <li>
               <a href={i.href}>
                 <span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span>
@@ -33,6 +33,10 @@ import { THEMES, DOCS } from '../lib/ia';
             </li>
           ))}
         </ul>
+        <details class="topic-more">
+          <summary data-aria-es={`Ver todas las opciones: ${t.es}`} data-aria-en={`See all options: ${t.en}`}><span data-lang-es>Ver todas las opciones de este tema</span><span data-lang-en hidden>See all options in this topic</span></summary>
+          <ul>{t.items.slice(1).map((i) => <li><a href={i.href}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span><small><span data-lang-es>{i.d_es}</span><span data-lang-en hidden>{i.d_en}</span></small></a></li>)}</ul>
+        </details>
       </section>
     ))}
     <section class="pt-theme" id="documentos">

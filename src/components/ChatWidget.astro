@@ -1169,12 +1169,13 @@ const { home = false, shell = false } = Astro.props;
   var DOCKABLE = document.body.classList.contains('has-chat-sidebar') && !CHAT_HOME;
   var DOCK_KEY = 'bcs_chat_docked';
   function dockPref() {
+    if (/^\/inicio\/?$/.test(location.pathname)) return false;
     try {
       var v = localStorage.getItem(DOCK_KEY);
       if (v === '1') return true;
       if (v === '0') return false;
     } catch (e) {}
-    return window.innerWidth >= 1100 || /^\/(inicio|chat)\/?$/.test(location.pathname);
+    return false;
   }
   function rememberDock(open) {
     if (!DOCKABLE || MQ.matches) return;
@@ -1204,7 +1205,7 @@ const { home = false, shell = false } = Astro.props;
       else backdrop.setAttribute('hidden', '');
     }
     if (panel) {
-      var hidePanel = MQ.matches && !open;
+      var hidePanel = (MQ.matches || DOCKABLE) && !open;
       panel.setAttribute('aria-hidden', hidePanel ? 'true' : 'false');
       if (hidePanel) panel.setAttribute('inert', '');
       else panel.removeAttribute('inert');
@@ -1250,7 +1251,7 @@ const { home = false, shell = false } = Astro.props;
     }, { passive: true });
   }
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && MQ.matches && root.getAttribute('data-open') === 'true') {
+    if (e.key === 'Escape' && (MQ.matches || DOCKABLE) && root.getAttribute('data-open') === 'true') {
       var cur = root.getAttribute('data-sheet');
       if (cur === 'full') setOpen(true, 'partial');
       else setOpen(false);

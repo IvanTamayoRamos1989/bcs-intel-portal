@@ -4,38 +4,37 @@ import folders from '../data/folders_summary.json';
 import engagement from '../data/engagement_catalog.json';
 
 const themes = Object.keys(folders.theme_counts || {}).sort();
+const themeLabels: Record<string, [string, string]> = {
+  agua:['Agua','Water'], ambiente:['Medio ambiente','Environment'], catalogo:['Índices y referencias','Indexes and references'],
+  conectividad:['Transporte y conexiones','Transport and connections'], data_lake:['Otras fuentes','Other sources'],
+  economia:['Economía','Economy'], energia:['Energía','Energy'], inteligencia_territorial:['Análisis del territorio','Territorial analysis'],
+  mapas:['Mapas','Maps'], ontologia:['Relaciones entre temas','Topic relationships'], planeacion:['Planes del territorio','Territorial plans'],
+  portal:['Información del portal','Portal information'], programa:['Programa de trabajo','Work programme'],
+  proyectos_federales:['Proyectos federales','Federal projects'], territorio:['Territorio y población','Territory and population'],
+};
 ---
 <BaseLayout
-  title="Catálogo de datos"
-  titleEn="Data catalog"
+  title="Documentos"
+  titleEn="Documents"
   description="Todos los archivos del proyecto: busca, filtra y ábrelos o descárgalos."
   descriptionEn="All project files: search, filter, and open or download them."
   wide={true}
 >
-  <p class="lead">
-    <span data-lang-es>
-      {(folders.total_files||0).toLocaleString("es-MX")} archivos ({folders.pdf_count} PDF). Escribe en el buscador o filtra por tema o grupo;
-      cada archivo se abre o descarga desde Google Drive (Ver / Descargar). Los PDF temáticos (INEGI, CONEVAL, planes…) están
-      ordenados por <strong>tema territorial</strong>; los grupos de trabajo agrupan los paquetes de actores. Al final puedes <a href="#contribuir">subir un archivo</a>.
-    </span>
-    <span data-lang-en hidden>
-      {(folders.total_files||0).toLocaleString("en-US")} files ({folders.pdf_count} PDFs). Type in the search box or filter by theme or group;
-      every file opens or downloads from Google Drive (View / Download). Theme PDFs (INEGI, CONEVAL, plans…) are
-      sorted by <strong>territory theme</strong>; working groups bundle the stakeholder packs. At the bottom you can <a href="#contribuir">upload a file</a>.
-    </span>
-  </p>
-  <p>
-    <a href="/aprendizaje/#evidencia"><span data-lang-es>Evidencia externa</span><span data-lang-en hidden>External evidence</span></a>
-    {' · '}
-    <a href="/vistas/"><span data-lang-es>Vistas guardadas</span><span data-lang-en hidden>Saved views</span></a>
-    {' · '}
-    <a href="/metas/"><span data-lang-es>Preguntas abiertas</span><span data-lang-en hidden>Open questions</span></a>
-    <span data-lang-es> (Aqueduct, MapBiomas, Resource Watch, DataMéxico, Data Commons, Digital Twin Victoria, ClimateView, Open SDG) no forma parte de este catálogo y no aporta cifras de BCS.</span>
-    <span data-lang-en hidden> (Aqueduct, MapBiomas, Resource Watch, DataMéxico, Data Commons, Digital Twin Victoria, ClimateView, Open SDG) is not part of this catalog and does not add BCS figures.</span>
-  </p>
-
+  <p class="lead"><span data-lang-es>Busca por palabra o tema. Cada resultado incluye un resumen y un enlace para abrir el documento original.</span><span data-lang-en hidden>Search by keyword or topic. Each result includes a summary and a link to open the original document.</span></p>
+  <p><a href="/finanzas-publicas/"><span data-lang-es>Presupuestos e informes de gasto →</span><span data-lang-en hidden>Budget and spending reports →</span></a> · <a href="/planes-archivo/"><span data-lang-es>Planes del territorio →</span><span data-lang-en hidden>Territorial plans →</span></a></p>
   <div class="catalog-toolbar">
     <input type="search" id="cat-q" data-i18n="searchPlaceholder" placeholder="Buscar por nombre, resumen, grupo…" aria-label="Buscar en el catálogo" />
+
+    <label>
+      <span data-i18n="filterTheme">Tema</span>
+      <select id="cat-theme">
+        <option value="">Todos</option>
+        {themes.map((t) => <option value={t} data-label-es={themeLabels[t]?.[0] || t} data-label-en={themeLabels[t]?.[1] || t}>{themeLabels[t]?.[0] || t}</option>)}
+      </select>
+    </label>
+
+  </div>
+  <details class="catalog-extra"><summary><span data-lang-es>Más filtros</span><span data-lang-en hidden>More filters</span></summary><div class="catalog-toolbar">
     <label>
       <span data-lang-es>Grupo</span><span data-lang-en hidden>Group</span>
       <select id="cat-eng">
@@ -48,23 +47,14 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
           </optgroup>
         ))}
       </select>
-    </label>
-    <label>
-      <span data-i18n="filterTheme">Tema</span>
-      <select id="cat-theme">
-        <option value="">Todos</option>
-        {themes.map((t) => <option value={t}>{t}</option>)}
-      </select>
-    </label>
-    <label>
-      <span data-lang-es>Drive</span><span data-lang-en hidden>Drive</span>
+    </label>    <label>
+      <span data-lang-es>Disponibilidad</span><span data-lang-en hidden>Availability</span>
       <select id="cat-drive">
         <option value="drive">En Drive</option>
         <option value="all">Todos</option>
         <option value="pending">Pendiente en Drive</option>
       </select>
-    </label>
-  </div>
+    </label></div></details>
   <details class="pt-group" id="cat-groups">
     <summary>
       <span data-lang-es>Explorar por grupo de trabajo</span>
@@ -103,7 +93,7 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
   </div>
     </div>
   </details>
-  <p class="catalog-meta" id="cat-meta">Cargando catálogo…</p>
+  <p class="catalog-meta" id="cat-meta" role="status" aria-live="polite">Cargando catálogo…</p>
 
   <div class="table-wrap">
     <table>
@@ -119,8 +109,11 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
       <tbody id="cat-body"></tbody>
     </table>
   </div>
-
-
+  <nav class="catalog-pagination" aria-label="Páginas de documentos">
+    <button type="button" id="cat-prev" disabled><span data-lang-es>← Anterior</span><span data-lang-en hidden>← Previous</span></button>
+    <span id="cat-page"></span>
+    <button type="button" id="cat-next" disabled><span data-lang-es>Siguiente →</span><span data-lang-en hidden>Next →</span></button>
+  </nav>
   <div class="form-card" id="contribuir" style="margin-top:2.5rem">
     <h2><span data-lang-es>Subir archivo</span><span data-lang-en hidden>Upload file</span></h2>
     <p class="meta">
@@ -158,10 +151,13 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
     .eng-group-title { font-size: 1.05rem; margin: 0.75rem 0 0.5rem; color: #34607d; }
   </style>
 
-  <script is:inline define:vars={{ engJson: engagement }}>
+  <script>
+    import engagement from '../data/engagement_catalog.json';
+    import exclusions from '../data/catalog_exclusions.json';
+    import { docTitle, cleanSourceText } from '../lib/sourceLabel';
     (function () {
       var rows = [];
-      var eng = engJson || { groups: [], exclude_from_downloads: {} };
+      var eng = engagement || { groups: [], exclude_from_downloads: {} };
       var subgroupIndex = {};
       (eng.groups || []).forEach(function (g) {
         (g.subgroups || []).forEach(function (s) {
@@ -179,7 +175,12 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
       var drv = document.getElementById('cat-drive');
       var body = document.getElementById('cat-body');
       var meta = document.getElementById('cat-meta');
-      var MAX = 500;
+      var MAX = 25;
+      var page = 0;
+      var filterKey = '';
+      var prev = document.getElementById('cat-prev');
+      var next = document.getElementById('cat-next');
+      var pageLabel = document.getElementById('cat-page');
 
       function esc(s) {
         return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -205,12 +206,13 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
           var lab = en ? og.getAttribute('data-label-en') : og.getAttribute('data-label-es');
           if (lab) og.label = lab;
         });
-        document.querySelectorAll('#cat-eng option[data-label-es]').forEach(function (op) {
+        document.querySelectorAll('#cat-eng option[data-label-es], #cat-theme option[data-label-es]').forEach(function (op) {
           var lab = en ? op.getAttribute('data-label-en') : op.getAttribute('data-label-es');
           if (lab) op.textContent = lab;
         });
       }
       function blockedDownload(r) {
+        if (Object.prototype.hasOwnProperty.call(exclusions.paths, r.p || '')) return true;
         var p = r.p || '';
         var f = r.f || '';
         if (exclFolders.indexOf(f) >= 0) return true;
@@ -324,6 +326,8 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
         var ee = engSel ? engSel.value : '';
         var tt = th.value;
         var dd = drv ? drv.value : 'drive';
+        var currentFilters = JSON.stringify([qq, ee, tt, dd]);
+        if (currentFilters !== filterKey) { page = 0; filterKey = currentFilters; }
         var sg = ee ? subgroupIndex[ee] : null;
         var out = [];
         for (var i = 0; i < rows.length; i++) {
@@ -350,10 +354,13 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
         }
         var withDrive = 0;
         for (var k = 0; k < out.length; k++) if (out[k].gid) withDrive++;
-        meta.textContent = out.length + ' / ' + rows.length +
-          ' · Drive: ' + withDrive +
-          (out.length > MAX ? ' (max ' + MAX + ')' : '');
-        var slice = out.slice(0, MAX);
+        var pages = Math.max(1, Math.ceil(out.length / MAX));
+        page = Math.min(page, pages - 1);
+        meta.textContent = out.length + (isEn() ? ' documents found' : ' documentos encontrados');
+        pageLabel.textContent = (isEn() ? 'Page ' : 'Página ') + (page + 1) + (isEn() ? ' of ' : ' de ') + pages;
+        prev.disabled = page === 0;
+        next.disabled = page >= pages - 1;
+        var slice = out.slice(page * MAX, (page + 1) * MAX);
         var html = '';
         for (var j = 0; j < slice.length; j++) {
           var x = slice[j];
@@ -372,12 +379,12 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
             driveCell = '<span class="badge-pending">' + (isEn() ? 'Pending on Drive' : 'Pendiente en Drive') + '</span>';
           }
           var sum = summaryFor(x);
-          html += '<tr><td>' + esc(x.n) + badge + '<br><small>' + fmtSize(x.s) + '</small></td>' +
-            '<td class="sum-cell">' + esc(sum || '—') + '</td>' +
+          html += '<tr><td>' + esc(docTitle(x.n)) + badge + '<br><small>' + fmtSize(x.s) + '</small></td>' +
+            '<td class="sum-cell">' + esc(cleanSourceText(sum) || '—') + '</td>' +
             '<td>' + esc(subgroupLabel(x)) + '</td><td>' + esc(x.e) + '</td>' +
             '<td>' + driveCell + '</td></tr>';
         }
-        body.innerHTML = html || '<tr><td colspan="5">—</td></tr>';
+        body.innerHTML = html || '<tr><td colspan="5">' + (isEn() ? 'No documents match. Try another word or clear the filters.' : 'No encontramos documentos. Prueba otra palabra o cambia los filtros.') + '</td></tr>';
       }
       function params() {
         var u = new URL(location.href);
@@ -406,6 +413,8 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
         }
       }
       params();
+      prev.addEventListener('click', function () { page--; render(); meta.scrollIntoView({block:'start'}); });
+      next.addEventListener('click', function () { page++; render(); meta.scrollIntoView({block:'start'}); });
       syncEngSelectLabels();
       qEl.addEventListener('input', render);
       if (engSel) engSel.addEventListener('change', render);
@@ -455,7 +464,7 @@ const themes = Object.keys(folders.theme_counts || {}).sort();
       fetch('/catalog_slim.json')
         .then(function(r){ return r.json(); })
         .then(function(data){ rows = data; updateEngCounts(); render(); })
-        .catch(function(e){ meta.textContent = 'Error cargando catálogo: ' + e; });
+        .catch(function(){ meta.textContent = isEn() ? 'The documents could not be loaded. Please reload this page to try again.' : 'No se pudieron cargar los documentos. Recarga esta página para intentarlo de nuevo.'; });
     })();
   </script>
 </BaseLayout>

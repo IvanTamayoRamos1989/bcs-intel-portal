@@ -1,0 +1,61 @@
+/* Shared reading rhythm; keep maps and the advanced workspace independent. */
+.portal-simple { --ink:#294554; --ink-2:#455e68; --muted:#566b72; --mineral:#285d72; --line:#d3dcd9; --panel:#fcfcf7; --ios-bg:#f5f4ed; --ios-text:#294554; --ios-accent:#285d72; background:#f5f4ed; color:#294554; }
+.portal-simple .pt-top { background:#f5f4ed; border-bottom:1px solid #d3dcd9; box-shadow:none; }
+.portal-simple .pt-brand strong { color:#294554; letter-spacing:.06em; }
+.portal-simple .pt-navbtn { min-height:44px; }
+.portal-simple .pt-navbtn[aria-current=page] { color:#285d72; background:#e4ebe5; }
+.portal-simple .ios-page-head { margin:1.1rem 0 1.5rem !important; }
+.portal-simple .ios-large-title { font-weight:550; font-size:clamp(1.8rem,3vw,2.7rem) !important; line-height:1.15 !important; }
+.portal-simple .ios-page-sub { font-size:1rem; line-height:1.65; max-width:65ch; margin-top:.65rem !important; }
+.portal-simple main p { line-height:1.65; }
+.portal-simple :is(a,button,input,select,summary):focus-visible { outline:3px solid #285d72; outline-offset:4px; }
+.portal-skip { position:fixed; top:8px; left:12px; z-index:200; padding:12px; background:#fff; color:#294554; transform:translateY(-160%); }
+.portal-skip:focus { transform:none; }
+.portal-home .pt-sub { display:none; }
+.portal-home main.ios-main { max-width:1280px; padding:0 5vw 3rem !important; }
+.welcome { padding:64px 0 32px; max-width:880px; }
+.welcome-kicker { font-size:11px; font-weight:700; letter-spacing:2px; margin:0 0 22px; }
+.welcome h1 { font-size:clamp(36px,4.6vw,66px); letter-spacing:-2px; line-height:1.08; font-weight:500; margin:0 0 24px; color:#294554; }
+.welcome h1 em { color:#62818b; font-style:normal; }
+.welcome-intro { font-size:18px; max-width:650px; color:#566b72; margin-bottom:28px; }
+.welcome-ask { background:#e9eeea; padding:22px; border:1px solid #d3dcd9; }
+.welcome-ask label { display:block; font-weight:600; margin-bottom:10px; }
+.welcome-ask>div { display:flex; gap:8px; }
+.welcome-ask input { flex:1; min-width:0; background:#fcfcf7; border:1px solid #bacbc5; padding:14px; border-radius:4px; font:inherit; font-size:16px; color:#294554; }
+.welcome-ask button { background:#285d72; color:#fff; padding:12px 22px; border:0; border-radius:4px; font:inherit; font-weight:600; cursor:pointer; min-height:48px; }
+.welcome-ask p { margin:10px 0 0; font-size:12px; color:#566b72; }
+.welcome-tasks { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid #c3d1cb; border-bottom:1px solid #c3d1cb; margin:8px 0 44px; }
+.welcome-task { position:relative; display:block; padding:26px 22px 38px; color:#294554; text-decoration:none; border-right:1px solid #c3d1cb; transition:background .15s; }
+.welcome-task:first-child { border-left:1px solid #c3d1cb; }
+.welcome-task:hover { background:#e9eeea; }
+.task-top { display:flex; justify-content:space-between; color:#62818b; font-size:13px; }
+.task-top span:last-child { font-size:24px; }
+.portal-simple .welcome-task h2 { font-size:20px; font-weight:550; letter-spacing:-.4px; line-height:1.3; margin:24px 0 10px !important; }
+.welcome-task p { font-size:14px; color:#566b72; }
+.task-arrow { position:absolute; right:20px; bottom:15px; }
+.welcome-places { display:grid; grid-template-columns:1fr 1.5fr; gap:35px; padding-bottom:35px; border-bottom:1px solid #d3dcd9; scroll-margin-top:100px; }
+.welcome-places h2,.welcome-topics h2 { font-weight:500; font-size:26px; letter-spacing:-.5px; }
+.welcome-places p { color:#566b72; font-size:14px; }
+.welcome-places .welcome-kicker { margin-bottom:10px; }
+.welcome-place-links { display:grid; grid-template-columns:1fr 1fr; gap:8px 24px; }
+.welcome-place-links a { display:flex; justify-content:space-between; align-items:center; min-height:52px; text-decoration:none; color:#294554; border-bottom:1px solid #c3d1cb; gap:12px; }
+.welcome-place-links a:hover { color:#285d72; background:#e9eeea; }
+.welcome-topics { padding:24px 0; }
+.welcome-topics>div,.welcome-more>div { display:flex; flex-wrap:wrap; gap:10px 18px; }
+.welcome-topics a { border:1px solid #bdcdc6; padding:10px 16px; border-radius:4px; color:#294554; text-decoration:none; min-height:44px; }
+.welcome-more { padding:22px; margin:16px 0; background:#e7ece5; border:1px solid #ced8cd; }
+.welcome-more summary { cursor:pointer; font-weight:600; min-height:28px; }
+.welcome-more p { color:#566b72; max-width:75ch; }
+.welcome-more a { display:inline-flex; min-height:44px; align-items:center; color:#285d72; }
+.portal-simple .pt-spec-note { font-size:14px; border-left:3px solid #9ab5a9; background:#e9eeea; }
+.portal-simple .topic-more { margin-top:14px; border-top:1px solid #d3dcd9; padding-top:8px; }
+.portal-simple .topic-more summary { cursor:pointer; padding:10px 0; font-size:14px; color:#285d72; }
+.portal-simple .catalog-extra { margin:12px 0; padding:12px 18px; border:1px solid #d3dcd9; background:#e9eeea; }
+.portal-simple .catalog-extra summary { cursor:pointer; min-height:32px; }
+.catalog-pagination { display:flex; align-items:center; justify-content:center; gap:16px; margin:24px 0; }
+.catalog-pagination button { min-height:44px; padding:10px 15px; background:#fcfcf7; color:#294554; border:1px solid #b8cbc9; border-radius:4px; font:inherit; cursor:pointer; }
+.catalog-pagination button:disabled { opacity:.45; cursor:default; }
+.catalog-pagination span { font-size:14px; }
+@media(max-width:1100px) { .welcome-tasks { grid-template-columns:repeat(2,minmax(0,1fr)); } .welcome-task:nth-child(3) { border-left:1px solid #c3d1cb; } .welcome-task:nth-child(-n+2) { border-bottom:1px solid #c3d1cb; } }
+@media(max-width:700px) { .welcome { padding-top:32px; } .welcome h1 { letter-spacing:-1px; } .welcome-intro { font-size:16px; } .welcome-ask { padding:16px; } .welcome-ask>div { flex-direction:column; } .welcome-task { padding:20px 14px 32px; } .portal-simple .welcome-task h2 { font-size:18px; margin-top:15px !important; } .welcome-task p { font-size:13px; } .welcome-places { grid-template-columns:1fr; gap:12px; } .welcome-place-links { gap:6px 16px; } .welcome-more { padding:18px; } }
+@media(prefers-reduced-motion:reduce) { .welcome-task { transition:none; } }

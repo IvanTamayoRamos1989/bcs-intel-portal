@@ -53,6 +53,7 @@ export const THEMES: IATheme[] = [
     d_en: 'Key figures, tourism, housing, public finance and projects.',
     items: [
       { href: '/resumen', es: 'Resumen', en: 'Summary', d_es: 'Tablero con las cifras clave', d_en: 'Dashboard of the main data' },
+      { href: '/finanzas-publicas/', es: 'Presupuesto y gasto público', en: 'Public budget and spending', d_es: 'Importes del presupuesto, informes oficiales y documentos', d_en: 'Budget amounts, official reports and documents' },
       { href: '/economia', es: 'Economía', en: 'Economy', d_es: 'PIB, inversión, empleo, turismo y minería', d_en: 'GDP, investment, jobs, tourism and mining' },
       { href: '/turismo', es: 'Turismo', en: 'Tourism', d_es: 'Atractivos turísticos y perfil de visitantes', d_en: 'Tourism assets and visitor profiles' },
       { href: '/inmobiliario', es: 'Inmobiliario', en: 'Real estate', d_es: 'Mercado residencial', d_en: 'Residential market' },
@@ -88,6 +89,7 @@ export const THEMES: IATheme[] = [
     d_en: 'More technical analysis tools: foresight, strategic questions, work sessions, growth and relationship map.',
     items: [
       { href: '/gemelo', es: 'Gemelo territorial', en: 'Territorial twin', d_es: 'Mapa, cifras y escenarios para comparar el territorio', d_en: 'Map, figures and scenarios to compare the territory' },
+      { href: '/consulta', es: 'Mesa de trabajo', en: 'Workspace', d_es: 'Mapa, asistente y archivos en la misma pantalla', d_en: 'Map, assistant and files on the same screen' },
       { href: '/coordinacion', es: 'Coordinación de proyectos', en: 'Project coordination', d_es: 'Institución, obra y sexenio del inventario federal', d_en: 'Institution, work and administration from the federal inventory' },
       { href: '/vistas', es: 'Vistas guardadas', en: 'Saved views', d_es: 'Enlaces con nombre para el mapa y el gemelo', d_en: 'Named links for the map and the twin' },
       { href: '/metas', es: 'Preguntas abiertas', en: 'Open questions', d_es: 'Preguntas, señales y brechas, sin porcentaje de avance', d_en: 'Questions, signals and gaps, with no progress percentage' },
@@ -124,6 +126,7 @@ export function breadcrumbs(path: string, pageEs: string, pageEn?: string): Crum
   const out: Crumb[] = [{ es: 'Inicio', en: 'Home', href: '/inicio' }];
   if (p === '/inicio' || p === '/') return [];
   if (p === '/temas') return [...out, { es: 'Temas', en: 'Topics' }];
+  if (p === '/catalogo') return [...out, { es: 'Documentos', en: 'Documents' }];
   const theme = THEMES.find((t) => t.items.some((i) => i.href === p));
   const doc = DOCS.find((i) => i.href === p);
   if (theme) {

@@ -25,6 +25,9 @@
     });
 
     // Explicit placeholder attribute (ChatWidget textarea)
+    document.querySelectorAll('[data-placeholder-es]').forEach(function (el) {
+      el.setAttribute('placeholder', el.getAttribute('data-placeholder-' + lang) || el.getAttribute('data-placeholder-es'));
+    });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
       var k = el.getAttribute('data-i18n-placeholder');
       if (dict && dict[k] != null) {

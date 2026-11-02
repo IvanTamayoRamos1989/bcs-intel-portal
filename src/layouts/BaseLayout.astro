@@ -1,8 +1,9 @@
 ---
 import '../styles/global.css';
 import '../styles/atlas-theme.css';
+import '../styles/portal-ux.css';
 import { ui } from '../i18n/ui';
-import { THEMES, DOCS, breadcrumbs, topSection } from '../lib/ia';
+import { breadcrumbs, topSection } from '../lib/ia';
 import ChatWidget from '../components/ChatWidget.astro';
 import PlaceStrip from '../components/PlaceStrip.astro';
 
@@ -37,6 +38,12 @@ const {
   landing = false,
   chatHome = false,
 } = Astro.props;
+const simpleNav = [
+  { href: '/inicio', es: 'Inicio', en: 'Home' },
+  { href: '/temas', es: 'Temas', en: 'Topics' },
+  { href: '/explorar', es: 'Mapa', en: 'Map' },
+  { href: '/catalogo', es: 'Documentos', en: 'Documents' },
+];
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const deployCtx = (typeof process !== 'undefined' && process.env && (process.env.CONTEXT || process.env.NETLIFY_CONTEXT)) || '';
 const isProdDeploy = deployCtx === 'production';
@@ -106,64 +113,27 @@ const pageSubEn = home
         <script is:inline define:vars={{ uiObj: ui }}>
           window.__BCS_UI__ = uiObj;
         </script>
-        <script is:inline src="/lang-toggle.js"></script>
+        <script is:inline src="/lang-toggle.js?v=20261102-ux"></script>
         <script is:inline src="/auth-gate.js"></script>
-        <script is:inline src="/header-search.js" defer></script>
+        <script is:inline src="/header-search.js?v=20261102-ux" defer></script>
         <script is:inline src="/place-strip.js" defer></script>
         <script is:inline src="/glossary.js" defer></script>
       </>
     )}
   </head>
-  <body class:list={[landing && 'landing-body', !landing && 'has-chat-sidebar', !landing && 'ios-shell', chatHome && 'chat-home']}>
+  <body class:list={[landing && 'landing-body', !landing && 'has-chat-sidebar', !landing && 'ios-shell portal-simple', home && 'portal-home', chatHome && 'chat-home']}>
     {landing ? (
       null
     ) : (
       <>
+        <a class="portal-skip" href="#contenido"><span data-lang-es>Ir al contenido</span><span data-lang-en hidden>Skip to content</span></a>
         <header class="pt-top site-header" id="site-header">
           <a class="pt-brand" href="/inicio" title="Inicio del portal">
             <strong>BCS2050</strong>
             <span><span data-lang-es>Portal territorial</span><span data-lang-en hidden>Territorial portal</span></span>
           </a>
           <nav class="pt-nav" aria-label="Navegación principal">
-            <a class="pt-navbtn" href="/explorar" aria-current={top === 'explorar' ? 'page' : undefined}>
-              <span data-lang-es>Explorar</span><span data-lang-en hidden>Explore</span>
-            </a>
-            <div class="pt-menu">
-              <button type="button" class:list={['pt-navbtn', top === 'temas' && 'is-current']} aria-expanded="false" aria-controls="pt-temas-panel" data-pt-menu>
-                <span data-lang-es>Temas</span><span data-lang-en hidden>Topics</span><span class="caret" aria-hidden="true">▾</span>
-              </button>
-              <div class="pt-mega" id="pt-temas-panel" hidden>
-                {THEMES.map((t) => (
-                  <section>
-                    <h3><a href={`/temas#${t.id}`}><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></a></h3>
-                    <ul>
-                      {t.items.map((i) => (
-                        <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>
-                      ))}
-                    </ul>
-                  </section>
-                ))}
-                <div class="pt-mega-foot">
-                  <a href="/temas"><span data-lang-es>Ver todos los temas con descripción →</span><span data-lang-en hidden>See all topics with descriptions →</span></a>
-                  <a href="/inicio"><span data-lang-es>Volver al inicio</span><span data-lang-en hidden>Back to home</span></a>
-                </div>
-              </div>
-            </div>
-            <div class="pt-menu">
-              <button type="button" class:list={['pt-navbtn', top === 'documentos' && 'is-current']} aria-expanded="false" aria-controls="pt-docs-panel" data-pt-menu>
-                <span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span><span class="caret" aria-hidden="true">▾</span>
-              </button>
-              <div class="pt-drop" id="pt-docs-panel" hidden>
-                <ul>
-                  {DOCS.map((i) => (
-                    <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span><small><span data-lang-es>{i.d_es}</span><span data-lang-en hidden>{i.d_en}</span></small></a></li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <a class="pt-navbtn" href="/noticias" aria-current={top === 'noticias' ? 'page' : undefined}>
-              <span data-lang-es>Noticias</span><span data-lang-en hidden>News</span>
-            </a>
+            {simpleNav.map((i) => <a class="pt-navbtn" href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a>)}
           </nav>
           <div class="bcs-header-search" data-bcs-header-search>
               <button type="button" class="bcs-hs-toggle" aria-label={ui.es.searchOpen} data-i18n-aria="searchOpen">
@@ -224,39 +194,10 @@ const pageSubEn = home
             <button type="button" class="pt-navbtn" id="nav-drawer-close"><span data-lang-es>Cerrar</span><span data-lang-en hidden>Close</span></button>
           </div>
           <ul>
-            <li><a href="/inicio" aria-current={top === 'inicio' ? 'page' : undefined}><span data-lang-es>Inicio</span><span data-lang-en hidden>Home</span></a></li>
-            <li><a href="/explorar"><span data-lang-es>Explorar (atlas 3D)</span><span data-lang-en hidden>Explore (3D atlas)</span></a></li>
-          </ul>
-          <div class="pt-drawer-sep"></div>
-          <ul>
-            {THEMES.map((t) => (
-              <li>
-                <details open={t.items.some((i) => isCur(i.href) || path.startsWith(i.href + '/')) ? true : undefined}>
-                  <summary><span data-lang-es>{t.es}</span><span data-lang-en hidden>{t.en}</span></summary>
-                  <ul>
-                    {t.items.map((i) => (
-                      <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>
-                    ))}
-                  </ul>
-                </details>
-              </li>
-            ))}
-            <li>
-              <details open={top === 'documentos' ? true : undefined}>
-                <summary><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></summary>
-                <ul>
-                  {DOCS.map((i) => (
-                    <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>
-                  ))}
-                </ul>
-              </details>
-            </li>
-          </ul>
-          <div class="pt-drawer-sep"></div>
-          <ul>
-            <li><a href="/temas" aria-current={path === '/temas' ? 'page' : undefined}><span data-lang-es>Todos los temas</span><span data-lang-en hidden>All topics</span></a></li>
-            <li><a href="/noticias" aria-current={top === 'noticias' ? 'page' : undefined}><span data-lang-es>Noticias</span><span data-lang-en hidden>News</span></a></li>
-            <li><a href="/ayuda" aria-current={top === 'ayuda' ? 'page' : undefined}><span data-lang-es>Ayuda y fuentes</span><span data-lang-en hidden>Help and sources</span></a></li>
+            {simpleNav.map((i) => <li><a href={i.href} aria-current={isCur(i.href) ? 'page' : undefined}><span data-lang-es>{i.es}</span><span data-lang-en hidden>{i.en}</span></a></li>)}
+            <li><a href="/finanzas-publicas/"><span data-lang-es>Presupuesto y gasto público</span><span data-lang-en hidden>Public budget and spending</span></a></li>
+            <li><a href="/consulta/"><span data-lang-es>Mesa de trabajo</span><span data-lang-en hidden>Workspace</span></a></li>
+            <li><a href="/ayuda/"><span data-lang-es>Cómo usar el portal</span><span data-lang-en hidden>How to use the portal</span></a></li>
           </ul>
           <div class="pt-drawer-tools">
             <button type="button" class="lang-toggle" data-lang-mirror aria-label={ui.es.toggleAria}><span data-lang-es>English</span><span data-lang-en hidden>Español</span></button>
@@ -282,14 +223,14 @@ const pageSubEn = home
             </ol>
           </nav>
         )}
-        <PlaceStrip />
+        {!home && <PlaceStrip />}
       </div>
     )}
 
-    <main class:list={[wide && 'wide', 'ios-main']}>
+    <main id="contenido" tabindex="-1" class:list={[wide && 'wide', 'ios-main']}>
       {specNote && (
-        <aside class="pt-spec-note" aria-label="Para especialistas">
-          <strong><span data-lang-es>Para especialistas · en pocas palabras</span><span data-lang-en hidden>For specialists · in short</span></strong>
+        <aside class="pt-spec-note" aria-label="Cómo usar esta página">
+          <strong><span data-lang-es>Qué puedes hacer aquí</span><span data-lang-en hidden>What you can do here</span></strong>
           <p><span data-lang-es>{specNote.es}</span><span data-lang-en hidden>{specNote.en}</span></p>
         </aside>
       )}
@@ -382,6 +323,8 @@ const pageSubEn = home
             drawer.hidden = !open;
             if (backdrop) backdrop.hidden = !open;
             hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open && closeBtn) closeBtn.focus();
+            else if (drawer.contains(document.activeElement)) hb.focus();
             document.body.classList.toggle('nav-drawer-open', open);
           }
           hb && hb.addEventListener('click', function () { setDrawer(drawer && drawer.hidden); });
@@ -389,6 +332,13 @@ const pageSubEn = home
           backdrop && backdrop.addEventListener('click', function () { setDrawer(false); });
           drawer && drawer.querySelectorAll('a').forEach(function (a) {
             a.addEventListener('click', function () { setDrawer(false); });
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab' || !drawer || drawer.hidden) return;
+            var items = Array.from(drawer.querySelectorAll('a, button')).filter(function (el) { return el.getClientRects().length; });
+            var first = items[0], last = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
           });
           // Drawer language button mirrors the top-bar ES|EN toggle
           var mirror = document.querySelector('[data-lang-mirror]');
