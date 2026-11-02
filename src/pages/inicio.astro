@@ -68,7 +68,23 @@ const stack = [
   { id: 'l3', layers: ['osm_transport_nodes', 'highway_nodes', 'focus_corridor_cabos_lapaz'] },
 ];
 const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
-const shellLayers = [...catalogLayers, ...extras];
+// INEGI Censo 2020 urban blocks, from the BCS2050 Foster GIS handover (built by scripts/build_manzanas_2020.py).
+const blockLayer = {
+  id: 'manzanas_2020',
+  url: '/gis/manzanas_2020.geojson',
+  type: 'polygon',
+  color: '#0083C4',
+  name_es: 'Manzanas urbanas · densidad 2020',
+  name_en: 'Urban blocks · 2020 density',
+  group: 'urban',
+  source_es: 'INEGI Censo 2020, manzanas urbanas',
+  source_en: 'INEGI Census 2020, urban blocks',
+  year_es: '2020',
+  year_en: '2020',
+  extrude: 'dens',
+  minzoom: 9,
+};
+const shellLayers = [...catalogLayers, ...extras, blockLayer];
 const layersById = Object.fromEntries(shellLayers.map((l) => [l.id, l]));
 for (const group of stack) {
   for (const id of group.layers) {
@@ -154,7 +170,8 @@ const shellModel = {
       <footer class="shell-dock" id="shell-dock">
         <div class="shell-dock-bar">
           <div class="shell-base" role="group" aria-label="Mapa base" data-aria-es="Mapa base" data-aria-en="Basemap">
-            <button type="button" data-base="streets" aria-pressed="true"><span data-lang-es>Calles</span><span data-lang-en hidden>Streets</span></button>
+            <button type="button" data-base="relief" aria-pressed="true"><span data-lang-es>Relieve</span><span data-lang-en hidden>Relief</span></button>
+            <button type="button" data-base="streets" aria-pressed="false"><span data-lang-es>Calles</span><span data-lang-en hidden>Streets</span></button>
             <button type="button" data-base="satellite" aria-pressed="false"><span data-lang-es>Satélite</span><span data-lang-en hidden>Satellite</span></button>
             <button type="button" id="shell-pitch" aria-pressed="true">
               <span data-lang-es>3D</span><span data-lang-en hidden>3D</span>
@@ -230,6 +247,16 @@ const shellModel = {
                     </li>
                   ))}
                 </ul>
+                <div class="shell-layer-group">
+                  <label>
+                    <input type="checkbox" data-layer="manzanas_2020" />
+                    <i class="shell-swatch" style="background:linear-gradient(90deg,#efe6cf,#7ec8e8,#0b3a56)"></i>
+                    <span>
+                      <span data-lang-es>Manzanas urbanas · densidad 2020</span><span data-lang-en hidden>Urban blocks · 2020 density</span>
+                      <small><span data-lang-es>INEGI Censo 2020 · 17,009 manzanas. La altura es habitantes por hectárea, no la altura de un edificio. Se ve al acercarse a una ciudad.</span><span data-lang-en hidden>INEGI Census 2020 · 17,009 blocks. Height is persons per hectare, not building height. Shows when you zoom into a town.</span></small>
+                    </span>
+                  </label>
+                </div>
                 <p class="shell-note"><span data-lang-es>La columna compara población 2020, INEGI. No es la altura del terreno ni de un inmueble.</span><span data-lang-en hidden>The column compares 2020 population, INEGI. It is not terrain height and not a building height.</span></p>
                 <p class="shell-gap-note"><span data-lang-es>BIM de edificios: próximo / sin datos.</span><span data-lang-en hidden>Building BIM: upcoming / no data.</span></p>
               </li>

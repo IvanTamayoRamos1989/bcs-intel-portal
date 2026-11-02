@@ -6,6 +6,8 @@ The twin today compares five municipalities. East Cape stays inside Los Cabos. T
 
 ## 1. AGEB polygons
 
+**Status (2026-11-02): urban blocks ingested.** INEGI Censo 2020 urban blocks (17,009, joined one to one by CVEGEO; 135 census rows without a polygon stay out) arrived in the BCS2050 Foster GIS handover of 2026-10-29. `scripts/build_manzanas_2020.py` turns them into `public/gis/manzanas_2020.geojson` (population, dwellings, persons per hectare, % dwellings with piped water inside). On the twin they rise by density from zoom 9. They cover urban blocks only (728,934 people, not the state total). The 2020 and 2025 AGEB frameworks are in the same handover and are not drawn yet.
+
 What to obtain
 
 - INEGI Marco Geoestadístico, integración urbana: AGEB and, if the question needs it, manzanas.

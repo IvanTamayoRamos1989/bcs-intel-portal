@@ -18,7 +18,7 @@
   var streetsLayer = null;
   var satLayer = null;
   var on = {};
-  var basemap = 'streets';
+  var basemap = 'relief';
   var muniGeo = null;
   var index = null;
   var mapReady = false;
@@ -160,6 +160,24 @@
   function featureLabel(p) {
     return p.name || p.name_es || p.NOM_LOC || p.NOM_NUC || p.NOMBRE_UGA || p.proyecto || p.ref || '';
   }
+  function openBlockFiche(p) {
+    var loc = lang() === 'en' ? 'en-US' : 'es-MX';
+    function n(v, d) { return v == null ? tx('Celda en blanco en el censo', 'Blank cell in the census') : Number(v).toLocaleString(loc, { maximumFractionDigits: d || 0 }); }
+    openFiche({
+      kind_es: 'Manzana urbana · Censo 2020', kind_en: 'Urban block · Census 2020',
+      title: (p.loc || '') + (p.mun && p.mun !== p.loc ? ' · ' + p.mun : ''),
+      rows: [
+        { es: 'Población 2020', en: 'Population 2020', value: n(p.pob) + (p.pob == null ? '' : tx(' habitantes', ' people')) },
+        { es: 'Viviendas', en: 'Dwellings', value: n(p.viv) },
+        { es: 'Densidad', en: 'Density', value: p.dens == null ? tx('Sin dato', 'No figure') : n(p.dens, 1) + tx(' hab/ha', ' people/ha') },
+        { es: 'Agua entubada dentro de la vivienda', en: 'Piped water inside the dwelling', value: p.agua == null ? tx('Celda en blanco en el censo', 'Blank cell in the census') : n(p.agua, 1) + tx(' % de viviendas habitadas', ' % of inhabited dwellings') },
+        { es: 'Superficie', en: 'Area', value: n(p.ha, 2) + ' ha' },
+        { es: 'Clave', en: 'Key', value: p.id },
+        { es: 'Fuente', en: 'Source', value: tx('INEGI, Censo de Población y Vivienda 2020. Manzanas urbanas; no cubre la población rural.', 'INEGI, Population and Housing Census 2020. Urban blocks; rural population is not covered.') },
+        { es: 'Lectura', en: 'Reading', value: tx('La altura compara habitantes por hectárea. No es la altura de un edificio. El servicio de agua es el registrado en 2020, no la disponibilidad actual.', 'Height compares people per hectare. It is not a building height. Water service is as recorded in 2020, not current availability.') },
+      ],
+    });
+  }
   function openFeatureFiche(feature, lngLat, meta, note) {
     var p = (feature && feature.properties) || {};
     var layerId = feature && feature.layer && feature.layer.id || '';
@@ -167,6 +185,7 @@
       if (p.name) openMuniFiche(p.name);
       return;
     }
+    if (layerId === 'cdt-ly-manzanas_2020') { openBlockFiche(p); return; }
     var title = featureLabel(p) || (meta ? (lang() === 'en' ? meta.name_en : meta.name_es) : '');
     if (!title) return;
     var rows = [];
@@ -413,11 +432,12 @@
       })[0];
       var box = boundsOf(feat);
       paintMuni(name);
-      if (box) flyBox(box);
+      // Open the fiche first so the frame can leave room for it.
       if (!quiet) {
         setStatus('Encuadre: ' + name + '.', 'Frame: ' + name + '.');
         openMuniFiche(name);
       }
+      if (box) flyBox(box);
     });
   }
   function markReady() {
@@ -477,7 +497,7 @@
   }
 
   function setBasemap(mode) {
-    basemap = mode === 'satellite' ? 'satellite' : 'streets';
+    basemap = mode === 'satellite' || mode === 'streets' ? mode : 'relief';
     var wrap = document.querySelector('.shell-map-wrap');
     if (wrap) wrap.classList.toggle('is-sat', basemap === 'satellite');
     document.body.classList.toggle('is-sat', basemap === 'satellite');
@@ -488,6 +508,7 @@
     if (leafletMap && streetsLayer && satLayer) {
       if (leafletMap.hasLayer(streetsLayer)) leafletMap.removeLayer(streetsLayer);
       if (leafletMap.hasLayer(satLayer)) leafletMap.removeLayer(satLayer);
+      // The flat fallback has no relief engine: Relieve uses the street tiles there.
       (basemap === 'satellite' ? satLayer : streetsLayer).addTo(leafletMap);
     }
   }
@@ -707,6 +728,16 @@
       bearing: pitched ? BEARING_ON : 0,
       exaggeration: TERRAIN_EX,
       onFeature: onMapFeature,
+      // Keep framed places clear of the fiche that floats over the map.
+      fitPadding: function (box) {
+        var f = document.getElementById('shell-fiche');
+        if (!f || f.hidden) return null;
+        var r = f.getBoundingClientRect();
+        if (!r.width || !r.height) return null;
+        if (r.left > box.left + box.width / 2) return { r: box.right - r.left + 24 };
+        if (r.top > box.top + box.height / 2) return { b: box.bottom - r.top + 24 };
+        return null;
+      },
     }).then(function (eng) {
       engine = eng;
       setBasemap(basemap);
@@ -954,7 +985,7 @@
   function readBoot() {
     var params = new URLSearchParams(location.search);
     var base = params.get('base');
-    if (base === 'satellite' || base === 'streets') basemap = base;
+    if (base === 'satellite' || base === 'streets' || base === 'relief') basemap = base;
     (model.defaults || ['osm_towns', 'osm_highways']).forEach(function (id) { if (byId[id]) on[id] = true; });
     var theme = params.get('theme') || params.get('tema');
     if (theme && themeById[theme]) {
@@ -974,6 +1005,9 @@
 
   document.querySelectorAll('[data-layer]').forEach(function (box) {
     box.addEventListener('change', function () {
+      if (box.checked && box.getAttribute('data-layer') === 'manzanas_2020' && engine && engine.getZoom && engine.getZoom() < 9) {
+        setStatus('Las manzanas aparecen al acercarse a una ciudad. Toca un municipio o haz zoom.', 'Blocks appear when you zoom into a town. Tap a municipality or zoom in.');
+      }
       showLayer(box.getAttribute('data-layer'), box.checked);
       syncThemePressed();
       syncStackToggles();

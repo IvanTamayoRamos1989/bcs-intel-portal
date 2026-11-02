@@ -125,7 +125,7 @@
       encoding: 'terrarium',
       tileSize: 256,
       minzoom: 5,
-      maxzoom: 12,
+      maxzoom: 14,
       bounds: [-118, 20, -106, 31.5],
     };
     return {
@@ -160,10 +160,12 @@
         { id: 'land', type: 'fill', source: 'land', paint: { 'fill-color': '#e7e2d4', 'fill-opacity': 0.9 } },
         { id: 'bcs-land', type: 'fill', source: 'bcs', paint: { 'fill-color': '#ece6d4' } },
         { id: 'hills', type: 'hillshade', source: 'shade', paint: {
-          'hillshade-illumination-direction': 315,
-          'hillshade-exaggeration': 0.55,
-          'hillshade-shadow-color': '#6d848c',
-          'hillshade-highlight-color': '#fbf8ee',
+          // Several light directions show ridges on every side of the sierra (MapLibre >= 5.5).
+          'hillshade-method': 'multidirectional',
+          'hillshade-illumination-direction': [270, 315, 0, 45],
+          'hillshade-exaggeration': ['interpolate', ['linear'], ['zoom'], 6, 0.8, 10, 0.5],
+          'hillshade-shadow-color': ['#6d848c', '#6d848c', '#7f9298', '#7f9298'],
+          'hillshade-highlight-color': ['#fbf8ee', '#fbf8ee', '#f6f1e3', '#f6f1e3'],
           'hillshade-accent-color': '#8ea0a4',
         } },
         { id: 'bcs-mask', type: 'fill', source: 'mask', paint: { 'fill-color': '#c5d5de', 'fill-opacity': 1 } },
@@ -186,6 +188,8 @@
         { id: 'coast', type: 'line', source: 'bcs', paint: { 'line-color': '#5f7f8c', 'line-width': 1.1 } },
       ],
       terrain: { source: 'dem', exaggeration: 1.35 },
+      // Low afternoon sun from the south-west: volumes read with a lit face and a shaded face.
+      light: { anchor: 'map', color: '#fff7ea', intensity: 0.42, position: [1.3, 225, 38] },
       sky: {
         'sky-color': '#d7e5ea',
         'horizon-color': '#f3f0e6',
@@ -193,8 +197,154 @@
         'fog-ground-blend': 0.55,
         'horizon-fog-blend': 0.65,
         'sky-horizon-blend': 0.65,
+        'atmosphere-blend': ['interpolate', ['linear'], ['zoom'], 5, 0.85, 10, 0.5, 13, 0.15],
       },
     };
+  }
+
+  var POP = ['to-number', ['coalesce', ['get', 'population'], ['get', 'pobtot'], 0], 0];
+  // Circle size follows the population the file carries. Features without one stay small.
+  function circleR(k) {
+    return ['interpolate', ['linear'], ['zoom'],
+      6, ['*', k, ['+', 2.4, ['*', 0.013, ['sqrt', POP]]]],
+      10, ['*', k, ['+', 4, ['*', 0.022, ['sqrt', POP]]]]];
+  }
+  var CIRCLE_R = circleR(1);
+  var ROAD = ['coalesce', ['get', 'highway'], ''];
+  function lineW(k) {
+    return ['interpolate', ['exponential', 1.5], ['zoom'],
+      6, ['*', k, ['match', ROAD, 'motorway', 1.9, 'trunk', 1.6, 'primary', 1.1, 'secondary', 0.6, 1.2]],
+      11, ['*', k, ['match', ROAD, 'motorway', 5, 'trunk', 4.2, 'primary', 3, 'secondary', 1.8, 2.6]]];
+  }
+  var LINE_W = lineW(1);
+  var CASE_W = ['interpolate', ['exponential', 1.5], ['zoom'],
+    6, ['match', ROAD, 'motorway', 3.2, 'trunk', 2.8, 'primary', 2.1, 'secondary', 0, 0],
+    11, ['match', ROAD, 'motorway', 7.5, 'trunk', 6.6, 'primary', 5, 'secondary', 3.4, 0]];
+
+  function injectCss() {
+    if (document.getElementById('cdt3d-css')) return;
+    var st = document.createElement('style');
+    st.id = 'cdt3d-css';
+    st.textContent = [
+      '.cdt-place{pointer-events:none;font:600 12px/1.15 "DM Sans","Helvetica Neue",Arial,sans-serif;color:#1f3440;letter-spacing:.01em;white-space:nowrap;',
+      'text-shadow:0 0 2px #f6f3ea,0 0 3px #f6f3ea,0 0 6px rgba(246,243,234,.9);padding-left:9px}',
+      '.cdt-place.is-hid{visibility:hidden}',
+      '.cdt-orbit button[aria-pressed="true"]{background:#0083C4;color:#fff}',
+      '.cdt-orbit button{color:#1f3440;display:flex;align-items:center;justify-content:center}',
+      '.cdt-orbit button:hover{background:#eef5f9}',
+      '.cdt-orbit button[aria-pressed="true"]:hover{background:#006BA3}',
+      '.cdt-hint{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);max-width:min(560px,90%);z-index:3;background:rgba(251,248,240,.96);',
+      'color:#1f3440;font:400 13px/1.45 "DM Sans","Helvetica Neue",Arial,sans-serif;padding:10px 14px;border-radius:10px;box-shadow:0 4px 18px rgba(31,52,64,.18)}',
+      '.cdt-hint b{display:block;font-weight:700;margin-bottom:2px}',
+      '.cdt-hint.is-touch{top:64px;bottom:auto;left:12px;right:64px;transform:none;max-width:none;font-size:12.5px}',
+      '.cdt-hint button{margin-left:8px;font:inherit;font-weight:700;color:#006BA3;background:none;border:1px solid #0083C4;border-radius:999px;padding:1px 10px;cursor:pointer}',
+      '.cdt-place.t1{font-size:14px;font-weight:700;letter-spacing:.02em}',
+      '.cdt-place.t3{font-weight:500;font-size:11px;color:#3c5260}',
+      '.maplibregl-map[data-ztier="1"] .cdt-place.t3,.maplibregl-map[data-base="streets"] .cdt-place{visibility:hidden}',
+      '.maplibregl-map[data-sat="1"] .cdt-place{color:#fff;text-shadow:0 0 3px rgba(0,0,0,.85),0 0 6px rgba(0,0,0,.6)}',
+    ].join('');
+    document.head.appendChild(st);
+  }
+
+  // Orbit tools: turn and tilt buttons, a slow auto-orbit, and a mode where a one-finger / left drag orbits.
+  function orbitControl(map) {
+    var wrap = document.createElement('div');
+    wrap.className = 'maplibregl-ctrl maplibregl-ctrl-group cdt-orbit';
+    var lang = function () { return (document.documentElement.lang || 'es').slice(0, 2) === 'en' ? 'en' : 'es'; };
+    var spin = null;
+    var orbitMode = false;
+    function btn(icon, es, en, fn) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.innerHTML = icon;
+      b.title = lang() === 'en' ? en : es;
+      b.setAttribute('aria-label', b.title);
+      b.addEventListener('click', function (e) { e.stopPropagation(); fn(b); });
+      wrap.appendChild(b);
+      return b;
+    }
+    function svg(path) { return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + path + '</svg>'; }
+    function stopSpin() {
+      if (!spin) return;
+      cancelAnimationFrame(spin);
+      spin = null;
+      spinBtn.setAttribute('aria-pressed', 'false');
+    }
+    btn(svg('<path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/>'), 'Girar a la izquierda', 'Orbit left', function () {
+      stopSpin(); map.easeTo({ bearing: map.getBearing() - 45, duration: 700 });
+    });
+    btn(svg('<path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/>'), 'Girar a la derecha', 'Orbit right', function () {
+      stopSpin(); map.easeTo({ bearing: map.getBearing() + 45, duration: 700 });
+    });
+    btn(svg('<path d="M4 17l8-8 8 8"/>'), 'Inclinar más', 'Tilt up', function () {
+      map.easeTo({ pitch: Math.min(map.getMaxPitch(), map.getPitch() + 15), duration: 500 });
+    });
+    btn(svg('<path d="M4 8l8 8 8-8"/>'), 'Inclinar menos', 'Tilt down', function () {
+      map.easeTo({ pitch: Math.max(0, map.getPitch() - 15), duration: 500 });
+    });
+    var spinBtn = btn(svg('<circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 0 1 9 9"/><path d="M12 21a9 9 0 0 1-9-9"/>'), 'Órbita automática', 'Auto-orbit', function (b) {
+      if (spin) { stopSpin(); return; }
+      b.setAttribute('aria-pressed', 'true');
+      if (map.getPitch() < 35) map.easeTo({ pitch: 55, duration: 600 });
+      var last = performance.now();
+      (function step(t) {
+        var dt = Math.min(64, t - last); last = t;
+        map.setBearing(map.getBearing() + dt * 0.006);
+        spin = requestAnimationFrame(step);
+      })(last);
+    });
+    spinBtn.setAttribute('aria-pressed', 'false');
+    var modeBtn = btn(svg('<path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/>'), 'Arrastrar para orbitar (activar o desactivar)', 'Drag to orbit (toggle)', function (b) {
+      orbitMode = !orbitMode;
+      b.setAttribute('aria-pressed', orbitMode ? 'true' : 'false');
+      if (orbitMode) map.dragPan.disable(); else map.dragPan.enable();
+      map.getCanvas().style.cursor = orbitMode ? 'grab' : '';
+    });
+    modeBtn.setAttribute('aria-pressed', 'false');
+    // Drag-to-orbit: horizontal turns, vertical tilts, around the centre of the view.
+    var drag = null;
+    function down(x, y) { if (!orbitMode) return; stopSpin(); drag = { x: x, y: y, b: map.getBearing(), p: map.getPitch(), moved: false }; map.getCanvas().style.cursor = 'grabbing'; }
+    function move(x, y) {
+      if (!drag) return;
+      if (Math.abs(x - drag.x) + Math.abs(y - drag.y) > 4) drag.moved = true;
+      map.jumpTo({ bearing: drag.b - (x - drag.x) * 0.35, pitch: Math.max(0, Math.min(map.getMaxPitch(), drag.p - (y - drag.y) * 0.25)) });
+    }
+    function up() { if (!drag) return; if (drag.moved) map.__orbitDragAt = Date.now(); drag = null; map.getCanvas().style.cursor = orbitMode ? 'grab' : ''; }
+    var cv = map.getCanvasContainer();
+    cv.addEventListener('mousedown', function (e) { if (e.button === 0) down(e.clientX, e.clientY); });
+    window.addEventListener('mousemove', function (e) { move(e.clientX, e.clientY); });
+    window.addEventListener('mouseup', up);
+    cv.addEventListener('touchstart', function (e) { if (e.touches.length === 1) down(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+    cv.addEventListener('touchmove', function (e) { if (e.touches.length === 1) move(e.touches[0].clientX, e.touches[0].clientY); else up(); }, { passive: true });
+    cv.addEventListener('touchend', up);
+    // Any manual interaction stops the auto-orbit.
+    ['mousedown', 'wheel', 'touchstart'].forEach(function (ev) { cv.addEventListener(ev, stopSpin, { passive: true }); });
+    return {
+      onAdd: function () { return wrap; },
+      onRemove: function () { stopSpin(); if (wrap.parentNode) wrap.parentNode.removeChild(wrap); },
+    };
+  }
+
+  function navHint(map) {
+    var key = 'cdt3d-hint-v1';
+    try { if (localStorage.getItem(key)) return; } catch (e) {}
+    var en = (document.documentElement.lang || 'es').slice(0, 2) === 'en';
+    var el = document.createElement('div');
+    el.className = 'cdt-hint';
+    var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    if (touch) el.classList.add('is-touch');
+    el.innerHTML = touch
+      ? (en
+        ? '<b>Move around in 3D</b> One finger to pan · two fingers to zoom and turn · drag two fingers up or down to tilt. <button type="button">Got it</button>'
+        : '<b>Moverse en 3D</b> Un dedo para desplazar · dos dedos para acercar y girar · arrastra dos dedos arriba o abajo para inclinar. <button type="button">Entendido</button>')
+      : en
+      ? '<b>Move around in 3D</b> Drag to pan · right-drag or Ctrl+drag to orbit · two fingers to turn and tilt · double-click to zoom in. <button type="button">Got it</button>'
+      : '<b>Moverse en 3D</b> Arrastra para desplazar · clic derecho o Ctrl+arrastrar para orbitar · dos dedos para girar e inclinar · doble clic para acercar. <button type="button">Entendido</button>';
+    map.getContainer().appendChild(el);
+    function close() { el.remove(); try { localStorage.setItem(key, '1'); } catch (e) {} }
+    el.querySelector('button').addEventListener('click', close);
+    map.once('rotatestart', close);
+    map.once('pitchstart', function () { setTimeout(close, 1200); });
   }
 
   function matchExpr(colors, prop, fallback) {
@@ -214,7 +364,8 @@
     var exaggeration = opts.exaggeration != null ? opts.exaggeration : 1.35;
     return loadBase().then(function (base) {
       var stateBounds = base && base.bounds ? base.bounds : [[STATE[0], STATE[1]], [STATE[2], STATE[3]]];
-      var pad = 0.45;
+      // Room to pull back: a tight box forces the zoom up and cuts Los Cabos off when the view is tilted.
+      var pad = 2.2;
       var map = new maplibregl.Map({
         container: opts.container,
         style: styleSpec(base),
@@ -222,9 +373,13 @@
         fitBoundsOptions: { padding: 24, pitch: pitch0, bearing: bearing0 },
         pitch: pitch0,
         bearing: bearing0,
-        maxPitch: 70,
+        maxPitch: 82,
         minZoom: 6.15,
-        maxZoom: 13,
+        maxZoom: 17,
+        // Sharp on high-density screens, smooth volume edges.
+        pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+        canvasContextAttributes: { antialias: true },
+        fadeDuration: 180,
         maxBounds: [[stateBounds[0][0] - pad, stateBounds[0][1] - pad], [stateBounds[1][0] + pad, stateBounds[1][1] + pad]],
         maxBoundsViscosity: 0.85,
         attributionControl: true,
@@ -232,21 +387,79 @@
         touchPitch: !reduced,
         cooperativeGestures: false,
       });
-      if (opts.tools !== false) map.addControl(new maplibregl.NavigationControl({ visualizePitch: true, showCompass: true }), 'top-right');
+      if (opts.tools !== false) {
+        map.addControl(new maplibregl.NavigationControl({ visualizePitch: true, showCompass: true }), 'top-right');
+        if (!reduced) map.addControl(orbitControl(map), 'top-right');
+      }
       var stateBox = (base && base.bounds)
         ? [base.bounds[0][0], base.bounds[0][1], base.bounds[1][0], base.bounds[1][1]]
         : STATE;
       var cache = {};
-      function fitBox(b) {
-        var box = b && b.length === 4 ? b : stateBox;
-        map.resize();
-        map.fitBounds([[box[0], box[1]], [box[2], box[3]]], {
-          padding: 22,
-          pitch: map.getPitch(),
-          bearing: reduced ? 0 : map.getBearing(),
-          duration: reduced ? 0 : 650,
-          maxZoom: 10,
+      var stateRing = [];
+      (function () {
+        var g = base && base.boundary && base.boundary.features && base.boundary.features[0] && base.boundary.features[0].geometry;
+        var polys = !g ? [] : g.type === 'MultiPolygon' ? g.coordinates : [g.coordinates];
+        polys.forEach(function (poly) {
+          var ring = poly && poly[0];
+          if (!ring || ring.length < 40) return; // islands do not set the frame
+          var step = Math.max(1, Math.floor(ring.length / 220));
+          for (var i = 0; i < ring.length; i += step) stateRing.push(ring[i]);
         });
+      })();
+      function boxRing(b) {
+        var pts = [];
+        for (var i = 0; i <= 4; i++) {
+          var fx = b[0] + (b[2] - b[0]) * i / 4;
+          var fy = b[1] + (b[3] - b[1]) * i / 4;
+          pts.push([fx, b[1]], [fx, b[3]], [b[0], fy], [b[2], fy]);
+        }
+        return pts;
+      }
+      // Frame what is drawn, tilted: project the outline, then correct zoom and centre until it fills the view.
+      function frame(pts, maxZ) {
+        var el = map.getContainer();
+        var W = el.clientWidth;
+        var H = el.clientHeight;
+        // Room for the page chrome that floats over the map (title pill, zoom buttons, attribution).
+        var pad = { l: 32, r: 64, t: 58, b: 40 };
+        if (opts.fitPadding) {
+          try {
+            var extra = opts.fitPadding(el.getBoundingClientRect()) || {};
+            ['l', 'r', 't', 'b'].forEach(function (k) { if (extra[k] > pad[k]) pad[k] = extra[k]; });
+          } catch (e) {}
+        }
+        if (pad.l + pad.r > W * 0.7) pad.l = pad.r = W * 0.15;
+        if (pad.t + pad.b > H * 0.7) pad.t = pad.b = H * 0.15;
+        var bearing = reduced ? 0 : map.getBearing();
+        var pitch = map.getPitch();
+        var prev = { center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: pitch };
+        var b0 = pts.reduce(function (a, c) { return [Math.min(a[0], c[0]), Math.min(a[1], c[1]), Math.max(a[2], c[0]), Math.max(a[3], c[1])]; }, [180, 90, -180, -90]);
+        var cam = map.cameraForBounds([[b0[0], b0[1]], [b0[2], b0[3]]], { padding: 24, bearing: bearing });
+        if (!cam) return;
+        var minZ = map.getMinZoom();
+        var z = cam.zoom;
+        var center = cam.center;
+        for (var it = 0; it < 4; it++) {
+          map.jumpTo({ center: center, zoom: z, bearing: bearing, pitch: pitch });
+          var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+          pts.forEach(function (c) {
+            var q = map.project(c);
+            if (q.x < x0) x0 = q.x; if (q.x > x1) x1 = q.x;
+            if (q.y < y0) y0 = q.y; if (q.y > y1) y1 = q.y;
+          });
+          var sw = (W - pad.l - pad.r) / Math.max(1, x1 - x0);
+          var sh = (H - pad.t - pad.b) / Math.max(1, y1 - y0);
+          var mid = map.unproject([(x0 + x1) / 2 + (pad.r - pad.l) / 2, (y0 + y1) / 2 + (pad.b - pad.t) / 2]);
+          center = [mid.lng, mid.lat];
+          z = Math.max(minZ, Math.min(maxZ, z + Math.log2(Math.min(sw, sh)) * 0.85));
+        }
+        map.jumpTo(prev);
+        map.easeTo({ center: center, zoom: z, bearing: bearing, pitch: pitch, duration: reduced ? 0 : 650 });
+      }
+      function fitBox(b) {
+        map.resize();
+        if (b && b.length === 4) frame(boxRing(b), 10);
+        else frame(stateRing.length ? stateRing : boxRing(stateBox), 10);
       }
       var muniBase = (base && base.municipalities) || { type: 'FeatureCollection', features: [] };
       var lastHeights = {};
@@ -364,11 +577,33 @@
         if (map.getLayer(lid)) return lid;
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
+        if (meta.extrude) {
+          // Blocks rise by a published figure (meta.extrude). A blank cell stays low and grey: it is not zero.
+          var v = ['get', meta.extrude];
+          var known = ['!=', v, null];
+          map.addLayer({
+            id: lid, type: 'fill-extrusion', source: src, minzoom: meta.minzoom || 9,
+            paint: {
+              'fill-extrusion-color': ['case', known,
+                ['interpolate', ['linear'], v, 0, '#efe6cf', 25, '#d9e9f2', 100, '#7ec8e8', 300, '#0083C4', 1000, '#0b3a56'],
+                '#cfc8b8'],
+              'fill-extrusion-height': ['case', known,
+                ['interpolate', ['linear'], v, 0, 4, 50, 45, 200, 140, 600, 260, 2000, 320],
+                3],
+              'fill-extrusion-base': 0,
+              'fill-extrusion-opacity': 0.9,
+              'fill-extrusion-vertical-gradient': true,
+            },
+          });
+          map.on('mouseenter', lid, function () { map.getCanvas().style.cursor = 'pointer'; });
+          map.on('mouseleave', lid, function () { map.getCanvas().style.cursor = ''; });
+          return lid;
+        }
         if (point) {
           map.addLayer({
             id: lid, type: 'circle', source: src,
             paint: {
-              'circle-radius': 5.5,
+              'circle-radius': CIRCLE_R,
               'circle-color': meta.color || '#0083C4',
               'circle-stroke-width': 1,
               'circle-stroke-color': '#ffffff',
@@ -377,9 +612,14 @@
           });
         } else if (line) {
           map.addLayer({
+            id: lid + '-case', type: 'line', source: src,
+            layout: { 'line-join': 'round', 'line-cap': 'round' },
+            paint: { 'line-color': '#fbf8f0', 'line-width': CASE_W, 'line-opacity': 0.85 },
+          });
+          map.addLayer({
             id: lid, type: 'line', source: src,
             layout: { 'line-join': 'round', 'line-cap': 'round' },
-            paint: { 'line-color': meta.color || '#0083C4', 'line-width': 2.2, 'line-opacity': 0.95 },
+            paint: { 'line-color': meta.color || '#0083C4', 'line-width': LINE_W, 'line-opacity': 0.92 },
           });
         } else {
           map.addLayer({
@@ -407,6 +647,7 @@
         var lid = 'cdt-ly-' + id;
         if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', 'none');
+        if (map.getLayer(lid + '-case')) map.setLayoutProperty(lid + '-case', 'visibility', 'none');
       }
       function tagPoer(geo) {
         if (!geo || !geo.features) return geo;
@@ -425,14 +666,16 @@
         var vis = mode === 'off' ? 'none' : 'visible';
         map.setLayoutProperty(lid, 'visibility', vis);
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', vis);
+        if (map.getLayer(lid + '-case')) map.setLayoutProperty(lid + '-case', 'visibility', vis);
+        if (meta.extrude) return;
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
         if (point) {
-          map.setPaintProperty(lid, 'circle-radius', 6);
+          map.setPaintProperty(lid, 'circle-radius', mode === 'compare' ? circleR(1.25) : CIRCLE_R);
           map.setPaintProperty(lid, 'circle-stroke-width', mode === 'compare' ? 3 : 1.4);
           map.setPaintProperty(lid, 'circle-stroke-color', mode === 'compare' ? '#0b3a56' : '#ffffff');
         } else if (line) {
-          map.setPaintProperty(lid, 'line-width', mode === 'compare' ? 3.4 : 2.2);
+          map.setPaintProperty(lid, 'line-width', mode === 'compare' ? lineW(1.5) : LINE_W);
         } else if (id === 'poer_ugas') {
           var poerColor = ['match', ['get', 'politica'], 'AS', '#2d6a4f', 'PT', '#6b3fa0', 'PR', '#d4a017', 'RT', '#c0392b', '#8d99ae'];
           map.setPaintProperty(lid, 'fill-color', poerColor);
@@ -496,11 +739,15 @@
       }
       var marker = null;
       var reliefOn = true;
+      var basemapMode = 'relief';
       function syncHills() {
         if (!map.getLayer('hills')) return;
         var sat = map.getLayer('basemap-sat') && map.getLayoutProperty('basemap-sat', 'visibility') === 'visible';
         map.setLayoutProperty('hills', 'visibility', reliefOn ? 'visible' : 'none');
-        map.setPaintProperty('hills', 'hillshade-exaggeration', sat ? 0.5 : 0.9);
+        map.setPaintProperty('hills', 'hillshade-exaggeration', sat
+          ? ['interpolate', ['linear'], ['zoom'], 6, 0.45, 10, 0.3]
+          : ['interpolate', ['linear'], ['zoom'], 6, 0.9, 10, 0.55]);
+        if (map.getLayer('cdt-tint')) map.setPaintProperty('cdt-tint', 'color-relief-opacity', sat ? 0 : basemapMode === 'streets' ? 0.25 : 0.85);
       }
       function setTerrain(on, ex) {
         reliefOn = !!on;
@@ -559,6 +806,10 @@
         if (map.getLayer('basemap-osm')) map.setLayoutProperty('basemap-osm', 'visibility', streets ? 'visible' : 'none');
         if (map.getLayer('land')) map.setPaintProperty('land', 'fill-opacity', sat ? 0 : streets ? 0.16 : 0.9);
         if (map.getLayer('bcs-land')) map.setPaintProperty('bcs-land', 'fill-opacity', sat ? 0.04 : streets ? 0.18 : 1);
+        map.getContainer().setAttribute('data-sat', sat ? '1' : '0');
+        // Street tiles carry their own names and colours: no tint, no second set of labels.
+        map.getContainer().setAttribute('data-base', sat ? 'satellite' : streets ? 'streets' : 'relief');
+        basemapMode = mode;
         syncHills();
       }
       function mark(lng, lat, label) {
@@ -570,6 +821,8 @@
         marker = new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat([lng, lat]).addTo(map);
       }
       map.on('click', function (e) {
+        // An orbit drag ends with a mouseup: it is not a click on the map.
+        if (map.__orbitDragAt && Date.now() - map.__orbitDragAt < 400) return;
         var layers = featureLayers();
         var feats = layers.length ? map.queryRenderedFeatures(e.point, { layers: layers }) : [];
         if (opts.onFeature) {
@@ -584,6 +837,70 @@
       });
       map.on('mouseenter', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'cdt-muni-fill', function () { map.getCanvas().style.cursor = ''; });
+      function addTint() {
+        // Hypsometric tint from the same DEM (MapLibre >= 5.6). Sea level was flattened to 0 m.
+        try {
+          if (map.getLayer('cdt-tint')) return;
+          if (!map.getSource('tint')) map.addSource('tint', Object.assign({}, styleSpec(null).sources.dem));
+          map.addLayer({
+            id: 'cdt-tint', type: 'color-relief', source: 'tint',
+            paint: {
+              'color-relief-opacity': 0.85,
+              'color-relief-color': ['interpolate', ['linear'], ['elevation'],
+                0, 'rgba(236,230,212,0)', 40, '#ece5d1', 250, '#e3d8bc', 600, '#d6c5a0',
+                1100, '#c3ab84', 1700, '#ad9270', 2200, '#987e62'],
+            },
+          }, 'hills');
+        } catch (e) { /* older engine: hillshade alone */ }
+      }
+      var zTier = 0;
+      function syncTier() {
+        var z = map.getZoom();
+        var tier = z < 8 ? 1 : 2;
+        if (tier === zTier) return;
+        zTier = tier;
+        map.getContainer().setAttribute('data-ztier', String(tier));
+      }
+      var placeEls = [];
+      // Larger places first: a name that would overlap one already drawn waits for more zoom.
+      function declutter() {
+        var box = map.getContainer().getBoundingClientRect();
+        var taken = [];
+        placeEls.forEach(function (el) {
+          el.classList.remove('is-hid');
+          var r = el.getBoundingClientRect();
+          if (!r.width) return;
+          var out = r.left < box.left || r.right > box.right || r.top < box.top || r.bottom > box.bottom;
+          var hit = taken.some(function (q) { return r.left < q.right + 4 && r.right > q.left - 4 && r.top < q.bottom + 2 && r.bottom > q.top - 2; });
+          if (out || hit) el.classList.add('is-hid');
+          else taken.push(r);
+        });
+      }
+      function addPlaces() {
+        if (opts.places === false) return;
+        injectCss();
+        syncTier();
+        map.on('zoom', syncTier);
+        fetch('/gis/osm_towns.geojson').then(function (r) { return r.ok ? r.json() : null; }).then(function (geo) {
+          if (!geo || removed) return;
+          var rows = (geo.features || []).map(function (f) {
+            var p = f.properties || {};
+            return { name: p.name, pop: Number(String(p.population || '').replace(/[^0-9]/g, '')) || 0, c: f.geometry && f.geometry.coordinates };
+          }).filter(function (r) { return r.name && r.pop > 0 && r.c; });
+          rows.sort(function (a, b) { return b.pop - a.pop; });
+          rows.slice(0, 18).forEach(function (r) {
+            var el = document.createElement('div');
+            el.className = 'cdt-place ' + (r.pop >= 100000 ? 't1' : r.pop >= 8000 ? 't2' : 't3');
+            el.textContent = r.name.replace(/^Villa Alberto Andrés Alvarado Arámburo \((.+)\)$/, '$1');
+            el.setAttribute('aria-hidden', 'true');
+            new maplibregl.Marker({ element: el, anchor: 'left' }).setLngLat(r.c).addTo(map);
+            placeEls.push(el);
+          });
+          declutter();
+          map.on('moveend', declutter);
+          map.on('zoomend', declutter);
+        }).catch(function () {});
+      }
       var removed = false;
       return new Promise(function (resolve, reject) {
         var settled = false;
@@ -591,7 +908,13 @@
           if (settled) return;
           settled = true;
           bindTools();
+          addTint();
+          addPlaces();
+          injectCss();
+          if (opts.tools !== false && !reduced) navHint(map);
+          syncHills();
           if (exaggeration !== 1.35) map.setTerrain({ source: 'dem', exaggeration: exaggeration });
+          fitBox(null);
           if (!base || !base.municipalities) {
             fetch('/gis/osm_municipalities.geojson').then(function (r) { return r.json(); }).then(function (geo) {
               muniBase = geo;
@@ -622,6 +945,7 @@
               var b = map.getBounds();
               return [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
             },
+            getZoom: function () { return map.getZoom(); },
             readCamera: function () {
               var c = map.getCenter();
               return { lng: c.lng, lat: c.lat, zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
