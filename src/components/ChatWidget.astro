@@ -1066,6 +1066,21 @@ const { home = false, shell = false } = Astro.props;
   body.shell-app #bcs-chat .shell-chat-lead { margin: 0; color: #3c5163; font-size: .84rem; line-height: 1.4; }
   body.shell-app #bcs-chat .bcs-chat-sugg { display: flex; flex-direction: column; }
   body.shell-app #bcs-chat .bcs-sugg-th { display: none; }
+  @media (max-width: 900px) {
+    body.shell-app #bcs-chat .bcs-chat-form textarea {
+      font-size: 16px;
+      min-height: 44px;
+    }
+    body.shell-app #bcs-chat .bcs-chat-send,
+    body.shell-app #bcs-chat .bcs-chat-mic,
+    body.shell-app #bcs-chat .bcs-chat-speak,
+    body.shell-app #bcs-chat .bcs-chat-sugg-btn {
+      min-height: 44px;
+    }
+    body.shell-app #bcs-chat .bcs-chat-msgs { overflow-x: hidden; }
+    body.shell-app #bcs-chat .bcs-ps-chip { min-height: 44px; }
+    body.shell-app #bcs-chat .bcs-chat-bubble { overflow-wrap: anywhere; }
+  }
 </style>
 
 <script is:inline src="/js/bcs-chat-render.js"></script>

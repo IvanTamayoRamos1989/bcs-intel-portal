@@ -209,23 +209,99 @@ const layersById = Object.fromEntries(shellModel.layers.map((l) => [l.id, l]));
       }
       .maplibregl-ctrl-top-right { top: .4rem; }
       @media (max-width: 900px) {
-        body.shell-app { display: flex; flex-direction: column; }
-        .shell { display: block; flex: 1; height: auto; min-height: 0; }
+        html, body.shell-app {
+          height: var(--shell-vvh, 100dvh);
+          max-width: 100%;
+          overflow: hidden;
+        }
+        body.shell-app {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: var(--shell-vvt, 0px);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding-top: env(safe-area-inset-top, 0px);
+          touch-action: manipulation;
+        }
+        body.shell-fold-chat .shell,
+        body.shell-fold-files .shell,
+        body.shell-fold-chat.shell-fold-files .shell {
+          display: block;
+          grid-template-columns: none;
+        }
+        body.shell-fold-chat .shell-chat,
+        body.shell-fold-files .shell-files { visibility: visible; overflow: hidden; }
+        .shell { display: block; flex: 1; height: auto; min-height: 0; width: 100%; max-width: 100%; overflow: hidden; }
         .shell-split { display: none; }
-        .shell-chat, .shell-map-wrap, .shell-files { display: none; height: 100%; }
+        .shell-chat, .shell-map-wrap, .shell-files {
+          display: none;
+          height: 100%;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
         body.shell-app[data-pane="chat"] .shell-chat,
-        body.shell-app[data-pane="map"] .shell-map-wrap,
         body.shell-app[data-pane="files"] .shell-files { display: flex; }
         body.shell-app[data-pane="map"] .shell-map-wrap { display: block; }
-        .shell-files { width: 100%; }
-        .shell-tabs {
-          display: grid; grid-template-columns: 1fr 1fr 1fr; flex: 0 0 auto;
-          border-top: 1px solid #e0e0e0; background: #fff;
-          padding-bottom: env(safe-area-inset-bottom, 0px);
+        .shell-files { flex-direction: column; }
+        .shell-files header { padding: .55rem .85rem .45rem; }
+        .shell-files input, .shell-file, .shell-files summary, .shell-more {
+          min-height: 44px;
+          font-size: 1rem;
         }
-        .shell-tabs button { font: inherit; font-weight: 700; border: 0; background: transparent; padding: .7rem .2rem; color: #3c5163; }
-        .shell-tabs button[aria-pressed="true"] { color: #0083C4; }
-        .shell-tools { width: min(300px, calc(100% - 1.2rem)); }
+        .shell-file, #shell-preview, .shell-files summary, .shell-tree-label {
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+        #shell-tree, #shell-related, #shell-preview { max-width: 100%; overflow-x: hidden; }
+        #shell-preview { max-height: 42%; }
+        #shell-preview img { max-width: 100%; height: auto; }
+        .shell-tabs {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          flex: 0 0 auto;
+          border-top: 1px solid #d5e2ea;
+          background: #fff;
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+          z-index: 5;
+        }
+        .shell-tabs button {
+          font: inherit;
+          font-size: 1rem;
+          font-weight: 750;
+          border: 0;
+          background: transparent;
+          min-height: 52px;
+          padding: .65rem .2rem;
+          color: #3c5163;
+        }
+        .shell-tabs button[aria-pressed="true"] { color: #0083C4; box-shadow: inset 0 3px 0 #0083C4; }
+        .shell-tools {
+          top: auto;
+          left: .5rem;
+          right: .5rem;
+          bottom: .5rem;
+          width: auto;
+          max-height: min(46vh, 360px);
+          border-left-width: 1px;
+          border-radius: 16px;
+          padding: .55rem .7rem .65rem;
+        }
+        .shell-brand { gap: .4rem .7rem; }
+        #lang-toggle, .shell-base button, .shell-themes button, .shell-layers summary {
+          min-height: 44px;
+          font-size: .95rem;
+          padding: .4rem .75rem;
+        }
+        .shell-themes { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: .15rem; }
+        .shell-themes button { flex: 0 0 auto; }
+        .shell-layers label { min-height: 44px; align-items: center; font-size: .95rem; }
+        .shell-layers input { width: 1.25rem; height: 1.25rem; flex: 0 0 auto; }
+        .maplibregl-ctrl-top-right { top: .45rem; right: .35rem; }
+        .maplibregl-ctrl-group button { width: 44px !important; height: 44px !important; }
+        .cdt-pin { max-width: 68vw; white-space: normal; }
       }
     </style>
   </body>
