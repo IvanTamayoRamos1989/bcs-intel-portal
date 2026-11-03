@@ -1621,6 +1621,24 @@ function expandQuery(query) {
   if (/\bdos ejidos\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
   if (/\b(siete mil cuatrocientos cincuenta y cinco|cuatro mil ciento cuarenta y nueve|tres mil trescientos tres|ochocientos setenta y nueve)\b/.test(qn) && /\bkilometros\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
   if (/\b(ciento setenta y nueve mil|doscientos veinte mil)\b/.test(qn) && /\bbeneficiarios\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(diaz espindola|espindola)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdiecisiete cruces peatonales\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcuatro mil cuatrocientos veintiocho\b/.test(qn) && /\bsalidas\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bnoventa y dos titulares\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcincuenta y seis destinos\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bsiete destinos\b/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bcincuenta anos\b/.test(qn) && /\b(concesion|puerto)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdiciembre de dos mil veintiocho\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcardonal\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bboletin\b/.test(qn) && /\bdiecinueve\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\btrece de noviembre de dos mil nueve\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bonce de noviembre de dos mil dos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bprimero de septiembre de dos mil\b/.test(qn) && !/\bprimero de septiembre de dos mil\s+(dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veint|treinta|cuarenta|cincuenta)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(dos|seis) de julio de mil novecientos cincuenta y cuatro\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bveintinueve de octubre de dos mil veintiseis\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bveintitres de abril de dos mil trece\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bciento cuarenta y ocho\b/.test(qn) && /\bmatorral\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdoscientos trece\b/.test(qn) && /\b(anp|area natural|proteg|imagen|muestra)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -2808,7 +2826,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bciento ochenta y uno\b/.test(qn)) add('ev_historia_bcs', 'terr_los_cabos');
   if (/\bcip\b/.test(qn) && /\b(cuartos|fonatur)\b/.test(qn)) add('ev_historia_bcs');
   if (/\bno es un censo\b/.test(qn) || (/\buna persona\b/.test(qn) && /\blocalidad\b/.test(qn))) add('ev_communities_master');
-  if (/\b(noventa y nueve|noventa y dos|boletin)\b/.test(qn)) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
+  if (/\b(noventa y nueve|noventa y dos)\b/.test(qn) || (/\bboletin\b/.test(qn) && !/\bdiecinueve\b/.test(qn))) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
   if (/\bveintinueve de febrero\b/.test(qn)) add('ev_org_cabos_2024', 'ev_organigrama_cabos');
   if (/\bno se infiere\b/.test(qn) || (/\bdireccion municipal\b/.test(qn) && /\bsin nombre\b/.test(qn))) add('gap_org_obras_cabos', 'ev_org_cabos_2024');
   if (/\bla que opera\b/.test(qn) || (/\bdos mil trece\b/.test(qn) && /\bmayo\b/.test(qn)) || (/\bdos mil veintitres\b/.test(qn) && /\bconsulta\b/.test(qn))) {
@@ -3211,6 +3229,22 @@ function factorSeedIds(qn, kinds) {
   if (/\b(veintiseis ejidos|diecinueve ejidos|dieciocho ejidos|treinta y un ejidos)\b/.test(qn) || (/\bdos ejidos\b/.test(qn) && /\bloreto\b/.test(qn))) add('ev_riesgos_documentados', 'gap_riesgo_capas_vector');
   if (/\b(siete mil cuatrocientos cincuenta y cinco|cuatro mil ciento cuarenta y nueve|tres mil trescientos tres|ochocientos setenta y nueve)\b/.test(qn) && /\bkilometros\b/.test(qn)) add('ev_escorrentia');
   if (/\b(ciento setenta y nueve mil|doscientos veinte mil)\b/.test(qn) && /\bbeneficiarios\b/.test(qn)) add('proj_fed_soc_001');
+  if (/\b(diaz espindola|espindola)\b/.test(qn)) add('ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos');
+  if (/\bdiecisiete cruces peatonales\b/.test(qn)) add('proj_fed_car_002');
+  if (/\bcuatro mil cuatrocientos veintiocho\b/.test(qn) && /\bsalidas\b/.test(qn)) add('ev_escorrentia');
+  if (/\bcincuenta y seis destinos\b/.test(qn)) add('ev_sig_vuelos', 'rc_aeropuerto_sjd', 'gap_loreto_pax');
+  if (/\bsiete destinos\b/.test(qn) && /\bla paz\b/.test(qn)) add('ev_sig_vuelos', 'rc_aeropuerto_lap', 'gap_loreto_pax');
+  if (/\bcincuenta anos\b/.test(qn) && /\b(concesion|puerto)\b/.test(qn)) add('ev_sig_asipona');
+  if (/\bdiciembre de dos mil veintiocho\b/.test(qn)) add('proj_p23_bs1', 'rc_tx_lapaz_cabos');
+  if (/\bboletin\b/.test(qn) && /\bdiecinueve\b/.test(qn)) add('gap_pdu_cabos_3a', 'inst_pdu_cabos');
+  if (/\btrece de noviembre de dos mil nueve\b/.test(qn)) add('ev_anp_avisos', 'terr_anp_cabo_pulmo', 'gap_east_cape_carga');
+  if (/\bonce de noviembre de dos mil dos\b/.test(qn)) add('ev_anp_avisos', 'terr_anp_loreto', 'gap_loreto_dma');
+  if (/\bprimero de septiembre de dos mil\b/.test(qn) && !/\bprimero de septiembre de dos mil\s+(dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veint|treinta|cuarenta|cincuenta)\b/.test(qn)) add('ev_anp_avisos', 'terr_anp_vizcaino', 'gap_acuifero_0302');
+  if (/\b(dos|seis) de julio de mil novecientos cincuenta y cuatro\b/.test(qn)) add('inst_veda_1954', 'ev_acuiferos_dma');
+  if (/\bveintinueve de octubre de dos mil veintiseis\b/.test(qn)) add('ev_news_pdu_este', 'gap_east_cape_carga', 'gap_pdu_cabos_3a');
+  if (/\bveintitres de abril de dos mil trece\b/.test(qn)) add('gap_pdu_cabos_3a', 'inst_pdu_cabos');
+  if (/\bciento cuarenta y ocho\b/.test(qn) && /\bmatorral\b/.test(qn)) add('ev_stills_intel');
+  if (/\bdoscientos trece\b/.test(qn) && /\b(anp|area natural|proteg|imagen|muestra)\b/.test(qn)) add('ev_stills_intel');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
