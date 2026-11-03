@@ -1,5 +1,5 @@
 {
-  "source": "Catálogo MLS BCS",
+  "source": "Catálogo MLS BCS · corte 2026-11-02",
   "extractedAt": "2026-11-02T21:06:49.249Z",
   "totalProperties": 3751,
   "pricedProperties": 3738,
@@ -954,5 +954,19 @@
       "imageUrl": null,
       "source": "Catálogo MLS BCS"
     }
-  ]
+  ],
+  "cutoffDate": "2026-11-02",
+  "fecha_corte": "2026-11-02",
+  "currency": "USD",
+  "moneda": "USD",
+  "caveat_es": "Precios anunciados de lista en USD; no equivalen a precios de venta cerrada ni a valores catastrales.",
+  "caveat_en": "Asking prices in USD; they do not represent closed sale prices or cadastral values.",
+  "reconciliation": {
+    "rawFetched": 3751,
+    "deduplicatedTotal": 3751,
+    "withExactCoordinates": 3751,
+    "withLocalityCentroid": 0,
+    "withoutReliableLocationExcluded": 0,
+    "withReportedAreaM2": 29
+  }
 }
