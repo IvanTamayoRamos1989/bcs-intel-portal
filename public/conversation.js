@@ -4,10 +4,9 @@
   var composer=document.getElementById('bcs-chat-input'),draftKey='bcs-question-draft';
   function clearDraft(){try{sessionStorage.removeItem(draftKey);}catch(_){}}
   if(composer){
-    try{if(!composer.value)composer.value=(sessionStorage.getItem(draftKey)||'').slice(0,2000);}catch(_){}
-    composer.addEventListener('input',function(){try{if(composer.value)sessionStorage.setItem(draftKey,composer.value.slice(0,2000));else clearDraft();}catch(_){}});
+    try{if(composer.value)sessionStorage.setItem(draftKey,composer.value.slice(0,2000));else composer.value=(sessionStorage.getItem(draftKey)||'').slice(0,2000);}catch(_){}
     document.addEventListener('bcs:chat-start',clearDraft);
-    newButton.addEventListener('click',function(){clearDraft();composer.value='';});
+    newButton.addEventListener('click',function(){clearDraft();composer.value='';try{sessionStorage.removeItem('bcs-map-view-v1');}catch(_){}});
   }
   function active(){document.body.classList.add('has-conversation');newButton.hidden=false;}
   function connect(d){

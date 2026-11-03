@@ -150,12 +150,21 @@
           });
         }
 
+        function returnToPortal() {
+          var next = new URLSearchParams(location.search).get('next') || '/inicio/';
+          var url = new URL('/inicio/', location.origin);
+          try {
+            var target = new URL(next, location.origin);
+            if (target.origin === location.origin && /^\/(inicio|consulta|catalogo)\/?$/.test(target.pathname)) url = target;
+          } catch (_) {}
+          location.replace(url.href);
+        }
         if (!form) return;
 
         fetch('/api/auth', { method: 'GET', credentials: 'same-origin' })
           .then(function (r) { return r.json().catch(function () { return {}; }); })
           .then(function (d) {
-            if (d && d.ok) location.replace('/inicio');
+            if (d && d.ok) returnToPortal();
           })
           .catch(function () {});
 
@@ -174,7 +183,7 @@
             })
             .then(function (res) {
               if (res.ok && res.j && res.j.ok) {
-                location.replace('/inicio');
+                returnToPortal();
                 return;
               }
               if (err) {

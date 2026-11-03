@@ -114,7 +114,7 @@
         "color": "#9a432f",
         "description_es": "Compara la extracción anual con la recarga disponible después de reservar las descargas naturales comprometidas. Selecciona un acuífero para ver su balance.",
         "description_en": "Annual extraction relative to recharge after committed natural discharge. Select an aquifer for its balance.",
-        "reference": "https://sigagis.conagua.gob.mx/gas1/sections/Edos/bcs/bcs.html",
+        "reference": "/gis/territorio/disponibilidad-acuiferos-2023.pdf#page=3",
         "url": "/gis/territorio/estres.geojson",
         "palette": [
           "#78b8a1",

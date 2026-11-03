@@ -1424,7 +1424,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
       } else if (s.href && (/^https?:\/\//.test(s.href) || s.href.charAt(0) === '/')) {
         a.href = s.href;
       } else {
-        a.href = '/catalogo?q=' + catalogQuery(s);
+        a = el('span','bcs-chat-chip bcs-chat-chip--static',safeCardTitle(s));
       }
       wrap.appendChild(a);
     });

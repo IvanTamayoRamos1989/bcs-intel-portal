@@ -11,6 +11,13 @@ import { ui } from '../i18n/ui';
   <meta name="robots" content="noindex, nofollow" /><meta name="theme-color" content="#f7f6ef" />
   <title>Chat · BCS 2050</title>
   <script is:inline define:vars={{uiObj:ui}}>window.__BCS_UI__=uiObj;</script>
+  <script is:inline>
+    document.addEventListener('input', function(e){
+      if (e.target.id === 'bcs-chat-input') {
+        try { sessionStorage.setItem('bcs-question-draft', e.target.value.slice(0,2000)); } catch (_) {}
+      }
+    });
+  </script>
   <script is:inline src="/auth-gate.js"></script><script is:inline src="/lang-toggle.js?v=20261102-ux"></script>
 </head>
 <body class="shell-app conversation-page">

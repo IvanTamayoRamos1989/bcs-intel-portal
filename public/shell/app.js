@@ -409,7 +409,10 @@
     identifyToken += 1;
     var specific = (feats || []).filter(function (feature) { return !washOnly(feature); });
     if (specific.length) {
-      var feature = specific[0];
+      var feature = specific.find(function (f) {
+        var id = f.layer.id.replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label|detail)$/, '');
+        return activeAnalysis && byId[id] && byId[activeAnalysis] && byId[id].url === byId[activeAnalysis].url;
+      }) || specific[0];
       var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label|detail)$/, '');
       openFeatureFiche(feature, lngLat, byId[id]);
       return;
@@ -565,32 +568,120 @@
     setStatus('Encuadre: ' + town.name + '.', 'Frame: ' + town.name + '.');
     return { kind: 'town', name: town.name };
   }
+  // The address contains only public map state. The private chat stays in its original tab.
+  var savedViewKey = 'bcs-map-view-v1';
+  var viewLive = false;
+  var viewTimer;
+  var savedCamera;
+  var savedMuni;
+  function rememberView() {
+    if (!viewLive) return;
+    var camera = engine && engine.readCamera();
+    if (!camera && leafletMap) {
+      var center = leafletMap.getCenter();
+      camera = {lng:center.lng,lat:center.lat,zoom:leafletMap.getZoom(),bearing:0,pitch:0};
+    }
+    if (!camera) return;
+    var url = new URL(location.href);
+    var fields = ['lng','lat','zoom','bearing','pitch'];
+    url.searchParams.set('cam',fields.map(function(k){return Number(camera[k].toFixed(5));}).join(','));
+    url.searchParams.set('capas',Object.keys(on).filter(function(id){return on[id] && byId[id];}).sort().join(','));
+    url.searchParams.set('base',basemap);
+    url.searchParams.set('relieve',terrainOn ? '1' : '0');
+    var box = document.querySelector('[data-buildings]');
+    if (box) url.searchParams.set('edificios',box.checked ? '1' : '0');
+    if (highlightedMuni) url.searchParams.set('muni',highlightedMuni); else url.searchParams.delete('muni');
+    if (activeAnalysis) url.searchParams.set('analisis',activeAnalysis); else url.searchParams.delete('analisis');
+    if (location.href !== url.href) history.replaceState(history.state,'',url.href);
+    try { sessionStorage.setItem(savedViewKey,url.search); } catch (_) {}
+  }
+  function scheduleView() {
+    if (!viewLive) return;
+    clearTimeout(viewTimer);
+    viewTimer = setTimeout(rememberView,180);
+  }
+  function restoreView() {
+    var params = new URLSearchParams(location.search);
+    if (!params.has('cam')) {
+      try {
+        var stored = new URLSearchParams(sessionStorage.getItem(savedViewKey) || '');
+        if (!params.size || (params.size === 1 && params.has('context') && params.get('context') === stored.get('context'))) params = stored;
+      } catch (_) {}
+    }
+    if (!params.has('cam')) return;
+    var v = params.get('cam').split(',').map(Number);
+    if(v.length !== 5 || !v.every(Number.isFinite) || Math.abs(v[0])>180 || Math.abs(v[1])>85 || v[2]<5 || v[2]>18 || v[4]<0 || v[4]>85) return;
+    savedCamera = {lng:v[0],lat:v[1],zoom:v[2],bearing:v[3],pitch:v[4]};
+    savedMuni = (model.munis || []).some(function(m){return m.name===params.get('muni');}) ? params.get('muni') : '';
+    pendingMuni = '';
+    if (params.has('capas')) {
+      on = {};
+      params.get('capas').split(',').forEach(function(id){if(Object.hasOwn(byId,id)) on[id]=true;});
+      document.querySelectorAll('[data-layer]').forEach(function(box){box.checked=!!on[box.dataset.layer];});
+    }
+    basemap = params.get('base') === 'satellite' ? 'satellite' : 'streets';
+    terrainOn = params.get('relieve') !== '0';
+    pitched = savedCamera.pitch > 0;
+    var box = document.querySelector('[data-buildings]');
+    if (box && params.has('edificios')) box.checked=params.get('edificios')==='1';
+    if (analysisSelect) {
+      analysisSelect.value = params.get('analisis') || '';
+      activeAnalysis = analysisSelect.value;
+      showAnalysisLegend();
+    }
+    syncStackToggles();
+    syncBasic();
+  }
+  window.addEventListener('pagehide',rememberView);
+  document.addEventListener('change',scheduleView);
+  document.addEventListener('click',scheduleView);
   function markReady() {
     mapReady = true;
     var ids = Object.keys(on).filter(function (id) { return on[id]; });
     Promise.all(ids.map(function (id) { return showLayer(id, true); })).then(function () {
-      if (pendingPoint) { flyPoint(pendingPoint[0],pendingPoint[1],pendingPoint[2]);pendingPoint=null; }
+      if (savedCamera) {
+        if (engine) engine.jumpCamera(savedCamera);
+        else if (leafletMap) leafletMap.setView([savedCamera.lat,savedCamera.lng],savedCamera.zoom);
+        if (savedMuni) paintMuni(savedMuni);
+      }
+      else if (pendingPoint) { flyPoint(pendingPoint[0],pendingPoint[1],pendingPoint[2]);pendingPoint=null; }
       else if (pendingJob) executeJob(pendingJob.question, pendingJob.sources, pendingJob.answer);
       else if (pendingMuni) focusMuni(pendingMuni);
       else if (engine && engine.fitBox) engine.fitBox(null);
       if (engine && engine.resize) engine.resize();
       if (leafletMap) leafletMap.invalidateSize();
+      viewLive = true;
+      if (engine) engine.watchMove(scheduleView);
+      else if (leafletMap) leafletMap.on('moveend',scheduleView);
+      scheduleView();
     });
   }
 
+  var layerVersion = {};
   function showLayer(id, visible) {
     var meta = byId[id];
     if (!meta) return Promise.resolve();
+    var version = (layerVersion[id] || 0) + 1;
+    layerVersion[id] = version;
+    function failed() {
+      if (layerVersion[id] !== version) return null;
+      showLayer(id,false);
+      syncStackToggles();
+      syncThemePressed();
+      setStatus('No se pudo cargar una capa. Intenta activarla de nuevo.', 'A layer could not be loaded. Try enabling it again.');
+      return null;
+    }
     on[id] = !!visible;
+    scheduleView();
     syncBasic();
     document.querySelectorAll('[data-layer="' + id + '"]').forEach(function (box) { box.checked = !!visible; });
     if (engine) {
       if (!visible) { engine.hide(id); return Promise.resolve(); }
       return engine.load(meta).then(function (geo) {
-        if (geo && on[id]) engine.show(id, geo, meta, 'on');
-        if (!geo) { on[id]=false; syncBasic(); setStatus('No se pudo cargar una capa. Intenta activarla de nuevo.', 'A layer could not be loaded. Try enabling it again.'); }
+        if (!geo) return failed();
+        if (on[id] && layerVersion[id] === version) engine.show(id, geo, meta, 'on');
         return geo;
-      });
+      }).catch(failed);
     }
     if (leafletMap && window.L) {
       if (!visible) {
@@ -602,8 +693,8 @@
         leafletLayers[id].addTo(leafletMap);
         return Promise.resolve();
       }
-      return fetch(meta.url).then(function (r) { return r.json(); }).then(function (geo) {
-        if (!on[id]) return geo;
+      return fetch(meta.url).then(function (r) { if(!r.ok) throw Error(id); return r.json(); }).then(function (geo) {
+        if (!on[id] || layerVersion[id] !== version) return geo;
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
         leafletLayers[id] = L.geoJSON(geo, {
           style: function (feat) { if(meta.palette) return {color:meta.palette[feat.properties.level] || '#919b9c',weight:.3,fillOpacity:.7}; return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
@@ -615,7 +706,7 @@
           },
         }).addTo(leafletMap);
         return geo;
-      }).catch(function () { return null; });
+      }).catch(failed);
     }
     return Promise.resolve();
   }
@@ -869,6 +960,13 @@
     satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Esri', maxZoom: 18 });
     setBasemap(basemap);
     L.control.scale({ imperial: false, metric: true }).addTo(leafletMap);
+    var perspective = document.getElementById('shell-pitch');
+    if (perspective) {
+      perspective.disabled = true;
+      perspective.setAttribute('aria-pressed','false');
+      perspective.textContent = '2D';
+      perspective.title = tx('Mapa plano disponible en este navegador.','Flat map available in this browser.');
+    }
     setStatus('Mapa plano. El relieve 3D no está disponible en este navegador.', 'Flat map. 3D terrain is not available in this browser.');
     Promise.all(Object.keys(on).filter(function (id) { return on[id]; }).map(function (id) { return showLayer(id, true); })).then(markReady);
   }
@@ -1602,7 +1700,8 @@
     }catch(e){}
   }
   readBoot();
-  try{var contextId=new URLSearchParams(location.search).get('context');if(contextId&&/^c[a-z0-9]+$/.test(contextId)){var context=JSON.parse(sessionStorage.getItem('bcs-map-'+contextId)||'null');if(context&&context.grounded!==false)applyText(context.question,context.sources,context.answer);}}catch(_){}
+  restoreView();
+  try{var contextId=new URLSearchParams(location.search).get('context');if(!savedCamera&&contextId&&/^c[a-z0-9]+$/.test(contextId)){var context=JSON.parse(sessionStorage.getItem('bcs-map-'+contextId)||'null');if(context&&context.grounded!==false)applyText(context.question,context.sources,context.answer);}}catch(_){}
   syncBasic();
   setBasemap(basemap);
   boot3d();

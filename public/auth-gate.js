@@ -20,7 +20,7 @@
   }
 
   function goLanding() {
-    location.replace('/');
+    location.replace('/?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
   }
 
   fetch('/api/auth', { method: 'GET', credentials: 'same-origin' })

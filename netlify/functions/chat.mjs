@@ -6233,7 +6233,7 @@ function followUpStaysOnThread(q, message, history) {
   const threadThemes = new Set(themesIn(blob).map((t) => t.id));
   if (themesIn(qq).some((t) => !threadThemes.has(t.id))) return false;
   const threadPlaces = new Set(munisInText(blob));
-  if (threadPlaces.size && munisInText(qq).some((p) => !threadPlaces.has(p))) return false;
+  if (munisInText(qq).some((p) => !threadPlaces.has(p))) return false;
   if (/\b(otro municipio|another municipality|cada municipio|each municipality|fotos aereas|aerial photos)\b/.test(qq)
     && !/\b(otro municipio|another municipality|cada municipio|each municipality|fotos aereas|aerial photos)\b/.test(blob)) return false;
   return true;
@@ -6650,6 +6650,9 @@ function evidenceSources(chunks, max = 5, newsFirst = false) {
     };
     const portalSlug = String(c.path || '').startsWith('portal/') ? String(c.path).slice(7).split('/')[0] : '';
     const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: c.href || portalHref[portalSlug] || null, type: c.type || null };
+    if (c.onto_id === 'ev_fiscal_ley_2026' || String(c.path || '').endsWith('#ev_fiscal_ley_2026')) {
+      card.href = 'https://finanzas.bcs.gob.mx/wp-content/themes/voice/assets/images/armonizacion_contable/cumpl_V/anual/2026/02.%20Presupuesto%20de%20Egresos%20para%20el%20Ejercicio%202026.pdf';
+    }
     if (c.type === 'news') {
       Object.assign(card, {
         label: c.no_summary ? 'Noticia sin resumen' : 'Noticia',
@@ -6839,18 +6842,6 @@ async function handlerInner(event) {
   }
 
   const cfg = providerConfig();
-  if (!cfg.key || !cfg.url) {
-    return {
-      statusCode: 503,
-      headers,
-      body: JSON.stringify({
-        error: 'Chat not configured',
-        answer: lang === 'en' ? 'Chat backend is not configured.' : 'El chat no está configurado en el servidor.',
-        sources: [],
-      }),
-    };
-  }
-
   await ensureCorpus(event);
   const index = ragIndex();
 
@@ -6943,6 +6934,22 @@ async function handlerInner(event) {
     : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
+  if (!cfg.key || !cfg.url) {
+    // Search remains available in deployments without a language-model credential.
+    const matches = hits.map(hit => hit.c).filter(c => c && (c.drive_url || c.href || c.url) && (c.sum_es || c.sum_en)).slice(0,3);
+    const en = lang === 'en';
+    const lead = en ? 'Document search · Matching excerpts' : 'Búsqueda documental · Fragmentos relacionados';
+    const excerpts = matches.map(c => {
+      const summary = ragCleanSummary(en ? c.sum_en || c.sum_es : c.sum_es || c.sum_en);
+      const excerpt = summary.length > 550 ? summary.slice(0,547).replace(/\s+\S*$/, '') + '…' : summary;
+      return '**' + cardTitle(c) + '**\n' + excerpt;
+    });
+    const missing = en ? 'No matching source was found. Try a place, a year or a document title.' : 'No encontré una fuente para esta consulta. Prueba con un lugar, un año o el nombre del documento.';
+    return {statusCode:200,headers,body:JSON.stringify({
+      mode:'document_search', answer:[lead,...(excerpts.length ? excerpts : [missing])].join('\n\n'),
+      sources:evidenceSources(matches,3), grounded:matches.length>0, blocks:[], followUps:[]
+    })};
+  }
   let evidence = hits.map((h) => h.c);
   if (airGuide && !evidence.some((c) => c.id === airGuide.id)) {
     evidence = [airGuide, ...evidence];
@@ -7082,7 +7089,9 @@ async function handlerInner(event) {
   const messages = [
     {
       role: 'system',
-      content: groundedPrompt(lang, contextBlock, {
+      content: (lang === 'en'
+        ? 'Keep the answer within the geography asked for. For national waters, only the federal authority grants concessions or allocations under article 20 of the National Waters Law. If only asked for availability, give the balance and date; avoid unsolicited permitting advice.\n'
+        : 'Respeta el ámbito geográfico solicitado. Para aguas nacionales, la autoridad federal otorga las concesiones o asignaciones conforme al artículo 20 de la Ley de Aguas Nacionales. Si se pregunta solo por disponibilidad, da el balance y su fecha, sin añadir consejos sobre permisos.\n') + groundedPrompt(lang, contextBlock, {
         placeLabel: placeId ? (PLACE_SPINE[placeId][lang] || PLACE_SPINE[placeId].es) : null,
         noEvidence,
         factorKinds: qIntents.isFactorIntent ? qIntents.factorKinds : null,
@@ -7177,7 +7186,7 @@ async function handlerInner(event) {
     munis: targetMunis(message, explicitPlace) || (threadFollow ? targetMunis(retrieveQuery, placeId) : null),
     history,
     evidence,
-  });
+  }).filter(q => followUpStaysOnThread(q,message,history));
   const surfaceLead = portalSurfaceBlocks(message, lang)[0];
   if (surfaceLead) {
     const surfaceQ = lang === 'en'
@@ -7194,8 +7203,8 @@ async function handlerInner(event) {
     const q0 = /👉/.test(last) ? last.replace(/^.*?👉\s*/, '').trim() : null;
     const onThread = q0 && followUpStaysOnThread(q0, message, history);
     if (onThread && !followUps.includes(q0)) followUps.unshift(q0);
-    if (q0 && !onThread && followUps[0]) {
-      lines[lines.length - 1] = '👉 ' + followUps[0];
+    if (q0 && !onThread) {
+      lines[lines.length - 1] = followUps[0] ? '👉 ' + followUps[0] : '';
       answer = lines.join('\n');
     } else if (!/\?\s*\**\s*$/.test(last) && followUps[0]) {
       answer = String(answer).trim() + '\n\n👉 ' + followUps[0];

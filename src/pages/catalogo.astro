@@ -166,6 +166,7 @@ const themeLabels: Record<string, [string, string]> = {
 
   <script>
     import engagement from '../data/engagement_catalog.json';
+    import territory from '../data/territorio_social.json';
     import exclusions from '../data/catalog_exclusions.json';
     import { docTitle, cleanSourceText } from '../lib/sourceLabel';
     (function () {
@@ -342,7 +343,8 @@ const themeLabels: Record<string, [string, string]> = {
         var tt = th.value;
         var dd = drv ? drv.value : 'drive';
         var currentFilters = JSON.stringify([qq, ee, tt, dd]);
-        if (currentFilters !== filterKey) { page = 0; filterKey = currentFilters; }
+        if (filterKey && currentFilters !== filterKey) page = 0;
+        filterKey = currentFilters;
         var sg = ee ? subgroupIndex[ee] : null;
         var out = [];
         for (var i = 0; i < rows.length; i++) {
@@ -378,6 +380,14 @@ const themeLabels: Record<string, [string, string]> = {
         for (var k = 0; k < out.length; k++) if (out[k].gid) withDrive++;
         var pages = Math.max(1, Math.ceil(out.length / MAX));
         page = Math.min(page, pages - 1);
+        var url = new URL(location.href);
+        var values = {q:qEl.value.trim(), eng:ee, theme:tt, drive:dd === 'drive' ? '' : dd, pagina:page ? String(page+1) : ''};
+        for (var [param,value] of Object.entries(values)) {
+          if (value) url.searchParams.set(param,value);
+          else url.searchParams.delete(param);
+        }
+        url.searchParams.delete('folder');
+        if (url.href !== location.href) history.replaceState(history.state,'',url.href);
         meta.textContent = out.length + (isEn() ? ' documents found' : ' documentos encontrados');
         pageLabel.textContent = (isEn() ? 'Page ' : 'Página ') + (page + 1) + (isEn() ? ' of ' : ' de ') + pages;
         prev.disabled = page === 0;
@@ -391,7 +401,7 @@ const themeLabels: Record<string, [string, string]> = {
             : '<span class="badge-pending">' + (isEn() ? 'Link unavailable' : 'Sin enlace disponible') + '</span>';
           var driveCell = '—';
           // no download for blocked types (already filtered); still hide dd if somehow present for ontology
-          var allowDl = x.dd && !blockedDownload(x);
+          var allowDl = x.dd && x.dd !== x.dv && !blockedDownload(x);
           if (x.dv) {
             driveCell = '<span class="drive-links">' +
               '<a href="' + esc(x.dv) + '" target="_blank" rel="noopener">' + (isEn() ? 'View' : 'Ver') + '</a>' +
@@ -435,6 +445,7 @@ const themeLabels: Record<string, [string, string]> = {
         }
       }
       params();
+      page = Math.max(0, (parseInt(new URL(location.href).searchParams.get('pagina'),10) || 1) - 1);
       prev.addEventListener('click', function () { page--; render(); meta.scrollIntoView({block:'start'}); });
       next.addEventListener('click', function () { page++; render(); meta.scrollIntoView({block:'start'}); });
       syncEngSelectLabels();
@@ -486,6 +497,16 @@ const themeLabels: Record<string, [string, string]> = {
       Promise.all([fetch('/catalog_slim.json').then(function(r){if(!r.ok)throw Error();return r.json();}),fetch('/finanzas-publicas/catalog.json').then(function(r){if(!r.ok)throw Error();return r.json();})])
         .then(function(data){
           rows=data[0];var known=new Set(rows.map(function(r){return r.dv;}));
+          const territorialDocs = territory.flatMap(group => group.layers.map(layer => ({
+            n: layer.name_es + ' · ' + layer.source_es, p:'territorio/'+layer.id, t:'territorio',
+            e:layer.reference.includes('.pdf')?'pdf':'web', dv:layer.reference,
+            sum_es:group.es+' · '+layer.description_es, sum_en:group.en+' · '+layer.description_en
+          })));
+          for (const [id,title,href] of [
+            ['licencias-cabos','Los Cabos · Licencias de construcción · abril–junio 2026','https://plataforma-transparencia.bcs.gob.mx/archivos/59825/descargar'],
+            ['licencias-paz','La Paz · Licencias de uso de suelo · enero–marzo 2026','https://plataforma-transparencia.bcs.gob.mx/archivos/61852/descargar']
+          ]) territorialDocs.push({n:title,p:'territorio/'+id,t:'territorio',e:'xlsx',dv:href,sum_es:id==='licencias-cabos'?'Registro municipal de licencia de construcción.':'Registro municipal de licencia de uso de suelo.',sum_en:'Municipal permit register.'});
+          territorialDocs.forEach(row => {if (!known.has(row.dv)) {rows.push(row);known.add(row.dv);}});
           (data[1].records||[]).filter(function(r){return r.kind==='document'&&r.status==='ok'&&!known.has(r.url);}).forEach(function(r){
             rows.push({n:r.title,p:'finanzas/'+r.id,e:r.format,t:'finanzas',y:Math.max.apply(null,(r.years||[]).map(Number).filter(Number.isFinite).concat([0])),s:r.bytes,dv:r.url,dd:r.url,sum_es:r.category+' · '+(r.years||[]).join(', ')+' · Secretaría de Finanzas de Baja California Sur. Documento original; consulta el periodo y alcance en la fuente.',sum_en:r.category+' · '+(r.years||[]).join(', ')+' · Baja California Sur Finance Secretariat. Original source document.'});
           });loaded=true;updateEngCounts();render();

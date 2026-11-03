@@ -95,7 +95,7 @@
       delete geoWait[meta.id];
       return geo;
     }).catch(function () {
-      geoReady[meta.id] = null;
+      // Leave failed downloads uncached so the next activation retries.
       delete geoWait[meta.id];
       return null;
     });
@@ -589,7 +589,7 @@
         if (meta.detailUrl) return loadPmtiles().then(function () { return loadGeo(meta); });
         if (cache[meta.id]) return Promise.resolve(cache[meta.id]);
         return loadGeo(meta).then(function (geo) {
-          cache[meta.id] = geo;
+          if (geo) cache[meta.id] = geo;
           return geo;
         });
       }
