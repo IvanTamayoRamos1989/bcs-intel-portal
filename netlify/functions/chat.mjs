@@ -6850,6 +6850,27 @@ async function handlerInner(event) {
   }
 
   const cfg = providerConfig();
+  // A branch-specific, nonsecret flag enables the same authenticated chat used by the live portal.
+  // Forward only this site's signed session to the fixed HTTPS endpoint.
+  if (!cfg.key && process.env.BCS_REVIEW_CHAT_GATEWAY === 'production') {
+    const cookie = String(event.headers?.cookie || event.headers?.Cookie || '')
+      .split(';').map(part => part.trim()).find(part => /^bcs_portal_auth=1\.[0-9a-f]{64}$/.test(part));
+    if (cookie) {
+      try {
+        const response = await fetch('https://bajacaliforniasur2050.com/api/chat', {
+          method: 'POST', redirect: 'error', signal: AbortSignal.timeout(25000),
+          headers: {Cookie: cookie, 'Content-Type': 'application/json'},
+          body: JSON.stringify({message, lang, history, place: body.place, session: body.session}),
+        });
+        if (response.ok) {
+          const result = await response.json();
+          if (typeof result.answer === 'string' && result.answer.trim() && result.mode !== 'document_search') {
+            return {statusCode: 200, headers, body: JSON.stringify({...result, mode:'generated_portal'})};
+          }
+        }
+      } catch { /* The branch can still answer with excerpts from its own corpus below. */ }
+    }
+  }
   await ensureCorpus(event);
   const index = ragIndex();
 
