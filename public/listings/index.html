@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Propiedades en Baja California Sur (3,751 Listings)</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <style>
+    :root { --bg: #0f172a; --card: #1e293b; --line: #334155; --ink: #f8fafc; --muted: #94a3b8; --accent: #38bdf8; --gold: #f59e0b; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--ink); }
+    header { padding: 1rem 1.5rem; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; background: #0b1120; }
+    header h1 { margin: 0; font-size: 1.2rem; }
+    header p { margin: 0.2rem 0 0; font-size: 0.85rem; color: var(--muted); }
+    .downloads { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600; text-decoration: none; background: var(--accent); color: #0f172a; border: 0; cursor: pointer; }
+    .btn.sec { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.75rem; padding: 1rem 1.5rem; }
+    .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 0.75rem 1rem; }
+    .kpi strong { display: block; font-size: 1.35rem; color: var(--accent); }
+    .kpi span { font-size: 0.78rem; color: var(--muted); }
+    .layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1rem; padding: 0 1.5rem 1.5rem; height: calc(100vh - 190px); min-height: 540px; }
+    #map { width: 100%; height: 100%; border-radius: 12px; border: 1px solid var(--line); overflow: hidden; }
+    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; }
+    .filters { padding: 0.75rem; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .filters input, .filters select { background: #0f172a; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.82rem; }
+    .filters input { flex: 1 1 180px; }
+    .table-wrap { flex: 1; overflow: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    th, td { padding: 0.5rem 0.65rem; border-bottom: 1px solid var(--line); text-align: left; }
+    th { position: sticky; top: 0; background: #0b1120; color: var(--muted); font-weight: 600; }
+    tr:hover { background: rgba(56, 189, 248, 0.08); cursor: pointer; }
+    .badge { display: inline-block; padding: 0.12rem 0.45rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; background: rgba(245, 158, 11, 0.18); color: #fbbf24; }
+    @media (max-width: 960px) { .layout { grid-template-columns: 1fr; height: auto; } #map { height: 420px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Catálogo Georreferenciado de Propiedades — Baja California Sur</h1>
+      <p>Base de datos limpia de listings inmobiliarios en BCS (coordenadas, precios en USD y tipología)</p>
+    </div>
+    <div class="downloads">
+      <a class="btn" href="/listings/BCS_Listings_3751.csv" download="BCS_Listings_3751.csv">⬇ Descargar Excel / CSV (3,751)</a>
+      <a class="btn sec" href="/listings/BCS_Listings_3751.json" download="BCS_Listings_3751.json">⬇ Descargar JSON</a>
+      <a class="btn sec" href="/gis/bcs_market_listings.geojson" download="BCS_Listings_3751.geojson">⬇ Descargar GeoJSON</a>
+    </div>
+  </header>
+  <section class="kpis">
+    <div class="kpi"><strong id="k-count">3,751</strong><span>Propiedades filtradas</span></div>
+    <div class="kpi"><strong id="k-vol">$4.73B USD</strong><span>Valor total de inventario</span></div>
+    <div class="kpi"><strong id="k-med">$450K USD</strong><span>Precio mediano</span></div>
+    <div class="kpi"><strong id="k-avg">$1.26M USD</strong><span>Precio promedio</span></div>
+  </section>
+  <main class="layout">
+    <div id="map"></div>
+    <div class="panel">
+      <div class="filters">
+        <input id="f-q" type="search" placeholder="Buscar por nombre, zona o ID..." />
+        <select id="f-muni">
+          <option value="">Todos los municipios</option>
+          <option value="Los Cabos">Los Cabos</option>
+          <option value="La Paz">La Paz</option>
+          <option value="Loreto">Loreto</option>
+          <option value="Mulegé">Mulegé</option>
+          <option value="Comondú">Comondú</option>
+        </select>
+        <select id="f-type">
+          <option value="">Todos los tipos</option>
+          <option value="RESIDENTIAL">RESIDENTIAL</option>
+          <option value="LAND">LAND</option>
+          <option value="CONDO">CONDO</option>
+          <option value="MULTI_FAMILY">MULTI_FAMILY</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Propiedad</th>
+              <th>Municipio</th>
+              <th>Tipo</th>
+              <th>Precio (USD)</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script>
+    let allFeatures = [];
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: {
+        version: 8,
+        sources: {
+          sat: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, maxzoom: 18 }
+        },
+        layers: [{ id: 'sat', type: 'raster', source: 'sat' }]
+      },
+      center: [-110.1, 23.6],
+      zoom: 7.2,
+      pitch: 45
+    });
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+    function fmtUsd(n) {
+      if (!n || !isFinite(n)) return '—';
+      if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B USD';
+      if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M USD';
+      if (n >= 1e3) return '$' + Math.round(n / 1e3).toLocaleString('en-US') + 'K USD';
+      return '$' + Math.round(n).toLocaleString('en-US') + ' USD';
+    }
+
+    function applyFilter() {
+      const q = (document.getElementById('f-q').value || '').toLowerCase();
+      const m = document.getElementById('f-muni').value;
+      const t = document.getElementById('f-type').value;
+      const filtered = allFeatures.filter(f => {
+        const p = f.properties || {};
+        if (m && p.municipality !== m) return false;
+        if (t && p.propertyType !== t) return false;
+        if (q) {
+          const blob = ((p.title || '') + ' ' + (p.city || '') + ' ' + (p.mlsId || '')).toLowerCase();
+          if (!blob.includes(q)) return false;
+        }
+        return true;
+      });
+      const prices = filtered.map(f => Number(f.properties?.price || 0)).filter(v => v > 0).sort((a,b) => a - b);
+      const vol = prices.reduce((s,v) => s + v, 0);
+      const med = prices.length ? prices[Math.floor(prices.length / 2)] : 0;
+      const avg = prices.length ? vol / prices.length : 0;
+      document.getElementById('k-count').textContent = filtered.length.toLocaleString('en-US');
+      document.getElementById('k-vol').textContent = fmtUsd(vol);
+      document.getElementById('k-med').textContent = fmtUsd(med);
+      document.getElementById('k-avg').textContent = fmtUsd(avg);
+
+      if (map.getSource('listings')) {
+        map.getSource('listings').setData({ type: 'FeatureCollection', features: filtered });
+      }
+
+      const tbody = document.getElementById('tbody');
+      tbody.innerHTML = filtered.slice(0, 300).map(f => {
+        const p = f.properties || {};
+        return '<tr data-lng="' + p.lng + '" data-lat="' + p.lat + '">' +
+          '<td><small>' + (p.mlsId || p.id) + '</small></td>' +
+          '<td><strong>' + (p.title || p.name) + '</strong></td>' +
+          '<td>' + (p.municipality || '') + '</td>' +
+          '<td><span class="badge">' + (p.propertyType || '') + '</span></td>' +
+          '<td><strong>' + (p.priceFormatted || fmtUsd(p.price)) + '</strong></td>' +
+        '</tr>';
+      }).join('');
+
+      tbody.querySelectorAll('tr').forEach(tr => {
+        tr.onclick = () => {
+          const lng = Number(tr.getAttribute('data-lng'));
+          const lat = Number(tr.getAttribute('data-lat'));
+          if (isFinite(lng) && isFinite(lat)) map.flyTo({ center: [lng, lat], zoom: 14, pitch: 55 });
+        };
+      });
+    }
+
+    map.on('load', () => {
+      fetch('/gis/bcs_market_listings.geojson')
+        .then(r => r.json())
+        .then(geo => {
+          allFeatures = geo.features || [];
+          map.addSource('listings', { type: 'geojson', data: geo });
+          map.addLayer({
+            id: 'listings-pts',
+            type: 'circle',
+            source: 'listings',
+            paint: {
+              'circle-radius': 6,
+              'circle-color': ['match', ['get', 'propertyType'], 'RESIDENTIAL', '#f59e0b', 'CONDO', '#38bdf8', 'LAND', '#10b981', '#a855f7'],
+              'circle-stroke-width': 1.2,
+              'circle-stroke-color': '#fff'
+            }
+          });
+          map.on('click', 'listings-pts', (e) => {
+            const p = e.features[0].properties;
+            new maplibregl.Popup()
+              .setLngLat(e.lngLat)
+              .setHTML('<div style="color:#0f172a"><strong>' + p.title + '</strong><br><b style="color:#b45309">' + p.priceFormatted + '</b><br><small>' + p.propertyType + ' · ' + p.municipality + '</small></div>')
+              .addTo(map);
+          });
+          applyFilter();
+        });
+    });
+
+    ['f-q', 'f-muni', 'f-type'].forEach(id => {
+      document.getElementById(id).addEventListener('input', applyFilter);
+      document.getElementById(id).addEventListener('change', applyFilter);
+    });
+  </script>
+</body>
+</html>
