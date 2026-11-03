@@ -1100,43 +1100,18 @@
     if (!btn) return;
     btn.setAttribute('aria-pressed', pitched && terrainOn ? 'true' : 'false');
   }
-  function levelToggleIds(id) {
-    var stack = stackById(id);
-    if (!stack) return [];
-    var chosen = (stack.toggle && stack.toggle.length) ? stack.toggle : (stack.layers || []);
-    return chosen.filter(function (lid) { return byId[lid]; });
-  }
-  function levelIsOn(id) {
-    if (id === 'l0') return !!terrainOn;
-    if (id === 'l5') return !!extrudeOn;
-    if (id === 'l1' || id === 'l4') return false;
-    var ids = levelToggleIds(id);
-    return ids.length > 0 && ids.every(function (lid) { return !!on[lid]; });
-  }
-  function applyStackToggle(id) {
-    if (id === 'l0') {
-      terrainOn = !terrainOn;
-      applyTerrain();
-      applyPitch();
-    } else if (id === 'l5') {
-      extrudeOn = !extrudeOn;
-      applyExtrusion();
-    } else if (id === 'l1' || id === 'l4') {
-      return;
-    } else {
-      var ids = levelToggleIds(id);
-      if (!ids.length) return;
-      var turnOn = ids.some(function (lid) { return !on[lid]; });
-      ids.forEach(function (lid) { delete answerLayers[lid]; showLayer(lid, turnOn); });
-    }
-    syncStackToggles();
-    syncHud();
-    syncBasic();
-  }
   function syncStackToggles() {
     document.querySelectorAll('[data-stack-toggle]').forEach(function (btn) {
       var id = btn.getAttribute('data-stack-toggle');
-      btn.setAttribute('aria-pressed', levelIsOn(id) ? 'true' : 'false');
+      var pressed = false;
+      if (id === 'l0') pressed = terrainOn;
+      else if (id === 'l1') pressed = extrudeOn;
+      else {
+        var stack = (model.stack || []).filter(function (s) { return s.id === id; })[0];
+        var ids = (stack && stack.layers) || [];
+        pressed = ids.length > 0 && ids.every(function (lid) { return on[lid]; });
+      }
+      btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
     });
     syncPitchBtn();
   }
@@ -1192,29 +1167,22 @@
   document.querySelectorAll('[data-stack-toggle]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var id = btn.getAttribute('data-stack-toggle');
-      var chip = btn.classList.contains('shell-level');
-      if (chip && (id === 'l1' || id === 'l4')) {
-        var emptyOpen = document.body.classList.contains('shell-sheet-open') && document.body.getAttribute('data-dock') === id;
-        if (emptyOpen) setSheet(false);
-        else openDock(id);
-        return;
+      if (id === 'l0') {
+        terrainOn = !terrainOn;
+        applyTerrain();
+        applyPitch();
+      } else if (id === 'l1') {
+        extrudeOn = !extrudeOn;
+        applyExtrusion();
+      } else {
+        var stack = stackById(id);
+        var ids = (stack && stack.layers) || [];
+        var turnOn = ids.some(function (lid) { return !on[lid]; });
+        ids.forEach(function (lid) { delete answerLayers[lid]; showLayer(lid, turnOn); });
       }
-      if (chip) {
-        var sheetHere = document.body.classList.contains('shell-sheet-open') && document.body.getAttribute('data-dock') === id;
-        if (!levelIsOn(id)) {
-          applyStackToggle(id);
-          openDock(id);
-          mapSummary('Capa encendida. El detalle nombra la fuente. Pulsa el mapa para leer un elemento.', 'Layer on. The detail names the source. Click the map to read a feature.');
-        } else if (!sheetHere) {
-          openDock(id);
-        } else {
-          applyStackToggle(id);
-          setSheet(false);
-          mapSummary('Capa apagada.', 'Layer off.');
-        }
-        return;
-      }
-      applyStackToggle(id);
+      syncStackToggles();
+      syncHud();
+      syncBasic();
     });
   });
   var pitchBtn = document.getElementById('shell-pitch');
@@ -1308,34 +1276,18 @@
       if (leafletMap) leafletMap.invalidateSize();
     }, 40);
   }
-  function paintDock(id) {
-    document.querySelectorAll('.shell-stack > li').forEach(function (li) {
-      li.classList.toggle('is-open', li.getAttribute('data-dock-panel') === id);
-    });
-    document.querySelectorAll('[data-dock]').forEach(function (btn) {
-      var here = btn.getAttribute('data-dock') === id;
-      btn.setAttribute('aria-selected', here ? 'true' : 'false');
-      if (btn.classList.contains('shell-level')) btn.setAttribute('aria-expanded', here ? 'true' : 'false');
-    });
-  }
-  function openDock(id) {
-    paintDock(id);
-    document.body.classList.add('shell-dock-open', 'shell-sheet-open');
-    document.body.setAttribute('data-dock', id);
-    var capas = document.getElementById('shell-capas');
-    if (capas) {
-      capas.setAttribute('aria-expanded', 'true');
-      capas.setAttribute('aria-pressed', 'true');
-    }
-    resizeMapSoon();
-  }
   function setDock(id) {
     var same = document.body.classList.contains('shell-dock-open') && document.body.getAttribute('data-dock') === id;
-    if (same) {
-      setSheet(false);
-      return;
-    }
-    openDock(id);
+    document.querySelectorAll('.shell-stack > li').forEach(function (li) {
+      li.classList.toggle('is-open', !same && li.getAttribute('data-dock-panel') === id);
+    });
+    document.querySelectorAll('.shell-dock-chips [data-dock]').forEach(function (btn) {
+      btn.setAttribute('aria-selected', !same && btn.getAttribute('data-dock') === id ? 'true' : 'false');
+    });
+    document.body.classList.toggle('shell-dock-open', !same);
+    if (same) document.body.removeAttribute('data-dock');
+    else document.body.setAttribute('data-dock', id);
+    resizeMapSoon();
   }
   document.querySelectorAll('.shell-dock-chips [data-dock]').forEach(function (btn) {
     btn.addEventListener('click', function () { setDock(btn.getAttribute('data-dock')); });
@@ -1422,17 +1374,11 @@
   }
   function setSheet(open) {
     document.body.classList.toggle('shell-sheet-open', !!open);
-    if (!open) {
-      document.body.classList.remove('shell-dock-open');
-      document.querySelectorAll('.shell-level[data-dock]').forEach(function (chip) {
-        chip.setAttribute('aria-expanded', 'false');
-        chip.setAttribute('aria-selected', 'false');
-      });
-    }
+    if (!open) document.body.classList.remove('shell-dock-open');
     var scrim = document.getElementById('shell-scrim');
     var btn = document.getElementById('shell-capas');
     if (scrim) scrim.hidden = true;
-    if(open){openDock(document.body.getAttribute('data-dock')||'l0');var closer=document.getElementById('shell-sheet-x');if(closer)closer.focus();}
+    if(open){setDock(document.body.getAttribute('data-dock')||'l0');var closer=document.getElementById('shell-sheet-x');if(closer)closer.focus();}
     else if(document.getElementById('shell-sheet')&&document.getElementById('shell-sheet').contains(document.activeElement)&&btn)btn.focus();
     if (btn) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -1485,6 +1431,7 @@
       var enable=ids.some(function(id){return !on[id];});
       ids.forEach(function(id){delete answerLayers[id];showLayer(id,enable);});
       syncBasic();
+      syncStackToggles();
       mapSummary(enable?'Capas activadas. Selecciona un elemento para ver su información.':'Capas desactivadas.',enable?'Layers enabled. Select a feature to view its information.':'Layers disabled.');
     });
   });
