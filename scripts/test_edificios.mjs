@@ -8,12 +8,12 @@
 //   3. Loreto and La Paz draw buildings at city zoom, with height, storeys, area and block fields.
 //   4. setBuildings(false) hides them; setBuildings(true) brings them back.
 //   5. Tapping a building opens its fiche. This needs the shell wiring of `cdt-bld-*` (Codex):
-//      reported as PENDING, not FAIL, until the shell answers with a building fiche.
-// Exit code 0 when checks 1-4 pass.
+//      opening the building fiche is required.
+// Exit code 0 only when all checks pass.
 import { chromium } from 'playwright';
 
 const BASE = process.env.BASE || 'http://localhost:4321';
-const PAGE = process.env.PAGE || '/inicio/';
+const PAGE = process.env.PAGE || '/consulta/';
 const results = [];
 function check(name, ok, detail = '', pending = false) {
   const tag = ok ? 'PASS' : pending ? 'PENDING' : 'FAIL';
@@ -21,7 +21,7 @@ function check(name, ok, detail = '', pending = false) {
   console.log(`${tag} · ${name}${detail ? ' · ' + detail : ''}`);
 }
 
-const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+const browser = await chromium.launch({ channel: process.env.BROWSER_CHANNEL || undefined, args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const tileHits = [];
 page.on('request', (r) => { if (r.url().includes('/gis/edificios/tiles/')) tileHits.push(r.url()); });
@@ -37,7 +37,7 @@ try {
   const ix = await (await fetch(BASE + '/gis/edificios/index.json')).json();
   check('index lists nine zones', (ix.cities || []).length === 9, (ix.cities || []).map((c) => c.id).join(', '));
   let missing = 0;
-  await Promise.all(ix.tiles.map(async (t) => { const r = await fetch(BASE + t.url, { method: 'HEAD' }); if (!r.ok) missing += 1; }));
+  for (let i=0;i<ix.tiles.length;i+=5) await Promise.all(ix.tiles.slice(i,i+5).map(async (t) => { const r = await fetch(BASE + t.url, { method: 'HEAD' }); if (!r.ok) missing += 1; }));
   const total = ix.cities.reduce((n, c) => n + (c.buildings || 0), 0);
   check('every tile URL answers', missing === 0, `${ix.tiles.length} tiles, ${missing} missing, ${total.toLocaleString('en-US')} buildings`);
   check('index carries source, height rule and limits', !!(ix.source && ix.limits && ix.height_rule));
@@ -73,9 +73,9 @@ try {
     await page.waitForTimeout(1500);
     const fiche = await call(`(() => { const f = document.getElementById('shell-fiche'); return f && !f.hidden ? f.innerText.replace(/\\s+/g, ' ').slice(0, 160) : ''; })()`);
     const ok = /edificio|building/i.test(fiche);
-    check('tapping a building opens its fiche', ok, fiche || 'no fiche', !ok);
+    check('tapping a building opens its fiche', ok, fiche || 'no fiche');
   } else {
-    check('tapping a building opens its fiche', false, 'no building point on screen', true);
+    check('tapping a building opens its fiche', false, 'no building point on screen');
   }
 
   // 4. Toggle
@@ -93,5 +93,6 @@ try {
 }
 
 const failed = results.filter((r) => !r.ok);
-console.log(`\n${results.length - failed.length}/${results.length} checks passed or pending`);
+console.log(`\n${results.length - failed.length}/${results.length} checks passed`);
 process.exit(failed.length ? 1 : 0);
+
