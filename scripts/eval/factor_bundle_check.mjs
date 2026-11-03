@@ -1010,6 +1010,74 @@ const CASES = [
     needIds: ['proj_fed_ene_007', 'rc_sibcs'],
     needTypes: ['Project', 'ResourceCapacity'],
   },
+  {
+    q: '¿Cuál es la capacidad de carga de Los Cabos?',
+    kind: 'viability',
+    needIds: ['dq_capacidad_carga', 'const_dma_deficit', 'rc_sibcs'],
+    needTypes: ['DecisionQuestion', 'Constraint', 'ResourceCapacity'],
+  },
+  {
+    q: 'Integridad ecológica de Sierra La Laguna',
+    kind: 'viability',
+    needIds: ['dq_integridad_ecologica', 'terr_anp_sierra_laguna', 'const_anp_nucleos'],
+    needTypes: ['DecisionQuestion', 'Territory', 'Constraint'],
+  },
+  {
+    q: '¿Cuántas localidades hay en BCS?',
+    kind: 'viability',
+    needIds: ['ev_communities_master'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: '¿Qué acuerdo DOF actualizó la DMA de La Paz?',
+    kind: 'viability',
+    needIds: ['ev_dma', 'proj_fed_agu_008', 'rc_acuifero_0324'],
+    needTypes: ['Evidence', 'Project', 'ResourceCapacity'],
+  },
+  {
+    q: '¿La interconexión de BCS con el SIN está pausada?',
+    kind: 'viability',
+    needIds: ['proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada'],
+    needTypes: ['Project', 'ResourceCapacity', 'Constraint'],
+  },
+  {
+    q: '¿Don Diego en el Golfo de Ulloa sigue vigente?',
+    kind: 'viability',
+    needIds: ['proj_fed_min_002'],
+    needTypes: ['Project'],
+  },
+  {
+    q: 'Glorieta de las Mujeres Libres',
+    kind: 'viability',
+    needIds: ['proj_fed_tur_002', 'proj_fed_car_002'],
+    needTypes: ['Project'],
+  },
+  {
+    q: '¿Cuántos puntos de costa protegida muestran los stills del estado?',
+    kind: 'viability',
+    needIds: ['ev_stills_intel'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'East Cape y Loreto no comparten aeropuerto',
+    kind: 'viability',
+    needIds: ['ev_dossiers_movilidad', 'terr_obs_east_cape', 'terr_loreto'],
+    needTypes: ['Evidence', 'Territory'],
+    forbid: ['dq_comparar_polos'],
+  },
+  {
+    q: 'Comondú y La Paz frente al agro y al agua',
+    kind: 'viability',
+    needIds: ['terr_comondu', 'terr_la_paz', 'dd_agro_santo_domingo', 'rc_acuifero_0324'],
+    needTypes: ['Territory', 'DemandDriver', 'ResourceCapacity'],
+  },
+  {
+    q: '¿El POER cabe en la constitución política?',
+    kind: 'landuse',
+    needIds: ['inst_poerbcs', 'inst_poer_politicas'],
+    needTypes: ['Instrument'],
+    forbid: ['terr_comondu', 'dd_agro_santo_domingo'],
+  },
 ];
 
 const NEGATIVES = [
