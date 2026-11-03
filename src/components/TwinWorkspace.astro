@@ -52,14 +52,31 @@ const catalogLayers = cdtModel.layerCatalog.map((l) => ({
 }));
 const catalogIds = new Set(catalogLayers.map((l) => l.id));
 const stack = [
-  { id: 'l0', layers: ['osm_towns', 'settlements'] },
+  {
+    id: 'l0',
+    layers: [
+      'osm_towns',
+      'settlements',
+      'curvas_nivel_bcs',
+      'pendiente_terreno_bcs',
+      'altitud_terreno_bcs',
+      'cobertura_vegetal_bcs',
+    ],
+  },
   {
     id: 'l2',
     layers: [
       'osm_highways',
       'osm_power_lines',
       'osm_power_nodes',
+      'infraestructura_urbana_bcs',
       'osm_waterways',
+      'presas_cea',
+      'acuiferos_conagua',
+      'desagues_pluviales_bcs',
+      'inundaciones_historico_bcs',
+      'agricultura_inegi',
+      'ran_nucleos',
       'focus_water_dmas',
       'focus_ports_air',
       'federal_projects',
@@ -68,8 +85,30 @@ const stack = [
       'rtp_conabio',
     ],
   },
-  { id: 'l3', layers: ['osm_transport_nodes', 'highway_nodes', 'focus_corridor_cabos_lapaz'] },
-  { id: 'l4', layers: ['bcs_market_listings'] },
+  {
+    id: 'l3',
+    layers: [
+      'osm_transport_nodes',
+      'highway_nodes',
+      'focus_corridor_cabos_lapaz',
+      'limites_velocidad_vial_bcs',
+      'ciclovias_bcs',
+      'reparto_bicicleta_bcs',
+      'estaciones_carga_ve_bcs',
+      'traffic_sict_bcs',
+      'bottlenecks_sict_bcs',
+    ],
+  },
+  {
+    id: 'l4',
+    layers: [
+      'bcs_market_listings',
+      'vivienda_multifamiliar_bcs',
+      'bcs_market_listings_manzanas',
+      'codigos_postales_bcs',
+      'density_muni',
+    ],
+  },
 ];
 const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
 const shellLayers = [...catalogLayers, ...extras];
@@ -277,7 +316,32 @@ const shellModel = {
                 </div>
                 <p class="shell-note"><span data-lang-es>El corredor es un marco de análisis, no un límite oficial.</span><span data-lang-en hidden>The corridor is an analysis frame, not an official boundary.</span></p>
               </li>
-              <li data-dock-panel="l4"><header><div><strong><span data-lang-es>Vivienda y mercado inmobiliario</span><span data-lang-en hidden>Housing and real estate</span></strong><small><span data-lang-es>Oferta publicada, con precios de lista en dólares.</span><span data-lang-en hidden>Published listings, with asking prices in US dollars.</span></small></div></header><div class="shell-layer-group"><label><input type="checkbox" data-layer="bcs_market_listings" /><i class="shell-swatch" style="background:#f59e0b"></i><span><span data-lang-es>Propiedades en mercado</span><span data-lang-en hidden>Market listings</span><small>MLS BCS · 2026</small></span></label></div><p class="shell-note"><span data-lang-es>Las columnas son símbolos de las propiedades; no representan edificios reales ni precios de venta cerrada.</span><span data-lang-en hidden>Columns are property symbols, not actual buildings or completed sale prices.</span></p></li>
+              <li data-dock-panel="l4">
+                <header>
+                  <span class="shell-n">4</span>
+                  <div>
+                    <strong><span data-lang-es>Vivienda, códigos postales y demografía</span><span data-lang-en hidden>Housing, postal codes and demography</span></strong>
+                    <small><span data-lang-es>Oferta inmobiliaria, vivienda multifamiliar, manzanas urbanas, códigos postales y densidad habitacional.</span><span data-lang-en hidden>Market listings, multi-family units, urban blocks, postal codes and population density.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l4" aria-pressed="false"><span data-lang-es>Todas</span><span data-lang-en hidden>All</span></button>
+                </header>
+                <div class="shell-layer-group">
+                  {stack[3].layers.map((id) => {
+                    const layer = layersById[id];
+                    return (
+                      <label>
+                        <input type="checkbox" data-layer={layer.id} />
+                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
+                        <span>
+                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+                <p class="shell-note"><span data-lang-es>Las columnas son símbolos de las propiedades; no representan edificios reales ni precios de venta cerrada.</span><span data-lang-en hidden>Columns are property symbols, not actual buildings or completed sale prices.</span></p>
+              </li>
               <li data-dock-panel="suelo">
                 <header>
                   <span class="shell-n">S</span>
