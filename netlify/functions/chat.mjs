@@ -2,6 +2,7 @@
  * BCS Portal chat — RAG over catalog + guides + ontology + stills.
  * Env: BCS_CHAT_API_KEY, BCS_CHAT_PROVIDER (openai|xai)
  */
+import { stateBudgetOverview } from '../lib/state_budget.mjs';
 import corpusData from './chat_corpus.json' with { type: 'json' };
 import graphData from './ontology_graph.json' with { type: 'json' };
 import stakeholdersSeed from './stakeholders_seed.json' with { type: 'json' };
@@ -6875,6 +6876,9 @@ async function handlerInner(event) {
   if (!message) {
     return { statusCode: 400, headers, body: JSON.stringify({ error: 'message required' }) };
   }
+
+  const budget = stateBudgetOverview(message, lang);
+  if (budget) return {statusCode:200,headers,body:JSON.stringify(budget)};
 
   const cfg = providerConfig();
   if (!cfg.key || !cfg.url) {
