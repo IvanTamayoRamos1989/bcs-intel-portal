@@ -237,7 +237,7 @@
         antialias: !reduced,
         pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
         minZoom: 6.15,
-        maxZoom: 14,
+        maxZoom: 17,
         maxBounds: [[stateBounds[0][0] - pad, stateBounds[0][1] - pad], [stateBounds[1][0] + pad, stateBounds[1][1] + pad]],
         maxBoundsViscosity: 0.85,
         attributionControl: true,
@@ -662,9 +662,103 @@
         var ids = [];
         ((style && style.layers) || []).forEach(function (layer) {
           var id = layer.id;
-          if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0) ids.push(id);
+          if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0 || id.indexOf('cdt-bld-') === 0) ids.push(id);
         });
         return ids.filter(function (id) { return map.getLayer(id); });
+      }
+      // Buildings: Google Open Buildings v3 footprints with Open Buildings 2.5D (2023) height,
+      // one PMTiles file (/gis/edificios/edificios.pmtiles, layer "edificios", zooms 13-15, overzoomed to 17).
+      // The vector source only requests tiles in view from zoom 13: the statewide view downloads no buildings.
+      var bld = { on: false, index: null, wait: null, ready: false };
+      var BLD_MINZ = 13;
+      var BLD_LAYER = 'cdt-bld-edificios';
+      function loadPmtiles() {
+        if (window.__cdtPmtiles) return window.__cdtPmtiles;
+        window.__cdtPmtiles = new Promise(function (resolve, reject) {
+          function register() {
+            if (!window.__cdtPmtilesProtocol) {
+              var protocol = new pmtiles.Protocol();
+              maplibregl.addProtocol('pmtiles', protocol.tile);
+              window.__cdtPmtilesProtocol = protocol;
+            }
+            resolve(true);
+          }
+          if (window.pmtiles && window.pmtiles.Protocol) { register(); return; }
+          var sc = document.createElement('script');
+          sc.src = '/gemelo/vendor/pmtiles.js';
+          sc.onload = register;
+          sc.onerror = function () { window.__cdtPmtiles = null; reject(new Error('pmtiles')); };
+          document.head.appendChild(sc);
+        });
+        return window.__cdtPmtiles;
+      }
+      function addBuildingLayer(ix) {
+        if (bld.ready || removed) return;
+        var pm = ix.pmtiles;
+        map.addSource('bld-src', {
+          type: 'vector',
+          url: 'pmtiles://' + new URL(pm.url, location.href).href,
+          minzoom: pm.minzoom,
+          maxzoom: pm.maxzoom,
+          attribution: 'Google Open Buildings',
+        });
+        map.addLayer({
+          id: BLD_LAYER, type: 'fill-extrusion', source: 'bld-src', 'source-layer': pm.layer, minzoom: BLD_MINZ,
+          paint: {
+            // Warm ramp by approximate storeys: one storey pale, towers umber.
+            'fill-extrusion-color': ['step', ['get', 'n'], '#ebe4d3', 2, '#ddd0b5', 3, '#cbb795', 5, '#ad916c', 10, '#7d6650'],
+            'fill-extrusion-height': ['get', 'h'],
+            'fill-extrusion-base': 0,
+            'fill-extrusion-opacity': ['interpolate', ['linear'], ['zoom'], BLD_MINZ, 0, BLD_MINZ + 0.6, 0.96],
+            'fill-extrusion-vertical-gradient': true,
+          },
+        });
+        map.on('mouseenter', BLD_LAYER, function () { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', BLD_LAYER, function () { map.getCanvas().style.cursor = ''; });
+        bld.ready = true;
+      }
+      function loadBuildingIndex() {
+        if (bld.index) return Promise.resolve(bld.index);
+        if (!bld.wait) {
+          bld.wait = fetch('/gis/edificios/index.json').then(function (r) {
+            if (!r.ok) throw new Error('index');
+            return r.json();
+          }).then(function (ix) { bld.index = ix; return ix; }).catch(function () { bld.wait = null; return null; });
+        }
+        return bld.wait;
+      }
+      // Public: turn buildings on or off. Resolves with the index summary (source, limits, cities) or null.
+      function setBuildings(on) {
+        bld.on = !!on;
+        if (!bld.on) {
+          if (map.getLayer(BLD_LAYER)) map.setLayoutProperty(BLD_LAYER, 'visibility', 'none');
+          return Promise.resolve(bld.index);
+        }
+        return loadBuildingIndex().then(function (ix) {
+          if (!ix || !ix.pmtiles) return null;
+          return loadPmtiles().then(function () {
+            if (!bld.on) return ix;
+            addBuildingLayer(ix);
+            if (map.getLayer(BLD_LAYER)) map.setLayoutProperty(BLD_LAYER, 'visibility', 'visible');
+            return ix;
+          });
+        }).catch(function () { return null; });
+      }
+      function bldLayerIds() { return map.getLayer(BLD_LAYER) ? [BLD_LAYER] : []; }
+      function buildingsStatus() {
+        var layers = bldLayerIds().filter(function (id) { return map.getLayoutProperty(id, 'visibility') !== 'none'; });
+        var feats = layers.length ? map.queryRenderedFeatures({ layers: layers }) : [];
+        var c = map.getCanvas().getBoundingClientRect();
+        var pick = null;
+        for (var i = 0; i < feats.length && !pick; i++) {
+          var g = feats[i].geometry;
+          var p = map.project(g.type === 'Polygon' ? g.coordinates[0][0] : g.coordinates[0][0][0]);
+          if (p.x > 40 && p.y > 40 && p.x < c.width - 40 && p.y < c.height - 40) pick = { x: c.left + p.x, y: c.top + p.y };
+        }
+        return {
+          on: bld.on, minZoom: BLD_MINZ, zoom: map.getZoom(), layers: layers,
+          rendered: feats.length, sample: feats[0] ? feats[0].properties : null, layerOfSample: feats[0] ? feats[0].layer.id : null, screenPoint: pick,
+        };
       }
       var marker = null;
       var reliefOn = true;
@@ -833,7 +927,7 @@
           } else {
             applyHeights(lastHeights);
           }
-          resolve({
+          var api = {
             kind: '3d',
             fitBox: fitBox,
             resize: function () { map.resize(); },
@@ -845,6 +939,8 @@
             load: load,
             setBasemap: setBasemap,
             setIcluster: setIcluster,
+            setBuildings: setBuildings,
+            buildingsStatus: buildingsStatus,
             setTerrain: setTerrain,
             setMuniWash: setMuniWash,
             setExtrudeOpacity: setExtrudeOpacity,
@@ -868,7 +964,10 @@
               removed = true;
               try { map.remove(); } catch (e) {}
             },
-          });
+          };
+          // Started engines, for scripts/test_edificios.mjs and debugging.
+          window.CDT3D.engines = (window.CDT3D.engines || []).concat([api]);
+          resolve(api);
         });
         function fail(err) {
           if (settled) return;
@@ -880,7 +979,7 @@
           var msg = String(ev && ev.error && ev.error.message || '');
           if (/WebGL|failed to initialize/i.test(msg)) fail(ev.error || new Error(msg));
         });
-        setTimeout(function () { if (!settled) fail(new Error('timeout')); }, 20000);
+        setTimeout(function () { if (!settled) fail(new Error('timeout')); }, 35000);
       });
     });
   }

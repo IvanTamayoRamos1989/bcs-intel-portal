@@ -1,0 +1,101 @@
+{
+ "source": "Google Open Buildings v3 (footprints, 50 cm imagery, confidence >= 0.70) and Open Buildings 2.5D Temporal v1 (building_height, 2023), via Earth Engine",
+ "limits": "Height is a model estimate from Sentinel-2 (effective 4 m). Good to tell one, two or three storeys from towers; not exact to the metre.",
+ "height_rule": "Drawn height is the estimated mean inside the footprint, floored at 3.0 m (one storey).",
+ "cities": [
+  {
+   "id": "corredor_turistico",
+   "name": "Corredor turístico",
+   "center": [
+    -109.8501215,
+    22.903841
+   ],
+   "buildings": 9873
+  },
+  {
+   "id": "guerrero_negro",
+   "name": "Guerrero Negro",
+   "center": [
+    -114.049246,
+    27.96496625
+   ],
+   "buildings": 9500
+  },
+  {
+   "id": "loreto",
+   "name": "Loreto",
+   "center": [
+    -111.34068350000001,
+    26.00845175
+   ],
+   "buildings": 12023
+  },
+  {
+   "id": "santa_rosalia",
+   "name": "Santa Rosalía",
+   "center": [
+    -112.26552649999999,
+    27.33591
+   ],
+   "buildings": 8005
+  },
+  {
+   "id": "todos_santos",
+   "name": "Todos Santos",
+   "center": [
+    -110.223557,
+    23.440542
+   ],
+   "buildings": 10423
+  },
+  {
+   "id": "cabo_san_lucas",
+   "name": "Cabo San Lucas",
+   "center": [
+    -109.9315445,
+    22.89624975
+   ],
+   "buildings": 99938
+  },
+  {
+   "id": "ciudad_constitucion",
+   "name": "Ciudad Constitución",
+   "center": [
+    -111.66438725,
+    25.0350685
+   ],
+   "buildings": 36234
+  },
+  {
+   "id": "la_paz",
+   "name": "La Paz",
+   "center": [
+    -110.294673,
+    24.06140575
+   ],
+   "buildings": 151975
+  },
+  {
+   "id": "san_jose_del_cabo",
+   "name": "San José del Cabo",
+   "center": [
+    -109.733086625,
+    23.109306125
+   ],
+   "buildings": 57786
+  }
+ ],
+ "pmtiles": {
+  "url": "/gis/edificios/edificios.pmtiles",
+  "layer": "edificios",
+  "minzoom": 13,
+  "maxzoom": 15,
+  "bounds": [
+   -114.07178,
+   22.87118,
+   -109.659,
+   27.98871
+  ],
+  "buildings": 395757
+ }
+}
