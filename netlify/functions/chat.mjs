@@ -546,7 +546,7 @@ function expandQuery(query) {
   if (/\bcompens\w*\b|\boffset\b/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (/\brenta hotel|\bcap rate|\bocupacion(?: de)? hotel|\brenta por noche|\bprecio por noche/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
   const mobileGen = /\bturbinas? moviles?\b|\bgeneracion movil\b|\bcabo bello\b/.test(qn)
-    || (/\b128\b/.test(qn) && /\bmw\b/.test(qn));
+    || (/\b128\b/.test(qn) && /\b(mw|megawatts?)\b/.test(qn));
   if (mobileGen && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (/\b(0302|acuifero vizcaino)\b/.test(qn) && /\b(mulege|pertenece|asign)\b/.test(qn) && !factorKinds.includes('viability')) {
     factorKinds.push('viability');
@@ -605,7 +605,7 @@ function expandQuery(query) {
   if (/\btranspeninsular\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bimplan\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpoer\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
-  if (/\b(oasis|hidrogen)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(oasis|hidrogen)/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bturismo\b/.test(qn) && /\b(los cabos|cabo san lucas|san jose del cabo)\b/.test(qn) && !factorKinds.length) {
     factorKinds.push('viability');
   }
@@ -778,6 +778,19 @@ function expandQuery(query) {
   if (/\bocupacion\b/.test(qn) && /\b(octubre|no es renta)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(red del pais|red nacional)\b/.test(qn) && /\bpaus/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\banexo\b/.test(qn) && /\b(participacion|2025)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bprimero el agua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bamortiguamiento\b/.test(qn) && /\bvizcaino\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(costa toca|toca un area protegida|area protegida)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bfalta agua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bley estatal de aguas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdisponibilidad media\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(valle agricola|agricola)\b/.test(qn) && /\binsurgentes\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsan carlos\b/.test(qn) && /\bapi\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b50 anos\b/.test(qn) && /\bpuerto\b/.test(qn) && /\b(cabo|cabos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btransferencia\b/.test(qn) && /\b(puerto|asipona|api)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\breporte de vivienda\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bviabil/.test(qn) && /\briesgos?\b/.test(qn) && /\bhuecos?\b/.test(qn) && !factorKinds.includes('risk')) factorKinds.push('risk');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1305,10 +1318,10 @@ function factorSeedIds(qn, kinds) {
   const kindHit = PROJECT_KIND_RE.test(qn);
   if (/\b(poblacion|habitantes|censo|demograf)\b/.test(qn)) add('ev_pob_censo_2020');
   if (/\brenta hotel|\bcap rate|\bocupacion(?: de)? hotel|\brenta por noche|\bprecio por noche/.test(qn)) add('gap_rentas_hoteleras', 'ev_news_ocupacion');
-  if (/\bturbinas? moviles?\b|\bgeneracion movil\b|\bcabo bello\b/.test(qn) || (/\b128\b/.test(qn) && /\bmw\b/.test(qn))) {
+  if (/\bturbinas? moviles?\b|\bgeneracion movil\b|\bcabo bello\b/.test(qn) || (/\b128\b/.test(qn) && /\b(mw|megawatts?)\b/.test(qn))) {
     add('ev_news_cfe_128', 'rc_sibcs', 'const_red_aislada');
   }
-  if (/\b(oasis|hidrogen)\b/.test(qn)) add('ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
+  if (/\b(oasis|hidrogen)/.test(qn)) add('ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
   if (p.loreto && /\b(pasajer|pax|viajer|total de pasajeros)\b/.test(qn)) {
     add('gap_loreto_pax', 'ev_aereo_setue', 'ev_dossiers_movilidad');
   }
@@ -1545,6 +1558,22 @@ function factorSeedIds(qn, kinds) {
   if (/\bocupacion\b/.test(qn) && /\b(octubre|no es renta)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
   if (/\b(red del pais|red nacional)\b/.test(qn) && /\bpaus/.test(qn)) add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
   if (/\banexo\b/.test(qn) && /\b(participacion|2025)\b/.test(qn)) add('ev_fiscal_anexo_2025');
+  if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
+  if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
+  if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
+  if (/\b(costa toca|toca un area protegida|area protegida)\b/.test(qn)) add('dq_coast_anp_buffers', 'const_coast_anp_pressure');
+  if (/\bfalta agua\b/.test(qn)) add('const_escasez_agua', 'const_dma_deficit');
+  if (/\bley estatal de aguas\b/.test(qn)) add('inst_ley_aguas', 'actor_cea', 'actor_conagua');
+  if (/\bdisponibilidad media\b/.test(qn)) add('ev_acuiferos_dma');
+  if (/\bpaus/.test(qn) && /\b(enlace|sistema electrico)\b/.test(qn)) add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
+  if (/\binsurgentes\b/.test(qn) && /\b(valle|agricol|agro)\b/.test(qn)) add('terr_comondu', 'dd_agro_santo_domingo');
+  if (/\bsan carlos\b/.test(qn) && /\bapi\b/.test(qn)) add('ev_sig_asipona', 'proj_fed_pue_002');
+  if (/\b50 anos\b/.test(qn) && /\bpuerto\b/.test(qn)) add('ev_sig_asipona');
+  if (/\btransferencia\b/.test(qn) && /\b(puerto|asipona|api)\b/.test(qn)) add('ev_sig_asipona');
+  if (/\breporte de vivienda\b/.test(qn)) add('ev_jll_zonas_2025', 'gap_rentas_hoteleras');
+  if (/\bviabil/.test(qn) && /\briesgos?\b/.test(qn) && /\bhuecos?\b/.test(qn)) {
+    add('dq_riesgos_principales', 'dq_viabilidad_proyecto', 'gap_rentas_hoteleras');
+  }
   if (p.east && /\baeropuerto/.test(qn)) add('ev_dossiers_movilidad', 'gap_east_cape_carga');
   if (/\briesgos?\b/.test(qn) && /\bquien decide\b/.test(qn)) {
     add('dq_riesgos_principales');
