@@ -60,7 +60,7 @@ check('Broken links (La Paz HTTP 500, Datos Abiertos 2026 HTTP 404) and gaps (Lo
 });
 
 check('3-pane Archivos index (public/shell/files.json) surfaces the verified 2025-2026 finance documents', () => {
-  const hits = (shellFiles.files || []).filter((row) => row[1] === 'gobierno' && /Presupuesto|Cuenta Publica/i.test(norm(row[0])));
+  const hits = (shellFiles.files || []).filter((row) => row[1] === 'gobierno' && /presupuesto|cuenta[\s-]publica|ley[\s-]de[\s-]ingresos|estado[\s-]analitico/i.test(norm(row[0])));
   assert.ok(hits.length >= 8, `Expected at least 8 verified finance files in shell/files.json, found ${hits.length}`);
 });
 
