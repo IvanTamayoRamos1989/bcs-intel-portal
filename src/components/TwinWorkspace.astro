@@ -1,15 +1,13 @@
 ---
 import '../styles/global.css';
-import ChatWidget from './ChatWidget.astro';
 import ThreeNav from './ThreeNav.astro';
 import { ui } from '../i18n/ui';
 import { cdtModel } from '../lib/cdtModel';
 import landWater from '../data/tierra_agua.json';
 import gisLayers from '../../public/gis/layers.json';
 
-const { home = false } = Astro.props;
-const titleEs = home ? 'Preguntar' : 'Mapa 3D';
-const titleEn = home ? 'Ask' : '3D map';
+const titleEs = 'Mapa 3D';
+const titleEn = '3D map';
 
 type GisLayer = {
   id: string;
@@ -127,34 +125,14 @@ const shellModel = {
     <script is:inline src="/auth-gate.js"></script>
     <script is:inline src="/place-strip.js" defer></script>
   </head>
-  <body class:list={['shell-app', 'twin-workspace', home ? 'twin-home' : 'map-page']} data-pane="map">
-    <ThreeNav active={home ? 'ask' : 'map'} />
+  <body class="shell-app twin-workspace map-page" data-pane="map">
+    <ThreeNav active="map" />
     <aside class="twin-guide" id="twin-guide" hidden>
-      <h2><span data-lang-es>Una pregunta conecta las tres vistas</span><span data-lang-en hidden>One question connects the three views</span></h2>
-      <p><span data-lang-es>Escribe lo que quieres entender. Lee la respuesta, explora los lugares y capas relacionados en el mapa y abre las fuentes al lado. Puedes pulsar un elemento del mapa para ver su información.</span><span data-lang-en hidden>Ask what you want to understand. Read the answer, explore related places and layers on the map, and open the sources alongside. Click a map feature to see its information.</span></p>
-      <p><span data-lang-es>Las capas se activan abajo. En móvil, cambia entre Conversación, Mapa y Fuentes sin perder tu consulta. Si no hay datos suficientes, el portal debe indicarlo.</span><span data-lang-en hidden>Toggle layers below. On mobile, switch between Conversation, Map and Sources without losing your question. The portal should say when evidence is insufficient.</span></p>
+      <h2><span data-lang-es>Explorar el mapa</span><span data-lang-en hidden>Explore the map</span></h2>
+      <p><span data-lang-es>Busca un lugar, activa una capa y toca un elemento para ver su ficha.</span><span data-lang-en hidden>Find a place, enable a layer and select a feature to see its details.</span></p>
       <button type="button" id="twin-help-close"><span data-lang-es>Entendido</span><span data-lang-en hidden>Got it</span></button>
     </aside>
-    <script is:inline>
-      (function () {
-        try {
-          if (!window.matchMedia('(max-width: 900px)').matches) return;
-          var pane = sessionStorage.getItem('bcs-shell-pane');
-          if (pane === 'chat' || pane === 'map' || pane === 'files') {
-            document.body.setAttribute('data-pane', pane);
-          }
-        } catch (e) {}
-      })();
-    </script>
     <div class="shell">
-      <section class="shell-chat" aria-label="Consulta">
-        <ChatWidget shell={true} />
-      </section>
-      <div class="shell-split" id="split-l" role="separator" aria-orientation="vertical" aria-label="Ancho de la consulta">
-        <button type="button" class="shell-fold" data-fold="chat" aria-pressed="false">
-          <span data-lang-es>Consulta</span><span data-lang-en hidden>Chat</span>
-        </button>
-      </div>
       <section class="shell-map-wrap" aria-label="Mapa">
         <div id="shell-map"></div>
         <div class="twin-map-context"><span class="twin-eyebrow"><span data-lang-es>BAJA CALIFORNIA SUR</span><span data-lang-en hidden>CONTEXT MAP</span></span><p id="twin-map-summary" role="status"><span data-lang-es>Busca un lugar o activa una capa.</span><span data-lang-en hidden>Find a place or turn on a layer.</span></p><div class="map-search"><label for="map-place-search"><span data-lang-es>Buscar un lugar</span><span data-lang-en hidden>Find a place</span></label><input id="map-place-search" type="search" placeholder="La Paz, Loreto, Todos Santos…" autocomplete="off" aria-controls="map-place-results" /><ul id="map-place-results" class="map-search-results" hidden></ul></div>
@@ -370,27 +348,8 @@ const shellModel = {
             <p class="shell-gap"><span data-lang-es>Selecciona un elemento del mapa para consultar sus datos y su fuente.</span><span data-lang-en hidden>Select a map feature to read its data and source.</span></p>
           </div>
       </footer>
-      <div class="shell-split" id="split-r" role="separator" aria-orientation="vertical" aria-label="Ancho de los archivos">
-        <button type="button" class="shell-fold" data-fold="files" aria-pressed="false">
-          <span data-lang-es>Archivos</span><span data-lang-en hidden>Files</span>
-        </button>
-      </div>
-      <section class="shell-files" aria-label="Fuentes y archivos">
-        <header>
-          <strong><span data-lang-es>Fuentes y archivos</span><span data-lang-en hidden>Sources and files</span></strong>
-          <label class="twin-file-search" for="shell-q"><span data-lang-es>Buscar en el archivo</span><span data-lang-en hidden>Search the archive</span></label><input id="shell-q" type="search" autocomplete="off" placeholder="Tema, lugar o documento…" data-lang-placeholder-es="Tema, lugar o documento…" data-lang-placeholder-en="Topic, place or document…" />
-        </header>
-        <div id="shell-related"><div class="twin-empty"><span aria-hidden="true">↗</span><p><span data-lang-es>Las fuentes de tu consulta aparecerán aquí.</span><span data-lang-en hidden>Your question’s sources will appear here.</span></p><small><span data-lang-es>Pregunta en la conversación o busca un documento arriba.</span><span data-lang-en hidden>Ask in the conversation or search for a document above.</span></small></div></div>
-        <details class="twin-archive" id="twin-archive"><summary><span data-lang-es>Explorar todos los archivos</span><span data-lang-en hidden>Browse all files</span></summary><div id="shell-tree"></div></details>
-        <div id="shell-preview" hidden></div>
-      </section>
     </div>
     <p class="shell-toast" id="shell-toast" hidden role="status"></p>
-    <nav class="shell-tabs" aria-label="Paneles">
-      <button type="button" data-pane="chat" aria-pressed="true"><span data-lang-es>Conversación</span><span data-lang-en hidden>Conversation</span></button>
-      <button type="button" data-pane="map" aria-pressed="false"><span data-lang-es>Mapa</span><span data-lang-en hidden>Map</span></button>
-      <button type="button" data-pane="files" aria-pressed="false"><span data-lang-es>Fuentes</span><span data-lang-en hidden>Sources</span></button>
-    </nav>
     <script is:inline define:vars={{ shellModel }}>
       window.__SHELL_MODEL__ = shellModel;
     </script>

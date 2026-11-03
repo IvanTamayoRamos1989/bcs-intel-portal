@@ -132,7 +132,8 @@
     if (x) x.addEventListener('click', closeFiche);
     ficheEl.querySelectorAll('[data-fiche-file]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        renderPreview(files[Number(btn.getAttribute('data-fiche-file'))]);
+        var row = files[Number(btn.getAttribute('data-fiche-file'))];
+        if (row) location.assign('/catalogo/?q=' + encodeURIComponent(fileName(row)));
       });
     });
   }
