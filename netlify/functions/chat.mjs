@@ -1524,6 +1524,14 @@ function expandQuery(query) {
   if (/\bsetenta y tres mil\b/.test(qn) && /\b(comondu|ciudad constitucion)\b/.test(qn) && !/\bconstitucion politica\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bsesenta y cuatro mil\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bciento treinta y seis mil\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(cabildo|regidor(?:es)?|regiduria|sindicos?|sindicatura)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcapitan de fragata\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\barquitecto christian\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdecimoquinto ayuntamiento\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bgestion de la demanda\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bantes de abrir\b/.test(qn) && /\bcrecimiento\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bordenamiento local\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(cuarenta y tres mil ochocientos cinco|catorce mil trescientos cincuenta y siete|dieciocho mil cincuenta y dos|dieciseis mil trescientos once|doscientos cincuenta mil ciento cuarenta y uno)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -2604,7 +2612,10 @@ function factorSeedIds(qn, kinds) {
   if (/\balinea\b/.test(qn) && /\bplaneacion\b/.test(qn)) add('inst_ped', 'inst_poerbcs');
   if (/\btensionado\b/.test(qn)) add('inst_pdu_cabos', 'const_dma_deficit');
   if (/\bcoherenciar\b/.test(qn)) add('inst_pdu_lapaz', 'gap_pmdu_lapaz_texto');
-  if (/\bconvenio\b/.test(qn) && /\bordenamiento local\b/.test(qn)) add('inst_poel_cabos', 'inst_poerbcs');
+  if (/\bconvenio\b/.test(qn) && /\bordenamiento local\b/.test(qn)) {
+    if (p.loreto) add('inst_poel_loreto', 'gap_psdu_loreto_gazette', 'terr_loreto');
+    if (p.cabos || !p.loreto) add('inst_poel_cabos', 'inst_poerbcs');
+  }
   if (/\boperadores municipales\b/.test(qn)) add('inst_ley_aguas', 'actor_cea');
   if (/\bsistema interconectado\b/.test(qn)) add('inst_prodesen', 'rc_sibcs', 'const_red_aislada');
   if (/\bno unificado\b/.test(qn)) add('proj_fed_agu_001', 'proj_desal_cabos');
@@ -2937,7 +2948,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bno borra\b/.test(qn) && /\b(candado|desal)/.test(qn)) add('proj_desal_cabos', 'const_dma_deficit');
   if (/\bficha\b/.test(qn) && p.paz && /\bno tiene\b/.test(qn) && /\b(desal|anunci)/.test(qn)) add('proj_fed_agu_002');
   if (/\bintegral\b/.test(qn) && /\bpresa\b/.test(qn)) add('proj_fed_agu_004', 'proj_fed_agu_003');
-  if (/\bdieciocho mil\b/.test(qn)) add('proj_fed_agu_005', 'gap_loreto_dma');
+  if (/\bdieciocho mil\b/.test(qn) && !/\bdieciocho mil cincuenta\b/.test(qn)) add('proj_fed_agu_005', 'gap_loreto_dma');
   if (/\breencarpet/.test(qn)) add('proj_fed_car_003', 'proj_transpeninsular');
   if (/\bpaquete carretero\b/.test(qn)) add('proj_fed_car_004');
   if (/\bmagicos\b/.test(qn) && /\bmonto\b/.test(qn)) add('proj_fed_tur_001');
@@ -3006,6 +3017,17 @@ function factorSeedIds(qn, kinds) {
   if (/\bsetenta y tres mil\b/.test(qn) && p.comondu && !/\bconstitucion politica\b/.test(qn)) add('ev_pob_censo_2020');
   if (/\bsesenta y cuatro mil\b/.test(qn) && p.mulege) add('ev_pob_censo_2020');
   if (/\bciento treinta y seis mil\b/.test(qn)) add('ev_pob_censo_2020', 'terr_los_cabos');
+  if (/\b(cabildo|regidor(?:es)?|regiduria|sindicos?|sindicatura)\b/.test(qn) && p.cabos && !p.paz && !p.loreto) add('actor_ayunt_cabos', 'ev_org_cabos_2024', 'gap_permisos_uso_suelo');
+  if (/\bcapitan de fragata\b/.test(qn)) add('actor_cabos_dg_seguridad_publica', 'ev_org_cabos_2024');
+  if (/\barquitecto christian\b/.test(qn)) add('actor_cabos_presidencia', 'ev_org_cabos_2024');
+  if (/\bdecimoquinto ayuntamiento\b/.test(qn)) add('ev_organigrama_cabos', 'ev_org_cabos_2024', 'actor_cabos_presidencia');
+  if (/\bgestion de la demanda\b/.test(qn) || (/\bantes de abrir\b/.test(qn) && /\bcrecimiento\b/.test(qn))) add('ev_esc_water_first', 'const_dma_deficit');
+  if (/\bordenamiento local\b/.test(qn) && p.loreto) add('inst_poel_loreto', 'gap_psdu_loreto_gazette', 'terr_loreto');
+  if (/\bcuarenta y tres mil ochocientos cinco\b/.test(qn) && !/\bconstitucion politica\b/.test(qn)) add('ev_pob_censo_2020', 'terr_comondu');
+  if (/\bcatorce mil trescientos cincuenta y siete\b/.test(qn)) add('ev_pob_censo_2020', 'terr_mulege');
+  if (/\bdieciocho mil cincuenta y dos\b/.test(qn)) add('ev_pob_censo_2020', 'gap_loreto_dma', 'terr_loreto');
+  if (/\bdieciseis mil trescientos once\b/.test(qn) && !/\bkilometros\b/.test(qn)) add('ev_pob_censo_2020', 'terr_loreto');
+  if (/\bdoscientos cincuenta mil ciento cuarenta y uno\b/.test(qn) && !/\blitros\b/.test(qn)) add('ev_pob_censo_2020', 'terr_la_paz');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
@@ -3072,7 +3094,8 @@ function factorSeedIds(qn, kinds) {
     if (p.paz) add('terr_la_paz', 'rc_acuifero_0324', 'dd_turismo_lapaz', 'inst_pdu_lapaz');
     if (p.comondu) add('terr_comondu', 'dd_agro_santo_domingo');
     if (p.loreto) {
-      add('terr_loreto', 'proj_fed_agu_005', 'terr_anp_loreto', 'inst_poel_loreto', 'gap_loreto_dma', 'gap_loreto_energia_local', 'gap_psdu_loreto_gazette', 'dq_pack_loreto');
+      add('terr_loreto', 'terr_anp_loreto', 'inst_poel_loreto', 'gap_loreto_dma', 'gap_loreto_energia_local', 'gap_psdu_loreto_gazette', 'dq_pack_loreto');
+      if (!/\bdieciocho mil cincuenta\b/.test(qn)) add('proj_fed_agu_005');
     }
     if (p.mulege) {
       add('terr_mulege', 'terr_anp_vizcaino', 'gap_pdu_mulege', 'gap_mulege_agua_energia', 'dq_pack_mulege', 'ev_sig_mulege_oasis');
@@ -3161,9 +3184,10 @@ function factorSeedIds(qn, kinds) {
   }
   if (p.loreto) {
     add(
-      'dq_pack_loreto', 'terr_loreto', 'terr_anp_loreto', 'proj_fed_agu_005', 'inst_poel_loreto',
+      'dq_pack_loreto', 'terr_loreto', 'terr_anp_loreto', 'inst_poel_loreto',
       'gap_psdu_loreto_gazette', 'gap_loreto_dma', 'gap_loreto_energia_local', 'terr_obs_loreto_bay',
     );
+    if (!/\bdieciocho mil cincuenta\b/.test(qn)) add('proj_fed_agu_005');
   }
   if (p.mulege) {
     add(
@@ -3206,7 +3230,10 @@ function factorSeedIds(qn, kinds) {
     if (!kindHit && p.paz) {
       add('terr_la_paz', 'inst_pdu_lapaz', 'rc_acuifero_0324', 'gap_pmdu_lapaz_texto', 'proj_fed_agu_002', 'dd_turismo_lapaz');
     }
-    if (!kindHit && p.loreto) add('terr_loreto', 'terr_anp_loreto', 'gap_psdu_loreto_gazette', 'proj_fed_agu_005');
+    if (!kindHit && p.loreto) {
+      add('terr_loreto', 'terr_anp_loreto', 'gap_psdu_loreto_gazette');
+      if (!/\bdieciocho mil cincuenta\b/.test(qn)) add('proj_fed_agu_005');
+    }
     if (!kindHit && p.comondu) add('terr_comondu', 'dd_agro_santo_domingo');
     if (!kindHit && p.mulege) add('terr_mulege', 'terr_anp_vizcaino', 'gap_pdu_mulege');
     if (!kindHit && p.todos) add('terr_todos_santos', 'rc_acuifero_0313', 'gap_pmdu_lapaz_texto');
@@ -3245,7 +3272,10 @@ function factorSeedIds(qn, kinds) {
     if (!p.any || p.cabos) add('dd_turismo_cabos', 'dd_residencial_cabos', 'proj_desal_cabos', 'rc_aeropuerto_sjd', 'proj_p23_bs1');
     if (!p.any || p.paz) add('dd_turismo_lapaz', 'proj_fed_agu_002', 'rc_aeropuerto_lap');
     if (!p.any || p.comondu) add('dd_agro_santo_domingo', 'terr_comondu');
-    if (p.loreto) add('terr_loreto', 'proj_fed_agu_005', 'terr_anp_loreto');
+    if (p.loreto) {
+      add('terr_loreto', 'terr_anp_loreto');
+      if (!/\bdieciocho mil cincuenta\b/.test(qn)) add('proj_fed_agu_005');
+    }
     if (p.mulege) add('terr_mulege', 'gap_pdu_mulege');
     if (!p.any) add('proj_fed_ene_002', 'proj_fed_viv_001', 'proj_fed_tur_001', 'dd_eventos_foro');
   }
