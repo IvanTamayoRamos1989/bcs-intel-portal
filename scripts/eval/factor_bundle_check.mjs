@@ -1136,6 +1136,65 @@ const CASES = [
     needIds: ['ev_sig_asipona', 'terr_comondu'],
     needTypes: ['Evidence', 'Territory'],
   },
+  {
+    q: '¿Qué es el PAMRNT para la red de BCS?',
+    kind: 'viability',
+    needIds: ['inst_pamrnt', 'rc_sibcs', 'proj_p23_bs1', 'const_red_aislada'],
+    needTypes: ['Instrument', 'ResourceCapacity', 'Project', 'Constraint'],
+  },
+  {
+    q: '¿Qué cubre el plan de centro de población de La Paz?',
+    kind: 'landuse',
+    needIds: ['inst_pdu_lapaz', 'gap_pmdu_lapaz_texto', 'rc_acuifero_0324'],
+    needTypes: ['Instrument', 'Constraint', 'ResourceCapacity'],
+    sinDatoIds: ['gap_pmdu_lapaz_texto'],
+  },
+  {
+    q: '¿Está publicado el texto del PMDU de La Paz?',
+    kind: 'landuse',
+    needIds: ['gap_pmdu_lapaz_texto', 'inst_pdu_lapaz'],
+    needTypes: ['Constraint', 'Instrument'],
+    sinDatoIds: ['gap_pmdu_lapaz_texto'],
+  },
+  {
+    q: '¿El POEL de Loreto limita la bahía?',
+    kind: 'landuse',
+    needIds: ['inst_poel_loreto', 'gap_psdu_loreto_gazette', 'terr_anp_loreto'],
+    needTypes: ['Instrument', 'Constraint', 'Territory'],
+    sinDatoIds: ['gap_psdu_loreto_gazette'],
+  },
+  {
+    q: 'Escasez de agua en Los Cabos',
+    kind: 'viability',
+    needIds: ['const_escasez_agua', 'const_dma_deficit', 'ev_acuiferos_dma'],
+    needTypes: ['Constraint', 'Evidence'],
+  },
+  {
+    q: '¿Cuándo se creó Baja California Sur?',
+    kind: 'viability',
+    needIds: ['ev_historia_bcs'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: '¿Cuándo se creó el municipio de Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_historia_bcs'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'Tercera actualización del PDU 2040',
+    kind: 'landuse',
+    needIds: ['gap_pdu_cabos_3a', 'inst_pdu_cabos'],
+    needTypes: ['Constraint', 'Instrument'],
+    sinDatoIds: ['gap_pdu_cabos_3a'],
+  },
+  {
+    q: '¿Cuántos MVA tiene la subestación?',
+    kind: 'viability',
+    needIds: ['rc_subestaciones_gap', 'rc_sibcs'],
+    needTypes: ['ResourceCapacity'],
+    noSubstationList: true,
+  },
 ];
 
 const NEGATIVES = [
@@ -1146,7 +1205,6 @@ const NEGATIVES = [
   '¿Cuántas viviendas dañó Polo?',
   'El discurso cita 3000 lotes en Los Cabos',
   'Sin luz en las delegaciones de La Paz',
-  '¿Cuántos MVA tiene la subestación?',
 ];
 
 let failed = 0;
@@ -1229,6 +1287,12 @@ for (const c of CASES) {
     const text = `${z?.sum_es || ''} ${z?.sum_en || ''}`;
     if (!/\b42\b/.test(text)) fail(`${c.q} Loreto MLS volume missing`);
     if (!/no es renta hotelera|not hotel rent/i.test(text)) fail(`${c.q} must keep hotel rents out`);
+  }
+  if (c.noSubstationList) {
+    const sub = ev.find((x) => (x.onto_id || '') === 'rc_subestaciones_gap');
+    const text = `${sub?.sum_es || ''} ${sub?.sum_en || ''}`;
+    if (!/falta listado|not consolidated|no consolidado/i.test(text)) fail(`${c.q} substation list must stay unpublished`);
+    if (/\b\d+\s*mva\b/i.test(text)) fail(`${c.q} invented a substation MVA`);
   }
   if (c.noFloodVolume) {
     const run = ev.find((x) => (x.onto_id || '') === 'ev_escorrentia');
