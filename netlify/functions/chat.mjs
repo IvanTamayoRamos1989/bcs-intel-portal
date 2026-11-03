@@ -1819,6 +1819,12 @@ function expandQuery(query) {
   if (/\bfovissste\b/.test(qn) && /\brenta\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bconavi\b/.test(qn) && /\b(permiso|obra)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\btreinta y cinco mil viviendas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\begresos no son participaciones\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(subejercicio no es obra|devengado no es capacidad|pagado no es renta)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bajuste no es mil cuatrocientos noventa y dos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bla ficha no es una transferencia nueva\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bparticipaciones de dos mil veinticinco\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\banexo no trae\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpacifico\b/.test(qn) && /\btodos santos\b/.test(qn) && /\brenta\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bel aviso no sustituye el decreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -2829,6 +2835,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bfuera del sur turistico\b/.test(qn)) add('ev_sig_comondu_loreto', 'gap_loreto_dma');
   if (/\begresos estatales\b/.test(qn)) add('ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026');
   if (/\bno es capacidad de obra\b/.test(qn)) add('ev_fiscal_anexo_2025');
+  if (/\bno es capacidad de obra\b/.test(qn) && /\bpresupuesto\b/.test(qn)) add('ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026');
   if (/\b30 de septiembre de 2026\b/.test(qn) || (/\b(regeneracion y biodiversidad|hospitalidad)\b/.test(qn) && /\bmesas?\b/.test(qn))) {
     add('ev_mesas_trabajo');
   }
@@ -3020,7 +3027,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bciento ochenta y uno\b/.test(qn)) add('ev_historia_bcs', 'terr_los_cabos');
   if (/\bcip\b/.test(qn) && /\b(cuartos|fonatur)\b/.test(qn)) add('ev_historia_bcs');
   if ((/\bno es un censo\b/.test(qn) && !/\b(viajeros|pasajeros|destinos|vuelo)\b/.test(qn)) || (/\buna persona\b/.test(qn) && /\blocalidad\b/.test(qn))) add('ev_communities_master');
-  if (/\b(noventa y nueve|noventa y dos)\b/.test(qn) || (/\bboletin\b/.test(qn) && !/\bdiecinueve\b/.test(qn) && !/\bsin boletin\b/.test(qn))) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
+  if ((/\b(noventa y nueve|noventa y dos)\b/.test(qn) && !/\bmillones\b/.test(qn)) || (/\bboletin\b/.test(qn) && !/\bdiecinueve\b/.test(qn) && !/\bsin boletin\b/.test(qn))) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
   if (/\bveintinueve de febrero\b/.test(qn)) add('ev_org_cabos_2024', 'ev_organigrama_cabos');
   if (/\bno se infiere\b/.test(qn) || (/\bdireccion municipal\b/.test(qn) && /\bsin nombre\b/.test(qn))) add('gap_org_obras_cabos', 'ev_org_cabos_2024');
   if (/\bla que opera\b/.test(qn) || (/\bdos mil trece\b/.test(qn) && /\bmayo\b/.test(qn)) || (/\bdos mil veintitres\b/.test(qn) && /\bconsulta\b/.test(qn))) {
@@ -3186,7 +3193,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bnovecientas cincuenta y seis\b/.test(qn) || (/\bciento sesenta y nueve\b/.test(qn) && /\b(mar|costa)\b/.test(qn)) || /\bfotos del estudio\b/.test(qn)) add('ev_stills_intel');
   if (/\bmil imagenes\b/.test(qn)) add('ev_orientacion_aerea');
   if (/\bsetenta y dos franjas\b/.test(qn) || (/\btreinta y nueve\b/.test(qn) && /\bplaya\b/.test(qn)) || /\bveinte cruces protegidos\b/.test(qn) || (/\bfranjas\b/.test(qn) && /\bcosta\b/.test(qn))) add('const_coast_anp_pressure');
-  if (/\bdos mil novecientos\b/.test(qn) || /\bciento cuarenta y seis\b/.test(qn) || (/\bdieciseis mil\b/.test(qn) && /\b(kilometros|cauces)\b/.test(qn)) || /\bno son caudales\b/.test(qn) || /\bsumideros\b/.test(qn) || /\bsin caudal\b/.test(qn) || /\brio contado\b/.test(qn)) add('ev_escorrentia');
+  if ((/\bdos mil novecientos\b/.test(qn) && !/\bmillones\b/.test(qn)) || /\bciento cuarenta y seis\b/.test(qn) || (/\bdieciseis mil\b/.test(qn) && /\b(kilometros|cauces)\b/.test(qn)) || /\bno son caudales\b/.test(qn) || /\bsumideros\b/.test(qn) || /\bsin caudal\b/.test(qn) || /\brio contado\b/.test(qn)) add('ev_escorrentia');
   if (/\bprobarlo con el agua\b/.test(qn)) add('ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
   if (/\b(desalacion alla|planta aca|alla y planta)\b/.test(qn)) add('ev_sig_comondu_loreto', 'gap_loreto_dma');
   if (/\bfechas con fuente\b/.test(qn) || /\bocho de octubre\b/.test(qn)) add('ev_historia_bcs');
@@ -3604,6 +3611,9 @@ function factorSeedIds(qn, kinds) {
   if (/\bfinanciamiento\b/.test(qn) && /\brenta\b/.test(qn)) add('ev_sniiv_vivienda', 'gap_rentas_hoteleras');
   if (/\bbanca\b/.test(qn) && /\bcap rate\b/.test(qn)) add('ev_sniiv_vivienda', 'gap_rentas_hoteleras');
   if (/\bacciones de vivienda\b/.test(qn) && /\bllaves\b/.test(qn)) add('ev_sniiv_vivienda', 'gap_permisos_uso_suelo');
+  if (/\begresos no son participaciones\b/.test(qn) || /\bla ficha no es una transferencia nueva\b/.test(qn) || /\b(subejercicio no es obra|devengado no es capacidad|pagado no es renta)\b/.test(qn) || /\bajuste no es mil cuatrocientos noventa y dos\b/.test(qn)) add('ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026');
+  if (/\bpagado no es renta\b/.test(qn)) add('gap_rentas_hoteleras');
+  if (/\bparticipaciones de dos mil veinticinco\b/.test(qn) || (/\banexo no trae\b/.test(qn) && /\bmulege\b/.test(qn))) add('ev_fiscal_anexo_2025', 'gap_fiscal_ingresos_2026');
   if (/\bpacifico\b/.test(qn) && /\btodos santos\b/.test(qn) && /\brenta\b/.test(qn)) add('ev_jll_zonas_2025', 'gap_rentas_hoteleras');
   if (/\bel aviso no sustituye el decreto\b/.test(qn)) add('ev_anp_avisos', 'ev_historia_bcs');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn)) add('ev_historia_bcs', 'terr_anp_vizcaino', 'ev_anp_avisos', 'gap_acuifero_0302');
