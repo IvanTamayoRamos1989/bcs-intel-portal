@@ -5,11 +5,11 @@ import ChatWidget from './ChatWidget.astro';
 import { ui } from '../i18n/ui';
 ---
 <!doctype html>
-<html lang="es" data-lang="es" data-title-es="Chat" data-title-en="Chat" data-title-suffix=" · BCS 2050">
+<html lang="es" data-lang="es" data-title-es="Preguntar" data-title-en="Ask" data-title-suffix=" · BCS 2050">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" /><meta name="theme-color" content="#f7f6ef" />
-  <title>Chat · BCS 2050</title>
+  <title>Preguntar · BCS 2050</title>
   <script is:inline define:vars={{uiObj:ui}}>window.__BCS_UI__=uiObj;</script>
   <script is:inline src="/auth-gate.js"></script><script is:inline src="/lang-toggle.js?v=20261102-ux"></script>
 </head>
@@ -24,6 +24,6 @@ import { ui } from '../i18n/ui';
     <button type="button" id="conversation-new" hidden><span data-lang-es>＋ Nueva conversación</span><span data-lang-en hidden>＋ New conversation</span></button>
     <ChatWidget shell={true} />
   </main>
-  <script is:inline src="/conversation.js?v=chat-only" defer></script>
-  <link rel="stylesheet" href="/conversation.css?v=20261102" />
+  <script is:inline src="/conversation.js?v=20261103-merge" defer></script>
+  <link rel="stylesheet" href="/conversation.css?v=20261103-merge" />
 </body></html>

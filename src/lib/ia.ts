@@ -89,7 +89,7 @@ export const THEMES: IATheme[] = [
     d_en: 'More technical analysis tools: foresight, strategic questions, work sessions, growth and relationship map.',
     items: [
       { href: '/gemelo', es: 'Gemelo territorial', en: 'Territorial twin', d_es: 'Mapa, cifras y escenarios para comparar el territorio', d_en: 'Map, figures and scenarios to compare the territory' },
-      { href: '/consulta', es: 'Mesa de trabajo', en: 'Workspace', d_es: 'Mapa, asistente y archivos en la misma pantalla', d_en: 'Map, assistant and files on the same screen' },
+      { href: '/consulta', es: 'Mapa 3D', en: '3D map', d_es: 'Gemelo territorial: calles, satélite, relieve y capas', d_en: 'Territorial twin: streets, satellite, relief and layers' },
       { href: '/coordinacion', es: 'Coordinación de proyectos', en: 'Project coordination', d_es: 'Institución, obra y sexenio del inventario federal', d_en: 'Institution, work and administration from the federal inventory' },
       { href: '/vistas', es: 'Vistas guardadas', en: 'Saved views', d_es: 'Enlaces con nombre para el mapa y el gemelo', d_en: 'Named links for the map and the twin' },
       { href: '/metas', es: 'Preguntas abiertas', en: 'Open questions', d_es: 'Preguntas, señales y brechas, sin porcentaje de avance', d_en: 'Questions, signals and gaps, with no progress percentage' },

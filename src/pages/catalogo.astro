@@ -21,10 +21,21 @@ const themeLabels: Record<string, [string, string]> = {
   wide={true}
   hidePageHead={true}
 >
-  <section class="documents-intro"><p>ARCHIVO DE BAJA CALIFORNIA SUR</p><h1><span data-lang-es>Encuentra el documento.</span><span data-lang-en hidden>Find the document.</span></h1><div><span data-lang-es>Planes, presupuestos, estudios y datos. Abre siempre la fuente original.</span><span data-lang-en hidden>Plans, budgets, studies and data. Open the original source.</span></div></section>
+  <div class="doc-explorer">
+  <header class="doc-bar">
+    <p class="doc-crumb" id="doc-crumbs"><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></p>
+    <input type="search" id="cat-q" placeholder="Busca un tema, lugar o documento…" data-placeholder-es="Busca un tema, lugar o documento…" data-placeholder-en="Search for a topic, place or document…" aria-label="Buscar en el archivo" />
+  </header>
+  <nav class="doc-tree" aria-label="Carpetas">
+    <button type="button" data-doc-theme="" aria-current="true"><span data-lang-es>Todos los documentos</span><span data-lang-en hidden>All documents</span></button>
+    <button type="button" data-doc-theme="finanzas"><span data-lang-es>Presupuesto y gasto público</span><span data-lang-en hidden>Public budget and spending</span></button>
+    {themes.map((t) => (
+      <button type="button" data-doc-theme={t}><span data-lang-es>{themeLabels[t]?.[0] || t}</span><span data-lang-en hidden>{themeLabels[t]?.[1] || t}</span></button>
+    ))}
+  </nav>
+  <div class="doc-main">
+  <section class="documents-intro"><p>ARCHIVO DE BAJA CALIFORNIA SUR</p><h1><span data-lang-es>Encuentra el documento.</span><span data-lang-en hidden>Find the document.</span></h1><div><span data-lang-es>Elige una carpeta o busca por tema, lugar o documento. Abre siempre la fuente original.</span><span data-lang-en hidden>Choose a folder or search by topic, place or document. Always open the original source.</span></div></section>
   <div class="catalog-toolbar">
-    <input type="search" id="cat-q" placeholder="Busca un tema, lugar o documento…" data-placeholder-es="Busca un tema, lugar o documento…" data-placeholder-en="Search for a topic, place or document…" aria-label="Buscar en el catálogo" />
-
     <label>
       <span data-i18n="filterTheme">Tema</span>
       <select id="cat-theme">
@@ -32,7 +43,6 @@ const themeLabels: Record<string, [string, string]> = {
         {themes.map((t) => <option value={t} data-label-es={themeLabels[t]?.[0] || t} data-label-en={themeLabels[t]?.[1] || t}>{themeLabels[t]?.[0] || t}</option>)}
       </select>
     </label>
-
   </div>
   <details class="catalog-extra"><summary><span data-lang-es>Más filtros</span><span data-lang-en hidden>More filters</span></summary><div class="catalog-toolbar">
     <label>
@@ -93,8 +103,6 @@ const themeLabels: Record<string, [string, string]> = {
   </div>
     </div>
   </details>
-  <p class="catalog-meta" id="cat-meta" role="status" aria-live="polite">Cargando catálogo…</p>
-
   <div class="table-wrap">
     <table>
       <thead>
@@ -143,7 +151,10 @@ const themeLabels: Record<string, [string, string]> = {
   </div>
 
   </details>
-  <link rel="stylesheet" href="/documents-page.css?v=20261102" />
+  </div>
+  <p class="catalog-meta" id="cat-meta" role="status" aria-live="polite">Cargando catálogo…</p>
+  </div>
+  <link rel="stylesheet" href="/documents-page.css?v=20261103-pages" />
   <style is:global>
     .badge-drive { display:inline-block; font-size:0.7rem; padding:0.1rem 0.4rem; border-radius:999px; background:#e3eadc; color:#4f6e4b; margin-left:0.35rem; vertical-align:middle; }
     .badge-pending { display:inline-block; font-size:0.7rem; padding:0.1rem 0.4rem; border-radius:999px; background:#f3e6cc; color:#8a5a1e; margin-left:0.35rem; vertical-align:middle; }
@@ -480,6 +491,37 @@ const themeLabels: Record<string, [string, string]> = {
           });loaded=true;updateEngCounts();render();
         })
         .catch(function(){ meta.textContent = isEn() ? 'The documents could not be loaded. Please reload this page to try again.' : 'No se pudieron cargar los documentos. Recarga esta página para intentarlo de nuevo.'; });
+    })();
+  </script>
+  <script is:inline>
+    (function () {
+      var theme = document.getElementById('cat-theme');
+      var crumbs = document.getElementById('doc-crumbs');
+      function paint() {
+        var value = theme ? theme.value : '';
+        var current = null;
+        document.querySelectorAll('[data-doc-theme]').forEach(function (b) {
+          var on = (b.getAttribute('data-doc-theme') || '') === value;
+          if (on) { b.setAttribute('aria-current', 'true'); current = b; }
+          else b.removeAttribute('aria-current');
+        });
+        if (!crumbs) return;
+        var en = document.documentElement.getAttribute('data-lang') === 'en';
+        var name = current && current.querySelector(en ? '[data-lang-en]' : '[data-lang-es]');
+        crumbs.textContent = (en ? 'Documents' : 'Documentos') + '  ›  ' + (name ? name.textContent : '');
+      }
+      document.querySelectorAll('[data-doc-theme]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (!theme) return;
+          theme.value = b.getAttribute('data-doc-theme') || '';
+          theme.dispatchEvent(new Event('change'));
+          paint();
+        });
+      });
+      if (theme) theme.addEventListener('change', paint);
+      document.addEventListener('bcs:lang', function () { setTimeout(paint, 40); });
+      document.addEventListener('DOMContentLoaded', paint);
+      paint();
     })();
   </script>
 </BaseLayout>

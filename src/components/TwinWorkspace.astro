@@ -341,26 +341,19 @@ const shellModel = {
     <script is:inline src="/vendor/leaflet/leaflet.js"></script>
     <script is:inline>if(new URLSearchParams(location.search).has("embed"))document.body.classList.add("map-embed");</script>
     <script is:inline src="/shell/evidence.js?v=20261102-integrated"></script>
-    <script is:inline src="/shell/app.js?v=20261103-options"></script>
+    <script is:inline src="/shell/app.js?v=20261103-pages"></script>
     <style is:global>
       html, body.shell-app { margin: 0; height: 100%; background: #fbf8f1; color: #1a1a1a; overflow: hidden; }
       body.shell-app { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
       .shell {
-        --chat-w: 2fr;
-        --map-w: 7fr;
-        --files-w: 1fr;
         display: grid;
-        grid-template-columns: minmax(0, var(--chat-w)) 6px minmax(0, var(--map-w)) 6px minmax(0, var(--files-w));
-        grid-template-rows: minmax(0, 1fr) 10%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr) auto;
         height: 100%;
         min-height: 0;
       }
-      .shell-chat { grid-column: 1; grid-row: 1; }
-      #split-l { grid-column: 2; grid-row: 1; }
-      .shell-map-wrap { grid-column: 3; grid-row: 1; }
-      #split-r { grid-column: 4; grid-row: 1; }
-      .shell-files { grid-column: 5; grid-row: 1; }
-      .shell-dock { grid-column: 1 / -1; grid-row: 2; }
+      .shell-map-wrap { grid-column: 1; grid-row: 1; }
+      .shell-dock { grid-column: 1; grid-row: 2; }
       body.shell-dock-open .shell { grid-template-rows: minmax(0, 1fr) minmax(10%, 36%); }
       .shell-chat, .shell-files, .shell-map-wrap { min-width: 0; min-height: 0; height: 100%; }
       .shell-chat { overflow: hidden; }
