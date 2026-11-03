@@ -3,6 +3,7 @@ import '../styles/global.css';
 import ThreeNav from './ThreeNav.astro';
 import { ui } from '../i18n/ui';
 import { cdtModel } from '../lib/cdtModel';
+import landWater from '../data/tierra_agua.json';
 import gisLayers from '../../public/gis/layers.json';
 
 const titleEs = 'Mapa 3D';
@@ -72,7 +73,8 @@ const stack = [
   { id: 'l4', layers: ['bcs_market_listings'] },
 ];
 const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
-const shellLayers = [...catalogLayers, ...extras];
+const territoryIds = new Set(landWater.map((layer) => layer.id));
+const shellLayers = [...catalogLayers, ...extras].filter((layer) => !territoryIds.has(layer.id)).concat(landWater.map((layer) => ({...layer, year_es: '', year_en: ''})));
 const layersById = Object.fromEntries(shellLayers.map((l) => [l.id, l]));
 for (const group of stack) {
   for (const id of group.layers) {
@@ -135,6 +137,15 @@ const shellModel = {
         <div id="shell-map"></div>
         <div class="twin-map-context"><span class="twin-eyebrow"><span data-lang-es>BAJA CALIFORNIA SUR</span><span data-lang-en hidden>CONTEXT MAP</span></span><p id="twin-map-summary" role="status"><span data-lang-es>Busca un lugar o activa una capa.</span><span data-lang-en hidden>Find a place or turn on a layer.</span></p><div class="map-search"><label for="map-place-search"><span data-lang-es>Buscar un lugar</span><span data-lang-en hidden>Find a place</span></label><input id="map-place-search" type="search" placeholder="La Paz, Loreto, Todos Santos…" autocomplete="off" aria-controls="map-place-results" /><ul id="map-place-results" class="map-search-results" hidden></ul></div>
           <button type="button" id="twin-reset-map"><span data-lang-es>Ver todo BCS</span><span data-lang-en hidden>View all BCS</span></button></div>
+        <details class="land-water" id="land-water">
+          <summary><span data-lang-es>Tierra y agua</span><span data-lang-en hidden>Land and water</span></summary>
+          <div>{landWater.map((layer) => (
+            <label title={layer.description_es}><input type="checkbox" data-layer={layer.id} />
+              <i style={`background:${layer.color}`}></i>
+              <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+            </label>
+          ))}</div>
+        </details>
         <aside id="shell-fiche" class="shell-fiche" hidden></aside>
       </section>
       <footer class="shell-dock" id="shell-dock">
