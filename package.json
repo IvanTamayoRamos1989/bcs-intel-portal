@@ -15,7 +15,8 @@
     "labels": "python3 scripts/clean_data_labels.py && python3 scripts/clean_source_labels.py",
     "check:cards": "node scripts/check_card_titles.mjs",
     "explorer:data": "python3 scripts/build_explorer_data.py && python3 scripts/add_citizen_labels.py",
-    "check:explorer": "node scripts/build_explorer_assets.mjs && node scripts/check_explorer.mjs"
+    "check:explorer": "node scripts/build_explorer_assets.mjs && node scripts/check_explorer.mjs",
+    "postbuild": "node scripts/check_three_pages.mjs"
   },
   "dependencies": {
     "@netlify/blobs": "^10.7.13",
