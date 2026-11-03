@@ -1,0 +1,134 @@
+[
+  {
+    "id": "social",
+    "es": "Vivienda social",
+    "en": "Social housing",
+    "layers": [
+      {
+        "id": "housing",
+        "name_es": "Obras y mejoras del INVI",
+        "name_en": "Housing works and improvements",
+        "source_es": "INVI · SRFT, 2021–2025",
+        "source_en": "INVI · SRFT, 2021–2025",
+        "type": "point",
+        "color": "#23736a",
+        "description_es": "475 proyectos en 159 zonas. Cada punto reúne obras cercanas.",
+        "description_en": "475 projects grouped into 159 areas.",
+        "reference": "https://www.invibcs.gob.mx/sistema-de-recursos-federales-transferidos-srft/",
+        "url": "/gis/territorio/housing.geojson"
+      },
+      {
+        "id": "programas",
+        "name_es": "Vivienda para el Bienestar y predios autorizados",
+        "name_en": "Housing programme and authorised sites",
+        "source_es": "Gobierno y Congreso de BCS",
+        "source_en": "Gobierno y Congreso de BCS",
+        "type": "polygon",
+        "color": "#b96826",
+        "description_es": "Selecciona un municipio para consultar las viviendas contratadas o los predios autorizados.",
+        "description_en": "Select a municipality for contracted housing or authorised sites.",
+        "reference": "https://www.bcs.gob.mx/encabeza-gobernador-victor-castro-reunion-de-seguimiento-al-programa-de-vivienda-para-el-bienestar-en-bcs/",
+        "url": "/gis/territorio/programas.geojson"
+      }
+    ]
+  },
+  {
+    "id": "informales",
+    "es": "Asentamientos informales",
+    "en": "Informal settlements",
+    "layers": [
+      {
+        "id": "insus",
+        "name_es": "Edificaciones potencialmente irregulares",
+        "name_en": "Potentially irregular buildings",
+        "source_es": "INSUS y TECHO México · MIAHI 2025",
+        "source_en": "INSUS y TECHO México · MIAHI 2025",
+        "type": "point",
+        "color": "#a44d28",
+        "description_es": "Acerca el mapa para ver las huellas. La clasificación indica posible irregularidad. El uso y los permisos de cada inmueble requieren verificación municipal.",
+        "description_en": "Zoom in for footprints. The inventory flags possible irregularity. Building use and permit status require municipal verification.",
+        "reference": "https://inventarionacionaldelsuelo.insus.gob.mx/public/metadatos/MIAHI.pdf",
+        "url": "/gis/territorio/insus.geojson",
+        "detailUrl": "/gis/territorio/miahi.pmtiles"
+      },
+      {
+        "id": "regularizacion",
+        "name_es": "Polígonos de regularización",
+        "name_en": "Regularisation programme areas",
+        "source_es": "INSUS · PRAH, 2021–2022",
+        "source_en": "INSUS · PRAH, 2021–2022",
+        "type": "polygon",
+        "color": "#6355a6",
+        "description_es": "Acciones documentadas en La Pitaya y Valle Dorado, La Paz.",
+        "description_en": "Documented actions in La Pitaya and Valle Dorado, La Paz.",
+        "reference": "https://inventarionacionaldelsuelo.insus.gob.mx/views/mapas/mapaINSP.php",
+        "url": "/gis/territorio/regularizacion.geojson"
+      }
+    ]
+  },
+  {
+    "id": "riesgo",
+    "es": "Riesgo Climático",
+    "en": "Climate Risk",
+    "layers": [
+      {
+        "id": "inundacion",
+        "name_es": "Peligro de inundación",
+        "name_en": "Flood hazard",
+        "source_es": "Atlas de Riesgos de BCS · UABCS",
+        "source_en": "Atlas de Riesgos de BCS · UABCS",
+        "type": "raster",
+        "color": "#2474ad",
+        "description_es": "El color indica el peligro publicado a escala regional.",
+        "description_en": "Colours indicate published regional flood hazard.",
+        "reference": "https://atlasriesgo.uabcs.mx/geovisualizador",
+        "url": "/gis/territorio/inundacion/{z}/{x}/{y}.png"
+      },
+      {
+        "id": "arroyos",
+        "name_es": "Arroyos y cauces principales",
+        "name_en": "Major drainage channels",
+        "source_es": "HydroRIVERS",
+        "source_en": "HydroRIVERS",
+        "type": "line",
+        "color": "#256c97",
+        "description_es": "172 tramos de orden 4 y 5. El orden indica el tamaño relativo del cauce.",
+        "description_en": "172 reaches of stream order 4 and 5. Order describes relative channel size.",
+        "reference": "https://www.hydrosheds.org/products/hydrorivers",
+        "url": "/gis/territorio/arroyos.geojson"
+      }
+    ]
+  },
+  {
+    "id": "agua-presion",
+    "es": "Estrés hídrico",
+    "en": "Water stress",
+    "layers": [
+      {
+        "id": "estres",
+        "name_es": "Presión sobre el agua subterránea",
+        "name_en": "Groundwater pressure",
+        "source_es": "CONAGUA · DOF, 9 nov 2023",
+        "source_en": "CONAGUA · DOF, 9 nov 2023",
+        "type": "polygon",
+        "color": "#9a432f",
+        "description_es": "Compara la extracción anual con la recarga disponible después de reservar las descargas naturales comprometidas. Selecciona un acuífero para ver su balance.",
+        "description_en": "Annual extraction relative to recharge after committed natural discharge. Select an aquifer for its balance.",
+        "reference": "https://sigagis.conagua.gob.mx/gas1/sections/Edos/bcs/bcs.html",
+        "url": "/gis/territorio/estres.geojson",
+        "palette": [
+          "#78b8a1",
+          "#e6c565",
+          "#df893f",
+          "#a6443b"
+        ],
+        "labels": [
+          "<50%",
+          "50–<80%",
+          "80–<100%",
+          "≥100%"
+        ]
+      }
+    ]
+  }
+]

@@ -449,6 +449,11 @@
       function ensure(id, geo, meta) {
         var src = 'cdt-src-' + id;
         var lid = 'cdt-ly-' + id;
+        if (meta.type === 'raster') {
+          if (!map.getSource(src)) map.addSource(src, {type:'raster', tiles:[location.origin + meta.url], tileSize:256, minzoom:5, maxzoom:9, bounds:[-115.8,22.75,-109.35,28.02]});
+          if (!map.getLayer(lid)) map.addLayer({id:lid, type:'raster', source:src, paint:{'raster-opacity':0.7,'raster-resampling':'nearest'}}, 'cdt-muni-fill');
+          return lid;
+        }
         if (!map.getSource(src)) map.addSource(src, { type: 'geojson', data: geo });
         if (id === 'bcs_market_listings' && !map.getSource(src + '-3d')) {
           map.addSource(src + '-3d', { type: 'geojson', data: buildListingPrisms(geo) });
@@ -507,6 +512,11 @@
             paint: { 'line-color': meta.color || '#0083C4', 'line-width': meta.palette ? 0 : 1.6, 'line-opacity': 0.95 },
           });
         }
+        if (meta.detailUrl) {
+          map.setLayerZoomRange(lid, 0, 13);
+          map.addSource(src+'-detail', {type:'vector', url:'pmtiles://'+location.origin+meta.detailUrl});
+          map.addLayer({id:lid+'-detail', type:'fill', source:src+'-detail', 'source-layer':'miahi', minzoom:13, paint:{'fill-color':meta.color,'fill-opacity':0.75}});
+        }
         ensurePlaceLabel(id, src);
         map.on('mouseenter', lid, function () { map.getCanvas().style.cursor = 'pointer'; });
         map.on('mouseleave', lid, function () { map.getCanvas().style.cursor = ''; });
@@ -522,6 +532,7 @@
       }
       function hide(id) {
         var lid = 'cdt-ly-' + id;
+        if (map.getLayer(lid+'-detail')) map.setLayoutProperty(lid+'-detail','visibility','none');
         if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
         if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', 'none');
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', 'none');
@@ -546,6 +557,8 @@
         }
         var vis = mode === 'off' ? 'none' : 'visible';
         map.setLayoutProperty(lid, 'visibility', vis);
+        if (meta.type === 'raster') return;
+        if (meta.detailUrl) map.setLayoutProperty(lid+'-detail','visibility',vis);
         if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', vis);
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', vis);
         if (map.getLayer(lid + '-label')) map.setLayoutProperty(lid + '-label', 'visibility', vis);
@@ -572,6 +585,8 @@
         }
       }
       function load(meta) {
+        if (meta.type === 'raster') return Promise.resolve({type:'FeatureCollection',features:[]});
+        if (meta.detailUrl) return loadPmtiles().then(function () { return loadGeo(meta); });
         if (cache[meta.id]) return Promise.resolve(cache[meta.id]);
         return loadGeo(meta).then(function (geo) {
           cache[meta.id] = geo;
@@ -667,6 +682,7 @@
         var style = map.getStyle();
         var ids = [];
         ((style && style.layers) || []).forEach(function (layer) {
+          if (layer.type === 'raster') return;
           var id = layer.id;
           if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0 || id.indexOf('cdt-bld-') === 0) ids.push(id);
         });

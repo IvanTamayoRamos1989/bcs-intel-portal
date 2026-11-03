@@ -277,7 +277,7 @@
       kind_es: meta ? meta.name_es : 'Elemento del mapa',
       kind_en: meta ? meta.name_en : 'Map feature',
       rows: rows,
-      href: meta && meta.reference || href,
+      href: meta && meta.id === 'programas' && /^https:\/\/www\.(?:bcs|cbcs)\.gob\.mx\//.test(p.source_url || '') ? p.source_url : meta && meta.reference || href,
       href_es: meta && meta.reference ? 'Consultar fuente' : 'Página relacionada',
       href_en: meta && meta.reference ? 'View source' : 'Related page',
       gaps: gap ? [gap] : [],
@@ -388,7 +388,7 @@
     var specific = (feats || []).filter(function (feature) { return !washOnly(feature); });
     if (specific.length) {
       var feature = specific[0];
-      var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label)$/, '');
+      var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label|detail)$/, '');
       openFeatureFiche(feature, lngLat, byId[id]);
       return;
     }
@@ -398,7 +398,7 @@
     }
     if (feats && feats.length) {
       var wash = feats[0];
-      var washId = String(wash.layer && wash.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label)$/, '');
+      var washId = String(wash.layer && wash.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label|detail)$/, '');
       openFeatureFiche(wash, lngLat, byId[washId]);
       return;
     }
@@ -573,6 +573,11 @@
     if (leafletMap && window.L) {
       if (!visible) {
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
+        return Promise.resolve();
+      }
+      if (meta.type === 'raster') {
+        if (!leafletLayers[id]) leafletLayers[id] = L.tileLayer(meta.url,{opacity:.7,tileSize:256,minNativeZoom:5,maxNativeZoom:9,bounds:[[22.75,-115.8],[28.02,-109.35]],noWrap:true});
+        leafletLayers[id].addTo(leafletMap);
         return Promise.resolve();
       }
       return fetch(meta.url).then(function (r) { return r.json(); }).then(function (geo) {
