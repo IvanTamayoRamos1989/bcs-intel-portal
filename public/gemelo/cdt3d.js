@@ -130,6 +130,13 @@
     };
     return {
       version: 8,
+      glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
+      light: {
+        anchor: 'viewport',
+        color: '#fffaf2',
+        intensity: 0.62,
+        position: [1.35, 210, 28],
+      },
       sources: {
         dem: dem,
         shade: Object.assign({}, dem),
@@ -187,12 +194,12 @@
       ],
       terrain: { source: 'dem', exaggeration: 1.35 },
       sky: {
-        'sky-color': '#d7e5ea',
-        'horizon-color': '#f3f0e6',
-        'fog-color': '#e7ece7',
-        'fog-ground-blend': 0.55,
-        'horizon-fog-blend': 0.65,
-        'sky-horizon-blend': 0.65,
+        'sky-color': '#c5dff2',
+        'horizon-color': '#f6f3ea',
+        'fog-color': '#d5e6ee',
+        'fog-ground-blend': 0.42,
+        'horizon-fog-blend': 0.58,
+        'sky-horizon-blend': 0.72,
       },
     };
   }
@@ -215,14 +222,20 @@
     return loadBase().then(function (base) {
       var stateBounds = base && base.bounds ? base.bounds : [[STATE[0], STATE[1]], [STATE[2], STATE[3]]];
       var pad = 0.45;
+      function framePadding(pitch) {
+        if (pitch < 18) return 22;
+        return { top: 18, bottom: Math.round(24 + pitch * 0.9), left: 16, right: 16 };
+      }
       var map = new maplibregl.Map({
         container: opts.container,
         style: styleSpec(base),
         bounds: stateBounds,
-        fitBoundsOptions: { padding: 24, pitch: pitch0, bearing: bearing0 },
+        fitBoundsOptions: { padding: framePadding(pitch0), pitch: pitch0, bearing: bearing0 },
         pitch: pitch0,
         bearing: bearing0,
-        maxPitch: 70,
+        maxPitch: 75,
+        antialias: !reduced,
+        pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
         minZoom: 6.15,
         maxZoom: 14,
         maxBounds: [[stateBounds[0][0] - pad, stateBounds[0][1] - pad], [stateBounds[1][0] + pad, stateBounds[1][1] + pad]],
@@ -241,7 +254,7 @@
         var box = b && b.length === 4 ? b : stateBox;
         map.resize();
         map.fitBounds([[box[0], box[1]], [box[2], box[3]]], {
-          padding: 22,
+          padding: framePadding(map.getPitch()),
           pitch: map.getPitch(),
           bearing: reduced ? 0 : map.getBearing(),
           duration: reduced ? 0 : 650,
@@ -395,6 +408,33 @@
         'MULTI_FAMILY', '#8b5cf6',
         '#ec4899'
       ];
+      var PLACE_LABEL = { osm_towns: 1, settlements: 1, focus_ports_air: 1 };
+      function ensurePlaceLabel(id, src) {
+        if (!PLACE_LABEL[id]) return;
+        var lid = 'cdt-ly-' + id + '-label';
+        if (map.getLayer(lid)) return;
+        map.addLayer({
+          id: lid,
+          type: 'symbol',
+          source: src,
+          layout: {
+            'text-field': ['coalesce', ['get', 'name'], ['get', 'name_es'], ''],
+            'text-font': ['Open Sans Regular'],
+            'text-size': ['interpolate', ['linear'], ['zoom'], 6, 11, 11, 14],
+            'text-offset': [0, 0.85],
+            'text-anchor': 'top',
+            'text-max-width': 10,
+            'text-padding': 2,
+            'text-allow-overlap': false,
+            'text-optional': true,
+          },
+          paint: {
+            'text-color': '#0b3a56',
+            'text-halo-color': '#fbf8f1',
+            'text-halo-width': 1.3,
+          },
+        });
+      }
       function ensure(id, geo, meta) {
         var src = 'cdt-src-' + id;
         var lid = 'cdt-ly-' + id;
@@ -450,6 +490,7 @@
             paint: { 'line-color': meta.color || '#0083C4', 'line-width': 1.6, 'line-opacity': 0.95 },
           });
         }
+        ensurePlaceLabel(id, src);
         map.on('mouseenter', lid, function () { map.getCanvas().style.cursor = 'pointer'; });
         map.on('mouseleave', lid, function () { map.getCanvas().style.cursor = ''; });
         if (map.getLayer(lid + '-3d')) {
@@ -467,6 +508,7 @@
         if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
         if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', 'none');
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', 'none');
+        if (map.getLayer(lid + '-label')) map.setLayoutProperty(lid + '-label', 'visibility', 'none');
       }
       function tagPoer(geo) {
         if (!geo || !geo.features) return geo;
@@ -489,6 +531,7 @@
         map.setLayoutProperty(lid, 'visibility', vis);
         if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', vis);
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', vis);
+        if (map.getLayer(lid + '-label')) map.setLayoutProperty(lid + '-label', 'visibility', vis);
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
         if (point) {
@@ -496,7 +539,11 @@
           map.setPaintProperty(lid, 'circle-stroke-width', mode === 'compare' ? 3 : 1.4);
           map.setPaintProperty(lid, 'circle-stroke-color', mode === 'compare' ? '#0b3a56' : '#ffffff');
         } else if (line) {
-          map.setPaintProperty(lid, 'line-width', mode === 'compare' ? 3.4 : 2.2);
+          if (id === 'osm_highways') {
+            map.setPaintProperty(lid, 'line-width', ['match', ['get', 'highway'], 'motorway', 3.6, 'trunk', 3.1, 'primary', 2.6, 'secondary', 2, 'tertiary', 1.5, 1.15]);
+          } else {
+            map.setPaintProperty(lid, 'line-width', mode === 'compare' ? 3.4 : 2.2);
+          }
         } else if (id === 'poer_ugas') {
           var poerColor = ['match', ['get', 'politica'], 'AS', '#2d6a4f', 'PT', '#6b3fa0', 'PR', '#d4a017', 'RT', '#c0392b', '#8d99ae'];
           map.setPaintProperty(lid, 'fill-color', poerColor);
