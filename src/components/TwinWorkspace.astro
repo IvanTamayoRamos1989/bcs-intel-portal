@@ -397,7 +397,7 @@ const shellModel = {
     <script is:inline src="/vendor/leaflet/leaflet.js"></script>
     <script is:inline>if(new URLSearchParams(location.search).has("embed"))document.body.classList.add("map-embed");</script>
     <script is:inline src="/shell/evidence.js?v=20261102-integrated"></script>
-    <script is:inline src="/shell/app.js?v=20261103-fly"></script>
+    <script is:inline src="/shell/app.js?v=20261103-files"></script>
     <style is:global>
       html, body.shell-app { margin: 0; height: 100%; background: #fbf8f1; color: #1a1a1a; overflow: hidden; }
       body.shell-app { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
@@ -607,10 +607,12 @@ const shellModel = {
         body.shell-app[data-pane="map"] .shell-map-wrap { display: block; }
         .shell-files { flex-direction: column; }
         .shell-files header { padding: .55rem .85rem .45rem; }
-        .shell-files input, .shell-file, .shell-files summary, .shell-more {
+        .shell-files input, .shell-file-main, .shell-file-open, .shell-files summary, .shell-more {
           min-height: 44px;
           font-size: 1rem;
         }
+        .shell-file-open { display: inline-flex; align-items: center; }
+        .shell-ext { width: 2.4rem; height: 1.8rem; font-size: .75rem; }
         .shell-file, #shell-preview, .shell-files summary, .shell-tree-label {
           overflow-wrap: anywhere;
           word-break: break-word;
@@ -838,7 +840,7 @@ const shellModel = {
         .shell-sheet { bottom: 3.6rem; max-height: 70%; }
       }
     </style>
-    <link rel="stylesheet" href="/shell/workspace.css?v=20261103-fly" />
+    <link rel="stylesheet" href="/shell/workspace.css?v=20261103-files" />
   <link rel="stylesheet" href="/map-page.css?v=20261103-capas" />
   <script is:inline src="/map-page.js?v=20261102" defer></script>
   </body>

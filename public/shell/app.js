@@ -878,15 +878,75 @@
     });
   }
 
+  function fileExt(row) { return String(row[2] || '').toLowerCase().replace(/^\./, ''); }
+  function fileType(row) {
+    var ext = fileExt(row);
+    var kind = fileKind(row);
+    if (kind === 'i' || /^(jpe?g|png|gif|webp|tif|tiff)$/.test(ext)) return { key: 'img', es: 'Imagen', en: 'Image', mark: 'IMG' };
+    if (kind === 'w' || ext === 'web' || ext === 'html' || ext === 'htm') return { key: 'web', es: 'Página', en: 'Page', mark: 'WEB' };
+    if (ext === 'pdf') return { key: 'pdf', es: 'PDF', en: 'PDF', mark: 'PDF' };
+    if (/^(xls|xlsx|csv|ods|tsv)$/.test(ext)) return { key: 'sheet', es: 'Tabla', en: 'Table', mark: 'TAB' };
+    if (/^(ppt|pptx|key)$/.test(ext)) return { key: 'slides', es: 'Láminas', en: 'Slides', mark: 'PPT' };
+    if (/^(doc|docx|odt|rtf|txt|md)$/.test(ext)) return { key: 'doc', es: 'Texto', en: 'Text', mark: 'DOC' };
+    if (/^(zip|rar|7z|gz)$/.test(ext)) return { key: 'zip', es: 'Paquete', en: 'Package', mark: 'ZIP' };
+    if (ext) return { key: 'file', es: ext.toUpperCase(), en: ext.toUpperCase(), mark: ext.slice(0, 3).toUpperCase() };
+    return { key: 'file', es: 'Archivo', en: 'File', mark: 'DOC' };
+  }
+  function folderLabel(id) {
+    var folders = (index && index.folders) || [];
+    for (var i = 0; i < folders.length; i++) {
+      if (folders[i][0] === id) return lang() === 'en' ? folders[i][2] : folders[i][1];
+    }
+    if (id === 'sources') return tx('Fuente citada', 'Cited source');
+    return '';
+  }
+  function fileCrumb(row) {
+    var type = fileType(row);
+    var folder = folderLabel(fileFolder(row));
+    var typeLabel = lang() === 'en' ? type.en : type.es;
+    return folder ? folder + ' · ' + typeLabel : typeLabel;
+  }
+  function openVerb(row) {
+    if (fileKind(row) === 'i') return tx('Ver', 'View');
+    if (/export=download|[?&]dl=1|\/uc\?/.test(String(fileHref(row) || ''))) return tx('Bajar', 'Save');
+    return tx('Abrir', 'Open');
+  }
   function rowButton(row) {
+    var type = fileType(row);
+    var wrap = document.createElement('article');
+    wrap.className = 'shell-file';
+    var ico = document.createElement('span');
+    ico.className = 'shell-ext';
+    ico.setAttribute('data-type', type.key);
+    ico.textContent = type.mark;
+    ico.setAttribute('aria-hidden', 'true');
     var btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'shell-file';
-    btn.textContent = fileName(row);
-    btn.title = fileName(row);
-    btn.setAttribute('aria-label',tx('Ver fuente: ','View source: ')+fileName(row));
+    btn.className = 'shell-file-main';
+    var name = document.createElement('strong');
+    name.textContent = fileName(row);
+    var crumb = document.createElement('small');
+    crumb.textContent = fileCrumb(row);
+    btn.appendChild(name);
+    btn.appendChild(crumb);
+    var note = row[5] ? String(row[5]) : '';
+    btn.title = note ? fileName(row) + '. ' + note : fileName(row) + ' — ' + fileCrumb(row);
+    btn.setAttribute('aria-label', tx('Ver ficha: ', 'View card: ') + fileName(row));
     btn.addEventListener('click', function () { renderPreview(row); });
-    return btn;
+    wrap.appendChild(ico);
+    wrap.appendChild(btn);
+    var href = fileHref(row);
+    if (href) {
+      var a = document.createElement('a');
+      a.className = 'shell-file-open';
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = openVerb(row);
+      a.setAttribute('aria-label', openVerb(row) + ': ' + fileName(row));
+      wrap.appendChild(a);
+    }
+    return wrap;
   }
 
   function fillList(host, rows) {
@@ -976,7 +1036,7 @@
     }
     citations.forEach(function(s){
       s.row[5]=s.direct ? tx('Fuente citada por el asistente. Abre el original para comprobar el dato y su fecha.','Source cited by the assistant. Open the original to check the figure and its date.') : tx('Referencia citada. El enlace busca el documento en el catálogo.','Cited reference. The link searches for the document in the catalog.');
-      var btn=rowButton(s.row); var sub=document.createElement('small');sub.textContent=s.direct ? tx('Fuente citada · ver documento','Cited source · view document') : tx('Referencia citada · buscar en el catálogo','Cited reference · search catalog');btn.appendChild(sub);relatedEl.appendChild(btn);
+      relatedEl.appendChild(rowButton(s.row));
     });
     if(index) {
       var qWords=wordsOf(question), scored=[];
