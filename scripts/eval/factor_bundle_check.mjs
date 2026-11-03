@@ -3,7 +3,7 @@
  * Retrieval check for the factor pack. No LLM.
  * Asserts intents and that the ontology bundle covers several factor families.
  */
-import { expandQuery, buildFactorEvidence, composeFactorBrief } from '../../netlify/functions/chat.mjs';
+import { expandQuery, buildFactorEvidence, composeFactorBrief, inferPlaceId, targetMunis } from '../../netlify/functions/chat.mjs';
 
 const CASES = [
   {
@@ -863,7 +863,7 @@ const CASES = [
   {
     q: 'Densificación costera observada en Los Cabos',
     kind: 'viability',
-    needIds: ['terr_obs_cabos_coast', 'terr_los_cabos'],
+    needIds: ['terr_obs_cabos_coast', 'terr_los_cabos', 'dq_stills_densification'],
     needTypes: ['Territory'],
   },
   {
@@ -1078,6 +1078,64 @@ const CASES = [
     needTypes: ['Instrument'],
     forbid: ['terr_comondu', 'dd_agro_santo_domingo'],
   },
+  {
+    q: '¿El acuífero 0314 compensa el déficit de Los Cabos?',
+    kind: 'viability',
+    needIds: ['ev_acuiferos_dma', 'const_dma_deficit'],
+    needTypes: ['Evidence', 'Constraint'],
+    forbid: ['terr_comondu', 'dd_agro_santo_domingo'],
+  },
+  {
+    q: '¿La escorrentía de La Paz es un volumen de inundación?',
+    kind: 'viability',
+    needIds: ['ev_escorrentia'],
+    needTypes: ['Evidence'],
+    noFloodVolume: true,
+  },
+  {
+    q: '¿Qué dice la Ley de Aguas sobre la desaladora?',
+    kind: 'viability',
+    needIds: ['inst_ley_aguas', 'actor_cea', 'actor_conagua'],
+    needTypes: ['Instrument', 'Actor'],
+  },
+  {
+    q: '¿La costa protegida es un buffer frente al hotel en East Cape?',
+    kind: 'viability',
+    needIds: ['dq_coast_anp_buffers', 'const_coast_anp_pressure', 'terr_anp_cabo_pulmo'],
+    needTypes: ['DecisionQuestion', 'Constraint', 'Territory'],
+  },
+  {
+    q: '¿Un anuncio de proyecto federal ya está construido?',
+    kind: 'viability',
+    needIds: ['ev_federal_projects_inventory', 'inst_federal_pipeline'],
+    needTypes: ['Evidence', 'Instrument'],
+  },
+  {
+    q: '¿Cuál es el techo regulatorio de Baja California Sur?',
+    kind: 'viability',
+    needIds: ['terr_bcs', 'inst_poerbcs', 'rc_sibcs', 'const_red_aislada'],
+    needTypes: ['Territory', 'Instrument', 'ResourceCapacity', 'Constraint'],
+  },
+  {
+    q: 'Nopoló en Loreto y el parque nacional',
+    kind: 'viability',
+    needIds: ['terr_loreto', 'terr_anp_loreto', 'gap_loreto_dma'],
+    needTypes: ['Territory', 'Constraint'],
+    sinDatoIds: ['gap_loreto_dma'],
+  },
+  {
+    q: 'Ciudad Insurgentes en Comondú',
+    kind: 'viability',
+    needIds: ['terr_comondu', 'dd_agro_santo_domingo'],
+    needTypes: ['Territory', 'DemandDriver'],
+    forbid: ['rc_plant_sol_insurgentes'],
+  },
+  {
+    q: '¿Quién opera Puerto San Carlos?',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona', 'terr_comondu'],
+    needTypes: ['Evidence', 'Territory'],
+  },
 ];
 
 const NEGATIVES = [
@@ -1172,6 +1230,11 @@ for (const c of CASES) {
     if (!/\b42\b/.test(text)) fail(`${c.q} Loreto MLS volume missing`);
     if (!/no es renta hotelera|not hotel rent/i.test(text)) fail(`${c.q} must keep hotel rents out`);
   }
+  if (c.noFloodVolume) {
+    const run = ev.find((x) => (x.onto_id || '') === 'ev_escorrentia');
+    const text = `${run?.sum_es || ''} ${run?.sum_en || ''}`;
+    if (!/no caudales|not a discharge|not an official flood/i.test(text)) fail(`${c.q} runoff must stay a reach count`);
+  }
   if (c.noAirport) {
     const mob = ev.find((x) => (x.onto_id || '') === 'ev_dossiers_movilidad');
     const text = `${mob?.sum_es || ''} ${mob?.sum_en || ''}`;
@@ -1231,6 +1294,11 @@ const dma0302 = expandQuery('¿Cuál es la DMA del acuífero 0302?');
 if (!dma0302.isWaterIntent || dma0302.isFactorIntent) fail('bare DMA 0302 became a factor intent');
 const pop = expandQuery('¿Cuánta gente vive en La Paz?');
 if (!pop.isDemoIntent || pop.isFactorIntent) fail('population query lost demo intent');
+if (inferPlaceId('¿El POER cabe en la constitución política?') === 'comondu') fail('constitución política became Comondú');
+if (inferPlaceId('Ciudad Constitución y el agro') !== 'comondu') fail('Ciudad Constitución lost Comondú');
+if (inferPlaceId('Nopoló y el parque') !== 'loreto') fail('Nopoló lost Loreto');
+const constiMaps = targetMunis('¿El POER cabe en la constitución política?');
+if (constiMaps && constiMaps.includes('Comondú')) fail('constitución política pulled Comondú maps');
 
 function briefOf(q) {
   const intents = expandQuery(q);
