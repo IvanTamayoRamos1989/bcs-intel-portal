@@ -50,11 +50,11 @@ const catalogLayers = cdtModel.layerCatalog.map((l) => ({
 }));
 const catalogIds = new Set(catalogLayers.map((l) => l.id));
 const stack = [
-  { id: 'l0', layers: ['osm_towns', 'settlements'] },
+  { id: 'l0', layers: ['osm_towns', 'settlements'], toggle: [] as string[] },
+  { id: 'l1', layers: [] as string[], toggle: [] as string[] },
   {
     id: 'l2',
     layers: [
-      'osm_highways',
       'osm_power_lines',
       'osm_power_nodes',
       'osm_waterways',
@@ -65,10 +65,17 @@ const stack = [
       'anp_federales',
       'rtp_conabio',
     ],
+    toggle: ['osm_power_lines', 'osm_waterways', 'focus_ports_air'],
   },
-  { id: 'l3', layers: ['osm_transport_nodes', 'highway_nodes', 'focus_corridor_cabos_lapaz'] },
-  { id: 'l4', layers: ['bcs_market_listings'] },
+  {
+    id: 'l3',
+    layers: ['osm_highways', 'osm_transport_nodes', 'highway_nodes', 'focus_corridor_cabos_lapaz'],
+    toggle: ['osm_highways'],
+  },
+  { id: 'l4', layers: [] as string[], toggle: [] as string[] },
+  { id: 'l5', layers: ['bcs_market_listings'], toggle: [] as string[] },
 ];
+const layersOf = (id: string) => stack.find((group) => group.id === id)?.layers ?? [];
 const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
 const shellLayers = [...catalogLayers, ...extras];
 const layersById = Object.fromEntries(shellLayers.map((l) => [l.id, l]));
@@ -164,37 +171,30 @@ const shellModel = {
               <span data-lang-es>3D</span><span data-lang-en hidden>3D</span>
             </button>
             <button type="button" class="shell-capas-btn" id="shell-capas" aria-expanded="false">
-              <span data-lang-es>Más capas</span><span data-lang-en hidden>More layers</span>
+              <span data-lang-es>Detalle</span><span data-lang-en hidden>Details</span>
             </button>
           </div>
           <p class="shell-hud" id="shell-hud">
             <span data-lang-es>Terreno 3D activo</span>
             <span data-lang-en hidden>3D terrain on</span>
           </p>
-          <div class="twin-basic" role="group" aria-label="Capas básicas">
-            <span class="twin-basic-label"><span data-lang-es>Mostrar</span><span data-lang-en hidden>Show</span></span>
-            <button type="button" data-basic="places" aria-pressed="true"><span data-lang-es>Localidades</span><span data-lang-en hidden>Places</span></button>
-            <button type="button" data-basic="roads" aria-pressed="true"><span data-lang-es>Carreteras</span><span data-lang-en hidden>Roads</span></button>
-            <button type="button" data-basic="water" aria-pressed="false"><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></button>
-            <button type="button" data-basic="nature" aria-pressed="false"><span data-lang-es>Áreas naturales</span><span data-lang-en hidden>Natural areas</span></button>
+          <div class="shell-level-chips" role="toolbar" aria-label="Capas del gemelo" data-aria-es="Capas del gemelo" data-aria-en="Twin layers">
+            <button type="button" class="shell-level" data-stack-toggle="l0" data-dock="l0" aria-pressed="true" aria-expanded="false"><span class="shell-n">0</span><span data-lang-es>Terreno</span><span data-lang-en hidden>Terrain</span></button>
+            <button type="button" class="shell-level is-empty" data-stack-toggle="l1" data-dock="l1" aria-pressed="false" aria-expanded="false"><span class="shell-n">1</span><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></button>
+            <button type="button" class="shell-level" data-stack-toggle="l2" data-dock="l2" aria-pressed="false" aria-expanded="false"><span class="shell-n">2</span><span data-lang-es>Infraestructura</span><span data-lang-en hidden>Infrastructure</span></button>
+            <button type="button" class="shell-level" data-stack-toggle="l3" data-dock="l3" aria-pressed="true" aria-expanded="false"><span class="shell-n">3</span><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></button>
+            <button type="button" class="shell-level is-empty" data-stack-toggle="l4" data-dock="l4" aria-pressed="false" aria-expanded="false"><span class="shell-n">4</span><span data-lang-es>Ciudad inteligente</span><span data-lang-en hidden>Smart city</span></button>
+            <button type="button" class="shell-level" data-stack-toggle="l5" data-dock="l5" aria-pressed="false" aria-expanded="false"><span class="shell-n">5</span><span data-lang-es>Gemelo digital</span><span data-lang-en hidden>Digital twin</span></button>
           </div>
         </div>
           <div class="shell-scrim" id="shell-scrim" hidden></div>
-          <div class="shell-sheet" id="shell-sheet" role="region" aria-label="Todas las capas">          <div class="shell-dock-chips" role="group" aria-label="Capas">
-            <button type="button" data-dock="l0" aria-selected="false"><span class="shell-n">0</span><span data-lang-es>Terreno</span><span data-lang-en hidden>Terrain</span></button>
-            <button type="button" data-dock="l1" aria-selected="false"><span class="shell-n">1</span><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></button>
-            <button type="button" data-dock="l2" aria-selected="false"><span class="shell-n">2</span><span data-lang-es>Infraestructura</span><span data-lang-en hidden>Infrastructure</span></button>
-            <button type="button" data-dock="l3" aria-selected="false"><span class="shell-n">3</span><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></button>
-            <button type="button" data-dock="l4" aria-selected="false"><span class="shell-n">4</span><span data-lang-es>Vivienda</span><span data-lang-en hidden>Housing</span></button>
-            <button type="button" data-dock="suelo" aria-selected="false"><span class="shell-n">S</span><span data-lang-es>Uso de suelo</span><span data-lang-en hidden>Land use</span></button>
-          </div>
-
+          <div class="shell-sheet" id="shell-sheet" role="region" aria-label="Detalle de capas">
             <button type="button" class="shell-sheet-x" id="shell-sheet-x">
               <span data-lang-es>Cerrar capas</span><span data-lang-en hidden>Close layers</span>
             </button>
             <p class="shell-stack-lead">
-              <span data-lang-es>Elige un tema y activa la información que quieras ver. Cada capa indica su fuente.</span>
-              <span data-lang-en hidden>Choose a topic and turn on the information you want to see. Each layer names its source.</span>
+              <span data-lang-es>La barra de abajo enciende cada nivel con datos publicados. El detalle muestra la fuente. Lo que no tiene archivo queda vacío a propósito.</span>
+              <span data-lang-en hidden>The bar below turns on each level that has published data. The detail names the source. Levels without a file stay empty on purpose.</span>
             </p>
             <ol class="shell-stack">
               <li data-dock-panel="l0">
@@ -202,12 +202,11 @@ const shellModel = {
                   <span class="shell-n">0</span>
                   <div>
                     <strong><span data-lang-es>Terreno</span><span data-lang-en hidden>Terrain</span></strong>
-                    <small><span data-lang-es>Relieve del estado y geografía básica. El botón 3D inclina la vista.</span><span data-lang-en hidden>State relief and basic geography. The 3D button pitches the view.</span></small>
+                    <small><span data-lang-es>Relieve del estado. El botón Terreno lo enciende o apaga. 3D inclina la vista. Las localidades son puntos publicados, no edificios.</span><span data-lang-en hidden>State relief. The Terrain button turns it on or off. 3D pitches the view. Localities are published points, not buildings.</span></small>
                   </div>
-                  <button type="button" data-stack-toggle="l0" aria-pressed="true"><span data-lang-es>Relieve</span><span data-lang-en hidden>Relief</span></button>
                 </header>
                 <div class="shell-layer-group">
-                  {stack[0].layers.map((id) => {
+                  {layersOf('l0').map((id) => {
                     const layer = layersById[id];
                     return (
                       <label>
@@ -226,34 +225,23 @@ const shellModel = {
                 <header>
                   <span class="shell-n">1</span>
                   <div>
-                    <strong><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></strong>
-                    <small><span data-lang-es>Apagada al entrar. Si la enciendes, son columnas de población sobre el relieve, no el terreno.</span><span data-lang-en hidden>Off on arrival. When on, population columns sit on the relief. They are not the terrain.</span></small>
+                    <strong><span data-lang-es>Edificios (BIM)</span><span data-lang-en hidden>Buildings (BIM)</span></strong>
+                    <small><span data-lang-es>Este nivel no dibuja nada.</span><span data-lang-en hidden>This level draws nothing.</span></small>
                   </div>
-                  <button type="button" data-stack-toggle="l1" aria-pressed="false"><span data-lang-es>Extrusión</span><span data-lang-en hidden>Extrusion</span></button>
                 </header>
-                <ul class="shell-bars">
-                  {munis.map((m) => (
-                    <li>
-                      <span>{m.name}</span>
-                      <span class="shell-bar" style={`width:${Math.max(8, Math.round((m.pob / maxPob) * 100))}%`}></span>
-                      <b>{m.pob.toLocaleString('es-MX')}</b>
-                    </li>
-                  ))}
-                </ul>
-                <p class="shell-note"><span data-lang-es>La columna compara población 2020, INEGI. No es la altura del terreno ni de un inmueble.</span><span data-lang-en hidden>The column compares 2020 population, INEGI. It is not terrain height and not a building height.</span></p>
-                <p class="shell-gap-note"><span data-lang-es>BIM de edificios: próximo / sin datos.</span><span data-lang-en hidden>Building BIM: upcoming / no data.</span></p>
+                <p class="shell-gap-note"><span data-lang-es>BIM de edificios: sin datos. No hay huella, altura ni modelo de inmueble en el portal. Las columnas de población están en Gemelo digital y comparan habitantes, no edificios.</span><span data-lang-en hidden>Building BIM: no data. The portal has no footprint, height or building model. Population columns are under Digital twin and compare inhabitants, not buildings.</span></p>
               </li>
               <li data-dock-panel="l2">
                 <header>
                   <span class="shell-n">2</span>
                   <div>
                     <strong><span data-lang-es>Infraestructura</span><span data-lang-en hidden>Infrastructure</span></strong>
-                    <small><span data-lang-es>Vías, energía, agua, puertos y ordenamiento publicado.</span><span data-lang-en hidden>Roads, energy, water, ports and published zoning.</span></small>
+                    <small><span data-lang-es>El botón enciende energía, cauces y puertos o aeropuertos. El resto se marca una por una. Las carreteras están en Movilidad.</span><span data-lang-en hidden>The button turns on energy, channels and ports or airports. The rest is one checkbox at a time. Roads are under Mobility.</span></small>
                   </div>
-                  <button type="button" data-stack-toggle="l2" aria-pressed="false"><span data-lang-es>Todas</span><span data-lang-en hidden>All</span></button>
+                  <button type="button" data-stack-toggle="l2" aria-pressed="false"><span data-lang-es>Conjunto</span><span data-lang-en hidden>Set</span></button>
                 </header>
                 <div class="shell-layer-group">
-                  {stack[1].layers.map((id) => {
+                  {layersOf('l2').map((id) => {
                     const layer = layersById[id];
                     return (
                       <label>
@@ -267,51 +255,6 @@ const shellModel = {
                     );
                   })}
                 </div>
-              </li>
-              <li data-dock-panel="l3">
-                <header>
-                  <span class="shell-n">3</span>
-                  <div>
-                    <strong><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></strong>
-                    <small><span data-lang-es>Movimiento de personas y bienes con las capas de transporte que ya existen.</span><span data-lang-en hidden>Movement of people and goods from transport layers that already exist.</span></small>
-                  </div>
-                  <button type="button" data-stack-toggle="l3" aria-pressed="false"><span data-lang-es>Todas</span><span data-lang-en hidden>All</span></button>
-                </header>
-                <div class="shell-layer-group">
-                  {stack[2].layers.map((id) => {
-                    const layer = layersById[id];
-                    return (
-                      <label>
-                        <input type="checkbox" data-layer={layer.id} />
-                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
-                        <span>
-                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
-                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
-                        </span>
-                      </label>
-                    );
-                  })}
-                </div>
-                <p class="shell-note"><span data-lang-es>El corredor es un marco de análisis, no un límite oficial.</span><span data-lang-en hidden>The corridor is an analysis frame, not an official boundary.</span></p>
-              </li>
-              <li data-dock-panel="l4"><header><div><strong><span data-lang-es>Vivienda y mercado inmobiliario</span><span data-lang-en hidden>Housing and real estate</span></strong><small><span data-lang-es>Oferta publicada, con precios de lista en dólares.</span><span data-lang-en hidden>Published listings, with asking prices in US dollars.</span></small></div></header><div class="shell-layer-group"><label><input type="checkbox" data-layer="bcs_market_listings" /><i class="shell-swatch" style="background:#f59e0b"></i><span><span data-lang-es>Propiedades en mercado</span><span data-lang-en hidden>Market listings</span><small>MLS BCS · 2026</small></span></label></div><p class="shell-note"><span data-lang-es>Las columnas son símbolos de las propiedades; no representan edificios reales ni precios de venta cerrada.</span><span data-lang-en hidden>Columns are property symbols, not actual buildings or completed sale prices.</span></p></li>
-              <li data-dock-panel="suelo">
-                <header>
-                  <span class="shell-n">S</span>
-                  <div>
-                    <strong><span data-lang-es>Uso de suelo</span><span data-lang-en hidden>Land use</span></strong>
-                    <small><span data-lang-es>Tres instrumentos. Solo se dibuja el que tiene polígonos publicados.</span><span data-lang-en hidden>Three instruments. Only the one with published polygons is drawn.</span></small>
-                  </div>
-                </header>
-                <div class="shell-layer-group">
-                  <label>
-                    <input type="checkbox" data-layer="poer_ugas" />
-                    <span>
-                      <span data-lang-es>POERBCS — política ambiental (69 UGA)</span><span data-lang-en hidden>POERBCS — environmental policy (69 UGAs)</span>
-                      <small><span data-lang-es>SEPUIMM / POERBCS. Polígonos reales. El color sigue el sufijo de CLASIFICAC.</span><span data-lang-en hidden>SEPUIMM / POERBCS. Real polygons. Color follows the CLASIFICAC suffix.</span></small>
-                    </span>
-                  </label>
-                </div>
                 <ul class="shell-legend">
                   <li><i style="background:#2d6a4f"></i><span data-lang-es>AS aprovechamiento sustentable</span><span data-lang-en hidden>AS sustainable use</span></li>
                   <li><i style="background:#d4a017"></i><span data-lang-es>PR preservación</span><span data-lang-en hidden>PR preservation</span></li>
@@ -319,7 +262,7 @@ const shellModel = {
                   <li><i style="background:#c0392b"></i><span data-lang-es>RT restauración</span><span data-lang-en hidden>RT restoration</span></li>
                   <li><i style="background:#8d99ae"></i><span data-lang-es>Otra clave de CLASIFICAC</span><span data-lang-en hidden>Other CLASIFICAC code</span></li>
                 </ul>
-                <p class="shell-note"><span data-lang-es>Nombres tomados de la simbología de la carta publicada del modelo de ordenamiento (AS, PR, PT, RT).</span><span data-lang-en hidden>Names taken from the legend of the published ordering-model map (AS, PR, PT, RT).</span></p>
+                <p class="shell-note"><span data-lang-es>Nombres tomados de la simbología de la carta publicada del modelo de ordenamiento (AS, PR, PT, RT). El color del POER sigue el sufijo de CLASIFICAC.</span><span data-lang-en hidden>Names taken from the legend of the published ordering-model map (AS, PR, PT, RT). POER color follows the CLASIFICAC suffix.</span></p>
                 <div class="shell-layer-group">
                   <label>
                     <input type="checkbox" data-icluster="uso" />
@@ -342,6 +285,79 @@ const shellModel = {
                   <a href="http://sig.bcs.gob.mx/iclusterbcs/" target="_blank" rel="noopener noreferrer"><span data-lang-es>Abrir visor iCluster</span><span data-lang-en hidden>Open the iCluster viewer</span></a>
                 </div>
                 <p class="shell-gap-note"><span data-lang-es>Algunos planes solo cuentan con mapas en imagen; no se representan como polígonos.</span><span data-lang-en hidden>Some plans are available as map images only; they are not represented as polygons.</span></p>
+              </li>
+              <li data-dock-panel="l3">
+                <header>
+                  <span class="shell-n">3</span>
+                  <div>
+                    <strong><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></strong>
+                    <small><span data-lang-es>El botón enciende las carreteras publicadas. No hay flujo de vehículos.</span><span data-lang-en hidden>The button turns on published roads. There is no vehicle flow.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l3" aria-pressed="true"><span data-lang-es>Carreteras</span><span data-lang-en hidden>Roads</span></button>
+                </header>
+                <div class="shell-layer-group">
+                  {layersOf('l3').map((id) => {
+                    const layer = layersById[id];
+                    return (
+                      <label>
+                        <input type="checkbox" data-layer={layer.id} checked={shellModel.defaults.includes(layer.id)} />
+                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
+                        <span>
+                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+                <p class="shell-note"><span data-lang-es>El corredor es un marco de análisis, no un límite oficial. El grosor de la línea sigue la clase de vía publicada (autopista, primaria, secundaria).</span><span data-lang-en hidden>The corridor is an analysis frame, not an official boundary. Line width follows the published road class (motorway, primary, secondary).</span></p>
+              </li>
+              <li data-dock-panel="l4">
+                <header>
+                  <span class="shell-n">4</span>
+                  <div>
+                    <strong><span data-lang-es>Ciudad inteligente (IoT)</span><span data-lang-en hidden>Smart city (IoT)</span></strong>
+                    <small><span data-lang-es>Este nivel no dibuja nada.</span><span data-lang-en hidden>This level draws nothing.</span></small>
+                  </div>
+                </header>
+                <p class="shell-gap-note"><span data-lang-es>Sensores: sin datos. No hay mediciones, series ni dispositivos en el portal. Cuando existan, sus datos alimentarían el gemelo digital. Hoy no hay ese intercambio.</span><span data-lang-en hidden>Sensors: no data. The portal has no measurements, time series or devices. When they exist, their data would feed the digital twin. There is no such exchange today.</span></p>
+              </li>
+              <li data-dock-panel="l5">
+                <header>
+                  <span class="shell-n">5</span>
+                  <div>
+                    <strong><span data-lang-es>Gemelo digital</span><span data-lang-en hidden>Digital twin</span></strong>
+                    <small><span data-lang-es>El botón levanta columnas de población 2020 para comparar municipios. No son edificios ni el relieve.</span><span data-lang-en hidden>The button raises 2020 population columns to compare municipalities. They are not buildings or the relief.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l5" aria-pressed="false"><span data-lang-es>Población</span><span data-lang-en hidden>Population</span></button>
+                </header>
+                <ul class="shell-bars">
+                  {munis.map((m) => (
+                    <li>
+                      <span>{m.name}</span>
+                      <span class="shell-bar" style={`width:${Math.max(8, Math.round((m.pob / maxPob) * 100))}%`}></span>
+                      <b>{m.pob.toLocaleString('es-MX')}</b>
+                    </li>
+                  ))}
+                </ul>
+                <p class="shell-note"><span data-lang-es>Habitantes por municipio, INEGI Censo 2020. La columna solo compara esa cifra.</span><span data-lang-en hidden>Inhabitants by municipality, INEGI 2020 Census. The column only compares that figure.</span></p>
+                <div class="shell-layer-group">
+                  {layersOf('l5').map((id) => {
+                    const layer = layersById[id];
+                    return (
+                      <label>
+                        <input type="checkbox" data-layer={layer.id} checked={shellModel.defaults.includes(layer.id)} />
+                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
+                        <span>
+                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+                <p class="shell-note"><span data-lang-es>Las columnas de la oferta inmobiliaria son símbolos de propiedades anunciadas. No son edificios ni precios de venta cerrada.</span><span data-lang-en hidden>Listing columns are symbols for advertised properties. They are not buildings or completed sale prices.</span></p>
+                <p class="shell-gap-note"><span data-lang-es>Ciudad inteligente no envía datos: no hay sensores que intercambiar con este nivel.</span><span data-lang-en hidden>Smart city sends no data: there are no sensors to exchange with this level.</span></p>
               </li>
             </ol>
             <p class="shell-status" id="shell-status" aria-live="polite"></p>
@@ -373,11 +389,11 @@ const shellModel = {
       window.__SHELL_MODEL__ = shellModel;
     </script>
     <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
-    <script is:inline src="/gemelo/cdt3d.js"></script>
+    <script is:inline src="/gemelo/cdt3d.js?v=20261103-capas"></script>
     <script is:inline src="/vendor/leaflet/leaflet.js"></script>
     <script is:inline>if(new URLSearchParams(location.search).has("embed"))document.body.classList.add("map-embed");</script>
     <script is:inline src="/shell/evidence.js?v=20261102-integrated"></script>
-    <script is:inline src="/shell/app.js?v=20261102-integrated"></script>
+    <script is:inline src="/shell/app.js?v=20261103-capas"></script>
     <style is:global>
       html, body.shell-app { margin: 0; height: 100%; background: #fbf8f1; color: #1a1a1a; overflow: hidden; }
       body.shell-app { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
@@ -444,14 +460,18 @@ const shellModel = {
         overflow: hidden;
       }
       .shell-dock-bar { display: flex; align-items: center; gap: .45rem; padding: .3rem .55rem; min-width: 0; }
-      .shell-dock-chips { display: flex; gap: .28rem; overflow-x: auto; flex: 1; min-width: 0; }
-      .shell-dock-chips button {
+      .shell-dock-chips, .shell-level-chips { display: flex; gap: .28rem; overflow-x: auto; flex: 1; min-width: 0; }
+      .shell-dock-chips button, .shell-level {
         display: inline-flex; align-items: center; gap: .28rem; font: inherit; font-size: .74rem; font-weight: 750;
-        border: 1px solid #c5d5de; background: #fff; color: #1a1a1a; border-radius: 999px;
+        border: 1px solid #9fd0ea; background: rgba(255, 255, 255, .88); color: #0b3a56; border-radius: 999px;
         padding: .16rem .55rem .16rem .2rem; cursor: pointer; white-space: nowrap;
       }
-      .shell-dock-chips button[aria-selected="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
-      .shell-dock-chips button[aria-selected="true"] .shell-n { background: #fff; color: #0083C4; }
+      .shell-level.is-empty { border-style: dashed; color: #3c5163; background: rgba(255, 255, 255, .55); }
+      .shell-dock-chips button[aria-selected="true"],
+      .shell-level[aria-pressed="true"] { background: #0083C4; color: #fff; border-color: #0083C4; }
+      .shell-dock-chips button[aria-selected="true"] .shell-n,
+      .shell-level[aria-pressed="true"] .shell-n { background: #fff; color: #0083C4; }
+      .shell-level[aria-expanded="true"]:not([aria-pressed="true"]) { box-shadow: inset 0 0 0 2px #0083C4; }
       .shell-sheet { display: none; flex: 1; min-height: 0; overflow: auto; padding: .15rem .7rem .5rem; }
       body.shell-dock-open .shell-sheet { display: block; }
       .shell-stack > li { display: none; }
@@ -649,6 +669,8 @@ const shellModel = {
         }
         .shell-dock-bar { display: block; padding: 0; pointer-events: none; }
         .shell-dock-chips { display: none; }
+        .shell-level-chips { display: flex; pointer-events: auto; }
+        .shell-level { min-height: 40px; font-size: .82rem; }
         .shell-base, .shell-sheet, .shell-hud, .shell-scrim, .shell-capas-btn { pointer-events: auto; }
         .shell-brand { gap: .4rem .7rem; }
         #lang-toggle, .shell-base button, .shell-stack header button, .shell-sheet-x {
@@ -812,8 +834,8 @@ const shellModel = {
         .shell-sheet { bottom: 3.6rem; max-height: 70%; }
       }
     </style>
-    <link rel="stylesheet" href="/shell/workspace.css?v=20261102-integrated" />
-  <link rel="stylesheet" href="/map-page.css?v=20261102" />
+    <link rel="stylesheet" href="/shell/workspace.css?v=20261103-capas" />
+  <link rel="stylesheet" href="/map-page.css?v=20261103-capas" />
   <script is:inline src="/map-page.js?v=20261102" defer></script>
   </body>
 </html>
