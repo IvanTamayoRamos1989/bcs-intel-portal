@@ -1616,6 +1616,75 @@ const CASES = [
     needIds: ['dq_riesgos_principales', 'ev_mesa_agua'],
     needTypes: ['DecisionQuestion', 'Evidence'],
   },
+  {
+    q: 'Tarifas del puerto de Cabo San Lucas',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: '222 cuadros del Vizcaíno',
+    kind: 'viability',
+    needIds: ['dq_vizcaino_corridor', 'terr_anp_vizcaino'],
+    needTypes: ['DecisionQuestion', 'Territory'],
+  },
+  {
+    q: '6 de junio de 1995',
+    kind: 'viability',
+    needIds: ['ev_historia_bcs', 'terr_anp_cabo_pulmo'],
+    needTypes: ['Evidence', 'Territory'],
+  },
+  {
+    q: '30 de noviembre de 1988',
+    kind: 'viability',
+    needIds: ['ev_historia_bcs', 'terr_anp_vizcaino'],
+    needTypes: ['Evidence', 'Territory'],
+  },
+  {
+    q: 'Cuatro acuíferos en déficit',
+    kind: 'viability',
+    needIds: ['const_escasez_agua', 'ev_acuiferos_dma'],
+    needTypes: ['Constraint', 'Evidence'],
+  },
+  {
+    q: 'Tabla de disponibilidad de acuíferos',
+    kind: 'viability',
+    needIds: ['ev_acuiferos_dma'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'Un remanente no compensa otro déficit',
+    kind: 'viability',
+    needIds: ['ev_acuiferos_dma'],
+    needTypes: ['Evidence'],
+    forbid: ['terr_comondu', 'dd_agro_santo_domingo'],
+  },
+  {
+    q: 'Ciudad Constitución',
+    kind: 'viability',
+    needIds: ['terr_comondu'],
+    needTypes: ['Territory'],
+  },
+  {
+    q: 'Ocupación en octubre no es renta',
+    kind: 'viability',
+    needIds: ['ev_news_ocupacion', 'gap_rentas_hoteleras'],
+    needTypes: ['Evidence', 'Constraint'],
+    sinDatoIds: ['gap_rentas_hoteleras'],
+    noRent: true,
+  },
+  {
+    q: 'La conexión con la red del país sigue en pausa',
+    kind: 'viability',
+    needIds: ['proj_fed_ene_010', 'rc_sibcs'],
+    needTypes: ['Project', 'ResourceCapacity'],
+  },
+  {
+    q: 'Anexo de participaciones 2025',
+    kind: 'viability',
+    needIds: ['ev_fiscal_anexo_2025'],
+    needTypes: ['Evidence'],
+  },
 ];
 
 const NEGATIVES = [
@@ -1626,6 +1695,9 @@ const NEGATIVES = [
   '¿Cuántas viviendas dañó Polo?',
   'El discurso cita 3000 lotes en Los Cabos',
   'Sin luz en las delegaciones de La Paz',
+  '1980',
+  'La constitución política del estado',
+  'la sierra recarga',
 ];
 
 let failed = 0;
