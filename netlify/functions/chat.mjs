@@ -808,7 +808,7 @@ function expandQuery(query) {
   if (/\bnatali\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b50 anos\b/.test(qn) && /\bfebrero de 2024\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\barribos?\b/.test(qn) && /\bsanta rosalia\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
-  if (/\b(rubio apodaca|ramon rubio)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(rubio apodaca|ramon rubio|ramon edgardo)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bagundez\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\broberto flores\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bjudith diaz\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -1690,7 +1690,7 @@ function expandQuery(query) {
   if (/\bno se afirma\b/.test(qn) && /\bpt\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\b(extracto no dice|sigla pr no es)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bcuatro codigos sin nombre\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
-  if (/\bdos tres y cuatro\b/.test(qn) && /\b(code pa|codigos)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bdos,? tres y cuatro\b/.test(qn) && /\b(code pa|codigos)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\blineamientos de restauracion\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bindice truncado\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bpagina diecinueve\b/.test(qn) && /\bextracto\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
@@ -1699,7 +1699,7 @@ function expandQuery(query) {
   if (/\bgarante del candado\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(opera el organismo|nodo clave)\b/.test(qn) && /\bagua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpregunta madre\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\b(penetren los nucleos|fuera de instrumento)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(penetr[ae]n los nucleos|fuera de instrumento)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bdesbloquea\b/.test(qn) && /\bcrecimiento\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bmesas del programa\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdireccion local\b/.test(qn) && /\b(comision nacional|conagua)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -1712,6 +1712,17 @@ function expandQuery(query) {
   if (/\bcuarteles\b/.test(qn) && /\bguardia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bmapa de sitios\b/.test(qn) && /\binternet\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bconexion satelital\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmesa de conservacion\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpolitica estatal\b/.test(qn) && /\bmesa\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\binfraestructura y energia\b/.test(qn) && /\bmesa\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\barquitectura y urbanismo\b/.test(qn) && /\bmesa\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno es una autorizacion de obra\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsemipermanente\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdemanda permanente\b/.test(qn) && /\bhotel/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpolo de mayor deficit\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bbenchmarking de destino\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\borganismo\b/.test(qn) && /\btitular\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno llena el recuadro\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -2494,7 +2505,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bnatali\b/.test(qn)) add('actor_cabos_dg_ecologia', 'ev_org_cabos_2024');
   if (/\b50 anos\b/.test(qn) && /\bfebrero de 2024\b/.test(qn)) add('ev_sig_asipona');
   if (/\barribos?\b/.test(qn) && p.mulege) add('ev_cruceros_datatur', 'terr_mulege');
-  if (/\b(rubio apodaca|ramon rubio)\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_org_cabos_2024');
+  if (/\b(rubio apodaca|ramon rubio|ramon edgardo)\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_org_cabos_2024');
   if (/\bagundez\b/.test(qn)) add('actor_cabos_presidencia', 'ev_org_cabos_2024', 'actor_ayunt_cabos');
   if (/\broberto flores\b/.test(qn)) add('actor_cabos_dg_desarrollo_urbano', 'ev_org_cabos_2024', 'inst_pdu_cabos');
   if (/\bjudith diaz\b/.test(qn)) add('ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos');
@@ -3366,7 +3377,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bno se afirma\b/.test(qn) && /\bpt\b/.test(qn)) add('inst_pa_proteccion', 'gap_politica_uga_leyenda');
   if (/\bclave numero\b/.test(qn) && /\buga\b/.test(qn)) add('gap_politica_uga_leyenda');
   if (/\b(extracto no dice|sigla pr no es)\b/.test(qn)) add('inst_pa_preservacion', 'gap_politica_uga_leyenda');
-  if (/\bcuatro codigos sin nombre\b/.test(qn) || (/\bdos tres y cuatro\b/.test(qn) && /\b(code pa|codigos)\b/.test(qn))) add('gap_politica_uga_leyenda', 'inst_pa_aprovechamiento');
+  if (/\bcuatro codigos sin nombre\b/.test(qn) || (/\bdos,? tres y cuatro\b/.test(qn) && /\b(code pa|codigos)\b/.test(qn))) add('gap_politica_uga_leyenda', 'inst_pa_aprovechamiento');
   if (/\blineamientos de restauracion\b/.test(qn) || /\bindice truncado\b/.test(qn)) add('inst_pa_restauracion', 'gap_politica_uga_leyenda');
   if (/\bpagina diecinueve\b/.test(qn) && /\bextracto\b/.test(qn)) add('inst_pa_preservacion', 'gap_politica_uga_leyenda');
   if (/\bpagina dieciocho\b/.test(qn) && /\bextracto\b/.test(qn)) add('inst_pa_aprovechamiento', 'gap_politica_uga_leyenda');
@@ -3375,7 +3386,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bgarante del candado\b/.test(qn)) add('actor_conanp', 'ev_anp_pm', 'const_anp_nucleos');
   if (/\b(opera el organismo|nodo clave)\b/.test(qn) && /\bagua\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_org_cabos_2024', 'ev_mesa_agua');
   if (/\bpregunta madre\b/.test(qn)) add('dq_capacidad_carga', 'const_dma_deficit', 'rc_sibcs');
-  if (/\b(penetren los nucleos|fuera de instrumento)\b/.test(qn)) add('dq_coherencia_instrumentos', 'inst_poerbcs', 'const_anp_nucleos');
+  if (/\b(penetr[ae]n los nucleos|fuera de instrumento)\b/.test(qn)) add('dq_coherencia_instrumentos', 'inst_poerbcs', 'const_anp_nucleos');
   if (/\bdesbloquea\b/.test(qn) && /\bcrecimiento\b/.test(qn)) add('dq_desal_vs_crecimiento', 'proj_desal_cabos', 'const_dma_deficit');
   if (/\bmesas del programa\b/.test(qn) || /\bdesarrollo orientado al transporte\b/.test(qn) || (/\binversion extranjera\b/.test(qn) && /\bmesa\b/.test(qn))) add('ev_mesas_trabajo');
   if (/\bdireccion local\b/.test(qn) && /\b(comision nacional|conagua)\b/.test(qn)) add('ev_mesa_agua', 'actor_conagua');
@@ -3385,6 +3396,15 @@ function factorSeedIds(qn, kinds) {
   if (/\bcuarteles\b/.test(qn) && /\bguardia\b/.test(qn)) add('proj_fed_seg_001');
   if (/\bmapa de sitios\b/.test(qn) && /\binternet\b/.test(qn)) add('proj_fed_int_002');
   if (/\bconexion satelital\b/.test(qn)) add('proj_fed_int_001');
+  if (/\b(mesa de conservacion|politica estatal)\b/.test(qn) && (/\bmesa\b/.test(qn) || /\bconservacion\b/.test(qn))) add('ev_mesas_trabajo');
+  if (/\binfraestructura y energia\b/.test(qn) && /\bmesa\b/.test(qn)) add('ev_mesas_trabajo');
+  if (/\barquitectura y urbanismo\b/.test(qn) && /\bmesa\b/.test(qn)) add('ev_mesa_urbanismo', 'ev_mesas_trabajo', 'gap_permisos_uso_suelo');
+  if (/\bno es una autorizacion de obra\b/.test(qn)) add('ev_mesas_trabajo', 'gap_permisos_uso_suelo');
+  if (/\bsemipermanente\b/.test(qn) || (/\bdemanda permanente\b/.test(qn) && /\bhotel/.test(qn))) add('dd_residencial_cabos', 'gap_rentas_hoteleras');
+  if (/\bpolo de mayor deficit\b/.test(qn)) add('actor_oomsapas_cabos', 'const_dma_deficit', 'rc_acuifero_0317');
+  if (/\bbenchmarking de destino\b/.test(qn)) add('dq_capacidad_carga', 'const_dma_deficit', 'gap_loreto_pax');
+  if (/\borganismo\b/.test(qn) && /\btitular\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_org_cabos_2024');
+  if (/\bno llena el recuadro\b/.test(qn) || (/\balejandra\b/.test(qn) && /\brecuadro\b/.test(qn))) add('gap_org_obras_cabos', 'actor_cabos_dg_obras_publicas');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
