@@ -13,11 +13,10 @@
     d.bubble.querySelectorAll('a[href]').forEach(function(a){var href=a.getAttribute('href');if(/^\/(explorar|mapas|consulta)\/?(?:[?#]|$)/.test(href))a.href='/consulta/?context='+id;});
     var mapped=(d.blocks||[]).some(function(b){return b.type==='map';})||d.place||/municipio|localidad|territorio|baja california sur|la paz|los cabos|loreto|muleg[eé]|comond[uú]/i.test(d.question||'');
     if(!mapped||d.grounded===false)return;
-    var details=document.createElement('details');details.className='conversation-map';
-    var summary=document.createElement('summary');summary.textContent=en()?'Explore this question on the map':'Explorar esta consulta en el mapa';details.appendChild(summary);
-    var full=document.createElement('a');full.href='/consulta/?context='+id;full.textContent=en()?'Open full 3D map →':'Abrir mapa 3D completo →';details.appendChild(full);
-    details.addEventListener('toggle',function(){if(!details.open||details.querySelector('iframe'))return;var frame=document.createElement('iframe');frame.src='/consulta/?embed=1&context='+id;frame.title=en()?'Map related to this question':'Mapa relacionado con esta consulta';frame.loading='lazy';details.insertBefore(frame,full);});
-    d.bubble.appendChild(details);
+    var jump=document.createElement('p');jump.className='conversation-map-link';
+    var full=document.createElement('a');full.href='/consulta/?context='+id;full.textContent=en()?'Open this question on the 3D map':'Abrir esta consulta en el mapa 3D';
+    jump.appendChild(full);
+    d.bubble.appendChild(jump);
   }
   document.addEventListener('bcs:chat-start',function(){active();newButton.disabled=true;});
   document.addEventListener('bcs:chat-error',function(){newButton.disabled=false;});

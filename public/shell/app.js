@@ -1,4 +1,4 @@
-/* 3-pane shell: chat events move the twin map and the file list. */
+/* Map page: layers, fly-to and a question handed off from the chat. */
 (function () {
   var model = window.__SHELL_MODEL__ || { layers: [], themes: [] };
   var byId = {};
@@ -1436,9 +1436,10 @@
     });
   });
   var help=document.getElementById('twin-help'),guide=document.getElementById('twin-guide');
-  function closeGuide(){if(!guide)return;guide.hidden=true;help.setAttribute('aria-expanded','false');help.focus();}
-  if(help)help.addEventListener('click',function(){guide.hidden=!guide.hidden;help.setAttribute('aria-expanded',String(!guide.hidden));if(!guide.hidden)document.getElementById('twin-help-close').focus();});
-  document.getElementById('twin-help-close').addEventListener('click',closeGuide);
+  function closeGuide(){if(!guide)return;guide.hidden=true;if(help){help.setAttribute('aria-expanded','false');help.focus();}}
+  if(help&&guide)help.addEventListener('click',function(){guide.hidden=!guide.hidden;help.setAttribute('aria-expanded',String(!guide.hidden));if(!guide.hidden){var closer=document.getElementById('twin-help-close');if(closer)closer.focus();}});
+  var helpClose=document.getElementById('twin-help-close');
+  if(helpClose)helpClose.addEventListener('click',closeGuide);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(guide&&!guide.hidden)closeGuide();else if(document.body.classList.contains('shell-sheet-open'))setSheet(false);else closeFiche();}});
   document.getElementById('twin-reset-map').addEventListener('click',function(){
     closeFiche();paintMuni('');if(engine&&engine.mark)engine.mark(null,null,'');if(engine&&engine.fitBox)engine.fitBox(null);if(leafletMap)leafletMap.fitBounds([[22.87,-115.22],[28,-109.41]]);
@@ -1456,11 +1457,11 @@
   syncBasic();
   setBasemap(basemap);
   boot3d();
-  fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
+  if (treeEl || relatedEl) fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
     index = data;
     renderTree(searchEl ? searchEl.value : '');
     if(latestAnswer)focusFiles(latestAnswer.question,latestAnswer.sources,latestAnswer.answer);
-    if(searchEl&&searchEl.value)document.getElementById('twin-archive').open=true;
+    if(searchEl&&searchEl.value){var archive=document.getElementById('twin-archive');if(archive)archive.open=true;}
   }).catch(function () {
     if (treeEl) treeEl.textContent = tx('No se pudo cargar el índice de archivos.', 'The file index could not be loaded.');
   });

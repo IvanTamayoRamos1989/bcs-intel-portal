@@ -52,8 +52,8 @@ const { home = false, shell = false } = Astro.props;
       )}
       {shell ? (
         <p class="shell-chat-lead">
-          <span data-lang-es>Pregunta por un lugar o un tema. El mapa y los archivos siguen la respuesta.</span>
-          <span data-lang-en hidden>Ask about a place or a theme. The map and the files follow the answer.</span>
+          <span data-lang-es>Pregunta por un lugar o un tema del estado. Si falta un dato, la respuesta lo dice.</span>
+          <span data-lang-en hidden>Ask about a place or a theme in the state. If a figure is missing, the answer says so.</span>
         </p>
       ) : (
         <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
