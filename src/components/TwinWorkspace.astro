@@ -177,6 +177,9 @@ const shellModel = {
           </p>
           <div class="twin-basic" role="group" aria-label="Capas básicas">
             <span class="twin-basic-label"><span data-lang-es>Mostrar</span><span data-lang-en hidden>Show</span></span>
+            <label class="building-picker"><span data-lang-es>Edificios 3D</span><span data-lang-en hidden>3D buildings</span>
+              <select data-building-places disabled><option value="">—</option></select>
+            </label>
             <button type="button" data-basic="places" aria-pressed="true"><span data-lang-es>Localidades</span><span data-lang-en hidden>Places</span></button>
             <button type="button" data-basic="roads" aria-pressed="true"><span data-lang-es>Carreteras</span><span data-lang-en hidden>Roads</span></button>
             <button type="button" data-basic="water" aria-pressed="false"><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></button>
@@ -238,9 +241,7 @@ const shellModel = {
                 </header>
                 <div class="shell-layer-group">
                   <label><input type="checkbox" data-buildings checked disabled /><span data-lang-es>Mostrar edificios en 3D</span><span data-lang-en hidden>Show 3D buildings</span></label>
-                  <label><span data-lang-es>Explorar una zona</span><span data-lang-en hidden>Explore an area</span>
-                    <select data-building-places disabled><option value="">—</option></select>
-                  </label>
+
                 </div>
                 <ul class="shell-bars">
                   {munis.map((m) => (
