@@ -620,7 +620,7 @@ function expandQuery(query) {
   if (/\borientacion aerea\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (
     /\b(los cabos|cabo san lucas)\b/.test(qn) &&
-    /\bdirige\b/.test(qn) &&
+    /\b(dirige|titular)\b/.test(qn) &&
     /\b(ecologia|catastro|presidencia|desarrollo urbano|fomento economico|desarrollo social|servicios publicos|seguridad publica)\b/.test(qn) &&
     !factorKinds.length
   ) {
@@ -721,7 +721,7 @@ function expandQuery(query) {
   }
   if (/\bsierra la laguna\b/.test(qn) && /\b(recarga|integridad)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bordenamiento ecologico\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
-  if (/\b(ampliacion|modernizacion)\b/.test(qn) && /\bred\b/.test(qn) && /\b(electric\w*|bcs|sibcs)\b/.test(qn) && !factorKinds.length) {
+  if (/\b(amplia\w*|moderniz\w*)\b/.test(qn) && /\bred\b/.test(qn) && /\b(electric\w*|bcs|sibcs)\b/.test(qn) && !factorKinds.length) {
     factorKinds.push('viability');
   }
   if ((/\bunion con la red nacional\b/.test(qn) || /\bsistema nacional\b/.test(qn)) && /\bpausad\w*/.test(qn) && !factorKinds.length) {
@@ -743,6 +743,20 @@ function expandQuery(query) {
   }
   if (/\bsistema electrico\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bplan sexenal\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(areas naturales protegidas|administra las areas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsecretaria de planeacion\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\benergi\w*/.test(qn) && /\bla paz\b/.test(qn) && /\blos cabos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bagua\b/.test(qn) && /\bla paz\b/.test(qn) && /\blos cabos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bhuecos?\b/.test(qn) && /\bhotel/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bnucleo\b/.test(qn) && /\b(pulmo|anp|vizcaino|sierra)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bordenamiento local\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\btecho ecologico\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(aprovechamiento sustentable|preservacion|restauracion)\b/.test(qn) && /\bordenamiento\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('landuse');
+  }
+  if (/\bapi\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\baeropuerto/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdensific\w*/.test(qn) && /\b(costa|los cabos|cabo)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1325,19 +1339,19 @@ function factorSeedIds(qn, kinds) {
   if (p.cabos && /\b(dirige|lleva|titular|quien)\b/.test(qn) && /\bcatastro\b/.test(qn)) {
     add('ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos', 'inst_pdu_cabos');
   }
-  if (p.cabos && /\bdirige\b/.test(qn) && /\bdesarrollo urbano\b/.test(qn)) {
+  if (p.cabos && /\b(dirige|titular)\b/.test(qn) && /\bdesarrollo urbano\b/.test(qn)) {
     add('actor_cabos_dg_desarrollo_urbano', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'inst_pdu_cabos', 'actor_ayunt_cabos', 'terr_los_cabos');
   }
-  if (p.cabos && /\bdirige\b/.test(qn) && /\bfomento economico\b/.test(qn)) {
+  if (p.cabos && /\b(dirige|titular)\b/.test(qn) && /\bfomento economico\b/.test(qn)) {
     add('actor_cabos_dg_fomento_economico', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
   }
-  if (p.cabos && /\bdirige\b/.test(qn) && /\bdesarrollo social\b/.test(qn)) {
+  if (p.cabos && /\b(dirige|titular)\b/.test(qn) && /\bdesarrollo social\b/.test(qn)) {
     add('actor_cabos_dg_desarrollo_social', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
   }
-  if (p.cabos && /\bdirige\b/.test(qn) && /\bservicios publicos\b/.test(qn)) {
+  if (p.cabos && /\b(dirige|titular)\b/.test(qn) && /\bservicios publicos\b/.test(qn)) {
     add('actor_cabos_dg_servicios_publicos', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
   }
-  if (p.cabos && /\bdirige\b/.test(qn) && /\bseguridad publica\b/.test(qn)) {
+  if (p.cabos && /\b(dirige|titular)\b/.test(qn) && /\bseguridad publica\b/.test(qn)) {
     add('actor_cabos_dg_seguridad_publica', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos');
   }
   if (p.cabos && /\bpresidencia\b/.test(qn)) {
@@ -1456,7 +1470,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bordenamiento ecologico\b/.test(qn) && p.loreto) add('inst_poel_loreto', 'gap_psdu_loreto_gazette', 'terr_loreto');
   else if (/\bordenamiento ecologico\b/.test(qn) && p.cabos) add('inst_poel_cabos', 'ev_sig_poel_cabos', 'terr_los_cabos');
   else if (/\bordenamiento ecologico\b/.test(qn)) add('inst_poerbcs', 'inst_poer_politicas', 'actor_sepuimm');
-  if (/\b(ampliacion|modernizacion)\b/.test(qn) && /\bred\b/.test(qn) && /\b(electric\w*|bcs|sibcs)\b/.test(qn)) {
+  if (/\b(amplia\w*|moderniz\w*)\b/.test(qn) && /\bred\b/.test(qn) && /\b(electric\w*|bcs|sibcs)\b/.test(qn)) {
     add('inst_pamrnt', 'rc_sibcs', 'const_red_aislada');
   }
   if ((/\bunion con la red nacional\b/.test(qn) || /\bsistema nacional\b/.test(qn)) && /\bpausad\w*/.test(qn)) {
@@ -1474,6 +1488,28 @@ function factorSeedIds(qn, kinds) {
   if (/\bplan de desarrollo urbano\b/.test(qn) && p.paz) add('inst_pdu_lapaz', 'gap_pmdu_lapaz_texto', 'rc_acuifero_0324');
   if (/\bsistema electrico\b/.test(qn)) add('ev_prodesen', 'rc_sibcs', 'const_red_aislada');
   if (/\bplan sexenal\b/.test(qn)) add('inst_ped', 'inst_poerbcs');
+  if (/\b(areas naturales protegidas|administra las areas)\b/.test(qn)) add('actor_conanp', 'const_anp_nucleos');
+  if (/\bsecretaria de planeacion\b/.test(qn)) add('inst_poerbcs', 'inst_poer_politicas');
+  if (/\benergi\w*/.test(qn) && p.paz && p.cabos) add('rc_tx_lapaz_cabos', 'rc_sibcs');
+  if (/\bagua\b/.test(qn) && p.paz && p.cabos) add('rc_acuifero_0317', 'rc_acuifero_0324', 'const_dma_deficit');
+  if (/\bdesal\w*/.test(qn) && p.paz && p.cabos) add('proj_desal_cabos', 'proj_fed_agu_002', 'const_dma_deficit');
+  if (/\bhuecos?\b/.test(qn) && /\bhotel/.test(qn)) add('gap_rentas_hoteleras', 'const_dma_deficit', 'dq_viabilidad_proyecto');
+  if (/\bviable\b/.test(qn) && /\briesgos?\b/.test(qn)) add('dq_riesgos_principales', 'dq_viabilidad_proyecto');
+  if (/\bquien decide\b/.test(qn) && /\boportunidad/.test(qn)) add('dq_oportunidades', 'ev_mesa_agua');
+  if (/\bnucleo\b/.test(qn)) {
+    add('const_anp_nucleos');
+    if (/\bcabo pulmo\b/.test(qn) || p.east) add('terr_anp_cabo_pulmo');
+    if (/\bvizcaino\b/.test(qn)) add('terr_anp_vizcaino');
+    if (/\bsierra la laguna\b/.test(qn)) add('terr_anp_sierra_laguna');
+  }
+  if (/\bordenamiento local\b/.test(qn) && p.cabos) add('inst_poel_cabos', 'ev_sig_poel_cabos', 'terr_los_cabos');
+  if (/\btecho ecologico\b/.test(qn)) add('inst_poerbcs', 'inst_poer_politicas');
+  if (/\baprovechamiento sustentable\b/.test(qn)) add('inst_pa_aprovechamiento', 'gap_politica_uga_leyenda');
+  if (/\bpreservacion\b/.test(qn) && /\bordenamiento\b/.test(qn)) add('inst_pa_preservacion', 'gap_politica_uga_leyenda');
+  if (/\brestauracion\b/.test(qn) && /\bordenamiento\b/.test(qn)) add('inst_pa_restauracion', 'gap_politica_uga_leyenda');
+  if (/\bapi\b/.test(qn) && (p.loreto || /\bpichilingue\b/.test(qn))) add('proj_fed_pue_002', 'ev_cruceros_datatur');
+  if (/\baeropuerto/.test(qn) && p.loreto) add('ev_dossiers_movilidad', 'gap_loreto_dma', 'ev_sig_vuelos');
+  if (/\bdensific\w*/.test(qn) && (p.cabos || /\bcosta\b/.test(qn))) add('terr_obs_cabos_coast', 'inst_pdu_cabos', 'dq_stills_densification');
   if (/\bcabo pulmo\b/.test(qn) && /\b(constru\w*|cierra|obra)\b/.test(qn)) {
     add('terr_anp_cabo_pulmo', 'const_anp_nucleos', 'ev_anp_avisos');
   }
