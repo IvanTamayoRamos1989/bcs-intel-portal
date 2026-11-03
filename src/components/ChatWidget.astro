@@ -1452,7 +1452,7 @@ const { home = false, shell = false } = Astro.props;
           msgs.querySelectorAll('.bcs-fu').forEach(function (n) { n.classList.add('bcs-fu-old'); });
           var fu = el('div', 'bcs-fu');
           var enL = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
-          fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Keep exploring' : 'Sigue explorando'));
+          fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Continue this consultation' : 'Sigue esta consulta'));
           fus.forEach(function (q) {
             var b = el('button', 'bcs-fu-chip', String(q));
             b.type = 'button';
