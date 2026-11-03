@@ -683,6 +683,19 @@ function expandQuery(query) {
   if (/\bnopolo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bciudad insurgentes\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpuerto san carlos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpamrnt\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(pducp|centro de poblacion|pmdu)\b/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bpoel\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bescasez\b/.test(qn) && /\bagua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(se creo|se fundo|fundacion|decreto 181)\b/.test(qn) && /\b(estado|baja california|\bbcs\b|los cabos|municipio)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\b1974\b/.test(qn) && /\b(baja california|\bbcs\b|los cabos|estado)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btercera actualizacion\b/.test(qn) && /\bpdu\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(subestacion|subestaciones)\b/.test(qn) && !/\b70\b/.test(qn) && !/\b(buenavista|cabo falso)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bmva\b/.test(qn) && !/\b70\b/.test(qn) && !/\b(buenavista|cabo falso)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1355,6 +1368,16 @@ function factorSeedIds(qn, kinds) {
   if (/\bnopolo\b/.test(qn)) add('terr_loreto', 'terr_anp_loreto', 'gap_loreto_dma');
   if (/\bciudad insurgentes\b/.test(qn)) add('terr_comondu', 'dd_agro_santo_domingo');
   if (/\bpuerto san carlos\b/.test(qn)) add('ev_sig_asipona', 'terr_comondu');
+  if (/\bpamrnt\b/.test(qn)) add('inst_pamrnt', 'rc_sibcs', 'proj_p23_bs1', 'const_red_aislada');
+  if (/\b(pducp|centro de poblacion|pmdu)\b/.test(qn) && p.paz) add('inst_pdu_lapaz', 'gap_pmdu_lapaz_texto', 'rc_acuifero_0324');
+  if (/\bpmdu\b/.test(qn) && p.loreto) add('gap_psdu_loreto_gazette', 'terr_loreto');
+  if (/\bpoel\b/.test(qn) && p.loreto) add('inst_poel_loreto', 'gap_psdu_loreto_gazette', 'terr_loreto', 'terr_anp_loreto');
+  if (/\bescasez\b/.test(qn) && /\bagua\b/.test(qn)) add('const_escasez_agua', 'const_dma_deficit', 'ev_acuiferos_dma');
+  if (/\b(se creo|se fundo|fundacion|decreto 181|1974)\b/.test(qn)) add('ev_historia_bcs');
+  if (/\btercera actualizacion\b/.test(qn) && /\bpdu\b/.test(qn)) add('gap_pdu_cabos_3a', 'inst_pdu_cabos');
+  if ((/\b(subestacion|subestaciones)\b/.test(qn) || /\bmva\b/.test(qn)) && !/\b70\b/.test(qn) && !/\b(buenavista|cabo falso)\b/.test(qn)) {
+    add('rc_subestaciones_gap', 'rc_sibcs');
+  }
   if (/\boomsapas\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_mesa_agua');
   if (/\bsepuimm\b/.test(qn)) add('actor_sepuimm', 'inst_poerbcs');
   if (/\bconanp\b/.test(qn)) add('actor_conanp', 'terr_anp_cabo_pulmo', 'const_anp_nucleos');
