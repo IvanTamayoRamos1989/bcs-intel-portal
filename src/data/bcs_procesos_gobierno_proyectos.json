@@ -1,0 +1,336 @@
+{
+  "schema": "bcs2050.regulatory_knowhow.v1",
+  "updated_at": "2026-11-03",
+  "scope": "Baja California Sur (Estatal + 5 Municipios: Los Cabos, La Paz, Loreto, Comondú, Mulegé)",
+  "caveat_es": "Los plazos legales provienen de leyes y reglamentos vigentes (LGEEPA, LAN, LDU BCS, LEEPA BCS, Ley de APP BCS, Ley de Obras Públicas BCS). Los rangos operativos reales dependen de la carga de trabajo de las dependencias, consultas públicas, prevenciones técnicas y disponibilidad física de agua (DMA CONAGUA) y energía (CENACE SIBCS). Una constancia de zonificación o un polígono en el mapa no equivale a una licencia ni a factibilidad otorgada.",
+  "caveat_en": "Statutory deadlines come from applicable federal, state, and municipal laws. Real operational timelines depend on agency workload, information requests, public consultations, and physical water (CONAGUA DMA) and grid (CENACE SIBCS) capacity. Map zoning does not equal a granted permit or utility feasibility.",
+  "modalities": [
+    {
+      "id": "privado",
+      "name_es": "Proyecto Privado (Inmobiliario, Turístico, Industrial, Comercial o Autogeneración)",
+      "name_en": "Private Project (Real Estate, Tourism, Industrial, Commercial, or Self-Generation)",
+      "estimated_total_months": { "min": 14, "typical": 24, "complex_coastal_or_forest": 36 },
+      "critical_bottlenecks_bcs": [
+        "Factibilidad hídrica (OOMSAPAS / CONAGUA): acuíferos costeros y urbanos en déficit (DMA negativa en Cabo San Lucas, San José del Cabo, La Paz, Loreto); proyectos mayores suelen requerir desalación propia con permiso de descarga (SEMARNAT/CONAGUA) o cesión de derechos de agua inscritos en REPDA.",
+        "Factibilidad eléctrica en sistema aislado (CFE Distribución / CENACE SIBCS): para demandas > 1 MW se requiere Estudio de Impacto en el Sistema e Indicativo de Conexión de Centros de Carga ante CENACE y posibles obras de refuerzo en subestaciones.",
+        "MIA Regional / DTU Forestal (SEMARNAT): cambio de uso de suelo en matorral sarcocaule o cercanía a ANP (Cabo Pulmo, Bahía de Loreto, Balandra, Sierra La Laguna, El Vizcaíno) activa consulta pública y opinión técnica de CONANP."
+      ],
+      "phases": [
+        {
+          "step": 1,
+          "phase_es": "Certidumbre Jurídica de la Tierra y Catastro",
+          "phase_en": "Land Tenure Legal Certainty and Cadastre",
+          "duration_months": "1 a 3 meses (6 a 12 meses si requiere adopción de dominio pleno ejidal)",
+          "level": "Municipal / Estatal / Federal (Agrario)",
+          "agencies": [
+            "Dirección Municipal de Catastro (Los Cabos, La Paz, Loreto, Comondú, Mulegé)",
+            "Registro Público de la Propiedad y del Comercio (RPPC BCS)",
+            "Registro Agrario Nacional (RAN) — si el origen es ejidal"
+          ],
+          "legal_basis": [
+            "Ley de Catastro para los Municipios del Estado de BCS",
+            "Código Civil y Reglamento del RPPC BCS",
+            "Ley Agraria (Arts. 81–86 para Dominio Pleno)"
+          ],
+          "deliverables": [
+            "Certificado de Libertad de Gravamen vigente (RPPC)",
+            "Deslinde y Avalúo Catastral certificado y Clave Catastral al corriente de impuesto predial",
+            "Alineamiento y Número Oficial municipal"
+          ]
+        },
+        {
+          "step": 2,
+          "phase_es": "Congruencia de Ordenamiento Ecológico y Uso de Suelo Urbano",
+          "phase_en": "Ecological Zoning Congruence and Urban Land Use",
+          "duration_months": "1 a 3 meses",
+          "level": "Estatal y Municipal",
+          "agencies": [
+            "Dirección General de Desarrollo Urbano y Ecología Municipal / IMPLAN",
+            "SEPUIMM BCS (Secretaría de Planeación Urbana, Infraestructura, Movilidad, Medio Ambiente y Recursos Naturales)"
+          ],
+          "legal_basis": [
+            "POERBCS 2026 (Decreto BOGE No. 09 del 21-ene-2026; 56 UGAs y políticas AS, PT, PR, RT)",
+            "Ley de Desarrollo Urbano para el Estado de BCS (LDU BCS)",
+            "PDU 2040 Los Cabos (2ª act. vigente) / PDUCP La Paz 2018 / PSDU Todos Santos y Los Barriles / POEL Loreto 2014 / PMDU Comondú"
+          ],
+          "deliverables": [
+            "Constancia o Dictamen Técnico de Uso de Suelo (COS, CUS, densidad bruta/neta, altura máxima y restricciones de UGA)",
+            "Opinión de Congruencia con el POERBCS (SEPUIMM) cuando el predio está fuera de polígono de centro de población con PDU diferido"
+          ]
+        },
+        {
+          "step": 3,
+          "phase_es": "Factibilidades de Agua, Energía, Escorrentía y Zona Federal",
+          "phase_en": "Water, Energy, Runoff, and Federal Zone Feasibility",
+          "duration_months": "3 a 9 meses",
+          "level": "Municipal y Federal",
+          "agencies": [
+            "OOMSAPAS municipal (Organismo Operador Municipal del Sistema de Agua Potable, Alcantarillado y Saneamiento)",
+            "CONAGUA Dirección Local BCS",
+            "CFE Distribución / CENACE (Gerencia de Control Regional Baja California)",
+            "SEMARNAT (ZOFEMAT) y SICT Centro BCS (accesos carreteros MEX-1 / MEX-19)"
+          ],
+          "legal_basis": [
+            "Ley de Aguas del Estado de BCS (2025) y Ley de Aguas Nacionales (LAN)",
+            "Acuerdos de Disponibilidad Media Anual (DMA) CONAGUA 2023–2024",
+            "Ley de la Industria Eléctrica / Manual de Interconexión y Conexión de Centros de Carga CENACE",
+            "Reglamento para el Uso y Aprovechamiento del Mar Territorial, Vías Navegables, Playas y ZOFEMAT"
+          ],
+          "deliverables": [
+            "Carta de Factibilidad de Agua Potable y Alcantarillado (OOMSAPAS) o Título de Concesión / Permiso de Desalación y Descarga (CONAGUA)",
+            "Delimitación de Zona Federal de Arroyos y Estudio Hidrológico de Escorrentía (CONAGUA / Protección Civil)",
+            "Oficio de Factibilidad de Suministro Eléctrico (CFE) y Estudio Indicativo / Impacto en el SIBCS (CENACE para >1 MW)",
+            "Concesión ZOFEMAT (si colinda con playa) y Permiso de Acceso Carretero (SICT)"
+          ]
+        },
+        {
+          "step": 4,
+          "phase_es": "Autorización de Impacto Ambiental y Cambio de Uso de Suelo Forestal",
+          "phase_en": "Environmental Impact Authorization and Forest Land-Use Change",
+          "duration_months": "4 a 12 meses (plazo legal SEMARNAT: 60 días hábiles, prorrogable a 120 días hábiles más suspensión por información adicional)",
+          "level": "Federal (SEMARNAT) o Estatal (SEPUIMM)",
+          "agencies": [
+            "SEMARNAT (Oficina de Representación en BCS / DGIRA en CDMX para proyectos regionales, costeros, turísticos o desaladoras)",
+            "CONANP (opinión técnica vinculante si incide en ANP o zona de influencia: Cabo Pulmo, Bahía de Loreto, Balandra, Espíritu Santo, Sierra La Laguna, El Vizcaíno)",
+            "SEPUIMM BCS (MIA Estatal para obras de competencia estrictamente estatal/municipal fuera de ecosistemas costeros y forestales federales)",
+            "PROFEPA (verificación de no inicio de obras antes de resolutivo)"
+          ],
+          "legal_basis": [
+            "LGEEPA (Art. 28 y Reglamento en Materia de Evaluación del Impacto Ambiental)",
+            "Ley General de Desarrollo Forestal Sustentable (Documento Técnico Unificado — DTU para remoción de vegetación de matorral sarcocaule/desértico)",
+            "Ley de Equilibrio Ecológico y Protección del Ambiente del Estado de BCS (LEEPA BCS)"
+          ],
+          "deliverables": [
+            "Resolutivo de Manifestación de Impacto Ambiental (MIA-Particular o MIA-Regional) condicionado",
+            "Autorización de Cambio de Uso de Suelo en Terrenos Forestales (CUSTF / DTU) y pago al Fondo Forestal Mexicano",
+            "Programa de Rescate y Reubicación de Flora y Fauna y Programa de Vigilancia Ambiental"
+          ]
+        },
+        {
+          "step": 5,
+          "phase_es": "Autorización de Fraccionamiento / Condominio, Protección Civil y Licencia de Construcción",
+          "phase_en": "Subdivision / Condominium Approval, Civil Protection, and Building Permit",
+          "duration_months": "3 a 6 meses",
+          "level": "Municipal y Cabildo",
+          "agencies": [
+            "H. Cabildo Municipal y Dirección de Desarrollo Urbano",
+            "Dirección Municipal / Subsecretaría Estatal de Protección Civil y H. Cuerpo de Bomberos",
+            "Colegio de Ingenieros Civiles / Colegio de Arquitectos de BCS (validación de DRO y Corresponsables)"
+          ],
+          "legal_basis": [
+            "Ley de Desarrollo Urbano para el Estado de BCS (fraccionamientos y cesión de áreas de donación municipal)",
+            "Ley sobre el Régimen de Propiedad en Condominio para el Estado de BCS",
+            "Reglamento de Construcciones para el Estado de BCS y Normas Técnicas Complementarias (viento huracanado y sismo)"
+          ],
+          "deliverables": [
+            "Acuerdo de Cabildo para Fraccionamiento / Relotificación y escrituración de áreas de donación municipal",
+            "Dictamen de Análisis de Riesgo y Visto Bueno de Protección Civil y Bomberos",
+            "Licencia de Urbanización y Licencia de Construcción firmada por Director Responsable de Obra (DRO)",
+            "Aviso de Terminación de Obra, Autorización de Uso y Ocupación e inscripción de Régimen en Condominio en RPPC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "publico",
+      "name_es": "Proyecto Público (Obra Pública e Infraestructura Federal, Estatal o Municipal)",
+      "name_en": "Public Project (Federal, State, or Municipal Public Works and Infrastructure)",
+      "estimated_total_months": { "min": 8, "typical": 16, "complex_coastal_or_forest": 28 },
+      "critical_bottlenecks_bcs": [
+        "Techo presupuestal y suficiencia financiera: el proyecto debe contar con asignación en el Presupuesto de Egresos aprobado (ej. Decreto 3266 para 2026), recursos federales (Ramo 33 FAIS/FORTAMUN o Cartera SHCP) o aprobación del Comité Técnico del FOIS BCS.",
+        "Liberación de Derecho de Vía y Tenencia de la Tierra: no se puede licitar obra pública sin acreditar la propiedad pública o servidumbre legal del predio/trazo (ejidos, propiedad privada o zona federal CONAGUA/SICT).",
+        "Permisos ambientales previos a licitación: la Ley de Obras Públicas exige contar con MIA (SEMARNAT o SEPUIMM) y permisos de CONAGUA antes de iniciar la ejecución."
+      ],
+      "phases": [
+        {
+          "step": 1,
+          "phase_es": "Planeación, Cartera de Inversión y Suficiencia Presupuestal",
+          "phase_en": "Planning, Investment Portfolio, and Budgetary Sufficiency",
+          "duration_months": "2 a 5 meses (sujeto al calendario del Paquete Económico oct–dic o sesiones de FOIS/Cabildo)",
+          "level": "Federal / Estatal / Municipal",
+          "agencies": [
+            "Secretaría de Finanzas y Administración (SFyA BCS) / Tesorería Municipal",
+            "Unidad de Inversión de la SHCP (si concurren recursos federales: Análisis Costo-Beneficio y Registro en Cartera)",
+            "Fideicomiso de Obras de Infraestructura Social (FOIS BCS) / COPLADEBCS"
+          ],
+          "legal_basis": [
+            "Plan Estatal de Desarrollo (PED 2021–2027) y Planes Municipales de Desarrollo (PMD 2024–2027)",
+            "Ley de Presupuesto y Responsabilidad Hacendaria del Estado de BCS y Decreto de Presupuesto de Egresos vigente",
+            "Ley de Disciplina Financiera de las Entidades Federativas y los Municipios (LDF)"
+          ],
+          "deliverables": [
+            "Proyecto Ejecutivo completo (planos, catálogo de conceptos, números generadores y especificaciones)",
+            "Análisis Costo-Beneficio (ACB) o Nota Técnica de Viabilidad",
+            "Oficio de Autorización y Suficiencia Presupuestal (SFyA / SHCP / FOIS / Cabildo)"
+          ]
+        },
+        {
+          "step": 2,
+          "phase_es": "Liberación de Derecho de Vía, Impacto Ambiental y Factibilidades Técnicas",
+          "phase_en": "Right-of-Way Clearance, Environmental Impact, and Technical Validations",
+          "duration_months": "3 a 8 meses",
+          "level": "Federal, Estatal y Municipal",
+          "agencies": [
+            "SEPUIMM BCS / SEMARNAT / CONAGUA / CEA BCS (Comisión Estatal del Agua)",
+            "SICT / CFE / INDAABIN / RAN (según el trazo de la infraestructura)"
+          ],
+          "legal_basis": [
+            "Ley de Obras Públicas y Servicios Relacionados con las Mismas del Estado de BCS (Art. sobre disponibilidad del inmueble y permisos)",
+            "LGEEPA / LEEPA BCS y Ley de Aguas Nacionales"
+          ],
+          "deliverables": [
+            "Dictamen de Liberación de Derecho de Vía o escritura/convenio de ocupación previa",
+            "Resolutivo de Impacto Ambiental (SEMARNAT o SEPUIMM) o exención fundada",
+            "Validación técnica normativa de proyecto ejecutivo (CONAGUA/CEA para agua; CFE/CENACE para energía; SICT para vialidades)"
+          ]
+        },
+        {
+          "step": 3,
+          "phase_es": "Licitación Pública, Contratación y Ejecución con Bitácora Electrónica",
+          "phase_en": "Public Tendering, Contracting, and Execution with Electronic Logbook",
+          "duration_months": "2 a 3 meses para licitación + plazo de ejecución de obra",
+          "level": "Estatal / Municipal / Federal",
+          "agencies": [
+            "SEPUIMM BCS / Dirección de Obras Públicas Municipales / OOMSAPAS / APIBCS",
+            "Contraloría General del Estado de BCS / Órgano Interno de Control",
+            "Auditoría Superior del Estado de BCS (ASEBCS) y ASF (fiscalización en Cuenta Pública)"
+          ],
+          "legal_basis": [
+            "Ley de Obras Públicas y Servicios Relacionados con las Mismas del Estado de BCS (y Ley Federal cuando aplica recurso federal)",
+            "Ley de Fiscalización y Rendición de Cuentas del Estado de BCS"
+          ],
+          "deliverables": [
+            "Convocatoria en Compranet / Boletín Oficial, Junta de Aclaraciones, Apertura de Propuestas y Fallo",
+            "Contrato de Obra Pública, Fianzas de Anticipo (100%), Cumplimiento (10%) y Vicios Ocultos (12 meses)",
+            "Bitácora Electrónica y Seguimiento a Obra Pública (BESOP), Estimaciones de Avance, Acta de Entrega-Recepción y reporte en Cuenta Pública"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "app",
+      "name_es": "Proyecto Público-Privado (APP, Concesión o Contrato de Prestación de Servicios de Largo Plazo)",
+      "name_en": "Public-Private Partnership (PPP / APP, Concession, or Long-Term Service Contract)",
+      "estimated_total_months": { "min": 18, "typical": 28, "complex_coastal_or_forest": 36 },
+      "critical_bottlenecks_bcs": [
+        "Autorización legislativa y de disciplina financiera: todo contrato APP o compromiso plurianual que afecte participaciones, ingresos propios o garantías requiere aprobación de Cabildo (si es municipal), dictamen de la SFyA BCS, aprobación de las dos terceras partes del H. Congreso del Estado de BCS e inscripción en el Registro Público Único (RPU) de la SHCP.",
+        "Estructuración de los 8 dictámenes de viabilidad y Comparador Público-Privado (Valor por Dinero — VFM): toma de 6 a 12 meses demostrar que el esquema APP genera mayor beneficio neto que la obra pública tradicional (ej. caso real en el acervo: APP Desaladora Los Cabos 250 lps con apoyo de FONADIN/BANOBRAS/CONAGUA).",
+        "Cierre financiero y garantías de pago: constitución del fideicomiso de fuente de pago o línea de crédito contingente."
+      ],
+      "phases": [
+        {
+          "step": 1,
+          "phase_es": "Iniciativa (Pública o Propuesta No Solicitada Privada) y Evaluación Preliminar",
+          "phase_en": "Initiative (Public or Unsolicited Private Proposal) and Preliminary Screening",
+          "duration_months": "2 a 4 meses",
+          "level": "Estatal o Municipal (con apoyo federal si participa FONADIN/BANOBRAS)",
+          "agencies": [
+            "Entidad Contratante (OOMSAPAS, CEA BCS, SEPUIMM, APIBCS o Ayuntamiento)",
+            "Secretaría de Finanzas y Administración (SFyA BCS)",
+            "BANOBRAS / FONADIN (cuando solicita apoyo no recuperable para estudios o subvención de inversión, p. ej. PROMAGUA)"
+          ],
+          "legal_basis": [
+            "Ley de Asociaciones Público-Privadas para el Estado de Baja California Sur",
+            "Ley Federal de Asociaciones Público-Privadas (cuando concurren recursos federales o FONADIN)",
+            "Reglas de Operación de FONADIN / Proyectos México"
+          ],
+          "deliverables": [
+            "Estudio Preliminar de Factibilidad o Propuesta No Solicitada (PNS)",
+            "Acuerdo de inicio de estudios de viabilidad o declaratoria de interés público"
+          ]
+        },
+        {
+          "step": 2,
+          "phase_es": "Integración de los 8 Estudios de Viabilidad y Comparador Público-Privado (VFM)",
+          "phase_en": "Integration of the 8 Feasibility Studies and Public-Private Comparator (Value for Money)",
+          "duration_months": "6 a 10 meses",
+          "level": "Estatal / Municipal / SHCP",
+          "agencies": [
+            "Entidad Contratante + Secretaría de Finanzas y Administración (SFyA BCS)",
+            "Unidad de Inversión de la SHCP (registro en Cartera si hay componente federal)",
+            "SEMARNAT / CONAGUA / CENACE (permisos y derechos de agua/energía base)"
+          ],
+          "legal_basis": [
+            "Ley de APP de BCS y Ley Federal de APP (Art. 14: los 8 análisis obligatorios)",
+            "Lineamientos de la SHCP para el Análisis Costo-Beneficio y Comparador Público-Privado"
+          ],
+          "deliverables": [
+            "1) Descripción del proyecto y viabilidad técnica; 2) Inmuebles, bienes y derechos de vía; 3) Autorizaciones y permisos (MIA, CONAGUA, uso de suelo)",
+            "4) Viabilidad jurídica; 5) Impacto ambiental y social; 6) Rentabilidad social (Análisis Costo-Beneficio con tasa social de descuento)",
+            "7) Estimaciones de inversión y contraprestaciones (modelo financiero); 8) Conveniencia económica y financiera (Comparador Público-Privado / Valor por Dinero) y Matriz de Riesgos"
+          ]
+        },
+        {
+          "step": 3,
+          "phase_es": "Aprobación de SFyA, Cabildo Municipal y H. Congreso del Estado de BCS",
+          "phase_en": "Approval by Finance Secretariat, Municipal Council, and BCS State Congress",
+          "duration_months": "3 a 6 meses",
+          "level": "Municipal y Poder Legislativo Estatal",
+          "agencies": [
+            "H. Cabildo del Ayuntamiento (para proyectos municipales como desaladoras o alumbrado/residuos)",
+            "Secretaría de Finanzas y Administración (SFyA BCS — dictamen de capacidad de pago y techo de financiamiento neto LDF)",
+            "H. Congreso del Estado de Baja California Sur (Decreto de autorización plurianual y afectación de participaciones/fideicomiso)"
+          ],
+          "legal_basis": [
+            "Constitución Política del Estado Libre y Soberano de BCS",
+            "Ley de Disciplina Financiera de las Entidades Federativas y los Municipios (LDF — mayoría calificada del Congreso local)",
+            "Ley de Deuda Pública y Ley de APP para el Estado de BCS"
+          ],
+          "deliverables": [
+            "Acta de Cabildo aprobando el proyecto APP y el mecanismo de pago",
+            "Dictamen de suficiencia y sostenibilidad financiera de SFyA BCS",
+            "Decreto del H. Congreso del Estado de BCS publicado en el Boletín Oficial (BOGE)"
+          ]
+        },
+        {
+          "step": 4,
+          "phase_es": "Concurso Público APP, Adjudicación, SPV, Cierre Financiero e Inscripción RPU",
+          "phase_en": "PPP Public Tender, Award, SPV Incorporation, Financial Close, and RPU Registration",
+          "duration_months": "6 a 12 meses + etapa de construcción (24–36 meses) + operación (15–25 años)",
+          "level": "Federal / Estatal / Municipal / Banca de Desarrollo y Comercial",
+          "agencies": [
+            "Entidad Contratante / Compranet / Proyectos México",
+            "SHCP — Registro Público Único de Financiamientos y Obligaciones (RPU)",
+            "BANOBRAS / FONADIN / Banca acreditante y Fiduciario del fideicomiso de administración y pago"
+          ],
+          "legal_basis": [
+            "Bases del Concurso APP y Contrato de Asociación Público-Privada",
+            "Reglamento del Registro Público Único de la SHCP"
+          ],
+          "deliverables": [
+            "Fallo del Concurso y constitución de la Sociedad de Propósito Específico (SPV) por el desarrollador ganador",
+            "Firma del Contrato APP, Fideicomiso de Fuente de Pago e inscripción en el RPU de la SHCP",
+            "Cierre Financiero, obtención de permisos definitivos de construcción, Construcción, Puesta en Marcha y pago de contraprestación sujeta a indicadores de desempeño (KPIs)"
+          ]
+        }
+      ]
+    }
+  ],
+  "municipal_specifics": {
+    "Los Cabos": {
+      "zoning_instrument": "PDU 2040 San José del Cabo–Cabo San Lucas (2ª actualización vigente, BOGE No. 19 del 06-may-2013; 3ª actualización en consulta sin BOGE final). POERBCS 2026 (UGA urbana BCS40AS difiere al PDU). POEL V4 en consulta (no decretado).",
+      "water_agency": "OOMSAPAS Los Cabos + CONAGUA. Acuíferos Cabo San Lucas (0317) y San José del Cabo (0319) en déficit; alta dependencia de desalación (Planta actual + APP Desaladora 250 lps + MIG).",
+      "key_risk_check": "Dictamen hidrometeorológico de escorrentía en arroyos (CONAGUA / Protección Civil) y restricción de alturas/accesos a playa (ZOFEMAT)."
+    },
+    "La Paz": {
+      "zoning_instrument": "PDUCP Centro de Población La Paz (vigente 2018; PMDU aprobado por Cabildo dic-2024 pendiente de BOGE completo). PSDU Todos Santos–El Pescadero–Las Playitas (UGA BCS32AS) y PSDU Los Barriles–El Cardonal (UGA BCS31AS). POERBCS 2026 (UGA BCS41AS).",
+      "water_agency": "OOMSAPAS La Paz + CONAGUA. Acuífero La Paz (0324) y El Coyote (0325) en déficit; proyectos estratégicos sujetos a potabilización/Presa La Buena Mujer / El Novillo o desalación/reúso.",
+      "key_risk_check": "Congruencia con ANP Balandra y Espíritu Santo (CONANP), escorrentías en cuencas urbanas y capacidad de subestaciones eléctricas en el nodo La Paz–Coromuel."
+    },
+    "Loreto": {
+      "zoning_instrument": "POEL Loreto (vigente BOGE No. 12 del 12-mar-2014) + PMDU Feb 2024 y actualización PSDU Loreto–Nopoló–Notrí–Puerto Escondido–Ligüí–Ensenada Blanca (UGA BCS30AS del POERBCS 2026).",
+      "water_agency": "OOMSAPAS Loreto + CONAGUA (Acuífero San Juan Bautista Londó).",
+      "key_risk_check": "Colindancia directa con el Parque Nacional Bahía de Loreto (CONANP); toda obra costera o náutica requiere MIA Federal ante SEMARNAT y opinión técnica vinculante de CONANP."
+    },
+    "Comondú": {
+      "zoning_instrument": "PMDU Visión 2025 + PMD 2024–2027 + POERBCS 2026.",
+      "water_agency": "OOMSAPAS Comondú + CONAGUA (Reglamento del Acuífero del Valle de Santo Domingo, DOF 14-ago-1992; veda estricta y mercado regulado de transmisión de derechos de agua).",
+      "key_risk_check": "Transmisión de derechos de agua inscritos en REPDA dentro del Distrito de Riego 066 Valle de Santo Domingo."
+    },
+    "Mulegé": {
+      "zoning_instrument": "POERBCS 2026 + PMD 2024–2027 (brecha documentada: sin PDU municipal publicado en el acervo) + Programas de Manejo de la Reserva de la Biosfera El Vizcaíno (CONANP).",
+      "water_agency": "OOMSAPAS Mulegé + CONAGUA.",
+      "key_risk_check": "Gran parte del territorio municipal se ubica dentro de la Reserva de la Biosfera El Vizcaíno o Valle de los Cirios; la zonificación del Programa de Manejo CONANP y la MIA Federal SEMARNAT son determinantes, además del sistema eléctrico aislado Mulegé (CENACE)."
+    }
+  }
+}
