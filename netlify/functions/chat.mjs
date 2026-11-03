@@ -1597,6 +1597,17 @@ function expandQuery(query) {
   if (/\bquinientos sesenta y nueve\b/.test(qn) && /\bconavi\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bcincuenta y ocho mil novecientos ochenta y siete\b/.test(qn) && /\b(rezago|viviendas)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bdoscientos setenta y cinco mil ciento cincuenta y nueve\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bveintisiete punto ochenta y tres\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdoce punto cinco\b/.test(qn) && !/\blitros\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btrece punto cinco\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdos punto noventa y seis\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdos punto veintinueve\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcero punto cuatro nueve\b/.test(qn) && /\b(vizcaino|acuifero|municipio)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcuatro punto seis\b/.test(qn) && /\bcuatro punto tres\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bcinco punto seis\b/.test(qn) && /\b(sismo|magnitud|enjambre|loreto)\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bsiete mil cuatrocientos veintiun millones\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bveintiseis mil novecientos tres millones\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(mil doscientos ochenta y dos millones|trescientos cincuenta y siete millones|doscientos sesenta y tres millones)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -3165,6 +3176,16 @@ function factorSeedIds(qn, kinds) {
   if (/\bquinientos sesenta y nueve\b/.test(qn) && /\bconavi\b/.test(qn)) add('ev_sniiv_vivienda');
   if (/\bcincuenta y ocho mil novecientos ochenta y siete\b/.test(qn) && /\b(rezago|viviendas)\b/.test(qn)) add('ev_sniiv_vivienda');
   if (/\bdoscientos setenta y cinco mil ciento cincuenta y nueve\b/.test(qn)) add('ev_sniiv_vivienda');
+  if (/\bveintisiete punto ochenta y tres\b/.test(qn)) add('ev_acuiferos_dma', 'rc_acuifero_0324');
+  if (/\bdoce punto cinco\b/.test(qn) && !/\blitros\b/.test(qn)) add('rc_acuifero_0319', 'ev_acuiferos_dma');
+  if (/\btrece punto cinco\b/.test(qn)) add('rc_acuifero_0324', 'ev_acuiferos_dma');
+  if (/\bdos punto noventa y seis\b/.test(qn)) add('rc_acuifero_0313', 'ev_acuiferos_dma', 'terr_todos_santos');
+  if (/\bdos punto veintinueve\b/.test(qn)) add('rc_acuifero_0318', 'ev_acuiferos_dma', 'terr_anp_cabo_pulmo');
+  if (/\bcero punto cuatro nueve\b/.test(qn) && /\b(vizcaino|acuifero|municipio)\b/.test(qn)) add('gap_acuifero_0302', 'ev_acuiferos_dma');
+  if (/\bcuatro punto seis\b/.test(qn) && /\bcuatro punto tres\b/.test(qn)) add('ev_riesgos_documentados', 'gap_riesgo_capas_vector');
+  if (/\bcinco punto seis\b/.test(qn) && /\b(sismo|magnitud|enjambre|loreto)\b/.test(qn)) add('ev_riesgos_documentados', 'gap_riesgo_capas_vector');
+  if (/\b(siete mil cuatrocientos veintiun millones|veintiseis mil novecientos tres millones)\b/.test(qn)) add('ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026');
+  if (/\b(mil doscientos ochenta y dos millones|trescientos cincuenta y siete millones|doscientos sesenta y tres millones)\b/.test(qn)) add('ev_fiscal_anexo_2025', 'gap_fiscal_ingresos_2026');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
