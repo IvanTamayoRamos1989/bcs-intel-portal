@@ -1837,6 +1837,49 @@ const CASES = [
     needIds: ['actor_cabos_dg_ecologia', 'ev_org_cabos_2024'],
     needTypes: ['Actor', 'Evidence'],
   },
+  {
+    q: '50 años desde febrero de 2024',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'Siete arribos en Santa Rosalía',
+    kind: 'opportunity',
+    needIds: ['ev_cruceros_datatur', 'terr_mulege'],
+    needTypes: ['Evidence', 'Territory'],
+    cruiseSeries: true,
+  },
+  {
+    q: 'Intrusión salina en La Paz',
+    kind: 'risk',
+    needIds: ['const_intrusion_marina', 'rc_acuifero_0324'],
+    needTypes: ['Constraint', 'ResourceCapacity'],
+  },
+  {
+    q: 'Ramón Rubio del organismo de agua',
+    kind: 'viability',
+    needIds: ['actor_oomsapas_cabos', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Christian Agúndez de la presidencia de Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_presidencia', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Roberto Flores de desarrollo urbano',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_desarrollo_urbano', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Judith Díaz del catastro',
+    kind: 'viability',
+    needIds: ['ev_org_cabos_2024'],
+    needTypes: ['Evidence'],
+  },
 ];
 
 const NEGATIVES = [

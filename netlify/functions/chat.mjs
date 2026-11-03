@@ -612,7 +612,7 @@ function expandQuery(query) {
   if (/\bforo\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\b(playitas|san juan de la costa|programa subregional)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bveda\b/.test(qn) && /\b1954\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
-  if (/\bintrusion marina\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bintrusion (marina|salina)\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
   if (/\btenencia\b/.test(qn) && /\b(barriles|cardonal|los barriles)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bcabo pulmo\b/.test(qn) && /\bbahia de loreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdossier\b/.test(qn) && /\b(mulege|loreto)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -799,6 +799,12 @@ function expandQuery(query) {
     factorKinds.push('viability');
   }
   if (/\bnatali\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b50 anos\b/.test(qn) && /\bfebrero de 2024\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\barribos?\b/.test(qn) && /\bsanta rosalia\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(rubio apodaca|ramon rubio)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bagundez\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\broberto flores\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bjudith diaz\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1366,7 +1372,7 @@ function factorSeedIds(qn, kinds) {
     add('ev_peotdu_instrumentos', 'inst_pdu_lapaz', 'terr_todos_santos');
   }
   if (/\bveda\b/.test(qn) && /\b1954\b/.test(qn)) add('inst_veda_1954');
-  if (/\bintrusion marina\b/.test(qn)) add('const_intrusion_marina', 'rc_acuifero_0324');
+  if (/\bintrusion (marina|salina)\b/.test(qn)) add('const_intrusion_marina', 'rc_acuifero_0324');
   if (/\btenencia\b/.test(qn) && /\b(barriles|cardonal)\b/.test(qn)) add('const_tenencia', 'ev_psdu_barriles');
   if (/\bcabo pulmo\b/.test(qn) && /\bbahia de loreto\b/.test(qn)) {
     add('terr_anp_cabo_pulmo', 'terr_anp_loreto', 'const_anp_nucleos');
@@ -1575,6 +1581,12 @@ function factorSeedIds(qn, kinds) {
   if (/\b1 de octubre\b/.test(qn) && /\b(tarifa|puerto)\b/.test(qn)) add('ev_sig_asipona');
   if (/\bapi\b/.test(qn) && /\b(administre|pidio)\b/.test(qn)) add('ev_sig_asipona');
   if (/\bnatali\b/.test(qn)) add('actor_cabos_dg_ecologia', 'ev_org_cabos_2024');
+  if (/\b50 anos\b/.test(qn) && /\bfebrero de 2024\b/.test(qn)) add('ev_sig_asipona');
+  if (/\barribos?\b/.test(qn) && p.mulege) add('ev_cruceros_datatur', 'terr_mulege');
+  if (/\b(rubio apodaca|ramon rubio)\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_org_cabos_2024');
+  if (/\bagundez\b/.test(qn)) add('actor_cabos_presidencia', 'ev_org_cabos_2024', 'actor_ayunt_cabos');
+  if (/\broberto flores\b/.test(qn)) add('actor_cabos_dg_desarrollo_urbano', 'ev_org_cabos_2024', 'inst_pdu_cabos');
+  if (/\bjudith diaz\b/.test(qn)) add('ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
