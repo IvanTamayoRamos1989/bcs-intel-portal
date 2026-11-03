@@ -1167,7 +1167,7 @@ function expandQuery(query) {
   if (/\bno es sismico\b/.test(qn) && !factorKinds.includes('risk')) factorKinds.push('risk');
   if (/\boferta nueva\b/.test(qn) && /\bveto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bplanear\b/.test(qn) && /\bprograma de ampliacion\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\bsesenta por ciento\b/.test(qn) && /\bavanz/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsesenta por ciento\b/.test(qn) && /\bavanz/.test(qn) && !/\bocupacion\b/.test(qn) && !/\bno es avance\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bacuerdos\b/.test(qn) && /\bdisponibilidad\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(ciento treinta y cuatro|cuatrocientos dos millones)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpausad\w*/.test(qn) && /\brevision\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -1556,8 +1556,8 @@ function expandQuery(query) {
   if (/\bcinco turbinas\b/.test(qn) && /\b(cabos|bello|cfe|movil)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bescasez de servicios\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bsetenta y seis por ciento\b/.test(qn) && /\b(ocupacion|octubre|proyectado)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\bsesenta por ciento\b/.test(qn) && /\bocupacion\b/.test(qn) && !/\bavanz/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\barriba de noventa\b/.test(qn) && /\b(ocupacion|fiestas|picos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsesenta\b/.test(qn) && /\bocupacion\b/.test(qn) && !(/\bavanz/.test(qn) && !/\bno es avance\b/.test(qn)) && !factorKinds.length) factorKinds.push('viability');
+  if (/\barriba de noventa\b/.test(qn) && /\b(ocupacion|fiestas|picos|renta)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(catorce por ciento|menos cinco por ciento)\b/.test(qn) && /\b(turistas|ocupacion|estados unidos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(veintisiete|diecinueve|dieciocho) de octubre\b/.test(qn) && /\b(ocupacion|imagen|tribuna|hoteles|turistas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdos de octubre\b/.test(qn) && /\b(tribuna|proyectado|ocupacion)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -1778,6 +1778,19 @@ function expandQuery(query) {
   if (/\bdecreto sigue siendo\b/.test(qn) && /\bmil novecientos noventa y cinco\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\baviso de dos mil dos\b/.test(qn) && /\bbahia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bprimero de septiembre\b/.test(qn) && /\bno asigna\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmenos cinco\b/.test(qn) && /\b(por ciento|ocupacion|tarifa)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsetenta y seis\b/.test(qn) && /\b(precio|ocupacion|octubre|proyectado)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bun punto mas\b/.test(qn) && /\b(ano pasado|dos mil veinticinco|renta)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\benero a agosto\b/.test(qn) && /\b(no es censo|estadounidenses)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdos de octubre\b/.test(qn) && /\bno es el primero\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bventa de activos\b/.test(qn) && /\bhospitalidad\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno coinciden entre si\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsegunda mitad de dos mil veintiseis\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpicos de fiestas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bturistas de estados unidos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmenos catorce\b/.test(qn) && /\b(estadounidenses|turistas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bla nota no es una serie de precios\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdiecinueve de octubre\b/.test(qn) && /\b(radio|imagen)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bel aviso no sustituye el decreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bmunicipio creado el diez de abril\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -2316,7 +2329,7 @@ function factorSeedIds(qn, kinds) {
     for (const id of ids) if (id && !seeds.includes(id)) seeds.push(id);
   };
   const kindHit = PROJECT_KIND_RE.test(qn);
-  if (/\b(poblacion|habitantes|censo|demograf)\b/.test(qn) && !/\b89 mil\b/.test(qn) && !/\bno es( un)? censo\b/.test(qn)) add('ev_pob_censo_2020');
+  if (/\b(poblacion|habitantes|censo|demograf)\b/.test(qn) && !/\b89 mil\b/.test(qn) && !/\bno (es|son)( un)? censo\b/.test(qn)) add('ev_pob_censo_2020');
   if (/\brenta hotel|\bcap rate|\bocupacion(?: de)? hotel|\brenta por noche|\bprecio por noche/.test(qn)) add('gap_rentas_hoteleras', 'ev_news_ocupacion');
   if (/\bturbinas? moviles?\b|\bgeneracion movil\b|\bcabo bello\b|\bturbogas\b/.test(qn) || (/\b128\b/.test(qn) && /\b(mw|megawatts?)\b/.test(qn))) {
     add('ev_news_cfe_128', 'rc_sibcs', 'const_red_aislada');
@@ -2958,7 +2971,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bno es sismico\b/.test(qn)) add('ev_riesgos_documentados', 'gap_riesgo_capas_vector');
   if (/\boferta nueva\b/.test(qn) && /\bveto\b/.test(qn)) add('const_escasez_agua', 'const_dma_deficit');
   if (/\bplanear\b/.test(qn) && /\bprograma de ampliacion\b/.test(qn)) add('const_red_aislada', 'inst_pamrnt', 'rc_sibcs');
-  if (/\bsesenta por ciento\b/.test(qn) && /\bavanz/.test(qn)) add('proj_desal_cabos', 'proj_fed_agu_001');
+  if (/\bsesenta por ciento\b/.test(qn) && /\bavanz/.test(qn) && !/\bocupacion\b/.test(qn) && !/\bno es avance\b/.test(qn)) add('proj_desal_cabos', 'proj_fed_agu_001');
   if (/\bacuerdos\b/.test(qn) && /\bdisponibilidad\b/.test(qn)) add('ev_acuiferos_dma', 'proj_fed_agu_008');
   if (/\b(ciento treinta y cuatro|cuatrocientos dos millones)\b/.test(qn)) add('proj_fed_ene_008', 'rc_sibcs');
   if ((/\bpausad\w*/.test(qn) && /\brevision\b/.test(qn)) || /\bunion con la red\b/.test(qn)) add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
@@ -3050,7 +3063,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bpicos de la red\b/.test(qn)) add('rc_sibcs', 'const_red_aislada');
   if (/\b2028\b/.test(qn) && /\btransmision\b/.test(qn)) add('proj_p23_bs1', 'rc_tx_lapaz_cabos');
   if (/\bdoscientos cincuenta\b/.test(qn) && /\blitros\b/.test(qn)) add('proj_desal_cabos', 'proj_fed_agu_001', 'const_dma_deficit');
-  if (/\bavance\b/.test(qn) && /\bsesenta\b/.test(qn)) add('proj_desal_cabos', 'proj_fed_agu_001');
+  if (/\bavance\b/.test(qn) && /\bsesenta\b/.test(qn) && !/\bocupacion\b/.test(qn) && !/\bno es avance\b/.test(qn)) add('proj_desal_cabos', 'proj_fed_agu_001');
   if (/\bsin ficha\b/.test(qn)) add('proj_fed_agu_002');
   if (/\bplanta\b/.test(qn) && p.loreto && /\bhabitantes\b/.test(qn)) add('proj_fed_agu_005', 'gap_loreto_dma');
   if (/\bdisponibilidad\b/.test(qn) && /\bdof\b/.test(qn)) add('ev_acuiferos_dma', 'proj_fed_agu_008');
@@ -3319,8 +3332,8 @@ function factorSeedIds(qn, kinds) {
   if (/\bcinco turbinas\b/.test(qn) && /\b(cabos|bello|cfe|movil)\b/.test(qn)) add('ev_news_cfe_128', 'rc_sibcs', 'const_red_aislada');
   if (/\bescasez de servicios\b/.test(qn) && p.mulege) add('ev_dossiers_lugar', 'gap_mulege_agua_energia', 'terr_mulege');
   if (/\bsetenta y seis por ciento\b/.test(qn) && /\b(ocupacion|octubre|proyectado)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
-  if (/\bsesenta por ciento\b/.test(qn) && /\bocupacion\b/.test(qn) && !/\bavanz/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
-  if (/\barriba de noventa\b/.test(qn) && /\b(ocupacion|fiestas|picos)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bsesenta\b/.test(qn) && /\bocupacion\b/.test(qn) && !(/\bavanz/.test(qn) && !/\bno es avance\b/.test(qn))) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\barriba de noventa\b/.test(qn) && /\b(ocupacion|fiestas|picos|renta)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
   if (/\b(catorce por ciento|menos cinco por ciento)\b/.test(qn) && /\b(turistas|ocupacion|estados unidos)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
   if (/\b(veintisiete|diecinueve|dieciocho) de octubre\b/.test(qn) && /\b(ocupacion|imagen|tribuna|hoteles|turistas)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
   if (/\bdos de octubre\b/.test(qn) && /\b(tribuna|proyectado|ocupacion)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
@@ -3523,6 +3536,18 @@ function factorSeedIds(qn, kinds) {
   if (/\bdecreto sigue siendo\b/.test(qn) && /\bmil novecientos noventa y cinco\b/.test(qn)) add('ev_anp_avisos', 'ev_historia_bcs', 'terr_anp_cabo_pulmo');
   if (/\baviso de dos mil dos\b/.test(qn) && /\bbahia\b/.test(qn)) add('ev_anp_avisos', 'terr_anp_loreto', 'gap_loreto_dma');
   if (/\bprimero de septiembre\b/.test(qn) && /\bno asigna\b/.test(qn)) add('ev_anp_avisos', 'terr_anp_vizcaino', 'gap_acuifero_0302');
+  if (/\bmenos cinco\b/.test(qn) && /\b(por ciento|ocupacion|tarifa)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bsetenta y seis\b/.test(qn) && /\b(precio|ocupacion|octubre|proyectado)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bun punto mas\b/.test(qn) && /\b(ano pasado|dos mil veinticinco|renta|ocupacion|proyectado|octubre)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\benero a agosto\b/.test(qn) && /\b(no es censo|estadounidenses|turistas|ocupacion)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bdos de octubre\b/.test(qn) && /\bno es el primero\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bventa de activos\b/.test(qn) && /\bhospitalidad\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bno coinciden entre si\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bsegunda mitad de dos mil veintiseis\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bpicos de fiestas\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bturistas de estados unidos\b/.test(qn) || (/\bmenos catorce\b/.test(qn) && /\b(estadounidenses|turistas)\b/.test(qn))) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bla nota no es una serie de precios\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bdiecinueve de octubre\b/.test(qn) && /\b(radio|imagen)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
   if (/\bel aviso no sustituye el decreto\b/.test(qn)) add('ev_anp_avisos', 'ev_historia_bcs');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn)) add('ev_historia_bcs', 'terr_anp_vizcaino', 'ev_anp_avisos', 'gap_acuifero_0302');
   if (/\bmunicipio creado el diez de abril\b/.test(qn)) add('ev_historia_bcs', 'terr_los_cabos');
@@ -3742,7 +3767,10 @@ function factorSeedIds(qn, kinds) {
     if (!kindHit && p.comondu) add('terr_comondu', 'dd_agro_santo_domingo');
     if (!kindHit && p.mulege) add('terr_mulege', 'terr_anp_vizcaino', 'gap_pdu_mulege');
     if (!kindHit && p.todos) add('terr_todos_santos', 'rc_acuifero_0313', 'gap_pmdu_lapaz_texto');
-    if (!kindHit && !p.any) add('dd_turismo_cabos', 'proj_desal_cabos', 'inst_pdu_cabos', 'inst_pdu_lapaz');
+    if (!kindHit && !p.any) {
+      add('dd_turismo_cabos', 'inst_pdu_cabos', 'inst_pdu_lapaz');
+      if (!(/\bocupacion\b/.test(qn) && /\bno es avance\b/.test(qn))) add('proj_desal_cabos');
+    }
   }
   if (kinds.includes('landuse')) {
     add(
