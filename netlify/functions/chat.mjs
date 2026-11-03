@@ -675,7 +675,7 @@ function expandQuery(query) {
   }
   if (/\bcomondu\b/.test(qn) && /\bla paz\b/.test(qn) && /\b(agro|agua)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b0314\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\bescorrent/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(escorrent|escurrimient)/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bley de aguas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(costa protegida|buffer)\b/.test(qn) && /\b(anp|hotel|cabo|costa)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\banuncio\b/.test(qn) && /\bfederal\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -706,8 +706,8 @@ function expandQuery(query) {
   if (/\b(los cabos|cabo san lucas)\b/.test(qn) && /\bmulege\b/.test(qn) && /\b(energi\w*|agua|sibcs)\b/.test(qn) && !factorKinds.length) {
     factorKinds.push('viability');
   }
-  if (/\bayuntamiento\b/.test(qn) && /\bcomondu\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\bayuntamiento\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(ayuntamiento|cabildo)\b/.test(qn) && /\bcomondu\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(ayuntamiento|cabildo)\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bmesa de energia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bmesa de urbanismo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bgap\b/.test(qn) && /\b(opera|concesion|aeropuerto)\b/.test(qn) && /\b(san jose|la paz|los cabos|sjd)\b/.test(qn) && !factorKinds.length) {
@@ -757,6 +757,16 @@ function expandQuery(query) {
   if (/\bapi\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\baeropuerto/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdensific\w*/.test(qn) && /\b(costa|los cabos|cabo)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcomision nacional del agua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmarina\b/.test(qn) && /\b(cabo san lucas|los cabos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(10 de abril de 1980|20 de agosto de 1992|6 de junio de 1995|30 de noviembre de 1988)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\b(east cape|cabo del este)\b/.test(qn) && /\baeropuerto/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\briesgos?\b/.test(qn) && /\bquien decide\b/.test(qn)) {
+    if (!factorKinds.includes('risk')) factorKinds.push('risk');
+    if (!factorKinds.includes('viability')) factorKinds.push('viability');
+  }
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1418,7 +1428,7 @@ function factorSeedIds(qn, kinds) {
   if (p.east && p.loreto && /\baeropuerto/.test(qn)) add('ev_dossiers_movilidad', 'terr_obs_east_cape', 'terr_loreto');
   if (p.comondu && p.paz && /\b(agro|agua)\b/.test(qn)) add('terr_comondu', 'terr_la_paz', 'dd_agro_santo_domingo', 'rc_acuifero_0324');
   if (/\b0314\b/.test(qn)) add('ev_acuiferos_dma', 'const_dma_deficit', 'rc_acuifero_0313');
-  if (/\bescorrent/.test(qn)) add('ev_escorrentia');
+  if (/\b(escorrent|escurrimient)/.test(qn)) add('ev_escorrentia');
   if (/\bley de aguas\b/.test(qn)) add('inst_ley_aguas', 'actor_cea', 'actor_conagua');
   if (/\b(costa protegida|buffer)\b/.test(qn)) {
     add('dq_coast_anp_buffers', 'const_coast_anp_pressure');
@@ -1454,8 +1464,8 @@ function factorSeedIds(qn, kinds) {
   if (p.cabos && p.mulege && /\b(energi\w*|agua|sibcs)\b/.test(qn)) {
     add('terr_los_cabos', 'terr_mulege', 'rc_sibcs', 'gap_mulege_agua_energia');
   }
-  if (/\bayuntamiento\b/.test(qn) && p.comondu) add('actor_ayunt_comondu', 'terr_comondu', 'ev_fiscal_ley_2026');
-  if (/\bayuntamiento\b/.test(qn) && p.mulege) add('actor_ayunt_mulege', 'terr_mulege', 'gap_fiscal_ingresos_2026');
+  if (/\b(ayuntamiento|cabildo)\b/.test(qn) && p.comondu) add('actor_ayunt_comondu', 'terr_comondu', 'ev_fiscal_ley_2026');
+  if (/\b(ayuntamiento|cabildo)\b/.test(qn) && p.mulege) add('actor_ayunt_mulege', 'terr_mulege', 'gap_fiscal_ingresos_2026');
   if (/\bmesa de energia\b/.test(qn)) add('ev_mesa_energia', 'actor_cfe', 'actor_cenace', 'rc_sibcs');
   if (/\bmesa de urbanismo\b/.test(qn)) add('ev_mesa_urbanismo', 'actor_implan_cabos', 'inst_pdu_cabos');
   if (/\bgap\b/.test(qn) && /\b(opera|concesion|aeropuerto)\b/.test(qn)) {
@@ -1510,6 +1520,14 @@ function factorSeedIds(qn, kinds) {
   if (/\bapi\b/.test(qn) && (p.loreto || /\bpichilingue\b/.test(qn))) add('proj_fed_pue_002', 'ev_cruceros_datatur');
   if (/\baeropuerto/.test(qn) && p.loreto) add('ev_dossiers_movilidad', 'gap_loreto_dma', 'ev_sig_vuelos');
   if (/\bdensific\w*/.test(qn) && (p.cabos || /\bcosta\b/.test(qn))) add('terr_obs_cabos_coast', 'inst_pdu_cabos', 'dq_stills_densification');
+  if (/\bcomision nacional del agua\b/.test(qn)) add('actor_conagua', 'ev_mesa_agua', 'ev_acuiferos_dma');
+  if (/\bmarina\b/.test(qn) && (p.cabos || /\bcabo san lucas\b/.test(qn))) add('ev_sig_asipona', 'proj_fed_pue_001');
+  if (/\b(10 de abril de 1980|20 de agosto de 1992|6 de junio de 1995|30 de noviembre de 1988)\b/.test(qn)) add('ev_historia_bcs');
+  if (p.east && /\baeropuerto/.test(qn)) add('ev_dossiers_movilidad', 'gap_east_cape_carga');
+  if (/\briesgos?\b/.test(qn) && /\bquien decide\b/.test(qn)) {
+    add('dq_riesgos_principales');
+    if (/\bagua\b/.test(qn)) add('ev_mesa_agua', 'actor_cea', 'actor_conagua');
+  }
   if (/\bcabo pulmo\b/.test(qn) && /\b(constru\w*|cierra|obra)\b/.test(qn)) {
     add('terr_anp_cabo_pulmo', 'const_anp_nucleos', 'ev_anp_avisos');
   }

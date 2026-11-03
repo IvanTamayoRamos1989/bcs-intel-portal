@@ -1557,6 +1557,65 @@ const CASES = [
     needTypes: ['Territory', 'Instrument'],
     forbid: ['gap_permisos_uso_suelo'],
   },
+  {
+    q: 'Cabildo de Comondú',
+    kind: 'viability',
+    needIds: ['actor_ayunt_comondu', 'terr_comondu', 'ev_fiscal_ley_2026'],
+    needTypes: ['Actor', 'Territory', 'Evidence'],
+  },
+  {
+    q: 'Cabildo de Mulegé',
+    kind: 'viability',
+    needIds: ['actor_ayunt_mulege', 'terr_mulege', 'gap_fiscal_ingresos_2026'],
+    needTypes: ['Actor', 'Territory', 'Constraint'],
+    sinDatoIds: ['gap_fiscal_ingresos_2026'],
+  },
+  {
+    q: '¿Quién es la Comisión Nacional del Agua aquí?',
+    kind: 'viability',
+    needIds: ['actor_conagua', 'ev_acuiferos_dma'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Marina de Cabo San Lucas quién la opera',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'Escurrimiento en La Paz no es inundación',
+    kind: 'viability',
+    needIds: ['ev_escorrentia'],
+    needTypes: ['Evidence'],
+    noFloodVolume: true,
+  },
+  {
+    q: '10 de abril de 1980',
+    kind: 'viability',
+    needIds: ['ev_historia_bcs'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: '20 de agosto de 1992 Loreto',
+    kind: 'viability',
+    needIds: ['ev_historia_bcs', 'terr_loreto'],
+    needTypes: ['Evidence', 'Territory'],
+  },
+  {
+    q: 'East Cape sin aeropuerto',
+    kind: 'viability',
+    needIds: ['ev_dossiers_movilidad', 'gap_east_cape_carga'],
+    needTypes: ['Evidence', 'Constraint'],
+    sinDatoIds: ['gap_east_cape_carga'],
+    noAirport: true,
+  },
+  {
+    q: 'Riesgos y quién decide el agua en Cabos',
+    kind: 'viability',
+    also: 'risk',
+    needIds: ['dq_riesgos_principales', 'ev_mesa_agua'],
+    needTypes: ['DecisionQuestion', 'Evidence'],
+  },
 ];
 
 const NEGATIVES = [
