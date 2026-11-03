@@ -47,7 +47,7 @@ body.twin-workspace.shell-dock-open .shell { grid-template-rows:minmax(0,1fr) au
 .twin-eyebrow { font-size:10px; font-weight:700; letter-spacing:1px; color:#62818b; }
 .twin-map-context p { margin:6px 0; font-size:13px; line-height:1.4; color:#294554; }
 .twin-map-context button { border:0; border-bottom:1px solid #b8cbc9; background:transparent; color:#285d72; font:inherit; font-size:11px; min-height:28px; cursor:pointer; padding:2px 0; }
-.twin-workspace .shell-fiche { top:14px; right:54px; width:min(340px,calc(100% - 68px)); border-color:#c3d1cb; border-top-color:#62818b; z-index:6; padding:16px; }
+.twin-workspace .shell-fiche { top:14px; right:54px; width:min(340px,calc(100% - 68px)); background:rgba(236,248,252,.94); border:1px solid rgba(0,131,196,.45); border-top:3px solid #0083C4; z-index:6; padding:16px; backdrop-filter:blur(8px); }
 .twin-workspace .shell-dock { position:relative; overflow:visible; border-top:1px solid rgba(0,131,196,.45); background:rgba(244,250,252,.94); padding:0; min-height:60px; backdrop-filter:blur(8px); }
 .twin-workspace .shell-dock-bar { min-height:60px; padding:10px 18px; gap:10px; flex-wrap:nowrap; align-items:center; }
 .twin-workspace .shell-base { flex:0 0 auto; }

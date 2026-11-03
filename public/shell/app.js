@@ -398,21 +398,29 @@
     }).catch(function () { return null; });
   }
 
+  var highlightedMuni = '';
   function paintMuni(name) {
-    if (!engine || !engine.paintMunis || !name) return;
+    highlightedMuni = name || '';
+    if (!engine || !engine.paintMunis) return;
+    if (!name) { engine.paintMunis(null); return; }
     var colors = {};
-    colors[name] = { fill: '#7ec8e8', line: '#006BA3', weight: 2.6 };
+    colors[name] = { fill: '#7ec8e8', line: '#006BA3', weight: 3.2, opacity: 0.5 };
     engine.paintMunis(colors);
   }
-
-  function flyBox(box) {
+  function framePad(kind) {
+    var narrow = window.matchMedia('(max-width: 900px)').matches;
+    if (kind === 'town') return narrow ? { top: 86, bottom: 78, left: 20, right: 20 } : { top: 56, bottom: 44, left: 28, right: 230 };
+    return narrow ? { top: 78, bottom: 70, left: 18, right: 18 } : { top: 48, bottom: 40, left: 24, right: 220 };
+  }
+  function flyBox(box, opts) {
     if (!box) return;
-    if (engine && engine.fitBox) engine.fitBox(box);
+    if (engine && engine.fitBox) engine.fitBox(box, opts || { padding: framePad('muni'), maxZoom: 9.6, pitch: pitched ? PITCH_ON : 0 });
     else if (leafletMap && window.L) leafletMap.fitBounds([[box[1], box[0]], [box[3], box[2]]]);
   }
-  function flyPoint(lng, lat, label) {
+  function flyPoint(lng, lat, label, opts) {
     if (engine && engine.mark) engine.mark(lng, lat, label || '');
-    if (engine && engine.fitBox) engine.fitBox([lng - 0.35, lat - 0.28, lng + 0.35, lat + 0.28]);
+    var span = 0.28;
+    if (engine && engine.fitBox) engine.fitBox([lng - span, lat - span * 0.75, lng + span, lat + span * 0.75], opts || { padding: framePad('town'), maxZoom: 11.2, pitch: pitched ? 54 : 0 });
     if (leafletMap && window.L) {
       leafletMap.setView([lat, lng], 10);
       if (window.__shellPin) leafletMap.removeLayer(window.__shellPin);
@@ -432,10 +440,69 @@
       paintMuni(name);
       if (box) flyBox(box);
       if (!quiet) {
-        setStatus('Encuadre: ' + name + '.', 'Frame: ' + name + '.');
+        setStatus('Encuadre: municipio de ' + name + '.', 'Frame: the municipality of ' + name + '.');
         openMuniFiche(name);
       }
+      return { kind: 'muni', name: name };
     });
+  }
+  var placeIndex = null;
+  function loadPlaces() {
+    if (placeIndex) return Promise.resolve(placeIndex);
+    function pull(url) {
+      return fetch(url).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    }
+    return Promise.all([pull('/gis/osm_towns.geojson'), pull('/gis/settlements.geojson'), loadMunis()]).then(function (all) {
+      var byKey = {};
+      function addTowns(geo, source) {
+        ((geo && geo.features) || []).forEach(function (f) {
+          var p = f.properties || {};
+          var g = f.geometry;
+          if (!p.name || !g || g.type !== 'Point' || !g.coordinates) return;
+          var key = norm(p.name);
+          if (key.length < 5) return;
+          var row = { name: p.name, key: key, lng: Number(g.coordinates[0]), lat: Number(g.coordinates[1]), muni: p.municipio || '', pop: p.pobtot || p.population || '', source: source };
+          var prev = byKey[key];
+          if (!prev || source === 'settlements') byKey[key] = row;
+        });
+      }
+      addTowns(all[0], 'osm_towns');
+      addTowns(all[1], 'settlements');
+      var munis = ((all[2] && all[2].features) || []).map(function (f) {
+        return { name: f.properties && f.properties.name, key: norm(f.properties && f.properties.name), feature: f };
+      }).filter(function (m) { return m.name; });
+      placeIndex = { towns: Object.keys(byKey).map(function (k) { return byKey[k]; }), munis: munis };
+      return placeIndex;
+    });
+  }
+  function bestPlace(text) {
+    var q = norm(text || '');
+    if (!q || !placeIndex) return null;
+    var muniHit = null;
+    placeIndex.munis.forEach(function (m) {
+      if (q.indexOf(m.key) === -1) return;
+      if (!muniHit || m.key.length > muniHit.key.length) muniHit = m;
+    });
+    var townHit = null;
+    placeIndex.towns.forEach(function (t) {
+      if (q.indexOf(t.key) === -1) return;
+      if (!townHit || t.key.length > townHit.key.length) townHit = t;
+    });
+    if (townHit && (!muniHit || townHit.key.length > muniHit.key.length)) return { kind: 'town', town: townHit, muni: muniHit };
+    if (muniHit) return { kind: 'muni', muni: muniHit };
+    return null;
+  }
+  function focusTown(town) {
+    if (town.muni) paintMuni(town.muni);
+    flyPoint(town.lng, town.lat, town.name);
+    var rows = [];
+    var pop = Number(String(town.pop || '').replace(/[^\d.]/g, ''));
+    if (pop > 0) rows.push({ es: 'Población publicada', en: 'Published population', value: pop.toLocaleString(lang() === 'en' ? 'en-US' : 'es-MX') });
+    if (town.muni) rows.push({ es: 'Municipio', en: 'Municipality', value: town.muni });
+    rows.push({ es: 'Qué se marca', en: 'What is marked', value: tx('El punto es la localidad publicada en el archivo de lugares. No es un edificio ni un predio.', 'The point is the locality published in the places file. It is not a building or a parcel.') });
+    openFiche({ title: town.name, kind_es: 'Localidad', kind_en: 'Locality', rows: rows });
+    setStatus('Encuadre: ' + town.name + '.', 'Frame: ' + town.name + '.');
+    return { kind: 'town', name: town.name };
   }
   function markReady() {
     mapReady = true;
@@ -652,27 +719,31 @@
     var place = pickRule(question);
     var statewide = !place && /cada municipio|por municipio|municipalities|estado|state|baja california sur/i.test(question||'');
     if (!place && !statewide) place=pickRule(answer);
-    if(statewide){pendingMuni='';if(engine&&engine.fitBox)engine.fitBox(null);}
+    var cameraSet = false;
+    if(statewide){pendingMuni='';cameraSet=true;paintMuni('');if(engine&&engine.fitBox)engine.fitBox(null);}
     var gaps = pillar ? [pillar.id] : [];
     if (place) {
       var useMuni = place.muniIf && place.muniIf.test(norm(question || '') + ' ' + norm(answer || ''));
       (place.layers || []).forEach(function (id) { if (byId[id]) jobs.push(autoLayer(id)); });
       if (useMuni && place.muni) {
-        jobs.push(focusMuni(place.muni, true).then(function () {
+        cameraSet = true;
+        jobs.push(focusMuni(place.muni, false).then(function () {
           if (place.noteIf) setStatus(place.noteIf[0], place.noteIf[1]);
-
         }));
       } else if (place.layer && byId[place.layer]) {
         jobs.push(autoLayer(place.layer).then(function (geo) {
           var hit = geo && place.hit ? findNamed(geo, place.hit) : null;
           var pt = hit ? pointOf(hit.feature) : null;
           if (pt) {
+            cameraSet = true;
             flyPoint(pt.lng, pt.lat, place.pin || hit.name);
             if (place.note) setStatus(place.note[0], place.note[1]);
-
-          } else if (place.muni) return focusMuni(place.muni, true);
+          } else if (place.muni) {
+            cameraSet = true;
+            return focusMuni(place.muni, false);
+          }
         }));
-      } else if (place.muni) jobs.push(focusMuni(place.muni, true));
+      }
     } else if (pillar) {
       setStatus(GAPS[pillar.id][0], GAPS[pillar.id][1]);
     } else if (jobs.length && !suelo) {
@@ -681,11 +752,37 @@
     if (suelo === 'pdu') jobs.push(focusMuni('Los Cabos', true));
     if (suelo === 'pducp') jobs.push(focusMuni('La Paz', true));
     if (suelo === 'icluster') setIcluster('uso', true);
+    function layerPhrase() {
+      var names = Object.keys(answerLayers).filter(function (id) { return on[id] && byId[id]; }).map(function (id) {
+        return lang() === 'en' ? byId[id].name_en : byId[id].name_es;
+      }).slice(0, 3);
+      if (!names.length) return ['', ''];
+      return [' Capas encendidas: ' + names.join(', ') + '.', ' Layers on: ' + names.join(', ') + '.'];
+    }
     return Promise.all(jobs).then(function () {
+      if (cameraSet) return null;
+      return loadPlaces().then(function () {
+        var hit = bestPlace(question) || bestPlace(answer);
+        if (hit && hit.kind === 'town') return focusTown(hit.town);
+        if (hit && hit.kind === 'muni') return focusMuni(hit.muni.name, false);
+        if (place && place.muni) return focusMuni(place.muni, false);
+        return null;
+      });
+    }).then(function (framed) {
       syncThemePressed();
       syncStackToggles();
-
-      mapSummary(place || jobs.length || suelo ? 'Capas y lugares relacionados con tu consulta.' : 'Esta respuesta no tiene una ubicación cartográfica identificada.', place || jobs.length || suelo ? 'Layers and places related to your question.' : 'No mapped location was identified for this answer.');
+      var extra = layerPhrase();
+      if (framed && framed.kind === 'town') {
+        mapSummary('Encuadre: ' + framed.name + ', localidad publicada. El punto sale del archivo de lugares.' + extra[0], 'Frame: ' + framed.name + ', a published locality. The point comes from the places file.' + extra[1]);
+      } else if (framed && framed.kind === 'muni') {
+        mapSummary('Encuadre: municipio de ' + framed.name + '. El contorno marca ese municipio.' + extra[0], 'Frame: the municipality of ' + framed.name + '. The outline marks that municipality.' + extra[1]);
+      } else if (cameraSet && statewide) {
+        mapSummary('Vista de todo Baja California Sur.' + extra[0], 'View of all Baja California Sur.' + extra[1]);
+      } else if (place || jobs.length || suelo) {
+        mapSummary('Capas y lugares relacionados con tu consulta.' + extra[0], 'Layers and places related to your question.' + extra[1]);
+      } else {
+        mapSummary('Esta respuesta no tiene una ubicación cartográfica identificada.', 'No mapped location was identified for this answer.');
+      }
       syncBasic();
     });
   }
@@ -926,7 +1023,8 @@
   function applyExtrusion() {
     if (!engine) return;
     if (engine.setExtrusion) engine.setExtrusion({});
-    if (engine.setMuniWash) engine.setMuniWash(0.02);
+    if (highlightedMuni) paintMuni(highlightedMuni);
+    else if (engine.setMuniWash) engine.setMuniWash(0.14);
     if (engine.setPopulationBars) engine.setPopulationBars(extrudeOn ? extrusionHeights() : null);
   }
   function applyTerrain() {
@@ -1336,7 +1434,7 @@
   document.getElementById('twin-help-close').addEventListener('click',closeGuide);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(guide&&!guide.hidden)closeGuide();else if(document.body.classList.contains('shell-sheet-open'))setSheet(false);else closeFiche();}});
   document.getElementById('twin-reset-map').addEventListener('click',function(){
-    closeFiche();if(engine&&engine.fitBox)engine.fitBox(null);if(leafletMap)leafletMap.fitBounds([[22.87,-115.22],[28,-109.41]]);
+    closeFiche();paintMuni('');if(engine&&engine.mark)engine.mark(null,null,'');if(engine&&engine.fitBox)engine.fitBox(null);if(leafletMap)leafletMap.fitBounds([[22.87,-115.22],[28,-109.41]]);
     mapSummary('Vista de todo Baja California Sur.','View of all Baja California Sur.');
   });
   // Home hands off a user-submitted question once, without putting its text into the URL.
