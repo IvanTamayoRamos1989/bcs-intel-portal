@@ -50,7 +50,7 @@ check('Search «presupuesto de egresos» finds 2026 State Decreto 3266, 2026 Mul
 check('Broken links (La Paz HTTP 500, Datos Abiertos 2026 HTTP 404) and gaps (Loreto) are marked as unavailable', () => {
   const brokenLaPaz = slim.find((r) => /ENLACE-ROTO-HTTP500/i.test(r.n));
   const broken2026 = slim.find((r) => /ENLACE-ROTO-HTTP404/i.test(r.n));
-  const gapLoreto = slim.find((r) => /Hueco-Documental.*Loreto/i.test(r.n));
+  const gapLoreto = slim.find((r) => /Loreto.*Hueco-Documental/i.test(r.n));
   assert.ok(brokenLaPaz && !brokenLaPaz.gid && !brokenLaPaz.dv, 'La Paz HTTP 500 must be marked without active link');
   assert.ok(broken2026 && !broken2026.gid && !broken2026.dv, 'Datos Abiertos 2026 HTTP 404 must be marked without active link');
   assert.ok(gapLoreto && !gapLoreto.gid && !gapLoreto.dv, 'Loreto gap must be marked without active link');
