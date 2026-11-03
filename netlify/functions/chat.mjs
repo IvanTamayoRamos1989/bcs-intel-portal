@@ -552,7 +552,7 @@ function expandQuery(query) {
     factorKinds.push('viability');
   }
   if (/\bcabo pulmo\b/.test(qn) && /\bhotel/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
-  if (/\bcabo pulmo\b/.test(qn) && /\b(construc\w*|cierra|obra)\b/.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
+  if (/\bcabo pulmo\b/.test(qn) && /\b(constru\w*|cierra|obra)\b/.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   if (/\basipona\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if ((/\bcompuerta\b/.test(qn) || (/\b237\b/.test(qn) && /\bmw\b/.test(qn))) && !factorKinds.includes('viability') && !factorKinds.includes('risk')) {
     factorKinds.push(/\briesgo/.test(qn) ? 'risk' : 'viability');
@@ -565,7 +565,7 @@ function expandQuery(query) {
     factorKinds.push('viability');
   }
   if (/\b(cinco municipios|cinco polos)\b/.test(qn) && FACTOR_COMPARE_RE.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
-  if (/\bcrucero/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bcrucer/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bjll\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\b(sniiv|rezago habitacional)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bsierra la laguna\b/.test(qn) && /\b(hotel|impide|cierra|construc)/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -666,7 +666,7 @@ function expandQuery(query) {
   if (/\bintegridad ecologica\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\blocalidades\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(acuerdo|dof)\b/.test(qn) && /\b(dma|acuifer)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\binterconex\w*/.test(qn) && /\b(pausad|sin|sistema interconectado)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\binterconex\w*/.test(qn) && /\b(pausad\w*|sin|sistema interconectado)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(don diego|golfo de ulloa)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bmujeres libres\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(stills|imagenes del territorio)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -708,6 +708,25 @@ function expandQuery(query) {
   }
   if (/\bayuntamiento\b/.test(qn) && /\bcomondu\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bayuntamiento\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmesa de energia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmesa de urbanismo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bgap\b/.test(qn) && /\b(opera|concesion|aeropuerto)\b/.test(qn) && /\b(san jose|la paz|los cabos|sjd)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bagua primero\b|\bwater first\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(como vamos|seguimos como)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\briesgos?\b/.test(qn) && /\boportunidad/.test(qn)) {
+    if (!factorKinds.includes('risk')) factorKinds.push('risk');
+    if (!factorKinds.includes('opportunity')) factorKinds.push('opportunity');
+  }
+  if (/\bsierra la laguna\b/.test(qn) && /\b(recarga|integridad)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bordenamiento ecologico\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\b(ampliacion|modernizacion)\b/.test(qn) && /\bred\b/.test(qn) && /\b(electric\w*|bcs|sibcs)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if ((/\bunion con la red nacional\b/.test(qn) || /\bsistema nacional\b/.test(qn)) && /\bpausad\w*/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1134,7 +1153,7 @@ function factorPredBase(pred) {
 
 function factorPlaceFlags(qn) {
   const east = /\b(east cape|cabo del este|cabo pulmo|la ribera|los barriles|barriles)\b/.test(qn);
-  const cabos = /\b(los cabos|cabo san lucas|san jose del cabo|\bsjd\b)\b/.test(qn);
+  const cabos = /\b(los cabos|cabo san lucas|san jose(?: del cabo)?|sjd)\b/.test(qn);
   const paz = /\bla paz\b/.test(qn) || /\bsan juan de la costa\b/.test(qn);
   const loreto = /\b(loreto|nopolo)\b/.test(qn);
   const comondu = /\bcomondu\b/.test(qn)
@@ -1360,7 +1379,7 @@ function factorSeedIds(qn, kinds) {
     add('ev_dma', 'proj_fed_agu_008', 'ev_acuiferos_dma');
     if (p.paz || /\b0324\b/.test(qn)) add('rc_acuifero_0324');
   }
-  if (/\binterconex\w*/.test(qn) && /\b(pausad|sin|sistema interconectado)\b/.test(qn)) {
+  if (/\binterconex\w*/.test(qn) && /\b(pausad\w*|sin|sistema interconectado)\b/.test(qn)) {
     add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
   }
   if (/\b(don diego|golfo de ulloa)\b/.test(qn)) add('proj_fed_min_002');
@@ -1407,6 +1426,29 @@ function factorSeedIds(qn, kinds) {
   }
   if (/\bayuntamiento\b/.test(qn) && p.comondu) add('actor_ayunt_comondu', 'terr_comondu', 'ev_fiscal_ley_2026');
   if (/\bayuntamiento\b/.test(qn) && p.mulege) add('actor_ayunt_mulege', 'terr_mulege', 'gap_fiscal_ingresos_2026');
+  if (/\bmesa de energia\b/.test(qn)) add('ev_mesa_energia', 'actor_cfe', 'actor_cenace', 'rc_sibcs');
+  if (/\bmesa de urbanismo\b/.test(qn)) add('ev_mesa_urbanismo', 'actor_implan_cabos', 'inst_pdu_cabos');
+  if (/\bgap\b/.test(qn) && /\b(opera|concesion|aeropuerto)\b/.test(qn)) {
+    add('rc_aeropuerto_sjd', 'rc_aeropuerto_lap', 'proj_fed_aer_001');
+  }
+  if (/\bagua primero\b|\bwater first\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
+  if (/\b(como vamos|seguimos como|trayectoria actual)\b/.test(qn)) add('ev_esc_baseline', 'dq_viabilidad_proyecto');
+  if (/\briesgos?\b/.test(qn) && /\boportunidad/.test(qn)) add('dq_riesgos_principales', 'dq_oportunidades');
+  if (/\bsierra la laguna\b/.test(qn) && /\b(recarga|integridad)\b/.test(qn)) {
+    add('terr_anp_sierra_laguna', 'dq_integridad_ecologica', 'const_anp_nucleos');
+  }
+  if (/\bordenamiento ecologico\b/.test(qn) && p.loreto) add('inst_poel_loreto', 'gap_psdu_loreto_gazette', 'terr_loreto');
+  else if (/\bordenamiento ecologico\b/.test(qn) && p.cabos) add('inst_poel_cabos', 'ev_sig_poel_cabos', 'terr_los_cabos');
+  else if (/\bordenamiento ecologico\b/.test(qn)) add('inst_poerbcs', 'inst_poer_politicas', 'actor_sepuimm');
+  if (/\b(ampliacion|modernizacion)\b/.test(qn) && /\bred\b/.test(qn) && /\b(electric\w*|bcs|sibcs)\b/.test(qn)) {
+    add('inst_pamrnt', 'rc_sibcs', 'const_red_aislada');
+  }
+  if ((/\bunion con la red nacional\b/.test(qn) || /\bsistema nacional\b/.test(qn)) && /\bpausad\w*/.test(qn)) {
+    add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
+  }
+  if (/\bcabo pulmo\b/.test(qn) && /\b(constru\w*|cierra|obra)\b/.test(qn)) {
+    add('terr_anp_cabo_pulmo', 'const_anp_nucleos', 'ev_anp_avisos');
+  }
   if (/\boomsapas\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_mesa_agua');
   if (/\bsepuimm\b/.test(qn)) add('actor_sepuimm', 'inst_poerbcs');
   if (/\bconanp\b/.test(qn)) add('actor_conanp', 'terr_anp_cabo_pulmo', 'const_anp_nucleos');
@@ -1417,7 +1459,7 @@ function factorSeedIds(qn, kinds) {
   if (/\b(cinco municipios|cinco polos)\b/.test(qn) && FACTOR_COMPARE_RE.test(qn)) {
     add('dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'terr_loreto', 'terr_comondu', 'terr_mulege', 'ev_gds_cinco_polos');
   }
-  if (/\bcrucero/.test(qn)) add('ev_cruceros_datatur', 'ev_sig_asipona');
+  if (/\bcrucer/.test(qn)) add('ev_cruceros_datatur', 'ev_sig_asipona');
   if (/\bsierra la laguna\b/.test(qn)) add('terr_anp_sierra_laguna', 'const_anp_nucleos');
   if (/\bbahia de loreto\b/.test(qn)) add('terr_anp_loreto', 'const_anp_nucleos');
   if (/\b(api bcs|pichilingue)\b/.test(qn)) add('proj_fed_pue_002', 'ev_cruceros_datatur');
