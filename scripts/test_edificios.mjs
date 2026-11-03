@@ -13,7 +13,16 @@
 import { chromium } from 'playwright';
 
 const BASE = process.env.BASE || 'http://localhost:4321';
-const PAGE = process.env.PAGE || '/inicio/';
+// The map page: PAGE if given, otherwise the first of these that loads the 3D engine script.
+async function mapPage() {
+  if (process.env.PAGE) return process.env.PAGE;
+  for (const p of ['/consulta/', '/inicio/']) {
+    const r = await fetch(BASE + p).catch(() => null);
+    if (r && r.ok && /gemelo\/cdt3d\.js/.test(await r.text())) return p;
+  }
+  return '/inicio/';
+}
+const PAGE = await mapPage();
 const results = [];
 function check(name, ok, detail = '', pending = false) {
   const tag = ok ? 'PASS' : pending ? 'PENDING' : 'FAIL';
@@ -48,6 +57,7 @@ try {
   check('PMTiles file answers byte ranges', head.status === 206 && magic.startsWith('PMTiles'), `${pm.url} · ${head.status} · ${(pm.buildings || 0).toLocaleString('en-US')} buildings · z${pm.minzoom}-${pm.maxzoom}`);
 
   // Engine up
+  console.log(`map page: ${PAGE}`);
   await page.goto(BASE + PAGE, { waitUntil: 'domcontentloaded' });
   await page.waitForFunction(() => window.CDT3D && window.CDT3D.engines && window.CDT3D.engines.length > 0, null, { timeout: 90000 });
   const jump = (lng, lat, zoom) => call(`${E}.jumpCamera({ lng: ${lng}, lat: ${lat}, zoom: ${zoom}, bearing: -20, pitch: 55 })`);
@@ -64,6 +74,14 @@ try {
     const before = tileHits.length;
     await jump(lng, lat, 15.8);
     await page.waitForFunction(`${E}.buildingsStatus().rendered > 0`, null, { timeout: 90000 }).catch(() => {});
+    // Let the visible tiles finish loading and the camera settle before reading the sample.
+    let prev = -1;
+    for (let k = 0; k < 10; k++) {
+      await page.waitForTimeout(2000);
+      const n = (await call(`${E}.buildingsStatus()`)).rendered;
+      if (n > 0 && n === prev) break;
+      prev = n;
+    }
     last = await call(`${E}.buildingsStatus()`);
     const s = last.sample || {};
     const fields = ['h', 'hm', 'n', 'a', 'mz'].every((k) => k in s);
