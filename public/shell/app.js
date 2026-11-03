@@ -133,7 +133,13 @@
     ficheEl.querySelectorAll('[data-fiche-file]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var row = files[Number(btn.getAttribute('data-fiche-file'))];
-        if (row) location.assign('/catalogo/?q=' + encodeURIComponent(fileName(row)));
+        if (!row) return;
+        var href = fileHref(row);
+        if (href && (/^https?:\/\//i.test(href) || /^\/(?:stills|gis|maps|finanzas-publicas|tramites)\//i.test(href))) {
+          window.open(href, '_blank', 'noopener,noreferrer');
+          return;
+        }
+        location.assign('/catalogo/?drive=all&q=' + encodeURIComponent(fileName(row)));
       });
     });
   }
@@ -169,7 +175,7 @@
     paintMuni(name);
   }
   function featureLabel(p) {
-    return p.name || p.name_es || p.NOM_LOC || p.NOM_NUC || p.NOMBRE_UGA || p.proyecto || p.ref || '';
+    return p.name || p.name_es || p.NOMBRE || p.title || p.localidad || p.NOM_LOC || p.NOM_NUC || p.NOMBRE_UGA || p.proyecto || p.road || (p.codigo_postal ? 'CP ' + p.codigo_postal : '') || p.ref || '';
   }
   function openBuildingFiche(p) {
     var loc = lang() === 'en' ? 'en-US' : 'es-MX';
@@ -272,6 +278,15 @@
       ['tdpa', 'Tránsito diario promedio (veh/día)', 'Average daily traffic (veh/day)'],
       ['peak', 'Demanda horaria estimada (veh/h)', 'Estimated peak hourly demand (veh/h)'],
       ['grade', 'Nivel de servicio vial', 'Road level of service'],
+      ['CAT_MANEJO', 'Categoría de manejo', 'Management category'],
+      ['SUPERFICIE', 'Superficie (ha)', 'Area (ha)'],
+      ['vehiculos_estimados', 'Parque vehicular estimado', 'Estimated vehicle fleet'],
+      ['poblacion_cp', 'Población estimada en CP', 'Estimated postal code population'],
+      ['capacidad_hm3', 'Capacidad (hm³)', 'Capacity (hm³)'],
+      ['uso', 'Uso principal', 'Main use'],
+      ['corriente', 'Corriente / Arroyo', 'Stream / Wash'],
+      ['condicion', 'Condición hídrica', 'Aquifer status'],
+      ['estado_conservacion', 'Estado de conservación', 'Conservation status'],
     ];
     fields.forEach(function (field) {
       var key = lang() === 'en' && field[3] && p[field[3]] != null && p[field[3]] !== '' ? field[3] : field[0];
@@ -676,13 +691,17 @@
     { re: /mulege|santa rosalia/, muni: 'Mulegé', layers: ['focus_ports_air'] },
   ];
   var THEME_RULES = [
-    { re: /\bmls\b|oferta inmobiliaria|real estate listings|propiedades en (?:venta|mercado)/, layers: ['bcs_market_listings'] },
-    { re: /acuifer|agua|water|novillo|oomsapas|santo domingo|\b0306\b/, layers: ['focus_water_dmas', 'osm_waterways'] },
-    { re: /termosolar|el crucero|\bcfe\b/, layers: ['federal_projects'] },
-    { re: /proteg|anp|natural area|area natural/, layers: ['anp_federales', 'rtp_conabio'] },
-    { re: /carretera|highway|movilidad|aeropuerto|puerto|airport|port/, layers: ['osm_highways', 'osm_transport_nodes', 'focus_ports_air'] },
-    { re: /vivienda|housing|sniiv/, layers: ['settlements', 'focus_water_dmas'] },
-    { re: /proyecto federal|federal project/, layers: ['federal_projects'] },
+    { re: /\bmls\b|oferta inmobiliaria|real estate listings|propiedades en (?:venta|mercado)|mercado inmobiliario|vivienda multifamiliar/, layers: ['bcs_market_listings', 'vivienda_multifamiliar_bcs', 'bcs_market_listings_manzanas'] },
+    { re: /acuifer|agua|water|novillo|oomsapas|santo domingo|\b0306\b|presa|hidric/, layers: ['focus_water_dmas', 'acuiferos_conagua', 'presas_cea', 'osm_waterways'] },
+    { re: /inundacion|pluvial|arroyo|escorrentia|peligro.*lluvia|flood/, layers: ['inundaciones_historico_bcs', 'desagues_pluviales_bcs', 'haz_rain'] },
+    { re: /pendiente|topograf|curvas de nivel|altitud|elevacion|relieve|slope/, layers: ['curvas_nivel_bcs', 'pendiente_terreno_bcs', 'height'] },
+    { re: /vegetacion|cobertura vegetal|agricol|ejido|nucleo agrario|\bran\b/, layers: ['cobertura_vegetal_bcs', 'agricultura_inegi', 'ran_nucleos'] },
+    { re: /termosolar|el crucero|\bcfe\b|electric|energia|red troncal|subestacion/, layers: ['osm_power_lines', 'osm_power_nodes', 'federal_projects'] },
+    { re: /proteg|anp|natural area|area natural|biodiversidad|conabio/, layers: ['anp_federales', 'rtp_conabio'] },
+    { re: /carretera|highway|movilidad|aeropuerto|puerto|airport|port|trafico|aforo|vial|velocidad|ciclovia|biciclet|electromovilidad|carga ve/, layers: ['osm_highways', 'traffic', 'bottlenecks', 'limites_velocidad_vial_bcs', 'ciclovias_bcs', 'estaciones_carga_ve_bcs', 'focus_ports_air'] },
+    { re: /vivienda|housing|sniiv|codigo postal|densidad| Rezago|marginacion|infonavit/i, layers: ['vivienda_multifamiliar_bcs', 'codigos_postales_bcs', 'density', 'settlements'] },
+    { re: /temperatura|calor|climatic|viento|sequia|oleaje/, layers: ['temperature', 'haz_heat', 'haz_drought'] },
+    { re: /proyecto federal|federal project|inversion federal/, layers: ['federal_projects'] },
   ];
 
   function sueloAsk(text) {
@@ -888,8 +907,10 @@
       var box = document.querySelector('[data-buildings]');
       var places = document.querySelector('[data-building-places]');
       if (box && places && eng.setBuildings) {
+        eng.setBuildings(box.checked);
+      }
+      if (false) {
         fetch('/gis/edificios/index.json').then(function (r) {
-          if (!r.ok) throw Error('buildings');
           return r.json();
         }).then(function (ix) {
           ix.cities.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(c){
@@ -1253,7 +1274,7 @@
     var choices=meta.id==='traffic'||meta.id==='bottlenecks' ? ['traffic','biodiversity'] : ['biodiversity'];
     choices.forEach(function(provider){
       var button=document.createElement('button'), result=document.createElement('p');
-      button.type='button';result.setAttribute('role','status');
+      button.type='button';button.className='shell-fiche-provider-btn';result.className='shell-fiche-provider-msg';result.setAttribute('role','status');
       button.textContent=provider==='traffic'?tx('Ver demora actual · TomTom','Current delay · TomTom'):tx('Consultar biodiversidad a 1 km · IBAT','Biodiversity within 1 km · IBAT');
       button.addEventListener('click',async function(){
         button.disabled=true;result.textContent=tx('Consultando…','Checking…');
@@ -1605,8 +1626,45 @@
   try{var contextId=new URLSearchParams(location.search).get('context');if(contextId&&/^c[a-z0-9]+$/.test(contextId)){var context=JSON.parse(sessionStorage.getItem('bcs-map-'+contextId)||'null');if(context&&context.grounded!==false)applyText(context.question,context.sources,context.answer);}}catch(_){}
   syncBasic();
   setBasemap(basemap);
+  (function initBuildingPlaces() {
+    var box = document.querySelector('[data-buildings]');
+    var places = document.querySelector('[data-building-places]');
+    if (!box || !places) return;
+    fetch('/gis/edificios/index.json').then(function (r) {
+      if (!r.ok) throw Error('buildings');
+      return r.json();
+    }).then(function (ix) {
+      (ix.cities || []).slice().sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (c) {
+        var option = document.createElement('option');
+        option.value = c.id;
+        option.textContent = c.name;
+        places.appendChild(option);
+      });
+      box.disabled = false;
+      places.disabled = false;
+      box.onchange = function () {
+        if (engine && engine.setBuildings) engine.setBuildings(box.checked);
+      };
+      places.onchange = function () {
+        var c = (ix.cities || []).find(function (item) { return item.id === places.value; });
+        if (!c) return;
+        var point = c.center || (c.bbox && [(c.bbox[0] + c.bbox[2]) / 2, (c.bbox[1] + c.bbox[3]) / 2]);
+        if (!point) return;
+        box.checked = true;
+        if (engine && engine.setBuildings) engine.setBuildings(true);
+        if (engine && engine.jumpCamera) {
+          engine.jumpCamera({ lng: point[0], lat: point[1], zoom: 16.2, bearing: -16, pitch: reduceMotion ? 0 : 52 });
+        } else {
+          flyPoint(point[0], point[1], c.name);
+        }
+        syncPitchBtn();
+      };
+    }).catch(function () {
+      setStatus('No se pudo cargar la lista de edificios.', 'Building coverage could not be loaded.');
+    });
+  })();
   boot3d();
-  if (treeEl || relatedEl) fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
+  if (ficheEl || treeEl || relatedEl) fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
     index = data;
     renderTree(searchEl ? searchEl.value : '');
     if(latestAnswer)focusFiles(latestAnswer.question,latestAnswer.sources,latestAnswer.answer);

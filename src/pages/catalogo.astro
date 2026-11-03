@@ -3,7 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import folders from '../data/folders_summary.json';
 import engagement from '../data/engagement_catalog.json';
 
-const themes = Object.keys(folders.theme_counts || {}).sort();
+const hiddenThemes = new Set(['catalogo', 'ontologia', 'portal', 'programa']);
+const themes = Object.keys(folders.theme_counts || {}).filter((t) => !hiddenThemes.has(t)).sort();
 const themeLabels: Record<string, [string, string]> = {
   agua:['Agua','Water'], ambiente:['Medio ambiente','Environment'], catalogo:['Índices y referencias','Indexes and references'],
   conectividad:['Transporte y conexiones','Transport and connections'], data_lake:['Otras fuentes','Other sources'],
@@ -39,7 +40,7 @@ const themeLabels: Record<string, [string, string]> = {
     <label>
       <span data-i18n="filterTheme">Tema</span>
       <select id="cat-theme">
-        <option value="">Todos los temas</option><option value="finanzas">Presupuesto y gasto público</option>
+        <option value="" data-label-es="Todos los temas" data-label-en="All topics">Todos los temas</option><option value="finanzas" data-label-es="Presupuesto y gasto público" data-label-en="Public budget and spending">Presupuesto y gasto público</option>
         {themes.map((t) => <option value={t} data-label-es={themeLabels[t]?.[0] || t} data-label-en={themeLabels[t]?.[1] || t}>{themeLabels[t]?.[0] || t}</option>)}
       </select>
     </label>
@@ -60,9 +61,9 @@ const themeLabels: Record<string, [string, string]> = {
     </label>    <label>
       <span data-lang-es>Disponibilidad</span><span data-lang-en hidden>Availability</span>
       <select id="cat-drive">
-        <option value="drive">Con enlace al documento</option>
-        <option value="all">Todos</option>
-        <option value="pending">Sin enlace disponible</option>
+        <option value="drive" data-label-es="Con enlace al documento" data-label-en="With document link">Con enlace al documento</option>
+        <option value="all" data-label-es="Todos" data-label-en="All">Todos</option>
+        <option value="pending" data-label-es="Sin enlace disponible" data-label-en="Link unavailable">Sin enlace disponible</option>
       </select>
     </label></div></details>
   <details class="pt-group" id="cat-groups">
@@ -220,7 +221,7 @@ const themeLabels: Record<string, [string, string]> = {
           var lab = en ? og.getAttribute('data-label-en') : og.getAttribute('data-label-es');
           if (lab) og.label = lab;
         });
-        document.querySelectorAll('#cat-eng option[data-label-es], #cat-theme option[data-label-es]').forEach(function (op) {
+        document.querySelectorAll('#cat-eng option[data-label-es], #cat-theme option[data-label-es], #cat-drive option[data-label-es]').forEach(function (op) {
           var lab = en ? op.getAttribute('data-label-en') : op.getAttribute('data-label-es');
           if (lab) op.textContent = lab;
         });
@@ -424,6 +425,7 @@ const themeLabels: Record<string, [string, string]> = {
         }
         if (u.searchParams.get('theme') && th) th.value = u.searchParams.get('theme');
         if (u.searchParams.get('drive') && drv) drv.value = u.searchParams.get('drive');
+        else if (u.searchParams.get('q') && drv) drv.value = 'all';
         // legacy ?folder=10_data_lake → leave as q path hint
         if (u.searchParams.get('folder') && qEl && !qEl.value) {
           var fol = u.searchParams.get('folder');

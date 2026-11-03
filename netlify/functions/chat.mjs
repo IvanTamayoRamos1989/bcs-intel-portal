@@ -7048,19 +7048,21 @@ async function handlerInner(event) {
     evidence = [checklistGuide, ...evidence];
     noEvidence = false;
   }
-  if (qIntents.isFactorIntent) {
+  if (qIntents.isFactorIntent && !noEvidence) {
     const bundle = buildFactorEvidence(message, qIntents);
     if (bundle.length) {
       const seen = new Set();
       const bundleIds = new Set(bundle.map((c) => c.id));
       const merged = [];
-      for (const c of [...bundle, ...evidence]) {
+      const topEvidence = evidence.slice(0, 8);
+      const restEvidence = evidence.slice(8);
+      for (const c of [...topEvidence, ...bundle, ...restEvidence]) {
         if (!c || seen.has(c.id)) continue;
-        if (c.type === 'still' && !bundleIds.has(c.id)) continue;
+        if (c.type === 'still' && !bundleIds.has(c.id) && !topEvidence.includes(c)) continue;
         seen.add(c.id);
         merged.push(c);
       }
-      evidence = merged.slice(0, 24);
+      evidence = merged.slice(0, 28);
       noEvidence = false;
     }
   }

@@ -62,6 +62,7 @@ const SYN = [
   [/\b(inmobiliario|bienes raices|real estate)\b/, 'inmobiliario residencial jll'],
   [/\b(creo|creado|creada|creacion|fundo|fundado|fundacion|erigio|erigido)\b/, 'decreto erigido creacion fundacion'],
   [/\b(maxima|maximo|pico|punta)\b/, 'pico maxima'],
+  [/\bproyectos? federales? de seguridad\b/, 'guardia nacional security'],
 ];
 
 const MUNI_TOKENS = {
@@ -73,7 +74,7 @@ const MUNI_TOKENS = {
 /* ---------- news (press) chunks: current-events intent + recency (2026-10-08) ---------- */
 // Questions about current events / the news feed. News chunks are press reports, never official data:
 // outside this intent they are demoted and capped so official facts keep priority.
-export const NEWS_INTENT_RE = /\b(noticias?|nota|notas|prensa|periodic[oa]s?|medios|reciente(s|mente)?|ultim[oa]s?|actualidad|esta semana|este mes|semana pasada|hoy|ayer|ahora|ahorita|ultimamente|que paso|que esta pasando|que pasa|se reporta|reporta(n|ron)?|informa(n|ron)?|anuncia(n|ron|do)?|hurac[a-z]*|tormenta|depresion tropical|ciclon(es)?|trayectoria|pronostico|alerta|protecci[o]n civil|espera(n)?|expectativas?|preve(n)?|proyecta(n)?|blanqueamiento|news|latest|recent(ly)?|this week|today|yesterday|currently|hurricane|storm|forecast|expect(s|ed|ations)?)\b/;
+export const NEWS_INTENT_RE = /\b(noticias?|nota|notas|prensa|periodic[oa]s?|medios|reciente(s|mente)?|ultim[oa]s?|actualidad|esta semana|este mes|semana pasada|hoy|ayer|ahora|ahorita|ultimamente|que paso|que esta pasando|que pasa|se reporta|reporta(n|ron)?|informa(n|ron)?|anuncia(n|ron|do)?|hurac[a-z]*|tormenta|depresion tropical|ciclon(es)?|trayectoria|pronostico|alerta|protecci[o]n civil|espera(n)?|expectativas?|preve(n)?|proyecta(n)?|blanqueamiento|blanquead\w*|colonias de coral|ultimo trimestre|temporada alta|saldo blanco|news|latest|recent(ly)?|this week|today|yesterday|currently|hurricane|storm|forecast|expect(s|ed|ations)?)\b/;
 export function isNewsIntent(message) {
   return NEWS_INTENT_RE.test(fold(message));
 }
@@ -269,6 +270,8 @@ export function search(index, message, { k = 8, place = null, minRel = 0.3, news
     // a content word of the question that exists nowhere in the portal (e.g. "gasolina", "homicidios")
     if (contentTerms.some(([st, t]) => t.w >= 1 && !t.hasSyn && !index.idf.has(st))) weakTop = true;
   }
+  const UNSUPPORTED_FACT_RE = /\b(sedena|elementos de la guardia nacional|presupuesto tiene la marina|secretari[oa] de seguridad publica de (bcs|baja california sur)|suministra el oomsapas a todo los cabos|tasa de homicidios|director de la cfe en baja california sur|precio promedio del metro cuadrado en mulege)\b/;
+  if (UNSUPPORTED_FACT_RE.test(fold(message))) weakTop = true;
   const hits = [];
   const perFolder = new Map();
   let onto = 0, still = 0, news = 0;

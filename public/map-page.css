@@ -4,24 +4,28 @@ body.map-page .shell{grid-template-columns:minmax(0,1fr)!important;grid-template
 .map-page .shell-dock{grid-column:1!important;grid-row:2!important;display:block!important}.map-page .twin-map-context{width:min(340px,calc(100% - 75px))}
 .map-search{margin:10px 0 4px;position:relative}.map-search label{display:block;font-size:12px;margin-bottom:6px;color:#60736c}.map-search input{width:100%;border:1px solid #c9d5cb;background:#fffef8;border-radius:9px;padding:11px;font:inherit;font-size:14px}.map-search-results{max-height:230px;overflow:auto;margin:0;padding:0;list-style:none;background:#fffef8}.map-search-results button{width:100%;text-align:left;border:0;border-bottom:1px solid #e2e8de;padding:11px;background:transparent;color:#294554;font:inherit;font-size:13px;cursor:pointer}.map-search-results button:hover{background:#e8eee6}
 @media(max-width:600px){.map-page .twin-map-context>p,.map-page .twin-map-context>strong{display:none}.map-page .map-search{margin-top:0}.map-page .map-search label{font-size:11px}.map-page #twin-reset-map{font-size:11px}}
-.map-page .twin-map-context>p{font-size:12px}.map-page .shell-fiche{width:min(340px,calc(100vw - 40px));max-height:75%}
+.map-page .twin-map-context>p{font-size:12px}.map-page .shell-fiche{width:min(340px,calc(100vw - 40px));max-height:75%;z-index:9}
 .map-embed .three-header,.map-embed .twin-map-context{display:none!important}.map-embed .shell{grid-template-rows:minmax(0,1fr) auto!important}.map-embed .shell-dock{display:block!important}.map-embed .shell-hud{display:none!important}.map-embed .shell-fiche{max-height:58%;top:8px;bottom:auto}.map-embed .shell-sheet{max-height:52%}.map-embed .shell-dock-bar{flex-wrap:wrap}.map-embed .twin-basic{flex:1 1 100%}
-@media(max-width:900px){.map-page .shell{display:flex!important;flex-direction:column}.map-page .shell-map-wrap{flex:1}.map-page .shell-dock{position:relative!important;top:auto!important;bottom:auto!important;flex:none;height:auto!important}.map-page .shell-map-wrap .maplibregl-ctrl-bottom-right{bottom:0}.map-page .shell-sheet{bottom:calc(100% + 6px);max-height:calc(100dvh - 270px)}.map-page .shell-fiche{top:auto;bottom:10px;left:10px;right:10px;max-height:65%}.map-embed .shell-map-wrap{height:100%!important}}
+@media(max-width:900px){.map-page .shell{display:flex!important;flex-direction:column}.map-page .shell-map-wrap{flex:1}.map-page .shell-dock{position:relative!important;top:auto!important;bottom:auto!important;flex:none;height:auto!important}.map-page .shell-map-wrap .maplibregl-ctrl-bottom-right{bottom:0}.map-page .shell-sheet{bottom:calc(100% + 6px);max-height:calc(100dvh - 270px)}.map-page .shell-fiche{top:auto;bottom:10px;left:10px;right:10px;max-height:65%;z-index:9}.map-page .shell-map-wrap:has(.shell-fiche:not([hidden])) .land-water,body.shell-sheet-open .land-water{opacity:0;pointer-events:none}.map-embed .shell-map-wrap{height:100%!important}}
 
 .building-picker{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;color:#20445a;font-size:.82rem;font-weight:650}.building-picker select{max-width:10rem;border:1px solid #abc2c8;border-radius:.5rem;background:#fff;color:inherit;padding:.32rem;font:inherit}
 
-.land-water { position:absolute;bottom:1rem;left:1rem;z-index:6;background:#fffdf7;color:#173f50;border:1px solid #aec2c4;border-radius:.65rem;padding:.55rem .8rem;box-shadow:0 2px 8px #27465222;font:600 .86rem/1.4 system-ui; }
+.land-water { position:absolute;bottom:1rem;left:1rem;z-index:6;background:#fffdf7;color:#173f50;border:1px solid #aec2c4;border-radius:.65rem;padding:.55rem .8rem;box-shadow:0 2px 8px #27465222;font:600 .86rem/1.4 system-ui;transition:opacity .15s ease; }
 .land-water summary,.land-water label { cursor:pointer; }
 .land-water label { display:flex;align-items:center;gap:.5rem;min-height:32px; }
 .land-water i { width:12px;height:12px;border-radius:3px; }
 .land-water [data-layer="presas_cea"]+i { border-radius:50%; }
 .land-water input { accent-color:#285d72; }
-@media(max-width:600px){.land-water { bottom:.45rem;left:.45rem; }.land-water label {min-height:35px;}}
+@media(max-width:600px){.land-water { bottom:.45rem;left:.45rem;max-width:calc(48vw - .55rem);padding:.45rem .6rem;font-size:.78rem; }.land-water[open]{max-width:calc(100vw - .9rem);z-index:7}.land-water label {min-height:35px;}}
 
-.analysis-panel {left:auto;right:1rem;bottom:2rem;max-width:min(270px,75vw);font-weight:500}
+.analysis-panel {left:auto;right:1rem;bottom:2.6rem;max-width:min(270px,75vw);font-weight:500}
 .analysis-panel summary {font-weight:700}
 .analysis-panel select {max-width:100%;width:100%;padding:.4rem;color:#173f50;background:white;border:1px solid #afc4c6;border-radius:.4rem}
 #analysis-caption {font-size:.76rem;margin:.45rem 0;line-height:1.4}
 #analysis-legend {display:flex;gap:.25rem .6rem;flex-wrap:wrap}
 #analysis-legend span {display:inline-flex;align-items:center;gap:.25rem;font-size:.74rem}
-@media(max-width:600px){.analysis-panel {left:auto;right:.45rem;bottom:.45rem;max-width:min(240px,65vw)}}
+@media(max-width:600px){.analysis-panel {left:auto;right:.45rem;bottom:.45rem;max-width:calc(48vw - .55rem)}.analysis-panel[open]{max-width:min(260px,calc(100vw - .9rem));z-index:7}}
+
+.shell-fiche-provider-btn{display:block;width:100%;margin-top:8px;padding:7px 10px;border:1px solid #b8c9cd;border-radius:7px;background:#f4f8f7;color:#173f50;font:600 12px/1.3 system-ui;text-align:left;cursor:pointer}
+.shell-fiche-provider-btn:hover{background:#e7f0ee}
+.shell-fiche-provider-msg{margin:4px 0 0;font-size:11.5px;color:#4a636d}

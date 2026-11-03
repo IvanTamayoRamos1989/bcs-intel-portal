@@ -62,7 +62,7 @@ const stack = [
       'settlements',
       'curvas_nivel_bcs',
       'pendiente_terreno_bcs',
-      'altitud_terreno_bcs',
+      'height',
       'cobertura_vegetal_bcs',
     ],
   },
@@ -98,8 +98,8 @@ const stack = [
       'ciclovias_bcs',
       'reparto_bicicleta_bcs',
       'estaciones_carga_ve_bcs',
-      'traffic_sict_bcs',
-      'bottlenecks_sict_bcs',
+      'traffic',
+      'bottlenecks',
     ],
   },
   {
@@ -113,11 +113,14 @@ const stack = [
     ],
   },
 ];
-const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
+const aliasIds = new Set(['altitud_terreno_bcs', 'traffic_sict_bcs', 'bottlenecks_sict_bcs']);
 const territoryIds = new Set(landWater.map((layer) => layer.id));
+const analysisIds = new Set(analysisLayers.map((layer) => layer.id));
+const socialIds = new Set(socialGroups.flatMap((group) => group.layers.map((l) => l.id)));
+const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id) && !territoryIds.has(id) && !analysisIds.has(id) && !socialIds.has(id)).map(extraLayer);
 const shellLayers = [
-  ...[...catalogLayers, ...extras].filter((layer) => !territoryIds.has(layer.id)),
-  ...landWater.map((layer) => ({...layer, year_es: '', year_en: ''})),
+  ...[...catalogLayers, ...extras].filter((layer) => !territoryIds.has(layer.id) && !analysisIds.has(layer.id) && !socialIds.has(layer.id) && !aliasIds.has(layer.id)),
+  ...landWater.map((layer) => ({...layer, year_es: layer.year_es || '', year_en: layer.year_en || ''})),
   ...analysisLayers,
   ...socialGroups.flatMap(group => group.layers),
 ];

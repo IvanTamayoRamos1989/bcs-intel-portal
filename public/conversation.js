@@ -16,8 +16,20 @@
     var id='c'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
     try{var keys=Object.keys(sessionStorage).filter(function(k){return k.indexOf('bcs-map-')===0;}).sort();while(keys.length>=30)sessionStorage.removeItem(keys.shift());sessionStorage.setItem('bcs-map-'+id,JSON.stringify({question:d.question,answer:d.answer,sources:d.sources,grounded:d.grounded}));sessionStorage.setItem('bcs-last-map',id);}catch(_){return;}
     var mapLink=document.querySelector('[data-destination="map"]');if(mapLink)mapLink.href='/consulta/?context='+id;
-    d.bubble.querySelectorAll('a[href]').forEach(function(a){var href=a.getAttribute('href');if(/^\/(explorar|mapas|consulta)\/?(?:[?#]|$)/.test(href))a.href='/consulta/?context='+id;});
-    var mapped=(d.blocks||[]).some(function(b){return b.type==='map';})||d.place||/municipio|localidad|territorio|baja california sur|la paz|los cabos|loreto|muleg[eé]|comond[uú]/i.test(d.question||'');
+    d.bubble.querySelectorAll('a[href]').forEach(function(a){
+      var href=a.getAttribute('href');
+      if(/^\/(explorar|mapas|consulta)\/?(?:[?#]|$)/.test(href)){
+        try{
+          var u=new URL(href,location.origin);
+          u.pathname='/consulta/';
+          if(!u.searchParams.has('vista')&&!u.searchParams.has('capa')&&!u.searchParams.has('layer'))u.searchParams.set('context',id);
+          a.href=u.pathname+u.search+u.hash;
+        }catch(_){
+          a.href='/consulta/?context='+id;
+        }
+      }
+    });
+    var mapped=(d.blocks||[]).some(function(b){return b.type==='map';})||d.place||/municipio|localidad|territorio|baja california sur|la paz|los cabos|loreto|muleg[eé]|comond[uú]|cabo pulmo|todos santos|cabo del este|east cape|inmobiliari|vivienda|ciclov[ií]a|inundaci[oó]n|clima|temperatura|precipitaci[oó]n|tr[aá]fico|pendiente|curvas de nivel|acu[ií]fero|ejido/i.test(d.question||'');
     if(!mapped||d.grounded===false)return;
     var link = document.createElement('a');
     link.className = 'conversation-map-link';
