@@ -767,6 +767,17 @@ function expandQuery(query) {
     if (!factorKinds.includes('risk')) factorKinds.push('risk');
     if (!factorKinds.includes('viability')) factorKinds.push('viability');
   }
+  if (/\btarifas?\b/.test(qn) && /\b(puerto|marina)\b/.test(qn) && /\b(cabo san lucas|los cabos)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\b(cuadros|stills)\b/.test(qn) && /\bvizcaino\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcuatro acuiferos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(tabla de disponibilidad|disponibilidad de acuiferos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bremanente\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bciudad constitucion\b/.test(qn) && !/\bconstitucion politica\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bocupacion\b/.test(qn) && /\b(octubre|no es renta)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(red del pais|red nacional)\b/.test(qn) && /\bpaus/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\banexo\b/.test(qn) && /\b(participacion|2025)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1523,6 +1534,17 @@ function factorSeedIds(qn, kinds) {
   if (/\bcomision nacional del agua\b/.test(qn)) add('actor_conagua', 'ev_mesa_agua', 'ev_acuiferos_dma');
   if (/\bmarina\b/.test(qn) && (p.cabos || /\bcabo san lucas\b/.test(qn))) add('ev_sig_asipona', 'proj_fed_pue_001');
   if (/\b(10 de abril de 1980|20 de agosto de 1992|6 de junio de 1995|30 de noviembre de 1988)\b/.test(qn)) add('ev_historia_bcs');
+  if (/\b6 de junio de 1995\b/.test(qn)) add('terr_anp_cabo_pulmo', 'const_anp_nucleos');
+  if (/\b30 de noviembre de 1988\b/.test(qn)) add('terr_anp_vizcaino', 'const_anp_nucleos');
+  if (/\btarifas?\b/.test(qn) && /\b(puerto|marina)\b/.test(qn) && (p.cabos || /\bcabo san lucas\b/.test(qn))) add('ev_sig_asipona');
+  if (/\bvizcaino\b/.test(qn) && /\b(cuadros|222)\b/.test(qn)) add('dq_vizcaino_corridor', 'terr_anp_vizcaino');
+  if (/\bcuatro acuiferos\b/.test(qn)) add('const_escasez_agua', 'ev_acuiferos_dma');
+  if (/\b(tabla de disponibilidad|disponibilidad de acuiferos)\b/.test(qn)) add('ev_acuiferos_dma');
+  if (/\bremanente\b/.test(qn)) add('ev_acuiferos_dma');
+  if (/\bciudad constitucion\b/.test(qn) && !/\bconstitucion politica\b/.test(qn)) add('terr_comondu');
+  if (/\bocupacion\b/.test(qn) && /\b(octubre|no es renta)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\b(red del pais|red nacional)\b/.test(qn) && /\bpaus/.test(qn)) add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
+  if (/\banexo\b/.test(qn) && /\b(participacion|2025)\b/.test(qn)) add('ev_fiscal_anexo_2025');
   if (p.east && /\baeropuerto/.test(qn)) add('ev_dossiers_movilidad', 'gap_east_cape_carga');
   if (/\briesgos?\b/.test(qn) && /\bquien decide\b/.test(qn)) {
     add('dq_riesgos_principales');
