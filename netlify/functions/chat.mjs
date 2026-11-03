@@ -1944,6 +1944,36 @@ function expandQuery(query) {
   if (/\bcode pa sigue sin nombre\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bno recibe la sigla\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bcuatro punto seis no es inundacion\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\binterfaz con el area protegida\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno autoriza obra en el flanco\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bpuerto ancla no es linea de transmision\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bfalta de agua frena la inversion\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bagua del lugar sin megawatts\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcada techo se conserva\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno trae acuifero propio\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bzonificacion de predio sigue sin texto\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bmodificado no es el anexo municipal\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\blo pagado en la ficha no es una renta\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\brutas contadas no son inundacion\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bno se suma la poblacion del estado\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpedir el puerto no completa el traspaso\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btrata el agua y no la crea\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bseis anos de acciones no son entrega\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\brezago publicado no cuenta cuartos\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bdias publicados no son tarifa\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bpreliminares no son el avion\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bsupuesto de tenencia no se copia\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bventa de activos no trae cifra\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmargen relativo de comondu no esta vacio\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno tiene margen en el tablero\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpoel catorce no cierra dos mil siete\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\belectricidad local de loreto sin numero\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno trae carga publicada\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcode pa permanece sin nombre\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bla sigla rt no se entrega\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bcuatro punto seis no es un mapa de agua\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bfoto de muestra sigue sin inventario\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdragado cerrado no es obra nueva\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpacifico\b/.test(qn) && /\btodos santos\b/.test(qn) && /\brenta\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bel aviso no sustituye el decreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -2580,6 +2610,36 @@ function factorSeedIds(qn, kinds) {
   if (/\bcode pa sigue sin nombre\b/.test(qn)) add('gap_politica_uga_leyenda');
   if (/\bno recibe la sigla\b/.test(qn)) add('inst_pa_restauracion', 'gap_politica_uga_leyenda');
   if (/\bcuatro punto seis no es inundacion\b/.test(qn)) add('ev_riesgos_documentados', 'gap_riesgo_capas_vector', 'ev_escorrentia');
+  if (/\binterfaz con el area protegida\b/.test(qn)) add('ev_esc_baseline', 'const_anp_nucleos');
+  if (/\bno autoriza obra en el flanco\b/.test(qn)) add('ev_esc_corridor', 'gap_permisos_uso_suelo', 'gap_east_cape_carga');
+  if (/\bpuerto ancla no es linea de transmision\b/.test(qn)) add('ev_esc_ports');
+  if (/\bfalta de agua frena la inversion\b/.test(qn)) add('ev_sig_tourism_fdi', 'const_escasez_agua', 'gap_rentas_hoteleras');
+  if (/\bagua del lugar sin megawatts\b/.test(qn)) add('ev_sig_mulege_oasis', 'gap_mulege_agua_energia');
+  if (/\bcada techo se conserva\b/.test(qn)) add('dq_comparar_polos', 'gap_loreto_dma', 'gap_east_cape_carga', 'ev_sig_mulege_oasis');
+  if (/\bno trae acuifero propio\b/.test(qn)) add('dq_comparar_polos', 'dd_agro_santo_domingo', 'terr_comondu');
+  if (/\bzonificacion de predio sigue sin texto\b/.test(qn)) add('gap_pmdu_lapaz_texto', 'gap_catastro_secundario');
+  if (/\bmodificado no es el anexo municipal\b/.test(qn) || /\blo pagado en la ficha no es una renta\b/.test(qn)) add('ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026');
+  if (/\blo pagado en la ficha no es una renta\b/.test(qn)) add('gap_rentas_hoteleras');
+  if (/\brutas contadas no son inundacion\b/.test(qn)) add('ev_escorrentia');
+  if (/\bno se suma la poblacion del estado\b/.test(qn)) add('ev_pob_censo_2020');
+  if (/\bpedir el puerto no completa el traspaso\b/.test(qn)) add('ev_sig_asipona');
+  if (/\btrata el agua y no la crea\b/.test(qn)) add('ev_sig_poel_cabos', 'ev_esc_water_first', 'const_dma_deficit');
+  if (/\bseis anos de acciones no son entrega\b/.test(qn)) add('ev_sniiv_vivienda', 'proj_fed_viv_001', 'gap_permisos_uso_suelo');
+  if (/\brezago publicado no cuenta cuartos\b/.test(qn)) add('ev_sniiv_vivienda', 'gap_rentas_hoteleras');
+  if (/\bdias publicados no son tarifa\b/.test(qn)) add('ev_jll_zonas_2025', 'gap_rentas_hoteleras');
+  if (/\bpreliminares no son el avion\b/.test(qn)) add('ev_cruceros_datatur', 'gap_loreto_pax');
+  if (/\bsupuesto de tenencia no se copia\b/.test(qn)) add('ev_psdu_barriles', 'gap_east_cape_carga');
+  if (/\bventa de activos no trae cifra\b/.test(qn)) add('gap_rentas_hoteleras');
+  if (/\bmargen relativo de comondu no esta vacio\b/.test(qn)) add('ev_gds_cinco_polos', 'dd_agro_santo_domingo', 'const_dma_deficit');
+  if (/\bno tiene margen en el tablero\b/.test(qn)) add('ev_gds_cinco_polos', 'gap_pmdu_lapaz_texto');
+  if (/\bpoel catorce no cierra dos mil siete\b/.test(qn)) add('inst_poel_loreto', 'gap_psdu_loreto_gazette');
+  if (/\belectricidad local de loreto sin numero\b/.test(qn)) add('gap_loreto_energia_local', 'rc_sibcs', 'const_red_aislada');
+  if (/\bno trae carga publicada\b/.test(qn)) add('gap_parque_industrial');
+  if (/\bcode pa permanece sin nombre\b/.test(qn)) add('gap_politica_uga_leyenda');
+  if (/\bla sigla rt no se entrega\b/.test(qn)) add('inst_pa_restauracion', 'gap_politica_uga_leyenda');
+  if (/\bcuatro punto seis no es un mapa de agua\b/.test(qn)) add('ev_riesgos_documentados', 'ev_escorrentia', 'gap_riesgo_capas_vector');
+  if (/\bfoto de muestra sigue sin inventario\b/.test(qn)) add('ev_stills_intel', 'gap_rentas_hoteleras');
+  if (/\bdragado cerrado no es obra nueva\b/.test(qn)) add('ev_anp_avisos', 'const_anp_nucleos', 'gap_permisos_uso_suelo');
   if (/\bdestinos sin escala\b/.test(qn) || (/\bsjd\b/.test(qn) && /\bdestinos\b/.test(qn))) {
     add('ev_sig_vuelos', 'rc_aeropuerto_sjd', 'ev_aereo_setue');
   }
@@ -3955,7 +4015,7 @@ function factorSeedIds(qn, kinds) {
     add('ev_cruceros_datatur', 'ev_aereo_setue', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap');
   }
   if (/\bcrucero/.test(qn)) add('ev_sig_asipona', 'proj_fed_pue_001', 'ev_cruceros_datatur');
-  if (/\b(compuerta|transmision|\b237\b|p23)\b/.test(qn)) {
+  if (/\b(compuerta|transmision|\b237\b|p23)\b/.test(qn) && !/\bno es linea de transmision\b/.test(qn)) {
     add('rc_tx_lapaz_cabos', 'proj_p23_bs1', 'rc_sibcs', 'const_red_aislada');
   }
   if (p.east && /\b(aeropuerto|hotel|vuelo)\b/.test(qn)) add('ev_dossiers_movilidad', 'gap_east_cape_carga');
