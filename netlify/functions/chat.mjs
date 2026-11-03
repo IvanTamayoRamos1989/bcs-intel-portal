@@ -1532,6 +1532,18 @@ function expandQuery(query) {
   if (/\bantes de abrir\b/.test(qn) && /\bcrecimiento\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bordenamiento local\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\b(cuarenta y tres mil ochocientos cinco|catorce mil trescientos cincuenta y siete|dieciocho mil cincuenta y dos|dieciseis mil trescientos once|doscientos cincuenta mil ciento cuarenta y uno)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(direccion( general)? de catastro|catastro municipal)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\boficial mayor\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno es un permiso de obra\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno crea disponibilidad nueva\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(notri|ligui|ensenada blanca)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpuerto escondido\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btres millones ochocientos mil\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(casa de descanso|vivienda vacacional|vivienda de descanso)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bplan municipal de desarrollo\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bpmd\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bbcs(40|41|32|31)as\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bsecretaria de turismo\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -2415,7 +2427,15 @@ function factorSeedIds(qn, kinds) {
     add('rc_acuifero_0320', 'inst_veda_1954', 'ev_acuiferos_dma');
   }
   if (/\bpdu\b/.test(qn) && p.mulege) add('gap_pdu_mulege', 'terr_mulege');
-  if (/\bplan parcial\b/.test(qn) || (/\bla ribera\b/.test(qn) && /\bpsdu\b/.test(qn))) add('gap_east_cape_instrumento', 'gap_east_cape_carga');
+  if ((/\bplan parcial\b/.test(qn) && (p.east || /\b(ribera|pulmo|barriles|east cape|cabo del este)\b/.test(qn))) || (/\bla ribera\b/.test(qn) && /\bpsdu\b/.test(qn))) {
+    add('gap_east_cape_instrumento', 'gap_east_cape_carga');
+  } else if (/\bplan parcial\b/.test(qn) && (p.paz || /\blos planes\b/.test(qn))) {
+    add('gap_pmdu_lapaz_texto', 'inst_pdu_lapaz');
+  } else if (/\bplan parcial\b/.test(qn) && p.loreto) {
+    add('gap_psdu_loreto_gazette', 'inst_poel_loreto', 'terr_loreto');
+  } else if (/\bplan parcial\b/.test(qn)) {
+    add('dq_cambio_uso_suelo', 'gap_permisos_uso_suelo');
+  }
   if (/\bempleo local\b/.test(qn) && p.east) add('gap_east_cape_carga', 'gap_east_cape_instrumento');
   if (/\b56 destinos\b/.test(qn)) add('ev_sig_vuelos', 'rc_aeropuerto_sjd');
   if (/\b2048\b/.test(qn)) add('rc_aeropuerto_sjd', 'ev_aereo_setue');
@@ -3028,6 +3048,19 @@ function factorSeedIds(qn, kinds) {
   if (/\bdieciocho mil cincuenta y dos\b/.test(qn)) add('ev_pob_censo_2020', 'gap_loreto_dma', 'terr_loreto');
   if (/\bdieciseis mil trescientos once\b/.test(qn) && !/\bkilometros\b/.test(qn)) add('ev_pob_censo_2020', 'terr_loreto');
   if (/\bdoscientos cincuenta mil ciento cuarenta y uno\b/.test(qn) && !/\blitros\b/.test(qn)) add('ev_pob_censo_2020', 'terr_la_paz');
+  if (/\b(direccion( general)? de catastro|catastro municipal)\b/.test(qn) && p.cabos) add('ev_org_cabos_2024', 'actor_cabos_presidencia');
+  if (/\boficial mayor\b/.test(qn) && p.cabos && !p.paz && !p.loreto) add('actor_cabos_presidencia', 'ev_org_cabos_2024');
+  if (/\bno es un permiso de obra\b/.test(qn)) add('ev_esc_corridor', 'gap_permisos_uso_suelo');
+  if (/\bno crea disponibilidad nueva\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
+  if (/\b(notri|ligui|ensenada blanca)\b/.test(qn) || (/\bpuerto escondido\b/.test(qn) && p.loreto)) {
+    add('gap_psdu_loreto_gazette', 'terr_loreto', 'terr_anp_loreto', 'gap_loreto_dma');
+  }
+  if (/\btres millones ochocientos mil\b/.test(qn)) add('ev_aereo_setue', 'rc_aeropuerto_sjd', 'gap_loreto_pax');
+  if (/\b(casa de descanso|vivienda vacacional|vivienda de descanso)\b/.test(qn)) add('dd_residencial_cabos', 'gap_rentas_hoteleras');
+  if (/\bplan municipal de desarrollo\b/.test(qn) && p.mulege) add('gap_pdu_mulege', 'gap_fiscal_ingresos_2026', 'terr_mulege');
+  if (/\bpmd\b/.test(qn) && p.loreto) add('gap_psdu_loreto_gazette', 'terr_loreto');
+  if (/\bbcs(40|41|32|31)as\b/.test(qn)) add('dq_cambio_uso_suelo', 'inst_poerbcs');
+  if (/\bsecretaria de turismo\b/.test(qn)) add('actor_setues', 'dd_turismo_cabos');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
