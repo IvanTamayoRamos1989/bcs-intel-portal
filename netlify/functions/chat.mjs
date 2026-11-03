@@ -6627,6 +6627,17 @@ function buildAnswerBlocks({ evidence, message, lang, noEvidence, primary_file, 
   return blocks.filter((b) => !/08_fp_team_research/i.test(JSON.stringify(b)));
 }
 
+function officialSource(c) {
+  if (/^aq:03\d{2}$/.test(c.id || '')) {
+    const page = String(c.sum_es || '').match(/DOF 9 nov 2023, p\.\s*(\d+)/i);
+    return '/gis/territorio/disponibilidad-acuiferos-2023.pdf' + (page ? '#page=' + page[1] : '');
+  }
+  if (c.onto_id === 'ev_fiscal_ley_2026' || String(c.path || '').endsWith('#ev_fiscal_ley_2026')) {
+    return 'https://finanzas.bcs.gob.mx/wp-content/themes/voice/assets/images/armonizacion_contable/cumpl_V/anual/2026/02.%20Presupuesto%20de%20Egresos%20para%20el%20Ejercicio%202026.pdf';
+  }
+  return null;
+}
+
 function evidenceSources(chunks, max = 5, newsFirst = false) {
   // Mixed answers show both kinds: news-intent questions lead with news cards, others with official sources;
   // at most 3 of the leading kind come first, then the best of the other kind, then the rest.
@@ -6649,10 +6660,7 @@ function evidenceSources(chunks, max = 5, newsFirst = false) {
       foro: '/foro/',
     };
     const portalSlug = String(c.path || '').startsWith('portal/') ? String(c.path).slice(7).split('/')[0] : '';
-    const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: c.href || portalHref[portalSlug] || null, type: c.type || null };
-    if (c.onto_id === 'ev_fiscal_ley_2026' || String(c.path || '').endsWith('#ev_fiscal_ley_2026')) {
-      card.href = 'https://finanzas.bcs.gob.mx/wp-content/themes/voice/assets/images/armonizacion_contable/cumpl_V/anual/2026/02.%20Presupuesto%20de%20Egresos%20para%20el%20Ejercicio%202026.pdf';
-    }
+    const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: officialSource(c) || c.href || portalHref[portalSlug] || null, type: c.type || null };
     if (c.type === 'news') {
       Object.assign(card, {
         label: c.no_summary ? 'Noticia sin resumen' : 'Noticia',
@@ -6936,7 +6944,7 @@ async function handlerInner(event) {
   const hits = noEvidence ? [] : res.hits;
   if (!cfg.key || !cfg.url) {
     // Search remains available in deployments without a language-model credential.
-    const matches = hits.map(hit => hit.c).filter(c => c && (c.drive_url || c.href || c.url) && (c.sum_es || c.sum_en)).slice(0,3);
+    const matches = hits.map(hit => hit.c).filter(c => c && (c.drive_url || c.href || c.url || officialSource(c)) && (c.sum_es || c.sum_en)).slice(0,3);
     const en = lang === 'en';
     const lead = en ? 'Document search · Matching excerpts' : 'Búsqueda documental · Fragmentos relacionados';
     const excerpts = matches.map(c => {
