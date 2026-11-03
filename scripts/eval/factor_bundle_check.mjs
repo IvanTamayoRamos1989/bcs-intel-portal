@@ -1259,6 +1259,93 @@ const CASES = [
     needTypes: ['Actor', 'Territory', 'Constraint'],
     sinDatoIds: ['gap_fiscal_ingresos_2026'],
   },
+  {
+    q: '¿Quién está en la mesa de energía?',
+    kind: 'viability',
+    needIds: ['ev_mesa_energia', 'actor_cfe', 'rc_sibcs'],
+    needTypes: ['Evidence', 'Actor', 'ResourceCapacity'],
+  },
+  {
+    q: '¿Qué hace la mesa de urbanismo?',
+    kind: 'viability',
+    needIds: ['ev_mesa_urbanismo', 'actor_implan_cabos', 'inst_pdu_cabos'],
+    needTypes: ['Evidence', 'Actor', 'Instrument'],
+  },
+  {
+    q: '¿GAP opera San José y La Paz?',
+    kind: 'viability',
+    needIds: ['rc_aeropuerto_sjd', 'rc_aeropuerto_lap', 'proj_fed_aer_001'],
+    needTypes: ['ResourceCapacity', 'Project'],
+  },
+  {
+    q: 'Agua primero antes de más hoteles',
+    kind: 'viability',
+    needIds: ['ev_esc_water_first', 'const_dma_deficit'],
+    needTypes: ['Evidence', 'Constraint'],
+  },
+  {
+    q: 'Si seguimos como vamos con el turismo',
+    kind: 'viability',
+    needIds: ['ev_esc_baseline', 'dq_viabilidad_proyecto'],
+    needTypes: ['Evidence', 'DecisionQuestion'],
+  },
+  {
+    q: 'Riesgos y oportunidades del agua en Los Cabos',
+    kind: 'opportunity',
+    also: 'risk',
+    needIds: ['dq_riesgos_principales', 'dq_oportunidades', 'const_dma_deficit'],
+    needTypes: ['DecisionQuestion', 'Constraint'],
+  },
+  {
+    q: '¿Cuántos cruceristas llegaron a Cabo San Lucas?',
+    kind: 'opportunity',
+    needIds: ['ev_cruceros_datatur'],
+    needTypes: ['Evidence'],
+    cruiseSeries: true,
+  },
+  {
+    q: '¿Se puede construir junto al parque de Cabo Pulmo?',
+    kind: 'landuse',
+    needIds: ['terr_anp_cabo_pulmo', 'const_anp_nucleos'],
+    needTypes: ['Territory', 'Constraint'],
+  },
+  {
+    q: 'Sierra La Laguna como recarga',
+    kind: 'viability',
+    needIds: ['terr_anp_sierra_laguna', 'dq_integridad_ecologica', 'const_anp_nucleos'],
+    needTypes: ['Territory', 'DecisionQuestion', 'Constraint'],
+  },
+  {
+    q: '¿Qué dice el ordenamiento ecológico del estado?',
+    kind: 'landuse',
+    needIds: ['inst_poerbcs', 'inst_poer_politicas'],
+    needTypes: ['Instrument'],
+  },
+  {
+    q: 'Ordenamiento ecológico de Loreto',
+    kind: 'landuse',
+    needIds: ['inst_poel_loreto', 'gap_psdu_loreto_gazette'],
+    needTypes: ['Instrument', 'Constraint'],
+    sinDatoIds: ['gap_psdu_loreto_gazette'],
+  },
+  {
+    q: 'Programa de ampliación de la red eléctrica',
+    kind: 'viability',
+    needIds: ['inst_pamrnt', 'rc_sibcs', 'const_red_aislada'],
+    needTypes: ['Instrument', 'ResourceCapacity', 'Constraint'],
+  },
+  {
+    q: '¿Sigue pausada la unión con la red nacional?',
+    kind: 'viability',
+    needIds: ['proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada'],
+    needTypes: ['Project', 'ResourceCapacity', 'Constraint'],
+  },
+  {
+    q: 'Interconexión con el sistema nacional pausada',
+    kind: 'viability',
+    needIds: ['proj_fed_ene_010', 'rc_sibcs'],
+    needTypes: ['Project', 'ResourceCapacity'],
+  },
 ];
 
 const NEGATIVES = [
