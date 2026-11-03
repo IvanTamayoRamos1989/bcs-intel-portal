@@ -123,3 +123,26 @@ body.twin-workspace #bcs-chat .bcs-chat-send { background:#285d72; color:#fff; m
 }
 @media(max-width:430px) { .twin-header nav a { display:none; } .twin-header nav button { padding:6px; } }
 @media(max-width:900px) and (orientation:landscape) { body.twin-workspace { flex-direction:column; padding-left:0; } .twin-workspace .shell-tabs { position:static; display:grid; width:auto; flex-direction:row; } }
+@media (min-width: 901px) {
+  body.twin-home.twin-workspace .shell {
+    --chat-w: clamp(240px, 20%, 340px);
+    --files-w: clamp(156px, 10%, 196px);
+    --map-w: 1fr;
+    grid-template-columns: minmax(0, var(--chat-w)) 6px minmax(0, var(--map-w)) 6px minmax(0, var(--files-w));
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+  body.twin-home.twin-workspace .shell-files header { padding: 8px 8px 6px; gap: 4px; }
+  body.twin-home.twin-workspace .shell-files header strong { font-size: 12px; font-weight: 700; white-space: normal; line-height: 1.25; }
+  body.twin-home.twin-workspace .twin-file-search { font-size: 10px; }
+  body.twin-home.twin-workspace .shell-files input { min-height: 32px; font-size: 12px; padding: 6px; }
+  body.twin-home.twin-workspace #shell-related { padding: 8px; }
+  body.twin-home.twin-workspace .twin-empty { padding: 8px 0; }
+  body.twin-home.twin-workspace .twin-empty > span { font-size: 18px; }
+  body.twin-home.twin-workspace .twin-empty p { font-size: 12px; margin: 6px 0; }
+  body.twin-home.twin-workspace .twin-empty small { font-size: 11px; }
+  body.twin-home.twin-workspace .shell-file { font-size: 11px; line-height: 1.35; padding: 7px 6px; margin: 0 0 4px; }
+  body.twin-home.twin-workspace .shell-tree-label { font-size: 10px; }
+  body.twin-home.twin-workspace .twin-archive { padding: 8px; }
+  body.twin-home.twin-workspace .shell-files details summary,
+  body.twin-home.twin-workspace .shell-files details details summary { font-size: 11px; min-height: 28px; }
+}
