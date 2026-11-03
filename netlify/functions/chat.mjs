@@ -210,6 +210,7 @@ const LANDUSE_RE =
 const RISK_RE =
   /\b(riesgos?\s+principales|principales\s+riesgos|que\s+riesgos|cuales\s+son\s+los\s+riesgos|main\s+risks|principal\s+risks|key\s+risks|riesgos?\s+(del|de|en|para)|hazard|hazards|amenazas?)\b/;
 const OPPORTUNITY_RE = /\b(oportunidad(?:es)?|opportunit(?:y|ies)|capacidad\s+ociosa|underused)\b/;
+const FACTOR_COMPARE_RE = /\b(comparar|compara|compare|comparacion|comparaciones|comparativa|comparativo|comparing|comparando)\b/;
 
 /** Walk predicates for the factor bundle. located_in / informs_decision are hubs and stay out. */
 const FACTOR_WALK = new Set([
@@ -563,7 +564,7 @@ function expandQuery(query) {
   if (/\bcomondu\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && /\b(deficit|cubrir|compens\w*|offset)\b/.test(qn) && !factorKinds.includes('viability')) {
     factorKinds.push('viability');
   }
-  if (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (/\b(cinco municipios|cinco polos)\b/.test(qn) && FACTOR_COMPARE_RE.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (/\bcrucero/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bjll\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\b(sniiv|rezago habitacional)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
@@ -571,7 +572,7 @@ function expandQuery(query) {
   if (/\bbahia de loreto\b/.test(qn) && /\b(limita|crecimiento|hotel|parque|anp)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(api bcs|pichilingue)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\baeropuerto/.test(qn) && /\b(gap|concesion|sjd|la paz|los cabos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\bcompar/.test(qn) && /\baeropuerto/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (FACTOR_COMPARE_RE.test(qn) && /\baeropuerto/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bescenario\b/.test(qn) && /\bagua primero\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if ((/\bdestinos sin escala\b/.test(qn) || (/\bsjd\b/.test(qn) && /\bdestinos\b/.test(qn))) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bfonatur\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -597,7 +598,7 @@ function expandQuery(query) {
   if ((/\bcomision estatal del agua\b/.test(qn) || /\bcea\b/.test(qn)) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpoel\b/.test(qn) && /\b(desarrollador|exige agua)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bvivienda social\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
-  if (/\b(huracan|polo|rachel)\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\b(huracan|rachel)\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
   if (/\btrayectoria actual\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\btodos santos\b/.test(qn) && /\b(amenidad|0313|acuifer)/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(east cape|cabo del este)\b/.test(qn) && /\b(desborde|spillover)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -627,6 +628,39 @@ function expandQuery(query) {
   }
   if (/\bpresidencia municipal\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) {
     factorKinds.push('viability');
+  }
+  if (/\borganigrama\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(delegad\w*|delegacion\w*)\b/.test(qn) && /\b(los cabos|cabo san lucas|la ribera|miraflores|santiago)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bmiraflores\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(asentamientos humanos|direccion general de obras)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(apff|flora y fauna)\b/.test(qn) && /\bcabo san lucas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcorredor hotelero\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdensificacion costera\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bprograma de manejo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bexpediente\b/.test(qn) && /\bpoer\b/.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
+  if (/\bplan estatal de desarrollo\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bprodesen\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bficha app\b/.test(qn) || (/\bdesal\w*/.test(qn) && /\bapp\b/.test(qn) && !factorKinds.length)) {
+    if (!factorKinds.length) factorKinds.push('viability');
+  }
+  if (/\bsetue\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bcenace\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(todos santos|pescadero)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bla ribera\b/.test(qn) && /\b(pdu|poel|instrumento|plan)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bsantiago\b/.test(qn) && /\b(0320|acuifer)/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bconstitucion\b/.test(qn) && /\bagro\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bguerrero negro\b/.test(qn) && /\b(sal|essa|exportadora)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsanta rosalia\b/.test(qn) && /\bpuerto/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bcabo pulmo\b/.test(qn) && /\bsierra la laguna\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(east cape|cabo del este)\b/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(los cabos|cabo san lucas)\b/.test(qn) && /\bloreto\b/.test(qn) && /\bagua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmulege\b/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btodos santos\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(glorieta|paso a desnivel)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if ((/\b70\b/.test(qn) && /\bmva\b/.test(qn)) || /\bbuenavista\b/.test(qn) || /\bcabo falso\b/.test(qn)) {
+    if (!factorKinds.length) factorKinds.push('viability');
   }
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
@@ -1061,8 +1095,8 @@ function factorPlaceFlags(qn) {
   const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
   const todos = /\b(todos santos|pescadero|playitas)\b/.test(qn);
   const nPlaces = [cabos, paz, loreto, comondu, mulege, todos, east].filter(Boolean).length;
-  const compare = (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn))
-    || (nPlaces >= 2 && /\b(compar\w*|versus|\bvs\b|diferencia entre)\b/.test(qn));
+  const compare = (/\b(cinco municipios|cinco polos)\b/.test(qn) && FACTOR_COMPARE_RE.test(qn))
+    || (nPlaces >= 2 && (FACTOR_COMPARE_RE.test(qn) || /\b(versus|\bvs\b|diferencia entre)\b/.test(qn)));
   const who = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
   return {
     cabos, paz, loreto, comondu, mulege, todos, east, compare, who,
@@ -1225,6 +1259,48 @@ function factorSeedIds(qn, kinds) {
   if (p.cabos && /\bpresidencia\b/.test(qn)) {
     add('actor_cabos_presidencia', 'ev_org_cabos_2024', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos', 'actor_oomsapas_cabos');
   }
+  if (/\borganigrama\b/.test(qn) && (p.cabos || !p.any)) add('ev_organigrama_cabos', 'ev_org_cabos_2024', 'gap_org_obras_cabos');
+  if (/\b(delegad\w*|delegacion\w*|miraflores)\b/.test(qn) && (p.cabos || p.east || /\b(miraflores|santiago|la ribera|cabo san lucas)\b/.test(qn))) {
+    add('actor_cabos_delegaciones', 'actor_cabos_presidencia', 'ev_org_cabos_2024', 'actor_ayunt_cabos', 'terr_los_cabos');
+  }
+  if (/\b(asentamientos humanos|direccion general de obras)\b/.test(qn)) {
+    add('actor_cabos_dg_obras_publicas', 'gap_org_obras_cabos', 'ev_org_cabos_2024', 'actor_cabos_presidencia');
+  }
+  if (/\b(apff|flora y fauna)\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'terr_los_cabos', 'inst_poerbcs');
+  if (/\bcorredor hotelero\b/.test(qn) || (/\bcorredor\b/.test(qn) && /\bcabo san lucas\b/.test(qn) && /\bsan jose del cabo\b/.test(qn))) {
+    add('terr_corredor_cabos', 'dd_turismo_cabos', 'terr_los_cabos');
+  }
+  if (/\bdensificacion costera\b/.test(qn)) add('terr_obs_cabos_coast', 'terr_los_cabos', 'dd_turismo_cabos');
+  if (/\bprograma de manejo\b/.test(qn)) {
+    add('ev_anp_pm', 'ev_anp_avisos', 'const_anp_nucleos');
+    if (/\bcabo pulmo\b/.test(qn)) add('terr_anp_cabo_pulmo');
+    if (/\bvizcaino\b/.test(qn)) add('terr_anp_vizcaino');
+    if (/\bsierra la laguna\b/.test(qn)) add('terr_anp_sierra_laguna');
+    if (/\bbahia de loreto\b/.test(qn) || (/\bloreto\b/.test(qn) && /\bparque\b/.test(qn))) add('terr_anp_loreto');
+  }
+  if (/\bexpediente\b/.test(qn) && /\bpoer\b/.test(qn)) add('ev_poerbcs', 'inst_poerbcs', 'inst_poer_politicas');
+  if (/\bplan estatal de desarrollo\b/.test(qn)) add('inst_ped', 'inst_poerbcs', 'actor_sepuimm');
+  if (/\bprodesen\b/.test(qn)) add('ev_prodesen', 'rc_sibcs', 'const_red_aislada');
+  if (/\bficha app\b/.test(qn) || (/\bdesal\w*/.test(qn) && /\bapp\b/.test(qn))) add('ev_desal_app', 'proj_desal_cabos', 'proj_fed_agu_001');
+  if (/\bsetue\b/.test(qn)) add('ev_setue_ie', 'actor_setues', 'dd_turismo_cabos');
+  if (/\bcenace\b/.test(qn)) add('actor_cenace', 'rc_sibcs', 'const_red_aislada');
+  if (/\b(todos santos|pescadero)\b/.test(qn)) add('terr_todos_santos', 'rc_acuifero_0313');
+  if (/\bla ribera\b/.test(qn) && /\b(pdu|poel|instrumento|plan)\b/.test(qn)) {
+    add('gap_east_cape_instrumento', 'gap_east_cape_carga', 'ev_psdu_barriles');
+  }
+  if (/\bsantiago\b/.test(qn) && /\b(0320|acuifer)/.test(qn)) add('rc_acuifero_0320', 'ev_acuiferos_dma', 'inst_veda_1954');
+  if (/\bconstitucion\b/.test(qn) && /\bagro\b/.test(qn)) add('terr_comondu', 'dd_agro_santo_domingo');
+  if (/\bguerrero negro\b/.test(qn) && /\b(sal|essa|exportadora)\b/.test(qn)) add('proj_fed_min_003', 'terr_mulege');
+  if (/\bsanta rosalia\b/.test(qn) && /\bpuerto/.test(qn)) add('ev_cruceros_datatur', 'terr_mulege');
+  if (/\bcabo pulmo\b/.test(qn) && /\bsierra la laguna\b/.test(qn)) add('terr_anp_cabo_pulmo', 'terr_anp_sierra_laguna', 'const_anp_nucleos');
+  if (p.east && p.paz) add('terr_obs_east_cape', 'terr_la_paz', 'gap_east_cape_carga');
+  if (p.cabos && p.loreto && /\bagua\b/.test(qn)) add('terr_los_cabos', 'terr_loreto', 'gap_loreto_dma', 'const_dma_deficit');
+  if (p.mulege && p.paz) add('terr_mulege', 'terr_la_paz', 'rc_acuifero_0324');
+  if (p.todos && p.cabos) add('terr_todos_santos', 'terr_los_cabos');
+  if (/\b(glorieta|paso a desnivel)\b/.test(qn)) add('proj_fed_car_002');
+  if ((/\b70\b/.test(qn) && /\bmva\b/.test(qn)) || /\b(buenavista|cabo falso)\b/.test(qn)) {
+    add('proj_fed_ene_008', 'proj_fed_ene_007', 'rc_sibcs');
+  }
   if (/\boomsapas\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_mesa_agua');
   if (/\bsepuimm\b/.test(qn)) add('actor_sepuimm', 'inst_poerbcs');
   if (/\bconanp\b/.test(qn)) add('actor_conanp', 'terr_anp_cabo_pulmo', 'const_anp_nucleos');
@@ -1232,7 +1308,7 @@ function factorSeedIds(qn, kinds) {
   if (p.comondu && p.loreto && /\b(desal|ptar)\b/.test(qn)) add('ev_sig_comondu_loreto', 'proj_fed_agu_005', 'gap_loreto_dma');
   if (/\btrayectoria actual\b/.test(qn)) add('ev_esc_baseline', 'dq_viabilidad_proyecto');
   if (/\bied\b/.test(qn)) add('ev_sig_tourism_fdi', 'const_dma_deficit');
-  if (/\b(cinco municipios|cinco polos)\b/.test(qn) && /\bcompar/.test(qn)) {
+  if (/\b(cinco municipios|cinco polos)\b/.test(qn) && FACTOR_COMPARE_RE.test(qn)) {
     add('dq_comparar_polos', 'terr_los_cabos', 'terr_la_paz', 'terr_loreto', 'terr_comondu', 'terr_mulege', 'ev_gds_cinco_polos');
   }
   if (/\bcrucero/.test(qn)) add('ev_cruceros_datatur', 'ev_sig_asipona');
@@ -1311,7 +1387,7 @@ function factorSeedIds(qn, kinds) {
     else if (/\bpuerto|\baeropuerto|\bairport|\bport\b/.test(qn)) add('ev_esc_ports');
     else add('ev_esc_baseline', 'ev_esc_water_first');
   }
-  if (/\bhuracan|\bhurricane|\bpolo\b|\brachel\b/.test(qn)) {
+  if (/\bhuracan|\bhurricane|\brachel\b/.test(qn)) {
     add('ev_sig_hurricanes', 'terr_comondu', 'const_red_aislada', 'actor_cfe');
   }
   if (/\bacoplamiento\b|\bagua[\s-]*energia|\bagua y energia\b|\bwater[\s-]*energy\b|\bapagon|\bacoplan agua\b/.test(qn)) {
