@@ -1778,6 +1778,17 @@ function expandQuery(query) {
   if (/\bdecreto sigue siendo\b/.test(qn) && /\bmil novecientos noventa y cinco\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\baviso de dos mil dos\b/.test(qn) && /\bbahia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bprimero de septiembre\b/.test(qn) && /\bno asigna\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bel aviso no sustituye el decreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdecreto de la reserva sigue siendo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmunicipio creado el diez de abril\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bparque decretado el seis de junio\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\breserva decretada el treinta de noviembre\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno se copian lineas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpuerta principal\b/.test(qn) && /\bno reconcilia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(tambien es gap|bajo gap)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bregulacion federal continua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(pasaje sin conciliar|ochenta y nueve mil seiscientos|comunicado contra el informe|dos fuentes que no se suman|informe marca desconocido)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bunknown\b/.test(qn) && /\b(informe|loreto|lto)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -2217,8 +2228,9 @@ function factorPlaceFlags(qn) {
   const compare = (/\b(cinco municipios|cinco polos)\b/.test(qn) && FACTOR_COMPARE_RE.test(qn))
     || (nPlaces >= 2 && (FACTOR_COMPARE_RE.test(qn) || /\b(versus|\bvs\b|diferencia entre)\b/.test(qn)));
   const who = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
+  const keepAirports = /\b(picos estacionales|puerta principal|no reconcilia|tambien es gap|bajo gap)\b/.test(qn);
   return {
-    cabos, paz, loreto, comondu, mulege, todos, east, compare, who,
+    cabos, paz, loreto, comondu, mulege, todos, east, compare, who, keepAirports,
     any: nPlaces > 0,
   };
 }
@@ -2226,6 +2238,7 @@ function factorPlaceFlags(qn) {
 function factorExcluded(id, place) {
   if (!place.any || place.compare) return false;
   if (place.cabos && place.paz && /aeropuerto_(sjd|lap)/.test(id)) return false;
+  if (place.keepAirports && /aeropuerto_(sjd|lap)/.test(id)) return false;
   const cabosId = /(?:^|_)cabos(?:_|$)|0317|0319|oomsapas_cabos|implan_cabos|aeropuerto_sjd/.test(id) && !/tx_lapaz/.test(id);
   const pazId = /lapaz|la_paz|0324|turismo_lapaz|aeropuerto_lap/.test(id) && !/tx_lapaz/.test(id);
   const otherThanPaz = place.east || place.cabos || place.loreto || place.mulege || place.comondu;
@@ -2804,7 +2817,7 @@ function factorSeedIds(qn, kinds) {
   if (/\b(proyectado en 76|turistas de estados unidos bajaron|octubre proyectado)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
   if (/\b10 registros\b/.test(qn) && p.mulege) add('ev_sniiv_vivienda', 'terr_mulege');
   if (/\b31 registros\b/.test(qn)) add('ev_sniiv_vivienda', 'terr_comondu');
-  if (/\bpicos estacionales\b/.test(qn)) add('rc_aeropuerto_sjd');
+  if (/\bpicos estacionales\b/.test(qn)) add('rc_aeropuerto_sjd', 'gap_loreto_pax');
   if (/\bconectividad norte sur\b/.test(qn)) add('rc_aeropuerto_lap', 'terr_la_paz');
   if (/\bconvocatoria publica\b/.test(qn)) add('dd_eventos_foro', 'dq_agenda_politica');
   if (/\bcartografia\b/.test(qn) && /\bbarriles\b/.test(qn)) add('const_tenencia', 'ev_psdu_barriles');
@@ -2964,7 +2977,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bno son caudales\b/.test(qn)) add('ev_escorrentia');
   if (/\bciento ochenta y uno\b/.test(qn)) add('ev_historia_bcs', 'terr_los_cabos');
   if (/\bcip\b/.test(qn) && /\b(cuartos|fonatur)\b/.test(qn)) add('ev_historia_bcs');
-  if (/\bno es un censo\b/.test(qn) || (/\buna persona\b/.test(qn) && /\blocalidad\b/.test(qn))) add('ev_communities_master');
+  if ((/\bno es un censo\b/.test(qn) && !/\b(viajeros|pasajeros|destinos|vuelo)\b/.test(qn)) || (/\buna persona\b/.test(qn) && /\blocalidad\b/.test(qn))) add('ev_communities_master');
   if (/\b(noventa y nueve|noventa y dos)\b/.test(qn) || (/\bboletin\b/.test(qn) && !/\bdiecinueve\b/.test(qn) && !/\bsin boletin\b/.test(qn))) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
   if (/\bveintinueve de febrero\b/.test(qn)) add('ev_org_cabos_2024', 'ev_organigrama_cabos');
   if (/\bno se infiere\b/.test(qn) || (/\bdireccion municipal\b/.test(qn) && /\bsin nombre\b/.test(qn))) add('gap_org_obras_cabos', 'ev_org_cabos_2024');
@@ -3408,7 +3421,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bseis resorts\b/.test(qn) && /\b(loreto|bahia)\b/.test(qn)) add('terr_obs_loreto_bay', 'gap_rentas_hoteleras', 'gap_loreto_dma');
   if (/\bnueve\b/.test(qn) && /\bmatorral\b/.test(qn) && /\bloreto\b/.test(qn)) add('terr_obs_loreto_bay', 'gap_loreto_dma');
   if (/\bsiete\b/.test(qn) && /\bparque\b/.test(qn) && /\bloreto\b/.test(qn) && !/\b(destinos|arribos)\b/.test(qn)) add('terr_obs_loreto_bay', 'terr_anp_loreto', 'gap_loreto_dma');
-  if (/\bdiecisiete de septiembre\b/.test(qn) && /\bdestinos\b/.test(qn)) add('ev_sig_vuelos', 'ev_dossiers_movilidad', 'gap_loreto_pax');
+  if (/\bdiecisiete de septiembre\b/.test(qn) && /\b(destinos|viajeros|pasajeros|censo)\b/.test(qn)) add('ev_sig_vuelos', 'ev_dossiers_movilidad', 'gap_loreto_pax');
   if (/\bpaquete de tres\b/.test(qn) && /\bsin aeropuerto\b/.test(qn)) add('ev_dossiers_movilidad', 'gap_mulege_agua_energia', 'gap_acuifero_0302');
   if (/\bcincuenta y cinco pt\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bguerrero negro\b/.test(qn) && /\bvizcaino\b/.test(qn)) add('proj_transpeninsular', 'terr_anp_vizcaino', 'dq_vizcaino_corridor', 'gap_acuifero_0302');
@@ -3510,6 +3523,16 @@ function factorSeedIds(qn, kinds) {
   if (/\bdecreto sigue siendo\b/.test(qn) && /\bmil novecientos noventa y cinco\b/.test(qn)) add('ev_anp_avisos', 'ev_historia_bcs', 'terr_anp_cabo_pulmo');
   if (/\baviso de dos mil dos\b/.test(qn) && /\bbahia\b/.test(qn)) add('ev_anp_avisos', 'terr_anp_loreto', 'gap_loreto_dma');
   if (/\bprimero de septiembre\b/.test(qn) && /\bno asigna\b/.test(qn)) add('ev_anp_avisos', 'terr_anp_vizcaino', 'gap_acuifero_0302');
+  if (/\bel aviso no sustituye el decreto\b/.test(qn)) add('ev_anp_avisos', 'ev_historia_bcs');
+  if (/\bdecreto de la reserva sigue siendo\b/.test(qn)) add('ev_historia_bcs', 'terr_anp_vizcaino', 'ev_anp_avisos', 'gap_acuifero_0302');
+  if (/\bmunicipio creado el diez de abril\b/.test(qn)) add('ev_historia_bcs', 'terr_los_cabos');
+  if (/\bparque decretado el seis de junio\b/.test(qn)) add('ev_historia_bcs', 'terr_anp_cabo_pulmo', 'ev_anp_avisos', 'gap_east_cape_carga');
+  if (/\breserva decretada el treinta de noviembre\b/.test(qn)) add('ev_historia_bcs', 'terr_anp_vizcaino', 'gap_acuifero_0302');
+  if (/\bno se copian lineas\b/.test(qn)) add('ev_historia_bcs');
+  if (/\bpuerta principal\b/.test(qn) && /\bno reconcilia\b/.test(qn)) add('rc_aeropuerto_sjd', 'gap_loreto_pax', 'ev_aereo_setue');
+  if (/\b(tambien es gap|bajo gap)\b/.test(qn)) add('rc_aeropuerto_sjd', 'rc_aeropuerto_lap', 'gap_loreto_pax');
+  if (/\bregulacion federal continua\b/.test(qn)) add('proj_fed_aer_001', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap');
+  if (/\b(pasaje sin conciliar|ochenta y nueve mil seiscientos|comunicado contra el informe|dos fuentes que no se suman|informe marca desconocido)\b/.test(qn) || (/\bunknown\b/.test(qn) && /\b(informe|loreto|lto)\b/.test(qn))) add('gap_loreto_pax', 'ev_aereo_setue');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
