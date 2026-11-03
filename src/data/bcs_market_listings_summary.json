@@ -968,5 +968,14 @@
     "withLocalityCentroid": 0,
     "withoutReliableLocationExcluded": 0,
     "withReportedAreaM2": 29
+  },
+  "manzanaJoin": {
+    "totalInegiBlocksBcs": 17009,
+    "listingsInsideManzana": 1548,
+    "listingsWithin50mOfManzana": 530,
+    "listingsOutsideUrbanManzanas": 1673,
+    "blocksWithListingsSample": 891,
+    "blocksWithPricePerM2Sample": 13,
+    "note_es": "Solo se calculan estadísticos en las 891 manzanas INEGI con muestra activa (sin extrapolar al resto de las 17,009 manzanas). Los 1673 anuncios restantes están en polígonos costeros, turísticos o rústicos fuera de amanzanamiento urbano INEGI."
   }
 }
