@@ -912,6 +912,7 @@ a.folder-card:hover { box-shadow: 0 4px 14px rgba(0,128,192,0.12); text-decorati
 .portal-status.gap { background: #f8d7da; color: #721c24; }
 
 [hidden] { display: none !important; }
+.team-only-banner { margin: 0; padding: 0.55rem 1rem; background: #e7eef2; color: #244e60; font-size: 0.86rem; border-bottom: 1px solid #d3dcd9; }
 
 
 /* Header Drive-style search */

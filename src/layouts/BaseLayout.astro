@@ -67,6 +67,8 @@ const SPECIALIST: Record<string, { es: string; en: string }> = {
   '/crecimiento': { es: 'Compara lo que necesitaría el crecimiento (agua, energía, vivienda, servicios) con lo que hay disponible en cada lugar. Es un análisis técnico. Las cifras vienen de las fuentes citadas en la página.', en: 'Compares what growth would need (water, energy, housing, services) with what is available in each place. It is a technical analysis. Figures come from the sources cited on the page.' },
   '/ontologia': { es: 'Mapa que muestra cómo se conectan lugares, proyectos, instituciones y temas. Es útil para ver relaciones, no para medir cantidades. Pulsa un elemento para ver con qué se relaciona.', en: 'A map of how places, projects, institutions and topics connect. It shows relationships, not quantities. Click an item to see what it relates to.' },
 };
+const TEAM_PAGES = ['/foresights', '/studio', '/crecimiento'];
+const teamOnly = TEAM_PAGES.some((k) => path === k || path.startsWith(k + '/'));
 const specKey = Object.keys(SPECIALIST).find((k) => path === k || path.startsWith(k + '/'));
 const specNote = landing ? undefined : (specKey ? SPECIALIST[specKey] : undefined);
 const pageSubEs = home
@@ -128,6 +130,12 @@ const pageSubEn = home
     ) : (
       <>
         <a class="portal-skip" href="#contenido"><span data-lang-es>Ir al contenido</span><span data-lang-en hidden>Skip to content</span></a>
+        {teamOnly && (
+          <p class="team-only-banner" role="note">
+            <span data-lang-es>Página de trabajo del equipo. La consulta pública está en Preguntar, Mapa 3D y Documentos.</span>
+            <span data-lang-en hidden>Team working page. The public consultation is Ask, the 3D map and Documents.</span>
+          </p>
+        )}
         {threePage ? <ThreeNav active="docs" /> : <>
         <header class="pt-top site-header" id="site-header">
           <a class="pt-brand" href="/inicio" title="Inicio del portal">

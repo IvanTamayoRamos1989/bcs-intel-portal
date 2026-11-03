@@ -158,6 +158,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     <form class="bcs-chat-form" id="bcs-chat-form">
       <label class="sr-only" for="bcs-chat-input" data-i18n="chatPlaceholder">{ui.es.chatPlaceholder}</label>
       <textarea id="bcs-chat-input" rows="2" data-i18n-placeholder="chatPlaceholder" placeholder={ui.es.chatPlaceholder} maxlength="2000" required></textarea>
+      <p class="bcs-chat-count" id="bcs-chat-count" hidden aria-live="polite"></p>
       <div class="bcs-chat-controls">
         <button type="button" class="bcs-chat-mic" id="bcs-chat-mic" data-i18n-aria="chatMic" aria-label={ui.es.chatMic} aria-pressed="false" title={ui.es.chatMic}>
           <span class="bcs-chat-mic-icon" aria-hidden="true">🎤</span>
@@ -167,7 +168,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
           <span class="bcs-chat-speak-icon" aria-hidden="true">🔊</span>
           <span class="bcs-chat-speak-label" data-i18n="chatSpeak">{ui.es.chatSpeak}</span>
         </button>
-        <button type="submit" class="bcs-chat-send" data-i18n="chatSend">{ui.es.chatSend}</button>
+        <button type="submit" class="bcs-chat-send" data-i18n="chatSend" disabled>{ui.es.chatSend}</button>
       </div>
       <p class="bcs-chat-voice-hint" data-i18n="chatVoiceHint">{ui.es.chatVoiceHint}</p>
       <p class="bcs-chat-voice-status" id="bcs-chat-voice-status" hidden aria-live="polite"></p>
@@ -629,7 +630,9 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     min-height: 44px;
     white-space: nowrap;
   }
-  .bcs-chat-send:disabled { opacity: 0.6; cursor: wait; }
+  .bcs-chat-send:disabled { opacity: 0.45; cursor: not-allowed; }
+  .bcs-chat-send[data-busy="1"]:disabled { cursor: wait; }
+  .bcs-chat-count { margin: 0.15rem 0 0; font-size: 0.72rem; color: var(--muted, #5c6e7b); }
   .bcs-chat-send:hover:not(:disabled) { background: var(--fp-blue-dark); }
   .sr-only {
     position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -1310,11 +1313,27 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
       addChip(flab, pf.view_url || pf.catalog_url || ('/catalogo?q=' + catalogQuery(pf)), pft, !!pf.view_url);
     }
 
-    // 2) Ontology (first 2)
+    function citizenLabel(raw) {
+      return String(raw || '')
+        .replace(/^(Ontology|Ontolog[ií]a|Onto|Still|Hueco|Hecho)\s*[:\-]?\s*/i, '')
+        .replace(/^(Territory|Evidence|ResourceCapacity|DecisionQuestion|Instrument|Constraint|Actor|Project|DemandDriver)\s*[:\-]?\s*/i, '')
+        .replace(/\bgap_[a-z0-9_]+\b/gi, lang === 'en' ? 'Missing data' : 'Dato faltante')
+        .replace(/\*\*/g, '')
+        .replace(/`/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+    function markTeam(label, href) {
+      if (!/^\/(foresights|studio|crecimiento)(\/|$|\?)/.test(href || '')) return label;
+      return label + (lang === 'en' ? ' · team' : ' · equipo');
+    }
+
+    // 2) Relationship cards (citizen names, no internal prefix)
     var onto = (payload && payload.ontology) || [];
     onto.slice(0, 2).forEach(function (n) {
-      var lab = (lang === 'es' && n.label_es) ? n.label_es : (n.label || n.id);
-      addChip((lang === 'en' ? 'Onto: ' : 'Onto: ') + lab, n.href || ('/ontologia#' + encodeURIComponent(n.id || '')), n.why || lab, false);
+      var lab = citizenLabel((lang === 'es' && n.label_es) ? n.label_es : (n.label_es || n.label || ''));
+      if (!lab || /^(ontology|onto|still|hueco)$/i.test(lab)) return;
+      addChip(lab, n.href || ('/ontologia#' + encodeURIComponent(n.id || '')), n.why || lab, false);
     });
 
     // 3) Stakeholder
@@ -1337,7 +1356,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     if (!placeId && window.BCSPlace && window.BCSPlace.get) placeId = window.BCSPlace.get() || null;
     if (placeId) {
       if (!placeLab) placeLab = placeId.replace(/_/g, ' ');
-      addChip((lang === 'en' ? 'Place: ' : 'Lugar: ') + placeLab, '/crecimiento/?place=' + encodeURIComponent(placeId) + '#' + encodeURIComponent(placeId), placeId, false);
+      addChip(markTeam((lang === 'en' ? 'Place: ' : 'Lugar: ') + placeLab, '/consulta/'), '/consulta/', placeId, false);
     }
 
     // 5) Foresight signal(s)
@@ -1353,7 +1372,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
       if (placeId) href += '?place=' + encodeURIComponent(placeId);
       if (sid) href += (href.indexOf('?') >= 0 ? '&' : '?') + 'signal=' + encodeURIComponent(sid);
       href += '#signal-' + encodeURIComponent(sid || 'signals');
-      addChip((lang === 'en' ? 'Signal: ' : 'Señal: ') + (sid || stitle), href, stitle, false);
+      addChip(markTeam((lang === 'en' ? 'Signal: ' : 'Señal: ') + (sid || stitle), href), href, stitle, false);
     });
 
     var sqs = (payload && payload.strategic_questions) || [];
@@ -1375,7 +1394,12 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
   function safeCardTitle(s) {
     var t = String((s && s.title) || '').replace(/\s+/g, ' ').trim();
     if (s && s.type === 'news') return t;
-    if (!t || CARD_FILE_RE.test(t)) t = 'Documento del acervo BCS 2050 — ' + ((s && s.theme_label) || 'acervo de datos');
+    t = t.replace(/\*\*/g, '').replace(/`/g, '').replace(/\s+/g, ' ').trim();
+    t = t.replace(/^(Ontology|Ontolog[ií]a|Onto|Still(?:\s+territorial)?|Hueco|Hecho)\s*[:\-]?\s*/i, '')
+      .replace(/\bTrade-off\b/g, (document.documentElement.getAttribute('data-lang') === 'en') ? 'Trade-off' : 'Tensión')
+      .trim();
+    if (!t || CARD_FILE_RE.test(t)) t = 'Documento del portal';
+    if (/acervo de datos/i.test(t)) t = 'Documento del portal';
     return t;
   }
   function catalogQuery(s) {
@@ -1394,6 +1418,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
       var key = title.toLowerCase();
       var base = ((s.path || title).split('/').pop() || '').toLowerCase();
       if (/08_fp_team_research/i.test(s.path || '') || /08_fp_team_research/i.test(s.drive_url || '')) return;
+      if (s.type === 'still' && (!s.href || s.href === '/stills' || s.href === '/stills/')) return;
       if (seen[key] || seen[base]) return;
       seen[key] = true;
       if (base) seen[base] = true;
@@ -1451,14 +1476,19 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
       try {
         var fus = payload && Array.isArray(payload.followUps) ? payload.followUps.slice(0, 3) : [];
         if (fus.length) {
-          msgs.querySelectorAll('.bcs-fu').forEach(function (n) { n.classList.add('bcs-fu-old'); });
+          msgs.querySelectorAll('.bcs-fu').forEach(function (n) { n.remove(); });
           var fu = el('div', 'bcs-fu');
           var enL = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
           fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Continue this consultation' : 'Sigue esta consulta'));
+          var seenFu = {};
           fus.forEach(function (q) {
-            var b = el('button', 'bcs-fu-chip', String(q));
+            var label = String(q).replace(/\bCONTEXT\b/gi, enL ? 'the portal' : 'el portal').replace(/\s+/g, ' ').trim();
+            var key = label.toLowerCase();
+            if (!label || seenFu[key] || /\bcontext\b/i.test(label) && label.length < 12) return;
+            seenFu[key] = 1;
+            var b = el('button', 'bcs-fu-chip', label);
             b.type = 'button';
-            b.addEventListener('click', function () { if (!input || !form) return; input.value = String(q).slice(0, 2000); if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true })); });
+            b.addEventListener('click', function () { if (!input || !form) return; input.value = label.slice(0, 2000); syncComposer(); if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true })); });
             fu.appendChild(b);
           });
           div.appendChild(fu);
@@ -1487,9 +1517,12 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
   var grokVoice = null;
   var conversationMode = false;
   var lastSpokenText = '';
+  var voiceTimer = null;
+  var inflight = null;
   var voiceSupported = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.WebSocket && (window.AudioContext || window.webkitAudioContext));
 
   function setVoiceState(state) {
+    if (state !== 'connecting') clearTimeout(voiceTimer);
     root.setAttribute('data-voice', state || '');
     if (!voiceStatus) return;
     if (!state) {
@@ -1499,6 +1532,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     }
     var map = {
       connecting: 'chatVoiceConnecting',
+      timeout: 'chatVoiceTimeout',
       listening: 'chatVoiceListening',
       speaking: 'chatVoiceSpeaking',
       processing: 'chatMicProcessing',
@@ -1536,6 +1570,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     var key = 'chatVoiceError';
     if (code === 'voice_not_configured') key = 'chatVoiceNotConfigured';
     else if (code === 'voice_unauthorized') key = 'chatVoiceUnauthorized';
+    else if (code === 'voice_timeout') key = 'chatVoiceTimeout';
     if (voiceStatus) {
       voiceStatus.textContent = t(key);
       voiceStatus.hidden = false;
@@ -1600,6 +1635,14 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     conversationMode = true;
     syncVoiceChrome();
     setVoiceState('connecting');
+    clearTimeout(voiceTimer);
+    voiceTimer = setTimeout(function () {
+      if (root.getAttribute('data-voice') === 'connecting') {
+        conversationMode = false;
+        try { if (grokVoice) grokVoice.stop(); } catch (err) {}
+        showVoiceError('voice_timeout');
+      }
+    }, 12000);
     var gv = ensureGrok();
     try {
       await gv.start();
@@ -1654,10 +1697,33 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     }
   });
 
+  var MAX_QUESTION = 2000;
+  function syncComposer() {
+    if (!input || !form) return;
+    var sendBtn = form.querySelector('.bcs-chat-send');
+    var n = input.value.length;
+    var empty = !(input.value || '').trim();
+    var busy = sendBtn && sendBtn.getAttribute('data-busy') === '1';
+    if (sendBtn && !busy) sendBtn.disabled = empty;
+    var count = document.getElementById('bcs-chat-count');
+    if (!count) return;
+    var enL = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
+    if (n >= 1600) {
+      count.hidden = false;
+      count.textContent = n + ' / ' + MAX_QUESTION + (n >= MAX_QUESTION
+        ? (enL ? ' · The question stops at 2,000 characters.' : ' · La pregunta se corta en 2,000 caracteres.')
+        : '');
+    } else count.hidden = true;
+  }
+  input && input.addEventListener('input', syncComposer);
+  syncComposer();
+
   form && form.addEventListener('submit', function (e) {
     e.preventDefault();
     var message = (input.value || '').trim();
-    if (!message || (form.querySelector('.bcs-chat-send') && form.querySelector('.bcs-chat-send').disabled)) return;
+    var sendBtn0 = form.querySelector('.bcs-chat-send');
+    if (!message || (sendBtn0 && sendBtn0.disabled && sendBtn0.getAttribute('data-busy') !== '1' && !message)) return;
+    if (!message) return;
     document.dispatchEvent(new CustomEvent('bcs:chat-start', {detail:{question:message}}));
     /* Typed chat stays independent of Grok voice session */
     input.value = '';
@@ -1665,10 +1731,13 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
     history.push({ role: 'user', content: message });
     var thinking = addBubble('bot thinking', t('chatThinking'));
     var sendBtn = form.querySelector('.bcs-chat-send');
-    if (sendBtn) sendBtn.disabled = true;
+    if (sendBtn) { sendBtn.disabled = true; sendBtn.setAttribute('data-busy', '1'); }
+    syncComposer();
 
     var lang = document.documentElement.getAttribute('data-lang') || 'es';
+    if (inflight) inflight.abort();
     var requestController=new AbortController();
+    inflight = requestController;
     var requestTimer=setTimeout(function(){requestController.abort();},100000);
     fetch('/api/chat', {
       signal:requestController.signal,
@@ -1698,8 +1767,8 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
           strategic_questions: j.strategic_questions || [],
           blocks: Array.isArray(j.blocks) ? j.blocks : [],
           followUps: Array.isArray(j.followUps) && j.followUps.length ? j.followUps : (lang === 'en'
-            ? ['How many people live in each municipality?', 'Which protected natural areas are in Baja California Sur?']
-            : ['¿Cuántas personas viven en cada municipio?', '¿Qué áreas naturales protegidas hay en Baja California Sur?'])
+            ? ['Which municipality and which topic should we look up?', 'What figure from the portal do you want to check?']
+            : ['¿En qué municipio y qué tema quieres consultar?', '¿Qué dato del portal quieres revisar?'])
         });
         try {
           var acts = j.actions || {};
@@ -1709,8 +1778,10 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
             var row = el('div', 'bcs-chat-link-row');
             function act(label, href) {
               if (!href) return;
-              var a = el('a', 'bcs-chat-chip', label);
+              var team = /^\/(foresights|studio|crecimiento)(\/|$|\?)/.test(href);
+              var a = el('a', 'bcs-chat-chip', label + (team ? (lang === 'en' ? ' · team' : ' · equipo') : ''));
               a.href = href;
+              if (team) a.title = lang === 'en' ? 'Team working page' : 'Página de trabajo del equipo';
               row.appendChild(a);
             }
             act(lang === 'en' ? 'Studio' : 'Studio', acts.open_lugares);
@@ -1733,7 +1804,8 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
         lastSpokenText = String(answer || '').replace(/\s+/g, ' ').trim().slice(0, 1200);
         syncVoiceChrome();
       })
-      .catch(function () {
+      .catch(function (err) {
+        if (err && err.name === 'AbortError') { try { thinking.remove(); } catch (e2) {} return; }
         document.dispatchEvent(new CustomEvent('bcs:chat-error'));
         thinking.remove();
         addBubble('bot', t('chatError'), {
@@ -1745,14 +1817,17 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
       })
       .finally(function () {
         clearTimeout(requestTimer);
-        if (sendBtn) sendBtn.disabled = false;
+        if (inflight === requestController) inflight = null;
+        if (sendBtn) sendBtn.removeAttribute('data-busy');
+        syncComposer();
       });
   });
 
   // Small public API so a page can dock the chat and prefill a question (used by /explorar).
   window.BCSChat = {
     root: root,
-    reset: function(){history=[];savedTurns=[];try{sessionStorage.removeItem('bcs-conversation');sessionStorage.removeItem('bcs-last-map');}catch(_){}msgs.querySelectorAll('.bcs-chat-bubble').forEach(function(b){b.remove();});var sug=document.getElementById('bcs-chat-sugg');if(sug)sug.hidden=false;if(input)input.focus();},
+    abort: function(){ if (inflight) { try { inflight.abort(); } catch (e) {} inflight = null; } },
+    reset: function(){history=[];savedTurns=[];try{sessionStorage.removeItem('bcs-conversation');sessionStorage.removeItem('bcs-last-map');}catch(_){}msgs.querySelectorAll('.bcs-chat-bubble').forEach(function(b){b.remove();});var sug=document.getElementById('bcs-chat-sugg');if(sug)sug.hidden=false;if(input){input.value='';input.focus();}syncComposer();},
     open: function () { setOpen(true, getSheet()); rememberDock(true); },
     close: function () { setOpen(false); rememberDock(false); },
     prefill: function (text) { if (input) { input.value = String(text || '').slice(0, 2000); try { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } catch (e) {} } },

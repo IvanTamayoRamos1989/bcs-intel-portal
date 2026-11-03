@@ -19,6 +19,15 @@ import {
   unsupportedNumbers,
   overlap as ragOverlap,
 } from '../lib/rag.mjs';
+import {
+  asksPopulationByMunicipality,
+  censusRowsFromChunks,
+  polishCitizenBundle,
+  populationTable,
+  welcomeFollowUps,
+  chipOffTopic,
+  scrubCitizenText,
+} from '../lib/citizen_answer.mjs';
 
 const FP_TEAM_HIDE = /08_fp_team_research/i;
 function scrubCorpus(rows) {
@@ -5916,7 +5925,7 @@ MULTI-FACTOR REASONING (this question is about project viability, land-use chang
 - CONTEXT opens with a labeled FACTOR BRIEF. Follow that order. Use only those cards and the fragments under them.
 - If two or more sections are present (viability, risks, opportunities, who decides, capacities, instruments), the answer must name at least two of them.
 - Every line that says "HUECO — sin dato" must be repeated as its own "Data gap:" line. Do not fill it with a number, a rent, a megawatt, a parcel, or a passenger total.
-- Name trade-offs that the cards already state. Do not recommend a zoning code that is not written in CONTEXT.
+- Name tensions that the cards already state. Do not recommend a zoning code that is not written in CONTEXT.
 - Cite each factor with the fragment title. Library page extracts are reference, not BCS statistics. News is press (outlet and date). Scenarios and foresight signals are readings, not new capacity.
 - Close with ONE follow-up on its own last line, starting with "👉 ", about a factor or gap already named in the brief and already in this thread (same municipality and theme). Do not switch to a stock topic. Do not ask for a series the brief marks as sin dato. For this class you may use up to about 220 words.
 `;
@@ -5926,7 +5935,7 @@ RAZONAMIENTO MULTIFACTOR (esta pregunta es de viabilidad de proyecto, cambio de 
 - El CONTEXTO abre con un RESUMEN DE FACTORES etiquetado. Sigue ese orden. Usa solo esas fichas y los fragmentos que van debajo.
 - Si hay dos o más secciones (viabilidad, riesgos, oportunidades, quién decide, capacidades, instrumentos), la respuesta debe nombrar al menos dos.
 - Cada línea que dice "HUECO — sin dato" se repite como su propia línea "Dato faltante:". No la completes con una cifra, una renta, un megawatt, un predio ni un total de pasajeros.
-- Nombra los trade-offs que las fichas ya dicen. No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
+- Nombra la tensión que las fichas ya dicen, con la palabra «Tensión». No uses la palabra inglesa Trade-off. No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
 - Cita cada factor con el título del fragmento. Las páginas de biblioteca son referencia, no estadística de BCS. Las noticias son prensa (medio y fecha). Escenarios y señales son lecturas, no capacidad nueva.
 - Cierra con UNA pregunta 👉 en su propia última línea, sobre un factor o hueco ya nombrado en el resumen y ya presente en este hilo (mismo municipio y mismo tema). No saltes a un tema de menú. No pidas una serie que el resumen marca como sin dato. En esta clase puedes usar hasta unas 220 palabras.
 `;
@@ -5947,11 +5956,11 @@ EVIDENCE RULES (mandatory):
 6. Never mention internal tools, vendors, offices or platform names.
 7. Items marked "news report — press, NOT official" come from the daily BCS news feed. Cite them as "News: <outlet>, <date>" and say they are press reports. For current events, lead with the most recent news item (marked MOST RECENT) as the current report and give its date; if older news items say something different, mention them afterwards as earlier reports with their dates — do not blend figures from different dates. Format: "According to the most recent report (<outlet>, <date>), …; earlier (<date>) … had been reported". News never replaces official data: if a news item conflicts with an official source (fact, aquifer, municipality, guide, official document), give both and say explicitly which one is official.
 CONSULTATION (how to write the answer):
-- Open with the decision: one sentence on what a municipality, a firm, or a citizen can decide with this evidence. Name that audience only if CONTEXT supports it.
+- Open with the figure or the fact they asked for. If that figure is missing, the first sentence is the gap ("Data gap:" or "Missing data"). A decision sentence, if any, comes after the figure. Do not open with a bold question.
 - Then two to four sourced claims. Put each figure in parentheses (fragment or document title, year, page if given). Use a compact pipe table only to compare figures that are in CONTEXT.
-- If two cards in CONTEXT pull apart (a capacity against a constraint, an instrument against a gap), state that trade-off in one sentence. If CONTEXT states no tension, omit it.
+- If two cards in CONTEXT pull apart (a capacity against a constraint, an instrument against a gap), state that tension in one sentence. If CONTEXT states no tension, omit it.
 - If the figure that would close the decision is missing, add one line "Data gap:" naming the metric or source CONTEXT already points to. Do not invent a gap when CONTEXT is enough. Do not fill a line marked sin dato with a number.
-- At most about 180 words unless they ask for detail. Do not repeat the question. No process narration. Reply in English. Simple markdown: **bold** for the decision and the trade-off. You may say "see the map below" for a place, the coast, a risk, or a map. Never write URLs or image links.
+- At most about 180 words unless they ask for detail. Do not repeat the question. No process narration. Reply in English. Simple markdown: **bold** for the main figure. You may say "see the map below" for a place, the coast, a risk, or a map. Never write URLs or image links. Never show internal labels (Ontology, Onto, Still, Hueco, gap ids, guides/*.md, grid coordinates). Say "Missing data" in plain language.
 - ALWAYS close with ONE follow-up on its own last line, starting with "👉 ". That question stays on the municipality and the theme already in this thread (the user's words and THREAD below). Ask about a factor, actor, instrument, or gap already named in CONTEXT. Do not offer a stock menu (population, protected areas, risks, urban plans, energy, aerial photos, another municipality) unless that topic is already in the thread. Do not ask for a series CONTEXT marks as missing.${placeLabel ? `\nActive place in the UI: ${placeLabel} (use only if the question is ambiguous).` : ''}${thread}${noEvidence ? '\nCONTEXT IS EMPTY: say the portal has no evidence on this and invent no figure. Close with a 👉 question that asks them to name the municipality or the theme they already used. For a greeting or a question about what the portal does, say briefly that you are the consultant for the citizen consultation and that you answer from portal sources.' : ''}
 
 CONTEXT:
@@ -5968,11 +5977,11 @@ REGLAS DE EVIDENCIA (obligatorias):
 6. Nunca menciones nombres de herramientas internas, proveedores, oficinas ni plataformas.
 7. Los elementos marcados "noticia — prensa, NO oficial" vienen del monitoreo diario de noticias de BCS. Cítalos como "Noticia: <medio>, <fecha>" y aclara que son notas de prensa. Para hechos de actualidad, empieza por la noticia más reciente (marcada MÁS RECIENTE) como la versión actual e indica su fecha; si noticias anteriores dicen otra cosa, menciónalas después como reportes previos con su fecha — no mezcles cifras de fechas distintas. Formato: "Según la noticia más reciente (<medio>, <fecha>), …; antes (<fecha>) se había reportado …". Una noticia nunca sustituye un dato oficial: si contradice una fuente oficial (hecho, acuífero, municipio, guía, documento oficial), muestra ambas y di explícitamente cuál es la oficial.
 CONSULTA (cómo redactar la respuesta):
-- Abre con la decisión: una frase sobre qué puede decidir un municipio, una empresa o un ciudadano con esta evidencia. Nombra a ese público solo si el CONTEXTO lo sostiene.
+- Abre con la cifra o el hecho que preguntaron. Si esa cifra falta, la primera frase es el hueco («Dato faltante»). Una frase de decisión, si hace falta, va después. No abras con una pregunta en negritas.
 - Luego dos a cuatro afirmaciones con fuente. Cada cifra entre paréntesis (título del fragmento o documento, año, página si está). Tabla compacta solo para comparar cifras que están en el CONTEXTO.
-- Si dos fichas del CONTEXTO jalan distinto (una capacidad contra una restricción, un instrumento contra un hueco), di ese trade-off en una frase. Si el CONTEXTO no trae tensión, omítelo.
+- Si dos fichas del CONTEXTO jalan distinto (una capacidad contra una restricción, un instrumento contra un hueco), di esa tensión en una frase y llámala «Tensión». No uses la palabra inglesa Trade-off. Si el CONTEXTO no trae tensión, omítela.
 - Si falta la cifra que cerraría la decisión, agrega una línea "Dato faltante:" con la métrica o la fuente que el CONTEXTO ya señala. No inventes un hueco cuando el CONTEXTO alcanza. No rellenes con un número una línea marcada sin dato.
-- Hasta unas 180 palabras salvo que pidan detalle. No repitas la pregunta. No narres el proceso. Responde en español. Markdown sencillo: **negritas** para la decisión y el trade-off. Puedes decir "mira el mapa abajo" si hablan de un lugar, la costa, un riesgo o un mapa. Nunca escribas URLs ni enlaces de imagen.
+- Hasta unas 180 palabras salvo que pidan detalle. No repitas la pregunta. No narres el proceso. Responde en español. Markdown sencillo: **negritas** para la cifra principal. Puedes decir "mira el mapa abajo" si hablan de un lugar, la costa, un riesgo o un mapa. Nunca escribas URLs ni enlaces de imagen. Nunca muestres etiquetas internas (Ontology, Onto, Still, Hueco, identificadores gap_, guides/*.md, coordenadas grid_). Di «Dato faltante» en lenguaje llano.
 - SIEMPRE cierra con UNA pregunta en su propia última línea, que empiece con "👉 ". Esa pregunta se queda en el municipio y el tema que ya están en este hilo (las palabras del usuario y el HILO de abajo). Pregunta por un factor, actor, instrumento o hueco ya nombrado en el CONTEXTO. No ofrezcas un menú fijo (población, áreas protegidas, riesgos, planes urbanos, energía, fotos aéreas, otro municipio) si ese tema no está ya en el hilo. No pidas una serie que el CONTEXTO marca como faltante.${placeLabel ? `\nLugar activo en la interfaz: ${placeLabel} (úsalo solo si la pregunta es ambigua).` : ''}${thread}${noEvidence ? '\nEL CONTEXTO ESTÁ VACÍO: di que el portal no tiene evidencia sobre esto y no inventes cifras. Cierra con una pregunta 👉 que pida precisar el municipio o el tema que la persona ya usó. Si es un saludo o pregunta qué hace el portal, di en breve que eres el consultor de la consulta ciudadana y que respondes con fuentes del portal.' : ''}
 
 CONTEXTO:
@@ -6023,7 +6032,7 @@ function targetMunis(message, uiPlace) {
 // Follow-ups stay on themes and municipalities already in the thread, plus factor
 // labels already retrieved. They do not rotate a stock menu of unrelated topics.
 const THREAD_THEMES = [
-  { id: 'water', re: /\b(agua|acuifero|dma|hidric|sequia|desal)/, noun: ['el agua', 'water'],
+  { id: 'water', re: /\b(agua|acuifero|dma|hidric|sequia|desal|water\b|aquifer)/, noun: ['el agua', 'water'],
     deepen: (p, en) => en
       ? `What capacity and what limit on water does the portal already cite for ${p}?`
       : `¿Qué capacidad y qué límite de agua cita ya el portal para ${p}?` },
@@ -6086,9 +6095,31 @@ function orderedThreadThemes(message, history) {
   return out;
 }
 
+function isUnknownTurn(message) {
+  const q = normQ(message).trim();
+  if (!q) return true;
+  if (themesIn(message).length || munisInText(message).length || ragInferPlace(message)) return false;
+  if (/^(hola|buenos dias|buenas|hello|hi|hey|gracias|thanks)\b/.test(q)) return true;
+  if (/^(y|e|o|and|what about|tambien|ahora|entonces)\b/.test(q)) return false;
+  if (/\b(eso|ese|esa|ello|lo mismo|quien|decide|profundiza|sigue|continua|what|which|who|how)\b/.test(q)) return false;
+  const words = q.split(/\s+/).filter((w) => w.length > 2);
+  if (words.length < 2) return true;
+  const withVowel = words.filter((w) => /[aeiou]/.test(w));
+  return withVowel.length < Math.ceil(words.length / 2);
+}
+
+function carriesNewTheme(message) {
+  const q = normQ(message);
+  if (!themesIn(message).length) return false;
+  if (/^(y|e|o|and|what about|tambien|ahora|entonces)\b/.test(q)) return false;
+  if (isFollowUpMessage(message)) return false;
+  return true;
+}
+
 function isThreadFollowUp(message, history) {
   const prior = threadUserTurns(history);
   if (!prior.length) return false;
+  if (isUnknownTurn(message)) return false;
   if (isFollowUpMessage(message)) return true;
   const q = normQ(message);
   if (/\b(estado|estatal|bcs|baja california|cada municipio|todos los municipios|statewide)\b/.test(q)) return false;
@@ -6175,16 +6206,26 @@ function factorQuestions(cards, place, en, noun) {
 
 function buildFollowUps({ message, lang, placeId, munis, history, evidence } = {}) {
   const en = lang === 'en';
-  const place = consultPlaceLabel({ message, history, lang, placeId, munis });
-  const themes = orderedThreadThemes(message, history);
+  if (isUnknownTurn(message)) return welcomeFollowUps(en ? 'en' : 'es');
+  const inherit = isThreadFollowUp(message, history) && !carriesNewTheme(message);
+  const place = inherit
+    ? consultPlaceLabel({ message, history, lang, placeId, munis })
+    : (munisInText(message)[0] || (munis && munis[0]) || (en ? 'this place' : 'este lugar'));
+  const themes = inherit ? orderedThreadThemes(message, history) : themesIn(message);
   const noun = themes[0] ? themes[0].noun[en ? 1 : 0] : '';
+  const asked = new Set([normQ(message), ...threadUserTurns(history).map((t) => normQ(t))]);
   const out = [];
   const push = (q) => {
-    const s = String(q || '').replace(/\s+/g, ' ').trim();
-    if (s && !out.includes(s)) out.push(s);
+    let s = scrubCitizenText(q, en ? 'en' : 'es').replace(/\s+/g, ' ').trim();
+    s = s.replace(/\bCONTEXT\b/g, en ? 'the portal' : 'el portal');
+    if (!s || out.includes(s) || asked.has(normQ(s)) || chipOffTopic(s, message)) return;
+    out.push(s);
   };
   const named = [];
-  for (const m of [...munisInText(message), ...munisInText(threadUserTurns(history).join(' '))]) {
+  const namePool = inherit
+    ? [...munisInText(message), ...munisInText(threadUserTurns(history).join(' '))]
+    : munisInText(message);
+  for (const m of namePool) {
     if (!named.includes(m)) named.push(m);
   }
   const factors = factorQuestions(evidence, place, en, noun);
@@ -6198,14 +6239,7 @@ function buildFollowUps({ message, lang, placeId, munis, history, evidence } = {
   for (const q of factors.slice(1)) push(q);
   if (themes[1]) push(themes[1].deepen(place, en));
   if (!out.length) {
-    const clip = clipConsult(message);
-    push(clip
-      ? (en
-        ? `What can a municipality, a firm, or a citizen decide with what the portal has on “${clip}”?`
-        : `¿Qué puede decidir un municipio, una empresa o un ciudadano con lo que el portal sí tiene sobre «${clip}»?`)
-      : (en
-        ? 'Which municipality and theme should this consultation stay on?'
-        : '¿En qué municipio y qué tema seguimos esta consulta?'));
+    for (const q of welcomeFollowUps(en ? 'en' : 'es')) push(q);
   }
   return out.slice(0, 3);
 }
@@ -6528,16 +6562,19 @@ function buildAnswerBlocks({ evidence, message, lang, noEvidence, primary_file, 
   const muniOk = (m) => !munis || (m && munis.includes(m));
   const en = lang === 'en';
   const blocks = [];
-  // 1) Population table from municipio chunks (whole-municipality figures only)
-  const muni = [];
-  for (const c of evidence) {
-    if (c.type !== 'municipio' || /localidad/.test(c.path || '')) continue;
-    const m = String(c.sum_es || '').match(/del municipio ([^()]+?) \(municipio completo[^)]*\):\s*([\d,]+) habitantes/);
-    if (m && !muni.find((r) => r[0] === m[1].trim())) muni.push([m[1].trim(), m[2], 'INEGI Censo 2020']);
+  // 1) Population table from municipio chunks (whole-municipality figures only).
+  // A question about every municipality uses the five INEGI rows already in the corpus.
+  let muni = censusRowsFromChunks(evidence);
+  if (asksPopulationByMunicipality(message)) {
+    const all = censusRowsFromChunks(CORPUS);
+    if (all.length > muni.length) muni = all;
   }
-  if (muni.length >= 2) {
-    blocks.push({ type: 'table', title: en ? 'Population by municipality' : 'Población por municipio',
-      headers: en ? ['Municipality', 'Inhabitants', 'Source'] : ['Municipio', 'Habitantes', 'Fuente'], rows: muni });
+  if (muni.length >= 2 || (asksPopulationByMunicipality(message) && muni.length)) {
+    const table = populationTable(muni, lang);
+    if (!asksPopulationByMunicipality(message) && muni.length < 5) {
+      table.title = en ? 'Population by municipality' : 'Población por municipio';
+    }
+    blocks.push(table);
   }
   // 1b) Charts — ONLY from numbers literally present in retrieved chunks
   if (muni.length >= 2) {
@@ -6552,10 +6589,11 @@ function buildAnswerBlocks({ evidence, message, lang, noEvidence, primary_file, 
       const k = s0.match(/cabecera, la localidad ([^,]+), tiene ([\d,]+) habitantes/);
       if (m && k && (!munis || munis.includes(m[1].trim()))) {
         const mv = Number(m[2].replace(/,/g, '')), kv = Number(k[2].replace(/,/g, ''));
+        const townName = k[1].trim().replace(/^ciudad\s+/i, '');
         blocks.push({ type: 'chart', kind: 'bar', title: en ? `${m[1].trim()}: municipality vs. main town (2020)` : `${m[1].trim()}: municipio vs. cabecera (2020)`,
           source: 'INEGI, Censo de Población y Vivienda 2020', unit: en ? 'inhabitants' : 'habitantes',
           series: [{ label: en ? `Municipality ${m[1].trim()}` : `Municipio ${m[1].trim()}`, value: mv },
-            { label: en ? `Town ${k[1].trim()} (seat)` : `Ciudad ${k[1].trim()} (cabecera)`, value: kv },
+            { label: en ? `Town ${townName} (seat)` : `Ciudad ${townName} (cabecera)`, value: kv },
             { label: en ? 'Rest of the municipality' : 'Resto del municipio', value: mv - kv }] });
         break;
       }
@@ -6590,7 +6628,7 @@ function buildAnswerBlocks({ evidence, message, lang, noEvidence, primary_file, 
     stills.push(c);
     blocks.push({ type: 'image', src: md.thumb, full: md.image || md.thumb,
       alt: md.name || c.title, caption: `${md.name || ''}${md.municipio ? ' · ' + md.municipio : ''}`,
-      href: '/explorar?fotos=1',
+      href: md.image || md.thumb,
       maps_url: lat != null && lon != null ? `https://www.google.com/maps?q=${lat},${lon}` : null });
   }
   // 4) Map atlas images: hits on map files first, then topic match on the question
@@ -6649,7 +6687,7 @@ function evidenceSources(chunks, max = 5, newsFirst = false) {
       foro: '/foro/',
     };
     const portalSlug = String(c.path || '').startsWith('portal/') ? String(c.path).slice(7).split('/')[0] : '';
-    const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: c.href || portalHref[portalSlug] || null, type: c.type || null };
+    const card = { id: c.id || null, title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: c.href || portalHref[portalSlug] || null, type: c.type || null };
     if (c.type === 'news') {
       Object.assign(card, {
         label: c.no_summary ? 'Noticia sin resumen' : 'Noticia',
@@ -7204,6 +7242,27 @@ async function handlerInner(event) {
     }
   } catch (e) {}
   followUps.splice(3);
+
+  const polished = polishCitizenBundle({
+    answer,
+    sources,
+    blocks,
+    followUps,
+    ontology,
+    primary: primary_file,
+    message,
+    lang,
+    history,
+    media: chatMedia,
+  });
+  answer = polished.answer;
+  sources.splice(0, sources.length, ...polished.sources);
+  blocks = polished.blocks;
+  followUps.splice(0, followUps.length, ...polished.followUps);
+  ontology.splice(0, ontology.length, ...polished.ontology);
+  if (primary_file && polished.primary) {
+    primary_file.title = polished.primary.title;
+  }
 
   const clientIp = String(ip).split(',')[0].trim();
   // Durable turn log (Blobs); never block the chat response on store failure
