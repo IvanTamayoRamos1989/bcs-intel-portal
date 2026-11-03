@@ -1003,6 +1003,7 @@ const CASES = [
     kind: 'viability',
     needIds: ['proj_fed_ene_008', 'rc_sibcs'],
     needTypes: ['Project', 'ResourceCapacity'],
+    forbid: ['rc_subestaciones_gap'],
   },
   {
     q: 'Subestación Buenavista y Cabo Falso',
@@ -1195,6 +1196,69 @@ const CASES = [
     needTypes: ['ResourceCapacity'],
     noSubstationList: true,
   },
+  {
+    q: '¿Cuántas llaves nuevas caben en Los Cabos?',
+    kind: 'viability',
+    needIds: ['rc_vivienda_cabos', 'const_dma_deficit', 'inst_pdu_cabos'],
+    needTypes: ['ResourceCapacity', 'Constraint', 'Instrument'],
+    noKeyCount: true,
+  },
+  {
+    q: '¿El reúso sustituye la desaladora de Los Cabos?',
+    kind: 'viability',
+    needIds: ['const_escasez_agua', 'const_dma_deficit', 'proj_desal_cabos'],
+    needTypes: ['Constraint', 'Project'],
+  },
+  {
+    q: '¿La NOM-011 es la DMA?',
+    kind: 'viability',
+    needIds: ['ev_acuiferos_dma'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: '8 de octubre de 1974',
+    kind: 'viability',
+    needIds: ['ev_historia_bcs'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: '¿La desaladora alcanza si crece Los Cabos?',
+    kind: 'viability',
+    needIds: ['dq_desal_vs_crecimiento', 'proj_desal_cabos', 'const_dma_deficit', 'rc_sibcs'],
+    needTypes: ['DecisionQuestion', 'Project', 'Constraint', 'ResourceCapacity'],
+  },
+  {
+    q: '¿El corredor del Vizcaíno tiene carretera?',
+    kind: 'viability',
+    needIds: ['dq_vizcaino_corridor', 'proj_transpeninsular', 'terr_anp_vizcaino'],
+    needTypes: ['DecisionQuestion', 'Project', 'Territory'],
+  },
+  {
+    q: '¿Qué infraestructura está lista para una APP?',
+    kind: 'viability',
+    needIds: ['dq_readiness_inversion', 'proj_desal_cabos', 'rc_sibcs', 'rc_aeropuerto_sjd'],
+    needTypes: ['DecisionQuestion', 'Project', 'ResourceCapacity'],
+  },
+  {
+    q: 'Los Cabos y Mulegé frente a la energía',
+    kind: 'viability',
+    needIds: ['terr_los_cabos', 'terr_mulege', 'rc_sibcs', 'gap_mulege_agua_energia'],
+    needTypes: ['Territory', 'ResourceCapacity', 'Constraint'],
+    sinDatoIds: ['gap_mulege_agua_energia'],
+  },
+  {
+    q: 'Ayuntamiento de Comondú',
+    kind: 'viability',
+    needIds: ['actor_ayunt_comondu', 'terr_comondu', 'ev_fiscal_ley_2026'],
+    needTypes: ['Actor', 'Territory', 'Evidence'],
+  },
+  {
+    q: 'Ayuntamiento de Mulegé',
+    kind: 'viability',
+    needIds: ['actor_ayunt_mulege', 'terr_mulege', 'gap_fiscal_ingresos_2026'],
+    needTypes: ['Actor', 'Territory', 'Constraint'],
+    sinDatoIds: ['gap_fiscal_ingresos_2026'],
+  },
 ];
 
 const NEGATIVES = [
@@ -1287,6 +1351,11 @@ for (const c of CASES) {
     const text = `${z?.sum_es || ''} ${z?.sum_en || ''}`;
     if (!/\b42\b/.test(text)) fail(`${c.q} Loreto MLS volume missing`);
     if (!/no es renta hotelera|not hotel rent/i.test(text)) fail(`${c.q} must keep hotel rents out`);
+  }
+  if (c.noKeyCount) {
+    const keys = ev.find((x) => (x.onto_id || '') === 'rc_vivienda_cabos');
+    const text = `${keys?.sum_es || ''} ${keys?.sum_en || ''}`;
+    if (/\b\d+\s*llaves\b/i.test(text)) fail(`${c.q} invented a key count`);
   }
   if (c.noSubstationList) {
     const sub = ev.find((x) => (x.onto_id || '') === 'rc_subestaciones_gap');

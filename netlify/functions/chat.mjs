@@ -691,11 +691,23 @@ function expandQuery(query) {
     factorKinds.push('viability');
   }
   if (/\b1974\b/.test(qn) && /\b(baja california|\bbcs\b|los cabos|estado)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b1974\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\btercera actualizacion\b/.test(qn) && /\bpdu\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\b(subestacion|subestaciones)\b/.test(qn) && !/\b70\b/.test(qn) && !/\b(buenavista|cabo falso)\b/.test(qn) && !factorKinds.length) {
     factorKinds.push('viability');
   }
   if (/\bmva\b/.test(qn) && !/\b70\b/.test(qn) && !/\b(buenavista|cabo falso)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bllaves\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\breuso\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bnom[-\s]?011\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdesal\w*/.test(qn) && /\b(crece|crecimiento|alcanza|sustitu)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bvizcaino\b/.test(qn) && /\b(corredor|carretera|ensanche)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bapp\b/.test(qn) && /\b(lista|infraestructura|inversion)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(los cabos|cabo san lucas)\b/.test(qn) && /\bmulege\b/.test(qn) && /\b(energi\w*|agua|sibcs)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bayuntamiento\b/.test(qn) && /\bcomondu\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bayuntamiento\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1378,6 +1390,23 @@ function factorSeedIds(qn, kinds) {
   if ((/\b(subestacion|subestaciones)\b/.test(qn) || /\bmva\b/.test(qn)) && !/\b70\b/.test(qn) && !/\b(buenavista|cabo falso)\b/.test(qn)) {
     add('rc_subestaciones_gap', 'rc_sibcs');
   }
+  if (/\bllaves\b/.test(qn)) add('rc_vivienda_cabos', 'const_dma_deficit', 'inst_pdu_cabos');
+  if (/\breuso\b/.test(qn)) add('const_escasez_agua', 'const_dma_deficit', 'proj_desal_cabos');
+  if (/\bnom[-\s]?011\b/.test(qn)) add('ev_acuiferos_dma');
+  if (/\bdesal\w*/.test(qn) && /\b(crece|crecimiento|alcanza|sustitu)\b/.test(qn)) {
+    add('dq_desal_vs_crecimiento', 'proj_desal_cabos', 'const_dma_deficit', 'rc_sibcs');
+  }
+  if (/\bvizcaino\b/.test(qn) && /\b(corredor|carretera|ensanche)\b/.test(qn)) {
+    add('dq_vizcaino_corridor', 'proj_transpeninsular', 'terr_anp_vizcaino');
+  }
+  if (/\bapp\b/.test(qn) && /\b(lista|infraestructura|inversion)\b/.test(qn)) {
+    add('dq_readiness_inversion', 'proj_desal_cabos', 'rc_sibcs', 'rc_aeropuerto_sjd');
+  }
+  if (p.cabos && p.mulege && /\b(energi\w*|agua|sibcs)\b/.test(qn)) {
+    add('terr_los_cabos', 'terr_mulege', 'rc_sibcs', 'gap_mulege_agua_energia');
+  }
+  if (/\bayuntamiento\b/.test(qn) && p.comondu) add('actor_ayunt_comondu', 'terr_comondu', 'ev_fiscal_ley_2026');
+  if (/\bayuntamiento\b/.test(qn) && p.mulege) add('actor_ayunt_mulege', 'terr_mulege', 'gap_fiscal_ingresos_2026');
   if (/\boomsapas\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_mesa_agua');
   if (/\bsepuimm\b/.test(qn)) add('actor_sepuimm', 'inst_poerbcs');
   if (/\bconanp\b/.test(qn)) add('actor_conanp', 'terr_anp_cabo_pulmo', 'const_anp_nucleos');
@@ -1545,7 +1574,8 @@ function factorSeedIds(qn, kinds) {
       add('proj_transpeninsular', 'proj_fed_car_003', 'const_anp_nucleos', 'terr_anp_vizcaino', 'dq_vizcaino_corridor');
     }
     if (/\b(energi\w*|energy|sibcs|cfe)\b/.test(qn)) {
-      add('proj_fed_ene_002', 'proj_fed_ene_005', 'proj_p23_bs1', 'inst_prodesen', 'inst_pamrnt', 'rc_bess_gap', 'rc_subestaciones_gap', 'rc_tx_lapaz_cabos', 'actor_cfe');
+      add('proj_fed_ene_002', 'proj_fed_ene_005', 'proj_p23_bs1', 'inst_prodesen', 'inst_pamrnt', 'rc_bess_gap', 'rc_tx_lapaz_cabos', 'actor_cfe');
+      if (!/\b70\b/.test(qn) && !/\b(buenavista|cabo falso)\b/.test(qn)) add('rc_subestaciones_gap');
     }
     if (!kindHit && p.cabos) {
       add('terr_los_cabos', 'inst_pdu_cabos', 'dd_turismo_cabos', 'rc_acuifero_0317', 'rc_acuifero_0319', 'proj_desal_cabos', 'gap_pdu_cabos_3a');
