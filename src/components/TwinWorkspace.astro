@@ -125,6 +125,11 @@ const shellModel = {
   </head>
   <body class="shell-app twin-workspace map-page" data-pane="map">
     <ThreeNav active="map" />
+    <aside class="twin-guide" id="twin-guide" hidden>
+      <h2><span data-lang-es>Explorar el mapa</span><span data-lang-en hidden>Explore the map</span></h2>
+      <p><span data-lang-es>Busca un lugar, activa una capa y toca un elemento para ver su ficha.</span><span data-lang-en hidden>Find a place, enable a layer and select a feature to see its details.</span></p>
+      <button type="button" id="twin-help-close"><span data-lang-es>Entendido</span><span data-lang-en hidden>Got it</span></button>
+    </aside>
     <div class="shell">
       <section class="shell-map-wrap" aria-label="Mapa">
         <div id="shell-map"></div>

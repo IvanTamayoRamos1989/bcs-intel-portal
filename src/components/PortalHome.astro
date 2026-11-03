@@ -12,10 +12,6 @@ import { ui } from '../i18n/ui';
   <title>Preguntar · BCS 2050</title>
   <script is:inline define:vars={{uiObj:ui}}>window.__BCS_UI__=uiObj;</script>
   <script is:inline src="/auth-gate.js"></script><script is:inline src="/lang-toggle.js?v=20261102-ux"></script>
-  <script is:inline>
-    var oldView=new URLSearchParams(location.search);
-    if(['base','theme','tema','muni','q'].some(function(k){return oldView.has(k);}))location.replace('/consulta/'+location.search+location.hash);
-  </script>
 </head>
 <body class="shell-app conversation-page">
   <ThreeNav active="ask" />
@@ -28,6 +24,6 @@ import { ui } from '../i18n/ui';
     <button type="button" id="conversation-new" hidden><span data-lang-es>＋ Nueva conversación</span><span data-lang-en hidden>＋ New conversation</span></button>
     <ChatWidget shell={true} />
   </main>
-  <script is:inline src="/conversation.js?v=20261103-pages" defer></script>
-  <link rel="stylesheet" href="/conversation.css?v=20261103-pages" />
+  <script is:inline src="/conversation.js?v=20261103-merge" defer></script>
+  <link rel="stylesheet" href="/conversation.css?v=20261103-merge" />
 </body></html>
