@@ -1846,6 +1846,32 @@ function expandQuery(query) {
   if (/\bdato no consolidado\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
   if (/\bsin cifras nuevas de cuartos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bla comparacion del medio no es censo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpoligonos de predio\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\binstrumento local esta en brecha\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bpeligrosidad por fallas\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bsin (boletin|boge) final\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bultima actualizacion en disco\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bel techo estatal sigue\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\briesgo hidrometeorologico\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\b(desborde|spillover) desde cabos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btechos de conservacion\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\briego y bombeo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bescasez de servicios\b/.test(qn) && /\bnorte\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcarga cuantitativa no esta en el dossier\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno es un organigrama\b/.test(qn) && /\bconsultoria\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bopera el marco hidrico\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bautoridad tecnica del plan\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno se suma un total estatal\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\binstrumento municipal en consulta\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bno es disponibilidad nueva\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bvigentes y en operacion\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bterritorio de mayor crecimiento urbano\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\btratamiento y residuos del desarrollador\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bprograma nombrado de la ribera\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bconservar el techo de cada uno\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmodificado no es una participacion\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdevengado no llena\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\benero a junio no es ley municipal\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpacifico\b/.test(qn) && /\btodos santos\b/.test(qn) && /\brenta\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bel aviso no sustituye el decreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -2462,7 +2488,7 @@ function factorSeedIds(qn, kinds) {
   if (p.cabos && /\bpresidencia\b/.test(qn)) {
     add('actor_cabos_presidencia', 'ev_org_cabos_2024', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos', 'actor_oomsapas_cabos');
   }
-  if (/\borganigrama\b/.test(qn) && (p.cabos || !p.any)) add('ev_organigrama_cabos', 'ev_org_cabos_2024', 'gap_org_obras_cabos');
+  if (/\borganigrama\b/.test(qn) && !/\bno es un organigrama\b/.test(qn) && (p.cabos || !p.any)) add('ev_organigrama_cabos', 'ev_org_cabos_2024', 'gap_org_obras_cabos');
   if (/\b(delegad\w*|delegacion\w*|miraflores)\b/.test(qn) && (p.cabos || p.east || /\b(miraflores|santiago|la ribera|cabo san lucas)\b/.test(qn))) {
     add('actor_cabos_delegaciones', 'actor_cabos_presidencia', 'ev_org_cabos_2024', 'actor_ayunt_cabos', 'terr_los_cabos');
   }
@@ -3146,7 +3172,7 @@ function factorSeedIds(qn, kinds) {
   if (/\b(tramos de rio|sin caudal|sumideros)\b/.test(qn)) add('ev_escorrentia');
   if (/\bdecreto\b/.test(qn) && /\b181\b/.test(qn)) add('ev_historia_bcs', 'terr_los_cabos');
   if (/\bsin cuartos\b/.test(qn) && /\bfonatur\b/.test(qn)) add('ev_historia_bcs');
-  if (/\borganigrama\b/.test(qn) || /\btitulares con nombre\b/.test(qn)) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
+  if ((/\borganigrama\b/.test(qn) && !/\bno es un organigrama\b/.test(qn)) || /\btitulares con nombre\b/.test(qn)) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
   if (/\bfin de febrero\b/.test(qn) && /\b2024\b/.test(qn)) add('ev_org_cabos_2024', 'ev_organigrama_cabos');
   if (/\bno se adivina\b/.test(qn) || /\bcuyo nombre no esta\b/.test(qn)) add('gap_org_obras_cabos');
   if (/\bmayo de 2013\b/.test(qn) || (/\bconsulta\b/.test(qn) && /\bveintitres\b/.test(qn))) add('gap_pdu_cabos_3a', 'inst_pdu_cabos');
@@ -3654,6 +3680,29 @@ function factorSeedIds(qn, kinds) {
   if (/\bsin cifras nuevas de cuartos\b/.test(qn)) add('ev_historia_bcs');
   if (/\bla comparacion del medio no es censo\b/.test(qn)) add('ev_news_cfe_128');
   if (/\bno sustituye a cfe\b/.test(qn) || (/\bno sustituye\b/.test(qn) && /\bcenace\b/.test(qn))) add('ev_mesa_energia');
+  if (/\bpoligonos de predio\b/.test(qn)) add('dq_cambio_uso_suelo', 'gap_permisos_uso_suelo', 'gap_catastro_secundario');
+  if (/\binstrumento local esta en brecha\b/.test(qn)) add('gap_pdu_cabos_3a', 'gap_pmdu_lapaz_texto', 'gap_pdu_mulege', 'gap_psdu_loreto_gazette', 'gap_permisos_uso_suelo');
+  if (/\bpeligrosidad por fallas\b/.test(qn)) add('ev_riesgos_documentados', 'gap_riesgo_capas_vector');
+  if (/\bsin (boletin|boge) final\b/.test(qn)) add('gap_pdu_cabos_3a', 'inst_pdu_cabos');
+  if (/\bultima actualizacion en disco\b/.test(qn)) add('gap_pmdu_lapaz_texto', 'inst_pdu_lapaz');
+  if (/\bel techo estatal sigue\b/.test(qn)) add('rc_sibcs', 'const_red_aislada', 'ev_sig_sibcs', 'gap_loreto_energia_local');
+  if (/\briesgo hidrometeorologico\b/.test(qn) || (/\bno sustituye el atlas\b/.test(qn) && /\briesgo\b/.test(qn))) add('ev_sig_hurricanes', 'gap_riesgo_capas_vector');
+  if (/\b(desborde|spillover) desde cabos\b/.test(qn)) add('ev_dossiers_lugar', 'gap_east_cape_carga', 'gap_east_cape_instrumento', 'terr_obs_east_cape');
+  if (/\btechos de conservacion\b/.test(qn)) add('ev_dossiers_lugar', 'gap_loreto_dma', 'terr_loreto');
+  if (/\briego y bombeo\b/.test(qn)) add('ev_dossiers_lugar', 'dd_agro_santo_domingo', 'terr_comondu', 'const_dma_deficit');
+  if (/\bescasez de servicios\b/.test(qn) && /\bnorte\b/.test(qn)) add('ev_dossiers_lugar', 'terr_mulege', 'gap_mulege_agua_energia', 'ev_sig_mulege_oasis', 'gap_acuifero_0302');
+  if (/\bcarga cuantitativa no esta en el dossier\b/.test(qn)) add('ev_dossiers_lugar', 'gap_east_cape_carga');
+  if (/\bno es un organigrama\b/.test(qn) && /\bconsultoria\b/.test(qn)) add('ev_mesa_agua', 'inst_ley_aguas', 'actor_cea', 'actor_conagua');
+  if (/\bopera el marco hidrico\b/.test(qn)) add('ev_mesa_agua', 'inst_ley_aguas', 'actor_cea');
+  if (/\bautoridad tecnica del plan\b/.test(qn)) add('ev_mesa_urbanismo', 'inst_pdu_cabos', 'gap_pdu_cabos_3a', 'actor_implan_cabos');
+  if (/\bno se suma un total estatal\b/.test(qn)) add('ev_pob_censo_2020');
+  if (/\binstrumento municipal en consulta\b/.test(qn) || /\btratamiento y residuos del desarrollador\b/.test(qn)) add('ev_sig_poel_cabos', 'inst_poel_cabos', 'gap_permisos_uso_suelo');
+  if (/\bno es disponibilidad nueva\b/.test(qn)) add('ev_sig_poel_cabos', 'ev_esc_water_first', 'const_dma_deficit');
+  if (/\bvigentes y en operacion\b/.test(qn) || /\bterritorio de mayor crecimiento urbano\b/.test(qn)) add('ev_peotdu_instrumentos', 'gap_permisos_uso_suelo');
+  if (/\bprograma nombrado de la ribera\b/.test(qn)) add('gap_east_cape_instrumento', 'gap_east_cape_carga', 'ev_psdu_barriles');
+  if (/\bconservar el techo de cada uno\b/.test(qn)) add('dq_comparar_polos', 'gap_loreto_dma', 'gap_east_cape_carga', 'ev_sig_mulege_oasis');
+  if (/\bmodificado no es una participacion\b/.test(qn) || /\bdevengado no llena\b/.test(qn) || /\benero a junio no es ley municipal\b/.test(qn)) add('ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026');
+  if (/\bsin megaproyecto nuevo\b/.test(qn)) add('ev_sig_vuelos', 'gap_loreto_pax', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap');
   if (/\bpacifico\b/.test(qn) && /\btodos santos\b/.test(qn) && /\brenta\b/.test(qn)) add('ev_jll_zonas_2025', 'gap_rentas_hoteleras');
   if (/\bel aviso no sustituye el decreto\b/.test(qn)) add('ev_anp_avisos', 'ev_historia_bcs');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn)) add('ev_historia_bcs', 'terr_anp_vizcaino', 'ev_anp_avisos', 'gap_acuifero_0302');
@@ -3806,7 +3855,7 @@ function factorSeedIds(qn, kinds) {
     if (/\b0320\b|santiago/.test(qn)) add('rc_acuifero_0320');
   }
   if (/\bescorrent|\bhidrosheds|\bcauces?\b/.test(qn)) add('ev_escorrentia');
-  if (/\borganigrama|\bdesarrollo urbano\b/.test(qn) && (p.cabos || p.who || !p.any)) {
+  if ((/\borganigrama\b/.test(qn) && !/\bno es un organigrama\b/.test(qn) || /\bdesarrollo urbano\b/.test(qn)) && (p.cabos || p.who || !p.any)) {
     add('ev_org_cabos_2024', 'gap_org_obras_cabos', 'actor_implan_cabos', 'actor_oomsapas_cabos');
   }
   if (/\bhistoria|\bfonatur\b|\b1974\b/.test(qn)) add('ev_historia_bcs');
