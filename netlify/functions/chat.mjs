@@ -1506,6 +1506,24 @@ function expandQuery(query) {
   if (/\bprogramas para el bienestar\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bmejoramiento urbano\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\b(trescientos cincuenta y un mil|doscientos noventa y dos mil)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(direccion( general)? de ecologia|ecologia y medio ambiente)\b/.test(qn) && /\b(los cabos|cabo san lucas|ayuntamiento)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(direccion( general)? de desarrollo social|desarrollo social municipal)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(direccion( general)? de fomento|fomento economico municipal)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(direccion( general)? de desarrollo urbano|desarrollo urbano municipal)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(direccion( general)? de servicios publicos|servicios publicos municipales)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(direccion( general)? de seguridad|seguridad publica municipal|policia preventiva)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\brosa esther\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(tesoreria|contraloria|oficialia mayor|secretaria general)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\balcalde\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdelegacion de santiago\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bseguimos asi\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bseguridad hidrica\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bfortalecer\b/.test(qn) && /\b(corredor|movilidad)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpuertos y aeropuertos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bprograma de ampliacion y modernizacion\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsetenta y tres mil\b/.test(qn) && /\b(comondu|ciudad constitucion)\b/.test(qn) && !/\bconstitucion politica\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bsesenta y cuatro mil\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bciento treinta y seis mil\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -2970,6 +2988,24 @@ function factorSeedIds(qn, kinds) {
   if (/\bprogramas para el bienestar\b/.test(qn)) add('proj_fed_soc_001');
   if (/\bmejoramiento urbano\b/.test(qn)) add('proj_fed_soc_002');
   if (/\btrescientos cincuenta y un mil\b/.test(qn) || /\bdoscientos noventa y dos mil\b/.test(qn)) add('ev_pob_censo_2020');
+  if (/\b(direccion( general)? de ecologia|ecologia y medio ambiente|rosa esther)\b/.test(qn) && (p.cabos || /\brosa esther\b/.test(qn) || /\bayuntamiento\b/.test(qn))) {
+    add('actor_cabos_dg_ecologia', 'ev_org_cabos_2024');
+  }
+  if (/\b(direccion( general)? de desarrollo social|desarrollo social municipal)\b/.test(qn) && p.cabos) add('actor_cabos_dg_desarrollo_social', 'ev_org_cabos_2024');
+  if (/\b(direccion( general)? de fomento|fomento economico municipal)\b/.test(qn) && p.cabos) add('actor_cabos_dg_fomento_economico', 'ev_org_cabos_2024');
+  if (/\b(direccion( general)? de desarrollo urbano|desarrollo urbano municipal)\b/.test(qn) && p.cabos) add('actor_cabos_dg_desarrollo_urbano', 'ev_org_cabos_2024', 'inst_pdu_cabos');
+  if (/\b(direccion( general)? de servicios publicos|servicios publicos municipales)\b/.test(qn) && p.cabos) add('actor_cabos_dg_servicios_publicos', 'ev_org_cabos_2024');
+  if (/\b(direccion( general)? de seguridad|seguridad publica municipal|policia preventiva)\b/.test(qn) && p.cabos) add('actor_cabos_dg_seguridad_publica', 'ev_org_cabos_2024');
+  if (/\b(tesoreria|contraloria|oficialia mayor|secretaria general|alcalde)\b/.test(qn) && p.cabos && !p.paz && !p.loreto) add('actor_cabos_presidencia', 'ev_org_cabos_2024');
+  if (/\bdelegacion de santiago\b/.test(qn)) add('actor_cabos_delegaciones', 'ev_org_cabos_2024', 'terr_los_cabos');
+  if (/\bseguimos asi\b/.test(qn)) add('ev_esc_baseline', 'const_dma_deficit');
+  if (/\bseguridad hidrica\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
+  if (/\bfortalecer\b/.test(qn) && /\b(corredor|movilidad)\b/.test(qn)) add('ev_esc_corridor');
+  if (/\bpuertos y aeropuertos\b/.test(qn)) add('ev_esc_ports', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap');
+  if (/\bprograma de ampliacion y modernizacion\b/.test(qn)) add('inst_pamrnt', 'rc_sibcs', 'const_red_aislada');
+  if (/\bsetenta y tres mil\b/.test(qn) && p.comondu && !/\bconstitucion politica\b/.test(qn)) add('ev_pob_censo_2020');
+  if (/\bsesenta y cuatro mil\b/.test(qn) && p.mulege) add('ev_pob_censo_2020');
+  if (/\bciento treinta y seis mil\b/.test(qn)) add('ev_pob_censo_2020', 'terr_los_cabos');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
