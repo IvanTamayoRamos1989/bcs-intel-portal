@@ -52,8 +52,8 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
       )}
       {shell ? (
         <p class="shell-chat-lead">
-          <span data-lang-es>Pregunta por un lugar o un tema. El mapa y los archivos siguen la respuesta.</span>
-          <span data-lang-en hidden>Ask about a place or a theme. The map and the files follow the answer.</span>
+          <span data-lang-es>Pregunta por un lugar o un tema del estado. Si falta un dato, la respuesta lo dice.</span>
+          <span data-lang-en hidden>Ask about a place or a theme in the state. If a figure is missing, the answer says so.</span>
         </p>
       ) : (
         <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
@@ -1454,7 +1454,7 @@ const { home = false, shell = false, showSuggestions = true } = Astro.props;
           msgs.querySelectorAll('.bcs-fu').forEach(function (n) { n.classList.add('bcs-fu-old'); });
           var fu = el('div', 'bcs-fu');
           var enL = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
-          fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Keep exploring' : 'Sigue explorando'));
+          fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Continue this consultation' : 'Sigue esta consulta'));
           fus.forEach(function (q) {
             var b = el('button', 'bcs-fu-chip', String(q));
             b.type = 'button';

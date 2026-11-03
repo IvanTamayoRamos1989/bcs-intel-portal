@@ -1,4 +1,4 @@
-/* 3-pane shell: chat events move the twin map and the file list. */
+/* Map page: layers, fly-to and a question handed off from the chat. */
 (function () {
   var model = window.__SHELL_MODEL__ || { layers: [], themes: [] };
   var byId = {};
@@ -250,6 +250,28 @@
       ['CODE_PA', 'Código de política', 'Policy code'],
       ['icao', 'ICAO', 'ICAO'],
       ['iata', 'IATA', 'IATA'],
+      ['elevacion_m', 'Elevación (m s.n.m.)', 'Elevation (m a.s.l.)'],
+      ['pendiente_rango', 'Rango de pendiente', 'Slope range'],
+      ['superficie_km2', 'Superficie estimada (km²)', 'Estimated area (km²)'],
+      ['superficie_m2', 'Superficie (m²)', 'Area (m²)'],
+      ['codigo_postal', 'Código postal', 'Postal code'],
+      ['viviendas_habitadas', 'Viviendas habitadas (INEGI)', 'Inhabited homes (INEGI)'],
+      ['hogares_con_vehiculo', 'Hogares con vehículo', 'Households with vehicle'],
+      ['pct_hogares_vehiculo', '% hogares con vehículo', '% households with vehicle'],
+      ['hogares_con_bicicleta', 'Hogares con bicicleta', 'Households with bicycle'],
+      ['pct_bicicleta', '% uso / disponibilidad de bicicleta', '% bicycle availability/share'],
+      ['unidades_economicas', 'Unidades económicas (DENUE)', 'Economic units (DENUE)'],
+      ['unidades_multifamiliares', 'Unidades multifamiliares / viviendas', 'Multi-family units / homes'],
+      ['velocidad_kmh', 'Límite de velocidad (km/h)', 'Speed limit (km/h)'],
+      ['carriles', 'Carriles', 'Lanes'],
+      ['longitud_km', 'Longitud (km)', 'Length (km)'],
+      ['operador', 'Operador / Red', 'Operator / Network'],
+      ['cobertura_electrica_pct', 'Cobertura eléctrica / alumbrado', 'Power / street lighting coverage'],
+      ['cobertura_drenaje_pct', 'Cobertura de drenaje y registros', 'Sewer & manhole coverage'],
+      ['cobertura_agua_pct', 'Cobertura de agua entubada', 'Piped water coverage'],
+      ['tdpa', 'Tránsito diario promedio (veh/día)', 'Average daily traffic (veh/day)'],
+      ['peak', 'Demanda horaria estimada (veh/h)', 'Estimated peak hourly demand (veh/h)'],
+      ['grade', 'Nivel de servicio vial', 'Road level of service'],
     ];
     fields.forEach(function (field) {
       var key = lang() === 'en' && field[3] && p[field[3]] != null && p[field[3]] !== '' ? field[3] : field[0];
@@ -1563,9 +1585,10 @@
     });
   });
   var help=document.getElementById('twin-help'),guide=document.getElementById('twin-guide');
-  function closeGuide(){if(!guide)return;guide.hidden=true;help.setAttribute('aria-expanded','false');help.focus();}
-  if(help)help.addEventListener('click',function(){guide.hidden=!guide.hidden;help.setAttribute('aria-expanded',String(!guide.hidden));if(!guide.hidden)document.getElementById('twin-help-close').focus();});
-  document.getElementById('twin-help-close').addEventListener('click',closeGuide);
+  function closeGuide(){if(!guide)return;guide.hidden=true;if(help){help.setAttribute('aria-expanded','false');help.focus();}}
+  if(help&&guide)help.addEventListener('click',function(){guide.hidden=!guide.hidden;help.setAttribute('aria-expanded',String(!guide.hidden));if(!guide.hidden){var closer=document.getElementById('twin-help-close');if(closer)closer.focus();}});
+  var helpClose=document.getElementById('twin-help-close');
+  if(helpClose)helpClose.addEventListener('click',closeGuide);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(guide&&!guide.hidden)closeGuide();else if(document.body.classList.contains('shell-sheet-open'))setSheet(false);else closeFiche();}});
   document.getElementById('twin-reset-map').addEventListener('click',function(){
     closeFiche();paintMuni('');if(engine&&engine.mark)engine.mark(null,null,'');if(engine&&engine.fitBox)engine.fitBox(null);if(leafletMap)leafletMap.fitBounds([[22.87,-115.22],[28,-109.41]]);
@@ -1583,11 +1606,11 @@
   syncBasic();
   setBasemap(basemap);
   boot3d();
-  fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
+  if (treeEl || relatedEl) fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
     index = data;
     renderTree(searchEl ? searchEl.value : '');
     if(latestAnswer)focusFiles(latestAnswer.question,latestAnswer.sources,latestAnswer.answer);
-    if(searchEl&&searchEl.value)document.getElementById('twin-archive').open=true;
+    if(searchEl&&searchEl.value){var archive=document.getElementById('twin-archive');if(archive)archive.open=true;}
   }).catch(function () {
     if (treeEl) treeEl.textContent = tx('No se pudo cargar el índice de archivos.', 'The file index could not be loaded.');
   });

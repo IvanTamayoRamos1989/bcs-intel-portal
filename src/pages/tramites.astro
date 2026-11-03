@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import knowhow from '../data/bcs_procesos_gobierno_proyectos.json';
+
+const modalities = knowhow.modalities;
+const munis = Object.entries(knowhow.municipal_specifics);
+---
+<BaseLayout
+  title="Ruta crítica y gestión gubernamental de proyectos en BCS"
+  titleEn="Critical path and government permitting for projects in BCS"
+  description="Guía operativa y normativa de trámites, factibilidades (agua, energía, uso de suelo, MIA) y aprobaciones para proyectos privados, obra pública y Asociaciones Público-Privadas (APP) en Baja California Sur."
+  descriptionEn="Operational and regulatory guide to permits, utility feasibilities (water, energy, land use, EIA) and approvals for private, public, and PPP projects in Baja California Sur."
+  wide={true}
+>
+  <section class="card" style="margin-bottom:1.5rem;border-left:4px solid #0284c7">
+    <p class="eyebrow" style="margin:0 0 0.35rem;font-size:0.78rem;font-weight:700;letter-spacing:0.06em;color:#0284c7">
+      <span data-lang-es>INTELIGENCIA REGULATORIA Y GESTIÓN DE PROYECTOS · BAJA CALIFORNIA SUR</span>
+      <span data-lang-en hidden>REGULATORY INTELLIGENCE & PROJECT PERMITTING · BAJA CALIFORNIA SUR</span>
+    </p>
+    <h1 style="margin:0 0 0.5rem">
+      <span data-lang-es>Ruta crítica para gestionar proyectos públicos, privados y APP en BCS</span>
+      <span data-lang-en hidden>Critical path to manage public, private, and PPP projects in BCS</span>
+    </h1>
+    <p style="margin:0;color:#334155;line-height:1.5">
+      <span data-lang-es>{knowhow.caveat_es}</span>
+      <span data-lang-en hidden>{knowhow.caveat_en}</span>
+    </p>
+  </section>
+
+  <section class="card" style="margin-bottom:1.75rem" id="simulador-ruta">
+    <h2 style="margin-top:0">
+      <span data-lang-es>1. Simulador de ruta regulatoria y tiempos estimados</span>
+      <span data-lang-en hidden>1. Regulatory path and timeline estimator</span>
+    </h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:1.25rem">
+      <label style="display:flex;flex-direction:column;gap:0.35rem;font-weight:600;font-size:0.88rem">
+        <span data-lang-es>Modalidad de proyecto</span>
+        <span data-lang-en hidden>Project modality</span>
+        <select id="sim-mod" style="padding:0.55rem;border-radius:8px;border:1px solid #cbd5e1;font:inherit">
+          <option value="privado">Proyecto Privado (Inmobiliario, Turístico, Industrial, Energía)</option>
+          <option value="publico">Proyecto Público (Obra Pública Federal, Estatal o Municipal)</option>
+          <option value="app">Asociación Público-Privada (APP / Concesión / CPS Largo Plazo)</option>
+        </select>
+      </label>
+      <label style="display:flex;flex-direction:column;gap:0.35rem;font-weight:600;font-size:0.88rem">
+        <span data-lang-es>Municipio en Baja California Sur</span>
+        <span data-lang-en hidden>Municipality in Baja California Sur</span>
+        <select id="sim-muni" style="padding:0.55rem;border-radius:8px;border:1px solid #cbd5e1;font:inherit">
+          <option value="Los Cabos">Los Cabos</option>
+          <option value="La Paz">La Paz</option>
+          <option value="Loreto">Loreto</option>
+          <option value="Comondú">Comondú</option>
+          <option value="Mulegé">Mulegé</option>
+        </select>
+      </label>
+      <label style="display:flex;flex-direction:column;gap:0.35rem;font-weight:600;font-size:0.88rem">
+        <span data-lang-es>Condición territorial / ambiental</span>
+        <span data-lang-en hidden>Territorial / environmental condition</span>
+        <select id="sim-cond" style="padding:0.55rem;border-radius:8px;border:1px solid #cbd5e1;font:inherit">
+          <option value="typical">Polígono urbano consolidado con PDU vigente</option>
+          <option value="complex_coastal_or_forest">Zona costera (ZOFEMAT), matorral forestal (DTU) o colindante a ANP</option>
+          <option value="min">Adecuación o proyecto menor en predio ya urbanizado</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="sim-output" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.1rem">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.85rem;margin-bottom:1rem">
+        <div style="background:#fff;padding:0.8rem 1rem;border-radius:8px;border:1px solid #cbd5e1">
+          <small style="color:#64748b;display:block">Plazo estimado de gestión previa a obra</small>
+          <strong id="sim-months" style="font-size:1.35rem;color:#0369a1">24 meses</strong>
+        </div>
+        <div style="background:#fff;padding:0.8rem 1rem;border-radius:8px;border:1px solid #cbd5e1">
+          <small style="color:#64748b;display:block">Instrumento rector en el municipio</small>
+          <strong id="sim-zoning" style="font-size:0.9rem;color:#0f172a">PDU 2040 Los Cabos + POERBCS 2026</strong>
+        </div>
+        <div style="background:#fff;padding:0.8rem 1rem;border-radius:8px;border:1px solid #cbd5e1">
+          <small style="color:#64748b;display:block">Autoridad hídrica y condición de acuífero</small>
+          <strong id="sim-water" style="font-size:0.9rem;color:#0f172a">OOMSAPAS Los Cabos + CONAGUA</strong>
+        </div>
+      </div>
+      <p style="margin:0;font-size:0.88rem;color:#334155">
+        <strong>Verificación crítica en este municipio:</strong>
+        <span id="sim-risk">Dictamen hidrometeorológico de escorrentía en arroyos (CONAGUA / Protección Civil) y restricción de alturas/accesos a playa (ZOFEMAT).</span>
+      </p>
+    </div>
+  </section>
+
+  <section style="margin-bottom:2rem">
+    <h2>
+      <span data-lang-es>2. Las 3 rutas de gestión paso a paso (Privado · Público · APP)</span>
+      <span data-lang-en hidden>2. The 3 step-by-step permitting roadmaps (Private · Public · PPP)</span>
+    </h2>
+
+    {modalities.map((m) => (
+      <article class="card" id={`ruta-${m.id}`} style="margin-bottom:1.5rem">
+        <header style="border-bottom:1px solid #e2e8f0;padding-bottom:0.75rem;margin-bottom:1rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:0.5rem">
+          <h3 style="margin:0;color:#0f172a">
+            <span data-lang-es>{m.name_es}</span>
+            <span data-lang-en hidden>{m.name_en}</span>
+          </h3>
+          <span style="background:#e0f2fe;color:#0369a1;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.8rem;font-weight:700">
+            Rango operativo en BCS: {m.estimated_total_months.min} a {m.estimated_total_months.complex_coastal_or_forest} meses (típico: {m.estimated_total_months.typical} meses)
+          </span>
+        </header>
+
+        <div style="background:#fffbeb;border-left:4px solid #f59e0b;padding:0.75rem 1rem;margin-bottom:1rem;border-radius:6px">
+          <strong style="display:block;font-size:0.85rem;color:#92400e;margin-bottom:0.35rem">
+            <span data-lang-es>Cuellos de botella críticos en Baja California Sur:</span>
+            <span data-lang-en hidden>Critical bottlenecks in Baja California Sur:</span>
+          </strong>
+          <ul style="margin:0;padding-left:1.2rem;font-size:0.85rem;color:#78350f">
+            {m.critical_bottlenecks_bcs.map((b) => (
+              <li style="margin-bottom:0.25rem">{b}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Etapa</th>
+                <th>Plazo estimado</th>
+                <th>Dependencias en BCS</th>
+                <th>Base legal e instrumentos</th>
+                <th>Entregables / Resolutivos requeridos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {m.phases.map((p) => (
+                <tr>
+                  <td>
+                    <strong>Paso {p.step}: {p.phase_es}</strong>
+                    <br /><small style="color:#64748b">{p.level}</small>
+                  </td>
+                  <td style="white-space:nowrap;font-weight:600;color:#0369a1">{p.duration_months}</td>
+                  <td>
+                    <ul style="margin:0;padding-left:1rem;font-size:0.82rem">
+                      {p.agencies.map((a) => <li>{a}</li>)}
+                    </ul>
+                  </td>
+                  <td>
+                    <ul style="margin:0;padding-left:1rem;font-size:0.82rem">
+                      {p.legal_basis.map((l) => <li>{l}</li>)}
+                    </ul>
+                  </td>
+                  <td>
+                    <ul style="margin:0;padding-left:1rem;font-size:0.82rem">
+                      {p.deliverables.map((d) => <li>{d}</li>)}
+                    </ul>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="card" style="margin-bottom:2rem">
+    <h2 style="margin-top:0">
+      <span data-lang-es>3. Especificidades regulatorias por municipio en BCS</span>
+      <span data-lang-en hidden>3. Regulatory specifics by municipality in BCS</span>
+    </h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Municipio</th>
+            <th>Instrumento de zonificación y ordenamiento</th>
+            <th>Gestión del agua (OOMSAPAS / CONAGUA)</th>
+            <th>Verificación territorial clave</th>
+          </tr>
+        </thead>
+        <tbody>
+          {munis.map(([name, info]) => (
+            <tr>
+              <td><strong>{name}</strong></td>
+              <td style="font-size:0.85rem">{info.zoning_instrument}</td>
+              <td style="font-size:0.85rem">{info.water_agency}</td>
+              <td style="font-size:0.85rem">{info.key_risk_check}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ knowhowData: knowhow }}>
+    (function () {
+      var modSel = document.getElementById('sim-mod');
+      var muniSel = document.getElementById('sim-muni');
+      var condSel = document.getElementById('sim-cond');
+      var monthsEl = document.getElementById('sim-months');
+      var zoningEl = document.getElementById('sim-zoning');
+      var waterEl = document.getElementById('sim-water');
+      var riskEl = document.getElementById('sim-risk');
+
+      var mods = {};
+      (knowhowData.modalities || []).forEach(function (m) { mods[m.id] = m; });
+      var munis = knowhowData.municipal_specifics || {};
+
+      function updateSim() {
+        var mod = mods[modSel.value] || mods.privado;
+        var muni = munis[muniSel.value] || munis['Los Cabos'];
+        var cond = condSel.value || 'typical';
+        var mVal = (mod.estimated_total_months && mod.estimated_total_months[cond]) || 24;
+        monthsEl.textContent = mVal + ' meses (aprox.)';
+        zoningEl.textContent = muni.zoning_instrument;
+        waterEl.textContent = muni.water_agency;
+        riskEl.textContent = muni.key_risk_check;
+      }
+
+      [modSel, muniSel, condSel].forEach(function (el) {
+        if (el) el.addEventListener('change', updateSim);
+      });
+      updateSim();
+    })();
+  </script>
+</BaseLayout>
