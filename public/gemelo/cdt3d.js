@@ -250,15 +250,17 @@
         ? [base.bounds[0][0], base.bounds[0][1], base.bounds[1][0], base.bounds[1][1]]
         : STATE;
       var cache = {};
-      function fitBox(b) {
+      function fitBox(b, opts) {
+        opts = opts || {};
         var box = b && b.length === 4 ? b : stateBox;
+        var pitch = opts.pitch != null ? opts.pitch : map.getPitch();
         map.resize();
         map.fitBounds([[box[0], box[1]], [box[2], box[3]]], {
-          padding: framePadding(map.getPitch()),
-          pitch: map.getPitch(),
-          bearing: reduced ? 0 : map.getBearing(),
-          duration: reduced ? 0 : 650,
-          maxZoom: 10.5,
+          padding: opts.padding || framePadding(pitch),
+          pitch: pitch,
+          bearing: reduced ? 0 : (opts.bearing != null ? opts.bearing : map.getBearing()),
+          duration: reduced ? 0 : (opts.duration != null ? opts.duration : 900),
+          maxZoom: opts.maxZoom != null ? opts.maxZoom : 10.5,
         });
       }
       var muniBase = (base && base.municipalities) || { type: 'FeatureCollection', features: [] };
@@ -368,7 +370,16 @@
       }
       function paintMunis(colors) {
         if (!map.getLayer('cdt-muni-fill')) return;
+        var named = colors && Object.keys(colors).length;
+        if (!named) {
+          map.setPaintProperty('cdt-muni-fill', 'fill-color', '#d6e8f5');
+          map.setPaintProperty('cdt-muni-fill', 'fill-opacity', 0.14);
+          map.setPaintProperty('cdt-muni-line', 'line-color', '#006BA3');
+          map.setPaintProperty('cdt-muni-line', 'line-width', 1.3);
+          return;
+        }
         map.setPaintProperty('cdt-muni-fill', 'fill-color', matchExpr(colors, 'fill', '#e6eef2'));
+        map.setPaintProperty('cdt-muni-fill', 'fill-opacity', matchExpr(colors, 'opacity', 0.08));
         map.setPaintProperty('cdt-muni-line', 'line-color', matchExpr(colors, 'line', '#8aa0ad'));
         map.setPaintProperty('cdt-muni-line', 'line-width', matchExpr(colors, 'weight', 1.1));
       }
