@@ -360,4 +360,16 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/explorar"
+  to = "/consulta/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/explorar/"
+  to = "/consulta/"
+  status = 301
+  force = true
+
 

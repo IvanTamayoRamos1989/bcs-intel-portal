@@ -151,7 +151,13 @@
         cap.appendChild(el('strong', null, b.title || b.caption || b.alt || ''));
         if (b.title && b.caption) cap.appendChild(el('span', 'bcs-rb-cap', b.caption));
         var row = el('span', 'bcs-rb-acts');
-        if (safeHref(b.href)) row.appendChild(mkLink(b.href, b.type === 'map' ? (en ? 'See in maps →' : 'Ver en mapas →') : (en ? 'See in atlas →' : 'Ver en explorar →')));
+        if (safeHref(b.href)) {
+          var imageHref = /\.(jpe?g|png|webp)(\?|$)/i.test(b.href);
+          var linkLabel = b.type === 'map'
+            ? (en ? 'See in maps →' : 'Ver en mapas →')
+            : (imageHref ? (en ? 'See the image →' : 'Ver la imagen →') : (en ? 'See in atlas →' : 'Ver en explorar →'));
+          row.appendChild(mkLink(b.href, linkLabel));
+        }
         if (safeHref(b.maps_url)) row.appendChild(mkLink(b.maps_url, 'Google Maps ↗'));
         cap.appendChild(row); fig.appendChild(cap);
         media.appendChild(fig);

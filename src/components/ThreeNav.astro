@@ -11,7 +11,4 @@ const links = [
   <nav aria-label="Navegación principal">{links.map(l=><a href={l.href} data-destination={l.id} aria-current={active===l.id?'page':undefined}><span data-lang-es>{l.es}</span><span data-lang-en hidden>{l.en}</span></a>)}</nav>
   <button id="lang-toggle" type="button" aria-label="Cambiar idioma" aria-pressed="false"><span data-side="es" class="active">ES</span><span aria-hidden="true"> · </span><span data-side="en">EN</span></button>
 </header>
-<link rel="stylesheet" href="/three-pages.css?v=20261102" />
-<script is:inline>
-  try{var lastContext=sessionStorage.getItem('bcs-last-map');var destination=document.querySelector('[data-destination="map"]');if(destination&&lastContext&&/^c[a-z0-9]+$/.test(lastContext)&&!destination.hasAttribute('aria-current'))destination.href='/consulta/?context='+lastContext;}catch(_){}
-</script>
+<link rel="stylesheet" href="/three-pages.css?v=20261103-citizen" />

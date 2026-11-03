@@ -80,14 +80,18 @@
     } catch (e) {}
     return 'es';
   }
-  document.addEventListener('DOMContentLoaded', function () {
+  function boot() {
     apply(current());
     var btn = document.getElementById('lang-toggle');
-    if (btn) {
+    if (btn && !btn.getAttribute('data-lang-bound')) {
+      btn.setAttribute('data-lang-bound', '1');
       btn.addEventListener('click', function () {
         apply(current() === 'es' ? 'en' : 'es');
       });
     }
-  });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+  window.addEventListener('pageshow', function () { apply(current()); });
   window.__BCS_SET_LANG__ = apply;
 })();
