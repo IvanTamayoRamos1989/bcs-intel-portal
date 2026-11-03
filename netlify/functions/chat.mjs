@@ -76,7 +76,7 @@ function inferPlaceId(message, explicit) {
     ['todos_santos', ['todos santos', 'pescadero']],
     ['la_paz', ['la paz', 'lap']],
     ['loreto', ['loreto', 'lto', 'nopolo']],
-    ['comondu', ['comondu', 'ciudad constitucion', 'ciudad insurgentes', 'puerto san carlos']],
+    ['comondu', ['comondu', 'ciudad constitucion', 'ciudad insurgentes', 'puerto san carlos', 'puerto de san carlos']],
     ['mulege_north', ['mulege', 'santa rosalia', 'vizcaino']],
   ];
   for (const [id, toks] of checks) {
@@ -682,7 +682,7 @@ function expandQuery(query) {
   if (/\btecho regulatorio\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bnopolo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bciudad insurgentes\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\bpuerto san carlos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpuerto (de )?san carlos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpamrnt\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(pducp|centro de poblacion|pmdu)\b/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bpoel\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
@@ -791,6 +791,14 @@ function expandQuery(query) {
   if (/\btransferencia\b/.test(qn) && /\b(puerto|asipona|api)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\breporte de vivienda\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bviabil/.test(qn) && /\briesgos?\b/.test(qn) && /\bhuecos?\b/.test(qn) && !factorKinds.includes('risk')) factorKinds.push('risk');
+  if (/\bdesal\w*/.test(qn) && /\bno borra\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcuellos de la red\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bfebrero de 2024\b/.test(qn) && /\b(concesion|puerto|marina)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b1 de octubre\b/.test(qn) && /\b(tarifa|puerto)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bapi\b/.test(qn) && /\b(administre|pidio)\b/.test(qn) && /\b(cabo|puerto)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bnatali\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1222,7 +1230,7 @@ function factorPlaceFlags(qn) {
   const loreto = /\b(loreto|nopolo)\b/.test(qn);
   const comondu = /\bcomondu\b/.test(qn)
     || /\bciudad insurgentes\b/.test(qn)
-    || /\bpuerto san carlos\b/.test(qn)
+    || /\bpuerto (de )?san carlos\b/.test(qn)
     || (/\b(ciudad constitucion|constitucion)\b/.test(qn) && !/\bconstitucion (politica|del estado)\b/.test(qn));
   const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
   const todos = /\b(todos santos|pescadero|playitas)\b/.test(qn);
@@ -1462,7 +1470,7 @@ function factorSeedIds(qn, kinds) {
   if (/\btecho regulatorio\b/.test(qn)) add('terr_bcs', 'inst_poerbcs', 'rc_sibcs', 'const_red_aislada');
   if (/\bnopolo\b/.test(qn)) add('terr_loreto', 'terr_anp_loreto', 'gap_loreto_dma');
   if (/\bciudad insurgentes\b/.test(qn)) add('terr_comondu', 'dd_agro_santo_domingo');
-  if (/\bpuerto san carlos\b/.test(qn)) add('ev_sig_asipona', 'terr_comondu');
+  if (/\bpuerto (de )?san carlos\b/.test(qn)) add('ev_sig_asipona', 'terr_comondu');
   if (/\bpamrnt\b/.test(qn)) add('inst_pamrnt', 'rc_sibcs', 'proj_p23_bs1', 'const_red_aislada');
   if (/\b(pducp|centro de poblacion|pmdu)\b/.test(qn) && p.paz) add('inst_pdu_lapaz', 'gap_pmdu_lapaz_texto', 'rc_acuifero_0324');
   if (/\bpmdu\b/.test(qn) && p.loreto) add('gap_psdu_loreto_gazette', 'terr_loreto');
@@ -1474,7 +1482,10 @@ function factorSeedIds(qn, kinds) {
     add('rc_subestaciones_gap', 'rc_sibcs');
   }
   if (/\bllaves\b/.test(qn)) add('rc_vivienda_cabos', 'const_dma_deficit', 'inst_pdu_cabos');
-  if (/\breuso\b/.test(qn)) add('const_escasez_agua', 'const_dma_deficit', 'proj_desal_cabos');
+  if (/\breuso\b/.test(qn)) {
+    add('const_escasez_agua', 'const_dma_deficit', 'proj_desal_cabos');
+    if (/\b(crece|alcanza|sustitu)\b/.test(qn)) add('dq_desal_vs_crecimiento', 'rc_sibcs');
+  }
   if (/\bnom[-\s]?011\b/.test(qn)) add('ev_acuiferos_dma');
   if (/\bdesal\w*/.test(qn) && /\b(crece|crecimiento|alcanza|sustitu)\b/.test(qn)) {
     add('dq_desal_vs_crecimiento', 'proj_desal_cabos', 'const_dma_deficit', 'rc_sibcs');
@@ -1558,6 +1569,12 @@ function factorSeedIds(qn, kinds) {
   if (/\bocupacion\b/.test(qn) && /\b(octubre|no es renta)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
   if (/\b(red del pais|red nacional)\b/.test(qn) && /\bpaus/.test(qn)) add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
   if (/\banexo\b/.test(qn) && /\b(participacion|2025)\b/.test(qn)) add('ev_fiscal_anexo_2025');
+  if (/\bdesal\w*/.test(qn) && /\bno borra\b/.test(qn)) add('proj_desal_cabos', 'const_dma_deficit');
+  if (/\bcuellos de la red\b/.test(qn)) add('inst_pamrnt', 'rc_sibcs', 'const_red_aislada');
+  if (/\bfebrero de 2024\b/.test(qn) && /\b(concesion|puerto|marina)\b/.test(qn)) add('ev_sig_asipona');
+  if (/\b1 de octubre\b/.test(qn) && /\b(tarifa|puerto)\b/.test(qn)) add('ev_sig_asipona');
+  if (/\bapi\b/.test(qn) && /\b(administre|pidio)\b/.test(qn)) add('ev_sig_asipona');
+  if (/\bnatali\b/.test(qn)) add('actor_cabos_dg_ecologia', 'ev_org_cabos_2024');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
@@ -3618,7 +3635,7 @@ const MUNI_RES = [
   ['Los Cabos', /\b(los cabos|cabo san lucas|san jose del cabo|cabo pulmo|la ribera|miraflores|santiago)\b/],
   ['La Paz', /\b(la paz|todos santos|el pescadero|pescadero|los barriles|barriles|el sargento|la ventana|el carrizal)\b/],
   ['Loreto', /\b(loreto|nopolo|san javier)\b/],
-  ['Comondú', /\b(comondu|ciudad constitucion|puerto san carlos|puerto adolfo lopez mateos|ciudad insurgentes)\b/],
+  ['Comondú', /\b(comondu|ciudad constitucion|puerto (de )?san carlos|puerto adolfo lopez mateos|ciudad insurgentes)\b/],
   ['Mulegé', /\b(mulege|santa rosalia|guerrero negro|vizcaino|san ignacio|bahia tortugas)\b/],
 ];
 const PLACE_TO_MUNI = { los_cabos: ['Los Cabos'], todos_santos: ['La Paz'], la_paz: ['La Paz'], east_cape: ['La Paz', 'Los Cabos'], loreto: ['Loreto'], comondu: ['Comondú'], mulege_north: ['Mulegé'] };

@@ -1788,6 +1788,55 @@ const CASES = [
     sinDatoIds: ['gap_rentas_hoteleras'],
     jllZones: true,
   },
+  {
+    q: 'El puerto de San Carlos',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona', 'terr_comondu'],
+    needTypes: ['Evidence', 'Territory'],
+  },
+  {
+    q: 'El reúso no alcanza si crece Cabos',
+    kind: 'viability',
+    needIds: ['const_escasez_agua', 'dq_desal_vs_crecimiento', 'proj_desal_cabos'],
+    needTypes: ['Constraint', 'DecisionQuestion', 'Project'],
+  },
+  {
+    q: 'La desaladora no borra el déficit',
+    kind: 'viability',
+    needIds: ['proj_desal_cabos', 'const_dma_deficit'],
+    needTypes: ['Project', 'Constraint'],
+  },
+  {
+    q: 'Cuellos de la red en el programa de ampliación',
+    kind: 'viability',
+    needIds: ['inst_pamrnt', 'rc_sibcs'],
+    needTypes: ['Instrument', 'ResourceCapacity'],
+  },
+  {
+    q: 'Concesión de febrero de 2024 en Cabo',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'Tarifas del 1 de octubre en el puerto',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'El gobernador pidió que API administre Cabo',
+    kind: 'viability',
+    needIds: ['ev_sig_asipona'],
+    needTypes: ['Evidence'],
+    forbid: ['actor_gobernador'],
+  },
+  {
+    q: 'Rosa Esther Natali de ecología',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_ecologia', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
 ];
 
 const NEGATIVES = [
