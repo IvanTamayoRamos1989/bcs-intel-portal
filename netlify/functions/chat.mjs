@@ -662,6 +662,18 @@ function expandQuery(query) {
   if ((/\b70\b/.test(qn) && /\bmva\b/.test(qn)) || /\bbuenavista\b/.test(qn) || /\bcabo falso\b/.test(qn)) {
     if (!factorKinds.length) factorKinds.push('viability');
   }
+  if (/\bcapacidad de carga\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bintegridad ecologica\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\blocalidades\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(acuerdo|dof)\b/.test(qn) && /\b(dma|acuifer)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\binterconex\w*/.test(qn) && /\b(pausad|sin|sistema interconectado)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(don diego|golfo de ulloa)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmujeres libres\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(stills|imagenes del territorio)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(east cape|cabo del este)\b/.test(qn) && /\bloreto\b/.test(qn) && /\baeropuerto/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bcomondu\b/.test(qn) && /\bla paz\b/.test(qn) && /\b(agro|agua)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1091,7 +1103,7 @@ function factorPlaceFlags(qn) {
   const cabos = /\b(los cabos|cabo san lucas|san jose del cabo|\bsjd\b)\b/.test(qn);
   const paz = /\bla paz\b/.test(qn) || /\bsan juan de la costa\b/.test(qn);
   const loreto = /\bloreto\b/.test(qn);
-  const comondu = /\b(comondu|constitucion)\b/.test(qn);
+  const comondu = /\bcomondu\b/.test(qn) || (/\b(ciudad constitucion|constitucion)\b/.test(qn) && !/\bconstitucion (politica|del estado)\b/.test(qn));
   const mulege = /\b(mulege|santa rosalia|vizcaino|guerrero negro)\b/.test(qn);
   const todos = /\b(todos santos|pescadero|playitas)\b/.test(qn);
   const nPlaces = [cabos, paz, loreto, comondu, mulege, todos, east].filter(Boolean).length;
@@ -1301,6 +1313,24 @@ function factorSeedIds(qn, kinds) {
   if ((/\b70\b/.test(qn) && /\bmva\b/.test(qn)) || /\b(buenavista|cabo falso)\b/.test(qn)) {
     add('proj_fed_ene_008', 'proj_fed_ene_007', 'rc_sibcs');
   }
+  if (/\bcapacidad de carga\b/.test(qn)) add('dq_capacidad_carga', 'const_dma_deficit', 'rc_sibcs', 'const_anp_nucleos');
+  if (/\bintegridad ecologica\b/.test(qn)) {
+    add('dq_integridad_ecologica', 'const_anp_nucleos');
+    if (/\bsierra la laguna\b/.test(qn)) add('terr_anp_sierra_laguna');
+  }
+  if (/\blocalidades\b/.test(qn)) add('ev_communities_master');
+  if (/\b(acuerdo|dof)\b/.test(qn) && /\b(dma|acuifer)\b/.test(qn)) {
+    add('ev_dma', 'proj_fed_agu_008', 'ev_acuiferos_dma');
+    if (p.paz || /\b0324\b/.test(qn)) add('rc_acuifero_0324');
+  }
+  if (/\binterconex\w*/.test(qn) && /\b(pausad|sin|sistema interconectado)\b/.test(qn)) {
+    add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
+  }
+  if (/\b(don diego|golfo de ulloa)\b/.test(qn)) add('proj_fed_min_002');
+  if (/\bmujeres libres\b/.test(qn)) add('proj_fed_tur_002', 'proj_fed_car_002');
+  if (/\b(stills|imagenes del territorio)\b/.test(qn)) add('ev_stills_intel', 'terr_obs_cabos_coast');
+  if (p.east && p.loreto && /\baeropuerto/.test(qn)) add('ev_dossiers_movilidad', 'terr_obs_east_cape', 'terr_loreto');
+  if (p.comondu && p.paz && /\b(agro|agua)\b/.test(qn)) add('terr_comondu', 'terr_la_paz', 'dd_agro_santo_domingo', 'rc_acuifero_0324');
   if (/\boomsapas\b/.test(qn)) add('actor_oomsapas_cabos', 'ev_mesa_agua');
   if (/\bsepuimm\b/.test(qn)) add('actor_sepuimm', 'inst_poerbcs');
   if (/\bconanp\b/.test(qn)) add('actor_conanp', 'terr_anp_cabo_pulmo', 'const_anp_nucleos');
