@@ -1639,6 +1639,18 @@ function expandQuery(query) {
   if (/\bveintitres de abril de dos mil trece\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bciento cuarenta y ocho\b/.test(qn) && /\bmatorral\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdoscientos trece\b/.test(qn) && /\b(anp|area natural|proteg|imagen|muestra)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bfebrero de dos mil veinticuatro\b/.test(qn) && /\b(concesion|puerto|marina|cincuenta anos)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bprimero de octubre\b/.test(qn) && /\b(tarifas?|puerto|sin precio)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(doscientos treinta|ciento quince)\b/.test(qn) && /\bkilovoltios\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bautobuses\b/.test(qn) && /\bmarzo de dos mil veintiseis\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bveinte de diciembre de dos mil veinticuatro\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bsegunda actualizacion\b/.test(qn) && /\bdos mil trece\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bdecreto ochocientos setenta y dos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bochocientos punto cinco\b/.test(qn) && /\bkilometros\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bno compensa\b/.test(qn) && /\b(pescadero|remanente|acuifero)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btreinta y dos\b/.test(qn) && /\bmatorral\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bveinticuatro\b/.test(qn) && /\bcosta visible\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bpedira\b/.test(qn) && /\bapi\b/.test(qn) && /\badministr/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -2826,7 +2838,7 @@ function factorSeedIds(qn, kinds) {
   if (/\bciento ochenta y uno\b/.test(qn)) add('ev_historia_bcs', 'terr_los_cabos');
   if (/\bcip\b/.test(qn) && /\b(cuartos|fonatur)\b/.test(qn)) add('ev_historia_bcs');
   if (/\bno es un censo\b/.test(qn) || (/\buna persona\b/.test(qn) && /\blocalidad\b/.test(qn))) add('ev_communities_master');
-  if (/\b(noventa y nueve|noventa y dos)\b/.test(qn) || (/\bboletin\b/.test(qn) && !/\bdiecinueve\b/.test(qn))) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
+  if (/\b(noventa y nueve|noventa y dos)\b/.test(qn) || (/\bboletin\b/.test(qn) && !/\bdiecinueve\b/.test(qn) && !/\bsin boletin\b/.test(qn))) add('ev_organigrama_cabos', 'ev_org_cabos_2024');
   if (/\bveintinueve de febrero\b/.test(qn)) add('ev_org_cabos_2024', 'ev_organigrama_cabos');
   if (/\bno se infiere\b/.test(qn) || (/\bdireccion municipal\b/.test(qn) && /\bsin nombre\b/.test(qn))) add('gap_org_obras_cabos', 'ev_org_cabos_2024');
   if (/\bla que opera\b/.test(qn) || (/\bdos mil trece\b/.test(qn) && /\bmayo\b/.test(qn)) || (/\bdos mil veintitres\b/.test(qn) && /\bconsulta\b/.test(qn))) {
@@ -3245,6 +3257,18 @@ function factorSeedIds(qn, kinds) {
   if (/\bveintitres de abril de dos mil trece\b/.test(qn)) add('gap_pdu_cabos_3a', 'inst_pdu_cabos');
   if (/\bciento cuarenta y ocho\b/.test(qn) && /\bmatorral\b/.test(qn)) add('ev_stills_intel');
   if (/\bdoscientos trece\b/.test(qn) && /\b(anp|area natural|proteg|imagen|muestra)\b/.test(qn)) add('ev_stills_intel');
+  if (/\bfebrero de dos mil veinticuatro\b/.test(qn) && /\b(concesion|puerto|marina|cincuenta anos)\b/.test(qn)) add('ev_sig_asipona');
+  if (/\bprimero de octubre\b/.test(qn) && /\b(tarifas?|puerto|sin precio)\b/.test(qn)) add('ev_sig_asipona');
+  if (/\b(doscientos treinta|ciento quince)\b/.test(qn) && /\bkilovoltios\b/.test(qn)) add('rc_tx_lapaz_cabos', 'proj_p23_bs1', 'rc_sibcs');
+  if (/\bautobuses\b/.test(qn) && /\bmarzo de dos mil veintiseis\b/.test(qn)) add('proj_fed_otr_001', 'terr_la_paz');
+  if (/\bveinte de diciembre de dos mil veinticuatro\b/.test(qn)) add('gap_pmdu_lapaz_texto', 'inst_pdu_lapaz');
+  if (/\bsegunda actualizacion\b/.test(qn) && /\bdos mil trece\b/.test(qn)) add('gap_pdu_cabos_3a', 'inst_pdu_cabos');
+  if (/\bdecreto ochocientos setenta y dos\b/.test(qn)) add('ev_historia_bcs', 'terr_loreto', 'gap_loreto_dma', 'gap_psdu_loreto_gazette');
+  if (/\bochocientos punto cinco\b/.test(qn) && /\bkilometros\b/.test(qn)) add('ev_escorrentia');
+  if (/\bno compensa\b/.test(qn) && /\b(pescadero|remanente|acuifero)\b/.test(qn)) add('ev_acuiferos_dma', 'const_dma_deficit');
+  if (/\btreinta y dos\b/.test(qn) && /\bmatorral\b/.test(qn)) add('terr_obs_cabos_coast');
+  if (/\bveinticuatro\b/.test(qn) && /\bcosta visible\b/.test(qn)) add('terr_obs_cabos_coast');
+  if (/\bpedira\b/.test(qn) && /\bapi\b/.test(qn) && /\badministr/.test(qn)) add('ev_sig_asipona');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
