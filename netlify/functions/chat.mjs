@@ -544,7 +544,7 @@ function expandQuery(query) {
   const whoFactor = /\b(quien (decide|opera|autoriza|gobierna)|who (decides|operates|runs)|titular)\b/.test(qn);
   if (whoFactor && !factorKinds.includes('viability')) factorKinds.push('viability');
   if (/\bcompens\w*\b|\boffset\b/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
-  if (/\brenta hotel|\bcap rate|\bocupacion hotel|\brenta por noche|\bprecio por noche/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
+  if (/\brenta hotel|\bcap rate|\bocupacion(?: de)? hotel|\brenta por noche|\bprecio por noche/.test(qn) && !factorKinds.includes('viability')) factorKinds.push('viability');
   const mobileGen = /\bturbinas? moviles?\b|\bgeneracion movil\b|\bcabo bello\b/.test(qn)
     || (/\b128\b/.test(qn) && /\bmw\b/.test(qn));
   if (mobileGen && !factorKinds.includes('viability')) factorKinds.push('viability');
@@ -582,7 +582,7 @@ function expandQuery(query) {
   if (/\bel novillo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdesal\w*/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bptar\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\bmesa de agua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bmesa del? agua\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bescenario\b/.test(qn) && /\b(corredor|intensif|ancla)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bescenario\b/.test(qn) && /\b(puertos?|aeropuertos?)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bied\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
@@ -590,7 +590,7 @@ function expandQuery(query) {
   if (/\b(peotdu|poetdu)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\bbarriles\b/.test(qn) && /\b(plan|psdu|pdu)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (/\b(cabo del este|east cape)\b/.test(qn) && /\b(boletin|pdu)\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
-  if (/\b(segunda residencia|segundas residencias|second homes?)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(segunda residencia|segundas residencias|segunda casa|segundas casas|second homes?)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bturismo\b/.test(qn) && /\bla paz\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\boomsapas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bsepuimm\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -635,7 +635,7 @@ function expandQuery(query) {
   }
   if (/\bmiraflores\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\b(asentamientos humanos|direccion general de obras)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
-  if (/\b(apff|flora y fauna)\b/.test(qn) && /\bcabo san lucas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(apff|flora y fauna|area de proteccion)\b/.test(qn) && /\bcabo san lucas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bcorredor hotelero\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdensificacion costera\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bprograma de manejo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -727,6 +727,22 @@ function expandQuery(query) {
   if ((/\bunion con la red nacional\b/.test(qn) || /\bsistema nacional\b/.test(qn)) && /\bpausad\w*/.test(qn) && !factorKinds.length) {
     factorKinds.push('viability');
   }
+  if (/\b(cobra|opera)\b/.test(qn) && /\bagua\b/.test(qn) && /\b(cabo san lucas|los cabos)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\bcatastro\b/.test(qn) && /\b(lleva|quien|titular|dirige)\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\b(linea de transmision|transmision|potencia)\b/.test(qn) && /\bla paz\b/.test(qn) && /\blos cabos\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('viability');
+  }
+  if (/\b(antes que el agua|antes del agua)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bvizcaino\b/.test(qn) && /\bhotel/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bplan de desarrollo urbano\b/.test(qn) && /\b(los cabos|cabo san lucas|la paz)\b/.test(qn) && !factorKinds.length) {
+    factorKinds.push('landuse');
+  }
+  if (/\bsistema electrico\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bplan sexenal\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -1253,7 +1269,7 @@ function factorSeedIds(qn, kinds) {
   };
   const kindHit = PROJECT_KIND_RE.test(qn);
   if (/\b(poblacion|habitantes|censo|demograf)\b/.test(qn)) add('ev_pob_censo_2020');
-  if (/\brenta hotel|\bcap rate|\bocupacion hotel|\brenta por noche|\bprecio por noche/.test(qn)) add('gap_rentas_hoteleras', 'ev_news_ocupacion');
+  if (/\brenta hotel|\bcap rate|\bocupacion(?: de)? hotel|\brenta por noche|\bprecio por noche/.test(qn)) add('gap_rentas_hoteleras', 'ev_news_ocupacion');
   if (/\bturbinas? moviles?\b|\bgeneracion movil\b|\bcabo bello\b/.test(qn) || (/\b128\b/.test(qn) && /\bmw\b/.test(qn))) {
     add('ev_news_cfe_128', 'rc_sibcs', 'const_red_aislada');
   }
@@ -1283,9 +1299,9 @@ function factorSeedIds(qn, kinds) {
   if (/\bel novillo\b/.test(qn)) add('proj_fed_agu_003');
   if (/\bdesal\w*/.test(qn) && p.paz) add('proj_fed_agu_002', 'rc_acuifero_0324');
   if (/\bptar\b/.test(qn) && p.loreto) add('proj_fed_agu_005', 'terr_loreto', 'gap_loreto_dma');
-  if (/\bmesa de agua\b/.test(qn)) add('ev_mesa_agua', 'actor_cea', 'actor_conagua');
+  if (/\bmesa del? agua\b/.test(qn)) add('ev_mesa_agua', 'actor_cea', 'actor_conagua');
   if (/\bimplan\b/.test(qn)) add('actor_implan_cabos', 'ev_mesa_urbanismo', 'inst_pdu_cabos', 'ev_org_cabos_2024');
-  if (/\b(segunda residencia|segundas residencias|second homes?)\b/.test(qn)) add('dd_residencial_cabos', 'ev_inmob_jll_2025');
+  if (/\b(segunda residencia|segundas residencias|segunda casa|segundas casas|second homes?)\b/.test(qn)) add('dd_residencial_cabos', 'ev_inmob_jll_2025');
   if (/\bturismo\b/.test(qn) && p.paz) add('dd_turismo_lapaz', 'rc_acuifero_0324');
   if (/\bturismo\b/.test(qn) && p.cabos) add('dd_turismo_cabos', 'const_dma_deficit');
   if (/\bforo\b/.test(qn)) add('dd_eventos_foro', 'dq_oportunidades');
@@ -1303,10 +1319,10 @@ function factorSeedIds(qn, kinds) {
   if (/\bdossier\b/.test(qn) && p.loreto) add('ev_dossiers_lugar', 'terr_loreto', 'gap_loreto_dma');
   if (/\bdesierto de evidencia\b/.test(qn)) add('ev_dossiers_movilidad', 'terr_mulege', 'gap_mulege_agua_energia');
   if (/\borientacion aerea\b/.test(qn)) add('ev_orientacion_aerea', 'dq_riesgos_principales', 'dq_cambio_uso_suelo');
-  if (p.cabos && /\bdirige\b/.test(qn) && /\becologia\b/.test(qn)) {
+  if (p.cabos && /\b(dirige|titular)\b/.test(qn) && /\becologia\b/.test(qn)) {
     add('actor_cabos_dg_ecologia', 'ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'inst_poel_cabos', 'terr_los_cabos');
   }
-  if (p.cabos && /\bdirige\b/.test(qn) && /\bcatastro\b/.test(qn)) {
+  if (p.cabos && /\b(dirige|lleva|titular|quien)\b/.test(qn) && /\bcatastro\b/.test(qn)) {
     add('ev_org_cabos_2024', 'actor_cabos_presidencia', 'actor_ayunt_cabos', 'terr_los_cabos', 'actor_implan_cabos', 'inst_pdu_cabos');
   }
   if (p.cabos && /\bdirige\b/.test(qn) && /\bdesarrollo urbano\b/.test(qn)) {
@@ -1334,7 +1350,7 @@ function factorSeedIds(qn, kinds) {
   if (/\b(asentamientos humanos|direccion general de obras)\b/.test(qn)) {
     add('actor_cabos_dg_obras_publicas', 'gap_org_obras_cabos', 'ev_org_cabos_2024', 'actor_cabos_presidencia');
   }
-  if (/\b(apff|flora y fauna)\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'terr_los_cabos', 'inst_poerbcs');
+  if (/\b(apff|flora y fauna|area de proteccion)\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'terr_los_cabos', 'inst_poerbcs');
   if (/\bcorredor hotelero\b/.test(qn) || (/\bcorredor\b/.test(qn) && /\bcabo san lucas\b/.test(qn) && /\bsan jose del cabo\b/.test(qn))) {
     add('terr_corredor_cabos', 'dd_turismo_cabos', 'terr_los_cabos');
   }
@@ -1446,6 +1462,18 @@ function factorSeedIds(qn, kinds) {
   if ((/\bunion con la red nacional\b/.test(qn) || /\bsistema nacional\b/.test(qn)) && /\bpausad\w*/.test(qn)) {
     add('proj_fed_ene_010', 'rc_sibcs', 'const_red_aislada');
   }
+  if (/\b(cobra|opera)\b/.test(qn) && /\bagua\b/.test(qn) && (p.cabos || /\bcabo san lucas\b/.test(qn))) {
+    add('actor_oomsapas_cabos', 'ev_mesa_agua');
+  }
+  if (/\b(linea de transmision|transmision|potencia)\b/.test(qn) && p.paz && p.cabos) {
+    add('rc_tx_lapaz_cabos', 'rc_sibcs', 'const_red_aislada');
+  }
+  if (/\b(antes que el agua|antes del agua)\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
+  if (/\bvizcaino\b/.test(qn) && /\bhotel/.test(qn)) add('terr_anp_vizcaino', 'const_anp_nucleos', 'ev_anp_avisos');
+  if (/\bplan de desarrollo urbano\b/.test(qn) && p.cabos) add('inst_pdu_cabos', 'terr_los_cabos', 'gap_pdu_cabos_3a');
+  if (/\bplan de desarrollo urbano\b/.test(qn) && p.paz) add('inst_pdu_lapaz', 'gap_pmdu_lapaz_texto', 'rc_acuifero_0324');
+  if (/\bsistema electrico\b/.test(qn)) add('ev_prodesen', 'rc_sibcs', 'const_red_aislada');
+  if (/\bplan sexenal\b/.test(qn)) add('inst_ped', 'inst_poerbcs');
   if (/\bcabo pulmo\b/.test(qn) && /\b(constru\w*|cierra|obra)\b/.test(qn)) {
     add('terr_anp_cabo_pulmo', 'const_anp_nucleos', 'ev_anp_avisos');
   }
