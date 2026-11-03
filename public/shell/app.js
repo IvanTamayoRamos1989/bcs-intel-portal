@@ -201,6 +201,18 @@
     var title = featureLabel(p) || (meta ? (lang() === 'en' ? meta.name_en : meta.name_es) : '');
     if (!title) return;
     var rows = [];
+    if (meta && meta.palette) {
+      var category = Number.isInteger(p.level) && meta.labels[p.level];
+      if (meta.id.indexOf('haz_') === 0) rows.push({es:'Nivel de peligro',en:'Hazard level',value:category || tx('Sin datos','No data')});
+      if (p.value != null) rows.push({es:'Densidad',en:'Density',value:p.value + (meta.id === 'density' ? ' hab/ha' : ' hab/km²')});
+      if (p.tdpa != null) rows.push({es:'Tránsito diario promedio (2024)',en:'Annual average daily traffic (2024)',value:p.tdpa+' veh/día'},
+        {es:'Demanda horaria estimada',en:'Estimated hourly demand',value:p.peak+' veh/h'}, {es:'Sentido del aforo',en:'Count direction',value:p.sc===0?tx('Ambos','Both'):String(p.sc)});
+      if (p.grade) rows.push({es:'Nivel de servicio (2024)',en:'Level of service (2024)',value:p.grade},
+        {es:'Volumen horario de referencia',en:'Reference hourly volume',value:p.vh+' veh/h'},
+        {es:'Umbral del nivel E',en:'Level E threshold',value:p.capacity+' veh/h'},
+        {es:'Volumen / umbral E',en:'Volume / level E threshold',value:p.ratio+' %'});
+      if (p.road) rows.push({es:'Carretera',en:'Road',value:p.road+' · km '+p.km});
+    }
     if (meta) rows.push({ es: 'Capa', en: 'Layer', value: lang() === 'en' ? meta.name_en : meta.name_es });
     var fields = [
       ['MUNICIPIO', 'Municipio', 'Municipality'],
@@ -270,6 +282,7 @@
       gaps: gap ? [gap] : [],
       files: filesFor(title),
     });
+    if (meta && meta.palette && lngLat) providerButtons(meta, lngLat);
     if (lngLat && engine && engine.mark) engine.mark(lngLat.lng, lngLat.lat, title);
   }
   function dmsPart(base) {
@@ -565,12 +578,12 @@
         if (!on[id]) return geo;
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
         leafletLayers[id] = L.geoJSON(geo, {
-          style: function () { return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
+          style: function (feat) { if(meta.palette) return {color:meta.palette[feat.properties.level] || '#919b9c',weight:.3,fillOpacity:.7}; return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
           onEachFeature: function (feature, layer) {
-            if (meta.reference) layer.on('click', function () { openFeatureFiche(feature, null, meta); });
+            if (meta.reference) layer.on('click', function (event) { openFeatureFiche(feature, event.latlng, meta); });
           },
           pointToLayer: function (feat, latlng) {
-            return L.circleMarker(latlng, { radius: 5, color: '#fff', weight: 1, fillColor: meta.color || '#0083C4', fillOpacity: 0.9 });
+            return L.circleMarker(latlng, { radius: 5, color: '#fff', weight: 1, fillColor: (meta.palette && meta.palette[feat.properties.level]) || meta.color || '#0083C4', fillOpacity: 0.9 });
           },
         }).addTo(leafletMap);
         return geo;
@@ -1188,6 +1201,61 @@
     return (model.stack || []).filter(function (s) { return s.id === id; })[0];
   }
 
+  var analysisSelect = document.getElementById('analysis-select');
+  var analysisPanel = document.getElementById('analysis-panel');
+  var activeAnalysis = '';
+  function showAnalysisLegend() {
+    if (!analysisSelect) return;
+    Array.from(analysisSelect.options).forEach(function(opt){ if(opt.dataset.es) opt.textContent=tx(opt.dataset.es,opt.dataset.en); });
+    var layer = byId[activeAnalysis], legend = document.getElementById('analysis-legend');
+    legend.replaceChildren();
+    document.getElementById('analysis-caption').textContent = layer ? tx(layer.description_es, layer.description_en) : tx('Elige qué quieres ver.','Choose a map.');
+    if (!layer) return;
+    var labels = layer.labels.slice(), colors = layer.palette.slice();
+    if (layer.id.indexOf('haz_') === 0) {
+      labels = lang()==='en' ? ['Very low','Low','Medium','High','No data'] : labels.concat('Sin datos');
+      colors.push('#919b9c');
+    }
+    labels.forEach(function (label, index) {
+      var item = document.createElement('span'), swatch = document.createElement('i');
+      swatch.style.background = colors[index]; item.append(swatch, label); legend.append(item);
+    });
+  }
+  if (analysisSelect) {
+    analysisSelect.addEventListener('change', function() {
+      if (activeAnalysis) showLayer(activeAnalysis,false);
+      activeAnalysis = analysisSelect.value;
+      if (activeAnalysis) showLayer(activeAnalysis,true);
+      closeFiche(); showAnalysisLegend();
+    });
+    new MutationObserver(showAnalysisLegend).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    [analysisPanel,document.getElementById('land-water')].forEach(function(panel,index,panels){
+      panel.addEventListener('toggle',function(){ if(panel.open) panels[1-index].open=false; });
+    });
+  }
+  function providerButtons(meta, loc) {
+    var panel = document.getElementById('shell-fiche');
+    var choices=meta.id==='traffic'||meta.id==='bottlenecks' ? ['traffic','biodiversity'] : ['biodiversity'];
+    choices.forEach(function(provider){
+      var button=document.createElement('button'), result=document.createElement('p');
+      button.type='button';result.setAttribute('role','status');
+      button.textContent=provider==='traffic'?tx('Ver demora actual · TomTom','Current delay · TomTom'):tx('Consultar biodiversidad a 1 km · IBAT','Biodiversity within 1 km · IBAT');
+      button.addEventListener('click',async function(){
+        button.disabled=true;result.textContent=tx('Consultando…','Checking…');
+        try {
+          var r=await fetch('/.netlify/functions/map-provider',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({provider:provider,lat:loc.lat,lng:loc.lng})});
+          var data=await r.json();
+          if(!r.ok) {
+            result.textContent=data.error==='not_configured'?tx('Conexión pendiente de activar.','Connection awaits activation.'):tx('Sin lectura disponible para este punto.','No reading available here.');
+          } else if(provider==='traffic') {
+            result.textContent=(data.closed?tx('Vía cerrada. ','Road closed. '):'')+data.speed+' km/h · '+tx('flujo libre ','free flow ')+data.freeSpeed+' km/h · '+tx('demora ','delay ')+Math.round(data.delaySeconds)+' s · '+new Date(data.retrieved).toLocaleTimeString();
+          } else result.textContent=data.count+tx(' áreas clave de biodiversidad en 1 km.',' key biodiversity areas within 1 km.');
+        } catch {result.textContent=tx('No se pudo consultar la fuente.','Source unavailable.');}
+        finally {button.disabled=false;}
+      });
+      panel.append(button,result);
+    });
+  }
   function readBoot() {
     var params = new URLSearchParams(location.search);
     if (params.get('vista') === 'tierra-agua') {
@@ -1197,6 +1265,12 @@
         panel.querySelectorAll('[data-layer]').forEach(function (box) { on[box.dataset.layer] = true; });
       }
     }
+    if (analysisSelect && params.get('vista') === 'analisis') {
+      var id = params.get('capa');
+      activeAnalysis = byId[id] && byId[id].palette ? id : 'temperature';
+      analysisSelect.value=activeAnalysis; on[activeAnalysis]=true; analysisPanel.open=true;
+    }
+    showAnalysisLegend();
     var base = params.get('base');
     if (base === 'satellite' || base === 'streets') basemap = base;
     (model.defaults || ['osm_towns', 'osm_highways']).forEach(function (id) { if (byId[id]) on[id] = true; });

@@ -4,6 +4,7 @@ import ChatWidget from './ChatWidget.astro';
 import ThreeNav from './ThreeNav.astro';
 import { ui } from '../i18n/ui';
 import { cdtModel } from '../lib/cdtModel';
+import analysisLayers from '../data/analysis_layers.json';
 import landWater from '../data/tierra_agua.json';
 import gisLayers from '../../public/gis/layers.json';
 
@@ -76,7 +77,11 @@ const stack = [
 ];
 const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
 const territoryIds = new Set(landWater.map((layer) => layer.id));
-const shellLayers = [...catalogLayers, ...extras].filter((layer) => !territoryIds.has(layer.id)).concat(landWater.map((layer) => ({...layer, year_es: '', year_en: ''})));
+const shellLayers = [
+  ...[...catalogLayers, ...extras].filter((layer) => !territoryIds.has(layer.id)),
+  ...landWater.map((layer) => ({...layer, year_es: '', year_en: ''})),
+  ...analysisLayers,
+];
 const layersById = Object.fromEntries(shellLayers.map((l) => [l.id, l]));
 for (const group of stack) {
   for (const id of group.layers) {
@@ -167,6 +172,15 @@ const shellModel = {
               <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
             </label>
           ))}</div>
+        </details>
+        <details id="analysis-panel" class="land-water analysis-panel">
+          <summary><span data-lang-es>Clima y territorio</span><span data-lang-en hidden>Climate and territory</span></summary>
+          <label for="analysis-select"><span data-lang-es>Mapa temático</span><span data-lang-en hidden>Thematic map</span></label>
+          <select id="analysis-select">
+            <option value="">—</option>
+            {analysisLayers.map((layer) => <option value={layer.id} data-es={layer.name_es} data-en={layer.name_en}>{layer.name_es}</option>)}
+          </select>
+          <p id="analysis-caption" aria-live="polite"></p><div id="analysis-legend"></div>
         </details>
         <aside id="shell-fiche" class="shell-fiche" hidden></aside>
       </section>

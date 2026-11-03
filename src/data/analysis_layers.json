@@ -1,0 +1,314 @@
+[
+  {
+    "id": "temperature",
+    "name_es": "Temperatura media anual",
+    "name_en": "Mean annual temperature",
+    "source_es": "INEGI · SEMARNAT",
+    "source_en": "INEGI · SEMARNAT",
+    "reference": "https://geomaticasig1.semarnat.gob.mx/arcgis/rest/services/siatsa/Ambiental_Atmosfera/MapServer/3",
+    "description_es": "Bandas de temperatura media anual del aire. La fuente consultada no indica el periodo de referencia.",
+    "description_en": "Air temperature climatology. Reference period unspecified in the service.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#a63827",
+    "palette": [
+      "#5a80bc",
+      "#71abbc",
+      "#e5bd68",
+      "#dc783a",
+      "#a63827"
+    ],
+    "labels": [
+      "<6 °C",
+      "6–12 °C",
+      "12–18 °C",
+      "18–22 °C",
+      "22–28 °C"
+    ],
+    "url": "/gis/analysis/temperature.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "height",
+    "name_es": "Altitud del terreno",
+    "name_en": "Terrain elevation",
+    "source_es": "Terrain Tiles · Terrarium",
+    "source_en": "Terrain Tiles · Terrarium",
+    "reference": "https://registry.opendata.aws/terrain-tiles/",
+    "description_es": "Altitud aproximada en metros sobre el nivel del mar. Modelo regional de aproximadamente 1 km por celda.",
+    "description_en": "Approximate elevation above sea level. Regional model at roughly 1 km per cell.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#674a50",
+    "palette": [
+      "#b3d1b4",
+      "#8fac72",
+      "#c5a36b",
+      "#a27050",
+      "#674a50"
+    ],
+    "labels": [
+      "<100 m",
+      "100–499 m",
+      "500–999 m",
+      "1,000–1,499 m",
+      "≥1,500 m"
+    ],
+    "url": "/gis/analysis/height.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "density_muni",
+    "name_es": "Población por municipio",
+    "name_en": "Municipal population density",
+    "source_es": "INEGI · Censo 2020 y Marco Geoestadístico",
+    "source_en": "INEGI · Censo 2020 y Marco Geoestadístico",
+    "reference": "https://gaia.inegi.org.mx/wscatgeo/v2/geo/mgem/03",
+    "description_es": "Habitantes por km²: población censada en 2020 dividida entre el área cartográfica del municipio.",
+    "description_en": "Residents per km²: 2020 population divided by mapped municipal area.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#533979",
+    "palette": [
+      "#d7cce5",
+      "#b7a6cd",
+      "#967db7",
+      "#75579c",
+      "#533979"
+    ],
+    "labels": [
+      "<5",
+      "5–<10",
+      "10–<25",
+      "25–<50",
+      "≥50"
+    ],
+    "url": "/gis/analysis/density_muni.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "density",
+    "name_es": "Población por manzana urbana",
+    "name_en": "Urban block population density",
+    "source_es": "INEGI · Censo 2020",
+    "source_en": "INEGI · Censo 2020",
+    "reference": "https://www.inegi.org.mx/programas/ccpv/2020/",
+    "description_es": "Habitantes por hectárea en manzanas urbanas con dato publicado. Acércate a una ciudad.",
+    "description_en": "Residents per hectare in urban blocks with reported population. Zoom into a town.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#61254e",
+    "palette": [
+      "#e8dce9",
+      "#d2a4cb",
+      "#b76b9e",
+      "#914777",
+      "#61254e"
+    ],
+    "labels": [
+      "<10",
+      "10–<35",
+      "35–<75",
+      "75–<150",
+      "≥150"
+    ],
+    "url": "/gis/analysis/density.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "haz_heat",
+    "name_es": "Calor extremo",
+    "name_en": "Extreme heat",
+    "source_es": "ThinkHazard! · GFDRR",
+    "source_en": "ThinkHazard! · GFDRR",
+    "reference": "https://thinkhazard.org/en/report/2030-mexico-baja-california-sur",
+    "description_es": "Peligro máximo en cada zona del informe de ThinkHazard. Escala de evaluación regional. Gris indica que falta el dato.",
+    "description_en": "Maximum hazard per ThinkHazard reporting area. Regional screening. Grey means no data.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#b84036",
+    "palette": [
+      "#b5ceb3",
+      "#ebcf76",
+      "#df9845",
+      "#b84036"
+    ],
+    "labels": [
+      "Muy bajo",
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "url": "/gis/analysis/haz_heat.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "haz_coast",
+    "name_es": "Inundación costera",
+    "name_en": "Coastal flooding",
+    "source_es": "ThinkHazard! · GFDRR",
+    "source_en": "ThinkHazard! · GFDRR",
+    "reference": "https://thinkhazard.org/en/report/2030-mexico-baja-california-sur",
+    "description_es": "Peligro máximo en cada zona del informe de ThinkHazard. Escala de evaluación regional. Gris indica que falta el dato.",
+    "description_en": "Maximum hazard per ThinkHazard reporting area. Regional screening. Grey means no data.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#b84036",
+    "palette": [
+      "#b5ceb3",
+      "#ebcf76",
+      "#df9845",
+      "#b84036"
+    ],
+    "labels": [
+      "Muy bajo",
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "url": "/gis/analysis/haz_coast.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "haz_cyclone",
+    "name_es": "Ciclones",
+    "name_en": "Cyclones",
+    "source_es": "ThinkHazard! · GFDRR",
+    "source_en": "ThinkHazard! · GFDRR",
+    "reference": "https://thinkhazard.org/en/report/2030-mexico-baja-california-sur",
+    "description_es": "Peligro máximo en cada zona del informe de ThinkHazard. Escala de evaluación regional. Gris indica que falta el dato.",
+    "description_en": "Maximum hazard per ThinkHazard reporting area. Regional screening. Grey means no data.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#b84036",
+    "palette": [
+      "#b5ceb3",
+      "#ebcf76",
+      "#df9845",
+      "#b84036"
+    ],
+    "labels": [
+      "Muy bajo",
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "url": "/gis/analysis/haz_cyclone.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "haz_drought",
+    "name_es": "Escasez de agua",
+    "name_en": "Water scarcity",
+    "source_es": "ThinkHazard! · GFDRR",
+    "source_en": "ThinkHazard! · GFDRR",
+    "reference": "https://thinkhazard.org/en/report/2030-mexico-baja-california-sur",
+    "description_es": "Peligro máximo en cada zona del informe de ThinkHazard. Escala de evaluación regional. Gris indica que falta el dato.",
+    "description_en": "Maximum hazard per ThinkHazard reporting area. Regional screening. Grey means no data.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#b84036",
+    "palette": [
+      "#b5ceb3",
+      "#ebcf76",
+      "#df9845",
+      "#b84036"
+    ],
+    "labels": [
+      "Muy bajo",
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "url": "/gis/analysis/haz_drought.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "haz_fire",
+    "name_es": "Incendios forestales",
+    "name_en": "Wildfire",
+    "source_es": "ThinkHazard! · GFDRR",
+    "source_en": "ThinkHazard! · GFDRR",
+    "reference": "https://thinkhazard.org/en/report/2030-mexico-baja-california-sur",
+    "description_es": "Peligro máximo en cada zona del informe de ThinkHazard. Escala de evaluación regional. Gris indica que falta el dato.",
+    "description_en": "Maximum hazard per ThinkHazard reporting area. Regional screening. Grey means no data.",
+    "group": "analysis",
+    "type": "polygon",
+    "color": "#b84036",
+    "palette": [
+      "#b5ceb3",
+      "#ebcf76",
+      "#df9845",
+      "#b84036"
+    ],
+    "labels": [
+      "Muy bajo",
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "url": "/gis/analysis/haz_fire.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "traffic",
+    "name_es": "Aforo y hora de mayor demanda",
+    "name_en": "Traffic counts and estimated hourly demand",
+    "source_es": "SICT · Datos Viales 2025 (aforos 2024)",
+    "source_en": "SICT · Datos Viales 2025 (aforos 2024)",
+    "reference": "https://micrs.sct.gob.mx/images/DireccionesGrales/DGST/Datos_Viales_2025/03_DV2025_Baja_California_Sur.pdf",
+    "description_es": "Vehículos por día en el sentido registrado. La estimación horaria multiplica el tránsito diario por el factor horario publicado.",
+    "description_en": "Vehicles per day in the recorded direction. Hourly estimate uses the published hourly factor.",
+    "group": "analysis",
+    "type": "points",
+    "color": "#a83d35",
+    "palette": [
+      "#73a9a1",
+      "#b9a550",
+      "#e28b40",
+      "#a83d35"
+    ],
+    "labels": [
+      "<2,500",
+      "2,500–9,999",
+      "10,000–24,999",
+      "≥25,000"
+    ],
+    "url": "/gis/analysis/traffic.geojson",
+    "year_es": "",
+    "year_en": ""
+  },
+  {
+    "id": "bottlenecks",
+    "name_es": "Posibles cuellos de botella",
+    "name_en": "Potential bottlenecks",
+    "source_es": "SICT · Capacidad y niveles de servicio 2024",
+    "source_en": "SICT · Capacidad y niveles de servicio 2024",
+    "reference": "https://micrs.sct.gob.mx/images/DireccionesGrales/DGST/Capacidades/capacidades_2025/Libro_CAPyNS_DV2025.pdf",
+    "description_es": "Cuatro tramos de nivel E o F. El punto sitúa una estación del tramo. La relación compara volumen horario y umbral de servicio E.",
+    "description_en": "Four segments rated E or F. Points locate count stations. Ratio compares hourly volume with the service E threshold.",
+    "group": "analysis",
+    "type": "points",
+    "color": "#ac3839",
+    "palette": [
+      "#ed9636",
+      "#ac3839"
+    ],
+    "labels": [
+      "E",
+      "F"
+    ],
+    "url": "/gis/analysis/bottlenecks.geojson",
+    "year_es": "",
+    "year_en": ""
+  }
+]

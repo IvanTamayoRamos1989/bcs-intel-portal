@@ -454,6 +454,12 @@
           map.addSource(src + '-3d', { type: 'geojson', data: buildListingPrisms(geo) });
         }
         if (map.getLayer(lid)) return lid;
+        var thematicColor = meta.color || '#0083C4';
+        if (meta.palette) {
+          thematicColor = ['match', ['get', 'level']];
+          meta.palette.forEach(function (color, i) { thematicColor.push(i, color); });
+          thematicColor.push('#919b9c');
+        }
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
         if (point) {
@@ -475,7 +481,7 @@
             id: lid, type: 'circle', source: src,
             paint: {
               'circle-radius': id === 'bcs_market_listings' ? 6.5 : 5.5,
-              'circle-color': id === 'bcs_market_listings' ? listingTypeColor : (meta.color || '#0083C4'),
+              'circle-color': id === 'bcs_market_listings' ? listingTypeColor : thematicColor,
               'circle-stroke-width': 1.4,
               'circle-stroke-color': '#ffffff',
               'circle-pitch-alignment': 'map',
@@ -491,14 +497,14 @@
           map.addLayer({
             id: lid, type: 'fill', source: src,
             paint: {
-              'fill-color': meta.color || '#0083C4',
+              'fill-color': thematicColor,
               'fill-opacity': 0.28,
-              'fill-outline-color': meta.color || '#0083C4',
+              'fill-outline-color': thematicColor,
             },
           }, 'cdt-muni-fill');
           map.addLayer({
             id: lid + '-edge', type: 'line', source: src,
-            paint: { 'line-color': meta.color || '#0083C4', 'line-width': 1.6, 'line-opacity': 0.95 },
+            paint: { 'line-color': meta.color || '#0083C4', 'line-width': meta.palette ? 0 : 1.6, 'line-opacity': 0.95 },
           });
         }
         ensurePlaceLabel(id, src);
@@ -562,7 +568,7 @@
           map.setPaintProperty(lid, 'fill-outline-color', poerColor);
           if (map.getLayer(lid + '-edge')) map.setPaintProperty(lid + '-edge', 'line-color', '#1a1a1a');
         } else {
-          map.setPaintProperty(lid, 'fill-opacity', mode === 'compare' ? 0.4 : 0.28);
+          map.setPaintProperty(lid, 'fill-opacity', meta.palette ? 0.74 : mode === 'compare' ? 0.4 : 0.28);
         }
       }
       function load(meta) {

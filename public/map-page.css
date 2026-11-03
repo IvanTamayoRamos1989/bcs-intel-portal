@@ -17,3 +17,11 @@ body.map-page .shell{grid-template-columns:minmax(0,1fr)!important;grid-template
 .land-water [data-layer="presas_cea"]+i { border-radius:50%; }
 .land-water input { accent-color:#285d72; }
 @media(max-width:600px){.land-water { bottom:.45rem;left:.45rem; }.land-water label {min-height:35px;}}
+
+.analysis-panel {left:auto;right:1rem;bottom:2rem;max-width:min(270px,75vw);font-weight:500}
+.analysis-panel summary {font-weight:700}
+.analysis-panel select {max-width:100%;width:100%;padding:.4rem;color:#173f50;background:white;border:1px solid #afc4c6;border-radius:.4rem}
+#analysis-caption {font-size:.76rem;margin:.45rem 0;line-height:1.4}
+#analysis-legend {display:flex;gap:.25rem .6rem;flex-wrap:wrap}
+#analysis-legend span {display:inline-flex;align-items:center;gap:.25rem;font-size:.74rem}
+@media(max-width:600px){.analysis-panel {left:auto;right:.45rem;bottom:.45rem;max-width:min(240px,65vw)}}
