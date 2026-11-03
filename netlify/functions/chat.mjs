@@ -1567,6 +1567,20 @@ function expandQuery(query) {
   if (/\b(veintiuno de septiembre|21 de septiembre)\b/.test(qn) && /\b(turbinas|movil|cfe|bello|unidades)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdieciocho de septiembre\b/.test(qn) && /\b(turbinas|movil|cfe|bello|unidades)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bley de aguas del estado\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(mil cuatrocientos noventa y dos millones|mil doscientos sesenta y cuatro millones)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bseis por ciento\b/.test(qn) && /\bvolumen\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bcuatro por ciento\b/.test(qn) && /\b(este|east|mercado)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\btres por ciento\b/.test(qn) && /\bloreto\b/.test(qn) && /\b(volumen|reporte|mls)\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\b(quinientos ochenta y ocho|ochocientos doce|mil setenta y nueve|novecientos noventa|trescientos cuarenta y cinco|ciento cuarenta y dos|treinta y un)\b/.test(qn) && /\bregistros?\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bdiez registros\b/.test(qn) && /\bmulege\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bcinco registros\b/.test(qn) && /\bloreto\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\btreinta y uno de agosto\b/.test(qn) && /\bdos mil veintiseis\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bveintiuno punto cuatro\b/.test(qn) && /\brezago\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
+  if (/\bcincuenta y seis poligonos\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bsesenta y nueve poligonos\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\benero a agosto\b/.test(qn) && /\b(turistas|ocupacion)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bun punto mas\b/.test(qn) && /\b(ocupacion|proyectado|octubre)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bencargado de ecologia\b/.test(qn) && /\b(los cabos|cabo san lucas)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (whoFactor && LANDUSE_RE.test(qn) && !factorKinds.includes('landuse')) factorKinds.push('landuse');
   const isFactorIntent = factorKinds.length > 0;
   if (isFactorIntent) {
@@ -3104,6 +3118,21 @@ function factorSeedIds(qn, kinds) {
   if (/\bdieciocho por ciento\b/.test(qn) && /\bpacifico\b/.test(qn)) add('ev_jll_zonas_2025', 'gap_rentas_hoteleras');
   if ((/\b(veintiuno de septiembre|21 de septiembre)\b/.test(qn) || /\bdieciocho de septiembre\b/.test(qn)) && /\b(turbinas|movil|cfe|bello|unidades)\b/.test(qn)) add('ev_news_cfe_128', 'rc_sibcs', 'const_red_aislada');
   if (/\bley de aguas del estado\b/.test(qn)) add('inst_ley_aguas', 'actor_cea', 'actor_conagua');
+  if (/\b(mil cuatrocientos noventa y dos millones|mil doscientos sesenta y cuatro millones)\b/.test(qn) || (/\bseis por ciento\b/.test(qn) && /\bvolumen\b/.test(qn))) {
+    add('ev_inmob_jll_2025', 'gap_rentas_hoteleras');
+  }
+  if (/\bcuatro por ciento\b/.test(qn) && /\b(este|east|mercado)\b/.test(qn)) add('ev_jll_zonas_2025', 'gap_rentas_hoteleras', 'gap_east_cape_carga');
+  if (/\btres por ciento\b/.test(qn) && p.loreto && /\b(volumen|reporte|mls)\b/.test(qn)) add('ev_jll_zonas_2025', 'gap_rentas_hoteleras', 'gap_loreto_dma');
+  if (/\b(quinientos ochenta y ocho|ochocientos doce|mil setenta y nueve|novecientos noventa|trescientos cuarenta y cinco|ciento cuarenta y dos|treinta y un)\b/.test(qn) && /\bregistros?\b/.test(qn)) add('ev_sniiv_vivienda');
+  if (/\bdiez registros\b/.test(qn) && p.mulege) add('ev_sniiv_vivienda', 'terr_mulege');
+  if (/\bcinco registros\b/.test(qn) && p.loreto) add('ev_sniiv_vivienda', 'gap_loreto_pax', 'gap_loreto_dma');
+  if (/\btreinta y uno de agosto\b/.test(qn) && /\bdos mil veintiseis\b/.test(qn)) add('ev_sniiv_vivienda');
+  if (/\bveintiuno punto cuatro\b/.test(qn) && /\brezago\b/.test(qn)) add('ev_sniiv_vivienda');
+  if (/\bcincuenta y seis poligonos\b/.test(qn)) add('inst_poerbcs');
+  if (/\bsesenta y nueve poligonos\b/.test(qn)) add('gap_politica_uga_leyenda', 'inst_pa_restauracion');
+  if (/\benero a agosto\b/.test(qn) && /\b(turistas|ocupacion)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bun punto mas\b/.test(qn) && /\b(ocupacion|proyectado|octubre)\b/.test(qn)) add('ev_news_ocupacion', 'gap_rentas_hoteleras');
+  if (/\bencargado de ecologia\b/.test(qn) && p.cabos) add('actor_cabos_dg_ecologia', 'ev_org_cabos_2024');
   if (/\bprimero el agua\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit');
   if (/\b1973\b/.test(qn) && /\bcabo san lucas\b/.test(qn)) add('terr_anp_apff_csl', 'inst_poerbcs');
   if (/\bamortiguamiento\b/.test(qn) && p.mulege) add('terr_anp_vizcaino', 'dq_vizcaino_corridor', 'const_anp_nucleos');
