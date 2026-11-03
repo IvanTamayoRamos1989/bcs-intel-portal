@@ -148,6 +148,7 @@
       rows.push({ es: 'Población 2020', en: 'Population 2020', value: n + (lang() === 'en' ? ' people' : ' habitantes') });
       rows.push({ es: 'Fuente', en: 'Source', value: 'INEGI Censo 2020' });
     }
+    if (meta && meta.description_es) rows.push({ es: 'Qué muestra', en: 'What it shows', value: tx(meta.description_es, meta.description_en) });
     if (note) rows.push({ es: 'Lectura', en: 'Reading', value: tx(note[0], note[1]) });
     if (extrudeOn) rows.push({ es: 'Columna', en: 'Column', value: tx('La columna compara esta población. No es el relieve ni un edificio.', 'The column compares this population. It is not the relief or a building.') });
     var gaps = ['land'];
@@ -202,6 +203,9 @@
     var rows = [];
     if (meta) rows.push({ es: 'Capa', en: 'Layer', value: lang() === 'en' ? meta.name_en : meta.name_es });
     var fields = [
+      ['MUNICIPIO', 'Municipio', 'Municipality'],
+      ['CLAVE', 'Clave del núcleo', 'Ejido code'],
+      ['ref', 'Clave', 'Code'],
       ['place', 'Tipo en el mapa', 'Map type'],
       ['kind', 'Clase', 'Kind'],
       ['population', 'Población publicada', 'Published population'],
@@ -260,9 +264,9 @@
       kind_es: meta ? meta.name_es : 'Elemento del mapa',
       kind_en: meta ? meta.name_en : 'Map feature',
       rows: rows,
-      href: href,
-      href_es: 'Página relacionada',
-      href_en: 'Related page',
+      href: meta && meta.reference || href,
+      href_es: meta && meta.reference ? 'Consultar fuente' : 'Página relacionada',
+      href_en: meta && meta.reference ? 'View source' : 'Related page',
       gaps: gap ? [gap] : [],
       files: filesFor(title),
     });
@@ -562,6 +566,9 @@
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
         leafletLayers[id] = L.geoJSON(geo, {
           style: function () { return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
+          onEachFeature: function (feature, layer) {
+            if (meta.reference) layer.on('click', function () { openFeatureFiche(feature, null, meta); });
+          },
           pointToLayer: function (feat, latlng) {
             return L.circleMarker(latlng, { radius: 5, color: '#fff', weight: 1, fillColor: meta.color || '#0083C4', fillOpacity: 0.9 });
           },
@@ -1183,6 +1190,13 @@
 
   function readBoot() {
     var params = new URLSearchParams(location.search);
+    if (params.get('vista') === 'tierra-agua') {
+      var panel = document.getElementById('land-water');
+      if (panel) {
+        panel.open = true;
+        panel.querySelectorAll('[data-layer]').forEach(function (box) { on[box.dataset.layer] = true; });
+      }
+    }
     var base = params.get('base');
     if (base === 'satellite' || base === 'streets') basemap = base;
     (model.defaults || ['osm_towns', 'osm_highways']).forEach(function (id) { if (byId[id]) on[id] = true; });

@@ -9,3 +9,11 @@ body.map-page .shell{grid-template-columns:minmax(0,1fr)!important;grid-template
 @media(max-width:900px){.map-page .shell{display:flex!important;flex-direction:column}.map-page .shell-map-wrap{flex:1}.map-page .shell-dock{position:relative!important;top:auto!important;bottom:auto!important;flex:none;height:auto!important}.map-page .shell-map-wrap .maplibregl-ctrl-bottom-right{bottom:0}.map-page .shell-sheet{bottom:calc(100% + 6px);max-height:calc(100dvh - 270px)}.map-page .shell-fiche{top:auto;bottom:10px;left:10px;right:10px;max-height:65%}.map-embed .shell-map-wrap{height:100%!important}}
 
 .building-picker{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;color:#20445a;font-size:.82rem;font-weight:650}.building-picker select{max-width:10rem;border:1px solid #abc2c8;border-radius:.5rem;background:#fff;color:inherit;padding:.32rem;font:inherit}
+
+.land-water { position:absolute;bottom:1rem;left:1rem;z-index:6;background:#fffdf7;color:#173f50;border:1px solid #aec2c4;border-radius:.65rem;padding:.55rem .8rem;box-shadow:0 2px 8px #27465222;font:600 .86rem/1.4 system-ui; }
+.land-water summary,.land-water label { cursor:pointer; }
+.land-water label { display:flex;align-items:center;gap:.5rem;min-height:32px; }
+.land-water i { width:12px;height:12px;border-radius:3px; }
+.land-water [data-layer="presas_cea"]+i { border-radius:50%; }
+.land-water input { accent-color:#285d72; }
+@media(max-width:600px){.land-water { bottom:.45rem;left:.45rem; }.land-water label {min-height:35px;}}

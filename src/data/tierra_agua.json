@@ -1,0 +1,58 @@
+[
+  {
+    "id": "agricultura_inegi",
+    "url": "/gis/agricultura_inegi.geojson",
+    "type": "polygon",
+    "name_es": "Tierra agrícola",
+    "name_en": "Farmland",
+    "color": "#548132",
+    "source_es": "INEGI · Uso del suelo y vegetación, Serie VII",
+    "source_en": "INEGI · Uso del suelo y vegetación, Serie VII",
+    "reference": "https://geomaticasig1.semarnat.gob.mx/arcgis/rest/services/aps/SDF_nacional_DGFDUA/MapServer/3",
+    "description_es": "Zonas clasificadas por su uso agrícola.",
+    "description_en": "Land classified for agricultural use.",
+    "group": "territory"
+  },
+  {
+    "id": "ran_nucleos",
+    "url": "/gis/ran_nucleos.geojson",
+    "type": "polygon",
+    "name_es": "Ejidos",
+    "name_en": "Ejidos",
+    "color": "#a5601c",
+    "source_es": "Registro Agrario Nacional · perímetros de núcleos agrarios",
+    "source_en": "Registro Agrario Nacional · perímetros de núcleos agrarios",
+    "reference": "https://www.gob.mx/ran",
+    "description_es": "Perímetro del núcleo ejidal. Las parcelas individuales pueden tener otros límites.",
+    "description_en": "Ejido boundaries. Individual parcel boundaries can differ.",
+    "group": "territory"
+  },
+  {
+    "id": "acuiferos_conagua",
+    "url": "/gis/acuiferos_conagua.geojson",
+    "type": "polygon",
+    "name_es": "Acuíferos",
+    "name_en": "Aquifers",
+    "color": "#007f98",
+    "source_es": "CONAGUA · delimitación publicada en 2023",
+    "source_en": "CONAGUA · delimitación publicada en 2023",
+    "reference": "https://geomaticasig1.semarnat.gob.mx/arcgis/rest/services/esdig/Agua/MapServer/9",
+    "description_es": "Límites administrativos de los acuíferos.",
+    "description_en": "Administrative aquifer boundaries.",
+    "group": "territory"
+  },
+  {
+    "id": "presas_cea",
+    "url": "/gis/presas_cea.geojson",
+    "type": "point",
+    "name_es": "Presas",
+    "name_en": "Dams",
+    "color": "#843080",
+    "source_es": "Comisión Estatal del Agua · inventario publicado en 2019",
+    "source_en": "Comisión Estatal del Agua · inventario publicado en 2019",
+    "reference": "https://cea.bcs.gob.mx/wp-content/uploads/2019/05/Presas.pdf",
+    "description_es": "Ubicación de las seis presas del inventario estatal de 2019.",
+    "description_en": "Locations of the six dams in the 2019 state inventory.",
+    "group": "territory"
+  }
+]
