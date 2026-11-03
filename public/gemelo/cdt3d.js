@@ -237,7 +237,7 @@
         antialias: !reduced,
         pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
         minZoom: 6.15,
-        maxZoom: 14,
+        maxZoom: 17,
         maxBounds: [[stateBounds[0][0] - pad, stateBounds[0][1] - pad], [stateBounds[1][0] + pad, stateBounds[1][1] + pad]],
         maxBoundsViscosity: 0.85,
         attributionControl: true,
@@ -662,10 +662,102 @@
         var ids = [];
         ((style && style.layers) || []).forEach(function (layer) {
           var id = layer.id;
-          if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0) ids.push(id);
+          if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0 || id.indexOf('cdt-bld-') === 0) ids.push(id);
         });
         return ids.filter(function (id) { return map.getLayer(id); });
       }
+      // Buildings: Google Open Buildings v3 footprints with Open Buildings 2.5D (2023) height.
+      // /gis/edificios/index.json lists ~1.4 km tiles; only the tiles in view load, from zoom 13.
+      var bld = { on: false, index: null, wait: null, added: {}, order: [] };
+      var BLD_MINZ = 13;
+      var BLD_KEEP = 90;
+      function bldLayerIds() { return bld.order.map(function (t) { return 'cdt-bld-' + t; }); }
+      function bldSync() {
+        if (!bld.on || !bld.index || removed) return;
+        if (map.getZoom() < BLD_MINZ - 0.3) return;
+        var b = map.getBounds();
+        var w = b.getWest(), s = b.getSouth(), e = b.getEast(), n = b.getNorth();
+        var cx = (w + e) / 2, cy = (s + n) / 2;
+        var view = bld.index.tiles.filter(function (t) {
+          return !(t.bbox[2] < w || t.bbox[0] > e || t.bbox[3] < s || t.bbox[1] > n);
+        }).sort(function (a, c) {
+          var da = Math.abs((a.bbox[0] + a.bbox[2]) / 2 - cx) + Math.abs((a.bbox[1] + a.bbox[3]) / 2 - cy);
+          var dc = Math.abs((c.bbox[0] + c.bbox[2]) / 2 - cx) + Math.abs((c.bbox[1] + c.bbox[3]) / 2 - cy);
+          return da - dc;
+        }).slice(0, 60);
+        var inView = {};
+        view.forEach(function (t) {
+          inView[t.id] = true;
+          if (bld.added[t.id]) {
+            bld.order.splice(bld.order.indexOf(t.id), 1);
+            bld.order.push(t.id);
+            if (map.getLayer('cdt-bld-' + t.id)) map.setLayoutProperty('cdt-bld-' + t.id, 'visibility', 'visible');
+            return;
+          }
+          bld.added[t.id] = true;
+          bld.order.push(t.id);
+          map.addSource('bld-src-' + t.id, { type: 'geojson', data: t.url, tolerance: 0.25 });
+          map.addLayer({
+            id: 'cdt-bld-' + t.id, type: 'fill-extrusion', source: 'bld-src-' + t.id, minzoom: BLD_MINZ,
+            paint: {
+              // Warm ramp by approximate storeys: one storey pale, towers umber.
+              'fill-extrusion-color': ['step', ['get', 'n'], '#ebe4d3', 2, '#ddd0b5', 3, '#cbb795', 5, '#ad916c', 10, '#7d6650'],
+              'fill-extrusion-height': ['get', 'h'],
+              'fill-extrusion-base': 0,
+              'fill-extrusion-opacity': ['interpolate', ['linear'], ['zoom'], BLD_MINZ, 0, BLD_MINZ + 0.6, 0.96],
+              'fill-extrusion-vertical-gradient': true,
+            },
+          });
+          map.on('mouseenter', 'cdt-bld-' + t.id, function () { map.getCanvas().style.cursor = 'pointer'; });
+          map.on('mouseleave', 'cdt-bld-' + t.id, function () { map.getCanvas().style.cursor = ''; });
+        });
+        // Keep memory bounded: drop the least recently seen tiles that are out of view.
+        while (bld.order.length > BLD_KEEP) {
+          var old = bld.order.find(function (t) { return !inView[t]; });
+          if (!old) break;
+          bld.order.splice(bld.order.indexOf(old), 1);
+          delete bld.added[old];
+          if (map.getLayer('cdt-bld-' + old)) map.removeLayer('cdt-bld-' + old);
+          if (map.getSource('bld-src-' + old)) map.removeSource('bld-src-' + old);
+        }
+      }
+      function loadBuildingIndex() {
+        if (bld.index) return Promise.resolve(bld.index);
+        if (!bld.wait) {
+          bld.wait = fetch('/gis/edificios/index.json').then(function (r) {
+            if (!r.ok) throw new Error('index');
+            return r.json();
+          }).then(function (ix) { bld.index = ix; return ix; }).catch(function () { bld.wait = null; return null; });
+        }
+        return bld.wait;
+      }
+      // Public: turn buildings on or off. Resolves with the index summary (source, limits, cities) or null.
+      function setBuildings(on) {
+        bld.on = !!on;
+        if (!bld.on) {
+          bldLayerIds().forEach(function (id) { if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none'); });
+          return Promise.resolve(bld.index);
+        }
+        return loadBuildingIndex().then(function (ix) {
+          if (ix) bldSync();
+          return ix;
+        });
+      }
+      function buildingsStatus() {
+        var layers = bldLayerIds().filter(function (id) { return map.getLayer(id) && map.getLayoutProperty(id, 'visibility') !== 'none'; });
+        var feats = layers.length ? map.queryRenderedFeatures({ layers: layers }) : [];
+        var c = map.getCanvas().getBoundingClientRect();
+        var pick = null;
+        for (var i = 0; i < feats.length && !pick; i++) {
+          var p = map.project(feats[i].geometry.type === 'Polygon' ? feats[i].geometry.coordinates[0][0] : feats[i].geometry.coordinates[0][0][0]);
+          if (p.x > 40 && p.y > 40 && p.x < c.width - 40 && p.y < c.height - 40) pick = { x: c.left + p.x, y: c.top + p.y };
+        }
+        return {
+          on: bld.on, minZoom: BLD_MINZ, zoom: map.getZoom(), tilesLoaded: bld.order.length, layers: layers,
+          rendered: feats.length, sample: feats[0] ? feats[0].properties : null, layerOfSample: feats[0] ? feats[0].layer.id : null, screenPoint: pick,
+        };
+      }
+      map.on('moveend', bldSync);
       var marker = null;
       var reliefOn = true;
       function syncHills() {
@@ -833,7 +925,7 @@
           } else {
             applyHeights(lastHeights);
           }
-          resolve({
+          var api = {
             kind: '3d',
             fitBox: fitBox,
             resize: function () { map.resize(); },
@@ -845,6 +937,8 @@
             load: load,
             setBasemap: setBasemap,
             setIcluster: setIcluster,
+            setBuildings: setBuildings,
+            buildingsStatus: buildingsStatus,
             setTerrain: setTerrain,
             setMuniWash: setMuniWash,
             setExtrudeOpacity: setExtrudeOpacity,
@@ -868,7 +962,10 @@
               removed = true;
               try { map.remove(); } catch (e) {}
             },
-          });
+          };
+          // Started engines, for scripts/test_edificios.mjs and debugging.
+          window.CDT3D.engines = (window.CDT3D.engines || []).concat([api]);
+          resolve(api);
         });
         function fail(err) {
           if (settled) return;
