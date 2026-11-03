@@ -232,10 +232,16 @@ const shellModel = {
                   <span class="shell-n">1</span>
                   <div>
                     <strong><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></strong>
-                    <small><span data-lang-es>Apagada al entrar. Si la enciendes, son columnas de población sobre el relieve, no el terreno.</span><span data-lang-en hidden>Off on arrival. When on, population columns sit on the relief. They are not the terrain.</span></small>
+                    <small><span data-lang-es>Elige una zona y toca un edificio para consultar su altura estimada.</span><span data-lang-en hidden>Choose an area and tap a building to see its estimated height.</span></small>
                   </div>
-                  <button type="button" data-stack-toggle="l1" aria-pressed="false"><span data-lang-es>Extrusión</span><span data-lang-en hidden>Extrusion</span></button>
+                  <button type="button" data-stack-toggle="l1" aria-pressed="false"><span data-lang-es>Población</span><span data-lang-en hidden>Population</span></button>
                 </header>
+                <div class="shell-layer-group">
+                  <label><input type="checkbox" data-buildings checked disabled /><span data-lang-es>Mostrar edificios en 3D</span><span data-lang-en hidden>Show 3D buildings</span></label>
+                  <label><span data-lang-es>Explorar una zona</span><span data-lang-en hidden>Explore an area</span>
+                    <select data-building-places disabled><option value="">—</option></select>
+                  </label>
+                </div>
                 <ul class="shell-bars">
                   {munis.map((m) => (
                     <li>
@@ -246,7 +252,6 @@ const shellModel = {
                   ))}
                 </ul>
                 <p class="shell-note"><span data-lang-es>La columna compara población 2020, INEGI. No es la altura del terreno ni de un inmueble.</span><span data-lang-en hidden>The column compares 2020 population, INEGI. It is not terrain height and not a building height.</span></p>
-                <p class="shell-gap-note"><span data-lang-es>BIM de edificios: próximo / sin datos.</span><span data-lang-en hidden>Building BIM: upcoming / no data.</span></p>
               </li>
               <li data-dock-panel="l2">
                 <header>
