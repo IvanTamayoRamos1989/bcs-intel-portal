@@ -1872,6 +1872,24 @@ function expandQuery(query) {
   if (/\bmodificado no es una participacion\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdevengado no llena\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\benero a junio no es ley municipal\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(no sustituye la dma oficial|no es un pronostico nuevo|presion hotelera y residencial|interfaces con area natural|crecimiento costero con deficit)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bflanco bajo tension\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno es un inventario de plantas\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\b(no es un atlas nuevo|red electrica en el riesgo)\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\bno se inventa dma\b/.test(qn) && /\bcomondu\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bdecreto historico completo\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bconsulta de actualizacion de dos mil veinticuatro\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bmapas ya citados\b/.test(qn) && !factorKinds.length) factorKinds.push('risk');
+  if (/\b(subejercicio no es participacion|pagado no es obra municipal|presupuesto modificado no es renta)\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bno abre mas crecimiento\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bya en deficit antes de crecer\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bcorredor de servicios no es permiso\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bcorredor de servicios\b/.test(qn) && /\btodos santos\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\bla ficha no publica el glosario\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bsolo en lineamientos\b/.test(qn) && /\brestauracion\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\btransacciones comparables\b/.test(qn) && !factorKinds.length) factorKinds.push('landuse');
+  if (/\bno se copia la tenencia\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
+  if (/\btransacciones de activos sin dato\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bpacifico\b/.test(qn) && /\btodos santos\b/.test(qn) && /\brenta\b/.test(qn) && !factorKinds.length) factorKinds.push('opportunity');
   if (/\bel aviso no sustituye el decreto\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
   if (/\bdecreto de la reserva sigue siendo\b/.test(qn) && !factorKinds.length) factorKinds.push('viability');
@@ -2434,6 +2452,26 @@ function factorSeedIds(qn, kinds) {
   if (p.comondu && p.cabos && /\b(deficit|cubrir|compens\w*|offset)\b/.test(qn)) {
     add('ev_preguntas_estrategicas', 'terr_comondu', 'const_dma_deficit', 'dd_agro_santo_domingo');
   }
+  if (/\b(no sustituye la dma oficial|no es un pronostico nuevo|presion hotelera y residencial|interfaces con area natural|crecimiento costero con deficit)\b/.test(qn)) {
+    add('ev_esc_baseline', 'const_dma_deficit');
+  }
+  if (/\bpresion hotelera y residencial\b/.test(qn)) add('gap_rentas_hoteleras');
+  if (/\binterfaces con area natural\b/.test(qn)) add('const_anp_nucleos');
+  if (/\bflanco bajo tension\b/.test(qn)) add('ev_esc_corridor', 'gap_east_cape_carga', 'terr_anp_cabo_pulmo');
+  if (/\bno es un inventario de plantas\b/.test(qn)) add('ev_sig_sibcs', 'rc_sibcs', 'const_red_aislada');
+  if (/\b(no es un atlas nuevo|red electrica en el riesgo)\b/.test(qn)) add('ev_sig_hurricanes', 'gap_riesgo_capas_vector', 'rc_sibcs');
+  if (/\bno se inventa dma\b/.test(qn) && /\bcomondu\b/.test(qn)) add('dq_comparar_polos', 'dd_agro_santo_domingo', 'const_dma_deficit');
+  if (/\bcodigos de zonificacion secundaria\b/.test(qn)) add('gap_pmdu_lapaz_texto', 'inst_pdu_lapaz');
+  if (/\bdecreto historico completo\b/.test(qn) || /\bconsulta de actualizacion de dos mil veinticuatro\b/.test(qn)) add('gap_psdu_loreto_gazette', 'inst_poel_loreto');
+  if (/\bmapas ya citados\b/.test(qn)) add('gap_riesgo_capas_vector', 'ev_riesgos_documentados');
+  if (/\b(subejercicio no es participacion|pagado no es obra municipal|presupuesto modificado no es renta)\b/.test(qn)) add('ev_fiscal_ley_2026', 'gap_fiscal_ingresos_2026');
+  if (/\bpresupuesto modificado no es renta\b/.test(qn) || /\btransacciones de activos sin dato\b/.test(qn)) add('gap_rentas_hoteleras');
+  if (/\bpagado no es obra municipal\b/.test(qn)) add('gap_permisos_uso_suelo');
+  if (/\bno abre mas crecimiento\b/.test(qn) || /\bya en deficit antes de crecer\b/.test(qn)) add('ev_esc_water_first', 'const_dma_deficit', 'ev_acuiferos_dma');
+  if (/\bcorredor de servicios\b/.test(qn)) add('ev_esc_corridor', 'gap_permisos_uso_suelo');
+  if (/\bla ficha no publica el glosario\b/.test(qn) || (/\bsolo en lineamientos\b/.test(qn) && /\brestauracion\b/.test(qn))) add('gap_politica_uga_leyenda', 'inst_pa_restauracion');
+  if (/\btransacciones comparables\b/.test(qn)) add('gap_catastro_secundario');
+  if (/\bno se copia la tenencia\b/.test(qn)) add('ev_dossiers_lugar');
   if (/\bdestinos sin escala\b/.test(qn) || (/\bsjd\b/.test(qn) && /\bdestinos\b/.test(qn))) {
     add('ev_sig_vuelos', 'rc_aeropuerto_sjd', 'ev_aereo_setue');
   }
