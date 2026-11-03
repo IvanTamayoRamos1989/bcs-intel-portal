@@ -22,7 +22,7 @@ import { ui } from '../i18n/ui';
       <div><span data-lang-es>Pregunta sobre el estado. Explora sus datos, lugares y documentos.</span><span data-lang-en hidden>Ask about the state. Explore its data, places and documents.</span></div>
     </section>
     <button type="button" id="conversation-new" hidden><span data-lang-es>＋ Nueva conversación</span><span data-lang-en hidden>＋ New conversation</span></button>
-    <ChatWidget shell={true} />
+    <ChatWidget shell={true} showSuggestions={false} />
   </main>
   <script is:inline src="/conversation.js?v=20261103-merge" defer></script>
   <link rel="stylesheet" href="/conversation.css?v=20261103-merge" />

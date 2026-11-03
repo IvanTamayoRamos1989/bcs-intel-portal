@@ -9,8 +9,6 @@
     document.addEventListener('bcs:chat-start',clearDraft);
     newButton.addEventListener('click',function(){clearDraft();composer.value='';});
   }
-  var starters=[['Agua en La Paz','Water in La Paz','¿De dónde viene el agua de La Paz?','Where does La Paz get its water?'],['Áreas naturales','Natural areas','¿Qué áreas naturales protegidas hay en Baja California Sur?','Which protected natural areas are in Baja California Sur?'],['Población por municipio','Population by municipality','¿Cuántas personas viven en cada municipio?','How many people live in each municipality?'],['Presupuesto público','Public budget','¿Qué información hay sobre el presupuesto y el gasto público de Baja California Sur?','What information is available about the public budget and spending in Baja California Sur?']];
-  document.querySelectorAll('#bcs-chat-sugg>button').forEach(function(b,i){if(!starters[i])return;var s=starters[i];b.setAttribute('data-q-es',s[2]);b.setAttribute('data-q-en',s[3]);var es=b.querySelector('.bcs-sugg-q [data-lang-es]'),eng=b.querySelector('.bcs-sugg-q [data-lang-en]');if(es)es.textContent=s[0];if(eng)eng.textContent=s[1];});
   function active(){document.body.classList.add('has-conversation');newButton.hidden=false;}
   function connect(d){
     active();

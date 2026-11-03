@@ -667,18 +667,6 @@
       });
       return;
     }
-    if (kind === 'parcelas') {
-      openFiche({
-        title: 'iCluster — parcelas',
-        kind_es: 'Capa publicada del visor estatal',
-        kind_en: 'Published state-viewer layer',
-        rows: [
-          { es: 'Qué se dibuja', en: 'What is drawn', value: tx('Parcelas de la Secretaría de Turismo, Economía y Sustentabilidad (capa cspyde100). No es el catastro del estado.', 'Parcels from the Tourism, Economy and Sustainability secretariat (layer cspyde100). It is not the state cadastre.') },
-          { es: 'Fuente', en: 'Source', value: 'SIG BCS — http://sig.bcs.gob.mx/iclusterbcs/' },
-        ],
-      });
-      return;
-    }
     openFiche({
       title: 'iCluster — uso de suelo IMPLAN',
       kind_es: 'Capa publicada del visor estatal',
@@ -686,7 +674,6 @@
       rows: [
         { es: 'Qué se dibuja', en: 'What is drawn', value: tx('Uso de suelo de IMPLAN Los Cabos (capa cimp100) del visor iCluster. Aparece al acercar la costa de Los Cabos.', 'IMPLAN Los Cabos land use (layer cimp100) from the iCluster viewer. It appears when you zoom to the Los Cabos coast.') },
         { es: 'Fuente', en: 'Source', value: 'IMPLAN Los Cabos / SIG BCS — http://sig.bcs.gob.mx/iclusterbcs/' },
-        { es: 'Parcelas', en: 'Parcels', value: tx('Opcional: capa cspyde100, Secretaría de Turismo, Economía y Sustentabilidad. No es el catastro del estado.', 'Optional: layer cspyde100, Tourism, Economy and Sustainability secretariat. It is not the state cadastre.') },
       ],
     });
   }
@@ -1306,7 +1293,7 @@
     box.addEventListener('change', function () {
       var kind = box.getAttribute('data-icluster');
       setIcluster(kind, box.checked);
-      if (box.checked) openSuelo(kind === 'parcelas' ? 'parcelas' : 'icluster');
+      if (box.checked) openSuelo('icluster');
     });
   });
   document.querySelectorAll('[data-fold]').forEach(function (btn) {
