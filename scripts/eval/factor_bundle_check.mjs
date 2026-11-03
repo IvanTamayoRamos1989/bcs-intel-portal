@@ -4373,6 +4373,117 @@ const CASES = [
     needIds: ['ev_pob_censo_2020'],
     needTypes: ['Evidence'],
   },
+  {
+    q: 'Dirección de ecología de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_ecologia', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Rosa Esther en el ayuntamiento',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_ecologia', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Dirección de desarrollo social de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_desarrollo_social', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Dirección de fomento económico de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_fomento_economico', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Dirección de desarrollo urbano de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_desarrollo_urbano', 'inst_pdu_cabos'],
+    needTypes: ['Actor', 'Instrument'],
+  },
+  {
+    q: 'Servicios públicos municipales de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_servicios_publicos', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Policía preventiva de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_dg_seguridad_publica', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Tesorería de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_presidencia', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Alcalde de Los Cabos',
+    kind: 'viability',
+    needIds: ['actor_cabos_presidencia', 'ev_org_cabos_2024'],
+    needTypes: ['Actor', 'Evidence'],
+  },
+  {
+    q: 'Delegación de Santiago',
+    kind: 'viability',
+    needIds: ['actor_cabos_delegaciones', 'terr_los_cabos'],
+    needTypes: ['Actor', 'Territory'],
+    forbid: ['rc_acuifero_0320'],
+  },
+  {
+    q: 'Si seguimos así',
+    kind: 'viability',
+    needIds: ['ev_esc_baseline', 'const_dma_deficit'],
+    needTypes: ['Evidence', 'Constraint'],
+  },
+  {
+    q: 'Seguridad hídrica antes de crecer',
+    kind: 'viability',
+    needIds: ['ev_esc_water_first', 'const_dma_deficit'],
+    needTypes: ['Evidence', 'Constraint'],
+  },
+  {
+    q: 'Fortalecer la movilidad del corredor',
+    kind: 'viability',
+    needIds: ['ev_esc_corridor'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'Puertos y aeropuertos como base del crecimiento',
+    kind: 'viability',
+    needIds: ['ev_esc_ports', 'rc_aeropuerto_sjd', 'rc_aeropuerto_lap'],
+    needTypes: ['Evidence', 'ResourceCapacity'],
+  },
+  {
+    q: 'Programa de ampliación y modernización de la red',
+    kind: 'viability',
+    needIds: ['inst_pamrnt', 'rc_sibcs', 'const_red_aislada'],
+    needTypes: ['Instrument', 'ResourceCapacity', 'Constraint'],
+    forbid: ['ev_sig_mulege_oasis'],
+  },
+  {
+    q: 'Setenta y tres mil habitantes de Comondú',
+    kind: 'viability',
+    needIds: ['ev_pob_censo_2020'],
+    needTypes: ['Evidence'],
+  },
+  {
+    q: 'Sesenta y cuatro mil habitantes de Mulegé',
+    kind: 'viability',
+    needIds: ['ev_pob_censo_2020'],
+    needTypes: ['Evidence'],
+    forbid: ['rc_plant_sol_insurgentes'],
+  },
+  {
+    q: 'Ciento treinta y seis mil en San José del Cabo',
+    kind: 'viability',
+    needIds: ['ev_pob_censo_2020', 'terr_los_cabos'],
+    needTypes: ['Evidence', 'Territory'],
+  },
 ];
 
 const NEGATIVES = [
@@ -4388,6 +4499,8 @@ const NEGATIVES = [
   'la sierra recarga',
   'sin',
   'mil novecientos ochenta',
+  'alcalde de La Paz',
+  'alcalde de Loreto',
 ];
 
 let failed = 0;
