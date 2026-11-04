@@ -149,7 +149,7 @@
           type: 'raster',
           tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
           tileSize: 256,
-          attribution: '© OpenStreetMap',
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
           maxzoom: 19,
         },
         sat: {
@@ -245,6 +245,7 @@
         touchPitch: !reduced,
         cooperativeGestures: false,
       });
+      if (opts.tools !== false) map.addControl(new maplibregl.ScaleControl({unit:'metric',maxWidth:90}), 'bottom-left');
       if (opts.tools !== false) map.addControl(new maplibregl.NavigationControl({ visualizePitch: true, showCompass: true }), 'top-right');
       var stateBox = (base && base.bounds)
         ? [base.bounds[0][0], base.bounds[0][1], base.bounds[1][0], base.bounds[1][1]]
@@ -845,6 +846,12 @@
         var streets = mode === 'streets';
         if (map.getLayer('basemap-sat')) map.setLayoutProperty('basemap-sat', 'visibility', sat ? 'visible' : 'none');
         if (map.getLayer('basemap-osm')) map.setLayoutProperty('basemap-osm', 'visibility', streets ? 'visible' : 'none');
+        if (opts.territorialAtlas) {
+          // At street scale a generalized regional coastline can cover real waterfront blocks.
+          var regional = ['interpolate',['linear'],['zoom'],8,1,12,0];
+          map.setPaintProperty('bcs-mask','fill-opacity',regional);
+          map.setPaintProperty('cdt-muni-line','line-opacity',regional);
+        }
         if (map.getLayer('land')) map.setPaintProperty('land', 'fill-opacity', sat ? 0 : streets ? 0.16 : 0.9);
         if (map.getLayer('bcs-land')) map.setPaintProperty('bcs-land', 'fill-opacity', sat ? 0.04 : streets ? 0.18 : 1);
         syncHills();

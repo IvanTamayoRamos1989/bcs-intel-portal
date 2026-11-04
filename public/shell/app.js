@@ -202,6 +202,7 @@
     var title = featureLabel(p) || (meta ? (lang() === 'en' ? meta.name_en : meta.name_es) : '');
     if (!title) return;
     var rows = [];
+    if (lngLat && Number.isFinite(lngLat.lat) && Number.isFinite(lngLat.lng)) rows.push({es:'Punto seleccionado (WGS84)',en:'Selected point (WGS84)',value:lngLat.lat.toFixed(5)+', '+lngLat.lng.toFixed(5)});
     if (meta && meta.palette) {
       var category = Number.isInteger(p.level) && meta.labels[p.level];
       if (meta.id.indexOf('haz_') === 0) rows.push({es:'Nivel de peligro',en:'Hazard level',value:category || tx('Sin datos','No data')});
@@ -465,6 +466,11 @@
   var highlightedMuni = '';
   function paintMuni(name) {
     highlightedMuni = name || '';
+    if (leafletMap) {
+      if (window.__shellMuni) leafletMap.removeLayer(window.__shellMuni);
+      var polygon = muniGeo && muniGeo.features.find(function(f){return f.properties.name===name;});
+      if (polygon) window.__shellMuni=L.geoJSON(polygon,{interactive:false,style:{color:'#197a78',weight:2,fillOpacity:0.09}}).addTo(leafletMap);
+    }
     if (!engine || !engine.paintMunis) return;
     if (!name) { engine.paintMunis(null); return; }
     var colors = {};
@@ -486,7 +492,7 @@
     var span = 0.28;
     if (engine && engine.fitBox) engine.fitBox([lng - span, lat - span * 0.75, lng + span, lat + span * 0.75], opts || { padding: framePad('town'), maxZoom: 11.2, pitch: pitched ? 54 : 0 });
     if (leafletMap && window.L) {
-      leafletMap.setView([lat, lng], 10);
+      leafletMap.setView([lat, lng], opts && opts.zoom || 11,{animate:false});
       if (window.__shellPin) leafletMap.removeLayer(window.__shellPin);
       window.__shellPin = L.circleMarker([lat, lng], { radius: 8, color: '#fff', weight: 2, fillColor: '#0083C4', fillOpacity: 1 }).addTo(leafletMap);
       if (label) window.__shellPin.bindTooltip(label, { permanent: true, direction: 'top' }).openTooltip();
@@ -573,19 +579,36 @@
   var viewLive = false;
   var viewTimer;
   var savedCamera;
+  var mapMode = new URLSearchParams(location.search).get('modo') || 'mapa';
+  function changeMode(mode, city) {
+    rememberView();
+    var url = new URL(location.href);
+    url.searchParams.set('modo',mode);
+    if (city) {
+      url.searchParams.set('cam',[city.center[0], city.center[1],16.2,-16,52].join(','));
+      url.searchParams.set('edificios','1');
+      url.searchParams.delete('muni');
+    } else if (url.searchParams.has('cam')) {
+      var v = url.searchParams.get('cam').split(',');
+      v[4] = mode === '3d' && !reduceMotion ? 52 : 0;
+      url.searchParams.set('cam',v.join(','));
+    }
+    location.assign(url.href);
+  }
   var savedMuni;
   function rememberView() {
     if (!viewLive) return;
     var camera = engine && engine.readCamera();
     if (!camera && leafletMap) {
       var center = leafletMap.getCenter();
-      camera = {lng:center.lng,lat:center.lat,zoom:leafletMap.getZoom(),bearing:0,pitch:0};
+      camera = {lng:center.lng,lat:center.lat,zoom:leafletMap.getZoom()-1,bearing:0,pitch:0};
     }
     if (!camera) return;
     var url = new URL(location.href);
     var fields = ['lng','lat','zoom','bearing','pitch'];
     url.searchParams.set('cam',fields.map(function(k){return Number(camera[k].toFixed(5));}).join(','));
     url.searchParams.set('capas',Object.keys(on).filter(function(id){return on[id] && byId[id];}).sort().join(','));
+    url.searchParams.set('modo',engine ? '3d' : 'mapa');
     url.searchParams.set('base',basemap);
     url.searchParams.set('relieve',terrainOn ? '1' : '0');
     var box = document.querySelector('[data-buildings]');
@@ -608,10 +631,12 @@
         if (!params.size || (params.size === 1 && params.has('context') && params.get('context') === stored.get('context'))) params = stored;
       } catch (_) {}
     }
+    mapMode = params.get('modo') || mapMode;
     if (!params.has('cam')) return;
     var v = params.get('cam').split(',').map(Number);
-    if(v.length !== 5 || !v.every(Number.isFinite) || Math.abs(v[0])>180 || Math.abs(v[1])>85 || v[2]<5 || v[2]>18 || v[4]<0 || v[4]>85) return;
+    if(v.length !== 5 || !v.every(Number.isFinite) || Math.abs(v[0])>180 || Math.abs(v[1])>85 || v[2]<3 || v[2]>18 || v[4]<0 || v[4]>85) return;
     savedCamera = {lng:v[0],lat:v[1],zoom:v[2],bearing:v[3],pitch:v[4]};
+    if (!params.has('modo') && savedCamera.pitch>0) mapMode='3d';
     savedMuni = (model.munis || []).some(function(m){return m.name===params.get('muni');}) ? params.get('muni') : '';
     pendingMuni = '';
     if (params.has('capas')) {
@@ -641,7 +666,7 @@
     Promise.all(ids.map(function (id) { return showLayer(id, true); })).then(function () {
       if (savedCamera) {
         if (engine) engine.jumpCamera(savedCamera);
-        else if (leafletMap) leafletMap.setView([savedCamera.lat,savedCamera.lng],savedCamera.zoom);
+        else if (leafletMap) leafletMap.setView([savedCamera.lat,savedCamera.lng],savedCamera.zoom+1);
         if (savedMuni) paintMuni(savedMuni);
       }
       else if (pendingPoint) { flyPoint(pendingPoint[0],pendingPoint[1],pendingPoint[2]);pendingPoint=null; }
@@ -689,7 +714,7 @@
         return Promise.resolve();
       }
       if (meta.type === 'raster') {
-        if (!leafletLayers[id]) leafletLayers[id] = L.tileLayer(meta.url,{opacity:.7,tileSize:256,minNativeZoom:5,maxNativeZoom:9,bounds:[[22.75,-115.8],[28.02,-109.35]],noWrap:true});
+        if (!leafletLayers[id]) leafletLayers[id] = L.tileLayer(meta.url,{opacity:.7,tileSize:256,minNativeZoom:5,maxNativeZoom:9,maxZoom:19,bounds:[[22.75,-115.8],[28.02,-109.35]],noWrap:true});
         leafletLayers[id].addTo(leafletMap);
         return Promise.resolve();
       }
@@ -697,12 +722,15 @@
         if (!on[id] || layerVersion[id] !== version) return geo;
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
         leafletLayers[id] = L.geoJSON(geo, {
-          style: function (feat) { if(meta.palette) return {color:meta.palette[feat.properties.level] || '#919b9c',weight:.3,fillOpacity:.7}; return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
+          style: function (feat) {
+            if(id==='osm_highways') return {color:'#a27042',weight:1.5,opacity:.8};
+            if(id==='osm_towns') return {color:'#fff',weight:1.15,fillColor:'#235d62',fillOpacity:.95};
+            if(meta.palette) return {color:meta.palette[feat.properties.level] || '#919b9c',weight:.3,fillOpacity:.7}; return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
           onEachFeature: function (feature, layer) {
-            if (meta.reference) layer.on('click', function (event) { openFeatureFiche(feature, event.latlng, meta); });
+            layer.on('click', function (event) { openFeatureFiche(feature, event.latlng, meta); });
           },
           pointToLayer: function (feat, latlng) {
-            return L.circleMarker(latlng, { radius: 5, color: '#fff', weight: 1, fillColor: (meta.palette && meta.palette[feat.properties.level]) || meta.color || '#0083C4', fillOpacity: 0.9 });
+            return L.circleMarker(latlng, { radius: id==='osm_towns' ? 3.3 : 5, color: '#fff', weight: 1, fillColor: (meta.palette && meta.palette[feat.properties.level]) || meta.color || '#0083C4', fillOpacity: 0.9 });
           },
         }).addTo(leafletMap);
         return geo;
@@ -838,6 +866,14 @@
   }
   function setIcluster(kind, on) {
     if (iclusterOn[kind] != null) iclusterOn[kind] = !!on;
+    if (leafletMap && kind==='uso') {
+      var key='iclusterUso';
+      if (on) {
+        if (!leafletLayers[key]) leafletLayers[key]=L.tileLayer.wms('/api/icluster-wms',{layers:'cimp100',format:'image/png',transparent:true,opacity:.65,maxZoom:19});
+        leafletLayers[key].addTo(leafletMap);
+        leafletMap.setView([22.99,-109.78],12);
+      } else if (leafletLayers[key]) leafletMap.removeLayer(leafletLayers[key]);
+    }
     if (engine && engine.setIcluster) engine.setIcluster(kind, on);
     document.querySelectorAll('[data-icluster="' + kind + '"]').forEach(function (box) { box.checked = !!on; });
     if (on && kind === 'uso' && engine && engine.jumpCamera) {
@@ -948,32 +984,64 @@
     });
   }
 
+  function updateModeLabel(is3d) {
+    var btn = document.getElementById('shell-pitch');
+    var can3d = is3d || !!(window.CDT3D && CDT3D.hasWebGL());
+    btn.disabled = !can3d;
+    btn.setAttribute('aria-pressed',String(is3d));
+    btn.title = !can3d ? tx('Este navegador admite la vista 2D.','This browser supports the 2D view.') : '';
+    btn.textContent = is3d ? tx('Volver a 2D','Back to 2D') : can3d ? tx('Explorar en 3D','Explore in 3D') : '2D';
+    document.body.dataset.mapMode=is3d ? '3d' : 'mapa';
+  }
+  function buildingPlaces(eng) {
+    var places=document.querySelector('[data-building-places]');
+    var box=document.querySelector('[data-buildings]');
+    if (!places || !box) return;
+    fetch('/gis/edificios/index.json').then(function(r){if(!r.ok)throw Error();return r.json();}).then(function(ix){
+      places.replaceChildren(new Option(tx('Elige una ciudad','Choose a city'),''));
+      ix.cities.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(city){
+        places.add(new Option(city.name,city.id));
+      });
+      places.disabled=false;
+      box.disabled=!eng;
+      if(eng){box.onchange=function(){eng.setBuildings(box.checked);};eng.setBuildings(box.checked);}
+      places.onchange=function(){
+        var city=ix.cities.find(function(c){return c.id===places.value;});
+        if(!city)return;
+        if(eng){box.checked=true;eng.setBuildings(true);eng.jumpCamera({lng:city.center[0],lat:city.center[1],zoom:16.2,bearing:-16,pitch:reduceMotion?0:52});}
+        else if(!document.getElementById('shell-pitch').disabled) changeMode('3d',city);
+        else leafletMap.setView([city.center[1],city.center[0]],17);
+      };
+    }).catch(function(){places.replaceChildren(new Option(tx('Cobertura no disponible','Coverage unavailable'),''));});
+  }
   function boot2d() {
     if (!window.L || !mapEl) return;
     leafletMap = L.map(mapEl, {
-      scrollWheelZoom: true,
-      maxZoom: 14,
-      minZoom: 6.15,
-      maxBounds: [[22.4, -115.7], [28.5, -108.95]],
-    }).fitBounds([[22.87, -115.22], [28.0, -109.41]]);
-    streetsLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap', maxZoom: 18 });
-    satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Esri', maxZoom: 18 });
+      zoomControl:false, preferCanvas:true, zoomSnap:0.25, maxZoom:19, minZoom:4,
+      maxBounds:[ [21.8,-116.7], [29,-108.3] ]
+    }).fitBounds([[22.87,-115.22],[28,-109.41]],{padding:[20,20]});
+    L.control.zoom({position:'topright'}).addTo(leafletMap);
+    leafletMap.createPane('municipalContext').style.zIndex = 350;
+    loadMunis().then(function(geo){
+      if (geo) L.geoJSON(geo,{pane:'municipalContext',interactive:false,
+        style:{color:'#39746d',weight:1.1,opacity:.75,fillColor:'#80baaa',fillOpacity:.075}
+      }).addTo(leafletMap);
+    });
+    L.control.scale({position:'bottomleft',imperial:false,metric:true}).addTo(leafletMap);
+    streetsLayer=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',maxZoom:19
+    });
+    satLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{attribution:'Imagery © Esri',maxZoom:19,maxNativeZoom:18});
     setBasemap(basemap);
-    L.control.scale({ imperial: false, metric: true }).addTo(leafletMap);
-    var perspective = document.getElementById('shell-pitch');
-    if (perspective) {
-      perspective.disabled = true;
-      perspective.setAttribute('aria-pressed','false');
-      perspective.textContent = '2D';
-      perspective.title = tx('Mapa plano disponible en este navegador.','Flat map available in this browser.');
-    }
-    setStatus('Mapa plano. El relieve 3D no está disponible en este navegador.', 'Flat map. 3D terrain is not available in this browser.');
-    Promise.all(Object.keys(on).filter(function (id) { return on[id]; }).map(function (id) { return showLayer(id, true); })).then(markReady);
+    leafletMap.on('click',function(e){if(iclusterOn.uso) identifyIcluster(e.latlng,++identifyToken);});
+    updateModeLabel(false);
+    buildingPlaces(null);
+    markReady();
   }
-
   function boot3d() {
     if (!window.CDT3D || !CDT3D.hasWebGL()) { boot2d(); return; }
     CDT3D.start({
+      territorialAtlas:true,
       container: mapEl,
       tools: true,
       reduced: reduceMotion,
@@ -983,31 +1051,8 @@
       onFeature: onMapFeature,
     }).then(function (eng) {
       engine = eng;
-      var box = document.querySelector('[data-buildings]');
-      var places = document.querySelector('[data-building-places]');
-      if (box && places && eng.setBuildings) {
-        fetch('/gis/edificios/index.json').then(function (r) {
-          if (!r.ok) throw Error('buildings');
-          return r.json();
-        }).then(function (ix) {
-          ix.cities.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(c){
-            var option=document.createElement('option'); option.value=c.id; option.textContent=c.name;
-            places.appendChild(option);
-          });
-          box.disabled=false; places.disabled=false;
-          box.onchange=function(){ eng.setBuildings(box.checked); };
-          places.onchange=function(){
-            var c=ix.cities.find(function(item){return item.id===places.value;});
-            if (!c) return;
-            var point=c.center || (c.bbox && [(c.bbox[0]+c.bbox[2])/2,(c.bbox[1]+c.bbox[3])/2]);
-            if (!point) return;
-            box.checked=true; eng.setBuildings(true);
-            eng.jumpCamera({lng:point[0],lat:point[1],zoom:16.2,bearing:-16,pitch:reduceMotion?0:52});
-            syncPitchBtn();
-          };
-          eng.setBuildings(box.checked);
-        }).catch(function(){setStatus('No se pudo cargar la lista de edificios.', 'Building coverage could not be loaded.');});
-      }
+      buildingPlaces(eng);
+      updateModeLabel(true);
       setBasemap(basemap);
       applyTerrain();
       applyExtrusion();
@@ -1235,7 +1280,7 @@
     return citations.length;
   }
 
-  var TERRAIN_EX = 2.15;
+  var TERRAIN_EX = 1;
   var PITCH_ON = 50;
   var BEARING_ON = -18;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1277,7 +1322,7 @@
   function syncPitchBtn() {
     var btn = document.getElementById('shell-pitch');
     if (!btn) return;
-    btn.setAttribute('aria-pressed', pitched && terrainOn ? 'true' : 'false');
+    btn.setAttribute('aria-pressed',engine ? 'true' : 'false');
   }
   function syncStackToggles() {
     document.querySelectorAll('[data-stack-toggle]').forEach(function (btn) {
@@ -1434,14 +1479,7 @@
   });
   var pitchBtn = document.getElementById('shell-pitch');
   if (pitchBtn) pitchBtn.addEventListener('click', function () {
-    pitched = !(pitched && terrainOn);
-    if (pitched && !terrainOn) {
-      terrainOn = true;
-      applyTerrain();
-    }
-    applyPitch();
-    syncStackToggles();
-    syncHud();
+    changeMode(engine ? 'mapa' : '3d');
   });
   document.querySelectorAll('[data-theme]').forEach(function (btn) {
     btn.addEventListener('click', function () { setTheme(btn.getAttribute('data-theme')); });
@@ -1704,7 +1742,13 @@
   try{var contextId=new URLSearchParams(location.search).get('context');if(!savedCamera&&contextId&&/^c[a-z0-9]+$/.test(contextId)){var context=JSON.parse(sessionStorage.getItem('bcs-map-'+contextId)||'null');if(context&&context.grounded!==false)applyText(context.question,context.sources,context.answer);}}catch(_){}
   syncBasic();
   setBasemap(basemap);
-  boot3d();
+  if (mapMode === '3d' && window.CDT3D && CDT3D.hasWebGL()) {
+    var renderer = document.createElement('script');
+    renderer.src='/explorar/vendor/maplibre-gl.js';
+    renderer.onload=boot3d;
+    renderer.onerror=boot2d;
+    document.head.appendChild(renderer);
+  } else boot2d();
   if (treeEl || relatedEl) fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
     index = data;
     renderTree(searchEl ? searchEl.value : '');
@@ -1719,8 +1763,22 @@
     showLayer: showLayer,
     setBasemap: setBasemap,
     focusMuni: focusMuni,
+    focusCoordinate: function(lng,lat) {
+      if (leafletMap) {
+        flyPoint(lng,lat,null,{zoom:17});
+      } else if (engine) {
+        engine.mark(lng,lat,'');
+        engine.jumpCamera({lng:lng,lat:lat,zoom:16,pitch:engine.getPitch(),bearing:engine.readCamera().bearing});
+      } else { pendingPoint=[lng,lat,'']; }
+      mapSummary(lat.toFixed(5)+', '+lng.toFixed(5)+' · WGS84',lat.toFixed(5)+', '+lng.toFixed(5)+' · WGS84');
+    },
     focusPoint: function(lng,lat,label){pendingJob=null;pendingMuni='';if(!mapReady)pendingPoint=[lng,lat,label];else flyPoint(lng,lat,label);mapSummary('Lugar: '+label,'Place: '+label);},
-    getBounds: function () { return engine && engine.getBounds ? engine.getBounds() : null; },
+    getBounds: function () {
+      if(engine) return engine.getBounds();
+      if(!leafletMap) return null;
+      var b=leafletMap.getBounds();
+      return [b.getWest(),b.getSouth(),b.getEast(),b.getNorth()];
+    },
     getPitch: function () { return engine && engine.getPitch ? engine.getPitch() : null; },
   };
 })();

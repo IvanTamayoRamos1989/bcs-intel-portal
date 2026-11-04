@@ -25,3 +25,36 @@ body.map-page .shell{grid-template-columns:minmax(0,1fr)!important;grid-template
 #analysis-legend {display:flex;gap:.25rem .6rem;flex-wrap:wrap}
 #analysis-legend span {display:inline-flex;align-items:center;gap:.25rem;font-size:.74rem}
 @media(max-width:600px){.analysis-panel {left:auto;right:.45rem;bottom:.45rem;max-width:min(240px,65vw)}}
+
+/* Atlas workspace: keep controls legible over both imagery and street cartography. */
+.map-page #shell-map { isolation:isolate; z-index:0; background:#d7e6eb; }
+.map-page .twin-map-context { background:#fffefa; border:1px solid #c7d4d0; border-top:3px solid #256d69; border-radius:10px; box-shadow:0 3px 14px #133d461c; }
+.map-page .twin-eyebrow { color:#21615f; font-weight:750; letter-spacing:.09em; }
+.map-page .map-search input { color:#173b43; background:#fff; }
+.map-page .map-search-results:not([hidden]) { border:1px solid #c9d7d3; border-radius:7px; }
+.map-page :is(.map-search input,.map-search-results button,.shell-dock button,.building-picker select):focus-visible { outline:3px solid #327f88; outline-offset:2px; }
+.map-page .leaflet-control-zoom { border:1px solid #b8cbc7; border-radius:8px; overflow:hidden; }
+.map-page .leaflet-control-zoom a { width:36px;height:36px;line-height:36px;color:#214752; }
+.map-page .leaflet-control-scale { margin:0 0 6px 12px; }
+.map-page .leaflet-control-attribution { font-size:10px; background:#fffffff0; }
+.map-page .land-water { bottom:36px; max-width:min(280px,45%); max-height:55%; overflow:auto; }
+.map-page .shell-fiche { z-index:10; }
+.map-page #shell-pitch { font-weight:700; color:#144b49; background:#e6f1ec; border-color:#83a9a1; }
+.map-page .shell-dock-bar { background:#fafbf7; border-top:1px solid #c4d2cf; }
+.map-page .shell-map-wrap:has(.shell-fiche:not([hidden])) .land-water { visibility:hidden; }
+@media(max-width:600px){
+ .map-page .twin-map-context { width:min(270px,calc(100% - 72px)); }
+ .map-page .land-water { bottom:30px; font-size:12px; }
+ .map-page .land-water[open] { max-width:calc(100% - 22px); z-index:8; }
+ .map-page .shell-dock-bar { gap:5px 8px; padding:7px 10px; }
+ .map-page .building-picker select { max-width:8.5rem; }
+}
+
+@media(max-width:600px){
+ .map-page .twin-basic { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:100%;overflow:visible; }
+ .map-page .building-picker { grid-column:1/-1;justify-content:space-between; }
+ .map-page .building-picker select { width:auto;max-width:68%; }
+ .map-page .twin-basic button { padding:5px 2px;min-height:32px; }
+ .map-page .twin-map-context { padding:8px 11px; }
+ .map-page .map-search input { padding:7px 10px; }
+}

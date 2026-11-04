@@ -181,7 +181,7 @@ const shellModel = {
     <div class="shell">
       <section class="shell-map-wrap" aria-label="Mapa">
         <div id="shell-map"></div>
-        <div class="twin-map-context"><span class="twin-eyebrow"><span data-lang-es>BAJA CALIFORNIA SUR</span><span data-lang-en hidden>CONTEXT MAP</span></span><p id="twin-map-summary" role="status"><span data-lang-es>Busca un lugar o activa una capa.</span><span data-lang-en hidden>Find a place or turn on a layer.</span></p><div class="map-search"><label for="map-place-search"><span data-lang-es>Buscar un lugar</span><span data-lang-en hidden>Find a place</span></label><input id="map-place-search" type="search" placeholder="La Paz, Loreto, Todos Santos…" autocomplete="off" aria-controls="map-place-results" /><ul id="map-place-results" class="map-search-results" hidden></ul></div>
+        <div class="twin-map-context"><span class="twin-eyebrow"><span data-lang-es>Atlas territorial · BCS</span><span data-lang-en hidden>Territorial atlas · BCS</span></span><p id="twin-map-summary" role="status"><span data-lang-es>Busca un lugar o activa una capa.</span><span data-lang-en hidden>Find a place or turn on a layer.</span></p><div class="map-search"><label for="map-place-search"><span data-lang-es>Lugar o coordenadas</span><span data-lang-en hidden>Place or coordinates</span></label><input id="map-place-search" type="search" placeholder="Loreto · 26.012, -111.344" autocomplete="off" aria-controls="map-place-results" /><ul id="map-place-results" class="map-search-results" hidden></ul></div>
           <button type="button" id="twin-reset-map"><span data-lang-es>Ver todo BCS</span><span data-lang-en hidden>View all BCS</span></button></div>
         <details class="land-water" id="land-water">
           <summary><span data-lang-es>Tierra y agua</span><span data-lang-en hidden>Land and water</span></summary>
@@ -196,7 +196,7 @@ const shellModel = {
           <summary><span data-lang-es>Clima y territorio</span><span data-lang-en hidden>Climate and territory</span></summary>
           <label for="analysis-select"><span data-lang-es>Mapa temático</span><span data-lang-en hidden>Thematic map</span></label>
           <select id="analysis-select">
-            <option value="">—</option>
+            <option value="">…</option>
             {analysisLayers.map((layer) => <option value={layer.id} data-es={layer.name_es} data-en={layer.name_en}>{layer.name_es}</option>)}
           </select>
           <p id="analysis-caption" aria-live="polite"></p><div id="analysis-legend"></div>
@@ -222,7 +222,7 @@ const shellModel = {
           <div class="twin-basic" role="group" aria-label="Capas básicas">
             <span class="twin-basic-label"><span data-lang-es>Mostrar</span><span data-lang-en hidden>Show</span></span>
             <label class="building-picker"><span data-lang-es>Edificios 3D</span><span data-lang-en hidden>3D buildings</span>
-              <select data-building-places disabled><option value="">—</option></select>
+              <select data-building-places disabled><option value="">…</option></select>
             </label>
             <button type="button" data-basic="places" aria-pressed="true"><span data-lang-es>Localidades</span><span data-lang-en hidden>Places</span></button>
             <button type="button" data-basic="roads" aria-pressed="true"><span data-lang-es>Carreteras</span><span data-lang-en hidden>Roads</span></button>
@@ -444,7 +444,6 @@ const shellModel = {
     <script is:inline define:vars={{ shellModel }}>
       window.__SHELL_MODEL__ = shellModel;
     </script>
-    <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
     <script is:inline src="/gemelo/cdt3d.js?v=20261103-fly"></script>
     <script is:inline src="/vendor/leaflet/leaflet.js"></script>
     <script is:inline>if(new URLSearchParams(location.search).has("embed"))document.body.classList.add("map-embed");</script>
