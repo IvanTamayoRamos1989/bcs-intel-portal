@@ -2,6 +2,7 @@
  * BCS Portal chat — RAG over catalog + guides + ontology + stills.
  * Env: BCS_CHAT_API_KEY, BCS_CHAT_PROVIDER (openai|xai)
  */
+import { stateBudgetOverview } from '../lib/state_budget.mjs';
 import corpusData from './chat_corpus.json' with { type: 'json' };
 import graphData from './ontology_graph.json' with { type: 'json' };
 import stakeholdersSeed from './stakeholders_seed.json' with { type: 'json' };
@@ -5918,7 +5919,7 @@ MULTI-FACTOR REASONING (this question is about project viability, land-use chang
 - Every line that says "HUECO — sin dato" must be repeated as its own "Data gap:" line. Do not fill it with a number, a rent, a megawatt, a parcel, or a passenger total.
 - Name trade-offs that the cards already state. Do not recommend a zoning code that is not written in CONTEXT.
 - Cite each factor with the fragment title. Library page extracts are reference, not BCS statistics. News is press (outlet and date). Scenarios and foresight signals are readings, not new capacity.
-- Close with ONE follow-up on its own last line, starting with "👉 ", about a factor or gap already named in the brief. Do not ask for a series the brief marks as sin dato. For this class you may use up to about 220 words.
+- Close with ONE follow-up on its own last line, starting with "👉 ", about a factor or gap already named in the brief and already in this thread (same municipality and theme). Do not switch to a stock topic. Do not ask for a series the brief marks as sin dato. For this class you may use up to about 220 words.
 `;
   }
   return `
@@ -5928,14 +5929,15 @@ RAZONAMIENTO MULTIFACTOR (esta pregunta es de viabilidad de proyecto, cambio de 
 - Cada línea que dice "HUECO — sin dato" se repite como su propia línea "Dato faltante:". No la completes con una cifra, una renta, un megawatt, un predio ni un total de pasajeros.
 - Nombra los trade-offs que las fichas ya dicen. No recomiendes un código de zonificación que no esté escrito en el CONTEXTO.
 - Cita cada factor con el título del fragmento. Las páginas de biblioteca son referencia, no estadística de BCS. Las noticias son prensa (medio y fecha). Escenarios y señales son lecturas, no capacidad nueva.
-- Cierra con UNA pregunta 👉 en su propia última línea, sobre un factor o hueco ya nombrado en el resumen. No pidas una serie que el resumen marca como sin dato. En esta clase puedes usar hasta unas 220 palabras.
+- Cierra con UNA pregunta 👉 en su propia última línea, sobre un factor o hueco ya nombrado en el resumen y ya presente en este hilo (mismo municipio y mismo tema). No saltes a un tema de menú. No pidas una serie que el resumen marca como sin dato. En esta clase puedes usar hasta unas 220 palabras.
 `;
 }
 
-function groundedPrompt(lang, contextBlock, { placeLabel = null, noEvidence = false, factorKinds = null } = {}) {
+function groundedPrompt(lang, contextBlock, { placeLabel = null, noEvidence = false, factorKinds = null, threadNote = '' } = {}) {
   const factorNote = factorPromptNote(lang, factorKinds);
+  const thread = threadNote ? `\n${threadNote}` : '';
   if (lang === 'en') {
-    return `You are the assistant of the BCS 2050 portal (territorial intelligence for Baja California Sur).
+    return `You are the consultant for the BCS 2050 citizen consultation (territorial intelligence for Baja California Sur). You advise government, the private sector, and civil society so they can decide with portal evidence. Do not invent AGEB, cadastre, BIM, IoT, hotel rents, permits, megawatts, parcels, or any figure that is not written in CONTEXT.
 
 EVIDENCE RULES (mandatory):
 1. Answer ONLY with information in CONTEXT. Every figure, date, person, position, company and institution you mention must appear in CONTEXT. Do not use your own knowledge for people, current office-holders or figures.
@@ -5945,12 +5947,18 @@ EVIDENCE RULES (mandatory):
 5. If CONTEXT has two different figures for the same thing, give both with their sources.
 6. Never mention internal tools, vendors, offices or platform names.
 7. Items marked "news report — press, NOT official" come from the daily BCS news feed. Cite them as "News: <outlet>, <date>" and say they are press reports. For current events, lead with the most recent news item (marked MOST RECENT) as the current report and give its date; if older news items say something different, mention them afterwards as earlier reports with their dates — do not blend figures from different dates. Format: "According to the most recent report (<outlet>, <date>), …; earlier (<date>) … had been reported". News never replaces official data: if a news item conflicts with an official source (fact, aquifer, municipality, guide, official document), give both and say explicitly which one is official.
-STYLE: direct, short (≤150 words unless detail is requested), do not repeat the question, no process narration. Reply in English. Use simple markdown: **bold** for key ideas, short bullet lists, and a compact pipe table (| a | b |) when comparing municipalities or metrics — only with figures from CONTEXT. The interface will show related maps, photos and documents next to your answer: if the question is about a place, the coast, risks or a map you may say "see the map below", but never write URLs or image links yourself. When the answer is incomplete, add a short line "Data gap: …" naming the missing metric/source. ALWAYS close with ONE short follow-up question on its own last line, starting with "👉 ", inviting the user to keep exploring a related topic or place the portal covers (e.g. water, protected areas, risks, urban plans, population, energy, another municipality). Never end with a bare fact.${placeLabel ? `\nActive place in the UI: ${placeLabel} (use only if the question is ambiguous).` : ''}${noEvidence ? '\nCONTEXT IS EMPTY: say the portal has no evidence on this, then still close with the 👉 follow-up question suggesting a topic the portal does cover (you may suggest the official source to consult, without figures). For greetings or questions about what the portal does, answer briefly.' : ''}
+CONSULTATION (how to write the answer):
+- Open with the decision: one sentence on what a municipality, a firm, or a citizen can decide with this evidence. Name that audience only if CONTEXT supports it.
+- Then two to four sourced claims. Put each figure in parentheses (fragment or document title, year, page if given). Use a compact pipe table only to compare figures that are in CONTEXT.
+- If two cards in CONTEXT pull apart (a capacity against a constraint, an instrument against a gap), state that trade-off in one sentence. If CONTEXT states no tension, omit it.
+- If the figure that would close the decision is missing, add one line "Data gap:" naming the metric or source CONTEXT already points to. Do not invent a gap when CONTEXT is enough. Do not fill a line marked sin dato with a number.
+- At most about 180 words unless they ask for detail. Do not repeat the question. No process narration. Reply in English. Simple markdown: **bold** for the decision and the trade-off. You may say "see the map below" for a place, the coast, a risk, or a map. Never write URLs or image links.
+- ALWAYS close with ONE follow-up on its own last line, starting with "👉 ". That question stays on the municipality and the theme already in this thread (the user's words and THREAD below). Ask about a factor, actor, instrument, or gap already named in CONTEXT. Do not offer a stock menu (population, protected areas, risks, urban plans, energy, aerial photos, another municipality) unless that topic is already in the thread. Do not ask for a series CONTEXT marks as missing.${placeLabel ? `\nActive place in the UI: ${placeLabel} (use only if the question is ambiguous).` : ''}${thread}${noEvidence ? '\nCONTEXT IS EMPTY: say the portal has no evidence on this and invent no figure. Close with a 👉 question that asks them to name the municipality or the theme they already used. For a greeting or a question about what the portal does, say briefly that you are the consultant for the citizen consultation and that you answer from portal sources.' : ''}
 
 CONTEXT:
 ${contextBlock}${factorNote}`;
   }
-  return `Eres el asistente del portal BCS 2050 (inteligencia territorial de Baja California Sur).
+  return `Eres el consultor de la consulta ciudadana del portal BCS 2050 (inteligencia territorial de Baja California Sur). Aconsejas a gobierno, sector privado y sociedad civil para que decidan con la evidencia del portal. No inventes AGEB, catastro, BIM, IoT, rentas hoteleras, permisos, megawatts, predios ni ninguna cifra que no esté escrita en el CONTEXTO.
 
 REGLAS DE EVIDENCIA (obligatorias):
 1. Responde SOLO con información del CONTEXTO. Toda cifra, fecha, persona, cargo, empresa o institución que menciones debe aparecer en el CONTEXTO. No uses conocimiento propio sobre personas, cargos actuales ni cifras.
@@ -5960,7 +5968,13 @@ REGLAS DE EVIDENCIA (obligatorias):
 5. Si el CONTEXTO trae dos cifras distintas para lo mismo, da ambas con su fuente.
 6. Nunca menciones nombres de herramientas internas, proveedores, oficinas ni plataformas.
 7. Los elementos marcados "noticia — prensa, NO oficial" vienen del monitoreo diario de noticias de BCS. Cítalos como "Noticia: <medio>, <fecha>" y aclara que son notas de prensa. Para hechos de actualidad, empieza por la noticia más reciente (marcada MÁS RECIENTE) como la versión actual e indica su fecha; si noticias anteriores dicen otra cosa, menciónalas después como reportes previos con su fecha — no mezcles cifras de fechas distintas. Formato: "Según la noticia más reciente (<medio>, <fecha>), …; antes (<fecha>) se había reportado …". Una noticia nunca sustituye un dato oficial: si contradice una fuente oficial (hecho, acuífero, municipio, guía, documento oficial), muestra ambas y di explícitamente cuál es la oficial.
-ESTILO: directo, breve (≤150 palabras salvo que pidan detalle), sin repetir la pregunta ni narrar el proceso. Responde en español. Usa markdown sencillo: **negritas** para ideas clave, listas cortas y una tabla compacta con barras (| a | b |) cuando compares municipios o indicadores — solo con cifras del CONTEXTO. La interfaz mostrará junto a tu respuesta mapas, fotos y documentos relacionados: si la pregunta trata de un lugar, la costa, riesgos o un mapa puedes decir "mira el mapa abajo", pero nunca escribas URLs ni enlaces de imagen. Si la respuesta queda incompleta, agrega una línea breve "Dato faltante: …" que nombre el indicador o la fuente que falta. SIEMPRE cierra con UNA pregunta breve de seguimiento en su propia última línea, que empiece con "👉 ", invitando a seguir explorando un tema o lugar relacionado que cubre el portal (agua, áreas naturales protegidas, riesgos, planes urbanos, población, energía, otro municipio). Nunca termines con un dato suelto.${placeLabel ? `\nLugar activo en la interfaz: ${placeLabel} (úsalo solo si la pregunta es ambigua).` : ''}${noEvidence ? '\nEL CONTEXTO ESTÁ VACÍO: di que el portal no tiene evidencia sobre esto y aun así cierra con la pregunta 👉 sugiriendo un tema que el portal sí cubre (puedes sugerir la fuente oficial a consultar, sin cifras). Si es un saludo o una pregunta sobre qué hace el portal, responde brevemente.' : ''}
+CONSULTA (cómo redactar la respuesta):
+- Abre con la decisión: una frase sobre qué puede decidir un municipio, una empresa o un ciudadano con esta evidencia. Nombra a ese público solo si el CONTEXTO lo sostiene.
+- Luego dos a cuatro afirmaciones con fuente. Cada cifra entre paréntesis (título del fragmento o documento, año, página si está). Tabla compacta solo para comparar cifras que están en el CONTEXTO.
+- Si dos fichas del CONTEXTO jalan distinto (una capacidad contra una restricción, un instrumento contra un hueco), di ese trade-off en una frase. Si el CONTEXTO no trae tensión, omítelo.
+- Si falta la cifra que cerraría la decisión, agrega una línea "Dato faltante:" con la métrica o la fuente que el CONTEXTO ya señala. No inventes un hueco cuando el CONTEXTO alcanza. No rellenes con un número una línea marcada sin dato.
+- Hasta unas 180 palabras salvo que pidan detalle. No repitas la pregunta. No narres el proceso. Responde en español. Markdown sencillo: **negritas** para la decisión y el trade-off. Puedes decir "mira el mapa abajo" si hablan de un lugar, la costa, un riesgo o un mapa. Nunca escribas URLs ni enlaces de imagen.
+- SIEMPRE cierra con UNA pregunta en su propia última línea, que empiece con "👉 ". Esa pregunta se queda en el municipio y el tema que ya están en este hilo (las palabras del usuario y el HILO de abajo). Pregunta por un factor, actor, instrumento o hueco ya nombrado en el CONTEXTO. No ofrezcas un menú fijo (población, áreas protegidas, riesgos, planes urbanos, energía, fotos aéreas, otro municipio) si ese tema no está ya en el hilo. No pidas una serie que el CONTEXTO marca como faltante.${placeLabel ? `\nLugar activo en la interfaz: ${placeLabel} (úsalo solo si la pregunta es ambigua).` : ''}${thread}${noEvidence ? '\nEL CONTEXTO ESTÁ VACÍO: di que el portal no tiene evidencia sobre esto y no inventes cifras. Cierra con una pregunta 👉 que pida precisar el municipio o el tema que la persona ya usó. Si es un saludo o pregunta qué hace el portal, di en breve que eres el consultor de la consulta ciudadana y que respondes con fuentes del portal.' : ''}
 
 CONTEXTO:
 ${contextBlock}${factorNote}`;
@@ -6007,30 +6021,223 @@ function targetMunis(message, uiPlace) {
   if (uiPlace && PLACE_TO_MUNI[uiPlace]) return PLACE_TO_MUNI[uiPlace];
   return null; // statewide question
 }
-const FU_TOPICS = [
-  ['pop', /\b(poblaci|habitantes|gente|vive|viven|censo|personas)/, (p) => [`¿Cuánta gente vive en ${p}?`, `How many people live in ${p}?`]],
-  ['water', /\b(agua|acuifero|dma|hidric|sequia)/, (p) => [`¿Cuánta agua hay disponible en ${p}?`, `How much water is available in ${p}?`]],
-  ['anp', /\b(anp|protegid|reserva|ambiental|costa)/, (p) => [`¿Qué áreas naturales protegidas hay cerca de ${p}? Muéstrame el mapa`, `Which protected areas are near ${p}? Show me the map`]],
-  ['risk', /\b(riesgo|huracan|ciclon|inundaci)/, (p) => [`¿Qué riesgos de huracán e inundación tiene ${p}?`, `What hurricane and flood risks does ${p} face?`]],
-  ['plan', /\b(plan urbano|pdu|psdu|zonificaci|uso de suelo)/, (p) => [`¿Qué plan urbano aplica en ${p}? Muéstrame el mapa`, `Which urban plan applies in ${p}? Show me the map`]],
-  ['energy', /\b(electric|energ|cenace)/, () => ['¿De dónde viene la electricidad del estado?', "Where does the state's electricity come from?"]],
-  ['fed', /\b(proyecto|federal|inversion)/, (p) => [`¿Qué proyectos federales hay en ${p}?`, `Which federal projects are in ${p}?`]],
-  ['photos', /\b(foto|aerea|vista)/, (p) => [`Muéstrame fotos aéreas de ${p}`, `Show me aerial photos of ${p}`]],
+// Follow-ups stay on themes and municipalities already in the thread, plus factor
+// labels already retrieved. They do not rotate a stock menu of unrelated topics.
+const THREAD_THEMES = [
+  { id: 'water', re: /\b(agua|acuifero|dma|hidric|sequia|desal)/, noun: ['el agua', 'water'],
+    deepen: (p, en) => en
+      ? `What capacity and what limit on water does the portal already cite for ${p}?`
+      : `¿Qué capacidad y qué límite de agua cita ya el portal para ${p}?` },
+  { id: 'pop', re: /\b(poblaci|habitantes|gente|vive|viven|censo|personas|population|people)/, noun: ['la población', 'population'],
+    deepen: (p, en) => en
+      ? `Is the population figure for ${p} the whole municipality or only the seat?`
+      : `¿La población de ${p} es el total del municipio o solo la cabecera?` },
+  { id: 'anp', re: /\b(anp|protegid|reserva|costa|litoral)/, noun: ['la costa y las áreas protegidas', 'the coast and protected areas'],
+    deepen: (p, en) => en
+      ? `Which protection instrument already cited applies along ${p}?`
+      : `¿Qué instrumento de protección ya citado aplica junto a ${p}?` },
+  { id: 'risk', re: /\b(riesgo|huracan|ciclon|inundaci)/, noun: ['el riesgo', 'risk'],
+    deepen: (p, en) => en
+      ? `Which risk already cited conditions a decision in ${p}?`
+      : `¿Qué riesgo ya citado condiciona una decisión en ${p}?` },
+  { id: 'plan', re: /\b(plan urbano|pdu|psdu|zonificaci|uso de suelo)/, noun: ['el plan urbano', 'the urban plan'],
+    deepen: (p, en) => en
+      ? `What does the plan for ${p} allow, and what does it restrict?`
+      : `¿Qué permite y qué restringe el plan de ${p}?` },
+  { id: 'energy', re: /\b(electric|energi|cenace|sibcs)/, noun: ['la electricidad', 'electricity'],
+    deepen: (p, en) => en
+      ? `What electricity limit does the portal already cite for ${p}?`
+      : `¿Qué límite eléctrico cita ya el portal para ${p}?` },
+  { id: 'fed', re: /\b(proyecto federal|proyectos federales|inversion federal)\b/, noun: ['el proyecto federal', 'the federal project'],
+    deepen: (p, en) => en
+      ? `Which actor drives the federal project the portal already cites in ${p}?`
+      : `¿Qué actor impulsa el proyecto federal que el portal ya cita en ${p}?` },
+  { id: 'photos', re: /\b(foto|aerea|fotograma)\b/, noun: ['la vista', 'the view'],
+    deepen: (p, en) => en
+      ? `What in that view of ${p} changes the decision?`
+      : `¿Qué de esa vista de ${p} cambia la decisión?` },
 ];
-function buildFollowUps({ message, lang, placeId, munis }) {
-  const en = lang === 'en';
-  const q = normQ(message);
-  const place = (munis && munis[0]) || (placeId && PLACE_SPINE?.[placeId] ? PLACE_SPINE[placeId][en ? 'en' : 'es'] : null);
-  const p = place || (en ? 'my municipality' : 'mi municipio');
+
+function themesIn(text) {
+  const q = normQ(text);
+  return THREAD_THEMES.filter((t) => t.re.test(q));
+}
+
+function threadUserTurns(history) {
+  return (Array.isArray(history) ? history : [])
+    .filter((h) => h && h.role === 'user' && h.content)
+    .map((h) => String(h.content).trim())
+    .filter(Boolean)
+    .slice(-4);
+}
+
+function munisInText(text) {
+  const q = normQ(text);
+  return MUNI_RES.filter(([, re]) => re.test(q)).map(([m]) => m);
+}
+
+function orderedThreadThemes(message, history) {
+  const seen = new Set();
   const out = [];
-  for (const [, re, f] of FU_TOPICS) if (!re.test(q)) out.push(f(p)[en ? 1 : 0]);
-  // rotate deterministically by message so chips vary between turns
-  const k = [...q].reduce((a, c) => a + c.charCodeAt(0), 0) % Math.max(1, out.length);
-  const rot = out.slice(k).concat(out.slice(0, k)).slice(0, 2);
-  const others = ['La Paz', 'Los Cabos', 'Loreto', 'Comondú', 'Mulegé'].filter((m) => !(munis || []).includes(m));
-  if (place && others.length) rot.push(en ? `Compare ${place} with ${others[k % others.length]}` : `Compara ${place} con ${others[k % others.length]}`);
-  else rot.push(en ? 'How many people live in each municipality?' : '¿Cuántas personas viven en cada municipio?');
-  return rot;
+  for (const t of [...themesIn(message), ...themesIn(threadUserTurns(history).join(' '))]) {
+    if (seen.has(t.id)) continue;
+    seen.add(t.id);
+    out.push(t);
+  }
+  return out;
+}
+
+function isThreadFollowUp(message, history) {
+  const prior = threadUserTurns(history);
+  if (!prior.length) return false;
+  if (isFollowUpMessage(message)) return true;
+  const q = normQ(message);
+  if (/\b(estado|estatal|bcs|baja california|cada municipio|todos los municipios|statewide)\b/.test(q)) return false;
+  const words = q.split(/\s+/).filter(Boolean);
+  // A short turn with no new place continues the consultation already underway.
+  if (words.length <= 6 && !ragInferPlace(message)) return true;
+  if (words.length <= 4 && ragInferPlace(message) && !themesIn(message).length) return true;
+  if (/^(si|ok|vale|profundiza|sigue|continua|continue|more|deeper)\b/.test(q)) return true;
+  if (/^(en|para|sobre|about|in|for)\b/.test(q)) return true;
+  return false;
+}
+
+/** Compose the existing RAG query so a short follow-up keeps the thread theme and place. */
+function composeRetrieveQuery(message, history) {
+  const text = String(message || '');
+  if (!isThreadFollowUp(text, history)) return text;
+  const prior = threadUserTurns(history);
+  const substantive = [...prior].reverse().find((t) => themesIn(t).length || ragInferPlace(t));
+  const base = substantive || prior[prior.length - 1];
+  if (!base) return text;
+  if (themesIn(text).length && ragInferPlace(text)) return text;
+  if (themesIn(text).length && !ragInferPlace(text)) {
+    const pid = ragInferPlace(base);
+    const label = pid && PLACE_SPINE[pid] ? PLACE_SPINE[pid].es : '';
+    return label ? `${label} ${text}`.replace(/\s+/g, ' ').slice(0, 500) : text;
+  }
+  return `${base} ${text}`.replace(/\s+/g, ' ').slice(0, 500);
+}
+
+function inheritedThreadPlace(history) {
+  for (const t of [...threadUserTurns(history)].reverse()) {
+    const id = ragInferPlace(t);
+    if (id) return id;
+  }
+  return null;
+}
+
+function consultPlaceLabel({ message, history, lang, placeId, munis }) {
+  const en = lang === 'en';
+  const fromMsg = munisInText(message);
+  if (fromMsg[0]) return fromMsg[0];
+  if (munis && munis[0]) return munis[0];
+  const fromHist = munisInText(threadUserTurns(history).join(' '));
+  if (fromHist[0]) return fromHist[0];
+  if (placeId && PLACE_SPINE[placeId]) return PLACE_SPINE[placeId][en ? 'en' : 'es'];
+  return en ? 'this place' : 'este lugar';
+}
+
+function clipConsult(s) {
+  return String(s || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+}
+
+function factorQuestions(cards, place, en, noun) {
+  const list = (cards || []).filter((c) => c && (c.onto_id || c.type === 'ontology'));
+  const out = [];
+  const cap = list.find((c) => c.onto_type === 'ResourceCapacity' && !isFactorGapCard(c));
+  const con = list.find((c) => (c.onto_type === 'Constraint' || /riesgo/.test(String(c.onto_id || ''))) && !isFactorGapCard(c));
+  const actor = list.find((c) => c.onto_type === 'Actor' && !isFactorGapCard(c));
+  const inst = list.find((c) => c.onto_type === 'Instrument' && !isFactorGapCard(c));
+  const gap = list.find(isFactorGapCard);
+  const topic = noun || (en ? 'this' : 'esto');
+  if (cap && con) {
+    out.push(en
+      ? `How do “${clipConsult(factorCardLabel(cap))}” and “${clipConsult(factorCardLabel(con))}” trade off in ${place}?`
+      : `¿Cómo se equilibran «${clipConsult(factorCardLabel(cap))}» y «${clipConsult(factorCardLabel(con))}» en ${place}?`);
+  }
+  if (gap) {
+    out.push(en
+      ? `The portal marks “${clipConsult(factorCardLabel(gap))}” as missing. Which actor or instrument already cited speaks to that gap in ${place}?`
+      : `El portal marca «${clipConsult(factorCardLabel(gap))}» como sin dato. ¿Qué actor o instrumento ya citado habla de ese hueco en ${place}?`);
+  }
+  if (actor) {
+    out.push(en
+      ? `What can ${clipConsult(factorCardLabel(actor))} decide about ${topic} in ${place}?`
+      : `¿Qué puede decidir ${clipConsult(factorCardLabel(actor))} sobre ${topic} en ${place}?`);
+  }
+  if (inst) {
+    out.push(en
+      ? `Which decision in ${place} does “${clipConsult(factorCardLabel(inst))}” govern?`
+      : `¿Qué decisión en ${place} gobierna «${clipConsult(factorCardLabel(inst))}»?`);
+  }
+  return out;
+}
+
+function buildFollowUps({ message, lang, placeId, munis, history, evidence } = {}) {
+  const en = lang === 'en';
+  const place = consultPlaceLabel({ message, history, lang, placeId, munis });
+  const themes = orderedThreadThemes(message, history);
+  const noun = themes[0] ? themes[0].noun[en ? 1 : 0] : '';
+  const out = [];
+  const push = (q) => {
+    const s = String(q || '').replace(/\s+/g, ' ').trim();
+    if (s && !out.includes(s)) out.push(s);
+  };
+  const named = [];
+  for (const m of [...munisInText(message), ...munisInText(threadUserTurns(history).join(' '))]) {
+    if (!named.includes(m)) named.push(m);
+  }
+  const factors = factorQuestions(evidence, place, en, noun);
+  if (themes[0]) push(themes[0].deepen(place, en));
+  if (factors[0]) push(factors[0]);
+  if (named.length >= 2 && themes[0]) {
+    push(en
+      ? `On ${themes[0].noun[1]}, what differs between ${named[0]} and ${named[1]} in the portal?`
+      : `Sobre ${themes[0].noun[0]}, ¿qué diferencia el portal entre ${named[0]} y ${named[1]}?`);
+  }
+  for (const q of factors.slice(1)) push(q);
+  if (themes[1]) push(themes[1].deepen(place, en));
+  if (!out.length) {
+    const clip = clipConsult(message);
+    push(clip
+      ? (en
+        ? `What can a municipality, a firm, or a citizen decide with what the portal has on “${clip}”?`
+        : `¿Qué puede decidir un municipio, una empresa o un ciudadano con lo que el portal sí tiene sobre «${clip}»?`)
+      : (en
+        ? 'Which municipality and theme should this consultation stay on?'
+        : '¿En qué municipio y qué tema seguimos esta consulta?'));
+  }
+  return out.slice(0, 3);
+}
+
+function consultThreadNote(lang, { message, history, placeLabel } = {}) {
+  const en = lang === 'en';
+  const themes = orderedThreadThemes(message, history);
+  const places = [];
+  for (const m of [...munisInText(message), ...munisInText(threadUserTurns(history).join(' '))]) {
+    if (!places.includes(m)) places.push(m);
+  }
+  const bits = [];
+  if (placeLabel) bits.push(en ? `UI place: ${placeLabel}` : `Lugar en la interfaz: ${placeLabel}`);
+  if (places.length) bits.push((en ? 'Places already in the thread: ' : 'Lugares ya en el hilo: ') + places.slice(0, 3).join(', '));
+  if (themes.length) bits.push((en ? 'Themes already in the thread: ' : 'Temas ya en el hilo: ') + themes.map((t) => t.noun[en ? 1 : 0]).join(', '));
+  if (!bits.length) return '';
+  return en
+    ? `THREAD: ${bits.join('. ')}. The 👉 question must stay on this thread.`
+    : `HILO: ${bits.join('. ')}. La pregunta 👉 debe seguir en este hilo.`;
+}
+
+function followUpStaysOnThread(q, message, history) {
+  const blob = normQ(`${message || ''} ${threadUserTurns(history).join(' ')}`);
+  const qq = normQ(q);
+  const threadThemes = new Set(themesIn(blob).map((t) => t.id));
+  if (themesIn(qq).some((t) => !threadThemes.has(t.id))) return false;
+  const threadPlaces = new Set(munisInText(blob));
+  if (munisInText(qq).some((p) => !threadPlaces.has(p))) return false;
+  if (/\b(otro municipio|another municipality|cada municipio|each municipality|fotos aereas|aerial photos)\b/.test(qq)
+    && !/\b(otro municipio|another municipality|cada municipio|each municipality|fotos aereas|aerial photos)\b/.test(blob)) return false;
+  return true;
 }
 function airAxisQuery(message) {
   return /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/.test(normQ(message));
@@ -6421,6 +6628,17 @@ function buildAnswerBlocks({ evidence, message, lang, noEvidence, primary_file, 
   return blocks.filter((b) => !/08_fp_team_research/i.test(JSON.stringify(b)));
 }
 
+function officialSource(c) {
+  if (/^aq:03\d{2}$/.test(c.id || '')) {
+    const page = String(c.sum_es || '').match(/DOF 9 nov 2023, p\.\s*(\d+)/i);
+    return '/gis/territorio/disponibilidad-acuiferos-2023.pdf' + (page ? '#page=' + page[1] : '');
+  }
+  if (c.onto_id === 'ev_fiscal_ley_2026' || String(c.path || '').endsWith('#ev_fiscal_ley_2026')) {
+    return 'https://finanzas.bcs.gob.mx/wp-content/themes/voice/assets/images/armonizacion_contable/cumpl_V/anual/2026/02.%20Presupuesto%20de%20Egresos%20para%20el%20Ejercicio%202026.pdf';
+  }
+  return null;
+}
+
 function evidenceSources(chunks, max = 5, newsFirst = false) {
   // Mixed answers show both kinds: news-intent questions lead with news cards, others with official sources;
   // at most 3 of the leading kind come first, then the best of the other kind, then the rest.
@@ -6443,7 +6661,7 @@ function evidenceSources(chunks, max = 5, newsFirst = false) {
       foro: '/foro/',
     };
     const portalSlug = String(c.path || '').startsWith('portal/') ? String(c.path).slice(7).split('/')[0] : '';
-    const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: c.href || portalHref[portalSlug] || null, type: c.type || null };
+    const card = { title: cardTitle(c), theme_label: c.theme_label || null, path: c.path, drive_url: c.drive_url || null, href: officialSource(c) || c.href || portalHref[portalSlug] || null, type: c.type || null };
     if (c.type === 'news') {
       Object.assign(card, {
         label: c.no_summary ? 'Noticia sin resumen' : 'Noticia',
@@ -6632,29 +6850,40 @@ async function handlerInner(event) {
     return { statusCode: 400, headers, body: JSON.stringify({ error: 'message required' }) };
   }
 
-  const cfg = providerConfig();
-  if (!cfg.key || !cfg.url) {
-    return {
-      statusCode: 503,
-      headers,
-      body: JSON.stringify({
-        error: 'Chat not configured',
-        answer: lang === 'en' ? 'Chat backend is not configured.' : 'El chat no está configurado en el servidor.',
-        sources: [],
-      }),
-    };
-  }
+  const budget = stateBudgetOverview(message, lang);
+  if (budget) return {statusCode:200,headers,body:JSON.stringify(budget)};
 
+  const cfg = providerConfig();
+  // A branch-specific, nonsecret flag enables the same authenticated chat used by the live portal.
+  // Forward only this site's signed session to the fixed HTTPS endpoint.
+  if (!cfg.key && process.env.BCS_REVIEW_CHAT_GATEWAY === 'production') {
+    const cookie = String(event.headers?.cookie || event.headers?.Cookie || '')
+      .split(';').map(part => part.trim()).find(part => /^bcs_portal_auth=1\.[0-9a-f]{64}$/.test(part));
+    if (cookie) {
+      try {
+        const response = await fetch('https://bajacaliforniasur2050.com/api/chat', {
+          method: 'POST', redirect: 'error', signal: AbortSignal.timeout(25000),
+          headers: {Cookie: cookie, 'Content-Type': 'application/json'},
+          body: JSON.stringify({message, lang, history, place: body.place, session: body.session}),
+        });
+        if (response.ok) {
+          const result = await response.json();
+          if (typeof result.answer === 'string' && result.answer.trim() && result.mode !== 'document_search') {
+            return {statusCode: 200, headers, body: JSON.stringify({...result, mode:'generated_portal'})};
+          }
+        }
+      } catch { /* The branch can still answer with excerpts from its own corpus below. */ }
+    }
+  }
   await ensureCorpus(event);
   const index = ragIndex();
 
   // ---- Grounded retrieval (see netlify/lib/rag.mjs) ----
-  const lastUser = [...history].reverse().find((h) => h && h.role === 'user' && h.content);
-  const isFollowUp = !!lastUser && isFollowUpMessage(message);
-  const retrieveQuery = isFollowUp ? `${String(lastUser.content).slice(0, 300)} ${message}` : message;
+  const threadFollow = isThreadFollowUp(message, history);
+  const retrieveQuery = composeRetrieveQuery(message, history);
   const explicitPlace = body.place && PLACE_SPINE[body.place] ? String(body.place) : null;
   const placeId =
-    ragInferPlace(message) || (isFollowUp ? ragInferPlace(String(lastUser.content)) : null) || explicitPlace;
+    ragInferPlace(message) || (threadFollow ? inheritedThreadPlace(history) : null) || explicitPlace;
   const qIntents = expandQuery(message);
   const open = qIntents.isOpenIntent || qIntents.isGrowthConstraintIntent || qIntents.isScenarioIntent || qIntents.isFactorIntent;
   const res = ragSearch(index, retrieveQuery, { k: qIntents.isFactorIntent ? 12 : open ? 10 : 8, place: placeId });
@@ -6738,6 +6967,22 @@ async function handlerInner(event) {
     : null;
   let noEvidence = !res.hits.length || res.weakTop;
   const hits = noEvidence ? [] : res.hits;
+  if (!cfg.key || !cfg.url) {
+    // Search remains available in deployments without a language-model credential.
+    const matches = hits.map(hit => hit.c).filter(c => c && (c.drive_url || c.href || c.url || officialSource(c)) && (c.sum_es || c.sum_en)).slice(0,3);
+    const en = lang === 'en';
+    const lead = en ? 'Document search · Matching excerpts' : 'Búsqueda documental · Fragmentos relacionados';
+    const excerpts = matches.map(c => {
+      const summary = ragCleanSummary(en ? c.sum_en || c.sum_es : c.sum_es || c.sum_en);
+      const excerpt = summary.length > 550 ? summary.slice(0,547).replace(/\s+\S*$/, '') + '…' : summary;
+      return '**' + cardTitle(c) + '**\n' + excerpt;
+    });
+    const missing = en ? 'No matching source was found. Try a place, a year or a document title.' : 'No encontré una fuente para esta consulta. Prueba con un lugar, un año o el nombre del documento.';
+    return {statusCode:200,headers,body:JSON.stringify({
+      mode:'document_search', answer:[lead,...(excerpts.length ? excerpts : [missing])].join('\n\n'),
+      sources:evidenceSources(matches,3), grounded:matches.length>0, blocks:[], followUps:[]
+    })};
+  }
   let evidence = hits.map((h) => h.c);
   if (airGuide && !evidence.some((c) => c.id === airGuide.id)) {
     evidence = [airGuide, ...evidence];
@@ -6877,10 +7122,17 @@ async function handlerInner(event) {
   const messages = [
     {
       role: 'system',
-      content: groundedPrompt(lang, contextBlock, {
+      content: (lang === 'en'
+        ? 'Keep the answer within the geography asked for. For national waters, only the federal authority grants concessions or allocations under article 20 of the National Waters Law. If only asked for availability, give the balance and date; avoid unsolicited permitting advice.\n'
+        : 'Respeta el ámbito geográfico solicitado. Para aguas nacionales, la autoridad federal otorga las concesiones o asignaciones conforme al artículo 20 de la Ley de Aguas Nacionales. Si se pregunta solo por disponibilidad, da el balance y su fecha, sin añadir consejos sobre permisos.\n') + groundedPrompt(lang, contextBlock, {
         placeLabel: placeId ? (PLACE_SPINE[placeId][lang] || PLACE_SPINE[placeId].es) : null,
         noEvidence,
         factorKinds: qIntents.isFactorIntent ? qIntents.factorKinds : null,
+        threadNote: consultThreadNote(lang, {
+          message,
+          history,
+          placeLabel: placeId ? (PLACE_SPINE[placeId][lang] || PLACE_SPINE[placeId].es) : null,
+        }),
       }),
     },
     ...history
@@ -6960,19 +7212,36 @@ async function handlerInner(event) {
   } catch (e) { console.warn('blocks', e?.message || e); }
 
   // ---- Conversational loop (2026-10-26): every reply ends with a question + clickable follow-up chips ----
-  const followUps = buildFollowUps({ message, lang, placeId, munis: targetMunis(message, explicitPlace) });
+  const followUps = buildFollowUps({
+    message,
+    lang,
+    placeId,
+    munis: targetMunis(message, explicitPlace) || (threadFollow ? targetMunis(retrieveQuery, placeId) : null),
+    history,
+    evidence,
+  }).filter(q => followUpStaysOnThread(q,message,history));
   const surfaceLead = portalSurfaceBlocks(message, lang)[0];
   if (surfaceLead) {
-    followUps.unshift(lang === 'en'
-      ? `Do you want to open ${surfaceLead.label}, or ask about one municipality?`
-      : `¿Abres ${surfaceLead.label}, o preguntas por un municipio?`);
+    const surfaceQ = lang === 'en'
+      ? `What decision on this thread changes if you open ${surfaceLead.label}?`
+      : `¿Qué decisión de este hilo cambia si abres ${surfaceLead.label}?`;
+    if (!followUps.includes(surfaceQ)) {
+      if (followUps.length >= 3) followUps[2] = surfaceQ;
+      else followUps.push(surfaceQ);
+    }
   }
   try {
     const lines = String(answer).trim().split('\n');
     const last = (lines[lines.length - 1] || '').trim();
     const q0 = /👉/.test(last) ? last.replace(/^.*?👉\s*/, '').trim() : null;
-    if (q0 && !followUps.includes(q0)) followUps.unshift(q0);
-    if (!/\?\s*\**\s*$/.test(last)) answer = String(answer).trim() + '\n\n👉 ' + followUps[0];
+    const onThread = q0 && followUpStaysOnThread(q0, message, history);
+    if (onThread && !followUps.includes(q0)) followUps.unshift(q0);
+    if (q0 && !onThread) {
+      lines[lines.length - 1] = followUps[0] ? '👉 ' + followUps[0] : '';
+      answer = lines.join('\n');
+    } else if (!/\?\s*\**\s*$/.test(last) && followUps[0]) {
+      answer = String(answer).trim() + '\n\n👉 ' + followUps[0];
+    }
   } catch (e) {}
   followUps.splice(3);
 
@@ -7038,4 +7307,4 @@ async function handlerInner(event) {
   };
 }
 
-export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk, buildFactorEvidence, composeFactorBrief, portalSurfaceBlocks, inferPlaceId, targetMunis };
+export { retrieve, expandQuery, pickOntologyNodeIds, scoreChunk, buildFactorEvidence, composeFactorBrief, portalSurfaceBlocks, inferPlaceId, targetMunis, buildFollowUps, composeRetrieveQuery, isThreadFollowUp, groundedPrompt, followUpStaysOnThread, consultThreadNote };

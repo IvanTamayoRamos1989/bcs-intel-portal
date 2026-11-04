@@ -1,7 +1,7 @@
 ---
 import { ui } from '../i18n/ui';
 import PlaceStrip from './PlaceStrip.astro';
-const { home = false, shell = false } = Astro.props;
+const { home = false, shell = false, showSuggestions = true } = Astro.props;
 ---
 <aside id="bcs-chat" class:list={['bcs-chat', shell && 'bcs-chat-shell']} data-open={shell ? 'true' : 'false'} aria-label={ui.es.chatTitle}>
   <div class="bcs-chat-backdrop" id="bcs-chat-backdrop" hidden></div>
@@ -52,12 +52,13 @@ const { home = false, shell = false } = Astro.props;
       )}
       {shell ? (
         <p class="shell-chat-lead">
-          <span data-lang-es>Pregunta por un lugar o un tema. El mapa y los archivos siguen la respuesta.</span>
-          <span data-lang-en hidden>Ask about a place or a theme. The map and the files follow the answer.</span>
+          <span data-lang-es>Pregunta por un lugar o un tema del estado. Si falta un dato, la respuesta lo dice.</span>
+          <span data-lang-en hidden>Ask about a place or a theme in the state. If a figure is missing, the answer says so.</span>
         </p>
       ) : (
         <p class="bcs-chat-hint" data-i18n="chatEmpty">{ui.es.chatEmpty}</p>
       )}
+      {showSuggestions && (
       <div class="bcs-chat-sugg" id="bcs-chat-sugg" aria-label="Preguntas sugeridas" data-aria-es="Preguntas sugeridas" data-aria-en="Suggested questions">
         <p class="bcs-chat-sugg-title"><span data-lang-es>Empieza a explorar</span><span data-lang-en hidden>Start exploring</span></p>
         <button type="button" class="bcs-chat-sugg-btn" data-q-es="¿Cuánta agua hay disponible en mi municipio?" data-q-en="How much water is available in my municipality?"><img class="bcs-sugg-th" src="/maps/dma-la-paz-localizacion.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="bcs-sugg-k"><span data-lang-es>Agua</span><span data-lang-en hidden>Water</span></span><span class="bcs-sugg-q"><span data-lang-es>¿Cuánta agua hay disponible en mi municipio?</span><span data-lang-en hidden>How much water is available in my municipality?</span></span></button>
@@ -152,6 +153,7 @@ const { home = false, shell = false } = Astro.props;
           </div>
         )}
       </div>
+      )}
     </div>
     <form class="bcs-chat-form" id="bcs-chat-form">
       <label class="sr-only" for="bcs-chat-input" data-i18n="chatPlaceholder">{ui.es.chatPlaceholder}</label>
@@ -1422,7 +1424,7 @@ const { home = false, shell = false } = Astro.props;
       } else if (s.href && (/^https?:\/\//.test(s.href) || s.href.charAt(0) === '/')) {
         a.href = s.href;
       } else {
-        a.href = '/catalogo?q=' + catalogQuery(s);
+        a = el('span','bcs-chat-chip bcs-chat-chip--static',safeCardTitle(s));
       }
       wrap.appendChild(a);
     });
@@ -1452,7 +1454,7 @@ const { home = false, shell = false } = Astro.props;
           msgs.querySelectorAll('.bcs-fu').forEach(function (n) { n.classList.add('bcs-fu-old'); });
           var fu = el('div', 'bcs-fu');
           var enL = (document.documentElement.getAttribute('data-lang') || 'es') === 'en';
-          fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Keep exploring' : 'Sigue explorando'));
+          fu.appendChild(el('span', 'bcs-fu-label', enL ? 'Continue this consultation' : 'Sigue esta consulta'));
           fus.forEach(function (q) {
             var b = el('button', 'bcs-fu-chip', String(q));
             b.type = 'button';

@@ -95,7 +95,7 @@
       delete geoWait[meta.id];
       return geo;
     }).catch(function () {
-      geoReady[meta.id] = null;
+      // Leave failed downloads uncached so the next activation retries.
       delete geoWait[meta.id];
       return null;
     });
@@ -149,7 +149,7 @@
           type: 'raster',
           tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
           tileSize: 256,
-          attribution: '© OpenStreetMap',
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
           maxzoom: 19,
         },
         sat: {
@@ -245,6 +245,7 @@
         touchPitch: !reduced,
         cooperativeGestures: false,
       });
+      if (opts.tools !== false) map.addControl(new maplibregl.ScaleControl({unit:'metric',maxWidth:90}), 'bottom-left');
       if (opts.tools !== false) map.addControl(new maplibregl.NavigationControl({ visualizePitch: true, showCompass: true }), 'top-right');
       var stateBox = (base && base.bounds)
         ? [base.bounds[0][0], base.bounds[0][1], base.bounds[1][0], base.bounds[1][1]]
@@ -449,11 +450,22 @@
       function ensure(id, geo, meta) {
         var src = 'cdt-src-' + id;
         var lid = 'cdt-ly-' + id;
+        if (meta.type === 'raster') {
+          if (!map.getSource(src)) map.addSource(src, {type:'raster', tiles:[location.origin + meta.url], tileSize:256, minzoom:5, maxzoom:9, bounds:[-115.8,22.75,-109.35,28.02]});
+          if (!map.getLayer(lid)) map.addLayer({id:lid, type:'raster', source:src, paint:{'raster-opacity':0.7,'raster-resampling':'nearest'}}, 'cdt-muni-fill');
+          return lid;
+        }
         if (!map.getSource(src)) map.addSource(src, { type: 'geojson', data: geo });
         if (id === 'bcs_market_listings' && !map.getSource(src + '-3d')) {
           map.addSource(src + '-3d', { type: 'geojson', data: buildListingPrisms(geo) });
         }
         if (map.getLayer(lid)) return lid;
+        var thematicColor = meta.color || '#0083C4';
+        if (meta.palette) {
+          thematicColor = ['match', ['get', 'level']];
+          meta.palette.forEach(function (color, i) { thematicColor.push(i, color); });
+          thematicColor.push('#919b9c');
+        }
         var point = meta.type === 'point' || meta.type === 'points';
         var line = meta.type === 'line';
         if (point) {
@@ -475,7 +487,7 @@
             id: lid, type: 'circle', source: src,
             paint: {
               'circle-radius': id === 'bcs_market_listings' ? 6.5 : 5.5,
-              'circle-color': id === 'bcs_market_listings' ? listingTypeColor : (meta.color || '#0083C4'),
+              'circle-color': id === 'bcs_market_listings' ? listingTypeColor : thematicColor,
               'circle-stroke-width': 1.4,
               'circle-stroke-color': '#ffffff',
               'circle-pitch-alignment': 'map',
@@ -491,15 +503,20 @@
           map.addLayer({
             id: lid, type: 'fill', source: src,
             paint: {
-              'fill-color': meta.color || '#0083C4',
+              'fill-color': thematicColor,
               'fill-opacity': 0.28,
-              'fill-outline-color': meta.color || '#0083C4',
+              'fill-outline-color': thematicColor,
             },
           }, 'cdt-muni-fill');
           map.addLayer({
             id: lid + '-edge', type: 'line', source: src,
-            paint: { 'line-color': meta.color || '#0083C4', 'line-width': 1.6, 'line-opacity': 0.95 },
+            paint: { 'line-color': meta.color || '#0083C4', 'line-width': meta.palette ? 0 : 1.6, 'line-opacity': 0.95 },
           });
+        }
+        if (meta.detailUrl) {
+          map.setLayerZoomRange(lid, 0, 13);
+          map.addSource(src+'-detail', {type:'vector', url:'pmtiles://'+location.origin+meta.detailUrl});
+          map.addLayer({id:lid+'-detail', type:'fill', source:src+'-detail', 'source-layer':'miahi', minzoom:13, paint:{'fill-color':meta.color,'fill-opacity':0.75}});
         }
         ensurePlaceLabel(id, src);
         map.on('mouseenter', lid, function () { map.getCanvas().style.cursor = 'pointer'; });
@@ -516,6 +533,7 @@
       }
       function hide(id) {
         var lid = 'cdt-ly-' + id;
+        if (map.getLayer(lid+'-detail')) map.setLayoutProperty(lid+'-detail','visibility','none');
         if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
         if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', 'none');
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', 'none');
@@ -540,6 +558,8 @@
         }
         var vis = mode === 'off' ? 'none' : 'visible';
         map.setLayoutProperty(lid, 'visibility', vis);
+        if (meta.type === 'raster') return;
+        if (meta.detailUrl) map.setLayoutProperty(lid+'-detail','visibility',vis);
         if (map.getLayer(lid + '-3d')) map.setLayoutProperty(lid + '-3d', 'visibility', vis);
         if (map.getLayer(lid + '-edge')) map.setLayoutProperty(lid + '-edge', 'visibility', vis);
         if (map.getLayer(lid + '-label')) map.setLayoutProperty(lid + '-label', 'visibility', vis);
@@ -562,13 +582,15 @@
           map.setPaintProperty(lid, 'fill-outline-color', poerColor);
           if (map.getLayer(lid + '-edge')) map.setPaintProperty(lid + '-edge', 'line-color', '#1a1a1a');
         } else {
-          map.setPaintProperty(lid, 'fill-opacity', mode === 'compare' ? 0.4 : 0.28);
+          map.setPaintProperty(lid, 'fill-opacity', meta.palette ? 0.74 : mode === 'compare' ? 0.4 : 0.28);
         }
       }
       function load(meta) {
+        if (meta.type === 'raster') return Promise.resolve({type:'FeatureCollection',features:[]});
+        if (meta.detailUrl) return loadPmtiles().then(function () { return loadGeo(meta); });
         if (cache[meta.id]) return Promise.resolve(cache[meta.id]);
         return loadGeo(meta).then(function (geo) {
-          cache[meta.id] = geo;
+          if (geo) cache[meta.id] = geo;
           return geo;
         });
       }
@@ -661,6 +683,7 @@
         var style = map.getStyle();
         var ids = [];
         ((style && style.layers) || []).forEach(function (layer) {
+          if (layer.type === 'raster') return;
           var id = layer.id;
           if (id === 'cdt-muni-fill' || id === 'cdt-muni-extrude' || id === 'cdt-bars' || id.indexOf('cdt-ly-') === 0 || id.indexOf('cdt-bld-') === 0) ids.push(id);
         });
@@ -823,6 +846,12 @@
         var streets = mode === 'streets';
         if (map.getLayer('basemap-sat')) map.setLayoutProperty('basemap-sat', 'visibility', sat ? 'visible' : 'none');
         if (map.getLayer('basemap-osm')) map.setLayoutProperty('basemap-osm', 'visibility', streets ? 'visible' : 'none');
+        if (opts.territorialAtlas) {
+          // At street scale a generalized regional coastline can cover real waterfront blocks.
+          var regional = ['interpolate',['linear'],['zoom'],8,1,12,0];
+          map.setPaintProperty('bcs-mask','fill-opacity',regional);
+          map.setPaintProperty('cdt-muni-line','line-opacity',regional);
+        }
         if (map.getLayer('land')) map.setPaintProperty('land', 'fill-opacity', sat ? 0 : streets ? 0.16 : 0.9);
         if (map.getLayer('bcs-land')) map.setPaintProperty('bcs-land', 'fill-opacity', sat ? 0.04 : streets ? 0.18 : 1);
         syncHills();

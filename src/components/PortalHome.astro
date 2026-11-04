@@ -11,6 +11,13 @@ import { ui } from '../i18n/ui';
   <meta name="robots" content="noindex, nofollow" /><meta name="theme-color" content="#f7f6ef" />
   <title>Chat · BCS 2050</title>
   <script is:inline define:vars={{uiObj:ui}}>window.__BCS_UI__=uiObj;</script>
+  <script is:inline>
+    document.addEventListener('input', function(e){
+      if (e.target.id === 'bcs-chat-input') {
+        try { sessionStorage.setItem('bcs-question-draft', e.target.value.slice(0,2000)); } catch (_) {}
+      }
+    });
+  </script>
   <script is:inline src="/auth-gate.js"></script><script is:inline src="/lang-toggle.js?v=20261102-ux"></script>
 </head>
 <body class="shell-app conversation-page">
@@ -22,8 +29,8 @@ import { ui } from '../i18n/ui';
       <div><span data-lang-es>Pregunta sobre el estado. Explora sus datos, lugares y documentos.</span><span data-lang-en hidden>Ask about the state. Explore its data, places and documents.</span></div>
     </section>
     <button type="button" id="conversation-new" hidden><span data-lang-es>＋ Nueva conversación</span><span data-lang-en hidden>＋ New conversation</span></button>
-    <ChatWidget shell={true} />
+    <ChatWidget shell={true} showSuggestions={false} />
   </main>
-  <script is:inline src="/conversation.js?v=chat-only" defer></script>
-  <link rel="stylesheet" href="/conversation.css?v=20261102" />
+  <script is:inline src="/conversation.js?v=20261103-merge" defer></script>
+  <link rel="stylesheet" href="/conversation.css?v=20261103-merge" />
 </body></html>

@@ -1,4 +1,4 @@
-/* 3-pane shell: chat events move the twin map and the file list. */
+/* Map page: layers, fly-to and a question handed off from the chat. */
 (function () {
   var model = window.__SHELL_MODEL__ || { layers: [], themes: [] };
   var byId = {};
@@ -202,6 +202,19 @@
     var title = featureLabel(p) || (meta ? (lang() === 'en' ? meta.name_en : meta.name_es) : '');
     if (!title) return;
     var rows = [];
+    if (lngLat && Number.isFinite(lngLat.lat) && Number.isFinite(lngLat.lng)) rows.push({es:'Punto seleccionado (WGS84)',en:'Selected point (WGS84)',value:lngLat.lat.toFixed(5)+', '+lngLat.lng.toFixed(5)});
+    if (meta && meta.palette) {
+      var category = Number.isInteger(p.level) && meta.labels[p.level];
+      if (meta.id.indexOf('haz_') === 0) rows.push({es:'Nivel de peligro',en:'Hazard level',value:category || tx('Sin datos','No data')});
+      if (p.value != null) rows.push({es:'Densidad',en:'Density',value:p.value + (meta.id === 'density' ? ' hab/ha' : ' hab/km²')});
+      if (p.tdpa != null) rows.push({es:'Tránsito diario promedio (2024)',en:'Annual average daily traffic (2024)',value:p.tdpa+' veh/día'},
+        {es:'Demanda horaria estimada',en:'Estimated hourly demand',value:p.peak+' veh/h'}, {es:'Sentido del aforo',en:'Count direction',value:p.sc===0?tx('Ambos','Both'):String(p.sc)});
+      if (p.grade) rows.push({es:'Nivel de servicio (2024)',en:'Level of service (2024)',value:p.grade},
+        {es:'Volumen horario de referencia',en:'Reference hourly volume',value:p.vh+' veh/h'},
+        {es:'Umbral del nivel E',en:'Level E threshold',value:p.capacity+' veh/h'},
+        {es:'Volumen / umbral E',en:'Volume / level E threshold',value:p.ratio+' %'});
+      if (p.road) rows.push({es:'Carretera',en:'Road',value:p.road+' · km '+p.km});
+    }
     if (meta) rows.push({ es: 'Capa', en: 'Layer', value: lang() === 'en' ? meta.name_en : meta.name_es });
     var fields = [
       ['MUNICIPIO', 'Municipio', 'Municipality'],
@@ -238,6 +251,28 @@
       ['CODE_PA', 'Código de política', 'Policy code'],
       ['icao', 'ICAO', 'ICAO'],
       ['iata', 'IATA', 'IATA'],
+      ['elevacion_m', 'Elevación (m s.n.m.)', 'Elevation (m a.s.l.)'],
+      ['pendiente_rango', 'Rango de pendiente', 'Slope range'],
+      ['superficie_km2', 'Superficie estimada (km²)', 'Estimated area (km²)'],
+      ['superficie_m2', 'Superficie (m²)', 'Area (m²)'],
+      ['codigo_postal', 'Código postal', 'Postal code'],
+      ['viviendas_habitadas', 'Viviendas habitadas (INEGI)', 'Inhabited homes (INEGI)'],
+      ['hogares_con_vehiculo', 'Hogares con vehículo', 'Households with vehicle'],
+      ['pct_hogares_vehiculo', '% hogares con vehículo', '% households with vehicle'],
+      ['hogares_con_bicicleta', 'Hogares con bicicleta', 'Households with bicycle'],
+      ['pct_bicicleta', '% uso / disponibilidad de bicicleta', '% bicycle availability/share'],
+      ['unidades_economicas', 'Unidades económicas (DENUE)', 'Economic units (DENUE)'],
+      ['unidades_multifamiliares', 'Unidades multifamiliares / viviendas', 'Multi-family units / homes'],
+      ['velocidad_kmh', 'Límite de velocidad (km/h)', 'Speed limit (km/h)'],
+      ['carriles', 'Carriles', 'Lanes'],
+      ['longitud_km', 'Longitud (km)', 'Length (km)'],
+      ['operador', 'Operador / Red', 'Operator / Network'],
+      ['cobertura_electrica_pct', 'Cobertura eléctrica / alumbrado', 'Power / street lighting coverage'],
+      ['cobertura_drenaje_pct', 'Cobertura de drenaje y registros', 'Sewer & manhole coverage'],
+      ['cobertura_agua_pct', 'Cobertura de agua entubada', 'Piped water coverage'],
+      ['tdpa', 'Tránsito diario promedio (veh/día)', 'Average daily traffic (veh/day)'],
+      ['peak', 'Demanda horaria estimada (veh/h)', 'Estimated peak hourly demand (veh/h)'],
+      ['grade', 'Nivel de servicio vial', 'Road level of service'],
     ];
     fields.forEach(function (field) {
       var key = lang() === 'en' && field[3] && p[field[3]] != null && p[field[3]] !== '' ? field[3] : field[0];
@@ -265,12 +300,13 @@
       kind_es: meta ? meta.name_es : 'Elemento del mapa',
       kind_en: meta ? meta.name_en : 'Map feature',
       rows: rows,
-      href: meta && meta.reference || href,
+      href: meta && meta.id === 'programas' && /^https:\/\/www\.(?:bcs|cbcs)\.gob\.mx\//.test(p.source_url || '') ? p.source_url : meta && meta.reference || href,
       href_es: meta && meta.reference ? 'Consultar fuente' : 'Página relacionada',
       href_en: meta && meta.reference ? 'View source' : 'Related page',
       gaps: gap ? [gap] : [],
       files: filesFor(title),
     });
+    if (meta && meta.palette && lngLat) providerButtons(meta, lngLat);
     if (lngLat && engine && engine.mark) engine.mark(lngLat.lng, lngLat.lat, title);
   }
   function dmsPart(base) {
@@ -374,8 +410,11 @@
     identifyToken += 1;
     var specific = (feats || []).filter(function (feature) { return !washOnly(feature); });
     if (specific.length) {
-      var feature = specific[0];
-      var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label)$/, '');
+      var feature = specific.find(function (f) {
+        var id = f.layer.id.replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label|detail)$/, '');
+        return activeAnalysis && byId[id] && byId[activeAnalysis] && byId[id].url === byId[activeAnalysis].url;
+      }) || specific[0];
+      var id = String(feature.layer && feature.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label|detail)$/, '');
       openFeatureFiche(feature, lngLat, byId[id]);
       return;
     }
@@ -385,7 +424,7 @@
     }
     if (feats && feats.length) {
       var wash = feats[0];
-      var washId = String(wash.layer && wash.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label)$/, '');
+      var washId = String(wash.layer && wash.layer.id || '').replace(/^cdt-ly-/, '').replace(/-(?:edge|3d|label|detail)$/, '');
       openFeatureFiche(wash, lngLat, byId[washId]);
       return;
     }
@@ -427,6 +466,11 @@
   var highlightedMuni = '';
   function paintMuni(name) {
     highlightedMuni = name || '';
+    if (leafletMap) {
+      if (window.__shellMuni) leafletMap.removeLayer(window.__shellMuni);
+      var polygon = muniGeo && muniGeo.features.find(function(f){return f.properties.name===name;});
+      if (polygon) window.__shellMuni=L.geoJSON(polygon,{interactive:false,style:{color:'#197a78',weight:2,fillOpacity:0.09}}).addTo(leafletMap);
+    }
     if (!engine || !engine.paintMunis) return;
     if (!name) { engine.paintMunis(null); return; }
     var colors = {};
@@ -448,7 +492,7 @@
     var span = 0.28;
     if (engine && engine.fitBox) engine.fitBox([lng - span, lat - span * 0.75, lng + span, lat + span * 0.75], opts || { padding: framePad('town'), maxZoom: 11.2, pitch: pitched ? 54 : 0 });
     if (leafletMap && window.L) {
-      leafletMap.setView([lat, lng], 10);
+      leafletMap.setView([lat, lng], opts && opts.zoom || 11,{animate:false});
       if (window.__shellPin) leafletMap.removeLayer(window.__shellPin);
       window.__shellPin = L.circleMarker([lat, lng], { radius: 8, color: '#fff', weight: 2, fillColor: '#0083C4', fillOpacity: 1 }).addTo(leafletMap);
       if (label) window.__shellPin.bindTooltip(label, { permanent: true, direction: 'top' }).openTooltip();
@@ -530,52 +574,167 @@
     setStatus('Encuadre: ' + town.name + '.', 'Frame: ' + town.name + '.');
     return { kind: 'town', name: town.name };
   }
+  // The address contains only public map state. The private chat stays in its original tab.
+  var savedViewKey = 'bcs-map-view-v1';
+  var viewLive = false;
+  var viewTimer;
+  var savedCamera;
+  var mapMode = new URLSearchParams(location.search).get('modo') || 'mapa';
+  function changeMode(mode, city) {
+    rememberView();
+    var url = new URL(location.href);
+    url.searchParams.set('modo',mode);
+    if (city) {
+      url.searchParams.set('cam',[city.center[0], city.center[1],16.2,-16,52].join(','));
+      url.searchParams.set('edificios','1');
+      url.searchParams.delete('muni');
+    } else if (url.searchParams.has('cam')) {
+      var v = url.searchParams.get('cam').split(',');
+      v[4] = mode === '3d' && !reduceMotion ? 52 : 0;
+      url.searchParams.set('cam',v.join(','));
+    }
+    location.assign(url.href);
+  }
+  var savedMuni;
+  function rememberView() {
+    if (!viewLive) return;
+    var camera = engine && engine.readCamera();
+    if (!camera && leafletMap) {
+      var center = leafletMap.getCenter();
+      camera = {lng:center.lng,lat:center.lat,zoom:leafletMap.getZoom()-1,bearing:0,pitch:0};
+    }
+    if (!camera) return;
+    var url = new URL(location.href);
+    var fields = ['lng','lat','zoom','bearing','pitch'];
+    url.searchParams.set('cam',fields.map(function(k){return Number(camera[k].toFixed(5));}).join(','));
+    url.searchParams.set('capas',Object.keys(on).filter(function(id){return on[id] && byId[id];}).sort().join(','));
+    url.searchParams.set('modo',engine ? '3d' : 'mapa');
+    url.searchParams.set('base',basemap);
+    url.searchParams.set('relieve',terrainOn ? '1' : '0');
+    var box = document.querySelector('[data-buildings]');
+    if (box) url.searchParams.set('edificios',box.checked ? '1' : '0');
+    if (highlightedMuni) url.searchParams.set('muni',highlightedMuni); else url.searchParams.delete('muni');
+    if (activeAnalysis) url.searchParams.set('analisis',activeAnalysis); else url.searchParams.delete('analisis');
+    if (location.href !== url.href) history.replaceState(history.state,'',url.href);
+    try { sessionStorage.setItem(savedViewKey,url.search); } catch (_) {}
+  }
+  function scheduleView() {
+    if (!viewLive) return;
+    clearTimeout(viewTimer);
+    viewTimer = setTimeout(rememberView,180);
+  }
+  function restoreView() {
+    var params = new URLSearchParams(location.search);
+    if (!params.has('cam')) {
+      try {
+        var stored = new URLSearchParams(sessionStorage.getItem(savedViewKey) || '');
+        if (!params.size || (params.size === 1 && params.has('context') && params.get('context') === stored.get('context'))) params = stored;
+      } catch (_) {}
+    }
+    mapMode = params.get('modo') || mapMode;
+    if (!params.has('cam')) return;
+    var v = params.get('cam').split(',').map(Number);
+    if(v.length !== 5 || !v.every(Number.isFinite) || Math.abs(v[0])>180 || Math.abs(v[1])>85 || v[2]<3 || v[2]>18 || v[4]<0 || v[4]>85) return;
+    savedCamera = {lng:v[0],lat:v[1],zoom:v[2],bearing:v[3],pitch:v[4]};
+    if (!params.has('modo') && savedCamera.pitch>0) mapMode='3d';
+    savedMuni = (model.munis || []).some(function(m){return m.name===params.get('muni');}) ? params.get('muni') : '';
+    pendingMuni = '';
+    if (params.has('capas')) {
+      on = {};
+      params.get('capas').split(',').forEach(function(id){if(Object.hasOwn(byId,id)) on[id]=true;});
+      document.querySelectorAll('[data-layer]').forEach(function(box){box.checked=!!on[box.dataset.layer];});
+    }
+    basemap = params.get('base') === 'satellite' ? 'satellite' : 'streets';
+    terrainOn = params.get('relieve') !== '0';
+    pitched = savedCamera.pitch > 0;
+    var box = document.querySelector('[data-buildings]');
+    if (box && params.has('edificios')) box.checked=params.get('edificios')==='1';
+    if (analysisSelect) {
+      analysisSelect.value = params.get('analisis') || '';
+      activeAnalysis = analysisSelect.value;
+      showAnalysisLegend();
+    }
+    syncStackToggles();
+    syncBasic();
+  }
+  window.addEventListener('pagehide',rememberView);
+  document.addEventListener('change',scheduleView);
+  document.addEventListener('click',scheduleView);
   function markReady() {
     mapReady = true;
     var ids = Object.keys(on).filter(function (id) { return on[id]; });
     Promise.all(ids.map(function (id) { return showLayer(id, true); })).then(function () {
-      if (pendingPoint) { flyPoint(pendingPoint[0],pendingPoint[1],pendingPoint[2]);pendingPoint=null; }
+      if (savedCamera) {
+        if (engine) engine.jumpCamera(savedCamera);
+        else if (leafletMap) leafletMap.setView([savedCamera.lat,savedCamera.lng],savedCamera.zoom+1);
+        if (savedMuni) paintMuni(savedMuni);
+      }
+      else if (pendingPoint) { flyPoint(pendingPoint[0],pendingPoint[1],pendingPoint[2]);pendingPoint=null; }
       else if (pendingJob) executeJob(pendingJob.question, pendingJob.sources, pendingJob.answer);
       else if (pendingMuni) focusMuni(pendingMuni);
       else if (engine && engine.fitBox) engine.fitBox(null);
       if (engine && engine.resize) engine.resize();
       if (leafletMap) leafletMap.invalidateSize();
+      viewLive = true;
+      if (engine) engine.watchMove(scheduleView);
+      else if (leafletMap) leafletMap.on('moveend',scheduleView);
+      scheduleView();
     });
   }
 
+  var layerVersion = {};
   function showLayer(id, visible) {
     var meta = byId[id];
     if (!meta) return Promise.resolve();
+    var version = (layerVersion[id] || 0) + 1;
+    layerVersion[id] = version;
+    function failed() {
+      if (layerVersion[id] !== version) return null;
+      showLayer(id,false);
+      syncStackToggles();
+      syncThemePressed();
+      setStatus('No se pudo cargar una capa. Intenta activarla de nuevo.', 'A layer could not be loaded. Try enabling it again.');
+      return null;
+    }
     on[id] = !!visible;
+    scheduleView();
     syncBasic();
     document.querySelectorAll('[data-layer="' + id + '"]').forEach(function (box) { box.checked = !!visible; });
     if (engine) {
       if (!visible) { engine.hide(id); return Promise.resolve(); }
       return engine.load(meta).then(function (geo) {
-        if (geo && on[id]) engine.show(id, geo, meta, 'on');
-        if (!geo) { on[id]=false; syncBasic(); setStatus('No se pudo cargar una capa. Intenta activarla de nuevo.', 'A layer could not be loaded. Try enabling it again.'); }
+        if (!geo) return failed();
+        if (on[id] && layerVersion[id] === version) engine.show(id, geo, meta, 'on');
         return geo;
-      });
+      }).catch(failed);
     }
     if (leafletMap && window.L) {
       if (!visible) {
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
         return Promise.resolve();
       }
-      return fetch(meta.url).then(function (r) { return r.json(); }).then(function (geo) {
-        if (!on[id]) return geo;
+      if (meta.type === 'raster') {
+        if (!leafletLayers[id]) leafletLayers[id] = L.tileLayer(meta.url,{opacity:.7,tileSize:256,minNativeZoom:5,maxNativeZoom:9,maxZoom:19,bounds:[[22.75,-115.8],[28.02,-109.35]],noWrap:true});
+        leafletLayers[id].addTo(leafletMap);
+        return Promise.resolve();
+      }
+      return fetch(meta.url).then(function (r) { if(!r.ok) throw Error(id); return r.json(); }).then(function (geo) {
+        if (!on[id] || layerVersion[id] !== version) return geo;
         if (leafletLayers[id]) leafletMap.removeLayer(leafletLayers[id]);
         leafletLayers[id] = L.geoJSON(geo, {
-          style: function () { return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
+          style: function (feat) {
+            if(id==='osm_highways') return {color:'#a27042',weight:1.5,opacity:.8};
+            if(id==='osm_towns') return {color:'#fff',weight:1.15,fillColor:'#235d62',fillOpacity:.95};
+            if(meta.palette) return {color:meta.palette[feat.properties.level] || '#919b9c',weight:.3,fillOpacity:.7}; return { color: meta.color || '#0083C4', weight: 1.4, fillOpacity: 0.2 }; },
           onEachFeature: function (feature, layer) {
-            if (meta.reference) layer.on('click', function () { openFeatureFiche(feature, null, meta); });
+            layer.on('click', function (event) { openFeatureFiche(feature, event.latlng, meta); });
           },
           pointToLayer: function (feat, latlng) {
-            return L.circleMarker(latlng, { radius: 5, color: '#fff', weight: 1, fillColor: meta.color || '#0083C4', fillOpacity: 0.9 });
+            return L.circleMarker(latlng, { radius: id==='osm_towns' ? 3.3 : 5, color: '#fff', weight: 1, fillColor: (meta.palette && meta.palette[feat.properties.level]) || meta.color || '#0083C4', fillOpacity: 0.9 });
           },
         }).addTo(leafletMap);
         return geo;
-      }).catch(function () { return null; });
+      }).catch(failed);
     }
     return Promise.resolve();
   }
@@ -695,18 +854,6 @@
       });
       return;
     }
-    if (kind === 'parcelas') {
-      openFiche({
-        title: 'iCluster — parcelas',
-        kind_es: 'Capa publicada del visor estatal',
-        kind_en: 'Published state-viewer layer',
-        rows: [
-          { es: 'Qué se dibuja', en: 'What is drawn', value: tx('Parcelas de la Secretaría de Turismo, Economía y Sustentabilidad (capa cspyde100). No es el catastro del estado.', 'Parcels from the Tourism, Economy and Sustainability secretariat (layer cspyde100). It is not the state cadastre.') },
-          { es: 'Fuente', en: 'Source', value: 'SIG BCS — http://sig.bcs.gob.mx/iclusterbcs/' },
-        ],
-      });
-      return;
-    }
     openFiche({
       title: 'iCluster — uso de suelo IMPLAN',
       kind_es: 'Capa publicada del visor estatal',
@@ -714,12 +861,19 @@
       rows: [
         { es: 'Qué se dibuja', en: 'What is drawn', value: tx('Uso de suelo de IMPLAN Los Cabos (capa cimp100) del visor iCluster. Aparece al acercar la costa de Los Cabos.', 'IMPLAN Los Cabos land use (layer cimp100) from the iCluster viewer. It appears when you zoom to the Los Cabos coast.') },
         { es: 'Fuente', en: 'Source', value: 'IMPLAN Los Cabos / SIG BCS — http://sig.bcs.gob.mx/iclusterbcs/' },
-        { es: 'Parcelas', en: 'Parcels', value: tx('Opcional: capa cspyde100, Secretaría de Turismo, Economía y Sustentabilidad. No es el catastro del estado.', 'Optional: layer cspyde100, Tourism, Economy and Sustainability secretariat. It is not the state cadastre.') },
       ],
     });
   }
   function setIcluster(kind, on) {
     if (iclusterOn[kind] != null) iclusterOn[kind] = !!on;
+    if (leafletMap && kind==='uso') {
+      var key='iclusterUso';
+      if (on) {
+        if (!leafletLayers[key]) leafletLayers[key]=L.tileLayer.wms('/api/icluster-wms',{layers:'cimp100',format:'image/png',transparent:true,opacity:.65,maxZoom:19});
+        leafletLayers[key].addTo(leafletMap);
+        leafletMap.setView([22.99,-109.78],12);
+      } else if (leafletLayers[key]) leafletMap.removeLayer(leafletLayers[key]);
+    }
     if (engine && engine.setIcluster) engine.setIcluster(kind, on);
     document.querySelectorAll('[data-icluster="' + kind + '"]').forEach(function (box) { box.checked = !!on; });
     if (on && kind === 'uso' && engine && engine.jumpCamera) {
@@ -830,25 +984,64 @@
     });
   }
 
+  function updateModeLabel(is3d) {
+    var btn = document.getElementById('shell-pitch');
+    var can3d = is3d || !!(window.CDT3D && CDT3D.hasWebGL());
+    btn.disabled = !can3d;
+    btn.setAttribute('aria-pressed',String(is3d));
+    btn.title = !can3d ? tx('Este navegador admite la vista 2D.','This browser supports the 2D view.') : '';
+    btn.textContent = is3d ? tx('Volver a 2D','Back to 2D') : can3d ? tx('Explorar en 3D','Explore in 3D') : '2D';
+    document.body.dataset.mapMode=is3d ? '3d' : 'mapa';
+  }
+  function buildingPlaces(eng) {
+    var places=document.querySelector('[data-building-places]');
+    var box=document.querySelector('[data-buildings]');
+    if (!places || !box) return;
+    fetch('/gis/edificios/index.json').then(function(r){if(!r.ok)throw Error();return r.json();}).then(function(ix){
+      places.replaceChildren(new Option(tx('Elige una ciudad','Choose a city'),''));
+      ix.cities.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(city){
+        places.add(new Option(city.name,city.id));
+      });
+      places.disabled=false;
+      box.disabled=!eng;
+      if(eng){box.onchange=function(){eng.setBuildings(box.checked);};eng.setBuildings(box.checked);}
+      places.onchange=function(){
+        var city=ix.cities.find(function(c){return c.id===places.value;});
+        if(!city)return;
+        if(eng){box.checked=true;eng.setBuildings(true);eng.jumpCamera({lng:city.center[0],lat:city.center[1],zoom:16.2,bearing:-16,pitch:reduceMotion?0:52});}
+        else if(!document.getElementById('shell-pitch').disabled) changeMode('3d',city);
+        else leafletMap.setView([city.center[1],city.center[0]],17);
+      };
+    }).catch(function(){places.replaceChildren(new Option(tx('Cobertura no disponible','Coverage unavailable'),''));});
+  }
   function boot2d() {
     if (!window.L || !mapEl) return;
     leafletMap = L.map(mapEl, {
-      scrollWheelZoom: true,
-      maxZoom: 14,
-      minZoom: 6.15,
-      maxBounds: [[22.4, -115.7], [28.5, -108.95]],
-    }).fitBounds([[22.87, -115.22], [28.0, -109.41]]);
-    streetsLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap', maxZoom: 18 });
-    satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Esri', maxZoom: 18 });
+      zoomControl:false, preferCanvas:true, zoomSnap:0.25, maxZoom:19, minZoom:4,
+      maxBounds:[ [21.8,-116.7], [29,-108.3] ]
+    }).fitBounds([[22.87,-115.22],[28,-109.41]],{padding:[20,20]});
+    L.control.zoom({position:'topright'}).addTo(leafletMap);
+    leafletMap.createPane('municipalContext').style.zIndex = 350;
+    loadMunis().then(function(geo){
+      if (geo) L.geoJSON(geo,{pane:'municipalContext',interactive:false,
+        style:{color:'#39746d',weight:1.1,opacity:.75,fillColor:'#80baaa',fillOpacity:.075}
+      }).addTo(leafletMap);
+    });
+    L.control.scale({position:'bottomleft',imperial:false,metric:true}).addTo(leafletMap);
+    streetsLayer=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',maxZoom:19
+    });
+    satLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{attribution:'Imagery © Esri',maxZoom:19,maxNativeZoom:18});
     setBasemap(basemap);
-    L.control.scale({ imperial: false, metric: true }).addTo(leafletMap);
-    setStatus('Mapa plano. El relieve 3D no está disponible en este navegador.', 'Flat map. 3D terrain is not available in this browser.');
-    Promise.all(Object.keys(on).filter(function (id) { return on[id]; }).map(function (id) { return showLayer(id, true); })).then(markReady);
+    leafletMap.on('click',function(e){if(iclusterOn.uso) identifyIcluster(e.latlng,++identifyToken);});
+    updateModeLabel(false);
+    buildingPlaces(null);
+    markReady();
   }
-
   function boot3d() {
     if (!window.CDT3D || !CDT3D.hasWebGL()) { boot2d(); return; }
     CDT3D.start({
+      territorialAtlas:true,
       container: mapEl,
       tools: true,
       reduced: reduceMotion,
@@ -858,31 +1051,8 @@
       onFeature: onMapFeature,
     }).then(function (eng) {
       engine = eng;
-      var box = document.querySelector('[data-buildings]');
-      var places = document.querySelector('[data-building-places]');
-      if (box && places && eng.setBuildings) {
-        fetch('/gis/edificios/index.json').then(function (r) {
-          if (!r.ok) throw Error('buildings');
-          return r.json();
-        }).then(function (ix) {
-          ix.cities.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(c){
-            var option=document.createElement('option'); option.value=c.id; option.textContent=c.name;
-            places.appendChild(option);
-          });
-          box.disabled=false; places.disabled=false;
-          box.onchange=function(){ eng.setBuildings(box.checked); };
-          places.onchange=function(){
-            var c=ix.cities.find(function(item){return item.id===places.value;});
-            if (!c) return;
-            var point=c.center || (c.bbox && [(c.bbox[0]+c.bbox[2])/2,(c.bbox[1]+c.bbox[3])/2]);
-            if (!point) return;
-            box.checked=true; eng.setBuildings(true);
-            eng.jumpCamera({lng:point[0],lat:point[1],zoom:16.2,bearing:-16,pitch:reduceMotion?0:52});
-            syncPitchBtn();
-          };
-          eng.setBuildings(box.checked);
-        }).catch(function(){setStatus('No se pudo cargar la lista de edificios.', 'Building coverage could not be loaded.');});
-      }
+      buildingPlaces(eng);
+      updateModeLabel(true);
       setBasemap(basemap);
       applyTerrain();
       applyExtrusion();
@@ -1110,7 +1280,7 @@
     return citations.length;
   }
 
-  var TERRAIN_EX = 2.15;
+  var TERRAIN_EX = 1;
   var PITCH_ON = 50;
   var BEARING_ON = -18;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1152,7 +1322,7 @@
   function syncPitchBtn() {
     var btn = document.getElementById('shell-pitch');
     if (!btn) return;
-    btn.setAttribute('aria-pressed', pitched && terrainOn ? 'true' : 'false');
+    btn.setAttribute('aria-pressed',engine ? 'true' : 'false');
   }
   function syncStackToggles() {
     document.querySelectorAll('[data-stack-toggle]').forEach(function (btn) {
@@ -1189,6 +1359,61 @@
     return (model.stack || []).filter(function (s) { return s.id === id; })[0];
   }
 
+  var analysisSelect = document.getElementById('analysis-select');
+  var analysisPanel = document.getElementById('analysis-panel');
+  var activeAnalysis = '';
+  function showAnalysisLegend() {
+    if (!analysisSelect) return;
+    Array.from(analysisSelect.options).forEach(function(opt){ if(opt.dataset.es) opt.textContent=tx(opt.dataset.es,opt.dataset.en); });
+    var layer = byId[activeAnalysis], legend = document.getElementById('analysis-legend');
+    legend.replaceChildren();
+    document.getElementById('analysis-caption').textContent = layer ? tx(layer.description_es, layer.description_en) : tx('Elige qué quieres ver.','Choose a map.');
+    if (!layer) return;
+    var labels = layer.labels.slice(), colors = layer.palette.slice();
+    if (layer.id.indexOf('haz_') === 0) {
+      labels = lang()==='en' ? ['Very low','Low','Medium','High','No data'] : labels.concat('Sin datos');
+      colors.push('#919b9c');
+    }
+    labels.forEach(function (label, index) {
+      var item = document.createElement('span'), swatch = document.createElement('i');
+      swatch.style.background = colors[index]; item.append(swatch, label); legend.append(item);
+    });
+  }
+  if (analysisSelect) {
+    analysisSelect.addEventListener('change', function() {
+      if (activeAnalysis) showLayer(activeAnalysis,false);
+      activeAnalysis = analysisSelect.value;
+      if (activeAnalysis) showLayer(activeAnalysis,true);
+      closeFiche(); showAnalysisLegend();
+    });
+    new MutationObserver(showAnalysisLegend).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    [analysisPanel,document.getElementById('land-water')].forEach(function(panel,index,panels){
+      panel.addEventListener('toggle',function(){ if(panel.open) panels[1-index].open=false; });
+    });
+  }
+  function providerButtons(meta, loc) {
+    var panel = document.getElementById('shell-fiche');
+    var choices=meta.id==='traffic'||meta.id==='bottlenecks' ? ['traffic','biodiversity'] : ['biodiversity'];
+    choices.forEach(function(provider){
+      var button=document.createElement('button'), result=document.createElement('p');
+      button.type='button';result.setAttribute('role','status');
+      button.textContent=provider==='traffic'?tx('Ver demora actual · TomTom','Current delay · TomTom'):tx('Consultar biodiversidad a 1 km · IBAT','Biodiversity within 1 km · IBAT');
+      button.addEventListener('click',async function(){
+        button.disabled=true;result.textContent=tx('Consultando…','Checking…');
+        try {
+          var r=await fetch('/.netlify/functions/map-provider',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({provider:provider,lat:loc.lat,lng:loc.lng})});
+          var data=await r.json();
+          if(!r.ok) {
+            result.textContent=data.error==='not_configured'?tx('Conexión pendiente de activar.','Connection awaits activation.'):tx('Sin lectura disponible para este punto.','No reading available here.');
+          } else if(provider==='traffic') {
+            result.textContent=(data.closed?tx('Vía cerrada. ','Road closed. '):'')+data.speed+' km/h · '+tx('flujo libre ','free flow ')+data.freeSpeed+' km/h · '+tx('demora ','delay ')+Math.round(data.delaySeconds)+' s · '+new Date(data.retrieved).toLocaleTimeString();
+          } else result.textContent=data.count+tx(' áreas clave de biodiversidad en 1 km.',' key biodiversity areas within 1 km.');
+        } catch {result.textContent=tx('No se pudo consultar la fuente.','Source unavailable.');}
+        finally {button.disabled=false;}
+      });
+      panel.append(button,result);
+    });
+  }
   function readBoot() {
     var params = new URLSearchParams(location.search);
     if (params.get('vista') === 'tierra-agua') {
@@ -1198,6 +1423,12 @@
         panel.querySelectorAll('[data-layer]').forEach(function (box) { on[box.dataset.layer] = true; });
       }
     }
+    if (analysisSelect && params.get('vista') === 'analisis') {
+      var id = params.get('capa');
+      activeAnalysis = byId[id] && byId[id].palette ? id : 'temperature';
+      analysisSelect.value=activeAnalysis; on[activeAnalysis]=true; analysisPanel.open=true;
+    }
+    showAnalysisLegend();
     var base = params.get('base');
     if (base === 'satellite' || base === 'streets') basemap = base;
     (model.defaults || ['osm_towns', 'osm_highways']).forEach(function (id) { if (byId[id]) on[id] = true; });
@@ -1248,14 +1479,7 @@
   });
   var pitchBtn = document.getElementById('shell-pitch');
   if (pitchBtn) pitchBtn.addEventListener('click', function () {
-    pitched = !(pitched && terrainOn);
-    if (pitched && !terrainOn) {
-      terrainOn = true;
-      applyTerrain();
-    }
-    applyPitch();
-    syncStackToggles();
-    syncHud();
+    changeMode(engine ? 'mapa' : '3d');
   });
   document.querySelectorAll('[data-theme]').forEach(function (btn) {
     btn.addEventListener('click', function () { setTheme(btn.getAttribute('data-theme')); });
@@ -1366,7 +1590,7 @@
     box.addEventListener('change', function () {
       var kind = box.getAttribute('data-icluster');
       setIcluster(kind, box.checked);
-      if (box.checked) openSuelo(kind === 'parcelas' ? 'parcelas' : 'icluster');
+      if (box.checked) openSuelo('icluster');
     });
   });
   document.querySelectorAll('[data-fold]').forEach(function (btn) {
@@ -1497,9 +1721,10 @@
     });
   });
   var help=document.getElementById('twin-help'),guide=document.getElementById('twin-guide');
-  function closeGuide(){if(!guide)return;guide.hidden=true;help.setAttribute('aria-expanded','false');help.focus();}
-  if(help)help.addEventListener('click',function(){guide.hidden=!guide.hidden;help.setAttribute('aria-expanded',String(!guide.hidden));if(!guide.hidden)document.getElementById('twin-help-close').focus();});
-  document.getElementById('twin-help-close').addEventListener('click',closeGuide);
+  function closeGuide(){if(!guide)return;guide.hidden=true;if(help){help.setAttribute('aria-expanded','false');help.focus();}}
+  if(help&&guide)help.addEventListener('click',function(){guide.hidden=!guide.hidden;help.setAttribute('aria-expanded',String(!guide.hidden));if(!guide.hidden){var closer=document.getElementById('twin-help-close');if(closer)closer.focus();}});
+  var helpClose=document.getElementById('twin-help-close');
+  if(helpClose)helpClose.addEventListener('click',closeGuide);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(guide&&!guide.hidden)closeGuide();else if(document.body.classList.contains('shell-sheet-open'))setSheet(false);else closeFiche();}});
   document.getElementById('twin-reset-map').addEventListener('click',function(){
     closeFiche();paintMuni('');if(engine&&engine.mark)engine.mark(null,null,'');if(engine&&engine.fitBox)engine.fitBox(null);if(leafletMap)leafletMap.fitBounds([[22.87,-115.22],[28,-109.41]]);
@@ -1513,15 +1738,22 @@
     }catch(e){}
   }
   readBoot();
-  try{var contextId=new URLSearchParams(location.search).get('context');if(contextId&&/^c[a-z0-9]+$/.test(contextId)){var context=JSON.parse(sessionStorage.getItem('bcs-map-'+contextId)||'null');if(context&&context.grounded!==false)applyText(context.question,context.sources,context.answer);}}catch(_){}
+  restoreView();
+  try{var contextId=new URLSearchParams(location.search).get('context');if(!savedCamera&&contextId&&/^c[a-z0-9]+$/.test(contextId)){var context=JSON.parse(sessionStorage.getItem('bcs-map-'+contextId)||'null');if(context&&context.grounded!==false)applyText(context.question,context.sources,context.answer);}}catch(_){}
   syncBasic();
   setBasemap(basemap);
-  boot3d();
-  fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
+  if (mapMode === '3d' && window.CDT3D && CDT3D.hasWebGL()) {
+    var renderer = document.createElement('script');
+    renderer.src='/explorar/vendor/maplibre-gl.js';
+    renderer.onload=boot3d;
+    renderer.onerror=boot2d;
+    document.head.appendChild(renderer);
+  } else boot2d();
+  if (treeEl || relatedEl) fetch('/shell/files.json').then(function (r) { return r.json(); }).then(function (data) {
     index = data;
     renderTree(searchEl ? searchEl.value : '');
     if(latestAnswer)focusFiles(latestAnswer.question,latestAnswer.sources,latestAnswer.answer);
-    if(searchEl&&searchEl.value)document.getElementById('twin-archive').open=true;
+    if(searchEl&&searchEl.value){var archive=document.getElementById('twin-archive');if(archive)archive.open=true;}
   }).catch(function () {
     if (treeEl) treeEl.textContent = tx('No se pudo cargar el índice de archivos.', 'The file index could not be loaded.');
   });
@@ -1531,8 +1763,22 @@
     showLayer: showLayer,
     setBasemap: setBasemap,
     focusMuni: focusMuni,
+    focusCoordinate: function(lng,lat) {
+      if (leafletMap) {
+        flyPoint(lng,lat,null,{zoom:17});
+      } else if (engine) {
+        engine.mark(lng,lat,'');
+        engine.jumpCamera({lng:lng,lat:lat,zoom:16,pitch:engine.getPitch(),bearing:engine.readCamera().bearing});
+      } else { pendingPoint=[lng,lat,'']; }
+      mapSummary(lat.toFixed(5)+', '+lng.toFixed(5)+' · WGS84',lat.toFixed(5)+', '+lng.toFixed(5)+' · WGS84');
+    },
     focusPoint: function(lng,lat,label){pendingJob=null;pendingMuni='';if(!mapReady)pendingPoint=[lng,lat,label];else flyPoint(lng,lat,label);mapSummary('Lugar: '+label,'Place: '+label);},
-    getBounds: function () { return engine && engine.getBounds ? engine.getBounds() : null; },
+    getBounds: function () {
+      if(engine) return engine.getBounds();
+      if(!leafletMap) return null;
+      var b=leafletMap.getBounds();
+      return [b.getWest(),b.getSouth(),b.getEast(),b.getNorth()];
+    },
     getPitch: function () { return engine && engine.getPitch ? engine.getPitch() : null; },
   };
 })();

@@ -214,6 +214,16 @@ const OTHER_MUNI = [
 ];
 
 export function search(index, message, { k = 8, place = null, minRel = 0.3, newsIntent = null } = {}) {
+  // Translate finance search terms into the vocabulary of the official Spanish records.
+  // Keep the original year, sector and municipality (and the user's answer language).
+  if (/\b(budget|expenditures?|public spending)\b/i.test(message)) {
+    message = message.replace(/\bclaifornia\b/gi,'california').replace(/\bbudget\b/gi,'presupuesto')
+      .replace(/\bexpenditures?\b|\bpublic spending\b/gi,'egresos').replace(/\bstate\b/gi,'estatal')
+      .replace(/\bapproved\b/gi,'aprobado').replace(/\bpaid\b/gi,'pagado')
+      .replace(/\b(education|health|housing|water|debt|revenue)\b/gi, term =>
+        ({education:'educacion',health:'salud',housing:'vivienda',water:'agua',debt:'deuda',revenue:'ingresos'})[term.toLowerCase()])
+      .replace(/\bin detail\b|\bexplain\b/gi,' ');
+  }
   const { terms, place: inferred } = analyseQuery(index, message);
   const wantNews = newsIntent == null ? isNewsIntent(message) : !!newsIntent;
   const placeId = place || inferred;

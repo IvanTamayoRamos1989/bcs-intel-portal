@@ -13,5 +13,14 @@ const links = [
 </header>
 <link rel="stylesheet" href="/three-pages.css?v=20261102" />
 <script is:inline>
-  try{var lastContext=sessionStorage.getItem('bcs-last-map');var destination=document.querySelector('[data-destination="map"]');if(destination&&lastContext&&/^c[a-z0-9]+$/.test(lastContext)&&!destination.hasAttribute('aria-current'))destination.href='/consulta/?context='+lastContext;}catch(_){}
+  try {
+    var lastContext = sessionStorage.getItem('bcs-last-map');
+    var destination = document.querySelector('[data-destination="map"]');
+    if (destination && !destination.hasAttribute('aria-current')) {
+      var view = new URLSearchParams(sessionStorage.getItem('bcs-map-view-v1') || '');
+      if (view.has('cam')) destination.href = '/consulta/?' + view.toString();
+      else if (lastContext && /^c[a-z0-9]+$/.test(lastContext)) destination.href = '/consulta/?context=' + lastContext;
+    }
+  } catch (_) {}
+
 </script>

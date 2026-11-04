@@ -108,7 +108,9 @@ export default async (request: Request, context: Context) => {
 
   // Unauthenticated: HTML → landing; everything else → 401 (do not serve data)
   if (wantsHtml(request, url.pathname)) {
-    return Response.redirect(new URL("/", url).toString(), 302);
+    const login = new URL("/", url);
+    if (/^\/(inicio|consulta|catalogo)\/?$/.test(url.pathname)) login.searchParams.set("next", url.pathname + url.search);
+    return new Response(null, {status: 302, headers: {Location: login.href, "Cache-Control": "no-store"}});
   }
 
   return new Response(JSON.stringify({ error: "Unauthorized" }), {

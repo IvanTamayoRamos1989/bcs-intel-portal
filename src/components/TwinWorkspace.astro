@@ -3,6 +3,8 @@ import '../styles/global.css';
 import ThreeNav from './ThreeNav.astro';
 import { ui } from '../i18n/ui';
 import { cdtModel } from '../lib/cdtModel';
+import socialGroups from '../data/territorio_social.json';
+import analysisLayers from '../data/analysis_layers.json';
 import landWater from '../data/tierra_agua.json';
 import gisLayers from '../../public/gis/layers.json';
 
@@ -53,14 +55,31 @@ const catalogLayers = cdtModel.layerCatalog.map((l) => ({
 }));
 const catalogIds = new Set(catalogLayers.map((l) => l.id));
 const stack = [
-  { id: 'l0', layers: ['osm_towns', 'settlements'] },
+  {
+    id: 'l0',
+    layers: [
+      'osm_towns',
+      'settlements',
+      'curvas_nivel_bcs',
+      'pendiente_terreno_bcs',
+      'altitud_terreno_bcs',
+      'cobertura_vegetal_bcs',
+    ],
+  },
   {
     id: 'l2',
     layers: [
       'osm_highways',
       'osm_power_lines',
       'osm_power_nodes',
+      'infraestructura_urbana_bcs',
       'osm_waterways',
+      'presas_cea',
+      'acuiferos_conagua',
+      'desagues_pluviales_bcs',
+      'inundaciones_historico_bcs',
+      'agricultura_inegi',
+      'ran_nucleos',
       'focus_water_dmas',
       'focus_ports_air',
       'federal_projects',
@@ -69,12 +88,39 @@ const stack = [
       'rtp_conabio',
     ],
   },
-  { id: 'l3', layers: ['osm_transport_nodes', 'highway_nodes', 'focus_corridor_cabos_lapaz'] },
-  { id: 'l4', layers: ['bcs_market_listings'] },
+  {
+    id: 'l3',
+    layers: [
+      'osm_transport_nodes',
+      'highway_nodes',
+      'focus_corridor_cabos_lapaz',
+      'limites_velocidad_vial_bcs',
+      'ciclovias_bcs',
+      'reparto_bicicleta_bcs',
+      'estaciones_carga_ve_bcs',
+      'traffic_sict_bcs',
+      'bottlenecks_sict_bcs',
+    ],
+  },
+  {
+    id: 'l4',
+    layers: [
+      'bcs_market_listings',
+      'vivienda_multifamiliar_bcs',
+      'bcs_market_listings_manzanas',
+      'codigos_postales_bcs',
+      'density_muni',
+    ],
+  },
 ];
 const extras = [...new Set(stack.flatMap((s) => s.layers))].filter((id) => !catalogIds.has(id)).map(extraLayer);
 const territoryIds = new Set(landWater.map((layer) => layer.id));
-const shellLayers = [...catalogLayers, ...extras].filter((layer) => !territoryIds.has(layer.id)).concat(landWater.map((layer) => ({...layer, year_es: '', year_en: ''})));
+const shellLayers = [
+  ...[...catalogLayers, ...extras].filter((layer) => !territoryIds.has(layer.id)),
+  ...landWater.map((layer) => ({...layer, year_es: '', year_en: ''})),
+  ...analysisLayers,
+  ...socialGroups.flatMap(group => group.layers),
+];
 const layersById = Object.fromEntries(shellLayers.map((l) => [l.id, l]));
 for (const group of stack) {
   for (const id of group.layers) {
@@ -135,7 +181,7 @@ const shellModel = {
     <div class="shell">
       <section class="shell-map-wrap" aria-label="Mapa">
         <div id="shell-map"></div>
-        <div class="twin-map-context"><span class="twin-eyebrow"><span data-lang-es>BAJA CALIFORNIA SUR</span><span data-lang-en hidden>CONTEXT MAP</span></span><p id="twin-map-summary" role="status"><span data-lang-es>Busca un lugar o activa una capa.</span><span data-lang-en hidden>Find a place or turn on a layer.</span></p><div class="map-search"><label for="map-place-search"><span data-lang-es>Buscar un lugar</span><span data-lang-en hidden>Find a place</span></label><input id="map-place-search" type="search" placeholder="La Paz, Loreto, Todos Santos…" autocomplete="off" aria-controls="map-place-results" /><ul id="map-place-results" class="map-search-results" hidden></ul></div>
+        <div class="twin-map-context"><span class="twin-eyebrow"><span data-lang-es>Atlas territorial · BCS</span><span data-lang-en hidden>Territorial atlas · BCS</span></span><p id="twin-map-summary" role="status"><span data-lang-es>Busca un lugar o activa una capa.</span><span data-lang-en hidden>Find a place or turn on a layer.</span></p><div class="map-search"><label for="map-place-search"><span data-lang-es>Lugar o coordenadas</span><span data-lang-en hidden>Place or coordinates</span></label><input id="map-place-search" type="search" placeholder="Loreto · 26.012, -111.344" autocomplete="off" aria-controls="map-place-results" /><ul id="map-place-results" class="map-search-results" hidden></ul></div>
           <button type="button" id="twin-reset-map"><span data-lang-es>Ver todo BCS</span><span data-lang-en hidden>View all BCS</span></button></div>
         <details class="land-water" id="land-water">
           <summary><span data-lang-es>Tierra y agua</span><span data-lang-en hidden>Land and water</span></summary>
@@ -145,6 +191,15 @@ const shellModel = {
               <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
             </label>
           ))}</div>
+        </details>
+        <details id="analysis-panel" class="land-water analysis-panel">
+          <summary><span data-lang-es>Clima y territorio</span><span data-lang-en hidden>Climate and territory</span></summary>
+          <label for="analysis-select"><span data-lang-es>Mapa temático</span><span data-lang-en hidden>Thematic map</span></label>
+          <select id="analysis-select">
+            <option value="">…</option>
+            {analysisLayers.map((layer) => <option value={layer.id} data-es={layer.name_es} data-en={layer.name_en}>{layer.name_es}</option>)}
+          </select>
+          <p id="analysis-caption" aria-live="polite"></p><div id="analysis-legend"></div>
         </details>
         <aside id="shell-fiche" class="shell-fiche" hidden></aside>
       </section>
@@ -167,7 +222,7 @@ const shellModel = {
           <div class="twin-basic" role="group" aria-label="Capas básicas">
             <span class="twin-basic-label"><span data-lang-es>Mostrar</span><span data-lang-en hidden>Show</span></span>
             <label class="building-picker"><span data-lang-es>Edificios 3D</span><span data-lang-en hidden>3D buildings</span>
-              <select data-building-places disabled><option value="">—</option></select>
+              <select data-building-places disabled><option value="">…</option></select>
             </label>
             <button type="button" data-basic="places" aria-pressed="true"><span data-lang-es>Localidades</span><span data-lang-en hidden>Places</span></button>
             <button type="button" data-basic="roads" aria-pressed="true"><span data-lang-es>Carreteras</span><span data-lang-en hidden>Roads</span></button>
@@ -182,7 +237,8 @@ const shellModel = {
             <button type="button" data-dock="l1" aria-selected="false"><span class="shell-n">1</span><span data-lang-es>Edificios</span><span data-lang-en hidden>Buildings</span></button>
             <button type="button" data-dock="l2" aria-selected="false"><span class="shell-n">2</span><span data-lang-es>Infraestructura</span><span data-lang-en hidden>Infrastructure</span></button>
             <button type="button" data-dock="l3" aria-selected="false"><span class="shell-n">3</span><span data-lang-es>Movilidad</span><span data-lang-en hidden>Mobility</span></button>
-            <button type="button" data-dock="l4" aria-selected="false"><span class="shell-n">4</span><span data-lang-es>Vivienda</span><span data-lang-en hidden>Housing</span></button>
+            <button type="button" data-dock="l4" aria-selected="false"><span class="shell-n">4</span><span data-lang-es>Mercado Inmobiliario</span><span data-lang-en hidden>Real Estate Market</span></button>
+            {socialGroups.map(group => <button type="button" data-dock={group.id} aria-selected="false"><span data-lang-es>{group.es}</span><span data-lang-en hidden>{group.en}</span></button>)}
             <button type="button" data-dock="suelo" aria-selected="false"><span class="shell-n">S</span><span data-lang-es>Uso de suelo</span><span data-lang-en hidden>Land use</span></button>
           </div>
 
@@ -294,7 +350,48 @@ const shellModel = {
                 </div>
                 <p class="shell-note"><span data-lang-es>El corredor es un marco de análisis, no un límite oficial.</span><span data-lang-en hidden>The corridor is an analysis frame, not an official boundary.</span></p>
               </li>
-              <li data-dock-panel="l4"><header><div><strong><span data-lang-es>Vivienda y mercado inmobiliario</span><span data-lang-en hidden>Housing and real estate</span></strong><small><span data-lang-es>Oferta publicada, con precios de lista en dólares.</span><span data-lang-en hidden>Published listings, with asking prices in US dollars.</span></small></div></header><div class="shell-layer-group"><label><input type="checkbox" data-layer="bcs_market_listings" /><i class="shell-swatch" style="background:#f59e0b"></i><span><span data-lang-es>Propiedades en mercado</span><span data-lang-en hidden>Market listings</span><small>MLS BCS · 2026</small></span></label></div><p class="shell-note"><span data-lang-es>Las columnas son símbolos de las propiedades; no representan edificios reales ni precios de venta cerrada.</span><span data-lang-en hidden>Columns are property symbols, not actual buildings or completed sale prices.</span></p></li>
+              <li data-dock-panel="l4">
+                <header>
+                  <span class="shell-n">4</span>
+                  <div>
+                    <strong><span data-lang-es>Mercado Inmobiliario</span><span data-lang-en hidden>Real Estate Market</span></strong>
+                    <small><span data-lang-es>Oferta inmobiliaria, vivienda multifamiliar, manzanas urbanas, códigos postales y densidad habitacional.</span><span data-lang-en hidden>Market listings, multi-family units, urban blocks, postal codes and population density.</span></small>
+                  </div>
+                  <button type="button" data-stack-toggle="l4" aria-pressed="false"><span data-lang-es>Todas</span><span data-lang-en hidden>All</span></button>
+                </header>
+                <div class="shell-layer-group">
+                  {stack[3].layers.map((id) => {
+                    const layer = layersById[id];
+                    return (
+                      <label>
+                        <input type="checkbox" data-layer={layer.id} />
+                        <i class="shell-swatch" style={`background:${layer.color}`}></i>
+                        <span>
+                          <span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span>
+                          <small><span data-lang-es>{layer.source_es}</span><span data-lang-en hidden>{layer.source_en}</span></small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+                <p class="shell-note"><span data-lang-es>Las columnas son símbolos de las propiedades; no representan edificios reales ni precios de venta cerrada.</span><span data-lang-en hidden>Columns are property symbols, not actual buildings or completed sale prices.</span></p>
+              </li>
+              {socialGroups.map(group => <li data-dock-panel={group.id}>
+                <header><strong><span data-lang-es>{group.es}</span><span data-lang-en hidden>{group.en}</span></strong></header>
+                {group.layers.map(layer => <div class="shell-layer-group">
+                  <label><input type="checkbox" data-layer={layer.id} /><i class="shell-swatch" style={'background:'+layer.color}></i>
+                    <span><span data-lang-es>{layer.name_es}</span><span data-lang-en hidden>{layer.name_en}</span><small>{layer.source_es}</small></span>
+                  </label>
+                  <p class="shell-note"><span data-lang-es>{layer.description_es}</span><span data-lang-en hidden>{layer.description_en}</span> <a href={layer.reference} target="_blank" rel="noopener"><span data-lang-es>Fuente</span><span data-lang-en hidden>Source</span></a></p>
+                  {layer.id === 'inundacion' && <img src="/gis/territorio/inundacion/leyenda.png" alt="Leyenda del Atlas de Riesgos" loading="lazy" />}
+                  {'palette' in layer && layer.palette && <ul class="shell-legend">{layer.palette.map((color,i) => <li><i style={'background:'+color}></i>{layer.labels[i]}</li>)}</ul>}
+                </div>)}
+                {group.id === 'social' && <a href="/gis/territorio/invi_proyectos.json" download><span data-lang-es>Descargar los 475 proyectos del INVI</span><span data-lang-en hidden>Download the 475 INVI project records</span></a>}
+                {group.id === 'informales' && <details><summary><span data-lang-es>Consultar licencias municipales</span><span data-lang-en hidden>Municipal permit records</span></summary>
+                  <p><a href="https://plataforma-transparencia.bcs.gob.mx/archivos/59825/descargar">Los Cabos · <span data-lang-es>construcción, abril–junio de 2026 (100 registros)</span><span data-lang-en hidden>construction, April–June 2026 (100 records)</span></a></p>
+                  <p><a href="https://plataforma-transparencia.bcs.gob.mx/archivos/61852/descargar">La Paz · <span data-lang-es>uso de suelo, enero–marzo de 2026 (508 registros)</span><span data-lang-en hidden>land use, January–March 2026 (508 records)</span></a></p>
+                </details>}
+              </li>)}
               <li data-dock-panel="suelo">
                 <header>
                   <span class="shell-n">S</span>
@@ -328,13 +425,7 @@ const shellModel = {
                       <small><span data-lang-es>SIG BCS, capa cimp100. Se ve al acercar a Los Cabos. Un clic identifica el uso de suelo. No es el POER.</span><span data-lang-en hidden>SIG BCS, layer cimp100. It shows when you zoom to Los Cabos. A click identifies the land use. It is not the POER.</span></small>
                     </span>
                   </label>
-                  <label>
-                    <input type="checkbox" data-icluster="parcelas" />
-                    <span>
-                      <span data-lang-es>iCluster — parcelas</span><span data-lang-en hidden>iCluster — parcels</span>
-                      <small><span data-lang-es>Secretaría de Turismo, Economía y Sustentabilidad, capa cspyde100. Un clic identifica la parcela si el servicio la devuelve. No es el catastro del estado.</span><span data-lang-en hidden>Tourism, Economy and Sustainability secretariat, layer cspyde100. A click identifies the parcel when the service returns one. It is not the state cadastre.</span></small>
-                    </span>
-                  </label>
+                  
                 </div>
                 <div class="shell-scenarios">
                   <button type="button" data-suelo="pdu"><span data-lang-es>PDU 2040 Los Cabos</span><span data-lang-en hidden>PDU 2040 Los Cabos</span></button>
@@ -353,31 +444,23 @@ const shellModel = {
     <script is:inline define:vars={{ shellModel }}>
       window.__SHELL_MODEL__ = shellModel;
     </script>
-    <script is:inline src="/explorar/vendor/maplibre-gl.js"></script>
     <script is:inline src="/gemelo/cdt3d.js?v=20261103-fly"></script>
     <script is:inline src="/vendor/leaflet/leaflet.js"></script>
     <script is:inline>if(new URLSearchParams(location.search).has("embed"))document.body.classList.add("map-embed");</script>
     <script is:inline src="/shell/evidence.js?v=20261102-integrated"></script>
-    <script is:inline src="/shell/app.js?v=20261103-options"></script>
+    <script is:inline src="/shell/app.js?v=20261103-pages"></script>
     <style is:global>
       html, body.shell-app { margin: 0; height: 100%; background: #fbf8f1; color: #1a1a1a; overflow: hidden; }
       body.shell-app { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
       .shell {
-        --chat-w: 2fr;
-        --map-w: 7fr;
-        --files-w: 1fr;
         display: grid;
-        grid-template-columns: minmax(0, var(--chat-w)) 6px minmax(0, var(--map-w)) 6px minmax(0, var(--files-w));
-        grid-template-rows: minmax(0, 1fr) 10%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr) auto;
         height: 100%;
         min-height: 0;
       }
-      .shell-chat { grid-column: 1; grid-row: 1; }
-      #split-l { grid-column: 2; grid-row: 1; }
-      .shell-map-wrap { grid-column: 3; grid-row: 1; }
-      #split-r { grid-column: 4; grid-row: 1; }
-      .shell-files { grid-column: 5; grid-row: 1; }
-      .shell-dock { grid-column: 1 / -1; grid-row: 2; }
+      .shell-map-wrap { grid-column: 1; grid-row: 1; }
+      .shell-dock { grid-column: 1; grid-row: 2; }
       body.shell-dock-open .shell { grid-template-rows: minmax(0, 1fr) minmax(10%, 36%); }
       .shell-chat, .shell-files, .shell-map-wrap { min-width: 0; min-height: 0; height: 100%; }
       .shell-chat { overflow: hidden; }
