@@ -6,6 +6,7 @@ import { buildIndex, search } from '../netlify/lib/rag.mjs';
 const question = 'explain me the budget in detail of the state of baja claifornia sur';
 const index = buildIndex(JSON.parse(readFileSync(new URL('../netlify/functions/chat_corpus.json', import.meta.url))));
 assert.equal(search(index,question).weakTop,false);
+assert.match(stateBudgetOverview(question,'es').answer,/Social development/);
 for (const [q,lang] of [[question,'en'], ['Explícame en detalle el presupuesto de Baja California Sur','es']]) {
   const result = stateBudgetOverview(q,lang);
   assert.match(result.answer,/26,903,040,145/);

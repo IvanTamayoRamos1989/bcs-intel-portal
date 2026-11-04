@@ -18,7 +18,7 @@ export function stateBudgetOverview(message, lang) {
   const remaining = q.replace(/\b(2026|baja california sur|bcs|statewide|state|government|budget|public|spending|expenditure|expenditures|approved|total|annual|fiscal|year|current|latest|overview|breakdown|detail|details|detailed|explain|give|tell|show|me|a|an|the|how|much|what|is|was|of|for|in|and|please|presupuesto|egresos|gasto|publico|estatal|estado|gobierno|aprobado|anual|actual|ejercicio|explica|explicame|desglosa|desglose|detalle|detallado|dame|cual|cuanto|es|fue|de|del|en|el|la|los|las|un|al|para|y|por|favor)\b/g,'').replace(/[\s¿?¡!.,:;()-]/g,'');
   if (remaining) return null;
 
-  const en = lang === 'en';
+  const en = /\bbudget\b/.test(q) || lang === 'en';
   const lines = headings.map(([es,english,a,b]) => '- ' + (en ? english : es) + ': **' + (a+b).toLocaleString('en-US') + ' MXN**');
   const answer = [
     en ? 'Baja California Sur approved **26,903,040,145 MXN** for fiscal year **2026** (Decree 3266).' :
