@@ -2072,10 +2072,10 @@
     {
       "id": "ev_geokg_s2",
       "type": "Evidence",
-      "label": "GeoKG imágenes Sentinel-2 (10000 marcos)",
-      "summary": "Grafo de conocimiento geoespacial de la carpeta «images of baja»: segmentación semántica (BCS-S2RGB-LandCover v1) en 9 clases y grafo de escena (adjacent_to, contains, along_coast, near). 111,727 nodos, 465,139 aristas. Concordancia 81% con WorldCover 2021. Área de imagen analizada — Comondú: urbano 0.2%, agua 29.8%; La Paz: urbano 1.1%, agua 38.0%; Loreto: urbano 0.1%, agua 49.9%; Los Cabos: urbano 1.4%, agua 39.1%; Mulegé: urbano 0.3%, agua 33.9%. Valores derivados por modelo, no oficiales.",
+      "label": "GeoKG imágenes Sentinel-2 v2 (10000 marcos)",
+      "summary": "Grafo de conocimiento geoespacial de la carpeta «images of baja»: segmentación semántica (BCS-S2MS-LandCover v2) en 9 clases y grafo de escena (adjacent_to, contains, along_coast, near). 109,063 nodos, 447,850 aristas. Concordancia 85% con WorldCover 2021. Área de imagen analizada — Comondú: urbano 0.2%, agua 29.7%; La Paz: urbano 0.8%, agua 36.8%; Loreto: urbano 0.1%, agua 42.7%; Los Cabos: urbano 1.4%, agua 38.8%; Mulegé: urbano 0.1%, agua 34.3%. Valores derivados por modelo, no oficiales.",
       "label_en": "GeoKG Sentinel-2 images (10000 frames)",
-      "summary_en": "Geospatial knowledge graph from the 'images of baja' folder: semantic segmentation (BCS-S2RGB-LandCover v1, 9 classes) and scene graph. 111,727 nodes, 465,139 edges. 81% agreement with WorldCover 2021. Model-derived, not official.",
+      "summary_en": "Geospatial knowledge graph from the 'images of baja' folder: semantic segmentation (BCS-S2MS-LandCover v2, 9 classes) and scene graph. 109,063 nodes, 447,850 edges. 85% agreement with WorldCover 2021. Model-derived, not official.",
       "evidence_path": "BCSFP/11_bcs_hub/src/data/geokg_summary.json"
     }
   ],

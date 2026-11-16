@@ -4,8 +4,8 @@ from rasterio.warp import reproject, Resampling, transform as wtransform
 from scipy import ndimage as ndi
 os.environ.setdefault('GDAL_DISABLE_READDIR_ON_OPEN','EMPTY_DIR')
 os.environ.setdefault('CPL_VSIL_CURL_ALLOWED_EXTENSIONS','.tif')
-os.environ.setdefault('GDAL_CACHEMAX','512')
-W=os.environ.get('GEOKG_WORK','/workspace/geokg')
+os.environ.setdefault('GDAL_CACHEMAX','512'); os.environ.setdefault('GDAL_HTTP_TIMEOUT','60'); os.environ.setdefault('GDAL_HTTP_CONNECTTIMEOUT','20')
+W='/workspace/geokg'
 INV={r['id']:r for r in csv.DictReader(open(f'{W}/inventario_10000.csv',encoding='utf-8-sig'))}
 IDX={}
 for l in open(f'{W}/tif_index.txt'):
