@@ -541,6 +541,64 @@ def add_aquifers(chunks):
     return n
 
 
+def add_geokg(chunks):
+    """GeoKG from the 'images of baja' Sentinel-2 collection (src/data/geokg_summary.json). Model-derived values only."""
+    p = ROOT / "src" / "data" / "geokg_summary.json"
+    if not p.is_file():
+        return 0
+    d = json.loads(p.read_text(encoding="utf-8"))
+    mdl = d["model"]; ev = d["evaluation"]; src = d["source"]; g = d["graph"]
+    pc = ev["per_class"]
+    url = src["drive_url"]
+    cav = " ".join(d["caveats_es"])
+    mtxt = (f"Modelo {mdl['name']}: {mdl['type']}; etiquetas de entrenamiento: {mdl['labels']}. "
+            f"Concordancia con WorldCover 2021 en {ev['held_out_frames']} marcos de prueba: {ev['overall_agreement']*100:.0f}% de píxeles "
+            f"(F1 agua {pc['agua']['f1']:.2f}, matorral {pc['matorral']['f1']:.2f}, urbano {pc['urbano_construido']['f1']:.2f}, manglar {pc['manglar']['f1']:.2f}).")
+    def lab(c): return c.replace("_", " ")
+    n = 0
+    body = (f"GeoKG (grafo de conocimiento geoespacial) de BCS 2050 construido con la colección de imágenes «images of baja»: "
+            f"{d['frames']} marcos Sentinel-2 ({src['imagery']}) de los 5 municipios. Segmentación semántica píxel a píxel en 9 clases de cobertura "
+            f"({', '.join(lab(c) for c in mdl['classes'])}) y grafo de escena con relaciones objeto-objeto ({mdl['scene_graph']}). "
+            f"El grafo tiene {g['nodes']:,} nodos y {g['edges']:,} aristas (municipio, localidad, acuífero, marco, clase, objeto). {mtxt} "
+            f"Capa en el Mapa 3D: Análisis → «Cobertura urbana detectada (GeoKG)». Advertencias: {cav} Crédito: {src['credit']}.")
+    chunks.append({"id": "geokg:metodo", "title": f"GeoKG imágenes satelitales BCS — segmentación semántica y grafo de escena ({d['frames']} marcos)",
+                   "path": "data/geokg_summary.json", "theme": "planeacion", "sum_es": body, "sum_en": "", "drive_url": url,
+                   "href": "/consulta/?vista=analisis&capa=geokg_urbano", "type": "fact", "metric": "Marcos analizados GeoKG", "value": str(d["frames"])}); n += 1
+    rows = []
+    for m, x in d["municipios"].items():
+        sh = x["share_all_pct"]; sw = x.get("share_wide_pct") or {}
+        locs = [l for l in d["localidades"] if l["municipio"] == m][:6]
+        ltxt = "; ".join(f"{l['localidad']} {l['urbano_km2']} km² urbano/construido en un marco de {l['width_km']} km ({l['urbano_pct']}%, {l['date']}, confianza {l['conf']:.2f})" for l in locs)
+        rtxt = "; ".join(f"{k} ×{v}" for k, v in x["top_relations"][:5])
+        wide = (f" En marcos amplios (regional/paisaje, {x['frames_wide']}): urbano {sw.get('urbano_construido')}%, agua {sw.get('agua')}%, matorral {sw.get('matorral')}%, suelo desnudo {sw.get('suelo_desnudo')}%." if sw else "")
+        body = (f"{m} según las imágenes satelitales (GeoKG, {x['frames']} marcos Sentinel-2, {x['dates'][0]} a {x['dates'][1]}): "
+                f"del área de imagen analizada, urbano/construido {sh['urbano_construido']}%, agua {sh['agua']}%, matorral {sh['matorral']}%, "
+                f"suelo desnudo {sh['suelo_desnudo']}%, arbolado {sh['arbolado']}%, cultivo {sh['cultivo']}%, manglar {sh['manglar']}%.{wide} "
+                f"Costa: {x['frames_with_coast']} marcos con línea de costa detectada (mediana {x['coast_km_median']} km de borde tierra-agua por marco). "
+                f"Marcos con ≥1% urbano: {x['frames_urban_ge1pct']}. Localidades con más superficie urbana detectada: {ltxt}. "
+                f"Relaciones de escena más frecuentes: {rtxt}. Grafo: {x['objects']} objetos, {x['relations']} relaciones. "
+                f"Confianza media {x['mean_conf']:.2f}; concordancia con WorldCover 2021 {x['mean_agreement_wc2021']*100:.0f}%. "
+                f"Son porcentajes del área de imagen (marcos solapados), no del territorio municipal ni estadística oficial. {mtxt}")
+        chunks.append({"id": f"geokg:muni:{x['ontology'] or m}", "title": f"{m} — cobertura del suelo y costa según imágenes satelitales (GeoKG)",
+                       "path": "data/geokg_summary.json#" + m, "theme": "planeacion", "sum_es": body, "sum_en": "", "drive_url": url,
+                       "href": "/consulta/?vista=analisis&capa=geokg_urbano", "type": "fact", "metric": f"Urbano/construido en imágenes — {m}", "value": f"{sh['urbano_construido']}% del área de imagen"}); n += 1
+        rows.append(f"{m} urbano {sh['urbano_construido']}%, agua {sh['agua']}%, {x['frames_with_coast']} marcos con costa")
+    for l in d["localidades"][:80]:
+        body = (f"Entorno de {l['localidad']} ({l['municipio']}) según imagen Sentinel-2 del {l['date']} (marco {l['frame']} centrado a ≤2 km de la localidad, {l['width_km']} km de lado, {l['res_m']:.0f} m/píxel; el marco puede incluir localidades vecinas, no es la mancha urbana de la localidad), "
+                f"GeoKG: urbano/construido {l['urbano_km2']} km² ({l['urbano_pct']}% del marco de {l['frame_km2']} km²), agua {l['agua_pct']}%, cultivo {l['cultivo_pct']}%, "
+                f"manglar {l['manglar_pct']}%, borde tierra-agua {l['coast_km']} km; mayor mancha urbana continua {l['largest_urban_obj_km2']} km²; "
+                f"{l['urban_along_coast']} relaciones urbano–costa (along_coast). Confianza {l['conf']:.2f}, concordancia WorldCover 2021 {(l['agree'] or 0)*100:.0f}%. "
+                f"Valor derivado por modelo, no catastro ni mancha urbana oficial (INEGI).")
+        chunks.append({"id": f"geokg:loc:{l['municipio']}:{l['localidad']}", "title": f"{l['localidad']} (entorno) — superficie urbana y costa en imagen satelital (GeoKG)",
+                       "path": "data/geokg_summary.json#" + l["localidad"], "theme": "planeacion", "sum_es": body, "sum_en": "", "drive_url": url,
+                       "type": "fact", "metric": f"Urbano/construido en imagen — {l['localidad']}", "value": f"{l['urbano_km2']} km²"}); n += 1
+    chunks.append({"id": "geokg:resumen", "title": "Comparación municipal — cobertura urbana, agua y costa en imágenes satelitales (GeoKG)",
+                   "path": "data/geokg_summary.json", "theme": "planeacion",
+                   "sum_es": "Comparación por municipio del área de imagen analizada (GeoKG, Sentinel-2 2026): " + "; ".join(rows) + f". {mtxt} {cav}",
+                   "sum_en": "", "drive_url": url, "type": "fact", "metric": "Cobertura por municipio (imágenes)", "value": "ver detalle"}); n += 1
+    return n
+
+
 def add_stakeholders(chunks):
     """Institutional stakeholders (steering / technical / forum) as actor cards. No F+P staff."""
     p = ROOT / "netlify" / "functions" / "stakeholders_seed.json"
@@ -3015,6 +3073,7 @@ def main():
         print(f"escorrentia_chunks={n_esc}")
         print(f"study_chunks={add_studies(chunks)}")
         print(f"aquifer_chunks={add_aquifers(chunks)}")
+        print(f"geokg_chunks={add_geokg(chunks)}")
         print(f"stakeholder_chunks={add_stakeholders(chunks)}")
     except Exception as e:
         print(f"aquifer/stakeholder_skip={type(e).__name__}:{e}")

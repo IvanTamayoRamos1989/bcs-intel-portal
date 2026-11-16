@@ -310,5 +310,33 @@
     "url": "/gis/analysis/bottlenecks.geojson",
     "year_es": "",
     "year_en": ""
+  },
+  {
+    "id": "geokg_urbano",
+    "name_es": "Cobertura urbana detectada en imágenes (GeoKG)",
+    "name_en": "Built-up cover detected in images (GeoKG)",
+    "source_es": "Sentinel-2 2026 · «images of baja» · modelo BCS-S2RGB-LandCover v1",
+    "source_en": "Sentinel-2 2026 · 'images of baja' · BCS-S2RGB-LandCover v1 model",
+    "reference": "https://drive.google.com/drive/folders/1KS5hc194cLLWzJ1r25CiALtvkHg-TJuq",
+    "description_es": "Un punto por marco de imagen. Color: porcentaje del marco clasificado como urbano/construido por segmentación semántica. Derivado por modelo (F1 urbano ≈0,49, tiende a sobrestimar); no es mancha urbana oficial.",
+    "description_en": "One point per image frame. Colour: share of the frame classified as built-up by semantic segmentation. Model-derived (built-up F1 ≈0.49, tends to overestimate); not an official urban footprint.",
+    "group": "analysis",
+    "type": "points",
+    "color": "#a83d35",
+    "palette": [
+      "#b5ceb3",
+      "#ebcf76",
+      "#e28b40",
+      "#a83d35"
+    ],
+    "labels": [
+      "<1 %",
+      "1–5 %",
+      "5–20 %",
+      "≥20 %"
+    ],
+    "url": "/gis/geokg/frames.geojson",
+    "year_es": "2026",
+    "year_en": "2026"
   }
 ]

@@ -219,6 +219,12 @@
         {es:'Umbral del nivel E',en:'Level E threshold',value:p.capacity+' veh/h'},
         {es:'Volumen / umbral E',en:'Volume / level E threshold',value:p.ratio+' %'});
       if (p.road) rows.push({es:'Carretera',en:'Road',value:p.road+' · km '+p.km});
+      if (p.geokg) rows.push({es:'Urbano/construido (modelo)',en:'Built-up (model)',value:p.urb+' %'},
+        {es:'Agua · vegetación',en:'Water · vegetation',value:p.agua+' % · '+p.veg+' %'},
+        {es:'Borde tierra-agua',en:'Land-water edge',value:p.coast+' km'},
+        {es:'Marco',en:'Frame',value:p.frame+' · '+p.w_km+' km'},
+        {es:'Objetos · relaciones',en:'Objects · relations',value:p.n_obj+' · '+p.n_rel},
+        {es:'Confianza · concordancia WorldCover 2021',en:'Confidence · WorldCover 2021 agreement',value:p.conf+' · '+(p.agree==null?'—':Math.round(p.agree*100)+' %')});
     }
     if (meta) rows.push({ es: 'Capa', en: 'Layer', value: lang() === 'en' ? meta.name_en : meta.name_es });
     var fields = [

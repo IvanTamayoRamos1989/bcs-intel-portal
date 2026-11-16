@@ -6272,6 +6272,25 @@ function followUpStaysOnThread(q, message, history) {
     && !/\b(otro municipio|another municipality|cada municipio|each municipality|fotos aereas|aerial photos)\b/.test(blob)) return false;
   return true;
 }
+function geokgQuery(message) {
+  const q = normQ(message);
+  if (/\b(stills?|earth studio|fotos del estudio|cuadros)\b/.test(q)) return false;
+  if (/\b(geokg|grafo de escena|scene graph|segmentaci\w*|segmentation|sentinel|images of baja|satelit\w*|satellite)\b/.test(q)) return true;
+  return /\b(imagenes|images)\b/.test(q) && /\b(cobertura|cover|urban\w*|costa|coast\w*|suelo|manglar\w*|agua|vegetaci\w*)\b/.test(q);
+}
+function geokgPins(message) {
+  // GeoKG (images of baja): municipio/localidad + method chunks, so model caveats travel with the numbers
+  if (!geokgQuery(message)) return [];
+  const corpus = loadCorpus();
+  const muniId = { los_cabos: 'terr_los_cabos', east_cape: 'terr_los_cabos', todos_santos: 'terr_la_paz', la_paz: 'terr_la_paz', loreto: 'terr_loreto', comondu: 'terr_comondu', mulege_north: 'terr_mulege' }[inferPlaceId(message)];
+  const qf = normQ(message);
+  const locs = corpus.filter((c) => {
+    if (!c.id.startsWith('geokg:loc:')) return false;
+    const n = normQ(c.id.split(':').pop());
+    return n.length > 3 && new RegExp(`\\b${n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(qf);
+  }).slice(0, 2);
+  return [...locs, corpus.find((c) => c.id === (muniId ? `geokg:muni:${muniId}` : 'geokg:resumen')), corpus.find((c) => c.id === 'geokg:metodo')].filter(Boolean);
+}
 function airAxisQuery(message) {
   return /pasajeros?\s+loreto|loreto.{0,30}pasajeros|compar(?:ar|o)\s+aeropuertos|compare airports|eje aereo|air axis/.test(normQ(message));
 }
@@ -7084,6 +7103,12 @@ async function handlerInner(event) {
   }
   if (checklistGuide && !evidence.some((c) => c.id === checklistGuide.id)) {
     evidence = [checklistGuide, ...evidence];
+    noEvidence = false;
+  }
+  const geoPins = geokgPins(message);
+  if (geoPins.length) {
+    const ids = new Set(geoPins.map((c) => c.id));
+    evidence = [...geoPins, ...evidence.filter((c) => !ids.has(c.id))];
     noEvidence = false;
   }
   if (qIntents.isFactorIntent && !noEvidence) {
