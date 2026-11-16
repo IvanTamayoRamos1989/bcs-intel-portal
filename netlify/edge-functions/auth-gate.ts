@@ -82,6 +82,18 @@ export default async (request: Request, context: Context) => {
   }
 
   if (isPublicPath(url.pathname)) {
+    // Authenticated visitors hitting "/" see the landing, URL stays "/".
+    // Unauthenticated visitors still get the password gate.
+    if ((url.pathname === "/" || url.pathname === "") && (request.method === "GET" || request.method === "HEAD")) {
+      const secretHome = Deno.env.get("BCS_PORTAL_SESSION_SECRET") || "";
+      const tokenHome = parseCookie(request.headers.get("cookie"), COOKIE);
+      if (secretHome && tokenHome) {
+        const expectedHome = `1.${await hmacHex(secretHome, "bcs-portal-ok")}`;
+        if (tokenHome === expectedHome) {
+          return context.rewrite("/portada/");
+        }
+      }
+    }
     return context.next();
   }
 

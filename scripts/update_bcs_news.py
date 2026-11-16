@@ -2,7 +2,7 @@
 """Refresh src/data/news.json with BCS-relevant headlines — MERGE ONLY, never truncate.
 
 Daily routine (07:05 Madrid, weekdays):
-    python3 scripts/update_bcs_news.py                    # search + merge + tag + rebuild chat corpus
+    python3 scripts/update_bcs_news.py                    # search + merge + tag + Tendencia 2050 + Visión + chat corpus
     python3 scripts/update_bcs_news.py --merge new.json   # merge curated items (list or {"items": [...]})
     python3 scripts/update_bcs_news.py --no-search --merge new.json
     python3 scripts/update_bcs_news.py --check            # build guard (run by `npm run build`)
@@ -313,10 +313,14 @@ def guard(prev_feed, prev_arch, feed, arch, led) -> None:
 
 
 # ---------------------------------------------------------------- commands
-def run_post(no_tag: bool, no_corpus: bool) -> None:
+def run_post(no_tag: bool, no_corpus: bool, no_vision: bool = False) -> None:
     steps = []
     if not no_tag:
         steps.append([sys.executable, str(ROOT / "scripts" / "tag_news_flights_to_foresights.py")])
+    if not no_vision:
+        today = date.today().isoformat()
+        steps.append([sys.executable, str(ROOT / "scripts" / "foresights_vision.py"), "--date", today])
+        steps.append([sys.executable, str(ROOT / "scripts" / "foresights_ideal.py"), "--date", today])
     if not no_corpus:
         steps.append([sys.executable, str(ROOT / "scripts" / "build_chat_corpus.py")])
     for cmd in steps:
@@ -376,6 +380,7 @@ def main() -> int:
     ap.add_argument("--no-search", action="store_true", help="skip the web search")
     ap.add_argument("--no-tag", action="store_true", help="skip tag_news_flights_to_foresights.py")
     ap.add_argument("--no-corpus", action="store_true", help="skip build_chat_corpus.py")
+    ap.add_argument("--no-vision", action="store_true", help="skip Tendencia 2050 and Visión recomputation")
     ap.add_argument("--dry-run", action="store_true", help="merge and guard, but write nothing")
     ap.add_argument("--check", action="store_true", help="validate feed vs ledger (build guard)")
     ap.add_argument("--remove", nargs="+", metavar="URL", help="deliberately remove items by URL")
@@ -428,7 +433,7 @@ def main() -> int:
         ledger_add(led, feed + arch)
         write_json_atomic(LEDGER, led)
         print(f"Wrote {OUT.relative_to(ROOT)} ({len(feed)} items, +{added} new)")
-        run_post(a.no_tag, a.no_corpus)
+        run_post(a.no_tag, a.no_corpus, a.no_vision)
         return 0
     except Abort as e:
         print(f"ABORT: {e}", file=sys.stderr)

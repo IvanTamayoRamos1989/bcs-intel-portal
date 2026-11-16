@@ -1,0 +1,65 @@
+---
+import news from '../data/news.json';
+import { formatEditionDate } from '../lib/foresightEditions';
+
+const topicLabel: Record<string, { es: string; en: string }> = {
+  water: { es: 'Agua', en: 'Water' },
+  energy: { es: 'Energía', en: 'Energy' },
+  land_use: { es: 'Uso de suelo', en: 'Land use' },
+  tourism: { es: 'Turismo', en: 'Tourism' },
+  environment: { es: 'Ambiente', en: 'Environment' },
+  planning: { es: 'Planeación', en: 'Planning' },
+  connectivity: { es: 'Conectividad', en: 'Connectivity' },
+};
+
+const updated = (news as any).updated as string;
+const items = [...((news as any).items || [])].sort((a: any, b: any) =>
+  String(b.date).localeCompare(String(a.date))
+);
+---
+<section class="landing-news" id="landing-news">
+  <header class="landing-col-head">
+    <p class="fs-kicker">
+      <span data-lang-es>Noticias</span>
+      <span data-lang-en hidden>News</span>
+    </p>
+    <h2>
+      <span data-lang-es>Últimas noticias</span>
+      <span data-lang-en hidden>Latest news</span>
+    </h2>
+    <p class="fs-vision-updated">
+      <span data-lang-es>Actualizada: {formatEditionDate(updated, 'es')} · {items.length} notas</span>
+      <span data-lang-en hidden>Updated: {formatEditionDate(updated, 'en')} · {items.length} items</span>
+    </p>
+  </header>
+  <div class="landing-news-list">
+    {items.map((it: any) => (
+      <article class="landing-news-item" data-news-id={it.id}>
+        <p class="landing-news-meta">
+          <time datetime={it.date}><span data-lang-es>{formatEditionDate(it.date, 'es')}</span><span data-lang-en hidden>{formatEditionDate(it.date, 'en')}</span></time>
+          <span class="landing-news-source">{it.source}</span>
+        </p>
+        <h3>
+          <a href={it.url} target="_blank" rel="noopener noreferrer">
+            <span data-lang-es>{it.title_es}</span>
+            <span data-lang-en hidden>{it.title_en}</span>
+          </a>
+        </h3>
+        <p class="landing-news-blurb">
+          <span data-lang-es>{it.blurb_es}</span>
+          <span data-lang-en hidden>{it.blurb_en}</span>
+        </p>
+        {(it.topics || []).length > 0 && (
+          <p class="landing-news-topics">
+            {(it.topics || []).map((t: string) => (
+              <span>
+                <span data-lang-es>{topicLabel[t]?.es || t}</span>
+                <span data-lang-en hidden>{topicLabel[t]?.en || t}</span>
+              </span>
+            ))}
+          </p>
+        )}
+      </article>
+    ))}
+  </div>
+</section>

@@ -47,3 +47,18 @@ body.foresight-page.ios-shell{padding:0!important;min-height:100dvh;background:#
   .fs-vision-body{font-size:11.5pt}
   .fs-vision-bar-head{flex-direction:column;gap:.15rem}
 }
+.fs-kicker{margin:0 0 .15rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34607d}
+.fs-ideal{margin:0 0 2.25rem;padding:1.15rem 1.2rem 1.4rem;background:#fffef8;border:1px solid #d8ded7;border-radius:16px}
+.fs-ideal>h2{margin:0 0 .35rem;font-size:1.55rem;color:#244e60;letter-spacing:-.02em}
+.fs-ideal .fs-vision-body{font-size:12pt;line-height:1.4;color:#294554;max-width:42rem}
+.fs-ideal-pillar{margin:0 0 1.15rem;padding:.85rem 0 0;border-top:1px solid #e3e8df}
+.fs-ideal-pillar:first-child{border-top:0;padding-top:0}
+.fs-ideal-pillar h3{margin:0 0 .35rem;font-size:1.05rem;color:#244e60}
+.fs-ideal-pillar h4{margin:.55rem 0 .25rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#34607d}
+.fs-ideal-risk,.fs-ideal-asp{margin:0 0 .45rem;font-size:12pt;line-height:1.4}
+.fs-ideal-pillar ul,.fs-ideal-cond ul{margin:0;padding-left:1.15rem;font-size:.95rem;line-height:1.45}
+.fs-ideal-cond{margin-top:1.1rem;padding-top:.7rem;border-top:1px solid #d8ded7}
+.fs-ideal-cond h3{margin:0 0 .4rem;font-size:1.02rem;color:#244e60}
+@media(max-width:640px){
+  .fs-ideal{padding:.95rem .8rem 1.15rem;border-radius:12px}
+}
