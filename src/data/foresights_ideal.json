@@ -1,0 +1,437 @@
+{
+  "updated": "2026-11-16",
+  "title_es": "Visión",
+  "title_en": "Vision",
+  "kicker_es": "El 2050 ideal y alcanzable, para mitigar los riesgos que señala la Tendencia.",
+  "kicker_en": "The ideal, achievable 2050, mitigating the risks the Trend identifies.",
+  "lead_es": "Lo más probable, según la Tendencia de hoy, es el escenario «Estrés hídrico-costero» (42 %). Esta Visión no discute ese cálculo: lo toma como el riesgo a mitigar. El 2050 que se busca es el ideal alcanzable —proactivo y regenerativo— para cada motor y cada techo que esa tendencia señala. Las metas se etiquetan como aspiraciones. Las cifras son las que ya están en el portal; donde no hay serie suficiente, no se inventa un número a 2050.",
+  "lead_en": "What is most likely, according to today’s Trend, is the “Water-coastal stress” scenario (42%). This Vision does not contest that calculation: it takes it as the risk to mitigate. The 2050 it aims for is the achievable ideal — proactive and regenerative — for each driver and each ceiling that trend points to. Targets are labelled as aspirations. Figures are those already on the portal; where the series is short, no 2050 number is invented.",
+  "change_es": "Se ajusta a la Tendencia de hoy: el escenario más probable es «Estrés hídrico-costero». Los motores o techos en énfasis son Agua, Costa y clima, Turismo, Economía.",
+  "change_en": "It tracks today’s Trend: the leading scenario is “Water-coastal stress”. Highlighted drivers or ceilings: Water, Coast and climate, Tourism, Economy.",
+  "pillars": [
+    {
+      "id": "agua",
+      "label_es": "Agua",
+      "label_en": "Water",
+      "emphasis": true,
+      "count": 10,
+      "ewma": 7.5572,
+      "direction": 0.3,
+      "z": 0.4453,
+      "risk_es": "El techo hídrico es el principal condicionante de cualquier 2050. 22 de 39 acuíferos en déficit; suma −105.1 hm³/año (CONAGUA, 2023). 25 tomas clandestinas en Los Cabos y más de 300 l/s de sustracción estimada. La ENCIG 2025, citada en la cobertura local, indica que solo tres de cada diez personas en el estado tienen suministro constante. Agua concentra 10 notas en la semana en curso (EWMA 7.56; dirección +0.30: las notas del periodo apuntan más a alivios o avances).",
+      "risk_en": "The water ceiling is the main constraint on any 2050 path. 22 of 39 aquifers in deficit; sum −105.1 hm³/year (CONAGUA, 2023). 25 illegal taps in Los Cabos and estimated extraction above 300 l/s. ENCIG 2025, cited in local coverage, finds that only three in ten people in the state have a constant supply. Water accounts for 10 items in the current week (EWMA 7.56; direction +0.30: news in the period leans toward relief or progress).",
+      "aspiration_es": "Aspiración: un estado donde el crecimiento nuevo no se sostenga sobre acuíferos en déficit, el abasto continuo deje de ser la excepción y el reúso entre en la cuenta del margen hídrico. No se publica aquí una cifra-objetivo a 2050: el portal no tiene una meta oficial de equilibrio.",
+      "aspiration_en": "Aspiration: a state where new growth is not carried by aquifers already in deficit, continuous supply is no longer the exception, and reuse counts toward the water margin. No 2050 target figure is published here: the portal has no official equilibrium goal.",
+      "levers_es": [
+        "Segunda desaladora de Cabo San Lucas al 75 %, 250 l/s; conjunto 655 l/s, conclusión 2027. Es una palanca de abasto ya en obra, no una licencia para seguir extrayendo de acuíferos en déficit.",
+        "Cerrar y prevenir tomas clandestinas, con el volumen estimado de sustracción como señal de lo que hoy se pierde antes de llegar al usuario.",
+        "Atar permisos de crecimiento a la disponibilidad media anual por acuífero (NOM-011) y a fuentes que no finjan crédito sobre el déficit.",
+        "Usar el tablero de demanda y oferta del portal para no compensar en el papel un déficit local con un margen de otro municipio."
+      ],
+      "levers_en": [
+        "Second Cabo San Lucas desal plant at 75%, 250 l/s; combined 655 l/s, finish 2027. It is a supply lever already under construction, not a licence to keep drawing from aquifers in deficit.",
+        "Close and prevent illegal taps, taking the estimated diverted volume as a signal of what is lost before it reaches users.",
+        "Tie growth permits to mean annual availability per aquifer (NOM-011) and to sources that do not pretend credit against the deficit.",
+        "Use the portal’s demand–supply board so a local deficit is not offset on paper by headroom in another municipality."
+      ]
+    },
+    {
+      "id": "costa_clima",
+      "label_es": "Costa y clima",
+      "label_en": "Coast and climate",
+      "emphasis": true,
+      "count": 10,
+      "ewma": 7.4586,
+      "direction": -0.3,
+      "z": -0.3463,
+      "risk_es": "El techo costero ya es visible: oleaje, erosión, inundaciones y revisiones de lo construido sobre la línea de costa. El Niño: oleaje de 15 a 30 cm en Puerto San Carlos (UABCS). El portal no proyecta una línea de costa a 2050: no hay una serie comparable con el tramo mínimo exigido, y esa celda permanece insuficiente. Costa y clima concentra 10 notas en la semana en curso (EWMA 7.46; dirección -0.30: las notas del periodo apuntan más a tensiones o retrocesos).",
+      "risk_en": "The coastal ceiling is already visible: surge, erosion, flooding and reviews of what was built on the shoreline. El Niño: 15–30 cm wave-height rise in Puerto San Carlos (UABCS). The portal does not project a 2050 shoreline: there is no comparable series with the required span, and that cell stays insufficient. Coast and climate accounts for 10 items in the current week (EWMA 7.46; direction -0.30: news in the period leans toward stress or setbacks).",
+      "aspiration_es": "Aspiración: una costa habitable y regenerativa, donde la restauración de barreras y playas y la retirada de lo construido en zona de riesgo precedan a cualquier nueva ocupación. Sin línea de costa modelada a 2050, la meta se enuncia en ese sentido, no como un metro de retroceso.",
+      "aspiration_en": "Aspiration: a habitable, regenerative coast, where restoring barriers and beaches and retreating from risk zones come before any new occupation. With no modelled 2050 shoreline, the goal is stated in that sense, not as a metre of setback.",
+      "levers_es": [
+        "Hacer valer las revisiones ambientales ya abiertas (como la del Hotel San Cristóbal en Punta Lobos) para que los escombros y el precedente no se diluyan.",
+        "Situar relocalización y retiro en primera línea de las decisiones, no como remedio posterior a la siguiente marejada.",
+        "Respetar techos de ANP y de ordenamiento costero antes de escalar hospitalidad en East Cape, Loreto y el Pacífico."
+      ],
+      "levers_en": [
+        "Follow through on environmental reviews already opened (such as Hotel San Cristóbal in Punta Lobos) so debris and precedent are not washed away.",
+        "Put relocation and retreat at the front of decisions, not as a remedy after the next surge.",
+        "Respect ANP and coastal-planning ceilings before scaling hospitality in East Cape, Loreto and the Pacific corridor."
+      ]
+    },
+    {
+      "id": "turismo",
+      "label_es": "Turismo",
+      "label_en": "Tourism",
+      "emphasis": true,
+      "count": 10,
+      "ewma": 7.5365,
+      "direction": 0.5,
+      "z": 0.9165,
+      "risk_es": "El motor turístico-residencial de Los Cabos y el corredor costero es el núcleo de la trayectoria actual: concentra demanda sobre techos de agua, red y costa. Ocupación 2025: Los Cabos 70.0 % y La Paz 64 % (SETUE). Ocupación 78 % en Los Cabos, 1–15 de noviembre de 2026 (Asociación de Hoteles). A nivel estado la lectura es restringida: el motor Cabos + corredor Pacífico concentra demanda aérea/turística sobre déficits DMA y un SIBCS aislado en alerta; East Cape y Loreto están en disputa conservación–crecimiento; Comondú ofrece margen relativo agro; el norte permanece desconocido. Turismo concentra 10 notas en la semana en curso (EWMA 7.54; dirección +0.50: las notas del periodo apuntan más a alivios o avances).",
+      "risk_en": "The Los Cabos tourism-residential engine and the coastal corridor are the core of the current path: they concentrate demand on water, grid and coastal ceilings. 2025 occupancy: Los Cabos 70.0% and La Paz 64% (SETUE). 78% occupancy in Los Cabos, 1–15 November 2026 (Hotel Association). At state scale the read is constrained: the Cabos engine + Pacific corridor concentrate air/tourism demand on DMA deficits and an isolated SIBCS under alert; East Cape and Loreto are conservation–growth contested; Comondú offers relative agri headroom; the north remains unknown. Tourism accounts for 10 items in the current week (EWMA 7.54; direction +0.50: news in the period leans toward relief or progress).",
+      "aspiration_es": "Aspiración: un turismo que quepa dentro de los techos de agua, energía y costa, y que no se sostenga clonando el modelo de Cabos a lo largo del estado. La ocupación y la derrama se leen como señales, no como una meta de volumen a 2050 que el portal no publica.",
+      "aspiration_en": "Aspiration: tourism that fits within the water, energy and coastal ceilings, and that is not held together by cloning the Cabos model along the state. Occupancy and spending are read as signals, not as a 2050 volume target the portal does not publish.",
+      "levers_es": [
+        "Condicionar nuevo crecimiento turístico o residencial a evidencia de margen hídrico y eléctrico, o a una fuente que no finja crédito NOM-011.",
+        "Tratar el cierre de playas y la calidad de la costa como un límite de la vocación, no como un incidente de temporada.",
+        "Desplazar peso relativo hacia La Paz, Loreto y el interior, cada uno con un rol distinto, no como un Cabos diluido."
+      ],
+      "levers_en": [
+        "Condition new tourism or residential growth on evidenced water and power margin, or on a source that does not pretend NOM-011 credit.",
+        "Treat beach closures and coastal quality as a limit on the vocation, not as a seasonal incident.",
+        "Shift relative weight toward La Paz, Loreto and the interior, each with a distinct role, not a diluted Cabos."
+      ]
+    },
+    {
+      "id": "economia",
+      "label_es": "Economía",
+      "label_en": "Economy",
+      "emphasis": true,
+      "count": 15,
+      "ewma": 7.291,
+      "direction": 0.2667,
+      "z": 0.7459,
+      "risk_es": "La economía estatal crece, pero no de forma pareja, y una parte del relato de inversión es todavía una propuesta, no una trayectoria medida. PIB constante 187,152 millones de pesos en 2024, +3.5 % frente a 2023 (INEGI). IED 1,353 mdd (2024) y 1,578 mdd (2025) (CNIE). Empleo formal IMSS en BCS −1.1 % anual en octubre; 224,460 puestos en septiembre. La meta de 3.5 % anual y de triplicar la IED regional es una propuesta del Foro, no una proyección del portal. Economía concentra 15 notas en la semana en curso (EWMA 7.29; dirección +0.27: las notas del periodo apuntan más a alivios o avances).",
+      "risk_en": "The state economy is growing, but not evenly, and part of the investment story is still a proposal, not a measured path. Constant-price GDP 187,152 million pesos in 2024, +3.5% versus 2023 (INEGI). FDI 1,353 million USD (2024) and 1,578 (2025) (CNIE). Formal IMSS employment in BCS −1.1% year-on-year in October; 224,460 posts in September. The 3.5% annual goal and tripling regional FDI is a Forum proposal, not a portal projection. Economy accounts for 15 items in the current week (EWMA 7.29; direction +0.27: news in the period leans toward relief or progress).",
+      "aspiration_es": "Aspiración: una economía policéntrica y regenerativa, donde la inversión no se concentre solo en clonar el motor de Cabos, y donde el empleo formal no quede a merced de una sola vocación costera. Las metas de crecimiento o de IED que circulan en foros se tratan como propuestas ajenas, no como cifras del portal.",
+      "aspiration_en": "Aspiration: a polycentric, regenerative economy, where investment is not concentrated only on cloning the Cabos engine, and formal employment is not left at the mercy of a single coastal vocation. Growth or FDI goals circulating in forums are treated as outside proposals, not as portal figures.",
+      "levers_es": [
+        "Dar peso a La Paz como capital de servicios y nodo agua–energía, a Comondú como producción agropecuaria con más margen relativo, y al norte como energía remota, no como residencial de amenidad sin evidencia.",
+        "Leer el empleo formal y la inflación junto con los techos de agua y red, no como un tablero aparte.",
+        "No usar una meta de foro (por ejemplo triplicar la IED) como si fuera una proyección ya aceptada."
+      ],
+      "levers_en": [
+        "Give weight to La Paz as a services capital and water–energy node, to Comondú as agricultural production with relative headroom, and to the north as remote energy, not amenity residential without evidence.",
+        "Read formal employment and inflation together with the water and grid ceilings, not as a separate board.",
+        "Do not treat a forum goal (for example tripling FDI) as if it were an already accepted projection."
+      ]
+    },
+    {
+      "id": "energia",
+      "label_es": "Energía",
+      "label_en": "Energy",
+      "emphasis": false,
+      "count": 3,
+      "ewma": 2.5599,
+      "direction": 0.6667,
+      "z": 0.6154,
+      "risk_es": "BCS sigue como sistema aislado: el techo eléctrico es único y no se cancela con un margen de otro lugar. Pico SIBCS 689 MW en 2024; en 2023 el portal consigna 660 MW netos y 675 MW. El crecimiento turístico y el bombeo o la desalación compiten por el mismo sistema. Energía concentra 3 notas en la semana en curso (EWMA 2.56; dirección +0.67: las notas del periodo apuntan más a alivios o avances).",
+      "risk_en": "BCS remains an island grid: the power ceiling is one, and it is not cancelled by headroom elsewhere. SIBCS peak 689 MW in 2024; for 2023 the portal records both 660 MW net and 675 MW. Tourism growth and pumping or desalination compete for the same system. Energy accounts for 3 items in the current week (EWMA 2.56; direction +0.67: news in the period leans toward relief or progress).",
+      "aspiration_es": "Aspiración: un sistema que deje atrás la condición de isla energética, con generación limpia, almacenamiento y demanda que quepa en el techo real del SIBCS. No se inventa aquí un pico en megawatts a 2050: donde la serie no alcanza, la Tendencia ya declara insuficiente.",
+      "aspiration_en": "Aspiration: a system that leaves island-grid status behind, with clean generation, storage and demand that fits the real SIBCS ceiling. No 2050 peak in megawatts is invented here: where the series falls short, the Trend already marks it insufficient.",
+      "levers_es": [
+        "Concluir y transparentar las licitaciones de generación remota ya visibles en el norte, sin convertirlas en un permiso residencial anticipado.",
+        "Planear la desalación y el bombeo junto con la red, no como una suma posterior de megawatts faltantes.",
+        "No añadir demanda turística o inmobiliaria en Cabos sin evidencia de margen en el SIBCS."
+      ],
+      "levers_en": [
+        "Complete and make transparent the remote-generation tenders already visible in the north, without turning them into an advance residential permit.",
+        "Plan desalination and pumping together with the grid, not as a later sum of missing megawatts.",
+        "Do not add tourism or real-estate demand in Cabos without evidenced SIBCS margin."
+      ]
+    },
+    {
+      "id": "movilidad",
+      "label_es": "Movilidad",
+      "label_en": "Mobility",
+      "emphasis": false,
+      "count": 3,
+      "ewma": 2.4869,
+      "direction": 0.3333,
+      "z": 0.6026,
+      "risk_es": "La conectividad aérea y terrestre revela hacia dónde se concentra el crecimiento —y dónde empieza a ceder. SJD −4.6 % en octubre y −5.5 % ene–oct; LAP +8.7 % en el año (GAP, 2026). Movilidad concentra 3 notas en la semana en curso (EWMA 2.49; dirección +0.33: las notas del periodo apuntan más a alivios o avances).",
+      "risk_en": "Air and land connectivity show where growth is concentrating — and where it is starting to give way. SJD −4.6% in October and −5.5% Jan–Oct; LAP +8.7% year-to-date (GAP, 2026). Mobility accounts for 3 items in the current week (EWMA 2.49; direction +0.33: news in the period leans toward relief or progress).",
+      "aspiration_es": "Aspiración: una conectividad al servicio de un estado policéntrico, no solo del eje SJD–Los Cabos. El tráfico de LAP y las rutas marítimas se leen como palancas ya observables, no como una meta de pasajeros a 2050.",
+      "aspiration_en": "Aspiration: connectivity in the service of a polycentric state, not only of the SJD–Los Cabos axis. LAP traffic and maritime routes are read as already observable levers, not as a 2050 passenger target.",
+      "levers_es": [
+        "Sostener el nodo de La Paz (LAP) como contrapeso medido al aeropuerto de Los Cabos, con los datos de GAP ya publicados.",
+        "Integrar ferries y el cabotaje del Mar de Cortés como alternativa de carga y personas, cuando haya proyectos en curso y no como una cifra inventada.",
+        "Leer la pavimentación y el aforo como servicio a comunidades, no solo como acceso a nuevas amenidades costeras."
+      ],
+      "levers_en": [
+        "Hold up the La Paz (LAP) node as a measured counterweight to Los Cabos airport, using GAP figures already published.",
+        "Bring Sea of Cortez ferries and cabotage in as a freight and passenger alternative where projects are underway, not as an invented figure.",
+        "Read paving and traffic counts as a service to communities, not only as access to new coastal amenities."
+      ]
+    },
+    {
+      "id": "vivienda",
+      "label_es": "Vivienda",
+      "label_en": "Housing",
+      "emphasis": false,
+      "count": 1,
+      "ewma": 2.2421,
+      "direction": 0.0,
+      "z": 0.0,
+      "risk_es": "La vivienda queda expuesta cuando crece sobre zonas sin servicios o en riesgo costero e hídrico. Población estatal 798,447 (INEGI Censo 2020). Vivienda concentra 1 notas en la semana en curso (EWMA 2.24; dirección +0.00: las notas del periodo son mixtas o neutras).",
+      "risk_en": "Housing is exposed when it grows in places without services or in coastal and water risk. State population 798,447 (INEGI Census 2020). Housing accounts for 1 items in the current week (EWMA 2.24; direction +0.00: news in the period is mixed or neutral).",
+      "aspiration_es": "Aspiración: vivienda con servicios, fuera de la primera línea de riesgo, y alineada con el margen real de agua y energía. No se publica una meta de viviendas a 2050: el portal no tiene una serie comparable que lo permita.",
+      "aspiration_en": "Aspiration: housing with services, off the first line of risk, and aligned with the real water and energy margin. No 2050 housing-unit target is published: the portal has no comparable series that would allow it.",
+      "levers_es": [
+        "Priorizar relocalización de lo ya expuesto antes de abrir frente residencial nuevo en costa o en acuíferos en déficit.",
+        "Cruzar cada desarrollo con el tablero de demanda y oferta y con los instrumentos de ordenamiento vigentes.",
+        "Tratar el rezago y la falta de servicios como un techo, no como un rezago que el mercado resolverá solo."
+      ],
+      "levers_en": [
+        "Prioritise relocating what is already exposed before opening a new residential front on the coast or on aquifers in deficit.",
+        "Cross-check every development with the demand–supply board and with current planning instruments.",
+        "Treat backlog and the lack of services as a ceiling, not as a gap the market will close on its own."
+      ]
+    },
+    {
+      "id": "gobernanza",
+      "label_es": "Gobernanza",
+      "label_en": "Governance",
+      "emphasis": false,
+      "count": 4,
+      "ewma": 4.4141,
+      "direction": 0.0,
+      "z": 0.0,
+      "risk_es": "Sin instrumentos que atén el crecimiento a los techos medidos, la trayectoria actual se impone por inercia de permisos. Gobernanza concentra 4 notas en la semana en curso (EWMA 4.41; dirección +0.00: las notas del periodo son mixtas o neutras).",
+      "risk_en": "Without instruments that bind growth to measured ceilings, the current path wins by the inertia of permits. Governance accounts for 4 items in the current week (EWMA 4.41; direction +0.00: news in the period is mixed or neutral).",
+      "aspiration_es": "Aspiración: decisiones públicas que hagan valer POEL, PDU, PMDU, consultas y techos de ANP como condiciones previas, no como trámites posteriores al hecho. La visión es alcanzable solo si esos instrumentos se usan con la evidencia que el portal ya reúne.",
+      "aspiration_en": "Aspiration: public decisions that make POEL, PDU, PMDU, consultations and ANP ceilings prior conditions, not paperwork after the fact. The vision is achievable only if those instruments are used with the evidence the portal already holds.",
+      "levers_es": [
+        "Cerrar con evidencia los huecos ya marcados (DMA de Loreto y el norte, cuartos de amenidad, PDU de Cabos, MW de bombeo) antes de escenarios públicos de mayor escala.",
+        "Mantener la consulta pública y la entrega de instrumentos al Congreso como palancas visibles, no como un trámite de cierre.",
+        "Usar la lectura restringida del tablero estatal como criterio de permiso, no solo como un texto de análisis."
+      ],
+      "levers_en": [
+        "Close already marked gaps with evidence (Loreto and northern DMA, amenity rooms, Cabos PDU, pumping MW) before larger public scenarios.",
+        "Keep public consultation and the delivery of instruments to Congress as visible levers, not as closing paperwork.",
+        "Use the state’s constrained board reading as a permit criterion, not only as an analysis text."
+      ]
+    }
+  ],
+  "conditions_es": [
+    "Cada vocación aporta un rol distinto (no un Cabos diluido en todo el estado).",
+    "Nuevo crecimiento turístico/residencial solo donde agua y energía tienen evidencia de margen o fuente no-DMA (p.ej. desal) sin fingir crédito NOM-011.",
+    "East Cape y Loreto respetan techos ANP/POEL antes de escalar hospitalidad.",
+    "Comondú/norte suman producción/energía sin vaciar servicios ni ANPs.",
+    "Los gaps marcados (DMA Loreto/norte, cuartos amenity, PDU Cabos, MW bombeo) se cierran con evidencia antes de escenarios públicos."
+  ],
+  "conditions_en": [
+    "Each vocation contributes a distinct role (not diluted Cabos statewide).",
+    "New tourism/residential growth only where water and energy show evidenced margin or non-DMA source (e.g. desal) without pretending NOM-011 credit.",
+    "East Cape and Loreto respect ANP/POEL ceilings before scaling hospitality.",
+    "Comondú/north add production/energy without emptying services or ANPs.",
+    "Marked gaps (Loreto/north DMA, amenity rooms, Cabos PDU, pumping MW) are closed with evidence before public scenarios."
+  ],
+  "gds_balance_es": "A nivel estado la lectura es restringida: el motor Cabos + corredor Pacífico concentra demanda aérea/turística sobre déficits DMA y un SIBCS aislado en alerta; East Cape y Loreto están en disputa conservación–crecimiento; Comondú ofrece margen relativo agro; el norte permanece desconocido.",
+  "gds_balance_en": "At state scale the read is constrained: the Cabos engine + Pacific corridor concentrate air/tourism demand on DMA deficits and an isolated SIBCS under alert; East Cape and Loreto are conservation–growth contested; Comondú offers relative agri headroom; the north remains unknown.",
+  "tendencia_updated": "2026-11-16",
+  "tendencia_leading": {
+    "id": "estres_hidrico_costero",
+    "p": 0.4208,
+    "label_es": "Estrés hídrico-costero",
+    "label_en": "Water-coastal stress"
+  },
+  "method_note_es": "Visión normativa e interna, no un plan oficial ni un pronóstico. Cada meta está etiquetada como aspiración. Las cifras se copian de la Tendencia, de las fuentes del portal y del tablero de demanda y oferta; no se inventan objetivos numéricos a 2050.",
+  "method_note_en": "A normative, internal vision — not an official plan and not a forecast. Each target is labelled as an aspiration. Figures are copied from the Trend, from portal sources and from the demand–supply board; no numeric 2050 targets are invented.",
+  "history": [
+    {
+      "updated": "2026-11-16",
+      "change_es": "Se ajusta a la Tendencia de hoy: el escenario más probable es «Estrés hídrico-costero». Los motores o techos en énfasis son Agua, Costa y clima, Turismo, Economía.",
+      "change_en": "It tracks today’s Trend: the leading scenario is “Water-coastal stress”. Highlighted drivers or ceilings: Water, Coast and climate, Tourism, Economy.",
+      "lead_es": "Lo más probable, según la Tendencia de hoy, es el escenario «Estrés hídrico-costero» (42 %). Esta Visión no discute ese cálculo: lo toma como el riesgo a mitigar. El 2050 que se busca es el ideal alcanzable —proactivo y regenerativo— para cada motor y cada techo que esa tendencia señala. Las metas se etiquetan como aspiraciones. Las cifras son las que ya están en el portal; donde no hay serie suficiente, no se inventa un número a 2050.",
+      "lead_en": "What is most likely, according to today’s Trend, is the “Water-coastal stress” scenario (42%). This Vision does not contest that calculation: it takes it as the risk to mitigate. The 2050 it aims for is the achievable ideal — proactive and regenerative — for each driver and each ceiling that trend points to. Targets are labelled as aspirations. Figures are those already on the portal; where the series is short, no 2050 number is invented.",
+      "pillars": [
+        {
+          "id": "agua",
+          "label_es": "Agua",
+          "label_en": "Water",
+          "emphasis": true,
+          "count": 10,
+          "ewma": 7.5572,
+          "direction": 0.3,
+          "z": 0.4453,
+          "risk_es": "El techo hídrico es el principal condicionante de cualquier 2050. 22 de 39 acuíferos en déficit; suma −105.1 hm³/año (CONAGUA, 2023). 25 tomas clandestinas en Los Cabos y más de 300 l/s de sustracción estimada. La ENCIG 2025, citada en la cobertura local, indica que solo tres de cada diez personas en el estado tienen suministro constante. Agua concentra 10 notas en la semana en curso (EWMA 7.56; dirección +0.30: las notas del periodo apuntan más a alivios o avances).",
+          "risk_en": "The water ceiling is the main constraint on any 2050 path. 22 of 39 aquifers in deficit; sum −105.1 hm³/year (CONAGUA, 2023). 25 illegal taps in Los Cabos and estimated extraction above 300 l/s. ENCIG 2025, cited in local coverage, finds that only three in ten people in the state have a constant supply. Water accounts for 10 items in the current week (EWMA 7.56; direction +0.30: news in the period leans toward relief or progress).",
+          "aspiration_es": "Aspiración: un estado donde el crecimiento nuevo no se sostenga sobre acuíferos en déficit, el abasto continuo deje de ser la excepción y el reúso entre en la cuenta del margen hídrico. No se publica aquí una cifra-objetivo a 2050: el portal no tiene una meta oficial de equilibrio.",
+          "aspiration_en": "Aspiration: a state where new growth is not carried by aquifers already in deficit, continuous supply is no longer the exception, and reuse counts toward the water margin. No 2050 target figure is published here: the portal has no official equilibrium goal.",
+          "levers_es": [
+            "Segunda desaladora de Cabo San Lucas al 75 %, 250 l/s; conjunto 655 l/s, conclusión 2027. Es una palanca de abasto ya en obra, no una licencia para seguir extrayendo de acuíferos en déficit.",
+            "Cerrar y prevenir tomas clandestinas, con el volumen estimado de sustracción como señal de lo que hoy se pierde antes de llegar al usuario.",
+            "Atar permisos de crecimiento a la disponibilidad media anual por acuífero (NOM-011) y a fuentes que no finjan crédito sobre el déficit.",
+            "Usar el tablero de demanda y oferta del portal para no compensar en el papel un déficit local con un margen de otro municipio."
+          ],
+          "levers_en": [
+            "Second Cabo San Lucas desal plant at 75%, 250 l/s; combined 655 l/s, finish 2027. It is a supply lever already under construction, not a licence to keep drawing from aquifers in deficit.",
+            "Close and prevent illegal taps, taking the estimated diverted volume as a signal of what is lost before it reaches users.",
+            "Tie growth permits to mean annual availability per aquifer (NOM-011) and to sources that do not pretend credit against the deficit.",
+            "Use the portal’s demand–supply board so a local deficit is not offset on paper by headroom in another municipality."
+          ]
+        },
+        {
+          "id": "costa_clima",
+          "label_es": "Costa y clima",
+          "label_en": "Coast and climate",
+          "emphasis": true,
+          "count": 10,
+          "ewma": 7.4586,
+          "direction": -0.3,
+          "z": -0.3463,
+          "risk_es": "El techo costero ya es visible: oleaje, erosión, inundaciones y revisiones de lo construido sobre la línea de costa. El Niño: oleaje de 15 a 30 cm en Puerto San Carlos (UABCS). El portal no proyecta una línea de costa a 2050: no hay una serie comparable con el tramo mínimo exigido, y esa celda permanece insuficiente. Costa y clima concentra 10 notas en la semana en curso (EWMA 7.46; dirección -0.30: las notas del periodo apuntan más a tensiones o retrocesos).",
+          "risk_en": "The coastal ceiling is already visible: surge, erosion, flooding and reviews of what was built on the shoreline. El Niño: 15–30 cm wave-height rise in Puerto San Carlos (UABCS). The portal does not project a 2050 shoreline: there is no comparable series with the required span, and that cell stays insufficient. Coast and climate accounts for 10 items in the current week (EWMA 7.46; direction -0.30: news in the period leans toward stress or setbacks).",
+          "aspiration_es": "Aspiración: una costa habitable y regenerativa, donde la restauración de barreras y playas y la retirada de lo construido en zona de riesgo precedan a cualquier nueva ocupación. Sin línea de costa modelada a 2050, la meta se enuncia en ese sentido, no como un metro de retroceso.",
+          "aspiration_en": "Aspiration: a habitable, regenerative coast, where restoring barriers and beaches and retreating from risk zones come before any new occupation. With no modelled 2050 shoreline, the goal is stated in that sense, not as a metre of setback.",
+          "levers_es": [
+            "Hacer valer las revisiones ambientales ya abiertas (como la del Hotel San Cristóbal en Punta Lobos) para que los escombros y el precedente no se diluyan.",
+            "Situar relocalización y retiro en primera línea de las decisiones, no como remedio posterior a la siguiente marejada.",
+            "Respetar techos de ANP y de ordenamiento costero antes de escalar hospitalidad en East Cape, Loreto y el Pacífico."
+          ],
+          "levers_en": [
+            "Follow through on environmental reviews already opened (such as Hotel San Cristóbal in Punta Lobos) so debris and precedent are not washed away.",
+            "Put relocation and retreat at the front of decisions, not as a remedy after the next surge.",
+            "Respect ANP and coastal-planning ceilings before scaling hospitality in East Cape, Loreto and the Pacific corridor."
+          ]
+        },
+        {
+          "id": "turismo",
+          "label_es": "Turismo",
+          "label_en": "Tourism",
+          "emphasis": true,
+          "count": 10,
+          "ewma": 7.5365,
+          "direction": 0.5,
+          "z": 0.9165,
+          "risk_es": "El motor turístico-residencial de Los Cabos y el corredor costero es el núcleo de la trayectoria actual: concentra demanda sobre techos de agua, red y costa. Ocupación 2025: Los Cabos 70.0 % y La Paz 64 % (SETUE). Ocupación 78 % en Los Cabos, 1–15 de noviembre de 2026 (Asociación de Hoteles). A nivel estado la lectura es restringida: el motor Cabos + corredor Pacífico concentra demanda aérea/turística sobre déficits DMA y un SIBCS aislado en alerta; East Cape y Loreto están en disputa conservación–crecimiento; Comondú ofrece margen relativo agro; el norte permanece desconocido. Turismo concentra 10 notas en la semana en curso (EWMA 7.54; dirección +0.50: las notas del periodo apuntan más a alivios o avances).",
+          "risk_en": "The Los Cabos tourism-residential engine and the coastal corridor are the core of the current path: they concentrate demand on water, grid and coastal ceilings. 2025 occupancy: Los Cabos 70.0% and La Paz 64% (SETUE). 78% occupancy in Los Cabos, 1–15 November 2026 (Hotel Association). At state scale the read is constrained: the Cabos engine + Pacific corridor concentrate air/tourism demand on DMA deficits and an isolated SIBCS under alert; East Cape and Loreto are conservation–growth contested; Comondú offers relative agri headroom; the north remains unknown. Tourism accounts for 10 items in the current week (EWMA 7.54; direction +0.50: news in the period leans toward relief or progress).",
+          "aspiration_es": "Aspiración: un turismo que quepa dentro de los techos de agua, energía y costa, y que no se sostenga clonando el modelo de Cabos a lo largo del estado. La ocupación y la derrama se leen como señales, no como una meta de volumen a 2050 que el portal no publica.",
+          "aspiration_en": "Aspiration: tourism that fits within the water, energy and coastal ceilings, and that is not held together by cloning the Cabos model along the state. Occupancy and spending are read as signals, not as a 2050 volume target the portal does not publish.",
+          "levers_es": [
+            "Condicionar nuevo crecimiento turístico o residencial a evidencia de margen hídrico y eléctrico, o a una fuente que no finja crédito NOM-011.",
+            "Tratar el cierre de playas y la calidad de la costa como un límite de la vocación, no como un incidente de temporada.",
+            "Desplazar peso relativo hacia La Paz, Loreto y el interior, cada uno con un rol distinto, no como un Cabos diluido."
+          ],
+          "levers_en": [
+            "Condition new tourism or residential growth on evidenced water and power margin, or on a source that does not pretend NOM-011 credit.",
+            "Treat beach closures and coastal quality as a limit on the vocation, not as a seasonal incident.",
+            "Shift relative weight toward La Paz, Loreto and the interior, each with a distinct role, not a diluted Cabos."
+          ]
+        },
+        {
+          "id": "economia",
+          "label_es": "Economía",
+          "label_en": "Economy",
+          "emphasis": true,
+          "count": 15,
+          "ewma": 7.291,
+          "direction": 0.2667,
+          "z": 0.7459,
+          "risk_es": "La economía estatal crece, pero no de forma pareja, y una parte del relato de inversión es todavía una propuesta, no una trayectoria medida. PIB constante 187,152 millones de pesos en 2024, +3.5 % frente a 2023 (INEGI). IED 1,353 mdd (2024) y 1,578 mdd (2025) (CNIE). Empleo formal IMSS en BCS −1.1 % anual en octubre; 224,460 puestos en septiembre. La meta de 3.5 % anual y de triplicar la IED regional es una propuesta del Foro, no una proyección del portal. Economía concentra 15 notas en la semana en curso (EWMA 7.29; dirección +0.27: las notas del periodo apuntan más a alivios o avances).",
+          "risk_en": "The state economy is growing, but not evenly, and part of the investment story is still a proposal, not a measured path. Constant-price GDP 187,152 million pesos in 2024, +3.5% versus 2023 (INEGI). FDI 1,353 million USD (2024) and 1,578 (2025) (CNIE). Formal IMSS employment in BCS −1.1% year-on-year in October; 224,460 posts in September. The 3.5% annual goal and tripling regional FDI is a Forum proposal, not a portal projection. Economy accounts for 15 items in the current week (EWMA 7.29; direction +0.27: news in the period leans toward relief or progress).",
+          "aspiration_es": "Aspiración: una economía policéntrica y regenerativa, donde la inversión no se concentre solo en clonar el motor de Cabos, y donde el empleo formal no quede a merced de una sola vocación costera. Las metas de crecimiento o de IED que circulan en foros se tratan como propuestas ajenas, no como cifras del portal.",
+          "aspiration_en": "Aspiration: a polycentric, regenerative economy, where investment is not concentrated only on cloning the Cabos engine, and formal employment is not left at the mercy of a single coastal vocation. Growth or FDI goals circulating in forums are treated as outside proposals, not as portal figures.",
+          "levers_es": [
+            "Dar peso a La Paz como capital de servicios y nodo agua–energía, a Comondú como producción agropecuaria con más margen relativo, y al norte como energía remota, no como residencial de amenidad sin evidencia.",
+            "Leer el empleo formal y la inflación junto con los techos de agua y red, no como un tablero aparte.",
+            "No usar una meta de foro (por ejemplo triplicar la IED) como si fuera una proyección ya aceptada."
+          ],
+          "levers_en": [
+            "Give weight to La Paz as a services capital and water–energy node, to Comondú as agricultural production with relative headroom, and to the north as remote energy, not amenity residential without evidence.",
+            "Read formal employment and inflation together with the water and grid ceilings, not as a separate board.",
+            "Do not treat a forum goal (for example tripling FDI) as if it were an already accepted projection."
+          ]
+        },
+        {
+          "id": "energia",
+          "label_es": "Energía",
+          "label_en": "Energy",
+          "emphasis": false,
+          "count": 3,
+          "ewma": 2.5599,
+          "direction": 0.6667,
+          "z": 0.6154,
+          "risk_es": "BCS sigue como sistema aislado: el techo eléctrico es único y no se cancela con un margen de otro lugar. Pico SIBCS 689 MW en 2024; en 2023 el portal consigna 660 MW netos y 675 MW. El crecimiento turístico y el bombeo o la desalación compiten por el mismo sistema. Energía concentra 3 notas en la semana en curso (EWMA 2.56; dirección +0.67: las notas del periodo apuntan más a alivios o avances).",
+          "risk_en": "BCS remains an island grid: the power ceiling is one, and it is not cancelled by headroom elsewhere. SIBCS peak 689 MW in 2024; for 2023 the portal records both 660 MW net and 675 MW. Tourism growth and pumping or desalination compete for the same system. Energy accounts for 3 items in the current week (EWMA 2.56; direction +0.67: news in the period leans toward relief or progress).",
+          "aspiration_es": "Aspiración: un sistema que deje atrás la condición de isla energética, con generación limpia, almacenamiento y demanda que quepa en el techo real del SIBCS. No se inventa aquí un pico en megawatts a 2050: donde la serie no alcanza, la Tendencia ya declara insuficiente.",
+          "aspiration_en": "Aspiration: a system that leaves island-grid status behind, with clean generation, storage and demand that fits the real SIBCS ceiling. No 2050 peak in megawatts is invented here: where the series falls short, the Trend already marks it insufficient.",
+          "levers_es": [
+            "Concluir y transparentar las licitaciones de generación remota ya visibles en el norte, sin convertirlas en un permiso residencial anticipado.",
+            "Planear la desalación y el bombeo junto con la red, no como una suma posterior de megawatts faltantes.",
+            "No añadir demanda turística o inmobiliaria en Cabos sin evidencia de margen en el SIBCS."
+          ],
+          "levers_en": [
+            "Complete and make transparent the remote-generation tenders already visible in the north, without turning them into an advance residential permit.",
+            "Plan desalination and pumping together with the grid, not as a later sum of missing megawatts.",
+            "Do not add tourism or real-estate demand in Cabos without evidenced SIBCS margin."
+          ]
+        },
+        {
+          "id": "movilidad",
+          "label_es": "Movilidad",
+          "label_en": "Mobility",
+          "emphasis": false,
+          "count": 3,
+          "ewma": 2.4869,
+          "direction": 0.3333,
+          "z": 0.6026,
+          "risk_es": "La conectividad aérea y terrestre revela hacia dónde se concentra el crecimiento —y dónde empieza a ceder. SJD −4.6 % en octubre y −5.5 % ene–oct; LAP +8.7 % en el año (GAP, 2026). Movilidad concentra 3 notas en la semana en curso (EWMA 2.49; dirección +0.33: las notas del periodo apuntan más a alivios o avances).",
+          "risk_en": "Air and land connectivity show where growth is concentrating — and where it is starting to give way. SJD −4.6% in October and −5.5% Jan–Oct; LAP +8.7% year-to-date (GAP, 2026). Mobility accounts for 3 items in the current week (EWMA 2.49; direction +0.33: news in the period leans toward relief or progress).",
+          "aspiration_es": "Aspiración: una conectividad al servicio de un estado policéntrico, no solo del eje SJD–Los Cabos. El tráfico de LAP y las rutas marítimas se leen como palancas ya observables, no como una meta de pasajeros a 2050.",
+          "aspiration_en": "Aspiration: connectivity in the service of a polycentric state, not only of the SJD–Los Cabos axis. LAP traffic and maritime routes are read as already observable levers, not as a 2050 passenger target.",
+          "levers_es": [
+            "Sostener el nodo de La Paz (LAP) como contrapeso medido al aeropuerto de Los Cabos, con los datos de GAP ya publicados.",
+            "Integrar ferries y el cabotaje del Mar de Cortés como alternativa de carga y personas, cuando haya proyectos en curso y no como una cifra inventada.",
+            "Leer la pavimentación y el aforo como servicio a comunidades, no solo como acceso a nuevas amenidades costeras."
+          ],
+          "levers_en": [
+            "Hold up the La Paz (LAP) node as a measured counterweight to Los Cabos airport, using GAP figures already published.",
+            "Bring Sea of Cortez ferries and cabotage in as a freight and passenger alternative where projects are underway, not as an invented figure.",
+            "Read paving and traffic counts as a service to communities, not only as access to new coastal amenities."
+          ]
+        },
+        {
+          "id": "vivienda",
+          "label_es": "Vivienda",
+          "label_en": "Housing",
+          "emphasis": false,
+          "count": 1,
+          "ewma": 2.2421,
+          "direction": 0.0,
+          "z": 0.0,
+          "risk_es": "La vivienda queda expuesta cuando crece sobre zonas sin servicios o en riesgo costero e hídrico. Población estatal 798,447 (INEGI Censo 2020). Vivienda concentra 1 notas en la semana en curso (EWMA 2.24; dirección +0.00: las notas del periodo son mixtas o neutras).",
+          "risk_en": "Housing is exposed when it grows in places without services or in coastal and water risk. State population 798,447 (INEGI Census 2020). Housing accounts for 1 items in the current week (EWMA 2.24; direction +0.00: news in the period is mixed or neutral).",
+          "aspiration_es": "Aspiración: vivienda con servicios, fuera de la primera línea de riesgo, y alineada con el margen real de agua y energía. No se publica una meta de viviendas a 2050: el portal no tiene una serie comparable que lo permita.",
+          "aspiration_en": "Aspiration: housing with services, off the first line of risk, and aligned with the real water and energy margin. No 2050 housing-unit target is published: the portal has no comparable series that would allow it.",
+          "levers_es": [
+            "Priorizar relocalización de lo ya expuesto antes de abrir frente residencial nuevo en costa o en acuíferos en déficit.",
+            "Cruzar cada desarrollo con el tablero de demanda y oferta y con los instrumentos de ordenamiento vigentes.",
+            "Tratar el rezago y la falta de servicios como un techo, no como un rezago que el mercado resolverá solo."
+          ],
+          "levers_en": [
+            "Prioritise relocating what is already exposed before opening a new residential front on the coast or on aquifers in deficit.",
+            "Cross-check every development with the demand–supply board and with current planning instruments.",
+            "Treat backlog and the lack of services as a ceiling, not as a gap the market will close on its own."
+          ]
+        },
+        {
+          "id": "gobernanza",
+          "label_es": "Gobernanza",
+          "label_en": "Governance",
+          "emphasis": false,
+          "count": 4,
+          "ewma": 4.4141,
+          "direction": 0.0,
+          "z": 0.0,
+          "risk_es": "Sin instrumentos que atén el crecimiento a los techos medidos, la trayectoria actual se impone por inercia de permisos. Gobernanza concentra 4 notas en la semana en curso (EWMA 4.41; dirección +0.00: las notas del periodo son mixtas o neutras).",
+          "risk_en": "Without instruments that bind growth to measured ceilings, the current path wins by the inertia of permits. Governance accounts for 4 items in the current week (EWMA 4.41; direction +0.00: news in the period is mixed or neutral).",
+          "aspiration_es": "Aspiración: decisiones públicas que hagan valer POEL, PDU, PMDU, consultas y techos de ANP como condiciones previas, no como trámites posteriores al hecho. La visión es alcanzable solo si esos instrumentos se usan con la evidencia que el portal ya reúne.",
+          "aspiration_en": "Aspiration: public decisions that make POEL, PDU, PMDU, consultations and ANP ceilings prior conditions, not paperwork after the fact. The vision is achievable only if those instruments are used with the evidence the portal already holds.",
+          "levers_es": [
+            "Cerrar con evidencia los huecos ya marcados (DMA de Loreto y el norte, cuartos de amenidad, PDU de Cabos, MW de bombeo) antes de escenarios públicos de mayor escala.",
+            "Mantener la consulta pública y la entrega de instrumentos al Congreso como palancas visibles, no como un trámite de cierre.",
+            "Usar la lectura restringida del tablero estatal como criterio de permiso, no solo como un texto de análisis."
+          ],
+          "levers_en": [
+            "Close already marked gaps with evidence (Loreto and northern DMA, amenity rooms, Cabos PDU, pumping MW) before larger public scenarios.",
+            "Keep public consultation and the delivery of instruments to Congress as visible levers, not as closing paperwork.",
+            "Use the state’s constrained board reading as a permit criterion, not only as an analysis text."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+html, body.landing-shell {
+  margin: 0;
+  min-height: 100%;
+  background: #f7f6ef;
+  color: #294554;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+body.landing-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+.landing-top {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem 1.25rem;
+  padding: 0.65rem 1.15rem;
+  border-bottom: 1px solid #d8ded7;
+  background: #f7f6ef;
+}
+.landing-brand {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #244e60;
+}
+.landing-brand strong { font-weight: 700; }
+.landing-tag {
+  margin: 0;
+  flex: 1;
+  font-size: 0.88rem;
+  color: #526569;
+}
+.landing-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.landing-shell .lang-toggle {
+  border: 0;
+  background: transparent;
+  color: #34607d;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  padding: 0.15rem 0.2rem;
+}
+.landing-shell .lang-toggle .active { font-weight: 700; color: #244e60; }
+.landing-logout {
+  border: 0;
+  background: transparent;
+  color: #526569;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.15rem 0.2rem;
+}
+.landing-logout:hover, .landing-shell .lang-toggle:hover { color: #244e60; }
+
+.landing-grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+}
+.landing-col {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 1.1rem 1.2rem 2.25rem;
+  border-left: 1px solid #d8ded7;
+  background: #f7f6ef;
+}
+.landing-col:first-child { border-left: 0; }
+
+.landing-col .fs-vision,
+.landing-col .fs-ideal {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.landing-col .fs-vision > h2,
+.landing-col .fs-ideal > h2,
+.landing-col-head h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  color: #244e60;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+}
+.landing-col .fs-kicker,
+.landing-col-head .fs-kicker {
+  margin: 0 0 0.15rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #34607d;
+}
+.landing-col .fs-vision-updated {
+  margin: 0 0 0.85rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-weight: 500;
+  color: #526569;
+}
+.landing-col .fs-vision-body {
+  font-size: 12pt;
+  line-height: 1.45;
+  max-width: none;
+}
+.landing-col .fs-vision-change {
+  font-size: 0.92rem;
+}
+
+.landing-news-item {
+  padding: 0.85rem 0 0.95rem;
+  border-top: 1px solid #e3e8df;
+}
+.landing-news-item:first-child { border-top: 0; }
+.landing-news-meta {
+  margin: 0 0 0.25rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #526569;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.landing-news-source { font-weight: 650; color: #34607d; }
+.landing-news-item h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.02rem;
+  line-height: 1.3;
+  font-weight: 650;
+  color: #244e60;
+}
+.landing-news-item h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.landing-news-item h3 a:hover { text-decoration: underline; }
+.landing-news-blurb {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #294554;
+}
+.landing-news-topics {
+  margin: 0.35rem 0 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  color: #526569;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.landing-news-topics span { letter-spacing: 0.02em; }
+
+.fs-ideal-pillar {
+  margin: 0 0 1.15rem;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid #e3e8df;
+}
+.fs-ideal-pillar:first-child { border-top: 0; padding-top: 0; }
+.fs-ideal-pillar.emphasis { }
+.fs-ideal-pillar h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #244e60;
+}
+.fs-ideal-pillar h4 {
+  margin: 0.55rem 0 0.25rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #34607d;
+}
+.fs-ideal-risk, .fs-ideal-asp {
+  margin: 0 0 0.45rem;
+  font-size: 12pt;
+  line-height: 1.45;
+}
+.fs-ideal-asp { }
+.fs-ideal-pillar ul, .fs-ideal-cond ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.fs-ideal-pillar li, .fs-ideal-cond li { margin: 0 0 0.3rem; }
+.fs-ideal-cond { margin-top: 1.1rem; padding-top: 0.7rem; border-top: 1px solid #d8ded7; }
+.fs-ideal-cond h3 { margin: 0 0 0.4rem; font-size: 1.02rem; color: #244e60; }
+
+.landing-foot {
+  flex: 0 0 auto;
+  padding: 0.4rem 1.15rem;
+  border-top: 1px solid #d8ded7;
+  background: #f7f6ef;
+}
+.landing-foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+.landing-foot-links a {
+  color: #7a8a8e;
+  text-decoration: none;
+}
+.landing-foot-links a:hover { color: #34607d; text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .landing-grid {
+    display: block;
+    overflow: auto;
+  }
+  .landing-col {
+    overflow: visible;
+    border-left: 0;
+    border-top: 1px solid #d8ded7;
+    padding: 1.15rem 1rem 1.75rem;
+  }
+  .landing-col:first-child { border-top: 0; }
+  .landing-tag { display: none; }
+  .landing-col .fs-vision > h2,
+  .landing-col .fs-ideal > h2,
+  .landing-col-head h2 { font-size: 1.3rem; }
+  .landing-col .fs-vision-body,
+  .fs-ideal-risk, .fs-ideal-asp { font-size: 11.5pt; }
+}

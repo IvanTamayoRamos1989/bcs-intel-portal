@@ -155,7 +155,7 @@
         fetch('/api/auth', { method: 'GET', credentials: 'same-origin' })
           .then(function (r) { return r.json().catch(function () { return {}; }); })
           .then(function (d) {
-            if (d && d.ok) location.replace('/inicio');
+            if (d && d.ok) location.replace('/portada/');
           })
           .catch(function () {});
 
@@ -174,7 +174,7 @@
             })
             .then(function (res) {
               if (res.ok && res.j && res.j.ok) {
-                location.replace('/inicio');
+                location.replace('/portada/');
                 return;
               }
               if (err) {

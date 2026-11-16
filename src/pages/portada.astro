@@ -1,0 +1,78 @@
+---
+/**
+ * Authenticated landing: three equal columns
+ * (Noticias | Tendencia 2050 | Visión). Legacy tools stay at their URLs.
+ */
+import { ui } from '../i18n/ui';
+import LandingNews from '../components/LandingNews.astro';
+import ForesightVision from '../components/ForesightVision.astro';
+import ForesightIdeal from '../components/ForesightIdeal.astro';
+---
+<!doctype html>
+<html lang="es" data-lang="es" data-title-es="BCS 2050" data-title-en="BCS 2050" data-title-suffix="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#f7f6ef" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="description" content="Noticias, tendencia y visión de Baja California Sur hacia 2050" />
+  <title>BCS 2050</title>
+  <script is:inline define:vars={{ uiObj: ui }}>window.__BCS_UI__ = uiObj;</script>
+  <script is:inline src="/auth-gate.js"></script>
+  <script is:inline src="/lang-toggle.js?v=20261116-portada"></script>
+  <link rel="stylesheet" href="/foresight-page.css?v=20261116-portada" />
+  <link rel="stylesheet" href="/portada.css?v=20261116-portada" />
+</head>
+<body class="landing-shell">
+  <header class="landing-top">
+    <p class="landing-brand">BCS <strong>2050</strong></p>
+    <p class="landing-tag">
+      <span data-lang-es>Noticias, tendencia y visión</span>
+      <span data-lang-en hidden>News, trend and vision</span>
+    </p>
+    <div class="landing-tools">
+      <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma" aria-pressed="false">
+        <span data-side="es" class="active">ES</span>
+        <span aria-hidden="true"> · </span>
+        <span data-side="en">EN</span>
+      </button>
+      <button type="button" class="landing-logout" id="bcs-logout">
+        <span data-lang-es>Salir</span>
+        <span data-lang-en hidden>Log out</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="landing-grid">
+    <div class="landing-col" id="col-noticias">
+      <LandingNews />
+    </div>
+    <div class="landing-col" id="col-tendencia">
+      <ForesightVision />
+    </div>
+    <div class="landing-col" id="col-vision">
+      <ForesightIdeal />
+    </div>
+  </div>
+
+  <footer class="landing-foot">
+    <nav class="landing-foot-links" aria-label="Herramientas del portal">
+      <a href="/inicio/"><span data-lang-es>Chat</span><span data-lang-en hidden>Chat</span></a>
+      <a href="/consulta/"><span data-lang-es>Mapa 3D</span><span data-lang-en hidden>3D map</span></a>
+      <a href="/catalogo/"><span data-lang-es>Documentos</span><span data-lang-en hidden>Documents</span></a>
+      <a href="/foresights/"><span data-lang-es>Foresight</span><span data-lang-en hidden>Foresight</span></a>
+    </nav>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      var lo = document.getElementById('bcs-logout');
+      lo && lo.addEventListener('click', function () {
+        fetch('/api/logout', { method: 'POST', credentials: 'same-origin' })
+          .finally(function () { location.replace('/'); });
+      });
+    })();
+  </script>
+</body>
+</html>

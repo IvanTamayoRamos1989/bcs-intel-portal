@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ForesightEdition from '../../components/ForesightEdition.astro';
 import ForesightArchive from '../../components/ForesightArchive.astro';
 import ForesightVision from '../../components/ForesightVision.astro';
+import ForesightIdeal from '../../components/ForesightIdeal.astro';
 import { loadLatest } from '../../lib/foresightEditions';
 
 const latest = loadLatest();
@@ -10,13 +11,14 @@ const latest = loadLatest();
 <BaseLayout
   title="Foresight"
   titleEn="Foresight"
-  description="Visión tendencia hacia 2050, edición semanal y archivo de foresights"
-  descriptionEn="Trend vision toward 2050, weekly edition and foresight archive"
+  description="Tendencia 2050, Visión, edición semanal y archivo de foresights"
+  descriptionEn="Trend 2050, Vision, weekly edition and foresight archive"
   wide={true}
   hidePageHead={true}
 >
   <link rel="stylesheet" href="/foresight-page.css?v=20261116-vision" />
   <ForesightVision />
+  <ForesightIdeal />
   <ForesightEdition edition={latest} isLatest={true} />
   <ForesightArchive />
 </BaseLayout>

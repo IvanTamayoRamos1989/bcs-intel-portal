@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""BCS Foresights — Visión tendencia (quantitative layer + weekly state).
+"""BCS Foresights — Tendencia 2050 (quantitative layer + daily state).
 
 Builds src/data/foresights_vision.json from news.json, portal_facts.json,
 aquifers, inmobiliario metrics, flight counts and the latest foresights edition.
@@ -726,10 +726,10 @@ def build(args) -> dict:
         "period": {"news_from": min((it.get("date") or "9999") for it in items) if items else None,
                    "news_to": max((it.get("date") or "") for it in items) if items else None,
                    "n_news": len(items)},
-        "title_es": "Visión tendencia",
-        "title_en": "Trend vision",
-        "kicker_es": "Lectura viva hacia 2050, actualizada cada semana con lo que ya está medido.",
-        "kicker_en": "A living reading toward 2050, updated each week with what is already measured.",
+        "title_es": "Tendencia 2050",
+        "title_en": "Trend 2050",
+        "kicker_es": "Lo más probable hacia 2050, según las circunstancias de hoy y lo que ya está medido.",
+        "kicker_en": "What is most likely toward 2050, given today’s circumstances and what is already measured.",
         "change_es": change_es,
         "change_en": change_en,
         "narrative_es": prose_es,
@@ -765,6 +765,27 @@ def build(args) -> dict:
     return state
 
 
+
+def archive_vision(data: dict, today: str) -> None:
+    """Snapshot Tendencia state under foresights_vision_editions/{date}.json.
+
+    Older dates are write-once; today's file may be refreshed on a same-day rerun.
+    History and quant_history are omitted from the dated file to keep it lean.
+    """
+    date_id = str((data or {}).get("updated") or "").strip()
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date_id):
+        return
+    dest_dir = DATA / "foresights_vision_editions"
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    dest = dest_dir / f"{date_id}.json"
+    if dest.exists() and date_id != today:
+        print(f"archive exists, keeping {dest}")
+        return
+    slim = {k: data[k] for k in data if k not in {"history", "quant_history"}}
+    dest.write_text(json.dumps(slim, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"archived vision {dest}")
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--date", help="Edition date YYYY-MM-DD (default: today)")
@@ -797,7 +818,11 @@ def main() -> int:
         print(raw)
         return 0
     OUT.parent.mkdir(parents=True, exist_ok=True)
+    prior = load_json(OUT, {}) or {}
+    if prior:
+        archive_vision(prior, state["updated"])
     OUT.write_text(raw, encoding="utf-8")
+    archive_vision(state, state["updated"])
     print(
         f"wrote {OUT} updated={state['updated']} words_es={state['word_count_es']} "
         f"needs_curation={state['needs_curation']}"

@@ -1,0 +1,93 @@
+---
+import ideal from '../data/foresights_ideal.json';
+import { formatEditionDate } from '../lib/foresightEditions';
+
+const v = ideal as any;
+const updated = v.updated as string;
+const pillars = (v.pillars || []) as any[];
+const conditionsEs = (v.conditions_es || []) as string[];
+const conditionsEn = (v.conditions_en || []) as string[];
+---
+<section class="fs-ideal" id="vision-ideal">
+  <p class="fs-kicker">
+    <span data-lang-es>Visión · el 2050 ideal y alcanzable</span>
+    <span data-lang-en hidden>Vision · the ideal, achievable 2050</span>
+  </p>
+  <h2>
+    <span data-lang-es>{v.title_es || 'Visión'}</span>
+    <span data-lang-en hidden>{v.title_en || 'Vision'}</span>
+  </h2>
+  <p class="fs-vision-updated">
+    <span data-lang-es>Actualizada: {formatEditionDate(updated, 'es')}</span>
+    <span data-lang-en hidden>Updated: {formatEditionDate(updated, 'en')}</span>
+  </p>
+  <p class="fs-vision-change">
+    <strong><span data-lang-es>Qué sostiene esta visión.</span><span data-lang-en hidden>What this vision tracks.</span></strong>
+    {' '}
+    <span data-lang-es>{v.change_es}</span>
+    <span data-lang-en hidden>{v.change_en}</span>
+  </p>
+  <div class="fs-vision-body">
+    <p data-lang-es>{v.lead_es}</p>
+    <p data-lang-en hidden>{v.lead_en}</p>
+  </div>
+
+  <div class="fs-ideal-pillars">
+    {pillars.map((p) => (
+      <article class:list={['fs-ideal-pillar', p.emphasis && 'emphasis']} id={`vision-${p.id}`}>
+        <h3>
+          <span data-lang-es>{p.label_es}</span>
+          <span data-lang-en hidden>{p.label_en}</span>
+        </h3>
+        <p class="fs-ideal-risk">
+          <span data-lang-es>{p.risk_es}</span>
+          <span data-lang-en hidden>{p.risk_en}</span>
+        </p>
+        <p class="fs-ideal-asp">
+          <span data-lang-es>{p.aspiration_es}</span>
+          <span data-lang-en hidden>{p.aspiration_en}</span>
+        </p>
+        <h4>
+          <span data-lang-es>Palancas</span>
+          <span data-lang-en hidden>Levers</span>
+        </h4>
+        <ul>
+          {(p.levers_es || []).map((lev: string, i: number) => (
+            <li>
+              <span data-lang-es>{lev}</span>
+              <span data-lang-en hidden>{(p.levers_en || [])[i] || ''}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+
+  {conditionsEs.length > 0 && (
+    <div class="fs-ideal-cond">
+      <h3>
+        <span data-lang-es>Condiciones para que sea alcanzable</span>
+        <span data-lang-en hidden>Conditions for it to be achievable</span>
+      </h3>
+      <ul>
+        {conditionsEs.map((c, i) => (
+          <li>
+            <span data-lang-es>{c}</span>
+            <span data-lang-en hidden>{conditionsEn[i] || c}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <details class="fs-vision-method">
+    <summary>
+      <span data-lang-es>Metodología</span>
+      <span data-lang-en hidden>Methodology</span>
+    </summary>
+    <p class="meta">
+      <span data-lang-es>{v.method_note_es}</span>
+      <span data-lang-en hidden>{v.method_note_en}</span>
+    </p>
+  </details>
+</section>
