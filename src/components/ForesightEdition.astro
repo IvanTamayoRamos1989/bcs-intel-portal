@@ -1,7 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import DebateConsensus from '../components/DebateConsensus.astro';
-import foresights from '../data/foresights.json';
+import DebateConsensus from './DebateConsensus.astro';
 
 const themeLabel: Record<string, { es: string; en: string }> = {
   water: { es: 'Agua', en: 'Water' },
@@ -12,7 +10,9 @@ const themeLabel: Record<string, { es: string; en: string }> = {
   planning: { es: 'Planeación', en: 'Planning' },
 };
 
-const f = foresights as any;
+const { edition, isLatest = false } = Astro.props;
+const f = edition as any;
+const isPartial = f?.complete === false || !(Array.isArray(f?.signals) && f.signals.length);
 const periodFrom = f.period?.from || '';
 const periodTo = f.period?.to || '';
 const places = f.places || [];
@@ -43,14 +43,49 @@ function portalHref(p: string) {
   return '/catalogo/?q=' + encodeURIComponent(p.split('/').pop() || p);
 }
 ---
-<BaseLayout
-  title="Prospectiva BCS"
-  titleEn="BCS Foresights"
-  description="Prospectiva semanal BCS 2050: tesis, señales, lentes y consenso por vocación de lugar"
-  descriptionEn="Weekly BCS 2050 foresight: thesis, signals, lenses and consensus by place vocation"
-  wide={true}
->
-  {/* 1. Edition thesis */}
+
+{!isLatest && !isPartial && (
+  <p class="fs-archive-note" role="note">
+    <span data-lang-es>Edición de archivo. Las imágenes en <code>/foresights/</code> se actualizan cada semana y pueden corresponder a la edición vigente.</span>
+    <span data-lang-en hidden>Archive edition. Images under <code>/foresights/</code> are updated weekly and may belong to the current edition.</span>
+  </p>
+)}
+
+{isPartial ? (
+  <div class="fs-hero" id="thesis">
+    <p class="fs-kicker">
+      <span data-lang-es>Edición de archivo</span>
+      <span data-lang-en hidden>Archive edition</span>
+    </p>
+    <h1>
+      <span data-lang-es>{f.headline_es}</span>
+      <span data-lang-en hidden>{f.headline_en || f.headline_es}</span>
+    </h1>
+    <p class="fs-period">
+      {f.period?.from && f.period?.to ? (
+        <>
+          <span data-lang-es>Periodo {f.period.from} → {f.period.to}</span>
+          <span data-lang-en hidden>Period {f.period.from} → {f.period.to}</span>
+          <span class="fs-dot">·</span>
+        </>
+      ) : null}
+      <span data-lang-es>Publicada {f.updated}</span>
+      <span data-lang-en hidden>Published {f.updated}</span>
+    </p>
+    <p class="lead fs-summary">
+      <span data-lang-es>{f.archive_note_es}</span>
+      <span data-lang-en hidden>{f.archive_note_en}</span>
+    </p>
+    {f.source && (
+      <p class="meta fs-method">
+        <span data-lang-es>Fuente: {f.source}</span>
+        <span data-lang-en hidden>Source: {f.source}</span>
+      </p>
+    )}
+  </div>
+) : (
+<>
+{/* 1. Edition thesis */}
   <div class="fs-hero" id="thesis">
     <p class="fs-kicker">
       <span data-lang-es>Argumento semanal · inteligencia interna</span>
@@ -764,5 +799,19 @@ function portalHref(p: string) {
       .fs-quick a { font-size: 0.78rem; padding: 0.35rem 0.7rem; }
       .fs-hypo-grid { grid-template-columns: 1fr; }
     }
+  
+    .fs-archive-note { margin: 0 0 1rem; padding: 0.7rem 0.9rem; background: #eef3f0; border: 1px solid #d8ded7; border-radius: 10px; font-size: 0.88rem; color: #34515c; line-height: 1.45; }
+    .fs-archive { margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid #d8ded7; }
+    .fs-archive h2 { font-size: 1.25rem; margin: 0 0 0.35rem; color: #244e60; }
+    .fs-archive-lead { margin: 0 0 1rem; color: #5c6e7b; font-size: 0.95rem; }
+    .fs-archive-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.65rem; }
+    .fs-archive-list a { display: block; text-decoration: none; color: inherit; padding: 0.85rem 1rem; border: 1px solid #d8ded7; border-radius: 12px; background: #fffef8; }
+    .fs-archive-list a:hover { border-color: #285d72; background: #f4f7f1; }
+    .fs-archive-date { display: block; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: #34607d; font-weight: 700; margin-bottom: 0.25rem; }
+    .fs-archive-list h3 { margin: 0; font-size: 1.02rem; font-weight: 600; color: #244e60; line-height: 1.35; }
+    .fs-back { margin: 0 0 1rem; font-size: 0.9rem; }
+    .fs-back a { color: #34607d; }
   </style>
-</BaseLayout>
+
+</>
+)}

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ForesightEdition from '../../components/ForesightEdition.astro';
+import ForesightArchive from '../../components/ForesightArchive.astro';
+import { loadLatest } from '../../lib/foresightEditions';
+
+const latest = loadLatest();
+---
+<BaseLayout
+  title="Foresight"
+  titleEn="Foresight"
+  description="Prospectiva semanal BCS 2050: tesis, señales y archivo de ediciones anteriores"
+  descriptionEn="Weekly BCS 2050 foresight: thesis, signals and archive of previous editions"
+  wide={true}
+  hidePageHead={true}
+>
+  <link rel="stylesheet" href="/foresight-page.css?v=20261116-foresight" />
+  <ForesightEdition edition={latest} isLatest={true} />
+  <ForesightArchive />
+</BaseLayout>

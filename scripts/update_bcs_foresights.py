@@ -3,6 +3,9 @@
 
 Reads news.json + catalog_slim (01_planning recent) + optional flight counts +
 foresights_swarm/*.md. Regenerates src/data/foresights.json (+ public mirror).
+Before overwriting, archives the previous dated edition to
+src/data/foresights_editions/{updated}.json (never overwrites an older date).
+Also writes/refreshes the snapshot for today's date.
 
 Fails safely: if little new material, keeps prior signals/places, bumps `updated`,
 and writes a bilingual «little change» summary.
@@ -26,6 +29,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "src" / "data" / "foresights.json"
 PUB = ROOT / "public" / "foresights.json"
+EDITIONS = ROOT / "src" / "data" / "foresights_editions"
 NEWS = ROOT / "src" / "data" / "news.json"
 CATALOG = ROOT / "src" / "data" / "catalog_slim.json"
 FLIGHTS = ROOT / "src" / "data" / "flight_connections_bcs.json"
@@ -50,6 +54,30 @@ THEME_HINTS = [
     (re.compile(r"anp|semarnat|ambiental|pulmo|ecolog", re.I), "environment"),
     (re.compile(r"poel|pdu|pmd|ordenamiento|planeaci|pmdu|plan parcial", re.I), "planning"),
 ]
+
+
+def edition_date(data) -> str:
+    d = str((data or {}).get("updated") or "").strip()
+    return d if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) else ""
+
+
+def archive_edition(data: dict, *, overwrite: bool = False) -> Path | None:
+    """Snapshot an edition JSON under foresights_editions/{date}.json.
+
+    Older dates are write-once so a later weekly run cannot clobber history.
+    Today's file may be refreshed on a same-day rerun (overwrite=True).
+    """
+    date_id = edition_date(data)
+    if not date_id:
+        return None
+    EDITIONS.mkdir(parents=True, exist_ok=True)
+    dest = EDITIONS / f"{date_id}.json"
+    if dest.exists() and not overwrite:
+        print(f"archive exists, keeping {dest}")
+        return dest
+    dest.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"archived edition {dest}")
+    return dest
 
 
 def load_json(path: Path, default):
@@ -260,11 +288,16 @@ def main() -> int:
         "little_change": little,
     }
 
+    prior_date = edition_date(prior)
+    if prior_date and prior_date != today:
+        archive_edition(prior, overwrite=False)
+
     raw = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
     OUT.parent.mkdir(parents=True, exist_ok=True)
     PUB.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(raw, encoding="utf-8")
     PUB.write_text(raw, encoding="utf-8")
+    archive_edition(data, overwrite=True)
     print(f"wrote {OUT} updated={today} signals={len(signals)} places={len(places)} little_change={little}")
     if swarm.get("files"):
         print("swarm:", ", ".join(swarm["files"]))
