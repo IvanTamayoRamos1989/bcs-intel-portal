@@ -1,18 +1,26 @@
-html, body.landing-shell {
+html.landing-html, body.landing-shell {
   margin: 0;
-  min-height: 100%;
   background: #f7f6ef;
   color: #294554;
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
 }
+html.landing-html {
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
 body.landing-shell {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
 }
 .landing-top {
-  flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   display: flex;
   align-items: baseline;
   gap: 0.85rem 1.25rem;
@@ -62,16 +70,21 @@ body.landing-shell {
 .landing-logout:hover, .landing-shell .lang-toggle:hover { color: #244e60; }
 
 .landing-grid {
-  flex: 1;
   min-height: 0;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   overflow: hidden;
 }
 .landing-col {
   min-width: 0;
   min-height: 0;
-  overflow: auto;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding: 1.1rem 1.2rem 2.25rem;
   border-left: 1px solid #d8ded7;
   background: #f7f6ef;
@@ -205,7 +218,9 @@ body.landing-shell {
 .fs-ideal-cond h3 { margin: 0 0 0.4rem; font-size: 1.02rem; color: #244e60; }
 
 .landing-foot {
-  flex: 0 0 auto;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
   padding: 0.4rem 1.15rem;
   border-top: 1px solid #d8ded7;
   background: #f7f6ef;
@@ -225,11 +240,26 @@ body.landing-shell {
 .landing-foot-links a:hover { color: #34607d; text-decoration: underline; }
 
 @media (max-width: 900px) {
-  .landing-grid {
-    display: block;
+  html.landing-html, body.landing-shell {
+    height: auto;
+    max-height: none;
     overflow: auto;
   }
+  body.landing-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+  .landing-top, .landing-foot {
+    position: static;
+  }
+  .landing-grid {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
   .landing-col {
+    height: auto;
     overflow: visible;
     border-left: 0;
     border-top: 1px solid #d8ded7;

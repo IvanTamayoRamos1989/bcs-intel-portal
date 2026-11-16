@@ -13,6 +13,12 @@ for (const href of ['/inicio/', '/consulta/', '/catalogo/', '/foresights/']) {
   assert.ok(portada.includes(`href="${href}"`), `Landing footer should link ${href}`);
 }
 
+const css = readFileSync('dist/portada.css', 'utf8');
+assert.match(css, /body\.landing-shell[^{]*\{[^}]*overflow:\s*hidden/, 'Desktop landing page must not scroll');
+assert.match(css, /\.landing-col[^{]*\{[^}]*overflow-y:\s*auto/, 'Each landing column must scroll independently');
+assert.match(css, /height:\s*100dvh/, 'Landing must fill the viewport height');
+assert.match(css, /@media \(max-width:\s*900px\)[\s\S]*overflow:\s*visible/, 'Narrow screens may use normal page scroll');
+
 const gate = readFileSync('dist/index.html', 'utf8');
 assert.ok(gate.includes('id="gate-password"'), 'Root must remain the password gate for unauthenticated visitors');
 assert.ok(gate.includes('/api/auth'), 'Gate must post to /api/auth');
