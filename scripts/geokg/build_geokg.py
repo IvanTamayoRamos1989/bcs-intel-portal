@@ -18,6 +18,8 @@ CARD = ROOT / "data" / "geokg" / "model_card.json"
 OUT_SUM = ROOT / "src" / "data" / "geokg_summary.json"
 OUT_PTS = ROOT / "public" / "gis" / "geokg" / "frames.geojson"
 OUT_G = ROOT / "public" / "gis" / "geokg" / "geokg_graph.json.gz"
+FP = ROOT / "data" / "geokg" / "footprints.json.gz"
+OUT_FP = ROOT / "public" / "gis" / "geokg" / "footprints.geojson"
 MUNI_NODE = {"Comondú": "terr_comondu", "La Paz": "terr_la_paz", "Loreto": "terr_loreto", "Los Cabos": "terr_los_cabos", "Mulegé": "terr_mulege"}
 CLASSES = ["arbolado", "matorral", "pastizal", "cultivo", "urbano_construido", "suelo_desnudo", "agua", "humedal", "manglar"]
 
@@ -77,6 +79,11 @@ def main():
                 "veg": r(sum(x["class_frac"].get(c, 0) for c in ("arbolado", "matorral", "pastizal", "manglar", "humedal")) * 100, 1),
                 "dom": dom, "coast": x["coastline_km"], "w_km": x["width_km"], "conf": x["mean_conf"], "agree": x["agreement_wc2021"],
                 "n_obj": len(x["objects"]), "n_rel": len(x["relations"])}})
+    if FP.is_file():
+        fp = json.load(gzip.open(FP, "rt", encoding="utf-8"))
+        polys = [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [fp[f["properties"]["frame"]]]}, "properties": f["properties"]}
+                 for f in sorted(feats, key=lambda f: -f["properties"]["w_km"]) if f["properties"]["frame"] in fp]
+        OUT_FP.write_text(json.dumps({"type": "FeatureCollection", "features": polys}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     OUT_PTS.write_text(json.dumps({"type": "FeatureCollection", "features": feats}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # ---- aggregates
     by = defaultdict(list)
@@ -123,7 +130,7 @@ def main():
     loc_rows.sort(key=lambda y: -(y["urbano_km2"] or 0))
     summary = {"title": "GeoKG BCS 2050 — imágenes Sentinel-2 (carpeta «images of baja»)",
         "source": {"name": "images of baja — Atlas territorial multiescala (Foster + Partners, 15 nov 2026)", "drive_url": "https://drive.google.com/drive/folders/1KS5hc194cLLWzJ1r25CiALtvkHg-TJuq",
-                   "imagery": "Copernicus Sentinel-2 L2A visual (RGB 8-bit), 2026-02-24 a 2026-11-14", "credit": "Contains modified Copernicus Sentinel data 2026"},
+                   "imagery": "Copernicus Sentinel-2 L2A (marcos de la carpeta; v2 lee las bandas B02–B12 de la misma escena y rejilla), 2026-02-24 a 2026-11-14", "credit": "Contains modified Copernicus Sentinel data 2026"},
         "model": card["model"], "evaluation": card["evaluation"], "caveats_es": card["caveats_es"],
         "frames": len(recs), "graph": {"nodes": len(nodes), "edges": len(edges), "node_types": dict(ntypes), "edge_types": dict(etypes)},
         "municipios": munis, "localidades": loc_rows}
@@ -134,7 +141,7 @@ def main():
         graph = json.loads(gp.read_text(encoding="utf-8"))
         ev = card["evaluation"]
         sm = "; ".join(f"{m}: urbano {x['share_all_pct']['urbano_construido']}%, agua {x['share_all_pct']['agua']}%" for m, x in munis.items())
-        nd = {"id": "ev_geokg_s2", "type": "Evidence", "label": f"GeoKG imágenes Sentinel-2 ({len(recs)} marcos)",
+        nd = {"id": "ev_geokg_s2", "type": "Evidence", "label": f"GeoKG imágenes Sentinel-2 v{card['model'].get('version', 1)} ({len(recs)} marcos)",
               "summary": (f"Grafo de conocimiento geoespacial de la carpeta «images of baja»: segmentación semántica ({card['model']['name']}) en 9 clases y grafo de escena "
                           f"(adjacent_to, contains, along_coast, near). {len(nodes):,} nodos, {len(edges):,} aristas. Concordancia {ev['overall_agreement']*100:.0f}% con WorldCover 2021. "
                           f"Área de imagen analizada — {sm}. Valores derivados por modelo, no oficiales."),

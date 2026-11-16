@@ -1,11 +1,12 @@
 {
  "model": {
-  "name": "BCS-S2RGB-LandCover v1",
-  "type": "Segmentación semántica píxel a píxel (HistGradientBoostingClassifier, scikit-learn 1.9.1)",
-  "input": "Sentinel-2 L2A visual RGB 8-bit (GeoTIFF de la carpeta), 10–40 m/píxel; marcos >512 px promediados a ≤512 px",
-  "features": "RGB, valor/saturación, índices de diferencia normalizada G-R, B-R, G-B, media y desviación local 5/15/31 px, gradiente Sobel, resolución",
-  "labels": "Supervisión débil con ESA WorldCover 2021 v200 (10 m, CC BY 4.0) reproyectado a cada marco; 9 clases",
-  "training": "340 marcos (50 por municipio al azar + 60 urbanos + 30 costa/agricultura), 1.7 M píxeles muestreados",
+  "name": "BCS-S2MS-LandCover v2",
+  "version": 2,
+  "type": "Segmentación semántica píxel a píxel (HistGradientBoostingClassifier, scikit-learn 1.9.1) sobre bandas multiespectrales",
+  "input": "Sentinel-2 L2A reflectancia de superficie B02, B03, B04, B08 (10 m), B11, B12 (20 m) leídas por ventana COG desde Microsoft Planetary Computer (escena y fecha exactas de cada marco del inventario, misma rejilla que el GeoTIFF)",
+  "features": "6 bandas + índices NDVI, NDWI, MNDWI, NDBI, BSI, B12/B11; medias locales 5/15/31 px de B08, NDVI y B11; textura de B04; gradiente Sobel; resolución",
+  "labels": "Supervisión débil con ESA WorldCover 2021 v200 (10 m). Probado también con manglar de Global Mangrove Watch v3 2020: no mejoró y se descartó",
+  "training": "340 marcos (los mismos que v1), 1.7 M píxeles muestreados",
   "postprocess": "suavizado 3×3 de probabilidades; objetos = componentes conexos (8-vecinos) ≥ 2 ha, hasta 4 por clase y 16 por marco",
   "scene_graph": "adjacent_to (comparten borde), contains (el objeto con huecos rellenos cubre ≥95% del otro), along_coast (objeto terrestre que toca un cuerpo de agua), near (centroides ≤ 1 km sin contacto)",
   "confidence": "probabilidad media de la clase ganadora por píxel (0–1)",
@@ -19,76 +20,143 @@
    "agua",
    "humedal",
    "manglar"
-  ]
+  ],
+  "previous": "v1 (BCS-S2RGB-LandCover v1) usaba solo el RGB de 8 bits de la carpeta"
  },
  "evaluation": {
   "reference": "ESA WorldCover 2021 v200 (su propia exactitud global publicada es ~77%; además 2021 ≠ 2026)",
   "held_out_frames": 100,
-  "held_out_pixels": 21692416,
-  "overall_agreement": 0.814,
-  "macro_f1": 0.453,
+  "held_out_pixels": 21286549,
+  "overall_agreement": 0.854,
+  "macro_f1": 0.566,
   "per_class": {
    "arbolado": {
-    "f1": 0.544,
-    "precision": 0.545,
-    "recall": 0.544,
-    "iou": 0.374
+    "f1": 0.562,
+    "precision": 0.561,
+    "recall": 0.564,
+    "iou": 0.391
    },
    "matorral": {
-    "f1": 0.849,
-    "precision": 0.816,
-    "recall": 0.884,
-    "iou": 0.737
+    "f1": 0.879,
+    "precision": 0.873,
+    "recall": 0.885,
+    "iou": 0.784
    },
    "pastizal": {
-    "f1": 0.117,
-    "precision": 0.25,
-    "recall": 0.077,
-    "iou": 0.062
+    "f1": 0.215,
+    "precision": 0.281,
+    "recall": 0.175,
+    "iou": 0.121
    },
    "cultivo": {
-    "f1": 0.104,
-    "precision": 0.115,
-    "recall": 0.095,
-    "iou": 0.055
+    "f1": 0.161,
+    "precision": 0.163,
+    "recall": 0.158,
+    "iou": 0.087
    },
    "urbano_construido": {
-    "f1": 0.485,
-    "precision": 0.387,
-    "recall": 0.647,
-    "iou": 0.32
+    "f1": 0.547,
+    "precision": 0.471,
+    "recall": 0.652,
+    "iou": 0.376
    },
    "suelo_desnudo": {
-    "f1": 0.587,
-    "precision": 0.682,
-    "recall": 0.516,
-    "iou": 0.416
+    "f1": 0.718,
+    "precision": 0.73,
+    "recall": 0.706,
+    "iou": 0.56
    },
    "agua": {
-    "f1": 0.975,
+    "f1": 0.983,
     "precision": 0.99,
-    "recall": 0.96,
-    "iou": 0.951
+    "recall": 0.976,
+    "iou": 0.966
    },
    "humedal": {
-    "f1": 0.038,
-    "precision": 0.024,
-    "recall": 0.096,
-    "iou": 0.02
+    "f1": 0.187,
+    "precision": 0.132,
+    "recall": 0.32,
+    "iou": 0.103
    },
    "manglar": {
-    "f1": 0.379,
-    "precision": 0.295,
-    "recall": 0.528,
-    "iou": 0.233
+    "f1": 0.838,
+    "precision": 0.81,
+    "recall": 0.868,
+    "iou": 0.721
    }
+  },
+  "v1": {
+   "overall_agreement": 0.814,
+   "macro_f1": 0.453,
+   "per_class": {
+    "arbolado": {
+     "f1": 0.544,
+     "precision": 0.545,
+     "recall": 0.544,
+     "iou": 0.374
+    },
+    "matorral": {
+     "f1": 0.849,
+     "precision": 0.816,
+     "recall": 0.884,
+     "iou": 0.737
+    },
+    "pastizal": {
+     "f1": 0.117,
+     "precision": 0.25,
+     "recall": 0.077,
+     "iou": 0.062
+    },
+    "cultivo": {
+     "f1": 0.104,
+     "precision": 0.115,
+     "recall": 0.095,
+     "iou": 0.055
+    },
+    "urbano_construido": {
+     "f1": 0.485,
+     "precision": 0.387,
+     "recall": 0.647,
+     "iou": 0.32
+    },
+    "suelo_desnudo": {
+     "f1": 0.587,
+     "precision": 0.682,
+     "recall": 0.516,
+     "iou": 0.416
+    },
+    "agua": {
+     "f1": 0.975,
+     "precision": 0.99,
+     "recall": 0.96,
+     "iou": 0.951
+    },
+    "humedal": {
+     "f1": 0.038,
+     "precision": 0.024,
+     "recall": 0.096,
+     "iou": 0.02
+    },
+    "manglar": {
+     "f1": 0.379,
+     "precision": 0.295,
+     "recall": 0.528,
+     "iou": 0.233
+    }
+   },
+   "held_out_pixels": 21692416
+  },
+  "gmw_variant": {
+   "overall_agreement": 0.855,
+   "macro_f1": 0.553,
+   "manglar_f1_vs_wc_gmw": 0.808
   }
  },
  "caveats_es": [
-  "Valores derivados por modelo a partir de imágenes RGB de 10–40 m; no son estadística oficial ni catastro.",
+  "Valores derivados por modelo a partir de bandas Sentinel-2 de 10–40 m; no son estadística oficial ni catastro.",
   "Los marcos se solapan entre escalas y no forman una muestra estadística: los porcentajes son del área de imagen analizada, no del municipio.",
-  "Fiable para agua/costa (IoU ~0.95) y matorral; moderado para urbano/construido (F1 ~0.49, tiende a sobrestimar), arbolado y suelo desnudo; débil para manglar, cultivo, pastizal y humedal.",
-  "A 10 m no se distinguen edificios individuales; 'urbano_construido' incluye calles, superficies selladas y a veces suelo claro.",
+  "Fiable para agua/costa (F1 0.98), matorral (0.88) y manglar (0.84); moderado para suelo desnudo (0.72), arbolado (0.56) y urbano/construido (0.55); débil para pastizal, humedal y cultivo (F1 ≤ 0,22; un solo día de imagen no capta el ciclo agrícola).",
+  "A 10 m no se distinguen edificios individuales; 'urbano_construido' incluye calles y superficies selladas.",
   "Fechas de captura 2026-02-24 a 2026-11-14; marea, estación e iluminación afectan la lectura."
  ]
 }

@@ -551,17 +551,20 @@ def add_geokg(chunks):
     pc = ev["per_class"]
     url = src["drive_url"]
     cav = " ".join(d["caveats_es"])
-    mtxt = (f"Modelo {mdl['name']}: {mdl['type']}; etiquetas de entrenamiento: {mdl['labels']}. "
+    v1 = ev.get("v1")
+    v1txt = (f" Mejora frente a v1 (solo RGB): concordancia {v1['overall_agreement']*100:.0f}%→{ev['overall_agreement']*100:.0f}%, F1 macro {v1['macro_f1']:.2f}→{ev['macro_f1']:.2f}, "
+             f"urbano {v1['per_class']['urbano_construido']['f1']:.2f}→{pc['urbano_construido']['f1']:.2f}, manglar {v1['per_class']['manglar']['f1']:.2f}→{pc['manglar']['f1']:.2f}.") if v1 else ""
+    mtxt = (f"Modelo {mdl['name']}: {mdl['type']}; entrada: {mdl['input']}; etiquetas de entrenamiento: {mdl['labels']}. "
             f"Concordancia con WorldCover 2021 en {ev['held_out_frames']} marcos de prueba: {ev['overall_agreement']*100:.0f}% de píxeles "
-            f"(F1 agua {pc['agua']['f1']:.2f}, matorral {pc['matorral']['f1']:.2f}, urbano {pc['urbano_construido']['f1']:.2f}, manglar {pc['manglar']['f1']:.2f}).")
+            f"(F1 agua {pc['agua']['f1']:.2f}, matorral {pc['matorral']['f1']:.2f}, urbano {pc['urbano_construido']['f1']:.2f}, manglar {pc['manglar']['f1']:.2f}, cultivo {pc['cultivo']['f1']:.2f}, humedal {pc['humedal']['f1']:.2f}).{v1txt}")
     def lab(c): return c.replace("_", " ")
     n = 0
     body = (f"GeoKG (grafo de conocimiento geoespacial) de BCS 2050 construido con la colección de imágenes «images of baja»: "
             f"{d['frames']} marcos Sentinel-2 ({src['imagery']}) de los 5 municipios. Segmentación semántica píxel a píxel en 9 clases de cobertura "
             f"({', '.join(lab(c) for c in mdl['classes'])}) y grafo de escena con relaciones objeto-objeto ({mdl['scene_graph']}). "
             f"El grafo tiene {g['nodes']:,} nodos y {g['edges']:,} aristas (municipio, localidad, acuífero, marco, clase, objeto). {mtxt} "
-            f"Capa en el Mapa 3D: Análisis → «Cobertura urbana detectada (GeoKG)». Advertencias: {cav} Crédito: {src['credit']}.")
-    chunks.append({"id": "geokg:metodo", "title": f"GeoKG imágenes satelitales BCS — segmentación semántica y grafo de escena ({d['frames']} marcos)",
+            f"Capas en el Mapa 3D: Análisis → «Cobertura urbana detectada en imágenes (GeoKG v2)» y «Huellas de las imágenes (GeoKG v2)». Advertencias: {cav} Crédito: {src['credit']}.")
+    chunks.append({"id": "geokg:metodo", "title": f"GeoKG imágenes satelitales BCS — segmentación semántica multiespectral v{mdl.get('version', 1)} y grafo de escena ({d['frames']} marcos)",
                    "path": "data/geokg_summary.json", "theme": "planeacion", "sum_es": body, "sum_en": "", "drive_url": url,
                    "href": "/consulta/?vista=analisis&capa=geokg_urbano", "type": "fact", "metric": "Marcos analizados GeoKG", "value": str(d["frames"])}); n += 1
     rows = []
