@@ -1,0 +1,129 @@
+[
+  {
+    "id": "dma",
+    "confidence": "alta",
+    "es": "22 de 39 acuíferos en déficit; suma −105.1 hm³/año (CONAGUA, 2023).",
+    "en": "22 of 39 aquifers in deficit; sum −105.1 hm³/year (CONAGUA, 2023).",
+    "sources": [
+      "CONAGUA, disponibilidad media anual 2023"
+    ]
+  },
+  {
+    "id": "poblacion",
+    "confidence": "alta",
+    "es": "Población estatal 798,447 (INEGI Censo 2020).",
+    "en": "State population 798,447 (INEGI Census 2020).",
+    "sources": [
+      "INEGI Censo 2020"
+    ]
+  },
+  {
+    "id": "pib",
+    "confidence": "alta",
+    "es": "PIB constante 187,152 millones de pesos en 2024, +3.5 % frente a 2023 (INEGI).",
+    "en": "Constant-price GDP 187,152 million pesos in 2024, +3.5% versus 2023 (INEGI).",
+    "sources": [
+      "INEGI PIBE"
+    ]
+  },
+  {
+    "id": "ied",
+    "confidence": "alta",
+    "es": "IED 1,353 mdd (2024) y 1,578 mdd (2025) (CNIE).",
+    "en": "FDI 1,353 million USD (2024) and 1,578 (2025) (CNIE).",
+    "sources": [
+      "CNIE"
+    ]
+  },
+  {
+    "id": "gap",
+    "confidence": "alta",
+    "es": "SJD −4.6 % en octubre y −5.5 % ene–oct; LAP +8.7 % en el año (GAP, 2026).",
+    "en": "SJD −4.6% in October and −5.5% Jan–Oct; LAP +8.7% year-to-date (GAP, 2026).",
+    "sources": [
+      "Grupo Aeroportuario del Pacífico, octubre 2026"
+    ]
+  },
+  {
+    "id": "setue_occ",
+    "confidence": "alta",
+    "es": "Ocupación 2025: Los Cabos 70.0 % y La Paz 64 % (SETUE).",
+    "en": "2025 occupancy: Los Cabos 70.0% and La Paz 64% (SETUE).",
+    "sources": [
+      "SETUE"
+    ]
+  },
+  {
+    "id": "inegi_infl",
+    "confidence": "alta",
+    "es": "Inflación en La Paz: 1.17 % mensual y 3.16 % anual en octubre de 2026 (INEGI).",
+    "en": "La Paz inflation: 1.17% monthly and 3.16% annual in October 2026 (INEGI).",
+    "sources": [
+      "INEGI"
+    ]
+  },
+  {
+    "id": "sibcs",
+    "confidence": "media",
+    "es": "Pico SIBCS 689 MW en 2024; en 2023 el portal consigna 660 MW netos y 675 MW.",
+    "en": "SIBCS peak 689 MW in 2024; for 2023 the portal records both 660 MW net and 675 MW.",
+    "sources": [
+      "CENACE / PRODESEN",
+      "ficha de energía del portal"
+    ]
+  },
+  {
+    "id": "ahlc",
+    "confidence": "media",
+    "es": "Ocupación 78 % en Los Cabos, 1–15 de noviembre de 2026 (Asociación de Hoteles).",
+    "en": "78% occupancy in Los Cabos, 1–15 November 2026 (Hotel Association).",
+    "sources": [
+      "Asociación de Hoteles de Los Cabos, vía Tribuna de México"
+    ]
+  },
+  {
+    "id": "imss",
+    "confidence": "media",
+    "es": "Empleo formal IMSS en BCS −1.1 % anual en octubre; 224,460 puestos en septiembre.",
+    "en": "Formal IMSS employment in BCS −1.1% year-on-year in October; 224,460 posts in September.",
+    "sources": [
+      "IMSS, citado por Tribuna de México"
+    ]
+  },
+  {
+    "id": "desal",
+    "confidence": "media",
+    "es": "Segunda desaladora de Cabo San Lucas al 75 %, 250 l/s; conjunto 655 l/s, conclusión 2027.",
+    "en": "Second Cabo San Lucas desal plant at 75%, 250 l/s; combined 655 l/s, finish 2027.",
+    "sources": [
+      "Gobierno del estado, vía Quepoca"
+    ]
+  },
+  {
+    "id": "tomas",
+    "confidence": "media",
+    "es": "25 tomas clandestinas en Los Cabos y más de 300 l/s de sustracción estimada.",
+    "en": "25 illegal taps in Los Cabos and estimated extraction above 300 l/s.",
+    "sources": [
+      "Tribuna de México, iniciativa y clausuras 2026"
+    ]
+  },
+  {
+    "id": "nino",
+    "confidence": "media",
+    "es": "El Niño: oleaje de 15 a 30 cm en Puerto San Carlos (UABCS).",
+    "en": "El Niño: 15–30 cm wave-height rise in Puerto San Carlos (UABCS).",
+    "sources": [
+      "Miguel Imaz, UABCS, vía Meganoticias"
+    ]
+  },
+  {
+    "id": "foro",
+    "confidence": "baja",
+    "es": "La meta de 3.5 % anual y de triplicar la IED regional es una propuesta del Foro, no una proyección del portal.",
+    "en": "The 3.5% annual goal and tripling regional FDI is a Forum proposal, not a portal projection.",
+    "sources": [
+      "Foro Mar de Cortés, Agustín Coppel, noviembre 2026"
+    ]
+  }
+]

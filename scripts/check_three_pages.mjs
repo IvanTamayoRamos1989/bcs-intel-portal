@@ -22,6 +22,7 @@ for (const [path, active, entry] of views) {
   assert.doesNotMatch(html,forbidden, `Mixed workspaces: ${path}`);
 }
 const index = readFileSync('dist/foresights/index.html', 'utf8');
+assert.ok(index.includes('id="vision-tendencia"'), 'Missing Visión tendencia section');
 assert.ok(index.includes('id="foresight-archive"'), 'Missing foresight archive list');
 assert.ok(index.includes('/foresights/2026-11-09/'), 'Archive should link the 9 Nov edition');
 assert.ok(existsSync('dist/foresights/2026-11-09/index.html'), 'Missing 2026-11-09 permalink');

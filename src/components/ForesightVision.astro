@@ -1,0 +1,212 @@
+---
+import vision from '../data/foresights_vision.json';
+import { formatEditionDate } from '../lib/foresightEditions';
+
+const v = vision as any;
+const updated = v.updated as string;
+const signals = v.signals || {};
+const scenarios = v.scenarios || {};
+const meta = v.scenario_meta || {};
+const series = (v.series || []) as any[];
+const claims = (v.claims || []) as any[];
+const params = v.parameters || {};
+const order = ['agua','costa_clima','turismo','economia','energia','movilidad','vivienda','gobernanza'];
+const themeLabel: Record<string, { es: string; en: string }> = {
+  agua: { es: 'Agua', en: 'Water' },
+  costa_clima: { es: 'Costa / clima', en: 'Coast / climate' },
+  turismo: { es: 'Turismo', en: 'Tourism' },
+  economia: { es: 'Economía', en: 'Economy' },
+  energia: { es: 'Energía', en: 'Energy' },
+  movilidad: { es: 'Movilidad', en: 'Mobility' },
+  vivienda: { es: 'Vivienda', en: 'Housing' },
+  gobernanza: { es: 'Gobernanza', en: 'Governance' },
+};
+const scenarioOrder = ['estres_hidrico_costero', 'base', 'diversificacion'];
+function pct(x: number) { return `${Math.round((x || 0) * 100)} %`; }
+function deltaLabel(d: number) {
+  const pts = (Math.abs(d) * 100).toFixed(1);
+  if (d > 0.0005) return `+${pts}`;
+  if (d < -0.0005) return `−${pts}`;
+  return '0';
+}
+function lastPoint(s: any) {
+  const pts = s.points || [];
+  return pts.length ? pts[pts.length - 1] : null;
+}
+function projCell(val: any) {
+  if (val == null || val === 'insuficiente') return 'insuficiente';
+  if (typeof val === 'object' && val.point != null) return String(val.point);
+  return 'insuficiente';
+}
+---
+<section class="fs-vision" id="vision-tendencia">
+  <p class="fs-kicker">
+    <span data-lang-es>Visión tendencia · lectura viva hacia 2050</span>
+    <span data-lang-en hidden>Trend vision · a living reading toward 2050</span>
+  </p>
+  <h2>
+    <span data-lang-es>{v.title_es || 'Visión tendencia'}</span>
+    <span data-lang-en hidden>{v.title_en || 'Trend vision'}</span>
+  </h2>
+  <p class="fs-vision-updated">
+    <span data-lang-es>Última actualización: {formatEditionDate(updated, 'es')}</span>
+    <span data-lang-en hidden>Last updated: {formatEditionDate(updated, 'en')}</span>
+  </p>
+  <p class="fs-vision-change">
+    <strong><span data-lang-es>Qué cambió esta semana.</span><span data-lang-en hidden>What changed this week.</span></strong>
+    {' '}
+    <span data-lang-es>{v.change_es}</span>
+    <span data-lang-en hidden>{v.change_en}</span>
+  </p>
+
+  <div class="fs-vision-body">
+    {(v.narrative_es || '').split(/\n\n+/).map((para: string) => (
+      <p data-lang-es>{para}</p>
+    ))}
+    {(v.narrative_en || '').split(/\n\n+/).map((para: string) => (
+      <p data-lang-en hidden>{para}</p>
+    ))}
+  </div>
+
+  {scenarioOrder.some((id) => scenarios[id]) && (
+    <div class="fs-vision-scenarios" aria-label="Probabilidades de escenario">
+      <h3>
+        <span data-lang-es>Probabilidades de escenario</span>
+        <span data-lang-en hidden>Scenario probabilities</span>
+      </h3>
+      <p class="fs-sec-lead">
+        <span data-lang-es>Prior = posterior de la semana previa. No son un plan.</span>
+        <span data-lang-en hidden>Prior = previous week’s posterior. These are not a plan.</span>
+      </p>
+      <ul class="fs-vision-bars">
+        {scenarioOrder.map((id) => {
+          const sc = scenarios[id];
+          if (!sc) return null;
+          const m = meta[id] || {};
+          const p = sc.p || 0;
+          return (
+            <li>
+              <div class="fs-vision-bar-head">
+                <strong><span data-lang-es>{m.label_es || id}</span><span data-lang-en hidden>{m.label_en || id}</span></strong>
+                <span class="fs-vision-p">{pct(p)} <span class={`fs-delta ${sc.delta > 0 ? 'up' : sc.delta < 0 ? 'down' : ''}`}>{deltaLabel(sc.delta)} pp</span></span>
+              </div>
+              <div class="fs-vision-track" aria-hidden="true"><span style={`width:${Math.max(2, p * 100)}%`}></span></div>
+              <p class="fs-cap">
+                <span data-lang-es>{m.blurb_es}</span>
+                <span data-lang-en hidden>{m.blurb_en}</span>
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  )}
+
+  <div class="fs-vision-signals">
+    <h3>
+      <span data-lang-es>Intensidad semanal de señales (EWMA y dirección)</span>
+      <span data-lang-en hidden>Weekly signal intensity (EWMA and direction)</span>
+    </h3>
+    <ul class="fs-vision-chips">
+      {order.map((id) => {
+        const s = signals[id];
+        if (!s) return null;
+        const dir = s.direction || 0;
+        const sign = dir > 0.05 ? '+' : dir < -0.05 ? '−' : '·';
+        return (
+          <li class={dir > 0.05 ? 'plus' : dir < -0.05 ? 'minus' : 'zero'}>
+            <span class="fs-chip-name"><span data-lang-es>{themeLabel[id].es}</span><span data-lang-en hidden>{themeLabel[id].en}</span></span>
+            <span class="fs-chip-vals">{s.count} · EWMA {Number(s.ewma).toFixed(1)} · {sign}</span>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+
+  <div class="fs-vision-series">
+    <h3>
+      <span data-lang-es>Series del portal y horizonte 2030 / 2050</span>
+      <span data-lang-en hidden>Portal series and 2030 / 2050 horizon</span>
+    </h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th><span data-lang-es>Indicador</span><span data-lang-en hidden>Indicator</span></th>
+            <th><span data-lang-es>Último dato</span><span data-lang-en hidden>Latest figure</span></th>
+            <th>2030</th>
+            <th>2050</th>
+          </tr>
+        </thead>
+        <tbody>
+          {series.map((s) => {
+            const last = lastPoint(s);
+            return (
+              <tr>
+                <td>
+                  <span data-lang-es>{s.label_es}</span>
+                  <span data-lang-en hidden>{s.label_en}</span>
+                </td>
+                <td>
+                  {last ? (
+                    <>
+                      <span>{last.y}{s.unit ? ` ${s.unit}` : ''}</span>
+                      <small> · {last.label}</small>
+                    </>
+                  ) : '—'}
+                </td>
+                <td>{projCell(s.projection?.y2030)}</td>
+                <td>{projCell(s.projection?.y2050)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    <p class="fs-cap">
+      <span data-lang-es>Se publica una proyección solo con al menos cuatro puntos comparables y un tramo de ocho años o más. El resto queda como insuficiente.</span>
+      <span data-lang-en hidden>A projection is published only with at least four comparable points and a span of eight years or more. Otherwise the cell is insufficient.</span>
+    </p>
+  </div>
+
+  {claims.length > 0 && (
+    <div class="fs-vision-conf">
+      <h3>
+        <span data-lang-es>Confianza de las cifras citadas</span>
+        <span data-lang-en hidden>Confidence of the figures cited</span>
+      </h3>
+      <ul>
+        {claims.map((c) => (
+          <li>
+            <span class={`fs-conf fs-conf-${c.confidence}`}>{c.confidence}</span>
+            <span data-lang-es>{c.es}</span>
+            <span data-lang-en hidden>{c.en}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <details class="fs-vision-method">
+    <summary>
+      <span data-lang-es>Metodología</span>
+      <span data-lang-en hidden>Methodology</span>
+    </summary>
+    <p class="fs-cap">
+      <span data-lang-es>α = {params.alpha_ewma} · λ = {params.lambda_bayes} · Holt α = {params.holt_alpha}, β = {params.holt_beta}. El prior de cada escenario es el posterior de la semana anterior (uniforme 1/3 al inicio).</span>
+      <span data-lang-en hidden>α = {params.alpha_ewma} · λ = {params.lambda_bayes} · Holt α = {params.holt_alpha}, β = {params.holt_beta}. Each scenario’s prior is last week’s posterior (uniform 1/3 at the start).</span>
+    </p>
+    <ol class="fs-formulas">
+      {(v.formulas_es || []).map((f: string, i: number) => (
+        <li>
+          <span data-lang-es>{f}</span>
+          <span data-lang-en hidden>{(v.formulas_en || [])[i] || ''}</span>
+        </li>
+      ))}
+    </ol>
+    <p class="meta">
+      <span data-lang-es>{v.method_note_es}</span>
+      <span data-lang-en hidden>{v.method_note_en}</span>
+    </p>
+  </details>
+</section>

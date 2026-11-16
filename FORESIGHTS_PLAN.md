@@ -8,8 +8,8 @@
 
 **Prod:** https://bcs-intel-portal.netlify.app/foresights/  
 **Aliases:** `/prospectiva`, `/foresight` → `/foresights/`  
-**Data:** `src/data/foresights.json` (+ `public/foresights.json` mirror)  
-**Weekly script:** `scripts/update_bcs_foresights.py` (+ `scripts/build_foresights_figures.py`)
+**Data:** `src/data/foresights.json` (+ `public/foresights.json` mirror) and `src/data/foresights_vision.json` (Visión tendencia + weekly history)  
+**Weekly script:** `scripts/update_bcs_foresights.py` (+ `scripts/build_foresights_figures.py` + `scripts/foresights_vision.py`)
 
 ## Intent
 
@@ -70,6 +70,20 @@ Mapped loosely to Steering / TAG / Forum **groups** — never to private F+P peo
 - P0.2 `/crecimiento` scorecards already shipped — strip highlights `data-place-card` articles; do not rebuild.
 - Deferred: Decision twin public UI; F+P fichas; full P1 Ask chain / Studio IA (light Ask place hint started).
 
+
+## Visión tendencia
+
+Living, forward-looking narrative on `/foresights/` (above the weekly edition). Max about one A4 page at 12 pt, in Spanish, with a short English twin.
+
+- Data: `src/data/foresights_vision.json`. History is appended each week (previous narratives are kept). Curated prose lives in `src/data/foresights_vision_prose/`.
+- Each Monday, `update_bcs_foresights.py` calls `scripts/foresights_vision.py`, which:
+  1. Recomputes EWMA theme intensity and +/− direction from `news.json`.
+  2. Re-reads portal series (INEGI, CONAGUA, GAP, SETUE, IMSS, CENACE/PRODESEN, Cabo RE). Fits OLS or Holt only on comparable series; writes 2030/2050 only with ≥4 points and ≥8 years of span; otherwise «insuficiente».
+  3. Updates scenario probabilities with Bayes (prior = last week's posterior; likelihood from signal direction and strength).
+  4. Refreshes the «qué cambió esta semana» line from those deltas.
+  5. **Keeps last week's narrative** unless a curated file is passed with `--prose-es` / `--prose-en`. It does not rewrite the essay from scratch. If the quantitative rank of scenarios changes, it sets `needs_curation=true` so the weekly pass can adjust the paragraphs that no longer hold.
+- Formulas and parameters are stored in the JSON and shown in a collapsible Metodología on the page. No invented figures.
+
 ## Weekly update
 
 ```bash
@@ -87,6 +101,7 @@ The script:
 3. Refreshes bilingual role briefs, consensus seeds, and watchlist from those signals.
 4. **Fails safely:** if little new material, keeps prior signals, bumps `updated`, and sets a “little change” summary.
 5. Calls `build_foresights_figures.py` to regenerate maps/diagrams/charts into `public/foresights/`.
+6. Calls `foresights_vision.py` to update the Visión tendencia state (EWMA, Bayes, series, change line) without discarding the previous narrative.
 
 Parent agent registers the weekly routine; this doc is the runbook.
 

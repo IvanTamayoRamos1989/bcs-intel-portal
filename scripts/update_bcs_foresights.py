@@ -6,6 +6,8 @@ foresights_swarm/*.md. Regenerates src/data/foresights.json (+ public mirror).
 Before overwriting, archives the previous dated edition to
 src/data/foresights_editions/{updated}.json (never overwrites an older date).
 Also writes/refreshes the snapshot for today's date.
+After the edition is written, runs scripts/foresights_vision.py to update
+the living Visión tendencia (quantitative state + incremental narrative).
 
 Fails safely: if little new material, keeps prior signals/places, bumps `updated`,
 and writes a bilingual «little change» summary.
@@ -302,6 +304,15 @@ def main() -> int:
     if swarm.get("files"):
         print("swarm:", ", ".join(swarm["files"]))
 
+
+
+    # Living "Visión tendencia": quantitative update + incremental narrative
+    vision_script = ROOT / "scripts" / "foresights_vision.py"
+    if vision_script.exists():
+        try:
+            subprocess.run([sys.executable, str(vision_script), "--date", today], check=False)
+        except Exception as e:
+            print("warn: foresights_vision failed:", e)
 
     # U5: tag news + flights into signals/places/seeds (provenance) after edition write
     tag_script = ROOT / "scripts" / "tag_news_flights_to_foresights.py"
