@@ -1,0 +1,1149 @@
+{
+  "updated": "2026-10-26",
+  "period": {
+    "from": "2026-09-21",
+    "to": "2026-10-26"
+  },
+  "headline_es": "El motor de Cabos pierde ritmo mientras agua, puerto y vivienda social reabren la discusión territorial",
+  "headline_en": "Cabos' engine loses pace as water, port and social housing reopen the territorial debate",
+  "summary_es": "Edición regenerada 2026-10-26: 10 señales · 118 notas recientes · 8 hits de planeación · 6 temas. Columna vertebral = vocaciones de lugar; lentes de rol = debate. No es plan oficial.",
+  "summary_en": "Edition regenerated 2026-10-26: 10 signals · 118 recent notes · 8 planning hits · 6 themes. Backbone = place vocations; role lenses = debate. Not an official plan.",
+  "system_view_es": "Baja California Sur solo llega a 2050 como sistema policéntrico y complementario: Cabos como motor turístico bajo estrés hídrico-eléctrico; East Cape como flanco de crecimiento del Golfo bajo tensión ANP/Pulmo; Todos Santos–El Pescadero como espina de amenidad del Pacífico; La Paz como capital/servicios y nodo de acoplamiento agua–energía; Loreto como ancla mid-península turismo–conservación; Ciudad Constitución / Comondú como hub agro–servicio; norte/Mulegé como corredor disperso de señales energéticas remotas — para que movilidad, agua, energía, conservación y medios de vida sumen en toda la península en lugar de clonar la fórmula Cabos. La estrategia es la suma de roles distintos, no un prototipo costero escalado al norte.",
+  "system_view_en": "Baja California Sur succeeds toward 2050 only as a polycentric, complementary system: each place keeps a distinct vocation (Cabos as tourism–growth engine under water/energy stress; East Cape as Gulf growth flank under ANP/Pulmo tension; Todos Santos–El Pescadero as Pacific amenity spine; La Paz as capital/services and water–energy coupling node; Loreto as mid-peninsula tourism–conservation anchor; Ciudad Constitución / Comondú as agri–service hub with desal/irrigation pilots; north/Mulegé as sparse corridor for remote energy signals) so that mobility, water, energy, conservation, and livelihoods add up across the peninsula—instead of copying the Cabos hotel–residential formula everywhere. The weekly Foresights edition should treat `places[]` as the geographic backbone and keep `system_view` as the reminder that strategy is the sum of different roles, not a single coastal prototype scaled north.",
+  "signals": [
+    {
+      "id": "sig-hurricanes-polo-rachel",
+      "title_es": "Huracanes Polo y Rachel: la resiliencia costera y de red entra al techo 2050",
+      "title_en": "Hurricanes Polo and Rachel: coastal and grid resilience joins the 2050 ceiling",
+      "theme": "environment",
+      "why_es": "En una semana, Polo tocó tierra en Comondú (bordo roto en Puerto San Carlos, evacuaciones, caminos y agua afectados en Comondú y Mulegé) y Rachel provocó inundaciones, cierre de puertos y suspensión de clases en Los Cabos. CFE reportó el restablecimiento total tras Polo. Señal: riesgo hidrometeorológico como restricción compartida por todas las vocaciones, no solo de Cabos. El 25 de octubre una marea alta metió agua a calles, viviendas, escuelas y malecón en El Centenario, El Conchalito y El Esterito (La Paz), sin reporte oficial de daños; Los Cabos emitió aviso preventivo por lluvias y viento. El riesgo costero también aparece fuera de temporada de huracanes.",
+      "why_en": "In one week, Polo made landfall in Comondú (protective levee breached at Puerto San Carlos, evacuations, roads and water affected in Comondú and Mulegé) and Rachel brought flooding, port closures and school suspensions to Los Cabos. CFE reported full restoration after Polo. Signal: hydro-meteorological risk as a shared constraint across every vocation, not just Cabos. On 25 October a high tide pushed water into streets, homes, schools and the seafront at El Centenario, El Conchalito and El Esterito (La Paz), with no official damage report; Los Cabos issued a preventive rain and wind warning. Coastal risk shows up outside hurricane landfalls too.",
+      "portal_paths": [
+        "/noticias",
+        "/riesgos",
+        "/ambiente",
+        "/energia"
+      ],
+      "source_urls": [
+        "https://www.informador.mx/mexico/huracan-rachel-de-categoria-1-provoca-lluvias-fuertes-en-baja-california-sur-20261003-0093.html",
+        "https://eclipsebcs.com.mx/mision-cumplida-cfe-restablece-a-la-normalidad-el-servicio-electrico-del-100-de-los-usuarios-afectados-por-el-huracan-polo/",
+        "https://www.eluniversal.com.mx/estados/retiran-agua-y-rehabilitan-caminos-en-comunidades-afectadas-por-polo-en-bcs-despliegan-brigada-de-200-personas/",
+        "https://tribunademexico.com/rachel-puertos/",
+        "https://tribunademexico.com/huracan-polo-rompe-bordo-de-proteccion-en-puerto/",
+        "https://tribunademexico.com/huracan-polo-toca-tierra-comondu-sonora/",
+        "https://www.tvaztecabajacalifornia.com/noticias/el-agua-llego-a-las-calles-reportan-inundaciones-en-varias-zonas-de-la-paz-este-domingo-video/",
+        "https://hcn.mx/2026/10/25/emite-gobierno-de-los-cabos-aviso-preventivo-por-pronostico-de-lluvias-y-viento/"
+      ],
+      "place_ids": [
+        "comondu",
+        "mulege_north",
+        "los_cabos",
+        "loreto",
+        "la_paz"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "facultades-municipales-ambientales-hcn-2026-10-29",
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "sig-social-housing-land",
+      "title_es": "Vivienda para el Bienestar: suelo estatal para vivienda social en Comondú y Mulegé",
+      "title_en": "Housing for Wellbeing: state land for social housing in Comondú and Mulegé",
+      "theme": "land_use",
+      "why_es": "El 20 de octubre el Congreso aprobó donar tres predios en Brisas del Valle, Ciudad Constitución (27,335, 17,881 y 13,576 m²) al INSUS y uno de 15,550 m² en Los Frayles, Santa Rosalía, al INFONAVIT, solo para vivienda social del programa federal con CONAVI; un diputado mencionó 35,000 viviendas previstas en BCS. El 22 de octubre el gobernador acordó con la Presidenta buscar suelo en los tres órdenes de gobierno y una Ventanilla de Vivienda Social para agilizar permisos, catastro y registro, sin cifras ni calendario. Señal: la ubicación de esta vivienda frente a agua, empleo y transporte decidirá si refuerza o dispersa las vocaciones de lugar.",
+      "why_en": "On 20 October Congress approved donating three plots in Brisas del Valle, Ciudad Constitución (27,335, 17,881 and 13,576 m²) to INSUS and one of 15,550 m² in Los Frayles, Santa Rosalía, to INFONAVIT, solely for social housing under the federal programme with CONAVI; a deputy mentioned 35,000 homes planned in BCS. On 22 October the governor agreed with the President to identify land across the three levels of government and a Social Housing Window to speed permits, cadastre and registry, with no numbers or timeline. Signal: where this housing lands relative to water, jobs and transport will decide whether it reinforces or scatters the place vocations.",
+      "portal_paths": [
+        "/noticias",
+        "/crecimiento",
+        "/planeacion",
+        "/inmobiliario"
+      ],
+      "source_urls": [
+        "https://informadorbcs.com/autoriza-congreso-donacion-de-predios-estatales-para-vivienda-en-comondu-y-mulege/",
+        "https://tribunademexico.com/construccion-viviendas-bcs/"
+      ],
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "provenance": {
+        "news_ids": [
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "sismo-3-7-santa-rosalia-2026-10-27",
+          "dengue-comondu-los-cabos-refuerzo-federal-2026-10-24",
+          "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
+          "vivienda-bienestar-ventanilla-bcs-2026-10-22",
+          "comodato-guardia-nacional-donacion-inmuebles-salud-2026-10-21"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "sig-csl-marina-asipona-tariffs",
+      "title_es": "Marina de Cabo San Lucas: tarifas de ASIPONA abren disputa por la gobernanza del puerto",
+      "title_en": "Cabo San Lucas marina: ASIPONA fees open a dispute over who governs the port",
+      "theme": "tourism",
+      "why_es": "Las nuevas cuotas de ASIPONA (publicadas en el DOF el 1 de octubre) para atraque, rampas, pernocta, muelle 1 y pasajeros de crucero detonaron rechazo: el Congreso de BCS pidió transparentar tarifas e ingresos y gestionar que el puerto se concesione al Gobierno del Estado; pescadores y prestadores náuticos preparan un amparo y convocaron una protesta el 19 de octubre. Señal: la economía náutica de Cabos depende de quién gobierna y reinvierte la infraestructura portuaria. El 21 de octubre el gobernador dijo que pedirá a la Federación que la API estatal (que ya opera Pichilingue, Loreto y San Carlos) administre el puerto de Cabo San Lucas; es una intención política, no una transferencia: ASIPONA tiene una concesión federal de 50 años otorgada en febrero de 2024.",
+      "why_en": "ASIPONA's new fees (published in the federal gazette on 1 October) for berthing, ramps, overnight stays, pier 1 and cruise passengers triggered pushback: the BCS Congress asked for transparency on fees and revenue and for the port to be conceded to the state government; fishers and nautical operators are preparing an amparo and called a protest for 19 October. Signal: Cabos' nautical economy depends on who governs and reinvests port infrastructure. On 21 October the governor said he will ask the federal government for the state port authority (which already runs Pichilingue, Loreto and San Carlos) to manage Cabo San Lucas port; this is a political intention, not a transfer: ASIPONA holds a 50-year federal concession granted in February 2024.",
+      "portal_paths": [
+        "/noticias",
+        "/puertos",
+        "/turismo",
+        "/planeacion"
+      ],
+      "source_urls": [
+        "https://hoybcs.com/asipona-aplicara-nuevas-tarifas-en-la-marina-de-cabo-san-lucas/",
+        "https://tribunademexico.com/congreso-bcs-marina-csl/",
+        "https://tribunademexico.com/comunidad-maritima-protesta-csl/",
+        "https://peninsulardigital.com/2026/10/18/preparan-pescadores-y-prestadores-turisticos-de-los-cabos-amparo-contra-nuevas-tarifas-portuarias/",
+        "https://tribunademexico.com/comunidad-maritima-protesta-asipona/",
+        "https://www.diarioelindependiente.mx/2026/10/victor-castro-respalda-que-api-baja-california-sur-administre-puerto-de-cabo-san-lucas"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "vance-inunda-los-cabos-reforma-2026-10-28",
+          "suspension-clases-lluvias-60mm-cabos-2026-10-28"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LTO",
+            "place_id": "loreto",
+            "destinations": 5,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sig-water-energy-coupling",
+      "title_es": "Acoplamiento agua–energía: desaladoras y apagones en Cabos y La Paz",
+      "title_en": "Water–energy coupling: desal plants and outages in Cabos and La Paz",
+      "theme": "water",
+      "why_es": "FISAM ~24 mdp para bombeo D1; rupturas y fallas eléctricas OOMSAPAS: el abasto urbano depende de la red. Vocación turística de Cabos no escala sobre suministro intermitente. Del 13 al 14 de octubre, una falla en subestación dejó sin luz a más de 13 mil usuarios en delegaciones de La Paz (segundo corte del mes) y un corte de unas tres horas apagó los pozos que alimentan el acueducto El Carrizal.",
+      "why_en": "FISAM ~MXN 24M for D1 pumping; line breaks and OOMSAPAS power faults: urban supply depends on the grid. Cabos tourism vocation cannot scale on intermittent supply. On 13–14 October a substation fault cut power to more than 13,000 customers in La Paz rural districts (the month's second outage), and a roughly three-hour cut took offline the wells feeding the El Carrizal aqueduct.",
+      "portal_paths": [
+        "/noticias",
+        "/agua",
+        "/energia",
+        "/foresights"
+      ],
+      "source_urls": [
+        "https://hoybcs.com/aprueban-invertir-recursos-del-fisam-en-desaladora-de-cabo-san-lucas/",
+        "https://www.meridiano22.mx/ruptura-en-linea-de-la-desaladora-1-provoca-afectaciones-al-tandeo-en-cabo-san-lucas/",
+        "https://eclipsebcs.com.mx/afectacion-general-en-el-suministro-de-agua-por-fallas-de-energia-electrica-oomsapas-los-cabos/",
+        "https://diariohumano.com.mx/2026/09/01/por-que-un-apagon-puede-dejar-sin-agua-durante-horas-a-la-paz/",
+        "https://www.bcsnoticias.mx/apagones-afectan-suministro-de-agua-en-la-paz-y-retrasan-recuperacion-del-servicio-oomsapas/",
+        "https://peninsulardigital.com/2026/10/13/sin-servicio-electrico-la-mayoria-de-las-delegaciones-de-la-paz/",
+        "https://www.diarioelindependiente.mx/2026/10/oomsapas-la-paz-recupera-gradualmente-el-suministro-de-agua-tras-restablecimiento-de-energia-electrica"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "provenance": {
+        "news_ids": [
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "vance-inunda-los-cabos-reforma-2026-10-28",
+          "transpeninsular-socavacion-vance-independiente-2026-10-28",
+          "hoteleros-plan-crisis-energetica-bcs-2026-10-27",
+          "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
+          "hoteleros-crisis-energetica-zeta-2026-10-27"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "sig-sibcs-island-grid",
+      "title_es": "SIBCS como isla energética: confiabilidad e inversión CFE",
+      "title_en": "SIBCS as an energy island: CFE reliability and investment",
+      "theme": "energy",
+      "why_es": "BCS como isla no interconectada; inversión/confiabilidad CFE y reuniones gobernador–CFE. Techo de red compartido por todas las vocaciones. Reportaje del 19 de octubre (Buzos): el cable submarino al sistema nacional se descartó en 2020 y BCS sigue aislado; destaca la central de combustión interna de CFE en Los Cabos con MIA aprobada (240 MW a gas natural, 228 MW a diésel, 13 motores, tres años de obra). CFE sostiene que la capacidad alcanza y que los apagones vienen de fallas de infraestructura.",
+      "why_en": "BCS as non-interconnected island; CFE investment/reliability and governor–CFE talks. Shared grid ceiling across all vocations. Buzos report, 19 October: the subsea cable to the national grid was dropped in 2020 and BCS remains isolated; it highlights CFE's Los Cabos internal-combustion plant with approved environmental impact statement (240 MW on natural gas, 228 MW on diesel, 13 engines, three years of works). CFE says capacity is sufficient and outages come from infrastructure failures.",
+      "portal_paths": [
+        "/energia",
+        "/noticias",
+        "/ontologia"
+      ],
+      "source_urls": [
+        "https://hojaderutadigital.mx/cfe-incrementa-la-confiabilidad-del-sistema-electrico-de-baja-california-sur/",
+        "https://www.puntoporpunto.com/noticias/politica/mexico-enfrenta-sistema-electrico-vulnerable-apagones-se-elevan-por-alta-demanda/",
+        "https://tribunademexico.com/cfe-inversion-bcs/",
+        "https://www.bcs.gob.mx/revisan-gobernador-y-cfe-condiciones-del-suministro-electrico-en-bcs/",
+        "https://we-news.com/mx/congreso-de-bcs-exige-a-sener-y-cfe-explicar-causas-y-medidas-por-apagones",
+        "https://buzos.com.mx/noticia/bcs-una-decada-de-proyectos-y-promesas-para-garantizar-electricidad"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "provenance": {
+        "news_ids": [
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "vance-inunda-los-cabos-reforma-2026-10-28",
+          "suspension-clases-lluvias-60mm-cabos-2026-10-28",
+          "desazolve-vial-csl-lluvias-2026-10-28",
+          "transpeninsular-socavacion-vance-independiente-2026-10-28",
+          "hoteleros-plan-crisis-energetica-bcs-2026-10-27"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "sig-tourism-fdi-vs-water",
+      "title_es": "IED turística líder vs. freno político por falta de agua en Cabos",
+      "title_en": "Leading tourism FDI vs. political brake from water scarcity in Cabos",
+      "theme": "tourism",
+      "why_es": "Liderazgo nacional en IED turística junto a mensaje de frenar desarrollo sin nuevas fuentes de agua. Tensión central de la vocación motor. Semana del 19–21 de octubre: la Asociación de Hoteles de Los Cabos reportó una caída de visitantes de EE. UU. en enero–agosto 2026 y busca compensar con Canadá, Europa y Sudamérica; la senadora Susana Zatarain habló de ventas turísticas 25–35% abajo en dos años y al menos 27 restaurantes cerrados o en pausa, y pidió reinvertir los ingresos turísticos. A la vez, vecinos de Cabo San Lucas marcharon el 21 de octubre a OOMSAPAS por falta de agua regular. Señal: el motor turístico se frena por demanda y por servicios al mismo tiempo.",
+      "why_en": "National tourism FDI leadership alongside messaging to slow development without new water sources. Core tension of the growth-engine vocation. Week of 19–21 October: the Los Cabos Hotel Association reported fewer US visitors in January–August 2026 and aims to offset with Canada, Europe and South America; Senator Susana Zatarain cited tourism sales down 25–35% over two years and at least 27 restaurants closed or paused, and asked for tourism revenue to be reinvested. Meanwhile Cabo San Lucas residents marched to the water utility on 21 October over irregular supply. Signal: the tourism engine is slowing on demand and on services at the same time.",
+      "portal_paths": [
+        "/turismo",
+        "/economia",
+        "/agua",
+        "/noticias"
+      ],
+      "source_urls": [
+        "https://www.bcs.gob.mx/lidera-bcs-la-captacion-de-inversion-extranjera-en-turismo-a-nivel-nacional/",
+        "https://www.meganoticias.mx/la-paz/noticia/sin-nuevas-fuentes-de-agua-los-cabos-debe-frenar-su-desarrollo-gobernador/751977",
+        "https://www.imagenradio.com.mx/programas/negocios-en-imagen/hoteleros-cabos-advierten-caida-turismo-norteamericano",
+        "https://www.meganoticias.mx/los-cabos/noticia/pide-zatarain-reinvertir-recursos-tur%C3%ADsticos-para-proteger-empleos-en-baja-california-sur/780974",
+        "https://www.diarioelindependiente.mx/2026/10/marchan-por-agua-en-cabo-san-lucas-protesta-llega-a-instalaciones-de-oomsapas"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "los-cabos-ocupacion-hotelera-cae-5-2026-10-27",
+          "sepuimm-campana-transicion-energetica-sjc-2026-10-27",
+          "los-cabos-campana-global-vip-summit-2026-10-26"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sig-flight-connectivity-sjd",
+      "title_es": "Conectividad SJD: demanda aérea que empuja la vocación Cabos",
+      "title_en": "SJD connectivity: air demand reinforcing the Cabos vocation",
+      "theme": "tourism",
+      "why_es": "Inventario portal (FlightConnections 2026-09-17): SJD ~56 destinos vs LAP 7 y LTO 5. Asimetría aérea concentra presión en el sur.",
+      "why_en": "Portal inventory (FlightConnections 2026-09-17): SJD ~56 destinations vs LAP 7 and LTO 5. Air asymmetry concentrates southern pressure.",
+      "source_urls": [],
+      "portal_paths": [
+        "/vuelos",
+        "/turismo",
+        "/conectividad"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto"
+      ],
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
+          "los-cabos-campana-global-vip-summit-2026-10-26"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LAP",
+            "place_id": "la_paz",
+            "destinations": 7,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LTO",
+            "place_id": "loreto",
+            "destinations": 5,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sig-poel-developer-water",
+      "title_es": "POEL Los Cabos y obligación de agua/residuos a desarrolladores",
+      "title_en": "Los Cabos POEL and developer water/waste obligations",
+      "theme": "planning",
+      "why_es": "Consulta POEL 2026 y reglas que exigen desal/PTAR/residuos; Punta Nayu en consulta. Instrumento municipal para internalizar costos de vocación turística.",
+      "why_en": "POEL 2026 consultation and rules requiring desal/WWTP/waste; Punta Nayu in consultation. Municipal instrument to internalize tourism-vocation costs.",
+      "portal_paths": [
+        "/planeacion",
+        "/agua",
+        "/noticias",
+        "/stakeholders"
+      ],
+      "source_urls": [
+        "https://www.loscabos.gob.mx/poel-2026/",
+        "https://elmundodigital.com.mx/desarrolladores-deberan-garantizar-agua-tratamiento-y-manejo-de-residuos-ecologia/",
+        "https://peninsulardigital.com/2026/06/14/a-consulta-publica-el-proyecto-punta-nayu/"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "provenance": {
+        "news_ids": [
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "suspension-clases-lluvias-60mm-cabos-2026-10-28",
+          "desazolve-vial-csl-lluvias-2026-10-28",
+          "castro-cambio-climatico-mareas-bcs-2026-10-28"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sig-comondu-desal-loreto-ptar",
+      "title_es": "Comondú desalación limpia + Loreto PTAR/acueducto",
+      "title_en": "Comondú clean desal + Loreto WWTP/aqueduct",
+      "theme": "water",
+      "why_es": "MIA desaladora limpia Comondú, riego, PTAR Loreto 2ª etapa y acueducto Londó–Loreto: vocaciones mid-península fuera del sur turístico. En octubre, el Gobierno de BCS presentó a Semarnat una desaladora para el ejido Matancitas y el gobernador confirmó una planta privada para uso agrícola en Comondú en evaluación ambiental.",
+      "why_en": "Clean desal MIA Comondú, irrigation, Loreto WWTP stage 2 and Londó–Loreto aqueduct: mid-peninsula vocations beyond the tourism south. In October the BCS government submitted a desalination plant for the Matancitas ejido to Semarnat, and the governor confirmed a private plant for agricultural use in Comondú under environmental review.",
+      "portal_paths": [
+        "/agua",
+        "/ambiente",
+        "/noticias",
+        "/planeacion"
+      ],
+      "source_urls": [
+        "https://www.bcsnoticias.mx/uabcs-presenta-evaluacion-ambiental-de-planta-desaladora-con-energias-limpias-en-comondu/",
+        "https://tribunademexico.com/invierten-mas-de-66-mdp-en-segunda-etapa-de-la-planta-tratadora-de-loreto/",
+        "https://nbcs.mx/?p=168654",
+        "https://www.bcs.gob.mx/entrega-gobernador-obras-de-riego-en-comondu-destaca-inversion-historica-en-infraestructura-hidrica-en-bcs/",
+        "https://bcsnoticias.com/es/n/bcs-semarnat-desaladora-matancitas-comondu-permisos-ballena-2026-10-09",
+        "https://www.palabrabcs.com/municipios/la-paz/gobernador-a-favor-de-desaladoras-siempre-y-cuando-no-danen-el-ambiente/"
+      ],
+      "place_ids": [
+        "loreto",
+        "comondu"
+      ],
+      "provenance": {
+        "news_ids": [
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "vinoramas-rechaza-pipas-sapa-la-paz-2026-10-26",
+          "marea-alta-inunda-costa-la-paz-2026-10-25",
+          "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
+          "planta-purificadora-agua-bienestar-la-pasion-la-paz-2026-10-25",
+          "oomsapas-la-paz-paraiso-del-sol-tandeo-2026-10-24"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "sig-mulege-oasis-h2",
+      "title_es": "Oasis hidrógeno verde en Mulegé: señal energética del norte",
+      "title_en": "Green-hydrogen Oasis in Mulegé: northern energy signal",
+      "theme": "energy",
+      "why_es": "CFE Oasis H2 en Mulegé: ¿corredor energético remoto vs. solo franja de tránsito? Debe probarse contra agua local y encaje territorial.",
+      "why_en": "CFE Oasis H2 in Mulegé: remote energy corridor vs. transit strip only? Must be tested against local water and territorial fit.",
+      "portal_paths": [
+        "/energia",
+        "/noticias",
+        "/comunidades"
+      ],
+      "source_urls": [
+        "https://cuspidemexico.com/2026/09/11/desarrolla-cfe-proyecto-oasis-de-hidrogeno-verde-para-fortalecer-el-suministro-de-energia-en-bcs/"
+      ],
+      "place_ids": [
+        "mulege_north"
+      ],
+      "provenance": {
+        "news_ids": [
+          "sismo-3-7-santa-rosalia-2026-10-27",
+          "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
+          "atlas-energetico-bcs-2026-10-14",
+          "vidrio-anp-vizcaino-lgeepa-2026-10-08",
+          "cfe-restablece-100-polo-2026-10-01",
+          "cfe-restablece-11k-usuarios-polo-2026-09-30"
+        ],
+        "flight_refs": []
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "los_cabos",
+      "name_es": "Los Cabos / San José–Cabo San Lucas",
+      "name_en": "Los Cabos / San José–Cabo San Lucas",
+      "vocation_es": "Motor de crecimiento turístico y puerta internacional primaria del cabo.",
+      "vocation_en": "Tourism–growth engine and primary international gateway of the cape.",
+      "strengths_es": "Marca reconocida; clúster aeropuerto SJD + hotelería; motor fiscal del sur (ficha municipal + inventario de vuelos del portal).",
+      "strengths_en": "Brand recognition; SJD airport + hospitality cluster; fiscal engine for the south (municipal sheet + portal flight inventory).",
+      "constraints_es": "Escasez hídrica y dependencia de desalación; carga pico eléctrica; especulación costera vs. capacidad de servicios; acuíferos en déficit (0317/0319).",
+      "constraints_en": "Water scarcity and desal dependency; peak energy load; coastal land speculation vs. service capacity; deficit aquifers (0317/0319).",
+      "portal_paths": [
+        "/turismo",
+        "/agua",
+        "/energia",
+        "/vuelos",
+        "/planeacion",
+        "/mapas",
+        "/noticias"
+      ],
+      "open_question_es": "¿Puede el crecimiento seguir liderado por el turismo sin encerrar al cabo en estrés hídrico-eléctrico permanente?",
+      "open_question_en": "Can growth stay tourism-led without locking the cape into permanent water–energy stress?",
+      "sum_2050_es": "Aporta fondos y conectividad a la península — solo si deja de exportar escasez a East Cape y a la espina del Pacífico.",
+      "sum_2050_en": "Funds and connectivity for the peninsula — but only if it stops exporting scarcity to East Cape and the Pacific spine.",
+      "provenance": {
+        "news_ids": [
+          "playas-cerradas-los-cabos-tribuna-2026-10-29",
+          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+          "asipona-traspaso-congreso-bitacora-2026-10-29",
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
+          "vance-inunda-los-cabos-reforma-2026-10-28",
+          "suspension-clases-lluvias-60mm-cabos-2026-10-28",
+          "desazolve-vial-csl-lluvias-2026-10-28",
+          "transpeninsular-socavacion-vance-independiente-2026-10-28"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "east_cape",
+      "name_es": "East Cape / Cabo del Este (San José del Este)",
+      "name_en": "East Cape / Cabo del Este (San José del Este)",
+      "vocation_es": "Frontera de crecimiento costero bajo presión de conservación (lógica Cabo Pulmo / ANP); piloto de realineación espacial.",
+      "vocation_en": "Coastal growth frontier under conservation pressure (Cabo Pulmo / ANP logic); spatial realignment pilot.",
+      "strengths_es": "Ecología arrecifal/costera singular; amenidad de menor densidad; corredor Cabos–La Paz; decks 14 sep 2026 en 01_planning.",
+      "strengths_en": "Unique reef/coastal ecology; lower-density amenity appeal; Cabos–La Paz corridor; 14 Sep 2026 decks in 01_planning.",
+      "constraints_es": "Límites ANP y capacidad de carga; infraestructura delgada; agua/energía antes de hotelería masiva; riesgo de spillover no gestionado desde Cabos.",
+      "constraints_en": "ANP and carrying-capacity limits; thin infrastructure; water/energy before mass hospitality; unmanaged spillover risk from Cabos.",
+      "portal_paths": [
+        "/planeacion",
+        "/catalogo",
+        "/mapas",
+        "/ambiente",
+        "/noticias"
+      ],
+      "open_question_es": "¿Es East Cape un borde gestionado conservación–turismo — o el próximo desborde no gestionado de Cabos?",
+      "open_question_en": "Is East Cape a managed conservation–tourism edge — or the next unmanaged spillover from Cabos?",
+      "sum_2050_es": "Protege la marca ecológica que Cabos monetiza; si se sobreconstruye, el modelo sureño pierde legitimidad.",
+      "sum_2050_en": "Protects the ecological brand that Cabos monetizes; if overbuilt, the whole southern model loses legitimacy.",
+      "provenance": {
+        "news_ids": [
+          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "todos_santos",
+      "name_es": "Todos Santos–El Pescadero",
+      "name_en": "Todos Santos–El Pescadero",
+      "vocation_es": "Espina de amenidad del Pacífico (cultura, turismo residencial, amenidades creativas/agro).",
+      "vocation_en": "Pacific amenity spine (culture, residential tourism, creative/agro amenities).",
+      "strengths_es": "Identidad Pacífico distinta al corredor Cabos; imán de migración lifestyle; capital cultural; parte del corredor de foco Cabos–Todos Santos–La Paz.",
+      "strengths_en": "Distinct Pacific identity vs. Cabos corridor; lifestyle migration magnet; cultural capital; part of Cabos–Todos Santos–La Paz focus corridor.",
+      "constraints_es": "Estrés hídrico, septic/tenencia bajo crecimiento de amenidad; presión de acceso carretera/costa; acuífero 0313 en déficit (ficha La Paz).",
+      "constraints_en": "Water and septic/tenure stress under amenity growth; highway/coastal access pressure; aquifer 0313 in deficit (La Paz sheet).",
+      "portal_paths": [
+        "/mapas",
+        "/agua",
+        "/comunidades",
+        "/riesgos",
+        "/inmobiliario"
+      ],
+      "open_question_es": "¿Puede densificarse la migración de amenidad sin convertir los pueblos del Pacífico en un segundo Cabos sin su infraestructura?",
+      "open_question_en": "Can amenity migration densify without turning Pacific towns into a second Cabos without Cabos’ infrastructure?",
+      "sum_2050_es": "Diversifica la economía sureña hacia el Pacífico — válvula de presión solo si la planeación evita el sprawl de desborde.",
+      "sum_2050_en": "Diversifies the southern economy Pacific-ward — a pressure valve only if planning prevents spillover sprawl.",
+      "provenance": {
+        "news_ids": [
+          "pueblos-magicos-bcs-promocion-2026-10-06"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "la_paz",
+      "name_es": "La Paz",
+      "name_en": "La Paz",
+      "vocation_es": "Capital de servicios, conocimiento, administración y logística del estado.",
+      "vocation_en": "Capital of services, knowledge, administration, and logistics for the state.",
+      "strengths_es": "Base de gobierno + universidad/servicios; orientación bahía/puerto; bisagra inland–cape; pobreza municipal más baja (ficha); PDUCP 2018.",
+      "strengths_en": "Government + university/services base; bay/port orientation; inland–cape hinge; lowest municipal poverty (sheet); PDUCP 2018.",
+      "constraints_es": "Acoplamiento agua–energía de capital en crecimiento; expansión urbana vs. bahía; carga de coordinación intermunicipal; acuíferos 0324/0313 en déficit.",
+      "constraints_en": "Tight water–energy coupling for a growing capital; urban expansion vs. bay; inter-municipal coordination load; aquifers 0324/0313 in deficit.",
+      "portal_paths": [
+        "/comunidades",
+        "/agua",
+        "/energia",
+        "/planeacion",
+        "/noticias",
+        "/mapas"
+      ],
+      "open_question_es": "¿Lidera La Paz como capital de servicios inteligentes — o permanece como cuello de botella de agua, energía y gobernanza?",
+      "open_question_en": "Does La Paz lead as the smart-services capital — or remain a bottleneck for water, power, and governance?",
+      "sum_2050_es": "Cerebro de coordinación de BCS 2050; sin una La Paz capaz, las vocaciones de lugar quedan en proyectos fragmentados.",
+      "sum_2050_en": "The coordination brain of BCS 2050; without a capable La Paz, place vocations stay fragmented projects.",
+      "provenance": {
+        "news_ids": [
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "hoteleros-plan-crisis-energetica-bcs-2026-10-27",
+          "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
+          "hoteleros-crisis-energetica-zeta-2026-10-27",
+          "vinoramas-rechaza-pipas-sapa-la-paz-2026-10-26",
+          "marea-alta-inunda-costa-la-paz-2026-10-25",
+          "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
+          "planta-purificadora-agua-bienestar-la-pasion-la-paz-2026-10-25"
+        ],
+        "flight_refs": [
+          {
+            "iata": "LAP",
+            "destinations": 7,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loreto",
+      "name_es": "Loreto",
+      "name_en": "Loreto",
+      "vocation_es": "Nodo mid-península turismo + conservación (identidad bahía/ANP).",
+      "vocation_en": "Mid-peninsula tourism + conservation node (bay/ANP identity).",
+      "strengths_es": "Marca natural fuerte; alternativa más quieta a Cabos; ancla mid-corredor; POEL 2014; PTAR 2ª etapa y acueducto Londó–Loreto en noticias.",
+      "strengths_en": "Strong natural brand; quieter alternative to Cabos; mid-corridor anchor; POEL 2014; WWTP stage 2 and Londó–Loreto aqueduct in news.",
+      "constraints_es": "Agua y carga turística estacional; techos de conservación; mercado laboral/servicios más delgado; PMDU en avance.",
+      "constraints_en": "Water and seasonal tourism load; conservation ceilings; thinner labor/services market; PMDU in progress.",
+      "portal_paths": [
+        "/ambiente",
+        "/planeacion",
+        "/agua",
+        "/turismo",
+        "/vuelos",
+        "/noticias"
+      ],
+      "open_question_es": "¿Puede Loreto crecer como nodo turismo–conservación sin copiar el modelo de volumen de Cabos?",
+      "open_question_en": "Can Loreto grow as a conservation-first tourism node without copying Cabos’ volume model?",
+      "sum_2050_es": "Cose el mid-BCS a la estrategia para que el estado no sea solo un mapa bipolar Cabos–La Paz.",
+      "sum_2050_en": "Stitches mid-BCS into the strategy so the state is not only a Cabos–La Paz bipolar map.",
+      "provenance": {
+        "news_ids": [
+          "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
+          "morena-coordinaciones-municipales-2027-bcs-2026-10-20",
+          "bcs-325-casos-dengue-comondu-2026-10-17",
+          "congreso-bcs-contaminacion-luminica-2026-10-13",
+          "blanqueamiento-corales-loreto-los-cabos-2026-10-07",
+          "pueblos-magicos-bcs-promocion-2026-10-06",
+          "cfe-restablece-100-polo-2026-10-01",
+          "loreto-pavimentacion-padre-ugarte-29-7-mdp-2026-10-01"
+        ],
+        "flight_refs": [
+          {
+            "iata": "LTO",
+            "destinations": 5,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "comondu",
+      "name_es": "Ciudad Constitución / Comondú",
+      "name_en": "Ciudad Constitución / Comondú",
+      "vocation_es": "Hub agro / servicios inland; pilotos de desalación, riego y hinterland productivo.",
+      "vocation_en": "Agri / inland service hub; pilots for desal, irrigation, and productive hinterland.",
+      "strengths_es": "Base agrícola y logística inland; espacio para inversión productiva (no solo amenidad); MIA desaladora limpia UABCS y obras de riego en noticias; PMDU Visión 2025 en datos.",
+      "strengths_en": "Agricultural base and inland logistics; space for productive (not only amenity) investment; UABCS clean desal MIA and irrigation works in news; PMDU Vision 2025 on disk.",
+      "constraints_es": "Estrés de riego y acuíferos; energía para bombeo/desal; exposición climática de rendimientos; sin visor catastral público.",
+      "constraints_en": "Irrigation water and aquifer stress; energy for pumping/desal; climate exposure of agri yields; no public cadastral viewer.",
+      "portal_paths": [
+        "/economia",
+        "/agua",
+        "/energia",
+        "/planeacion",
+        "/noticias",
+        "/comunidades"
+      ],
+      "open_question_es": "¿Es Comondú el hinterland productivo que alimenta y equilibra la costa turística — o una zona agro varada bajo estrés hídrico?",
+      "open_question_en": "Is Comondú the productive hinterland that feeds and balances the tourism coast — or a stranded agri zone under water stress?",
+      "sum_2050_es": "Da a BCS un pilar económico no turístico; sin él, 2050 colapsa en dependencia de amenidad costera.",
+      "sum_2050_en": "Gives BCS a non-tourism economic pillar; without it, 2050 collapses into coastal amenity dependence.",
+      "provenance": {
+        "news_ids": [
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "dengue-comondu-los-cabos-refuerzo-federal-2026-10-24",
+          "comodato-guardia-nacional-donacion-inmuebles-salud-2026-10-21",
+          "dengue-comondu-13-mil-hectareas-fumigadas-2026-10-21",
+          "congreso-donacion-predios-vivienda-comondu-mulege-2026-10-20",
+          "morena-coordinaciones-municipales-2027-bcs-2026-10-20",
+          "tormenta-trudy-lluvias-puntuales-bcs-2026-10-19",
+          "bcs-325-casos-dengue-comondu-2026-10-17"
+        ],
+        "flight_refs": []
+      }
+    },
+    {
+      "id": "mulege_north",
+      "name_es": "Mulegé / Santa Rosalía / Vizcaíno (norte)",
+      "name_en": "Mulegé / Santa Rosalía / Vizcaíno (north)",
+      "vocation_es": "Corredor disperso; señales de energía remota y logística de larga distancia (incl. narrativas H2 verde donde hay evidencia).",
+      "vocation_en": "Sparse corridor; remote energy and long-haul logistics signals (incl. green-H2 narratives where evidenced).",
+      "strengths_es": "Tierra y aislamiento para experimentos energéticos/logísticos; lógica de puerta norte; anuncio CFE Oasis H2 Mulegé (sep 2026); PMD 2024–2027.",
+      "strengths_en": "Land and isolation for energy/logistics experiments; northern gateway logic; CFE Oasis H2 Mulegé announcement (Sep 2026); PMD 2024–2027.",
+      "constraints_es": "Extrema escasez de servicios y mano de obra; agua; distancia a mercados; ecosistemas frágiles.",
+      "constraints_en": "Extreme sparsity of services and labor; water; distance from markets; fragile ecosystems.",
+      "portal_paths": [
+        "/energia",
+        "/comunidades",
+        "/noticias",
+        "/ambiente"
+      ],
+      "open_question_es": "¿Qué apuestas del norte son infraestructura real para la península — vs. megaproyectos especulativos sin encaje territorial?",
+      "open_question_en": "Which northern bets are real infrastructure for the peninsula — vs. speculative megaprojects with no territorial fit?",
+      "sum_2050_es": "Extiende BCS más allá del sur — solo si agua/energía sirven al sistema completo, no a enclaves.",
+      "sum_2050_en": "Extends BCS beyond the south — only if energy/water bets serve the whole system, not enclaves.",
+      "provenance": {
+        "news_ids": [
+          "dengue-comondu-brigadas-tribuna-2026-10-29",
+          "sismo-3-7-santa-rosalia-2026-10-27",
+          "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
+          "congreso-donacion-predios-vivienda-comondu-mulege-2026-10-20",
+          "morena-coordinaciones-municipales-2027-bcs-2026-10-20",
+          "simon-categoria-4-rachel-aviso-punta-eugenia-2026-10-10",
+          "vidrio-anp-vizcaino-lgeepa-2026-10-08",
+          "pueblos-magicos-bcs-promocion-2026-10-06"
+        ],
+        "flight_refs": []
+      }
+    }
+  ],
+  "role_briefs": [
+    {
+      "role_id": "territorial_development",
+      "role_label_es": "Desarrollo territorial",
+      "role_label_en": "Territorial development",
+      "stance_es": "La vocación del lugar = economía espacial de largo plazo: habitar, trabajar e invertir deben reforzar la estructura costa–desierto–oasis de BCS, no borrarla.",
+      "stance_en": "Place-vocation = long-horizon spatial economy: where people live, work, and invest must reinforce BCS’s coastal–desert–oasis structure, not erase it.",
+      "tension_es": "Con turismo/inversión: la presión de crecimiento puede aplanar la vocación en franjas resort genéricas.",
+      "tension_en": "With tourism/investment: growth pressure can flatten vocation into generic resort strips."
+    },
+    {
+      "role_id": "vision_spatial",
+      "role_label_es": "Visión y marco espacial",
+      "role_label_en": "Vision & spatial framework",
+      "stance_es": "La vocación necesita un diagrama claro (corredores, nodos, vacíos protegidos, jerarquía de asentamientos) contra el que cada sector se mida — San José del Este como piloto de realineación esta semana.",
+      "stance_en": "Place-vocation needs a clear diagram (corridors, nodes, protected voids, settlement hierarchy) that every sector can test against — San José del Este as this week’s realignment pilot.",
+      "tension_es": "Con planeación municipal: los planes locales pueden optimizar parcelas mientras el diagrama regional pide contención.",
+      "tension_en": "With municipal planning: local plans may optimize parcels while the regional diagram asks for restraint."
+    },
+    {
+      "role_id": "sustainability_infra",
+      "role_label_es": "Sustentabilidad e infraestructura",
+      "role_label_en": "Sustainability & infrastructure",
+      "stance_es": "La vocación solo es creíble si agua, energía, movilidad y residuos alcanzan para la mezcla de usos prevista (PTAR Loreto, desal Comondú/Cabos como señales).",
+      "stance_en": "Vocation is credible only if water, energy, mobility, and waste capacities match the intended mix of uses (Loreto WWTP, Comondú/Cabos desal as signals).",
+      "tension_es": "Con energía/turismo: picos de demanda y nuevas conexiones pueden fijar un crecimiento alto en carbono y agua.",
+      "tension_en": "With energy/tourism: peak loads and new connections can lock in high-carbon, high-water growth."
+    },
+    {
+      "role_id": "water_security",
+      "role_label_es": "Seguridad hídrica",
+      "role_label_en": "Water security",
+      "stance_es": "En BCS el agua es el techo duro de la vocación; toda afirmación debe declarar recarga, reúso y jerarquía de demanda — desal D1/tandeo lo confirman esta semana.",
+      "stance_en": "In BCS, water is the hard ceiling of place-vocation; every vocation claim must state recharge, reuse, and demand hierarchy — Desal D1/rationing confirm this week.",
+      "tension_es": "Con desarrollo territorial/turismo: el crecimiento de suelo y visitantes suele adelantar a acuíferos y a la ética de la desalación.",
+      "tension_en": "With territorial development/tourism: land and visitor growth often outrun aquifers and desalination ethics."
+    },
+    {
+      "role_id": "energy_grid",
+      "role_label_es": "Energía y red",
+      "role_label_en": "Energy & grid",
+      "stance_es": "La energía limpia debe servir a la vocación del lugar (resiliencia local, lógica solar del desierto), no solo exportar megavatios — isla SIBCS + Oasis H2 Mulegé.",
+      "stance_en": "Clean energy should serve place-vocation (local resilience, desert solar logic), not only export megawatts — SIBCS island + Oasis H2 Mulegé.",
+      "tension_es": "Con ambiente/ANPs: generación y corredores pueden chocar con paisajes y áreas protegidas.",
+      "tension_en": "With environment/ANPs: generation and corridors can conflict with landscapes and protected areas."
+    },
+    {
+      "role_id": "tourism_investment",
+      "role_label_es": "Turismo e inversión",
+      "role_label_en": "Tourism & investment",
+      "stance_es": "La inversión debe profundizar la vocación distintiva (paisaje, cultura, costa lenta), no importar producto intercambiable — IED líder vs. freno por agua.",
+      "stance_en": "Investment should deepen distinctive place-vocation (landscape, culture, slow coast) rather than import interchangeable product — leading FDI vs. water brake.",
+      "tension_es": "Con comunidad/tenencia: la velocidad del capital puede adelantar al consentimiento, claridad ejidal y reparto de beneficios.",
+      "tension_en": "With community/land tenure: capital speed can outpace consent, ejido clarity, and benefit sharing."
+    },
+    {
+      "role_id": "municipal_planning",
+      "role_label_es": "Planeación municipal",
+      "role_label_en": "Municipal planning",
+      "stance_es": "La vocación se vuelve real con zonificación, permisos y fases que el municipio pueda hacer cumplir — POEL Cabos y obligaciones de agua/residuos a desarrolladores.",
+      "stance_en": "Place-vocation becomes real through zoning, permits, and phasing that local governments can enforce — Cabos POEL and developer water/waste obligations.",
+      "tension_es": "Con visión/marco espacial: la ambición regional puede superar herramientas, presupuesto o ciclos políticos municipales.",
+      "tension_en": "With vision/spatial framework: regional ambition may exceed municipal tools, budgets, or political cycles."
+    },
+    {
+      "role_id": "environment_anp",
+      "role_label_es": "Ambiente y ANPs",
+      "role_label_en": "Environment & ANPs",
+      "stance_es": "ANPs y estructura ecológica son coautoras de la vocación, no «verde residual» — Cabo Pulmo / East Cape y Bahía de Loreto.",
+      "stance_en": "Protected areas and ecological structure are co-authors of place-vocation, not leftover green — Cabo Pulmo / East Cape and Bahía de Loreto.",
+      "tension_es": "Con infraestructura/energía: proyectos de conectividad pueden fragmentar hábitat o litoral.",
+      "tension_en": "With infrastructure/energy: connectivity projects may fragment habitat or shorelines."
+    },
+    {
+      "role_id": "community_tenure",
+      "role_label_es": "Comunidad y tenencia",
+      "role_label_en": "Community & land tenure",
+      "stance_es": "La vocación debe apoyarse en tenencia clara, voz y medios de vida — si no, el modelo es ficción extractiva (amenity migration Pacífico/East Cape).",
+      "stance_en": "Place-vocation must rest on clear tenure, voice, and livelihoods — otherwise the model is extractive fiction (Pacific/East Cape amenity migration).",
+      "tension_es": "Con turismo/inversión y planeación municipal: planes y deals formales pueden dejar fuera realidades ejidales o consuetudinarias.",
+      "tension_en": "With tourism/investment and municipal planning: formal plans and deals can sideline customary or ejidal realities."
+    }
+  ],
+  "consensus_seeds": [
+    {
+      "claim_es": "BCS 2050 debe diseñarse como suma de vocaciones territoriales complementarias, no como un único futuro uniforme centrado en Los Cabos.",
+      "claim_en": "BCS 2050 should be designed as a sum of complementary territorial vocations, not one Cabos-centric uniform future.",
+      "status": "emerging",
+      "place_ids": [
+        "los_cabos",
+        "east_cape",
+        "todos_santos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "territorial_development",
+          "label_es": "Desarrollo territorial",
+          "label_en": "Territorial development"
+        },
+        {
+          "role_id": "vision_spatial",
+          "label_es": "Visión y marco espacial",
+          "label_en": "Vision & spatial framework"
+        }
+      ],
+      "next_evidence_es": "Comparar scorecards de /crecimiento por las 7 vocaciones y citar una métrica portal (DMA, vuelos o stills) por lugar.",
+      "next_evidence_en": "Compare /crecimiento scorecards across the 7 vocations and cite one portal metric (DMA, flights or stills) per place."
+    },
+    {
+      "claim_es": "Agua y energía no son «servicios de después»: son la constricción vinculante de toda vocación costera (Cabos, East Cape, Pacífico, Loreto).",
+      "claim_en": "Water and energy are not utilities afterthoughts — they are the binding constraint on every coastal vocation (Cabos, East Cape, Pacific, Loreto).",
+      "status": "emerging",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "east_cape",
+        "loreto",
+        "todos_santos"
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "water_security",
+          "label_es": "Seguridad hídrica",
+          "label_en": "Water security"
+        },
+        {
+          "role_id": "energy_grid",
+          "label_es": "Energía y red",
+          "label_en": "Energy & grid"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "sustainability_infra",
+          "label_es": "Sustentabilidad e infraestructura",
+          "label_en": "Sustainability & infrastructure"
+        }
+      ],
+      "next_evidence_es": "Enlazar la señal de acoplamiento agua–energía con celdas gap de agua/energía en /crecimiento para Cabos y La Paz.",
+      "next_evidence_en": "Link the water–energy coupling signal to water/energy gap cells on /crecimiento for Cabos and La Paz."
+    },
+    {
+      "claim_es": "East Cape / Cabo Pulmo: techo de conservación vs. demanda de desborde desde el crecimiento de Cabos.",
+      "claim_en": "East Cape / Cabo Pulmo conservation ceiling vs. spillover demand from Cabos growth.",
+      "status": "contested",
+      "place_ids": [
+        "east_cape",
+        "los_cabos"
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "environment_anp",
+          "label_es": "Ambiente y ANPs",
+          "label_en": "Environment & ANPs"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        }
+      ],
+      "next_evidence_es": "Abrir ficha East Cape en /crecimiento y cruzar con notas de planeación San José del Este en /noticias y catálogo 01_planning.",
+      "next_evidence_en": "Open the East Cape /crecimiento card and cross-check San José del Este planning notes in /noticias and catalog 01_planning."
+    },
+    {
+      "claim_es": "Migración de amenidad (Todos Santos–Pescadero) como diversificación vs. densificación no planeada sin infraestructura a escala Cabos.",
+      "claim_en": "Amenity migration (Todos Santos–Pescadero) as diversification vs. unplanned densification without cape-scale infrastructure.",
+      "status": "contested",
+      "place_ids": [
+        "todos_santos",
+        "los_cabos"
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "community_tenure",
+          "label_es": "Comunidad y tenencia",
+          "label_en": "Community & land tenure"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        }
+      ],
+      "next_evidence_es": "Revisar gaps de infraestructura en scorecard Todos Santos y stills / foresights para ese place_id.",
+      "next_evidence_en": "Review infrastructure gaps on the Todos Santos scorecard and stills/foresights for that place_id."
+    },
+    {
+      "claim_es": "La Paz debe permanecer como capital de servicios/gobernanza para que la suma estatal no se fragmente en proyectos locales.",
+      "claim_en": "La Paz must remain the services/governance capital so the statewide sum does not fragment into local projects.",
+      "status": "emerging",
+      "place_ids": [
+        "la_paz"
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "territorial_development",
+          "label_es": "Desarrollo territorial",
+          "label_en": "Territorial development"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        }
+      ],
+      "next_evidence_es": "Usar roll-up estatal + scorecard La Paz en /crecimiento y conectividad LAP en /vuelos como evidencia de rol capital.",
+      "next_evidence_en": "Use state roll-up + La Paz scorecard on /crecimiento and LAP connectivity on /vuelos as capital-role evidence."
+    },
+    {
+      "claim_es": "Comondú inland agri/desal como segundo pilar real vs. el turismo costero como único motor fiscal.",
+      "claim_en": "Inland Comondú agri/desal as a true second pillar vs. coastal tourism as the only fiscal engine.",
+      "status": "contested",
+      "place_ids": [
+        "comondu",
+        "los_cabos"
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "water_security",
+          "label_es": "Seguridad hídrica",
+          "label_en": "Water security"
+        },
+        {
+          "role_id": "territorial_development",
+          "label_es": "Desarrollo territorial",
+          "label_en": "Territorial development"
+        }
+      ],
+      "next_evidence_es": "Marcar celdas gap agrícolas/DMA de Comondú en /crecimiento; no inventar hm³ — solo portal.",
+      "next_evidence_en": "Flag Comondú agri/DMA gap cells on /crecimiento; do not invent hm³ — portal only."
+    },
+    {
+      "claim_es": "Faltan métricas públicas de capacidad de carga (agua–kWh–cuartos) por lugar para arbitrar IED vs. freno político.",
+      "claim_en": "Public carrying-capacity metrics (water–kWh–rooms) by place are missing to arbitrate FDI vs. political brake.",
+      "status": "gap",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "east_cape",
+        "todos_santos",
+        "comondu",
+        "mulege_north"
+      ],
+      "opposing_lenses": [
+        {
+          "role_id": "sustainability_infra",
+          "label_es": "Sustentabilidad e infraestructura",
+          "label_en": "Sustainability & infrastructure"
+        },
+        {
+          "role_id": "water_security",
+          "label_es": "Seguridad hídrica",
+          "label_en": "Water security"
+        },
+        {
+          "role_id": "tourism_investment",
+          "label_es": "Turismo e inversión",
+          "label_en": "Tourism & investment"
+        },
+        {
+          "role_id": "municipal_planning",
+          "label_es": "Planeación municipal",
+          "label_en": "Municipal planning"
+        }
+      ],
+      "next_evidence_es": "Inventariar celdas status=gap en Base de datos BCS 2050 — demanda y oferta de crecimiento y priorizar la que bloquee el próximo debate de IED.",
+      "next_evidence_en": "Inventory status=gap cells in Base de datos BCS 2050 — demanda y oferta de crecimiento and prioritize the one blocking the next FDI debate."
+    }
+  ],
+  "watchlist": [
+    {
+      "item_es": "Avance e implicaciones del Plan Parcial / instrumentos de planeación East Cape / San José del Este.",
+      "item_en": "Progress and implications of East Cape / San José del Este partial plan and planning instruments."
+    },
+    {
+      "item_es": "Confiabilidad SIBCS y obras CFE vs. incidentes OOMSAPAS de abasto.",
+      "item_en": "SIBCS reliability and CFE works vs. OOMSAPAS supply incidents."
+    },
+    {
+      "item_es": "Consulta e implementación POEL Los Cabos 2026 (obligaciones de agua/residuos).",
+      "item_en": "Los Cabos POEL 2026 consultation and implementation (water/waste obligations)."
+    },
+    {
+      "item_es": "Desaladora Comondú (MIA) y segunda etapa PTAR Loreto — vocaciones mid-península.",
+      "item_en": "Comondú desal (MIA) and Loreto WWTP stage 2 — mid-peninsula vocations."
+    },
+    {
+      "item_es": "Proyecto Oasis H2 Mulegé: de anuncio a hitos verificables.",
+      "item_en": "Mulegé Oasis H2 project: from announcement to verifiable milestones."
+    },
+    {
+      "item_es": "Capas «Lugares de foco» en Mapas — no confundir con escenarios públicos (diferidos).",
+      "item_en": "«Focus places» layers on Maps — do not confuse with public scenarios (deferred)."
+    },
+    {
+      "item_es": "Conectividad SJD: 56 destinos sin escalas (inventario portal vuelos).",
+      "item_en": "SJD connectivity: 56 non-stop destinations (portal flights inventory)."
+    },
+    {
+      "item_es": "Dengue con transmisión activa en Los Cabos y Comondú (hospitales saturados en Los Cabos); visita presidencial a hospitales de BCS a finales de noviembre.",
+      "item_en": "Dengue with active transmission in Los Cabos and Comondú (hospitals strained in Los Cabos); presidential hospital visit to BCS in late November."
+    },
+    {
+      "item_es": "Vivienda para el Bienestar: ubicación de predios y Ventanilla de Vivienda Social frente a capacidad de agua y servicios.",
+      "item_en": "Housing for Wellbeing: plot locations and Social Housing Window against water and service capacity."
+    }
+  ],
+  "method_note_es": "Inteligencia interna / prospectiva en borrador. Combina análisis por lugar, lentes de rol, visión de sistema y señales con las noticias y el catálogo del portal. Vocaciones de lugar = columna vertebral; lentes de rol = debate. Sin fichas F+P. Sin gemelo de decisión público. No es un plan oficial.",
+  "method_note_en": "Internal intelligence / draft foresight. Combines place analysis, role lenses, a system view and signals with the portal's news and catalog. Place vocations = geographic backbone; role lenses = debate. No F+P fichas. No public decision twin. Not an official plan.",
+  "swarm_sources": [
+    "BCS_MASTERPLANS_ACQUISITION_LOG.md",
+    "BCS_MASTERPLANS_INVENTORY.md",
+    "PORTAL_REVIEW_BRIEF_CHATGPT_PC.md",
+    "PORTAL_REVIEW_BRIEF_FOR_CHATGPT.md",
+    "PORTAL_REVIEW_CHATGPT.md",
+    "PORTAL_REVIEW_CHATGPT_PC.md",
+    "places_claude.md",
+    "roles_astra.md",
+    "signals_kimi.md",
+    "system_view_antigravity.md"
+  ],
+  "little_change": false,
+  "feeds_meta": {
+    "updated": "2026-10-30",
+    "news_tagged": 143,
+    "signals_with_provenance": 10,
+    "flight_airports": [
+      "SJD",
+      "LAP",
+      "LTO"
+    ]
+  },
+  "visuals": [
+    {
+      "id": "vocation_map",
+      "type": "map",
+      "path": "/foresights/vocation_map.png",
+      "geojson": "/foresights/vocation_places.geojson",
+      "caption_es": "Mapa de vocaciones de lugar (marcadores indicativos sobre municipios OSM).",
+      "caption_en": "Place-vocation map (indicative markers on OSM municipalities).",
+      "source_es": "GIS portal · OpenStreetMap — límites municipales · Base de datos BCS 2050 — prospectiva",
+      "source_en": "Portal GIS · OpenStreetMap — límites municipales · Base de datos BCS 2050 — prospectiva"
+    },
+    {
+      "id": "signals_diagram",
+      "type": "diagram",
+      "path": "/foresights/signals_diagram.png",
+      "caption_es": "Diagrama de señales de la semana (temas → presión territorial).",
+      "caption_en": "This week’s signals diagram (themes → territorial pressure).",
+      "source_es": "Base de datos BCS 2050 — prospectiva · signals[]",
+      "source_en": "Base de datos BCS 2050 — prospectiva · signals[]"
+    },
+    {
+      "id": "constraints_flights",
+      "type": "chart",
+      "path": "/foresights/constraints_flights.png",
+      "caption_es": "Destinos sin escalas: SJD=56, LAP=7, LTO=5.",
+      "caption_en": "Non-stop destinations: SJD=56, LAP=7, LTO=5.",
+      "source_es": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)",
+      "source_en": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)",
+      "numbers": {
+        "SJD": 56,
+        "LAP": 7,
+        "LTO": 5
+      }
+    },
+    {
+      "id": "constraints_dma",
+      "type": "chart",
+      "path": "/foresights/constraints_dma.png",
+      "caption_es": "5 acuíferos en déficit en el pack DMA del portal (magnitudes CONAGUA).",
+      "caption_en": "5 deficit aquifers in the portal DMA pack (CONAGUA magnitudes).",
+      "source_es": "Base de datos BCS 2050 — capa SIG",
+      "source_en": "Base de datos BCS 2050 — capa SIG",
+      "numbers": {
+        "dma_deficit_count": 5,
+        "0317": 24.07,
+        "0324": 13.49,
+        "0319": 12.49,
+        "0313": 2.96,
+        "0318": 2.29
+      }
+    },
+    {
+      "id": "constraints_counts",
+      "type": "chart",
+      "path": "/foresights/constraints_counts.png",
+      "caption_es": "Conteos reales del portal: 956 stills, 5 DMA, 3 aeropuertos.",
+      "caption_en": "Real portal counts: 956 stills, 5 DMA, 3 airports.",
+      "source_es": "stills_points · focus_water_dmas · flight_connections_bcs",
+      "source_en": "stills_points · focus_water_dmas · flight_connections_bcs",
+      "numbers": {
+        "stills": 956,
+        "dma_markers": 5,
+        "airports": 3
+      }
+    },
+    {
+      "id": "role_tensions",
+      "type": "diagram",
+      "path": "/foresights/role_tensions.png",
+      "caption_es": "Esquema de tensiones: agua vs crecimiento, isla energética, Cabos vs resto.",
+      "caption_en": "Tension sketch: water vs growth, energy island, Cabos vs rest.",
+      "source_es": "Base de datos BCS 2050 — prospectiva role_briefs · system_view",
+      "source_en": "Base de datos BCS 2050 — prospectiva role_briefs · system_view"
+    },
+    {
+      "id": "stills_strip",
+      "type": "image_strip",
+      "caption_es": "Stills del territorio cerca de vocaciones (activos existentes del portal).",
+      "caption_en": "Territory stills near vocations (existing portal assets only).",
+      "source_es": "Base de datos BCS 2050 — imágenes del territorio",
+      "source_en": "Base de datos BCS 2050 — imágenes del territorio",
+      "items": [
+        {
+          "place_id": "los_cabos",
+          "still_id": "S0198",
+          "name": "Cabo San Lucas",
+          "path": "/foresights/stills/los_cabos_S0198.jpg",
+          "lat": 22.897019,
+          "lon": -109.925186
+        },
+        {
+          "place_id": "la_paz",
+          "still_id": "S0004",
+          "name": "La Paz",
+          "path": "/foresights/stills/la_paz_S0004.jpg",
+          "lat": 24.148745,
+          "lon": -110.30659
+        },
+        {
+          "place_id": "loreto",
+          "still_id": "S0210",
+          "name": "San Javier road west",
+          "path": "/foresights/stills/loreto_S0210.jpg",
+          "lat": 25.9965,
+          "lon": -111.366667
+        },
+        {
+          "place_id": "todos_santos",
+          "still_id": "S0173",
+          "name": "Todos Santos",
+          "path": "/foresights/stills/todos_santos_S0173.jpg",
+          "lat": 23.450437,
+          "lon": -110.225613
+        }
+      ]
+    }
+  ],
+  "visuals_built": true
+}

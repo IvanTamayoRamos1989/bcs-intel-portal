@@ -1,0 +1,8 @@
+body.foresight-page.ios-shell{padding:0!important;min-height:100dvh;background:#f7f6ef;color:#294554;display:flex;flex-direction:column}
+.foresight-page .portal-skip{position:absolute}
+.foresight-page #contenido,.foresight-page main.wide{flex:1;min-height:0;max-width:1040px!important;width:100%;margin:0 auto;padding:1.5rem 1.25rem 3rem!important;overflow:auto}
+.foresight-page .pt-spec-note{margin:0 0 1.25rem;padding:0.85rem 1rem;background:#eef3f0;border:1px solid #d8ded7;border-radius:12px}
+.foresight-page .foresight-strip{flex:0 0 auto;padding:0 1.25rem;border-bottom:1px solid #d8ded7;background:#f7f6ef}
+@media(max-width:640px){
+  .foresight-page #contenido,.foresight-page main.wide{padding:1rem 0.9rem 2.5rem!important}
+}

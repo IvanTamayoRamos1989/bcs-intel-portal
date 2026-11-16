@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ForesightEdition from '../../components/ForesightEdition.astro';
+import { listEditionMeta, loadEdition, loadLatest, formatEditionDate } from '../../lib/foresightEditions';
+
+export function getStaticPaths() {
+  return listEditionMeta().map((ed) => ({ params: { edition: ed.date } }));
+}
+
+const date = Astro.params.edition as string;
+const edition = loadEdition(date);
+if (!edition) throw new Error(`Missing foresight edition ${date}`);
+const latest = loadLatest();
+const isLatest = edition.updated === latest.updated;
+---
+<BaseLayout
+  title={edition.headline_es || `Foresight ${date}`}
+  titleEn={edition.headline_en || edition.headline_es || `Foresight ${date}`}
+  description={`Prospectiva BCS 2050 · ${formatEditionDate(date, 'es')}`}
+  descriptionEn={`BCS 2050 foresight · ${formatEditionDate(date, 'en')}`}
+  wide={true}
+  hidePageHead={true}
+>
+  <link rel="stylesheet" href="/foresight-page.css?v=20261116-foresight" />
+  <p class="fs-back">
+    <a href="/foresights/">
+      <span data-lang-es>← Foresight</span>
+      <span data-lang-en hidden>← Foresight</span>
+    </a>
+    <span class="fs-dot"> · </span>
+    <span data-lang-es>Edición del {formatEditionDate(date, 'es')}</span>
+    <span data-lang-en hidden>Edition of {formatEditionDate(date, 'en')}</span>
+  </p>
+  <ForesightEdition edition={edition} isLatest={isLatest} />
+</BaseLayout>

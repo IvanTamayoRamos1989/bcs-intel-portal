@@ -9,3 +9,5 @@
 .three-header #lang-toggle{border:1px solid #ccd5cd;background:transparent;border-radius:24px;padding:8px 12px;color:#34515c;font:inherit;font-size:12px}
 .three-header :is(a,button):focus-visible{outline:3px solid #285d72;outline-offset:3px}
 @media(max-width:600px){.three-header{height:104px;flex-basis:104px;flex-wrap:wrap;padding:10px 16px 7px;gap:4px}.three-brand{font-size:18px}.three-header nav{order:3;width:100%;justify-content:center;gap:4px}.three-header nav a{font-size:13px;padding:9px 18px}.three-header button{min-height:32px;padding:5px 10px}}
+@media(max-width:860px){.three-header{gap:12px;padding:0 16px}.three-header nav a{padding:9px 12px;font-size:13px}}
+@media(max-width:600px){.three-header nav a{font-size:12px;padding:8px 8px}}

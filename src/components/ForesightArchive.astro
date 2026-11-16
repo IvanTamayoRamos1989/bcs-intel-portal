@@ -1,0 +1,32 @@
+---
+import { previousEditions, formatEditionDate } from '../lib/foresightEditions';
+const items = previousEditions();
+---
+{items.length > 0 && (
+  <section class="fs-archive" id="foresight-archive">
+    <h2>
+      <span data-lang-es>Ediciones anteriores</span>
+      <span data-lang-en hidden>Previous editions</span>
+    </h2>
+    <p class="fs-archive-lead">
+      <span data-lang-es>Archivo de la prospectiva semanal, de la más reciente a la más antigua.</span>
+      <span data-lang-en hidden>Archive of the weekly foresight, newest first.</span>
+    </p>
+    <ul class="fs-archive-list">
+      {items.map((ed) => (
+        <li>
+          <a href={ed.href}>
+            <span class="fs-archive-date">
+              <span data-lang-es>{formatEditionDate(ed.date, 'es')}</span>
+              <span data-lang-en hidden>{formatEditionDate(ed.date, 'en')}</span>
+            </span>
+            <h3>
+              <span data-lang-es>{ed.headline_es}</span>
+              <span data-lang-en hidden>{ed.headline_en}</span>
+            </h3>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
