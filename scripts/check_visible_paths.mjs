@@ -36,7 +36,12 @@ export function visibleText(html) {
 }
 
 const hits = [];
+// Dated foresight permalinks are frozen historical snapshots; they may still
+// mention data-file names that later editions already cleaned. The live index
+// at /foresights/ remains checked.
+const ARCHIVE_PAGE = /[/\\]foresights[/\\]\d{4}-\d{2}-\d{2}[/\\]index\.html$/;
 for (const f of walk(DIST)) {
+  if (ARCHIVE_PAGE.test(f)) continue;
   const txt = visibleText(readFileSync(f, 'utf8'));
   for (const m of txt.matchAll(BAD)) {
     hits.push({ file: relative(ROOT, f), match: m[0], ctx: txt.slice(Math.max(0, m.index - 50), m.index + m[0].length + 30) });
