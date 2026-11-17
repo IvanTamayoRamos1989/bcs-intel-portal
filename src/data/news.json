@@ -1,7 +1,2696 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-17",
   "source_note": "Mixed curated + daily refresh; blurbs paraphrased from live pages, never fabricated URLs.",
   "items": [
+    {
+      "id": "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Gringo Gazette",
+      "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
+      "title_es": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
+      "title_en": "Los Cabos projects a 9% drop in 2027 revenue as the real estate market cools",
+      "blurb_es": "El Cabildo de Los Cabos aprobó por unanimidad enviar al Congreso la Ley de Ingresos 2027, con 6,746 mdp frente a 7,421 mdp del presupuesto modificado de 2026 (−9.09%, unos 675 mdp menos). Los ingresos propios —predial, ISABI y derecho de saneamiento ambiental— bajarían de 4,173 a 3,338 mdp, casi 20% menos; el Ayuntamiento lo atribuye a la contracción del mercado inmobiliario y advierte que podría reducir obras y proyectos el próximo año.",
+      "blurb_en": "Los Cabos council unanimously sent the state congress a 2027 revenue law of 6,746 million pesos versus 7,421 million in the modified 2026 budget (−9.09%, about 675 million less). Own-source revenue — property tax, transfer tax and environmental sanitation fee — would fall from 4,173 to 3,338 million pesos, nearly 20% less; the city blames the cooling real estate market and warns it may cut works and projects next year.",
+      "topics": [
+        "planning",
+        "land_use",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/11/16/cabo-del-este-convocan-a-firmar-por-el-camino-costero/",
+      "title_es": "Vecinos convocan colecta de firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040",
+      "title_en": "Residents call a signature drive to keep the East Cape Coastal Road in the 2040 urban plan",
+      "blurb_es": "Habitantes de Los Cabos recogerán firmas del 19 al 22 de noviembre bajo el lema «¡El Camino Costero se queda!» para que la vía no se elimine del Plan Director de Desarrollo Urbano 2040 y se mantenga como camino rústico. Grupo Questro propuso una carretera alterna a al menos 1 km de la playa; el Implan plantea conservar la ruta como paseo escénico con acceso a playas, y el alcalde afirmó que cualquier decisión se consultará. La actualización del PDU de 2025 preveía dejar en desuso 3.9 km de la ruta de 94 km San José del Cabo–La Ribera.",
+      "blurb_en": "Los Cabos residents will collect signatures on 19–22 November under the slogan “The Coastal Road stays!” so the road is not removed from the 2040 Urban Development Plan and is kept as a rustic road. Grupo Questro proposed an alternative highway at least 1 km from the beach; Implan proposes keeping the route as a scenic drive with beach access, and the mayor said any decision will be put to consultation. The 2025 plan update would have abandoned 3.9 km of the 94 km San José del Cabo–La Ribera route.",
+      "topics": [
+        "land_use",
+        "planning",
+        "environment",
+        "connectivity",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "east_cape"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "east_cape"
+        }
+      ]
+    },
+    {
+      "id": "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
+      "title_es": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
+      "title_en": "Rain and sewage spills are damaging the Transpeninsular highway in Los Cabos",
+      "blurb_es": "Las lluvias recientes y un derrame de aguas negras que el organismo operador de agua de Los Cabos no ha corregido en más de veinte días están dañando la carpeta asfáltica de la Transpeninsular. El Centro SCT en BCS reconoció afectaciones, sobre todo en los acotamientos del tramo San José–Cabo San Lucas; la nota pide una evaluación integral que atienda también el drenaje sanitario.",
+      "blurb_en": "Recent rain and a sewage spill that the Los Cabos water utility has not fixed in over twenty days are damaging the Transpeninsular highway surface. The SCT office in BCS acknowledged damage, mainly on the shoulders of the San José–Cabo San Lucas stretch; the report calls for a comprehensive assessment that also tackles sanitary drainage.",
+      "topics": [
+        "connectivity",
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/hotel-san-crist%C3%B3bal-suspende-operaciones-por-da%C3%B1os-causados-por-el-oleaje/789103",
+      "title_es": "Hotel San Cristóbal en Punta Lobos suspende operaciones por daños del oleaje",
+      "title_en": "Hotel San Cristóbal in Punta Lobos suspends operations after surf damage",
+      "blurb_es": "El Hotel San Cristóbal, en playa Punta Lobos (Todos Santos), suspendió temporalmente operaciones porque uno de sus edificios y las 12 habitaciones frente al mar sufrieron daños por las altas mareas y los recientes fenómenos meteorológicos; no hubo lesionados. Evaluará los daños antes de fijar una posible reapertura, sin fecha. El caso reaviva el debate sobre la ocupación de playas y la dinámica natural del litoral en BCS.",
+      "blurb_en": "Hotel San Cristóbal on Punta Lobos beach (Todos Santos) temporarily suspended operations because one of its buildings and its 12 beachfront rooms were damaged by high tides and recent weather events; nobody was hurt. It will assess the damage before setting a possible reopening, with no date. The case revives debate on beach occupation and natural shoreline dynamics in BCS.",
+      "topics": [
+        "environment",
+        "tourism",
+        "land_use"
+      ],
+      "place_ids": [
+        "todos_santos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        }
+      ]
+    },
+    {
+      "id": "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+      "date": "2026-11-16",
+      "source": "POSTA México",
+      "url": "https://www.posta.com.mx/bcs/habra-lluvias-en-bcs-este-lunes-16-de-noviembre-alertan-por-oleaje-de-hasta-3-metros/vl2279534",
+      "title_es": "SMN prevé oleaje de 2 a 3 metros en la costa del Pacífico de BCS y rachas de 30 a 50 km/h",
+      "title_en": "Weather service forecasts 2–3 m surf on BCS's Pacific coast and 30–50 km/h gusts",
+      "blurb_es": "El aviso 638 del Servicio Meteorológico Nacional prevé oleaje de 2 a 3 metros en la costa occidental de BCS (Guerrero Negro, Bahía Asunción, Puerto San Carlos, Puerto Adolfo López Mateos, Todos Santos, El Pescadero) y rachas de 30 a 50 km/h también en el Golfo de California, con riesgo para pangas y lanchas. A inicios de noviembre, con el frente frío 4, Marina cerró a la navegación menor Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y López Mateos.",
+      "blurb_en": "National Weather Service notice 638 forecasts 2–3 m surf on BCS's western coast (Guerrero Negro, Bahía Asunción, Puerto San Carlos, Puerto Adolfo López Mateos, Todos Santos, El Pescadero) and 30–50 km/h gusts also over the Gulf of California, a risk for small boats. In early November, with cold front 4, the Navy closed Santa Rosalía, Loreto, San Carlos, Bahía Magdalena and López Mateos to small craft.",
+      "topics": [
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "todos_santos",
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Diario Humano",
+      "url": "https://diariohumano.com.mx/2026/11/16/instalan-tercer-compostero-comunitario-en-la-paz-bcs/",
+      "title_es": "La Paz instala su tercer compostero comunitario, en El Palmar II",
+      "title_en": "La Paz installs its third community composter, in El Palmar II",
+      "blurb_es": "El Ayuntamiento de La Paz instaló un compostero comunitario en el Centro Impulso de la colonia El Palmar II, el tercero tras los de Solidaridad y Los Mangos; seguirán el parque Fundadores en El Centenario y La Cima. El programa, con Semarnat, el Fondo de Cooperación de la Alianza del Pacífico y GeoCiclos (Chile), convierte residuos orgánicos en composta para las áreas verdes y sigue a la entrega de 40 composteros a familias.",
+      "blurb_en": "La Paz city installed a community composter at the Centro Impulso in El Palmar II, the third after Solidaridad and Los Mangos; Fundadores park in El Centenario and La Cima will follow. The programme, with Semarnat, the Pacific Alliance Cooperation Fund and GeoCiclos (Chile), turns organic waste into compost for green areas and follows the delivery of 40 home composters to families.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/renovacion-calle-agustin-arriola-centro-lpz/",
+      "title_es": "Inicia la renovación con concreto hidráulico de la calle Agustín Arriola en el Centro Histórico de La Paz",
+      "title_en": "Concrete rebuild of Agustín Arriola street begins in La Paz's historic centre",
+      "blurb_es": "El 17 de noviembre arranca la reconstrucción con concreto hidráulico de la calle Agustín Arriola Martínez, entre Paseo Álvaro Obregón y Francisco I. Madero, en coordinación con el Fideicomiso de Obras de Infraestructura Social de La Paz (FOIS), con el objetivo de revitalizar comercio y turismo. El cierre vehicular empieza a las 6:00 h; se pidió retirar vehículos desde la noche del 16 y atender la señalización.",
+      "blurb_en": "On 17 November the rebuild of Agustín Arriola Martínez street with hydraulic concrete begins, between Paseo Álvaro Obregón and Francisco I. Madero, in coordination with the La Paz social infrastructure trust (FOIS), aiming to revive commerce and tourism. The road closes from 6:00; residents were asked to move vehicles from the night of the 16th and follow signage.",
+      "topics": [
+        "planning",
+        "connectivity",
+        "tourism"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "dengue-seguimiento-distancia-245-atenciones-los-cabos-meganoticias-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/secretaria-de-salud-realiza-245-atenciones-m%C3%A9dicas-por-dengue-en-los-cabos/789156",
+      "title_es": "Seguimiento médico a distancia suma 245 atenciones a pacientes de dengue de alto riesgo",
+      "title_en": "Remote medical follow-up reaches 245 consultations for high-risk dengue patients",
+      "blurb_es": "El sistema de seguimiento médico a distancia del Gobierno de BCS y el Servicio Nacional de Salud Pública ha hecho 245 atenciones a pacientes con dengue y factores de riesgo; 19 fueron canalizados a segundo nivel y 116 dados de alta, sin defunciones entre los incluidos. Se recomienda acudir a una unidad médica ante fiebre o dolores y evitar la automedicación.",
+      "blurb_en": "The remote medical follow-up system run by the BCS government and the National Public Health Service has made 245 consultations with dengue patients who have risk factors; 19 were referred to second-level care and 116 discharged, with no deaths among those enrolled. People with fever or pain are urged to see a doctor and avoid self-medication.",
+      "topics": [
+        "planning",
+        "environment"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+      "date": "2026-11-15",
+      "source": "La Nigua",
+      "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
+      "title_es": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
+      "title_en": "Debris from Hotel San Cristóbal under watch so it does not reach the sea",
+      "blurb_es": "Profepa recorrió el 11 de noviembre el Hotel San Cristóbal en Punta Lobos (Todos Santos), tras el aviso del proyecto Tres Santos sobre el derrumbe de un muro y la demolición de partes dañadas. No detectó descargas de aguas residuales, químicos o hidrocarburos al mar ni fauna afectada; revisará la autorización de impacto ambiental, si la demolición está contemplada y el manejo de residuos, y podrá hacer una visita de inspección si encuentra incumplimientos.",
+      "blurb_en": "On 11 November Profepa inspected Hotel San Cristóbal in Punta Lobos (Todos Santos) after the Tres Santos project reported a wall collapse and demolition of damaged sections. It found no discharges of wastewater, chemicals or hydrocarbons to the sea and no affected wildlife; it will review the environmental impact permit, whether demolition is covered and waste handling, and may carry out a formal inspection if it finds non-compliance.",
+      "topics": [
+        "environment",
+        "land_use",
+        "water"
+      ],
+      "place_ids": [
+        "todos_santos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        }
+      ]
+    },
+    {
+      "id": "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15",
+      "date": "2026-11-15",
+      "source": "El Economista",
+      "url": "https://www.eleconomista.com.mx/empresas/baja-ferries-busca-transformar-movilizacion-maritima-mar-cortes-experiencia-vacacional-20261115-844111.html",
+      "title_es": "Baja Ferries busca transformar movilización maritima por el Mar de Cortes en experiencia vacacional",
+      "title_en": "Baja Ferries seeks to turn Sea of Cortez crossings into a holiday experience",
+      "blurb_es": "El CEO de Baja Ferries, Nino Liaño, dijo que la naviera mueve más de 200 mil pasajeros al año en las rutas Topolobampo–La Paz y Mazatlán–La Paz y busca llegar a 300–400 mil con un producto tipo crucero. Recordó que el 90% de los bienes que llegan a BCS lo hacen por vía marítima. Tiene entre 20 y 30 alianzas con hoteles y agencias, una alianza con el Chepe hacia Los Cabos y paquetes a La Paz, Balandra, Todos Santos, Loreto y Los Cabos.",
+      "blurb_en": "Baja Ferries CEO Nino Liaño said the line carries over 200,000 passengers a year on the Topolobampo–La Paz and Mazatlán–La Paz routes and aims for 300–400,000 with a cruise-style product. He noted 90% of goods reaching BCS arrive by sea. It has 20–30 partnerships with hotels and agencies, an alliance with the Chepe train linking to Los Cabos, and packages to La Paz, Balandra, Todos Santos, Loreto and Los Cabos.",
+      "topics": [
+        "tourism",
+        "connectivity"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "todos_santos",
+        "la_paz",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ]
+    },
+    {
+      "id": "sepuimm-pavimentacion-criterios-aforo-palabrabcs-2026-11-15",
+      "date": "2026-11-15",
+      "source": "Palabra BCS",
+      "url": "https://www.palabrabcs.com/municipios/la-paz/la-pavimentacion-de-calles-se-define-principalmente-por-aforo-vehicular-precisa-sepuimm/",
+      "title_es": "La pavimentación de calles se define principalmente por aforo vehicular, precisa Sepuimm",
+      "title_en": "Street paving is decided mainly by traffic volume, says Sepuimm",
+      "blurb_es": "La titular de la Sepuimm, Carolina Armenta Cervantes, explicó que la prioridad de pavimentación se define sobre todo por aforo vehicular, además de zonas de inundación, hospitales y escuelas, porque la demanda supera los recursos; en colonias suele atenderse la calle que conecta con las arterias principales. La repavimentación con asfalto del bulevar Pino Pallas en La Paz debe concluir antes de Navidad y la calle Francisco King (concreto hidráulico) llevará unos cuatro meses.",
+      "blurb_en": "Sepuimm head Carolina Armenta Cervantes said paving priorities are set mainly by traffic volume, plus flood zones, hospitals and schools, because demand exceeds resources; in neighbourhoods the street linking to main arteries is usually done first. Asphalt resurfacing of Boulevard Pino Pallas in La Paz should finish before Christmas and Calle Francisco King (hydraulic concrete) will take about four months.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "el-nino-nivel-mar-puerto-san-carlos-meganoticias-2026-11-14",
+      "date": "2026-11-14",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+      "title_es": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+      "title_en": "El Niño is raising sea levels in Puerto San Carlos and will keep causing extraordinary tides in 2026, UABCS researcher warns",
+      "blurb_es": "Miguel Imaz (UABCS) explicó que El Niño ha elevado el oleaje entre 15 y 30 cm y contribuyó al colapso de barreras naturales en Puerto San Carlos (Comondú), con ingreso de agua de mar. Prevé que el fenómeno se debilite en 2027, con incertidumbre, y lluvias invernales más intensas. Pidió un análisis integral de alternativas de protección: un muro de concreto sería temporal, costoso y no necesariamente impediría la entrada del agua.",
+      "blurb_en": "Miguel Imaz (UABCS) said El Niño has raised waves by 15–30 cm and helped collapse natural barriers in Puerto San Carlos (Comondú), letting seawater in. He expects it to weaken in 2027, with uncertainty, and stronger winter rains. He called for a comprehensive study of protection options: a concrete wall would be temporary, costly and might not stop the water.",
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+      "date": "2026-11-13",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/propone-10-anos-carcel-huachicol-agua/",
+      "title_es": "Senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua; Los Cabos suma 25 tomas clandestinas en 2026",
+      "title_en": "Senator Susana Zatarain proposes up to 10 years in prison for water theft; Los Cabos has found 25 illegal connections in 2026",
+      "blurb_es": "La iniciativa adiciona un artículo al Código Penal Federal y reforma la Ley de Aguas Nacionales para sancionar la extracción sin autorización, la manipulación de infraestructura, los pozos clandestinos y la venta ilegal de agua. En Los Cabos se han clausurado 25 tomas clandestinas en 2026, con una sustracción estimada superior a 300 litros por segundo, y Conagua cerró dos aprovechamientos ilegales en Cabo San Lucas que abastecían unas 120 pipas diarias. Según la ENCIG 2025 del INEGI, solo tres de cada diez personas en BCS tienen suministro constante.",
+      "blurb_en": "The bill adds an article to the Federal Penal Code and amends the National Waters Law to punish unauthorised extraction, tampering with infrastructure, clandestine wells and illegal water sales. Los Cabos has shut 25 illegal connections in 2026, with estimated theft above 300 litres per second, and Conagua closed two illegal sources in Cabo San Lucas that supplied about 120 tanker trucks a day. Per INEGI's ENCIG 2025, only three in ten people in BCS have constant supply.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "los-cabos-conexion-aerea-61-diversificar-elfinanciero-2026-11-13",
+      "date": "2026-11-13",
+      "source": "El Financiero",
+      "url": "https://www.elfinanciero.com.mx/empresas/2026/11/13/crece-60-por-ciento-la-conexion-aerea-en-los-cabos-van-por-diversificar-turismo/",
+      "title_es": "Crece 60 por ciento la conexión aérea en Los Cabos; van por diversificar turismo",
+      "title_en": "Los Cabos air connectivity up 60%; destination aims to diversify tourism",
+      "blurb_es": "Según Fiturca (Rodrigo Esponda), las conexiones aéreas de Los Cabos crecieron 61% en una década y la afluencia casi se duplicó. La estrategia es diversificar mercados (Canadá compensa la caída de viajeros de EE. UU.; Europa y Sudamérica), elevar derrama y estadía, y apostar por nichos (naturaleza, gastronomía, wellness, reuniones) y residencias de marca. Las llegadas en aviación privada se triplicaron; el destino cerrará 2026 con unos 3.5 millones de visitantes, nivel que Fiturca considera sostenible.",
+      "blurb_en": "According to Fiturca (Rodrigo Esponda), Los Cabos air connections grew 61% in a decade and arrivals nearly doubled. The strategy is to diversify markets (Canada offsetting fewer US travellers; Europe and South America), raise spending and length of stay, and focus on niches (nature, food, wellness, meetings) and branded residences. Private-aviation arrivals tripled; the destination will close 2026 with about 3.5 million visitors, a level Fiturca considers sustainable.",
+      "topics": [
+        "tourism",
+        "connectivity"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "baja-1000-derrama-800-mdp-ocupacion-80-tribuna-2026-11-13",
+      "date": "2026-11-13",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/baja-1000-derrama/",
+      "title_es": "Baja 1000 dejará derrama de 800 mdp y ocupación hotelera de 80% en BCS",
+      "title_en": "Baja 1000 to leave 800 million pesos in spending and 80% hotel occupancy in BCS",
+      "blurb_es": "La secretaria de Turismo y Economía, Maribel Collins, estimó que la edición 59 de la Baja 1000 «Cabo to Cabo» (9 al 15 de noviembre), la primera corrida íntegramente en BCS, deja una derrama de unos 800 millones de pesos, con 282 equipos y cerca de 80% de ocupación hotelera en el estado, además de transmisión internacional en vivo. Son cifras estimadas por el gobierno estatal.",
+      "blurb_en": "Tourism and Economy Secretary Maribel Collins estimated that the 59th Baja 1000 'Cabo to Cabo' (9–15 November), the first held entirely in BCS, brings about 800 million pesos in spending, with 282 teams and close to 80% statewide hotel occupancy, plus live international broadcast. Figures are state-government estimates.",
+      "topics": [
+        "tourism"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        }
+      ]
+    },
+    {
+      "id": "bcs-primer-lugar-incidencia-dengue-meganoticias-2026-11-13",
+      "date": "2026-11-13",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/baja-california-sur-lidera-incidencia-de-dengue-en-m%C3%A9xico/788480",
+      "title_es": "Baja California Sur lidera incidencia de dengue en México",
+      "title_en": "Baja California Sur leads Mexico in dengue incidence",
+      "blurb_es": "Con datos de la Secretaría de Salud (semana epidemiológica 44), BCS ocupa el primer lugar nacional en incidencia de dengue y en casos estimados por cada 100 mil habitantes, con 5,790 casos probables, 628 confirmados y cinco defunciones. En casos confirmados absolutos es quinto, tras Sonora, Veracruz, Tabasco y Sinaloa. Las autoridades intensifican la descacharrización en los municipios con mayor incidencia.",
+      "blurb_en": "Per Health Ministry data (epidemiological week 44), BCS ranks first nationally in dengue incidence and in estimated cases per 100,000 people, with 5,790 probable cases, 628 confirmed and five deaths. In absolute confirmed cases it is fifth, after Sonora, Veracruz, Tabasco and Sinaloa. Authorities are stepping up container clean-ups in the most affected municipalities.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "loreto-calle-marlin-pavimentacion-45-aldiabcs-2026-11-13",
+      "date": "2026-11-13",
+      "source": "alDíaBCS",
+      "url": "https://aldiabcs.com/loreto/avanza-pavimentacion-de-calle-marlin/",
+      "title_es": "Avanza al 45% la pavimentación de la calle Marlín en la colonia Miramar de Loreto",
+      "title_en": "Paving of Calle Marlín in Loreto's Miramar neighbourhood reaches 45%",
+      "blurb_es": "El XI Ayuntamiento de Loreto informó que la obra de la calle Marlín (colonia Miramar) lleva 45% de avance general: concluyó el saneamiento de drenaje y alcantarillado, la red de agua potable está por terminar para interconectarse con la nueva línea, y hay 40% de guarniciones construidas y cimentaciones listas para el alumbrado público.",
+      "blurb_en": "Loreto's XI Town Council reported the Calle Marlín works (Miramar) at 45% overall: drainage and sewer rehabilitation is complete, the drinking-water network is nearly finished ahead of tie-in to the new line, 40% of kerbs are built and foundations for street lighting are in place.",
+      "topics": [
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ]
+    },
+    {
+      "id": "quinto-informe-entregado-congreso-ntcd-2026-11-12",
+      "date": "2026-11-12",
+      "source": "NTCD",
+      "url": "https://ntcd.mx/noticias-entregan-congreso-baja-california-sur-quinto-informe-gobierno",
+      "title_es": "Entregan al Congreso de BCS el Quinto Informe de Gobierno; el gobernador presentará resultados el 27 de noviembre",
+      "title_en": "BCS Congress receives the Fifth Government Report; the governor will present results on 27 November",
+      "blurb_es": "En representación del gobernador Víctor Manuel Castro Cosío, la secretaria general de Gobierno en funciones entregó al Congreso el Quinto Informe (1 sep 2025–31 ago 2026): documento socioeconómico, anexos de obras y acciones y anexo gráfico-estadístico, organizados por los cinco ejes del Plan Estatal de Desarrollo. El encuentro ciudadano será el viernes 27 de noviembre en la Plaza de la Reforma, La Paz.",
+      "blurb_en": "On behalf of Governor Víctor Manuel Castro Cosío, the acting Secretary of Government delivered the Fifth Report (1 Sep 2025–31 Aug 2026) to Congress: socio-economic document, works and actions annexes and a statistical annex, organised by the five axes of the State Development Plan. The public event will be on Friday 27 November at Plaza de la Reforma, La Paz.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "ocupacion-hotelera-los-cabos-78-pga-baja1000-tribuna-2026-11-12",
+      "date": "2026-11-12",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/ocupacion-hotelera-los-cabos-2/",
+      "title_es": "PGA Tour y Baja 1000 elevan la ocupación hotelera de Los Cabos al 78%, cuatro puntos sobre 2025",
+      "title_en": "PGA Tour and Baja 1000 lift Los Cabos hotel occupancy to 78%, four points above 2025",
+      "blurb_es": "La Asociación de Hoteles de Los Cabos reportó 78% de ocupación promedio en las dos primeras semanas de noviembre, cuatro puntos más que en 2025; es la primera vez desde marzo que el destino supera los registros del año anterior. Para el puente con la Baja 1000 se prevé 80%.",
+      "blurb_en": "The Los Cabos Hotel Association reported average occupancy of 78% in the first two weeks of November, four points above 2025 — the first time since March the destination has beaten the prior year. About 80% is expected for the long weekend with the Baja 1000.",
+      "topics": [
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "shell-nurse-arrecifes-rancho-marino-bahia-la-paz-meganoticias-2026-11-12",
+      "date": "2026-11-12",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
+      "title_es": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
+      "title_en": "Shell Nurse: Japanese-technology artificial reefs and a first marine ranch in La Paz Bay",
+      "blurb_es": "En el Foro Mar de Cortés, FEDECOOP y el Gobierno de BCS presentaron avances del proyecto de arrecifes artificiales Shell Nurse en la Bahía de La Paz, como respuesta pesquera al calentamiento del mar. Hay una investigación financiada por la Secihti sobre el desempeño de las estructuras y un análisis costo-beneficio del BID, IMIPAS y CISIMAR; los siguientes pasos son proteger las áreas, monitorear y evaluar si el modelo es replicable.",
+      "blurb_en": "At the Sea of Cortez Forum, FEDECOOP and the BCS government presented progress on the Shell Nurse artificial reefs in La Paz Bay, a fisheries response to warming waters. A Secihti-funded study is assessing the structures and the IDB, IMIPAS and CISIMAR are running a cost-benefit analysis; next steps are protecting the sites, monitoring and assessing replicability.",
+      "topics": [
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11",
+      "date": "2026-11-11",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/llegara-el-tiburon-urbano-a-el-centenario-y-chametla-cabildo-autoriza-compra-de-dos-camiones/",
+      "title_es": "Cabildo de La Paz autoriza dos camiones para llevar el Tiburón Urbano a El Centenario y Chametla",
+      "title_en": "La Paz council approves two buses to extend the Tiburón Urbano service to El Centenario and Chametla",
+      "blurb_es": "Con una reasignación de recursos federales del Ramo 33, el Cabildo aprobó la compra de dos unidades para una nueva ruta que conectará El Centenario y Chametla con el centro de La Paz, una demanda vecinal por la falta de transporte público. Se suma a la ruta Pedregal–Centro; aún no hay fecha de inicio, horarios ni frecuencias.",
+      "blurb_en": "Using reallocated federal Ramo 33 funds, the council approved buying two buses for a new route linking El Centenario and Chametla with downtown La Paz, a long-standing residents' demand given scarce public transport. It follows the Pedregal–Centro route; no start date, schedule or frequency yet.",
+      "topics": [
+        "planning",
+        "connectivity"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "camina-cabo-centro-csl-pausa-meganoticias-2026-11-11",
+      "date": "2026-11-11",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
+      "title_es": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
+      "title_en": "Los Cabos business owners say the state has paused the Camina Cabo walkability plan and the downtown Cabo San Lucas makeover",
+      "blurb_es": "La Asociación de Empresarios de Los Cabos afirma que el proyecto peatonal Camina Cabo y la remodelación del centro de CSL, que contaba con recursos del Fiturca, siguen detenidos en el Gobierno estatal sin explicación. Señala abandono del primer cuadro por cierre de negocios y su traslado a El Tezal, y buscará reactivar la revisión con Desarrollo Urbano.",
+      "blurb_en": "The Los Cabos business association says the Camina Cabo pedestrian plan and the downtown CSL makeover, which had Fiturca funds, remain stalled at state level without explanation. It points to downtown decline as businesses close or move to El Tezal and will seek to restart the review with urban development officials.",
+      "topics": [
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "vivienda-bienestar-704-sierra-vista-reubicacion-meganoticias-2026-11-11",
+      "date": "2026-11-11",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/avanza-reubicaci%C3%B3n-de-familias-en-zonas-de-riesgo-en-los-cabos/787724",
+      "title_es": "Vivienda para el Bienestar: 704 casas en Sierra Vista para reubicar a familias de zonas de riesgo en Los Cabos",
+      "title_en": "Housing for Wellbeing: 704 homes in Sierra Vista to relocate families from risk zones in Los Cabos",
+      "blurb_es": "Con Conavi y Sedatu, el Ayuntamiento prioriza reubicar a familias que viven en cauces de arroyo e invasiones; las primeras 704 viviendas en Sierra Vista (Cabo San Lucas) superan 90% de avance, sin fecha de entrega. El municipio tiene asignadas más de 17 mil viviendas del programa; el alcalde reconoce que el suelo y el agua potable son el principal reto. Se firmó otro desarrollo con Infonavit en San José del Cabo.",
+      "blurb_en": "With Conavi and Sedatu, the municipality is prioritising relocation of families living in stream beds and informal settlements; the first 704 homes in Sierra Vista (Cabo San Lucas) are over 90% built, with no handover date. Los Cabos has more than 17,000 homes assigned under the programme; the mayor says land and drinking water are the main challenges. Another development was agreed with Infonavit in San José del Cabo.",
+      "topics": [
+        "land_use",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "empleo-imss-octubre-bcs-cae-tribuna-2026-11-11",
+      "date": "2026-11-11",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/bcs-registra-menos-empleos-formales/",
+      "title_es": "BCS cierra octubre con 1.1% menos empleo formal que hace un año, mientras el país marca récord en el IMSS",
+      "title_en": "BCS ends October with 1.1% fewer formal jobs than a year ago while Mexico hits an IMSS record",
+      "blurb_es": "El empleo afiliado al IMSS en Baja California Sur cayó 1.1% anual en octubre de 2026, frente a un alza nacional de 1.3% y un máximo histórico de 23.09 millones de puestos. En septiembre el estado tenía 224,460 puestos, 1,539 menos que un año antes; es otro mes consecutivo con variación anual negativa.",
+      "blurb_en": "IMSS-registered employment in Baja California Sur fell 1.1% year on year in October 2026, versus 1.3% national growth and a record 23.09 million jobs. In September the state had 224,460 jobs, 1,539 fewer than a year earlier; another consecutive month of annual decline.",
+      "topics": [
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "tiburon-ballena-temporada-retraso-tribuna-2026-11-11",
+      "date": "2026-11-11",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/tiburon-ballena-retraso/",
+      "title_es": "Se retrasa la temporada de tiburón ballena en la Bahía de La Paz: aún no hay los seis ejemplares mínimos",
+      "title_en": "Whale shark season delayed in La Paz Bay: the minimum of six animals has not yet been reached",
+      "blurb_es": "Aunque la temporada legal va del 1 de octubre al 30 de abril, los recorridos siguen detenidos porque los monitoreos con la Conanp no registran los seis ejemplares mínimos que exige el plan de manejo en el área de refugio. Prestadores lo atribuyen a la temperatura del agua alterada por El Niño y piden contratar solo servicios certificados.",
+      "blurb_en": "Although the legal season runs from 1 October to 30 April, tours remain on hold because monitoring with Conanp has not recorded the minimum six animals the management plan requires in the refuge area. Operators blame water temperatures altered by El Niño and urge visitors to hire only certified providers.",
+      "topics": [
+        "environment",
+        "tourism",
+        "water"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "dengue-comparecencia-ssa-congreso-elindependiente-2026-11-11",
+      "date": "2026-11-11",
+      "source": "Diario El Independiente",
+      "url": "https://www.diarioelindependiente.mx/2026/11/comparece-secretaria-de-salud-ante-congreso-para-informar-acciones-contra-dengue",
+      "title_es": "Secretaria de Salud comparece ante el Congreso: 628 casos de dengue en 2026, concentrados en Los Cabos (275) y Comondú (216)",
+      "title_en": "State health secretary appears before Congress: 628 dengue cases in 2026, concentrated in Los Cabos (275) and Comondú (216)",
+      "blurb_es": "Ana Luisa Guluarte informó a la XVII Legislatura que los casos confirmados se concentran en Los Cabos y Comondú, que bajaron la última semana y que desde el 10 de noviembre se intensifica la fumigación en Los Cabos. Vinculó los brotes con las lluvias de agosto–septiembre y pidió participación ciudadana para eliminar criaderos.",
+      "blurb_en": "Ana Luisa Guluarte told the state legislature that confirmed cases are concentrated in Los Cabos and Comondú, that they fell last week, and that fumigation in Los Cabos intensified from 10 November. She linked outbreaks to the August–September rains and asked residents to help eliminate breeding sites.",
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "punta-lobos-hotel-san-cristobal-demolicion-oleaje-hoybcs-2026-11-11",
+      "date": "2026-11-11",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
+      "title_es": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
+      "title_en": "Part of Hotel San Cristóbal in Punta Lobos (Todos Santos) demolished after wave erosion; fishers had warned of risks",
+      "blurb_es": "El oleaje dañó el muro de contención y erosionó el terreno hasta dejar expuesta la cimentación de un edificio de dos niveles, que fue demolido parcialmente el 10 de noviembre. Pescadores de Punta Lobos denuncian desde 2015 que las obras del desarrollo Tres Santos alteran la dinámica de la playa y pidieron revisión federal tras el huracán Polo. Aún no hay dictamen técnico oficial sobre las causas.",
+      "blurb_en": "Waves damaged the seawall and eroded the ground until the foundations of a two-storey building were exposed; it was partly demolished on 10 November. Punta Lobos fishers have argued since 2015 that the Tres Santos development alters beach dynamics and sought a federal review after Hurricane Polo. There is no official technical report on the causes yet.",
+      "topics": [
+        "environment",
+        "tourism",
+        "land_use"
+      ],
+      "place_ids": [
+        "todos_santos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        }
+      ]
+    },
+    {
+      "id": "tratado-regional-mar-de-cortes-herrmann-foromdc-2026-11-11",
+      "date": "2026-11-11",
+      "source": "Foro Mar de Cortés",
+      "url": "https://foromdc.org/summit/proponen-tratado-regional-para-atraer-inversion-y-proteger-el-patrimonio-natural-del-mar-de-cortes/",
+      "title_es": "Proponen en el Summit de Los Cabos un «tratado regional» de los cinco estados para atraer inversión y proteger el Mar de Cortés",
+      "title_en": "A five-state 'regional treaty' to attract investment and protect the Sea of Cortez is proposed at the Los Cabos summit",
+      "blurb_es": "Hans Herrmann (Mare Nostrum) planteó que la región tiene talento, infraestructura y vínculos con EE. UU., pero le faltan instrumentos de planeación; propuso un tratado entre Baja California, BCS, Nayarit, Sinaloa y Sonora, con participación de las comunidades y articulado por el Foro, para orientar decisiones de inversión, desarrollo y conservación.",
+      "blurb_en": "Hans Herrmann (Mare Nostrum) argued the region has talent, infrastructure and US ties but lacks planning instruments; he proposed a treaty among Baja California, BCS, Nayarit, Sinaloa and Sonora, with community participation and convened by the Forum, to guide investment, development and conservation decisions.",
+      "topics": [
+        "planning",
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "foromdc-roc-observatorio-ciudadano-semaforo-2026-11-11",
+      "date": "2026-11-11",
+      "source": "Foro Mar de Cortés",
+      "url": "https://foromdc.org/summit/foro-mar-de-cortes-y-roc-firman-convenio-para-ampliar-la-vigilancia-ciudadana-en-el-golfo-de-california/",
+      "title_es": "Foro Mar de Cortés y la Red de Observadores Ciudadanos firman convenio para un observatorio y un «semáforo» del Golfo de California",
+      "title_en": "Sea of Cortez Forum and the Citizen Observers Network sign an agreement for a Gulf of California observatory and 'traffic light'",
+      "blurb_es": "El convenio, firmado en el Summit 2026 con la titular de Semarnat en BCS como testigo, busca llevar a otras comunidades del Golfo las prácticas de vigilancia ciudadana de BCS: un Observatorio Ciudadano del Mar de Cortés, un Semáforo con indicadores de biodiversidad, pesca ilegal y gobernanza, un informe anual, una red de monitoreo y alertas tempranas.",
+      "blurb_en": "Signed at the 2026 Summit with Semarnat's BCS head as witness, the agreement aims to extend BCS citizen-monitoring practices around the Gulf: a Sea of Cortez Citizen Observatory, a traffic-light index for biodiversity, illegal fishing and governance, an annual report, a monitoring network and early warnings.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        }
+      ]
+    },
+    {
+      "id": "dengue-comondu-mayor-incidencia-posta-2026-11-11",
+      "date": "2026-11-11",
+      "source": "POSTA México",
+      "url": "https://www.posta.com.mx/bcs/dengue-se-dispara-en-comondu-aumentan-77-los-casos-en-dos-semanas/vl2277706",
+      "title_es": "Comondú, el municipio con mayor incidencia de dengue en BCS: 216 casos y casi 296 por cada 100 mil habitantes",
+      "title_en": "Comondú has BCS's highest dengue incidence: 216 cases and almost 296 per 100,000 residents",
+      "blurb_es": "Con corte a la semana 44, Comondú pasó de 183 a 216 casos en una semana (+18%) y suma dos defunciones; concentró el 41% de los casos nuevos del estado en cuatro semanas. Los Cabos tiene más casos (275) pero una tasa cercana a 78 por 100 mil; La Paz 132, Loreto 5 y Mulegé ninguno. El estado acumula 628 casos y cinco muertes.",
+      "blurb_en": "As of week 44, Comondú went from 183 to 216 cases in a week (+18%) with two deaths, accounting for 41% of the state's new cases over four weeks. Los Cabos has more cases (275) but a rate near 78 per 100,000; La Paz 132, Loreto 5 and Mulegé none. The state totals 628 cases and five deaths.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "derrama-332-mdp-puente-baja1000-eleconomista-2026-11-10",
+      "date": "2026-11-10",
+      "source": "El Economista",
+      "url": "https://www.eleconomista.com.mx/estados/baja-california-sur-preve-derrama-332-millones-pesos-semana-20261110-843285.html",
+      "title_es": "BCS prevé derrama de más de 332 mdp y 80% de ocupación hotelera por el fin de semana largo y la Baja 1000",
+      "title_en": "BCS expects over MXN 332m in spending and 80% hotel occupancy over the long weekend and the Baja 1000",
+      "blurb_es": "La Secretaría de Turismo y Economía estima la llegada de unos 120 mil turistas hospedados del 13 al 16 de noviembre, con ocupación de 78% en Los Cabos, 75% en La Paz, 76–85% en Loreto, 100% en Comondú y 85–90% en Mulegé. La SCORE Baja 1000 arranca el 13 de noviembre en San José del Cabo, por primera vez con salida en territorio sudcaliforniano.",
+      "blurb_en": "The state tourism and economy ministry expects about 120,000 hotel guests from 13 to 16 November, with occupancy of 78% in Los Cabos, 75% in La Paz, 76–85% in Loreto, 100% in Comondú and 85–90% in Mulegé. The SCORE Baja 1000 starts on 13 November in San José del Cabo, the first time it starts in Baja California Sur.",
+      "topics": [
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "castro-baja1000-caminos-sin-subsidio-hoybcs-2026-11-10",
+      "date": "2026-11-10",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/victor-castro-exige-a-organizadores-de-la-baja-1000-reparar-caminos-rurales-advierte-que-no-volvera-a-subsidiar-la-carrera/",
+      "title_es": "Víctor Castro exige a la Baja 1000 reparar caminos rurales y advierte que el Estado no volverá a subsidiar la carrera",
+      "title_en": "Governor Víctor Castro demands the Baja 1000 repair rural roads and says the state will not subsidise the race again",
+      "blurb_es": "El gobernador reconoció la derrama y proyección de la carrera, pero dijo que los rancheros cargan con el deterioro de los caminos rurales sin beneficio directo. Pidió que la empresa organizadora cubra las reparaciones mediante acuerdos con los ayuntamientos y afirmó que será la última vez que el gobierno estatal destine recursos a esos daños.",
+      "blurb_en": "The governor acknowledged the race's spending and visibility but said ranchers bear the damage to rural roads without direct benefit. He asked that the organiser pay for repairs through agreements with the municipalities and said it is the last time the state will spend on that damage.",
+      "topics": [
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "la-paz-sin-credito-diciembre-palabrabcs-2026-11-10",
+      "date": "2026-11-10",
+      "source": "Palabra BCS",
+      "url": "https://www.palabrabcs.com/municipios/la-paz/definitivamente-el-ayuntamiento-de-la-paz-no-recurrira-a-credito-para-compromisos-de-diciembre/",
+      "title_es": "El Ayuntamiento de La Paz no recurrirá a crédito para pagar compromisos de diciembre; adelanta aguinaldo de 71.5 mdp",
+      "title_en": "La Paz city council will not borrow to meet December payroll; brings forward MXN 71.5m year-end bonus",
+      "blurb_es": "La alcaldesa Milena Quiroga confirmó que sueldos y prestaciones de fin de año se cubrirán con recursos propios, apoyados en la recaudación del predial anticipado 2027 (con 30% de descuento). El aguinaldo, de 71.5 millones de pesos, se adelantará al 12 de noviembre, sin crédito bancario ni préstamo estatal.",
+      "blurb_en": "Mayor Milena Quiroga said year-end wages and benefits will be paid from own revenue, helped by early 2027 property-tax payments (30% discount). The MXN 71.5m bonus will be paid early on 12 November, without bank or state loans.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "king-rondero-pavimentacion-48-mdp-palabrabcs-2026-11-10",
+      "date": "2026-11-10",
+      "source": "Palabra BCS",
+      "url": "https://www.palabrabcs.com/municipios/la-paz/iniciara-pavimentacion-de-la-calle-francisco-king-rondero-invertiran-48-mdp-sepuimm/",
+      "title_es": "Sepuimm inicia pavimentación de la calle Francisco King Rondero en La Paz con 48 mdp y nuevas redes de agua y drenaje",
+      "title_en": "State planning ministry starts MXN 48m paving of Francisco King Rondero street in La Paz with new water and sewer lines",
+      "blurb_es": "La obra, entre Ignacio Altamirano y México, arranca el 11 de noviembre con concreto hidráulico y beneficiará a más de 13 mil habitantes de colonias como El Esterito y Ladrillera. Incluye sustitución de redes de agua potable y drenaje, que se entregarán al Oomsapas La Paz, muros contra corrientes pluviales, banquetas accesibles y alumbrado solar.",
+      "blurb_en": "Works between Ignacio Altamirano and México streets start on 11 November with hydraulic concrete and will benefit over 13,000 residents of neighbourhoods such as El Esterito and Ladrillera. They include replacing water and sewer lines, to be handed to the La Paz water utility, storm-water walls, accessible sidewalks and solar lighting.",
+      "topics": [
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "imco-competitividad-bcs-foro-mar-cortes-espejo-2026-11-10",
+      "date": "2026-11-10",
+      "source": "Revista Espejo",
+      "url": "https://revistaespejo.com/2026/11/10/cambiar-la-forma-de-decidir-clave-para-mejorar-la-competitividad-regional-valeria-moy/",
+      "title_es": "IMCO en el Foro Mar de Cortés: BCS sube del lugar 8 al 5 en competitividad estatal entre 2021 y 2026",
+      "title_en": "IMCO at the Mar de Cortés Forum: BCS rises from 8th to 5th in state competitiveness between 2021 and 2026",
+      "blurb_es": "En el Summit del Foro Mar de Cortés en Los Cabos, Valeria Moy (IMCO) planteó que la región debe cambiar su forma de decidir para ser más competitiva. Mientras Sinaloa, Sonora y Baja California retrocedieron, Baja California Sur pasó del lugar 8 al 5; IMCO ve oportunidad en el vínculo con Norteamérica y en actividades de mayor valor agregado.",
+      "blurb_en": "At the Mar de Cortés Forum summit in Los Cabos, IMCO's Valeria Moy said the region must change how it makes decisions to become more competitive. While Sinaloa, Sonora and Baja California slipped, Baja California Sur rose from 8th to 5th; IMCO sees opportunity in North American ties and higher value-added activities.",
+      "topics": [
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "coppel-fmc-duplicar-economia-triplicar-ied-foromdc-2026-11-10",
+      "date": "2026-11-10",
+      "source": "Foro Mar de Cortés",
+      "url": "https://foromdc.org/summit/agustin-coppel-hace-un-llamado-a-duplicar-la-economia-de-la-region-del-mar-de-cortes-y-triplicar-las-inversiones-en-20-anos/",
+      "title_es": "Agustín Coppel propone en el Summit del Foro Mar de Cortés en Los Cabos duplicar la economía regional y triplicar la inversión extranjera en 20 años",
+      "title_en": "At the Sea of Cortez Forum summit in Los Cabos, Agustín Coppel proposes doubling the regional economy and tripling foreign investment in 20 years",
+      "blurb_es": "Al inaugurar la sexta cumbre «Tomando el timón» (10–12 de noviembre, Los Cabos), Coppel Luken planteó crecer 3.5% anual durante 20 años en los cinco estados del Mar de Cortés y triplicar la IED regional, hoy cercana a 4,100 millones de dólares (≈10% del total nacional). Pidió más inversión pública en carreteras, puertos, uso de aeropuertos, educación y seguridad; citó que BCS creció 2.1% anual en la última década.",
+      "blurb_en": "Opening the sixth 'Taking the helm' summit (10–12 November, Los Cabos), Coppel Luken called for 3.5% annual growth over 20 years across the five Sea of Cortez states and tripling regional FDI, now around USD 4.1bn (≈10% of Mexico's total). He urged more public investment in roads, ports, airport use, education and security, noting BCS grew 2.1% a year over the last decade.",
+      "topics": [
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "segunda-desaladora-csl-75-quepoca-2026-11-09",
+      "date": "2026-11-09",
+      "source": "Quepoca",
+      "url": "https://www.quepoca.com/articulo/actualidad/avanza-75-segunda-desaladora-cabo-san-lucas/20261109165636004259.html",
+      "title_es": "La segunda desaladora de Cabo San Lucas alcanza 75% de avance y aportará 250 litros por segundo",
+      "title_en": "Cabo San Lucas' second desalination plant reaches 75% completion and will add 250 litres per second",
+      "blurb_es": "El gobernador Víctor Castro informó que la segunda planta desaladora de Cabo San Lucas lleva 75% de avance y sumará 250 l/s al abasto. Con ella, la capacidad conjunta de las desaladoras llegaría a 655 l/s, en beneficio estimado de más de 200 mil habitantes; el 25% restante se prevé concluir en 2027, antes del fin de su administración.",
+      "blurb_en": "Governor Víctor Castro said Cabo San Lucas' second desalination plant is 75% complete and will add 250 l/s to supply. Combined desalination capacity would reach 655 l/s, estimated to benefit more than 200,000 residents; the remaining 25% is expected to be finished in 2027, before his term ends.",
+      "topics": [
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
+      "date": "2026-11-09",
+      "source": "GlobeNewswire (Grupo Aeroportuario del Pacífico)",
+      "url": "https://www.globenewswire.com/news-release/2026/11/09/3399085/0/en/grupo-aeroportuario-del-pacifico-reports-a-passenger-traffic-decrease-in-october-2026-of-7-0-compared-to-2025.html",
+      "title_es": "GAP: el aeropuerto de Los Cabos cae 4.6% en pasajeros en octubre; La Paz baja 2.1% pero crece 8.7% en el año",
+      "title_en": "GAP: Los Cabos airport passengers fall 4.6% in October; La Paz down 2.1% but up 8.7% year to date",
+      "blurb_es": "Según cifras preliminares de Grupo Aeroportuario del Pacífico, Los Cabos movió 520.9 mil pasajeros en octubre de 2026 (−4.6% anual; internacionales −5.9%) y acumula 5.87 millones en enero–octubre (−5.5%). La Paz registró 108 mil pasajeros (−2.1%), pero acumula 1.19 millones en el año (+8.7%). GAP reporta la nueva ruta Los Cabos–Washington Dulles de United.",
+      "blurb_en": "Per Grupo Aeroportuario del Pacífico preliminary figures, Los Cabos handled 520.9 thousand passengers in October 2026 (−4.6% y/y; international −5.9%) and 5.87 million in January–October (−5.5%). La Paz handled 108 thousand (−2.1%) but 1.19 million year to date (+8.7%). GAP lists a new United route Los Cabos–Washington Dulles.",
+      "topics": [
+        "tourism",
+        "connectivity"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "summit-foro-mar-de-cortes-los-cabos-tusbuenasnoticias-2026-11-09",
+      "date": "2026-11-09",
+      "source": "Tus Buenas Noticias",
+      "url": "https://www.tusbuenasnoticias.com/noticias/economia/2026/11/09/66795-summit-2026-foro-mar-de-cortes-en-los-cabos",
+      "title_es": "Los Cabos recibe del 10 al 12 de noviembre el Summit 2026 del Foro Mar de Cortés sobre inversión, ciudades y clima",
+      "title_en": "Los Cabos hosts the Foro Mar de Cortés 2026 Summit on investment, cities and climate, 10–12 November",
+      "blurb_es": "El Foro Mar de Cortés reúne en Los Cabos a sectores empresarial, académico, social y público de BC, BCS, Nayarit, Sinaloa y Sonora bajo el lema «Tomando el Timón». La agenda incluye competitividad regional (IMCO), atracción de inversión, futuro de las ciudades, límites del desarrollo, conservación marina y cambio climático. El foro sitúa a BCS a la cabeza de la región en capital natural.",
+      "blurb_en": "The Foro Mar de Cortés brings together business, academic, social and public-sector leaders from BC, BCS, Nayarit, Sinaloa and Sonora in Los Cabos under the motto 'Taking the Helm'. The agenda covers regional competitiveness (IMCO), investment attraction, the future of cities, limits to development, marine conservation and climate change. The forum ranks BCS first in the region for natural capital.",
+      "topics": [
+        "planning",
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "dengue-628-casos-centenario-ntcd-2026-11-09",
+      "date": "2026-11-09",
+      "source": "NTCD",
+      "url": "https://ntcd.mx/noticias-baja-california-sur-suma-628-casos-dengue-retiran-30-toneladas",
+      "title_es": "BCS suma 628 casos de dengue; retiran unas 30 toneladas de cacharros en El Centenario",
+      "title_en": "BCS reaches 628 dengue cases; about 30 tonnes of breeding-site waste removed in El Centenario",
+      "blurb_es": "La Secretaría de Salud estatal reportó 628 casos de dengue acumulados en BCS y retiró cerca de 30 toneladas de residuos en una jornada de descacharrización en El Centenario (La Paz), con el Ayuntamiento y las fuerzas armadas. La fumigación siguió en Ciudad Constitución, Pescadero y Todos Santos, y se reanudará en colonias de Cabo San Lucas.",
+      "blurb_en": "The state Health Ministry reported 628 cumulative dengue cases in BCS and removed about 30 tonnes of waste in a breeding-site clean-up in El Centenario (La Paz), with the city council and armed forces. Fogging continued in Ciudad Constitución, Pescadero and Todos Santos and will resume in Cabo San Lucas neighbourhoods.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "todos_santos",
+        "la_paz",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ]
+    },
+    {
+      "id": "dengue-los-cabos-200-casos-meganoticias-2026-11-09",
+      "date": "2026-11-09",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/crece-el-n%C3%BAmero-de-casos-de-dengue-en-los-cabos/786985",
+      "title_es": "Los Cabos supera los 200 casos de dengue y suma tres defunciones, según el Instituto de Salud municipal",
+      "title_en": "Los Cabos exceeds 200 dengue cases with three deaths, according to the municipal Health Institute",
+      "blurb_es": "El Instituto de Salud de Los Cabos reconoce más de doscientos casos de dengue y tres defunciones, asociados a las lluvias y al agua acumulada en recipientes. Señala colonias con más casos en San José del Cabo (Vista Hermosa, La Ballena, El Zacatal) y Cabo San Lucas (Caribe, Las Palmas, Mesa Colorada, Lagunitas, entre otras) y pide no automedicarse.",
+      "blurb_en": "The Los Cabos Health Institute acknowledges more than two hundred dengue cases and three deaths, linked to rains and water left standing in containers. It lists neighbourhoods with more cases in San José del Cabo (Vista Hermosa, La Ballena, El Zacatal) and Cabo San Lucas (Caribe, Las Palmas, Mesa Colorada, Lagunitas, among others) and warns against self-medication.",
+      "topics": [
+        "environment",
+        "water"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "sapa-la-paz-reportes-vactor-tribuna-2026-11-09",
+      "date": "2026-11-09",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/sapa-la-paz-reportes-importancia/",
+      "title_es": "SAPA La Paz reconoce que solo opera dos de sus cuatro equipos Vactor y gestiona dos nuevos con Conagua",
+      "title_en": "SAPA La Paz admits only two of its four Vactor sewer trucks are working and is seeking two new ones with Conagua",
+      "blurb_es": "Ante quejas por reportes sin atender de fugas y drenajes colapsados, el director de OOMSAPAS La Paz pidió usar el Call Center oficial (612-386-0000). Explicó que los derrames se atienden por prioridad (hospitales, escuelas, zonas comerciales y turísticas antes que colonias) y que de cuatro equipos Vactor a veces solo funciona uno; hoy operan dos para La Paz, Todos Santos y El Pescadero.",
+      "blurb_en": "Facing complaints about unanswered leak and sewer-collapse reports, the head of OOMSAPAS La Paz urged residents to use the official call centre (612-386-0000). Spills are handled by priority (hospitals, schools, commercial and tourist areas before neighbourhoods), and of four Vactor trucks sometimes only one works; two currently serve La Paz, Todos Santos and El Pescadero.",
+      "topics": [
+        "water"
+      ],
+      "place_ids": [
+        "todos_santos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "sne-microempresarios-loreto-mulege-ntcd-2026-11-09",
+      "date": "2026-11-09",
+      "source": "NTCD",
+      "url": "https://ntcd.mx/noticias-sne-entrega-48-mil-pesos-equipos-ocho-microempresarios-loreto-mulege",
+      "title_es": "El Servicio Nacional de Empleo entrega 48 mil pesos en equipo a ocho microempresarios de Loreto y Mulegé",
+      "title_en": "National Employment Service gives 48,000 pesos in equipment to eight micro-entrepreneurs in Loreto and Mulegé",
+      "blurb_es": "El SNE-BCS entregó equipo y herramientas por 48 mil pesos a ocho beneficiarios del subprograma de Fomento al Autoempleo: uno en Loreto y siete en Mulegé (Santa Rosalía, Guerrero Negro, Isla Natividad y San Ignacio), para iniciar o sostener pequeños negocios familiares.",
+      "blurb_en": "SNE-BCS delivered 48,000 pesos in equipment and tools to eight beneficiaries of its self-employment programme: one in Loreto and seven in Mulegé (Santa Rosalía, Guerrero Negro, Isla Natividad and San Ignacio), to start or sustain small family businesses.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
+      "date": "2026-11-09",
+      "source": "PVTIME",
+      "url": "https://www.pvtime.org/mexico-tenders-solar-hydrogen-oasis-microgrid-project/",
+      "title_es": "CFE licita el proyecto Oasis en Mulegé: 72 MW solares, baterías de 80 MWh e hidrógeno verde",
+      "title_en": "CFE tenders the Oasis project in Mulegé: 72 MW solar, 80 MWh batteries and green hydrogen",
+      "blurb_es": "La CFE, con HDF Energy, lanzó la licitación del proyecto integrado Oasis en Baja California Sur: 72 MW de fotovoltaica (DC), almacenamiento de 20 MW/80 MWh y un electrolizador de 20 MW con celdas de combustible para usar el excedente solar como hidrógeno verde. Abastecería a unos 40 mil hogares y evitaría unas 94 mil toneladas de CO2 al año.",
+      "blurb_en": "CFE, with HDF Energy, launched the tender for the integrated Oasis project in Baja California Sur: 72 MW DC of solar PV, 20 MW/80 MWh storage and a 20 MW electrolyser with fuel cells to store surplus solar as green hydrogen. It would supply about 40,000 households and avoid about 94,000 tonnes of CO2 a year.",
+      "topics": [
+        "energy"
+      ],
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "inflacion-la-paz-octubre-1-17-tribuna-2026-11-09",
+      "date": "2026-11-09",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/precios-suben-mas-en-bcs/",
+      "title_es": "Precios en La Paz suben 1.17% en octubre, casi el doble que el 0.65% nacional (INEGI)",
+      "title_en": "Prices in La Paz rise 1.17% in October, almost double the 0.65% national figure (INEGI)",
+      "blurb_es": "Según el INEGI, la inflación mensual de octubre en La Paz, ciudad de referencia de BCS, fue de 1.17% tras 0.01% en septiembre; a nivel nacional pesaron la electricidad (+18.51% por fin de subsidios de verano) y el transporte aéreo (+26.36%). La inflación anual en La Paz es de 3.16%, por debajo del 3.75% nacional.",
+      "blurb_en": "According to INEGI, October monthly inflation in La Paz, the BCS reference city, was 1.17% after 0.01% in September; nationally electricity (+18.51% as summer subsidies ended) and air fares (+26.36%) drove prices. Annual inflation in La Paz is 3.16%, below the 3.75% national rate.",
+      "topics": [
+        "planning",
+        "energy"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "amparo-indigenas-reforma-ranchera-congreso-elmundodigital-2026-11-08",
+      "date": "2026-11-08",
+      "source": "El Mundo Digital",
+      "url": "https://elmundodigital.com.mx/pueblos-indigenas-y-afromexicanos-llevan-al-congreso-de-bcs-ante-la-justicia-federal-por-reconocer-a-rancheros-sin-consulta-previa/",
+      "title_es": "Pueblos indígenas y afromexicanos promueven amparo contra la reforma que reconoce a la comunidad ranchera sin consulta previa",
+      "title_en": "Indigenous and Afro-Mexican communities file amparo against reform recognising the ranchero community without prior consultation",
+      "blurb_es": "Integrantes de comunidades indígenas y afromexicanas de BCS presentaron un juicio de amparo indirecto contra el Decreto 3299 del Congreso estatal, que reconoce a la comunidad ranchera sudcaliforniana como minoría, alegando que no hubo consulta previa, libre e informada. Pidieron suspensión de sus efectos; aún no consta que un juez la haya concedido.",
+      "blurb_en": "Members of BCS Indigenous and Afro-Mexican communities filed an indirect amparo against state Congress Decree 3299, which recognises the sudcaliforniano ranchero community as a minority, arguing there was no prior, free and informed consultation. They requested suspension of its effects; no ruling granting it is on record yet.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "baja-1000-rehabilitacion-caminos-los-cabos-tribuna-2026-11-08",
+      "date": "2026-11-08",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/los-cabos-rehabilitara-caminos/",
+      "title_es": "Ayuntamiento de Los Cabos asumirá la rehabilitación de caminos y brechas tras la Baja 1000 2026",
+      "title_en": "Los Cabos council to repair roads and dirt tracks after the 2026 Baja 1000",
+      "blurb_es": "El subsecretario de Turismo estatal, Fernando Ojeda, dijo que el Ayuntamiento de Los Cabos encabezará la reparación de brechas afectadas y ha negociado con delegados y vecinos de la ruta, parte de ella inédita. Reconoció inconformidades de propietarios aún en negociación y que las brechas también se desgastan por otras competencias y tours off-road durante el año.",
+      "blurb_en": "State tourism undersecretary Fernando Ojeda said the Los Cabos council will lead repairs of damaged tracks and has negotiated with local delegates and residents along the route, part of it new. He acknowledged landowner objections still under negotiation and noted tracks also wear from other races and off-road tours year-round.",
+      "topics": [
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "fuerza-por-mexico-alianza-pan-2027-quepoca-2026-11-08",
+      "date": "2026-11-08",
+      "source": "Quepoca",
+      "url": "https://www.quepoca.com/articulo/actualidad/fuerza-mexico-definira-ruta-rumbo-2027/20261108081152004244.html",
+      "title_es": "Fuerza por México BCS celebra asamblea para definir una posible alianza con el PAN rumbo a 2027",
+      "title_en": "Fuerza por México BCS holds assembly to decide a possible alliance with PAN ahead of 2027",
+      "blurb_es": "El partido convocó a una asamblea extraordinaria el 8 de noviembre en La Paz para renovar sus órganos internos y fijar acuerdos para el proceso electoral 2026-2027, incluida una posible coalición con el PAN. También anunció la incorporación de nuevos liderazgos de Cabo San Lucas.",
+      "blurb_en": "The party called an extraordinary assembly on 8 November in La Paz to renew its internal bodies and set agreements for the 2026–2027 election, including a possible coalition with PAN. It also announced new leaders joining from Cabo San Lucas.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "reubicacion-ptar-fonatur-estero-josefino-noticabo-2026-11-07",
+      "date": "2026-11-07",
+      "source": "Noticabo",
+      "url": "https://noticabo.com/noticias/avanza-reubicacion-de-planta-de-fonatur-proyecto-busca-recuperar-el-estero-josefino-en-san-jose-del-cabo/",
+      "title_es": "Avanza la reubicación de la planta de tratamiento de Fonatur para recuperar el Estero Josefino en San José del Cabo",
+      "title_en": "Relocation of the Fonatur wastewater plant advances to restore the San José del Cabo estuary",
+      "blurb_es": "El proyecto sustituye gran parte de la planta del centro de San José del Cabo por un cárcamo de rebombeo de 350 l/s hacia la planta La Sonoreña, y prevé una segunda planta, La Sonoreña II, de 250 l/s. Los trabajos de interconexión comenzaron en 2026 con coordinación de CONAGUA; el objetivo es reducir descargas al Estero Josefino y convertir el predio en parque ecológico.",
+      "blurb_en": "The project replaces most of the downtown San José del Cabo plant with a 350 l/s pumping station feeding La Sonoreña, and plans a second 250 l/s plant, La Sonoreña II. Interconnection works began in 2026 under CONAGUA coordination; the aim is to cut discharges into the Estero Josefino and turn the site into an ecological park.",
+      "topics": [
+        "water",
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "ligir-mareas-altas-comondu-mulege-tribuna-2026-11-07",
+      "date": "2026-11-07",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/ligir-advierte-nuevos-periodos-de-mareas-altas-en-comunidades-costeras-de-bcs/",
+      "title_es": "LIGIR-UABCS advierte nuevas mareas extraordinarias en noviembre y diciembre; posibles inundaciones en Comondú y Mulegé",
+      "title_en": "UABCS risk lab warns of new extreme tides in November and December; possible flooding in Comondú and Mulegé",
+      "blurb_es": "El laboratorio de riesgo de la UABCS prevé mareas de 2.12 a 2.55 m en Bahía Magdalena (San Carlos, Puerto Cortés, Puerto Chale), con un periodo del 21 al 28 de noviembre, y de 2.10 a 2.36 m en Pacífico Norte y Laguna San Ignacio del 22 al 27 de noviembre y del 21 al 26 de diciembre. En la Bahía de La Paz se esperan 1.68–1.80 m hacia el 23–26 de diciembre; recomienda medidas preventivas.",
+      "blurb_en": "The UABCS risk lab forecasts 2.12–2.55 m tides in Bahía Magdalena (San Carlos, Puerto Cortés, Puerto Chale), including 21–28 November, and 2.10–2.36 m in Pacífico Norte and Laguna San Ignacio on 22–27 November and 21–26 December. La Paz Bay expects 1.68–1.80 m around 23–26 December; it recommends preventive measures.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "los-cabos-menor-inversion-cea-agua-meganoticias-2026-11-06",
+      "date": "2026-11-06",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/los-cabos-municipio-con-menor-inversi%C3%B3n-para-obras-de-agua-en-sudcalifornia/786368",
+      "title_es": "Los Cabos, el municipio con menor inversión de la CEA en obras de agua: 2.02 mdp entre 2021 y 2026",
+      "title_en": "Los Cabos got the least state water-works investment: MXN 2.02m from CEA in 2021–2026",
+      "blurb_es": "Según la CEA, de 401.27 mdp invertidos en los cinco municipios entre 2021 y 2026, Los Cabos recibió apenas 2.02 mdp (frente a 121.38 mdp en La Paz y 126.99 mdp en Mulegé); el OOMSAPAS sumó unos 70 mdp vía PROAGUA. En Cabo San Lucas hay vecinos que esperan hasta 40 días el agua de red y gastan hasta 2 mil pesos quincenales en pipas.",
+      "blurb_en": "Per CEA, of MXN 401.27m invested across the five municipalities in 2021–2026, Los Cabos received just MXN 2.02m (vs MXN 121.38m in La Paz and MXN 126.99m in Mulegé); the local utility added about MXN 70m via PROAGUA. Some Cabo San Lucas residents wait up to 40 days for piped water and spend up to MXN 2,000 per fortnight on water trucks.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "ppdu-el-tezal-consulta-publica-hcn-2026-11-06",
+      "date": "2026-11-06",
+      "source": "HCN",
+      "url": "https://hcn.mx/2026/11/06/aprueba-cabildo-consulta-publica-para-el-programa-parcial-de-desarrollo-urbano-de-el-tezal/",
+      "title_es": "Cabildo de Los Cabos aprueba someter a consulta pública el Programa Parcial de Desarrollo Urbano de El Tezal",
+      "title_en": "Los Cabos council approves public consultation on the El Tezal partial urban development plan",
+      "blurb_es": "Por unanimidad, el Cabildo autorizó al IMPLAN publicar el proyecto actualizado del Programa Parcial de Desarrollo Urbano de El Tezal, en Cabo San Lucas, para que la ciudadanía presente observaciones sobre ordenamiento, usos de suelo y crecimiento. El IMPLAN anunciará sedes, fechas y mecanismos de participación en los próximos días.",
+      "blurb_en": "The council unanimously authorised IMPLAN to publish the updated El Tezal partial urban development plan in Cabo San Lucas so residents can comment on zoning, land use and growth. IMPLAN will announce venues, dates and participation channels in the coming days.",
+      "topics": [
+        "planning",
+        "land_use"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "quinto-informe-gobierno-27-noviembre-iert-2026-11-06",
+      "date": "2026-11-06",
+      "source": "IERT BCS",
+      "url": "https://iert.bcs.gob.mx/realiza-gobernador-reunion-de-organizacion-rumbo-al-5-informe-de-gobierno/",
+      "title_es": "El gobernador prepara su 5º Informe de Gobierno, previsto para el 27 de noviembre en La Paz",
+      "title_en": "Governor prepares 5th State of the State report, set for 27 November in La Paz",
+      "blurb_es": "Víctor Manuel Castro Cosío se reunió con su gabinete y trabajadores de los tres órdenes de gobierno en la Arena La Paz para definir las acciones previas al 5º Informe, que se presentará el 27 de noviembre en la Plaza de la Reforma y dará cuenta de las obras y acciones de cinco años de administración.",
+      "blurb_en": "Governor Víctor Manuel Castro Cosío met his cabinet and staff from all three levels of government at Arena La Paz to prepare the 5th report, to be delivered on 27 November at Plaza de la Reforma covering five years of works and actions.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
+    {
+      "id": "cea-400-mdp-obras-hidricas-municipios-tribuna-2026-11-05",
+      "date": "2026-11-05",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/cea-inversion-obras-hidricas-bcs/",
+      "title_es": "CEA: más de 400 mdp en obras hídricas; destacan PTAR Loreto, desaladoras y estudios de la Presa El Novillo",
+      "title_en": "CEA: over MXN 400m in water works; Loreto WWTP, desal plants and El Novillo dam studies stand out",
+      "blurb_es": "Con presupuesto base de ~35 mdp al año, la CEA suma CONAGUA y PROAGUA hasta superar 400 mdp en 134 acciones. Resaltan la PTAR de Loreto (>85 mdp), desaladoras en Isla Natividad, San Cosme, Puerto Alcatraz y Punta Alta, el acueducto Palo Verde–Santa Rosalía (50 mdp) y 7.7 mdp de estudios que situaron la Presa El Novillo entre 17 proyectos prioritarios federales.",
+      "blurb_en": "With a ~MXN 35m annual base budget, CEA plus CONAGUA/PROAGUA tops MXN 400m across 134 actions. Highlights include Loreto’s WWTP (>MXN 85m), desal plants at Isla Natividad, San Cosme, Puerto Alcatraz and Punta Alta, the Palo Verde–Santa Rosalía aqueduct (MXN 50m) and MXN 7.7m in studies that put El Novillo dam among 17 federal priority projects.",
+      "topics": [
+        "water",
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "condor-francfort-los-cabos-temporada-meganoticias-2026-11-05",
+      "date": "2026-11-05",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/condor-retoma-vuelos-directos-entre-fr%C3%A1ncfort-y-los-cabos-ocupaci%C3%B3n-al-92/785839",
+      "title_es": "Condor retoma vuelos directos Fráncfort–Los Cabos con 92% de ocupación y +37.5% en reservaciones",
+      "title_en": "Condor resumes Frankfurt–Los Cabos nonstops at 92% load factor and +37.5% bookings",
+      "blurb_es": "La aerolínea alemana inició el 2 de noviembre su tercera temporada (lunes y viernes hasta marzo 2027) en A330-900neo. Alemania aporta >60% de pasajeros; la ocupación de la temporada previa subió de 45.7% a 74.4%. Es la única ruta directa Europa–Los Cabos, según FITURCA.",
+      "blurb_en": "The German airline began its third season on 2 November (Mondays and Fridays through March 2027) on A330-900neo aircraft. Germany accounts for >60% of passengers; prior-season load factor rose from 45.7% to 74.4%. It remains the only direct Europe–Los Cabos route, per FITURCA.",
+      "topics": [
+        "tourism",
+        "connectivity"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "los-cabos-cinco-rutas-canada-travelweek-2026-11-05",
+      "date": "2026-11-05",
+      "source": "Travelweek",
+      "url": "https://www.travelweek.ca/news/destinations/double-digit-growth-los-cabos-builds-on-canadian-demand-with-five-new-air-routes/",
+      "title_es": "Los Cabos suma cinco nuevas rutas desde Canadá y prevé ~300 mil visitantes canadienses en 2026",
+      "title_en": "Los Cabos adds five new Canada routes and expects ~300,000 Canadian visitors in 2026",
+      "blurb_es": "FITURCA estima ~300 mil canadienses en 2026 (vs 200 mil en 2024), con +35% de asientos: Porter desde Toronto y Edmonton (16 nov) y Ottawa (18 dic), Air Transat Montréal (10 dic) y WestJet Regina (14 dic). Canadienses promedian 11 noches y ~4,600 USD por viaje; hay >1,200 cuartos en pipeline a 2029.",
+      "blurb_en": "FITURCA expects ~300,000 Canadians in 2026 (vs 200,000 in 2024), with +35% seat capacity: Porter from Toronto and Edmonton (16 Nov) and Ottawa (18 Dec), Air Transat Montréal (10 Dec) and WestJet Regina (14 Dec). Canadians average 11 nights and ~USD 4,600 per trip; >1,200 rooms are in the pipeline through 2029.",
+      "topics": [
+        "tourism",
+        "land_use",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "concesiones-transporte-840-los-cabos-ntcd-2026-11-05",
+      "date": "2026-11-05",
+      "source": "NTCD",
+      "url": "https://ntcd.mx/noticias-entregan-840-concesiones-transporte-trabajadores-volante-cabos",
+      "title_es": "Gobierno de BCS entrega 840 concesiones de transporte a trabajadores del volante en Los Cabos",
+      "title_en": "BCS government grants 840 transport concessions to Los Cabos drivers",
+      "blurb_es": "En Cabo San Lucas, Castro Cosío entregó 840 concesiones en distintas modalidades tras más de 10 años de demanda del gremio, para dar certeza jurídica y evitar privatización. Anunció seguimiento al transporte irregular y a prácticas indebidas en algunos hoteles, con presencia de SEPUIMM y el Ayuntamiento.",
+      "blurb_en": "In Cabo San Lucas, Castro Cosío awarded 840 concessions across modes after more than a decade of drivers’ demands, aiming for legal certainty and against privatisation. He pledged action on irregular transport and improper practices at some hotels, with SEPUIMM and the municipality present.",
+      "topics": [
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "ieebcs-financiamiento-partidos-2027-meganoticias-2026-11-05",
+      "date": "2026-11-05",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/partidos-pol%C3%ADticos-recibir%C3%A1n-768-millones-para-elecciones-de-2027-en-bcs/786013",
+      "title_es": "IEEBCS proyecta 76.8 mdp para partidos en 2027; tope de gubernatura en 27 mdp",
+      "title_en": "State electoral institute projects MXN 76.8m for parties in 2027; gubernatorial spending cap ~MXN 27m",
+      "blurb_es": "Para la elección de gubernatura, cinco ayuntamientos y diputaciones, el IEEBCS estima 50.2 mdp ordinarios, 1.5 mdp específicos y 25.1 mdp de campaña. Topes municipales: Los Cabos 12.3 mdp, La Paz 9.8, Comondú 2.4, Mulegé 1.9 y Loreto 0.58. El paquete estatal 2027 sigue en el Congreso.",
+      "blurb_en": "For the governor, five municipalities and local deputies race, IEEBCS estimates MXN 50.2m ordinary, 1.5m specific and 25.1m campaign funding. Municipal caps: Los Cabos 12.3, La Paz 9.8, Comondú 2.4, Mulegé 1.9 and Loreto 0.58. The 2027 state budget package is still before Congress.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "delicadisimo-agua-los-cabos-peninsular-2026-11-04",
+      "date": "2026-11-04",
+      "source": "Península Digital",
+      "url": "https://peninsulardigital.com/2026/11/04/delicadisimo-el-problema-del-agua-en-los-cabos/",
+      "title_es": "Castro Cosío califica de «delicadísimo» el desabasto de agua en Los Cabos y pide acelerar la obra a CONAGUA",
+      "title_en": "Castro Cosío calls Los Cabos water shortage “extremely delicate” and asks CONAGUA to speed up the works",
+      "blurb_es": "El gobernador pidió al titular de CONAGUA acelerar la obra de tratamiento de aguas residuales en Los Cabos, con avance estimado del 60% y casi 8 mdp en trámites iniciales. La CEA detalla 7.73 mdp en estudios básicos, hidrológicos y de geotecnia; se espera concluir en 2027 tras litigios de empresas y conflictos con camioneros.",
+      "blurb_en": "The governor asked CONAGUA’s head to speed the Los Cabos wastewater treatment project, about 60% advanced with nearly MXN 8m in early paperwork. CEA lists MXN 7.73m for basic, hydrological and geotechnical studies; completion is expected in 2027 after company lawsuits and trucker disputes.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "cea-jec-878-mdp-agua-caminos-eleconomista-2026-11-04",
+      "date": "2026-11-04",
+      "source": "El Economista",
+      "url": "https://www.eleconomista.com.mx/estados/baja-california-sur-invierte-878-millones-pesos-agua-potable-conectividad-20261104-842256.html",
+      "title_es": "BCS reporta más de 878 mdp en agua potable y caminos: 134 acciones CEA y 5,800 km rehabilitados",
+      "title_en": "BCS reports over MXN 878m in drinking water and roads: 134 CEA actions and 5,800 km rehabilitated",
+      "blurb_es": "En cinco años la CEA ejecutó 134 acciones con más de 400 mdp (Mulegé 127, La Paz 121, Loreto 93, Comondú 58, Los Cabos 2). La Junta Estatal de Caminos invirtió 478 mdp en 5,800 km; anuncia tramos Campo Fisher–Punta Abreojos, El Cajete–San Juan de la Costa y Los Planes–Ensenada de Muertos, más 15 mdp por lluvias.",
+      "blurb_en": "In five years CEA delivered 134 actions with over MXN 400m (Mulegé 127, La Paz 121, Loreto 93, Comondú 58, Los Cabos 2). The state roads board invested MXN 478m across 5,800 km; upcoming works include Campo Fisher–Punta Abreojos, El Cajete–San Juan de la Costa and Los Planes–Ensenada de Muertos, plus MXN 15m for rain damage.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "pleamar-comunidades-pesqueras-san-carlos-datil-meganoticias-2026-11-03",
+      "date": "2026-11-03",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/bajo-el-agua-permanecen-comunidades-pesqueras-por-pleamar/785073",
+      "title_es": "Mareas altas inundan Puerto San Carlos y el estero El Dátil: más de 300 viviendas bajo el agua",
+      "title_en": "High tides flood Puerto San Carlos and El Dátil estuary: over 300 homes under water",
+      "blurb_es": "En Puerto San Carlos (Comondú) colapsó el bordo de contención y más de 300 viviendas siguen inundadas; en El Dátil (Mulegé) unas 300 familias resienten la subida del agua y unas 20 casas tienen daños. Habitantes piden bordos; un investigador de la UABCS vincula el fenómeno con El Niño.",
+      "blurb_en": "In Puerto San Carlos (Comondú) the containment berm collapsed and over 300 homes remain flooded; in El Dátil (Mulegé) about 300 families face rising water and some 20 homes are damaged. Residents ask for berms; a UABCS researcher links it to El Niño.",
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ],
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
+      "date": "2026-11-03",
+      "source": "Península Digital",
+      "url": "https://peninsulardigital.com/2026/11/03/cierran-a-la-navegacion-cinco-puertos-de-bcs/",
+      "title_es": "Marina cierra cinco puertos de BCS a embarcaciones menores por el frente frío 4",
+      "title_en": "Navy closes five BCS ports to small craft due to cold front 4",
+      "blurb_es": "La SEMAR cerró a la navegación de embarcaciones menores Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y Adolfo López Mateos; Protección Civil de Loreto prevé el 3 y 4 de noviembre rachas de 30 a 50 km/h y oleaje de dos a tres metros en la costa occidental.",
+      "blurb_en": "The Navy closed Santa Rosalía, Loreto, San Carlos, Bahía Magdalena and Adolfo López Mateos to small craft; Loreto civil protection expects 30–50 km/h gusts and 2–3 m waves on the west coast on 3–4 November.",
+      "topics": [
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "oomsapas-los-cabos-saneamiento-tras-lluvias-hcn-2026-11-03",
+      "date": "2026-11-03",
+      "source": "HCN",
+      "url": "https://hcn.mx/2026/11/03/intensifica-oomsapas-los-cabos-trabajos-de-saneamiento-tras-lluvias-registradas-en-el-municipio/",
+      "title_es": "OOMSAPAS Los Cabos desazolva 50 pozos de visita y repara cuatro colectores tras las lluvias",
+      "title_en": "Los Cabos water utility clears 50 manholes and repairs four sewer mains after the rains",
+      "blurb_es": "El organismo de agua de Los Cabos prioriza zonas bajas de Cabo San Lucas por el arrastre de arena; colectores de 24 pulgadas en Tierra y Libertad, Chula Vista y Leona Vicario exigen jornadas de 7 a 8 horas. Las brigadas seguirán hasta regularizar la red.",
+      "blurb_en": "The Los Cabos water utility prioritises low-lying Cabo San Lucas areas hit by sand wash-in; 24-inch mains in Tierra y Libertad, Chula Vista and Leona Vicario need 7–8 hour shifts. Crews will continue until the network is normal.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "medano-neumaticos-zofemat-meganoticias-2026-11-03",
+      "date": "2026-11-03",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/retiran-tras-las-lluvias-m%C3%A1s-de-trecientos-neum%C3%A1ticos-del-medano/785194",
+      "title_es": "Zofemat retira más de 350 llantas y 18 toneladas de basura de El Médano tras las lluvias",
+      "title_en": "Zofemat removes over 350 tyres and 18 tonnes of rubbish from El Médano after the rains",
+      "blurb_es": "Las crecidas del 30 de octubre arrastraron al mar residuos enterrados en cauces usados como tiraderos clandestinos; la bocana se abrió dos veces. La limpieza de playas afectadas tardará unos 10 días más.",
+      "blurb_en": "The 30 October floods washed buried waste from arroyos used as illegal dumps into the sea; the estuary mouth opened twice. Cleaning affected beaches will take about 10 more days.",
+      "topics": [
+        "environment",
+        "tourism"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        }
+      ]
+    },
+    {
+      "id": "paquete-economico-2027-bcs-hoybcs-2026-11-02",
+      "date": "2026-11-02",
+      "source": "HOY BCS",
+      "url": "https://hoybcs.com/propone-gobierno-de-bcs-presupuesto-de-28-mil-300-millones-de-pesos-para-2027/",
+      "title_es": "El Gobierno de BCS propone un presupuesto de 28 mil 300 millones de pesos para 2027",
+      "title_en": "BCS government proposes a MXN 28.3bn budget for 2027",
+      "blurb_es": "La Secretaría de Finanzas entregó al Congreso el Paquete Económico 2027, con prioridad en educación, salud, seguridad, desarrollo social y obra pública. Los ingresos propios pasarían del 8% del presupuesto en 2021 al 14.6% en 2027; el Congreso prevé aprobarlo en diciembre para licitar desde enero.",
+      "blurb_en": "The finance ministry delivered the 2027 budget package to Congress, prioritising education, health, security, social development and public works. Own revenue would rise from 8% of the budget in 2021 to 14.6% in 2027; Congress expects to approve it in December so tenders can start in January.",
+      "topics": [
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "inundaciones-los-cabos-remanentes-vance-elmomento-2026-11-02",
+      "date": "2026-11-02",
+      "source": "El Momento BCS",
+      "url": "https://elmomentobcs.mx/2026/11/02/inundaciones-en-los-cabos-dejan-calles-bajo-el-agua-y-danos-en-varias-colonias/",
+      "title_es": "Remanentes de Vance inundan Los Cabos: 41 rescates y 356 evacuados de la clínica IMSS de San José",
+      "title_en": "Vance remnants flood Los Cabos: 41 rescues and 356 evacuated from San José IMSS clinic",
+      "blurb_es": "Lluvias de más de 100 mm en pocas horas desbordaron arroyos y calles en San José Viejo, Las Veredas, San Bernabé, Santa Catarina, Colosio y Rosarito; el arroyo Costa Azul arrastró autos al mar y el agua superó las barreras de la UMF 6 del IMSS, que suspendió servicios.",
+      "blurb_en": "Over 100 mm of rain in a few hours overflowed arroyos and streets in San José Viejo, Las Veredas, San Bernabé, Santa Catarina, Colosio and Rosarito; the Costa Azul arroyo swept cars to the sea and water breached the IMSS UMF 6 barriers, suspending services.",
+      "topics": [
+        "environment",
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "camaron-beach-semarnat-la-paz-gringo-gazette-2026-11-02",
+      "date": "2026-11-02",
+      "source": "Gringo Gazette",
+      "url": "https://gringogazette.com/la-paz-resort-cleared-despite-known-eco-risks/",
+      "title_es": "Semarnat aprueba con condiciones el desarrollo Camarón Beach al noroeste de La Paz pese a impactos reconocidos",
+      "title_en": "Semarnat conditionally approves Camarón Beach development northwest of La Paz despite acknowledged impacts",
+      "blurb_es": "El proyecto de Superior Enterprises ocupa 30.96 ha a unos 47 km de La Paz, con 27 lotes residenciales, vivienda de personal y zonas de conservación; recibió 14 objeciones en consulta pública. Una dirección de la propia Semarnat concluyó que las medidas de mitigación son insuficientes; la autorización exige desmontar unas 10.54 ha con rescate de tres reptiles en NOM-059 y dejar más de 81 mil m² sin construir.",
+      "blurb_en": "The Superior Enterprises project covers 30.96 ha about 47 km from La Paz, with 27 residential lots, staff housing and conservation zones; it drew 14 objections in public consultation. A Semarnat directorate found mitigation insufficient; the approval involves clearing about 10.54 ha with rescue of three NOM-059 reptiles and keeping over 81,000 m² free of construction.",
+      "topics": [
+        "environment",
+        "land_use",
+        "tourism"
+      ],
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ]
+    },
     {
       "id": "playas-cerradas-los-cabos-tribuna-2026-10-29",
       "date": "2026-10-29",
@@ -21,15 +2710,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -60,6 +2749,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -68,11 +2761,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -140,7 +2829,7 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
@@ -152,7 +2841,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "place",
@@ -181,6 +2870,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         }
       ]
@@ -204,19 +2897,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "place",
@@ -248,15 +2941,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
-        },
-        {
-          "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
         },
         {
           "type": "place",
@@ -293,15 +2986,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -328,6 +3021,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -336,11 +3033,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -367,6 +3060,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -375,11 +3072,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -402,6 +3095,10 @@
       ],
       "place_ids": [],
       "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
@@ -432,15 +3129,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -477,11 +3174,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -513,6 +3210,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-sibcs-island-grid"
         },
         {
@@ -521,11 +3222,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-tourism-fdi-vs-water"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -551,19 +3248,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -594,15 +3291,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
-        },
-        {
-          "type": "signal",
-          "id": "sig-mulege-oasis-h2"
         },
         {
           "type": "place",
@@ -638,7 +3335,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -678,11 +3375,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -714,19 +3411,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -752,15 +3449,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -800,11 +3497,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -832,19 +3529,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -866,6 +3563,10 @@
       ],
       "place_ids": [],
       "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
@@ -900,11 +3601,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -935,15 +3636,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -979,11 +3680,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1017,11 +3718,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1055,11 +3756,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1086,6 +3787,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1094,11 +3799,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1132,19 +3833,49 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
-          "type": "signal",
-          "id": "sig-mulege-oasis-h2"
-        },
-        {
           "type": "place",
           "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "bbva-ipavir-vivienda-bcs-eleconomista-2026-10-24",
+      "date": "2026-10-24",
+      "source": "El Economista",
+      "url": "https://www.eleconomista.com.mx/econohabitat/estados-alejan-precios-vivienda-ingresos-20261024-840284.html",
+      "title_es": "BCS, el estado donde más se alejan los precios de vivienda de los ingresos según BBVA",
+      "title_en": "BCS is the state where housing prices diverge most from incomes, per BBVA",
+      "blurb_es": "El índice IPAVIR de BBVA Research marcó 144.2 puntos en BCS en 2025 frente a 83.6 nacional, por compras de vivienda como inversión y renta corta; BBVA empieza a ver menos compras de inversión por la brecha entre precios e ingresos.",
+      "blurb_en": "BBVA Research's IPAVIR index hit 144.2 in BCS in 2025 versus 83.6 nationally, driven by investment and short-term-rental purchases; BBVA is starting to see fewer investment purchases given the price-income gap.",
+      "topics": [
+        "land_use",
+        "tourism",
+        "planning"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         }
       ]
     },
@@ -1171,15 +3902,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -1205,6 +3936,10 @@
         {
           "type": "signal",
           "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -1239,11 +3974,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1318,11 +4053,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -1354,19 +4089,19 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1392,6 +4127,10 @@
       ],
       "place_ids": [],
       "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
@@ -1421,7 +4160,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -1429,7 +4168,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -1455,6 +4194,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1463,11 +4206,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1494,6 +4233,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1502,11 +4245,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1537,11 +4276,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -1577,11 +4320,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-poel-developer-water"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1611,19 +4354,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1651,6 +4394,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-flight-connectivity-sjd"
         },
         {
@@ -1659,11 +4406,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -1694,15 +4437,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -1790,6 +4533,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1798,11 +4545,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1836,19 +4579,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1883,7 +4626,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -1917,11 +4660,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2038,11 +4781,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2089,15 +4832,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2137,11 +4880,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -2175,15 +4918,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2221,19 +4964,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2262,19 +5005,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2302,19 +5045,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2342,6 +5085,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2350,11 +5097,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2445,19 +5188,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2489,15 +5232,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -2568,6 +5311,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2576,11 +5323,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2619,11 +5362,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2673,15 +5416,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         }
       ]
     },
@@ -2707,15 +5450,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
           "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -2781,11 +5524,11 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2819,19 +5562,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2859,19 +5602,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2897,15 +5640,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2937,6 +5680,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2945,11 +5692,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2980,15 +5723,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3059,6 +5802,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3067,11 +5814,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3099,6 +5842,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3107,11 +5854,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3142,11 +5885,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-social-housing-land"
         },
         {
           "type": "signal",
-          "id": "sig-mulege-oasis-h2"
+          "id": "sig-comondu-desal-loreto-ptar"
         },
         {
           "type": "place",
@@ -3173,6 +5920,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3181,11 +5932,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3238,6 +5985,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3246,11 +5997,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3282,6 +6029,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
           "id": "sig-comondu-desal-loreto-ptar"
         },
         {
@@ -3290,11 +6041,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -3324,15 +6071,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3362,6 +6109,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3370,11 +6121,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3406,11 +6153,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "signal",
@@ -3441,6 +6188,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3449,11 +6200,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3476,6 +6223,10 @@
       ],
       "place_ids": [],
       "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
@@ -3507,15 +6258,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -3551,6 +6302,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3559,11 +6314,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3630,6 +6381,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3638,11 +6393,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3670,6 +6421,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3678,11 +6433,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3713,15 +6464,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3747,15 +6498,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3787,19 +6538,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3826,19 +6577,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3866,19 +6617,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3915,11 +6666,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "place",
@@ -3955,15 +6706,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3999,15 +6750,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
           "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
           "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "place",
@@ -4035,19 +6786,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4075,6 +6826,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -4083,11 +6838,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4124,11 +6875,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -4169,11 +6920,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "place",
@@ -4213,15 +6964,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4260,11 +7011,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "place",
@@ -4305,15 +7056,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -4359,11 +7110,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -4400,15 +7151,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -4448,7 +7199,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -4456,7 +7207,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -4499,7 +7250,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -4538,7 +7289,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -4546,7 +7297,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -4578,11 +7329,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "signal",
@@ -4620,7 +7371,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
@@ -4628,7 +7379,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "place",
@@ -4669,15 +7420,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -4711,15 +7462,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         }
       ]
     },
@@ -4743,15 +7494,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -4788,15 +7539,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -4834,6 +7585,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -4842,11 +7597,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4916,11 +7667,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
@@ -4955,19 +7706,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4997,6 +7748,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -5005,11 +7760,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5045,19 +7796,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5084,19 +7835,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5160,11 +7911,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5203,11 +7954,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5234,19 +7985,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5282,11 +8033,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5313,6 +8064,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -5321,11 +8076,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5385,7 +8136,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
@@ -5416,15 +8167,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -5455,6 +8206,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-flight-connectivity-sjd"
         },
         {
@@ -5463,11 +8218,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -5502,7 +8253,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -5541,11 +8292,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -5580,15 +8331,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -5632,7 +8383,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
