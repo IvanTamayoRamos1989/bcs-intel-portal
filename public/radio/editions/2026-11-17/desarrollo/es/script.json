@@ -1,0 +1,323 @@
+{
+  "topic": "desarrollo",
+  "lang": "es",
+  "title": "Desarrollo · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Las olas se llevaron parte del Hotel San Cristóbal en Punta Lobos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Profepa recorrió el once de noviembre el hotel después de que el proyecto Tres Santos avisara del derrumbe de un muro y la demolición de partes dañadas."
+        },
+        {
+          "speaker": "host",
+          "text": "Revisaron si algo llegaba al mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No detectaron descargas de aguas residuales, químicos ni hidrocarburos, ni fauna afectada, pero los pescadores ya habían advertido el riesgo y ahora vigilan los escombros."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en paralelo entregaron el Quinto Informe de Gobierno al Congreso."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El gobernador presentará los resultados el 27 de noviembre en la Plaza de la Reforma en La Paz. Esto es Radio BCS2050. Hoy profundizamos en Desarrollo y la pregunta es: ¿qué decide el mar sobre lo que construimos?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según La Nigua, la Profepa ya revisó el Hotel San Cristóbal en Punta Lobos. Tras el derrumbe de un muro, vigilan que los escombros no lleguen al mar."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y no encontraron descargas ni fauna afectada?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Nada de eso. El recorrido fue el once de noviembre tras el aviso del proyecto Tres Santos sobre la demolición de partes dañadas. Ahora revisarán la autorización de impacto ambiental y el manejo de residuos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasa si hay incumplimientos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Podrían ordenar una inspección más a fondo. Imagina los escombros quietos bajo el sol, con el mar tan cerca."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Mientras tanto, el Quinto Informe de Gobierno ya está en el Congreso, informa NTCD."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los resultados del primer año del plan estatal, con anexos de obras y acciones organizados por los cinco ejes del Plan Estatal de Desarrollo. Lo presentarán el 27 de noviembre en la Plaza de la Reforma, en La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué contiene ese informe en concreto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El documento socioeconómico y el anexo gráfico-estadístico del periodo del primero de septiembre de 2025 al 31 de agosto de 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en Los Cabos, ¿qué dicen los empresarios?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meganoticias reporta que Camina Cabo y la remodelación del centro siguen en pausa. Señalan que los negocios cierran y se van a El Tezal. Buscarán reactivar la revisión con Desarrollo Urbano."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y las familias en zonas de riesgo?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "También según Meganoticias, las primeras setecientas cuatro casas en Sierra Vista ya superan el 90% de avance. El alcalde dice que el suelo y el agua son el reto principal. El municipio tiene más de 17 mil viviendas asignadas, pero sin fecha de entrega aún. Se firmó otro desarrollo con Infonavit en San José del Cabo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo afecta eso a quienes esperan reubicación?"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, esta semana todo parece separado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, pero hay algo que une los números de Los Cabos con el Camino Costero y la planta de Fonatur."
+        },
+        {
+          "speaker": "host",
+          "text": "¿El presupuesto que baja 9.09%?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Los Cabos aprueba 6,746 millones para 2027 porque el predial y el saneamiento caen casi 20%, según Gringo Gazette."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y cómo se ve eso en la calle?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los vecinos recogen firmas del 19 al 22 de noviembre para que el camino costero siga en el PDU 2040, informa Diario Humano."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en Punta Lobos derriban parte del hotel porque el oleaje se llevó la arena. Pescadores avisaron desde 2015."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, según HOY BCS el muro de contención falló y quedó expuesta la cimentación."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué hilo los atraviesa a todos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El agua. O la falta de ella. El Foresight del portal ya lo decía: la IED turística choca con el límite hídrico."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero aquí viene lo que no se ve."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La reubicación de la planta de Fonatur en San José del Cabo. Van a mover 350 litros por segundo para que el Estero Josefino respire, según Noticabo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y eso qué cambia?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cambia el suelo que se puede vender o no. Cambia el ritmo del mercado inmobiliario que ahora da menos dinero."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El hilo no es el dinero. Es la tubería."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y también la red eléctrica. En Mulegé la CFE licita el proyecto Oasis con 72 megawatts solares y baterías, según PVTIME."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo se conecta eso con el desarrollo de los cinco estados?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el Summit del Foro Mar de Cortés propusieron un tratado regional para planear inversión y conservar el Mar de Cortés."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el hilo oculto es la infraestructura que decide qué crece y qué se detiene."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "¿Sabías que Baja California Sur pasó del lugar 8 al 5 en competitividad estatal entre 2021 y 2026?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo reportó el IMCO. Un salto que refleja cómo se va ordenando el desarrollo en el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Imagina una carretera que antes se llenaba de baches. Cuando la arreglan, llega más gente, llegan más camiones y el pueblo entero se mueve distinto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. El Foro Mar de Cortés propuso crecer 3.5% anual durante 20 años y triplicar la inversión extranjera directa en los cinco estados del Mar de Cortés."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa meta la lanzó Agustín Coppel en noviembre de 2026. No es una proyección del portal, es una propuesta del Foro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y mientras tanto BCS venía creciendo solo 2.1% anual en la década anterior."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasa cuando la competitividad sube pero el agua y la luz siguen justas? ¿La carretera sigue sirviendo o se queda corta?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa es la tensión que queda en el aire."
+        },
+        {
+          "speaker": "host",
+          "text": "En Los Cabos la consulta del POEL obliga a los desarrolladores a llevar su propia desaladora y plantas de tratamiento. El desierto no perdona atajos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y vecinos del lugar ya preguntan cómo se va a sostener todo cuando el turismo sigue siendo el motor principal."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "En el pilar Vivienda de la Visión del portal, el riesgo está claro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La vivienda queda expuesta cuando crece sobre zonas sin servicios o en riesgo costero e hídrico. La población estatal es 798,447 según el INEGI Censo 2020. Esta semana no hay notas nuevas, solo un EWMA estable."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y la aspiración?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Vivienda con servicios, fuera de la primera línea de riesgo, y alineada con el margen real de agua y energía. No se publica una meta de viviendas a 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Los levers del portal apuntan a tres caminos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Priorizar relocalización de lo ya expuesto antes de abrir frente residencial nuevo. Cruzar cada desarrollo con el tablero de demanda y oferta. Tratar el rezago como un techo, no como algo que el mercado resolverá solo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y hacia dónde va la Tendencia 2050 del portal?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Baja California Sur no se sostiene como una sola fórmula costera. Un sistema policéntrico: Los Cabos como motor turístico bajo estrés hídrico y eléctrico, el East Cape en tensión con áreas protegidas, Todos Santos y El Pescadero como espina de amenidad del Pacífico, La Paz como capital de servicios y nodo agua-energía, Loreto como ancla de turismo y conservación, Comondú como hub agropecuario con más margen relativo, y el norte de Mulegé como corredor con licitación de generación remota."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué se ve en el horizonte si todo sigue así?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La suma de roles distintos. Cada vocación aporta algo que no es un Cabos diluido."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué condiciones harían falta para que funcione?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada vocación aporta un rol distinto. Nuevo crecimiento solo donde agua y energía tienen margen real. East Cape y Loreto respetan techos ANP. Comondú y el norte suman producción sin vaciar servicios."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El desierto marca el límite."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "En Punta Lobos demuelen parte del Hotel San Cristóbal por la erosión del oleaje."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los escombros quedan bajo vigilancia para que no lleguen al mar. Pescadores ya lo habían advertido."
+        },
+        {
+          "speaker": "host",
+          "text": "Al mismo tiempo entregan 704 casas en Sierra Vista para sacar familias de zonas de riesgo en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sin embargo Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento inmobiliario. Empresarios denuncian que el Estado mantiene en pausa Camina Cabo y vecinos piden firmas para que el Camino Costero siga en el PDU 2040."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y el Quinto Informe que entregan al Congreso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El gobernador lo presenta el 27 de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "Vivienda con servicios, fuera de la primera línea de riesgo y ajustada al agua y la energía real."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Quédense con nosotros, más Radio BCS2050 después de la música."
+        }
+      ]
+    }
+  ]
+}

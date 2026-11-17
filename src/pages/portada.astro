@@ -23,7 +23,7 @@ import ForesightIdeal from '../components/ForesightIdeal.astro';
   <script is:inline src="/lang-toggle.js?v=20261116-portada-scroll"></script>
   <link rel="stylesheet" href="/foresight-page.css?v=20261116-portada-scroll" />
   <link rel="stylesheet" href="/portada.css?v=20261116-portada-scroll" />
-  <link rel="stylesheet" href="/radio-player.css?v=20261117-radio" />
+  <link rel="stylesheet" href="/radio-player.css?v=20261117-live" />
 </head>
 <body class="landing-shell">
   <header class="landing-top">
@@ -39,13 +39,12 @@ import ForesightIdeal from '../components/ForesightIdeal.astro';
       </button>
       <div class="radio-panel" id="radio-panel" hidden role="region" aria-label="Radio BCS2050">
         <div class="radio-head">
-          <p class="radio-name">Radio BCS2050</p>
+          <p class="radio-name">Radio BCS2050 <span class="radio-live" hidden>● <span data-lang-es>En vivo</span><span data-lang-en hidden>Live</span></span></p>
           <span class="radio-langs" role="group" aria-label="Idioma / Language">
             <button type="button" data-l="es" aria-pressed="true">ES</button><button type="button" data-l="en" aria-pressed="false">EN</button>
           </span>
         </div>
-        <p class="radio-date"></p>
-        <p class="radio-title">…</p>
+        <p class="radio-title">24/7</p>
         <p class="radio-seg"></p>
         <div class="radio-ctrl">
           <button type="button" class="radio-prev" aria-label="Anterior">⏮</button>
@@ -53,11 +52,14 @@ import ForesightIdeal from '../components/ForesightIdeal.astro';
           <button type="button" class="radio-next" aria-label="Siguiente">⏭</button>
         </div>
         <div class="radio-bar"><i></i></div>
+        <button type="button" class="radio-golive" hidden></button>
+        <p class="radio-up"></p>
         <ol class="radio-tracks"></ol>
         <div class="radio-foot"><button type="button" class="radio-notes-btn">Notas y fuentes</button><button type="button" class="radio-close" aria-label="Cerrar">✕</button></div>
         <div class="radio-notes" hidden></div>
         <p class="radio-msg" aria-live="polite"></p>
       </div>
+    </div>
     </div>
       <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma" aria-pressed="false">
         <span data-side="es" class="active">ES</span>
@@ -92,7 +94,7 @@ import ForesightIdeal from '../components/ForesightIdeal.astro';
     </nav>
   </footer>
 
-  <script is:inline src="/radio-player.js?v=20261117-radio"></script>
+  <script is:inline src="/radio-player.js?v=20261117-live"></script>
   <script is:inline>
     (function () {
       var lo = document.getElementById('bcs-logout');

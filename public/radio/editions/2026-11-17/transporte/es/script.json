@@ -1,0 +1,303 @@
+{
+  "topic": "transporte",
+  "lang": "es",
+  "title": "Transporte · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "En La Paz el asfalto llega primero a la calle que conecta con las arterias principales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Carolina Armenta de Sepuimm explica que el aforo vehicular decide la prioridad, junto con inundaciones y escuelas, porque los recursos no alcanzan, según Palabra BCS."
+        },
+        {
+          "speaker": "host",
+          "text": "Los rancheros siguen cargando el deterioro de los caminos rurales por el paso de la Baja 1000."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Víctor Castro exige a los organizadores que reparen y avisa que el estado ya no destinará recursos para esos daños, informa HOY BCS."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy profundizamos en Transporte. La pregunta que nos guía: ¿qué es una carretera para el desierto?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según Palabra BCS, la titular de la Sepuimm, Carolina Armenta Cervantes, explica que en La Paz la prioridad de pavimentación se define sobre todo por aforo vehicular, más las zonas de inundación, hospitales y escuelas, porque la demanda supera los recursos. En colonias atienden primero la calle que conecta con las arterias principales."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Y quién decide cuál es la calle que más necesita esa conexión?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La repavimentación con asfalto del bulevar Pino Pallas debe terminar antes de Navidad. La calle Francisco King, en concreto hidráulico, llevará unos cuatro meses."
+        },
+        {
+          "speaker": "host",
+          "text": "Cuatro meses para una sola calle. ¿Cómo se siente el que vive ahí mientras tanto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En HOY BCS, el gobernador Víctor Castro exige a los organizadores de la Baja 1000 que reparen los caminos rurales. Dice que los rancheros cargan con el deterioro sin beneficio directo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y qué respondió la organización?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El gobernador advierte que el Estado no volverá a subsidiar esos daños y pide que la empresa cubra las reparaciones mediante acuerdos con los ayuntamientos."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué pasa cuando la carrera se va y queda el camino roto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Tribuna de México, la inflación de octubre en La Paz fue de 1.17%, casi el doble del 0.65% nacional. El transporte aéreo subió 26.36%."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo afecta eso al que tiene que viajar por trabajo o por salud?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La inflación anual en La Paz quedó en 3.16%, por debajo del promedio nacional."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto marca sus propios límites. ¿Qué camino elige una ciudad cuando los recursos no alcanzan para todos?"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, si miramos las noticias de estos días, ¿qué hilo une el Camino Costero, la Transpeninsular y las rutas nuevas de La Paz?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El mismo corredor que conecta todo. El acceso a Cabo del Este sigue dependiendo de ese camino rústico que los vecinos quieren mantener en el PDU 2040, según Diario Humano. Recogerán firmas del 19 al 22 de noviembre bajo el lema ¡El Camino Costero se queda! Grupo Questro propuso una carretera alterna a al menos un kilómetro de la playa."
+        },
+        {
+          "speaker": "host",
+          "text": "Y al mismo tiempo la Transpeninsular se rompe con las lluvias y el drenaje sin arreglar, informa Meganoticias. ¿Cómo se sostiene todo eso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Un tramo afecta al otro. El Centro SCT ya reconoció daños en San José-Cabo San Lucas, sobre todo en los acotamientos. Piden una evaluación integral que atienda también el drenaje que lleva más de 20 días sin corregirse."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto entregan 840 concesiones para transporte en Los Cabos, según NTCD. ¿Y en La Paz?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y autorizan dos camiones más para El Centenario y Chametla con recursos del Ramo 33, cuenta HOY BCS. Es una demanda vecinal por la falta de transporte público que se suma a la ruta Pedregal-Centro."
+        },
+        {
+          "speaker": "host",
+          "text": "Todo parece terrestre. Pero el 90% de los bienes llega por mar, recuerda El Economista. ¿Qué cambia eso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Baja Ferries busca llevar 300 o 400 mil pasajeros al año con rutas tipo crucero entre La Paz y el continente. Ya mueve más de 200 mil y tiene alianzas con hoteles y el Chepe hacia Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el mar sostiene la tierra. Pero aquí viene lo raro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Transpeninsular también está condicionada por la Reserva de la Biosfera El Vizcaíno en el norte. Los tramos quedan limitados por el ANP y el presupuesto, igual que otros corredores que cruzan zonas protegidas."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El hilo no es solo el asfalto ni el ferry. Es la decisión de qué se protege y qué se mueve. ¿Y si esa decisión define hasta dónde llega el desarrollo en 2050?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Detrás de cada camino rústico que se firma, cada camión que se compra y cada ferry que se planea, hay una línea invisible de protección que decide qué se puede ampliar y qué se detiene."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "¿Sabías que en marzo de 2026 llegan nuevas unidades de transporte público a La Paz?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Cómo cambia eso el día a día de quien espera el camión?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El anuncio lo hizo Sheinbaum durante su gira y lo publica el sitio del estado. Un autobús nuevo, menos espera, menos calor."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y la carretera que los une?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "También está en obra la repavimentación de la Transpeninsular, según el mismo informe."
+        },
+        {
+          "speaker": "host",
+          "text": "Dos cosas que se tocan: el asfalto y el camión. ¿Qué pasa cuando una falla?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El viaje se alarga o se complica. Aquí todo está conectado."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Y si pensamos en el corredor entero, cómo se siente mover gente y mercancías por esa misma cinta de asfalto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El documento de UN-Habitat sobre movilidad urbana sostenible dice que hay que unir el uso del suelo con el transporte. Sin eso el camión nuevo llega pero el camino se rompe igual."
+        },
+        {
+          "speaker": "host",
+          "text": "Un camino que se cuida es como el mar que se renueva con cada marea. ¿Qué pasa si no se cuida?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El desierto te lo recuerda: todo se seca más rápido de lo que esperas. Por eso el informe del estado menciona ambas obras juntas."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hacia 2050 la movilidad no puede ser solo el eje de Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El pilar de Visión lo dice claro: hay que servir a un estado policéntrico."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué riesgo se ve hoy?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La conectividad aérea y terrestre ya muestra dónde crece y dónde cede. SJD bajó 4.6 % en octubre y 5.5 % en lo que va del año. LAP, en cambio, subió 8.7 %. Según GAP, la tendencia es mixta."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces La Paz puede ser contrapeso."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. La aspiración es sostener LAP como nodo, integrar ferries y cabotaje del Mar de Cortés, y leer la pavimentación como servicio a comunidades, no solo a nuevas amenidades costeras."
+        },
+        {
+          "speaker": "host",
+          "text": "El mar podría conectar lo que la carretera no alcanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, como palanca ya observable."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y la tendencia que marca el tablero?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un sistema policéntrico. Cada lugar con su rol: Los Cabos bajo estrés hídrico y eléctrico; el East Cape en tensión con las áreas protegidas; Todos Santos y El Pescadero como espina de amenidad del Pacífico; La Paz como capital de servicios y nodo agua–energía; Loreto como ancla de turismo y conservación; Comondú como hub agropecuario con más margen relativo; y el norte de Mulegé como corredor poco documentado, ahora con una licitación de generación remota."
+        },
+        {
+          "speaker": "host",
+          "text": "Para que funcione, cada vocación debe aportar algo distinto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Y el crecimiento solo donde haya margen real de agua y energía, sin fingir crédito NOM-011. East Cape y Loreto deben respetar techos ANP/POEL antes de escalar. Comondú y el norte suman producción sin vaciar servicios ni ANPs."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué observamos en el camino?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La consulta pública del PPDU El Tezal por IMPLAN Los Cabos y la actualización del PDU Los Cabos con límites de densidad y el camino costero Cabo del Este van a ser clave."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Las lluvias y los derrames de aguas negras siguen deteriorando la carretera Transpeninsular en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y cómo cambia eso el día a día de quien vive lejos del eje principal?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Víctor Castro exige a la Baja 1000 reparar caminos rurales y advierte que el Estado no volverá a subsidiar la carrera."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto marca el límite de cada ruta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El cabildo de La Paz autorizó dos camiones más para que el Tiburón Urbano llegue a El Centenario y Chametla."
+        },
+        {
+          "speaker": "host",
+          "text": "Parece pequeño, pero abre el mapa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los vecinos convocan firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040. Baja Ferries busca transformar la movilización marítima por el Mar de Cortés en experiencia vacacional."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y eso acerca el policentrismo?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aspiración es una conectividad al servicio de un estado policéntrico, no solo del eje SJD–Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Para llevar: la conectividad debe servir a todo el estado. Quédate con nosotros, más Radio BCS2050 después de la música."
+        }
+      ]
+    }
+  ]
+}

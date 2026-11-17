@@ -18,3 +18,5 @@ scripts/finance_archive/__pycache__/
 # Radio BCS2050 caches (TTS cache, music sources)
 scripts/_cache/radio/
 scripts/_cache/radio_music_src/
+# Radio episode audio is deployed from the box, not kept in git (scripts/edition.json are)
+public/radio/editions/**/*.mp3
