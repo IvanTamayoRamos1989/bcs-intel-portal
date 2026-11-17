@@ -273,14 +273,14 @@ AMBIENCE = {"medio_ambiente": "coast", "turismo": "coast", "conectividad": "coas
 
 # Fixed chapter plan of every deep dive (titles come from here, never from the model).
 CHAPTERS = [  # ~20 min of continuous conversation per episode; music only under the voices, break between episodes
-    ("entrada", "Entrada", "Cold open", 160),
-    ("acto1", "Acto 1 · Lo que está pasando", "Act 1 · What's happening", 380),
-    ("personas", "Las personas y los lugares", "People and places", 300),
-    ("acto2", "Acto 2 · El hilo oculto", "Act 2 · The hidden thread", 340),
-    ("sabias", "¿Sabías que…?", "Did you know?", 270),
-    ("diseno", "El diseño invisible", "The hidden design", 290),
-    ("acto3", "Acto 3 · Hacia 2050", "Act 3 · Toward 2050", 340),
-    ("cierre", "Para llevar", "The takeaway", 170),
+    ("entrada", "Entrada", "Cold open", 190),
+    ("acto1", "Acto 1 · Lo que está pasando", "Act 1 · What's happening", 450),
+    ("personas", "Las personas y los lugares", "People and places", 360),
+    ("acto2", "Acto 2 · El hilo oculto", "Act 2 · The hidden thread", 400),
+    ("sabias", "¿Sabías que…?", "Did you know?", 320),
+    ("diseno", "El diseño invisible", "The hidden design", 350),
+    ("acto3", "Acto 3 · Hacia 2050", "Act 3 · Toward 2050", 400),
+    ("cierre", "Para llevar", "The takeaway", 200),
 ]
 
 
@@ -896,7 +896,11 @@ def sync() -> int:
     restored = 0
     for x in missing:
         b = STORE / x.split("/radio/", 1)[1]
-        if b.exists():
+        try:
+            ok = b.exists()
+        except OSError:
+            ok = False
+        if ok:
             dst = ROOT / "public" / x.lstrip("/")
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(b, dst)
@@ -905,10 +909,25 @@ def sync() -> int:
     for key_ in sorted({tuple(x.split("/")[3:6]) for x in left}):
         print(f"  re-rendering {'/'.join(key_)} from script.json")
         rerender(*key_)
+    try:
+        backup_store()
+    except OSError as e:  # the store is a network mount; never fail a build on it
+        print(f"  WARN: store backup skipped ({e})")
+    print(f"radio sync: {len(need)} episode files in the loop, {restored} restored from store, "
+          f"{len([x for x in missing if not (ROOT / 'public' / x.lstrip('/')).exists()])} still missing")
+    return 0
+
+
+def backup_store() -> None:
     if STORE.parent.exists():
         eds = sorted((p.name for p in (OUT / "editions").iterdir() if p.is_dir()), reverse=True)[:KEEP_AUDIO]
         used = 0
         for d in eds:
+            for f in sorted((OUT / "editions" / d).rglob("*.json")):  # scripts + edition manifests (tiny)
+                if ".staging" not in f.parts:
+                    b = STORE / "editions" / f.relative_to(OUT / "editions")
+                    b.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(f, b)
             for f in sorted((OUT / "editions" / d).rglob("*.mp3")):
                 used += f.stat().st_size
                 if used > STORE_CAP_MB * 1e6:
@@ -921,9 +940,6 @@ def sync() -> int:
             for d in (STORE / "editions").iterdir():
                 if d.name not in eds:
                     shutil.rmtree(d, ignore_errors=True)
-    print(f"radio sync: {len(need)} episode files in the loop, {restored} restored from store, "
-          f"{len([x for x in missing if not (ROOT / 'public' / x.lstrip('/')).exists()])} still missing")
-    return 0
 
 
 def check_dist() -> int:
