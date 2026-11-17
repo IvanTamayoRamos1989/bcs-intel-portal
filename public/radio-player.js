@@ -24,9 +24,20 @@
   function get(u) { return fetch(u, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw r.status; return r.json(); }); }
   function load() {
     var jobs = [st[lang] ? null : get('/radio/station_' + lang + '.json').then(function (j) {
-      var c = 0; j.items.forEach(function (x) { x.t0 = c; c += x.d; }); j.total = c; st[lang] = j; })];
+      // a station file holds the running loop and, after a daily build, the next one with its on-air time
+      var sc = (j.schedules || [{ start: j.epoch, items: j.items }]).map(function (x) {
+        var c = 0; x.items.forEach(function (y) { y.t0 = c; c += y.d; }); x.total = c; x.at = Date.parse(x.start); return x;
+      });
+      st[lang] = { list: sc };
+    })];
     if (!credits) jobs.push(get('/radio/credits.json').then(function (c) { credits = c; }).catch(function () {}));
-    return Promise.all(jobs);
+    return Promise.all(jobs).then(pick);
+  }
+  function pick() {  // the schedule on air now (latest whose start has passed)
+    var s = st[lang]; if (!s) return;
+    var now = Date.now(), on = s.list[0];
+    s.list.forEach(function (x) { if (x.at <= now && x.at >= on.at) on = x; });
+    if (s.cur !== on) { s.cur = on; s.items = on.items; s.total = on.total; s.epoch = on.start; return true; }
   }
   function livePos() {  // [item index, offset seconds]
     var s = S(), t = ((Date.now() - Date.parse(s.epoch)) / 1000) % s.total;
@@ -111,7 +122,7 @@
     if (pending > 0.5 && pending < (audio.duration || 0) - 0.5) audio.currentTime = pending;
     pending = 0;
   });
-  audio.addEventListener('ended', function () { playItem(i + 1, 0); });
+  audio.addEventListener('ended', function () { if (live && pick()) goLive(); else playItem(i + 1, 0); });
   audio.addEventListener('play', state); audio.addEventListener('pause', state);
   audio.addEventListener('error', function () { if (audio.getAttribute('src')) { $('.radio-msg').textContent = T[lang].err; setTimeout(function () { playItem(i + 1, 0); }, 1500); } });
   audio.addEventListener('timeupdate', function () {

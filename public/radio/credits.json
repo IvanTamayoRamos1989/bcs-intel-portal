@@ -1,5 +1,5 @@
 {
-  "note": "Only CC0, public-domain or CC BY recordings; short excerpts (stingers and soft beds) with fades.",
+  "note": "Only CC0, public-domain or CC BY recordings; short excerpts, soft beds under the dialogue and ambience, with fades.",
   "music": [
     {
       "id": "romanza",
@@ -58,12 +58,36 @@
       "source": "https://commons.wikimedia.org/wiki/File:Surf_Shimmy_(ISRC_USUAN1700018).mp3"
     },
     {
+      "id": "gull",
+      "title": "Gull 1 (gull calls)",
+      "artist": "avphillips",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Gull_1.ogg",
+      "source": "https://commons.wikimedia.org/wiki/File:Gull_1.ogg"
+    },
+    {
+      "id": "citybird",
+      "title": "Bird sings in the morning with cars in the background",
+      "artist": "ezwa",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Bird_sings_in_the_morning_with_cars_in_the_background.ogg",
+      "source": "https://commons.wikimedia.org/wiki/File:Bird_sings_in_the_morning_with_cars_in_the_background.ogg"
+    },
+    {
       "id": "waves",
       "title": "On a pebble beach (waves)",
       "artist": "earthcalling",
       "license": "Public domain",
       "license_url": "https://commons.wikimedia.org/wiki/File:On_a_pebble_beach.ogg",
       "source": "https://commons.wikimedia.org/wiki/File:On_a_pebble_beach.ogg"
+    },
+    {
+      "id": "wind",
+      "title": "Desert wind (ambience)",
+      "artist": "Generated for Radio BCS2050 (filtered noise)",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://bajacaliforniasur2050.com"
     }
   ],
   "voices": "Grok text-to-speech (xAI): voices 'rex' (host) and 'eve' (co-host)."
