@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-17",
   "place_labels": {
     "los_cabos": {
       "es": "Los Cabos",
@@ -32,14 +32,120 @@
   },
   "news": [
     {
-      "id": "playas-cerradas-los-cabos-tribuna-2026-10-29",
+      "id": "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
       "place_ids": [
         "los_cabos"
       ],
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
           "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use",
+        "tourism"
+      ]
+    },
+    {
+      "id": "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+      "place_ids": [
+        "los_cabos",
+        "east_cape"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "east_cape"
+        }
+      ],
+      "topics": [
+        "land_use",
+        "planning",
+        "environment",
+        "connectivity",
+        "tourism"
+      ]
+    },
+    {
+      "id": "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "connectivity",
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+      "place_ids": [
+        "todos_santos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
@@ -48,6 +154,2120 @@
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "land_use"
+      ]
+    },
+    {
+      "id": "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+      "place_ids": [
+        "todos_santos",
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning",
+        "connectivity",
+        "tourism"
+      ]
+    },
+    {
+      "id": "dengue-seguimiento-distancia-245-atenciones-los-cabos-meganoticias-2026-11-16",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment"
+      ]
+    },
+    {
+      "id": "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+      "place_ids": [
+        "todos_santos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "land_use",
+        "water"
+      ]
+    },
+    {
+      "id": "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15",
+      "place_ids": [
+        "los_cabos",
+        "todos_santos",
+        "la_paz",
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "connectivity"
+      ]
+    },
+    {
+      "id": "sepuimm-pavimentacion-criterios-aforo-palabrabcs-2026-11-15",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "el-nino-nivel-mar-puerto-san-carlos-meganoticias-2026-11-14",
+      "place_ids": [
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "los-cabos-conexion-aerea-61-diversificar-elfinanciero-2026-11-13",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "connectivity"
+      ]
+    },
+    {
+      "id": "baja-1000-derrama-800-mdp-ocupacion-80-tribuna-2026-11-13",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "bcs-primer-lugar-incidencia-dengue-meganoticias-2026-11-13",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "loreto-calle-marlin-pavimentacion-45-aldiabcs-2026-11-13",
+      "place_ids": [
+        "loreto"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        }
+      ],
+      "topics": [
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "quinto-informe-entregado-congreso-ntcd-2026-11-12",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "ocupacion-hotelera-los-cabos-78-pga-baja1000-tribuna-2026-11-12",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "shell-nurse-arrecifes-rancho-marino-bahia-la-paz-meganoticias-2026-11-12",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning",
+        "connectivity"
+      ]
+    },
+    {
+      "id": "camina-cabo-centro-csl-pausa-meganoticias-2026-11-11",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "vivienda-bienestar-704-sierra-vista-reubicacion-meganoticias-2026-11-11",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "land_use",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "empleo-imss-octubre-bcs-cae-tribuna-2026-11-11",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "tiburon-ballena-temporada-retraso-tribuna-2026-11-11",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "water"
+      ]
+    },
+    {
+      "id": "dengue-comparecencia-ssa-congreso-elindependiente-2026-11-11",
+      "place_ids": [
+        "los_cabos",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "punta-lobos-hotel-san-cristobal-demolicion-oleaje-hoybcs-2026-11-11",
+      "place_ids": [
+        "todos_santos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism",
+        "land_use"
+      ]
+    },
+    {
+      "id": "tratado-regional-mar-de-cortes-herrmann-foromdc-2026-11-11",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "foromdc-roc-observatorio-ciudadano-semaforo-2026-11-11",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "dengue-comondu-mayor-incidencia-posta-2026-11-11",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "derrama-332-mdp-puente-baja1000-eleconomista-2026-11-10",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "tourism"
+      ]
+    },
+    {
+      "id": "castro-baja1000-caminos-sin-subsidio-hoybcs-2026-11-10",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "la-paz-sin-credito-diciembre-palabrabcs-2026-11-10",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "king-rondero-pavimentacion-48-mdp-palabrabcs-2026-11-10",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "imco-competitividad-bcs-foro-mar-cortes-espejo-2026-11-10",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "coppel-fmc-duplicar-economia-triplicar-ied-foromdc-2026-11-10",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "segunda-desaladora-csl-75-quepoca-2026-11-09",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water"
+      ]
+    },
+    {
+      "id": "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "connectivity"
+      ]
+    },
+    {
+      "id": "summit-foro-mar-de-cortes-los-cabos-tusbuenasnoticias-2026-11-09",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "dengue-628-casos-centenario-ntcd-2026-11-09",
+      "place_ids": [
+        "los_cabos",
+        "todos_santos",
+        "la_paz",
+        "comondu"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "dengue-los-cabos-200-casos-meganoticias-2026-11-09",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "water"
+      ]
+    },
+    {
+      "id": "sapa-la-paz-reportes-vactor-tribuna-2026-11-09",
+      "place_ids": [
+        "todos_santos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "todos_santos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "water"
+      ]
+    },
+    {
+      "id": "sne-microempresarios-loreto-mulege-ntcd-2026-11-09",
+      "place_ids": [
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mulege-oasis-h2"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-sibcs-island-grid"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "energy"
+      ]
+    },
+    {
+      "id": "inflacion-la-paz-octubre-1-17-tribuna-2026-11-09",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning",
+        "energy"
+      ]
+    },
+    {
+      "id": "amparo-indigenas-reforma-ranchera-congreso-elmundodigital-2026-11-08",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "baja-1000-rehabilitacion-caminos-los-cabos-tribuna-2026-11-08",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "planning"
+      ]
+    },
+    {
+      "id": "fuerza-por-mexico-alianza-pan-2027-quepoca-2026-11-08",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "reubicacion-ptar-fonatur-estero-josefino-noticabo-2026-11-07",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "ligir-mareas-altas-comondu-mulege-tribuna-2026-11-07",
+      "place_ids": [
+        "la_paz",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "los-cabos-menor-inversion-cea-agua-meganoticias-2026-11-06",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "ppdu-el-tezal-consulta-publica-hcn-2026-11-06",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "land_use"
+      ]
+    },
+    {
+      "id": "quinto-informe-gobierno-27-noviembre-iert-2026-11-06",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "cea-400-mdp-obras-hidricas-municipios-tribuna-2026-11-05",
+      "place_ids": [
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "water",
+        "environment",
+        "planning"
+      ]
+    },
+    {
+      "id": "condor-francfort-los-cabos-temporada-meganoticias-2026-11-05",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "connectivity"
+      ]
+    },
+    {
+      "id": "los-cabos-cinco-rutas-canada-travelweek-2026-11-05",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "tourism",
+        "land_use",
+        "planning"
+      ]
+    },
+    {
+      "id": "concesiones-transporte-840-los-cabos-ntcd-2026-11-05",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "planning",
+        "tourism"
+      ]
+    },
+    {
+      "id": "ieebcs-financiamiento-partidos-2027-meganoticias-2026-11-05",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "delicadisimo-agua-los-cabos-peninsular-2026-11-04",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "cea-jec-878-mdp-agua-caminos-eleconomista-2026-11-04",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "pleamar-comunidades-pesqueras-san-carlos-datil-meganoticias-2026-11-03",
+      "place_ids": [
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "planning",
+        "water"
+      ]
+    },
+    {
+      "id": "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
+      "place_ids": [
+        "loreto",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "oomsapas-los-cabos-saneamiento-tras-lluvias-hcn-2026-11-03",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "medano-neumaticos-zofemat-meganoticias-2026-11-03",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        }
+      ],
+      "topics": [
+        "environment",
+        "tourism"
+      ]
+    },
+    {
+      "id": "paquete-economico-2027-bcs-hoybcs-2026-11-02",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        }
+      ],
+      "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "inundaciones-los-cabos-remanentes-vance-elmomento-2026-11-02",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ],
+      "topics": [
+        "environment",
+        "water",
+        "planning"
+      ]
+    },
+    {
+      "id": "camaron-beach-semarnat-la-paz-gringo-gazette-2026-11-02",
+      "place_ids": [
+        "la_paz"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        }
+      ],
+      "topics": [
+        "environment",
+        "land_use",
+        "tourism"
+      ]
+    },
+    {
+      "id": "playas-cerradas-los-cabos-tribuna-2026-10-29",
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -71,6 +2291,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -79,11 +2303,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -136,7 +2356,7 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
@@ -148,7 +2368,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "place",
@@ -171,6 +2391,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         }
       ],
@@ -187,19 +2411,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "place",
@@ -224,15 +2448,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
-        },
-        {
-          "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
         },
         {
           "type": "place",
@@ -260,15 +2484,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -290,6 +2514,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -298,11 +2526,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -322,6 +2546,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -330,11 +2558,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -350,6 +2574,10 @@
       "id": "castro-cambio-climatico-mareas-bcs-2026-10-28",
       "place_ids": [],
       "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
@@ -372,15 +2600,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -410,11 +2638,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -439,6 +2667,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-sibcs-island-grid"
         },
         {
@@ -447,11 +2679,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-tourism-fdi-vs-water"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -472,19 +2700,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -507,15 +2735,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
-        },
-        {
-          "type": "signal",
-          "id": "sig-mulege-oasis-h2"
         },
         {
           "type": "place",
@@ -543,7 +2771,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -577,11 +2805,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -605,19 +2833,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -638,15 +2866,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -677,11 +2905,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -702,19 +2930,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -731,6 +2959,10 @@
       "id": "bcs-monitoreo-diario-dengue-2026-10-26",
       "place_ids": [],
       "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
@@ -756,11 +2988,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -785,15 +3017,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -821,11 +3053,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -854,11 +3086,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -885,11 +3117,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -909,6 +3141,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -917,11 +3153,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -948,15 +3180,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
-        },
-        {
-          "type": "signal",
-          "id": "sig-mulege-oasis-h2"
         },
         {
           "type": "place",
@@ -964,6 +3196,29 @@
         }
       ],
       "topics": [
+        "planning"
+      ]
+    },
+    {
+      "id": "bbva-ipavir-vivienda-bcs-eleconomista-2026-10-24",
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        }
+      ],
+      "topics": [
+        "land_use",
+        "tourism",
         "planning"
       ]
     },
@@ -979,15 +3234,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -1006,6 +3261,10 @@
         {
           "type": "signal",
           "id": "sig-social-housing-land"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -1033,11 +3292,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1098,11 +3357,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -1127,19 +3386,19 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1161,6 +3420,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         }
       ],
@@ -1180,7 +3443,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -1188,7 +3451,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -1208,6 +3471,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1216,11 +3483,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1239,6 +3502,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1247,11 +3514,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1275,11 +3538,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -1308,11 +3575,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-poel-developer-water"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1336,19 +3603,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1367,6 +3634,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-flight-connectivity-sjd"
         },
         {
@@ -1375,11 +3646,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -1404,15 +3671,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -1486,6 +3753,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1494,11 +3765,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1526,19 +3793,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1565,7 +3832,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -1593,11 +3860,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -1692,11 +3959,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1730,15 +3997,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -1770,11 +4037,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -1800,15 +4067,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -1841,19 +4108,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1872,19 +4139,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1906,19 +4173,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -1940,6 +4207,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -1948,11 +4219,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2023,19 +4290,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2059,15 +4326,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -2124,6 +4391,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2132,11 +4403,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2168,11 +4435,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2208,15 +4475,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         }
       ],
       "topics": [
@@ -2236,15 +4503,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
           "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -2294,11 +4561,11 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2327,19 +4594,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2358,19 +4625,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2391,15 +4658,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2423,6 +4690,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2431,11 +4702,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2459,15 +4726,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2524,6 +4791,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2532,11 +4803,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2556,6 +4823,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2564,11 +4835,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2593,11 +4860,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-social-housing-land"
         },
         {
           "type": "signal",
-          "id": "sig-mulege-oasis-h2"
+          "id": "sig-comondu-desal-loreto-ptar"
         },
         {
           "type": "place",
@@ -2617,6 +4888,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2625,11 +4900,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2668,6 +4939,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2676,11 +4951,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2705,6 +4976,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
           "id": "sig-comondu-desal-loreto-ptar"
         },
         {
@@ -2713,11 +4988,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -2741,15 +5012,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -2772,6 +5043,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2780,11 +5055,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2807,11 +5078,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "signal",
@@ -2836,6 +5107,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2844,11 +5119,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2864,6 +5135,10 @@
       "id": "protocolo-busqueda-desastres-naturales-bcs-2026-10-06",
       "place_ids": [],
       "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
@@ -2888,15 +5163,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -2924,6 +5199,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2932,11 +5211,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -2989,6 +5264,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -2997,11 +5276,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3022,6 +5297,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3030,11 +5309,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3059,15 +5334,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3087,15 +5362,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3118,19 +5393,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3151,19 +5426,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3183,19 +5458,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3226,11 +5501,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "place",
@@ -3258,15 +5533,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3295,15 +5570,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
           "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
           "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "place",
@@ -3324,19 +5599,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3357,6 +5632,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -3365,11 +5644,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3399,11 +5674,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -3438,11 +5713,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "place",
@@ -3474,15 +5749,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -3513,11 +5788,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "place",
@@ -3553,15 +5828,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -3598,11 +5873,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-flight-connectivity-sjd"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -3634,15 +5909,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -3674,7 +5949,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -3682,7 +5957,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -3717,7 +5992,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -3751,7 +6026,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -3759,7 +6034,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "place",
@@ -3783,11 +6058,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-sibcs-island-grid"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-social-housing-land"
         },
         {
           "type": "signal",
@@ -3818,7 +6093,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
@@ -3826,7 +6101,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "place",
@@ -3861,15 +6136,15 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "place",
@@ -3895,15 +6170,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         }
       ],
       "topics": [
@@ -3921,15 +6196,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3958,15 +6233,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -3998,6 +6273,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -4006,11 +6285,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4066,11 +6341,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-poel-developer-water"
         },
         {
           "type": "signal",
@@ -4098,19 +6373,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4132,6 +6407,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -4140,11 +6419,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4173,19 +6448,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4206,19 +6481,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-water-energy-coupling"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4267,11 +6542,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4304,11 +6579,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4328,19 +6603,19 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-hurricanes-polo-rachel"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
-        },
-        {
-          "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4368,11 +6643,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4393,6 +6668,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
           "id": "sig-poel-developer-water"
         },
         {
@@ -4401,11 +6680,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-sibcs-island-grid"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4451,7 +6726,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
@@ -4475,15 +6750,15 @@
       "feeds_into": [
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
           "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "signal",
           "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
         },
         {
           "type": "signal",
@@ -4507,6 +6782,10 @@
       "feeds_into": [
         {
           "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
           "id": "sig-flight-connectivity-sjd"
         },
         {
@@ -4515,11 +6794,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
-        },
-        {
-          "type": "signal",
-          "id": "sig-water-energy-coupling"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -4547,7 +6822,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -4579,11 +6854,11 @@
         },
         {
           "type": "signal",
-          "id": "sig-flight-connectivity-sjd"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
-          "id": "sig-comondu-desal-loreto-ptar"
+          "id": "sig-tourism-fdi-vs-water"
         },
         {
           "type": "place",
@@ -4609,15 +6884,15 @@
         },
         {
           "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
           "id": "sig-hurricanes-polo-rachel"
         },
         {
           "type": "signal",
-          "id": "sig-social-housing-land"
-        },
-        {
-          "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "place",
@@ -4655,7 +6930,7 @@
         },
         {
           "type": "signal",
-          "id": "sig-csl-marina-asipona-tariffs"
+          "id": "sig-mar-de-cortes-regional-ambition"
         },
         {
           "type": "signal",
@@ -4680,9 +6955,9 @@
       "destinations": 56,
       "feeds_into_signals": [
         "sig-hurricanes-polo-rachel",
-        "sig-csl-marina-asipona-tariffs",
-        "sig-sibcs-island-grid",
-        "sig-tourism-fdi-vs-water"
+        "sig-mar-de-cortes-regional-ambition",
+        "sig-tourism-fdi-vs-water",
+        "sig-poel-developer-water"
       ],
       "feeds_into_place": "los_cabos"
     },
@@ -4692,8 +6967,9 @@
       "destinations": 7,
       "feeds_into_signals": [
         "sig-hurricanes-polo-rachel",
-        "sig-water-energy-coupling",
-        "sig-flight-connectivity-sjd"
+        "sig-mar-de-cortes-regional-ambition",
+        "sig-tourism-fdi-vs-water",
+        "sig-poel-developer-water"
       ],
       "feeds_into_place": "la_paz"
     },
@@ -4703,9 +6979,9 @@
       "destinations": 5,
       "feeds_into_signals": [
         "sig-hurricanes-polo-rachel",
-        "sig-csl-marina-asipona-tariffs",
+        "sig-mar-de-cortes-regional-ambition",
         "sig-flight-connectivity-sjd",
-        "sig-comondu-desal-loreto-ptar"
+        "sig-csl-marina-asipona-tariffs"
       ],
       "feeds_into_place": "loreto"
     }
@@ -4719,64 +6995,29 @@
         "mulege_north",
         "los_cabos",
         "loreto",
-        "la_paz"
+        "la_paz",
+        "todos_santos"
       ],
       "provenance": {
         "news_ids": [
-          "playas-cerradas-los-cabos-tribuna-2026-10-29",
-          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
-          "asipona-traspaso-congreso-bitacora-2026-10-29",
-          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
-          "facultades-municipales-ambientales-hcn-2026-10-29",
-          "antorchistas-electrificacion-la-paz-palabra-2026-10-29"
-        ],
-        "flight_refs": []
-      },
-      "title_es": "Huracanes Polo y Rachel: la resiliencia costera y de red entra al techo 2050",
-      "title_en": "Hurricanes Polo and Rachel: coastal and grid resilience joins the 2050 ceiling"
-    },
-    {
-      "id": "sig-social-housing-land",
-      "theme": "land_use",
-      "place_ids": [
-        "comondu",
-        "mulege_north"
-      ],
-      "provenance": {
-        "news_ids": [
-          "dengue-comondu-brigadas-tribuna-2026-10-29",
-          "sismo-3-7-santa-rosalia-2026-10-27",
-          "dengue-comondu-los-cabos-refuerzo-federal-2026-10-24",
-          "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
-          "vivienda-bienestar-ventanilla-bcs-2026-10-22",
-          "comodato-guardia-nacional-donacion-inmuebles-salud-2026-10-21"
-        ],
-        "flight_refs": []
-      },
-      "title_es": "Vivienda para el Bienestar: suelo estatal para vivienda social en Comondú y Mulegé",
-      "title_en": "Housing for Wellbeing: state land for social housing in Comondú and Mulegé"
-    },
-    {
-      "id": "sig-csl-marina-asipona-tariffs",
-      "theme": "tourism",
-      "place_ids": [
-        "los_cabos",
-        "loreto"
-      ],
-      "provenance": {
-        "news_ids": [
-          "playas-cerradas-los-cabos-tribuna-2026-10-29",
-          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
-          "asipona-traspaso-congreso-bitacora-2026-10-29",
-          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
-          "vance-inunda-los-cabos-reforma-2026-10-28",
-          "suspension-clases-lluvias-60mm-cabos-2026-10-28"
+          "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+          "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+          "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+          "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+          "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+          "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16"
         ],
         "flight_refs": [
           {
             "iata": "SJD",
             "place_id": "los_cabos",
             "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LAP",
+            "place_id": "la_paz",
+            "destinations": 7,
             "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
           },
           {
@@ -4787,63 +7028,26 @@
           }
         ]
       },
-      "title_es": "Marina de Cabo San Lucas: tarifas de ASIPONA abren disputa por la gobernanza del puerto",
-      "title_en": "Cabo San Lucas marina: ASIPONA fees open a dispute over who governs the port"
+      "title_es": "Polo, Vance, El Niño y mareas extremas: la erosión costera entra al techo 2050",
+      "title_en": "Polo, Vance, El Niño and extreme tides: coastal erosion joins the 2050 ceiling"
     },
     {
-      "id": "sig-water-energy-coupling",
-      "theme": "water",
+      "id": "sig-mar-de-cortes-regional-ambition",
+      "theme": "planning",
       "place_ids": [
-        "la_paz"
+        "los_cabos",
+        "la_paz",
+        "east_cape",
+        "loreto"
       ],
       "provenance": {
         "news_ids": [
-          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
-          "vance-inunda-los-cabos-reforma-2026-10-28",
-          "transpeninsular-socavacion-vance-independiente-2026-10-28",
-          "hoteleros-plan-crisis-energetica-bcs-2026-10-27",
-          "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
-          "hoteleros-crisis-energetica-zeta-2026-10-27"
-        ],
-        "flight_refs": []
-      },
-      "title_es": "Acoplamiento agua–energía: desaladoras y apagones en Cabos y La Paz",
-      "title_en": "Water–energy coupling: desal plants and outages in Cabos and La Paz"
-    },
-    {
-      "id": "sig-sibcs-island-grid",
-      "theme": "energy",
-      "place_ids": [
-        "los_cabos"
-      ],
-      "provenance": {
-        "news_ids": [
-          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
-          "vance-inunda-los-cabos-reforma-2026-10-28",
-          "suspension-clases-lluvias-60mm-cabos-2026-10-28",
-          "desazolve-vial-csl-lluvias-2026-10-28",
-          "transpeninsular-socavacion-vance-independiente-2026-10-28",
-          "hoteleros-plan-crisis-energetica-bcs-2026-10-27"
-        ],
-        "flight_refs": []
-      },
-      "title_es": "SIBCS como isla energética: confiabilidad e inversión CFE",
-      "title_en": "SIBCS as an energy island: CFE reliability and investment"
-    },
-    {
-      "id": "sig-tourism-fdi-vs-water",
-      "theme": "tourism",
-      "place_ids": [
-        "los_cabos"
-      ],
-      "provenance": {
-        "news_ids": [
-          "playas-cerradas-los-cabos-tribuna-2026-10-29",
-          "asipona-traspaso-congreso-bitacora-2026-10-29",
-          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
-          "los-cabos-ocupacion-hotelera-cae-5-2026-10-27",
-          "sepuimm-campana-transicion-energetica-sjc-2026-10-27",
-          "los-cabos-campana-global-vip-summit-2026-10-26"
+          "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+          "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+          "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
+          "dengue-seguimiento-distancia-245-atenciones-los-cabos-meganoticias-2026-11-16",
+          "sepuimm-pavimentacion-criterios-aforo-palabrabcs-2026-11-15",
+          "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13"
         ],
         "flight_refs": [
           {
@@ -4851,11 +7055,114 @@
             "place_id": "los_cabos",
             "destinations": 56,
             "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LAP",
+            "place_id": "la_paz",
+            "destinations": 7,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LTO",
+            "place_id": "loreto",
+            "destinations": 5,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      },
+      "title_es": "Foro Mar de Cortés: ambición regional de crecimiento frente a límites y gobernanza del Golfo",
+      "title_en": "Sea of Cortez Forum: regional growth ambition versus limits and Gulf governance"
+    },
+    {
+      "id": "sig-tourism-fdi-vs-water",
+      "theme": "tourism",
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "mulege_north"
+      ],
+      "provenance": {
+        "news_ids": [
+          "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+          "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+          "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+          "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+          "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+          "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LAP",
+            "place_id": "la_paz",
+            "destinations": 7,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
           }
         ]
       },
       "title_es": "IED turística líder vs. freno político por falta de agua en Cabos",
       "title_en": "Leading tourism FDI vs. political brake from water scarcity in Cabos"
+    },
+    {
+      "id": "sig-poel-developer-water",
+      "theme": "planning",
+      "place_ids": [
+        "los_cabos",
+        "east_cape",
+        "la_paz"
+      ],
+      "provenance": {
+        "news_ids": [
+          "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+          "dengue-seguimiento-distancia-245-atenciones-los-cabos-meganoticias-2026-11-16",
+          "sepuimm-pavimentacion-criterios-aforo-palabrabcs-2026-11-15",
+          "bcs-primer-lugar-incidencia-dengue-meganoticias-2026-11-13",
+          "quinto-informe-entregado-congreso-ntcd-2026-11-12",
+          "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11"
+        ],
+        "flight_refs": [
+          {
+            "iata": "SJD",
+            "place_id": "los_cabos",
+            "destinations": 56,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LAP",
+            "place_id": "la_paz",
+            "destinations": 7,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          }
+        ]
+      },
+      "title_es": "POEL Los Cabos y obligación de agua/residuos a desarrolladores",
+      "title_en": "Los Cabos POEL and developer water/waste obligations"
+    },
+    {
+      "id": "sig-sibcs-island-grid",
+      "theme": "energy",
+      "place_ids": [
+        "los_cabos",
+        "la_paz"
+      ],
+      "provenance": {
+        "news_ids": [
+          "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
+          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
+          "hoteleros-plan-crisis-energetica-bcs-2026-10-27",
+          "los-cabos-ocupacion-hotelera-cae-5-2026-10-27",
+          "sepuimm-campana-transicion-energetica-sjc-2026-10-27",
+          "hoteleros-crisis-energetica-zeta-2026-10-27"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "SIBCS como isla energética: confiabilidad e inversión CFE",
+      "title_en": "SIBCS as an energy island: CFE reliability and investment"
     },
     {
       "id": "sig-flight-connectivity-sjd",
@@ -4867,12 +7174,12 @@
       ],
       "provenance": {
         "news_ids": [
-          "playas-cerradas-los-cabos-tribuna-2026-10-29",
-          "asipona-traspaso-congreso-bitacora-2026-10-29",
-          "pdu-cabo-del-este-sector-privado-meganoticias-2026-10-29",
-          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
-          "rehabilitacion-bulevar-5-febrero-la-paz-2026-10-27",
-          "los-cabos-campana-global-vip-summit-2026-10-26"
+          "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+          "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+          "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+          "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+          "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
+          "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15"
         ],
         "flight_refs": [
           {
@@ -4899,19 +7206,42 @@
       "title_en": "SJD connectivity: air demand reinforcing the Cabos vocation"
     },
     {
-      "id": "sig-poel-developer-water",
-      "theme": "planning",
+      "id": "sig-social-housing-land",
+      "theme": "land_use",
       "place_ids": [
+        "comondu",
+        "mulege_north",
         "los_cabos"
       ],
       "provenance": {
         "news_ids": [
-          "servicios-publicos-los-cabos-meganoticias-2026-10-29",
-          "antorchistas-electrificacion-la-paz-palabra-2026-10-29",
-          "dengue-comondu-brigadas-tribuna-2026-10-29",
-          "suspension-clases-lluvias-60mm-cabos-2026-10-28",
-          "desazolve-vial-csl-lluvias-2026-10-28",
-          "castro-cambio-climatico-mareas-bcs-2026-10-28"
+          "el-nino-nivel-mar-puerto-san-carlos-meganoticias-2026-11-14",
+          "vivienda-bienestar-704-sierra-vista-reubicacion-meganoticias-2026-11-11",
+          "pleamar-comunidades-pesqueras-san-carlos-datil-meganoticias-2026-11-03",
+          "vivienda-bienestar-ventanilla-bcs-2026-10-22",
+          "dengue-comondu-13-mil-hectareas-fumigadas-2026-10-21",
+          "congreso-donacion-predios-vivienda-comondu-mulege-2026-10-20"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "Vivienda para el Bienestar: suelo para vivienda social y reubicación de zonas de riesgo",
+      "title_en": "Housing for Wellbeing: land for social housing and relocation out of risk zones"
+    },
+    {
+      "id": "sig-csl-marina-asipona-tariffs",
+      "theme": "tourism",
+      "place_ids": [
+        "los_cabos",
+        "loreto"
+      ],
+      "provenance": {
+        "news_ids": [
+          "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+          "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+          "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+          "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+          "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15",
+          "los-cabos-conexion-aerea-61-diversificar-elfinanciero-2026-11-13"
         ],
         "flight_refs": [
           {
@@ -4919,27 +7249,56 @@
             "place_id": "los_cabos",
             "destinations": 56,
             "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
+          },
+          {
+            "iata": "LTO",
+            "place_id": "loreto",
+            "destinations": 5,
+            "source": "FlightConnections.com — rutas sin escalas (consultado 2026-09-17)"
           }
         ]
       },
-      "title_es": "POEL Los Cabos y obligación de agua/residuos a desarrolladores",
-      "title_en": "Los Cabos POEL and developer water/waste obligations"
+      "title_es": "Marina de Cabo San Lucas: tarifas de ASIPONA abren disputa por la gobernanza del puerto",
+      "title_en": "Cabo San Lucas marina: ASIPONA fees open a dispute over who governs the port"
+    },
+    {
+      "id": "sig-water-energy-coupling",
+      "theme": "water",
+      "place_ids": [
+        "la_paz",
+        "los_cabos",
+        "todos_santos"
+      ],
+      "provenance": {
+        "news_ids": [
+          "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+          "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+          "el-nino-nivel-mar-puerto-san-carlos-meganoticias-2026-11-14",
+          "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+          "loreto-calle-marlin-pavimentacion-45-aldiabcs-2026-11-13",
+          "vivienda-bienestar-704-sierra-vista-reubicacion-meganoticias-2026-11-11"
+        ],
+        "flight_refs": []
+      },
+      "title_es": "Acoplamiento agua–energía: desaladoras y apagones en Cabos y La Paz",
+      "title_en": "Water–energy coupling: desal plants and outages in Cabos and La Paz"
     },
     {
       "id": "sig-comondu-desal-loreto-ptar",
       "theme": "water",
       "place_ids": [
         "loreto",
-        "comondu"
+        "comondu",
+        "mulege_north"
       ],
       "provenance": {
         "news_ids": [
-          "dengue-comondu-brigadas-tribuna-2026-10-29",
-          "vinoramas-rechaza-pipas-sapa-la-paz-2026-10-26",
-          "marea-alta-inunda-costa-la-paz-2026-10-25",
-          "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
-          "planta-purificadora-agua-bienestar-la-pasion-la-paz-2026-10-25",
-          "oomsapas-la-paz-paraiso-del-sol-tandeo-2026-10-24"
+          "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+          "el-nino-nivel-mar-puerto-san-carlos-meganoticias-2026-11-14",
+          "loreto-calle-marlin-pavimentacion-45-aldiabcs-2026-11-13",
+          "los-cabos-menor-inversion-cea-agua-meganoticias-2026-11-06",
+          "cea-400-mdp-obras-hidricas-municipios-tribuna-2026-11-05",
+          "cea-jec-878-mdp-agua-caminos-eleconomista-2026-11-04"
         ],
         "flight_refs": []
       },
@@ -4954,17 +7313,17 @@
       ],
       "provenance": {
         "news_ids": [
-          "sismo-3-7-santa-rosalia-2026-10-27",
-          "cierres-cuesta-las-virgenes-transpeninsular-mulege-2026-10-24",
+          "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
           "atlas-energetico-bcs-2026-10-14",
-          "vidrio-anp-vizcaino-lgeepa-2026-10-08",
           "cfe-restablece-100-polo-2026-10-01",
-          "cfe-restablece-11k-usuarios-polo-2026-09-30"
+          "cfe-restablece-11k-usuarios-polo-2026-09-30",
+          "cfe-536-mdp-70-mva-bcs-2026-09-23",
+          "cfe-bcs-generacion-electrificacion-2026-09-22"
         ],
         "flight_refs": []
       },
-      "title_es": "Oasis hidrógeno verde en Mulegé: señal energética del norte",
-      "title_en": "Green-hydrogen Oasis in Mulegé: northern energy signal"
+      "title_es": "Oasis Mulegé: CFE licita 72 MW solares, baterías e hidrógeno verde",
+      "title_en": "Mulegé Oasis: CFE tenders 72 MW solar, batteries and green hydrogen"
     }
   ]
 }

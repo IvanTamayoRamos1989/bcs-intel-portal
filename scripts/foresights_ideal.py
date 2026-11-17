@@ -527,25 +527,56 @@ def lead_for(vision: dict, lang: str) -> str:
     )
 
 
+def join_natural(names: list[str], lang: str) -> str:
+    """Join 1/N proper names with a natural conjunction (y / and)."""
+    clean = [n.strip() for n in names if str(n or "").strip()]
+    if not clean:
+        return ""
+    if len(clean) == 1:
+        return clean[0]
+    conj = " y " if lang == "es" else " and "
+    if len(clean) == 2:
+        return conj.join(clean)
+    return ", ".join(clean[:-1]) + conj + clean[-1]
+
+
+def emphasis_clause(names: list[str], lang: str) -> str:
+    """Grammatical 0/1/N sentence about themes in emphasis."""
+    n = len([x for x in names if str(x or "").strip()])
+    joined = join_natural(names, lang)
+    if lang == "es":
+        if n == 0:
+            return "Hoy no hay ningún motor o techo en énfasis."
+        if n == 1:
+            return f"El motor o techo en énfasis es {joined}."
+        return f"Los motores o techos en énfasis son {joined}."
+    if n == 0:
+        return "No drivers or ceilings are highlighted today."
+    if n == 1:
+        return f"The highlighted driver or ceiling is {joined}."
+    return f"The highlighted drivers or ceilings are {joined}."
+
+
 def change_for(vision: dict, pillars: list[dict], lang: str) -> str:
     scenarios = vision.get("scenarios") or {}
     ranked = sorted(scenarios, key=lambda h: scenarios[h].get("p") or 0, reverse=True)
     top = ranked[0] if ranked else None
     meta = vision.get("scenario_meta") or {}
     stressed = [p for p in pillars if p.get("emphasis")]
-    names = ", ".join(
-        (x["label_es"] if lang == "es" else x["label_en"]) for x in stressed
-    ) or ("ningún tema en énfasis" if lang == "es" else "no theme highlighted")
+    names = [
+        (x.get("label_es") if lang == "es" else x.get("label_en")) or ""
+        for x in stressed
+    ]
     if lang == "es":
         label = (meta.get(top) or {}).get("label_es") if top else "—"
         return (
             f"Se ajusta a la Tendencia de hoy: el escenario más probable es «{label}». "
-            f"Los motores o techos en énfasis son {names}."
+            + emphasis_clause(names, "es")
         )
     label = (meta.get(top) or {}).get("label_en") if top else "—"
     return (
         f"It tracks today’s Trend: the leading scenario is “{label}”. "
-        f"Highlighted drivers or ceilings: {names}."
+        + emphasis_clause(names, "en")
     )
 
 

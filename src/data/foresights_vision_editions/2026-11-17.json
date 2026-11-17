@@ -1,0 +1,733 @@
+{
+  "updated": "2026-11-17",
+  "period": {
+    "news_from": "2026-09-18",
+    "news_to": "2026-11-16",
+    "n_news": 211
+  },
+  "title_es": "Tendencia 2050",
+  "title_en": "Trend 2050",
+  "kicker_es": "Lo más probable hacia 2050, según las circunstancias de hoy y lo que ya está medido.",
+  "kicker_en": "What is most likely toward 2050, given today’s circumstances and what is already measured.",
+  "change_es": "El escenario con mayor probabilidad es «Estrés hídrico-costero» (42 %, baja 1.5 puntos frente a la semana previa). La mayor intensidad de notas de esta semana está en Turismo (4 notas; EWMA 6.30; dirección +0.00). Cambios de intensidad (≥5 notas): Agua 10→1, Costa / clima 10→2, Turismo 10→4, Economía 15→1.",
+  "change_en": "The leading scenario is “Water-coastal stress” (42%, falls 1.5 points versus the previous week). The week’s highest news intensity is in Tourism (4 items; EWMA 6.30; direction +0.00). Intensity changes (≥5 items): Water 10→1, Coast / climate 10→2, Tourism 10→4, Economy 15→1.",
+  "narrative_es": "Baja California Sur no se sostiene hacia 2050 como una sola fórmula costera repetida de sur a norte. La lectura que se mantiene —y que el tablero de demanda y oferta del portal resume como restringida a escala estatal— es un sistema policéntrico: Los Cabos como motor turístico bajo estrés hídrico y eléctrico; el East Cape en tensión con las áreas protegidas; Todos Santos y El Pescadero como espina de amenidad del Pacífico; La Paz como capital de servicios y nodo agua–energía; Loreto como ancla de turismo y conservación; Comondú como hub agropecuario con más margen relativo; y el norte de Mulegé como corredor poco documentado, ahora con una licitación de generación remota. Esa suma de roles distintos sigue siendo la hipótesis central.\n\nEl techo hídrico no es hipotético. De 39 acuíferos con disponibilidad media anual de CONAGUA (2023) en el portal, 22 están en déficit y esos balances suman −105.1 hm³ al año, con déficits notables en Los Cabos, East Cape, Todos Santos y La Paz. En 2026 la prensa local reporta 25 tomas clandestinas clausuradas en Los Cabos, con una sustracción estimada de más de 300 l/s, y el gobernador sitúa la segunda desaladora de Cabo San Lucas al 75 % de avance (250 l/s más; 655 l/s en conjunto, a concluir en 2027). La desalación puede mover el margen de abasto, pero no convierte en superávit un acuífero ya en déficit, ni anula el dato de la ENCIG 2025, citado en esa cobertura, de que solo tres de cada diez personas en el estado tienen suministro constante.\n\nEl techo costero se ha vuelto visible. Un investigador de la UABCS atribuye a El Niño un oleaje de 15 a 30 cm y el colapso de barreras en Puerto San Carlos, y advierte mareas extraordinarias en lo que resta de 2026, con un debilitamiento posible —no seguro— en 2027. Se suman inundaciones en El Dátil y Los Cabos a inicios de noviembre, y la demolición parcial del Hotel San Cristóbal en Punta Lobos, bajo revisión de Profepa. No proyectamos una línea de costa a 2050: no hay en el portal una serie de nivel del mar lo bastante larga. Sí hay una dirección: la costa ya condiciona permisos y vocaciones de playa.\n\nEl motor de Cabos es el que más empuja y el que más duda. SETUE registró 70.0 % de ocupación en Los Cabos en 2025, frente a 64 % en La Paz. La Asociación de Hoteles reportó 78 % en las dos primeras semanas de noviembre de 2026, cuatro puntos sobre 2025 y el primer tramo por encima del año previo desde marzo. GAP, en cambio, informó 520.9 mil pasajeros en Los Cabos en octubre (−4.6 % anual; 5.87 millones en enero–octubre, −5.5 %), mientras La Paz acumula 1.19 millones en el año (+8.7 %). El empleo formal IMSS en BCS cayó 1.1 % anual en octubre (224,460 puestos en septiembre). No son una sola serie, así que no las prolongamos a 2030 ni a 2050: hay un episodio de ocupación al alza, con aire y empleo formal todavía por debajo del año anterior.\n\nEl INEGI registra un PIB de 187,152 millones de pesos constantes en 2024, 3.5 % más que en 2023, e IED por 1,578 millones de dólares en 2025 (1,353 en 2024). Dos cortes anuales no bastan para proyectar 2050. El Foro Mar de Cortés planteó, como propuesta y no como dato del portal, un 3.5 % anual durante veinte años y triplicar la IED regional; IMCO situó a BCS del octavo al quinto lugar entre 2021 y 2026. El pico del SIBCS aparece en 689 MW en 2024 (en 2023 el portal consigna 660 MW netos y 675 MW) y la licitación de Oasis Mulegé —72 MW solares, 20 MW / 80 MWh y un electrolizador de 20 MW— es una señal geográfica, todavía en concurso.\n\nTras nueve semanas del feed (18 de septiembre a 15 de noviembre), el escenario de estrés hídrico-costero sigue siendo el más probable, en torno al 42 %, pero esta semana cede casi veinte puntos porque se dispara la intensidad económica del Foro y mejoran las señales de turismo y de nueva oferta eléctrica. El escenario base sube a cerca del 32 %; el de diversificación policéntrica, a cerca del 26 %. Ninguno es un plan. Las series oficiales son cortas o de un solo corte, y las proyecciones a 2030 y 2050 se marcan como insuficientes: la visión se actualiza cada semana con lo medido, no con una cifra inventada de llegada.",
+  "narrative_en": "Baja California Sur does not hold together toward 2050 as a single coastal formula repeated from south to north. The reading that still stands — and that the portal’s demand–supply board summarises as constrained at state scale — is a polycentric system: Los Cabos as the tourism engine under water and power stress; East Cape in tension with protected areas; Todos Santos and El Pescadero as the Pacific amenity spine; La Paz as the service capital and water–energy node; Loreto as a tourism–conservation anchor; Comondú as an agricultural hub with relatively more room; and northern Mulegé as a thinly documented corridor, now with a remote generation tender. That sum of distinct roles remains the central hypothesis.\n\nThe water ceiling is not hypothetical. Of 39 aquifers with CONAGUA mean annual availability (2023) in the portal, 22 are in deficit and those balances sum to −105.1 hm³ a year, with notable deficits in Los Cabos, East Cape, Todos Santos and La Paz. In 2026 local coverage reports 25 illegal taps closed in Los Cabos, with estimated extraction above 300 l/s, and the governor places the second Cabo San Lucas desalination plant at 75 % completion (an additional 250 l/s; 655 l/s combined, to be finished in 2027). Desalination can shift the supply margin, but it does not turn a deficit aquifer into a surplus, nor does it cancel the ENCIG 2025 figure, cited in the same coverage, that only three in ten people in the state have a constant supply.\n\nThe coastal ceiling has become visible. A UABCS researcher attributes to El Niño a 15-to-30 cm rise in wave height and the collapse of barriers in Puerto San Carlos, and warns of extraordinary tides through the rest of 2026, with a possible — not certain — weakening in 2027. Added to that are floods in El Dátil and Los Cabos in early November, and the partial demolition of Hotel San Cristóbal in Punta Lobos, under Profepa review. We do not project a 2050 shoreline: the portal has no sea-level series long enough. There is a direction: the coast now conditions permits and beach vocations.\n\nThe Cabos engine is still the one that pushes hardest and hesitates most. SETUE recorded 70.0 % occupancy in Los Cabos in 2025, against 64 % in La Paz. The Hotel Association reported 78 % in the first two weeks of November 2026, four points above 2025 and the first stretch above the prior year since March. GAP, by contrast, reported 520.9 thousand passengers in Los Cabos in October (−4.6 % year-on-year; 5.87 million in January–October, −5.5 %), while La Paz has accumulated 1.19 million in the year (+8.7 %). Formal IMSS employment in BCS fell 1.1 % year-on-year in October (224,460 posts in September). These are not one series, so we do not extend them to 2030 or 2050: occupancy is up in a specific episode, with air demand and formal employment still below last year.\n\nINEGI records constant-price GDP of 187,152 million pesos in 2024, 3.5 % above 2023, and FDI of 1,578 million dollars in 2025 (1,353 in 2024). Two annual cuts cannot support a 2050 projection. The Sea of Cortez Forum put forward, as a proposal and not as a portal figure, a 3.5 % annual pace for twenty years and a tripling of regional FDI; IMCO moved BCS from 8th to 5th between 2021 and 2026. The SIBCS peak appears at 689 MW in 2024 (for 2023 the portal records both 660 MW net and 675 MW), and the Oasis Mulegé tender — 72 MW solar, 20 MW / 80 MWh and a 20 MW electrolyser — is a geographic signal, still under bid.\n\nAfter nine weeks of the feed (18 September to 15 November), the water-coastal stress scenario remains the most probable, around 42 %, but it gives up almost twenty points this week as Forum-driven economic intensity jumps and tourism and new power-supply signals improve. The baseline scenario rises to about 32 %; polycentric diversification, to about 26 %. None of these is a plan. Official series are short or single-cut, and 2030 and 2050 projections are marked insufficient: the vision is updated each week with what is measured, not with an invented arrival figure.",
+  "word_count_es": 755,
+  "word_count_en": 704,
+  "needs_curation": false,
+  "claims": [
+    {
+      "id": "dma",
+      "confidence": "alta",
+      "es": "22 de 39 acuíferos en déficit; suma −105.1 hm³/año (CONAGUA, 2023).",
+      "en": "22 of 39 aquifers in deficit; sum −105.1 hm³/year (CONAGUA, 2023).",
+      "sources": [
+        "CONAGUA, disponibilidad media anual 2023"
+      ]
+    },
+    {
+      "id": "poblacion",
+      "confidence": "alta",
+      "es": "Población estatal 798,447 (INEGI Censo 2020).",
+      "en": "State population 798,447 (INEGI Census 2020).",
+      "sources": [
+        "INEGI Censo 2020"
+      ]
+    },
+    {
+      "id": "pib",
+      "confidence": "alta",
+      "es": "PIB constante 187,152 millones de pesos en 2024, +3.5 % frente a 2023 (INEGI).",
+      "en": "Constant-price GDP 187,152 million pesos in 2024, +3.5% versus 2023 (INEGI).",
+      "sources": [
+        "INEGI PIBE"
+      ]
+    },
+    {
+      "id": "ied",
+      "confidence": "alta",
+      "es": "IED 1,353 mdd (2024) y 1,578 mdd (2025) (CNIE).",
+      "en": "FDI 1,353 million USD (2024) and 1,578 (2025) (CNIE).",
+      "sources": [
+        "CNIE"
+      ]
+    },
+    {
+      "id": "gap",
+      "confidence": "alta",
+      "es": "SJD −4.6 % en octubre y −5.5 % ene–oct; LAP +8.7 % en el año (GAP, 2026).",
+      "en": "SJD −4.6% in October and −5.5% Jan–Oct; LAP +8.7% year-to-date (GAP, 2026).",
+      "sources": [
+        "Grupo Aeroportuario del Pacífico, octubre 2026"
+      ]
+    },
+    {
+      "id": "setue_occ",
+      "confidence": "alta",
+      "es": "Ocupación 2025: Los Cabos 70.0 % y La Paz 64 % (SETUE).",
+      "en": "2025 occupancy: Los Cabos 70.0% and La Paz 64% (SETUE).",
+      "sources": [
+        "SETUE"
+      ]
+    },
+    {
+      "id": "inegi_infl",
+      "confidence": "alta",
+      "es": "Inflación en La Paz: 1.17 % mensual y 3.16 % anual en octubre de 2026 (INEGI).",
+      "en": "La Paz inflation: 1.17% monthly and 3.16% annual in October 2026 (INEGI).",
+      "sources": [
+        "INEGI"
+      ]
+    },
+    {
+      "id": "sibcs",
+      "confidence": "media",
+      "es": "Pico SIBCS 689 MW en 2024; en 2023 el portal consigna 660 MW netos y 675 MW.",
+      "en": "SIBCS peak 689 MW in 2024; for 2023 the portal records both 660 MW net and 675 MW.",
+      "sources": [
+        "CENACE / PRODESEN",
+        "ficha de energía del portal"
+      ]
+    },
+    {
+      "id": "ahlc",
+      "confidence": "media",
+      "es": "Ocupación 78 % en Los Cabos, 1–15 de noviembre de 2026 (Asociación de Hoteles).",
+      "en": "78% occupancy in Los Cabos, 1–15 November 2026 (Hotel Association).",
+      "sources": [
+        "Asociación de Hoteles de Los Cabos, vía Tribuna de México"
+      ]
+    },
+    {
+      "id": "imss",
+      "confidence": "media",
+      "es": "Empleo formal IMSS en BCS −1.1 % anual en octubre; 224,460 puestos en septiembre.",
+      "en": "Formal IMSS employment in BCS −1.1% year-on-year in October; 224,460 posts in September.",
+      "sources": [
+        "IMSS, citado por Tribuna de México"
+      ]
+    },
+    {
+      "id": "desal",
+      "confidence": "media",
+      "es": "Segunda desaladora de Cabo San Lucas al 75 %, 250 l/s; conjunto 655 l/s, conclusión 2027.",
+      "en": "Second Cabo San Lucas desal plant at 75%, 250 l/s; combined 655 l/s, finish 2027.",
+      "sources": [
+        "Gobierno del estado, vía Quepoca"
+      ]
+    },
+    {
+      "id": "tomas",
+      "confidence": "media",
+      "es": "25 tomas clandestinas en Los Cabos y más de 300 l/s de sustracción estimada.",
+      "en": "25 illegal taps in Los Cabos and estimated extraction above 300 l/s.",
+      "sources": [
+        "Tribuna de México, iniciativa y clausuras 2026"
+      ]
+    },
+    {
+      "id": "nino",
+      "confidence": "media",
+      "es": "El Niño: oleaje de 15 a 30 cm en Puerto San Carlos (UABCS).",
+      "en": "El Niño: 15–30 cm wave-height rise in Puerto San Carlos (UABCS).",
+      "sources": [
+        "Miguel Imaz, UABCS, vía Meganoticias"
+      ]
+    },
+    {
+      "id": "foro",
+      "confidence": "baja",
+      "es": "La meta de 3.5 % anual y de triplicar la IED regional es una propuesta del Foro, no una proyección del portal.",
+      "en": "The 3.5% annual goal and tripling regional FDI is a Forum proposal, not a portal projection.",
+      "sources": [
+        "Foro Mar de Cortés, Agustín Coppel, noviembre 2026"
+      ]
+    }
+  ],
+  "scenarios": {
+    "base": {
+      "p": 0.3099,
+      "delta": -0.001
+    },
+    "estres_hidrico_costero": {
+      "p": 0.4193,
+      "delta": -0.0154
+    },
+    "diversificacion": {
+      "p": 0.2708,
+      "delta": 0.0165
+    }
+  },
+  "scenario_meta": {
+    "base": {
+      "label_es": "Trayectoria actual",
+      "label_en": "Current path",
+      "blurb_es": "El motor turístico-residencial de Los Cabos y el corredor costero siguen creciendo, con alivios incrementales de desalación y red.",
+      "blurb_en": "The Los Cabos tourism-residential engine and the coastal corridor keep growing, with incremental desal and grid relief."
+    },
+    "estres_hidrico_costero": {
+      "label_es": "Estrés hídrico-costero",
+      "label_en": "Water-coastal stress",
+      "blurb_es": "Los techos de agua, costa y red se adelantan al crecimiento: déficits de acuíferos, oleaje y erosión condicionan permisos y vocaciones.",
+      "blurb_en": "Water, coast and grid ceilings arrive before growth: aquifer deficits, surge and erosion condition permits and vocations."
+    },
+    "diversificacion": {
+      "label_es": "Diversificación policéntrica",
+      "label_en": "Polycentric diversification",
+      "blurb_es": "La Paz, el interior y el norte ganan peso (foro regional, tráfico de LAP, energía remota) y el estado no se sostiene solo clonando Cabos.",
+      "blurb_en": "La Paz, the interior and the north gain weight (regional forum, LAP traffic, remote energy) and the state is not held together by cloning Cabos."
+    }
+  },
+  "scenario_weights": {
+    "base": {
+      "agua": 0.15,
+      "costa_clima": -0.15,
+      "turismo": 0.8,
+      "economia": 0.5,
+      "energia": 0.2,
+      "movilidad": 0.4,
+      "vivienda": 0.15,
+      "gobernanza": 0.2
+    },
+    "estres_hidrico_costero": {
+      "agua": -0.9,
+      "costa_clima": -0.9,
+      "turismo": 0.15,
+      "economia": -0.15,
+      "energia": -0.4,
+      "movilidad": 0.0,
+      "vivienda": -0.25,
+      "gobernanza": 0.1
+    },
+    "diversificacion": {
+      "agua": 0.2,
+      "costa_clima": 0.1,
+      "turismo": 0.15,
+      "economia": 0.7,
+      "energia": 0.55,
+      "movilidad": 0.45,
+      "vivienda": 0.3,
+      "gobernanza": 0.4
+    }
+  },
+  "signals": {
+    "agua": {
+      "count": 1,
+      "ewma": 5.2622,
+      "direction": 0.0,
+      "z": 0.0,
+      "plus": 0,
+      "minus": 0,
+      "zero": 1
+    },
+    "costa_clima": {
+      "count": 2,
+      "ewma": 5.5481,
+      "direction": 0.0,
+      "z": 0.0,
+      "plus": 0,
+      "minus": 0,
+      "zero": 2
+    },
+    "turismo": {
+      "count": 4,
+      "ewma": 6.2988,
+      "direction": 0.0,
+      "z": 0.0,
+      "plus": 1,
+      "minus": 1,
+      "zero": 2
+    },
+    "economia": {
+      "count": 1,
+      "ewma": 5.0892,
+      "direction": 0.0,
+      "z": 0.0,
+      "plus": 0,
+      "minus": 0,
+      "zero": 1
+    },
+    "energia": {
+      "count": 0,
+      "ewma": 1.664,
+      "direction": 0.0,
+      "z": 0.0,
+      "plus": 0,
+      "minus": 0,
+      "zero": 0
+    },
+    "movilidad": {
+      "count": 2,
+      "ewma": 2.3165,
+      "direction": 0.0,
+      "z": 0.0,
+      "plus": 0,
+      "minus": 0,
+      "zero": 2
+    },
+    "vivienda": {
+      "count": 0,
+      "ewma": 1.4573,
+      "direction": 0.0,
+      "z": 0.0,
+      "plus": 0,
+      "minus": 0,
+      "zero": 0
+    },
+    "gobernanza": {
+      "count": 2,
+      "ewma": 3.5691,
+      "direction": 0.5,
+      "z": 0.7322,
+      "plus": 1,
+      "minus": 0,
+      "zero": 1
+    }
+  },
+  "signals_week": "2026-11-16",
+  "series": [
+    {
+      "id": "ocupacion_los_cabos",
+      "label_es": "Ocupación hotelera en Los Cabos",
+      "label_en": "Hotel occupancy in Los Cabos",
+      "unit": "%",
+      "points": [
+        {
+          "t": 2024.0,
+          "y": 76.0,
+          "label": "2024 JLL",
+          "source": "JLL, ocupación hotelera Los Cabos 2024"
+        },
+        {
+          "t": 2025.0,
+          "y": 70.0,
+          "label": "2025 SETUE",
+          "source": "SETUE, ocupación 2025 Los Cabos (estancia 4.7 días)"
+        },
+        {
+          "t": 2026.04,
+          "y": 74.0,
+          "label": "ene-2026",
+          "source": "FITURCA / ficha portal, ocupación Los Cabos ene-2026"
+        },
+        {
+          "t": 2026.86,
+          "y": 78.0,
+          "label": "1–15 nov 2026 AHLC",
+          "source": "Asociación de Hoteles de Los Cabos, dos primeras semanas de noviembre de 2026"
+        }
+      ],
+      "comparable": false,
+      "n": 4,
+      "span_years": 2.86,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Las observaciones no son una serie metodológicamente comparable.",
+        "reason_en": "The observations are not a methodologically comparable series."
+      },
+      "short_term": null,
+      "note_es": "JLL 2024, SETUE 2025, ficha ene-2026 y Asociación de Hoteles (1–15 nov 2026) no comparten la misma metodología ni la misma ventana. No se ajusta una recta.",
+      "note_en": "JLL 2024, SETUE 2025, January 2026 and the Hotel Association (1–15 Nov 2026) do not share a method or window. No line is fitted."
+    },
+    {
+      "id": "pax_sjd",
+      "label_es": "Pasajeros en el aeropuerto de Los Cabos",
+      "label_en": "Los Cabos airport passengers",
+      "unit": "millones o miles, ver puntos",
+      "points": [
+        {
+          "t": 2024.0,
+          "y": 4.66,
+          "label": "2024 intl JLL",
+          "source": "JLL, pasajeros internacionales SJD 2024 (millones)"
+        },
+        {
+          "t": 2025.0,
+          "y": 4.69,
+          "label": "2025 intl JLL",
+          "source": "JLL, pasajeros internacionales SJD 2025 (millones)"
+        },
+        {
+          "t": 2025.0,
+          "y": 3.8,
+          "label": "2025 SETUE ~",
+          "source": "SETUE, pasajeros 2025 SJD (~3.8 millones; 83.2% del estado)"
+        },
+        {
+          "t": 2026.83,
+          "y": 0.5209,
+          "label": "oct 2026 GAP",
+          "source": "GAP, 520.9 mil pasajeros en octubre de 2026 (−4.6% anual)"
+        }
+      ],
+      "comparable": false,
+      "n": 4,
+      "span_years": 2.83,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Las observaciones no son una serie metodológicamente comparable.",
+        "reason_en": "The observations are not a methodologically comparable series."
+      },
+      "short_term": null,
+      "note_es": "JLL reporta pasajeros internacionales anuales; SETUE un total 2025 aproximado; GAP un mes y un acumulado 2026. No son una sola serie.",
+      "note_en": "JLL reports annual international passengers; SETUE an approximate 2025 total; GAP a 2026 month and year-to-date. Not one series."
+    },
+    {
+      "id": "pax_lap",
+      "label_es": "Pasajeros en el aeropuerto de La Paz",
+      "label_en": "La Paz airport passengers",
+      "unit": "pasajeros",
+      "points": [
+        {
+          "t": 2025.0,
+          "y": 668800,
+          "label": "2025 SETUE",
+          "source": "SETUE, pasajeros 2025 LAP 668,800 (+10.9% anual)"
+        },
+        {
+          "t": 2026.83,
+          "y": 1190000,
+          "label": "ene–oct 2026 GAP",
+          "source": "GAP, 1.19 millones ene–oct 2026 (+8.7%)"
+        }
+      ],
+      "comparable": false,
+      "n": 2,
+      "span_years": 1.83,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Las observaciones no son una serie metodológicamente comparable.",
+        "reason_en": "The observations are not a methodologically comparable series."
+      },
+      "short_term": null,
+      "note_es": "SETUE 2025 (año) y GAP ene–oct 2026 (acumulado) cubren ventanas distintas.",
+      "note_en": "SETUE 2025 (calendar year) and GAP Jan–Oct 2026 (year-to-date) cover different windows."
+    },
+    {
+      "id": "empleo_imss",
+      "label_es": "Empleo formal IMSS en BCS",
+      "label_en": "Formal IMSS employment in BCS",
+      "unit": "puestos",
+      "points": [
+        {
+          "t": 2025.75,
+          "y": 225999,
+          "label": "sep 2025",
+          "source": "IMSS, citado en prensa: 224,460 puestos en septiembre de 2026 son 1,539 menos que un año antes"
+        },
+        {
+          "t": 2026.75,
+          "y": 224460,
+          "label": "sep 2026",
+          "source": "IMSS, citado en prensa: 224,460 puestos en septiembre de 2026 (−1.1% anual en octubre)"
+        }
+      ],
+      "comparable": false,
+      "n": 2,
+      "span_years": 1.0,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Las observaciones no son una serie metodológicamente comparable.",
+        "reason_en": "The observations are not a methodologically comparable series."
+      },
+      "short_term": null,
+      "note_es": "Solo hay un corte comparable citado en prensa (septiembre 2025 implícito y septiembre 2026: 224,460). El −1.1% es la variación anual de octubre.",
+      "note_en": "Only one comparable press-cited cut (implicit Sep 2025 and Sep 2026: 224,460). The −1.1% is the October year-on-year change."
+    },
+    {
+      "id": "inflacion_la_paz",
+      "label_es": "Inflación mensual en La Paz",
+      "label_en": "Monthly inflation in La Paz",
+      "unit": "%",
+      "points": [
+        {
+          "t": 2026.75,
+          "y": 0.01,
+          "label": "sep 2026 mensual",
+          "source": "INEGI, inflación mensual La Paz septiembre 2026: 0.01%"
+        },
+        {
+          "t": 2026.83,
+          "y": 1.17,
+          "label": "oct 2026 mensual",
+          "source": "INEGI, inflación mensual La Paz octubre 2026: 1.17% (anual 3.16%)"
+        }
+      ],
+      "comparable": false,
+      "n": 2,
+      "span_years": 0.08,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Las observaciones no son una serie metodológicamente comparable.",
+        "reason_en": "The observations are not a methodologically comparable series."
+      },
+      "short_term": null,
+      "note_es": "Dos meses de INEGI (sep y oct 2026). Insuficiente para una tendencia de mediano plazo.",
+      "note_en": "Two INEGI months (Sep and Oct 2026). Insufficient for a medium-term trend."
+    },
+    {
+      "id": "pib_constante",
+      "label_es": "PIB estatal a precios constantes",
+      "label_en": "State GDP at constant prices",
+      "unit": "millones de MXN",
+      "points": [
+        {
+          "t": 2023.0,
+          "y": 180823.2,
+          "label": "2023 (implícito)",
+          "source": "INEGI PIBE: 187,152 M MXN constantes en 2024, +3.5% frente a 2023"
+        },
+        {
+          "t": 2024.0,
+          "y": 187152,
+          "label": "2024",
+          "source": "INEGI PIBE, PIB constante BCS 2024"
+        }
+      ],
+      "comparable": true,
+      "n": 2,
+      "span_years": 1.0,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Hay 2 punto(s); se piden al menos 4 para ajustar una tendencia.",
+        "reason_en": "2 point(s); at least 4 are required to fit a trend."
+      },
+      "short_term": null,
+      "note_es": "INEGI PIBE: 187,152 millones en 2024, +3.5% frente a 2023. El valor 2023 se obtiene de esa tasa oficial. Dos años no bastan para 2030/2050.",
+      "note_en": "INEGI PIBE: 187,152 million in 2024, +3.5% versus 2023. The 2023 level is implied by that official rate. Two years are not enough for 2030/2050."
+    },
+    {
+      "id": "ied_bcs",
+      "label_es": "IED en Baja California Sur",
+      "label_en": "FDI in Baja California Sur",
+      "unit": "millones de USD",
+      "points": [
+        {
+          "t": 2024.0,
+          "y": 1353,
+          "label": "2024",
+          "source": "CNIE, IED BCS 2024 (millones de dólares)"
+        },
+        {
+          "t": 2025.0,
+          "y": 1578,
+          "label": "2025",
+          "source": "CNIE, IED BCS 2025 (millones de dólares; 5.º nacional en el corte citado)"
+        }
+      ],
+      "comparable": true,
+      "n": 2,
+      "span_years": 1.0,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Hay 2 punto(s); se piden al menos 4 para ajustar una tendencia.",
+        "reason_en": "2 point(s); at least 4 are required to fit a trend."
+      },
+      "short_term": null,
+      "note_es": "CNIE: 1,353 (2024) y 1,578 (2025). Dos cortes anuales; no se proyecta a 2030/2050.",
+      "note_en": "CNIE: 1,353 (2024) and 1,578 (2025). Two annual cuts; no 2030/2050 projection."
+    },
+    {
+      "id": "pico_sibcs",
+      "label_es": "Pico de demanda del SIBCS",
+      "label_en": "SIBCS peak demand",
+      "unit": "MW",
+      "points": [
+        {
+          "t": 2023.0,
+          "y": 675,
+          "label": "2023 (675 MW)",
+          "source": "PRODESEN / ficha portal, pico SIBCS 2023; también se consigna 660 MW netos"
+        },
+        {
+          "t": 2024.0,
+          "y": 689,
+          "label": "2024",
+          "source": "CENACE / PRODESEN, pico SIBCS 2024 (689 MW; instantáneo 688.5 MW el 10 sep 2024)"
+        }
+      ],
+      "comparable": false,
+      "n": 2,
+      "span_years": 1.0,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Las observaciones no son una serie metodológicamente comparable.",
+        "reason_en": "The observations are not a methodologically comparable series."
+      },
+      "short_term": null,
+      "note_es": "En 2023 el portal consigna 660 MW netos y 675 MW; en 2024, 689 MW (instantáneo 688.5). No se elige un único valor de 2023 para ajustar una recta.",
+      "note_en": "For 2023 the portal records both 660 MW net and 675 MW; for 2024, 689 MW (instantaneous 688.5). No single 2023 value is chosen for a fit."
+    },
+    {
+      "id": "poblacion_estatal",
+      "label_es": "Población estatal",
+      "label_en": "State population",
+      "unit": "habitantes",
+      "points": [
+        {
+          "t": 2020.0,
+          "y": 798447,
+          "label": "Censo 2020",
+          "source": "INEGI Censo 2020, población estatal (POBTOT) 798,447"
+        }
+      ],
+      "comparable": true,
+      "n": 1,
+      "span_years": 0.0,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Hay 1 punto(s); se piden al menos 4 para ajustar una tendencia.",
+        "reason_en": "1 point(s); at least 4 are required to fit a trend."
+      },
+      "short_term": null,
+      "note_es": "Solo está el Censo 2020 (798,447). Sin una serie CONAPO o un censo previo en el portal, 2030/2050 es insuficiente.",
+      "note_en": "Only the 2020 Census (798,447) is in the portal. Without a CONAPO series or a prior census, 2030/2050 is insufficient."
+    },
+    {
+      "id": "cabo_re_volumen",
+      "label_es": "Volumen residencial bajo contrato en Los Cabos",
+      "label_en": "Los Cabos residential volume under contract",
+      "unit": "millones de USD",
+      "points": [
+        {
+          "t": 2025.0,
+          "y": 559.0,
+          "label": "2025 Q1",
+          "source": "Cabo Real Estate Services, volumen bajo contrato (millones de USD), 2025 Q1"
+        },
+        {
+          "t": 2025.25,
+          "y": 362.0,
+          "label": "2025 Q2",
+          "source": "Cabo Real Estate Services, volumen bajo contrato (millones de USD), 2025 Q2"
+        },
+        {
+          "t": 2025.5,
+          "y": 225.5,
+          "label": "2025 Q3",
+          "source": "Cabo Real Estate Services, volumen bajo contrato (millones de USD), 2025 Q3"
+        },
+        {
+          "t": 2025.75,
+          "y": 326.0,
+          "label": "2025 Q4",
+          "source": "Cabo Real Estate Services, volumen bajo contrato (millones de USD), 2025 Q4"
+        },
+        {
+          "t": 2026.0,
+          "y": 391.0,
+          "label": "2026 Q1",
+          "source": "Cabo Real Estate Services, volumen bajo contrato (millones de USD), 2026 Q1"
+        },
+        {
+          "t": 2026.25,
+          "y": 456.0,
+          "label": "2026 Q2",
+          "source": "Cabo Real Estate Services, volumen bajo contrato (millones de USD), 2026 Q2"
+        }
+      ],
+      "comparable": true,
+      "n": 6,
+      "span_years": 1.25,
+      "ols": {
+        "a": 76202.8333,
+        "b": -37.4286,
+        "r2": 0.024,
+        "n": 6
+      },
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "El tramo observado es de 1.2 años; se piden 8 o más para publicar 2030/2050.",
+        "reason_en": "The observed span is 1.2 years; 8 or more are required to publish 2030/2050."
+      },
+      "short_term": {
+        "method": "Holt",
+        "next_2_steps": "insuficiente",
+        "sigma": 356.676,
+        "r2_ols": 0.024,
+        "note_es": "El ajuste de corto plazo es inestable (estacionalidad o residuos grandes; R² lineal bajo). No se publica un punto de Holt.",
+        "note_en": "The short-term fit is unstable (seasonality or large residuals; low linear R²). No Holt point is published."
+      },
+      "note_es": "Seis trimestres (2025 Q1–2026 Q2) de Cabo Real Estate Services. La serie es corta y estacional: se reporta un Holt de corto plazo, no una proyección a 2030/2050.",
+      "note_en": "Six quarters (2025 Q1–2026 Q2) from Cabo Real Estate Services. The series is short and seasonal: a short-term Holt is reported, not a 2030/2050 projection."
+    },
+    {
+      "id": "dma_deficit",
+      "label_es": "Suma de balances DMA en acuíferos en déficit",
+      "label_en": "Sum of DMA balances in deficit aquifers",
+      "unit": "hm³/año",
+      "points": [
+        {
+          "t": 2023.0,
+          "y": -105.124,
+          "label": "2023 CONAGUA",
+          "source": "CONAGUA, disponibilidad media anual: 22 acuíferos en déficit de 39; suma -105.124 hm³/año"
+        }
+      ],
+      "comparable": true,
+      "n": 1,
+      "span_years": 0.0,
+      "ols": null,
+      "projection": {
+        "y2030": "insuficiente",
+        "y2050": "insuficiente",
+        "reason_es": "Hay 1 punto(s); se piden al menos 4 para ajustar una tendencia.",
+        "reason_en": "1 point(s); at least 4 are required to fit a trend."
+      },
+      "short_term": null,
+      "note_es": "Corte CONAGUA 2023: 22 de 39 acuíferos en déficit; suma -105.124 hm³/año. Un solo año; no hay tendencia.",
+      "note_en": "CONAGUA 2023 cut: 22 of 39 aquifers in deficit; sum -105.124 hm³/year. A single year; no trend."
+    }
+  ],
+  "parameters": {
+    "alpha_ewma": 0.35,
+    "lambda_bayes": 0.45,
+    "holt_alpha": 0.4,
+    "holt_beta": 0.2,
+    "min_points": 4,
+    "min_years_horizon": 8
+  },
+  "formulas_es": [
+    "Intensidad suavizada (EWMA): s_t = α x_t + (1 − α) s_{t−1}, con s_1 = x_1 y α = 0.35. x_t es el número de notas del feed que coinciden con el tema en la semana t.",
+    "Dirección: d_t = (n⁺_t − n⁻_t) / max(n⁺_t + n⁻_t + n⁰_t, 1) ∈ [−1, 1], según un léxico fijo por tema aplicado al titular y a la entradilla. El valor por defecto es 0 (neutro o mixto).",
+    "Señal combinada: z_t = s̃_t d_t, donde s̃_t = s_t / max(s̄, 1) y s̄ es la media de s en las semanas observadas.",
+    "Tendencia (cuando hay serie comparable): regresión lineal y = a + b t o log-lineal ln y = a + b t, con intervalo de predicción ŷ₀ ± t_{n−2, 0.975} σ̂ √[1 + 1/n + (t₀ − t̄)² / Σ(t − t̄)²]. Alternativa de corto plazo: suavizado de Holt ℓ_t = α_H y_t + (1 − α_H)(ℓ_{t−1} + b_{t−1}), b_t = β(ℓ_t − ℓ_{t−1}) + (1 − β) b_{t−1}, con α_H = 0.4 y β = 0.2.",
+    "Horizonte 2030/2050: solo se publica si la serie tiene al menos 4 puntos comparables y un tramo de 8 años o más. Si no, la celda es «insuficiente». No se mezclan metodologías distintas (p. ej. ocupación SETUE y ocupación de la asociación hotelera) en una sola recta.",
+    "Bayes: P(H_i | D_t) ∝ P(D_t | H_i) P(H_i), con prior P(H_i) igual al posterior de la semana anterior (uniforme 1/3 en la primera semana) y verosimilitud P(D_t | H_i) = exp(λ Σ_k w_ik z_{k,t}), λ = 0.45. Los pesos w_ik están fijos y documentados en el estado semanal.",
+    "Confianza de cada afirmación: alta si hay fuente estadística oficial y al menos dos citas o una serie de más de un año; media si hay una fuente oficial o gremial que cita la cifra; baja si la cifra depende de una sola nota de prensa o de un estimado."
+  ],
+  "formulas_en": [
+    "Smoothed intensity (EWMA): s_t = α x_t + (1 − α) s_{t−1}, with s_1 = x_1 and α = 0.35. x_t is the number of feed items matching the theme in week t.",
+    "Direction: d_t = (n⁺_t − n⁻_t) / max(n⁺_t + n⁻_t + n⁰_t, 1) ∈ [−1, 1], from a fixed per-theme lexicon on title and blurb. Default 0 (neutral or mixed).",
+    "Combined signal: z_t = s̃_t d_t, where s̃_t = s_t / max(s̄, 1) and s̄ is the mean of s over observed weeks.",
+    "Trend (when a comparable series exists): linear y = a + b t or log-linear ln y = a + b t, with prediction interval ŷ₀ ± t_{n−2, 0.975} σ̂ √[1 + 1/n + (t₀ − t̄)² / Σ(t − t̄)²]. Short-term alternative: Holt smoothing ℓ_t = α_H y_t + (1 − α_H)(ℓ_{t−1} + b_{t−1}), b_t = β(ℓ_t − ℓ_{t−1}) + (1 − β) b_{t−1}, with α_H = 0.4 and β = 0.2.",
+    "2030/2050 horizon: published only if the series has at least 4 comparable points and a span of 8 years or more. Otherwise the cell is “insufficient”. Different methodologies are not fitted on one line.",
+    "Bayes: P(H_i | D_t) ∝ P(D_t | H_i) P(H_i), prior = last week’s posterior (uniform 1/3 in week one), likelihood P(D_t | H_i) = exp(λ Σ_k w_ik z_{k,t}), λ = 0.45. Weights w_ik are fixed and stored in the weekly state.",
+    "Confidence: high if an official statistical source plus at least two citations or a multi-year series; medium if one official or industry source states the figure; low if it rests on a single press note or an estimate."
+  ],
+  "method_note_es": "Prospectiva interna. No es un plan oficial ni una predicción puntual de llegada a 2050. Las cifras salen del feed de noticias y de los datos ya publicados en el portal; donde la serie no alcanza, se declara insuficiente.",
+  "method_note_en": "Internal foresight. Not an official plan and not a point forecast of arrival in 2050. Figures come from the news feed and from data already on the portal; where the series falls short, it is marked insufficient.",
+  "edition_headline_es": "El Niño erosiona la costa de Punta Lobos a San Carlos y Los Cabos persigue el huachicol de agua mientras el Mar de Cortés pide duplicar su economía",
+  "edition_updated": "2026-11-16",
+  "gds_balance_es": "A nivel estado la lectura es restringida: el motor Cabos + corredor Pacífico concentra demanda aérea/turística sobre déficits DMA y un SIBCS aislado en alerta; East Cape y Loreto están en disputa conservación–crecimiento; Comondú ofrece margen relativo agro; el norte permanece desconocido."
+}
