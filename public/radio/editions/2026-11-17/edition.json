@@ -668,14 +668,14 @@
       "languages": {
         "es": {
           "title": "Turismo · Radio BCS2050",
-          "duration": 770.0,
+          "duration": 991.8,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/turismo/es/01.mp3",
-              "duration": 84.91,
+              "duration": 61.03,
               "sting": null
             },
             {
@@ -683,7 +683,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/turismo/es/02.mp3",
-              "duration": 104.57,
+              "duration": 170.4,
               "sting": null
             },
             {
@@ -691,7 +691,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/turismo/es/03.mp3",
-              "duration": 60.46,
+              "duration": 149.9,
               "sting": null
             },
             {
@@ -699,7 +699,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/turismo/es/04.mp3",
-              "duration": 155.16,
+              "duration": 153.6,
               "sting": null
             },
             {
@@ -707,7 +707,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/turismo/es/05.mp3",
-              "duration": 108.29,
+              "duration": 86.47,
               "sting": null
             },
             {
@@ -715,7 +715,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/turismo/es/06.mp3",
-              "duration": 72.98,
+              "duration": 138.0,
               "sting": null
             },
             {
@@ -723,7 +723,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/turismo/es/07.mp3",
-              "duration": 110.33,
+              "duration": 175.73,
               "sting": null
             },
             {
@@ -731,23 +731,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/turismo/es/08.mp3",
-              "duration": 73.34,
+              "duration": 56.71,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/turismo/es/script.json",
-          "words": 1458
+          "words": 2160
         },
         "en": {
           "title": "Tourism · Radio BCS2050",
-          "duration": 689.0,
+          "duration": 948.8,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/turismo/en/01.mp3",
-              "duration": 40.34,
+              "duration": 77.83,
               "sting": null
             },
             {
@@ -755,7 +755,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/turismo/en/02.mp3",
-              "duration": 111.74,
+              "duration": 146.59,
               "sting": null
             },
             {
@@ -763,7 +763,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/turismo/en/03.mp3",
-              "duration": 96.65,
+              "duration": 118.18,
               "sting": null
             },
             {
@@ -771,7 +771,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/turismo/en/04.mp3",
-              "duration": 103.7,
+              "duration": 149.57,
               "sting": null
             },
             {
@@ -779,7 +779,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/turismo/en/05.mp3",
-              "duration": 69.02,
+              "duration": 123.58,
               "sting": null
             },
             {
@@ -787,7 +787,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/turismo/en/06.mp3",
-              "duration": 99.5,
+              "duration": 119.18,
               "sting": null
             },
             {
@@ -795,7 +795,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/turismo/en/07.mp3",
-              "duration": 110.57,
+              "duration": 149.52,
               "sting": null
             },
             {
@@ -803,12 +803,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/turismo/en/08.mp3",
-              "duration": 57.53,
+              "duration": 64.39,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/turismo/en/script.json",
-          "words": 1394
+          "words": 2074
         }
       },
       "sources": [

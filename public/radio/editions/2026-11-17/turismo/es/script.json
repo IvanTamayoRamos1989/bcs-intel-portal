@@ -1,0 +1,603 @@
+{
+  "topic": "turismo",
+  "lang": "es",
+  "title": "Turismo · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Las olas se llevaron parte del Hotel San Cristóbal en Punta Lobos."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué tan grave fue el daño?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Suspendieron operaciones en doce habitaciones frente al mar, según Meganoticias. Nadie resultó herido."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y ahora qué hacen con los escombros?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los vigilan para que no lleguen al mar."
+        },
+        {
+          "speaker": "host",
+          "text": "El mar sigue recordándonos su fuerza. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Buscan diversificar mercados y nichos."
+        },
+        {
+          "speaker": "host",
+          "text": "También cerrarán el año con unos 3.5 millones de visitantes, un nivel que ven sostenible."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aviación privada se triplicó y buscan nichos como wellness y gastronomía."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy hablamos de turismo. La pregunta que vamos a seguir es: ¿cómo deja el mar que el turismo exista sin borrarlo?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según Meganoticias, el Hotel San Cristóbal en Punta Lobos suspendió operaciones por daños del oleaje."
+        },
+        {
+          "speaker": "host",
+          "text": "Doce habitaciones frente al mar quedaron afectadas. [pause] Nadie salió herido, pero la playa sigue su curso."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Evaluarán los daños antes de cualquier reapertura. ¿Qué te dice eso sobre cómo construimos tan cerca del agua?"
+        },
+        {
+          "speaker": "host",
+          "text": "Me hace pensar en los pescadores de Todos Santos que ven la marea cambiar cada año. [chuckle] ¿Tú qué preguntarías a los dueños?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Les preguntaría si ya pensaron en mover las habitaciones más atrás."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Ahora, El Financiero reporta que las conexiones aéreas en Los Cabos crecieron 61% en una década."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La afluencia casi se duplicó. Están buscando mercados nuevos como Canadá y Europa para compensar."
+        },
+        {
+          "speaker": "host",
+          "text": "3.5 millones de visitantes al cierre de 2026. [breath] ¿Crees que esa cifra se sienta sostenible para la gente local?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aviación privada se triplicó. Eso cambia el perfil del turista que llega."
+        },
+        {
+          "speaker": "host",
+          "text": "Y Tribuna de México dice que la Baja 1000 dejará 800 millones de pesos de derrama."
+        },
+        {
+          "speaker": "cohost",
+          "text": "80% de ocupación hotelera en todo el estado. Es la primera vez que la carrera corre completa dentro de Baja California Sur."
+        },
+        {
+          "speaker": "host",
+          "text": "80% suena bien, pero ¿a quién beneficia más esa derrama?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La secretaria de Turismo estima 282 equipos participando."
+        },
+        {
+          "speaker": "host",
+          "text": "Con transmisión internacional en vivo. [pause] Eso pone al estado en el mapa de otra forma."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos la ocupación llegó a 78% estas dos semanas, cuatro puntos más que el año pasado."
+        },
+        {
+          "speaker": "host",
+          "text": "El PGA Tour y la Baja 1000 empujaron esos números. ¿Qué pasa cuando se acaba el evento?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esperan 80% durante el puente. [laugh] Ojalá la ocupación se mantenga un poco más estable después."
+        },
+        {
+          "speaker": "host",
+          "text": "El caso del hotel dañado y estos números altos juntos muestran la tensión entre crecimiento y la fuerza del mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y sin fecha definida para la reapertura, informa Meganoticias."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso reaviva el debate sobre la ocupación de las playas frente a la dinámica natural del litoral."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras Fiturca, con Rodrigo Esponda, apuesta por nichos como naturaleza, gastronomía y wellness para elevar la estadía."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Cómo equilibramos ese impulso con lo que el oleaje nos recuerda en Punta Lobos? [pause]"
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "Las personas y los lugares",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hoy hablamos de los lugares donde el turismo toca la vida diaria en Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, Tomás. Empecemos por Los Cabos, el motor que recibe a casi 3.5 millones de visitantes este año."
+        },
+        {
+          "speaker": "host",
+          "text": "Según El Financiero, las conexiones aéreas crecieron 61% en diez años."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la afluencia casi se duplicó. Fiturca busca diversificar hacia Canadá y Europa."
+        },
+        {
+          "speaker": "host",
+          "text": "También triplicaron las llegadas en aviación privada. [chuckle] Imagina el cielo lleno de jets sobre el desierto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero aquí el agua escasea y todo depende de la desalación. ¿Cómo se siente eso en el día a día?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El desierto enseña que cada gota cuenta antes de que llegue el primer huésped."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y luego está el East Cape, esa frontera más tranquila cerca de Cabo Pulmo."
+        },
+        {
+          "speaker": "host",
+          "text": "Allí la ecología arrecifal pide cuidado. Menos densidad, más presión de conservación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me pregunto qué se siente vivir en San José del Este con ese equilibrio tan delicado."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué le preguntarías a un vecino de allí sobre el mar y los nuevos proyectos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Le preguntaría cómo cambia su rutina cuando llega más gente por el corredor."
+        },
+        {
+          "speaker": "host",
+          "text": "Y luego está el caso de Punta Lobos. [pause] Meganoticias cuenta que el Hotel San Cristóbal cerró temporalmente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Doce habitaciones frente al mar dañadas por el oleaje reciente. Nadie herido, pero la playa recordó quién manda."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso reaviva el debate sobre ocupar la línea costera cuando el mar sube."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué le preguntarías al equipo de ese hotel ahora mismo?"
+        },
+        {
+          "speaker": "host",
+          "text": "Les preguntaría cómo evalúan volver a abrir y qué aprendieron del oleaje."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto, en el corredor hay resorts como Secrets Puerto Los Cabos y el Hilton."
+        },
+        {
+          "speaker": "host",
+          "text": "Y Buenavista Oceanfront en el camino hacia el este. Lugares que dependen del mismo mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También CostaBaja en La Paz, junto a su marina. El turismo se extiende más allá de los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto y la costa siguen enseñando que el agua y la energía marcan el ritmo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Quizá la lección más clara es que cada ola y cada gota definen cómo seguimos."
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, si miramos las noticias de esta semana, el turismo parece crecer por un lado y enfrentar el mar por el otro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, Tomás. Según El Economista, BCS espera 120 mil turistas hospedados este fin de semana largo."
+        },
+        {
+          "speaker": "host",
+          "text": "Con una derrama de 332 mdp, según el mismo cálculo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y al mismo tiempo, en Punta Lobos, el oleaje erosionó el Hotel San Cristóbal."
+        },
+        {
+          "speaker": "host",
+          "text": "HOY BCS cuenta que pescadores ya advertían desde 2015 sobre esos riesgos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Nigua reporta que Profepa revisó el sitio el 11 de noviembre y no halló descargas al mar. [pause] Pero el muro cayó igual."
+        },
+        {
+          "speaker": "host",
+          "text": "El hilo que une todo esto parece ser el mar mismo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Trae pasajeros y también quita terreno."
+        },
+        {
+          "speaker": "host",
+          "text": "Baja Ferries mueve más de 200 mil personas al año entre Topolobampo y La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. El CEO busca llegar más lejos con un formato tipo crucero."
+        },
+        {
+          "speaker": "host",
+          "text": "Nino Liaño menciona que el 90 % de los bienes que llegan a BCS entra por barco. [breath] El mismo camino que usan los turistas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y los Foresight del portal ya hablaban de acoplamiento agua-energía."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos crece en IED turística, pero el acuífero Santiago está en veda desde 1954."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El conocimiento del grafo señala que la red eléctrica es aislada."
+        },
+        {
+          "speaker": "host",
+          "text": "Los picos de demanda hotelera caen justo donde CENACE marca alerta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hoteleros pidieron plan tras 120 cortes en el verano, según El Momento BCS. [chuckle] El mar trae luz y también la quita."
+        },
+        {
+          "speaker": "host",
+          "text": "—que es la parte rara. El mismo oleaje que cierra playas en Los Cabos, según Tribuna de México, erosiona Punta Lobos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y mientras tanto Condor vuela directo desde Fráncfort con 92 % de ocupación."
+        },
+        {
+          "speaker": "host",
+          "text": "La competitividad estatal subió del lugar 8 al 5, informa Revista Espejo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Valeria Moy dijo que hay que cambiar cómo se decide."
+        },
+        {
+          "speaker": "host",
+          "text": "El hilo oculto es la infraestructura que no se ve: la tubería, el cable, la línea de presupuesto que decide hasta dónde llega el turismo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el mar, que decide por todos cuando el oleaje sube."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "¿Sabías que Los Cabos tiene 22,254 cuartos de hotel distribuidos en los resorts que miran al Pacífico?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "22,254. ¿Y cuántos se llenan en promedio cuando el sol sale sobre el mar?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto en La Paz la estancia es de solo 2 días. [chuckle] Menos tiempo para que el desierto y el golfo dejen su huella."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Qué diferencia. ¿Por qué crees que se quedan más tiempo en Cabos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Tal vez por las playas y los resorts que ofrecen todo en un solo lugar. [pause] ¿Y qué pasó hace poco con los números?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cuéntame qué viste en los reportes recientes."
+        },
+        {
+          "speaker": "host",
+          "text": "Entre el 1 y el 15 de noviembre de 2026 la ocupación subió según la Asociación de Hoteles de Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A cuánto llegó en esos días de noviembre?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Eso sí que es un repunte. Aun así hay que ver cómo sigue el resto del año."
+        },
+        {
+          "speaker": "host",
+          "text": "La Asociación de Hoteles de Los Cabos lo reportó con detalle. Hay 188 hoteles en total en el municipio."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué harían falta para equilibrar un poco y que La Paz reciba más visitantes que se queden?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tal vez más días de playa en La Paz también, para que el mar y el malecón inviten a quedarse más tiempo."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "El diseño invisible",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Un espacio de estacionamiento frente a un hotel en Los Cabos parece solo una línea pintada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y sin embargo carga todo el peso de la viabilidad del proyecto."
+        },
+        {
+          "speaker": "host",
+          "text": "Según el libro de Donald Shoup de 2011, ese lugar gratis oculta reglas de precio y suelo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Y aquí se junta con el paquete de viabilidad que pregunta si el hotel cabe con el agua y la energía."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. I keep thinking about how that line connects to the whole coast."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según SETUE, los perfiles de 2020 y 2026 ya muestran el turismo como motor principal de demanda en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "El acuífero Santiago ya marca +0.30 hm³ al año bajo veda desde 1954."
+        },
+        {
+          "speaker": "cohost",
+          "text": "CONAGUA lo nombra alternativa turística, aunque el número no licencia un polo nuevo."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces ese cajón de estacionamiento pregunta por la desaladora y por el SIBCS antes de existir."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La red eléctrica aislada de BCS marca picos en alerta cada vez que llega más hotelera. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Y el diseño de la calle misma, según la guía de NACTO de 2016, decide si el auto o el peatón lleva la ventaja."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Jan Gehl en 2010 insistía en que la escala humana decide si el turista se queda o pasa de largo."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el estacionamiento ya no es solo concreto, es un nodo del POERBCS y del PDU."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y también del escenario base donde el turismo costero ya presiona las DMA en déficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo curioso es que el mismo espacio puede activar la restricción de ANP si está cerca de la costa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "O puede forzar una nueva línea de energía que el PAMRNT todavía no contempla."
+        },
+        {
+          "speaker": "host",
+          "text": "Por eso ese pedazo de asfalto termina hablando de todo el sistema antes de que el primer huésped llegue."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. El diseño invisible se esconde justo donde el auto se detiene."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el mar sigue llegando igual, sin preguntar por los documentos."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Miramos la Visión del portal para el turismo hacia 2050. El riesgo principal es que el motor de Los Cabos y el corredor costero siga concentrando todo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y la ocupación llegó a 78 % en Los Cabos entre el 1 y el 15 de noviembre de 2026, según la Asociación de Hoteles."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Eso muestra la presión constante sobre el corredor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En 2025 la ocupación fue de 70.0 % en Los Cabos, de acuerdo con SETUE."
+        },
+        {
+          "speaker": "host",
+          "text": "Y 64 % en La Paz ese mismo año. El estado entero se lee restringido."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Foresight del portal dice que no podemos repetir la misma fórmula costera de sur a norte."
+        },
+        {
+          "speaker": "host",
+          "text": "Necesitamos un sistema policéntrico donde cada lugar aporte un rol distinto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos como motor bajo estrés hídrico y eléctrico, East Cape en tensión con las áreas protegidas."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz como capital de servicios y nodo agua-energía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto como ancla de turismo y conservación, Comondú como hub agropecuario con más margen."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el norte de Mulegé queda poco documentado, ahora con una licitación de generación remota. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal insiste en que cada vocación aporte un rol distinto, no un Cabos diluido."
+        },
+        {
+          "speaker": "host",
+          "text": "La aspiración es clara: un turismo que quepa dentro de los techos de agua, energía y costa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La ocupación y la derrama son solo señales, no una meta de volumen a 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Para lograrlo los levers son tres. Primero, condicionar nuevo crecimiento a evidencia real de margen hídrico y eléctrico."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Segundo, tratar el cierre de playas y la calidad de la costa como un límite de la vocación, no como un incidente de temporada. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Y tercero, desplazar peso relativo hacia La Paz, Loreto y el interior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Las condiciones incluyen que East Cape y Loreto respeten los techos de ANP y POEL antes de escalar hospitalidad."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú y el norte sumen producción y energía sin vaciar servicios ni áreas protegidas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la watchlist aparece Punta Lobos y el Hotel San Cristóbal: el dictamen técnico de causas y la revisión de Profepa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si ese dictamen obliga a cambios reales? [breath]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Podría ser el primer punto donde se pruebe que el límite de la costa ya no es negociable."
+        },
+        {
+          "speaker": "host",
+          "text": "Sería una señal concreta de que el modelo ya no se expande sin rendir cuentas."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "A veces me pregunto qué significa que el turismo quepa de verdad en un lugar como este."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Como si la costa y el desierto pusieran ellos mismos las reglas del juego. ¿Tú qué imaginas cuando piensas en eso?"
+        },
+        {
+          "speaker": "host",
+          "text": "Que no se trata de copiar lo que ya funciona en otra parte, sino de escuchar lo que el sitio pide. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me hace pensar en el oleaje que llega y se lleva lo que no pertenece. Es como si el mar estuviera recordándonos algo."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. El lugar marca hasta dónde se puede llegar sin romper algo que ya estaba ahí. ¿Y qué sensación te deja eso al final del día?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La de caminar por la playa y notar que el mar ya decidió el límite antes que nosotros. [chuckle] Me gusta esa idea."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, es más simple de lo que parece. Solo hay que prestar atención."
+        }
+      ]
+    }
+  ]
+}
