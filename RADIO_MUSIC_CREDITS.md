@@ -11,4 +11,7 @@ Only CC0, public-domain or CC BY recordings are used, as short excerpts (14–38
 | Bossa Antigua | Kevin MacLeod (incompetech.com) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | https://commons.wikimedia.org/wiki/File:Bossa_Antigua_(ISRC_USUAN1700069).mp3 |
 | Beach Bum | Kevin MacLeod (incompetech.com) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | https://commons.wikimedia.org/wiki/File:Beach_Bum_(ISRC_USUAN1100347).mp3 |
 | Surf Shimmy | Kevin MacLeod (incompetech.com) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | https://commons.wikimedia.org/wiki/File:Surf_Shimmy_(ISRC_USUAN1700018).mp3 |
+| Gull 1 (gull calls) | avphillips | [Public domain](https://commons.wikimedia.org/wiki/File:Gull_1.ogg) | https://commons.wikimedia.org/wiki/File:Gull_1.ogg |
+| Bird sings in the morning with cars in the background | ezwa | [Public domain](https://commons.wikimedia.org/wiki/File:Bird_sings_in_the_morning_with_cars_in_the_background.ogg) | https://commons.wikimedia.org/wiki/File:Bird_sings_in_the_morning_with_cars_in_the_background.ogg |
 | On a pebble beach (waves) | earthcalling | [Public domain](https://commons.wikimedia.org/wiki/File:On_a_pebble_beach.ogg) | https://commons.wikimedia.org/wiki/File:On_a_pebble_beach.ogg |
+| Desert wind (ambience) | Generated for Radio BCS2050 from filtered noise | CC0 1.0 | scripts/bcs_radio.py |

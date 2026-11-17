@@ -1,839 +1,822 @@
 {
-  "epoch": "2026-11-17T00:00:00Z",
-  "total": 5463.2,
-  "episodes": 8,
-  "items": [
-    {
-      "src": "/radio/music/id_es_1.mp3",
-      "d": 10.99,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/infraestructura/es/01.mp3",
-      "d": 73.63,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/music/short_surf.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/infraestructura/es/02.mp3",
-      "d": 123.22,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/music/short_bossa.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/infraestructura/es/03.mp3",
-      "d": 97.68,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/music/break_romanza.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/infraestructura/es/04.mp3",
-      "d": 87.82,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/infraestructura/es/05.mp3",
-      "d": 138.53,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/music/short_surf.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/infraestructura/es/06.mp3",
-      "d": 52.06,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "infraestructura",
-      "name": "Infraestructura"
-    },
-    {
-      "src": "/radio/music/break_romanza.mp3",
-      "d": 30.04,
-      "kind": "music"
-    },
-    {
-      "src": "/radio/music/id_es_2.mp3",
-      "d": 9.62,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/finanzas/es/01.mp3",
-      "d": 58.2,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/music/short_romanza.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/finanzas/es/02.mp3",
-      "d": 108.46,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/finanzas/es/03.mp3",
-      "d": 129.55,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/music/break_cielito.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/finanzas/es/04.mp3",
-      "d": 80.54,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/music/short_bossa.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/finanzas/es/05.mp3",
-      "d": 111.41,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/music/short_romanza.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/finanzas/es/06.mp3",
-      "d": 53.57,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "finanzas",
-      "name": "Finanzas"
-    },
-    {
-      "src": "/radio/music/break_romance.mp3",
-      "d": 30.04,
-      "kind": "music"
-    },
-    {
-      "src": "/radio/music/id_es_3.mp3",
-      "d": 9.98,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/desarrollo/es/01.mp3",
-      "d": 58.27,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/desarrollo/es/02.mp3",
-      "d": 125.04,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/music/short_surf.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/desarrollo/es/03.mp3",
-      "d": 129.48,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/music/break_romance.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/desarrollo/es/04.mp3",
-      "d": 87.38,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/music/short_romanza.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/desarrollo/es/05.mp3",
-      "d": 131.62,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/desarrollo/es/06.mp3",
-      "d": 62.4,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "desarrollo",
-      "name": "Desarrollo"
-    },
-    {
-      "src": "/radio/music/break_cielito.mp3",
-      "d": 30.04,
-      "kind": "music"
-    },
-    {
-      "src": "/radio/music/id_es_1.mp3",
-      "d": 10.99,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/turismo/es/01.mp3",
-      "d": 48.19,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/music/short_surf.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/turismo/es/02.mp3",
-      "d": 114.24,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/music/short_bossa.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/turismo/es/03.mp3",
-      "d": 108.22,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/music/break_cielito.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/turismo/es/04.mp3",
-      "d": 86.04,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/music/short_beachbum.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/turismo/es/05.mp3",
-      "d": 140.83,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/music/short_surf.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/turismo/es/06.mp3",
-      "d": 61.25,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "turismo",
-      "name": "Turismo"
-    },
-    {
-      "src": "/radio/music/break_horizon.mp3",
-      "d": 30.04,
-      "kind": "music"
-    },
-    {
-      "src": "/radio/music/id_es_2.mp3",
-      "d": 9.62,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/economia/es/01.mp3",
-      "d": 82.1,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/music/short_cielito.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/economia/es/02.mp3",
-      "d": 104.59,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/music/short_surf.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/economia/es/03.mp3",
-      "d": 122.74,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/music/break_romance.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/economia/es/04.mp3",
-      "d": 87.24,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/music/short_bossa.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/economia/es/05.mp3",
-      "d": 105.38,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/music/short_cielito.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/economia/es/06.mp3",
-      "d": 71.26,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "economia",
-      "name": "Economía"
-    },
-    {
-      "src": "/radio/music/break_bossa.mp3",
-      "d": 30.04,
-      "kind": "music"
-    },
-    {
-      "src": "/radio/music/id_es_3.mp3",
-      "d": 9.98,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/urbanismo/es/01.mp3",
-      "d": 64.18,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/music/short_romanza.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/urbanismo/es/02.mp3",
-      "d": 160.61,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/music/short_bossa.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/urbanismo/es/03.mp3",
-      "d": 135.17,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/music/break_romance.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/urbanismo/es/04.mp3",
-      "d": 78.91,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/urbanismo/es/05.mp3",
-      "d": 128.3,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/music/short_romanza.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/urbanismo/es/06.mp3",
-      "d": 56.3,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "urbanismo",
-      "name": "Urbanismo"
-    },
-    {
-      "src": "/radio/music/break_beachbum.mp3",
-      "d": 30.04,
-      "kind": "music"
-    },
-    {
-      "src": "/radio/music/id_es_1.mp3",
-      "d": 10.99,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/crimen/es/01.mp3",
-      "d": 52.03,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/crimen/es/02.mp3",
-      "d": 153.17,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/music/short_romanza.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/crimen/es/03.mp3",
-      "d": 134.76,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/music/break_bossa.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/crimen/es/04.mp3",
-      "d": 87.05,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/music/short_romance.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/crimen/es/05.mp3",
-      "d": 107.3,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/crimen/es/06.mp3",
-      "d": 60.58,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "crimen",
-      "name": "Seguridad"
-    },
-    {
-      "src": "/radio/music/break_surf.mp3",
-      "d": 30.04,
-      "kind": "music"
-    },
-    {
-      "src": "/radio/music/id_es_2.mp3",
-      "d": 9.62,
-      "kind": "id"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/transporte/es/01.mp3",
-      "d": 50.23,
-      "kind": "talk",
-      "ch": "Entrada",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/music/short_beachbum.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/transporte/es/02.mp3",
-      "d": 117.07,
-      "kind": "talk",
-      "ch": "Acto 1 · Lo que está pasando",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/music/short_horizon.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/transporte/es/03.mp3",
-      "d": 156.55,
-      "kind": "talk",
-      "ch": "Acto 2 · El hilo oculto",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/music/break_romanza.mp3",
-      "d": 30.04,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/transporte/es/04.mp3",
-      "d": 83.02,
-      "kind": "talk",
-      "ch": "¿Sabías que…?",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/music/short_surf.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/transporte/es/05.mp3",
-      "d": 137.95,
-      "kind": "talk",
-      "ch": "Acto 3 · Hacia 2050",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/music/short_beachbum.mp3",
-      "d": 7.03,
-      "kind": "music",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/editions/2026-11-17/transporte/es/06.mp3",
-      "d": 71.69,
-      "kind": "talk",
-      "ch": "Para llevar",
-      "date": "2026-11-17",
-      "topic": "transporte",
-      "name": "Transporte"
-    },
-    {
-      "src": "/radio/music/break_romanza.mp3",
-      "d": 30.04,
-      "kind": "music"
+  "schedules": [
+    {
+      "start": "2026-11-17T18:08:00Z",
+      "total": 5616.31,
+      "episodes": 8,
+      "items": [
+        {
+          "src": "/radio/music/id_es_1.mp3",
+          "d": 10.99,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/es/01.mp3",
+          "d": 73.63,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/music/short_surf.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/es/02.mp3",
+          "d": 123.22,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/music/short_bossa.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/es/03.mp3",
+          "d": 97.68,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/music/break_romanza.mp3",
+          "d": 30.04,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/es/04.mp3",
+          "d": 87.82,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/es/05.mp3",
+          "d": 138.53,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/music/short_surf.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/es/06.mp3",
+          "d": 52.06,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infraestructura"
+        },
+        {
+          "src": "/radio/music/break_romanza.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_es_2.mp3",
+          "d": 9.62,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/es/01.mp3",
+          "d": 58.2,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/music/short_romanza.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/es/02.mp3",
+          "d": 108.46,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/es/03.mp3",
+          "d": 129.55,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/music/break_cielito.mp3",
+          "d": 30.04,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/es/04.mp3",
+          "d": 80.54,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/music/short_bossa.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/es/05.mp3",
+          "d": 111.41,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/music/short_romanza.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/es/06.mp3",
+          "d": 53.57,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finanzas"
+        },
+        {
+          "src": "/radio/music/break_romance.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_es_3.mp3",
+          "d": 9.98,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/es/01.mp3",
+          "d": 58.27,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/es/02.mp3",
+          "d": 125.04,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/music/short_surf.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/es/03.mp3",
+          "d": 129.48,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/music/break_romance.mp3",
+          "d": 30.04,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/es/04.mp3",
+          "d": 87.38,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/music/short_romanza.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/es/05.mp3",
+          "d": 131.62,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/es/06.mp3",
+          "d": 62.4,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Desarrollo"
+        },
+        {
+          "src": "/radio/music/break_cielito.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_es_1.mp3",
+          "d": 10.99,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/01.mp3",
+          "d": 84.91,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/02.mp3",
+          "d": 104.57,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/03.mp3",
+          "d": 60.46,
+          "kind": "talk",
+          "ch": "Las personas y los lugares",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/04.mp3",
+          "d": 155.16,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/05.mp3",
+          "d": 108.29,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/06.mp3",
+          "d": 72.98,
+          "kind": "talk",
+          "ch": "El diseño invisible",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/07.mp3",
+          "d": 110.33,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/turismo/es/08.mp3",
+          "d": 73.34,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "turismo",
+          "name": "Turismo"
+        },
+        {
+          "src": "/radio/music/break_horizon.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_es_2.mp3",
+          "d": 9.62,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/es/01.mp3",
+          "d": 82.1,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/music/short_cielito.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/es/02.mp3",
+          "d": 104.59,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/music/short_surf.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/es/03.mp3",
+          "d": 122.74,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/music/break_romance.mp3",
+          "d": 30.04,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/es/04.mp3",
+          "d": 87.24,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/music/short_bossa.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/es/05.mp3",
+          "d": 105.38,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/music/short_cielito.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/es/06.mp3",
+          "d": 71.26,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economía"
+        },
+        {
+          "src": "/radio/music/break_bossa.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_es_3.mp3",
+          "d": 9.98,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/es/01.mp3",
+          "d": 64.18,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/music/short_romanza.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/es/02.mp3",
+          "d": 160.61,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/music/short_bossa.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/es/03.mp3",
+          "d": 135.17,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/music/break_romance.mp3",
+          "d": 30.04,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/es/04.mp3",
+          "d": 78.91,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/es/05.mp3",
+          "d": 128.3,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/music/short_romanza.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/es/06.mp3",
+          "d": 56.3,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanismo"
+        },
+        {
+          "src": "/radio/music/break_beachbum.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_es_1.mp3",
+          "d": 10.99,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/es/01.mp3",
+          "d": 52.03,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/es/02.mp3",
+          "d": 153.17,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/music/short_romanza.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/es/03.mp3",
+          "d": 134.76,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/music/break_bossa.mp3",
+          "d": 30.04,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/es/04.mp3",
+          "d": 87.05,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/music/short_romance.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/es/05.mp3",
+          "d": 107.3,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/es/06.mp3",
+          "d": 60.58,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Seguridad"
+        },
+        {
+          "src": "/radio/music/break_surf.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_es_2.mp3",
+          "d": 9.62,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/transporte/es/01.mp3",
+          "d": 50.23,
+          "kind": "talk",
+          "ch": "Entrada",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/music/short_beachbum.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/transporte/es/02.mp3",
+          "d": 117.07,
+          "kind": "talk",
+          "ch": "Acto 1 · Lo que está pasando",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/music/short_horizon.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/transporte/es/03.mp3",
+          "d": 156.55,
+          "kind": "talk",
+          "ch": "Acto 2 · El hilo oculto",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/music/break_romanza.mp3",
+          "d": 30.04,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/transporte/es/04.mp3",
+          "d": 83.02,
+          "kind": "talk",
+          "ch": "¿Sabías que…?",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/music/short_surf.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/transporte/es/05.mp3",
+          "d": 137.95,
+          "kind": "talk",
+          "ch": "Acto 3 · Hacia 2050",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/music/short_beachbum.mp3",
+          "d": 7.03,
+          "kind": "music",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/transporte/es/06.mp3",
+          "d": 71.69,
+          "kind": "talk",
+          "ch": "Para llevar",
+          "date": "2026-11-17",
+          "topic": "transporte",
+          "name": "Transporte"
+        },
+        {
+          "src": "/radio/music/break_romanza.mp3",
+          "d": 30.04,
+          "kind": "music"
+        }
+      ],
+      "built": "2026-11-17"
     }
   ],
   "updated": "2026-11-17"

@@ -668,115 +668,147 @@
       "languages": {
         "es": {
           "title": "Turismo · Radio BCS2050",
-          "duration": 616.9,
+          "duration": 770.0,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/turismo/es/01.mp3",
-              "duration": 48.19,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 84.91,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/turismo/es/02.mp3",
-              "duration": 114.24,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 104.57,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/turismo/es/03.mp3",
-              "duration": 108.22,
-              "sting": "/radio/music/break_cielito.mp3"
+              "duration": 60.46,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/turismo/es/04.mp3",
-              "duration": 86.04,
-              "sting": "/radio/music/short_beachbum.mp3"
+              "duration": 155.16,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/turismo/es/05.mp3",
-              "duration": 140.83,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 108.29,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/turismo/es/06.mp3",
+              "duration": 72.98,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/turismo/es/07.mp3",
+              "duration": 110.33,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/turismo/es/06.mp3",
-              "duration": 61.25,
+              "src": "/radio/editions/2026-11-17/turismo/es/08.mp3",
+              "duration": 73.34,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/turismo/es/script.json",
-          "words": 1196
+          "words": 1458
         },
         "en": {
           "title": "Tourism · Radio BCS2050",
-          "duration": 580.9,
+          "duration": 689.0,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/turismo/en/01.mp3",
-              "duration": 62.02,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 40.34,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/turismo/en/02.mp3",
-              "duration": 129.12,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 111.74,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/turismo/en/03.mp3",
-              "duration": 105.22,
-              "sting": "/radio/music/break_cielito.mp3"
+              "duration": 96.65,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/turismo/en/04.mp3",
-              "duration": 73.61,
-              "sting": "/radio/music/short_beachbum.mp3"
+              "duration": 103.7,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/turismo/en/05.mp3",
-              "duration": 113.45,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 69.02,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/turismo/en/06.mp3",
+              "duration": 99.5,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/turismo/en/07.mp3",
+              "duration": 110.57,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/turismo/en/06.mp3",
-              "duration": 39.29,
+              "src": "/radio/editions/2026-11-17/turismo/en/08.mp3",
+              "duration": 57.53,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/turismo/en/script.json",
-          "words": 1107
+          "words": 1394
         }
       },
       "sources": [
@@ -787,46 +819,10 @@
           "date": "2026-11-16"
         },
         {
-          "outlet": "POSTA México",
-          "title": "SMN prevé oleaje de 2 a 3 metros en la costa del Pacífico de BCS y rachas de 30 a 50 km/h",
-          "url": "https://www.posta.com.mx/bcs/habra-lluvias-en-bcs-este-lunes-16-de-noviembre-alertan-por-oleaje-de-hasta-3-metros/vl2279534",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "El Economista",
-          "title": "Baja Ferries busca transformar movilización maritima por el Mar de Cortes en experiencia vacacional",
-          "url": "https://www.eleconomista.com.mx/empresas/baja-ferries-busca-transformar-movilizacion-maritima-mar-cortes-experiencia-vacacional-20261115-844111.html",
-          "date": "2026-11-15"
-        },
-        {
           "outlet": "El Financiero",
           "title": "Crece 60 por ciento la conexión aérea en Los Cabos; van por diversificar turismo",
           "url": "https://www.elfinanciero.com.mx/empresas/2026/11/13/crece-60-por-ciento-la-conexion-aerea-en-los-cabos-van-por-diversificar-turismo/",
           "date": "2026-11-13"
-        },
-        {
-          "outlet": "Gringo Gazette",
-          "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
-          "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Diario Humano",
-          "title": "Vecinos convocan colecta de firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040",
-          "url": "https://diariohumano.com.mx/2026/11/16/cabo-del-este-convocan-a-firmar-por-el-camino-costero/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Inicia la renovación con concreto hidráulico de la calle Agustín Arriola en el Centro Histórico de La Paz",
-          "url": "https://tribunademexico.com/renovacion-calle-agustin-arriola-centro-lpz/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "La Nigua",
-          "title": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
-          "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
-          "date": "2026-11-15"
         },
         {
           "outlet": "Tribuna de México",
@@ -841,22 +837,58 @@
           "date": "2026-11-12"
         },
         {
-          "outlet": "Meganoticias",
-          "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
-          "date": "2026-11-12"
+          "outlet": "La Nigua",
+          "title": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
+          "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
+          "date": "2026-11-15"
+        },
+        {
+          "outlet": "El Economista",
+          "title": "Baja Ferries busca transformar movilización maritima por el Mar de Cortes en experiencia vacacional",
+          "url": "https://www.eleconomista.com.mx/empresas/baja-ferries-busca-transformar-movilizacion-maritima-mar-cortes-experiencia-vacacional-20261115-844111.html",
+          "date": "2026-11-15"
+        },
+        {
+          "outlet": "HOY BCS",
+          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
+          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
+          "date": "2026-11-11"
+        },
+        {
+          "outlet": "El Economista",
+          "title": "BCS prevé derrama de más de 332 mdp y 80% de ocupación hotelera por el fin de semana largo y la Baja 1000",
+          "url": "https://www.eleconomista.com.mx/estados/baja-california-sur-preve-derrama-332-millones-pesos-semana-20261110-843285.html",
+          "date": "2026-11-10"
+        },
+        {
+          "outlet": "Revista Espejo",
+          "title": "IMCO en el Foro Mar de Cortés: BCS sube del lugar 8 al 5 en competitividad estatal entre 2021 y 2026",
+          "url": "https://revistaespejo.com/2026/11/10/cambiar-la-forma-de-decidir-clave-para-mejorar-la-competitividad-regional-valeria-moy/",
+          "date": "2026-11-10"
         },
         {
           "outlet": "Meganoticias",
-          "title": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
-          "date": "2026-11-11"
+          "title": "Condor retoma vuelos directos Fráncfort–Los Cabos con 92% de ocupación y +37.5% en reservaciones",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/condor-retoma-vuelos-directos-entre-fr%C3%A1ncfort-y-los-cabos-ocupaci%C3%B3n-al-92/785839",
+          "date": "2026-11-05"
+        },
+        {
+          "outlet": "Travelweek",
+          "title": "Los Cabos suma cinco nuevas rutas desde Canadá y prevé ~300 mil visitantes canadienses en 2026",
+          "url": "https://www.travelweek.ca/news/destinations/double-digit-growth-los-cabos-builds-on-canadian-demand-with-five-new-air-routes/",
+          "date": "2026-11-05"
         },
         {
           "outlet": "Tribuna de México",
-          "title": "BCS cierra octubre con 1.1% menos empleo formal que hace un año, mientras el país marca récord en el IMSS",
-          "url": "https://tribunademexico.com/bcs-registra-menos-empleos-formales/",
-          "date": "2026-11-11"
+          "title": "Playas de Los Cabos siguen cerradas por segundo día: 26 con bandera negra y cinco con roja",
+          "url": "https://tribunademexico.com/playas-los-cabos-cerradas-prohiben-banarse/",
+          "date": "2026-10-29"
+        },
+        {
+          "outlet": "El Momento BCS",
+          "title": "Hoteleros exigen plan ante la crisis energética en BCS",
+          "url": "https://elmomentobcs.mx/2026/10/27/hoteleros-exigen-plan-ante-la-crisis-energetica-en-bcs/",
+          "date": "2026-10-27"
         },
         {
           "outlet": "Jan Gehl (2010)",
@@ -883,6 +915,20 @@
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+        "los-cabos-conexion-aerea-61-diversificar-elfinanciero-2026-11-13",
+        "baja-1000-derrama-800-mdp-ocupacion-80-tribuna-2026-11-13",
+        "ocupacion-hotelera-los-cabos-78-pga-baja1000-tribuna-2026-11-12",
+        "UP006",
+        "TD010",
+        "TD018",
+        "edu-ox23YEevIy4",
+        "const_red_aislada",
+        "actor_setues",
+        "rc_acuifero_0320",
+        "ev_setue_ie"
       ]
     },
     {
@@ -1767,95 +1813,18 @@
     }
   ],
   "source_ids": [
-    "RP001",
-    "RP002",
-    "RP003",
-    "RP004",
-    "RP005",
-    "RP006",
-    "RP007",
-    "RP013",
-    "RP015",
-    "RP018",
-    "RP021",
-    "RP023",
-    "TD001",
-    "TD002",
-    "TD003",
     "TD010",
-    "TD013",
     "TD018",
-    "UE001",
-    "UP002",
     "UP006",
-    "UP016",
-    "UP019",
-    "UP022",
-    "actor_ayunt_lapaz",
-    "actor_cabos_dg_desarrollo_social",
-    "actor_cabos_dg_fomento_economico",
-    "actor_cabos_dg_obras_publicas",
-    "actor_implan_cabos",
-    "asipona-traspaso-congreso-bitacora-2026-10-29",
+    "actor_setues",
     "baja-1000-derrama-800-mdp-ocupacion-80-tribuna-2026-11-13",
-    "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15",
-    "camina-cabo-centro-csl-pausa-meganoticias-2026-11-11",
-    "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
-    "castro-baja1000-caminos-sin-subsidio-hoybcs-2026-11-10",
-    "cea-400-mdp-obras-hidricas-municipios-tribuna-2026-11-05",
-    "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
-    "coppel-fmc-duplicar-economia-triplicar-ied-foromdc-2026-11-10",
-    "dd_residencial_cabos",
-    "dd_turismo_cabos",
-    "dd_turismo_lapaz",
-    "dengue-628-casos-centenario-ntcd-2026-11-09",
-    "dengue-comparecencia-ssa-congreso-elindependiente-2026-11-11",
-    "dq_oportunidades",
-    "dq_viabilidad_proyecto",
+    "const_red_aislada",
     "edu-ox23YEevIy4",
-    "empleo-imss-octubre-bcs-cae-tribuna-2026-11-11",
-    "ev_acuiferos_dma",
-    "ev_communities_master",
-    "ev_dossiers_movilidad",
-    "ev_esc_water_first",
-    "ev_fiscal_anexo_2025",
-    "ev_mesas_trabajo",
-    "ev_peotdu_instrumentos",
-    "ev_preguntas_estrategicas",
-    "ev_stills_intel",
-    "foromdc-roc-observatorio-ciudadano-semaforo-2026-11-11",
-    "gap_catastro_secundario",
-    "gap_east_cape_carga",
-    "gap_pmdu_lapaz_texto",
-    "gap_politica_uga_leyenda",
+    "ev_setue_ie",
     "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
-    "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
-    "inflacion-la-paz-octubre-1-17-tribuna-2026-11-09",
-    "inst_pa_preservacion",
-    "inst_pa_restauracion",
-    "la-paz-sin-credito-diciembre-palabrabcs-2026-11-10",
     "los-cabos-conexion-aerea-61-diversificar-elfinanciero-2026-11-13",
-    "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
-    "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
-    "paquete-economico-2027-bcs-hoybcs-2026-11-02",
-    "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
-    "proj_commitment",
-    "proj_fed_edu_002",
-    "proj_fed_pes_001",
-    "proj_fed_soc_001",
-    "proj_transpeninsular",
-    "punta-lobos-hotel-san-cristobal-demolicion-oleaje-hoybcs-2026-11-11",
-    "quinto-informe-entregado-congreso-ntcd-2026-11-12",
-    "rc_aeropuerto_sjd",
-    "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
-    "sepuimm-pavimentacion-criterios-aforo-palabrabcs-2026-11-15",
-    "shell-nurse-arrecifes-rancho-marino-bahia-la-paz-meganoticias-2026-11-12",
-    "summit-foro-mar-de-cortes-los-cabos-tusbuenasnoticias-2026-11-09",
-    "terr_anp_vizcaino",
-    "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11",
-    "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
-    "vivienda-bienestar-704-sierra-vista-reubicacion-meganoticias-2026-11-11",
-    "zatarain-caida-turismo-los-cabos-2026-10-21"
+    "ocupacion-hotelera-los-cabos-78-pga-baja1000-tribuna-2026-11-12",
+    "rc_acuifero_0320"
   ],
   "credits": "/radio/credits.json"
 }

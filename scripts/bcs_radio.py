@@ -52,18 +52,18 @@ UA = "BCS2050Radio/1.0 (bajacaliforniasur2050.com)"
 
 THEMES = {
     "urbanismo": ("Urbanismo", "Urbanism", r"urban|ciudad|city|implan|pdu|vivienda|housing|densidad|density|plan de desarrollo urbano|zonific|zoning|land_use|uso de suelo"),
-    "desarrollo": ("Desarrollo", "Development", r"desarroll|develop|proyecto|project|inversi|investment|masterplan|plan maestro"),
+    "desarrollo": ("Desarrollo", "Development", r"desarrollo inmobiliario|desarrolladora|developer|proyecto turístico|proyecto inmobiliario|inversi|investment|masterplan|plan maestro|fraccionamiento|condominio|resort project"),
     "medio_ambiente": ("Medio ambiente", "Environment", r"environment|ambient|ecolog|reserva|protected|área natural|anp|manglar|mangrove|ballena|whale|tortuga|turtle|coral|el niño|erosi|semarnat|conanp|profepa|clima|climate|hurac|hurricane"),
     "agua": ("Agua", "Water", r"water|agua|acuífer|aquifer|desalin|oomsapas|conagua|cea|huachicol|drenaje|sanea"),
-    "social": ("Social", "Society", r"social|comunidad|community|salud|health|educa|school|escuela|pobreza|poverty|migra|trabajador|worker|mujer|women|cultura|culture"),
-    "infraestructura": ("Infraestructura", "Infrastructure", r"infraestruct|infrastructure|energ|electric|cfe|planta|plant|carretera|highway|obra|works|puente|bridge|energy"),
+    "social": ("Social", "Society", r"social|comunidad|community|salud|health|dengue|hospital|imss|issste|paciente|patient|educa|school|escuela|pobreza|poverty|migra|trabajador|worker|mujer|women|cultura|culture"),
+    "infraestructura": ("Infraestructura", "Infrastructure", r"infraestruct|infrastructure|energ|electric|cfe|apag|blackout|planta desaladora|desalination plant|carretera|highway|obra pública|public works|puente|bridge|pavimenta|paving|concreto hidráulico|calle|street|drenaje|sewer"),
     "turismo": ("Turismo", "Tourism", r"touris|turis|hotel|crucer|cruise|visitant|visitor|ocupaci|occupancy|fitur|tourism"),
-    "conectividad": ("Conectividad", "Connectivity", r"aeropuert|airport|vuelo|flight|aerol|airline|ruta|route|conectiv|connectiv|internet|puerto|port|ferry"),
+    "conectividad": ("Conectividad", "Connectivity", r"aeropuert|airport|vuelo|flight|aerol|airline|ruta aérea|air route|conectividad|connectivity|internet|fibra|puerto|seaport|ferry|crucero|cruise"),
     "transporte": ("Transporte", "Transport", r"transport|movilidad|mobility|tráfico|traffic|camión|bus|transpeninsular|vialidad|road|taxi|uber"),
     "economia": ("Economía", "Economy", r"econom|empleo|employment|jobs|pib|gdp|comercio|trade|empresa|business|inmobiliar|real estate|pesca|fishing|minería|mining"),
     "finanzas": ("Finanzas", "Finance", r"finanz|financ|presupuest|budget|ingresos|revenue|deuda|debt|impuest|tax|predial|ley de ingresos|paquete económico"),
-    "crimen": ("Seguridad", "Security", r"crimen|crime|delito|seguridad|security|homicid|robo|theft|violen|polic|fiscal[ií]a|guardia nacional|narco"),
-    "politica": ("Política", "Politics", r"polític|politic|congreso|congress|cabildo|council|gobernador|governor|alcald|mayor|elecci|election|ley |law|informe|reform"),
+    "crimen": ("Seguridad", "Security", r"crimen|crime|delito|huachicol|clandestin|clausur|seguridad|security|homicid|robo|theft|violen|polic|fiscal[ií]a|guardia nacional|narco"),
+    "politica": ("Política", "Politics", r"polític|politic|congreso|congress|cabildo|council|gobernador|governor|alcald|mayor\b|elecci|election|informe de gobierno|reforma|partido|senador|diputad"),
 }
 
 
@@ -160,6 +160,16 @@ MUSIC = [
      "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/",
      "source": "https://commons.wikimedia.org/wiki/File:Surf_Shimmy_(ISRC_USUAN1700018).mp3",
      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Surf_Shimmy_%28ISRC_USUAN1700018%29.mp3"},
+    {"id": "gull", "file": "gull.src", "start": 0, "len": 18, "amb": True,
+     "title": "Gull 1 (gull calls)", "artist": "avphillips",
+     "license": "Public domain", "license_url": "https://commons.wikimedia.org/wiki/File:Gull_1.ogg",
+     "source": "https://commons.wikimedia.org/wiki/File:Gull_1.ogg",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Gull_1.ogg"},
+    {"id": "citybird", "file": "citybird.src", "start": 0, "len": 65, "amb": True,
+     "title": "Bird sings in the morning with cars in the background", "artist": "ezwa",
+     "license": "Public domain", "license_url": "https://commons.wikimedia.org/wiki/File:Bird_sings_in_the_morning_with_cars_in_the_background.ogg",
+     "source": "https://commons.wikimedia.org/wiki/File:Bird_sings_in_the_morning_with_cars_in_the_background.ogg",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Bird_sings_in_the_morning_with_cars_in_the_background.ogg"},
     {"id": "waves", "file": "pebble_beach.src", "start": 0, "len": 38, "bed": True,
      "title": "On a pebble beach (waves)", "artist": "earthcalling",
      "license": "Public domain", "license_url": "https://commons.wikimedia.org/wiki/File:On_a_pebble_beach.ogg",
@@ -175,6 +185,10 @@ def build_music() -> dict:
     for m in MUSIC:
         src = MUSIC_SRC / m["file"]
         dst = mdir / f"{m['id']}.mp3"
+        if m.get("amb"):
+            if not src.exists():
+                subprocess.run(["curl", "-sf", "-A", UA, "-o", str(src), m["url"]], timeout=180)
+            continue
         if not dst.exists() and not src.exists():  # stingers are committed; sources only needed to re-cut them
             subprocess.run(["curl", "-sf", "-A", UA, "-o", str(src), m["url"]], timeout=180)
             time.sleep(3)  # be gentle with Wikimedia (429s)
@@ -194,16 +208,46 @@ def build_music() -> dict:
             ffmpeg("-ss", str(m["start"]), "-t", "45", "-i", str(src), "-af",
                    "afade=t=in:d=2,afade=t=out:st=41:d=4,loudnorm=I=-24:TP=-3", "-ac", "2", "-ar", "44100",
                    "-c:a", "libmp3lame", "-b:a", "80k", str(bed))
+        under = mdir / f"under_{m['id']}.mp3"
+        if not m.get("bed") and not under.exists() and src.exists():  # 150 s bed that plays under the dialogue
+            ffmpeg("-ss", str(m["start"]), "-t", "150", "-i", str(src), "-af",
+                   "afade=t=in:d=4,afade=t=out:st=144:d=6,lowpass=f=5000,loudnorm=I=-24:TP=-3", "-ac", "1", "-ar", "24000",
+                   "-c:a", "libmp3lame", "-b:a", "48k", str(under))
+    build_ambience()
     credits = [{k: m[k] for k in ("id", "title", "artist", "license", "license_url", "source")} for m in MUSIC]
-    dump(OUT / "credits.json", {"note": "Only CC0, public-domain or CC BY recordings; short excerpts (stingers and soft beds) with fades.",
+    credits.append({"id": "wind", "title": "Desert wind (ambience)", "artist": "Generated for Radio BCS2050 (filtered noise)",
+                    "license": "CC0 1.0", "license_url": "https://creativecommons.org/publicdomain/zero/1.0/", "source": "https://bajacaliforniasur2050.com"})
+    dump(OUT / "credits.json", {"note": "Only CC0, public-domain or CC BY recordings; short excerpts, soft beds under the dialogue and ambience, with fades.",
                                 "music": credits,
                                 "voices": "Grok text-to-speech (xAI): voices 'rex' (host) and 'eve' (co-host)."})
     md = ["# Radio BCS2050 — music credits", "",
           "Only CC0, public-domain or CC BY recordings are used, as short excerpts (14–38 s) with fades.", "",
           "| Track | Artist | License | Source |", "|---|---|---|---|"]
     md += [f"| {m['title']} | {m['artist']} | [{m['license']}]({m['license_url']}) | {m['source']} |" for m in MUSIC]
+    md += ["| Desert wind (ambience) | Generated for Radio BCS2050 from filtered noise | CC0 1.0 | scripts/bcs_radio.py |"]
     (ROOT / "RADIO_MUSIC_CREDITS.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return {m["id"]: f"/radio/music/{m['id']}.mp3" for m in MUSIC}
+
+
+AMB_LEN = 75
+
+
+def build_ambience() -> None:
+    """~75 s ambience loops (fade in/out so loops breathe): coast (PD waves + PD gulls), city (PD birds + cars),
+    desert wind (generated here from filtered noise, CC0)."""
+    mdir, srcd = OUT / "music", MUSIC_SRC
+    coast, city, wind = mdir / "amb_coast.mp3", mdir / "amb_city.mp3", mdir / "amb_wind.mp3"
+    tail = f"afade=t=in:d=3,afade=t=out:st={AMB_LEN-4}:d=4,loudnorm=I=-26:TP=-4"
+    enc = ["-ac", "1", "-ar", "24000", "-c:a", "libmp3lame", "-b:a", "48k"]
+    if not coast.exists() and (srcd / "pebble_beach.src").exists() and (srcd / "gull.src").exists():
+        ffmpeg("-stream_loop", "2", "-i", str(srcd / "pebble_beach.src"), "-i", str(srcd / "gull.src"), "-filter_complex",
+               "[1:a]volume=0.35,adelay=9000|9000,apad[g];[0:a][g]amix=inputs=2:duration=first:normalize=0,"
+               f"atrim=0:{AMB_LEN},{tail}", *enc, str(coast))
+    if not city.exists() and (srcd / "citybird.src").exists():
+        ffmpeg("-stream_loop", "1", "-i", str(srcd / "citybird.src"), "-af", f"atrim=0:{AMB_LEN},highpass=f=120,{tail}", *enc, str(city))
+    if not wind.exists():
+        ffmpeg("-f", "lavfi", "-i", f"anoisesrc=color=brown:amplitude=0.6:duration={AMB_LEN}:seed=7", "-af",
+               f"lowpass=f=520,highpass=f=60,volume='0.55+0.45*sin(2*PI*t/11)':eval=frame,{tail}", *enc, str(wind))
 
 
 # ------------------------------------------------------------------ topics
@@ -223,14 +267,20 @@ TOPIC = {
     "crimen": ("gobernanza", "romance", ["horizon", "romanza", "bossa"]),
     "politica": ("gobernanza", "cielito", ["bossa", "romance", "horizon"]),
 }
+AMBIENCE = {"medio_ambiente": "coast", "turismo": "coast", "conectividad": "coast", "agua": "wind", "desarrollo": "wind"}
+# everything else: city
+
+
 # Fixed chapter plan of every deep dive (titles come from here, never from the model).
-CHAPTERS = [
-    ("entrada", "Entrada", "Cold open", 120),
-    ("acto1", "Acto 1 · Lo que está pasando", "Act 1 · What's happening", 300),
-    ("acto2", "Acto 2 · El hilo oculto", "Act 2 · The hidden thread", 280),
-    ("sabias", "¿Sabías que…?", "Did you know?", 210),
-    ("acto3", "Acto 3 · Hacia 2050", "Act 3 · Toward 2050", 260),
-    ("cierre", "Para llevar", "The takeaway", 120),
+CHAPTERS = [  # ~20 min of continuous conversation per episode; music only under the voices, break between episodes
+    ("entrada", "Entrada", "Cold open", 160),
+    ("acto1", "Acto 1 · Lo que está pasando", "Act 1 · What's happening", 380),
+    ("personas", "Las personas y los lugares", "People and places", 300),
+    ("acto2", "Acto 2 · El hilo oculto", "Act 2 · The hidden thread", 340),
+    ("sabias", "¿Sabías que…?", "Did you know?", 270),
+    ("diseno", "El diseño invisible", "The hidden design", 290),
+    ("acto3", "Acto 3 · Hacia 2050", "Act 3 · Toward 2050", 340),
+    ("cierre", "Para llevar", "The takeaway", 170),
 ]
 
 
@@ -238,6 +288,41 @@ CHAPTERS = [
 def theme_of(text: str) -> list[str]:
     t = norm(text)
     return [k for k, (_, _, rx) in THEMES.items() if re.search(norm(rx), t)]
+
+
+TAGS = {"water": {"agua": 2}, "environment": {"medio_ambiente": 2}, "tourism": {"turismo": 2}, "energy": {"infraestructura": 2},
+        "land_use": {"urbanismo": 2}, "connectivity": {"conectividad": 1.5, "transporte": 1}, "planning": {"urbanismo": 1, "desarrollo": 0.5}}
+_CLS: dict = {}
+
+
+def classify(n: dict) -> dict:
+    """Score each theme for a news item: title hits weigh 3, blurb hits 1, portal topic tags 0.5-2.
+    The primary theme is the best score; a strong secondary (>= 4) also counts."""
+    if n["id"] in _CLS:
+        return _CLS[n["id"]]
+    title = norm(" ".join([n.get("title_es", ""), n.get("title_en", "")]))
+    blurb = norm(n.get("blurb_es", "")[:600])
+    sc = {}
+    for k, (_, _, rx) in THEMES.items():
+        r = re.compile(norm(rx))
+        v = 3 * len(set(r.findall(title))) + min(3, len(set(r.findall(blurb))))
+        for tg in n.get("topics") or []:
+            v += TAGS.get(tg, {}).get(k, 0)
+        if v:
+            sc[k] = v
+    best = max(sc, key=sc.get) if sc else None
+    out = {k: v for k, v in sc.items() if k == best or v >= 4}
+    _CLS[n["id"]] = out
+    return out
+
+
+def in_theme(theme: str, n: dict) -> bool:
+    return theme in classify(n)
+
+
+def primary(n: dict):
+    c = classify(n)
+    return max(c, key=c.get) if c else None
 
 
 def matches(theme: str, text: str) -> bool:
@@ -278,7 +363,7 @@ def news_text(n: dict) -> str:
 
 def pick_topics(today: str, hist: dict, n: int, news: list[dict]) -> list[str]:
     used, last = set(hist.get("used", [])), hist.get("theme_last", {})
-    fresh = {k: sum(1 for x in news[:150] if x["id"] not in used and matches(k, news_text(x))) for k in THEMES}
+    fresh = {k: sum(1 for x in news[:150] if x["id"] not in used and primary(x) == k) for k in THEMES}
     order = sorted(THEMES, key=lambda k: (last.get(k, ""), hashlib.md5((today + k).encode()).hexdigest()))
     out = [k for k in order if fresh[k] >= 2][:n]
     return out + [k for k in order if k not in out][: n - len(out)]
@@ -287,9 +372,10 @@ def pick_topics(today: str, hist: dict, n: int, news: list[dict]) -> list[str]:
 def topic_pack(theme: str, hist: dict, news: list[dict], edu: list[dict]) -> dict:
     """Everything the portal knows about one theme, split by chapter."""
     used = set(hist.get("used", []))
-    mine = [x for x in news if matches(theme, news_text(x))]
-    fresh = [x for x in mine if x["id"] not in used]
-    now = (fresh or mine)[:4]
+    mine = [x for x in news if in_theme(theme, x)]
+    first = [x for x in mine if primary(x) == theme]  # the episode leads with stories that are mainly about it
+    fresh = [x for x in first if x["id"] not in used] or [x for x in mine if x["id"] not in used]
+    now = (fresh or first or mine)[:4]
     older = [x for x in mine if x not in now][:9]
 
     def item(x, n=650):
@@ -376,9 +462,13 @@ def chapter_sources(pack: dict, ch: str, L: str) -> dict:
     if ch == "sabias":
         d = pack["data"]
         return {"tendencia_claims": [{"text": c[L], "source": c["source"]} for c in d["tendencia_claims"]],
-                "foresight_signals": [s[L] for s in d["foresight_signals"]], "portal_facts": d["portal_facts"],
-                "library_documents": d["library"], "ontology": d["ontology"], "places": pack["places"],
-                "municipalities": pack["municipios"], "tourism_inventory": pack["tourism"]}
+                "foresight_signals": [s[L] for s in d["foresight_signals"]], "portal_facts": d["portal_facts"]}
+    if ch == "personas":
+        return {"places": pack["places"], "municipalities": pack["municipios"], "tourism_inventory": pack["tourism"],
+                "people_in_the_news": [tl(x) for x in pack["now"][:2]]}
+    if ch == "diseno":
+        d = pack["data"]
+        return {"library_documents": d["library"], "ontology": d["ontology"], "knowledge_graph": [g[L] for g in pack["graph"]]}
     vv = pack["vision"]
     return {"vision_pillar": {k[:-3]: v for k, v in vv["pillar"].items() if v and k.endswith("_" + L)},
             "tendencia_2050": vv["tendencia_kicker"][L], "conditions": vv["conditions"][L],
@@ -398,6 +488,18 @@ questions about place, craft, nature, time and design ("What does the desert tea
 Leave space: short sentences, let a thought land before the next one; occasionally a single word or a quiet "Mm." turn.
 Calm and warm delivery, never hyped, never a radio DJ voice.
 Two voices: HOST {host} (deep, slow, reflective) and CO-HOST {cohost} (warm, curious, brings the facts gently).
+MOOD: bright, warm, sunny and optimistic — two friends who are genuinely happy to be talking about this place.
+They laugh easily, get excited by a good detail, tease each other kindly, and find hope even in hard news,
+while keeping the calm, reflective depth. Use these delivery tags naturally, 2-4 per chapter (at least one [laugh] or [chuckle]):
+[laugh], [chuckle], [pause], [breath], [sigh], and <soft>…</soft> around a quiet phrase. No other tags.
+THIS IS A REAL TWO-PERSON CONVERSATION, not a reading:
+- Natural turns: mostly full spoken sentences of 10-35 words, with an occasional longer reflective turn (up to 50)
+  and an occasional tiny reaction. Never choppy one-line ping-pong. Alternate speakers; never 3 turns in a row by one voice.
+- Reactions ("Wait—", "Mm.", "Really?", "Ha, of course"), follow-up questions, gentle interruptions (a turn may start
+  by finishing or cutting into the other's thought, e.g. "—which is the strange part"), small personal curiosity
+  ("I keep thinking about…", "What would you ask them?"), light humor.
+- Numbers are woven into talk, one at a time, never read as a list: at most ONE number per turn, and the next turn
+  reacts to it (a comparison, an image, a question). Never stack facts in a single turn.
 They really talk: react to each other, riff, follow up, sometimes she asks him and he answers slowly.
 Short sentences. Natural spoken {lang} only — never mix languages inside a sentence.
 
@@ -426,13 +528,20 @@ THIS CHAPTER: "{chapter}" — about {words} words (hard minimum {minw}), {turns}
 Return JSON only: {{"turns": [{{"speaker": "host"|"cohost", "text": str}}]}}"""
 
 BRIEF = {
-    "entrada": "COLD OPEN: no greeting first. Start inside a scene or a surprising concrete detail from hook_material or "
-               "one_portal_fact, 3-5 turns of hook. Then one line: this is Radio BCS2050, today's deep dive on {topic}, "
-               "and the one simple question the episode will chase.",
+    "entrada": "COLD OPEN: no greeting. Open on ONE vivid moment from hook_material (a sound, a place, an object, a "
+               "person) or one striking fact from one_portal_fact, as if the listener walked in mid-conversation. "
+               "4-6 quick turns of curiosity that pull the listener in. Only then: this is Radio BCS2050, today's deep "
+               "dive on {topic}, and the one simple question the episode will chase.",
     "acto1": "ACT 1. Tell each latest news item clearly (who, what, where, key numbers, outlet), with the human angle, "
              "reactions and a follow-up question each. Build tension. No greeting.",
     "acto2": "ACT 2. Zoom out: the hidden thread through earlier news, the portal's past Foresight editions and the "
              "knowledge graph. Show the hidden design/infrastructure underneath. Include one surprise turn. No greeting.",
+    "personas": "PEOPLE AND PLACES: who lives this topic — the towns, municipalities and people (only as given in "
+                "SOURCES). Paint the places with the senses, wonder about daily life there, ask each other what you would "
+                "ask them. No greeting.",
+    "diseno": "THE HIDDEN DESIGN: the invisible systems behind this topic — rules, documents, institutions, networks "
+              "(library documents: name the organisation; ontology; knowledge graph). Make one everyday object reveal the "
+              "system behind it. Curious, playful. No greeting.",
     "sabias": "DID YOU KNOW: pick ONE memorable fact from the portal data and build the chapter around it; explain it with "
               "one concrete object or everyday example, plain words and humor. Then 1-2 supporting facts (cite the "
               "source/organisation, place or municipality). No greeting.",
@@ -448,8 +557,10 @@ BRIEF = {
              "portal facts, library documents (name the organisation) and the ontology. Make the numbers feel human.",
     "horizonte": "Toward 2050: the portal's Visión pillar for this topic (risk, aspiration, levers), the Tendencia 2050, "
                  "the conditions and the watchlist. Where is it heading vs. where could it go? What would it take?",
-    "cierre": "THE TAKEAWAY: distil the episode into one sentence listeners can carry. Then a calm, quiet handover "
-              "to the music: stay with us, more Radio BCS2050 after the music (in the show's language).",
+    "cierre": "THE TAKEAWAY: a quiet exchange, NOT a recap. No numbers, no news, no list. The two of them land on one "
+              "idea listeners can carry (a question, an image, a feeling about the place), in 4-7 short turns that "
+              "respond to each other. Then a calm handover to the music: stay with us, more Radio BCS2050 after the "
+              "music (in the show's language).",
 }
 
 
@@ -469,8 +580,8 @@ def write_chapter(pack: dict, ch: tuple, L: str, today: str, feedback: str = "",
                           attrib='"según Diario Humano…", "informa Meganoticias…"' if L == "es" else '"Gringo Gazette reports…"',
                           portal='"la Tendencia 2050 del portal", "la Visión del portal", "el Foresight del portal"' if L == "es"
                           else '"the portal\'s Trend 2050", "the portal\'s Vision", "the portal\'s Foresight"',
-                          chapter=t_es if L == "es" else t_en, words=w, minw=int(w * 0.85),
-                          turns=f"{max(4, w // 32)}-{max(6, w // 22)}", brief=BRIEF[cid].format(date=dstr, topic=topic))
+                          chapter=t_es if L == "es" else t_en, words=int(w * 1.5), minw=w,
+                          turns=f"{max(6, w // 24)}-{max(8, w // 16)}", brief=BRIEF[cid].format(date=dstr, topic=topic))
     user = "SOURCES:\n" + json.dumps({"date": dstr, "topic": topic, **src}, ensure_ascii=False)
     if draft:
         user += f"\n\nYOUR CURRENT DRAFT:\n{json.dumps(draft, ensure_ascii=False)}\n\nREVISE IT (return the whole JSON):\n{feedback}"
@@ -507,14 +618,45 @@ def fact_guard(turns: list, src_text: str, today: str) -> list[str]:
     return bad
 
 
+def conversation_lint(turns: list, cid: str) -> list[str]:
+    msgs, run = [], 1
+    for k, t in enumerate(turns):
+        txt = t.get("text", "")
+        n = len(NUM.findall(txt))
+        if n > 2 or (n > 1 and cid in ("entrada", "cierre")):
+            msgs.append(f"turn {k+1} stacks {n} numbers (one per turn, then a reaction): {txt[:90]}")
+        if len(txt.split()) > 45:
+            msgs.append(f"turn {k+1} is a monologue ({len(txt.split())} words; keep turns short): {txt[:90]}")
+        if k and t.get("speaker") == turns[k - 1].get("speaker"):
+            run += 1
+            if run == 3:
+                msgs.append(f"turns {k-1}-{k+1}: same speaker three times in a row")
+        else:
+            run = 1
+    if cid == "cierre" and any(NUM.search(t.get("text", "")) for t in turns):
+        msgs.append("the takeaway must contain no numbers")
+    return msgs
+
+
 def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
     out, src_text, w = write_chapter(pack, ch, L, today)
     turns = out.get("turns", [])
-    if words(turns) < w * 0.8:
-        out, src_text, _ = write_chapter(pack, ch, L, today, f"Only {words(turns)} words; reach at least {w}. Keep every turn "
-                                         "and ADD turns: more back-and-forth, follow-ups, images, and SOURCES facts not yet told.",
+    lint = conversation_lint(turns, ch[0])
+    if lint:
+        out, src_text, _ = write_chapter(pack, ch, L, today, "Make it more of a real conversation. Fix:\n" + "\n".join(lint) +
+                                         f"\nKeep the same facts and AT LEAST {w} words; split long turns, add reactions and follow-ups.",
                                          {"turns": turns})
         turns = out.get("turns", turns)
+    for _ in range(2):
+        if words(turns) >= w * 0.9:
+            break
+        out, src_text, _ = write_chapter(pack, ch, L, today, f"Only {words(turns)} words; reach at least {w}. Keep every turn "
+                                         "and ADD natural conversational turns: reactions, follow-ups, laughter, images, and SOURCES facts not yet told "
+                                         "(one number per turn at most).",
+                                         {"turns": turns})
+        turns = out.get("turns", turns)
+    if ch[0] == "cierre":  # the takeaway carries no figures
+        turns = [t for t in turns if not NUM.search(t.get("text", ""))]
     bad = fact_guard(turns, src_text, today)
     if bad:
         out, src_text, _ = write_chapter(pack, ch, L, today, "Fix ONLY these sentences (use exact digits from SOURCES or drop "
@@ -524,7 +666,8 @@ def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
         turns = [t for t in turns if not any(b.endswith(t.get("text", "")[:140]) for b in bad)]
     clean = []
     for t in turns:
-        txt = re.sub(r"\[[a-z_ ]+\]|<[^>]+>", "", t.get("text", "")).strip()
+        txt = re.sub(r"\[(?!(?:laugh|chuckle|pause|long-pause|breath|sigh)\])[a-z_ -]+\]|<(?!/?soft>)[^>]+>", "",
+                     t.get("text", "")).strip()
         if txt:
             clean.append({"speaker": "cohost" if t.get("speaker") == "cohost" else "host", "text": txt})
     return clean
@@ -553,7 +696,7 @@ def tts(text: str, voice: str, lang: str) -> Path:
     return cache
 
 
-def render_chapter(turns: list, lang: str, dest: Path, bed: Path | None) -> float:
+def render_chapter(turns: list, lang: str, dest: Path, opening: bool, under: Path | None, amb: Path | None) -> float:
     with ThreadPoolExecutor(6) as ex:
         clips = list(ex.map(lambda t: tts(t["text"], VOICES[t["speaker"]], lang), turns))
     with tempfile.TemporaryDirectory() as td:
@@ -569,18 +712,25 @@ def render_chapter(turns: list, lang: str, dest: Path, bed: Path | None) -> floa
         lst.write_text("".join(f"file '{p}'\n" for p in parts))
         voice = td / "voice.wav"
         ffmpeg("-f", "concat", "-safe", "0", "-i", str(lst), "-ar", "24000", "-ac", "1", str(voice))
-        if bed:  # topic's signature music + waves under the opening, ducked low, 2.5 s lead-in
-            waves = OUT / "music" / "waves.mp3"
-            ffmpeg("-i", str(voice), "-stream_loop", "-1", "-i", str(bed), "-stream_loop", "-1", "-i", str(waves),
-                   "-filter_complex",
-                   "[0:a]adelay=2500,apad=pad_dur=2[v];"
-                   "[1:a]aresample=24000,pan=mono|c0=0.5*c0+0.5*c1,volume=0.30[m];"
-                   "[2:a]aresample=24000,pan=mono|c0=0.5*c0+0.5*c1,volume=0.30[w];"
-                   "[m][w]amix=inputs=2:duration=longest[bg];"
-                   "[v][bg]amix=inputs=2:duration=first:dropout_transition=3:weights=1 1,loudnorm=I=-17:TP=-1.5",
-                   "-ac", "1", "-c:a", "libmp3lame", "-b:a", "48k", str(dest))
-        else:
+        lead = 2.5 if opening else 0.6
+        D = duration(voice) + lead + 1.8
+        ins, labels = ["-i", str(voice)], []
+        mv, av = (0.30, 0.22) if opening else (0.13, 0.16)  # music / ambience level before ducking
+        for k, (f, vol) in enumerate(((under, mv), (amb, av))):
+            if f and f.exists():
+                ins += ["-stream_loop", "-1", "-i", str(f)]
+                labels.append(f"[{len(labels)+1}:a]aresample=24000,aformat=channel_layouts=mono,volume={vol}[b{k}];")
+        if not labels:
             ffmpeg("-i", str(voice), "-af", "loudnorm=I=-17:TP=-1.5", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "48k", str(dest))
+            return duration(dest)
+        tags = "".join(re.findall(r"\[b\d\]", "".join(labels)))
+        fc = ("".join(labels) +
+              (f"{tags}amix=inputs={len(labels)}:duration=longest:normalize=0[bg0];" if len(labels) > 1 else f"{tags}anull[bg0];") +
+              f"[bg0]atrim=0:{D:.2f},afade=t=in:d=1.2,afade=t=out:st={D-2.2:.2f}:d=2.2[bg];"
+              f"[0:a]adelay={int(lead*1000)},apad=whole_dur={D:.2f},asplit[v][vk];"
+              "[bg][vk]sidechaincompress=threshold=0.02:ratio=8:attack=30:release=600:makeup=1[duck];"
+              "[v][duck]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-17:TP=-1.5")
+        ffmpeg(*ins, "-filter_complex", fc, "-t", f"{D:.2f}", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "48k", str(dest))
     return duration(dest)
 
 
@@ -589,17 +739,18 @@ def build_episode(theme: str, pack: dict, today: str, lang: str, music: dict, sc
     t0 = time.time()
     with ThreadPoolExecutor(len(CHAPTERS)) as ex:
         chapters = list(ex.map(lambda ch: make_chapter(pack, ch, lang, today), CHAPTERS))
-    edir = OUT / "editions" / today / theme / lang
+    edir = OUT / "editions" / today / ".staging" / theme / lang  # swapped into place only when every episode succeeded
+    shutil.rmtree(edir, ignore_errors=True)
     edir.mkdir(parents=True, exist_ok=True)
     sig, stings = TOPIC[theme][1], TOPIC[theme][2]
-    bed = OUT / "music" / f"bed_{sig}.mp3"
+    under = OUT / "music" / f"under_{sig}.mp3"
+    amb = OUT / "music" / f"amb_{AMBIENCE.get(theme, 'city')}.mp3"
     tracks, total = [], 0.0
     for k, (ch, turns) in enumerate(zip(CHAPTERS, chapters), 1):
         f = edir / f"{k:02d}.mp3"
-        dur = 0.0 if script_only else render_chapter(turns, lang, f, bed if k == 1 and bed.exists() else None)
+        dur = 0.0 if script_only else render_chapter(turns, lang, f, k == 1, under, amb)
         pick = (stings + [sig])[(k - 1) % (len(stings) + 1)]
-        sting = None if k == len(CHAPTERS) else (f"/radio/music/break_{pick}.mp3" if k == MID_BREAK_AFTER
-                                                 else f"/radio/music/short_{pick}.mp3")
+        sting = None  # continuous conversation; the station puts an ID + music break between episodes
         total += dur + (duration(ROOT / "public" / sting.lstrip("/")) if sting else 0)
         tracks.append({"n": k, "id": ch[0], "title": ch[1] if lang == "es" else ch[2],
                        "src": f"/radio/editions/{today}/{theme}/{lang}/{k:02d}.mp3", "duration": dur, "sting": sting})
@@ -614,7 +765,6 @@ def build_episode(theme: str, pack: dict, today: str, lang: str, music: dict, sc
 
 STING_LEN: dict = {}
 TTS_SPEED = 0.94  # unhurried
-MID_BREAK_AFTER = 3  # chapters 1-3 ≈ 5 min of talk, then a ~30 s music break
 
 ID_TEXT = {
     "es": ["Estás escuchando Radio BCS2050. Baja California Sur, con espíritu de California.",
@@ -648,9 +798,36 @@ def build_ids() -> dict:
 
 
 EPOCH = "2026-11-17T00:00:00Z"
+SWITCH_HOUR = 12  # new schedules go on air at the next 12:00 Europe/Madrid, so the live loop never jumps mid-day
+STORE = Path(os.environ.get("BCS_RADIO_STORE", "/cursor/stores/store-fc6b39be-e5cc-45bc-92bf-16b8f06bfaac/radio_bcs2050"))
+STORE_CAP_MB = 400
 
 
-def build_station() -> None:
+def next_switch(now=None) -> str:
+    from datetime import datetime, timedelta
+    from zoneinfo import ZoneInfo
+    tz = ZoneInfo("Europe/Madrid")
+    now = now or datetime.now(tz)
+    t = now.replace(hour=SWITCH_HOUR, minute=0, second=0, microsecond=0)
+    if t <= now:
+        t += timedelta(days=1)
+    return t.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _ts(iso: str) -> float:
+    from datetime import datetime
+    return datetime.fromisoformat(iso.replace("Z", "+00:00")).timestamp()
+
+
+def station_srcs() -> set:
+    out = set()
+    for lang in ("es", "en"):
+        for sc in (load(OUT / f"station_{lang}.json", {}) or {}).get("schedules", []):
+            out |= {x["src"] for x in sc["items"]}
+    return out
+
+
+def build_station(apply_now: bool = False) -> None:
     """24/7 loop per language over every edition still holding audio: station ID → episode (chapters with short
     transitions and a mid break) → ~30 s music break → next episode. The player joins at (now - EPOCH) % total."""
     ids = build_ids()
@@ -661,7 +838,7 @@ def build_station() -> None:
             lens[url] = duration(ROOT / "public" / url.lstrip("/"))
         return lens[url]
 
-    breaks = [f"/radio/music/break_{m['id']}.mp3" for m in MUSIC if not m.get("bed")]
+    breaks = [f"/radio/music/break_{m['id']}.mp3" for m in MUSIC if not (m.get("bed") or m.get("amb"))]
     eds = sorted((p.name for p in (OUT / "editions").iterdir() if (p / "edition.json").exists()), reverse=True)
     for lang in ("es", "en"):
         items, n = [], 0
@@ -681,9 +858,81 @@ def build_station() -> None:
                 items.append({"src": b, "d": dur(b), "kind": "music"})
                 n += 1
         total = round(sum(x["d"] for x in items), 2)
-        dump(OUT / f"station_{lang}.json", {"epoch": EPOCH, "total": total, "episodes": n, "items": items,
-                                            "updated": date.today().isoformat()})
-        print(f"  station {lang}: {n} deep dives, loop {total/3600:.2f} h")
+        new = {"start": EPOCH, "total": total, "episodes": n, "items": items, "built": date.today().isoformat()}
+        prev = load(OUT / f"station_{lang}.json", {}) or {}
+        scheds = prev.get("schedules") or ([{"start": prev["epoch"], "total": prev["total"], "episodes": prev.get("episodes"),
+                                            "items": prev["items"]}] if prev.get("items") else [])
+        nowt = time.time()
+        active = max((x for x in scheds if _ts(x["start"]) <= nowt), key=lambda x: _ts(x["start"]), default=None)
+        if apply_now or not active:
+            new["start"] = EPOCH if not active else time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(nowt))
+            scheds = [new]
+        elif [x["src"] for x in active["items"]] == [x["src"] for x in items]:
+            scheds = [active]  # nothing new: keep the running loop
+        else:
+            new["start"] = next_switch()
+            scheds = [active, new]
+        dump(OUT / f"station_{lang}.json", {"schedules": scheds, "updated": date.today().isoformat()})
+        print(f"  station {lang}: {n} deep dives, loop {total/3600:.2f} h, on air from {scheds[-1]['start']}")
+
+
+def rerender(ed_date: str, topic: str, lang: str) -> bool:
+    """Rebuild one episode's MP3s from its committed script.json (TTS cache makes this cheap when warm)."""
+    sc = load(OUT / "editions" / ed_date / topic / lang / "script.json")
+    if not sc or not os.environ.get("XAI_API_KEY"):
+        return False
+    sig = TOPIC[topic][1]
+    for k, ch in enumerate(sc["chapters"], 1):
+        render_chapter(ch["turns"], lang, OUT / "editions" / ed_date / topic / lang / f"{k:02d}.mp3", k == 1,
+                       OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(topic, 'city')}.mp3")
+    return True
+
+
+def sync() -> int:
+    """Before a build: restore any episode MP3 the station needs (persistent store first, then re-render from the
+    script), back up episode audio to the store (newest first, capped), and drop store copies older than KEEP_AUDIO."""
+    need = sorted(x for x in station_srcs() if x.startswith("/radio/editions/"))
+    missing = [x for x in need if not (ROOT / "public" / x.lstrip("/")).exists()]
+    restored = 0
+    for x in missing:
+        b = STORE / x.split("/radio/", 1)[1]
+        if b.exists():
+            dst = ROOT / "public" / x.lstrip("/")
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(b, dst)
+            restored += 1
+    left = [x for x in missing if not (ROOT / "public" / x.lstrip("/")).exists()]
+    for key_ in sorted({tuple(x.split("/")[3:6]) for x in left}):
+        print(f"  re-rendering {'/'.join(key_)} from script.json")
+        rerender(*key_)
+    if STORE.parent.exists():
+        eds = sorted((p.name for p in (OUT / "editions").iterdir() if p.is_dir()), reverse=True)[:KEEP_AUDIO]
+        used = 0
+        for d in eds:
+            for f in sorted((OUT / "editions" / d).rglob("*.mp3")):
+                used += f.stat().st_size
+                if used > STORE_CAP_MB * 1e6:
+                    break
+                b = STORE / "editions" / f.relative_to(OUT / "editions")
+                if not b.exists() or b.stat().st_size != f.stat().st_size:
+                    b.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(f, b)
+        if (STORE / "editions").exists():
+            for d in (STORE / "editions").iterdir():
+                if d.name not in eds:
+                    shutil.rmtree(d, ignore_errors=True)
+    print(f"radio sync: {len(need)} episode files in the loop, {restored} restored from store, "
+          f"{len([x for x in missing if not (ROOT / 'public' / x.lstrip('/')).exists()])} still missing")
+    return 0
+
+
+def check_dist() -> int:
+    missing = [x for x in station_srcs() if not (ROOT / "dist" / x.lstrip("/")).exists()]
+    if missing:
+        print(f"RADIO CHECK FAILED: {len(missing)} station files missing from dist, e.g. {missing[:3]}", file=sys.stderr)
+        return 1
+    print(f"radio: OK ({len(station_srcs())} station files present in dist)")
+    return 0
 
 
 def main() -> int:
@@ -695,25 +944,38 @@ def main() -> int:
     ap.add_argument("--script-only", action="store_true")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--station-only", action="store_true", help="only rebuild the 24/7 loop files")
+    ap.add_argument("--apply-now", action="store_true", help="put the new loop on air now instead of at the next 12:00 Madrid")
+    ap.add_argument("--replace", action="store_true", help="with --topic: rebuild only those topics inside today's edition")
+    ap.add_argument("--sync", action="store_true", help="restore/back up episode audio (run before astro build)")
+    ap.add_argument("--check-dist", action="store_true", help="fail if any station file is missing from dist")
     a = ap.parse_args()
     today, t0 = a.date, time.time()
+    if a.sync:
+        return sync()
+    if a.check_dist:
+        return check_dist()
     if a.station_only:
         build_music()
-        build_station()
+        build_station(a.apply_now)
         return 0
     ed_dir = OUT / "editions" / today
-    if (ed_dir / "edition.json").exists() and not a.force:
+    if (ed_dir / "edition.json").exists() and not (a.force or a.replace):
         print(f"Radio BCS2050 {today}: edition exists (use --force to rebuild)")
         return 0
     music = build_music()
     for mid, url in music.items():
         STING_LEN[url] = duration(OUT / "music" / f"{mid}.mp3")
     hist = load(OUT / "history.json", {"used": [], "theme_last": {}, "editions": []})
-    if a.force and ed_dir.exists():  # rebuilding today: forget today's own picks first
+    keep_eps = []
+    if a.replace and a.topic and (ed_dir / "edition.json").exists():
+        prev = load(ed_dir / "edition.json", {}) or {}
+        keep_eps = [e for e in prev.get("episodes", []) if e["topic"] not in a.topic]
+        hist["used"] = [u for u in hist.get("used", []) if u not in set(prev.get("source_ids", []))] + \
+            [i for e in keep_eps for i in e.get("source_ids", [])]
+    elif a.force and ed_dir.exists():  # rebuilding today: forget today's own picks first
         prev = load(ed_dir / "edition.json", {}) or {}
         hist["used"] = [u for u in hist.get("used", []) if u not in set(prev.get("source_ids", []))]
         hist["theme_last"] = {k: v for k, v in hist.get("theme_last", {}).items() if v != today}
-        shutil.rmtree(ed_dir)
     news, edu = all_news(), expres_de_unic()
     topics = a.topic or pick_topics(today, hist, a.topics, news)
     print(f"Radio BCS2050 {today}: deep dives {topics}")
@@ -725,6 +987,15 @@ def main() -> int:
     jobs = [(th, L) for th in topics for L in langs]
     with ThreadPoolExecutor(3) as ex:
         res = dict(zip(jobs, ex.map(lambda j: build_episode(j[0], packs[j[0]], today, j[1], music, a.script_only), jobs)))
+    stage = ed_dir / ".staging"
+    for th in topics:  # all episodes rendered: swap staging into place
+        shutil.rmtree(ed_dir / th, ignore_errors=True)
+        shutil.move(str(stage / th), str(ed_dir / th))
+    shutil.rmtree(stage, ignore_errors=True)
+    if a.force and not keep_eps:
+        for d in ed_dir.iterdir():
+            if d.is_dir() and d.name not in topics:
+                shutil.rmtree(d)
     episodes = []
     for th in topics:
         p = packs[th]
@@ -733,9 +1004,12 @@ def main() -> int:
         srcs += [{"outlet": "Expres de Unic", "title": e["title"], "url": e["url"]} for e in p["expres_de_unic"]]
         srcs += [{"outlet": "Portal BCS 2050", "title": "Tendencia 2050 · Visión · Foresight · Ontología", "url": "/foresights/"}]
         episodes.append({"topic": th, "name_es": THEMES[th][0], "name_en": THEMES[th][1], "signature": music[TOPIC[th][1]],
-                         "languages": {L: res[(th, L)] for L in langs}, "sources": srcs})
+                         "languages": {L: res[(th, L)] for L in langs}, "sources": srcs, "source_ids": p["ids"]})
+    if keep_eps:
+        order = {e["topic"]: k for k, e in enumerate(load(ed_dir / "edition.json", {}).get("episodes", []))}
+        episodes = sorted(keep_eps + episodes, key=lambda e: order.get(e["topic"], 99))
     edition = {"date": today, "format": "deep-dives", "engine": {"script": f"xAI {MODEL}", "voices": "xAI Grok TTS (rex, eve)"},
-               "episodes": episodes, "source_ids": sorted(set(i for p in packs.values() for i in p["ids"])),
+               "episodes": episodes, "source_ids": sorted(set(i for e in episodes for i in e.get("source_ids", []))),
                "credits": "/radio/credits.json"}
     dump(ed_dir / "edition.json", edition)
     if a.script_only:
@@ -747,9 +1021,6 @@ def main() -> int:
     hist["editions"] = sorted(set(hist.get("editions", [])) | {today})
     dump(OUT / "history.json", hist)
     eds = sorted(p.name for p in (OUT / "editions").iterdir() if (p / "edition.json").exists())
-    for old in eds[:-KEEP_AUDIO]:
-        for mp3 in (OUT / "editions" / old).rglob("*.mp3"):
-            mp3.unlink()
     arch = []
     for d in reversed(eds):
         e = load(OUT / "editions" / d / "edition.json", {})
@@ -758,7 +1029,13 @@ def main() -> int:
                                  "duration": {L: v["duration"] for L, v in x["languages"].items()}}
                                 for x in e.get("episodes", [])]})
     dump(OUT / "archive.json", {"editions": arch})
-    build_station()
+    build_station(a.apply_now)
+    keep = station_srcs()
+    for old in eds[:-KEEP_AUDIO]:  # trim: audio older than the rotation and no longer on any schedule
+        for mp3 in (OUT / "editions" / old).rglob("*.mp3"):
+            if "/radio/" + str(mp3.relative_to(ROOT / "public")).split("radio/", 1)[1] not in keep:
+                mp3.unlink()
+    sync()
     print(f"Wrote public/radio/latest.json ({today}) in {(time.time()-t0)/60:.1f} min")
     return 0
 
