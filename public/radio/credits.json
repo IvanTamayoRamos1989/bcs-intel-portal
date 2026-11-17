@@ -1,0 +1,70 @@
+{
+  "note": "Only CC0, public-domain or CC BY recordings; short excerpts with fades.",
+  "music": [
+    {
+      "id": "romanza",
+      "title": "Romanza española",
+      "artist": "Composer unknown; courtesy of Alias Guitar",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Romanza_espa%C3%B1ola.ogg"
+    },
+    {
+      "id": "romance",
+      "title": "Romance Anónimo (Jeux interdits)",
+      "artist": "Composer unknown; performed by Jim Greeninger",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Romance_An%C3%B3nimo_(Jeux_interdits).ogg"
+    },
+    {
+      "id": "cielito",
+      "title": "Cielito lindo (Quirino Mendoza y Cortés)",
+      "artist": "Synth rendition by Pracchia-78",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Anonimo_-_Cielito_lindo.ogg",
+      "source": "https://commons.wikimedia.org/wiki/File:Anonimo_-_Cielito_lindo.ogg"
+    },
+    {
+      "id": "horizon",
+      "title": "Port Horizon",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Port_Horizon_(ISRC_USUAN1700015).mp3"
+    },
+    {
+      "id": "bossa",
+      "title": "Bossa Antigua",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Bossa_Antigua_(ISRC_USUAN1700069).mp3"
+    },
+    {
+      "id": "beachbum",
+      "title": "Beach Bum",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Beach_Bum_(ISRC_USUAN1100347).mp3"
+    },
+    {
+      "id": "surf",
+      "title": "Surf Shimmy",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Surf_Shimmy_(ISRC_USUAN1700018).mp3"
+    },
+    {
+      "id": "waves",
+      "title": "On a pebble beach (waves)",
+      "artist": "earthcalling",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:On_a_pebble_beach.ogg",
+      "source": "https://commons.wikimedia.org/wiki/File:On_a_pebble_beach.ogg"
+    }
+  ],
+  "voices": "Grok text-to-speech (xAI): voices 'rex' (host) and 'eve' (co-host)."
+}

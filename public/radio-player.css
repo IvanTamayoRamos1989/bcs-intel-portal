@@ -1,0 +1,54 @@
+/* Radio BCS2050 — minimal player, California light */
+.radio-wrap { position: relative; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.radio-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border: 1px solid #e6c9a8; background: linear-gradient(180deg, #fffaf1, #fbefdf);
+  color: #8a4b22; border-radius: 999px; padding: 0.2rem 0.65rem 0.2rem 0.3rem;
+  font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
+}
+.radio-btn:hover { box-shadow: 0 2px 10px rgba(224,137,74,.25); }
+.radio-btn .radio-dot {
+  width: 1.35rem; height: 1.35rem; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 35% 30%, #f6b26b, #e0894a 60%, #c4642f); color: #fff; font-size: 0.6rem;
+}
+.radio-btn.is-playing .radio-dot { animation: radio-breathe 3.2s ease-in-out infinite; }
+@keyframes radio-breathe { 0%,100% { box-shadow: 0 0 0 0 rgba(224,137,74,.45); } 50% { box-shadow: 0 0 0 6px rgba(224,137,74,0); } }
+.radio-panel {
+  position: absolute; right: 0; top: calc(100% + 0.55rem); z-index: 30; width: 330px; max-width: calc(100vw - 1.5rem);
+  background: #fffdf8; border: 1px solid #ecdcc6; border-radius: 16px; padding: 0.9rem 1rem 0.8rem;
+  box-shadow: 0 18px 40px -18px rgba(70,50,30,.35); color: #3b3a36;
+}
+.radio-panel[hidden] { display: none; }
+.radio-head { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.radio-name { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #8a4b22; margin: 0; }
+.radio-date { font-size: .72rem; color: #8b8578; margin: 0; }
+.radio-langs { display: inline-flex; border: 1px solid #ecdcc6; border-radius: 999px; overflow: hidden; }
+.radio-langs button { border: 0; background: transparent; font-size: .68rem; padding: .15rem .55rem; cursor: pointer; color: #8b8578; }
+.radio-langs button[aria-pressed="true"] { background: #e0894a; color: #fff; }
+.radio-title { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 1.02rem; line-height: 1.3; margin: .6rem 0 .1rem; color: #294554; }
+.radio-seg { font-size: .78rem; color: #6d6a62; margin: 0 0 .55rem; min-height: 1.1em; }
+.radio-ctrl { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin: .2rem 0 .55rem; }
+.radio-ctrl button { border: 0; background: transparent; cursor: pointer; color: #294554; font-size: .95rem; padding: .3rem; }
+.radio-ctrl .radio-play {
+  width: 2.7rem; height: 2.7rem; border-radius: 50%; color: #fff; font-size: 1rem;
+  background: radial-gradient(circle at 35% 30%, #f6b26b, #e0894a 60%, #c4642f);
+  box-shadow: 0 6px 16px -6px rgba(196,100,47,.6);
+}
+.radio-bar { height: 3px; background: #f1e6d6; border-radius: 3px; overflow: hidden; }
+.radio-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #6fb7c9, #e0894a); transition: width .3s linear; }
+.radio-tracks { list-style: none; margin: .6rem 0 0; padding: 0; max-height: 9.5rem; overflow: auto; }
+.radio-tracks li button { width: 100%; text-align: left; border: 0; background: transparent; cursor: pointer;
+  font-size: .76rem; color: #6d6a62; padding: .18rem .1rem; display: flex; justify-content: space-between; gap: .5rem; }
+.radio-tracks li button[aria-current="true"] { color: #8a4b22; font-weight: 600; }
+.radio-foot { display: flex; justify-content: space-between; margin-top: .45rem; }
+.radio-foot button { border: 0; background: transparent; font-size: .7rem; color: #34607d; cursor: pointer; padding: 0; }
+.radio-notes { font-size: .7rem; color: #6d6a62; line-height: 1.45; margin-top: .45rem; max-height: 10rem; overflow: auto; border-top: 1px solid #f1e6d6; padding-top: .45rem; }
+.radio-notes[hidden] { display: none; }
+.radio-notes a { color: #34607d; }
+.radio-notes p { margin: .2rem 0; }
+.radio-msg { font-size: .72rem; color: #a0522d; margin: .3rem 0 0; }
+@media (max-width: 900px) {
+  .radio-btn .radio-label { display: none; } .radio-btn { padding-right: .3rem; }
+  .radio-panel { position: fixed; left: .75rem; right: .75rem; top: 3.4rem; width: auto; max-width: none; }
+}

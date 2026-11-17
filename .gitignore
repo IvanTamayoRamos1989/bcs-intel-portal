@@ -14,3 +14,7 @@ foresights_swarm/
 .env.*
 .finance-archive/
 scripts/finance_archive/__pycache__/
+
+# Radio BCS2050 caches (TTS cache, music sources)
+scripts/_cache/radio/
+scripts/_cache/radio_music_src/
