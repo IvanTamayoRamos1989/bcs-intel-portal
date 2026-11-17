@@ -1,0 +1,19 @@
+{
+  "editions": [
+    {
+      "date": "2026-11-17",
+      "themes": [
+        "economia",
+        "urbanismo",
+        "crimen",
+        "transporte"
+      ],
+      "audio": true,
+      "edition": "/radio/editions/2026-11-17/edition.json",
+      "titles": {
+        "es": "Radio BCS2050 - 17 de noviembre de 2026",
+        "en": "Radio BCS2050 - 17 November 2026"
+      }
+    }
+  ]
+}

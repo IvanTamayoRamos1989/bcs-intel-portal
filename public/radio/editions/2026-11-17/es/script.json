@@ -1,0 +1,336 @@
+{
+  "title": "Radio BCS2050 - 17 de noviembre de 2026",
+  "segments": [
+    {
+      "id": "apertura",
+      "title": "Apertura",
+      "theme": "apertura",
+      "source_ids": [],
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Buenos días. Hoy es 17 de noviembre de 2026. En Radio BCS2050 miramos el estado hacia 2050 con calma y atención. Hoy escucharemos sobre ingresos en Los Cabos, el litoral que cambia, el agua que se extrae sin permiso y las rutas que conectan pueblos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El mar golpea fuerte estos días y las decisiones locales se acumulan. ¿Qué esencia guardan estos cambios?"
+        },
+        {
+          "speaker": "host",
+          "text": "Eso es lo que buscaremos juntos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La luz del Pacífico entra por la ventana del estudio. El viento trae sal."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. Escuchemos con esa misma luz."
+        }
+      ]
+    },
+    {
+      "id": "economia",
+      "title": "Economía",
+      "theme": "economia",
+      "source_ids": [
+        "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+        "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "El Cabildo de Los Cabos aprobó enviar al Congreso la Ley de Ingresos 2027. Serán 6,746 mdp, 9.09% menos que los 7,421 mdp del presupuesto modificado de 2026. Según Gringo Gazette, los ingresos propios bajan de 4,173 a 3,338 mdp, casi 20% menos, por la contracción del mercado inmobiliario."
+        },
+        {
+          "speaker": "host",
+          "text": "El Ayuntamiento advierte que podría reducir obras el próximo año. El mar también manda aviso."
+        },
+        {
+          "speaker": "cohost",
+          "text": "POSTA México informa que el Servicio Meteorológico Nacional prevé oleaje de 2 a 3 metros en la costa occidental, de Guerrero Negro a El Pescadero, con rachas de 30 a 50 km/h. Ya cerró puertos menores en noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué esencia tiene este enfriamiento?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La dependencia del ciclo inmobiliario y del mar. Ambos se retraen al mismo tiempo."
+        },
+        {
+          "speaker": "host",
+          "text": "Una pregunta queda: ¿cómo se sostiene un presupuesto cuando la tierra y el agua piden pausa?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El oleaje de 2 a 3 metros llega a las pangas en Todos Santos y El Pescadero. El mismo viento que baja los ingresos puede cerrar la navegación."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto y el mar dictan el ritmo juntos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Nada se mueve si el mar dice no."
+        }
+      ]
+    },
+    {
+      "id": "urbanismo",
+      "title": "Urbanismo",
+      "theme": "urbanismo",
+      "source_ids": [
+        "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+        "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos, vecinos recogen firmas del 19 al 22 de noviembre para que el Camino Costero de Cabo del Este quede en el PDU 2040. Diario Humano cuenta que Grupo Questro propone una carretera alterna a un kilómetro de la playa."
+        },
+        {
+          "speaker": "host",
+          "text": "El Implan quiere conservarla como paseo escénico. El alcalde dice que cualquier decisión se consultará."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La actualización de 2025 preveía dejar en desuso 3.9 km de la ruta de 94 km entre San José del Cabo y La Ribera."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto, en Punta Lobos, Meganoticias reporta que el Hotel San Cristóbal suspendió operaciones. Las altas mareas dañaron un edificio y 12 habitaciones frente al mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No hubo lesionados. Evaluarán daños antes de reapertura."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué esencia surge aquí?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La línea entre el deseo de construir y el mar que siempre reclama su espacio."
+        },
+        {
+          "speaker": "host",
+          "text": "El oleaje no negocia."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la playa de Punta Lobos la luz cambia rápido. El hotel cerró justo donde el agua subió."
+        },
+        {
+          "speaker": "host",
+          "text": "El camino costero pide que lo dejen como paseo. El mar ya eligió."
+        }
+      ]
+    },
+    {
+      "id": "crimen",
+      "title": "Seguridad",
+      "theme": "crimen",
+      "source_ids": [
+        "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+        "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "La senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua. Tribuna de México informa que la iniciativa reforma el Código Penal Federal y la Ley de Aguas Nacionales."
+        },
+        {
+          "speaker": "host",
+          "text": "En Los Cabos ya se clausuraron 25 tomas clandestinas en 2026. La sustracción supera los 300 litros por segundo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Conagua cerró dos aprovechamientos ilegales en Cabo San Lucas que abastecían unas 120 pipas diarias."
+        },
+        {
+          "speaker": "host",
+          "text": "Según la ENCIG 2025 del INEGI, solo tres de cada diez personas en BCS tienen suministro constante."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Cuál es la esencia de este problema?"
+        },
+        {
+          "speaker": "host",
+          "text": "El agua que falta y la que se roba al mismo tiempo. Una contradicción que no se resuelve sola."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Cabildo de La Paz autorizó dos camiones nuevos para el Tiburón Urbano. Con recursos del Ramo 33 llevarán El Centenario y Chametla hasta el centro."
+        },
+        {
+          "speaker": "host",
+          "text": "Se suma a la ruta Pedregal–Centro. Los vecinos pedían más conexión."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todavía no hay fecha de inicio ni horarios."
+        },
+        {
+          "speaker": "host",
+          "text": "El agua robada y las rutas que faltan. Dos formas de la misma escasez."
+        }
+      ]
+    },
+    {
+      "id": "transporte",
+      "title": "Transporte",
+      "theme": "transporte",
+      "source_ids": [
+        "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+        "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Las lluvias y un derrame de aguas negras que lleva más de 20 días sin corregirse dañan la Transpeninsular en Los Cabos. Meganoticias señala afectaciones en los acotamientos entre San José y Cabo San Lucas."
+        },
+        {
+          "speaker": "host",
+          "text": "El Centro SCT reconoció los daños. Piden evaluación integral que incluya drenaje sanitario."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Baja Ferries, según El Economista, mueve más de 200 mil pasajeros al año en las rutas Topolobampo-La Paz y Mazatlán-La Paz. El CEO Nino Liaño busca llegar a 300 o 400 mil con un producto tipo crucero."
+        },
+        {
+          "speaker": "host",
+          "text": "El 90% de los bienes que llegan a BCS llega por mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué esencia une estos dos relatos?"
+        },
+        {
+          "speaker": "host",
+          "text": "El camino que se deteriora y el mar que puede abrirse más. Uno pide reparación, el otro invita a ampliar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La carretera Transpeninsular recibe el agua negra desde hace más de 20 días. El asfalto se rompe bajo las ruedas."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto el ferry imagina cruceros por el Mar de Cortés. La misma agua, dos historias."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El viento del Pacífico empuja las olas contra la costa y contra la carpeta asfáltica."
+        },
+        {
+          "speaker": "host",
+          "text": "El mar da y el mar quita."
+        }
+      ]
+    },
+    {
+      "id": "archivo",
+      "title": "Archivo",
+      "theme": "archivo",
+      "source_ids": [
+        "GT004",
+        "gap_pdu_mulege"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "De la biblioteca del portal, la Glasgow Declaration on Climate Action in Tourism de UNWTO en 2021 habla de vías de descarbonización para destinos y operadores."
+        },
+        {
+          "speaker": "host",
+          "text": "Una idea que sigue viva: el turismo también debe medir su huella."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el programa Expres de Unic entrevistaron recientemente a la Directora Municipal de Turismo Ana Gabriela Navarro."
+        },
+        {
+          "speaker": "host",
+          "text": "También conversaron con el científico Mauricio Hoyos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "De la ontología del portal, el PDU de Mulegé sigue como brecha. No hay dato de zonificación en el corpus."
+        },
+        {
+          "speaker": "host",
+          "text": "El vacío queda. La planeación espera."
+        }
+      ]
+    },
+    {
+      "id": "horizonte",
+      "title": "Horizonte",
+      "theme": "horizonte",
+      "source_ids": [],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal apunta a un sistema policéntrico. Los Cabos bajo estrés hídrico, el East Cape en tensión con áreas protegidas, La Paz como nodo de servicios, Loreto como ancla de conservación."
+        },
+        {
+          "speaker": "host",
+          "text": "El techo hídrico ya es real. 22 de 39 acuíferos están en déficit, con un balance de menos 105.1 hm³ al año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Visión más probable es el escenario de Estrés hídrico-costero, con 42%. El Niño sigue elevando el nivel del mar entre 15 y 30 cm."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Hacia dónde puede inclinarse el estado si actúa?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hacia una economía policéntrica y regenerativa, donde la inversión no repita solo el modelo costero y el empleo no dependa de una sola vocación."
+        },
+        {
+          "speaker": "host",
+          "text": "El paquete económico 2027 de 28 300 mdp se discute en diciembre. La consulta del PPDU El Tezal sigue abierta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Niño se debilitará en 2027 según el investigador de la UABCS. Las mareas extraordinarias seguirán en Bahía de La Paz del 23 al 26 de diciembre."
+        },
+        {
+          "speaker": "host",
+          "text": "La luz del atardecer en La Paz sigue siendo la misma, pero el agua sube."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El encuentro ciudadano del 5.º Informe es el 27 de noviembre en la Plaza de la Reforma."
+        },
+        {
+          "speaker": "host",
+          "text": "Cada decisión pequeña suma o resta al 2050."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Cierre",
+      "theme": "cierre",
+      "source_ids": [],
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "El mar marca el límite y el agua marca el ritmo. Mañana volvemos con más preguntas sobre Baja California Sur hacia 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Gracias por acompañarnos. Hasta pronto."
+        },
+        {
+          "speaker": "host",
+          "text": "Que el viento del Pacífico los acompañe."
+        }
+      ]
+    }
+  ]
+}

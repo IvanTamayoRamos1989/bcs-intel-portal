@@ -1,0 +1,455 @@
+{
+  "title": "Radio BCS2050 - 17 November 2026",
+  "segments": [
+    {
+      "id": "apertura",
+      "title": "Apertura",
+      "theme": "Welcome",
+      "source_ids": [],
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Good morning from the Pacific side. Today is 17 November 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "We look at four themes: economy, urbanism, security and transport."
+        },
+        {
+          "speaker": "host",
+          "text": "What stays when the real estate tide turns?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The light on the water feels different when the numbers pull back."
+        },
+        {
+          "speaker": "host",
+          "text": "The swell and the budget both speak of limits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The desert wind carries the same quiet message across the long road south."
+        },
+        {
+          "speaker": "host",
+          "text": "We listen for the essence beneath each story today."
+        }
+      ]
+    },
+    {
+      "id": "economia",
+      "title": "Economy",
+      "theme": "economia",
+      "source_ids": [
+        "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+        "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Gringo Gazette reports Los Cabos sent a 2027 revenue law of 6,746 million pesos, down 9.09 percent from the modified 2026 budget."
+        },
+        {
+          "speaker": "host",
+          "text": "Own-source revenue falls nearly 20 percent to 3,338 million pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The city links the drop to a cooling real estate market and warns of cuts to works."
+        },
+        {
+          "speaker": "host",
+          "text": "What does that quieter market look like on the ground?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "POSTA México adds that 2 to 3 metre surf and 30 to 50 km/h gusts hit the western coast today."
+        },
+        {
+          "speaker": "host",
+          "text": "Small boats face risk from Guerrero Negro to El Pescadero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The wind carries the same message the budget does."
+        },
+        {
+          "speaker": "host",
+          "text": "The coast keeps its own rhythm."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yes. The numbers already show the strain."
+        },
+        {
+          "speaker": "host",
+          "text": "How does the drop in property tax and transfer tax feel when the waves keep coming?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The ocean does not pause for the revenue law."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the city must still plan the year ahead."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 675 million pesos less will reach every project along the shore."
+        },
+        {
+          "speaker": "host",
+          "text": "The Pacific light still touches the same empty lots."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The real estate slowdown meets the cold front in one shared horizon."
+        }
+      ]
+    },
+    {
+      "id": "urbanismo",
+      "title": "Urbanism",
+      "theme": "urbanismo",
+      "source_ids": [
+        "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+        "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Diario Humano says residents begin collecting signatures 19 to 22 November to keep the East Cape Coastal Road in the 2040 plan."
+        },
+        {
+          "speaker": "host",
+          "text": "They want it kept as a rustic road with beach access."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 2025 plan update would have abandoned 3.9 km of the 94 km San José del Cabo–La Ribera route."
+        },
+        {
+          "speaker": "host",
+          "text": "The road has always followed the curve of the land."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meganoticias reports Hotel San Cristóbal in Punta Lobos suspended operations after high tides damaged one building and twelve rooms."
+        },
+        {
+          "speaker": "host",
+          "text": "No one was hurt. Damage assessment continues."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The case brings back the question of how far buildings should sit from the shifting shore."
+        },
+        {
+          "speaker": "host",
+          "text": "Where does the line between road, beach and plan actually lie?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The signatures and the damaged rooms both point to the same edge."
+        },
+        {
+          "speaker": "host",
+          "text": "The Pacific light still falls on the same sand."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Grupo Questro proposed an alternative at least 1 km inland."
+        },
+        {
+          "speaker": "host",
+          "text": "Implan wants a scenic drive that still touches the water."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Any final choice will go to consultation."
+        },
+        {
+          "speaker": "host",
+          "text": "The wind moves the same palm fronds whether the plan stays or shifts."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Residents will stand on the beach with their pens on those four November days."
+        }
+      ]
+    },
+    {
+      "id": "crimen",
+      "title": "Security",
+      "theme": "crimen",
+      "source_ids": [
+        "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+        "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Tribuna de México notes Senator Susana Zatarain proposes up to ten years in prison for water theft."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos closed 25 illegal connections this year, with theft above 300 litres per second."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Conagua closed two illegal sources in Cabo San Lucas that supplied about 120 tanker trucks a day."
+        },
+        {
+          "speaker": "host",
+          "text": "The water moves even when the law tries to hold it."
+        },
+        {
+          "speaker": "cohost",
+          "text": "HOY BCS reports La Paz council approved two new buses to extend the Tiburón Urbano route to El Centenario and Chametla."
+        },
+        {
+          "speaker": "host",
+          "text": "The service will link those areas with downtown using reallocated federal funds."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Residents have asked for better public transport for years."
+        },
+        {
+          "speaker": "host",
+          "text": "How does the same water that is taken illegally also shape where buses can run?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Both stories circle back to daily movement."
+        },
+        {
+          "speaker": "host",
+          "text": "Only three in ten people in BCS have constant supply."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The new route may ease one small part of that pressure."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert road still waits for the next connection."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The wind across the dry hills carries the same scarcity each morning."
+        },
+        {
+          "speaker": "host",
+          "text": "Two buses and 25 closed taps meet at the same quiet crossroads."
+        }
+      ]
+    },
+    {
+      "id": "transporte",
+      "title": "Transport",
+      "theme": "transporte",
+      "source_ids": [
+        "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+        "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15"
+      ],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Meganoticias says rain and an unfixed sewage spill are damaging the Transpeninsular highway in Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "The SCT office confirmed damage on the shoulders between San José and Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The spill has continued for over 20 days."
+        },
+        {
+          "speaker": "host",
+          "text": "The road feels the weight of the water that should have stayed underground."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Economista reports Baja Ferries carries over 200,000 passengers a year on the Sea of Cortez routes and aims for 300 to 400,000."
+        },
+        {
+          "speaker": "host",
+          "text": "They seek to turn crossings into a cruise-style experience with hotel partnerships."
+        },
+        {
+          "speaker": "cohost",
+          "text": "90% of goods reach the state by sea."
+        },
+        {
+          "speaker": "host",
+          "text": "What moves when the highway cracks and the ferry adds beds?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The sea stays the main road."
+        },
+        {
+          "speaker": "host",
+          "text": "The long crossings already link La Paz with Mazatlán and Topolobampo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Packages now reach Loreto and Todos Santos as well."
+        },
+        {
+          "speaker": "host",
+          "text": "The wind across the water still decides the schedule."
+        },
+        {
+          "speaker": "cohost",
+          "text": "20–30 partnerships with hotels already shape the voyage."
+        },
+        {
+          "speaker": "host",
+          "text": "The Chepe train alliance extends the journey all the way to Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The ferry deck meets the desert highway under the same salt air."
+        }
+      ]
+    },
+    {
+      "id": "archivo",
+      "title": "Archivo",
+      "theme": "Archive",
+      "source_ids": [
+        "GT004"
+      ],
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "From the portal library we keep the Glasgow Declaration on Climate Action in Tourism."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It outlines decarbonization pathways for destinations."
+        },
+        {
+          "speaker": "host",
+          "text": "The show Expres de Unic recently spoke with scientist Mauricio Hoyos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "His words stay with us as we look at the same coastline."
+        },
+        {
+          "speaker": "host",
+          "text": "The declaration still asks what the light on the water will cost in decades ahead."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Each wave carries that same quiet question."
+        },
+        {
+          "speaker": "host",
+          "text": "The ontology also notes the PDU gap in Mulegé."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No zoning data appears in the corpus for that northern stretch."
+        }
+      ]
+    },
+    {
+      "id": "horizonte",
+      "title": "Horizonte",
+      "theme": "Foresight",
+      "source_ids": [],
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "The portal's Tendencia 2050 sees a polycentric system rather than one repeated coastal formula."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos under water and power stress, East Cape in tension with protected areas, La Paz as service capital."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú as agricultural hub, northern Mulegé as thin corridor."
+        },
+        {
+          "speaker": "host",
+          "text": "Of 39 aquifers, 22 show deficit summing to minus 105.1 cubic hectometres a year."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Vision places the water-coastal stress scenario at 42 percent likelihood."
+        },
+        {
+          "speaker": "host",
+          "text": "El Niño keeps raising tides and the second desalination plant in Cabo San Lucas reaches 75 percent completion."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Foresight lists the 2027 budget package, El Tezal partial plan and extreme tides through December."
+        },
+        {
+          "speaker": "host",
+          "text": "Where the measured path narrows, what still opens?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The governor places the plant at an additional 250 litres per second once finished in 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "The polycentric roles already appear in the way the wind moves between each place."
+        },
+        {
+          "speaker": "cohost",
+          "text": "LIGIR extreme tides continue from Bahía Magdalena into La Paz Bay in December."
+        },
+        {
+          "speaker": "host",
+          "text": "The sea level rise of 15 to 30 centimetres already changes the shoreline each winter."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 2027 budget package of 28.3 billion pesos awaits approval."
+        },
+        {
+          "speaker": "host",
+          "text": "The second plant will bring combined capacity to 655 litres per second."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 5th report public event sits on 27 November at Plaza de la Reforma."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Cierre",
+      "theme": "Close",
+      "source_ids": [],
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The coast writes its own limits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Thank you for listening to Radio BCS2050. Come back tomorrow."
+        },
+        {
+          "speaker": "host",
+          "text": "The road south still waits for the next swell."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same light will fall on the water again at dawn."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "date": "2026-11-17",
+  "engine": {
+    "script": "xAI grok-4.3",
+    "voices": "xAI Grok TTS (rex, eve)"
+  },
+  "themes": [
+    "economia",
+    "urbanismo",
+    "crimen",
+    "transporte"
+  ],
+  "languages": {
+    "es": {
+      "title": "Radio BCS2050 - 17 de noviembre de 2026",
+      "duration": 480.5,
+      "tracks": [
+        {
+          "n": 1,
+          "id": "apertura",
+          "title": "Apertura",
+          "theme": "apertura",
+          "src": "/radio/editions/2026-11-17/es/01.mp3",
+          "duration": 38.9,
+          "sting": "/radio/music/bossa.mp3"
+        },
+        {
+          "n": 2,
+          "id": "economia",
+          "title": "Economía",
+          "theme": "economia",
+          "src": "/radio/editions/2026-11-17/es/02.mp3",
+          "duration": 84.5,
+          "sting": "/radio/music/romanza.mp3"
+        },
+        {
+          "n": 3,
+          "id": "urbanismo",
+          "title": "Urbanismo",
+          "theme": "urbanismo",
+          "src": "/radio/editions/2026-11-17/es/03.mp3",
+          "duration": 70.94,
+          "sting": "/radio/music/surf.mp3"
+        },
+        {
+          "n": 4,
+          "id": "crimen",
+          "title": "Seguridad",
+          "theme": "crimen",
+          "src": "/radio/editions/2026-11-17/es/04.mp3",
+          "duration": 69.34,
+          "sting": "/radio/music/cielito.mp3"
+        },
+        {
+          "n": 5,
+          "id": "transporte",
+          "title": "Transporte",
+          "theme": "transporte",
+          "src": "/radio/editions/2026-11-17/es/05.mp3",
+          "duration": 73.15,
+          "sting": "/radio/music/beachbum.mp3"
+        },
+        {
+          "n": 6,
+          "id": "archivo",
+          "title": "Archivo",
+          "theme": "archivo",
+          "src": "/radio/editions/2026-11-17/es/06.mp3",
+          "duration": 40.15,
+          "sting": "/radio/music/romance.mp3"
+        },
+        {
+          "n": 7,
+          "id": "horizonte",
+          "title": "Horizonte",
+          "theme": "horizonte",
+          "src": "/radio/editions/2026-11-17/es/07.mp3",
+          "duration": 88.87,
+          "sting": "/radio/music/horizon.mp3"
+        },
+        {
+          "n": 8,
+          "id": "cierre",
+          "title": "Cierre",
+          "theme": "cierre",
+          "src": "/radio/editions/2026-11-17/es/08.mp3",
+          "duration": 14.66,
+          "sting": null
+        }
+      ],
+      "script": "/radio/editions/2026-11-17/es/script.json"
+    },
+    "en": {
+      "title": "Radio BCS2050 - 17 November 2026",
+      "duration": 464.5,
+      "tracks": [
+        {
+          "n": 1,
+          "id": "apertura",
+          "title": "Apertura",
+          "theme": "Welcome",
+          "src": "/radio/editions/2026-11-17/en/01.mp3",
+          "duration": 30.94,
+          "sting": "/radio/music/bossa.mp3"
+        },
+        {
+          "n": 2,
+          "id": "economia",
+          "title": "Economy",
+          "theme": "economia",
+          "src": "/radio/editions/2026-11-17/en/02.mp3",
+          "duration": 74.4,
+          "sting": "/radio/music/romanza.mp3"
+        },
+        {
+          "n": 3,
+          "id": "urbanismo",
+          "title": "Urbanism",
+          "theme": "urbanismo",
+          "src": "/radio/editions/2026-11-17/en/03.mp3",
+          "duration": 76.3,
+          "sting": "/radio/music/surf.mp3"
+        },
+        {
+          "n": 4,
+          "id": "crimen",
+          "title": "Security",
+          "theme": "crimen",
+          "src": "/radio/editions/2026-11-17/en/04.mp3",
+          "duration": 71.98,
+          "sting": "/radio/music/cielito.mp3"
+        },
+        {
+          "n": 5,
+          "id": "transporte",
+          "title": "Transport",
+          "theme": "transporte",
+          "src": "/radio/editions/2026-11-17/en/05.mp3",
+          "duration": 71.23,
+          "sting": "/radio/music/beachbum.mp3"
+        },
+        {
+          "n": 6,
+          "id": "archivo",
+          "title": "Archivo",
+          "theme": "Archive",
+          "src": "/radio/editions/2026-11-17/en/06.mp3",
+          "duration": 34.1,
+          "sting": "/radio/music/romance.mp3"
+        },
+        {
+          "n": 7,
+          "id": "horizonte",
+          "title": "Horizonte",
+          "theme": "Foresight",
+          "src": "/radio/editions/2026-11-17/en/07.mp3",
+          "duration": 91.68,
+          "sting": "/radio/music/horizon.mp3"
+        },
+        {
+          "n": 8,
+          "id": "cierre",
+          "title": "Cierre",
+          "theme": "Close",
+          "src": "/radio/editions/2026-11-17/en/08.mp3",
+          "duration": 13.87,
+          "sting": null
+        }
+      ],
+      "script": "/radio/editions/2026-11-17/en/script.json"
+    }
+  },
+  "source_ids": [
+    "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+    "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+    "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+    "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+    "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+    "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11",
+    "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+    "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15",
+    "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
+    "el-nino-nivel-mar-puerto-san-carlos-meganoticias-2026-11-14",
+    "GT004",
+    "gap_pdu_mulege",
+    "edu-3XtwnTX4n04",
+    "edu-ox23YEevIy4",
+    "edu-Lzf4w49sJhQ"
+  ],
+  "sources": [
+    {
+      "outlet": "Gringo Gazette",
+      "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
+      "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
+      "date": "2026-11-16"
+    },
+    {
+      "outlet": "POSTA México",
+      "title": "SMN prevé oleaje de 2 a 3 metros en la costa del Pacífico de BCS y rachas de 30 a 50 km/h",
+      "url": "https://www.posta.com.mx/bcs/habra-lluvias-en-bcs-este-lunes-16-de-noviembre-alertan-por-oleaje-de-hasta-3-metros/vl2279534",
+      "date": "2026-11-16"
+    },
+    {
+      "outlet": "Diario Humano",
+      "title": "Vecinos convocan colecta de firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040",
+      "url": "https://diariohumano.com.mx/2026/11/16/cabo-del-este-convocan-a-firmar-por-el-camino-costero/",
+      "date": "2026-11-16"
+    },
+    {
+      "outlet": "Meganoticias",
+      "title": "Hotel San Cristóbal en Punta Lobos suspende operaciones por daños del oleaje",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/hotel-san-crist%C3%B3bal-suspende-operaciones-por-da%C3%B1os-causados-por-el-oleaje/789103",
+      "date": "2026-11-16"
+    },
+    {
+      "outlet": "Tribuna de México",
+      "title": "Senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua; Los Cabos suma 25 tomas clandestinas en 2026",
+      "url": "https://tribunademexico.com/propone-10-anos-carcel-huachicol-agua/",
+      "date": "2026-11-13"
+    },
+    {
+      "outlet": "HOY BCS",
+      "title": "Cabildo de La Paz autoriza dos camiones para llevar el Tiburón Urbano a El Centenario y Chametla",
+      "url": "https://hoybcs.com/llegara-el-tiburon-urbano-a-el-centenario-y-chametla-cabildo-autoriza-compra-de-dos-camiones/",
+      "date": "2026-11-11"
+    },
+    {
+      "outlet": "Meganoticias",
+      "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
+      "date": "2026-11-16"
+    },
+    {
+      "outlet": "El Economista",
+      "title": "Baja Ferries busca transformar movilización maritima por el Mar de Cortes en experiencia vacacional",
+      "url": "https://www.eleconomista.com.mx/empresas/baja-ferries-busca-transformar-movilizacion-maritima-mar-cortes-experiencia-vacacional-20261115-844111.html",
+      "date": "2026-11-15"
+    },
+    {
+      "outlet": "Tribuna de México",
+      "title": "Inicia la renovación con concreto hidráulico de la calle Agustín Arriola en el Centro Histórico de La Paz",
+      "url": "https://tribunademexico.com/renovacion-calle-agustin-arriola-centro-lpz/",
+      "date": "2026-11-16"
+    },
+    {
+      "outlet": "Meganoticias",
+      "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+      "date": "2026-11-14"
+    },
+    {
+      "outlet": "Biblioteca del portal: UNWTO (2021)",
+      "title": "Glasgow Declaration on Climate Action in Tourism",
+      "url": "https://www.unwto.org/the-glasgow-declaration"
+    },
+    {
+      "outlet": "Ontología del portal",
+      "title": "Brecha: PDU de Mulegé",
+      "url": ""
+    },
+    {
+      "outlet": "Expres de Unic",
+      "title": "LCALC Video Radio Show November 12, 2026",
+      "url": "https://www.youtube.com/watch?v=3XtwnTX4n04"
+    },
+    {
+      "outlet": "Expres de Unic",
+      "title": "Video interview with Municipal Director of Tourism Ana Gabriela Navarro",
+      "url": "https://www.youtube.com/watch?v=ox23YEevIy4"
+    },
+    {
+      "outlet": "Expres de Unic",
+      "title": "Video interview with scientist Mauricio Hoyos",
+      "url": "https://www.youtube.com/watch?v=Lzf4w49sJhQ"
+    },
+    {
+      "outlet": "Portal BCS 2050",
+      "title": "Tendencia 2050 · Visión · Foresight",
+      "url": "/foresights/"
+    }
+  ],
+  "intro_bed": "/radio/music/waves.mp3",
+  "credits": "/radio/credits.json"
+}
