@@ -1,0 +1,303 @@
+{
+  "topic": "economia",
+  "lang": "es",
+  "title": "Economía · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según Tribuna de México, la edición 59 de la Baja 1000 deja una derrama de 800 millones de pesos y 80% de ocupación hotelera en todo el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "800 millones. La arena se mueve, los motores pasan, el dinero llega."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sin embargo, el empleo formal bajó 1.1% en octubre, mientras el país marca récord en el IMSS."
+        },
+        {
+          "speaker": "host",
+          "text": "Un paso atrás justo cuando el turismo avanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aun así, el PIB constante de 2024 llegó a 187,152 millones de pesos, un alza de 3.5% frente a 2023."
+        },
+        {
+          "speaker": "host",
+          "text": "El crecimiento queda en los números, pero los puestos se escurren."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en Los Cabos proyectan 9.09% menos ingresos para 2027 por el enfriamiento del mercado inmobiliario."
+        },
+        {
+          "speaker": "host",
+          "text": "La ola que trae la carrera también puede dejar la playa más vacía al día siguiente."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy profundizamos en Economía. La pregunta es: ¿qué sostiene el trabajo cuando la derrama pasa de largo?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según Tribuna de México, la Baja 1000 dejó una derrama de 800 millones de pesos y 80% de ocupación hotelera."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo se siente eso en las calles de Cabo?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La secretaria Maribel Collins dice que fueron 282 equipos y la primera vez que corre toda dentro de Baja California Sur, con transmisión internacional en vivo."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Y sin embargo…"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El mismo mes, informa Tribuna de México, el empleo formal cayó 1.1% anual, mientras el país marcaba récord en el IMSS con 23.09 millones de puestos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasa con esos 1,539 puestos que ya no están?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En septiembre eran 224,460. Es otro mes consecutivo con variación anual negativa en el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en Punta Lobos, HOY BCS cuenta que demolieron parte del Hotel San Cristóbal por el oleaje que erosionó la cimentación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los pescadores llevan desde 2015 advirtiendo que las obras del desarrollo Tres Santos alteran la dinámica de la playa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Quién paga esa cuenta?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aún no hay dictamen técnico oficial, tras el paso del huracán Polo."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto, Foro Mar de Cortés firma un convenio para vigilar el Golfo con un semáforo de biodiversidad y pesca ilegal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El acuerdo busca llevar las prácticas de BCS a otras comunidades, con un observatorio ciudadano y alertas tempranas."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y eso cómo se traduce en la economía de quien vive del mar?"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, al ver la baja de ingresos en Los Cabos y la idea de duplicar la economía del Mar de Cortés, noto un hilo que no aparece en las cifras."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El de la infraestructura que sostiene todo."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. El Cabildo aprobó la Ley de Ingresos 2027 con 6,746 mdp, 9.09% menos que el año anterior, según Gringo Gazette, por la caída del mercado inmobiliario."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y al mismo tiempo el Foro Mar de Cortés plantea triplicar la inversión extranjera en 20 años."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasa cuando el crecimiento choca con lo que no se ve?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los acuíferos marcan el límite. El de Todos Santos tiene un déficit de casi 3 hm³ al año, según los datos de CONAGUA."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto llega la Baja 1000 y se esperan 332 mdp de derrama, informa El Economista."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero el gobernador ya dijo que no volverá a subsidiar los daños en los caminos rurales."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en La Paz, el 17 de noviembre inicia la obra de concreto hidráulico en la calle Agustín Arriola para revitalizar el comercio y el turismo, según Tribuna de México."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El oleaje de dos a tres metros en la costa del Pacífico también afecta las pangas, avisa POSTA México."
+        },
+        {
+          "speaker": "host",
+          "text": "Aquí viene la vuelta. El plan de duplicar la economía regional asume que el agua y las carreteras pueden estirarse."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y los datos del conocimiento muestran que el acuífero 0313 ya está en rojo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Entonces el crecimiento se mide en otra unidad?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tal vez en metros cúbicos disponibles, no solo en 6,746 mdp."
+        },
+        {
+          "speaker": "host",
+          "text": "O en los proyectos detenidos del centro de Cabo San Lucas que menciona Meganoticias."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La calle renovada y el agua que falta dibujan el mismo mapa."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "¿Sabías que Baja California Sur tiene la pobreza laboral más baja de las 32 entidades?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. 13.2 % según CONEVAL."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Es el dato más reciente del cuarto trimestre de 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Piensa en un pescador de Puerto San Carlos. Ese número significa que su ingreso cubre mejor la canasta básica que en otros estados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y cómo se ve eso en la vida diaria de un lugar como La Paz?"
+        },
+        {
+          "speaker": "host",
+          "text": "La gente encuentra más estabilidad. Los números del censo muestran 43,405 establecimientos y 300,857 personas ocupadas en 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el PIB llegó a 187,152 millones de pesos constantes en 2024, con un crecimiento de 3.5 % frente a 2023, según INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo se conectan esas dos cosas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El empleo formal del IMSS bajó 1.1 % anual en octubre, pero la pobreza laboral sigue siendo la menor del país."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto y el mar enseñan que el crecimiento no siempre llega parejo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. La marea sube en un lado y baja en otro, pero el pescador sigue viendo su plato más lleno que antes."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hacia 2050 el portal ve una economía que no se sostiene como una sola fórmula costera."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. El crecimiento sigue, pero no es parejo. El PIB llegó a 187,152 millones de pesos en 2024 con un 3.5 % más que el año anterior, según INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la IED subió de 1,353 a 1,578 millones de dólares entre 2024 y 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, pero el empleo formal bajó 1.1 % anual en octubre y hay 224,460 puestos en septiembre. Una nota sola esta semana y el EWMA en 5.09, neutro."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el riesgo es que la inversión se quede en propuesta y no en trayectoria medida."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aspiración del portal es otra: una economía policéntrica y regenerativa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué haría falta para que cada lugar aporte su rol sin repetir Cabos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz como capital de servicios y nodo agua-energía. Comondú como hub agropecuario. El norte de Mulegé como corredor de generación remota. Y solo nuevo crecimiento donde haya evidencia de agua y energía, sin tocar techos de ANP ni POEL."
+        },
+        {
+          "speaker": "host",
+          "text": "El Paquete Económico 2027 trae 28 300 mdp. El quinto informe ya se entregó y el 27 de noviembre hay encuentro en La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahí se verá si las condiciones se cumplen o si seguimos con una sola vocación bajo estrés."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Baja 1000 dejará una derrama de 800 mdp y 80% de ocupación hotelera en BCS. Aun así el estado cerró octubre con 1.1% menos empleo formal que hace un año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario. ¿Qué significa que todo gire alrededor de una sola costa y de eventos puntuales?"
+        },
+        {
+          "speaker": "host",
+          "text": "El mar recuerda lo frágil que es eso. El SMN prevé oleaje de 2 a 3 metros en el Pacífico de BCS y rachas de 30 a 50 km/h."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los pescadores ya habían advertido el riesgo en Punta Lobos. Ahora demuelen parte del Hotel San Cristóbal por la erosión del oleaje. En cambio el Foro Mar de Cortés y la Red de Observadores firman un convenio para un observatorio y un semáforo del Golfo."
+        },
+        {
+          "speaker": "host",
+          "text": "Una economía policéntrica y regenerativa, donde la inversión no se concentre solo en clonar el motor de Cabos. Quédense con nosotros, más Radio BCS2050 después de la música."
+        }
+      ]
+    }
+  ]
+}

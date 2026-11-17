@@ -1,0 +1,323 @@
+{
+  "topic": "crimen",
+  "lang": "es",
+  "title": "Seguridad · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Piensa en el agua que corre de noche por una toma que nadie autorizó."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Tribuna de México, en Los Cabos ya cerraron 25 de esas tomas este año."
+        },
+        {
+          "speaker": "host",
+          "text": "300 litros por segundo que se van."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y solo tres de cada diez personas en Baja California Sur tienen suministro constante, según la encuesta del INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "En Cabo San Lucas cerraron dos pozos que llenaban 120 pipas al día."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La senadora Zatarain propone hasta diez años de cárcel por extraerla sin permiso."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050, hoy profundizamos en Seguridad, y la pregunta que perseguimos es: ¿cómo se protege el agua cuando nadie la ve?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Tomás, según Tribuna de México, la senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua."
+        },
+        {
+          "speaker": "host",
+          "text": "Diez años. ¿Y en Los Cabos qué pasa?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Han clausurado 25 tomas clandestinas en 2026. Se llevan más de 300 litros por segundo. Conagua cerró dos pozos que daban 120 pipas diarias."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Cómo afecta eso a la gente?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según la ENCIG 2025 del INEGI, solo tres de cada diez personas en BCS tienen agua todo el tiempo. La iniciativa de Zatarain suma un artículo al Código Penal Federal y reforma la Ley de Aguas Nacionales para castigar pozos clandestinos y venta ilegal."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y qué se siente cuando el agua se va?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el desierto, cada gota cuenta. La gente espera pipas, los cultivos se secan y los hogares se quedan sin luz para la bomba."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pasemos al Foro Mar de Cortés. Agustín Coppel pide triplicar la inversión extranjera en 20 años y más gasto en seguridad."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Por qué menciona seguridad ahora?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Dice que BCS creció solo 2.1% anual en la última década. Propone 3.5% cada año. Hoy la IED regional anda cerca de 4,100 millones de dólares. Pide más dinero en carreteras, puertos y educación."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y la gente del mar lo ve posible?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Bitácora BCS, el Congreso pide estudiar el traspaso de ASIPONA al gobierno del estado por el rechazo a las tarifas nuevas en Cabo San Lucas."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué tienen que ver las tarifas con la seguridad?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los prestadores náuticos protestan desde el 1 de octubre. El exhorto no cambia nada de inmediato, depende de la Federación."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El puerto también necesita confianza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Meganoticias, la senadora Zatarain alerta que las ventas en Los Cabos bajaron entre 25% y 35%. Ya cerraron 27 restaurantes por la percepción de inseguridad. Para 2027 el Derecho de No Residente sube a 1,158 pesos, un 17.8% más."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué se necesita para que vuelva la confianza?"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Luz: En los últimos meses vemos donaciones de predios y reasignaciones de recursos que parecen aisladas."
+        },
+        {
+          "speaker": "host",
+          "text": "Tomás: ¿Qué las une?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luz: El comodato por 30 años de un predio en Comondú a la Guardia Nacional, según Palabra BCS, y la prioridad de seguridad en el paquete de 28 mil 300 millones que HOY BCS reporta para 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "Tomás: Mm. ¿Y el presupuesto de Los Cabos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luz: Gringo Gazette informa que el Cabildo aprobó 6,746 mdp para 2027, 675 mdp menos que este año, por la caída inmobiliaria."
+        },
+        {
+          "speaker": "host",
+          "text": "Tomás: ¿Cómo afecta eso a la seguridad?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luz: Menos ingresos propios significan menos margen para mantener rutas como el Tiburón Urbano o las tarifas nuevas de 16 y 18 pesos que El Momento BCS menciona."
+        },
+        {
+          "speaker": "host",
+          "text": "Tomás: El mar y el desierto parecen lejanos de estas cifras."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luz: Sin embargo, Tribuna de México cuenta que el Congreso pide a ASIPONA transparentar las tarifas de la Marina de Cabo San Lucas y gestionar que el puerto pase al estado para reinvertir en la comunidad."
+        },
+        {
+          "speaker": "host",
+          "text": "Tomás: ¿Y eso toca la seguridad?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luz: Peninsular Digital añade que pescadores y prestadores preparan un amparo contra las nuevas tarifas portuarias porque encarecen la pesca y el turismo náutico."
+        },
+        {
+          "speaker": "host",
+          "text": "Tomás: Pero aquí viene el giro inesperado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luz: Imagen Radio cuenta que los hoteleros de Los Cabos atribuyen la baja de 14% en turistas estadounidenses a la percepción de inseguridad, aunque el estado invierte en Guardia Nacional y vivienda social."
+        },
+        {
+          "speaker": "host",
+          "text": "Tomás: Entonces la seguridad no es solo la patrulla."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luz: Es también el hilo que une el puerto, el predio y el presupuesto que llega o no llega, y cómo eso moldea la luz que vemos cada atardecer en el Pacífico."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "¿Sabías que 22 de 39 acuíferos en Baja California Sur están en déficit y suman menos 105.1 hectómetros cúbicos al año?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Según CONAGUA, datos de 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Piensa en el agua que llega a una casa en Los Cabos. Cada día menos de lo que se usa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y eso qué cambia para quien vive ahí?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La población es de 798,447 personas según el INEGI de 2020. Más gente, misma agua."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El desierto no perdona."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Y el PIB subió 3.5 % en 2024, pero el agua sigue bajando."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasa cuando el motor crece y el pozo no?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos la Asociación de Hoteles reportó menos visitantes de Estados Unidos y restaurantes cerrados. Buscan Canadá y Europa."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El camino costero de Cabo del Este queda en pausa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Y el Congreso donó predios en Ciudad Constitución y Santa Rosalía para vivienda social del programa federal."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Reubicar de zonas de riesgo ayuda al equilibrio?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tal vez. Priorizar el agua antes de más crecimiento, como dicen los planes municipales."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "¿Qué marca la Visión del portal para este tema hacia 2050?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El riesgo es que sin instrumentos que aten el crecimiento a los techos medidos, la trayectoria actual siga por inercia de permisos."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aspiración es que las decisiones públicas hagan valer POEL, PDU, PMDU, consultas y techos de ANP como condiciones previas, no como trámites posteriores."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y qué palancas se ven?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cerrar con evidencia los huecos ya marcados antes de escenarios de mayor escala. Mantener la consulta pública como palanca visible. Usar la lectura restringida del tablero estatal como criterio de permiso."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo se ve Baja California Sur entonces?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "No como una sola fórmula costera. Un sistema policéntrico: Los Cabos bajo estrés hídrico, East Cape en tensión con áreas protegidas, La Paz como nodo agua-energía, Loreto como ancla de conservación, Comondú como hub agropecuario y el norte con su corredor de generación."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué condiciones harían falta?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada vocación aporta un rol distinto. Nuevo crecimiento solo donde haya margen real de agua y energía. East Cape y Loreto respetan techos ANP antes de escalar. Comondú y el norte suman producción sin vaciar servicios."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la lista de vigilancia aparece el huachicol de agua, con iniciativa federal y clausuras en Los Cabos, más la segunda desaladora de CSL que llegaría a 250 litros por segundo en 2027."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, en seguridad el agua llama la atención en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, ya suman 25 tomas clandestinas este 2026 y la senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y qué más cuenta ella sobre el impacto en la vida diaria?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Alerta de menos turistas, menores ventas y cierres de restaurantes, justo cuando Los Cabos proyecta 9.09% menos ingresos en 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "Además el gobierno cede un predio en Comondú a la Guardia Nacional por 30 años, y propone un presupuesto de 28 mil 300 millones de pesos para 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo que llevamos es que las decisiones públicas deben hacer valer los POEL, PDU y consultas como condiciones previas, no como trámites posteriores al hecho. Quédense con nosotros, más Radio BCS2050 después de la música."
+        }
+      ]
+    }
+  ]
+}

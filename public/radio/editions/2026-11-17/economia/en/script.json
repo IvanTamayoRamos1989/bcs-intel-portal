@@ -1,0 +1,311 @@
+{
+  "topic": "economia",
+  "lang": "en",
+  "title": "Economy · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Cold open",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "The Baja 1000 just ran its first full loop inside Baja California Sur. Tribuna de México reports state estimates of 800 million pesos in spending from the race."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. 282 teams racing across the desert roads, close to 80 percent hotel occupancy statewide, and the live broadcast reaching far beyond."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yet IMSS figures show formal jobs in BCS fell 1.1 percent in October from a year ago, even as Mexico reached a record 23.09 million jobs."
+        },
+        {
+          "speaker": "host",
+          "text": "One event pours money into the hotels and the towns along the course. Then the count of steady work slips back."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal lists the state's constant GDP at 187,152 million pesos in 2024, up 3.5 percent from 2023."
+        },
+        {
+          "speaker": "host",
+          "text": "This is Radio BCS2050. Today we look at the economy and ask what actually holds when the finish line moves on."
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Act 1 · What's happening",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Tribuna de México reports the 59th Baja 1000 left about 800 million pesos in spending and reached 80 percent hotel occupancy across Baja California Sur."
+        },
+        {
+          "speaker": "host",
+          "text": "A single race, yet the first one run entirely inside the state."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tourism Secretary Maribel Collins gave the state-government estimate after the November event."
+        },
+        {
+          "speaker": "host",
+          "text": "What does that money actually touch once it arrives?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "282 teams took part, with live international broadcast and close to 80 percent occupancy from the 9th to the 15th."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. The hotels fill, the roads carry the crews, the restaurants stay open late."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Same outlet notes formal jobs fell 1.1 percent year on year in October, while the rest of Mexico added work."
+        },
+        {
+          "speaker": "host",
+          "text": "224,460 jobs left in September, and the number keeps sliding."
+        },
+        {
+          "speaker": "cohost",
+          "text": "IMSS data show 1,539 fewer registered jobs than a year earlier, another month of annual decline."
+        },
+        {
+          "speaker": "host",
+          "text": "How does the money from one week meet the steady loss of work the rest of the year?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "HOY BCS reports part of the Hotel San Cristóbal at Punta Lobos was demolished after waves stripped the foundations."
+        },
+        {
+          "speaker": "host",
+          "text": "Fishers had warned about the beach since 2015."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Waves damaged the seawall, eroded the ground, exposed the two-storey building's foundations; it came down on the 10th."
+        },
+        {
+          "speaker": "host",
+          "text": "No technical report yet on why the beach shifted."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Foro Mar de Cortés and the Citizen Observers Network signed an agreement for a Gulf of California observatory and a traffic-light index on biodiversity and illegal fishing."
+        },
+        {
+          "speaker": "host",
+          "text": "Signed at the 2026 Summit, witnessed by Semarnat's BCS head, it will track governance and send early warnings."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They want an annual report and a monitoring network that reaches every part of the Gulf."
+        },
+        {
+          "speaker": "host",
+          "text": "If the desert and the sea set the real limits, what kind of economy can actually stay inside them?"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Act 2 · The hidden thread",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The numbers keep pointing back to one thread."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Gringo Gazette reports Los Cabos sent a 2027 revenue law of 6,746 million pesos, down 9% from the prior budget."
+        },
+        {
+          "speaker": "host",
+          "text": "Own-source revenue falling almost 20%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They blame the cooling real estate market."
+        },
+        {
+          "speaker": "host",
+          "text": "Now the portal's earlier Foresight already flagged the same growth ambition against limits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "At the Sea of Cortez forum, Agustín Coppel called for doubling the regional economy and tripling foreign investment in 20 years."
+        },
+        {
+          "speaker": "host",
+          "text": "BCS grew 2.1% a year over the last decade."
+        },
+        {
+          "speaker": "cohost",
+          "text": "But here is the hidden thread the knowledge graph keeps surfacing."
+        },
+        {
+          "speaker": "host",
+          "text": "The aquifer numbers."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todos Santos shows a deficit of 2.964513 cubic hectometres a year."
+        },
+        {
+          "speaker": "host",
+          "text": "So the road to more visitors and more taxes runs straight through water that is already short."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Economista notes the Baja 1000 weekend alone brought 332 million pesos in spending and 80% hotel occupancy."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the governor told the organizers they must repair the rural roads themselves."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ranchers feel the damage without the gain."
+        },
+        {
+          "speaker": "host",
+          "text": "Meanwhile the Camina Cabo plan and the downtown makeover stay paused at state level."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Business owners watch shops close and move out to El Tezal."
+        },
+        {
+          "speaker": "host",
+          "text": "Tribuna de México reports the city is pouring new concrete on Agustín Arriola street to bring commerce back."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The pipe and the road still decide how far the economy can stretch."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "Did you know?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Did you know Baja California Sur holds the lowest labor poverty rate in the country?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "13.2 percent. The bottom mark among all 32 states."
+        },
+        {
+          "speaker": "host",
+          "text": "Think of a single paycheck that still covers the week’s groceries and the bus to the job site."
+        },
+        {
+          "speaker": "cohost",
+          "text": "CON EVAL tracked it for the fourth quarter of 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Meanwhile the state’s constant-price GDP reached 187,152 million pesos that same year."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Up 3.5 percent from 2023, according to INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "A quiet cushion, even when the next swell brings change."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm."
+        },
+        {
+          "speaker": "host",
+          "text": "What does the desert teach a city when the numbers stay that steady?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "43,405 businesses and 300,857 people counted in the 2024 economic census."
+        },
+        {
+          "speaker": "host",
+          "text": "A small boat that still makes it across the bay."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Even with formal posts down 1.1 percent year on year."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Act 3 · Toward 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The portal’s vision for the economy looks ahead to 2050 with one clear risk."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Growth is real yet uneven. Constant-price GDP reached 187,152 million pesos in 2024, up 3.5% from 2023 per INEGI. FDI rose from 1,353 million USD in 2024 to 1,578 in 2025 per CNIE. Formal IMSS posts fell 1.1% year-on-year in October, sitting at 224,460 in September."
+        },
+        {
+          "speaker": "host",
+          "text": "So the state adds jobs and capital, but the path stays narrow."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The aspiration is a polycentric, regenerative economy. Investment would not simply clone the Cabos model everywhere, and formal work would not rest on one coastal vocation alone."
+        },
+        {
+          "speaker": "host",
+          "text": "Baja California Sur does not hold together as a single coastal formula repeated north and south."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos remains the tourism engine under stress. La Paz serves as services capital and water-energy node. Comondú keeps agricultural room. The north adds remote generation. Each place keeps its own role."
+        },
+        {
+          "speaker": "host",
+          "text": "What would it take for that sum of roles to stay intact?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "New growth only where water and energy show margin. East Cape and Loreto respect ANP ceilings. Comondú and the north add production without emptying services. The 2027 budget package of MXN 28.3bn, due for approval in December, sits on the watchlist."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "The takeaway",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "One sentence to carry: as formal jobs slip 1.1 percent and Los Cabos revenue is set to drop 9 percent, the real work is building a polycentric economy that does not rest on a single coast."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. The Baja 1000 will still bring 800 million pesos and fill hotels, yet the pattern stays the same."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. The new observatory agreement between the Sea of Cortez Forum and the Citizen Observers Network points elsewhere."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A traffic light for the gulf. Small, steady steps away from cloning the old engine."
+        },
+        {
+          "speaker": "host",
+          "text": "Stay with us. More Radio BCS2050 after the music."
+        }
+      ]
+    }
+  ]
+}

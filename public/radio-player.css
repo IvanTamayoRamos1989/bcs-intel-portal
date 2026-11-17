@@ -52,3 +52,14 @@
   .radio-btn .radio-label { display: none; } .radio-btn { padding-right: .3rem; }
   .radio-panel { position: fixed; left: .75rem; right: .75rem; top: 3.4rem; width: auto; max-width: none; }
 }
+.radio-sub { margin: .25rem 0 0; }
+.radio-dates { border: 0; background: transparent; font-size: .72rem; color: #8b8578; padding: 0; cursor: pointer; font-family: inherit; }
+.radio-eps { display: flex; flex-wrap: wrap; gap: .35rem; margin: .55rem 0 0; }
+.radio-eps button { border: 1px solid #ecdcc6; background: #fffaf1; color: #6d6a62; border-radius: 999px; font-size: .72rem; padding: .2rem .6rem; cursor: pointer; }
+.radio-eps button small { color: #a59f92; margin-left: .3rem; }
+.radio-eps button[aria-selected="true"] { background: #fbe3cc; border-color: #e0894a; color: #8a4b22; }
+.radio-live { color: #d0522d; letter-spacing: .08em; margin-left: .35rem; animation: radio-blink 2.4s ease-in-out infinite; }
+@keyframes radio-blink { 50% { opacity: .45; } }
+.radio-golive { border: 0; background: transparent; color: #d0522d; font-size: .7rem; cursor: pointer; padding: .3rem 0 0; }
+.radio-up { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: #a59f92; margin: .7rem 0 0; }
+.radio-tracks li button span:last-child { color: #a59f92; }

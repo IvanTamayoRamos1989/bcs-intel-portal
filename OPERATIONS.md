@@ -258,9 +258,10 @@ Deploys: chat fix `6ac7b40d360a5f3881ced03c` (2026-10-08 ~18:03 Madrid); rollbac
 - **Deploy:** `6ad1d870149109f6fd0280a7` (2026-10-16 ~09:57 Madrid, producción). **Rollback:** `6ad1b183ca79c5b2f314efa7` (ojo: el rollback solo restaura el código; el chat seguirá en xAI mientras las variables de entorno no se cambien).
 - **Verificación:** build con todas las comprobaciones OK (términos prohibidos, rutas visibles, explorador); eval en vivo 98/100, noticias 6/6, 0 cifras inventadas, 0 títulos de tarjeta erróneos; pregunta general OK; población municipio La Paz 292,241; noticias recientes con tarjetas "Noticia"; `/api/voice-token` 200.
 
-## Radio BCS2050 (landing play button)
+## Radio BCS2050 (24/7 station on the landing)
 
-- `python3 scripts/bcs_radio.py` builds today's edition (ES + EN) into `public/radio/` — script via xAI `grok-4.3`, voices via Grok TTS (`rex` host, `eve` co-host), short licensed music stingers (`RADIO_MUSIC_CREDITS.md`, `public/radio/credits.json`). Needs `XAI_API_KEY` in the box env (never in the browser).
-- Runs automatically at the end of `python3 scripts/update_bcs_news.py`; skip with `--no-radio`. Existing editions are not rebuilt unless `--force`.
-- Content only from portal sources (news with outlet names, Tendencia 2050, Visión, Foresight, library, ontology, optional Expres de Unic video titles). A numeric fact guard rejects numbers not present in the sources. Themes rotate via `public/radio/history.json`.
-- Archive: `public/radio/archive.json`; scripts kept for every edition, MP3s only for the newest 3.
+- `python3 scripts/bcs_radio.py` builds today's edition: 3 rotating ~10-minute topic deep dives (`--topics N`, `--topic agua`), each in ES and EN, as MP3 chapters (cold open → 3 acts → "did you know" → takeaway) with short CC transitions and a ~30 s music break about every 5 minutes. Script: xAI `grok-4.3`; voices: Grok TTS (`rex`, `eve`, speed 0.94). Needs `XAI_API_KEY` in the box env (never in the browser).
+- Sources: full news history (feed + archive), Tendencia 2050, Visión pillar, Foresight (current + past editions), portal facts, library, ontology, knowledge graph, place dossiers, municipios, tourism inventory, Expres de Unic video titles. A numeric fact guard rejects numbers not in the chapter's sources. Topic/news rotation via `public/radio/history.json`.
+- 24/7: `public/radio/station_{es,en}.json` is one deterministic loop (station ID → deep dive → music break) over every edition that still has audio (last 14 days). The player joins at `(now − epoch) mod loop` — static files only. Rebuild only the loop: `python3 scripts/bcs_radio.py --station-only`.
+- Runs at the end of `python3 scripts/update_bcs_news.py` (skip with `--no-radio`); then build + deploy as usual. Episode MP3s are not in git (`.gitignore`); deploy from the box.
+- Music: CC0 / public domain / CC BY only — `RADIO_MUSIC_CREDITS.md`, `public/radio/credits.json`.

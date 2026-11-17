@@ -1,0 +1,291 @@
+{
+  "topic": "finanzas",
+  "lang": "es",
+  "title": "Finanzas · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "En La Paz el ayuntamiento cubrirá el aguinaldo de 71.5 millones de pesos sin pedir crédito."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Con qué?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con recursos propios, gracias a la recaudación anticipada del predial. La alcaldesa lo confirmó."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Mientras tanto se instalan arrecifes artificiales en la bahía para sostener la pesca."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, según Meganoticias en el Foro Mar de Cortés presentaron Shell Nurse con tecnología japonesa, una respuesta al mar que se calienta. Hay estudios de costo-beneficio."
+        },
+        {
+          "speaker": "host",
+          "text": "Imagínate la luz sobre la Bahía de La Paz y esas estructuras bajo el agua sosteniendo lo que antes daba el mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy en Finanzas: ¿qué significa pagar lo que se debe sin deberle a nadie?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según Meganoticias, en el Foro Mar de Cortés, FEDECOOP y el Gobierno de BCS mostraron avances de los arrecifes artificiales Shell Nurse en la Bahía de La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Tecnología japonesa para responder al mar que se calienta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hay estudios de la Secihti sobre cómo funcionan las estructuras y un análisis del BID con IMIPAS y CISIMAR. El siguiente paso es proteger las zonas y ver si se puede copiar el modelo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo afecta esto al pescador que sale cada mañana?"
+        },
+        {
+          "speaker": "host",
+          "text": "En Palabra BCS leemos que la alcaldesa Milena Quiroga confirmó que el Ayuntamiento de La Paz pagará sueldos y prestaciones con recursos propios."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Adelantan el aguinaldo de 71.5 millones de pesos el 12 de noviembre, sin pedir crédito bancario."
+        },
+        {
+          "speaker": "host",
+          "text": "Se apoyan en el predial cobrado por adelantado con descuento del 30%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasa cuando un municipio decide no endeudarse para cerrar el año?"
+        },
+        {
+          "speaker": "host",
+          "text": "Tribuna de México informa que la CEA supera los 400 millones de pesos en obras de agua con apoyo de CONAGUA."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Destacan la PTAR de Loreto por más de 85 millones, varias desaladoras y estudios para la Presa El Novillo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué significa tener más de 400 millones cuando el presupuesto base es de solo 35 millones al año?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "HOY BCS dice que el Gobierno de BCS entregó al Congreso un paquete de 28 mil 300 millones de pesos para 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "Los ingresos propios subirían al 14.6%. ¿Qué cambia cuando el estado depende menos de transferencias federales?"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, esa baja de ingresos en Los Cabos parece el comienzo de algo más largo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, Tomás. De 7,421 mdp a 6,746 mdp en 2027, casi 675 mdp menos según Gringo Gazette."
+        },
+        {
+          "speaker": "host",
+          "text": "Y los ingresos propios caen cerca del 20% por el mercado inmobiliario."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Y al mismo tiempo Meganoticias reporta que las ventas turísticas bajaron entre 25% y 35%, con 27 restaurantes cerrados."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo se sostiene entonces la obra pública y el saneamiento?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahí está el hilo. La compra de la planta de tratamiento Fonatur sigue estancada por deudas de OOMSAPAS, informa Meganoticias."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto el Congreso pide transparencia sobre las tarifas de la Marina de Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y que se concesione al Estado para reinvertir los recursos en la comunidad, según Tribuna de México."
+        },
+        {
+          "speaker": "host",
+          "text": "Imagínate el estero de San José al atardecer, con el agua que ya no fluye como antes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el índice de BBVA marca 144.2 puntos en BCS, muy por encima del promedio nacional, por las casas que se compran como inversión."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero aquí viene lo que no se ve a primera vista."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Milena Quiroga dice que La Paz tiene finanzas sanas y no se endeudará, reporta Peninsular Digital."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin embargo el Estado tendrá que apoyar financieramente a Comondú y Mulegé para cerrar el año, por el dengue."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y nace el primer fondo climático estatal para reforestar y proteger acuíferos, con posible uso del impuesto turístico."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué pasa cuando el mar y el desierto piden más de lo que los números locales pueden dar?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El hilo oculto es que los recursos propios ya no alcanzan y la reinversión sigue dependiendo de decisiones que aún no se concretan."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "¿Sabías que en 2025 se otorgaron 8,993 acciones de financiamiento de vivienda por 6,560 millones de pesos en Baja California Sur?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Ese dinero llega a gente que busca su primer techo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Imagina una familia en las afueras de La Paz que por fin recibe el crédito y empieza a construir con calma, cerca del mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Y todo eso viene de los datos del portal en economía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Al mismo tiempo el PIB estatal llegó a 187,152 millones de pesos en 2024, con un alza de 3.5 % según INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero aquí viene lo curioso: ¿cómo se reparte ese financiamiento cuando 22 de los 39 acuíferos ya están en déficit según CONAGUA?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa es la tensión. El dinero avanza, el agua marca el límite para Los Cabos y La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Y qué pasa cuando el crecimiento llega más rápido que las fuentes nuevas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los vecinos sienten primero el cierre de opciones. El financiamiento ayuda hoy, pero sin agua el techo nuevo queda seco."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto enseña despacio."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "La Visión del portal para las finanzas estatales apunta a un riesgo claro."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cuál es ese riesgo?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La economía crece, pero no de forma pareja. El PIB se quedó en 187,152 millones de pesos en 2024, con un +3.5 % frente a 2023, según INEGI. La IED llegó a 1,353 mdd ese año y 1,578 mdd en 2025, según CNIE. El empleo formal IMSS bajó 1.1 % anual en octubre, con 224,460 puestos en septiembre."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos números suenan a una trayectoria que aún no se mide del todo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. La aspiración es una economía policéntrica y regenerativa, donde la inversión no se quede solo en copiar el motor de Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué haría falta para que eso ocurra?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Dar peso real a La Paz como capital de servicios y nodo agua-energía, a Comondú como producción agropecuaria, y al norte como energía remota."
+        },
+        {
+          "speaker": "host",
+          "text": "La Tendencia 2050 del portal dice que el estado no se sostiene como una sola fórmula costera."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Así es. Cada región debe aportar un rol distinto: Los Cabos bajo estrés hídrico, el East Cape con las áreas protegidas, La Paz como nodo de servicios, Comondú como hub agropecuario."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y qué hay que vigilar ahora?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Paquete Económico 2027 de 28 300 mdp, con aprobación prevista en diciembre, y el encuentro ciudadano del 27 de noviembre en la Plaza de la Reforma."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, este diciembre La Paz paga sin crédito nuevo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Así es. El ayuntamiento adelanta 71.5 mdp de aguinaldo y evita préstamos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y el estado para 2027?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El gobierno propone 28 mil 300 millones. En Los Cabos esperan 9.09% menos ingresos por el mercado inmobiliario que se enfría. BBVA dice que aquí los precios de vivienda se alejan más de los sueldos. La senadora Zatarain ve menos turistas y restaurantes que cierran."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces la lección que nos llevamos es que una economía policéntrica y regenerativa vale más que depender de un solo motor costero. Quédense con nosotros. Más Radio BCS2050 después de la música."
+        }
+      ]
+    }
+  ]
+}
