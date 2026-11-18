@@ -1,1564 +1,1592 @@
 {
-  "date": "2026-11-18",
-  "format": "podcast-episodes",
-  "engine": {
-    "script": "xAI grok-4.3",
-    "voices": "xAI Grok TTS (rex, eve)"
-  },
-  "episodes": [
-    {
-      "topic": "noticias-conectividad",
-      "kind": "noticias",
-      "theme": "conectividad",
-      "name_es": "Noticias · Conectividad",
-      "name_en": "News · Connectivity",
-      "signature": "/radio/music/surf.mp3",
-      "languages": {
-        "es": {
-          "title": "Noticias · Conectividad · Radio BCS2050",
-          "duration": 1197.2,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Entrada",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/01.mp3",
-              "duration": 99.36,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "titulares",
-              "title": "Lo que pasó",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/02.mp3",
-              "duration": 175.2,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "mas",
-              "title": "Más noticias",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/03.mp3",
-              "duration": 179.35,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "contexto",
-              "title": "El contexto",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/04.mp3",
-              "duration": 168.6,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "lugares",
-              "title": "Dónde y a quién",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/05.mp3",
-              "duration": 168.55,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "claves",
-              "title": "Qué significa",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/06.mp3",
-              "duration": 198.62,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "pendientes",
-              "title": "Lo que falta saber",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/07.mp3",
-              "duration": 147.29,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Para pensar",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/es/08.mp3",
-              "duration": 60.19,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/noticias-conectividad/es/script.json",
-          "words": 2481
-        },
-        "en": {
-          "title": "News · Connectivity · Radio BCS2050",
-          "duration": 1262.0,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Cold open",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/01.mp3",
-              "duration": 102.0,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "titulares",
-              "title": "What happened",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/02.mp3",
-              "duration": 212.66,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "mas",
-              "title": "More news",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/03.mp3",
-              "duration": 168.6,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "contexto",
-              "title": "The context",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/04.mp3",
-              "duration": 163.25,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "lugares",
-              "title": "Where and who",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/05.mp3",
-              "duration": 177.55,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "claves",
-              "title": "What it means",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/06.mp3",
-              "duration": 182.35,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "pendientes",
-              "title": "What we still don't know",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/07.mp3",
-              "duration": 181.44,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Food for thought",
-              "src": "/radio/editions/2026-11-18/noticias-conectividad/en/08.mp3",
-              "duration": 74.18,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/noticias-conectividad/en/script.json",
-          "words": 2695
-        }
+ "date": "2026-11-18",
+ "format": "podcast-episodes",
+ "engine": {
+  "script": "xAI grok-4.3",
+  "voices": "xAI Grok TTS (rex, eve)"
+ },
+ "episodes": [
+  {
+   "topic": "noticias-conectividad",
+   "kind": "noticias",
+   "theme": "conectividad",
+   "name_es": "Noticias · Conectividad",
+   "name_en": "News · Connectivity",
+   "signature": "/radio/music/surf.mp3",
+   "languages": {
+    "es": {
+     "title": "Noticias · Conectividad · Radio BCS2050",
+     "duration": 1197.2,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Entrada",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/01.mp3",
+       "duration": 99.36,
+       "sting": null
       },
-      "sources": [
-        {
-          "outlet": "GlobeNewswire (Grupo Aeroportuario del Pacífico)",
-          "title": "GAP: el aeropuerto de Los Cabos cae 4.6% en pasajeros en octubre; La Paz baja 2.1% pero crece 8.7% en el año",
-          "url": "https://www.globenewswire.com/news-release/2026/11/09/3399085/0/en/grupo-aeroportuario-del-pacifico-reports-a-passenger-traffic-decrease-in-october-2026-of-7-0-compared-to-2025.html",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Península Digital",
-          "title": "Marina cierra cinco puertos de BCS a embarcaciones menores por el frente frío 4",
-          "url": "https://peninsulardigital.com/2026/11/03/cierran-a-la-navegacion-cinco-puertos-de-bcs/",
-          "date": "2026-11-03"
-        },
-        {
-          "outlet": "Reforma",
-          "title": "Tormenta tropical Vance inunda Los Cabos: arrastre de vehículos, rescates y cierre de puertos",
-          "url": "https://www.reforma.com/azota-vance-los-cabos-agua-arrastra-autos-y-activan-ayuda/ar3303853",
-          "date": "2026-10-28"
-        },
-        {
-          "outlet": "Diario El Independiente",
-          "title": "Víctor Castro respalda que la API estatal administre el puerto de Cabo San Lucas",
-          "url": "https://www.diarioelindependiente.mx/2026/10/victor-castro-respalda-que-api-baja-california-sur-administre-puerto-de-cabo-san-lucas",
-          "date": "2026-10-21"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
-          "date": "2026-11-14"
-        },
-        {
-          "outlet": "El Financiero",
-          "title": "Crece 60 por ciento la conexión aérea en Los Cabos; van por diversificar turismo",
-          "url": "https://www.elfinanciero.com.mx/empresas/2026/11/13/crece-60-por-ciento-la-conexion-aerea-en-los-cabos-van-por-diversificar-turismo/",
-          "date": "2026-11-13"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
-          "date": "2026-11-14"
-        },
-        {
-          "outlet": "El Financiero",
-          "title": "Crece 60 por ciento la conexión aérea en Los Cabos; van por diversificar turismo",
-          "url": "https://www.elfinanciero.com.mx/empresas/2026/11/13/crece-60-por-ciento-la-conexion-aerea-en-los-cabos-van-por-diversificar-turismo/",
-          "date": "2026-11-13"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Condor retoma vuelos directos Fráncfort–Los Cabos con 92% de ocupación y +37.5% en reservaciones",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/condor-retoma-vuelos-directos-entre-fr%C3%A1ncfort-y-los-cabos-ocupaci%C3%B3n-al-92/785839",
-          "date": "2026-11-05"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Mareas altas inundan Puerto San Carlos y el estero El Dátil: más de 300 viviendas bajo el agua",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/bajo-el-agua-permanecen-comunidades-pesqueras-por-pleamar/785073",
-          "date": "2026-11-03"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Cierran puertos de Cabo San Lucas y San José del Cabo a navegación menor por Rachel",
-          "url": "https://tribunademexico.com/rachel-puertos/",
-          "date": "2026-09-30"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Huracán Polo rompe bordo de protección en Puerto San Carlos; evacúan a 400 personas",
-          "url": "https://tribunademexico.com/huracan-polo-rompe-bordo-de-proteccion-en-puerto/",
-          "date": "2026-09-28"
-        },
-        {
-          "outlet": "Gringo Gazette",
-          "title": "Polo se debilita a categoría 3; playas y puertos de BCS siguen cerrados",
-          "url": "https://gringogazette.com/polo-weakens-to-cat-3-beaches-ports-stay-closed/",
-          "date": "2026-09-27"
-        }
-      ],
-      "source_ids": [
-        "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
-        "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
-        "vance-inunda-los-cabos-reforma-2026-10-28",
-        "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
-        "IN011",
-        "IN023",
-        "IN024",
-        "ev_cruceros_datatur",
-        "ev_aereo_setue",
-        "ev_sig_asipona",
-        "ev_dossiers_movilidad"
-      ],
-      "title_es": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
-      "title_en": "October Passenger Figures at Los Cabos and La Paz Airports",
-      "desc_es": "El oyente conocerá los números de pasajeros de octubre en Los Cabos y La Paz, los totales acumulados del año y la nueva ruta de United a Washington Dulles.",
-      "desc_en": "Listener learns October passenger numbers at Los Cabos and La Paz airports, year-to-date totals and the new United route to Washington Dulles.",
-      "number": 1
+      {
+       "n": 2,
+       "id": "titulares",
+       "title": "Lo que pasó",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/02.mp3",
+       "duration": 175.2,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "mas",
+       "title": "Más noticias",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/03.mp3",
+       "duration": 179.35,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "contexto",
+       "title": "El contexto",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/04.mp3",
+       "duration": 168.6,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "lugares",
+       "title": "Dónde y a quién",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/05.mp3",
+       "duration": 168.55,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "claves",
+       "title": "Qué significa",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/06.mp3",
+       "duration": 198.62,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "pendientes",
+       "title": "Lo que falta saber",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/07.mp3",
+       "duration": 147.29,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Para pensar",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/es/08.mp3",
+       "duration": 60.19,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/noticias-conectividad/es/script.json",
+     "words": 2481
     },
-    {
-      "topic": "noticias-infraestructura",
-      "kind": "noticias",
-      "theme": "infraestructura",
-      "name_es": "Noticias · Infraestructura",
-      "name_en": "News · Infrastructure",
-      "signature": "/radio/music/horizon.mp3",
-      "languages": {
-        "es": {
-          "title": "Noticias · Infraestructura · Radio BCS2050",
-          "duration": 1248.5,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Entrada",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/01.mp3",
-              "duration": 89.3,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "titulares",
-              "title": "Lo que pasó",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/02.mp3",
-              "duration": 217.7,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "mas",
-              "title": "Más noticias",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/03.mp3",
-              "duration": 199.13,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "contexto",
-              "title": "El contexto",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/04.mp3",
-              "duration": 192.94,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "lugares",
-              "title": "Dónde y a quién",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/05.mp3",
-              "duration": 165.34,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "claves",
-              "title": "Qué significa",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/06.mp3",
-              "duration": 154.27,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "pendientes",
-              "title": "Lo que falta saber",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/07.mp3",
-              "duration": 156.46,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Para pensar",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/08.mp3",
-              "duration": 73.39,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/noticias-infraestructura/es/script.json",
-          "words": 2807
-        },
-        "en": {
-          "title": "News · Infrastructure · Radio BCS2050",
-          "duration": 1190.0,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Cold open",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/01.mp3",
-              "duration": 101.35,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "titulares",
-              "title": "What happened",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/02.mp3",
-              "duration": 166.85,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "mas",
-              "title": "More news",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/03.mp3",
-              "duration": 213.48,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "contexto",
-              "title": "The context",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/04.mp3",
-              "duration": 160.94,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "lugares",
-              "title": "Where and who",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/05.mp3",
-              "duration": 155.64,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "claves",
-              "title": "What it means",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/06.mp3",
-              "duration": 167.42,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "pendientes",
-              "title": "What we still don't know",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/07.mp3",
-              "duration": 156.05,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Food for thought",
-              "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/08.mp3",
-              "duration": 68.3,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/noticias-infraestructura/en/script.json",
-          "words": 2688
-        }
+    "en": {
+     "title": "News · Connectivity · Radio BCS2050",
+     "duration": 1262.0,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Cold open",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/01.mp3",
+       "duration": 102.0,
+       "sting": null
       },
-      "sources": [
-        {
-          "outlet": "Palabra BCS",
-          "title": "Sepuimm inicia pavimentación de la calle Francisco King Rondero en La Paz con 48 mdp y nuevas redes de agua y drenaje",
-          "url": "https://www.palabrabcs.com/municipios/la-paz/iniciara-pavimentacion-de-la-calle-francisco-king-rondero-invertiran-48-mdp-sepuimm/",
-          "date": "2026-11-10"
-        },
-        {
-          "outlet": "PVTIME",
-          "title": "CFE licita el proyecto Oasis en Mulegé: 72 MW solares, baterías de 80 MWh e hidrógeno verde",
-          "url": "https://www.pvtime.org/mexico-tenders-solar-hydrogen-oasis-microgrid-project/",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Precios en La Paz suben 1.17% en octubre, casi el doble que el 0.65% nacional (INEGI)",
-          "url": "https://tribunademexico.com/precios-suben-mas-en-bcs/",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Los Cabos tardará una semana en normalizar la recolección de basura por calles de terracería dañadas",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/tardaran-una-semana-en-regularizarse-los-servicios-p%C3%BAblicos-en-los-cabos/783878",
-          "date": "2026-10-29"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "El puente del arroyo San José Viejo podría construirse en 2027: el proyecto ejecutivo ya está listo, dice la SICT",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/en-pie-construcci%C3%B3n-de-puente-en-arroyo-san-jose-viejo/789578",
-          "date": "2026-11-17"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Cauces modificados y falta de drenaje pluvial llevan toneladas de basura al mar en Los Cabos",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/modificaciones-urbanas-llevan-toneladas-de-basura-al-mar-en-los-cabos/789460",
-          "date": "2026-11-17"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "El puente del arroyo San José Viejo podría construirse en 2027: el proyecto ejecutivo ya está listo, dice la SICT",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/en-pie-construcci%C3%B3n-de-puente-en-arroyo-san-jose-viejo/789578",
-          "date": "2026-11-17"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Cauces modificados y falta de drenaje pluvial llevan toneladas de basura al mar en Los Cabos",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/modificaciones-urbanas-llevan-toneladas-de-basura-al-mar-en-los-cabos/789460",
-          "date": "2026-11-17"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Mulegé reporta 713 mdp en obra en cinco años e inicia el nuevo acueducto Palo Verde–Santa Rosalía; la obra federal cayó 70%",
-          "url": "https://tribunademexico.com/mulege-reporta-713-mdp-invertidos/",
-          "date": "2026-11-17"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Inicia la renovación con concreto hidráulico de la calle Agustín Arriola en el Centro Histórico de La Paz",
-          "url": "https://tribunademexico.com/renovacion-calle-agustin-arriola-centro-lpz/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Palabra BCS",
-          "title": "La pavimentación de calles se define principalmente por aforo vehicular, precisa Sepuimm",
-          "url": "https://www.palabrabcs.com/municipios/la-paz/la-pavimentacion-de-calles-se-define-principalmente-por-aforo-vehicular-precisa-sepuimm/",
-          "date": "2026-11-15"
-        },
-        {
-          "outlet": "alDíaBCS",
-          "title": "Avanza al 45% la pavimentación de la calle Marlín en la colonia Miramar de Loreto",
-          "url": "https://aldiabcs.com/loreto/avanza-pavimentacion-de-calle-marlin/",
-          "date": "2026-11-13"
-        },
-        {
-          "outlet": "Quepoca",
-          "title": "La segunda desaladora de Cabo San Lucas alcanza 75% de avance y aportará 250 litros por segundo",
-          "url": "https://www.quepoca.com/articulo/actualidad/avanza-75-segunda-desaladora-cabo-san-lucas/20261109165636004259.html",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "SAPA La Paz reconoce que solo opera dos de sus cuatro equipos Vactor y gestiona dos nuevos con Conagua",
-          "url": "https://tribunademexico.com/sapa-la-paz-reportes-importancia/",
-          "date": "2026-11-09"
-        }
-      ],
-      "source_ids": [
-        "king-rondero-pavimentacion-48-mdp-palabrabcs-2026-11-10",
-        "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
-        "inflacion-la-paz-octubre-1-17-tribuna-2026-11-09",
-        "servicios-publicos-los-cabos-meganoticias-2026-10-29",
-        "UP017",
-        "UP019",
-        "UP025",
-        "ev_news_cfe_128",
-        "terr_bcs",
-        "terr_comondu",
-        "terr_mulege"
-      ],
-      "title_es": "Pavimentación en La Paz y licitación Oasis en Mulegé",
-      "title_en": "Paving in La Paz and Oasis Tender in Mulegé",
-      "desc_es": "El episodio detalla el inicio de la pavimentación de la calle Francisco King Rondero en La Paz con concreto hidráulico y cambios en redes de agua y drenaje, y la licitación del proyecto solar con baterías e hidrógeno verde en Mulegé.",
-      "desc_en": "The episode details the start of paving on Francisco King Rondero street in La Paz with hydraulic concrete and water and sewer upgrades, plus the tender for the solar, battery and green hydrogen project in Mulegé.",
-      "number": 2
-    },
-    {
-      "topic": "noticias-medio_ambiente",
-      "kind": "noticias",
-      "theme": "medio_ambiente",
-      "name_es": "Noticias · Medio ambiente",
-      "name_en": "News · Environment",
-      "signature": "/radio/music/romance.mp3",
-      "languages": {
-        "es": {
-          "title": "Noticias · Medio ambiente · Radio BCS2050",
-          "duration": 1229.4,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Entrada",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/01.mp3",
-              "duration": 81.31,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "titulares",
-              "title": "Lo que pasó",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/02.mp3",
-              "duration": 194.54,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "mas",
-              "title": "Más noticias",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/03.mp3",
-              "duration": 172.9,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "contexto",
-              "title": "El contexto",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/04.mp3",
-              "duration": 213.1,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "lugares",
-              "title": "Dónde y a quién",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/05.mp3",
-              "duration": 167.47,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "claves",
-              "title": "Qué significa",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/06.mp3",
-              "duration": 171.05,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "pendientes",
-              "title": "Lo que falta saber",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/07.mp3",
-              "duration": 158.78,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Para pensar",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/08.mp3",
-              "duration": 70.22,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/script.json",
-          "words": 2758
-        },
-        "en": {
-          "title": "News · Environment · Radio BCS2050",
-          "duration": 1188.7,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Cold open",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/01.mp3",
-              "duration": 77.59,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "titulares",
-              "title": "What happened",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/02.mp3",
-              "duration": 181.01,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "mas",
-              "title": "More news",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/03.mp3",
-              "duration": 161.9,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "contexto",
-              "title": "The context",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/04.mp3",
-              "duration": 164.11,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "lugares",
-              "title": "Where and who",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/05.mp3",
-              "duration": 192.0,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "claves",
-              "title": "What it means",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/06.mp3",
-              "duration": 166.34,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "pendientes",
-              "title": "What we still don't know",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/07.mp3",
-              "duration": 166.42,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Food for thought",
-              "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/08.mp3",
-              "duration": 79.34,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/script.json",
-          "words": 2663
-        }
+      {
+       "n": 2,
+       "id": "titulares",
+       "title": "What happened",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/02.mp3",
+       "duration": 212.66,
+       "sting": null
       },
-      "sources": [
-        {
-          "outlet": "POSTA México",
-          "title": "SMN prevé oleaje de 2 a 3 metros en la costa del Pacífico de BCS y rachas de 30 a 50 km/h",
-          "url": "https://www.posta.com.mx/bcs/habra-lluvias-en-bcs-este-lunes-16-de-noviembre-alertan-por-oleaje-de-hasta-3-metros/vl2279534",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Diario Humano",
-          "title": "La Paz instala su tercer compostero comunitario, en El Palmar II",
-          "url": "https://diariohumano.com.mx/2026/11/16/instalan-tercer-compostero-comunitario-en-la-paz-bcs/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Palabra BCS",
-          "title": "El frente frío 7 llega a BCS esta semana: La Paz bajaría a 17 °C de noche por primera vez en la temporada",
-          "url": "https://www.palabrabcs.com/municipios/la-paz/se-acerca-frente-frio-a-bcs-la-paz-llegaria-a-17o-por-primera-ocasion-en-la-temporada/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "La Nigua",
-          "title": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
-          "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
-          "date": "2026-11-15"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
-          "date": "2026-11-14"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
-          "date": "2026-11-12"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
-          "date": "2026-11-14"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
-          "date": "2026-11-12"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Se retrasa la temporada de tiburón ballena en la Bahía de La Paz: aún no hay los seis ejemplares mínimos",
-          "url": "https://tribunademexico.com/tiburon-ballena-retraso/",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "HOY BCS",
-          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
-          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Tus Buenas Noticias",
-          "title": "Los Cabos recibe del 10 al 12 de noviembre el Summit 2026 del Foro Mar de Cortés sobre inversión, ciudades y clima",
-          "url": "https://www.tusbuenasnoticias.com/noticias/economia/2026/11/09/66795-summit-2026-foro-mar-de-cortes-en-los-cabos",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "LIGIR-UABCS advierte nuevas mareas extraordinarias en noviembre y diciembre; posibles inundaciones en Comondú y Mulegé",
-          "url": "https://tribunademexico.com/ligir-advierte-nuevos-periodos-de-mareas-altas-en-comunidades-costeras-de-bcs/",
-          "date": "2026-11-07"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Zofemat retira más de 350 llantas y 18 toneladas de basura de El Médano tras las lluvias",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/retiran-tras-las-lluvias-m%C3%A1s-de-trecientos-neum%C3%A1ticos-del-medano/785194",
-          "date": "2026-11-03"
-        },
-        {
-          "outlet": "Gringo Gazette",
-          "title": "Semarnat aprueba con condiciones el desarrollo Camarón Beach al noroeste de La Paz pese a impactos reconocidos",
-          "url": "https://gringogazette.com/la-paz-resort-cleared-despite-known-eco-risks/",
-          "date": "2026-11-02"
-        },
-        {
-          "outlet": "HCN",
-          "title": "Iniciativa para dar a los ayuntamientos de BCS más facultades en reservas ecológicas y zonas de conservación",
-          "url": "https://hcn.mx/2026/10/29/proponen-fortalecer-las-facultades-municipales-para-la-conservacion-ambiental-en-bcs/",
-          "date": "2026-10-29"
-        }
-      ],
-      "source_ids": [
-        "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
-        "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
-        "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
-        "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
-        "UP013",
-        "TD006",
-        "TD007",
-        "ev_orientacion_aerea",
-        "ev_anp_avisos",
-        "terr_loreto",
-        "terr_anp_cabo_pulmo"
-      ],
-      "title_es": "Aviso 638 por oleaje en costa de Baja California Sur",
-      "title_en": "Notice 638 forecasts surf on Baja California Sur coast",
-      "desc_es": "El oyente aprenderá cómo el oleaje y rachas de viento afectan a pangas y comunidades pesqueras en Guerrero Negro, Puerto San Carlos y otros puertos del Pacífico.",
-      "desc_en": "Listeners will learn how surf and wind gusts affect small boats and fishing communities in Guerrero Negro, Puerto San Carlos and other Pacific ports.",
-      "number": 3
-    },
-    {
-      "topic": "datos-economia",
-      "kind": "datos",
-      "theme": "economia",
-      "name_es": "Datos del portal · Economía",
-      "name_en": "Portal data · Economy",
-      "signature": "/radio/music/bossa.mp3",
-      "languages": {
-        "es": {
-          "title": "Datos del portal · Economía · Radio BCS2050",
-          "duration": 1230.0,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Entrada",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/01.mp3",
-              "duration": 98.35,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "cifras",
-              "title": "Las cifras",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/02.mp3",
-              "duration": 169.08,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "territorio",
-              "title": "El territorio",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/03.mp3",
-              "duration": 197.98,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "documentos",
-              "title": "Los documentos",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/04.mp3",
-              "duration": 161.06,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "sistema",
-              "title": "Cómo se conecta",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/05.mp3",
-              "duration": 194.06,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/06.mp3",
-              "duration": 158.33,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "lectura",
-              "title": "Cómo leer los datos",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/07.mp3",
-              "duration": 175.73,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Para pensar",
-              "src": "/radio/editions/2026-11-18/datos-economia/es/08.mp3",
-              "duration": 75.46,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/datos-economia/es/script.json",
-          "words": 2541
-        },
-        "en": {
-          "title": "Portal data · Economy · Radio BCS2050",
-          "duration": 1206.5,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Cold open",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/01.mp3",
-              "duration": 86.66,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "cifras",
-              "title": "The numbers",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/02.mp3",
-              "duration": 158.45,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "territorio",
-              "title": "The territory",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/03.mp3",
-              "duration": 200.26,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "documentos",
-              "title": "The documents",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/04.mp3",
-              "duration": 167.9,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "sistema",
-              "title": "How it connects",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/05.mp3",
-              "duration": 170.95,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "sabias",
-              "title": "Did you know?",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/06.mp3",
-              "duration": 138.67,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "lectura",
-              "title": "How to read the data",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/07.mp3",
-              "duration": 203.06,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Food for thought",
-              "src": "/radio/editions/2026-11-18/datos-economia/en/08.mp3",
-              "duration": 80.59,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/datos-economia/en/script.json",
-          "words": 2470
-        }
+      {
+       "n": 3,
+       "id": "mas",
+       "title": "More news",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/03.mp3",
+       "duration": 168.6,
+       "sting": null
       },
-      "sources": [
-        {
-          "outlet": "Edward Glaeser (2011)",
-          "title": "Triumph of the City",
-          "url": "https://www.penguinrandomhouse.com/books/303441/triumph-of-the-city-by-edward-glaeser/"
-        },
-        {
-          "outlet": "Enrico Moretti (2012)",
-          "title": "The New Geography of Jobs",
-          "url": "https://www.hmhbooks.com/shop/books/The-New-Geography-of-Jobs/9780547750118"
-        },
-        {
-          "outlet": "Fujita/Krugman/Venables (1999)",
-          "title": "The Spatial Economy: Cities Regions and International Trade",
-          "url": "https://mitpress.mit.edu/9780262561471/the-spatial-economy/"
-        },
-        {
-          "outlet": "Portal BCS 2050",
-          "title": "Base de datos del portal (GIS, CONAGUA, INEGI, ontología)",
-          "url": "/explorar/"
-        }
-      ],
-      "source_ids": [
-        "punta-lobos-hotel-san-cristobal-demolicion-oleaje-hoybcs-2026-11-11",
-        "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
-        "fuga-gas-infra-pueblo-nuevo-la-paz-2026-10-20",
-        "pescadores-amparo-tarifas-asipona-los-cabos-2026-10-18",
-        "UE002",
-        "UE003",
-        "UE004",
-        "gap_east_cape_carga",
-        "ev_acuiferos_dma",
-        "ev_preguntas_estrategicas",
-        "ev_peotdu_instrumentos"
-      ],
-      "title_es": "Fuentes de datos económicos del portal en Baja California Sur",
-      "title_en": "Portal Economy Data Sources for Baja California Sur",
-      "desc_es": "El episodio detalla que los datos de IED provienen de CNIE pack 07 y los de bienes raíces residenciales del reporte JLL 2025, integrados en la guía temática y la base BCS 2050 junto con series de empleo.",
-      "desc_en": "The episode details that FDI data comes from CNIE pack 07 and residential real estate from the JLL 2025 report, integrated in the thematic guide and BCS 2050 database alongside employment series.",
-      "number": 4
-    },
-    {
-      "topic": "datos-conectividad",
-      "kind": "datos",
-      "theme": "conectividad",
-      "name_es": "Datos del portal · Conectividad",
-      "name_en": "Portal data · Connectivity",
-      "signature": "/radio/music/surf.mp3",
-      "languages": {
-        "es": {
-          "title": "Datos del portal · Conectividad · Radio BCS2050",
-          "duration": 1236.0,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Entrada",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/01.mp3",
-              "duration": 92.93,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "cifras",
-              "title": "Las cifras",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/02.mp3",
-              "duration": 211.56,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "territorio",
-              "title": "El territorio",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/03.mp3",
-              "duration": 159.58,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "documentos",
-              "title": "Los documentos",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/04.mp3",
-              "duration": 153.86,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "sistema",
-              "title": "Cómo se conecta",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/05.mp3",
-              "duration": 203.54,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/06.mp3",
-              "duration": 152.33,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "lectura",
-              "title": "Cómo leer los datos",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/07.mp3",
-              "duration": 175.82,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Para pensar",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/es/08.mp3",
-              "duration": 86.38,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/datos-conectividad/es/script.json",
-          "words": 2609
-        },
-        "en": {
-          "title": "Portal data · Connectivity · Radio BCS2050",
-          "duration": 1217.8,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Cold open",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/01.mp3",
-              "duration": 77.9,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "cifras",
-              "title": "The numbers",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/02.mp3",
-              "duration": 216.24,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "territorio",
-              "title": "The territory",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/03.mp3",
-              "duration": 177.86,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "documentos",
-              "title": "The documents",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/04.mp3",
-              "duration": 154.54,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "sistema",
-              "title": "How it connects",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/05.mp3",
-              "duration": 167.9,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "sabias",
-              "title": "Did you know?",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/06.mp3",
-              "duration": 183.62,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "lectura",
-              "title": "How to read the data",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/07.mp3",
-              "duration": 156.86,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Food for thought",
-              "src": "/radio/editions/2026-11-18/datos-conectividad/en/08.mp3",
-              "duration": 82.9,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/datos-conectividad/en/script.json",
-          "words": 2557
-        }
+      {
+       "n": 4,
+       "id": "contexto",
+       "title": "The context",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/04.mp3",
+       "duration": 163.25,
+       "sting": null
       },
-      "sources": [
-        {
-          "outlet": "Administracion Portuaria Integral de Cabo San Lucas (2006)",
-          "title": "Programa Maestro de Desarrollo Portuario de Cabo San Lucas (API)",
-          "url": ""
-        },
-        {
-          "outlet": "SECTUR (2024)",
-          "title": "DATATUR - Sistema de Informacion Estadistica del Turismo",
-          "url": "https://www.datatur.sectur.gob.mx/"
-        },
-        {
-          "outlet": "City of Dubrovnik / UNESCO (2019)",
-          "title": "Dubrovnik Respect the City: overtourism management plan",
-          "url": "https://www.dubrovnik.hr/"
-        },
-        {
-          "outlet": "Portal BCS 2050",
-          "title": "Base de datos del portal (GIS, CONAGUA, INEGI, ontología)",
-          "url": "/explorar/"
-        }
-      ],
-      "source_ids": [
-        "polo-weakens-cat3-beaches-ports-closed-2026-09-27",
-        "MX018",
-        "DT007",
-        "GP025",
-        "dq_pack_east_cape",
-        "ev_esc_ports",
-        "rc_aeropuerto_sjd",
-        "rc_aeropuerto_lap"
-      ],
-      "title_es": "Datos del portal de conectividad en Los Cabos",
-      "title_en": "Portal Connectivity Data for Los Cabos",
-      "desc_es": "El oyente conocerá cómo Los Cabos concentra 759 unidades de conectividad que representan 45% del total estatal, junto con las medidas de las pistas y terminales de los aeropuertos de San José del Cabo y La Paz según la guía temática del portal.",
-      "desc_en": "The listener will learn how Los Cabos holds 759 connectivity units equaling 45 percent of the state total along with runway and terminal measurements at San José del Cabo and La Paz airports from the portal's thematic guide.",
-      "number": 5
-    },
-    {
-      "topic": "tendencia",
-      "kind": "tendencia",
-      "theme": "tendencia",
-      "name_es": "Tendencia 2050",
-      "name_en": "Trend 2050",
-      "signature": "/radio/music/bossa.mp3",
-      "languages": {
-        "es": {
-          "title": "Tendencia 2050 · Radio BCS2050",
-          "duration": 1353.2,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Entrada",
-              "src": "/radio/editions/2026-11-18/tendencia/es/01.mp3",
-              "duration": 105.72,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "cambio",
-              "title": "Qué cambió esta semana",
-              "src": "/radio/editions/2026-11-18/tendencia/es/02.mp3",
-              "duration": 185.23,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "escenarios",
-              "title": "Los escenarios",
-              "src": "/radio/editions/2026-11-18/tendencia/es/03.mp3",
-              "duration": 203.23,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "senales",
-              "title": "Las señales",
-              "src": "/radio/editions/2026-11-18/tendencia/es/04.mp3",
-              "duration": 212.93,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "datos_base",
-              "title": "Los datos detrás",
-              "src": "/radio/editions/2026-11-18/tendencia/es/05.mp3",
-              "duration": 213.26,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "vigilar",
-              "title": "Qué vigilar",
-              "src": "/radio/editions/2026-11-18/tendencia/es/06.mp3",
-              "duration": 196.08,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "incertidumbre",
-              "title": "Lo que podría cambiar",
-              "src": "/radio/editions/2026-11-18/tendencia/es/07.mp3",
-              "duration": 155.06,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Para pensar",
-              "src": "/radio/editions/2026-11-18/tendencia/es/08.mp3",
-              "duration": 81.74,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/tendencia/es/script.json",
-          "words": 2709
-        },
-        "en": {
-          "title": "Trend 2050 · Radio BCS2050",
-          "duration": 1248.8,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Cold open",
-              "src": "/radio/editions/2026-11-18/tendencia/en/01.mp3",
-              "duration": 95.21,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "cambio",
-              "title": "What changed this week",
-              "src": "/radio/editions/2026-11-18/tendencia/en/02.mp3",
-              "duration": 182.14,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "escenarios",
-              "title": "The scenarios",
-              "src": "/radio/editions/2026-11-18/tendencia/en/03.mp3",
-              "duration": 201.62,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "senales",
-              "title": "The signals",
-              "src": "/radio/editions/2026-11-18/tendencia/en/04.mp3",
-              "duration": 200.71,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "datos_base",
-              "title": "The data behind it",
-              "src": "/radio/editions/2026-11-18/tendencia/en/05.mp3",
-              "duration": 201.6,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "vigilar",
-              "title": "What to watch",
-              "src": "/radio/editions/2026-11-18/tendencia/en/06.mp3",
-              "duration": 157.94,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "incertidumbre",
-              "title": "What could change it",
-              "src": "/radio/editions/2026-11-18/tendencia/en/07.mp3",
-              "duration": 158.45,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Food for thought",
-              "src": "/radio/editions/2026-11-18/tendencia/en/08.mp3",
-              "duration": 51.14,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/tendencia/en/script.json",
-          "words": 2516
-        }
+      {
+       "n": 5,
+       "id": "lugares",
+       "title": "Where and who",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/05.mp3",
+       "duration": 177.55,
+       "sting": null
       },
-      "sources": [
-        {
-          "outlet": "Portal BCS 2050",
-          "title": "Tendencia 2050",
-          "url": "/foresights/"
-        }
-      ],
-      "source_ids": [],
-      "title_es": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
-      "title_en": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-      "desc_es": "El oyente conocerá la probabilidad del escenario de estrés hídrico-costero para Baja California Sur según los datos del portal al 18 de noviembre de 2026 y el volumen de notas en turismo.",
-      "desc_en": "Listeners learn the water-coastal stress scenario probability for Baja California Sur from the portal data on November 18 2026 and the week's tourism news intensity.",
-      "number": 6
-    },
-    {
-      "topic": "vision",
-      "kind": "vision",
-      "theme": "vision",
-      "name_es": "Visión 2050",
-      "name_en": "Vision 2050",
-      "signature": "/radio/music/romance.mp3",
-      "languages": {
-        "es": {
-          "title": "Visión 2050 · Radio BCS2050",
-          "duration": 1247.0,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Entrada",
-              "src": "/radio/editions/2026-11-18/vision/es/01.mp3",
-              "duration": 90.62,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "pilares1",
-              "title": "Agua y costa",
-              "src": "/radio/editions/2026-11-18/vision/es/02.mp3",
-              "duration": 179.52,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "pilares2",
-              "title": "Turismo y economía",
-              "src": "/radio/editions/2026-11-18/vision/es/03.mp3",
-              "duration": 201.05,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "pilares3",
-              "title": "Energía y movilidad",
-              "src": "/radio/editions/2026-11-18/vision/es/04.mp3",
-              "duration": 191.35,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "pilares4",
-              "title": "Vivienda y gobierno",
-              "src": "/radio/editions/2026-11-18/vision/es/05.mp3",
-              "duration": 173.42,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "condiciones",
-              "title": "Las condiciones",
-              "src": "/radio/editions/2026-11-18/vision/es/06.mp3",
-              "duration": 155.66,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "palancas",
-              "title": "Las palancas",
-              "src": "/radio/editions/2026-11-18/vision/es/07.mp3",
-              "duration": 174.6,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Para pensar",
-              "src": "/radio/editions/2026-11-18/vision/es/08.mp3",
-              "duration": 80.81,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/vision/es/script.json",
-          "words": 2686
-        },
-        "en": {
-          "title": "Vision 2050 · Radio BCS2050",
-          "duration": 1248.5,
-          "tracks": [
-            {
-              "n": 1,
-              "id": "entrada",
-              "title": "Cold open",
-              "src": "/radio/editions/2026-11-18/vision/en/01.mp3",
-              "duration": 95.06,
-              "sting": null
-            },
-            {
-              "n": 2,
-              "id": "pilares1",
-              "title": "Water and coast",
-              "src": "/radio/editions/2026-11-18/vision/en/02.mp3",
-              "duration": 185.35,
-              "sting": null
-            },
-            {
-              "n": 3,
-              "id": "pilares2",
-              "title": "Tourism and economy",
-              "src": "/radio/editions/2026-11-18/vision/en/03.mp3",
-              "duration": 201.29,
-              "sting": null
-            },
-            {
-              "n": 4,
-              "id": "pilares3",
-              "title": "Energy and mobility",
-              "src": "/radio/editions/2026-11-18/vision/en/04.mp3",
-              "duration": 204.48,
-              "sting": null
-            },
-            {
-              "n": 5,
-              "id": "pilares4",
-              "title": "Housing and governance",
-              "src": "/radio/editions/2026-11-18/vision/en/05.mp3",
-              "duration": 168.24,
-              "sting": null
-            },
-            {
-              "n": 6,
-              "id": "condiciones",
-              "title": "The conditions",
-              "src": "/radio/editions/2026-11-18/vision/en/06.mp3",
-              "duration": 161.02,
-              "sting": null
-            },
-            {
-              "n": 7,
-              "id": "palancas",
-              "title": "The levers",
-              "src": "/radio/editions/2026-11-18/vision/en/07.mp3",
-              "duration": 154.75,
-              "sting": null
-            },
-            {
-              "n": 8,
-              "id": "cierre",
-              "title": "Food for thought",
-              "src": "/radio/editions/2026-11-18/vision/en/08.mp3",
-              "duration": 78.26,
-              "sting": null
-            }
-          ],
-          "script": "/radio/editions/2026-11-18/vision/en/script.json",
-          "words": 2688
-        }
+      {
+       "n": 6,
+       "id": "claves",
+       "title": "What it means",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/06.mp3",
+       "duration": 182.35,
+       "sting": null
       },
-      "sources": [
-        {
-          "outlet": "Portal BCS 2050",
-          "title": "Visión 2050",
-          "url": "/foresights/"
-        }
-      ],
-      "source_ids": [],
-      "title_es": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
-      "title_en": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-      "desc_es": "El oyente conocerá el camino proactivo y regenerativo propuesto para Baja California Sur que reduce el estrés hídrico-costero mediante desaladoras, cierre de tomas clandestinas y retiro de zonas de riesgo costero.",
-      "desc_en": "Listeners will learn the proposed proactive regenerative path for Baja California Sur to reduce water-coastal stress via desalination plants, closing illegal taps and retreat from coastal risk zones.",
-      "number": 7
+      {
+       "n": 7,
+       "id": "pendientes",
+       "title": "What we still don't know",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/07.mp3",
+       "duration": 181.44,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Food for thought",
+       "src": "/radio/editions/2026-11-18/noticias-conectividad/en/08.mp3",
+       "duration": 74.18,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/noticias-conectividad/en/script.json",
+     "words": 2695
     }
-  ],
-  "source_ids": [
-    "DT007",
-    "GP025",
+   },
+   "sources": [
+    {
+     "outlet": "GlobeNewswire (Grupo Aeroportuario del Pacífico)",
+     "title": "GAP: el aeropuerto de Los Cabos cae 4.6% en pasajeros en octubre; La Paz baja 2.1% pero crece 8.7% en el año",
+     "url": "https://www.globenewswire.com/news-release/2026/11/09/3399085/0/en/grupo-aeroportuario-del-pacifico-reports-a-passenger-traffic-decrease-in-october-2026-of-7-0-compared-to-2025.html",
+     "date": "2026-11-09"
+    },
+    {
+     "outlet": "Península Digital",
+     "title": "Marina cierra cinco puertos de BCS a embarcaciones menores por el frente frío 4",
+     "url": "https://peninsulardigital.com/2026/11/03/cierran-a-la-navegacion-cinco-puertos-de-bcs/",
+     "date": "2026-11-03"
+    },
+    {
+     "outlet": "Reforma",
+     "title": "Tormenta tropical Vance inunda Los Cabos: arrastre de vehículos, rescates y cierre de puertos",
+     "url": "https://www.reforma.com/azota-vance-los-cabos-agua-arrastra-autos-y-activan-ayuda/ar3303853",
+     "date": "2026-10-28"
+    },
+    {
+     "outlet": "Diario El Independiente",
+     "title": "Víctor Castro respalda que la API estatal administre el puerto de Cabo San Lucas",
+     "url": "https://www.diarioelindependiente.mx/2026/10/victor-castro-respalda-que-api-baja-california-sur-administre-puerto-de-cabo-san-lucas",
+     "date": "2026-10-21"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+     "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+     "date": "2026-11-14"
+    },
+    {
+     "outlet": "El Financiero",
+     "title": "Crece 60 por ciento la conexión aérea en Los Cabos; van por diversificar turismo",
+     "url": "https://www.elfinanciero.com.mx/empresas/2026/11/13/crece-60-por-ciento-la-conexion-aerea-en-los-cabos-van-por-diversificar-turismo/",
+     "date": "2026-11-13"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+     "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+     "date": "2026-11-14"
+    },
+    {
+     "outlet": "El Financiero",
+     "title": "Crece 60 por ciento la conexión aérea en Los Cabos; van por diversificar turismo",
+     "url": "https://www.elfinanciero.com.mx/empresas/2026/11/13/crece-60-por-ciento-la-conexion-aerea-en-los-cabos-van-por-diversificar-turismo/",
+     "date": "2026-11-13"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Condor retoma vuelos directos Fráncfort–Los Cabos con 92% de ocupación y +37.5% en reservaciones",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/condor-retoma-vuelos-directos-entre-fr%C3%A1ncfort-y-los-cabos-ocupaci%C3%B3n-al-92/785839",
+     "date": "2026-11-05"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Mareas altas inundan Puerto San Carlos y el estero El Dátil: más de 300 viviendas bajo el agua",
+     "url": "https://www.meganoticias.mx/la-paz/noticia/bajo-el-agua-permanecen-comunidades-pesqueras-por-pleamar/785073",
+     "date": "2026-11-03"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "Cierran puertos de Cabo San Lucas y San José del Cabo a navegación menor por Rachel",
+     "url": "https://tribunademexico.com/rachel-puertos/",
+     "date": "2026-09-30"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "Huracán Polo rompe bordo de protección en Puerto San Carlos; evacúan a 400 personas",
+     "url": "https://tribunademexico.com/huracan-polo-rompe-bordo-de-proteccion-en-puerto/",
+     "date": "2026-09-28"
+    },
+    {
+     "outlet": "Gringo Gazette",
+     "title": "Polo se debilita a categoría 3; playas y puertos de BCS siguen cerrados",
+     "url": "https://gringogazette.com/polo-weakens-to-cat-3-beaches-ports-stay-closed/",
+     "date": "2026-09-27"
+    }
+   ],
+   "source_ids": [
+    "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
+    "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
+    "vance-inunda-los-cabos-reforma-2026-10-28",
+    "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
     "IN011",
     "IN023",
     "IN024",
-    "MX018",
-    "TD006",
-    "TD007",
-    "UE002",
-    "UE003",
-    "UE004",
-    "UP013",
+    "ev_cruceros_datatur",
+    "ev_aereo_setue",
+    "ev_sig_asipona",
+    "ev_dossiers_movilidad"
+   ],
+   "title_es": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+   "title_en": "October Passenger Figures at Los Cabos and La Paz Airports",
+   "desc_es": "El oyente conocerá los números de pasajeros de octubre en Los Cabos y La Paz, los totales acumulados del año y la nueva ruta de United a Washington Dulles.",
+   "desc_en": "Listener learns October passenger numbers at Los Cabos and La Paz airports, year-to-date totals and the new United route to Washington Dulles.",
+   "number": 1,
+   "hosts": [
+    "Tomás",
+    "Luz"
+   ]
+  },
+  {
+   "topic": "noticias-infraestructura",
+   "kind": "noticias",
+   "theme": "infraestructura",
+   "name_es": "Noticias · Infraestructura",
+   "name_en": "News · Infrastructure",
+   "signature": "/radio/music/horizon.mp3",
+   "languages": {
+    "es": {
+     "title": "Noticias · Infraestructura · Radio BCS2050",
+     "duration": 1248.5,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Entrada",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/01.mp3",
+       "duration": 89.3,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "titulares",
+       "title": "Lo que pasó",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/02.mp3",
+       "duration": 217.7,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "mas",
+       "title": "Más noticias",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/03.mp3",
+       "duration": 199.13,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "contexto",
+       "title": "El contexto",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/04.mp3",
+       "duration": 192.94,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "lugares",
+       "title": "Dónde y a quién",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/05.mp3",
+       "duration": 165.34,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "claves",
+       "title": "Qué significa",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/06.mp3",
+       "duration": 154.27,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "pendientes",
+       "title": "Lo que falta saber",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/07.mp3",
+       "duration": 156.46,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Para pensar",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/08.mp3",
+       "duration": 73.39,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/noticias-infraestructura/es/script.json",
+     "words": 2807
+    },
+    "en": {
+     "title": "News · Infrastructure · Radio BCS2050",
+     "duration": 1190.0,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Cold open",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/01.mp3",
+       "duration": 101.35,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "titulares",
+       "title": "What happened",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/02.mp3",
+       "duration": 166.85,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "mas",
+       "title": "More news",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/03.mp3",
+       "duration": 213.48,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "contexto",
+       "title": "The context",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/04.mp3",
+       "duration": 160.94,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "lugares",
+       "title": "Where and who",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/05.mp3",
+       "duration": 155.64,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "claves",
+       "title": "What it means",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/06.mp3",
+       "duration": 167.42,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "pendientes",
+       "title": "What we still don't know",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/07.mp3",
+       "duration": 156.05,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Food for thought",
+       "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/08.mp3",
+       "duration": 68.3,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/noticias-infraestructura/en/script.json",
+     "words": 2688
+    }
+   },
+   "sources": [
+    {
+     "outlet": "Palabra BCS",
+     "title": "Sepuimm inicia pavimentación de la calle Francisco King Rondero en La Paz con 48 mdp y nuevas redes de agua y drenaje",
+     "url": "https://www.palabrabcs.com/municipios/la-paz/iniciara-pavimentacion-de-la-calle-francisco-king-rondero-invertiran-48-mdp-sepuimm/",
+     "date": "2026-11-10"
+    },
+    {
+     "outlet": "PVTIME",
+     "title": "CFE licita el proyecto Oasis en Mulegé: 72 MW solares, baterías de 80 MWh e hidrógeno verde",
+     "url": "https://www.pvtime.org/mexico-tenders-solar-hydrogen-oasis-microgrid-project/",
+     "date": "2026-11-09"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "Precios en La Paz suben 1.17% en octubre, casi el doble que el 0.65% nacional (INEGI)",
+     "url": "https://tribunademexico.com/precios-suben-mas-en-bcs/",
+     "date": "2026-11-09"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Los Cabos tardará una semana en normalizar la recolección de basura por calles de terracería dañadas",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/tardaran-una-semana-en-regularizarse-los-servicios-p%C3%BAblicos-en-los-cabos/783878",
+     "date": "2026-10-29"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "El puente del arroyo San José Viejo podría construirse en 2027: el proyecto ejecutivo ya está listo, dice la SICT",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/en-pie-construcci%C3%B3n-de-puente-en-arroyo-san-jose-viejo/789578",
+     "date": "2026-11-17"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Cauces modificados y falta de drenaje pluvial llevan toneladas de basura al mar en Los Cabos",
+     "url": "https://www.meganoticias.mx/la-paz/noticia/modificaciones-urbanas-llevan-toneladas-de-basura-al-mar-en-los-cabos/789460",
+     "date": "2026-11-17"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "El puente del arroyo San José Viejo podría construirse en 2027: el proyecto ejecutivo ya está listo, dice la SICT",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/en-pie-construcci%C3%B3n-de-puente-en-arroyo-san-jose-viejo/789578",
+     "date": "2026-11-17"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Cauces modificados y falta de drenaje pluvial llevan toneladas de basura al mar en Los Cabos",
+     "url": "https://www.meganoticias.mx/la-paz/noticia/modificaciones-urbanas-llevan-toneladas-de-basura-al-mar-en-los-cabos/789460",
+     "date": "2026-11-17"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "Mulegé reporta 713 mdp en obra en cinco años e inicia el nuevo acueducto Palo Verde–Santa Rosalía; la obra federal cayó 70%",
+     "url": "https://tribunademexico.com/mulege-reporta-713-mdp-invertidos/",
+     "date": "2026-11-17"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
+     "date": "2026-11-16"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "Inicia la renovación con concreto hidráulico de la calle Agustín Arriola en el Centro Histórico de La Paz",
+     "url": "https://tribunademexico.com/renovacion-calle-agustin-arriola-centro-lpz/",
+     "date": "2026-11-16"
+    },
+    {
+     "outlet": "Palabra BCS",
+     "title": "La pavimentación de calles se define principalmente por aforo vehicular, precisa Sepuimm",
+     "url": "https://www.palabrabcs.com/municipios/la-paz/la-pavimentacion-de-calles-se-define-principalmente-por-aforo-vehicular-precisa-sepuimm/",
+     "date": "2026-11-15"
+    },
+    {
+     "outlet": "alDíaBCS",
+     "title": "Avanza al 45% la pavimentación de la calle Marlín en la colonia Miramar de Loreto",
+     "url": "https://aldiabcs.com/loreto/avanza-pavimentacion-de-calle-marlin/",
+     "date": "2026-11-13"
+    },
+    {
+     "outlet": "Quepoca",
+     "title": "La segunda desaladora de Cabo San Lucas alcanza 75% de avance y aportará 250 litros por segundo",
+     "url": "https://www.quepoca.com/articulo/actualidad/avanza-75-segunda-desaladora-cabo-san-lucas/20261109165636004259.html",
+     "date": "2026-11-09"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "SAPA La Paz reconoce que solo opera dos de sus cuatro equipos Vactor y gestiona dos nuevos con Conagua",
+     "url": "https://tribunademexico.com/sapa-la-paz-reportes-importancia/",
+     "date": "2026-11-09"
+    }
+   ],
+   "source_ids": [
+    "king-rondero-pavimentacion-48-mdp-palabrabcs-2026-11-10",
+    "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
+    "inflacion-la-paz-octubre-1-17-tribuna-2026-11-09",
+    "servicios-publicos-los-cabos-meganoticias-2026-10-29",
     "UP017",
     "UP019",
     "UP025",
-    "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
-    "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
-    "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
-    "dq_pack_east_cape",
-    "ev_acuiferos_dma",
-    "ev_aereo_setue",
-    "ev_anp_avisos",
-    "ev_cruceros_datatur",
-    "ev_dossiers_movilidad",
-    "ev_esc_ports",
     "ev_news_cfe_128",
-    "ev_orientacion_aerea",
-    "ev_peotdu_instrumentos",
-    "ev_preguntas_estrategicas",
-    "ev_sig_asipona",
-    "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
-    "fuga-gas-infra-pueblo-nuevo-la-paz-2026-10-20",
-    "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
-    "gap_east_cape_carga",
-    "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
-    "inflacion-la-paz-octubre-1-17-tribuna-2026-11-09",
-    "king-rondero-pavimentacion-48-mdp-palabrabcs-2026-11-10",
-    "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
-    "pescadores-amparo-tarifas-asipona-los-cabos-2026-10-18",
-    "polo-weakens-cat3-beaches-ports-closed-2026-09-27",
-    "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
-    "punta-lobos-hotel-san-cristobal-demolicion-oleaje-hoybcs-2026-11-11",
-    "rc_aeropuerto_lap",
-    "rc_aeropuerto_sjd",
-    "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
-    "servicios-publicos-los-cabos-meganoticias-2026-10-29",
-    "terr_anp_cabo_pulmo",
     "terr_bcs",
     "terr_comondu",
+    "terr_mulege"
+   ],
+   "title_es": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+   "title_en": "Paving in La Paz and Oasis Tender in Mulegé",
+   "desc_es": "El episodio detalla el inicio de la pavimentación de la calle Francisco King Rondero en La Paz con concreto hidráulico y cambios en redes de agua y drenaje, y la licitación del proyecto solar con baterías e hidrógeno verde en Mulegé.",
+   "desc_en": "The episode details the start of paving on Francisco King Rondero street in La Paz with hydraulic concrete and water and sewer upgrades, plus the tender for the solar, battery and green hydrogen project in Mulegé.",
+   "number": 2,
+   "hosts": [
+    "Tomás",
+    "Luz"
+   ]
+  },
+  {
+   "topic": "noticias-medio_ambiente",
+   "kind": "noticias",
+   "theme": "medio_ambiente",
+   "name_es": "Noticias · Medio ambiente",
+   "name_en": "News · Environment",
+   "signature": "/radio/music/romance.mp3",
+   "languages": {
+    "es": {
+     "title": "Noticias · Medio ambiente · Radio BCS2050",
+     "duration": 1229.4,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Entrada",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/01.mp3",
+       "duration": 81.31,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "titulares",
+       "title": "Lo que pasó",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/02.mp3",
+       "duration": 194.54,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "mas",
+       "title": "Más noticias",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/03.mp3",
+       "duration": 172.9,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "contexto",
+       "title": "El contexto",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/04.mp3",
+       "duration": 213.1,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "lugares",
+       "title": "Dónde y a quién",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/05.mp3",
+       "duration": 167.47,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "claves",
+       "title": "Qué significa",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/06.mp3",
+       "duration": 171.05,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "pendientes",
+       "title": "Lo que falta saber",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/07.mp3",
+       "duration": 158.78,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Para pensar",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/08.mp3",
+       "duration": 70.22,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/script.json",
+     "words": 2758
+    },
+    "en": {
+     "title": "News · Environment · Radio BCS2050",
+     "duration": 1188.7,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Cold open",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/01.mp3",
+       "duration": 77.59,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "titulares",
+       "title": "What happened",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/02.mp3",
+       "duration": 181.01,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "mas",
+       "title": "More news",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/03.mp3",
+       "duration": 161.9,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "contexto",
+       "title": "The context",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/04.mp3",
+       "duration": 164.11,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "lugares",
+       "title": "Where and who",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/05.mp3",
+       "duration": 192.0,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "claves",
+       "title": "What it means",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/06.mp3",
+       "duration": 166.34,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "pendientes",
+       "title": "What we still don't know",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/07.mp3",
+       "duration": 166.42,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Food for thought",
+       "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/08.mp3",
+       "duration": 79.34,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/script.json",
+     "words": 2663
+    }
+   },
+   "sources": [
+    {
+     "outlet": "POSTA México",
+     "title": "SMN prevé oleaje de 2 a 3 metros en la costa del Pacífico de BCS y rachas de 30 a 50 km/h",
+     "url": "https://www.posta.com.mx/bcs/habra-lluvias-en-bcs-este-lunes-16-de-noviembre-alertan-por-oleaje-de-hasta-3-metros/vl2279534",
+     "date": "2026-11-16"
+    },
+    {
+     "outlet": "Diario Humano",
+     "title": "La Paz instala su tercer compostero comunitario, en El Palmar II",
+     "url": "https://diariohumano.com.mx/2026/11/16/instalan-tercer-compostero-comunitario-en-la-paz-bcs/",
+     "date": "2026-11-16"
+    },
+    {
+     "outlet": "Palabra BCS",
+     "title": "El frente frío 7 llega a BCS esta semana: La Paz bajaría a 17 °C de noche por primera vez en la temporada",
+     "url": "https://www.palabrabcs.com/municipios/la-paz/se-acerca-frente-frio-a-bcs-la-paz-llegaria-a-17o-por-primera-ocasion-en-la-temporada/",
+     "date": "2026-11-16"
+    },
+    {
+     "outlet": "La Nigua",
+     "title": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
+     "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
+     "date": "2026-11-15"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+     "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+     "date": "2026-11-14"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
+     "date": "2026-11-12"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+     "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+     "date": "2026-11-14"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
+     "date": "2026-11-12"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "Se retrasa la temporada de tiburón ballena en la Bahía de La Paz: aún no hay los seis ejemplares mínimos",
+     "url": "https://tribunademexico.com/tiburon-ballena-retraso/",
+     "date": "2026-11-11"
+    },
+    {
+     "outlet": "HOY BCS",
+     "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
+     "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
+     "date": "2026-11-11"
+    },
+    {
+     "outlet": "Tus Buenas Noticias",
+     "title": "Los Cabos recibe del 10 al 12 de noviembre el Summit 2026 del Foro Mar de Cortés sobre inversión, ciudades y clima",
+     "url": "https://www.tusbuenasnoticias.com/noticias/economia/2026/11/09/66795-summit-2026-foro-mar-de-cortes-en-los-cabos",
+     "date": "2026-11-09"
+    },
+    {
+     "outlet": "Tribuna de México",
+     "title": "LIGIR-UABCS advierte nuevas mareas extraordinarias en noviembre y diciembre; posibles inundaciones en Comondú y Mulegé",
+     "url": "https://tribunademexico.com/ligir-advierte-nuevos-periodos-de-mareas-altas-en-comunidades-costeras-de-bcs/",
+     "date": "2026-11-07"
+    },
+    {
+     "outlet": "Meganoticias",
+     "title": "Zofemat retira más de 350 llantas y 18 toneladas de basura de El Médano tras las lluvias",
+     "url": "https://www.meganoticias.mx/los-cabos/noticia/retiran-tras-las-lluvias-m%C3%A1s-de-trecientos-neum%C3%A1ticos-del-medano/785194",
+     "date": "2026-11-03"
+    },
+    {
+     "outlet": "Gringo Gazette",
+     "title": "Semarnat aprueba con condiciones el desarrollo Camarón Beach al noroeste de La Paz pese a impactos reconocidos",
+     "url": "https://gringogazette.com/la-paz-resort-cleared-despite-known-eco-risks/",
+     "date": "2026-11-02"
+    },
+    {
+     "outlet": "HCN",
+     "title": "Iniciativa para dar a los ayuntamientos de BCS más facultades en reservas ecológicas y zonas de conservación",
+     "url": "https://hcn.mx/2026/10/29/proponen-fortalecer-las-facultades-municipales-para-la-conservacion-ambiental-en-bcs/",
+     "date": "2026-10-29"
+    }
+   ],
+   "source_ids": [
+    "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+    "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+    "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
+    "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+    "UP013",
+    "TD006",
+    "TD007",
+    "ev_orientacion_aerea",
+    "ev_anp_avisos",
     "terr_loreto",
-    "terr_mulege",
-    "vance-inunda-los-cabos-reforma-2026-10-28"
-  ],
-  "credits": "/radio/credits.json"
+    "terr_anp_cabo_pulmo"
+   ],
+   "title_es": "Aviso 638 por oleaje en costa de Baja California Sur",
+   "title_en": "Notice 638 forecasts surf on Baja California Sur coast",
+   "desc_es": "El oyente aprenderá cómo el oleaje y rachas de viento afectan a pangas y comunidades pesqueras en Guerrero Negro, Puerto San Carlos y otros puertos del Pacífico.",
+   "desc_en": "Listeners will learn how surf and wind gusts affect small boats and fishing communities in Guerrero Negro, Puerto San Carlos and other Pacific ports.",
+   "number": 3,
+   "hosts": [
+    "Tomás",
+    "Luz"
+   ]
+  },
+  {
+   "topic": "datos-economia",
+   "kind": "datos",
+   "theme": "economia",
+   "name_es": "Datos del portal · Economía",
+   "name_en": "Portal data · Economy",
+   "signature": "/radio/music/bossa.mp3",
+   "languages": {
+    "es": {
+     "title": "Datos del portal · Economía · Radio BCS2050",
+     "duration": 1230.0,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Entrada",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/01.mp3",
+       "duration": 98.35,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "cifras",
+       "title": "Las cifras",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/02.mp3",
+       "duration": 169.08,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "territorio",
+       "title": "El territorio",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/03.mp3",
+       "duration": 197.98,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "documentos",
+       "title": "Los documentos",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/04.mp3",
+       "duration": 161.06,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "sistema",
+       "title": "Cómo se conecta",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/05.mp3",
+       "duration": 194.06,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "sabias",
+       "title": "¿Sabías que…?",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/06.mp3",
+       "duration": 158.33,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "lectura",
+       "title": "Cómo leer los datos",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/07.mp3",
+       "duration": 175.73,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Para pensar",
+       "src": "/radio/editions/2026-11-18/datos-economia/es/08.mp3",
+       "duration": 75.46,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/datos-economia/es/script.json",
+     "words": 2541
+    },
+    "en": {
+     "title": "Portal data · Economy · Radio BCS2050",
+     "duration": 1206.5,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Cold open",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/01.mp3",
+       "duration": 86.66,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "cifras",
+       "title": "The numbers",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/02.mp3",
+       "duration": 158.45,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "territorio",
+       "title": "The territory",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/03.mp3",
+       "duration": 200.26,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "documentos",
+       "title": "The documents",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/04.mp3",
+       "duration": 167.9,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "sistema",
+       "title": "How it connects",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/05.mp3",
+       "duration": 170.95,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "sabias",
+       "title": "Did you know?",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/06.mp3",
+       "duration": 138.67,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "lectura",
+       "title": "How to read the data",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/07.mp3",
+       "duration": 203.06,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Food for thought",
+       "src": "/radio/editions/2026-11-18/datos-economia/en/08.mp3",
+       "duration": 80.59,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/datos-economia/en/script.json",
+     "words": 2470
+    }
+   },
+   "sources": [
+    {
+     "outlet": "Edward Glaeser (2011)",
+     "title": "Triumph of the City",
+     "url": "https://www.penguinrandomhouse.com/books/303441/triumph-of-the-city-by-edward-glaeser/"
+    },
+    {
+     "outlet": "Enrico Moretti (2012)",
+     "title": "The New Geography of Jobs",
+     "url": "https://www.hmhbooks.com/shop/books/The-New-Geography-of-Jobs/9780547750118"
+    },
+    {
+     "outlet": "Fujita/Krugman/Venables (1999)",
+     "title": "The Spatial Economy: Cities Regions and International Trade",
+     "url": "https://mitpress.mit.edu/9780262561471/the-spatial-economy/"
+    },
+    {
+     "outlet": "Portal BCS 2050",
+     "title": "Base de datos del portal (GIS, CONAGUA, INEGI, ontología)",
+     "url": "/explorar/"
+    }
+   ],
+   "source_ids": [
+    "punta-lobos-hotel-san-cristobal-demolicion-oleaje-hoybcs-2026-11-11",
+    "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
+    "fuga-gas-infra-pueblo-nuevo-la-paz-2026-10-20",
+    "pescadores-amparo-tarifas-asipona-los-cabos-2026-10-18",
+    "UE002",
+    "UE003",
+    "UE004",
+    "gap_east_cape_carga",
+    "ev_acuiferos_dma",
+    "ev_preguntas_estrategicas",
+    "ev_peotdu_instrumentos"
+   ],
+   "title_es": "Fuentes de datos económicos del portal en Baja California Sur",
+   "title_en": "Portal Economy Data Sources for Baja California Sur",
+   "desc_es": "El episodio detalla que los datos de IED provienen de CNIE pack 07 y los de bienes raíces residenciales del reporte JLL 2025, integrados en la guía temática y la base BCS 2050 junto con series de empleo.",
+   "desc_en": "The episode details that FDI data comes from CNIE pack 07 and residential real estate from the JLL 2025 report, integrated in the thematic guide and BCS 2050 database alongside employment series.",
+   "number": 4,
+   "hosts": [
+    "Tomás",
+    "Luz"
+   ]
+  },
+  {
+   "topic": "datos-conectividad",
+   "kind": "datos",
+   "theme": "conectividad",
+   "name_es": "Datos del portal · Conectividad",
+   "name_en": "Portal data · Connectivity",
+   "signature": "/radio/music/surf.mp3",
+   "languages": {
+    "es": {
+     "title": "Datos del portal · Conectividad · Radio BCS2050",
+     "duration": 1236.0,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Entrada",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/01.mp3",
+       "duration": 92.93,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "cifras",
+       "title": "Las cifras",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/02.mp3",
+       "duration": 211.56,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "territorio",
+       "title": "El territorio",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/03.mp3",
+       "duration": 159.58,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "documentos",
+       "title": "Los documentos",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/04.mp3",
+       "duration": 153.86,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "sistema",
+       "title": "Cómo se conecta",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/05.mp3",
+       "duration": 203.54,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "sabias",
+       "title": "¿Sabías que…?",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/06.mp3",
+       "duration": 152.33,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "lectura",
+       "title": "Cómo leer los datos",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/07.mp3",
+       "duration": 175.82,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Para pensar",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/es/08.mp3",
+       "duration": 86.38,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/datos-conectividad/es/script.json",
+     "words": 2609
+    },
+    "en": {
+     "title": "Portal data · Connectivity · Radio BCS2050",
+     "duration": 1217.8,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Cold open",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/01.mp3",
+       "duration": 77.9,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "cifras",
+       "title": "The numbers",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/02.mp3",
+       "duration": 216.24,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "territorio",
+       "title": "The territory",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/03.mp3",
+       "duration": 177.86,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "documentos",
+       "title": "The documents",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/04.mp3",
+       "duration": 154.54,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "sistema",
+       "title": "How it connects",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/05.mp3",
+       "duration": 167.9,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "sabias",
+       "title": "Did you know?",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/06.mp3",
+       "duration": 183.62,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "lectura",
+       "title": "How to read the data",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/07.mp3",
+       "duration": 156.86,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Food for thought",
+       "src": "/radio/editions/2026-11-18/datos-conectividad/en/08.mp3",
+       "duration": 82.9,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/datos-conectividad/en/script.json",
+     "words": 2557
+    }
+   },
+   "sources": [
+    {
+     "outlet": "Administracion Portuaria Integral de Cabo San Lucas (2006)",
+     "title": "Programa Maestro de Desarrollo Portuario de Cabo San Lucas (API)",
+     "url": ""
+    },
+    {
+     "outlet": "SECTUR (2024)",
+     "title": "DATATUR - Sistema de Informacion Estadistica del Turismo",
+     "url": "https://www.datatur.sectur.gob.mx/"
+    },
+    {
+     "outlet": "City of Dubrovnik / UNESCO (2019)",
+     "title": "Dubrovnik Respect the City: overtourism management plan",
+     "url": "https://www.dubrovnik.hr/"
+    },
+    {
+     "outlet": "Portal BCS 2050",
+     "title": "Base de datos del portal (GIS, CONAGUA, INEGI, ontología)",
+     "url": "/explorar/"
+    }
+   ],
+   "source_ids": [
+    "polo-weakens-cat3-beaches-ports-closed-2026-09-27",
+    "MX018",
+    "DT007",
+    "GP025",
+    "dq_pack_east_cape",
+    "ev_esc_ports",
+    "rc_aeropuerto_sjd",
+    "rc_aeropuerto_lap"
+   ],
+   "title_es": "Datos del portal de conectividad en Los Cabos",
+   "title_en": "Portal Connectivity Data for Los Cabos",
+   "desc_es": "El oyente conocerá cómo Los Cabos concentra 759 unidades de conectividad que representan 45% del total estatal, junto con las medidas de las pistas y terminales de los aeropuertos de San José del Cabo y La Paz según la guía temática del portal.",
+   "desc_en": "The listener will learn how Los Cabos holds 759 connectivity units equaling 45 percent of the state total along with runway and terminal measurements at San José del Cabo and La Paz airports from the portal's thematic guide.",
+   "number": 5,
+   "hosts": [
+    "Tomás",
+    "Luz"
+   ]
+  },
+  {
+   "topic": "tendencia",
+   "kind": "tendencia",
+   "theme": "tendencia",
+   "name_es": "Tendencia 2050",
+   "name_en": "Trend 2050",
+   "signature": "/radio/music/bossa.mp3",
+   "languages": {
+    "es": {
+     "title": "Tendencia 2050 · Radio BCS2050",
+     "duration": 1353.2,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Entrada",
+       "src": "/radio/editions/2026-11-18/tendencia/es/01.mp3",
+       "duration": 105.72,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "cambio",
+       "title": "Qué cambió esta semana",
+       "src": "/radio/editions/2026-11-18/tendencia/es/02.mp3",
+       "duration": 185.23,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "escenarios",
+       "title": "Los escenarios",
+       "src": "/radio/editions/2026-11-18/tendencia/es/03.mp3",
+       "duration": 203.23,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "senales",
+       "title": "Las señales",
+       "src": "/radio/editions/2026-11-18/tendencia/es/04.mp3",
+       "duration": 212.93,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "datos_base",
+       "title": "Los datos detrás",
+       "src": "/radio/editions/2026-11-18/tendencia/es/05.mp3",
+       "duration": 213.26,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "vigilar",
+       "title": "Qué vigilar",
+       "src": "/radio/editions/2026-11-18/tendencia/es/06.mp3",
+       "duration": 196.08,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "incertidumbre",
+       "title": "Lo que podría cambiar",
+       "src": "/radio/editions/2026-11-18/tendencia/es/07.mp3",
+       "duration": 155.06,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Para pensar",
+       "src": "/radio/editions/2026-11-18/tendencia/es/08.mp3",
+       "duration": 81.74,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/tendencia/es/script.json",
+     "words": 2739
+    },
+    "en": {
+     "title": "Trend 2050 · Radio BCS2050",
+     "duration": 1248.8,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Cold open",
+       "src": "/radio/editions/2026-11-18/tendencia/en/01.mp3",
+       "duration": 95.21,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "cambio",
+       "title": "What changed this week",
+       "src": "/radio/editions/2026-11-18/tendencia/en/02.mp3",
+       "duration": 182.14,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "escenarios",
+       "title": "The scenarios",
+       "src": "/radio/editions/2026-11-18/tendencia/en/03.mp3",
+       "duration": 201.62,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "senales",
+       "title": "The signals",
+       "src": "/radio/editions/2026-11-18/tendencia/en/04.mp3",
+       "duration": 200.71,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "datos_base",
+       "title": "The data behind it",
+       "src": "/radio/editions/2026-11-18/tendencia/en/05.mp3",
+       "duration": 201.6,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "vigilar",
+       "title": "What to watch",
+       "src": "/radio/editions/2026-11-18/tendencia/en/06.mp3",
+       "duration": 157.94,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "incertidumbre",
+       "title": "What could change it",
+       "src": "/radio/editions/2026-11-18/tendencia/en/07.mp3",
+       "duration": 158.45,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Food for thought",
+       "src": "/radio/editions/2026-11-18/tendencia/en/08.mp3",
+       "duration": 51.14,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/tendencia/en/script.json",
+     "words": 2516
+    }
+   },
+   "sources": [
+    {
+     "outlet": "Portal BCS 2050",
+     "title": "Tendencia 2050",
+     "url": "/foresights/"
+    }
+   ],
+   "source_ids": [],
+   "title_es": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+   "title_en": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+   "desc_es": "El oyente conocerá la probabilidad del escenario de estrés hídrico-costero para Baja California Sur según los datos del portal al 18 de noviembre de 2026 y el volumen de notas en turismo.",
+   "desc_en": "Listeners learn the water-coastal stress scenario probability for Baja California Sur from the portal data on November 18 2026 and the week's tourism news intensity.",
+   "number": 6,
+   "hosts": [
+    "Tomás",
+    "Luz"
+   ]
+  },
+  {
+   "topic": "vision",
+   "kind": "vision",
+   "theme": "vision",
+   "name_es": "Visión 2050",
+   "name_en": "Vision 2050",
+   "signature": "/radio/music/romance.mp3",
+   "languages": {
+    "es": {
+     "title": "Visión 2050 · Radio BCS2050",
+     "duration": 1247.0,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Entrada",
+       "src": "/radio/editions/2026-11-18/vision/es/01.mp3",
+       "duration": 90.62,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "pilares1",
+       "title": "Agua y costa",
+       "src": "/radio/editions/2026-11-18/vision/es/02.mp3",
+       "duration": 179.52,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "pilares2",
+       "title": "Turismo y economía",
+       "src": "/radio/editions/2026-11-18/vision/es/03.mp3",
+       "duration": 201.05,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "pilares3",
+       "title": "Energía y movilidad",
+       "src": "/radio/editions/2026-11-18/vision/es/04.mp3",
+       "duration": 191.35,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "pilares4",
+       "title": "Vivienda y gobierno",
+       "src": "/radio/editions/2026-11-18/vision/es/05.mp3",
+       "duration": 173.42,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "condiciones",
+       "title": "Las condiciones",
+       "src": "/radio/editions/2026-11-18/vision/es/06.mp3",
+       "duration": 155.66,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "palancas",
+       "title": "Las palancas",
+       "src": "/radio/editions/2026-11-18/vision/es/07.mp3",
+       "duration": 174.6,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Para pensar",
+       "src": "/radio/editions/2026-11-18/vision/es/08.mp3",
+       "duration": 80.81,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/vision/es/script.json",
+     "words": 2686
+    },
+    "en": {
+     "title": "Vision 2050 · Radio BCS2050",
+     "duration": 1248.5,
+     "tracks": [
+      {
+       "n": 1,
+       "id": "entrada",
+       "title": "Cold open",
+       "src": "/radio/editions/2026-11-18/vision/en/01.mp3",
+       "duration": 95.06,
+       "sting": null
+      },
+      {
+       "n": 2,
+       "id": "pilares1",
+       "title": "Water and coast",
+       "src": "/radio/editions/2026-11-18/vision/en/02.mp3",
+       "duration": 185.35,
+       "sting": null
+      },
+      {
+       "n": 3,
+       "id": "pilares2",
+       "title": "Tourism and economy",
+       "src": "/radio/editions/2026-11-18/vision/en/03.mp3",
+       "duration": 201.29,
+       "sting": null
+      },
+      {
+       "n": 4,
+       "id": "pilares3",
+       "title": "Energy and mobility",
+       "src": "/radio/editions/2026-11-18/vision/en/04.mp3",
+       "duration": 204.48,
+       "sting": null
+      },
+      {
+       "n": 5,
+       "id": "pilares4",
+       "title": "Housing and governance",
+       "src": "/radio/editions/2026-11-18/vision/en/05.mp3",
+       "duration": 168.24,
+       "sting": null
+      },
+      {
+       "n": 6,
+       "id": "condiciones",
+       "title": "The conditions",
+       "src": "/radio/editions/2026-11-18/vision/en/06.mp3",
+       "duration": 161.02,
+       "sting": null
+      },
+      {
+       "n": 7,
+       "id": "palancas",
+       "title": "The levers",
+       "src": "/radio/editions/2026-11-18/vision/en/07.mp3",
+       "duration": 154.75,
+       "sting": null
+      },
+      {
+       "n": 8,
+       "id": "cierre",
+       "title": "Food for thought",
+       "src": "/radio/editions/2026-11-18/vision/en/08.mp3",
+       "duration": 78.26,
+       "sting": null
+      }
+     ],
+     "script": "/radio/editions/2026-11-18/vision/en/script.json",
+     "words": 2688
+    }
+   },
+   "sources": [
+    {
+     "outlet": "Portal BCS 2050",
+     "title": "Visión 2050",
+     "url": "/foresights/"
+    }
+   ],
+   "source_ids": [],
+   "title_es": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+   "title_en": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+   "desc_es": "El oyente conocerá el camino proactivo y regenerativo propuesto para Baja California Sur que reduce el estrés hídrico-costero mediante desaladoras, cierre de tomas clandestinas y retiro de zonas de riesgo costero.",
+   "desc_en": "Listeners will learn the proposed proactive regenerative path for Baja California Sur to reduce water-coastal stress via desalination plants, closing illegal taps and retreat from coastal risk zones.",
+   "number": 7,
+   "hosts": [
+    "Tomás",
+    "Luz"
+   ]
+  }
+ ],
+ "source_ids": [
+  "DT007",
+  "GP025",
+  "IN011",
+  "IN023",
+  "IN024",
+  "MX018",
+  "TD006",
+  "TD007",
+  "UE002",
+  "UE003",
+  "UE004",
+  "UP013",
+  "UP017",
+  "UP019",
+  "UP025",
+  "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
+  "cfe-licitacion-oasis-mulege-pvtime-2026-11-09",
+  "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+  "dq_pack_east_cape",
+  "ev_acuiferos_dma",
+  "ev_aereo_setue",
+  "ev_anp_avisos",
+  "ev_cruceros_datatur",
+  "ev_dossiers_movilidad",
+  "ev_esc_ports",
+  "ev_news_cfe_128",
+  "ev_orientacion_aerea",
+  "ev_peotdu_instrumentos",
+  "ev_preguntas_estrategicas",
+  "ev_sig_asipona",
+  "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
+  "fuga-gas-infra-pueblo-nuevo-la-paz-2026-10-20",
+  "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
+  "gap_east_cape_carga",
+  "gobernador-ranchos-la-paz-caminos-agua-solar-2026-10-25",
+  "inflacion-la-paz-octubre-1-17-tribuna-2026-11-09",
+  "king-rondero-pavimentacion-48-mdp-palabrabcs-2026-11-10",
+  "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+  "pescadores-amparo-tarifas-asipona-los-cabos-2026-10-18",
+  "polo-weakens-cat3-beaches-ports-closed-2026-09-27",
+  "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+  "punta-lobos-hotel-san-cristobal-demolicion-oleaje-hoybcs-2026-11-11",
+  "rc_aeropuerto_lap",
+  "rc_aeropuerto_sjd",
+  "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
+  "servicios-publicos-los-cabos-meganoticias-2026-10-29",
+  "terr_anp_cabo_pulmo",
+  "terr_bcs",
+  "terr_comondu",
+  "terr_loreto",
+  "terr_mulege",
+  "vance-inunda-los-cabos-reforma-2026-10-28"
+ ],
+ "credits": "/radio/credits.json"
 }

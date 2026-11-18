@@ -36,7 +36,7 @@ import time
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 import urllib.request
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,8 +47,22 @@ MUSIC_SRC = ROOT / "scripts" / "_cache" / "radio_music_src"
 KEEP_AUDIO = 14  # editions (days) whose MP3s stay on the site = the 24/7 rotation; scripts are kept forever
 MODEL = os.environ.get("BCS_RADIO_MODEL", "grok-4.3")
 VOICES = {"host": "rex", "cohost": "eve"}
-TEMPO = {"rex": 1.09}  # Tomás ~9% quicker (pitch-preserving atempo on the TTS clip); Luz unchanged
 NAMES = {"host": "Tomás", "cohost": "Luz"}
+# Host roster: every Grok TTS voice (GET /v1/tts/voices, 28 voices) has one fixed on-air name.
+MALE = {"rex": "Tomás", "altair": "Andrés", "atlas": "Mateo", "castor": "Diego", "cosmo": "Joaquín", "helios": "Rafa",
+        "helix": "Emilio", "kepler": "Javier", "leo": "Leo", "lumen": "Gabriel", "lux": "Nico", "naksh": "Samuel",
+        "orion": "Óscar", "perseus": "Pablo", "rigel": "Ramón", "sal": "Salvador", "sirius": "Sergio", "zagan": "Bruno",
+        "zenith": "Julián"}
+FEMALE = {"eve": "Luz", "ara": "Marina", "aurora": "Aurora", "carina": "Carmen", "celeste": "Celeste", "iris": "Isabel",
+          "liora": "Lía", "luna": "Paloma", "ursa": "Rosa"}
+# 19 pairs (one male + one female each), pair 0 = Tomás (rex) + Luz (eve); the lead alternates by pair.
+PAIRS = [((m, f) if k % 2 == 0 else (f, m)) for k, (m, f) in
+         enumerate(zip(MALE, [list(FEMALE)[k % len(FEMALE)] for k in range(len(MALE))]))]
+VNAME = {**MALE, **FEMALE}
+# pitch-preserving atempo per voice, measured against a reference read (slow voices brought to a natural pace);
+# rex = Tomás +9 %, eve = Luz unchanged
+TEMPO = {'altair': 1.1, 'ara': 1.07, 'atlas': 1.07, 'aurora': 1.04, 'carina': 1.04, 'castor': 1.01, 'cosmo': 1.02, 'helios': 1.07, 'helix': 1.02, 'iris': 1.02, 'kepler': 1.1, 'leo': 1.1, 'liora': 1.1, 'lumen': 1.01, 'luna': 1.09, 'lux': 1.09, 'naksh': 1.04, 'orion': 1.09, 'perseus': 1.1, 'rex': 1.09, 'rigel': 1.1, 'sal': 1.07, 'ursa': 1.1, 'zagan': 1.1}
+CAST_FILE = Path(__file__).resolve().parent.parent / "public" / "radio" / "cast.json"
 UA = "BCS2050Radio/1.0 (bajacaliforniasur2050.com)"
 
 THEMES = {
@@ -161,6 +175,34 @@ MUSIC = [
      "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/",
      "source": "https://commons.wikimedia.org/wiki/File:Surf_Shimmy_(ISRC_USUAN1700018).mp3",
      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Surf_Shimmy_%28ISRC_USUAN1700018%29.mp3"},
+    # ---- added 18 Nov 2026: more CC BY 3.0 tracks by Kevin MacLeod (Wikimedia Commons) so every episode sounds different
+    {"id": "airportlounge", "file": "airportlounge.src", "start": 4, "len": 16, "title": "Airport Lounge", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Airport_Lounge_(ISRC_USUAN1100806).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Airport_Lounge_%28ISRC_USUAN1100806%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "ambler", "file": "ambler.src", "start": 1, "len": 16, "title": "Ambler", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Ambler_(ISRC_USUAN1300019).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Ambler_%28ISRC_USUAN1300019%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "aridfoothills", "file": "aridfoothills.src", "start": 4, "len": 16, "title": "Arid Foothills", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Arid_Foothills_(ISRC_USUAN1100437).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Arid_Foothills_%28ISRC_USUAN1100437%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "backbaylounge", "file": "backbaylounge.src", "start": 4, "len": 16, "title": "Backbay Lounge", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Backbay_Lounge_(ISRC_USUAN1700068).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Backbay_Lounge_%28ISRC_USUAN1700068%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "clearair", "file": "clearair.src", "start": 4, "len": 16, "title": "Clear Air", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Clear_Air_(ISRC_USUAN1100626).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Clear_Air_%28ISRC_USUAN1100626%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "desertcity", "file": "desertcity.src", "start": 4, "len": 16, "title": "Desert City", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Desert_City_(ISRC_USUAN1100564).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Desert_City_%28ISRC_USUAN1100564%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "fluidscape", "file": "fluidscape.src", "start": 4, "len": 16, "title": "Fluidscape", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Fluidscape_(ISRC_USUAN1100393).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Fluidscape_%28ISRC_USUAN1100393%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "gymnopedie1", "file": "gymnopedie1.src", "start": 4, "len": 16, "title": "Gymnopedie No. 1", "artist": "Kevin MacLeod (incompetech.com), after Erik Satie", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Gymnopedie_No._1_(ISRC_USUAN1100787).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Gymnopedie_No._1_%28ISRC_USUAN1100787%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "jazzbrunch", "file": "jazzbrunch.src", "start": 4, "len": 16, "title": "Jazz Brunch", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Jazz_Brunch_(ISRC_USUAN1700074).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Jazz_Brunch_%28ISRC_USUAN1700074%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "lagoav1", "file": "lagoav1.src", "start": 4, "len": 16, "title": "Lagoa v1", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Lagoa_v1_(ISRC_USUAN1100864).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Lagoa_v1_%28ISRC_USUAN1100864%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "leblon", "file": "leblon.src", "start": 4, "len": 16, "title": "Leblon", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Leblon_(ISRC_USUAN1100866).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Leblon_%28ISRC_USUAN1100866%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "localforecasts", "file": "localforecasts.src", "start": 4, "len": 16, "title": "Local Forecast - Slower", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Local_Forecast_-_Slower_(ISRC_USUAN1300011).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Local_Forecast_-_Slower_%28ISRC_USUAN1300011%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "longstroll", "file": "longstroll.src", "start": 4, "len": 16, "title": "Long Stroll", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Long_Stroll_(ISRC_USUAN1100174).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Long_Stroll_%28ISRC_USUAN1100174%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "mariachisnooze", "file": "mariachisnooze.src", "start": 1, "len": 16, "title": "Mariachi Snooze", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Mariachi_Snooze_(ISRC_USUAN1100166).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Mariachi_Snooze_%28ISRC_USUAN1100166%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "mellowtron", "file": "mellowtron.src", "start": 1, "len": 16, "title": "Mellowtron", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Mellowtron_(ISRC_USUAN1300020).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mellowtron_%28ISRC_USUAN1300020%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "sambaisobel", "file": "sambaisobel.src", "start": 4, "len": 16, "title": "Samba Isobel", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Samba_Isobel_(ISRC_USUAN1700071).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Samba_Isobel_%28ISRC_USUAN1700071%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "sidewalkshade", "file": "sidewalkshade.src", "start": 4, "len": 16, "title": "Sidewalk Shade", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Sidewalk_Shade_(ISRC_USUAN1200103).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Sidewalk_Shade_%28ISRC_USUAN1200103%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "smoothlovin", "file": "smoothlovin.src", "start": 4, "len": 16, "title": "Smooth Lovin", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Smooth_Lovin_(ISRC_USUAN1700077).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Smooth_Lovin_%28ISRC_USUAN1700077%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "somewheresunny", "file": "somewheresunny.src", "start": 1, "len": 16, "title": "Somewhere Sunny", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Somewhere_Sunny_(ISRC_USUAN1100493).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Somewhere_Sunny_%28ISRC_USUAN1100493%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "walkingalong", "file": "walkingalong.src", "start": 4, "len": 16, "title": "Walking Along", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Walking_Along_(ISRC_USUAN1100020).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Walking_Along_%28ISRC_USUAN1100020%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "aperohour", "file": "aperohour.src", "start": 4, "len": 16, "title": "Apero Hour", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Apero_Hour_(ISRC_USUAN1700070).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Apero_Hour_%28ISRC_USUAN1700070%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "gardenmusic", "file": "gardenmusic.src", "start": 4, "len": 16, "title": "Garden Music", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Garden_Music_(ISRC_USUAN1500081).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Garden_Music_%28ISRC_USUAN1500081%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "inspired", "file": "inspired.src", "start": 4, "len": 16, "title": "Inspired", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Inspired_(ISRC_USUAN1600022).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Inspired_%28ISRC_USUAN1600022%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "lewisanddekalb", "file": "lewisanddekalb.src", "start": 4, "len": 16, "title": "Lewis and Dekalb", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Lewis_and_Dekalb_(ISRC_USUAN1600027).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Lewis_and_Dekalb_%28ISRC_USUAN1600027%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "shadesofspring", "file": "shadesofspring.src", "start": 4, "len": 16, "title": "Shades of Spring", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Shades_of_Spring_(ISRC_USUAN1100080).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Shades_of_Spring_%28ISRC_USUAN1100080%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "slowjam", "file": "slowjam.src", "start": 4, "len": 16, "title": "Slow Jam", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Slow_Jam_(ISRC_USUAN1600015).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Slow_Jam_%28ISRC_USUAN1600015%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
+    {"id": "tranquilitybas", "file": "tranquilitybas.src", "start": 4, "len": 16, "title": "Tranquility Base", "artist": "Kevin MacLeod (incompetech.com)", "legacy": False, "license": "CC BY 3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "source": "https://commons.wikimedia.org/wiki/File:Tranquility_Base_(ISRC_USUAN1100614).mp3", "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Tranquility_Base_%28ISRC_USUAN1100614%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"},
     {"id": "gull", "file": "gull.src", "start": 0, "len": 18, "amb": True,
      "title": "Gull 1 (gull calls)", "artist": "avphillips",
      "license": "Public domain", "license_url": "https://commons.wikimedia.org/wiki/File:Gull_1.ogg",
@@ -198,22 +240,23 @@ def build_music() -> dict:
             af = f"afade=t=in:d={1.5 if m.get('bed') else 0.8},afade=t=out:st={L-3}:d=3,loudnorm=I={-26 if m.get('bed') else -19}:TP=-2"
             ffmpeg("-ss", str(m["start"]), "-t", str(L), "-i", str(src), "-af", af, "-ac", "2", "-ar", "44100",
                    "-c:a", "libmp3lame", "-b:a", "96k", str(dst))
-        for kind, L, fo in (("short", 7, 2.5), ("break", 30, 4)):  # chapter transition / ~30 s music break
+        for kind, L, fo in (("short", 7, 2.5), ("break", 30, 4)) if m.get("legacy", True) else (("break", 30, 4),):
             out = mdir / f"{kind}_{m['id']}.mp3"
             if not m.get("bed") and not out.exists() and src.exists():
                 ffmpeg("-ss", str(m["start"] + (0 if kind == "short" else 3)), "-t", str(L), "-i", str(src), "-af",
                        f"afade=t=in:d=0.6,afade=t=out:st={L-fo}:d={fo},loudnorm=I=-19:TP=-2", "-ac", "2", "-ar", "44100",
                        "-c:a", "libmp3lame", "-b:a", "96k", str(out))
         bed = mdir / f"bed_{m['id']}.mp3"
-        if not m.get("bed") and not bed.exists() and src.exists():  # 45 s soft bed for under the opening voice
+        if m.get("legacy", True) and not m.get("bed") and not bed.exists() and src.exists():  # 45 s bed under station IDs
             ffmpeg("-ss", str(m["start"]), "-t", "45", "-i", str(src), "-af",
                    "afade=t=in:d=2,afade=t=out:st=41:d=4,loudnorm=I=-24:TP=-3", "-ac", "2", "-ar", "44100",
                    "-c:a", "libmp3lame", "-b:a", "80k", str(bed))
         under = mdir / f"under_{m['id']}.mp3"
-        if not m.get("bed") and not under.exists() and src.exists():  # 150 s bed that plays under the dialogue
-            ffmpeg("-ss", str(m["start"]), "-t", "150", "-i", str(src), "-af",
-                   "afade=t=in:d=4,afade=t=out:st=144:d=6,lowpass=f=5000,loudnorm=I=-24:TP=-3", "-ac", "1", "-ar", "24000",
-                   "-c:a", "libmp3lame", "-b:a", "48k", str(under))
+        if not m.get("bed") and not under.exists() and src.exists():  # <=150 s bed that plays (looped) under the dialogue
+            UL = max(20.0, min(150.0, duration(src) - m["start"] - 1))
+            ffmpeg("-ss", str(m["start"]), "-t", f"{UL:.1f}", "-i", str(src), "-af",
+                   f"afade=t=in:d=4,afade=t=out:st={UL-6:.1f}:d=6,lowpass=f=5000,loudnorm=I=-24:TP=-3", "-ac", "1", "-ar", "24000",
+                   "-c:a", "libmp3lame", "-b:a", "40k", str(under))
     build_ambience()
     credits = [{k: m[k] for k in ("id", "title", "artist", "license", "license_url", "source")} for m in MUSIC]
     credits.append({"id": "wind", "title": "Desert wind (ambience)", "artist": "Generated for Radio BCS2050 (filtered noise)",
@@ -222,7 +265,7 @@ def build_music() -> dict:
                                 "music": credits,
                                 "voices": "Grok text-to-speech (xAI): voices 'rex' (host) and 'eve' (co-host)."})
     md = ["# Radio BCS2050 — music credits", "",
-          "Only CC0, public-domain or CC BY recordings are used, as short excerpts (14–38 s) with fades.", "",
+          "Only CC0, public-domain or CC BY recordings are used, as excerpts with fades (soft beds under the voices, ~30 s breaks).", "",
           "| Track | Artist | License | Source |", "|---|---|---|---|"]
     md += [f"| {m['title']} | {m['artist']} | [{m['license']}]({m['license_url']}) | {m['source']} |" for m in MUSIC]
     md += ["| Desert wind (ambience) | Generated for Radio BCS2050 from filtered noise | CC0 1.0 | scripts/bcs_radio.py |"]
@@ -491,7 +534,7 @@ def chapter_sources(pack: dict, ch: str, L: str) -> dict:
 #   datos     = reality measured in the portal's own database (GIS, CONAGUA/DMA, INEGI, documents, ontology)
 #   tendencia = the portal's Tendencia 2050: a PROBABLE trend, not a fact
 #   vision    = the portal's Visión 2050: an IDEAL, achievable future, not a forecast
-KINDS = {"noticias": ("Noticias", "News"), "datos": ("Datos del portal", "Portal data"),
+KINDS = {"noticias": ("Noticias", "News"), "datos": ("Datos del portal", "Portal data"), "serie": ("Datos del portal", "Portal data"),
          "tendencia": ("Tendencia 2050", "Trend 2050"), "vision": ("Visión 2050", "Vision 2050")}
 DAILY_PLAN = {"noticias": 3, "datos": 2, "tendencia": 1, "vision": 1}  # 7 episodes x ES/EN, ~20 min each
 KIND_MUSIC = {"tendencia": "economia", "vision": "medio_ambiente"}  # music/ambience for state-wide episodes
@@ -513,6 +556,8 @@ STATUS = {
                "Vision 2050 proposes… a desirable, achievable future, not a prediction'). When a lever or risk cites a measured "
                "fact, say so."),
 }
+STATUS["serie"] = STATUS["datos"] + (" Say what the map shows in words (what is drawn, where it concentrates). Flag data "
+                                     "gaps and limits honestly. If a record is a projection or a plan, say so explicitly.")
 KIND_CHAPTERS = {
     "noticias": [("entrada", "Entrada", "Cold open", 190), ("titulares", "Lo que pasó", "What happened", 450),
                  ("mas", "Más noticias", "More news", 400), ("contexto", "El contexto", "The context", 380),
@@ -534,9 +579,10 @@ KIND_CHAPTERS = {
 PILLAR_GROUPS = {"pilares1": ["agua", "costa_clima"], "pilares2": ["turismo", "economia"],
                  "pilares3": ["energia", "movilidad"], "pilares4": ["vivienda", "gobernanza"]}
 KIND_BRIEF = {
-    "entrada": "COLD OPEN: no greeting. Lead with the single most important item in SOURCES (what, where, who, when, "
-               "source, why it matters), signposting its source and status. Then: this is Radio BCS2050, today's episode "
-               "'{topic}', and the concrete question it will answer.",
+    "entrada": "COLD OPEN: lead with ONE hook from SOURCES (the most surprising or important item: what, where, who, "
+               "source, status) in a quick, lively exchange. Then this is Radio BCS2050, a friendly hello, the two hosts "
+               "introduce themselves by first name ({host} and {cohost}), today's episode '{topic}', the concrete question "
+               "it will answer, and a teaser of something surprising coming later in the episode.",
     "titulares": "The latest news, one story at a time: what, where, who, when, outlet, why it matters for BCS; a reaction "
                  "and a follow-up question for each. No greeting.",
     "mas": "More of today's news not yet told, same method (outlet + date for each). No greeting.",
@@ -560,6 +606,11 @@ KIND_BRIEF = {
               "Light humor. No greeting.",
     "lectura": "How to read these data: what each measure means, its year and source, its limits (what it does NOT tell "
                "us). One reflective question for the audience. No greeting.",
+    "mapa": "WHAT THE MAP SHOWS: walk the listener through the portal's map layers for this topic in plain words — what "
+            "is drawn, how many features, where they concentrate, what the categories mean, the source. One layer at a time. "
+            "No greeting.",
+    "lagunas": "WHAT WE STILL DON'T KNOW: the data gaps and limits (missing layers, estimates, outdated years, model caveats), "
+               "said honestly, and why they matter for decisions. One reflective question for the audience. No greeting.",
     "cambio": "What changed this week in the portal's Tendencia 2050 (headline, change, leading theme), framed as a "
               "probable trend. No greeting.",
     "escenarios": "The scenarios and their probabilities and weekly changes, exactly as in SOURCES; what each scenario "
@@ -587,16 +638,195 @@ KIND_BRIEF = {
 }
 
 
+# ------------------------------------------------------------------ portal data series (permanent catalog)
+# slug: (title_es, title_en, music theme, record regex, map-layer id regex)
+SERIES = {
+    "acuiferos": ("Acuíferos y disponibilidad de agua", "Aquifers and water availability", "agua",
+                  r"acu[ií]fer|aquifer|dma|disponibilidad|conagua", r"acuiferos|focus_water"),
+    "presas_desalacion": ("Presas, desalación y abasto", "Dams, desalination and supply", "agua",
+                          r"presa|dam\b|desal|abasto|oomsapas|planta de tratamiento|reuse|re[uú]so", r"presas|focus_water"),
+    "escorrentia": ("Escorrentía y cuencas", "Runoff and watersheds", "agua",
+                    r"escorrent|runoff|cuenca|watershed|arroyo|hidrosheds|hydrosheds", r"escorrentia|waterways"),
+    "energia_red": ("Plantas, red eléctrica y subestaciones", "Power plants, grid and substations", "infraestructura",
+                    r"energ|el[eé]ctric|subestaci|substation|cfe|cenace|planta|power|sibcs|apag", r"energy|power"),
+    "proyectos_federales": ("Proyectos federales en el estado", "Federal projects in the state", "infraestructura",
+                            r"federal|sexenio|proyecto|project|inversi[oó]n p[uú]blica", r"federal_projects"),
+    "localidades": ("Localidades y población", "Towns and population", "urbanismo",
+                    r"localidad|locality|poblaci|population|inegi|censo|census|habitantes|vivienda", r"settlements|towns|municipalities"),
+    "edificios": ("El mapa de los edificios", "The map of buildings", "urbanismo",
+                  r"edific|building|altura|height|footprint|densidad|density|pisos|storey", r"edificios|density|vivienda_multifamiliar"),
+    "vivienda": ("Vivienda y mercado inmobiliario", "Housing and the property market", "desarrollo",
+                 r"vivienda|housing|inmobiliar|real estate|invi|listing|precio|renta|multifamiliar", r"market|vivienda"),
+    "anp": ("Áreas naturales protegidas y vegetación", "Protected areas and vegetation", "medio_ambiente",
+            r"anp|protegid|protected|reserva|biosfera|conanp|vegetaci|vegetation|rtp|conabio|manglar", r"anp|protected|rtp|cobertura"),
+    "costa": ("Costa, playas y riesgo costero", "Coast, beaches and coastal risk", "medio_ambiente",
+              r"costa|coast|playa|beach|erosi|oleaje|surge|litoral|nivel del mar|sea level", r"coast|beaches|haz_coast"),
+    "ciclones_inundaciones": ("Ciclones, inundaciones y drenaje pluvial", "Hurricanes, floods and storm drains", "medio_ambiente",
+                              r"cicl[oó]n|cyclone|hurac|hurricane|inund|flood|pluvial|drenaje|storm", r"inundaciones|desagues|haz_cyclone"),
+    "calor_sequia": ("Calor, sequía e incendios", "Heat, drought and wildfire", "medio_ambiente",
+                     r"calor|heat|sequ[ií]a|drought|incendi|fire|temperatura|temperature|clima|climate", r"haz_heat|haz_drought|haz_fire|temperature"),
+    "turismo_inventario": ("El inventario turístico", "The tourism inventory", "turismo",
+                           r"hotel|cuartos|rooms|turis|touris|ocupaci|occupancy|visitant|crucer|cruise", r"zzz"),
+    "aeropuertos": ("Aeropuertos y rutas aéreas", "Airports and air routes", "conectividad",
+                    r"aeropuert|airport|ruta|route|vuelo|flight|pasajer|passenger|iata|sjd|lap\b|lto", r"ports_air|transport_nodes"),
+    "carreteras": ("Carreteras, tráfico y cuellos de botella", "Roads, traffic and bottlenecks", "transporte",
+                   r"carreter|highway|road|tr[aá]fico|traffic|sict|tdpa|cuello|bottleneck|velocidad|speed", r"highway|traffic|bottleneck|limites"),
+    "movilidad_urbana": ("Ciclovías, carga eléctrica y movilidad urbana", "Bike lanes, EV charging and urban mobility", "transporte",
+                         r"ciclov|bike|bicicleta|carga|charging|el[eé]ctrico|movilidad|mobility|transporte p[uú]blico|bus", r"ciclovias|reparto|estaciones_carga"),
+    "crecimiento_urbano": ("Crecimiento urbano por municipio", "Urban growth by municipality", "urbanismo",
+                           r"crecimiento|growth|mancha urbana|urban|expansi|municipio|demanda|supply|oferta", r"density_muni|focus_corridor|focus_east|focus_places"),
+    "ordenamiento": ("Ordenamiento ecológico y planes urbanos", "Ecological zoning and urban plans", "urbanismo",
+                     r"ordenamiento|poer|uga|zonific|zoning|plan de desarrollo|pdu|programa|instrumento", r"poer|ran_nucleos"),
+    "tierra_agricultura": ("Tierra agrícola, ejidos y economía rural", "Farmland, ejidos and rural economy", "economia",
+                           r"agr[ií]col|farm|ejid|n[uú]cleo agrario|ran\b|pesca|fishing|ganad|rural|cultivo", r"agricultura|ran_nucleos"),
+    "brechas_datos": ("Lo que el portal todavía no sabe", "What the portal still doesn't know", "economia",
+                      r"brecha|gap|falta|missing|no disponible|unavailable|pendiente|caveat|limit", r"zzz"),
+}
+SERIES_CHAPTERS = [("entrada", "Entrada", "Cold open", 190), ("cifras", "Las cifras", "The numbers", 430),
+                   ("mapa", "Qué muestra el mapa", "What the map shows", 420), ("territorio", "El territorio", "The territory", 380),
+                   ("documentos", "Los documentos", "The documents", 340), ("sabias", "¿Sabías que…?", "Did you know?", 330),
+                   ("lagunas", "Lo que falta saber", "What we still don't know", 340), ("cierre", "Para pensar", "Food for thought", 210)]
+DATA_FILES = {  # file: (label for the source, list key or None)
+    "aquifers_bcs.json": ("CONAGUA, disponibilidad de acuíferos (DOF 2023)", "aquifers"),
+    "maps_gallery.json": ("mapas del atlas del portal", None), "analysis_layers.json": ("capas de análisis del portal", None),
+    "data_inventory.json": ("inventario de datos del portal", "datasets"), "data_gaps.json": ("brechas de datos del portal", "gaps"),
+    "top_localities.json": ("INEGI, censo de población y vivienda 2020", None), "tierra_agua.json": ("capas de tierra y agua", None),
+    "escorrentia.json": ("modelo de escorrentía del portal", None), "growth_demand_supply.json": ("análisis de crecimiento, demanda y oferta", None),
+    "inmobiliario_metrics.json": ("métricas inmobiliarias del portal", None), "flight_connections_bcs.json": ("rutas aéreas sin escalas", "airports"),
+    "ports_demand.json": ("demanda de aeropuertos y puertos", "airports"), "federal_projects.json": ("proyectos federales", "projects"),
+    "territorio_social.json": ("capas de territorio social", None), "geokg_summary.json": ("modelo de crecimiento urbano con imágenes Sentinel-2", None),
+    "plans_archive.json": ("archivo de planes e instrumentos", "plans"), "strategic_questions.json": ("preguntas estratégicas del portal", "questions"),
+    "tourism_detail.json": ("inventario turístico", "hotels"),
+}
+_SKIP_KEYS = re.compile(r"^(path|file|files|src|url|urls|p|n|geometry|coords|bbox|center|color|icon|id|ontology_id|source_file|"
+                        r"source_page|desktop|markdown|fich\w*|drive\w*)$", re.I)
+
+
+def _records(obj, key=None) -> list:
+    if key and isinstance(obj, dict):
+        obj = obj.get(key, [])
+    if isinstance(obj, list):
+        return [x for x in obj if isinstance(x, dict)]
+    if isinstance(obj, dict):  # dict of dicts or a single record with list fields
+        vals = [v for v in obj.values() if isinstance(v, dict)]
+        return vals if len(vals) >= 3 else [obj]
+    return []
+
+
+def _clean(x, depth=0):
+    if isinstance(x, dict):
+        return {k: _clean(v, depth + 1) for k, v in x.items() if not _SKIP_KEYS.match(str(k)) and v not in (None, "", [], {})}
+    if isinstance(x, list):
+        return [_clean(v, depth + 1) for v in x[:8]]
+    if isinstance(x, str) and re.search(r"\.(pdf|md|json|geojson|qgz|xlsx|csv|jpg|png)\b|/[\w-]+/", x):
+        return None
+    return x
+
+
+def gis_summary() -> dict:
+    """What each map layer shows: name, meaning, legend, source and simple counts (cached)."""
+    cache = CACHE / "gis_summary.json"
+    if cache.exists() and time.time() - cache.stat().st_mtime < 7 * 86400:
+        return load(cache, {})
+    gis = ROOT / "public" / "gis"
+    out = {}
+    layers = load(gis / "layers.json", []) or []
+    al = {x.get("id"): x for x in (load(DATA / "analysis_layers.json", []) or [])}
+    for f in sorted((gis / "analysis").glob("*.geojson")):
+        meta = al.get(f.stem) or al.get(f.stem.replace("haz_", "")) or {}
+        layers.append({"id": "analysis_" + f.stem, "url": f"/gis/analysis/{f.name}",
+                       **{k: v for k, v in meta.items() if k not in ("id", "url")},
+                       "name_es": meta.get("name_es") or f.stem.replace("_", " ")})
+    for ly in layers:
+        info = {k: v for k, v in ly.items() if k in ("name_es", "name_en", "legend_es", "legend_en", "label_ciudadano", "que_significa",
+                                                     "source_es", "source_en", "group_es", "group_en", "fuente", "source")}
+        fp = gis / str(ly.get("url", "")).replace("/gis/", "", 1)
+        try:
+            if fp.suffix == ".geojson" and fp.exists() and fp.stat().st_size < 40e6:
+                feats = (load(fp, {}) or {}).get("features", [])
+                info["features"] = len(feats)
+                props: dict = {}
+                for ft in feats[:5000]:
+                    for k, v in (ft.get("properties") or {}).items():
+                        if isinstance(v, str) and len(v) < 60:
+                            props.setdefault(k, {}).setdefault(v, 0)
+                            props[k][v] += 1
+                cats = {k: dict(sorted(v.items(), key=lambda kv: -kv[1])[:8]) for k, v in props.items()
+                        if 1 < len(v) <= 25 and not _SKIP_KEYS.match(k)}
+                names = next((list(v)[:12] for k, v in props.items() if re.match(r"(name|nombre|nom_\w+|NOMBRE|nom)$", k)), [])
+                if cats:
+                    info["categories"] = dict(list(cats.items())[:4])
+                if names:
+                    info["examples"] = names
+        except Exception:  # noqa: BLE001
+            pass
+        out[ly["id"]] = info
+    bi = load(gis / "edificios" / "index.json", {}) or {}
+    out["edificios"] = {"name_es": "Edificios (huellas y alturas)", **{k: v for k, v in bi.items() if isinstance(v, (str, int, float))}}
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    dump(cache, out)
+    return out
+
+
+def series_pack(slug: str, hist: dict) -> dict:
+    t_es, t_en, mus, rx, lrx = SERIES[slug]
+    R = re.compile(rx, re.I)
+    recs = []
+    for f, (label, key) in DATA_FILES.items():
+        for x in _records(load(DATA / f, {}) or {}, key):
+            c = _clean(x)
+            txt = json.dumps(c, ensure_ascii=False)
+            if c and R.search(txt):
+                recs.append({"dataset": label, "record": json.loads(clip(txt, 700)) if txt.endswith("}") and len(txt) <= 700 else clip(txt, 700)})
+    facts = [{**{k: x.get(k) for k in ("metric", "value", "unit", "year")}, "source": source_label(x.get("source", ""))}
+             for x in (load(DATA / "portal_facts.json", {}) or {}).get("facts", [])
+             if R.search(" ".join(str(x.get(k, "")) for k in ("metric", "theme", "source", "id")))]
+    gis = gis_summary()
+    maps = [v for k, v in gis.items() if re.search(lrx, k) or R.search(json.dumps(v, ensure_ascii=False)[:400])][:8]
+    lib = [{"title": x["title"], "org": x.get("org"), "year": x.get("year"), "why": clip(x.get("relevance", ""), 260)}
+           for x in (load(DATA / "library.json", {}) or {}).get("items", [])
+           if R.search(" ".join([x.get("title", ""), x.get("relevance", ""), " ".join(x.get("tags") or [])]))][:6]
+    onto = [{"label": x.get("label"), "summary": clip(x.get("summary", ""), 300)}
+            for x in (load(DATA / "ontology_factors.json", {}) or {}).get("nodes", []) if x.get("summary") and R.search(x.get("label", "") + x.get("summary", ""))][:4]
+    graph = [{"label": x.get("label"), "summary": clip(x.get("summary", ""), 300)}
+             for x in (load(DATA / "graph.json", {}) or {}).get("nodes", []) if x.get("summary") and R.search(x.get("label", "") + x.get("summary", ""))][:4]
+    gaps = [r_ for r_ in recs if r_["dataset"] in ("brechas de datos del portal",)][:6]
+    muni = {k: {kk: vv for kk, vv in v.items() if not isinstance(vv, (list, dict))}
+            for k, v in (load(DATA / "municipios.json", {}) or {}).items() if isinstance(v, dict)}
+    places = [clip(json.dumps(_clean({k: v for k, v in pl.items()}), ensure_ascii=False), 700)
+              for pl in (load(DATA / "place_dossiers.json", {}) or {}).get("places", []) if R.search(json.dumps(pl, ensure_ascii=False))][:3]
+    other = [r_ for r_ in recs if r_ not in gaps]
+    return {"theme": slug, "kind": "serie", "ids": [], "now": [], "older": [], "label_es": f"Datos del portal · {t_es}",
+            "label_en": f"Portal data · {t_en}", "series": {"facts": facts[:40], "records": other[:30], "maps": maps, "library": lib,
+                                                              "ontology": onto + graph, "gaps": gaps, "municipios": muni, "places": places}}
+
+
+def series_sources(pack: dict, ch: str, L: str) -> dict:
+    d = pack["series"]
+    f, rc = d["facts"], d["records"]
+    return {"entrada": {"key_facts": f[:3], "key_records": rc[:2], "map": d["maps"][:1]},
+            "cifras": {"portal_facts": f[:16], "records": rc[:6]},
+            "mapa": {"map_layers": d["maps"], "note": "describe what each map shows: what is drawn, where it concentrates, what the colours/categories mean"},
+            "territorio": {"records": rc[6:18], "municipalities": d["municipios"], "places": d["places"]},
+            "documentos": {"library_documents": d["library"], "ontology_and_graph": d["ontology"], "records": rc[18:24]},
+            "sabias": {"portal_facts": f[16:32] or f[:8], "records": rc[24:30] or rc[:4]},
+            "lagunas": {"data_gaps": d["gaps"], "map_layers_with_limits": [{k: v for k, v in m.items() if "legend" in k or "name" in k} for m in d["maps"]],
+                        "facts": f[:6]},
+            "cierre": {"topic": pack["label_" + L], "what_was_covered": [x.get("metric") for x in f[:10]] + [m.get("name_" + L) or m.get("name_es") for m in d["maps"][:4]]}}[ch]
+
+
 def music_theme(eid: str) -> str:
     """Music/ambience theme for an episode id ('noticias-agua' -> 'agua'; 'tendencia' -> its KIND_MUSIC)."""
     kind, _, theme = eid.partition("-")
+    if theme in SERIES:
+        return SERIES[theme][2]
     if theme in TOPIC:
         return theme
     return KIND_MUSIC.get(kind, eid if eid in TOPIC else "economia")
 
 
 def chapters_for(pack: dict) -> list:
-    return KIND_CHAPTERS.get(pack.get("kind", ""), CHAPTERS)
+    return SERIES_CHAPTERS if pack.get("kind") == "serie" else KIND_CHAPTERS.get(pack.get("kind", ""), CHAPTERS)
 
 
 def plain(text: str, L: str) -> str:
@@ -617,7 +847,27 @@ def source_label(src: str) -> str:
 
 def kind_pack(kind: str, theme: str | None, hist: dict, news: list[dict], edu: list[dict]) -> dict:
     """Sources for one typed episode; each type sees only its own kind of material."""
-    if kind in ("noticias", "datos"):
+    if kind == "noticias" and theme == "semana":  # the week's most relevant news across all themes
+        today_ = max((n.get("date", "") for n in news), default=date.today().isoformat())
+        since = (date.fromisoformat(today_) - timedelta(days=7)).isoformat()
+        week = [n for n in news if n.get("date", "") > since]
+        def weight(n):
+            sc = classify(n)
+            return (max(sc.values()) if sc else 0) + 0.5 * len(n.get("feeds_into") or []) + (1 if n.get("place_ids") else 0)
+        ranked, seen_t = [], {}
+        for n in sorted(week, key=weight, reverse=True):  # relevance, at most 2 stories per theme
+            t = primary(n) or "otro"
+            if seen_t.get(t, 0) < 2:
+                ranked.append(n)
+                seen_t[t] = seen_t.get(t, 0) + 1
+        def item(x, n_=650):
+            return {"id": x["id"], "outlet": x.get("source", ""), "date": x.get("date", ""), "url": x["url"],
+                    "title_es": x.get("title_es", ""), "title_en": x.get("title_en", ""),
+                    "facts_es": clip(x.get("blurb_es", ""), n_), "facts_en": clip(x.get("blurb_en", ""), n_)}
+        p = {"theme": "semana", "now": [item(x) for x in ranked[:7]], "older": [item(x, 380) for x in ranked[7:15]],
+             "expres_de_unic": [], "ids": [x["id"] for x in ranked[:7]]}
+        tn = ("Lo más relevante de la semana", "The week's most relevant news")
+    elif kind in ("noticias", "datos"):
         p = topic_pack(theme, hist, news, edu)
         tn = THEMES[theme]
     else:
@@ -628,7 +878,7 @@ def kind_pack(kind: str, theme: str | None, hist: dict, news: list[dict], edu: l
     p["label_en"] = KINDS[kind][1] + (f" · {tn[1]}" if tn[1] else "")
     v = load(DATA / "foresights_vision.json", {}) or {}
     i = load(DATA / "foresights_ideal.json", {}) or {}
-    if kind == "noticias":
+    if kind == "noticias" and theme != "semana":
         p["now"] = p["now"] + [x for x in p["older"] if x not in p["now"]][:2]  # a fuller news slate
     if kind == "datos":
         pf = [x for x in (load(DATA / "portal_facts.json", {}) or {}).get("facts", [])
@@ -724,6 +974,8 @@ def number_episodes(today: str, episodes: list, hist: dict) -> None:
 
 def kind_sources(pack: dict, ch: str, L: str) -> dict:
     kind = pack["kind"]
+    if kind == "serie":
+        return series_sources(pack, ch, L)
     tl = lambda x: {k[:-3]: v for k, v in x.items() if not k.endswith("_es" if L == "en" else "_en")}
     if kind == "noticias":
         now, older = [tl(x) for x in pack["now"]], [tl(x) for x in pack["older"]]
@@ -782,9 +1034,29 @@ Not pure data: after the facts, help listeners care and think. Awareness and ref
 beats (one per chapter at most), and the episode asks the AUDIENCE 1-3 direct reflective questions in total
 ('¿Y usted/tú qué opinas…?', 'What would you…?'), mainly in the closing chapter. Clear narration: listeners must always
 know whether something is reported news, portal data, a probable trend or an ideal vision.
-Tone: warm, sunny, relaxed, curious and unhurried; friends explaining the news intelligently, not delivering a poem.
+Tone: warm, sunny, playful and curious; two friends explaining the news intelligently and having fun doing it.
 Humor and laughter come from natural reactions, never from tragedy or affected people. Never preach or hype.
-Two voices: HOST {host} (deep, slow, reflective) and CO-HOST {cohost} (warm, curious, brings the facts gently).
+Two voices: HOST {host} (warm, curious, steers the conversation) and CO-HOST {cohost} (quick, witty, brings the facts).
+In the opening chapter they greet the audience and introduce themselves by first name once, in the episode's language
+(Spanish: 'Soy {host}…' / 'y yo soy {cohost}'; English: 'I'm {host}…' / 'and I'm {cohost}'); later they call each
+other by name now and then. Never use any other host names.
+In English episodes translate every Spanish label from SOURCES ('guía temática del portal' → 'the portal's topic guide',
+'hm³/año' → 'cubic hectometres a year'). Never say acronyms such as DMA aloud: say 'water availability' / 'disponibilidad
+de agua' instead.
+ENTERTAINMENT (keep the audience listening; this must be FUN, not a lecture):
+- Real host chemistry: friendly banter, light teasing, playful disagreement that resolves with the facts, shared
+  laughs. Humor comes from the situation and the hosts' reactions — never forced jokes, puns on tragedy, or mockery.
+- Curiosity hooks and teasers that pay off later (Spanish: 'y en un momento te cuento por qué…', 'aguántame tantito…';
+  English: 'hold that thought…', 'stick around for this one…'). Stay 100 % in the episode's language.
+- Surprising, concrete comparisons a listener can picture (only with numbers from SOURCES; a comparison object
+  without digits like 'more than a soccer stadium' is fine only when it does not add a new fact).
+- Short anecdotes and local references tied to REAL places named in SOURCES (La Paz, Los Cabos, Loreto, Mulegé,
+  Comondú, the malecón, the Transpeninsular…), never invented events or people.
+- Recurring mini-segments the hosts name out loud, e.g. «El dato que nadie te contó» / "The number nobody told you",
+  «¿Y eso con qué se come?» / "So what does that mean for me?", «Mapa en mano» / "Map in hand".
+- Varied rhythm: quick back-and-forth runs, then a slower explanatory turn; a question to the listener mid-episode.
+Still professional: facts accurate and attributed, the source (news vs portal data) and status (reality / trend /
+vision) stay clear, no invented facts, no poetic excess.
 MOOD: bright, warm, sunny and optimistic — two friends who are genuinely happy to be talking about this place.
 They laugh easily, get excited by a good detail, tease each other kindly, and find hope even in hard news,
 while keeping the reporting accurate and useful. Use these delivery tags naturally, 2-4 per chapter (at least one [laugh] or [chuckle]):
@@ -876,13 +1148,14 @@ def write_chapter(pack: dict, ch: tuple, L: str, today: str, feedback: str = "",
     src = kind_sources(pack, cid, L) if kind else chapter_sources(pack, cid, L)
     kind_rule = (f"EPISODE TYPE: {KINDS[kind][0 if L == 'es' else 1]}. Everything in it is {STATUS[kind]}" if kind else "")
     brief = (KIND_BRIEF if kind else BRIEF)[cid]
-    sysmsg = STYLE.format(topic=topic, host=NAMES["host"], cohost=NAMES["cohost"],
+    sysmsg = STYLE.format(topic=topic, host=pack.get("names", NAMES)["host"], cohost=pack.get("names", NAMES)["cohost"],
                           lang="Mexican Spanish" if L == "es" else "English",
                           attrib='"según Diario Humano…", "informa Meganoticias…"' if L == "es" else '"Gringo Gazette reports…"',
                           portal='"la Tendencia 2050 del portal", "la Visión del portal", "el Foresight del portal"' if L == "es"
                           else '"the portal\'s Trend 2050", "the portal\'s Vision", "the portal\'s Foresight"',
                           chapter=t_es if L == "es" else t_en, words=int(w * 1.5), minw=w, kind_rule=kind_rule,
-                          turns=f"{max(6, w // 24)}-{max(8, w // 16)}", brief=brief.format(date=dstr, topic=topic))
+                          turns=f"{max(6, w // 24)}-{max(8, w // 16)}", brief=brief.format(date=dstr, topic=topic, host=pack.get("names", NAMES)["host"],
+                                                                              cohost=pack.get("names", NAMES)["cohost"]))
     user = "SOURCES:\n" + json.dumps({"date": dstr, "topic": topic, **src}, ensure_ascii=False)
     if draft:
         user += f"\n\nYOUR CURRENT DRAFT:\n{json.dumps(draft, ensure_ascii=False)}\n\nREVISE IT (return the whole JSON):\n{feedback}"
@@ -939,7 +1212,7 @@ def conversation_lint(turns: list, cid: str) -> list[str]:
     return msgs
 
 
-WRONG_STATUS = {"tendencia": r"\bvisi[oó]n\b|\bvision\b|aspiraci|ideal", "noticias": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050", "datos": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050"}
+WRONG_STATUS = {"serie": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050", "tendencia": r"\bvisi[oó]n\b|\bvision\b|aspiraci|ideal", "noticias": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050", "datos": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050"}
 
 
 JARGON = re.compile(r"\bEWMA\b|z-?score|\bdelta\b|p-?value|\bjson\b|\bgrok\b|\bxai\b|\bllm\b|\.md\b|\.json\b|https?://|www\.|"
@@ -1028,8 +1301,8 @@ def extend_chapter(pack: dict, ch: tuple, L: str, today: str, turns: list, add: 
 def fit_length(theme: str, pack: dict, today: str, lang: str, chapters: list, durs: list, edir: Path) -> list:
     """Measure the rendered episode; while it is under MIN_EP, lengthen the chapters furthest below their word target
     and re-render only those. Returns the (possibly longer) chapters; durs is updated in place."""
-    sig = TOPIC[music_theme(theme)][1]
-    under, amb = OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(music_theme(theme), 'city')}.mp3"
+    c = ep_cast(today, theme)
+    amb, V = cast_amb(theme), cast_voices(c)
     for rnd in range(4):
         total = sum(durs)
         if total >= MIN_EP:
@@ -1047,7 +1320,7 @@ def fit_length(theme: str, pack: dict, today: str, lang: str, chapters: list, du
         for k, t in new.items():
             if t is not chapters[k]:
                 chapters[k] = t
-                durs[k] = render_chapter(t, lang, edir / f"{k+1:02d}.mp3", k == 0, under, amb)
+                durs[k] = render_chapter(t, lang, edir / f"{k+1:02d}.mp3", k == 0, cast_bed(c, k + 1, len(chapters)), amb, V)
     return chapters
 
 
@@ -1074,9 +1347,11 @@ def tts(text: str, voice: str, lang: str) -> Path:
     return cache
 
 
-def render_chapter(turns: list, lang: str, dest: Path, opening: bool, under: Path | None, amb: Path | None) -> float:
+def render_chapter(turns: list, lang: str, dest: Path, opening: bool, under: Path | None, amb: Path | None,
+                   voices: dict | None = None) -> float:
+    V = voices or VOICES
     with ThreadPoolExecutor(6) as ex:
-        clips = list(ex.map(lambda t: tts(t["text"], VOICES[t["speaker"]], lang), turns))
+        clips = list(ex.map(lambda t: tts(t["text"], V[t["speaker"]], lang), turns))
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         parts = []
@@ -1084,7 +1359,7 @@ def render_chapter(turns: list, lang: str, dest: Path, opening: bool, under: Pat
         ffmpeg("-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", "0.8", str(sil))
         for k, c in enumerate(clips):
             w = td / f"t{k}.wav"
-            tempo = TEMPO.get(VOICES[turns[k]["speaker"]])
+            tempo = TEMPO.get(V[turns[k]["speaker"]])
             ffmpeg("-i", str(c), *(["-af", f"atempo={tempo}"] if tempo else []), "-ar", "24000", "-ac", "1", str(w))
             parts += [w, sil]
         lst = td / "list.txt"
@@ -1113,6 +1388,93 @@ def render_chapter(turns: list, lang: str, dest: Path, opening: bool, under: Pat
     return duration(dest)
 
 
+# ------------------------------------------------------------------ cast: hosts + music per episode
+def bed_pool() -> list:
+    return [m["id"] for m in MUSIC if not (m.get("bed") or m.get("amb"))]
+
+
+def load_cast() -> dict:
+    return load(CAST_FILE, {}) or {}
+
+
+def ep_cast(day: str, eid: str) -> dict:
+    """Hosts (voice pair) and music (3 beds that change between acts + the break after the episode)."""
+    c = load_cast().get(f"{day}/{eid}") or {}
+    return {"pair": c.get("pair", 0), "beds": c.get("beds") or [TOPIC[music_theme(eid)][1]], "break": c.get("break")}
+
+
+def cast_voices(c: dict) -> dict:
+    a, b = PAIRS[c["pair"]]
+    return {"host": a, "cohost": b}
+
+
+def cast_names(c: dict) -> dict:
+    v = cast_voices(c)
+    return {k: VNAME[x] for k, x in v.items()}
+
+
+def cast_bed(c: dict, k: int, n: int) -> Path:
+    """Bed under chapter k (1-based) of n: the bed changes between acts (opening / middle / closing third)."""
+    beds = c["beds"]
+    return OUT / "music" / f"under_{beds[min(len(beds) - 1, (k - 1) * len(beds) // max(1, n))]}.mp3"
+
+
+def cast_amb(eid: str) -> Path:
+    return OUT / "music" / f"amb_{AMBIENCE.get(music_theme(eid), 'city')}.mp3"
+
+
+def catalog_order(today: str | None = None, today_topics: list | None = None) -> list:
+    """Loop order of the station (newest edition first, edition order inside), as 'date/topic' keys."""
+    eds = sorted((p.name for p in (OUT / "editions").iterdir() if (p / "edition.json").exists()), reverse=True)
+    if today and today not in eds:
+        eds = sorted(eds + [today], reverse=True)
+    out = []
+    for d in eds:
+        e = load(OUT / "editions" / d / "edition.json", {}) or {}
+        if e and e.get("format") != "podcast-episodes":
+            continue
+        tops = [x["topic"] for x in e.get("episodes", [])]
+        if d == today and today_topics:
+            tops += [t for t in today_topics if t not in tops]
+        out += [f"{d}/{t}" for t in tops]
+    return out
+
+
+def assign_cast(order: list, fresh: set) -> dict:
+    """Give each episode a host pair and music so neighbours in the loop never share a pair or a track.
+    Fresh keys get a rotating voice pair; older episodes keep their recorded pair (pair 0 = Tomás + Luz)."""
+    cast, pool, n = load_cast(), bed_pool(), len(order)
+    for key in fresh:
+        cast.pop(key, None)
+    pair_use = {k: 0 for k in range(len(PAIRS))}
+    track_use = {m: 0 for m in pool}
+    for c in cast.values():
+        pair_use[c.get("pair", 0)] = pair_use.get(c.get("pair", 0), 0) + 1
+        for m in c.get("beds", []) + [c.get("break")]:
+            if m in track_use:
+                track_use[m] += 1
+    for i, key in enumerate(order):
+        if key in cast and cast[key].get("beds") and cast[key].get("break"):
+            continue
+        nb = [cast.get(order[(i - 1) % n]) or {}, cast.get(order[(i + 1) % n]) or {}] if n > 1 else []
+        if key in fresh:
+            bad = {x.get("pair") for x in nb}
+            pair = min((p for p in range(len(PAIRS)) if p not in bad), key=lambda p: (pair_use[p], p))
+        else:
+            pair = (cast.get(key) or {}).get("pair", 0)
+        busy = {m for x in nb for m in x.get("beds", []) + [x.get("break")]}
+        h = int(hashlib.sha1(key.encode()).hexdigest(), 16)
+        rank = sorted((m for m in pool if m not in busy), key=lambda m: (track_use[m], (h + pool.index(m) * 7919) % 997))
+        beds, brk = rank[:3], rank[3]
+        cast[key] = {"pair": pair, "beds": beds, "break": brk,
+                     "hosts": [VNAME[v] for v in PAIRS[pair]], "voices": list(PAIRS[pair])}
+        pair_use[pair] += 1
+        for m in beds + [brk]:
+            track_use[m] += 1
+    dump(CAST_FILE, dict(sorted(cast.items())))
+    return cast
+
+
 # ------------------------------------------------------------------ main
 def build_episode(theme: str, pack: dict, today: str, lang: str, music: dict, script_only: bool) -> dict:
     t0 = time.time()
@@ -1123,9 +1485,9 @@ def build_episode(theme: str, pack: dict, today: str, lang: str, music: dict, sc
     shutil.rmtree(edir, ignore_errors=True)
     edir.mkdir(parents=True, exist_ok=True)
     sig, stings = TOPIC[music_theme(theme)][1], TOPIC[music_theme(theme)][2]
-    under = OUT / "music" / f"under_{sig}.mp3"
-    amb = OUT / "music" / f"amb_{AMBIENCE.get(music_theme(theme), 'city')}.mp3"
-    durs = [0.0 if script_only else render_chapter(t, lang, edir / f"{k:02d}.mp3", k == 1, under, amb)
+    c = ep_cast(today, theme)
+    amb, V = cast_amb(theme), cast_voices(c)
+    durs = [0.0 if script_only else render_chapter(t, lang, edir / f"{k:02d}.mp3", k == 1, cast_bed(c, k, len(chapters)), amb, V)
             for k, t in enumerate(chapters, 1)]
     if not script_only:
         chapters = fit_length(theme, pack, today, lang, chapters, durs, edir)
@@ -1138,7 +1500,8 @@ def build_episode(theme: str, pack: dict, today: str, lang: str, music: dict, sc
         tracks.append({"n": k, "id": ch[0], "title": ch[1] if lang == "es" else ch[2],
                        "src": f"/radio/editions/{today}/{theme}/{lang}/{k:02d}.mp3", "duration": dur, "sting": sting})
     title = f"{pack.get('label_' + lang) or THEMES[theme][0 if lang == 'es' else 1]} · Radio BCS2050"
-    dump(edir / "script.json", {"topic": theme, "lang": lang, "title": title,
+    dump(edir / "script.json", {"topic": theme, "lang": lang, "title": title, "hosts": cast_names(c), "voices": V,
+                                "music": c["beds"],
                                 "chapters": [{"id": c[0], "title": c[1] if lang == "es" else c[2], "turns": t}
                                              for c, t in zip(CH, chapters)]})
     print(f"  [{theme}/{lang}] {sum(words(t) for t in chapters)} words, {total/60:.1f} min ({time.time()-t0:.0f}s)")
@@ -1183,7 +1546,7 @@ def build_ids() -> dict:
 EPOCH = "2026-11-17T00:00:00Z"
 SWITCH_HOUR = 12  # new schedules go on air at the next 12:00 Europe/Madrid, so the live loop never jumps mid-day
 STORE = Path(os.environ.get("BCS_RADIO_STORE", "/cursor/stores/store-fc6b39be-e5cc-45bc-92bf-16b8f06bfaac/radio_bcs2050"))
-STORE_CAP_MB = 400
+STORE_CAP_MB = 3000  # permanent catalog (~7 MB per episode-language)
 
 
 def next_switch(now=None) -> str:
@@ -1240,15 +1603,9 @@ def build_station(apply_now: bool = False) -> None:
         return sum(1 for ep in (load(OUT / "editions" / d / "edition.json", {}) or {}).get("episodes", [])
                    if all((ROOT / "public" / t["src"].lstrip("/")).exists()
                           for lv in ep.get("languages", {}).values() for t in lv["tracks"]))
-    keep, n_eps = [], 0
-    for d in eds:
-        k = has_audio(d)
-        if k:
-            keep.append(d)
-            n_eps += k
-        if n_eps >= MIN_LOOP:
-            break
-    eds = keep
+    eds = [d for d in eds if has_audio(d)  # permanent catalog: every podcast edition with audio, newest first
+           and (load(OUT / "editions" / d / "edition.json", {}) or {}).get("format") == "podcast-episodes"]
+    cast = load_cast()
     for lang in ("es", "en"):
         items, n = [], 0
         for d in eds:
@@ -1262,12 +1619,17 @@ def build_station(apply_now: bool = False) -> None:
                     meta["title"] = ep[f"title_{lang}"]
                 if ep.get("number"):
                     meta["num"] = ep["number"]
+                if ep.get("kind"):
+                    meta["type"] = "datos" if ep["kind"] == "serie" else ep["kind"]
+                if ep.get("hosts"):
+                    meta["hosts"] = ep["hosts"]
                 items.append({"src": ids[lang][n % len(ids[lang])], "d": dur(ids[lang][n % len(ids[lang])]), "kind": "id"})
                 for t in lv["tracks"]:
                     items.append({"src": t["src"], "d": t["duration"] or dur(t["src"]), "kind": "talk", "ch": t["title"], **meta})
                     if t.get("sting"):
                         items.append({"src": t["sting"], "d": dur(t["sting"]), "kind": "music", **meta})
-                b = breaks[n % len(breaks)]
+                cb = (cast.get(f"{d}/{ep['topic']}") or {}).get("break")
+                b = f"/radio/music/break_{cb}.mp3" if cb else breaks[n % len(breaks)]
                 items.append({"src": b, "d": dur(b), "kind": "music"})
                 n += 1
         total = round(sum(x["d"] for x in items), 2)
@@ -1294,10 +1656,11 @@ def rerender(ed_date: str, topic: str, lang: str) -> bool:
     sc = load(OUT / "editions" / ed_date / topic / lang / "script.json")
     if not sc or not os.environ.get("XAI_API_KEY"):
         return False
-    sig = TOPIC[music_theme(topic)][1]
+    c = ep_cast(ed_date, topic)
+    n = len(sc["chapters"])
     for k, ch in enumerate(sc["chapters"], 1):
         render_chapter(ch["turns"], lang, OUT / "editions" / ed_date / topic / lang / f"{k:02d}.mp3", k == 1,
-                       OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(music_theme(topic), 'city')}.mp3")
+                       cast_bed(c, k, n), cast_amb(topic), sc.get("voices") or cast_voices(c))
     return True
 
 
@@ -1333,7 +1696,7 @@ def sync() -> int:
 
 def backup_store() -> None:
     if STORE.parent.exists():
-        eds = sorted((p.name for p in (OUT / "editions").iterdir() if p.is_dir()), reverse=True)[:KEEP_AUDIO]
+        eds = sorted((p.name for p in (OUT / "editions").iterdir() if p.is_dir()), reverse=True)
         used = 0
         for d in eds:
             for f in sorted((OUT / "editions" / d).rglob("*.json")):  # scripts + edition manifests (tiny)
@@ -1349,10 +1712,7 @@ def backup_store() -> None:
                 if not b.exists() or b.stat().st_size != f.stat().st_size:
                     b.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(f, b)
-        if (STORE / "editions").exists():
-            for d in (STORE / "editions").iterdir():
-                if d.name not in eds:
-                    shutil.rmtree(d, ignore_errors=True)
+        # permanent catalog: nothing is removed from the store
 
 
 def check_dist() -> int:
@@ -1376,11 +1736,18 @@ def main() -> int:
     ap.add_argument("--apply-now", action="store_true", help="put the new loop on air now instead of at the next 12:00 Madrid")
     ap.add_argument("--replace", action="store_true", help="with --topic: rebuild only those topics inside today's edition")
     ap.add_argument("--rerender", action="store_true", help="with --extend: re-mix every episode with current voice settings")
+    ap.add_argument("--weekly-news", action="store_true",
+                    help="add ONE ~20 min episode on the week's most relevant news to the catalog (Monday routine)")
+    ap.add_argument("--data-series", action="store_true", help="(re)build the 20 'Datos del portal' catalog episodes (SERIES)")
     ap.add_argument("--meta", action="store_true", help="(re)write episode titles, show notes and numbers for --date")
     ap.add_argument("--extend", action="store_true", help="lengthen built episodes of --date that measure under ~19.5 min")
     ap.add_argument("--sync", action="store_true", help="restore/back up episode audio (run before astro build)")
     ap.add_argument("--check-dist", action="store_true", help="fail if any station file is missing from dist")
     a = ap.parse_args()
+    if a.weekly_news:
+        a.topic, a.replace, a.apply_now = ["noticias-semana"], True, True
+    if a.data_series:
+        a.topic, a.replace, a.apply_now = (a.topic or [f"serie-{k}" for k in SERIES]), True, True
     today, t0 = a.date, time.time()
     if a.sync:
         return sync()
@@ -1431,8 +1798,16 @@ def main() -> int:
     packs = {}
     for th in topics:  # sequential so two episodes never tell the same fresh story
         kind, _, theme = th.partition("-")
-        packs[th] = kind_pack(kind, theme or None, hist, news, edu) if kind in KINDS else topic_pack(th, hist, news, edu)
+        if kind == "serie" or (kind == "datos" and theme in SERIES):
+            packs[th] = series_pack(theme, hist)
+        elif kind in KINDS:
+            packs[th] = kind_pack(kind, theme or None, hist, news, edu)
+        else:
+            packs[th] = topic_pack(th, hist, news, edu)
         hist = {**hist, "used": list(set(hist.get("used", [])) | set(packs[th]["ids"]))}
+    assign_cast(catalog_order(today, [e["topic"] for e in keep_eps] + topics), {f"{today}/{t}" for t in topics})
+    for th in topics:
+        packs[th]["names"] = cast_names(ep_cast(today, th))
     langs = ["es", "en"] if a.lang == "both" else [a.lang]
     jobs = [(th, L) for th in topics for L in langs]
     def safe(j):  # one failed episode drops its topic, not the whole edition
@@ -1441,7 +1816,7 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"  WARN: {j[0]}/{j[1]} failed: {e}", file=sys.stderr)
             return None
-    with ThreadPoolExecutor(3) as ex:
+    with ThreadPoolExecutor(4) as ex:
         res = dict(zip(jobs, ex.map(safe, jobs)))
     failed = {th for (th, L), v in res.items() if v is None}
     topics = [th for th in topics if th not in failed]
@@ -1473,11 +1848,17 @@ def main() -> int:
             srcs += [{"outlet": "Portal BCS 2050", "title": "Tendencia 2050", "url": "/foresights/"}]
         if kind == "vision":
             srcs += [{"outlet": "Portal BCS 2050", "title": "Visión 2050", "url": "/foresights/"}]
+        if kind == "serie":
+            sd = p["series"]
+            srcs += [{"outlet": "Portal BCS 2050", "title": t} for t in sorted({x["dataset"] for x in sd["records"] + sd["gaps"]})]
+            srcs += [{"outlet": "Portal BCS 2050 · mapa", "title": m.get("name_es") or ""} for m in sd["maps"] if m.get("name_es")]
+            srcs += [{"outlet": f"{x.get('org','')} ({x.get('year','')})", "title": x["title"]} for x in sd["library"]]
         if kind is None:
             srcs += [{"outlet": "Portal BCS 2050", "title": "Tendencia 2050 · Visión · Foresight · Ontología", "url": "/foresights/"}]
         episodes.append({"topic": th, "kind": kind or "tema", "theme": p.get("theme"),
                          "name_es": p.get("label_es") or THEMES[th][0], "name_en": p.get("label_en") or THEMES[th][1],
                          "signature": music[TOPIC[music_theme(th)][1]],
+                         "hosts": list(cast_names(ep_cast(today, th)).values()), "music": ep_cast(today, th)["beds"],
                          "languages": {L: res[(th, L)] for L in langs}, "sources": srcs, "source_ids": p["ids"]})
     if keep_eps:
         order = {e["topic"]: k for k, e in enumerate(load(ed_dir / "edition.json", {}).get("episodes", []))}
@@ -1486,7 +1867,7 @@ def main() -> int:
         with ThreadPoolExecutor(4) as ex:
             list(ex.map(lambda e: e.get("title_es") or episode_meta(ed_dir, e), episodes))
     number_episodes(today, episodes, hist)
-    edition = {"date": today, "format": "podcast-episodes", "engine": {"script": f"xAI {MODEL}", "voices": "xAI Grok TTS (rex, eve)"},
+    edition = {"date": today, "format": "podcast-episodes", "engine": {"script": f"xAI {MODEL}", "voices": "xAI Grok TTS (rotating host pairs, see /radio/cast.json)"},
                "episodes": episodes, "source_ids": sorted(set(i for e in episodes for i in e.get("source_ids", []))),
                "credits": "/radio/credits.json"}
     dump(ed_dir / "edition.json", edition)
@@ -1505,11 +1886,7 @@ def main() -> int:
     newer = not on_air_dates() or today > max(on_air_dates())
     build_station(a.apply_now or newer)
     keep = station_srcs()
-    for old in eds[:-KEEP_AUDIO]:  # trim: audio older than the rotation and no longer on any schedule
-        for mp3 in (OUT / "editions" / old).rglob("*.mp3"):
-            if "/radio/" + str(mp3.relative_to(ROOT / "public")).split("radio/", 1)[1] not in keep:
-                mp3.unlink()
-    sync()
+    sync()  # permanent catalog: episode audio is never deleted
     print(f"Wrote public/radio/latest.json ({today}) in {(time.time()-t0)/60:.1f} min")
     return 0
 
@@ -1519,7 +1896,7 @@ def write_archive() -> list:
     arch = []
     for d in reversed(eds):
         e = load(OUT / "editions" / d / "edition.json", {})
-        arch.append({"date": d, "audio": d in eds[-KEEP_AUDIO:], "edition": f"/radio/editions/{d}/edition.json",
+        arch.append({"date": d, "audio": True, "edition": f"/radio/editions/{d}/edition.json",
                      "topics": [{"topic": x["topic"], "name_es": x["name_es"], "name_en": x["name_en"], "kind": x.get("kind"),
                                  "number": x.get("number"), "title_es": x.get("title_es"), "title_en": x.get("title_en"),
                                  "duration": {L: v["duration"] for L, v in x["languages"].items()}}
@@ -1548,23 +1925,35 @@ def extend_existing(today: str, topics: list | None, apply_now: bool, rerender_a
             if sum(durs) < MIN_EP or rerender_all:
                 jobs.append((ep, L, lv, sc, durs))
 
+    assign_cast(catalog_order(), set())  # older episodes get varied music (their recorded voices stay)
+
     def run(j):
         ep, L, lv, sc, durs = j
         own = set(ep.get("source_ids", []))
         h = {**hist, "used": [u for u in hist.get("used", []) if u not in own]}
         kind = ep.get("kind")
-        pack = (kind_pack(kind, ep.get("theme") if kind in ("noticias", "datos") else None, h, news, edu)
-                if kind in KINDS else topic_pack(ep["topic"], h, news, edu))
+        if kind == "serie":
+            pack = series_pack(ep["topic"].partition("-")[2], h)
+        else:
+            pack = (kind_pack(kind, ep.get("theme") if kind in ("noticias", "datos") else None, h, news, edu)
+                    if kind in KINDS else topic_pack(ep["topic"], h, news, edu))
+        pack["names"] = sc.get("hosts") or cast_names(ep_cast(today, ep["topic"]))
         src, stage = ed_dir / ep["topic"] / L, ed_dir / ".staging" / ep["topic"] / L
         shutil.rmtree(stage, ignore_errors=True)
         shutil.copytree(src, stage)
         if rerender_all:  # re-mix every chapter with the current voice settings (TTS cache: no new API calls)
-            sig = TOPIC[music_theme(ep["topic"])][1]
+            cc = ep_cast(today, ep["topic"])
+            n = len(sc["chapters"])
             for k, c in enumerate(sc["chapters"]):
-                durs[k] = render_chapter(c["turns"], L, stage / f"{k+1:02d}.mp3", k == 0, OUT / "music" / f"under_{sig}.mp3",
-                                         OUT / "music" / f"amb_{AMBIENCE.get(music_theme(ep['topic']), 'city')}.mp3")
+                durs[k] = render_chapter(c["turns"], L, stage / f"{k+1:02d}.mp3", k == 0, cast_bed(cc, k + 1, n),
+                                         cast_amb(ep["topic"]), sc.get("voices") or cast_voices(cc))
+            sc["music"] = cc["beds"]
             print(f"  [{ep['topic']}/{L}] re-mixed: {sum(durs)/60:.1f} min")
-        chapters = fit_length(ep["topic"], pack, today, L, [c["turns"] for c in sc["chapters"]], durs, stage)
+        try:
+            chapters = fit_length(ep["topic"], pack, today, L, [c["turns"] for c in sc["chapters"]], durs, stage)
+        except Exception as e:  # noqa: BLE001 — e.g. no script-model credit: keep the re-mix as it is
+            print(f"  WARN: {ep['topic']}/{L} not lengthened: {e}", file=sys.stderr)
+            chapters = [c["turns"] for c in sc["chapters"]]
         for c, t in zip(sc["chapters"], chapters):
             c["turns"] = t
         dump(stage / "script.json", sc)

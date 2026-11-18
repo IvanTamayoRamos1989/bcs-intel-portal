@@ -23,7 +23,7 @@ import ForesightIdeal from '../components/ForesightIdeal.astro';
   <script is:inline src="/lang-toggle.js?v=20261116-portada-scroll"></script>
   <link rel="stylesheet" href="/foresight-page.css?v=20261116-portada-scroll" />
   <link rel="stylesheet" href="/portada.css?v=20261116-portada-scroll" />
-  <link rel="stylesheet" href="/radio-player.css?v=20261118-eps" />
+  <link rel="stylesheet" href="/radio-player.css?v=20261118-cast" />
 </head>
 <body class="landing-shell">
   <header class="landing-top">
@@ -56,6 +56,7 @@ import ForesightIdeal from '../components/ForesightIdeal.astro';
         <p class="radio-up"></p>
         <ol class="radio-tracks"></ol>
         <p class="radio-eps-h"></p>
+        <div class="radio-filter" role="group"></div>
         <ol class="radio-eps"></ol>
         <div class="radio-foot"><button type="button" class="radio-notes-btn">Notas y fuentes</button><button type="button" class="radio-close" aria-label="Cerrar">✕</button></div>
         <div class="radio-notes" hidden></div>
@@ -96,7 +97,7 @@ import ForesightIdeal from '../components/ForesightIdeal.astro';
     </nav>
   </footer>
 
-  <script is:inline src="/radio-player.js?v=20261118-eps"></script>
+  <script is:inline src="/radio-player.js?v=20261118-cast"></script>
   <script is:inline>
     (function () {
       var lo = document.getElementById('bcs-logout');

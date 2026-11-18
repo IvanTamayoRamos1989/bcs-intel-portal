@@ -1,0 +1,121 @@
+{
+  "2026-11-18/datos-conectividad": {
+    "pair": 0,
+    "beds": [
+      "aridfoothills",
+      "walkingalong",
+      "ambler"
+    ],
+    "break": "somewheresunny",
+    "hosts": [
+      "Tomás",
+      "Luz"
+    ],
+    "voices": [
+      "rex",
+      "eve"
+    ]
+  },
+  "2026-11-18/datos-economia": {
+    "pair": 0,
+    "beds": [
+      "longstroll",
+      "romance",
+      "localforecasts"
+    ],
+    "break": "romanza",
+    "hosts": [
+      "Tomás",
+      "Luz"
+    ],
+    "voices": [
+      "rex",
+      "eve"
+    ]
+  },
+  "2026-11-18/noticias-conectividad": {
+    "pair": 0,
+    "beds": [
+      "sidewalkshade",
+      "beachbum",
+      "sambaisobel"
+    ],
+    "break": "bossa",
+    "hosts": [
+      "Tomás",
+      "Luz"
+    ],
+    "voices": [
+      "rex",
+      "eve"
+    ]
+  },
+  "2026-11-18/noticias-infraestructura": {
+    "pair": 0,
+    "beds": [
+      "gymnopedie1",
+      "shadesofspring",
+      "fluidscape"
+    ],
+    "break": "lewisanddekalb",
+    "hosts": [
+      "Tomás",
+      "Luz"
+    ],
+    "voices": [
+      "rex",
+      "eve"
+    ]
+  },
+  "2026-11-18/noticias-medio_ambiente": {
+    "pair": 0,
+    "beds": [
+      "mellowtron",
+      "horizon",
+      "mariachisnooze"
+    ],
+    "break": "cielito",
+    "hosts": [
+      "Tomás",
+      "Luz"
+    ],
+    "voices": [
+      "rex",
+      "eve"
+    ]
+  },
+  "2026-11-18/tendencia": {
+    "pair": 0,
+    "beds": [
+      "leblon",
+      "lagoav1",
+      "tranquilitybas"
+    ],
+    "break": "jazzbrunch",
+    "hosts": [
+      "Tomás",
+      "Luz"
+    ],
+    "voices": [
+      "rex",
+      "eve"
+    ]
+  },
+  "2026-11-18/vision": {
+    "pair": 0,
+    "beds": [
+      "slowjam",
+      "desertcity",
+      "inspired"
+    ],
+    "break": "clearair",
+    "hosts": [
+      "Tomás",
+      "Luz"
+    ],
+    "voices": [
+      "rex",
+      "eve"
+    ]
+  }
+}

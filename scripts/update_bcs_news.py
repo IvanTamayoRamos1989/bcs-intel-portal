@@ -6,7 +6,8 @@ Daily routine (07:05 Madrid, weekdays):
     python3 scripts/update_bcs_news.py --merge new.json   # merge curated items (list or {"items": [...]})
     python3 scripts/update_bcs_news.py --no-search --merge new.json
     python3 scripts/update_bcs_news.py --check            # build guard (run by `npm run build`)
-    python3 scripts/update_bcs_news.py --no-radio         # skip today's Radio BCS2050 edition (scripts/bcs_radio.py)
+    python3 scripts/update_bcs_news.py --radio            # also run scripts/bcs_radio.py (off by default: the radio is a
+                                                          # permanent catalog; weekly news episode = bcs_radio.py --weekly-news)
     python3 scripts/update_bcs_news.py --remove <url>     # deliberate removal (recorded in the ledger)
 
 Rules (2026-10-08):
@@ -393,7 +394,8 @@ def main() -> int:
     ap.add_argument("--no-tag", action="store_true", help="skip tag_news_flights_to_foresights.py")
     ap.add_argument("--no-corpus", action="store_true", help="skip build_chat_corpus.py")
     ap.add_argument("--no-vision", action="store_true", help="skip Tendencia 2050 and Visión recomputation")
-    ap.add_argument("--no-radio", action="store_true", help="skip the Radio BCS2050 edition (scripts/bcs_radio.py)")
+    ap.add_argument("--radio", action="store_true", help="also run scripts/bcs_radio.py (off by default; the radio is a permanent catalog)")
+    ap.add_argument("--no-radio", action="store_true", help="(default) skip the radio; kept for old routine commands")
     ap.add_argument("--dry-run", action="store_true", help="merge and guard, but write nothing")
     ap.add_argument("--check", action="store_true", help="validate feed vs ledger (build guard)")
     ap.add_argument("--remove", nargs="+", metavar="URL", help="deliberately remove items by URL")
@@ -447,7 +449,7 @@ def main() -> int:
         write_json_atomic(LEDGER, led)
         print(f"Wrote {OUT.relative_to(ROOT)} ({len(feed)} items, +{added} new)")
         run_post(a.no_tag, a.no_corpus, a.no_vision)
-        if not a.no_radio:
+        if a.radio and not a.no_radio:
             run_radio()
         return 0
     except Abort as e:
