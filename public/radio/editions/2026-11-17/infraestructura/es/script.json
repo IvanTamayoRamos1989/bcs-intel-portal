@@ -9,27 +9,47 @@
       "turns": [
         {
           "speaker": "cohost",
-          "text": "En Los Cabos el cabildo aprobó por unanimidad la Ley de Ingresos 2027: 6,746 mdp, 675 mdp menos que este año."
+          "text": "Cada temporada de lluvias el arroyo San José Viejo corta la circulación entre las colonias de San José del Cabo."
         },
         {
           "speaker": "host",
-          "text": "Mm. 9.09% menos, solo por la caída del mercado inmobiliario."
+          "text": "Mm. ¿Y la gente que viene del aeropuerto?"
         },
         {
           "speaker": "cohost",
-          "text": "Según Gringo Gazette, eso puede recortar obras el próximo año. Piensa en el camino que se queda sin asfalto, el desierto quieto bajo el sol."
+          "text": "Tiene que desviarse por la carretera de cuota, según Meganoticias. El proyecto ejecutivo del puente ya está listo."
         },
         {
           "speaker": "host",
-          "text": "Al mismo tiempo los vecinos recogen firmas del 19 al 22 para que el Camino Costero de Cabo del Este quede en el PDU 2040."
+          "text": "[pause] Imagina llegar después de un vuelo largo y encontrarte con eso."
         },
         {
           "speaker": "cohost",
-          "text": "Diario Humano cuenta que hay 3.9 km en riesgo de quedar en desuso. Grupo Questro propone una carretera alterna a un kilómetro de la playa. El Implan prefiere conservarla como paseo escénico con acceso al mar."
+          "text": "La SICT busca recursos federales para empezar la obra en 2027, a petición del gobernador."
         },
         {
           "speaker": "host",
-          "text": "Esto es Radio BCS2050. Hoy profundizamos en Infraestructura. La pregunta que perseguiremos es: ¿qué camino queremos que quede?"
+          "text": "Mientras tanto el tráfico sigue buscando rutas largas. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En La Paz también renuevan la calle Agustín Arriola con concreto hidráulico, informa Tribuna de México."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Desde cuándo? Y 48 mdp van a otra calle en La Paz, con redes nuevas de agua."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El 17 de noviembre, entre Paseo Álvaro Obregón y Francisco I. Madero, para revitalizar comercio y turismo. Esto es Radio BCS2050. Hoy hablamos de infraestructura. ¿Qué le pide el desierto a un puente?"
+        },
+        {
+          "speaker": "host",
+          "text": "The arroyo reminds me of how the sea and the desert meet and argue every year. [chuckle] What do you think the new concrete streets will feel like under the sun?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Warmer and smoother, I hope. They are trying to make the historic center ready for more visitors without losing its calm."
         }
       ]
     },
@@ -39,51 +59,249 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Según Gringo Gazette, el Cabildo de Los Cabos aprobó enviar al Congreso la Ley de Ingresos 2027 con 6,746 mdp, casi 675 mdp menos que el presupuesto de 2026."
-        },
-        {
-          "speaker": "host",
-          "text": "¿Qué pasa entonces con las obras que dependen de esos ingresos propios?"
+          "text": "Según Meganoticias, el proyecto ejecutivo del puente sobre el arroyo San José Viejo ya está listo."
         },
         {
           "speaker": "cohost",
-          "text": "El Ayuntamiento advierte que podrían reducirse proyectos el próximo año. ¿Y qué opinan los vecinos que viven de esas obras?"
+          "text": "Sí, y la SICT busca recursos federales para empezar en 2027, a petición del gobernador."
         },
         {
           "speaker": "host",
-          "text": "En Diario Humano leemos que habitantes de Los Cabos recogen firmas del 19 al 22 de noviembre para que el Camino Costero de Cabo del Este siga en el PDU 2040."
+          "text": "Cada temporada de lluvias el arroyo corta la circulación entre colonias de San José del Cabo."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, bajo el lema ¡El Camino Costero se queda!, porque el Implan quiere conservarlo como paseo escénico y Grupo Questro propone una carretera alterna a un kilómetro de la playa."
+          "text": "Obliga a quienes vienen del aeropuerto a desviarse por la carretera de cuota. [pause]"
         },
         {
           "speaker": "host",
-          "text": "¿Y qué decide el alcalde sobre esa consulta?"
+          "text": "¿Qué pasaría si el puente no se construye pronto?"
         },
         {
           "speaker": "cohost",
-          "text": "Dice que cualquier cambio se consultará. Mientras tanto, la actualización del PDU de 2025 pensaba dejar en desuso 3.9 km de los 94 km totales."
+          "text": "Sería un problema constante para vecinos y visitantes que llegan cansados del vuelo."
         },
         {
           "speaker": "host",
-          "text": "Meganoticias informa que las lluvias recientes y un derrame de aguas negras sin corregir por más de 20 días están dañando la carpeta asfáltica de la Transpeninsular."
+          "text": "Mm. Imagina dar todo ese rodeo con maletas y el sol bajando."
         },
         {
           "speaker": "cohost",
-          "text": "El Centro SCT en BCS reconoce las afectaciones en los acotamientos entre San José y Cabo San Lucas. ¿Y si el drenaje sanitario no se atiende pronto?"
+          "text": "El puente ayudaría a miles de personas que viajan entre el aeropuerto y las colonias todos los días."
         },
         {
           "speaker": "host",
-          "text": "En Tribuna de México leemos que hoy 17 de noviembre inicia la renovación con concreto hidráulico de la calle Agustín Arriola en el Centro Histórico de La Paz."
+          "text": "Ahora, Tribuna de México informa que mañana inicia la renovación de la calle Agustín Arriola en el Centro Histórico de La Paz."
         },
         {
           "speaker": "cohost",
-          "text": "Coordinada con el Fideicomiso de Obras de Infraestructura Social, para revitalizar comercio y turismo. El cierre empieza a las 6:00 h."
+          "text": "Con concreto hidráulico, entre Paseo Álvaro Obregón y Francisco I. Madero, en coordinación con el FOIS."
         },
         {
           "speaker": "host",
-          "text": "¿Cómo se siente una calle renovada cuando todo lo demás parece estar en pausa?"
+          "text": "El cierre vehicular empieza a las 6:00 h y pidieron retirar autos desde la noche anterior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El objetivo es revitalizar el comercio y el turismo en esa zona."
+        },
+        {
+          "speaker": "host",
+          "text": "La obra en el Centro Histórico podría atraer más visitantes una vez terminada la renovación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Crees que el cierre afecte mucho a los comercios al principio? [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Puede ser incómodo al inicio, pero a largo plazo debería ayudar a los puestos que están ahí todos los días."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me pregunto cómo lo viven los que atienden clientes justo en esa cuadra."
+        },
+        {
+          "speaker": "host",
+          "text": "Los comerciantes de la zona han esperado esta mejora por años, según los reportes locales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Palabra BCS menciona que la pavimentación se define principalmente por aforo vehicular."
+        },
+        {
+          "speaker": "host",
+          "text": "Además de zonas de inundación, hospitales y escuelas, porque la demanda supera los recursos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La titular Carolina Armenta Cervantes lo explicó así."
+        },
+        {
+          "speaker": "host",
+          "text": "Carolina Armenta Cervantes señaló que los recursos limitados obligan a elegir prioridades claras."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La repavimentación del bulevar Pino Pallas debe terminar antes de Navidad."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la calle Francisco King con concreto hidráulico llevará unos cuatro meses."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué te parece que prioricen por aforo? [laugh]"
+        },
+        {
+          "speaker": "host",
+          "text": "Tiene sentido cuando hay poco dinero, pero deja a muchas colonias esperando por su turno."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En las colonias atienden primero la calle que conecta con las arterias principales."
+        },
+        {
+          "speaker": "host",
+          "text": "Muchas familias en colonias periféricas esperan su turno para tener calles pavimentadas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "alDíaBCS reporta que la pavimentación de la calle Marlín en Loreto va al 45%."
+        },
+        {
+          "speaker": "host",
+          "text": "Ya terminaron el saneamiento de drenaje y alcantarillado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La red de agua potable está por terminar y hay 40% de guarniciones construidas."
+        },
+        {
+          "speaker": "host",
+          "text": "En Loreto el avance permite imaginar cómo quedará la calle Marlín cuando esté lista."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También preparan las cimentaciones para el alumbrado público."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo ves el avance en Loreto comparado con lo que falta en otras partes?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El futuro de la infraestructura en Baja California Sur depende de estos proyectos pequeños pero importantes."
+        },
+        {
+          "speaker": "host",
+          "text": "Es un paso adelante, aunque todavía queda mucho por hacer en toda la península."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "Las personas y los lugares",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hoy hablamos de cómo la infraestructura toca la vida diaria en lugares como Loreto y Comondú."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y también en La Paz y San José del Cabo. Esos proyectos recientes muestran lo que significa una calle o un puente para la gente."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué le preguntaría a alguien que vive cerca del arroyo San José Viejo?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Le preguntaría cómo se siente cuando las lluvias cortan el paso entre las colonias."
+        },
+        {
+          "speaker": "host",
+          "text": "Según Meganoticias el proyecto ejecutivo del puente ya está listo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en 2027 buscarán los recursos federales, a petición del gobernador. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Un puente que evita el desvío por la carretera de cuota para quien viene del aeropuerto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Imagínate el tiempo que se ahorra cada temporada de lluvias."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y qué pasaría si el puente no llega a tiempo?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La gente seguiría desviándose, sobre todo en temporada de lluvias."
+        },
+        {
+          "speaker": "host",
+          "text": "En La Paz también hay movimiento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El 17 de noviembre inicia la renovación de la calle Agustín Arriola con concreto hidráulico."
+        },
+        {
+          "speaker": "host",
+          "text": "Informa Tribuna de México que el cierre empieza a las seis de la mañana."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pidieron retirar los autos desde la noche del dieciséis. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "Todo en coordinación con el Fideicomiso de Obras de Infraestructura Social."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El objetivo es revitalizar el comercio y el turismo en el Centro Histórico."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué le preguntaría a un comerciante de esa calle?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Le preguntaría si cree que el concreto nuevo va a cambiar el flujo de gente."
+        },
+        {
+          "speaker": "host",
+          "text": "En Loreto el acueducto Londó–Loreto y la segunda etapa de la PTAR siguen siendo clave para el turismo y la conservación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en Comondú las obras de riego y la desaladora de la UABCS buscan apoyar el hub agro."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué le preguntaría a un agricultor de Comondú sobre el agua?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Le preguntaría cómo afecta el estrés de los acuíferos a sus cultivos diarios."
+        },
+        {
+          "speaker": "host",
+          "text": "La infraestructura siempre termina hablando de quiénes viven ahí y cómo se mueven."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Un puente o una calle nueva no es solo obra, es el día a día de las colonias."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. [pause] Eso es lo que nos deja pensando."
         }
       ]
     },
@@ -93,51 +311,139 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Luz, estos reportes de calles que se pavimentan y tomas de agua que se cierran… parece que hablan de cosas separadas."
+          "text": "Mira cómo todo se conecta sin que lo veamos."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, Tomás. En Loreto y La Paz renuevan redes de agua y drenaje junto con el pavimento. En Los Cabos cierran 25 tomas clandestinas que robaban más de 300 litros por segundo."
+          "text": "Sí, las lluvias del 30 de octubre dejaron claro que los cauces ya no fluyen como antes."
         },
         {
           "speaker": "host",
-          "text": "¿Y qué une todo eso por debajo?"
+          "text": "Según Meganoticias, Zofemat sacó 18 toneladas de basura solo en El Médano."
         },
         {
           "speaker": "cohost",
-          "text": "El mismo hilo: el sistema de agua que sostiene cada obra nueva. Sin él, la calle nueva no sirve y el hotel lleno se queda sin servicio."
+          "text": "Y 12.5 toneladas de palizada en San José del Cabo. Los especialistas dicen que modificar los cauces concentra todo."
         },
         {
           "speaker": "host",
-          "text": "Mm. Las desaladoras y la energía que las mueve siguen apareciendo en las ediciones anteriores del portal."
+          "text": "Mm. Esa concentración es lo que nadie ve hasta que llega el agua."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. El acoplamiento agua-energía que ya se veía en 2026 sigue presente. Un apagón en Cabos o La Paz afecta todo el paquete de infraestructura."
+          "text": "Exacto. Luego la misma agua daña la Transpeninsular."
         },
         {
           "speaker": "host",
-          "text": "¿Y el caso del hotel en Punta Lobos?"
+          "text": "Según Meganoticias, un derrame de aguas negras lleva más de 20 días sin repararse."
         },
         {
           "speaker": "cohost",
-          "text": "Los pescadores avisaron desde 2015 que las obras cercanas cambiaban la playa. Ahora el oleaje se llevó la cimentación. El problema no era solo el muro, era cómo se conecta todo con el mar."
+          "text": "El asfalto se rompe y el acotamiento se va."
         },
         {
           "speaker": "host",
-          "text": "Pero aquí está lo que nadie ve…"
+          "text": "Mientras tanto, en La Paz pavimentan la calle Francisco King Rondero con 48 millones de pesos."
         },
         {
           "speaker": "cohost",
-          "text": "La misma red que lleva agua a las colonias también decide si un desarrollo costero resiste o se derrumba."
+          "text": "Y aprovechan para cambiar las redes de agua y drenaje."
         },
         {
           "speaker": "host",
-          "text": "¿Entonces qué nos enseña el desierto y la costa juntos?"
+          "text": "Palabra BCS dice que beneficiará a más de 13 mil personas. [chuckle]"
         },
         {
           "speaker": "cohost",
-          "text": "Que la infraestructura no es lo que se ve en la superficie, sino el hilo que decide qué proyecto dura y cuál se borra con la marea."
+          "text": "En Mulegé acaban de empezar el acueducto Palo Verde–Santa Rosalía."
+        },
+        {
+          "speaker": "host",
+          "text": "Tribuna de México cuenta que en cinco años invirtieron 713 millones de pesos en obra pública."
+        },
+        {
+          "speaker": "host",
+          "text": "Y solo tienen dos de cuatro equipos Vactor trabajando para atender fugas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el agua que entra por la desaladora de Cabo San Lucas…"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y sumará 250 litros por segundo."
+        },
+        {
+          "speaker": "host",
+          "text": "Con ella la capacidad total llega a 655 litros por segundo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa agua necesita energía para moverse."
+        },
+        {
+          "speaker": "host",
+          "text": "Y ahí aparece el proyecto Oasis de la CFE en Mulegé."
+        },
+        {
+          "speaker": "cohost",
+          "text": "72 megawatts solares."
+        },
+        {
+          "speaker": "host",
+          "text": "Con baterías de 80 megawatts hora."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y un electrolizador de 20 megawatts para hidrógeno verde."
+        },
+        {
+          "speaker": "host",
+          "text": "Abastecería a unos 40 mil hogares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y evitaría 94 mil toneladas de CO2 al año."
+        },
+        {
+          "speaker": "host",
+          "text": "En Mulegé también pusieron 23 kilómetros de red de agua nueva."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y 15 kilómetros de drenaje."
+        },
+        {
+          "speaker": "host",
+          "text": "El hilo es que sin drenaje bien hecho, la energía que llega no alcanza a sostener el agua."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y sin agua estable, la carretera y el mar terminan pagando el precio."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que el desierto nos recuerda otra vez [pause] que todo está unido por debajo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "<soft>Pero aquí está lo que nadie espera.</soft> Los mismos recursos que faltan para los Vactor también frenan el nuevo acueducto."
+        },
+        {
+          "speaker": "host",
+          "text": "En cinco años metieron 240 millones solo en Guerrero Negro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y aun así las colonias siguen esperando que alguien atienda las fugas primero."
+        },
+        {
+          "speaker": "host",
+          "text": "La segunda desaladora beneficiará a más de 200 mil personas cuando termine en 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todo depende de que el hilo de abajo no se rompa."
         }
       ]
     },
@@ -146,40 +452,198 @@
       "title": "¿Sabías que…?",
       "turns": [
         {
+          "speaker": "host",
+          "text": "¿Sabías que 22 de 39 acuíferos están en déficit?"
+        },
+        {
           "speaker": "cohost",
-          "text": "Sabías que la segunda desaladora de Cabo San Lucas ya está al 75 %."
+          "text": "Sí, según CONAGUA la suma llega a menos 105.1 hm³ al año."
         },
         {
           "speaker": "host",
-          "text": "Mm. ¿Qué significa eso en litros para la gente de todos los días?"
+          "text": "Piensa en la llave de una casa en Cabo San Lucas. Abre y a veces sale poco."
         },
         {
           "speaker": "cohost",
-          "text": "Según el gobierno del estado vía Quepoca, produce 250 litros por segundo. Con la primera llegan a 655 litros por segundo en total. Termina en 2027."
+          "text": "Exacto. Esa falta de agua ya frena nuevos hoteles y restaurantes."
         },
         {
           "speaker": "host",
-          "text": "Piensa en un grifo abierto en una casa de Cabo San Lucas. Esa agua viene de ahí, del mar convertido en chorro."
+          "text": "¿Qué pasa cuando la demanda sigue creciendo?"
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. Y sin ella el turismo no crece. La Asociación de Hoteles de Los Cabos reportó caídas de visitantes de Estados Unidos y busca compensar con otros países."
+          "text": "La población y el turismo siguen llegando. [pause]"
         },
         {
           "speaker": "host",
-          "text": "¿Y qué pasa cuando las mareas altas entran a las calles como pasó en La Paz?"
+          "text": "Mm. Entonces el límite ya no es solo el desierto."
         },
         {
           "speaker": "cohost",
-          "text": "Informa el portal que el 25 de octubre entró agua en El Centenario, El Conchalito y El Esterito. Escuelas, viviendas y malecón se mojaron. Además Polo tocó tierra en Comondú, rompió el bordo en Puerto San Carlos y afectó caminos y agua en Comondú y Mulegé."
+          "text": "En Los Cabos la Asociación de Hoteles reportó menos visitantes de Estados Unidos."
         },
         {
           "speaker": "host",
-          "text": "Entonces la desaladora no es solo un tanque. Es el borde entre el mar que da vida y el mar que se mete."
+          "text": "Y piden reinvertir los ingresos en más fuentes de agua."
         },
         {
           "speaker": "cohost",
-          "text": "Y el riesgo hidrometeorológico ya no es solo de Los Cabos. Es de todos los municipios que comparten la costa y las tormentas."
+          "text": "Sí. El mensaje es claro: sin agua nueva no hay más desarrollo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué le preguntaría a quien diseña las tuberías?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cómo hacer que cada gota cuente cuando el acuífero ya da menos. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto siempre cobra su cuenta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y las mareas altas de octubre ya metieron agua a calles de La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces la infraestructura tiene que pensar en dos frentes al mismo tiempo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Agua que falta y agua que sobra en mal momento."
+        },
+        {
+          "speaker": "host",
+          "text": "Un equilibrio que el mar y el desierto nos recuerdan cada año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El foresight del portal menciona a Polo y Rachel. Dos tormentas en una semana."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué dejaron atrás?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Bordo roto en Puerto San Carlos. Caminos y agua afectados en Comondú y Mulegé."
+        },
+        {
+          "speaker": "host",
+          "text": "Y CFE reportó restablecimiento total tras Polo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero la erosión costera ya entra al techo 2050. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "El mar también cobra. ¿Qué le preguntarías a quien planea los bordos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cómo diseñar para que resistan cuando el siguiente Polo llegue más fuerte."
+        },
+        {
+          "speaker": "host",
+          "text": "El PIB creció 3.5% en 2024. [laugh]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, según INEGI. Pero sin agua y sin bordos que aguanten, ese crecimiento se queda en números."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "El diseño invisible",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Cuando uno camina por una calle cualquiera de Los Cabos, ¿qué es lo que realmente sostiene todo esto? [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Detrás de esa calle hay documentos que deciden cómo crece la ciudad."
+        },
+        {
+          "speaker": "host",
+          "text": "La UN-Habitat en 2013 habla de las calles como espacios públicos que impulsan la prosperidad urbana."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y en 2014 agregaron cinco principios para planear barrios sostenibles."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasa si aplicamos eso aquí, donde el desierto se encuentra con el mar?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces la calle deja de ser solo pavimento y se vuelve el esqueleto que organiza el agua, la energía y el paso de la gente."
+        },
+        {
+          "speaker": "host",
+          "text": "Toma la Carretera Transpeninsular. Hoy la están repavimentando con un programa de la SICT."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese programa destina 350 millones de pesos solo para conservación en BCS."
+        },
+        {
+          "speaker": "host",
+          "text": "350. ¿Y qué diseño invisible decide dónde se pone cada peso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahí entran las mesas de trabajo que revisan viabilidad: agua, energía, restricciones ambientales."
+        },
+        {
+          "speaker": "host",
+          "text": "Jane Jacobs ya lo decía en 1961: la vitalidad viene del uso mezclado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Claro. Si solo hay una función, la calle muere cuando el sol baja."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y si la calle también lleva internet para el bienestar?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese es otro sistema invisible. CFE lo está desplegando, pero el ancho de banda real depende de los mismos planes de ordenamiento."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces un bache en la Transpeninsular no es solo un bache."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es el punto donde se cruzan el presupuesto federal, las reglas de uso de suelo y la forma en que queremos vivir aquí."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. [chuckle] El desierto nos recuerda que todo está conectado por el agua y por el camino."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por eso el diseño invisible importa más que el concreto que vemos."
+        },
+        {
+          "speaker": "host",
+          "text": "Me pregunto qué diría un pescador de La Paz si le mostramos esos planos de viabilidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Seguro preguntaría primero por el agua antes que por el asfalto."
+        },
+        {
+          "speaker": "host",
+          "text": "Y al final la pregunta queda flotando: ¿para quién se construye esa red que no se ve?"
         }
       ]
     },
@@ -189,51 +653,159 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Luz, la visión del portal para energía hacia 2050 parte de un riesgo claro."
+          "text": "Luz, la Visión del portal para energía en 2050 parte de un riesgo claro."
         },
         {
           "speaker": "cohost",
-          "text": "Sí. BCS sigue como sistema aislado. El pico de 689 MW en 2024 marca el techo y no hay margen de otra zona. En 2023 el portal consigna 660 MW netos y 675 MW, y el crecimiento turístico compite con el bombeo y la desalación por el mismo sistema."
+          "text": "Sí, Tomás. BCS sigue como sistema aislado."
         },
         {
           "speaker": "host",
-          "text": "¿Qué aspira entonces el portal?"
+          "text": "El techo eléctrico es único y no se cancela con margen de otro lugar."
         },
         {
           "speaker": "cohost",
-          "text": "Dejar atrás la condición de isla. Generación limpia, almacenamiento y demanda que quepa en el techo real del SIBCS. Donde la serie no alcanza, la Tendencia ya declara insuficiente."
+          "text": "Exacto."
         },
         {
           "speaker": "host",
-          "text": "Los levers que señala son concretos."
+          "text": "El pico SIBCS llegó a 689 MW en 2024."
         },
         {
           "speaker": "cohost",
-          "text": "Concluir las licitaciones de generación remota en el norte. Planear desalación y bombeo junto con la red. No añadir demanda turística sin evidencia de margen."
+          "text": "En 2023 el portal registró 660 MW netos."
         },
         {
           "speaker": "host",
-          "text": "¿Y qué imagen surge cuando piensas en ese norte?"
+          "text": "¿Y el otro dato?"
         },
         {
           "speaker": "cohost",
-          "text": "Un corredor poco documentado que ahora suma la licitación CFE Oasis Mulegé de 72 MW FV, 20 MW/80 MWh y electrolizador de 20 MW. Ese es el primer paso visible."
+          "text": "675 MW. El crecimiento turístico y el bombeo compiten por ese mismo techo."
         },
         {
           "speaker": "host",
-          "text": "Y la tendencia 2050 apunta a un sistema policéntrico."
+          "text": "Mm."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. Cada región con su rol distinto: Los Cabos bajo estrés, La Paz como nodo agua-energía, Comondú con más margen, el norte de Mulegé con esa licitación. Esa suma de roles distintos es la que se mantiene."
+          "text": "¿Qué significa eso para la aspiración?"
         },
         {
           "speaker": "host",
-          "text": "¿Qué condiciones exige esa visión?"
+          "text": "Un sistema que deje atrás la condición de isla energética, con generación limpia y almacenamiento que quepa en el techo real del SIBCS."
         },
         {
           "speaker": "cohost",
-          "text": "Crecimiento solo donde haya margen o fuente no-DMA. Respetar techos de ANP en East Cape y Loreto. Y vigilar la confiabilidad del SIBCS junto con la segunda desaladora CSL que llega al 75%, 250 l/s y conclusión en 2027. También el huachicol de agua y las clausuras en Los Cabos forman parte de esa lista."
+          "text": "La Tendencia 2050 del portal habla de un sistema policéntrico."
+        },
+        {
+          "speaker": "host",
+          "text": "No una sola fórmula costera repetida."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada lugar con su rol. Los Cabos bajo estrés hídrico y eléctrico."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz como nodo agua-energía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el norte de Mulegé como corredor con una licitación de generación remota."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa suma de roles distintos es la que el tablero resume como restringida a escala estatal. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué condiciones se necesitan para que funcione?"
+        },
+        {
+          "speaker": "host",
+          "text": "Cada vocación aporta un rol distinto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Nuevo crecimiento solo donde agua y energía tengan margen o fuente no-DMA."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape y Loreto respetando techos ANP/POEL antes de escalar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y Comondú y el norte sumando producción sin vaciar servicios ni áreas protegidas."
+        },
+        {
+          "speaker": "host",
+          "text": "La aspiración también menciona concluir licitaciones de generación remota sin convertirlas en permiso residencial anticipado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y planear desalación y bombeo junto con la red, no como suma posterior de megawatts."
+        },
+        {
+          "speaker": "host",
+          "text": "En la watchlist está la confiabilidad del SIBCS y las obras CFE versus incidentes de abasto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la licitación CFE Oasis Mulegé: 72 MW FV."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y el resto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "20 MW/80 MWh."
+        },
+        {
+          "speaker": "host",
+          "text": "Más el electrolizador."
+        },
+        {
+          "speaker": "cohost",
+          "text": "20 MW. Fallo y calendario."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si no se cumple esa condición de margen real?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia ya declara insuficiente donde la serie no alcanza."
+        },
+        {
+          "speaker": "host",
+          "text": "No se inventa un pico a 2050. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Entonces el camino es más estrecho de lo que parece."
+        },
+        {
+          "speaker": "host",
+          "text": "Me pregunto cómo se siente el norte cuando esa licitación llega sin que nadie explique el margen real."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es como ver la luz del desierto al atardecer: parece cercana, pero el camino sigue siendo largo."
+        },
+        {
+          "speaker": "host",
+          "text": "Y si el East Cape crece sin respetar los techos de las áreas protegidas, ¿qué queda para el resto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Nada que no se haya visto ya en otras costas. [chuckle] El mar siempre cobra lo que se le debe."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el verdadero lever es esa transparencia antes de sumar más demanda."
         }
       ]
     },
@@ -243,27 +815,55 @@
       "turns": [
         {
           "speaker": "cohost",
-          "text": "Las lluvias dañan la Transpeninsular en Los Cabos. Los vecinos reúnen firmas para que el Camino Costero quede en el PDU 2040."
-        },
-        {
-          "speaker": "host",
-          "text": "Mm. Una carretera que se rompe dice mucho de lo que sostienes."
+          "text": "Esa cifra ya dice algo sobre el ritmo que llevamos."
         },
         {
           "speaker": "cohost",
-          "text": "En Loreto la calle Marlín va al 45% de pavimentación. En La Paz renuevan Agustín Arriola con concreto hidráulico."
+          "text": "Esa calle va a cambiar mucho para quien la usa todos los días."
         },
         {
           "speaker": "host",
-          "text": "¿Y el agua? 25 tomas clandestinas en Los Cabos este año."
+          "text": "A veces pienso que una carretera aquí no solo une pueblos."
         },
         {
           "speaker": "cohost",
-          "text": "La aspiración es dejar de ser isla energética con generación limpia y almacenamiento que quepa en el techo real del SIBCS."
+          "text": "¿Qué más hace entonces?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el tiempo se vuelve parte del diseño."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Poco a poco se va tejiendo la ciudad."
         },
         {
           "speaker": "host",
-          "text": "Lo que llevamos es esto: la infraestructura marca hasta dónde llega el deseo de seguir aquí. Quédense con nosotros, más Radio BCS2050 después de la música."
+          "text": "Quizá enseña al desierto a respirar con el mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "O al mar a no llevarse todo lo que toca."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. La infraestructura que deja pasar el agua sin arrastrar la vida."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me gusta esa imagen. Como si cada tubería o cada capa de concreto fuera una pregunta."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pregunta?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cuánto tiempo estamos dispuestos a cuidar lo que construimos. <soft>Qué delicado es eso.</soft>"
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] Uno lo siente cuando camina por una calle que respira bien."
         }
       ]
     }

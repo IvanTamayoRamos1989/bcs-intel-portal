@@ -8,40 +8,48 @@
       "title": "Cold open",
       "turns": [
         {
+          "speaker": "cohost",
+          "text": "Imagine the desert light hitting a hidden pipe in Los Cabos, water vanishing at more than 300 litres a second."
+        },
+        {
           "speaker": "host",
-          "text": "In Los Cabos this year crews closed 25 illegal water connections."
+          "text": "And the city shut down 25 of those connections this year alone."
         },
         {
           "speaker": "cohost",
-          "text": "Theft ran above 300 litres every second."
+          "text": "Really? Tribuna de México adds that Conagua closed two illegal sources feeding about 120 tanker trucks a day."
         },
         {
           "speaker": "host",
-          "text": "Two hidden sources alone fed 120 tanker trucks a day."
+          "text": "120 trucks. That is a lot of water moving in secret."
         },
         {
           "speaker": "cohost",
-          "text": "Only three in ten people in BCS still receive water without breaks."
+          "text": "The senator proposes up to 10 years in prison for anyone who tampers with the lines."
         },
         {
           "speaker": "host",
-          "text": "The rest wait on trucks that may never come."
+          "text": "Ten years. For water. [pause] That changes the meaning of a tap."
         },
         {
           "speaker": "cohost",
-          "text": "The senator wants prison terms up to ten years for taking the water."
+          "text": "Meanwhile the state just lent a plot in Comondú to the National Guard for 30 years."
         },
         {
           "speaker": "host",
-          "text": "The desert light makes every drop visible on the road south."
+          "text": "30 years of boots on a piece of desert ground."
         },
         {
           "speaker": "cohost",
-          "text": "Yet the lines keep vanishing."
+          "text": "Palabra BCS says the same meeting gave away two health buildings, one for dialysis, one psychiatric."
         },
         {
           "speaker": "host",
-          "text": "This is Radio BCS2050. Today a deep dive on Security. What does safety mean when the water itself keeps disappearing?"
+          "text": "So security and care get braided together in the same decision."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] This is Radio BCS2050. Today we stay with security and ask one question: what does it mean to guard the water that already guards the future?"
         }
       ]
     },
@@ -50,52 +58,254 @@
       "title": "Act 1 · What's happening",
       "turns": [
         {
-          "speaker": "cohost",
-          "text": "Tribuna de México reports that Senator Susana Zatarain wants up to 10 years in prison for water theft."
-        },
-        {
           "speaker": "host",
-          "text": "Water theft."
+          "text": "Los Cabos shut down 25 illegal water connections this year."
         },
         {
           "speaker": "cohost",
-          "text": "The bill adds an article to the Federal Penal Code and amends the National Waters Law to punish unauthorised extraction, tampering with infrastructure, clandestine wells and illegal water sales. Los Cabos found 25 illegal connections this year. The theft runs above 300 litres per second. Conagua closed two hidden sources that fed about 120 tanker trucks a day."
+          "text": "Tribuna de México reports the theft ran above 300 litres per second."
         },
         {
           "speaker": "host",
-          "text": "Three in ten people in BCS still have steady water, according to INEGI."
+          "text": "I keep thinking about how the desert light falls on those empty tanks at noon."
         },
         {
           "speaker": "cohost",
-          "text": "How does that feel for a family waiting on a truck?"
+          "text": "Senator Susana Zatarain wants up to 10 years in prison for that kind of theft."
         },
         {
           "speaker": "host",
-          "text": "Mm."
+          "text": "Ten years behind bars would make anyone think twice about the hidden lines."
         },
         {
           "speaker": "cohost",
-          "text": "At the Sea of Cortez Forum in Los Cabos, Agustín Coppel asked for 3.5 percent annual growth over 20 years across the five states, triple the foreign investment from the current USD 4.1 billion, and more public money for roads, ports, airport use, education and security."
+          "text": "The bill would change the Federal Penal Code and the National Waters Law."
         },
         {
           "speaker": "host",
-          "text": "He noted BCS grew only 2.1 percent a year for the last decade."
+          "text": "It would punish unauthorised extraction and tampering with the pipes."
         },
         {
           "speaker": "cohost",
-          "text": "Bitácora BCS says the state congress wants to take over port management from the navy after new tariffs upset operators in Cabo San Lucas. The schedule appeared on 1 October, though nothing changes yet without federal approval."
+          "text": "Clandestine wells and illegal sales would also carry the new penalties."
         },
         {
           "speaker": "host",
-          "text": "Ports carry people and goods. Who watches the gates?"
+          "text": "Would the new penalties actually stop the trucks from running their daily routes?"
         },
         {
           "speaker": "cohost",
-          "text": "Meganoticias adds that Zatarain sees sales down 25 to 35 percent over two years and at least 27 restaurants closed or paused, partly from the feeling of insecurity, weak promotion and deteriorating infrastructure. She wants tourism revenue put back into the sector."
+          "text": "Conagua also closed two illegal sources in Cabo San Lucas."
         },
         {
           "speaker": "host",
-          "text": "A 17.8 percent rise in the visitor fee to 1,158 pesos is set for 2027. Does the road feel safer when the lights stay on?"
+          "text": "The two sources closed by Conagua fed the daily tanker flow into town."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Those spots fed roughly 120 tanker trucks every day."
+        },
+        {
+          "speaker": "host",
+          "text": "Only three in ten people across BCS get water all the time, according to INEGI."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What does it feel like when the tap runs dry for most of the week?"
+        },
+        {
+          "speaker": "host",
+          "text": "A neighbour might check the pressure at dawn just to know what the day holds."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It turns a basic need into something people have to guard."
+        },
+        {
+          "speaker": "host",
+          "text": "—which is the strange part, because the desert already teaches patience."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A neighbour might rise early just to see if the pressure holds."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. The light hits the empty cistern and you remember how far the water travels."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Now the state is lending a plot in Comondú to the National Guard."
+        },
+        {
+          "speaker": "host",
+          "text": "The northern desert road leads to that loaned ground in Comondú."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Palabra BCS says the loan runs for 30 years."
+        },
+        {
+          "speaker": "host",
+          "text": "The Guard will use it for operations in the north."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They also donated two health buildings, one in La Paz and one in El Centenario."
+        },
+        {
+          "speaker": "host",
+          "text": "Security steps and health buildings end up on the same agenda in the state house."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The La Paz one holds the haemodialysis unit and the chronic-disease clinic."
+        },
+        {
+          "speaker": "host",
+          "text": "So security steps and health care sit on the same state table."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Security and water seem to sit on the same table these days."
+        },
+        {
+          "speaker": "host",
+          "text": "What does it mean when water theft carries the same weight as other crimes?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. A neighbour in Los Cabos told me they check their meter every morning like it is a lock."
+        },
+        {
+          "speaker": "host",
+          "text": "Does the new prison term change how people think about the pipes?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "It might, if the water keeps moving through hidden lines."
+        },
+        {
+          "speaker": "host",
+          "text": "The road south still carries the same old questions about who controls the flow."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] The desert does not care who signs the papers."
+        },
+        {
+          "speaker": "host",
+          "text": "Standing on that ground for 30 years changes how the north feels its presence."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yet the Guard will stand on that Comondú ground for three decades."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the senator if she sat here with us?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "I would ask how the law reaches the people who sell the water in the first place."
+        },
+        {
+          "speaker": "host",
+          "text": "Perhaps the next generation will see the supply reach more than three in ten homes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And whether three in ten is the number the next generation will inherit."
+        },
+        {
+          "speaker": "host",
+          "text": "The cisterns sit empty under that same clear sky."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[pause] Maybe the law and the pipes will finally meet in the light."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "People and places",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los Cabos sits at the edge of the cape, where the hotels meet the dry hills. Water theft there now draws in the penal code."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tribuna de México reports the senator’s bill would send people to prison for up to ten years for tapping pipes or selling stolen water."
+        },
+        {
+          "speaker": "host",
+          "text": "Ten years. That changes the conversation from pipes to courts."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos already shut 25 illegal connections this year. The theft was running above 300 litres every second."
+        },
+        {
+          "speaker": "host",
+          "text": "300 litres a second. Imagine the sound of that water leaving the system in the dark."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Two clandestine wells in Cabo San Lucas fed roughly 120 tanker trucks a day before Conagua closed them."
+        },
+        {
+          "speaker": "host",
+          "text": "Who notices first when the pressure drops? A family in San José or a hotel on the beach?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Only three in ten people across the state have steady supply, according to the latest survey."
+        },
+        {
+          "speaker": "host",
+          "text": "Three in ten. That number lives in every kitchen."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] I keep wondering what the tanker drivers tell their children about the work."
+        },
+        {
+          "speaker": "host",
+          "text": "North of that, in Comondú, the state just loaned land to the National Guard for 30 years."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Palabra BCS says the plot sits in the northern part of the municipality, near the sparse corridor of Mulegé and Santa Rosalía."
+        },
+        {
+          "speaker": "host",
+          "text": "30 years. That is longer than many children in Ciudad Constitución will live in one house."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same meeting gave away two buildings in La Paz for health services and one psychiatric hospital to IMSS Bienestar."
+        },
+        {
+          "speaker": "host",
+          "text": "So security and care arrive together on paper. What does the desert teach a city about keeping both?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "In Mulegé the population is smaller, the distances longer. A single well matters more."
+        },
+        {
+          "speaker": "host",
+          "text": "I would ask the families along the Vizcaíno road what safety feels like when the nearest clinic is hours away."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And whether the new guard presence changes the daily drive to the salt flats or the fishing grounds."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] The light there stays the same. The questions keep shifting with the water."
         }
       ]
     },
@@ -105,39 +315,131 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Luz, the state budget proposal puts security among the top lines. HOY BCS notes the 28.3 billion peso package for 2027."
+          "text": "The foresight from yesterday keeps pulling at me."
         },
         {
           "speaker": "cohost",
-          "text": "Yes, and own revenue is meant to climb to 14.6 percent. Yet the Los Cabos revenue law sent to congress shows a 9 percent drop, nearly 675 million pesos less."
+          "text": "El Niño erodes the coast from Punta Lobos to San Carlos."
         },
         {
           "speaker": "host",
-          "text": "That cooling real estate market cuts property and transfer taxes sharply. How does the security line hold when the city’s own funds shrink 20 percent?"
+          "text": "Mm. [pause] You can almost hear the waves pulling at the sand."
         },
         {
           "speaker": "cohost",
-          "text": "Palabra BCS reports the state lending a Comondú plot to the National Guard for 30 years. The land itself becomes part of the security infrastructure."
+          "text": "The tides from El Niño hit hard along that stretch."
         },
         {
           "speaker": "host",
-          "text": "Mm. And the same committee donates buildings to health services. The thread runs through land decisions and budget priorities together."
+          "text": "Mm. What does that do to the growth plans at the forum?"
         },
         {
           "speaker": "cohost",
-          "text": "Imagen Radio adds that hoteliers link a 14 percent drop in U.S. visitors partly to security perceptions. The economic effect circles back to the revenue the budget needs."
+          "text": "And Los Cabos chasing water theft at the same time."
         },
         {
           "speaker": "host",
-          "text": "So the hidden design is this loop: land for the Guard, revenue shortfalls from tourism and real estate, and the priority line that must still be met."
+          "text": "Really? The two problems feel connected even though they sit far apart on the map."
         },
         {
           "speaker": "cohost",
-          "text": "Here is the turn. The portal’s water-first scenario names aquifer security as the precondition before any further growth. The same logic may quietly shape every other security choice."
+          "text": "While the Sea of Cortez forum calls for doubling its economy."
         },
         {
           "speaker": "host",
-          "text": "What does the desert teach a city when water itself is the first security line?"
+          "text": "That tension sits right inside the 2050 ceiling."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 2025 POERBCS report spells out preservation right on the page."
+        },
+        {
+          "speaker": "host",
+          "text": "Imagine standing at San Carlos as the line shifts under your feet."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Growth ambition running into real limits and Gulf governance."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep wondering what holds those limits in place."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The knowledge graph points to POERBCS policies from 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "The ones for sustainable use, preservation, and protection."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Preservation shows up clearly in the lineamientos."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the actual layer only carries the PR suffix on ten polygons."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wait—only ten? [chuckle] That feels small against the whole peninsula."
+        },
+        {
+          "speaker": "host",
+          "text": "Restoration appears in the table but never gets assigned in the map."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 69-polygon layer leaves restoration without any code at all."
+        },
+        {
+          "speaker": "host",
+          "text": "So the infrastructure for protection stays partly invisible."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The MOE56 sheet lists UGA numbers and policy initials."
+        },
+        {
+          "speaker": "host",
+          "text": "But it never publishes the full glossary."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What happens when a fisher walks the line between those missing codes?"
+        },
+        {
+          "speaker": "host",
+          "text": "The gap feels like the real thread under the security question."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Water theft and coastal loss both depend on those missing codes."
+        },
+        {
+          "speaker": "host",
+          "text": "Without the names, the enforcement layer stays thin."
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep picturing the long road south where the policies should meet the ground."
+        },
+        {
+          "speaker": "host",
+          "text": "So security here is really about finishing the map."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. The policies already exist on paper."
+        },
+        {
+          "speaker": "host",
+          "text": "But until the suffixes match the ground, erosion and theft keep winning."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The surprise is how much of the design already sits there waiting for the names."
         }
       ]
     },
@@ -146,36 +448,230 @@
       "title": "Did you know?",
       "turns": [
         {
-          "speaker": "cohost",
-          "text": "Did you know the National Guard infrastructure was announced for national deployment?"
-        },
-        {
           "speaker": "host",
-          "text": "Mm."
+          "text": "Did you know there are 25 illegal taps in Los Cabos pulling more than 300 liters per second?"
         },
         {
           "speaker": "cohost",
-          "text": "The source lists it as announced but notes no BCS barracks with a primary source. It is the only security metric the portal records."
+          "text": "That number from Tribuna de México feels almost ordinary until you picture it. [pause]"
         },
         {
           "speaker": "host",
-          "text": "So the plan stays national."
+          "text": "Imagine one neighbor quietly running a hose from the main line into their garden every night."
         },
         {
           "speaker": "cohost",
-          "text": "Exactly. No local details surface yet. Picture a quiet desert road at dusk, the long line of trucks heading south, and no new station marked on the map for the peninsula."
+          "text": "Now multiply that hose by 25, hidden across the arroyos and hotel zones."
         },
         {
           "speaker": "host",
-          "text": "What does that leave for the peninsula?"
+          "text": "Each tap steals water that was meant for homes and the reef."
         },
         {
           "speaker": "cohost",
-          "text": "A question the portal leaves open. The state holds 798,447 people and a constant-price GDP of 187,152 million pesos in 2024, yet the Guard detail remains at the national level only."
+          "text": "Tribuna de México says the extraction tops 300 liters every second."
         },
         {
           "speaker": "host",
-          "text": "Mm. The road south stays long."
+          "text": "What does that volume look like on a normal day?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Enough to fill a small pool every few minutes, all day, without anyone paying for it."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert already teaches us how precious every drop is."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yet the growth engine keeps demanding more rooms and more flights. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "The portal notes SJD now links to 56 destinations."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That air reach keeps the pressure on the southern coast."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos Hotel Association noted fewer visitors from the US this year."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They are trying to bring in more from Canada and Europe instead."
+        },
+        {
+          "speaker": "host",
+          "text": "FITURCA expects about 300,000 Canadian visitors in 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wait, that is up from 200,000 in 2024, but the pressure on water stays the same."
+        },
+        {
+          "speaker": "host",
+          "text": "GAP reports 520.9 thousand recent arrivals at the airport."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Senator Susana Zatarain mentioned sales down 25 to 35 percent over two years."
+        },
+        {
+          "speaker": "host",
+          "text": "And at least 27 restaurants closed or paused."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile the march to the water in Cabo San Lucas keeps happening."
+        },
+        {
+          "speaker": "host",
+          "text": "The POEL rules now require new desal plants and wastewater treatment."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Still the taps keep running in the dark."
+        },
+        {
+          "speaker": "host",
+          "text": "What would it take for those 25 lines to simply stop flowing?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Maybe just the simple act of turning the valve back toward the people who live here."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "The hidden design",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "The hidden design of security here starts with water first."
+        },
+        {
+          "speaker": "host",
+          "text": "How does that shape what we build next?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal shows aquifers already in deficit, so desalación or demand management comes before new growth."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. One pipe decides the rest."
+        },
+        {
+          "speaker": "cohost",
+          "text": "OECD Regional Outlook 2016 gives the productivity and inclusion frame for that choice."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the authors of that outlook?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "How they weigh an aquifer against a new neighborhood."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert teaches patience with limits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Governing the City from 2015 shows how multiple municipalities might share that patience."
+        },
+        {
+          "speaker": "host",
+          "text": "A single road carries the decision across boundaries."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Planning for Sustainable Territorial Development from ECLAC 2019 adds the territorial map."
+        },
+        {
+          "speaker": "host",
+          "text": "Does the map show the aquifers first?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "It does, and it names preservation and restoration as the policies that follow."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] So the everyday house sits on a line in a document."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. On 20 de octubre the Congress donated land in Comondú and Mulegé for social housing only after those lines were checked."
+        },
+        {
+          "speaker": "host",
+          "text": "One plot of 15550 square meters reveals the whole system."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The knowledge graph lists UGA polygons with PR for preservation and RT for restoration."
+        },
+        {
+          "speaker": "host",
+          "text": "What does the desert ask of a city when water comes first?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "It asks whether the next house can wait."
+        },
+        {
+          "speaker": "host",
+          "text": "Wait— the three plots in Brisas del Valle add up to quite a stretch of ground."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They do, and the portal ties each one to the water-first scenario before any building starts."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. The long road south runs through those same aquifer numbers."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[pause] 35000 homes are mentioned for the whole state."
+        },
+        {
+          "speaker": "host",
+          "text": "One at a time, though, each tied to the same hidden line."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The OECD document from 2016 frames it as a choice between productivity and the quiet limits of place."
+        },
+        {
+          "speaker": "host",
+          "text": "What would the sea say if it could read the map?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Probably the same thing the desert already whispers."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep thinking about the 27335 square meter plot and how it waits on those aquifer codes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The signal from 26 oct 2026 already links every donation to the POERBCS preservation rules."
+        },
+        {
+          "speaker": "host",
+          "text": "Really? So the next house listens to the same document that names POLÍTICA DE RESTAURACIÓN."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It does, and that line decides if growth can follow the water-first scenario at all."
         }
       ]
     },
@@ -184,68 +680,132 @@
       "title": "Act 3 · Toward 2050",
       "turns": [
         {
-          "speaker": "cohost",
-          "text": "The portal’s Visión for governance points to a clear risk."
-        },
-        {
           "speaker": "host",
-          "text": "Without instruments that bind growth to measured ceilings."
+          "text": "The portal's Vision for governance points to a clear risk."
         },
         {
           "speaker": "cohost",
-          "text": "Yes. The current path wins by the inertia of permits. Governance shows an EWMA of 3.57 this week, direction plus 0.50."
+          "text": "Without instruments that bind growth to measured ceilings, permits keep rolling forward by inertia alone."
         },
         {
           "speaker": "host",
-          "text": "Mm. What does the aspiration ask instead?"
+          "text": "Governance shows only two items this week, with that EWMA at 3.57 and a mild positive drift."
         },
         {
           "speaker": "cohost",
-          "text": "Public decisions that treat POEL, PDU, PMDU, consultations and ANP ceilings as prior conditions, not paperwork after the fact."
+          "text": "The news leans toward relief, yet the aspiration stays sharper. [chuckle]"
         },
         {
           "speaker": "host",
-          "text": "And the levers to reach it?"
+          "text": "Public decisions should treat POEL, PDU, PMDU, consultations and ANP ceilings as starting conditions, not later paperwork."
         },
         {
           "speaker": "cohost",
-          "text": "Close the marked gaps with evidence first. Keep consultation and delivery to Congress visible. Use the state’s constrained board reading as a permit criterion."
+          "text": "That only works if the evidence already in the portal actually shapes the permits."
         },
         {
           "speaker": "host",
-          "text": "Toward 2050 the tendencia describes a polycentric system, not one coastal formula."
+          "text": "The levers are practical: close the marked gaps first."
         },
         {
           "speaker": "cohost",
-          "text": "Los Cabos under water and power stress. East Cape in tension with protected areas. Todos Santos and El Pescadero as the Pacific amenity spine. La Paz as service capital and water-energy node. Loreto as tourism-conservation anchor. Comondú as agricultural hub with more room. Northern Mulegé as thinly documented corridor with a remote generation tender."
+          "text": "Loreto, northern DMA, amenity rooms, Cabos PDU, and the pumping megawatts need attention before bigger scenarios open."
         },
         {
           "speaker": "host",
-          "text": "The desert light still falls differently on each stretch of that long road south."
+          "text": "Keep consultations and delivery to Congress visible, not hidden at the end."
         },
         {
           "speaker": "cohost",
-          "text": "Each vocation keeps a distinct role. New tourism or residential growth only where water and energy show evidenced margin or non-DMA source, without pretending NOM-011 credit."
+          "text": "And use the state's constrained board reading as an actual permit test."
         },
         {
           "speaker": "host",
-          "text": "What would East Cape and Loreto need to hold the line?"
+          "text": "Toward 2050 the region does not hold as one repeated coastal formula."
         },
         {
           "speaker": "cohost",
-          "text": "Respect ANP and POEL ceilings before scaling hospitality. Comondú and the north can add production and energy, yet without emptying services or ANPs."
+          "text": "The board reading still shows a polycentric system instead."
         },
         {
           "speaker": "host",
-          "text": "The watchlist holds one concrete item."
+          "text": "Los Cabos carries the tourism load under water and power stress."
         },
         {
           "speaker": "cohost",
-          "text": "The federal bill on water theft, up to 10 years in prison, and closures of illegal connections in Los Cabos. The second CSL desal plant sits at 75 percent, 250 liters per second, completion 2027."
+          "text": "East Cape stays in tension with protected areas, while Todos Santos and El Pescadero form the Pacific amenity spine."
         },
         {
           "speaker": "host",
-          "text": "What would it take for each vocation to keep its distinct role?"
+          "text": "La Paz serves as the service capital and water-energy node."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto anchors tourism with conservation, Comondú holds agricultural room, and northern Mulegé remains a thin corridor with its remote generation tender."
+        },
+        {
+          "speaker": "host",
+          "text": "Each place keeps its own role, so growth stays where water and energy show real margin."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No pretending NOM-011 credit, and East Cape plus Loreto respect ANP and POEL ceilings first."
+        },
+        {
+          "speaker": "host",
+          "text": "What would it take for those lines to hold across the whole state? [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep thinking about the long light over the desert, how it shows every boundary so clearly when you stand back."
+        },
+        {
+          "speaker": "host",
+          "text": "The watchlist holds water theft, with a federal bill carrying up to 10 years."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And closures already happening in Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "The second CSL desal plant sits at 75 percent."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? Aiming for 250 liters per second."
+        },
+        {
+          "speaker": "host",
+          "text": "By 2027, they say."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That could ease the stress in a real way. [breath]"
+        },
+        {
+          "speaker": "host",
+          "text": "Security through governance may rest on whether those distinct vocations actually hold their lines."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. If each vocation contributes without diluting the others, the whole coast might still breathe by mid-century."
+        },
+        {
+          "speaker": "host",
+          "text": "New growth only where the margins are proven, not wished for."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the watchlist reminds us the small fixes, like illegal connections, matter as much as the big plants."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the planners if they sat here now?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Whether the evidence they already hold will finally move before the next permit does."
         }
       ]
     },
@@ -254,36 +814,56 @@
       "title": "The takeaway",
       "turns": [
         {
-          "speaker": "cohost",
-          "text": "The senator wants up to 10 years in prison for water theft, and Los Cabos already found 25 illegal connections this year."
-        },
-        {
           "speaker": "host",
-          "text": "And the state is lending a plot in Comondú to the National Guard for 30 years."
+          "text": "I keep coming back to how a place stays safe when the ground itself is treated as the first plan."
         },
         {
           "speaker": "cohost",
-          "text": "It feels like the same thread."
+          "text": "Not something we remember after the fact."
         },
         {
           "speaker": "host",
-          "text": "Mm. What does the desert teach a city about keeping what it needs?"
+          "text": "Exactly. The desert already shows where water moves and where it does not."
         },
         {
           "speaker": "cohost",
-          "text": "Congress wants to transfer ASIPONA to the state, while Los Cabos faces a 9 percent revenue drop in 2027 and restaurant closures."
+          "text": "I keep thinking about those dry channels at dusk, how the light falls across them."
         },
         {
           "speaker": "host",
-          "text": "The 28.3 billion peso budget might hold the key."
+          "text": "If we let that shape every later choice, maybe the rest follows more naturally."
         },
         {
           "speaker": "cohost",
-          "text": "The takeaway is that security grows when we treat water, land and budgets as shared foundations before trouble arrives."
+          "text": "It feels like the difference between building on the land and building against it."
         },
         {
           "speaker": "host",
-          "text": "Stay with us. More Radio BCS2050 after the music."
+          "text": "Mm. What would change if we asked the evidence first, every single time?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The road south might feel less like something we fix and more like something we already understand."
+        },
+        {
+          "speaker": "host",
+          "text": "I like that. [pause] It turns security into a conversation with the place itself."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yes. We stop forcing solutions and start listening to what the desert already knows."
+        },
+        {
+          "speaker": "host",
+          "text": "The government lending that plot in Comondú for 30 years feels like one small step toward letting the land lead."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ha, of course. [chuckle] And suddenly the buildings and the roads make more sense when they follow what is already there."
+        },
+        {
+          "speaker": "host",
+          "text": "That feels like the real takeaway."
         }
       ]
     }

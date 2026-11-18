@@ -572,8 +572,6 @@ def write_chapter(pack: dict, ch: tuple, L: str, today: str, feedback: str = "",
            "noviembre", "diciembre"][dd.month - 1]
     dstr = f"{dd.day} de {mes} de {dd.year}" if L == "es" else dd.strftime("%B %-d, %Y")
     topic = THEMES[pack["theme"]][0 if L == "es" else 1]
-    if L == "en":
-        w = int(w * 0.92)
     src = chapter_sources(pack, cid, L)
     sysmsg = STYLE.format(topic=topic, host=NAMES["host"], cohost=NAMES["cohost"],
                           lang="Mexican Spanish" if L == "es" else "English",
@@ -655,6 +653,10 @@ def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
                                          "(one number per turn at most).",
                                          {"turns": turns})
         turns = out.get("turns", turns)
+    return polish(pack, ch, L, today, turns, src_text)
+
+
+def polish(pack: dict, ch: tuple, L: str, today: str, turns: list, src_text: str) -> list:
     if ch[0] == "cierre":  # the takeaway carries no figures
         turns = [t for t in turns if not NUM.search(t.get("text", ""))]
     bad = fact_guard(turns, src_text, today)
@@ -671,6 +673,47 @@ def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
         if txt:
             clean.append({"speaker": "cohost" if t.get("speaker") == "cohost" else "host", "text": txt})
     return clean
+
+
+MIN_EP, TARGET_EP = 19.75 * 60, 20.75 * 60  # every episode must run a full ~20 min, checked on the rendered audio
+
+
+def extend_chapter(pack: dict, ch: tuple, L: str, today: str, turns: list, add: int) -> list:
+    out, src_text, _ = write_chapter(pack, ch, L, today,
+        f"The episode runs short. Keep EVERY existing turn word for word and in the same order, and ADD about {add} words "
+        "of NEW turns where they fit naturally: reactions, follow-ups, laughter, a concrete image or place, a question to the "
+        "other host, and SOURCES facts not yet told (exact digits, one number per turn). Turns of 10-35 words; never three "
+        "turns in a row by one speaker." + (" No numbers at all in this chapter." if ch[0] == "cierre" else ""), {"turns": turns})
+    new = out.get("turns", [])
+    if words(new) <= words(turns) + 20:
+        return turns
+    new = polish(pack, ch, L, today, new, src_text + " " + json.dumps(turns, ensure_ascii=False))
+    return new if words(new) > words(turns) else turns
+
+
+def fit_length(theme: str, pack: dict, today: str, lang: str, chapters: list, durs: list, edir: Path) -> list:
+    """Measure the rendered episode; while it is under MIN_EP, lengthen the chapters furthest below their word target
+    and re-render only those. Returns the (possibly longer) chapters; durs is updated in place."""
+    sig = TOPIC[theme][1]
+    under, amb = OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(theme, 'city')}.mp3"
+    for rnd in range(4):
+        total = sum(durs)
+        if total >= MIN_EP:
+            break
+        wps = max(1.5, sum(words(t) for t in chapters) / max(1.0, total))
+        need = int((TARGET_EP - total) * wps)
+        order = sorted(range(len(chapters)), key=lambda k: words(chapters[k]) / CHAPTERS[k][3])
+        pick = [k for k in order if CHAPTERS[k][0] != "cierre"][:max(2, min(6, -(-need // 140)))]
+        share = {k: CHAPTERS[k][3] for k in pick}
+        add = {k: max(60, int(need * 1.15 * share[k] / sum(share.values()))) for k in pick}
+        print(f"  [{theme}/{lang}] {total/60:.1f} min < {MIN_EP/60:.1f}: +{need} words over chapters {[k+1 for k in pick]} (round {rnd+1})")
+        with ThreadPoolExecutor(len(pick)) as ex:
+            new = dict(zip(pick, ex.map(lambda k: extend_chapter(pack, CHAPTERS[k], lang, today, chapters[k], add[k]), pick)))
+        for k, t in new.items():
+            if t is not chapters[k]:
+                chapters[k] = t
+                durs[k] = render_chapter(t, lang, edir / f"{k+1:02d}.mp3", k == 0, under, amb)
+    return chapters
 
 
 # ------------------------------------------------------------------ audio
@@ -745,10 +788,13 @@ def build_episode(theme: str, pack: dict, today: str, lang: str, music: dict, sc
     sig, stings = TOPIC[theme][1], TOPIC[theme][2]
     under = OUT / "music" / f"under_{sig}.mp3"
     amb = OUT / "music" / f"amb_{AMBIENCE.get(theme, 'city')}.mp3"
+    durs = [0.0 if script_only else render_chapter(t, lang, edir / f"{k:02d}.mp3", k == 1, under, amb)
+            for k, t in enumerate(chapters, 1)]
+    if not script_only:
+        chapters = fit_length(theme, pack, today, lang, chapters, durs, edir)
     tracks, total = [], 0.0
     for k, (ch, turns) in enumerate(zip(CHAPTERS, chapters), 1):
-        f = edir / f"{k:02d}.mp3"
-        dur = 0.0 if script_only else render_chapter(turns, lang, f, k == 1, under, amb)
+        dur = durs[k - 1]
         pick = (stings + [sig])[(k - 1) % (len(stings) + 1)]
         sting = None  # continuous conversation; the station puts an ID + music break between episodes
         total += dur + (duration(ROOT / "public" / sting.lstrip("/")) if sting else 0)
@@ -962,6 +1008,7 @@ def main() -> int:
     ap.add_argument("--station-only", action="store_true", help="only rebuild the 24/7 loop files")
     ap.add_argument("--apply-now", action="store_true", help="put the new loop on air now instead of at the next 12:00 Madrid")
     ap.add_argument("--replace", action="store_true", help="with --topic: rebuild only those topics inside today's edition")
+    ap.add_argument("--extend", action="store_true", help="lengthen built episodes of --date that measure under ~19.5 min")
     ap.add_argument("--sync", action="store_true", help="restore/back up episode audio (run before astro build)")
     ap.add_argument("--check-dist", action="store_true", help="fail if any station file is missing from dist")
     a = ap.parse_args()
@@ -970,6 +1017,9 @@ def main() -> int:
         return sync()
     if a.check_dist:
         return check_dist()
+    if a.extend:
+        build_music()
+        return extend_existing(today, a.topic, a.apply_now)
     if a.station_only:
         build_music()
         build_station(a.apply_now)
@@ -1030,12 +1080,27 @@ def main() -> int:
     dump(ed_dir / "edition.json", edition)
     if a.script_only:
         return 0
-    dump(OUT / "latest.json", edition)
+    newest = max(p.name for p in (OUT / "editions").iterdir() if (p / "edition.json").exists())
+    if today >= newest:
+        dump(OUT / "latest.json", edition)
     hist["used"] = sorted(set(hist.get("used", [])))
     for th in topics:
-        hist.setdefault("theme_last", {})[th] = today
+        hist.setdefault("theme_last", {})[th] = max(today, hist.get("theme_last", {}).get(th, ""))
     hist["editions"] = sorted(set(hist.get("editions", [])) | {today})
     dump(OUT / "history.json", hist)
+    eds = write_archive()
+    build_station(a.apply_now)
+    keep = station_srcs()
+    for old in eds[:-KEEP_AUDIO]:  # trim: audio older than the rotation and no longer on any schedule
+        for mp3 in (OUT / "editions" / old).rglob("*.mp3"):
+            if "/radio/" + str(mp3.relative_to(ROOT / "public")).split("radio/", 1)[1] not in keep:
+                mp3.unlink()
+    sync()
+    print(f"Wrote public/radio/latest.json ({today}) in {(time.time()-t0)/60:.1f} min")
+    return 0
+
+
+def write_archive() -> list:
     eds = sorted(p.name for p in (OUT / "editions").iterdir() if (p / "edition.json").exists())
     arch = []
     for d in reversed(eds):
@@ -1045,14 +1110,56 @@ def main() -> int:
                                  "duration": {L: v["duration"] for L, v in x["languages"].items()}}
                                 for x in e.get("episodes", [])]})
     dump(OUT / "archive.json", {"editions": arch})
-    build_station(a.apply_now)
-    keep = station_srcs()
-    for old in eds[:-KEEP_AUDIO]:  # trim: audio older than the rotation and no longer on any schedule
-        for mp3 in (OUT / "editions" / old).rglob("*.mp3"):
-            if "/radio/" + str(mp3.relative_to(ROOT / "public")).split("radio/", 1)[1] not in keep:
-                mp3.unlink()
+    return eds
+
+
+def extend_existing(today: str, topics: list | None, apply_now: bool) -> int:
+    """Lengthen already-built 8-chapter episodes that measure under MIN_EP, keeping every existing turn."""
+    ed_dir = OUT / "editions" / today
+    ed = load(ed_dir / "edition.json", {}) or {}
+    hist = load(OUT / "history.json", {"used": []})
+    news, edu = all_news(), expres_de_unic()
+    jobs = []
+    for ep in ed.get("episodes", []):
+        if topics and ep["topic"] not in topics:
+            continue
+        for L, lv in ep["languages"].items():
+            sc = load(ed_dir / ep["topic"] / L / "script.json", {}) or {}
+            if [c["id"] for c in sc.get("chapters", [])] != [c[0] for c in CHAPTERS]:
+                print(f"  {ep['topic']}/{L}: old chapter format, rebuild it with --topic {ep['topic']} --replace")
+                continue
+            durs = [duration(ROOT / "public" / t["src"].lstrip("/")) for t in lv["tracks"]]
+            print(f"  {ep['topic']}/{L}: {sum(durs)/60:.1f} min")
+            if sum(durs) < MIN_EP:
+                jobs.append((ep, L, lv, sc, durs))
+
+    def run(j):
+        ep, L, lv, sc, durs = j
+        own = set(ep.get("source_ids", []))
+        pack = topic_pack(ep["topic"], {**hist, "used": [u for u in hist.get("used", []) if u not in own]}, news, edu)
+        src, stage = ed_dir / ep["topic"] / L, ed_dir / ".staging" / ep["topic"] / L
+        shutil.rmtree(stage, ignore_errors=True)
+        shutil.copytree(src, stage)
+        chapters = fit_length(ep["topic"], pack, today, L, [c["turns"] for c in sc["chapters"]], durs, stage)
+        for c, t in zip(sc["chapters"], chapters):
+            c["turns"] = t
+        dump(stage / "script.json", sc)
+        shutil.rmtree(src)
+        shutil.move(str(stage), str(src))
+        for t, d in zip(lv["tracks"], durs):
+            t["duration"] = d
+        lv["duration"], lv["words"] = round(sum(durs), 1), sum(words(t) for t in chapters)
+        print(f"  [{ep['topic']}/{L}] now {sum(durs)/60:.1f} min, {lv['words']} words")
+
+    with ThreadPoolExecutor(3) as ex:
+        list(ex.map(run, jobs))
+    shutil.rmtree(ed_dir / ".staging", ignore_errors=True)
+    dump(ed_dir / "edition.json", ed)
+    if (load(OUT / "latest.json", {}) or {}).get("date") == today:
+        dump(OUT / "latest.json", ed)
+    write_archive()
+    build_station(apply_now)
     sync()
-    print(f"Wrote public/radio/latest.json ({today}) in {(time.time()-t0)/60:.1f} min")
     return 0
 
 

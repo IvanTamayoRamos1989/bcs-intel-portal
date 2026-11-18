@@ -1,0 +1,747 @@
+{
+  "topic": "agua",
+  "lang": "en",
+  "title": "Water · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Cold open",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "After the October rains, 18 tonnes of waste and over 350 tyres washed up on El Médano beach."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Straight into the sea. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meganoticias says altered stream beds funneled everything down. The federal office also pulled 12.5 tonnes of debris from San José beaches."
+        },
+        {
+          "speaker": "host",
+          "text": "Really? I keep picturing those stream beds like old desert roads."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile over in Mulegé they spent 713 million pesos on works including a new aqueduct."
+        },
+        {
+          "speaker": "host",
+          "text": "And federal funding there fell 70 percent."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile the city just spent 302.9 million pesos on water lines and leaks."
+        },
+        {
+          "speaker": "host",
+          "text": "Gringo Gazette reports the D1 plant now pushes 130 litres per second after OOMSAPAS took over."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They also added 20 free water trucks and repaired 4,312 leaks."
+        },
+        {
+          "speaker": "host",
+          "text": "And D2 is three quarters done, set to add 250 litres per second once finished."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos also found 25 illegal connections this year."
+        },
+        {
+          "speaker": "host",
+          "text": "Senator Zatarain wants up to ten years in prison for theft."
+        },
+        {
+          "speaker": "cohost",
+          "text": "This is Radio BCS2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Today we ask one question."
+        },
+        {
+          "speaker": "cohost",
+          "text": "When the desert sends water and waste the same way, where does the city put its trust? [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Act 1 · What's happening",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Gringo Gazette reports that Los Cabos invested 302.9 million pesos in water and sanitation ahead of the mayor's second report."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They repaired over 4,312 leaks and installed 39,058 new meters."
+        },
+        {
+          "speaker": "host",
+          "text": "Plus 20 free water trucks for people who still need them."
+        },
+        {
+          "speaker": "cohost",
+          "text": "After ending the private contract, they spent 78 million pesos on the D1 plant."
+        },
+        {
+          "speaker": "host",
+          "text": "It now runs at 130 liters per second instead of 70."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The mayor is set to deliver her second report on 21 November, right after these investments."
+        },
+        {
+          "speaker": "host",
+          "text": "Along with those mains they also put in fifteen kilometres of new sewers for better drainage."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What does that change feel like for families who used to wait on trucks?"
+        },
+        {
+          "speaker": "host",
+          "text": "I keep thinking about the quiet mornings when the truck finally arrives."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The D2 plant in Cabo San Lucas sits at 76.58% built."
+        },
+        {
+          "speaker": "host",
+          "text": "One point seven eight billion pesos so far, adding 250 liters per second once finished."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The city is looking for more support to expand capacity even beyond the current plans."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep picturing the long road south and how water shapes every stop along it."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They want another two point one billion from the federal government to push D1 further."
+        },
+        {
+          "speaker": "host",
+          "text": "To reach 200 liters per second there."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Sonoreña 2 already has 708 million pesos approved."
+        },
+        {
+          "speaker": "host",
+          "text": "Meanwhile Meganoticias says the thirtieth of October rains sent eighteen tonnes of waste onto El Médano beach."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Over 350 tyres came with it."
+        },
+        {
+          "speaker": "host",
+          "text": "Another twelve point five tonnes landed on San José beaches, along with fifteen vehicles."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It makes me wonder how the waves sound when they carry all that debris onto the sand."
+        },
+        {
+          "speaker": "host",
+          "text": "The Pacific light hits differently after a storm like that one on 30 October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Specialists point to altered stream beds that now funnel everything straight to the sea."
+        },
+        {
+          "speaker": "host",
+          "text": "The engineers' association wants all three government levels to fund proper storm drainage."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A sewage spill that has sat unfixed for more than 20 days is now eating into the Transpeninsular highway."
+        },
+        {
+          "speaker": "host",
+          "text": "The SCT office in BCS confirmed damage mainly on the shoulders between San José and Cabo San Lucas. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "How long before a full assessment also looks at the sanitary drainage underneath?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. The rain and the road feel connected in ways we rarely see until they break."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Over in Mulegé, Tribuna de México says the mayor reported 713 million pesos in public works across five years."
+        },
+        {
+          "speaker": "host",
+          "text": "More than 215 million of that went to water works, including 23 kilometres of new mains."
+        },
+        {
+          "speaker": "cohost",
+          "text": "240 million pesos of the total went specifically to work in Guerrero Negro alone."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert light changes when water arrives after so many dry seasons. [laugh]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "They just began the first seven kilometres of the Palo Verde to Santa Rosalía aqueduct with Conagua."
+        },
+        {
+          "speaker": "host",
+          "text": "Federal works funding dropped 70% this year."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Still, over 150,000 visitors come each season to Bahía Concepción. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the engineers who keep the pipes and the highway from meeting like this?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "I would ask how the desert itself might guide the next stretch of pipe."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "People and places",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "East Cape sits at the edge of growth, with that reef ecology pulling at one side and the ANP limits holding the other."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. What does daily life feel like there when the water supply is already thin before any new hotel arrives?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Gringo Gazette reports Los Cabos just spent 302.9 million pesos on water and sanitation upgrades."
+        },
+        {
+          "speaker": "host",
+          "text": "One number, yet it reaches right into those coastal towns."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They raised the D1 plant from 70 to 130 liters per second after taking the private operator out of the picture."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] I keep wondering what that change feels like for the families who used to wait on the trucks."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todos Santos–El Pescadero sits on the Pacific spine, lifestyle migration still arriving, yet the aquifer already runs in deficit."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert teaches you to notice every drop. How do the creative growers and the new residents share that same thin supply?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "After the October rains, Meganoticias says crews pulled eighteen tonnes of waste and 350 tyres off El Médano beach alone."
+        },
+        {
+          "speaker": "host",
+          "text": "Altered stream beds sent it all straight to the sea. What would you ask the engineers who watch those beds every storm?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] I would ask whether the new drainage money will follow the natural paths instead of fighting them."
+        },
+        {
+          "speaker": "host",
+          "text": "And in East Cape, with the decks still on the table from September, the question becomes how the corridor to La Paz holds its lower density while the water moves."
+        },
+        {
+          "speaker": "cohost",
+          "text": "D2 plant sits at 76.58% complete. The city is asking the federal side for another 2.1 billion pesos to push D1 further."
+        },
+        {
+          "speaker": "host",
+          "text": "[breath] One plant at a time, yet the reef and the aquifer keep their own clocks."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you ask the people living between the two plants right now?"
+        },
+        {
+          "speaker": "host",
+          "text": "I would ask what the morning light looks like when the tap finally runs clear without the truck."
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Act 2 · The hidden thread",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The water stories keep circling back to the same quiet lines under the streets."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. The paving in Loreto and La Paz both include new drinking-water networks and sewer lines being handed to the utilities."
+        },
+        {
+          "speaker": "host",
+          "text": "Wait—Conagua also closed two sources in Cabo San Lucas that supplied about 120 litres per second."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the La Paz paving project alone costs 48 million pesos with all new lines included."
+        },
+        {
+          "speaker": "host",
+          "text": "Those lines are the thread. Without them the desal plants and the treatment upgrades have nowhere to land."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Gringo Gazette reports 25 illegal connections found in Los Cabos this year alone, pulling more than 300 litres per second."
+        },
+        {
+          "speaker": "host",
+          "text": "Do you think the theft bill will change much on the ground?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The knowledge graph shows the design veto is still there without reuse or new supply."
+        },
+        {
+          "speaker": "host",
+          "text": "And the bill now proposes up to ten years in prison for that kind of extraction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile the second desal plant in Cabo San Lucas sits at 75% and will add 250 litres per second once it finishes next year."
+        },
+        {
+          "speaker": "host",
+          "text": "The paving in Miramar reached 45 percent with the water network nearly ready for tie-in."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It feels like the whole state is stitching new threads at once."
+        },
+        {
+          "speaker": "host",
+          "text": "So the legal supply grows while the hidden theft keeps draining it at the same time."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's earlier Foresight editions kept saying water, grid and places set the 2050 ceiling."
+        },
+        {
+          "speaker": "host",
+          "text": "And the numbers back that up. Los Cabos received just 2.02m pesos in state water works from 2021 to 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is the lowest of any municipality, even though the corridor carries the heaviest tourism load."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep thinking about residents waiting up to 40 days for water in some areas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And spending as much as 2,000 pesos every two weeks on trucks. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "The governor called the shortage extremely delicate and asked Conagua to hurry the wastewater projects."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Those projects are only 60% advanced and still tied up in lawsuits."
+        },
+        {
+          "speaker": "host",
+          "text": "The second plant will bring total desal capacity to 655 litres per second."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Serving more than 200,000 people once it is done."
+        },
+        {
+          "speaker": "host",
+          "text": "So the hidden design is this: new pipes and desal capacity only matter if the old leaks and theft stop first."
+        },
+        {
+          "speaker": "cohost",
+          "text": "But here is the strange part. The same week they announce the prison bill, the portal notes Los Cabos is already chasing water theft while the Sea of Cortez forum talks about doubling the regional economy."
+        },
+        {
+          "speaker": "host",
+          "text": "The two ambitions sit on the same aquifer."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Four key aquifers already in deficit, the knowledge graph says. Growth without new supply or reuse is simply blocked."
+        },
+        {
+          "speaker": "host",
+          "text": "The thread runs from the illegal well to the paving contract to the desal plant to the 2050 map."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And every time we follow one story it pulls the others into view."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "Did you know?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Did you know 22 of 39 aquifers sit in deficit right now."
+        },
+        {
+          "speaker": "host",
+          "text": "That number feels heavy. What does it look like on the ground."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Think of one family’s backyard well in the middle of the dry season. The pump keeps running but the level drops a little every year until one morning the hose spits air."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. And the whole region loses −105.1 cubic hectometers each year according to CONAGUA."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. CONAGUA’s 2023 numbers put the total shortfall at that figure across those 22 aquifers."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep picturing the same well but multiplied across the peninsula. What happens when the hose runs dry for everyone at once."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That question sits behind every growth plan."
+        },
+        {
+          "speaker": "host",
+          "text": "The Sea of Cortez Forum last week heard a call for 3.5% annual growth for 20 years."
+        },
+        {
+          "speaker": "cohost",
+          "text": "At the same time the same room talked about the missing planning tools for water. Hans Herrmann called for a five state treaty."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert teaches you the cost of every extra drop before you spend it."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Last month Hurricane Polo showed what happens when the system is already stretched. The levee at Puerto San Carlos gave way and water service was knocked out across parts of Comondú and Mulegé."
+        },
+        {
+          "speaker": "host",
+          "text": "One storm, one breach, and the everyday supply disappears for days."
+        },
+        {
+          "speaker": "cohost",
+          "text": "CFE said power came back quickly but the water lines took longer."
+        },
+        {
+          "speaker": "host",
+          "text": "It always comes back to the same quiet limit. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same limit that makes every new hotel or road feel heavier than it looks on paper."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the next person who draws up a 20 year plan."
+        },
+        {
+          "speaker": "cohost",
+          "text": "I would ask how the numbers change when the aquifer is already running on air."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "The hidden design",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Turn on the tap in Los Cabos and what do you actually touch?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The pipe, sure, but the whole chain behind it. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. One ordinary faucet opens onto four key aquifers already in DMA deficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the water arrives only if someone already answered the viability questions first."
+        },
+        {
+          "speaker": "host",
+          "text": "Those questions sit in the dq_viabilidad_proyecto package. Water has to clear DMA, aquifers, and desal before anything else moves."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wait, so even a small housing project gets checked against all that before the first drawing gets approved? Really?"
+        },
+        {
+          "speaker": "host",
+          "text": "Yes, and Los Cabos tourism sits at the center of the demand pressure along the whole corridor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the people who keep that list straight meet in the mesas de trabajo."
+        },
+        {
+          "speaker": "host",
+          "text": "The notes from 30 sep 2026 show how the water mesa tracks every proposal against the four aquifers in deficit."
+        },
+        {
+          "speaker": "host",
+          "text": "The water mesa belongs to CEA and CONAGUA."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They sit with the other tables, the ones on energy, urban plans, and conservation, all checking the same project."
+        },
+        {
+          "speaker": "host",
+          "text": "So the faucet is really a committee decision made visible."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the asset managers keep the pipes alive under ISO 55000 rules from the Institute of Asset Management in 2014."
+        },
+        {
+          "speaker": "host",
+          "text": "And still no parque industrial has both a site and a water allocation listed anywhere in the records."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Every valve, every pump, tracked like a living thing across decades. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep thinking about the coastal stretch and what rising seas might do to those same pipes."
+        },
+        {
+          "speaker": "host",
+          "text": "The IPCC SROCC lays out the exposure clearly for places like this."
+        },
+        {
+          "speaker": "cohost",
+          "text": "IRENA data shows solar can make desal cheap enough to add supply without breaking the aquifers further, especially with BCS top-tier solar resource."
+        },
+        {
+          "speaker": "host",
+          "text": "Along the CSL to SJD corridor the tourism demand shapes everything else that follows."
+        },
+        {
+          "speaker": "host",
+          "text": "But only if the mesas already agreed the desal plant fits the POERBCS and PDU."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One glass of water therefore carries the weight of every rule that said yes."
+        },
+        {
+          "speaker": "host",
+          "text": "I wonder what the next round of mesas will unlock for the coastal pipes. [laugh]"
+        },
+        {
+          "speaker": "host",
+          "text": "And the ones that still say not yet. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The hidden design is just that long quiet conversation before the tap ever runs. [breath]"
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Act 3 · Toward 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The portal’s vision for water toward 2050 starts with the ceiling that limits everything else."
+        },
+        {
+          "speaker": "cohost",
+          "text": "22 of 39 aquifers sit in deficit, according to CONAGUA in 2023."
+        },
+        {
+          "speaker": "host",
+          "text": "That total shortfall of 105.1 cubic hectometers per year feels like a hard line."
+        },
+        {
+          "speaker": "cohost",
+          "text": "25 illegal taps in Los Cabos alone, pulling more than 300 liters per second."
+        },
+        {
+          "speaker": "host",
+          "text": "And only three in ten residents enjoy constant supply, per the ENCIG 2025 data."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The aspiration is simple: new growth that does not lean on those same stressed aquifers."
+        },
+        {
+          "speaker": "host",
+          "text": "Continuous supply stops being the rare case, and reuse actually adds to the margin."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal offers no single 2050 equilibrium number, just that direction."
+        },
+        {
+          "speaker": "host",
+          "text": "One lever already moving is the second Cabo San Lucas desal plant."
+        },
+        {
+          "speaker": "cohost",
+          "text": "75% complete, adding 250 liters per second, for a combined 655 liters per second by 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "It is a supply tool under construction, not permission to keep draining the deficit aquifers."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Closing those illegal connections would recover volume that never reaches users now."
+        },
+        {
+          "speaker": "host",
+          "text": "Growth permits would then tie directly to mean annual availability under NOM-011, without pretending credit against the shortfall."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The demand-supply board keeps any local deficit from being masked by headroom elsewhere on paper."
+        },
+        {
+          "speaker": "host",
+          "text": "The tendencia reading stays polycentric rather than one coastal formula repeated north to south."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos carries the tourism engine under water and power stress, while Comondú holds more room as an agricultural hub."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape stays in tension with protected areas, and Loreto anchors tourism with conservation."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Each place keeps its distinct role instead of becoming a diluted version of Cabo statewide."
+        },
+        {
+          "speaker": "host",
+          "text": "New projects only go where water and energy show real margin or a non-DMA source like desal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape and Loreto would need to respect ANP and POEL ceilings before any hospitality expansion."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú and the north could add production and energy, yet without emptying services or protected zones elsewhere."
+        },
+        {
+          "speaker": "cohost",
+          "text": "On the watchlist, the second desal plant progress, the Los Cabos POEL 2026 water obligations, and federal action on theft."
+        },
+        {
+          "speaker": "host",
+          "text": "A federal bill now carries penalties up to ten years in prison for water theft."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That pairs with ongoing closures of illegal connections in Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Housing for Wellbeing plots would also need checking against actual water and service capacity."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The question is whether those separate vocations can hold without one place emptying another."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. That is what the board is meant to test."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "The takeaway",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "I keep coming back to one thought about water here. It feels like the whole peninsula is teaching us something quiet about limits and flow, like the slow pulse under everything."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Which one?"
+        },
+        {
+          "speaker": "host",
+          "text": "How the desert and the sea keep the same slow conversation going, only in different tones. The waves come in, the arroyos wait for rain, and somehow that balance holds the light."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[pause] And we stand right in the middle of it, trying not to interrupt."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. It makes me wonder what happens when we stop rushing to answer and just watch how the place already moves."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? You mean just letting the place speak first before we decide what it needs?"
+        },
+        {
+          "speaker": "host",
+          "text": "Yes. The real work is learning how to listen before we speak, the way the dunes seem to listen to the wind."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] That feels true. Like waiting for the right set before you drop in, feeling the swell rather than chasing it."
+        },
+        {
+          "speaker": "host",
+          "text": "[breath] The feeling that stays with me is that patience might be the quietest kind of design, the one the desert has been practicing for centuries."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yes. And maybe that is the one thing we can carry forward, this sense of waiting with the land instead of against it."
+        }
+      ]
+    }
+  ]
+}

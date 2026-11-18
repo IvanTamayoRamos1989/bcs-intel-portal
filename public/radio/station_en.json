@@ -1,9 +1,9 @@
 {
   "schedules": [
     {
-      "start": "2026-11-17T18:37:04Z",
-      "total": 5439.3,
-      "episodes": 8,
+      "start": "2026-11-18T11:36:19Z",
+      "total": 13865.39,
+      "episodes": 11,
       "items": [
         {
           "src": "/radio/music/id_en_1.mp3",
@@ -11,98 +11,76 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-17/infraestructura/en/01.mp3",
-          "d": 78.02,
+          "src": "/radio/editions/2026-11-18/conectividad/en/01.mp3",
+          "d": 105.55,
           "kind": "talk",
           "ch": "Cold open",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
-          "src": "/radio/music/short_surf.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/infraestructura/en/02.mp3",
-          "d": 108.38,
+          "src": "/radio/editions/2026-11-18/conectividad/en/02.mp3",
+          "d": 211.37,
           "kind": "talk",
           "ch": "Act 1 · What's happening",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
-          "src": "/radio/music/short_bossa.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "src": "/radio/editions/2026-11-18/conectividad/en/03.mp3",
+          "d": 160.03,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
-          "src": "/radio/editions/2026-11-17/infraestructura/en/03.mp3",
-          "d": 108.19,
+          "src": "/radio/editions/2026-11-18/conectividad/en/04.mp3",
+          "d": 192.79,
           "kind": "talk",
           "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
-          "src": "/radio/music/break_romanza.mp3",
-          "d": 30.04,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/infraestructura/en/04.mp3",
-          "d": 64.63,
+          "src": "/radio/editions/2026-11-18/conectividad/en/05.mp3",
+          "d": 131.18,
           "kind": "talk",
           "ch": "Did you know?",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "src": "/radio/editions/2026-11-18/conectividad/en/06.mp3",
+          "d": 138.26,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
-          "src": "/radio/editions/2026-11-17/infraestructura/en/05.mp3",
-          "d": 145.66,
+          "src": "/radio/editions/2026-11-18/conectividad/en/07.mp3",
+          "d": 169.82,
           "kind": "talk",
           "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
-          "src": "/radio/music/short_surf.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/infraestructura/en/06.mp3",
-          "d": 52.08,
+          "src": "/radio/editions/2026-11-18/conectividad/en/08.mp3",
+          "d": 77.69,
           "kind": "talk",
           "ch": "The takeaway",
-          "date": "2026-11-17",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "date": "2026-11-18",
+          "topic": "conectividad",
+          "name": "Connectivity"
         },
         {
           "src": "/radio/music/break_romanza.mp3",
@@ -115,98 +93,76 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-17/finanzas/en/01.mp3",
-          "d": 51.02,
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/01.mp3",
+          "d": 100.94,
           "kind": "talk",
           "ch": "Cold open",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
-          "src": "/radio/music/short_romanza.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/finanzas/en/02.mp3",
-          "d": 138.65,
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/02.mp3",
+          "d": 207.74,
           "kind": "talk",
           "ch": "Act 1 · What's happening",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/03.mp3",
+          "d": 169.13,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
-          "src": "/radio/editions/2026-11-17/finanzas/en/03.mp3",
-          "d": 109.37,
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/04.mp3",
+          "d": 170.78,
           "kind": "talk",
           "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
-          "src": "/radio/music/break_cielito.mp3",
-          "d": 30.04,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/finanzas/en/04.mp3",
-          "d": 78.41,
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/05.mp3",
+          "d": 166.46,
           "kind": "talk",
           "ch": "Did you know?",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
-          "src": "/radio/music/short_bossa.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/06.mp3",
+          "d": 150.12,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
-          "src": "/radio/editions/2026-11-17/finanzas/en/05.mp3",
-          "d": 110.28,
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/07.mp3",
+          "d": 166.08,
           "kind": "talk",
           "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
-          "src": "/radio/music/short_romanza.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/finanzas/en/06.mp3",
-          "d": 60.82,
+          "src": "/radio/editions/2026-11-18/medio_ambiente/en/08.mp3",
+          "d": 76.18,
           "kind": "talk",
           "ch": "The takeaway",
-          "date": "2026-11-17",
-          "topic": "finanzas",
-          "name": "Finance"
+          "date": "2026-11-18",
+          "topic": "medio_ambiente",
+          "name": "Environment"
         },
         {
           "src": "/radio/music/break_romance.mp3",
@@ -219,98 +175,76 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-17/desarrollo/en/01.mp3",
-          "d": 54.5,
+          "src": "/radio/editions/2026-11-18/agua/en/01.mp3",
+          "d": 98.47,
           "kind": "talk",
           "ch": "Cold open",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/desarrollo/en/02.mp3",
-          "d": 103.9,
+          "src": "/radio/editions/2026-11-18/agua/en/02.mp3",
+          "d": 229.27,
           "kind": "talk",
           "ch": "Act 1 · What's happening",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
-          "src": "/radio/music/short_surf.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "src": "/radio/editions/2026-11-18/agua/en/03.mp3",
+          "d": 128.18,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
-          "src": "/radio/editions/2026-11-17/desarrollo/en/03.mp3",
-          "d": 111.77,
+          "src": "/radio/editions/2026-11-18/agua/en/04.mp3",
+          "d": 198.24,
           "kind": "talk",
           "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
-          "src": "/radio/music/break_romance.mp3",
-          "d": 30.04,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/desarrollo/en/04.mp3",
-          "d": 64.1,
+          "src": "/radio/editions/2026-11-18/agua/en/05.mp3",
+          "d": 116.78,
           "kind": "talk",
           "ch": "Did you know?",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
-          "src": "/radio/music/short_romanza.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "src": "/radio/editions/2026-11-18/agua/en/06.mp3",
+          "d": 167.02,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
-          "src": "/radio/editions/2026-11-17/desarrollo/en/05.mp3",
-          "d": 126.14,
+          "src": "/radio/editions/2026-11-18/agua/en/07.mp3",
+          "d": 194.3,
           "kind": "talk",
           "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/desarrollo/en/06.mp3",
-          "d": 61.27,
+          "src": "/radio/editions/2026-11-18/agua/en/08.mp3",
+          "d": 78.84,
           "kind": "talk",
           "ch": "The takeaway",
-          "date": "2026-11-17",
-          "topic": "desarrollo",
-          "name": "Development"
+          "date": "2026-11-18",
+          "topic": "agua",
+          "name": "Water"
         },
         {
           "src": "/radio/music/break_cielito.mp3",
@@ -323,8 +257,254 @@
           "kind": "id"
         },
         {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/01.mp3",
+          "d": 88.68,
+          "kind": "talk",
+          "ch": "Cold open",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/02.mp3",
+          "d": 183.86,
+          "kind": "talk",
+          "ch": "Act 1 · What's happening",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/03.mp3",
+          "d": 165.94,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/04.mp3",
+          "d": 185.33,
+          "kind": "talk",
+          "ch": "Act 2 · The hidden thread",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/05.mp3",
+          "d": 133.46,
+          "kind": "talk",
+          "ch": "Did you know?",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/06.mp3",
+          "d": 168.24,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/07.mp3",
+          "d": 220.39,
+          "kind": "talk",
+          "ch": "Act 3 · Toward 2050",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/infraestructura/en/08.mp3",
+          "d": 65.18,
+          "kind": "talk",
+          "ch": "The takeaway",
+          "date": "2026-11-17",
+          "topic": "infraestructura",
+          "name": "Infrastructure"
+        },
+        {
+          "src": "/radio/music/break_horizon.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_en_2.mp3",
+          "d": 9.98,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/01.mp3",
+          "d": 81.96,
+          "kind": "talk",
+          "ch": "Cold open",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/02.mp3",
+          "d": 174.82,
+          "kind": "talk",
+          "ch": "Act 1 · What's happening",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/03.mp3",
+          "d": 191.66,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/04.mp3",
+          "d": 168.0,
+          "kind": "talk",
+          "ch": "Act 2 · The hidden thread",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/05.mp3",
+          "d": 139.58,
+          "kind": "talk",
+          "ch": "Did you know?",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/06.mp3",
+          "d": 184.1,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/07.mp3",
+          "d": 203.59,
+          "kind": "talk",
+          "ch": "Act 3 · Toward 2050",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/finanzas/en/08.mp3",
+          "d": 79.8,
+          "kind": "talk",
+          "ch": "The takeaway",
+          "date": "2026-11-17",
+          "topic": "finanzas",
+          "name": "Finance"
+        },
+        {
+          "src": "/radio/music/break_bossa.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_en_3.mp3",
+          "d": 9.29,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/01.mp3",
+          "d": 81.38,
+          "kind": "talk",
+          "ch": "Cold open",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/02.mp3",
+          "d": 206.78,
+          "kind": "talk",
+          "ch": "Act 1 · What's happening",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/03.mp3",
+          "d": 189.62,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/04.mp3",
+          "d": 165.86,
+          "kind": "talk",
+          "ch": "Act 2 · The hidden thread",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/05.mp3",
+          "d": 179.74,
+          "kind": "talk",
+          "ch": "Did you know?",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/06.mp3",
+          "d": 152.9,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/07.mp3",
+          "d": 200.26,
+          "kind": "talk",
+          "ch": "Act 3 · Toward 2050",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/desarrollo/en/08.mp3",
+          "d": 64.54,
+          "kind": "talk",
+          "ch": "The takeaway",
+          "date": "2026-11-17",
+          "topic": "desarrollo",
+          "name": "Development"
+        },
+        {
+          "src": "/radio/music/break_beachbum.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_en_1.mp3",
+          "d": 10.99,
+          "kind": "id"
+        },
+        {
           "src": "/radio/editions/2026-11-17/turismo/en/01.mp3",
-          "d": 77.83,
+          "d": 113.3,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-17",
@@ -333,7 +513,7 @@
         },
         {
           "src": "/radio/editions/2026-11-17/turismo/en/02.mp3",
-          "d": 146.59,
+          "d": 197.66,
           "kind": "talk",
           "ch": "Act 1 · What's happening",
           "date": "2026-11-17",
@@ -342,7 +522,7 @@
         },
         {
           "src": "/radio/editions/2026-11-17/turismo/en/03.mp3",
-          "d": 118.18,
+          "d": 148.58,
           "kind": "talk",
           "ch": "People and places",
           "date": "2026-11-17",
@@ -351,7 +531,7 @@
         },
         {
           "src": "/radio/editions/2026-11-17/turismo/en/04.mp3",
-          "d": 149.57,
+          "d": 193.1,
           "kind": "talk",
           "ch": "Act 2 · The hidden thread",
           "date": "2026-11-17",
@@ -360,7 +540,7 @@
         },
         {
           "src": "/radio/editions/2026-11-17/turismo/en/05.mp3",
-          "d": 123.58,
+          "d": 164.5,
           "kind": "talk",
           "ch": "Did you know?",
           "date": "2026-11-17",
@@ -369,7 +549,7 @@
         },
         {
           "src": "/radio/editions/2026-11-17/turismo/en/06.mp3",
-          "d": 119.18,
+          "d": 170.04,
           "kind": "talk",
           "ch": "The hidden design",
           "date": "2026-11-17",
@@ -378,7 +558,7 @@
         },
         {
           "src": "/radio/editions/2026-11-17/turismo/en/07.mp3",
-          "d": 149.52,
+          "d": 175.13,
           "kind": "talk",
           "ch": "Act 3 · Toward 2050",
           "date": "2026-11-17",
@@ -395,318 +575,6 @@
           "name": "Tourism"
         },
         {
-          "src": "/radio/music/break_horizon.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_en_2.mp3",
-          "d": 9.98,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/economia/en/01.mp3",
-          "d": 70.92,
-          "kind": "talk",
-          "ch": "Cold open",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/music/short_cielito.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/economia/en/02.mp3",
-          "d": 133.39,
-          "kind": "talk",
-          "ch": "Act 1 · What's happening",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/music/short_surf.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/economia/en/03.mp3",
-          "d": 107.16,
-          "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/music/break_romance.mp3",
-          "d": 30.04,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/economia/en/04.mp3",
-          "d": 66.67,
-          "kind": "talk",
-          "ch": "Did you know?",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/music/short_bossa.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/economia/en/05.mp3",
-          "d": 107.38,
-          "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/music/short_cielito.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/economia/en/06.mp3",
-          "d": 43.68,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-17",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/music/break_bossa.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_en_3.mp3",
-          "d": 9.29,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/urbanismo/en/01.mp3",
-          "d": 56.35,
-          "kind": "talk",
-          "ch": "Cold open",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/music/short_romanza.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/urbanismo/en/02.mp3",
-          "d": 112.32,
-          "kind": "talk",
-          "ch": "Act 1 · What's happening",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/music/short_bossa.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/urbanismo/en/03.mp3",
-          "d": 127.18,
-          "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/music/break_romance.mp3",
-          "d": 30.04,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/urbanismo/en/04.mp3",
-          "d": 61.06,
-          "kind": "talk",
-          "ch": "Did you know?",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/urbanismo/en/05.mp3",
-          "d": 132.48,
-          "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/music/short_romanza.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/urbanismo/en/06.mp3",
-          "d": 68.11,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-17",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/music/break_beachbum.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_en_1.mp3",
-          "d": 10.99,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/crimen/en/01.mp3",
-          "d": 50.78,
-          "kind": "talk",
-          "ch": "Cold open",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/crimen/en/02.mp3",
-          "d": 123.89,
-          "kind": "talk",
-          "ch": "Act 1 · What's happening",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/music/short_romanza.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/crimen/en/03.mp3",
-          "d": 95.64,
-          "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/music/break_bossa.mp3",
-          "d": 30.04,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/crimen/en/04.mp3",
-          "d": 57.98,
-          "kind": "talk",
-          "ch": "Did you know?",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/music/short_romance.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/crimen/en/05.mp3",
-          "d": 144.89,
-          "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/crimen/en/06.mp3",
-          "d": 50.78,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-17",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
           "src": "/radio/music/break_surf.mp3",
           "d": 30.04,
           "kind": "music"
@@ -717,8 +585,254 @@
           "kind": "id"
         },
         {
+          "src": "/radio/editions/2026-11-17/economia/en/01.mp3",
+          "d": 82.39,
+          "kind": "talk",
+          "ch": "Cold open",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/en/02.mp3",
+          "d": 192.12,
+          "kind": "talk",
+          "ch": "Act 1 · What's happening",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/en/03.mp3",
+          "d": 158.71,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/en/04.mp3",
+          "d": 210.86,
+          "kind": "talk",
+          "ch": "Act 2 · The hidden thread",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/en/05.mp3",
+          "d": 153.74,
+          "kind": "talk",
+          "ch": "Did you know?",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/en/06.mp3",
+          "d": 167.26,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/en/07.mp3",
+          "d": 187.8,
+          "kind": "talk",
+          "ch": "Act 3 · Toward 2050",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/economia/en/08.mp3",
+          "d": 75.29,
+          "kind": "talk",
+          "ch": "The takeaway",
+          "date": "2026-11-17",
+          "topic": "economia",
+          "name": "Economy"
+        },
+        {
+          "src": "/radio/music/break_romanza.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_en_3.mp3",
+          "d": 9.29,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/01.mp3",
+          "d": 82.46,
+          "kind": "talk",
+          "ch": "Cold open",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/02.mp3",
+          "d": 222.82,
+          "kind": "talk",
+          "ch": "Act 1 · What's happening",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/03.mp3",
+          "d": 157.18,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/04.mp3",
+          "d": 177.5,
+          "kind": "talk",
+          "ch": "Act 2 · The hidden thread",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/05.mp3",
+          "d": 167.64,
+          "kind": "talk",
+          "ch": "Did you know?",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/06.mp3",
+          "d": 164.33,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/07.mp3",
+          "d": 203.76,
+          "kind": "talk",
+          "ch": "Act 3 · Toward 2050",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/urbanismo/en/08.mp3",
+          "d": 62.81,
+          "kind": "talk",
+          "ch": "The takeaway",
+          "date": "2026-11-17",
+          "topic": "urbanismo",
+          "name": "Urbanism"
+        },
+        {
+          "src": "/radio/music/break_romance.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_en_1.mp3",
+          "d": 10.99,
+          "kind": "id"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/01.mp3",
+          "d": 78.53,
+          "kind": "talk",
+          "ch": "Cold open",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/02.mp3",
+          "d": 218.26,
+          "kind": "talk",
+          "ch": "Act 1 · What's happening",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/03.mp3",
+          "d": 136.97,
+          "kind": "talk",
+          "ch": "People and places",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/04.mp3",
+          "d": 159.58,
+          "kind": "talk",
+          "ch": "Act 2 · The hidden thread",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/05.mp3",
+          "d": 133.97,
+          "kind": "talk",
+          "ch": "Did you know?",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/06.mp3",
+          "d": 178.15,
+          "kind": "talk",
+          "ch": "The hidden design",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/07.mp3",
+          "d": 207.62,
+          "kind": "talk",
+          "ch": "Act 3 · Toward 2050",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/editions/2026-11-17/crimen/en/08.mp3",
+          "d": 76.8,
+          "kind": "talk",
+          "ch": "The takeaway",
+          "date": "2026-11-17",
+          "topic": "crimen",
+          "name": "Security"
+        },
+        {
+          "src": "/radio/music/break_cielito.mp3",
+          "d": 30.04,
+          "kind": "music"
+        },
+        {
+          "src": "/radio/music/id_en_2.mp3",
+          "d": 9.98,
+          "kind": "id"
+        },
+        {
           "src": "/radio/editions/2026-11-17/transporte/en/01.mp3",
-          "d": 58.39,
+          "d": 103.9,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-17",
@@ -726,16 +840,8 @@
           "name": "Transport"
         },
         {
-          "src": "/radio/music/short_beachbum.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
           "src": "/radio/editions/2026-11-17/transporte/en/02.mp3",
-          "d": 138.36,
+          "d": 212.57,
           "kind": "talk",
           "ch": "Act 1 · What's happening",
           "date": "2026-11-17",
@@ -743,16 +849,17 @@
           "name": "Transport"
         },
         {
-          "src": "/radio/music/short_horizon.mp3",
-          "d": 7.03,
-          "kind": "music",
+          "src": "/radio/editions/2026-11-17/transporte/en/03.mp3",
+          "d": 182.42,
+          "kind": "talk",
+          "ch": "People and places",
           "date": "2026-11-17",
           "topic": "transporte",
           "name": "Transport"
         },
         {
-          "src": "/radio/editions/2026-11-17/transporte/en/03.mp3",
-          "d": 101.18,
+          "src": "/radio/editions/2026-11-17/transporte/en/04.mp3",
+          "d": 174.22,
           "kind": "talk",
           "ch": "Act 2 · The hidden thread",
           "date": "2026-11-17",
@@ -760,16 +867,8 @@
           "name": "Transport"
         },
         {
-          "src": "/radio/music/break_romanza.mp3",
-          "d": 30.04,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/transporte/en/04.mp3",
-          "d": 81.46,
+          "src": "/radio/editions/2026-11-17/transporte/en/05.mp3",
+          "d": 128.66,
           "kind": "talk",
           "ch": "Did you know?",
           "date": "2026-11-17",
@@ -777,16 +876,17 @@
           "name": "Transport"
         },
         {
-          "src": "/radio/music/short_surf.mp3",
-          "d": 7.03,
-          "kind": "music",
+          "src": "/radio/editions/2026-11-17/transporte/en/06.mp3",
+          "d": 206.3,
+          "kind": "talk",
+          "ch": "The hidden design",
           "date": "2026-11-17",
           "topic": "transporte",
           "name": "Transport"
         },
         {
-          "src": "/radio/editions/2026-11-17/transporte/en/05.mp3",
-          "d": 89.16,
+          "src": "/radio/editions/2026-11-17/transporte/en/07.mp3",
+          "d": 180.77,
           "kind": "talk",
           "ch": "Act 3 · Toward 2050",
           "date": "2026-11-17",
@@ -794,16 +894,8 @@
           "name": "Transport"
         },
         {
-          "src": "/radio/music/short_beachbum.mp3",
-          "d": 7.03,
-          "kind": "music",
-          "date": "2026-11-17",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-17/transporte/en/06.mp3",
-          "d": 55.13,
+          "src": "/radio/editions/2026-11-17/transporte/en/08.mp3",
+          "d": 70.22,
           "kind": "talk",
           "ch": "The takeaway",
           "date": "2026-11-17",
@@ -811,13 +903,13 @@
           "name": "Transport"
         },
         {
-          "src": "/radio/music/break_romanza.mp3",
+          "src": "/radio/music/break_horizon.mp3",
           "d": 30.04,
           "kind": "music"
         }
       ],
-      "built": "2026-11-17"
+      "built": "2026-11-18"
     }
   ],
-  "updated": "2026-11-17"
+  "updated": "2026-11-18"
 }

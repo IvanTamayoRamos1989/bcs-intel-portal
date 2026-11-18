@@ -1,0 +1,839 @@
+{
+  "topic": "agua",
+  "lang": "es",
+  "title": "Agua · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Después de las lluvias recientes retiraron 18 toneladas de basura de la playa El Médano."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y todo eso a dónde va a parar?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Meganoticias los cauces cambiados y la falta de drenaje lo empujan directo al mar, concentrando los escurrimientos."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] El mar se lleva lo que la ciudad no planea."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además sacaron más de 350 neumáticos de esa misma playa."
+        },
+        {
+          "speaker": "host",
+          "text": "350. [chuckle] El desierto y el mar siguen negociando sin permiso."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A la vez Los Cabos reporta 302.9 mdp invertidos en agua y saneamiento."
+        },
+        {
+          "speaker": "host",
+          "text": "302.9 millones. ¿Qué lograron con eso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Reequiparon la desaladora D1 y la llevó a 130 litros por segundo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Desde cuánto operaba antes?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Desde 70 litros por segundo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y van a sumar 250 litros más por segundo cuando termine."
+        },
+        {
+          "speaker": "host",
+          "text": "Parece que el desierto empieza a negociar con el mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También instalaron 39,058 micromedidores y repararon más de 4,312 fugas."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Esto es Radio BCS2050. Hoy un vistazo profundo al agua. La pregunta que vamos a perseguir: ¿qué le enseña el desierto a una ciudad sobre el agua?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Empecemos con lo que más se mueve ahora mismo en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Gringo Gazette, el municipio reporta 302.9 mdp invertidos en agua y saneamiento antes del informe del alcalde."
+        },
+        {
+          "speaker": "host",
+          "text": "302.9 mdp. Eso cubre 20 pipas de agua gratuita y casi 39,058 micromedidores."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También repararon más de 4,312 fugas. Y la desaladora D1 ya sube de 70 a 130 litros por segundo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo se siente eso en los hogares que antes dependían de pipas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La D2 de Cabo San Lucas va al 76.58%, con 1,780 mdp ya ejercidos."
+        },
+        {
+          "speaker": "host",
+          "text": "Y piden 2,105 mdp más para llevar D1 a 200 litros por segundo. [pause] El paso es lento pero claro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "OOMSAPAS reequipó la planta tras dejar al operador privado. 78 mdp vinieron del FISAM."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Ese cambio interno parece haber acelerado las cosas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora, Meganoticias cuenta otra cara."
+        },
+        {
+          "speaker": "host",
+          "text": "Después de las lluvias del 30 de octubre, Zofemat sacó 18 toneladas de basura de playa El Médano."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además de 350 neumáticos. Y en San José del Cabo, 12.5 toneladas de palizada y 15 vehículos arrastrados."
+        },
+        {
+          "speaker": "host",
+          "text": "Los cauces ya no siguen su camino natural. Todo se concentra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Colegio de Ingenieros Civiles pide que los tres órdenes de gobierno inviertan en drenaje pluvial. ¿Qué pasaría si no?"
+        },
+        {
+          "speaker": "host",
+          "text": "La basura termina en el mar y las playas se quedan sucias para quien vive del turismo. [chuckle] El mar no olvida."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otro reporte de Meganoticias muestra cómo las lluvias y un derrame de aguas negras dañan la Transpeninsular."
+        },
+        {
+          "speaker": "host",
+          "text": "El organismo operador lleva más de 20 días sin reparar el derrame. La carpeta asfáltica se está rompiendo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sobre todo en los acotamientos entre San José y Cabo San Lucas."
+        },
+        {
+          "speaker": "host",
+          "text": "El Centro SCT ya reconoce las afectaciones. [breath] Un bache en la carretera que une todo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pasemos a Mulegé. Tribuna de México reporta 713 mdp en obra pública en cinco años."
+        },
+        {
+          "speaker": "host",
+          "text": "De esos, más de 215 mdp fueron para obra hídrica: 23 kilómetros de red de agua y 15 de drenaje."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Acaban de iniciar la primera etapa del acueducto Palo Verde–Santa Rosalía. 7 kilómetros por ahora."
+        },
+        {
+          "speaker": "host",
+          "text": "Aunque los recursos federales cayeron 70% este año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La alcaldesa Edith Aguilar lo dijo en su segundo informe. Aun así, la obra sigue."
+        },
+        {
+          "speaker": "host",
+          "text": "En Guerrero Negro aplicaron 240 mdp. El desierto sigue pidiendo más."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Sonoreña 2 ya tiene 708 mdp autorizados. ¿Qué significa tener menos dinero federal cuando el desierto pide más agua?"
+        },
+        {
+          "speaker": "host",
+          "text": "Tal vez que cada kilómetro nuevo cuente el doble."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "Las personas y los lugares",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "En East Cape la gente vive entre el arrecife y el desierto, con el mar cerca y el agua siempre en la mente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y en Todos Santos también. El acuífero 0313 ya está en déficit mientras crece el turismo residencial."
+        },
+        {
+          "speaker": "host",
+          "text": "Me pregunto qué dirían los vecinos de El Pescadero si les preguntamos cómo se vive sin agua segura cada día."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos reportan 302.9 mdp invertidos en agua y saneamiento, según Gringo Gazette."
+        },
+        {
+          "speaker": "host",
+          "text": "302.9 mdp… eso es una cifra grande."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Incluye 20 pipas de agua gratuita para la gente."
+        },
+        {
+          "speaker": "host",
+          "text": "Y también 39,058 micromedidores instalados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además repararon 4,312 fugas. Pero las lluvias del 30 de octubre dejaron claro que falta drenaje pluvial."
+        },
+        {
+          "speaker": "host",
+          "text": "Meganoticias cuenta que Zofemat sacó 18 toneladas de basura y 350 neumáticos solo de El Médano."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En San José del Cabo fueron 12.5 toneladas de palizada y 15 vehículos arrastrados hasta la playa."
+        },
+        {
+          "speaker": "host",
+          "text": "Los cauces modificados concentran el agua sucia y la llevan directo al mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué se siente ver eso desde tu casa?"
+        },
+        {
+          "speaker": "host",
+          "text": "La desaladora D1 pasó de 70 a 130 litros por segundo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Después de invertir 78 mdp del FISAM."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora piden 2,105 mdp más para llevarla a 200 litros por segundo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La D2 ya va en 76.58%."
+        },
+        {
+          "speaker": "host",
+          "text": "La Sonoreña 2 suma 708 mdp autorizados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todo esto llega antes del informe del alcalde el 21 de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "En East Cape la lógica de Cabo Pulmo marca los límites."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué le preguntarías a un pescador de ahí sobre el futuro del agua?"
+        },
+        {
+          "speaker": "host",
+          "text": "En Todos Santos el estrés hídrico choca con la identidad del Pacífico y el turismo lifestyle."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. <soft>Me imagino el olor del mar mezclado con el plástico después de una lluvia de octubre.</soft>"
+        },
+        {
+          "speaker": "host",
+          "text": "Y la D2 suma 1,780 mdp en total."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Eso cambia la escala del proyecto."
+        },
+        {
+          "speaker": "host",
+          "text": "La desaladora D2 añade 250 litros por segundo más."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En un lugar donde el arrecife pide calma, ¿cómo se siente tanta obra cerca?"
+        },
+        {
+          "speaker": "host",
+          "text": "Los ingenieros civiles piden inversión en drenaje a los tres niveles de gobierno."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me pregunto qué respondería un vecino de San José del Cabo si le preguntas por las calles que ahora arrastran todo al mar."
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, si miramos todo lo que hemos oído sobre agua estas semanas, hay algo que conecta las tomas clandestinas, las pavimentaciones y las desaladoras."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. El hilo que pasa por debajo de las calles y de las decisiones."
+        },
+        {
+          "speaker": "host",
+          "text": "En Los Cabos ya clausuraron 25 tomas clandestinas este año, según Tribuna de México."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y se llevan más de 300 litros por segundo."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto, la segunda desaladora de Cabo San Lucas va al 75%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Informa Quepoca que va a sumar 250 litros por segundo."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero la inversión de la CEA en Los Cabos entre 2021 y 2026 fue solo de 2.02 millones de pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meganoticias lo señala claro. La Paz tuvo más."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Y Mulegé."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el agua que falta se va por un lado mientras se intenta traer por otro."
+        },
+        {
+          "speaker": "host",
+          "text": "Y debajo de eso están las obras que no se ven tanto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En La Paz, la pavimentación de Francisco King Rondero incluye sustitución completa de redes de agua y drenaje, según Palabra BCS."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo mismo en Loreto con la calle Marlín."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Van al 45% y ya terminaron el drenaje para conectar la nueva línea de agua potable."
+        },
+        {
+          "speaker": "host",
+          "text": "Es el momento en que el pavimento abre la calle y queda al descubierto la tubería vieja."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa es la parte que casi nunca sale en las fotos."
+        },
+        {
+          "speaker": "host",
+          "text": "Y al mismo tiempo, en San José del Cabo están reubicando la planta de Fonatur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Noticabo cuenta que van a construir también La Sonoreña II de 250 litros más."
+        },
+        {
+          "speaker": "host",
+          "text": "Con un cárcamo de 350 litros por segundo hacia la otra planta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces todo apunta a la misma pregunta: ¿cuánto puede crecer el lugar si la red sigue siendo el límite?"
+        },
+        {
+          "speaker": "host",
+          "text": "Los pronósticos del portal desde octubre vienen repitiendo que el agua, la red y los lugares definen el techo 2050 para Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y ahora aparece la iniciativa de la senadora Susana Zatarain para meter hasta 10 años de cárcel por huachicol de agua."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo curioso es que al mismo tiempo que se endurece la ley, los equipos Vactor de Oomsapas La Paz a veces solo funcionan dos de cuatro, informa Tribuna de México."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El director pidió que usen el call center porque atienden por prioridad, primero hospitales y zonas turísticas."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero aquí viene lo que me sorprendió."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos, que recibe la menor inversión hídrica, es también donde el turismo exige más agua."
+        },
+        {
+          "speaker": "host",
+          "text": "Y donde el crecimiento sigue condicionado por los acuíferos en déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. El conocimiento del portal dice que sin nueva oferta de desalación o reúso, el veto de diseño ya está puesto sobre cualquier escenario de expansión."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el hilo oculto no es solo la tubería bajo la calle Marlín o la de Francisco King Rondero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es la decisión de dónde poner el dinero y dónde poner la vigilancia, que termina decidiendo quién llega al 2050 con agua suficiente."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "¿Sabías que 22 de 39 acuíferos están en déficit?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y la suma llega a menos 105.1 hm³ al año, según CONAGUA 2023."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Eso es mucho menos de lo que entra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Imagina un tanque que pierde agua más rápido de lo que lo llenas."
+        },
+        {
+          "speaker": "host",
+          "text": "Y eso pasa en más de la mitad de los acuíferos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Comondú el bordo se rompió con Polo y el agua potable se complicó."
+        },
+        {
+          "speaker": "host",
+          "text": "Los caminos y el suministro quedaron afectados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y en Mulegé también."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasa cuando el mar se mete como en El Centenario?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Inunda calles, escuelas y el malecón. El agua dulce se mezcla con sal."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el problema no es solo cantidad, también calidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en Los Cabos el crecimiento turístico choca con esa falta de agua nueva."
+        },
+        {
+          "speaker": "host",
+          "text": "La Asociación de Hoteles busca más visitantes de Canadá, pero el límite sigue ahí."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La senadora Zatarain mencionó ventas 25-35% abajo."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin nuevas fuentes, el desarrollo se frena solo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasaría si un solo acuífero se recupera un poco?"
+        },
+        {
+          "speaker": "host",
+          "text": "Sería como arreglar una gotera antes de que el techo se hunda."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] El desierto siempre cobra la cuenta."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Y 2050 se acerca rápido."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En La Paz la marea alta del 25 de octubre entró hasta las viviendas."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso mezcla todo y deja el suelo salado por meses."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Los vecinos de El Esterito vieron el malecón cubierto de agua salada."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y cómo afecta eso a las familias que viven cerca?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pierden el agua potable y tienen que esperar días para que vuelva."
+        },
+        {
+          "speaker": "host",
+          "text": "Es como si el mar les recordara que el desierto no perdona."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y en Los Cabos los hoteles ya sienten el freno por falta de nuevas fuentes."
+        },
+        {
+          "speaker": "host",
+          "text": "El Foro Mar de Cortés habló de crecer 3.5% anual, pero el agua no alcanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "IMCO subió a BCS al quinto lugar en competitividad, [pause] sin resolver el agua."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si triplican la inversión sin más acuíferos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El límite hidrometeorológico toca a todos, no solo a los turistas."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto enseña que el crecimiento necesita raíces profundas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Y cada tormenta como Rachel cierra puertos y suspende clases."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el agua decide hasta dónde puede llegar 2050."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "El diseño invisible",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hoy hablamos del agua, pero no de la que sale del grifo. Del diseño que nadie ve."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Ese sistema que decide si un hotel puede abrir o si un barrio crece."
+        },
+        {
+          "speaker": "host",
+          "text": "Piensa en la llave de una habitación en Los Cabos. Detrás hay un paquete entero de viabilidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Agua, energía, carretera, todo acoplado. Las mesas de trabajo del programa lo revisan."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y quién está en la mesa de agua?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "CEA y CONAGUA, según los datos del portal. Ellos revisan los acuíferos y la desalación."
+        },
+        {
+          "speaker": "host",
+          "text": "Cuatro acuíferos en déficit en el sur. Sin nueva oferta no hay crecimiento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El reúso y la desaladora entran ahí. [pause] Pero también el costo de la energía que las mueve."
+        },
+        {
+          "speaker": "host",
+          "text": "IRENA dice que el sol de Baja California Sur es de los mejores para bajar ese costo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, según el reporte de 2024. Un grifo en un hotel nuevo depende de si el proyecto pasó por la viabilidad completa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y si falta un dato?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el proyecto se frena. No hay parque industrial con dotación de agua registrada en el grafo."
+        },
+        {
+          "speaker": "host",
+          "text": "El diseño invisible decide dónde se puede construir y dónde no. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Incluye las restricciones de ANP, la costa, la tenencia de la tierra."
+        },
+        {
+          "speaker": "host",
+          "text": "También el manejo de activos. ISO 55000 para que las tuberías y plantas duren."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Institute of Asset Management lo detalla desde 2014. ¿Cómo se mantiene todo eso vivo en el desierto?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Y el nivel del mar que sube, según el informe del IPCC."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, el de 2019. Todo está conectado. Un cambio en la costa toca la intrusión salina y el agua dulce."
+        },
+        {
+          "speaker": "host",
+          "text": "Un solo grifo abre un mapa entero de decisiones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y sin ese mapa, el futuro se queda en el papel."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué pasaría si miramos el paquete completo de viabilidad?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Incluye hotel, desaladora, energía de SIBCS y CFE, hasta las restricciones de intrusión salina."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el turismo como motor principal de demanda en el corredor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. [laugh] Un grifo que se abre hoy ya trae todo eso dentro."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué imagen te queda de todo este sistema?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La de una red silenciosa que sostiene cada gota. Como el desierto que enseña paciencia al diseño."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "El techo hídrico marca todo lo que pueda pasar hacia 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y el dato que más pesa es que 22 de los 39 acuíferos ya están en déficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Menos 105.1 hectómetros cúbicos al año. Eso no deja mucho margen para seguir como hasta ahora."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y aun así solo tres de cada diez personas tienen agua constante. La ENCIG lo dejó claro."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si el crecimiento nuevo ya no pudiera apoyarse en esos acuíferos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa es la aspiración del portal: que el abasto continuo deje de ser la excepción y que el reúso cuente de verdad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "250 litros por segundo más. Juntas llegarán a 655 para el 2027. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "Pero no puede ser solo una excusa para seguir sacando de los pozos que ya están secos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Cerrar las tomas clandestinas también entra en la cuenta. En Los Cabos ya se detectaron 25."
+        },
+        {
+          "speaker": "host",
+          "text": "Más de 300 litros por segundo que se pierden antes de llegar a la gente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El tablero del portal insiste en no compensar un déficit local con el margen de otro municipio."
+        },
+        {
+          "speaker": "host",
+          "text": "Baja California Sur no puede ser una sola fórmula costera repetida del sur al norte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El foresight habla de un sistema policéntrico. Cada lugar con su rol distinto."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos como motor turístico bajo estrés, La Paz como nodo de agua y energía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú con más margen para lo agropecuario, Loreto cuidando sus áreas protegidas. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Y el East Cape en tensión con las zonas que debemos dejar en paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Todos Santos y El Pescadero como esa espina de amenidad del Pacífico."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que se requiere es que cada vocación respete su propio techo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y que el nuevo crecimiento turístico solo vaya donde haya evidencia real de agua y energía."
+        },
+        {
+          "speaker": "host",
+          "text": "La lista de vigilancia incluye la consulta del POEL de Los Cabos este año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la ubicación de los predios de Vivienda para el Bienestar frente a la capacidad real de servicio."
+        },
+        {
+          "speaker": "host",
+          "text": "También la fiabilidad de las obras de la CFE contra los incidentes de abasto locales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sin olvidar la iniciativa federal contra el huachicol de agua, que puede llevar hasta diez años de cárcel."
+        },
+        {
+          "speaker": "host",
+          "text": "Si todo eso se ata, el 2050 puede verse distinto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sin fingir que el déficit desaparece en el papel."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Me quedo pensando en cómo el agua conecta todo en Baja California Sur, desde las obras hasta el mar."
+        },
+        {
+          "speaker": "host",
+          "text": "A veces pienso que el agua aquí nos enseña a mirar más lejos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, como si cada gota supiera de dónde viene y a dónde debe volver."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto pone las cosas en su lugar. Te hace esperar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Y al final todo regresa al mar, pero el camino importa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué sería llevar esa idea en el día a día? [pause] ¿Cómo la usamos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tal vez recordando que nada se pierde del todo. Solo cambia de forma."
+        },
+        {
+          "speaker": "host",
+          "text": "Me gusta esa imagen. El agua no se va, solo se mueve."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Y nosotros estamos en medio de ese movimiento."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] ¿Qué pasaría si viviéramos así, sin apresurarnos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El desierto ya lo hace. Nos invita a soltarnos un poco."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es como si el agua misma nos recordara que el equilibrio está en el movimiento lento."
+        }
+      ]
+    }
+  ]
+}

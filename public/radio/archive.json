@@ -1,6 +1,40 @@
 {
   "editions": [
     {
+      "date": "2026-11-18",
+      "audio": true,
+      "edition": "/radio/editions/2026-11-18/edition.json",
+      "topics": [
+        {
+          "topic": "conectividad",
+          "name_es": "Conectividad",
+          "name_en": "Connectivity",
+          "duration": {
+            "es": 1193.8,
+            "en": 1186.7
+          }
+        },
+        {
+          "topic": "medio_ambiente",
+          "name_es": "Medio ambiente",
+          "name_en": "Environment",
+          "duration": {
+            "es": 1220.2,
+            "en": 1207.4
+          }
+        },
+        {
+          "topic": "agua",
+          "name_es": "Agua",
+          "name_en": "Water",
+          "duration": {
+            "es": 1278.4,
+            "en": 1211.1
+          }
+        }
+      ]
+    },
+    {
       "date": "2026-11-17",
       "audio": true,
       "edition": "/radio/editions/2026-11-17/edition.json",
@@ -10,8 +44,8 @@
           "name_es": "Infraestructura",
           "name_en": "Infrastructure",
           "duration": {
-            "es": 631.1,
-            "en": 615.1
+            "es": 1217.3,
+            "en": 1211.1
           }
         },
         {
@@ -19,8 +53,8 @@
           "name_es": "Finanzas",
           "name_en": "Finance",
           "duration": {
-            "es": 599.9,
-            "en": 606.7
+            "es": 1229.3,
+            "en": 1223.5
           }
         },
         {
@@ -28,8 +62,8 @@
           "name_es": "Desarrollo",
           "name_en": "Development",
           "duration": {
-            "es": 652.3,
-            "en": 579.8
+            "es": 1230.0,
+            "en": 1241.1
           }
         },
         {
@@ -37,8 +71,8 @@
           "name_es": "Turismo",
           "name_en": "Tourism",
           "duration": {
-            "es": 991.8,
-            "en": 948.8
+            "es": 1236.7,
+            "en": 1226.7
           }
         },
         {
@@ -46,8 +80,8 @@
           "name_es": "Economía",
           "name_en": "Economy",
           "duration": {
-            "es": 631.5,
-            "en": 587.4
+            "es": 1197.7,
+            "en": 1228.2
           }
         },
         {
@@ -55,8 +89,8 @@
           "name_es": "Urbanismo",
           "name_en": "Urbanism",
           "duration": {
-            "es": 681.6,
-            "en": 615.7
+            "es": 1229.3,
+            "en": 1238.5
           }
         },
         {
@@ -64,8 +98,8 @@
           "name_es": "Seguridad",
           "name_en": "Security",
           "duration": {
-            "es": 653.0,
-            "en": 582.1
+            "es": 1200.8,
+            "en": 1189.9
           }
         },
         {
@@ -73,8 +107,8 @@
           "name_es": "Transporte",
           "name_en": "Transport",
           "duration": {
-            "es": 674.7,
-            "en": 581.8
+            "es": 1187.2,
+            "en": 1259.1
           }
         }
       ]

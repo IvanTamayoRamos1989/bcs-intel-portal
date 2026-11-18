@@ -8,40 +8,44 @@
       "title": "Cold open",
       "turns": [
         {
+          "speaker": "cohost",
+          "text": "At the Sea of Cortez Forum in Los Cabos last week, someone stood up and proposed a treaty signed by five states."
+        },
+        {
           "speaker": "host",
-          "text": "At Punta Lobos the broken wall of Hotel San Cristóbal rests on the sand."
+          "text": "Five states to decide together how investment moves and how the sea stays protected."
         },
         {
           "speaker": "cohost",
-          "text": "La Nigua says inspectors from Profepa checked the site on 11 November."
+          "text": "Hans Herrmann from Mare Nostrum said the region already has the talent and the ties north, but no shared planning tool."
         },
         {
           "speaker": "host",
-          "text": "They found no waste in the sea, yet the rubble stays under watch."
+          "text": "So the idea is one document, community voices included, to steer both growth and conservation."
         },
         {
           "speaker": "cohost",
-          "text": "Fishers had warned about the waves long before any collapse."
+          "text": "Meanwhile Agustín Coppel opened the same summit calling for the whole region to double its economy and triple foreign investment inside 20 years."
         },
         {
           "speaker": "host",
-          "text": "The Tres Santos project reported the wall collapse and took down the damaged sections."
+          "text": "That would mean steady 3.5 percent growth every year."
         },
         {
           "speaker": "cohost",
-          "text": "No wildlife was hurt, and no chemicals reached the water."
+          "text": "Starting from the 4.1 billion dollars now coming in from abroad."
         },
         {
           "speaker": "host",
-          "text": "Still the debris sits there under careful eyes."
+          "text": "And yet the same Los Cabos that hosts these talks received only 2.02 million pesos in state water-works money across five years."
         },
         {
           "speaker": "cohost",
-          "text": "The sea keeps coming in at the same edge where the hotel once stood."
+          "text": "This is Radio BCS2050. Today we sit with that gap between the big numbers on stage and the quiet numbers on the ground."
         },
         {
           "speaker": "host",
-          "text": "This is Radio BCS2050. Today a deep dive on Development. What holds the edge of a town when the sea takes its share?"
+          "text": "The question we keep coming back to is simple: what does it take for a place to grow without outrunning its own water and light?"
         }
       ]
     },
@@ -51,59 +55,281 @@
       "turns": [
         {
           "speaker": "cohost",
-          "text": "La Nigua reports that on 11 November Profepa inspected the Hotel San Cristóbal site in Punta Lobos after a wall collapse in the Tres Santos project."
+          "text": "The Foro Mar de Cortés summit just wrapped in Los Cabos."
         },
         {
           "speaker": "host",
-          "text": "What did they find?"
+          "text": "The light down there always feels different this time of year."
         },
         {
           "speaker": "cohost",
-          "text": "No wastewater or chemicals reached the sea, and no wildlife was harmed. They will now check the environmental permit and how the debris is handled."
+          "text": "It does."
         },
         {
           "speaker": "host",
-          "text": "Mm. A wall falls and suddenly the sea is part of the story."
+          "text": "What stood out for you?"
         },
         {
           "speaker": "cohost",
-          "text": "NTCD says the Fifth Government Report covering 1 Sep 2025 to 31 Aug 2026 was delivered to Congress on 12 November. The governor presents it publicly on 27 November at Plaza de la Reforma in La Paz."
+          "text": "Agustín Coppel opened by calling for 3.5 percent annual growth across the five states for the next 20 years."
         },
         {
           "speaker": "host",
-          "text": "What does the report actually track?"
+          "text": "That would double the whole regional economy."
         },
         {
           "speaker": "cohost",
-          "text": "Works and actions grouped under the five axes of the State Development Plan."
+          "text": "Exactly, and he wants foreign investment tripled from the current four point one billion dollars."
         },
         {
           "speaker": "host",
-          "text": "And the people who live with those axes every day?"
+          "text": "Almost ten percent of what Mexico receives altogether."
         },
         {
           "speaker": "cohost",
-          "text": "Meganoticias reports Los Cabos business owners say the state has paused the Camina Cabo walkability plan and the downtown Cabo San Lucas makeover, even though Fiturca funds were ready."
+          "text": "He urged more public investment in roads, ports, airport use, education and security."
         },
         {
           "speaker": "host",
-          "text": "Why pause it?"
+          "text": "Tus Buenas Noticias covered the event under the motto Taking the Helm."
         },
         {
           "speaker": "cohost",
-          "text": "No explanation given. Shops are closing and moving to El Tezal."
+          "text": "They also noted the forum ranks Baja California Sur first in natural capital for the region."
         },
         {
           "speaker": "host",
-          "text": "A plan meant to bring people downtown now keeps them away."
+          "text": "That feels like the quiet advantage we rarely name out loud."
         },
         {
           "speaker": "cohost",
-          "text": "The same outlet notes that 704 homes in Sierra Vista are over 90 percent built to move families out of stream beds. More than 17,000 homes are assigned across Los Cabos, but land and drinking water remain the main obstacles."
+          "text": "Coppel pointed out that Baja California Sur itself grew only two point one percent a year over the last decade."
         },
         {
           "speaker": "host",
-          "text": "What happens to the families still waiting?"
+          "text": "So the gap between where we are and where he wants us to go is quite wide."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The agenda touched limits to development and marine conservation too."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep picturing the swell rolling in while they talk about those limits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He asked for more public money in roads, ports, airports, education and security to close it."
+        },
+        {
+          "speaker": "host",
+          "text": "What would that actually look like on the ground here?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "A few days later Hans Herrmann from Mare Nostrum took the stage with another idea."
+        },
+        {
+          "speaker": "host",
+          "text": "The regional treaty."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yes, a five-state agreement among Baja California, Baja California Sur, Nayarit, Sinaloa and Sonora."
+        },
+        {
+          "speaker": "host",
+          "text": "To guide both investment and conservation together."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He said the region already has talent, infrastructure and close ties to the United States, yet still lacks the planning tools."
+        },
+        {
+          "speaker": "host",
+          "text": "So the treaty would be the missing instrument."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Foro Mar de Cortés would convene it with real community participation."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep thinking about how the desert and the sea would shape those planning meetings if communities really led the way."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hans Herrmann made the point that the missing piece is exactly those shared instruments for deciding together."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the people in the villages if they were at the table?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Whether the new investment would protect the places they have fished for generations or just open them up."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. The long road south always brings those questions back to the water's edge. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep wondering what that participation would feel like in a fishing village south of here."
+        },
+        {
+          "speaker": "host",
+          "text": "The summit ran from the tenth to the twelfth of November."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It was the sixth edition, after all."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They brought in IMCO to talk regional competitiveness."
+        },
+        {
+          "speaker": "host",
+          "text": "And the future of cities too."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Climate change sat on the agenda right beside marine conservation."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert teaches patience, but the sea does not wait. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Or if the desert and the sea simply keep their own pace. [pause]"
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "People and places",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Paz sits as the state capital with its bay and port facing the water."
+        },
+        {
+          "speaker": "cohost",
+          "text": "People there move between government offices and the university, the lowest municipal poverty at 20.6 percent."
+        },
+        {
+          "speaker": "host",
+          "text": "The bay must shape how the city grows, yet aquifers 0324 and 0313 sit in deficit. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yes, and that tight water-energy coupling shows up in every new neighborhood."
+        },
+        {
+          "speaker": "host",
+          "text": "Drive north and you reach Todos Santos–El Pescadero, the Pacific amenity spine."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lifestyle migrants arrive for the culture and the light, yet the same aquifers feel the pressure."
+        },
+        {
+          "speaker": "host",
+          "text": "What does a morning walk along that coast sound like when new homes keep appearing?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The highway and the shoreline both feel the squeeze of growth. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos holds the primate municipality role, 351111 people across 428 localities."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Its hotels line the corridor, from Grand Velas to Vidanta, drawing visitors year-round."
+        },
+        {
+          "speaker": "host",
+          "text": "Those properties sit on aquifers already marked in deficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly, and the East Cape and Cabo Pulmo remain points of tension."
+        },
+        {
+          "speaker": "host",
+          "text": "At the recent Los Cabos summit, Hans Herrmann spoke of a five-state regional treaty."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He wants investment guided by shared planning for the Sea of Cortez."
+        },
+        {
+          "speaker": "host",
+          "text": "Agustín Coppel called for doubling the regional economy over 20 years."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That would mean 3.5 percent annual growth across the five states."
+        },
+        {
+          "speaker": "host",
+          "text": "Tripling foreign investment while adding roads, ports, and education."
+        },
+        {
+          "speaker": "cohost",
+          "text": "BCS itself grew only 2.1 percent a year over the last decade, so the jump feels steep."
+        },
+        {
+          "speaker": "host",
+          "text": "What would a fisher in Comondú or a family in Loreto ask about that plan? [breath]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú carries the agro pole in Valle Santo Domingo, yet lacks a public cadastre viewer."
+        },
+        {
+          "speaker": "host",
+          "text": "Loreto keeps its POEL from 2014 while the Nopoló corridor grows quietly."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The desert light and the long road south still decide how daily life unfolds in each place."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep wondering how those towns would answer a simple question about water and time."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hans Herrmann from Mare Nostrum mentioned talent and US ties already in place."
+        },
+        {
+          "speaker": "host",
+          "text": "The treaty would include Baja California, Nayarit, Sinaloa and Sonora too."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Community participation would guide every decision on conservation and new projects."
+        },
+        {
+          "speaker": "host",
+          "text": "Agustín Coppel noted current foreign investment sits near 4.1 billion dollars."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. That figure is roughly ten percent of Mexico's total, yet the road ahead still needs building."
+        },
+        {
+          "speaker": "host",
+          "text": "I wonder what the swell sounds like on the Pacific side when the next home rises."
         }
       ]
     },
@@ -113,47 +339,83 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Luz, the numbers from Los Cabos keep pointing somewhere deeper."
+          "text": "The numbers on water works keep pointing back to the same line under the map."
         },
         {
           "speaker": "cohost",
-          "text": "Gringo Gazette reports the 2027 revenue law at 6,746 million pesos, down nine percent. Own-source revenue falls nearly 20% from property tax and fees."
+          "text": "Meganoticias laid it out last week. Los Cabos received just 2.02 million from the state water agency over five years."
         },
         {
           "speaker": "host",
-          "text": "That drop sits right next to the coastal road fight and the estuary cleanup."
+          "text": "While La Paz took 121.38 million and Mulegé 126.99. The desert asks the same question every time: where does the next drop come from?"
         },
         {
           "speaker": "cohost",
-          "text": "Diario Humano notes residents will collect signatures 19 to 22 November under The Coastal Road stays. Noticabo says the Fonatur plant move aims to restore the San José estuary with new pumping stations."
+          "text": "Yet the real-estate numbers from JLL show Los Cabos still captured 81 percent of the state’s residential volume."
         },
         {
           "speaker": "host",
-          "text": "Mm. And the Oasis tender brings 72 megawatts of solar plus hydrogen storage."
+          "text": "That mismatch is the thread. Growth keeps arriving, but the pipe and the wire do not stretch at the same speed."
         },
         {
           "speaker": "cohost",
-          "text": "PVTIME reports the project would serve 40,000 households and cut 94,000 tonnes of CO2. Meanwhile the forum in Los Cabos pushes for a five-state treaty to guide investment and conservation."
+          "text": "El Mundo Digital spoke with the tourism developers. They listed water first, then roads, then power capacity."
         },
         {
           "speaker": "host",
-          "text": "So the thread runs through water, power, and the coastline itself. The portal's earlier Foresight already flagged water scarcity as the brake on tourism growth."
+          "text": "And the urban plan itself is back on the table."
         },
         {
           "speaker": "cohost",
-          "text": "Meganoticias adds Shell Nurse artificial reefs in La Paz Bay, a fisheries response to warming waters with cost-benefit work by the IDB."
+          "text": "The portal’s earlier Foresight notes already called water the political brake on tourism investment. Nothing new there, only louder now."
         },
         {
           "speaker": "host",
-          "text": "Yet the same week the forum calls for tripling investment across the region, fishers at Punta Lobos are still waiting for a technical report on why the hotel foundations washed out."
+          "text": "The knowledge graph keeps tagging the same signal: SIBCS as an energy island. The grid sits alone."
         },
         {
           "speaker": "cohost",
-          "text": "HOY BCS says waves exposed the building after the seawall failed. The surprise is how the push for roads, ports and solar can run ahead of the simple question of where the sand goes next."
+          "text": "Reliability and investment both hit the ceiling at the same time. One storm or one pump failure and the lights and the taps feel it together."
         },
         {
           "speaker": "host",
-          "text": "What does that tell us about the real limits the desert and the tide set on any plan?"
+          "text": "So the hidden thread is not just the missing money. It is the shared limit between water and power that no single project can outrun."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 2026 POEL consultation adds one more layer. Developers must now bring their own desalination and treatment."
+        },
+        {
+          "speaker": "host",
+          "text": "That shifts the old bargain. The municipality used to promise the lines; now the lines travel with the permit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Some residents already wait 40 days for a connection and pay 2,000 pesos every two weeks for truck deliveries."
+        },
+        {
+          "speaker": "host",
+          "text": "The desert does not negotiate. It simply waits for the next bill to arrive."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The surprise is how little the state line has moved while private money keeps flowing in. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "Maybe the thread runs the other way. Perhaps the ceiling is not the money at all, but the rule that still treats the island grid as an afterthought."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal’s past editions already flagged the same spot. Water, grid, and place set the 2050 limit together."
+        },
+        {
+          "speaker": "host",
+          "text": "A road or a pipe is never only concrete. It is the quiet agreement about how far the city is allowed to reach."
+        },
+        {
+          "speaker": "cohost",
+          "text": "When that agreement stays unwritten, every new hotel and every empty cistern tells the same story."
         }
       ]
     },
@@ -162,36 +424,214 @@
       "title": "Did you know?",
       "turns": [
         {
-          "speaker": "host",
-          "text": "Did you know Baja California Sur grew at 2.1 percent a year over the last decade?"
-        },
-        {
           "speaker": "cohost",
-          "text": "That number comes from the Sea of Cortez Forum in Los Cabos."
+          "text": "Did you know 22 of 39 aquifers sit in deficit right now?"
         },
         {
           "speaker": "host",
-          "text": "Two point one percent. What does that pace feel like on the ground?"
+          "text": "That number feels heavy. [pause] What does it look like on the ground?"
         },
         {
           "speaker": "cohost",
-          "text": "IMCO reports the state climbed from eighth to fifth in competitiveness between 2021 and 2026."
+          "text": "CONAGUA measured the whole state pulling 105.1 cubic hectometers more than it receives each year."
         },
         {
           "speaker": "host",
-          "text": "A quiet climb. Yet the same forum proposed 3.5 percent annual growth for 20 years."
+          "text": "Imagine the desert trying to refill a single backyard cistern while the tap stays open."
         },
         {
           "speaker": "cohost",
-          "text": "With roads, ports and airports to support it."
+          "text": "INEGI counted exactly 798,447 residents living in Baja California Sur according to the 2020 census data."
         },
         {
           "speaker": "host",
-          "text": "So the road south carries both the past pace and the new ambition."
+          "text": "The economy produced 187,152 million pesos in constant prices through 2024, showing a 3.5 percent rise from the year before."
         },
         {
           "speaker": "cohost",
-          "text": "Agustín Coppel also spoke of tripling regional foreign direct investment from its current level near 4.1 billion dollars. Hans Herrmann suggested a five-state treaty to handle the shared sea and its limits. In Los Cabos the same growth engine meets water scarcity that already slows new hotels and sends residents marching for answers."
+          "text": "Exactly. [chuckle] The cistern never catches up."
+        },
+        {
+          "speaker": "host",
+          "text": "And this is the same place courting big new hotels and airports."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Sea of Cortez Forum heard Agustín Coppel call for 3.5 percent growth every year for 20 years."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. That ambition meets the leaking cistern."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Baja California Sur grew only 2.1 percent a year over the last decade."
+        },
+        {
+          "speaker": "host",
+          "text": "So the new target asks the desert for more than it has given lately."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Los Cabos POEL now requires every new project to add its own desal plant or wastewater treatment before it can build."
+        },
+        {
+          "speaker": "host",
+          "text": "So the rule tries to make the bucket watertight."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Los Cabos Hotel Association reported tourism sales down between 25 and 35 percent over the past two years, with at least 27 restaurants now closed."
+        },
+        {
+          "speaker": "host",
+          "text": "At the same time the transport ministry is spending 350 million pesos on conserving roads and bridges throughout the state."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It does. The council just opened consultation on the El Tezal partial plan and the Punta Nayu project."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the planners if you sat at that table?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Whether the desert will still lend us water after the next summers."
+        },
+        {
+          "speaker": "host",
+          "text": "A fair question. [breath] The light on the water always makes the answer feel possible."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The federal investment in social programs for the state totals 6766000000 MXN this year."
+        },
+        {
+          "speaker": "host",
+          "text": "That sits alongside plans for a 240 megawatt power plant in Los Cabos expected by 2028."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It does. Yet the numbers keep reminding us the cistern is finite."
+        },
+        {
+          "speaker": "host",
+          "text": "IMCO tracked the state climbing from eighth to fifth in competitiveness lately."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That climb sits right beside the water warnings."
+        },
+        {
+          "speaker": "host",
+          "text": "The Los Cabos Hotel Association saw visitor numbers drop from the north. [laugh]"
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "The hidden design",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "I keep thinking about a single house going up in Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The kind you see in the JLL numbers."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. One house, yet it sits inside a whole mesh of rules no one sees from the street."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? Like what kind of rules do you picture first?"
+        },
+        {
+          "speaker": "host",
+          "text": "The 2026 POEL consultation now asks developers to supply their own desalination and treatment."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the house carries its own small water plant before the first wall goes up."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. That requirement comes straight from the mesas on agua and urbanismo Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Which ones meet with SEPUIMM and IMPLAN."
+        },
+        {
+          "speaker": "host",
+          "text": "And with the G20 quality-infrastructure principles that ask for long-term output specs."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wait—does that also tie into the mesa on desarrollo orientado al transporte?"
+        },
+        {
+          "speaker": "host",
+          "text": "It does. The same working tables look at how transit benefits ripple out, the way the VTPI framework lays them out."
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep picturing the road out front, quiet at dawn, carrying more than cars once the house is lived in."
+        },
+        {
+          "speaker": "host",
+          "text": "So the hidden design is not the roofline. It is the document that says the roof must also handle its own waste stream."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same mesas track the tourism investment signal against the water limit."
+        },
+        {
+          "speaker": "host",
+          "text": "One number from last year still sits in the room: one point five seven billion dollars in BCS residential volume."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos took 81 percent of that."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the grid that keeps the lights on is still treated as an energy island."
+        },
+        {
+          "speaker": "cohost",
+          "text": "CFE reliability inside the isolated system sets the real ceiling."
+        },
+        {
+          "speaker": "host",
+          "text": "So the house also carries its own piece of the larger reliability question."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you ask the people around those tables if you could sit in for one session?"
+        },
+        {
+          "speaker": "host",
+          "text": "I would ask how the rules for one house scale when the next follow."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The working tables keep pulling those threads together before the next permit is signed."
+        },
+        {
+          "speaker": "host",
+          "text": "A quiet kind of design, [pause] written in the margins of the mesas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ha, of course it is. [chuckle] One more detail from the JLL report: 1,840 units sold across the state."
+        },
+        {
+          "speaker": "host",
+          "text": "Each one quietly shaped by the same unseen documents."
         }
       ]
     },
@@ -201,55 +641,127 @@
       "turns": [
         {
           "speaker": "cohost",
-          "text": "The portal’s Visión pillar for housing points to one clear risk."
+          "text": "The portal’s Visión pillar on housing points straight at the risk."
         },
         {
           "speaker": "host",
-          "text": "Homes built without services or on the coast and over stressed water."
+          "text": "Housing grows where services are missing or where water and coastlines are already under pressure."
         },
         {
           "speaker": "cohost",
-          "text": "State population stands at 798,447 from the 2020 census. This week the housing beat is quiet. Housing shows zero items against the EWMA of 1.46, direction flat."
+          "text": "The state counted 798,447 people in the 2020 census. That number sets the scale."
         },
         {
           "speaker": "host",
-          "text": "So the aspiration stays simple."
+          "text": "Really? One number like that makes the whole picture feel more immediate."
         },
         {
           "speaker": "cohost",
-          "text": "Housing that sits inside real water and energy margins and away from the first line of risk. No published 2050 unit target exists."
+          "text": "Housing accounts for just one item this week, with the EWMA at 1.81."
         },
         {
           "speaker": "host",
-          "text": "What would it take to steer toward the polycentric picture the portal describes?"
+          "text": "Yet no published target exists for how many units should stand by 2050."
         },
         {
           "speaker": "cohost",
-          "text": "Each place keeps its own role. Los Cabos stays the stressed tourism engine. La Paz holds the service and water-energy node. Comondú grows food and power without draining its towns or protected zones. East Cape stays in tension with its protected areas. Todos Santos and El Pescadero form the Pacific amenity spine. Loreto anchors tourism and conservation. Northern Mulegé holds the thin corridor with its new remote generation tender."
+          "text": "The aspiration is simple: homes with real services, set back from the first line of risk."
         },
         {
           "speaker": "host",
-          "text": "Mm. The desert light still falls differently on each of those spines."
+          "text": "And matched to whatever water and energy margin actually exists."
         },
         {
           "speaker": "cohost",
-          "text": "New growth only where the demand-supply board shows margin or non-DMA supply. East Cape and Loreto stay inside their ANP and POEL limits first."
+          "text": "The levers are clear. First, move what is already exposed before opening new coastal fronts."
         },
         {
           "speaker": "host",
-          "text": "The levers are already there."
+          "text": "Then cross-check every project against the demand–supply board and current plans."
         },
         {
           "speaker": "cohost",
-          "text": "Prioritise moving what is already exposed before any new coastal front opens. Cross-check every project against the board and the planning instruments. Treat the backlog of missing services as a hard ceiling."
+          "text": "Treat the backlog of missing services as a hard ceiling, not something the market will fix later."
         },
         {
           "speaker": "host",
-          "text": "And if those conditions hold, the state keeps its distinct pieces instead of one repeated coastal line from south to north."
+          "text": "Mm. That changes how growth is allowed to happen."
         },
         {
           "speaker": "cohost",
-          "text": "That is the reading the portal’s demand-supply board still summarises as constrained at state scale."
+          "text": "When you drive through Comondú the fields stretch out under that clear sky and you see the room it has."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. It turns the question from how much we can build into whether the place can actually hold it."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the planners in Loreto about keeping that balance with the protected areas?"
+        },
+        {
+          "speaker": "host",
+          "text": "The Tendencia 2050 sees the state as a polycentric system rather than one repeated coastal pattern."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos keeps the tourism engine but carries water and power stress."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape stays in tension with protected areas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todos Santos and El Pescadero form the Pacific amenity spine."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz serves as the water–energy node and service capital."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto anchors tourism and conservation. Comondú holds the agricultural role with more room."
+        },
+        {
+          "speaker": "host",
+          "text": "Northern Mulegé remains thinly documented, now seeing a remote generation tender."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Northern Mulegé with its tender feels like the quiet edge of the map."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Each place keeps its own vocation instead of copying the same formula."
+        },
+        {
+          "speaker": "host",
+          "text": "New growth only where water and energy show real margin or come from desal, without counting on NOM-011 credit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape and Loreto respect ANP and POEL limits before any scaling."
+        },
+        {
+          "speaker": "host",
+          "text": "What would it take, really, for those different roles to stay distinct all the way out?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Each vocation contributes a distinct role, not diluted Cabos statewide. [pause] The light on the desert changes everything when you drive north."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú and the north could add production without emptying services or protected zones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The aspiration stays grounded in those local roles and the real margins of water and energy across the state."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is the watchlist that matters. [chuckle] The sea keeps its own count."
         }
       ]
     },
@@ -259,27 +771,43 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "The lesson is simple. Homes with services, off the first line of risk, and inside the real margin of water and energy. The kind of housing that respects the desert's limits and the sea's reach."
+          "text": "I keep wondering what it really means for this place to grow in a way that makes sense for everyone who lives here."
         },
         {
           "speaker": "cohost",
-          "text": "Mm. And 704 of those homes are planned in Sierra Vista to move families out of danger zones in Los Cabos."
+          "text": "Not just bigger, but right. Something that feels natural rather than forced onto the land."
         },
         {
           "speaker": "host",
-          "text": "But here's the thing. Part of Hotel San Cristóbal in Punta Lobos was already taken by the waves. Fishers had warned about the risks, and now debris is being watched so it does not reach the sea."
+          "text": "Exactly. Like the buildings and the roads actually belong here instead of sitting on top of everything."
         },
         {
           "speaker": "cohost",
-          "text": "Los Cabos projects a 9% drop in 2027 revenue as the real estate market cools. Business owners say the Camina Cabo walkability plan has been paused."
+          "text": "Instead of fighting the desert and the sea for space, as if they weren't already part of the story."
         },
         {
           "speaker": "host",
-          "text": "Residents are gathering signatures to keep the East Cape Coastal Road in the 2040 urban plan. What does the coast teach us about where we build?"
+          "text": "What would that look like, do you think? [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Maybe houses that sit back a little from the edge, where the water can still reach the land in its own time."
         },
         {
           "speaker": "host",
-          "text": "Stay with us. More Radio BCS2050 after the music."
+          "text": "And the light can move through them the way it always has across the dunes and the water."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That feels like the real work ahead of us now. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "The forum's vision of protecting the Sea of Cortez while attracting investment comes to mind here. [breath]"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Not how much we add to the map, but whether it still feels like home when we are done with it all."
         }
       ]
     }

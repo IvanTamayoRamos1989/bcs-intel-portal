@@ -1,0 +1,811 @@
+{
+  "topic": "conectividad",
+  "lang": "en",
+  "title": "Connectivity · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Cold open",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "3,004 meters long, 45 meters wide. [pause] That runway at Los Cabos sits there under the sun, holding every takeoff and landing."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. And yet the numbers just came in smaller."
+        },
+        {
+          "speaker": "cohost",
+          "text": "GlobeNewswire reports 520.9 thousand passengers last month, down 4.6 percent."
+        },
+        {
+          "speaker": "host",
+          "text": "Really? The desert feels it first."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz handled 108 thousand, down 2.1 percent."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the year to date shows a different current."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Up 8.7 percent there, against the tide."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] One fewer flight every so often, but the long strip keeps stretching south."
+        },
+        {
+          "speaker": "cohost",
+          "text": "GlobeNewswire reports 5.87 million passengers from January through October, 5.5 percent lower than before."
+        },
+        {
+          "speaker": "host",
+          "text": "Still the Condor service from Frankfurt flies at a 92 percent load factor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Still they added a United route straight to Washington Dulles."
+        },
+        {
+          "speaker": "host",
+          "text": "—which is the strange part. More reach, yet fewer feet on the ground."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The destination aims to diversify its tourism even as the counts shift."
+        },
+        {
+          "speaker": "host",
+          "text": "Does that runway hold the future open or just the same paths?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep thinking about what that runway actually connects us to when the counts drop."
+        },
+        {
+          "speaker": "host",
+          "text": "[breath] This is Radio BCS2050. Today we stay with Connectivity and the single question it keeps raising: what does a runway that size really hold open for the place it serves?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Act 1 · What's happening",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The latest numbers from Los Cabos airport show 520.9 thousand passengers in October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "GlobeNewswire reports a 4.6 percent drop from last year, and international traffic fell even more."
+        },
+        {
+          "speaker": "host",
+          "text": "That quiet season feeling hits harder when the planes carry fewer people."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The year to date sits at 5.87 million, down 5.5 percent from the same stretch last year."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep picturing the long runway under that desert light with fewer shadows on it."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile Península Digital notes the Navy closed five ports to small craft because of cold front 4."
+        },
+        {
+          "speaker": "host",
+          "text": "Santa Rosalía, Loreto, San Carlos, Bahía Magdalena and Adolfo López Mateos all shut down."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Waves up to three meters on the west coast. Fishermen must wait it out."
+        },
+        {
+          "speaker": "host",
+          "text": "How does a port feel when the sea decides the schedule?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "30–50 km/h gusts were forecast along the coast that weekend."
+        },
+        {
+          "speaker": "host",
+          "text": "The boats rock against the docks while the wind moves through the rigging like a low song."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Reforma covered Tropical Storm Vance a week earlier, flooding Los Cabos and sweeping cars away."
+        },
+        {
+          "speaker": "host",
+          "text": "Urban washes turned into rivers. Schools closed, beaches emptied, ports banned navigation again."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. [pause] Dozens of vehicles ended up in those washes, and rescuers worked through the night."
+        },
+        {
+          "speaker": "host",
+          "text": "Two storms in quick succession, both cutting the same connections."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What does that teach a place that lives on arrivals and departures?"
+        },
+        {
+          "speaker": "host",
+          "text": "Diario El Independiente reported Governor Víctor Castro wants the state port authority to run Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He would ask the federal government to shift it from the Navy concession to the state, the same body that already handles Pichilingue and Loreto."
+        },
+        {
+          "speaker": "host",
+          "text": "The 50-year concession was only granted in February 2024, so the change stays political for now."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Who ends up deciding how the sea meets the land when the rules keep shifting?"
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz airport traffic rose 8.7 percent year to date despite the October dip."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One airport grows while the bigger one shrinks. The contrast feels sharp."
+        },
+        {
+          "speaker": "host",
+          "text": "GAP also added a new United flight from Los Cabos to Washington Dulles."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A single new route while everything else pauses. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the governor about holding the keys to that harbor?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Whether the state can keep the water calm when the next front arrives."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz handled 108 thousand passengers that month."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Still a dip for the month, yet the yearly climb tells a steadier story."
+        },
+        {
+          "speaker": "host",
+          "text": "I wonder how the crews at the smaller airport feel when the numbers finally turn up."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the international drop at Los Cabos reached 5.9 percent that October."
+        },
+        {
+          "speaker": "host",
+          "text": "Fewer visitors from far away changes the rhythm of the whole town."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The state port authority already runs three others. Maybe that experience matters most."
+        },
+        {
+          "speaker": "host",
+          "text": "Or maybe the long concession locks everything in place for decades."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Either way the harbor keeps waiting for the next decision from Mexico City."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "People and places",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Paz sits as the hinge between the inland and the cape."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Its bay and port shape how people move services and ideas across the state."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the aquifers stay in deficit while the city grows."
+        },
+        {
+          "speaker": "cohost",
+          "text": "GlobeNewswire reports La Paz airport handled 108 thousand passengers in October."
+        },
+        {
+          "speaker": "host",
+          "text": "Down 2.1 percent that month."
+        },
+        {
+          "speaker": "cohost",
+          "text": "But up 8.7 percent for the year."
+        },
+        {
+          "speaker": "host",
+          "text": "That year-to-date rise feels like a quiet signal for daily life there."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A new United route from Los Cabos to Washington Dulles might pull some traffic away."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep wondering what that means for someone catching a flight from La Paz itself."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto sits farther up the peninsula as a quieter mid-corridor anchor."
+        },
+        {
+          "speaker": "host",
+          "text": "Its bay and protected areas draw a different kind of traveler."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Península Digital notes the Navy closed Loreto and four other ports to small craft because of cold front 4."
+        },
+        {
+          "speaker": "host",
+          "text": "Winds up to 50 kilometers an hour and two-to-three-meter waves on the west coast."
+        },
+        {
+          "speaker": "cohost",
+          "text": "For fishers or small-boat operators that closure changes the whole day. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask someone waiting out that weather in Loreto harbor?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "How the seasonal tourism load meets the thinner labor market when the sea stays closed."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz carries the heavier coordination load between municipalities."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same water-energy coupling that keeps the capital running also limits how far connectivity can stretch."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. The desert light still falls the same on both places. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos handled 520.9 thousand passengers that same October."
+        },
+        {
+          "speaker": "host",
+          "text": "Down almost five percent year over year there."
+        },
+        {
+          "speaker": "cohost",
+          "text": "International traffic dropped nearly six percent."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the year-to-date total still reached 5.87 million."
+        },
+        {
+          "speaker": "cohost",
+          "text": "I wonder how that ebb and flow touches someone running a small café near the La Paz terminal."
+        },
+        {
+          "speaker": "host",
+          "text": "The waves hitting the closed harbors must sound different when tourism pauses."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That image stays with me."
+        },
+        {
+          "speaker": "host",
+          "text": "What does the mid-peninsula quiet teach the whole state about slower connections?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "How a single port closure ripples through families who rely on the morning catch."
+        },
+        {
+          "speaker": "host",
+          "text": "The light on the bay still feels generous even when the wind holds everything still. [laugh]"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Act 2 · The hidden thread",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The air routes keep expanding while the sea keeps pushing back. That tension feels like the real story underneath everything we heard this month."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Financiero reports air connections in Los Cabos grew 61 percent over a decade. Arrivals nearly doubled."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Yet the same week Meganoticias described over 300 homes underwater in Puerto San Carlos after the berm collapsed."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Gringo Gazette noted every beach from Los Cabos to Loreto stayed under black flags during Polo and Rachel."
+        },
+        {
+          "speaker": "host",
+          "text": "So the hidden thread is the ports and runways themselves."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The knowledge graph shows ASIPONA holds the 50-year concession for Cabo San Lucas port."
+        },
+        {
+          "speaker": "host",
+          "text": "Those long contracts sit under every flight and every fishing boat that cannot leave harbor. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's earlier Foresight editions already flagged coastal and grid resilience as the new 2050 ceiling."
+        },
+        {
+          "speaker": "host",
+          "text": "And now the territorial debate includes water, ports, and social housing all at once."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Condor resumed Frankfurt flights at 92 percent load factor."
+        },
+        {
+          "speaker": "host",
+          "text": "That single route carries most of the German traffic."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A UABCS researcher told Meganoticias that El Niño lifted waves another 15 to 30 centimeters."
+        },
+        {
+          "speaker": "host",
+          "text": "Really? The same sea that brings the tourists is the one that keeps flooding the fishing communities."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He expects it to weaken in 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "Here is the surprise turn. The growth in air connectivity is real, yet the very concessions that make it possible also lock in the same vulnerable shoreline. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's Vision already asked what happens when the engine of tourism meets the rising water line."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. The thread runs from the airport gates straight through the broken berm in Comondú."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Residents keep asking for stronger protection while the long-term leases remain unchanged."
+        },
+        {
+          "speaker": "host",
+          "text": "So the quiet question becomes what a road or a runway is really meant to hold when the desert and the sea decide to meet. <soft>What would you ask the concession holders?</soft>"
+        },
+        {
+          "speaker": "cohost",
+          "text": "One number at a time, the map keeps redrawing itself."
+        },
+        {
+          "speaker": "host",
+          "text": "Wait—private aviation arrivals tripled in the same period."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That detail from El Financiero changes the picture of who is actually landing."
+        },
+        {
+          "speaker": "host",
+          "text": "And in El Dátil another 300 families faced rising water with roughly 20 homes damaged."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The researcher also called for a full study of protection options before any wall is built."
+        },
+        {
+          "speaker": "host",
+          "text": "A concrete barrier sounds permanent until the next storm shows it is not."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile the Los Cabos airport concession runs until roughly 2048."
+        },
+        {
+          "speaker": "host",
+          "text": "Those decades ahead feel both long and suddenly short when the tides keep rising. [breath]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The earlier Foresight note on Cabos losing pace now reads like a quiet warning."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "Did you know?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Did you know the main airport in Los Cabos moved about 3.8 million passengers in 2025?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is most of the state traffic, right?"
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly 83.2 percent, according to the connectivity guide."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the rest of Baja California Sur shares just what's left."
+        },
+        {
+          "speaker": "host",
+          "text": "Think about one traveler stepping off a plane there. That single arrival already represents the bulk of how people reach the peninsula."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile the smaller airport at La Paz recorded 668,800 passengers that same year."
+        },
+        {
+          "speaker": "host",
+          "text": "And it grew 10.9 percent from the year before."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Still a fraction of the southern hub."
+        },
+        {
+          "speaker": "host",
+          "text": "The runway at Los Cabos stretches 3,004 meters."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is a long strip of concrete."
+        },
+        {
+          "speaker": "host",
+          "text": "It measures 45 meters across."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wide enough for the biggest planes."
+        },
+        {
+          "speaker": "host",
+          "text": "The terminal itself covers 15,130 square meters."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Big enough to swallow most of the state's air traffic without much notice."
+        },
+        {
+          "speaker": "host",
+          "text": "What happens to places farther north when almost everything funnels through one southern door?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "They lean on the sea instead. Cabo San Lucas saw 1,057,758 ferry passengers arrive in 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "Pichilingue added another 133,269."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto logged just 20 arrivals that year. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "The La Paz runway runs 2,500 meters, with a terminal of 5,900 square meters."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the desert roads and the water both become backup routes when the big runway is full. [pause] One concrete object, a single boarding pass, carries the weight of the whole state's connection to the outside."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep wondering how the light on the Sea of Cortez changes when those ferries slip in at dusk."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The swell still decides who arrives and who waits, no matter the concrete."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "The hidden design",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "What if the ticket in your hand already carries the whole plan for how this place connects to the world."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. The hidden design lives in those documents no one reads at the gate."
+        },
+        {
+          "speaker": "host",
+          "text": "Take Los Cabos airport. The concession runs until 2048 under GAP. That single line decides how many gates open in winter and how many stay dark in summer."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the ICAO Airport Economics Manual from 2013 still guides the numbers they use for landing fees and passenger charges. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "So a flight from Los Angeles already follows rules written a decade before most of us noticed the growth."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz airport sits under the same concession. It serves the capital and the long road north, yet it stays the quieter sibling."
+        },
+        {
+          "speaker": "host",
+          "text": "Now shift to the water. ASIPONA holds a 50-year federal concession for the Cabo San Lucas port, granted in February 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "New fees appeared in the official gazette on the first of October. Congress asked for transparency, and the governor said he would request it too."
+        },
+        {
+          "speaker": "host",
+          "text": "One marina slip therefore carries layers of federal rule, state interest, and that long concession clock."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The UNWTO cruise reports from 2016 still shape how terminals plan for those ships that arrive in season and vanish again."
+        },
+        {
+          "speaker": "host",
+          "text": "What does the desert teach a city about these invisible lines? [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "That every arrival depends on documents kept far away, in Montreal or Geneva."
+        },
+        {
+          "speaker": "host",
+          "text": "ICAO also offers Total Airport Management guidance from 2016. It asks planners to treat the whole facility as one living system rather than separate runways and terminals."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the quiet spreadsheet in an office actually decides whether a fisher in Loreto can reach a hospital flight or a tourist can reach the reef."
+        },
+        {
+          "speaker": "host",
+          "text": "The object is simple: the boarding pass or the dock receipt. Yet it already contains the concession, the manual, and the calendar of peaks and lulls."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the next traveler will never see any of it."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. <soft>That is the design.</soft>"
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Act 3 · Toward 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The portal’s Visión pillar frames mobility as the thread that could pull Baja California Sur into a polycentric shape by 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Instead of one coastal line repeated from south to north."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. Los Cabos keeps the tourism engine, yet it already shows water and power stress."
+        },
+        {
+          "speaker": "cohost",
+          "text": "While La Paz grows as the service capital and water-energy node."
+        },
+        {
+          "speaker": "host",
+          "text": "GAP figures for 2026 already mark the shift. [pause] SJD traffic fell 4.6 percent last October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And 5.5 percent across the first ten months."
+        },
+        {
+          "speaker": "host",
+          "text": "Meanwhile LAP rose 8.7 percent year to date."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the northern node is already acting as a measured counterweight."
+        },
+        {
+          "speaker": "host",
+          "text": "The aspiration is simple: let each place keep its own vocation."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape stays in tension with its protected areas. Loreto anchors tourism and conservation."
+        },
+        {
+          "speaker": "host",
+          "text": "Todos Santos and El Pescadero form the Pacific amenity spine."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú adds agriculture without emptying its services."
+        },
+        {
+          "speaker": "host",
+          "text": "And northern Mulegé holds the remote generation tender."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal’s demand-supply board calls the whole state constrained at that scale."
+        },
+        {
+          "speaker": "host",
+          "text": "Mobility news sits at three items this week, neutral overall."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the direction holds steady at zero for now."
+        },
+        {
+          "speaker": "host",
+          "text": "The EWMA sits at 2.67 across those stories."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. The signal stays quiet even as the pieces move."
+        },
+        {
+          "speaker": "host",
+          "text": "New growth only lands where water and energy already show margin."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Or where desal supplies the difference, without pretending credit from NOM-011."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape and Loreto must respect ANP and POEL ceilings first."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otherwise the protected zones lose before they begin."
+        },
+        {
+          "speaker": "host",
+          "text": "The watchlist keeps an eye on SJD’s 56 non-stop destinations."
+        },
+        {
+          "speaker": "cohost",
+          "text": "If those routes tighten further, the polycentric balance becomes the only workable path."
+        },
+        {
+          "speaker": "host",
+          "text": "What would it take for the ferries across the Sea of Cortez to carry real freight and passengers in that system? [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "And for paving projects to serve the communities already living there, not just new coastal arrivals."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep wondering how the long desert road feels when the traffic counts finally serve the ranches instead of the new hotels."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Each vocation stays distinct, not diluted into one big Cabos story."
+        },
+        {
+          "speaker": "host",
+          "text": "That is the quiet lever the portal keeps pointing toward."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "The takeaway",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "I keep thinking about what it really means for this whole state to feel connected."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Not just one place pulling everything toward it."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. Like the sea touching many shores at once, instead of one harbor taking all the traffic."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would that look like, do you think?"
+        },
+        {
+          "speaker": "host",
+          "text": "Maybe roads and routes that let smaller places keep their own rhythm [pause] while still belonging to the larger whole."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The desert teaching the cities how to spread out without losing touch."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. I keep wondering what that balance feels like on an ordinary morning."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? Like people moving between places without one always winning."
+        },
+        {
+          "speaker": "host",
+          "text": "A network that serves everyone who lives here, not only the brightest lights."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The ports closing and opening with the seasons, teaching us patience with the sea."
+        },
+        {
+          "speaker": "host",
+          "text": "Yes. A single day where every town wakes up feeling part of the same story."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Without one place casting the only shadow."
+        },
+        {
+          "speaker": "host",
+          "text": "The long horizon where all the roads meet and then keep going [laugh]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] The long road south, but with many destinations that matter."
+        }
+      ]
+    }
+  ]
+}
