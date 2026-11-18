@@ -1,7 +1,275 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "source_note": "Mixed curated + daily refresh; blurbs paraphrased from live pages, never fabricated URLs.",
   "items": [
+    {
+      "id": "los-cabos-302-mdp-agua-d1-d2-gringogazette-2026-11-17",
+      "date": "2026-11-17",
+      "source": "Gringo Gazette",
+      "url": "https://gringogazette.com/los-cabos-mayors-report-to-spotlight-302m-pesos-in-water-work/",
+      "title_es": "Los Cabos reporta 302.9 mdp en agua y saneamiento; la desaladora D1 pasa de 70 a 130 l/s y la D2 va al 76.58%",
+      "title_en": "Los Cabos reports 302.9 million pesos in water and sanitation; D1 desalination plant up from 70 to 130 l/s, D2 at 76.58%",
+      "blurb_es": "Antes del Segundo Informe del alcalde Christian Agúndez (21 de noviembre), el municipio reporta 302.9 mdp invertidos en agua y saneamiento: 20 pipas de agua gratuita, 39,058 micromedidores y 4,312 fugas reparadas. Tras rescindir al operador privado, OOMSAPAS reequipó la desaladora D1 (78 mdp del FISAM) y la llevó de 70 a 130 l/s. La desaladora D2 de Cabo San Lucas va al 76.58% (1,780 mdp, +250 l/s) y se piden 2,105 mdp a la Federación para ampliar D1 a 200 l/s; La Sonoreña 2 suma 708 mdp autorizados.",
+      "blurb_en": "Ahead of Mayor Christian Agúndez's second report (21 November), Los Cabos reports 302.9 million pesos invested in water and sanitation: 20 free water trucks, 39,058 meters and 4,312 leaks repaired. After ending the private operator's contract, OOMSAPAS re-equipped the D1 desalination plant (78 million pesos from FISAM), raising it from 70 to 130 l/s. The D2 plant in Cabo San Lucas is 76.58% built (1.78 billion pesos, +250 l/s), the city seeks 2.1 billion pesos from the federal government to take D1 to 200 l/s, and La Sonoreña 2 has 708 million pesos authorised.",
+      "topics": [
+        "water",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "puente-arroyo-san-jose-viejo-2027-meganoticias-2026-11-17",
+      "date": "2026-11-17",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/los-cabos/noticia/en-pie-construcci%C3%B3n-de-puente-en-arroyo-san-jose-viejo/789578",
+      "title_es": "El puente del arroyo San José Viejo podría construirse en 2027: el proyecto ejecutivo ya está listo, dice la SICT",
+      "title_en": "The San José Viejo arroyo bridge could be built in 2027: the design is ready, says SICT",
+      "blurb_es": "El Centro SICT en BCS afirma que el proyecto ejecutivo del puente vehicular sobre el arroyo San José Viejo está completo y que en el próximo ejercicio fiscal se buscarán los recursos federales para iniciar la obra, a petición del gobernador. Cada temporada de lluvias el arroyo corta la circulación entre colonias de San José del Cabo y obliga a quienes vienen del aeropuerto a desviarse por la carretera de cuota.",
+      "blurb_en": "The federal transport ministry's BCS office says the design for a road bridge over the San José Viejo arroyo is complete and federal funds will be sought next fiscal year to start works, at the governor's request. Every rainy season the arroyo cuts traffic between San José del Cabo neighbourhoods and forces drivers coming from the airport onto the toll road.",
+      "topics": [
+        "planning",
+        "connectivity"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "cauces-modificados-basura-al-mar-los-cabos-meganoticias-2026-11-17",
+      "date": "2026-11-17",
+      "source": "Meganoticias",
+      "url": "https://www.meganoticias.mx/la-paz/noticia/modificaciones-urbanas-llevan-toneladas-de-basura-al-mar-en-los-cabos/789460",
+      "title_es": "Cauces modificados y falta de drenaje pluvial llevan toneladas de basura al mar en Los Cabos",
+      "title_en": "Altered stream beds and lack of storm drainage send tonnes of waste into the sea in Los Cabos",
+      "blurb_es": "Tras las lluvias del 30 de octubre, Zofemat retiró unas 18 toneladas de basura y más de 350 neumáticos de playa El Médano, y 12.5 toneladas de palizada y 15 vehículos arrastrados en playas de San José del Cabo. Especialistas atribuyen el problema a la modificación de cauces naturales, que concentra los escurrimientos, y el Colegio de Ingenieros Civiles pide a los tres órdenes de gobierno invertir en infraestructura pluvial.",
+      "blurb_en": "After the 30 October rains, the federal beach-zone office removed about 18 tonnes of waste and over 350 tyres from El Médano beach, plus 12.5 tonnes of debris and 15 washed-away vehicles on San José del Cabo beaches. Specialists blame altered natural stream beds that concentrate runoff, and the civil engineers' association urges all three levels of government to invest in storm-water infrastructure.",
+      "topics": [
+        "environment",
+        "water",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
+    {
+      "id": "mulege-informe-713-mdp-acueducto-palo-verde-tribuna-2026-11-17",
+      "date": "2026-11-17",
+      "source": "Tribuna de México",
+      "url": "https://tribunademexico.com/mulege-reporta-713-mdp-invertidos/",
+      "title_es": "Mulegé reporta 713 mdp en obra en cinco años e inicia el nuevo acueducto Palo Verde–Santa Rosalía; la obra federal cayó 70%",
+      "title_en": "Mulegé reports 713 million pesos in public works over five years and starts the new Palo Verde–Santa Rosalía aqueduct; federal works funding fell 70%",
+      "blurb_es": "En su segundo informe, la alcaldesa Edith Aguilar cifró en 713 mdp la obra pública de cinco años, con más de 215 mdp en obra hídrica, 23 km de red de agua y 15 km de drenaje; 240 mdp se aplicaron en Guerrero Negro. Municipio, Estado y Federación iniciaron la primera etapa (7 km) del nuevo acueducto Palo Verde–Santa Rosalía ante Conagua. Reportó un recorte de 70% en recursos federales para obra en 2026 y más de 150 mil visitantes por temporada en Bahía Concepción.",
+      "blurb_en": "In her second report, Mayor Edith Aguilar put five years of public works at 713 million pesos, including over 215 million in water works, 23 km of water mains and 15 km of sewers; 240 million went to Guerrero Negro. Municipal, state and federal governments started the first 7 km stage of a new Palo Verde–Santa Rosalía aqueduct with Conagua. She reported a 70% cut in federal works funding in 2026 and over 150,000 visitors per season at Bahía Concepción.",
+      "topics": [
+        "water",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "vivienda-mulege-59-acciones-hcn-2026-11-17",
+      "date": "2026-11-17",
+      "source": "HCN",
+      "url": "https://hcn.mx/2026/11/17/entrega-victor-castro-59-acciones-de-vivienda-para-fortalecer-el-patrimonio-familiar-en-mulege/",
+      "title_es": "El gobernador entrega 59 acciones de vivienda en Mulegé, entre ellas 50 títulos de propiedad en Los Frailes, Santa Rosalía",
+      "title_en": "Governor delivers 59 housing actions in Mulegé, including 50 property titles in Los Frailes, Santa Rosalía",
+      "blurb_es": "Con 6.4 mdp, Víctor Castro Cosío entregó en Mulegé 50 títulos de propiedad a familias de la colonia Los Frailes (Santa Rosalía), dentro del programa de reubicación, y nueve viviendas progresivas de 44 m² en Santa Rosalía, Guerrero Negro y Heroica Mulegé. El INVI suma 992 acciones de vivienda en el municipio en cinco años, con 145.4 mdp invertidos.",
+      "blurb_en": "With 6.4 million pesos, Governor Víctor Castro Cosío delivered 50 property titles to families in Los Frailes (Santa Rosalía) under the relocation programme, plus nine 44 m² starter homes in Santa Rosalía, Guerrero Negro and Heroica Mulegé. The state housing institute counts 992 housing actions in the municipality over five years, worth 145.4 million pesos.",
+      "topics": [
+        "land_use",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-social-housing-land"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "codigo-civil-prescripcion-inmuebles-violencia-hcn-2026-11-17",
+      "date": "2026-11-17",
+      "source": "HCN",
+      "url": "https://hcn.mx/2026/11/17/proponen-reformas-al-codigo-civil-de-bcs-para-proteger-la-propiedad/",
+      "title_es": "Proponen reformar el Código Civil de BCS para que invasiones, despojo o extorsión no permitan adquirir inmuebles por prescripción",
+      "title_en": "Proposed reform to the BCS Civil Code would bar invasion, dispossession or extortion from leading to property ownership by prescription",
+      "blurb_es": "El diputado Sergio Polanco Salaices (Morena) propone reformar los artículos 1159 y 1160 del Código Civil: elevar de 10 a 15 años el plazo de prescripción adquisitiva de inmuebles poseídos con violencia y excluir la posesión obtenida mediante extorsión, secuestro, invasión, despojo agravado o fraude. Busca dar certeza jurídica a la propiedad adquirida lícitamente.",
+      "blurb_en": "Deputy Sergio Polanco Salaices (Morena) proposes amending articles 1159 and 1160 of the state Civil Code: raising from 10 to 15 years the adverse-possession period for property held through violence, and excluding possession obtained through extortion, kidnapping, invasion, aggravated dispossession or fraud. The aim is legal certainty for lawfully acquired property.",
+      "topics": [
+        "land_use",
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        }
+      ]
+    },
+    {
+      "id": "extorsiones-bcs-44-por-ciento-elmomento-2026-11-17",
+      "date": "2026-11-17",
+      "source": "El Momento BCS",
+      "url": "https://elmomentobcs.mx/2026/11/17/aumentan-44-4-las-extorsiones-en-baja-california-sur/",
+      "title_es": "Las extorsiones suben 44.4% en BCS entre enero y septiembre de 2026, según el SESNSP",
+      "title_en": "Extortion rises 44.4% in BCS between January and September 2026, according to SESNSP",
+      "blurb_es": "El Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública contabiliza 143 carpetas de investigación por extorsión en BCS en los primeros nueve meses de 2026, frente a 99 víctimas en el mismo periodo de 2025; 127 casos fueron por teléfono u otros medios y 16 presenciales. Las autoridades piden no responder llamadas sospechosas y destacan la coordinación con los hoteles de Los Cabos para la seguridad de los turistas.",
+      "blurb_en": "The national public security secretariat counts 143 extortion investigations in BCS in the first nine months of 2026, against 99 victims in the same period of 2025; 127 cases were by phone or other remote means and 16 in person. Authorities urge people not to answer suspicious calls and highlight coordination with Los Cabos hotels on tourist safety.",
+      "topics": [
+        "planning",
+        "tourism"
+      ],
+      "place_ids": [
+        "los_cabos"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-flight-connectivity-sjd"
+        },
+        {
+          "type": "signal",
+          "id": "sig-csl-marina-asipona-tariffs"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        }
+      ]
+    },
     {
       "id": "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
       "date": "2026-11-16",
@@ -319,6 +587,114 @@
         {
           "type": "signal",
           "id": "sig-poel-developer-water"
+        }
+      ]
+    },
+    {
+      "id": "dengue-bcs-719-casos-seis-muertes-posta-2026-11-16",
+      "date": "2026-11-16",
+      "source": "POSTA México",
+      "url": "https://www.posta.com.mx/bcs/dengue-en-bcs-suman-719-casos-y-seis-muertes-en-la-semana-45/vl2279618",
+      "title_es": "Dengue en BCS: 719 casos y seis muertes en la semana 45; Comondú tiene la tasa más alta",
+      "title_en": "Dengue in BCS: 719 cases and six deaths in week 45; Comondú has the highest rate",
+      "blurb_es": "La Secretaría de Salud estatal reporta 719 casos confirmados de dengue en 2026 (91 más en una semana, +14.5%) y seis defunciones: Los Cabos 311 casos y 4 muertes, Comondú 259 y 2, La Paz 143, Loreto 6 y Mulegé ninguno. Comondú registra unos 355 casos por 100 mil habitantes, cuatro veces Los Cabos; el 65% de los casos son con signos de alarma o graves, y la ocupación hospitalaria por dengue bajó a 4.3%.",
+      "blurb_en": "The state health ministry reports 719 confirmed dengue cases in 2026 (91 more in a week, +14.5%) and six deaths: Los Cabos 311 cases and 4 deaths, Comondú 259 and 2, La Paz 143, Loreto 6 and Mulegé none. Comondú has about 355 cases per 100,000 people, four times Los Cabos; 65% of cases show warning signs or are severe, and dengue hospital occupancy fell to 4.3%.",
+      "topics": [
+        "environment",
+        "planning"
+      ],
+      "place_ids": [
+        "los_cabos",
+        "la_paz",
+        "loreto",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "signal",
+          "id": "sig-poel-developer-water"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-tourism-fdi-vs-water"
+        },
+        {
+          "type": "place",
+          "id": "los_cabos"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "loreto"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
+        }
+      ]
+    },
+    {
+      "id": "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
+      "date": "2026-11-16",
+      "source": "Palabra BCS",
+      "url": "https://www.palabrabcs.com/municipios/la-paz/se-acerca-frente-frio-a-bcs-la-paz-llegaria-a-17o-por-primera-ocasion-en-la-temporada/",
+      "title_es": "El frente frío 7 llega a BCS esta semana: La Paz bajaría a 17 °C de noche por primera vez en la temporada",
+      "title_en": "Cold front 7 reaches BCS this week: La Paz night temperatures could drop to 17 °C for the first time this season",
+      "blurb_es": "El frente frío número 7, asociado a una vaguada y a las corrientes en chorro, cruzará el noroeste del país con chubascos, rachas fuertes y descenso de temperatura. Se prevén lluvias de 5 a 25 mm en el Pacífico Norte (Bahía Tortugas, Guerrero Negro, El Vizcaíno); el frío llegaría al centro y sur de la entidad entre jueves y sábado, con mínimas de 16 a 17 °C en el valle de Santo Domingo y La Paz.",
+      "blurb_en": "Cold front number 7, linked to an upper trough and the jet streams, will cross north-west Mexico with showers, strong gusts and falling temperatures. Rain of 5–25 mm is expected in the Pacífico Norte (Bahía Tortugas, Guerrero Negro, El Vizcaíno); the cold would reach the centre and south of the state between Thursday and Saturday, with lows of 16–17 °C in the Santo Domingo valley and La Paz.",
+      "topics": [
+        "environment",
+        "water"
+      ],
+      "place_ids": [
+        "la_paz",
+        "comondu",
+        "mulege_north"
+      ],
+      "feeds_into": [
+        {
+          "type": "signal",
+          "id": "sig-water-energy-coupling"
+        },
+        {
+          "type": "signal",
+          "id": "sig-comondu-desal-loreto-ptar"
+        },
+        {
+          "type": "signal",
+          "id": "sig-hurricanes-polo-rachel"
+        },
+        {
+          "type": "signal",
+          "id": "sig-mar-de-cortes-regional-ambition"
+        },
+        {
+          "type": "place",
+          "id": "la_paz"
+        },
+        {
+          "type": "place",
+          "id": "comondu"
+        },
+        {
+          "type": "place",
+          "id": "mulege_north"
         }
       ]
     },

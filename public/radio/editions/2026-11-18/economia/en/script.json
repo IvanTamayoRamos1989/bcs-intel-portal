@@ -1,0 +1,723 @@
+{
+  "topic": "economia",
+  "lang": "en",
+  "title": "Economy · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Cold open",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "HOY BCS reports that part of the Hotel San Cristóbal in Punta Lobos near Todos Santos was partly demolished on November 10."
+        },
+        {
+          "speaker": "host",
+          "text": "Waves had eroded the seawall until the foundations of a two-storey building were exposed. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Punta Lobos fishers had warned since 2015 that the Tres Santos development alters beach dynamics."
+        },
+        {
+          "speaker": "host",
+          "text": "They asked for a federal review after Hurricane Polo, but there is still no official technical report."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That long without a report?"
+        },
+        {
+          "speaker": "host",
+          "text": "The state recorded 187,152 million pesos in constant GDP for 2024, up 3.5 percent from 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That growth figure comes from the economy guide, yet coastal projects keep running into these exact risks."
+        },
+        {
+          "speaker": "host",
+          "text": "This hits the tourism economy right where projects meet the coast. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "It matters for Baja California Sur because any setback there ripples through jobs and investment along the corridor."
+        },
+        {
+          "speaker": "host",
+          "text": "Wait—how do the fishers' warnings from 2015 connect to the missing technical report today?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "You're listening to Radio BCS2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Today's topic is the Economy."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The question we will answer is how the state's overall growth picture looks when these coastal risks are factored in."
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Act 1 · What's happening",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "HOY BCS reports that on November 10 part of the Hotel San Cristóbal in Punta Lobos, Todos Santos, was demolished after waves eroded the seawall and exposed the foundations of a two-storey building."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The fishers there had warned since 2015 that the Tres Santos development was changing beach dynamics."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly, and they asked for a federal review after Hurricane Polo, but there is still no official technical report on the causes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That matters for the local economy because the hotel and the beachfront support tourism jobs in an area already feeling the pressure from development."
+        },
+        {
+          "speaker": "host",
+          "text": "Now shift to La Paz ranch communities. Palabra BCS covered Governor Víctor Castro’s visit on October 25 to Texcalama, San Andrés, Horconcitos and Saltito de los García."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He promised road repairs, a fixed water tanker in Texcalama by late January, and solar equipment fixes."
+        },
+        {
+          "speaker": "host",
+          "text": "He also said he would look at the roughly 50 km road loop called La Herradura de la Sierra that links the ranches."
+        },
+        {
+          "speaker": "cohost",
+          "text": "For the rural economy these commitments could cut transport costs and keep small producers connected to markets in La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "But here is the tension: many of these communities have waited years for basic services that directly affect their ability to earn a living."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Right. What would you ask the governor about the timeline on that water tanker?"
+        },
+        {
+          "speaker": "host",
+          "text": "I would ask whether the January deadline includes a maintenance plan so the tankers do not break down again by March."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Good point. Now the safety side. Tribuna de México reported that on October 20 a high-pressure release of cryogenic oxygen at the Infra plant in Pueblo Nuevo forced the evacuation of the David Peralta Osuna secondary school."
+        },
+        {
+          "speaker": "host",
+          "text": "The fire chief noted they have been called to the site several times and that urban growth has now surrounded the plant with homes and schools."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Authorities are reviewing relocation of the company, which is an industrial operation that employs people but now sits inside a residential zone."
+        },
+        {
+          "speaker": "host",
+          "text": "For the economy that raises questions about long-term operating costs and insurance if the plant stays or has to move."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Last item. Peninsular Digital says fishers and tourism operators in Los Cabos are preparing an amparo against new port fees set by ASIPONA."
+        },
+        {
+          "speaker": "host",
+          "text": "The Mar Azul cooperative federation and other marina users say the fees were approved without consultation and raise costs for fishing and nautical tourism."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They want a dialogue table and a review of berthing charges."
+        },
+        {
+          "speaker": "host",
+          "text": "That directly hits the daily economics of small boat owners who already face fuel and maintenance costs."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So across these four stories we see tourism infrastructure at risk, rural investment promises, industrial safety questions, and port fee disputes."
+        },
+        {
+          "speaker": "host",
+          "text": "Each one touches the same underlying question of how Baja California Sur balances growth with the practical needs of the people who keep the economy running."
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep thinking about the fishers who warned years ago about Punta Lobos. [pause] Their experience shows how local knowledge often arrives before the technical reports."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "People and places",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "HOY BCS reported on 11 November that crews demolished part of the Hotel San Cristóbal at Punta Lobos in Todos Santos after waves exposed its foundations."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The article says local fishers had warned since 2015 that the Tres Santos development was changing beach dynamics."
+        },
+        {
+          "speaker": "host",
+          "text": "No official technical report exists yet on the exact cause."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That leaves the coastal economy exposed without clear answers."
+        },
+        {
+          "speaker": "host",
+          "text": "This matters for the economy because Punta Lobos sits inside La Paz municipality, which lists 2905974532 pesos in its 2026 revenue law."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos, by comparison, lists 7421559352 pesos in the same law [chuckle]."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos also holds the largest population at 351111 people and the SJD airport cluster."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Its constraints include aquifers 0317 and 0319 already in deficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Todos Santos falls under La Paz and carries its own aquifer 0313 in deficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. So any tourism revenue there hits those water limits first."
+        },
+        {
+          "speaker": "host",
+          "text": "On 25 October, Palabra BCS covered Governor Víctor Castro visiting ranch communities in La Paz municipality."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He committed to road repairs, a fixed water tanker in Texcalama by late January, and solar equipment."
+        },
+        {
+          "speaker": "host",
+          "text": "He also promised to assess a 50-kilometre road loop called La Herradura de la Sierra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That infrastructure could ease daily access for the 292241 people counted in La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz has the lowest municipal poverty rate recorded at 20.6 percent in 2020."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wait—how does that compare once you add the coastal pressure from Todos Santos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú lists 817244119 pesos in its 2026 revenue law and focuses on the Valle Santo Domingo agro pole."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Its population is 73021 people across 589 localities."
+        },
+        {
+          "speaker": "host",
+          "text": "Mulegé lists 357354826 pesos from the federal anexo I33 and relies on fisheries and salt."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto lists 263961262 pesos from the same federal transfer and holds the Bahía de Loreto protected area."
+        },
+        {
+          "speaker": "host",
+          "text": "All five municipalities face water or planning limits that cap how far tourism and agro revenue can grow."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The question left open is whether the new infrastructure commitments will reach the coastal and ranch economies before the deficits tighten further."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. The practical next step is seeing how those January water fixes line up with the existing deficits."
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Act 2 · The hidden thread",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Gringo Gazette reports Los Cabos sent a 2027 revenue law of 6,746 million pesos to the state congress."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is down from the modified 2026 budget."
+        },
+        {
+          "speaker": "host",
+          "text": "Own-source revenue from property tax and transfer fees would drop nearly 20 percent to 3,338 million pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The city links the shortfall directly to the cooling real estate market."
+        },
+        {
+          "speaker": "host",
+          "text": "Meganoticias adds that the state has kept the Camina Cabo walkability plan and the downtown Cabo San Lucas makeover on hold."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Business owners say the projects had Fiturca funds but received no explanation for the pause."
+        },
+        {
+          "speaker": "host",
+          "text": "Tribuna de México notes Baja California Sur lost 1.1 percent of formal jobs year on year through October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The state recorded 1,539 fewer IMSS-registered positions than the prior September."
+        },
+        {
+          "speaker": "host",
+          "text": "NTCD reports the National Employment Service still delivered 48,000 pesos in equipment to eight micro-entrepreneurs in Loreto and Mulegé."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One recipient is in Loreto and seven are in Santa Rosalía, Guerrero Negro, Isla Natividad and San Ignacio."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal's earlier Foresight editions already flagged coastal erosion from El Niño between Punta Lobos and San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They also noted the Sea of Cortez forum's call to double the regional economy."
+        },
+        {
+          "speaker": "host",
+          "text": "The knowledge graph shows CONAGUA data for aquifer 0313 Todos Santos at a deficit of 2.964513 cubic hectometres per year."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aquifer 0314 El Pescadero shows a small surplus, yet the legal balance does not offset deficits elsewhere."
+        },
+        {
+          "speaker": "host",
+          "text": "The state urban programme lists the 2018 La Paz population-centre plan and the 2008 Todos Santos–Pescadero subregional programme as still in force."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Those documents set the infrastructure rules that now shape revenue and job numbers."
+        },
+        {
+          "speaker": "host",
+          "text": "But here is the thread that connects them all."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The stalled downtown projects and the real-estate slowdown sit on top of the same water-balance limits that the aquifer data already record."
+        },
+        {
+          "speaker": "host",
+          "text": "The surprise is that the forum's growth target runs into those exact limits without new supply lines or updated urban rules."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the 9 percent revenue drop and the 1.1 percent job loss both trace back to the same documented constraints on water and land use."
+        },
+        {
+          "speaker": "host",
+          "text": "The small equipment grants in Loreto and Mulegé show one short-term workaround."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They do not change the underlying balance the state urban programme still carries forward."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "Did you know?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "INEGI reports Baja California Sur posted constant-price GDP of 187,152 million pesos in 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "That single number already tells us the state economy kept growing."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It rose 3.5 percent from 2023."
+        },
+        {
+          "speaker": "host",
+          "text": "Right. Most of that came from the terciarias sector."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Terciarias covers services. Hotels, restaurants, transport and retail."
+        },
+        {
+          "speaker": "host",
+          "text": "So every room booked in Cabo San Lucas feeds straight into that total."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal lists labor poverty at 13.2 percent for the fourth quarter of 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "The lowest rate among all 32 entities at that moment."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lower labor poverty usually means more households cover basic needs without falling behind."
+        },
+        {
+          "speaker": "host",
+          "text": "At the same time formal IMSS employment dipped 1.1 percent year-on-year by October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the overall economy grew while registered jobs edged down slightly."
+        },
+        {
+          "speaker": "host",
+          "text": "That tension shows up across the reported figures."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 2024 economic census counted 43,405 establishments."
+        },
+        {
+          "speaker": "host",
+          "text": "Those are the concrete places where the GDP number actually happens."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same census recorded 300,857 people working in them."
+        },
+        {
+          "speaker": "host",
+          "text": "A large base of small and medium businesses."
+        },
+        {
+          "speaker": "cohost",
+          "text": "In the second quarter of 2026 the economically active population reached its reported level."
+        },
+        {
+          "speaker": "host",
+          "text": "Unemployment sat at 2.3 percent."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The headline growth figure sits next to a still-low but slightly softer jobs count."
+        },
+        {
+          "speaker": "host",
+          "text": "IMSS still listed 224,460 formal posts in September."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is the registered workforce the state relies on day to day."
+        },
+        {
+          "speaker": "host",
+          "text": "BCS also attracted 1,353 million dollars in FDI during 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The figure rose to 1,578 million dollars the following year."
+        },
+        {
+          "speaker": "host",
+          "text": "IMCO notes the state climbed from eighth to fifth place in competitiveness rankings between 2021 and 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That ranking tracks how easy it is to do business across the state."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] I keep wondering what that 3.5 percent growth feels like for someone running a small shop in Todos Santos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. The numbers are useful, yet they still leave room for questions about daily life."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "The hidden design",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "CONAGUA published the disponibilidad media anual for BCS aquifers in the DOF 2023 under NOM-011."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That figure is the legal water balance for each aquifer, not a physical measurement."
+        },
+        {
+          "speaker": "host",
+          "text": "Aquifer 0313 Todos Santos shows a deficit of 2.964513 hm³ per year, and it covers La Paz municipality."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That legal balance then feeds straight into project checks."
+        },
+        {
+          "speaker": "host",
+          "text": "Aquifer 0314 El Pescadero shows a small surplus of 0.107682 hm³ per year for La Paz and Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A surplus cannot move to cover another aquifer though."
+        },
+        {
+          "speaker": "host",
+          "text": "The state urban programme from 2024 lists the active plans that must use these DMA numbers when checking project viability."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Those plans include the La Paz population-centre urban plan of 2018 and the Todos Santos–Pescadero subregional programme of 2008."
+        },
+        {
+          "speaker": "host",
+          "text": "The ontology ties the DMA directly to the viability package for any new hotel, desaladora or industrial park."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The package also checks energy from CFE and PRODESEN plus the POERBCS and PDU instruments. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos General Directorate of Economic Development, led by C. Abril I. Urueta Martínez from 2024 to 2027, works inside that same graph."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The scorecard still marks the East Cape quantitative load as incomplete, even though DMA 0318 and the ANP sit on the graph."
+        },
+        {
+          "speaker": "host",
+          "text": "A surplus in one aquifer cannot offset a deficit in another; each balance stands alone."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That rule shapes where new settlement pressure can actually land without new water sources."
+        },
+        {
+          "speaker": "host",
+          "text": "Families are consulted on the coupled factors before any viability sign-off."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The hidden design is simply the requirement that every new economic project must clear the full list of those documented balances first."
+        },
+        {
+          "speaker": "host",
+          "text": "What would change if the East Cape load numbers were finally added to the graph? [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Directorate would have one more concrete check before approving the next hotel or road link."
+        },
+        {
+          "speaker": "host",
+          "text": "And the state programme already lists the exact instruments that would apply that check."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the everyday permit for a new building starts with those aquifer lines in the DOF."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Act 3 · Toward 2050",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "The portal’s Vision for the economy opens with what INEGI already measured."
+        },
+        {
+          "speaker": "host",
+          "text": "Constant-price GDP reached 187,152 million pesos in 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And it rose 3.5 percent from the year before."
+        },
+        {
+          "speaker": "host",
+          "text": "Really? That growth sits right next to the CNIE numbers on foreign direct investment."
+        },
+        {
+          "speaker": "cohost",
+          "text": "1,353 million dollars came in during 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Then it moved to 1,578 million the next year."
+        },
+        {
+          "speaker": "cohost",
+          "text": "At the same time IMSS data show formal employment fell 1.1 percent year-on-year by October."
+        },
+        {
+          "speaker": "host",
+          "text": "With 224,460 posts recorded in September."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal treats any 3.5 percent annual goal and talk of tripling regional FDI as outside proposals from forums."
+        },
+        {
+          "speaker": "host",
+          "text": "Not as its own projections. So the risk it flags is that growth continues yet stays uneven."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And part of the investment story remains a proposal rather than a measured path."
+        },
+        {
+          "speaker": "host",
+          "text": "The aspiration the portal sets out is a polycentric, regenerative economy."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Where investment does not simply clone the Cabos model everywhere."
+        },
+        {
+          "speaker": "host",
+          "text": "Formal employment would not depend on one coastal vocation alone. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Tendencia 2050 reading that still holds describes distinct roles instead of one repeated formula."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos stays the tourism engine but under water and power stress."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape sits in tension with protected areas. Todos Santos and El Pescadero form the Pacific amenity spine."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz would act as the services capital and water-energy node."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto functions as a tourism-conservation anchor. Comondú keeps its role as an agricultural hub with relatively more room."
+        },
+        {
+          "speaker": "host",
+          "text": "Northern Mulegé appears as a thinly documented corridor now carrying a remote generation tender."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal’s levers are to give weight to La Paz, Comondú and the north without pretending every place can copy the same engine."
+        },
+        {
+          "speaker": "host",
+          "text": "Read formal employment and inflation together with the actual water and grid ceilings."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Do not treat any forum goal such as tripling FDI as an already accepted projection."
+        },
+        {
+          "speaker": "host",
+          "text": "The conditions listed are straightforward. Each vocation keeps its distinct role."
+        },
+        {
+          "speaker": "cohost",
+          "text": "New tourism or residential growth appears only where water and energy show evidenced margin or a non-DMA source such as desal."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape and Loreto must respect ANP and POEL ceilings before scaling hospitality."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú and the north add production or energy without emptying services or protected areas."
+        },
+        {
+          "speaker": "host",
+          "text": "On the watchlist sits the 2027 budget package of 28.3 billion pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Approval expected in December. The fifth report was delivered to Congress on 12 November."
+        },
+        {
+          "speaker": "host",
+          "text": "The public event is set for 27 November at Plaza de la Reforma in La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would it take for the state to move from the present mixed signals toward that polycentric pattern?"
+        },
+        {
+          "speaker": "host",
+          "text": "The portal leaves that open, but the demand-supply board already shows the state-scale constraints that any path must respect. [pause]"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "The takeaway",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "That contrast stands out right away."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos projects a revenue drop next year as the real estate market cools, and fishers there are preparing a legal challenge over the new port fees."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Meanwhile the governor visited ranch communities near La Paz and committed to roads, water, temporary jobs and solar power."
+        },
+        {
+          "speaker": "host",
+          "text": "Business owners in Los Cabos say the state has paused the Camina Cabo walkability plan and the downtown makeover."
+        },
+        {
+          "speaker": "host",
+          "text": "Those commitments and the job numbers together suggest responsibility rests with state leadership to broaden opportunities beyond one sector."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What remains unknown is whether the legal challenge will succeed or how the proposed relocation of the Infra plant will affect local schools."
+        },
+        {
+          "speaker": "host",
+          "text": "The takeaway is that formal employment in BCS remains tied to a narrow set of activities, and the documented findings leave open how quickly that pattern can shift."
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep wondering what the ranch communities will see first from those commitments. [pause]"
+        }
+      ]
+    }
+  ]
+}

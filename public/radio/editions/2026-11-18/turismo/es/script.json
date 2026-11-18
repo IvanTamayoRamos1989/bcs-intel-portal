@@ -1,0 +1,779 @@
+{
+  "topic": "turismo",
+  "lang": "es",
+  "title": "Turismo · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "El Economista informa que Baja California Sur prevé una derrama de más de 332 millones de pesos por el fin de semana largo y la Baja 1000."
+        },
+        {
+          "speaker": "host",
+          "text": "¿De cuántos visitantes hablan exactamente?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Secretaría de Turismo y Economía calcula unos 120 mil turistas hospedados del 13 al 16 de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso ya es una cifra alta para la región."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos la ocupación hotelera llega al 78%."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en La Paz llega al 75%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto El Momento BCS reporta que las extorsiones subieron 44.4% según el SESNSP."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y cuántas carpetas de investigación registraron?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Registraron 143 carpetas de investigación entre enero y septiembre de 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Frente a 99 en el mismo periodo del año anterior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "De esas, 127 fueron por teléfono u otros medios y las autoridades piden no responder llamadas sospechosas."
+        },
+        {
+          "speaker": "host",
+          "text": "Además destacan la coordinación con los hoteles de Los Cabos para la seguridad de los turistas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Esta es Radio BCS2050 y hoy hablamos de Turismo. La pregunta que vamos a seguir es cómo el ingreso esperado y el aumento en extorsiones van a afectar la temporada."
+        },
+        {
+          "speaker": "host",
+          "text": "Sobre todo porque la Baja 1000 sale por primera vez desde San José del Cabo [chuckle]."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según la ENOE del segundo trimestre de 2026, la población económicamente activa en BCS es de 512 mil personas con una desocupación de 2.3%."
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según El Momento BCS, el Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública reportó 143 carpetas de investigación por extorsión en Baja California Sur entre enero y septiembre de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso representa un aumento notable respecto al año anterior."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, 44.4% más que las 99 carpetas del mismo periodo de 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "De esos casos 127 fueron por teléfono u otros medios."
+        },
+        {
+          "speaker": "host",
+          "text": "Y 16 resultaron presenciales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Las autoridades recomiendan no contestar llamadas sospechosas."
+        },
+        {
+          "speaker": "host",
+          "text": "Además destacan la coordinación con los hoteles de Los Cabos para la seguridad de los turistas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué te parece que esa coordinación se enfoque justo en Los Cabos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Tiene sentido porque ahí llegan más visitantes internacionales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero deja abierta la pregunta de cómo se extiende a otras zonas."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora pasemos a los números positivos que trae El Economista."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Secretaría de Turismo y Economía calcula una derrama de más de 332 millones de pesos."
+        },
+        {
+          "speaker": "host",
+          "text": "Por el fin de semana largo y la Baja 1000."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esperan unos 120 mil turistas hospedados entre el 13 y el 16 de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso es bastante gente para cuatro días."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La ocupación llegaría a 78% en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y en La Paz?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "75% en La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "En Loreto varía entre 76 y 85%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú marca 100%."
+        },
+        {
+          "speaker": "host",
+          "text": "Mulegé entre 85 y 90%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La SCORE Baja 1000 sale por primera vez de San José del Cabo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Crees que esa salida local ayude a repartir mejor los beneficios?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Puede ser, aunque habrá que ver cómo se reparten los gastos en combustible y hospedaje."
+        },
+        {
+          "speaker": "host",
+          "text": "De Revista Espejo viene otro dato que toca la competitividad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el Summit del Foro Mar de Cortés en Los Cabos Valeria Moy del IMCO señaló que Baja California Sur subió del lugar 8 al 5."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso ocurrió entre 2021 y 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras Sinaloa, Sonora y Baja California bajaron de posición."
+        },
+        {
+          "speaker": "host",
+          "text": "Ella dijo que la región necesita cambiar su forma de decidir para ganar más valor agregado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el último dato viene de Meganoticias."
+        },
+        {
+          "speaker": "host",
+          "text": "La aerolínea Condor retomó los vuelos directos Fráncfort–Los Cabos el 2 de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con 92% de ocupación."
+        },
+        {
+          "speaker": "host",
+          "text": "Es la tercera temporada, lunes y viernes hasta marzo de 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Alemania aporta más del 60% de esos pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "Las reservaciones crecieron 37.5% respecto a la temporada anterior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según FITURCA es la única ruta directa Europa–Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso explica en parte por qué la ocupación hotelera se mantiene alta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Queda la pregunta de cómo se mantiene esa confianza si los casos por teléfono siguen subiendo."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "Las personas y los lugares",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según El Momento BCS del 17 de noviembre, las carpetas por extorsión en Baja California Sur subieron 44.4%."
+        },
+        {
+          "speaker": "host",
+          "text": "Entre enero y septiembre de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública registró 143 casos."
+        },
+        {
+          "speaker": "host",
+          "text": "Frente a 99 del año anterior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "De esos, 127 fueron por teléfono y 16 presenciales."
+        },
+        {
+          "speaker": "host",
+          "text": "Las autoridades piden no contestar llamadas sospechosas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y destacan la coordinación con los hoteles de Los Cabos para la seguridad de los turistas."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso conecta directo con el otro dato que tenemos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Ahora veamos el lado de la derrama."
+        },
+        {
+          "speaker": "host",
+          "text": "El Economista reporta que la Secretaría de Turismo y Economía prevé 332 millones de pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por el fin de semana largo y la Baja 1000."
+        },
+        {
+          "speaker": "host",
+          "text": "Calculan unos 120 mil turistas hospedados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Del 13 al 16 de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "En Los Cabos la ocupación llegaría a 78%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y en los otros municipios?"
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz marca 75%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto entre 76 y 85."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú llega a 100%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mulegé se ubica entre 85 y 90."
+        },
+        {
+          "speaker": "host",
+          "text": "La carrera Baja 1000 arranca por primera vez en San José del Cabo, en territorio sudcaliforniano."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz sigue como capital de servicios, gobierno y universidad, con su PDUCP de 2018."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto, Loreto se mantiene como nodo de turismo y conservación con su POEL de 2014."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los hoteles grandes del corredor, como Marquis Los Cabos y Secrets Puerto Los Cabos, forman parte de esa coordinación de seguridad."
+        },
+        {
+          "speaker": "host",
+          "text": "El aumento de extorsiones pone presión sobre esa misma red hotelera que recibe a los 120 mil visitantes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La pregunta es cómo se sostiene la coordinación cuando la carga turística crece."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y cómo afecta la vida diaria en cada municipio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz tiene el acoplamiento más fuerte entre agua y energía por su crecimiento."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso limita la expansión urbana hacia la bahía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Loreto el mercado laboral es más delgado."
+        },
+        {
+          "speaker": "host",
+          "text": "Y depende de techos de conservación para mantener su marca natural."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los hoteles mencionados como Hacienda Beach Club y Buenavista Oceanfront también entran en esa red."
+        },
+        {
+          "speaker": "host",
+          "text": "El problema de extorsiones toca directamente a los trabajadores de esos lugares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La coordinación con Los Cabos ayuda, pero ¿qué pasa en los otros municipios?"
+        },
+        {
+          "speaker": "host",
+          "text": "Todavía no hay datos claros sobre cómo se extiende esa protección."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso queda en el aire por ahora. [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según La Nigua y HOY BCS, el 11 de noviembre Profepa revisó el Hotel San Cristóbal en Punta Lobos tras el derrumbe de un muro y la demolición parcial de un edificio dañado por el oleaje."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El caso viene de las altas mareas y fenómenos recientes, sin descargas al mar detectadas, pero los pescadores de la zona vienen advirtiendo desde 2015 sobre cambios por el desarrollo Tres Santos."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Y eso conecta con el Foresight de noviembre que menciona cómo El Niño y mareas extremas exponen la costa desde Punta Lobos hasta San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto, El Financiero reporta que las conexiones aéreas en Los Cabos crecieron 61% en una década y la afluencia casi se duplicó."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y Travelweek añade cinco nuevas rutas desde Canadá que buscan 300 mil visitantes canadienses este año, con un gasto promedio de 4,600 dólares por viaje."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso parece positivo, pero el mismo Foresight de septiembre ya alertaba que el IED turístico lidera mientras el freno político viene por falta de agua en Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "—que es el detalle que no se ve en la ocupación hotelera del 78% que reportó Tribuna de México en las primeras dos semanas de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la Baja 1000 dejó una derrama estimada de 800 millones de pesos, según la secretaria Collins."
+        },
+        {
+          "speaker": "host",
+          "text": "80% de ocupación hotelera en el estado, la primera corrida íntegramente en BCS."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm, eso ayuda a la temporada."
+        },
+        {
+          "speaker": "host",
+          "text": "Baja Ferries, por su lado, mueve 200 mil pasajeros anuales en las rutas a La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y busca subir a 300 o 400 mil con un formato tipo crucero, según El Economista."
+        },
+        {
+          "speaker": "host",
+          "text": "Aquí está el hilo: el crecimiento turístico depende de conexiones aéreas y marítimas, pero la infraestructura costera y el agua están al límite."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los presupuestos municipales de 2026 muestran a Los Cabos con ingresos, pero el Foresight señala que sigue último en inversión hídrica."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Y el conocimiento del censo 2020 ya daba a Los Cabos habitantes, mientras la erosión sigue golpeando hoteles sin un dictamen técnico final."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero aquí viene la vuelta: las mismas mareas que cerraron 26 playas en octubre con bandera negra, según Tribuna de México, también amenazan el producto vacacional que Baja Ferries quiere vender en el Mar de Cortés."
+        },
+        {
+          "speaker": "host",
+          "text": "Es decir, el turismo crece por eventos y rutas nuevas, sin embargo la costa y el agua no han recibido la misma atención que las llegadas de vuelos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y el Foresight de noviembre lo resume: la resiliencia costera ya entró al techo 2050, pero el acoplamiento agua-energía sigue siendo el límite invisible."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y qué pasa si la próxima temporada de mareas afecta más propiedades antes de que se resuelvan las autorizaciones ambientales? [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa es la pregunta que queda abierta, porque hasta ahora solo hay vigilancia de escombros y revisión de impacto ambiental, sin fecha de solución."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto el sector sigue apostando por nichos como wellness y reuniones, pero la base física del destino sigue expuesta."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Sabías que Los Cabos reportó 78% de ocupación entre el 1 y el 15 de noviembre de 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "¿En serio? Eso parece muy bueno para estas fechas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, según la Asociación de Hoteles de Los Cabos vía Tribuna de México."
+        },
+        {
+          "speaker": "host",
+          "text": "Y ahí tienen cuartos en total."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Eso significa que se ocuparon cerca de habitaciones en esos quince días."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto La Paz cerró ese año en 64%."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz tiene 3 mil cuartos en 148 hoteles."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La estancia promedio también marca diferencia: 4.7 días en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y en La Paz?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Solo 2.04 días. Por eso un visitante que se queda casi cinco noches deja más gasto en tours y comida."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos cuenta con 188 hoteles en total."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y eso da una idea del tamaño del sector frente a los 148 de La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero el mismo informe de la Asociación de Hoteles menciona que las ventas a Estados Unidos bajaron entre enero y agosto de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La senadora Susana Zatarain dijo que las ventas turísticas cayeron entre 25 y 35% en dos años."
+        },
+        {
+          "speaker": "host",
+          "text": "Y al menos 27 restaurants cerraron o están en pausa en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por eso buscan compensar con más turistas de Canadá, Europa y Sudamérica."
+        },
+        {
+          "speaker": "host",
+          "text": "Al mismo tiempo el POEL obliga a los nuevos desarrollos a instalar desaladoras y plantas de tratamiento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Entonces el 78% de noviembre es buena noticia, pero el límite real parece estar en el agua."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. Sin nuevas fuentes, sostener o subir esa ocupación será más complicado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La consulta del POEL 2026 busca que los desarrolladores cubran también el manejo de residuos."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto, y Punta Nayu ya está en ese proceso de consulta pública."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "El diseño invisible",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según el estudio de COLMEX y UABJO de 2015, el turismo impulsa conversión de suelo en destinos mexicanos, y en Baja California Sur esto aparece en los planes municipales de Los Cabos y Loreto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa conversión forma parte del paquete de viabilidad que revisa el proyecto con agua, energía y suelo."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. El documento dq_viabilidad_proyecto enumera los factores acoplados: DMA, acuíferos, desaladoras, SIBCS, CFE y PRODESEN."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces, cuando un hotel nuevo pide conexión, ya está dentro de esa lista que incluye POERBCS y PDU."
+        },
+        {
+          "speaker": "host",
+          "text": "Imagina la llave de agua de una habitación en Los Cabos. Detrás está el cálculo de intrusión salina y la restricción de ANP."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el presupuesto de egresos estatal 2026, que es 26903040145 pesos, tiene que cubrir parte de esa infraestructura."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y la Ley de Ingresos de Los Cabos para 2026 llega a 7421559352 pesos, la más alta entre los municipios."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En cambio Loreto tiene POEL 2014 y un PTAR federal, pero el escenario baseline marca déficit de DMA en varios polos costeros."
+        },
+        {
+          "speaker": "host",
+          "text": "El protocolo de gestión costera integrada de UNEP/MAP de 2008 es el único tratado vinculante que podría servir de modelo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aunque aquí aún no se aplica de forma directa."
+        },
+        {
+          "speaker": "host",
+          "text": "El ev_esc_baseline del portal describe el crecimiento hotelero y residencial en Cabos, East Cape y Loreto con presión sobre las ANP."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y los datos de ocupación de Imagen Radio muestran una baja de −5.0% en la segunda mitad de 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Al mismo tiempo el registro de vivienda SNIIV indica que en 2025 se inscribieron 776 viviendas nuevas en todo el estado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La mayoría en La Paz, con 588, y solo 142 en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "El libro de Moretti de 2012 explica que el sector turismo multiplica empleos cuando se combina con diversificación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por eso el dq_comparar_polos compara Los Cabos con Comondú, donde el motor es agro en Santo Domingo."
+        },
+        {
+          "speaker": "host",
+          "text": "La pregunta que queda es si las mesas de actores van a ajustar los instrumentos antes de que el déficit de agua se vuelva estructural."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es lo que revisa cada nuevo proyecto en la base de datos BCS 2050."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Tendencia 2050 del portal describe un sistema policéntrico para el turismo en Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No una sola fórmula costera repetida de sur a norte. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos sigue como motor turístico, pero bajo estrés hídrico y eléctrico."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La ocupación 2025 llegó a 70.0 % en Los Cabos según SETUE. ¿Qué significa eso en la práctica?"
+        },
+        {
+          "speaker": "host",
+          "text": "La Visión del portal señala que el corredor costero concentra demanda sobre techos de agua y red."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y el resto del estado? Porque la lectura estatal sigue restringida."
+        },
+        {
+          "speaker": "host",
+          "text": "El East Cape queda en tensión con las áreas protegidas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto como ancla de turismo y conservación. Eso cambia el peso."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz como capital de servicios y nodo agua–energía. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú como hub agropecuario con más margen relativo."
+        },
+        {
+          "speaker": "host",
+          "text": "El norte de Mulegé aparece como corredor poco documentado, ahora con una licitación de generación remota."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aspiración del portal es un turismo que quepa dentro de los techos de agua, energía y costa."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin clonarse el modelo de Cabos a lo largo del estado. ¿Qué te parece?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los levers incluyen condicionar nuevo crecimiento a evidencia de margen hídrico y eléctrico."
+        },
+        {
+          "speaker": "host",
+          "text": "Tratar el cierre de playas y la calidad de la costa como un límite de la vocación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Desplazar peso relativo hacia La Paz, Loreto y el interior, cada uno con un rol distinto. [laugh]"
+        },
+        {
+          "speaker": "host",
+          "text": "Las condiciones para llegar ahí son que cada vocación aporte un papel propio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Nuevo crecimiento solo donde agua y energía tengan margen real o fuente no-DMA."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape y Loreto respeten techos ANP/POEL antes de escalar hospitalidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú y el norte sumen producción sin vaciar servicios ni ANPs."
+        },
+        {
+          "speaker": "host",
+          "text": "La watchlist del portal incluye Punta Lobos y Hotel San Cristóbal, con dictamen técnico de causas y revisión de Profepa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasaría si esas condiciones no se cumplen?"
+        },
+        {
+          "speaker": "host",
+          "text": "El tablero de demanda y oferta del portal resume la lectura como restringida a escala estatal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces la suma de roles distintos es lo que marca la diferencia hacia 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Turismo concentra 8 notas en la semana en curso según el portal, con EWMA en 7.70."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Las notas del periodo son mixtas o neutras, según la dirección +0.00."
+        },
+        {
+          "speaker": "host",
+          "text": "La ocupación en Los Cabos subió a 78 % entre el 1 y el 15 de noviembre de 2026, informa la Asociación de Hoteles."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En La Paz la ocupación 2025 fue 64 % según SETUE. [breath]"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Eso afecta directamente al turismo, Tomás. ¿Cómo se conecta con los números de ocupación que se esperan este fin de semana?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Y el porcentaje de ocupación hotelera?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué pasó con las reservaciones?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto el Hotel San Cristóbal en Punta Lobos suspendió operaciones por daños del oleaje y sus escombros están bajo vigilancia."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Baja Ferries quiere convertir los traslados por el Mar de Cortés en una experiencia vacacional."
+        }
+      ]
+    }
+  ]
+}
