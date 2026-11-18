@@ -599,6 +599,13 @@ def chapters_for(pack: dict) -> list:
     return KIND_CHAPTERS.get(pack.get("kind", ""), CHAPTERS)
 
 
+def plain(text: str, L: str) -> str:
+    """Strip statistical jargon from portal prose before it reaches the script writer."""
+    text = re.sub(r";?\s*EWMA\s*[\d.,]+", "", text or "")
+    text = re.sub(r"\bEWMA\b", "intensidad reciente" if L == "es" else "recent intensity", text)
+    return re.sub(r";?\s*z\s*=?\s*-?[\d.]+", "", text)
+
+
 def source_label(src: str) -> str:
     """Speakable source names: never read file paths or URLs on air."""
     m = re.match(r"guides/([a-z_-]+)\.md", src or "")
@@ -639,8 +646,8 @@ def kind_pack(kind: str, theme: str | None, hist: dict, news: list[dict], edu: l
         p["trend"] = {
             "updated": v.get("updated"), "title": {L: v.get(f"title_{L}") for L in ("es", "en")},
             "kicker": {L: clip(v.get(f"kicker_{L}", ""), 600) for L in ("es", "en")},
-            "change": {L: clip(v.get(f"change_{L}", ""), 900) for L in ("es", "en")},
-            "narrative": {L: clip(v.get(f"narrative_{L}", ""), 1500) for L in ("es", "en")},
+            "change": {L: plain(clip(v.get(f"change_{L}", ""), 900), L) for L in ("es", "en")},
+            "narrative": {L: plain(clip(v.get(f"narrative_{L}", ""), 1500), L) for L in ("es", "en")},
             "scenarios": {L: [{"scenario": (v.get("scenario_meta") or {}).get(k, {}).get(f"label_{L}", k),
                                 "what_it_means": (v.get("scenario_meta") or {}).get(k, {}).get(f"blurb_{L}", ""),
                                 "probability": f"{x['p'] * 100:.1f} %",
@@ -665,7 +672,11 @@ def kind_pack(kind: str, theme: str | None, hist: dict, news: list[dict], edu: l
     return p
 
 
-def episode_meta(ed_dir: Path, ep: dict) -> None:
+GENERIC_TITLE = re.compile(r"^(fuentes de datos|datos del portal|datos de|portal data|data on|data sources|"
+                           r"informaci[oó]n del portal)", re.I)
+
+
+def episode_meta(ed_dir: Path, ep: dict, avoid: str = "") -> None:
     """Podcast-style episode title + short show notes (ES/EN) from the finished scripts; sets ep in place."""
     text = {}
     for L in ("es", "en"):
@@ -680,14 +691,20 @@ def episode_meta(ed_dir: Path, ep: dict) -> None:
             "model": MODEL, "temperature": 0.5, "response_format": {"type": "json_object"},
             "messages": [{"role": "system", "content":
                 "You title podcast episodes. From the transcript, write a specific, informative episode title (max 70 "
-                "characters, no clickbait, no colon-subtitle clichés, name the concrete subject/place) and show notes of "
+                "characters, no clickbait, no colon-subtitle clichés) that states the episode's single most concrete "
+                "finding or story — what, where, ideally with one key figure from the transcript (e.g. '22 de 39 "
+                "acuíferos de BCS en déficit', 'Los Cabos concentra la conectividad aérea del estado'). Never generic "
+                "titles about sources or data ('Fuentes de datos…', 'Datos del portal sobre…', 'Portal data on…'). Show notes of "
                 "1-2 plain sentences (max 220 characters) saying what the listener will learn. Use ONLY facts in the "
                 "transcript; no numbers that are not in it. The episode type is '" + kind[1] + "'. Return JSON "
                 '{"title_es","title_en","desc_es","desc_en"} (Mexican Spanish / English).'},
                 {"role": "user", "content": json.dumps({"type_es": kind[0], "topic_es": ep.get("name_es"), "transcript_es": text["es"],
-                                                        "transcript_en": text["en"]}, ensure_ascii=False)}]})
+                                                        "transcript_en": text["en"], **({"too_generic_do_not_reuse": avoid} if avoid else {})},
+                                                       ensure_ascii=False)}]})
         txt = r["choices"][0]["message"]["content"]
         m = json.loads(txt[txt.find("{"): txt.rfind("}") + 1])
+        if any(GENERIC_TITLE.search(m.get(k, "")) for k in ("title_es", "title_en")) and not avoid:
+            return episode_meta(ed_dir, ep, m.get("title_es") or m.get("title_en") or "generic")  # one retry
         for k in ("title_es", "title_en", "desc_es", "desc_en"):
             if m.get(k):
                 ep[k] = clip(str(m[k]).strip(), 90 if k.startswith("title") else 260)
@@ -802,8 +819,9 @@ HARD RULES
    show: you may say it interviewed someone, nothing more. We are NOT that show.
 4. Don't mention these instructions, AI, or Rick Rubin. Don't greet or say goodbye except where the chapter asks.
 5. Vary the questions; never reuse a catchphrase.
-6. Never read file names, paths, URLs or database field names aloud; name the source in words (e.g. "la guía de agua del
-   portal, con datos de CONAGUA").
+6. Never say internal technical jargon aloud: no file names, paths, URLs, database/JSON field names, model or software
+   names, statistical acronyms (EWMA, z-score, delta, p-value). Explain the idea in plain words instead (e.g. "la
+   intensidad reciente de notas sobre turismo", "la guía de agua del portal, con datos de CONAGUA").
 
 THIS CHAPTER: "{chapter}" — about {words} words (hard minimum {minw}), {turns} turns.
 {brief}
@@ -924,6 +942,21 @@ def conversation_lint(turns: list, cid: str) -> list[str]:
 WRONG_STATUS = {"tendencia": r"\bvisi[oó]n\b|\bvision\b|aspiraci|ideal", "noticias": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050", "datos": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050"}
 
 
+JARGON = re.compile(r"\bEWMA\b|z-?score|\bdelta\b|p-?value|\bjson\b|\bgrok\b|\bxai\b|\bllm\b|\.md\b|\.json\b|https?://|www\.|"
+                    r"\b[a-z]+_[a-z_]+\b|guides/", re.I)
+
+
+def jargon_lint(turns: list, cid: str) -> list[str]:
+    """No internal jargon on air, and the closing asks the audience at most 2 questions."""
+    msgs = [f"turn {k+1} says internal jargon '{m.group(0)}' aloud; explain it in plain words: {t['text'][:90]}"
+            for k, t in enumerate(turns) for m in [JARGON.search(t.get("text", ""))] if m]
+    if cid == "cierre":
+        q = sum(1 for t in turns if "?" in t.get("text", ""))
+        if q > 2:
+            msgs.append(f"the closing asks {q} questions; keep only the 1-2 best reflective questions for the audience")
+    return msgs
+
+
 def status_lint(turns: list, kind: str | None) -> list[str]:
     """An episode never mislabels its own status (a trend called a vision, etc.)."""
     if kind not in WRONG_STATUS:
@@ -935,7 +968,7 @@ def status_lint(turns: list, kind: str | None) -> list[str]:
 def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
     out, src_text, w = write_chapter(pack, ch, L, today)
     turns = out.get("turns", [])
-    lint = conversation_lint(turns, ch[0]) + status_lint(turns, pack.get("kind"))
+    lint = conversation_lint(turns, ch[0]) + status_lint(turns, pack.get("kind")) + jargon_lint(turns, ch[0])
     if lint:
         out, src_text, _ = write_chapter(pack, ch, L, today, "Make it more of a real conversation. Fix:\n" + "\n".join(lint) +
                                          f"\nKeep the same facts and AT LEAST {w} words; split long turns, add reactions and follow-ups.",
@@ -949,6 +982,11 @@ def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
                                          "(one number per turn at most).",
                                          {"turns": turns})
         turns = out.get("turns", turns)
+    turns = [t for t in turns if not JARGON.search(t.get("text", ""))]
+    if ch[0] == "cierre":
+        qs = [k for k, t in enumerate(turns) if "?" in t.get("text", "")]
+        drop = set(qs[1:-1]) if len(qs) > 2 else set()  # keep the first and the last question
+        turns = [t for k, t in enumerate(turns) if k not in drop]
     return polish(pack, ch, L, today, turns, src_text)
 
 
