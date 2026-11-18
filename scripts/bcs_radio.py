@@ -877,6 +877,17 @@ def station_srcs() -> set:
     return out
 
 
+MIN_LOOP = 3
+DAILY_TOPICS = 8  # a full daily line-up: the loop carries only the newest edition
+
+
+def on_air_dates() -> set:
+    out = set()
+    for sc in (load(OUT / "station_es.json", {}) or {}).get("schedules", []):
+        out |= {x["date"] for x in sc["items"] if x.get("date")}
+    return out
+
+
 def build_station(apply_now: bool = False) -> None:
     """24/7 loop per language over every edition still holding audio: station ID → episode (chapters with short
     transitions and a mid break) → ~30 s music break → next episode. The player joins at (now - EPOCH) % total."""
@@ -890,6 +901,21 @@ def build_station(apply_now: bool = False) -> None:
 
     breaks = [f"/radio/music/break_{m['id']}.mp3" for m in MUSIC if not (m.get("bed") or m.get("amb"))]
     eds = sorted((p.name for p in (OUT / "editions").iterdir() if (p / "edition.json").exists()), reverse=True)
+    # the station carries only the newest dated edition (older ones stay in the archive); an older edition is added
+    # only if the newest has fewer than MIN_LOOP episodes with audio (e.g. a partial build)
+    def has_audio(d):
+        return sum(1 for ep in (load(OUT / "editions" / d / "edition.json", {}) or {}).get("episodes", [])
+                   if all((ROOT / "public" / t["src"].lstrip("/")).exists()
+                          for lv in ep.get("languages", {}).values() for t in lv["tracks"]))
+    keep, n_eps = [], 0
+    for d in eds:
+        k = has_audio(d)
+        if k:
+            keep.append(d)
+            n_eps += k
+        if n_eps >= MIN_LOOP:
+            break
+    eds = keep
     for lang in ("es", "en"):
         items, n = [], 0
         for d in eds:
@@ -1005,7 +1031,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--date", default=date.today().isoformat())
     ap.add_argument("--lang", choices=["es", "en", "both"], default="both")
-    ap.add_argument("--topics", type=int, default=3, help="deep dives per edition (default 3)")
+    ap.add_argument("--topics", type=int, default=DAILY_TOPICS, help=f"deep dives per edition (default {DAILY_TOPICS})")
     ap.add_argument("--topic", action="append", choices=list(THEMES), help="force specific topic(s)")
     ap.add_argument("--script-only", action="store_true")
     ap.add_argument("--force", action="store_true")
@@ -1037,7 +1063,7 @@ def main() -> int:
     for mid, url in music.items():
         STING_LEN[url] = duration(OUT / "music" / f"{mid}.mp3")
     hist = load(OUT / "history.json", {"used": [], "theme_last": {}, "editions": []})
-    keep_eps = []
+    keep_eps, prev_eps = [], (load(ed_dir / "edition.json", {}) or {}).get("episodes", []) if a.replace else []
     if a.replace and a.topic and (ed_dir / "edition.json").exists():
         prev = load(ed_dir / "edition.json", {}) or {}
         keep_eps = [e for e in prev.get("episodes", []) if e["topic"] not in a.topic]
@@ -1056,8 +1082,20 @@ def main() -> int:
         hist = {**hist, "used": list(set(hist.get("used", [])) | set(packs[th]["ids"]))}
     langs = ["es", "en"] if a.lang == "both" else [a.lang]
     jobs = [(th, L) for th in topics for L in langs]
+    def safe(j):  # one failed episode drops its topic, not the whole edition
+        try:
+            return build_episode(j[0], packs[j[0]], today, j[1], music, a.script_only)
+        except Exception as e:  # noqa: BLE001
+            print(f"  WARN: {j[0]}/{j[1]} failed: {e}", file=sys.stderr)
+            return None
     with ThreadPoolExecutor(3) as ex:
-        res = dict(zip(jobs, ex.map(lambda j: build_episode(j[0], packs[j[0]], today, j[1], music, a.script_only), jobs)))
+        res = dict(zip(jobs, ex.map(safe, jobs)))
+    failed = {th for (th, L), v in res.items() if v is None}
+    topics = [th for th in topics if th not in failed]
+    keep_eps += [e for e in prev_eps if e["topic"] in failed]  # a failed rebuild keeps the old episode
+    if not topics:
+        print("Radio BCS2050: every episode failed; the station is unchanged", file=sys.stderr)
+        return 1
     stage = ed_dir / ".staging"
     for th in topics:  # all episodes rendered: swap staging into place
         shutil.rmtree(ed_dir / th, ignore_errors=True)
@@ -1094,7 +1132,8 @@ def main() -> int:
     hist["editions"] = sorted(set(hist.get("editions", [])) | {today})
     dump(OUT / "history.json", hist)
     eds = write_archive()
-    build_station(a.apply_now)
+    newer = not on_air_dates() or today > max(on_air_dates())
+    build_station(a.apply_now or newer)
     keep = station_srcs()
     for old in eds[:-KEEP_AUDIO]:  # trim: audio older than the rotation and no longer on any schedule
         for mp3 in (OUT / "editions" / old).rglob("*.mp3"):

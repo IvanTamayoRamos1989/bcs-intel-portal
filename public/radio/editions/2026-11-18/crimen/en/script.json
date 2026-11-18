@@ -1,0 +1,747 @@
+{
+  "topic": "crimen",
+  "lang": "en",
+  "title": "Security · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Cold open",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Tribuna de México reports that Senator Susana Zatarain has proposed up to 10 years in prison for water theft."
+        },
+        {
+          "speaker": "host",
+          "text": "The bill would amend the Federal Penal Code and the National Waters Law to cover unauthorised extraction and clandestine wells."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That reaches both the extraction and any tampering with pipes."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos shut 25 illegal connections this year alone. [pause] That volume matters."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Those connections were stealing more than 300 litres per second across the municipality."
+        },
+        {
+          "speaker": "host",
+          "text": "Conagua also shut two illegal sources in Cabo San Lucas that fed about 120 tanker trucks daily."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Only three in ten people in BCS have constant supply, according to INEGI's latest survey."
+        },
+        {
+          "speaker": "host",
+          "text": "Palabra BCS adds that the BCS government lent a plot in Comondú to the National Guard for 30 years."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same agreement donates two health buildings in La Paz and El Centenario to federal agencies."
+        },
+        {
+          "speaker": "host",
+          "text": "One building holds the haemodialysis unit and the chronic-disease clinic. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "This is Radio BCS2050. Our topic is Security. The question we will answer is how these measures affect water access and public infrastructure across the state."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the senator next?"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Act 1 · What's happening",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Tribuna de México reports that Senator Susana Zatarain has proposed adding an article to the Federal Penal Code."
+        },
+        {
+          "speaker": "host",
+          "text": "What exactly would that change cover?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "It targets unauthorised water extraction, tampering with infrastructure, clandestine wells and illegal sales."
+        },
+        {
+          "speaker": "host",
+          "text": "That list covers the main ways water gets taken without permission."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the penalty could reach ten years in prison."
+        },
+        {
+          "speaker": "host",
+          "text": "Yes. The bill also amends the National Waters Law. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos has already shut 25 illegal connections this year."
+        },
+        {
+          "speaker": "host",
+          "text": "25 shut down already shows how active the problem remains."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The estimated theft runs above 300 litres per second."
+        },
+        {
+          "speaker": "host",
+          "text": "That volume is enough to affect entire neighbourhoods waiting on trucks."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Conagua closed two illegal sources in Cabo San Lucas."
+        },
+        {
+          "speaker": "host",
+          "text": "Those sources supplied roughly 120 tanker trucks a day."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wait, 120 trucks every day from just two spots?"
+        },
+        {
+          "speaker": "host",
+          "text": "INEGI’s 2025 survey shows only three in ten BCS residents receive constant supply."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the theft hits people who already wait for water."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly, the families without steady pipes feel it first."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Palabra BCS covered a different security step taken last month."
+        },
+        {
+          "speaker": "host",
+          "text": "The state agreed to lend a plot in Comondú to the National Guard."
+        },
+        {
+          "speaker": "cohost",
+          "text": "For how long?"
+        },
+        {
+          "speaker": "host",
+          "text": "30 years, under a comodato agreement."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same meeting also transferred two health buildings."
+        },
+        {
+          "speaker": "host",
+          "text": "One in La Paz went to the Health Ministry, the psychiatric hospital in El Centenario to IMSS Bienestar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The La Paz site holds the haemodialysis unit and the mental-health services."
+        },
+        {
+          "speaker": "host",
+          "text": "Both moves were approved by the state real-estate committee chaired by the governor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Guard site is meant for operations in the north of the state."
+        },
+        {
+          "speaker": "host",
+          "text": "Water theft now carries a clear criminal label, while the Guard gains a long-term base."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you ask the senator about enforcement in Los Cabos?"
+        },
+        {
+          "speaker": "host",
+          "text": "How the new penalties would actually reach the tanker-truck networks."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And whether 30 years is enough time for the Guard to change daily security in Comondú."
+        },
+        {
+          "speaker": "host",
+          "text": "Those are the open questions after these two decisions. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep wondering how the water fines would work alongside the Guard’s new site."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "People and places",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Tribuna de México reported on November 13 that Senator Susana Zatarain proposes up to ten years in prison for water theft."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The bill would add an article to the Federal Penal Code and change the National Waters Law to cover unauthorised extraction, tampering and clandestine wells."
+        },
+        {
+          "speaker": "host",
+          "text": "In Los Cabos the municipality already shut 25 illegal connections this year, with theft estimated above 300 litres per second."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Conagua also closed two illegal sources in Cabo San Lucas that had been supplying about 120 tanker trucks a day."
+        },
+        {
+          "speaker": "host",
+          "text": "INEGI's ENCIG 2025 survey shows only three in ten people across Baja California Sur receive water on a constant basis."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the proposal lands in places already struggling with supply shortfalls."
+        },
+        {
+          "speaker": "host",
+          "text": "Palabra BCS reported on October 21 that the state government agreed to lend a plot in Comondú to the National Guard for 30 years."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The loan covers operations in the north of the state and the decision came from the state real-estate committee chaired by the governor."
+        },
+        {
+          "speaker": "host",
+          "text": "The same meeting also transferred two health buildings in La Paz and one psychiatric hospital in El Centenario to federal health agencies."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú already hosts the main agro pole in Valle Santo Domingo and fisheries along the coast."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos remains the primate municipality with the highest fiscal capacity and the main international gateway at SJD airport."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Its aquifers 0317 and 0319 are listed in deficit, which limits how much new supply can be added."
+        },
+        {
+          "speaker": "host",
+          "text": "Mulegé north shows the same pattern of sparse services and long distances to markets."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The National Guard site in Comondú sits along the northern corridor that also carries the CFE Oasis H2 announcement from September 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Water theft enforcement would therefore affect daily supply reliability in both the tourism-heavy south and the logistics corridor further north."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The 30-year term sets a long operational horizon for the Guard in an area that still lacks a public cadastre viewer."
+        },
+        {
+          "speaker": "host",
+          "text": "Residents in Los Cabos and Comondú therefore face the same practical question of how enforcement and new federal presence change access to basic services."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The open question is whether the legal changes and the land loan will translate into measurable reductions in illegal extraction by the end of the current municipal plans."
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Act 2 · The hidden thread",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The November 16 Foresight edition reports Los Cabos pursuing water theft cases while the Sea of Cortez forum debates doubling regional growth against aquifer limits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That lines up with the water first scenario in the Base de datos BCS 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. It calls for prioritising security on aquifers already in deficit, starting with 0313."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Just one aquifer at a time makes sense when the list is that long."
+        },
+        {
+          "speaker": "host",
+          "text": "Next comes 0317, before any new growth is unlocked."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the rule is clear: secure what exists first."
+        },
+        {
+          "speaker": "host",
+          "text": "Then 0319 joins the list, followed by 0324."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Four so far. The scenario still mentions 0318 as well."
+        },
+        {
+          "speaker": "host",
+          "text": "Right. The same edition ties coastal erosion from Punta Lobos to San Carlos directly to El Niño and extreme tides."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Which raises the question of who enforces the limits once the forum sets them."
+        },
+        {
+          "speaker": "host",
+          "text": "The Los Cabos General Directorate of Public Security sits under Cap. de Fragata C.G. Christopher Jordi López Monge through 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "His unit would handle the water theft enforcement the portal mentioned."
+        },
+        {
+          "speaker": "host",
+          "text": "On October 20 Congress approved donating three plots in Brisas del Valle to INSUS."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Those three plots sit in Ciudad Constitución, Comondú."
+        },
+        {
+          "speaker": "host",
+          "text": "One measures 27335 square metres."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is a substantial parcel for social housing."
+        },
+        {
+          "speaker": "host",
+          "text": "A second one covers 17881 square metres."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The third reaches 13576 square metres, all in the same area."
+        },
+        {
+          "speaker": "host",
+          "text": "A fourth plot of 15550 square metres went to INFONAVIT in Santa Rosalía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "All of it restricted to federal social housing only."
+        },
+        {
+          "speaker": "host",
+          "text": "The signal also covers a similar donation in Mulegé."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The water first scenario says this housing cannot create new water availability."
+        },
+        {
+          "speaker": "host",
+          "text": "So the security directorate ends up guarding both supply and the new zones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The ordinance references POERBCS policies of Sustainable Use, Preservation and Protection across 56 UGAs."
+        },
+        {
+          "speaker": "host",
+          "text": "Urban deferrals like BCS40AS are listed in the planning guide."
+        },
+        {
+          "speaker": "cohost",
+          "text": "But here's the thing: the knowledge graph does not yet show how the security directorate will coordinate with those land-use rules when water theft cases cross municipal lines."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal's Foresight leaves open whether the same police structure can enforce both coastal erosion rules and aquifer protection at once [pause]."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It also leaves open how the forum's economy target will be measured against the water actually secured first."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "Did you know?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Tribuna de México reports authorities closed 25 illegal taps in Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "25 taps? That points straight at the supply lines serving homes and hotels. I keep thinking about how one pipe can affect an entire neighborhood meter."
+        },
+        {
+          "speaker": "host",
+          "text": "They estimate the combined extraction runs above 300 liters per second."
+        },
+        {
+          "speaker": "cohost",
+          "text": "300 liters every second? That volume leaves a big hole in what actually reaches the meters. It is like a hose running nonstop behind the scenes."
+        },
+        {
+          "speaker": "host",
+          "text": "Each tap is an unauthorized pipe into the main lines."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the water bypasses both billing and the treatment plants it was meant to reach. That turns a utility problem into something security teams must track."
+        },
+        {
+          "speaker": "host",
+          "text": "The closures form part of the 2026 enforcement actions listed in the report."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That enforcement detail turns the issue into a security question as well as a utility one. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "The portal notes a national announcement on Guardia Nacional infrastructure."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yet specific barracks for Baja California Sur still lack a primary source. It leaves open how much local presence will grow."
+        },
+        {
+          "speaker": "host",
+          "text": "Meanwhile the Los Cabos Hotel Association recorded fewer U.S. visitors through August 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Senator Susana Zatarain stated tourism sales fell 25 to 35 percent over two years."
+        },
+        {
+          "speaker": "host",
+          "text": "She added that at least 27 restaurants have closed or paused operations."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The contrast is clear: new investment keeps arriving while daily water supply stays tight. FITURCA still projects 300,000 Canadian visitors for the year."
+        },
+        {
+          "speaker": "host",
+          "text": "The POEL process now requires developers to present desal, wastewater, and waste plans before approval."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That rule tries to put the real costs of growth on the balance sheet from the start. It is one way to link tourism plans directly to infrastructure."
+        },
+        {
+          "speaker": "host",
+          "text": "FlightConnections data from September shows the airport here with 56 destinations."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That number concentrates pressure on one corner of the state compared with seven in La Paz. Air seats keep rising even as some hotels feel the pinch."
+        },
+        {
+          "speaker": "host",
+          "text": "It is still too early to know how fast the closed taps will change measured flows."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Right. We see the enforcement step, yet the next round of supply data is still ahead. [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "The hidden design",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The Los Cabos General Directorate of Public Security, Preventive Police and Municipal Transit lists its head for 2024 to 2027 as Cap. de Fragata C.G. Christopher Jordi López Monge."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That org chart sits inside a larger set of rules."
+        },
+        {
+          "speaker": "host",
+          "text": "On 20 October the Congress approved donation of three plots in Brisas del Valle, Ciudad Constitución, to INSUS."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Three plots? What sizes are we talking about?"
+        },
+        {
+          "speaker": "host",
+          "text": "The first one measures 27335 square metres."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the others?"
+        },
+        {
+          "speaker": "host",
+          "text": "One is 17881 square metres and the last is 13576 square metres."
+        },
+        {
+          "speaker": "cohost",
+          "text": "All three for federal social housing with CONAVI."
+        },
+        {
+          "speaker": "host",
+          "text": "Congress also approved one more plot of 15550 square metres in Los Frayles, Santa Rosalía, to INFONAVIT."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Same purpose, only social housing."
+        },
+        {
+          "speaker": "host",
+          "text": "The EU Territorial Agenda 2030, issued by EU Ministers responsible for spatial planning in 2020, supplies the cohesion template for balanced development in places like Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "How does that template reach the police directorate?"
+        },
+        {
+          "speaker": "host",
+          "text": "Through the land-use change pack that consults POERBCS with its 56 UGAs and the named policies of Sustainable Use, Preservation and Protection."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The urban deferrals listed in the planning guide include BCS40AS."
+        },
+        {
+          "speaker": "host",
+          "text": "Yes, and also BCS41AS, BCS32AS, BCS31AS and BCS30AS."
+        },
+        {
+          "speaker": "cohost",
+          "text": "UN-Habitat’s 2019 synopsis on rural-urban linkages supplies global evidence on how those linkages support regional integration."
+        },
+        {
+          "speaker": "host",
+          "text": "ECLAC’s 2015 panorama calls for territorial pacts focused on equality."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The water_first scenario in the BCS 2050 database requires prioritising security on aquifers already in deficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Those aquifers carry the codes 0313, 0317, 0319, 0324 and 0318."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Desalination or demand management must come before any further growth is unlocked."
+        },
+        {
+          "speaker": "host",
+          "text": "None of those steps create new water availability."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So a single social-housing plot approval travels through the Congress decision, the INSUS transfer, the POERBCS policies and the water_first check."
+        },
+        {
+          "speaker": "host",
+          "text": "Each step sits in a different document, yet all shape what the preventive police can actually secure on the ground."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The directorate therefore operates inside that chain rather than outside it."
+        },
+        {
+          "speaker": "host",
+          "text": "A land-use change request must still clear the same pack before any new housing or patrol area is added."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is the hidden design."
+        },
+        {
+          "speaker": "host",
+          "text": "I keep wondering which office first stamps the water check before the plot reaches the police map. [pause]"
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Act 3 · Toward 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The portal's Visión pillar under Governance reports that without instruments tying growth to measured ceilings, the current path wins by permit inertia."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It notes governance accounts for two items this week, with EWMA at 3.57 and direction plus 0.50, leaning toward relief."
+        },
+        {
+          "speaker": "host",
+          "text": "That number still points to modest progress on paper."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The aspiration is public decisions that make POEL, PDU, PMDU, consultations and ANP ceilings prior conditions rather than later paperwork."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly, and the vision holds only if those instruments draw on the evidence the portal already holds."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Three levers stand out. First, close the marked gaps with evidence before larger public scenarios."
+        },
+        {
+          "speaker": "host",
+          "text": "Which gaps exactly?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto and northern DMA, amenity rooms, Cabos PDU, and pumping MW."
+        },
+        {
+          "speaker": "host",
+          "text": "Second lever?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Keep public consultation and delivery of instruments to Congress visible levers, not closing paperwork."
+        },
+        {
+          "speaker": "host",
+          "text": "And the third?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Use the state's constrained board reading as a permit criterion, not only as analysis text."
+        },
+        {
+          "speaker": "host",
+          "text": "That last one could actually slow bad projects early."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The Tendencia 2050 describes Baja California Sur as a polycentric system rather than one coastal formula repeated north to south."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos as tourism engine under water and power stress."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape stays in tension with protected areas."
+        },
+        {
+          "speaker": "host",
+          "text": "Todos Santos and El Pescadero form the Pacific amenity spine."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz serves as the service capital and water-energy node."
+        },
+        {
+          "speaker": "host",
+          "text": "Loreto anchors tourism and conservation, Comondú acts as agricultural hub with more room, and northern Mulegé remains a thinly documented corridor now holding a remote generation tender."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Four conditions shape whether that sum of roles stays intact."
+        },
+        {
+          "speaker": "host",
+          "text": "Each vocation keeps its distinct role. New tourism or residential growth occurs only where water and energy show evidenced margin or non-DMA source."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape and Loreto respect ANP and POEL ceilings before scaling hospitality."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú and the north add production or energy without emptying services or ANPs."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The watchlist flags water theft with a federal bill allowing up to ten years in prison and closures of illegal connections in Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "It also tracks the second CSL desal plant at 75%, 250 l/s, due for completion in 2027. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "If those conditions hold, the polycentric path could still shape 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Otherwise the inertia the portal describes simply continues."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "The takeaway",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Senator Susana Zatarain has put forward a proposal to treat water theft as a criminal offense with prison time."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos has also reported uncovering illegal water connections this year, according to the headlines."
+        },
+        {
+          "speaker": "host",
+          "text": "The BCS government is lending a plot in Comondú to the National Guard for decades and donating some health buildings."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That places security forces into local infrastructure decisions in a new way."
+        },
+        {
+          "speaker": "host",
+          "text": "It does shift the picture. [pause] Water theft moves from an administrative issue toward something enforced by courts."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the land loan gives the National Guard a longer-term presence in Comondú for operations."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal's aspiration is that tools like POEL, PDU and PMDU should shape these choices from the beginning."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That means using the evidence already collected rather than approving projects first and planning later."
+        },
+        {
+          "speaker": "host",
+          "text": "What stays unclear is how the new measures will be applied across municipalities and whether public consultations will guide them."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The takeaway is that public decisions now link security actions to earlier planning requirements. State and local authorities carry the main responsibility, yet questions remain on practical rollout."
+        }
+      ]
+    }
+  ]
+}
