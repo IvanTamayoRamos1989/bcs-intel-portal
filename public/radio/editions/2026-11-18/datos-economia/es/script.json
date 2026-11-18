@@ -1,0 +1,699 @@
+{
+  "topic": "datos-economia",
+  "lang": "es",
+  "title": "Datos del portal · Economía · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que la fuente para la IED en Baja California Sur es CNIE pack 07, según la guía temática del portal en economía, con datos de 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y de dónde sale esa información exactamente?"
+        },
+        {
+          "speaker": "host",
+          "text": "Viene de la guía temática del portal en la sección de economía. [pause] Es la referencia oficial que usan para todo lo relacionado con inversión extranjera."
+        },
+        {
+          "speaker": "cohost",
+          "text": "O sea que cualquier número de inversión extranjera que consultemos ya tiene esa procedencia oficial."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Y la misma guía organiza los valores de empleo, ITAEE y ENOE como series dentro de la Base de datos BCS 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la parte de economía e inversión [chuckle]. Eso ayuda a comparar todo en un solo lugar."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy en el episodio Datos del portal · Economía vamos a revisar qué información económica ya está cargada y de dónde viene."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La pregunta concreta es qué indicadores de inversión y empleo podemos consultar hoy mismo en esa base."
+        },
+        {
+          "speaker": "host",
+          "text": "Y por qué importa conocer la procedencia de esos datos cuando hablamos del futuro económico de Baja California Sur. [breath] Saber de dónde vienen las cifras cambia cómo las usamos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Porque si sabemos que todo pasa por la guía temática, podemos rastrear mejor los cambios en el empleo y la inversión."
+        },
+        {
+          "speaker": "host",
+          "text": "Así evitamos confusiones cuando cruzamos datos de diferentes años o indicadores."
+        }
+      ]
+    },
+    {
+      "id": "cifras",
+      "title": "Las cifras",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que el volumen residencial en Baja California Sur llegó a 1,570 millones de dólares en 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según la guía temática del portal con fuente JLL Reporte Anual Los Cabos 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso equivale más o menos a lo que costaría construir varios hoteles grandes de una sola vez."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La misma guía indica 1,840 unidades residenciales vendidas ese año."
+        },
+        {
+          "speaker": "host",
+          "text": "1,840 viviendas. [pause] Me pregunto cómo se distribuyen esas ventas entre locales y compradores de fuera."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Te imaginas cuántas familias podrían mudarse con eso?"
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, aunque la mayoría parecen ser propiedades de alto precio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "De ese total, Los Cabos concentró 1,264 millones de dólares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los datos del portal lo confirman con la misma fuente JLL 2025. [chuckle] Ocho de cada diez pesos se mueven ahí."
+        },
+        {
+          "speaker": "host",
+          "text": "Para quien vive aquí, eso significa que la mayor parte de la actividad inmobiliaria se concentra en un solo municipio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el segundo trimestre de 2026 ya había 456 millones de dólares bajo contrato en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Junto con 293 unidades."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La fuente es Cabo RE, integrada en la guía temática del portal."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese monto ya está comprometido antes de terminar el año. [breath] Eso da una idea de cómo sigue la demanda."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El precio mediano de una vivienda en Los Cabos alcanzó 525,000 dólares."
+        },
+        {
+          "speaker": "host",
+          "text": "Medio millón de dólares es más o menos lo que cuesta una casa amplia en muchas zonas del estado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Eso pone en perspectiva lo que se considera promedio por allá."
+        },
+        {
+          "speaker": "host",
+          "text": "La guía temática del portal también menciona series de empleo e ITAEE de la base de datos BCS 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esos datos están disponibles pero sin cifras específicas en este documento."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la IED 2025 proviene de CNIE pack 07."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La misma guía los agrupa bajo economía e inversión."
+        },
+        {
+          "speaker": "host",
+          "text": "La inversión extranjera directa aparece ahí como una serie separada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Crees que esos empleos se concentran también en Los Cabos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Es probable, aunque el portal no cruza todavía las cifras por municipio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo que sí queda claro es que el mercado residencial sigue moviendo cifras altas."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué opinas? ¿Cómo afecta esto a quien busca vivienda local?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "territorio",
+      "title": "El territorio",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que Los Cabos concentra la mayor población del estado con 351111 habitantes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa cifra ya dice mucho sobre dónde se mueve la gente y el dinero."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y según la ficha municipal su ley de ingresos 2026 llega a 7421559352 pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es más del doble que cualquier otro municipio. ¿De dónde sale esa diferencia? [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "La misma ficha indica que el clúster de hotelería y el aeropuerto SJD sostienen esa recaudación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto La Paz tiene 292241 personas."
+        },
+        {
+          "speaker": "host",
+          "text": "Y sus ingresos 2026 alcanzan 2905974532 pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además registra la pobreza municipal más baja del estado, 20.6% en 2020."
+        },
+        {
+          "speaker": "host",
+          "text": "La capital administrativa sigue siendo La Paz, y ahí está el PDUCP de 2018."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En cambio Comondú tiene 73021 habitantes y 817244119 pesos."
+        },
+        {
+          "speaker": "host",
+          "text": "Su vocación está en el Valle de Santo Domingo y la pesca, según la misma base."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mulegé y Loreto quedan más pequeños, con 64022 y 18052 habitantes."
+        },
+        {
+          "speaker": "host",
+          "text": "Mulegé no tiene dato de ingresos 2026 en el portal y Loreto muestra 263961262 pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los datos del portal describen Los Cabos como motor turístico y puerta internacional principal."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero ahí mismo registran los acuíferos 0317 y 0319 en déficit, más la dependencia de desalación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todos Santos–El Pescadero aparece como espina de amenidad del Pacífico, distinta al corredor de Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Su acuífero 0313 también está en déficit según la ficha de La Paz que integra el portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos el inventario turístico lista resorts como Esperanza, Chileno Bay y Nobu Hotel."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos lugares generan la marca reconocida que menciona la capa de fortalezas del portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú tiene PMDU Visión 2025 y PMD 2024–2027 en la base de datos."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero sigue sin visor catastral público."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mulegé y Loreto tampoco muestran portal catastral ni IMPLAN actualizado en los documentos del portal."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos del portal dejan claro que la presión hídrica y la capacidad de servicios varían mucho entre estos territorios."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué parte de esta distribución te parece más relevante para entender la economía actual de Baja California Sur?"
+        },
+        {
+          "speaker": "host",
+          "text": "A mí me llama la atención cómo el corredor de Los Cabos concentra tanto ingreso fiscal mientras otros municipios dependen de agro y pesca. [pause] ¿Y tú qué opinas?"
+        }
+      ]
+    },
+    {
+      "id": "documentos",
+      "title": "Los documentos",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal incluyen tres documentos de la biblioteca sobre economía. El primero es Triumph of the City, de Edward Glaeser, de 2011."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese libro presenta el caso de la productividad urbana y el crecimiento impulsado por el capital humano."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. Según el documento que integra el portal, se trata de un argumento central para entender cómo las ciudades generan valor económico."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y por qué importa eso para Baja California Sur?"
+        },
+        {
+          "speaker": "host",
+          "text": "Porque el portal lo coloca como referencia para pensar en el desarrollo regional aquí. [pause] Las ciudades pueden concentrar talento y elevar la productividad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Eso suena directo para lugares como La Paz o Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. El documento de Glaeser explica que el capital humano atrae más actividad económica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El siguiente es The New Geography of Jobs, de Enrico Moretti, de 2012."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese documento explica los multiplicadores del sector de innovación y la lógica de turismo más diversificación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El portal lo vincula directamente con Baja California Sur."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Muestra cómo un sector puede arrastrar a otros en una economía regional."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Cómo se vería eso en la práctica aquí?"
+        },
+        {
+          "speaker": "host",
+          "text": "Por ejemplo, si el turismo crece, puede generar empleos en servicios técnicos y en sectores relacionados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el tercero es The Spatial Economy: Cities Regions and International Trade, de Fujita, Krugman y Venables, de 1999."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese es el documento base de la nueva geografía económica para modelar el desarrollo regional."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los tres están en la misma sección de la biblioteca del portal."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos del portal los agrupan como lecturas clave para la parte económica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué diferencia hay entre lo que dice cada uno?"
+        },
+        {
+          "speaker": "host",
+          "text": "El de Glaeser se centra en las ciudades como motor de productividad. El de Moretti añade el efecto multiplicador de la innovación. El de Fujita y los demás da el marco teórico de regiones y comercio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y todos los tres aparecen con su año y autor original."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. El portal los presenta tal como fueron publicados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué parte de esto te llama más la atención para aquí?"
+        },
+        {
+          "speaker": "host",
+          "text": "La forma en que el de Moretti menciona la diversificación junto al turismo. [pause] Eso se siente muy cercano."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A mí también. [chuckle] ¿Y tú qué opinas de cómo estos textos se relacionan entre sí en el portal?"
+        }
+      ]
+    },
+    {
+      "id": "sistema",
+      "title": "Cómo se conecta",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que la viabilidad de un proyecto en Baja California Sur depende de varios factores acoplados en un solo paquete."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué incluye exactamente ese paquete según la ontología? [chuckle] Me parece que todo queda atado."
+        },
+        {
+          "speaker": "host",
+          "text": "Incluye hotel, desaladora, parque industrial, vivienda, carretera y energía, todo evaluado junto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces no se puede ver uno solo sin los demás. Eso cambia cómo se revisan los proyectos."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. La capa de agua usa la disponibilidad media anual de acuíferos de CONAGUA, del DOF 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué dice esa base para la zona de La Paz?"
+        },
+        {
+          "speaker": "host",
+          "text": "El acuífero 0313 Todos Santos marca menos 2.964513 hm³ por año, un déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso ya limita cualquier proyecto que necesite más agua. [pause] ¿Y el resto de la región?"
+        },
+        {
+          "speaker": "host",
+          "text": "El acuífero 0314 El Pescadero marca 0.107682 hm³ por año disponible."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Interesante. Eso cubre parte de La Paz y Los Cabos según el mismo documento."
+        },
+        {
+          "speaker": "host",
+          "text": "Además, la DMA es solo un balance legal, no mide el aforo real en el terreno."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el portal también conecta eso con la energía a través de SIBCS y CFE."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y con los instrumentos de ordenamiento como el POERBCS y los PDU vigentes del 2018 y 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces todo queda atado a restricciones como ANP, costa y tenencia de la tierra."
+        },
+        {
+          "speaker": "host",
+          "text": "El grafo del portal marca una brecha clara en East Cape: falta evidencia cuantitativa de carga. [breath]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué significa eso en la práctica para quien quiere decidir?"
+        },
+        {
+          "speaker": "host",
+          "text": "El scorecard señala settlement_pressure y empleo local como gaps sin datos completos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aunque DMA 0318 y el ANP sí aparecen conectados. [chuckle] No se puede ignorar eso."
+        },
+        {
+          "speaker": "host",
+          "text": "Por eso la viabilidad no se puede decidir sin consultar primero a las familias involucradas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué pasa si falta esa información cuantitativa en East Cape?"
+        },
+        {
+          "speaker": "host",
+          "text": "Queda un hueco en la decisión: se sabe que hay presión, pero no cuánto crecimiento cabe realmente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Entonces el portal deja claro qué depende de qué, pero también qué aún falta medir."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. El conocimiento del grafo muestra las conexiones, mas la evidencia de carga sigue incompleta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El acuífero 0317 Cabo San Lucas marca menos 24.06961 hm³ por año, también en déficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Un remanente en un lado no compensa el déficit en otro según la NOM-011."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso explica por qué el paquete de viabilidad exige ver todos los factores al mismo tiempo."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "¿Sabías que los datos del portal muestran 15 meses de inventario en Los Cabos para el segundo trimestre de 2026?"
+        },
+        {
+          "speaker": "host",
+          "text": "Quince meses. Eso significa que, al ritmo actual de ventas, tardarían más de un año en colocar todo lo que está en el mercado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según la guía temática del portal en economía, el inventario activo llega a 2,134 unidades valuadas en US$2.86 B."
+        },
+        {
+          "speaker": "host",
+          "text": "Es una cifra considerable. Me pregunto cómo afecta eso a los precios medianos que también reporta el mismo documento para el mismo periodo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, la mediana de precio aparece registrada en el segundo trimestre de 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora, otro dato del mismo portal: en enero de 2026 el RevPAR en Los Cabos alcanzó 369 dólares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el ADR llegó a 499 dólares ese mismo mes, según el Observatorio FITURCA de febrero de 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos números de ocupación y tarifa promedio explican por qué el inventario residencial tarda tanto en moverse."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además, el portal indica que en enero de 2026 el aeropuerto de San José del Cabo registró 328.5 mil pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] 328.5 mil. Bastante movimiento para un solo mes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pasando a vivienda, los datos del portal con fuente SNIIV registraron 776 viviendas en Baja California Sur durante 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el financiamiento de vivienda en el mismo año alcanzó 8,993 acciones por 6,560 millones de pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es interesante ver cómo estos dos indicadores de vivienda contrastan con el inventario de Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "La guía temática del portal los presenta juntos, pero no explica la relación directa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo que sí queda claro es que el inventario de 15 meses es el dato más llamativo del trimestre."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Quince meses de oferta disponible mientras el turismo sigue llegando en esos volúmenes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué te parece que signifique esto para quien busca comprar en Los Cabos ahora mismo?"
+        },
+        {
+          "speaker": "host",
+          "text": "Buena pregunta. Creo que da margen para negociar, pero habría que revisar caso por caso."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los datos del portal no dicen si esa tendencia se mantiene o cambia, solo lo que midieron en 2026 Q2."
+        }
+      ]
+    },
+    {
+      "id": "lectura",
+      "title": "Cómo leer los datos",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Los datos del portal muestran varias medidas de la economía de Baja California Sur, pero cada una viene de una fuente distinta y cubre un periodo específico."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Por ejemplo, la guía temática de economía del portal integra la IED de 2025 desde CNIE pack 07. Eso nos dice la inversión extranjera directa registrada ese año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y también trae el volumen residencial de JLL Reporte Anual Los Cabos 2025, que reporta US$1,570 M en BCS."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y de esas transacciones, US$1,264 M corresponden a Los Cabos, el 81% del total estatal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El mismo reporte indica 1,840 unidades residenciales vendidas en 2025. Eso mide transacciones cerradas, no proyectos futuros."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora, la base de datos BCS 2050 también integra series de empleo, ITAEE y ENOE. Son datos oficiales que muestran el nivel de actividad económica por sector."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero no incluyen proyecciones. Solo registran lo que ya pasó."
+        },
+        {
+          "speaker": "host",
+          "text": "En el segundo trimestre de 2026, los datos de Cabo RE muestran US$456 M en contratos pendientes, 293 u."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El precio mediano en Los Cabos llegó a US$525,000 en ese mismo trimestre."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el inventario activo era de 2,134 u. / US$2.86 B listados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Quince meses de inventario significa que, al ritmo actual de ventas, tardarían más de un año en agotarse las propiedades disponibles."
+        },
+        {
+          "speaker": "host",
+          "text": "Del lado hotelero, el observatorio FITURCA reporta un RevPAR de US$369 en enero de 2026 y un ADR de US$499."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esos números reflejan solo el promedio por habitación disponible y por habitación ocupada en Los Cabos durante ese mes."
+        },
+        {
+          "speaker": "host",
+          "text": "Además, el aeropuerto SJD registró 328.5 mil llegadas de pasajeros en enero de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por el lado de vivienda social, el SNIIV registró 776 viviendas en BCS durante 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el financiamiento totalizó 8,993 acciones / $6,560 M MXN ese mismo año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo que estos datos no muestran es si las transacciones beneficiaron a residentes locales o si el empleo creció de forma sostenida."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué parte de estos números te gustaría entender mejor para decidir cómo afecta tu día a día?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para pensar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal sobre la economía nos dejan ver cómo se mueven los recursos en Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, Tomás. Esos números muestran las bases que usan las instituciones para decidir dónde invertir."
+        },
+        {
+          "speaker": "host",
+          "text": "Y eso cambia cómo las familias ven sus trabajos y sus gastos diarios en la península."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, porque detrás de cada cifra hay gente que decide si abre un negocio o busca otro empleo."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] Me sigue dando qué pensar el peso que tiene la información oficial en esas decisiones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Totalmente. Si los datos son claros, la gente puede ajustar sus planes con más confianza."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero aquí viene lo interesante: saber qué parte de la economía local se ve más afectada por esos movimientos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Claro, y eso nos lleva a preguntar cómo lo vive cada persona en su colonia."
+        },
+        {
+          "speaker": "host",
+          "text": "Al final, entender la economía a través del portal ayuda a las familias a anticipar cambios en sus ingresos y oportunidades."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué harías si tuvieras estos datos del portal frente a ti para planear el año que viene?"
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué parte de la economía local te gustaría entender mejor para tu propia situación?"
+        }
+      ]
+    }
+  ]
+}

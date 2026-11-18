@@ -362,6 +362,15 @@ def news_text(n: dict) -> str:
     return " ".join([n.get("title_es", ""), n.get("title_en", ""), n.get("blurb_es", "")[:500], " ".join(n.get("topics") or [])])
 
 
+def plan_episodes(today: str, hist: dict, news: list[dict]) -> list[str]:
+    """The day's typed line-up: news first, then portal data, then the trend and the vision."""
+    last = hist.get("theme_last", {})
+    nt = pick_topics(today, hist, DAILY_PLAN["noticias"], news)
+    dt = sorted(PF_THEMES, key=lambda k: (last.get("datos-" + k, ""), hashlib.md5((today + "d" + k).encode()).hexdigest()))
+    return ([f"noticias-{t}" for t in nt] + [f"datos-{t}" for t in dt[:DAILY_PLAN["datos"]]] +
+            ["tendencia"] * DAILY_PLAN["tendencia"] + ["vision"] * DAILY_PLAN["vision"])
+
+
 def pick_topics(today: str, hist: dict, n: int, news: list[dict]) -> list[str]:
     used, last = set(hist.get("used", [])), hist.get("theme_last", {})
     fresh = {k: sum(1 for x in news[:150] if x["id"] not in used and primary(x) == k) for k in THEMES}
@@ -476,9 +485,274 @@ def chapter_sources(pack: dict, ch: str, L: str) -> dict:
             "watchlist": [w[L] for w in vv["watchlist"]]}
 
 
+# ------------------------------------------------------------------ episode types
+# Each daily episode has ONE type, so listeners always know what they are hearing:
+#   noticias  = reality reported by the news feed (outlet + date)
+#   datos     = reality measured in the portal's own database (GIS, CONAGUA/DMA, INEGI, documents, ontology)
+#   tendencia = the portal's Tendencia 2050: a PROBABLE trend, not a fact
+#   vision    = the portal's Visión 2050: an IDEAL, achievable future, not a forecast
+KINDS = {"noticias": ("Noticias", "News"), "datos": ("Datos del portal", "Portal data"),
+         "tendencia": ("Tendencia 2050", "Trend 2050"), "vision": ("Visión 2050", "Vision 2050")}
+DAILY_PLAN = {"noticias": 3, "datos": 2, "tendencia": 1, "vision": 1}  # 7 episodes x ES/EN, ~20 min each
+KIND_MUSIC = {"tendencia": "economia", "vision": "medio_ambiente"}  # music/ambience for state-wide episodes
+PF_THEMES = {"agua": ["agua"], "medio_ambiente": ["ambiente", "riesgos"], "turismo": ["turismo"], "economia": ["economia"],
+             "conectividad": ["conectividad"], "urbanismo": ["territorio", "planeacion"],
+             "infraestructura": ["energia", "proyectos-federales"]}
+STATUS = {
+    "noticias": ("REALITY reported by the news. Signpost it: 'según la nota de <outlet> del <fecha>…' / 'according to "
+                 "<outlet>'s report from <date>…'. Use ONLY the news items in SOURCES; no portal analysis, no forecasts."),
+    "datos": ("REALITY measured in the portal's database. Signpost it: 'los datos del portal muestran…', 'según la capa / "
+              "el documento / la base de <fuente> que integra el portal…' (EN: 'the portal's data shows…'). Name the original "
+              "source (CONAGUA, INEGI, DOF…) and year when given. No news, no forecasts."),
+    "tendencia": ("a PROBABLE TREND, not a fact. Say clearly and repeatedly that this is the portal's Tendencia 2050: "
+                  "'la tendencia del portal apunta a…', 'es una probabilidad, no un hecho' (EN: 'the portal's Trend 2050 "
+                  "points to… it is a probability, not a fact'). Give probabilities exactly as in SOURCES; when a claim cites "
+                  "a measured source, say it is the data behind the trend."),
+    "vision": ("an IDEAL but ACHIEVABLE FUTURE, not a forecast and not a fact. Say clearly that this is the portal's Visión "
+               "2050: 'la visión del portal propone…', 'es un futuro deseable y posible, no una predicción' (EN: 'the portal's "
+               "Vision 2050 proposes… a desirable, achievable future, not a prediction'). When a lever or risk cites a measured "
+               "fact, say so."),
+}
+KIND_CHAPTERS = {
+    "noticias": [("entrada", "Entrada", "Cold open", 190), ("titulares", "Lo que pasó", "What happened", 450),
+                 ("mas", "Más noticias", "More news", 400), ("contexto", "El contexto", "The context", 380),
+                 ("lugares", "Dónde y a quién", "Where and who", 330), ("claves", "Qué significa", "What it means", 380),
+                 ("pendientes", "Lo que falta saber", "What we still don't know", 330), ("cierre", "Para pensar", "Food for thought", 210)],
+    "datos": [("entrada", "Entrada", "Cold open", 190), ("cifras", "Las cifras", "The numbers", 430),
+              ("territorio", "El territorio", "The territory", 400), ("documentos", "Los documentos", "The documents", 380),
+              ("sistema", "Cómo se conecta", "How it connects", 360), ("sabias", "¿Sabías que…?", "Did you know?", 340),
+              ("lectura", "Cómo leer los datos", "How to read the data", 340), ("cierre", "Para pensar", "Food for thought", 210)],
+    "tendencia": [("entrada", "Entrada", "Cold open", 190), ("cambio", "Qué cambió esta semana", "What changed this week", 400),
+                  ("escenarios", "Los escenarios", "The scenarios", 420), ("senales", "Las señales", "The signals", 400),
+                  ("datos_base", "Los datos detrás", "The data behind it", 400), ("vigilar", "Qué vigilar", "What to watch", 350),
+                  ("incertidumbre", "Lo que podría cambiar", "What could change it", 330), ("cierre", "Para pensar", "Food for thought", 210)],
+    "vision": [("entrada", "Entrada", "Cold open", 190), ("pilares1", "Agua y costa", "Water and coast", 420),
+               ("pilares2", "Turismo y economía", "Tourism and economy", 420), ("pilares3", "Energía y movilidad", "Energy and mobility", 400),
+               ("pilares4", "Vivienda y gobierno", "Housing and governance", 400), ("condiciones", "Las condiciones", "The conditions", 380),
+               ("palancas", "Las palancas", "The levers", 330), ("cierre", "Para pensar", "Food for thought", 210)],
+}
+PILLAR_GROUPS = {"pilares1": ["agua", "costa_clima"], "pilares2": ["turismo", "economia"],
+                 "pilares3": ["energia", "movilidad"], "pilares4": ["vivienda", "gobernanza"]}
+KIND_BRIEF = {
+    "entrada": "COLD OPEN: no greeting. Lead with the single most important item in SOURCES (what, where, who, when, "
+               "source, why it matters), signposting its source and status. Then: this is Radio BCS2050, today's episode "
+               "'{topic}', and the concrete question it will answer.",
+    "titulares": "The latest news, one story at a time: what, where, who, when, outlet, why it matters for BCS; a reaction "
+                 "and a follow-up question for each. No greeting.",
+    "mas": "More of today's news not yet told, same method (outlet + date for each). No greeting.",
+    "contexto": "Earlier news on this topic: what thread connects them over the weeks (dates and outlets). Facts only from "
+                "these news items. No greeting.",
+    "lugares": "Where these stories happen and who is involved (municipalities, institutions, companies, people named in "
+               "the news). Practical consequences for residents, only as reported. No greeting.",
+    "claves": "What the news means, explained simply: causes and consequences stated in the reports, who decides, what "
+              "changes for people. Clearly separate what was reported from your own questions. No greeting.",
+    "pendientes": "What the reports leave open: unanswered questions, next dates or decisions mentioned, what to follow. "
+                  "One reflective question for the audience. No greeting.",
+    "cifras": "The key figures from the portal's database for this topic, one per turn, each with its original source and "
+              "year, explained with an everyday comparison. No greeting.",
+    "territorio": "The territory in the data: places, municipalities, aquifers or layers in SOURCES, where things are and "
+                  "how they differ. No greeting.",
+    "documentos": "The documents in the portal's library: name the organisation and year, what each says and why it "
+                  "matters. No greeting.",
+    "sistema": "How the pieces connect, from the portal's ontology and knowledge graph: what depends on what. No metaphors. "
+               "No greeting.",
+    "sabias": "DID YOU KNOW: one surprising fact from the data, explained clearly with its source; then 1-2 related facts. "
+              "Light humor. No greeting.",
+    "lectura": "How to read these data: what each measure means, its year and source, its limits (what it does NOT tell "
+               "us). One reflective question for the audience. No greeting.",
+    "cambio": "What changed this week in the portal's Tendencia 2050 (headline, change, leading theme), framed as a "
+              "probable trend. No greeting.",
+    "escenarios": "The scenarios and their probabilities and weekly changes, exactly as in SOURCES; what each scenario "
+                  "means in plain words. Always: probabilities, not facts. No greeting.",
+    "senales": "The signals the trend reads: the claims and signals in SOURCES, each with its source; say which are "
+               "measured facts and which are interpretation. No greeting.",
+    "datos_base": "The measured data behind the trend (claims with sources, series), clearly labelled as the data behind "
+                  "the trend. No greeting.",
+    "vigilar": "What to watch in the coming weeks (watchlist), and what would confirm or weaken the trend. No greeting.",
+    "incertidumbre": "What could change the trend and how confident the portal is (confidence levels, method note). "
+                     "One reflective question for the audience. No greeting.",
+    "pilares1": "The Vision's pillars in SOURCES: for each, the documented risk (a fact, say so), the aspiration (the "
+                "ideal) and the levers. Make the difference between fact and aspiration explicit. No greeting.",
+    "pilares2": "Same method for these pillars: risk (fact) → aspiration (ideal) → levers. No greeting.",
+    "pilares3": "Same method for these pillars: risk (fact) → aspiration (ideal) → levers. No greeting.",
+    "pilares4": "Same method for these pillars: risk (fact) → aspiration (ideal) → levers. No greeting.",
+    "condiciones": "The Vision's conditions: what must be true for this future to happen, explained one by one. No greeting.",
+    "palancas": "Which levers are already under way (as documented) and which are only proposals; who would have to act. "
+                "One reflective question for the audience. No greeting.",
+    "cierre": "FOOD FOR THOUGHT: in plain words, without figures, recall the episode's 1-2 key points by name (places, "
+              "institutions, issues — no meta-talk about the format; name the content type in one short phrase only), "
+              "say what it changes for people in BCS, and ask the audience 1-2 direct, concrete reflective "
+              "questions (e.g. '¿Y tú, qué harías…?'). Warm, brief, no preaching. Then: stay with us, more Radio "
+              "BCS2050 after the music (in the show's language).",
+}
+
+
+def music_theme(eid: str) -> str:
+    """Music/ambience theme for an episode id ('noticias-agua' -> 'agua'; 'tendencia' -> its KIND_MUSIC)."""
+    kind, _, theme = eid.partition("-")
+    if theme in TOPIC:
+        return theme
+    return KIND_MUSIC.get(kind, eid if eid in TOPIC else "economia")
+
+
+def chapters_for(pack: dict) -> list:
+    return KIND_CHAPTERS.get(pack.get("kind", ""), CHAPTERS)
+
+
+def source_label(src: str) -> str:
+    """Speakable source names: never read file paths or URLs on air."""
+    m = re.match(r"guides/([a-z_-]+)\.md", src or "")
+    if m:
+        return f"guía temática del portal ({m.group(1).replace('-', ' ')})"
+    m = re.match(r"https?://(?:www\.)?([^/]+)", src or "")
+    return m.group(1) if m else (src or "")
+
+
+def kind_pack(kind: str, theme: str | None, hist: dict, news: list[dict], edu: list[dict]) -> dict:
+    """Sources for one typed episode; each type sees only its own kind of material."""
+    if kind in ("noticias", "datos"):
+        p = topic_pack(theme, hist, news, edu)
+        tn = THEMES[theme]
+    else:
+        p = {"theme": theme or kind, "ids": [], "now": [], "older": []}
+        tn = ("", "")
+    p["kind"] = kind
+    p["label_es"] = KINDS[kind][0] + (f" · {tn[0]}" if tn[0] else "")
+    p["label_en"] = KINDS[kind][1] + (f" · {tn[1]}" if tn[1] else "")
+    v = load(DATA / "foresights_vision.json", {}) or {}
+    i = load(DATA / "foresights_ideal.json", {}) or {}
+    if kind == "noticias":
+        p["now"] = p["now"] + [x for x in p["older"] if x not in p["now"]][:2]  # a fuller news slate
+    if kind == "datos":
+        pf = [x for x in (load(DATA / "portal_facts.json", {}) or {}).get("facts", [])
+              if x.get("theme") in PF_THEMES.get(theme, [])]
+        rot = int(hashlib.md5((date.today().isoformat() + theme).encode()).hexdigest(), 16)
+        pf = (pf[rot % len(pf):] + pf[:rot % len(pf)])[:30] if pf else p["data"]["portal_facts"]
+        p["data"]["portal_facts"] = [{**{k: x.get(k) for k in ("metric", "value", "unit", "year")},
+                                      "source": source_label(x.get("source", ""))} for x in pf]
+        if theme == "agua":
+            aq = (load(DATA / "aquifers_bcs.json", {}) or {}).get("aquifers", [])
+            p["aquifers"] = [{"clave": a.get("clave"), "nombre": a.get("nombre"), "dma_hm3": round(a["dma_hm3"], 2),
+                              "status": a.get("status"), "source": a.get("source")} for a in aq if a.get("dma_hm3") is not None][:20]
+    if kind == "tendencia":
+        sig = v.get("signals_week") or v.get("signals") or []
+        p["trend"] = {
+            "updated": v.get("updated"), "title": {L: v.get(f"title_{L}") for L in ("es", "en")},
+            "kicker": {L: clip(v.get(f"kicker_{L}", ""), 600) for L in ("es", "en")},
+            "change": {L: clip(v.get(f"change_{L}", ""), 900) for L in ("es", "en")},
+            "narrative": {L: clip(v.get(f"narrative_{L}", ""), 1500) for L in ("es", "en")},
+            "scenarios": {L: [{"scenario": (v.get("scenario_meta") or {}).get(k, {}).get(f"label_{L}", k),
+                                "what_it_means": (v.get("scenario_meta") or {}).get(k, {}).get(f"blurb_{L}", ""),
+                                "probability": f"{x['p'] * 100:.1f} %",
+                                "weekly_change": f"{x['delta'] * 100:+.1f} " + ("puntos" if L == "es" else "points")}
+                               for k, x in (v.get("scenarios") or {}).items() if isinstance(x, dict) and "p" in x]
+                          for L in ("es", "en")},
+            "claims": [{"es": c.get("es"), "en": c.get("en"), "confidence": c.get("confidence"),
+                        "source": ", ".join(c.get("sources") or [])} for c in v.get("claims", [])],
+            "signals": [clip(json.dumps(x, ensure_ascii=False), 400) for x in (sig if isinstance(sig, list) else [sig])][:8],
+            "method": {L: clip(v.get(f"method_note_{L}", ""), 600) for L in ("es", "en")},
+            "watchlist": [{"es": w.get("item_es"), "en": w.get("item_en")} for w in ((load(DATA / "foresights.json", {}) or {}).get("watchlist") or [])][:8],
+        }
+    if kind == "vision":
+        p["ideal"] = {
+            "updated": i.get("updated"), "title": {L: i.get(f"title_{L}") for L in ("es", "en")},
+            "kicker": {L: clip(i.get(f"kicker_{L}", ""), 600) for L in ("es", "en")},
+            "lead": {L: clip(i.get(f"lead_{L}", ""), 900) for L in ("es", "en")},
+            "pillars": {pl.get("id"): {k: pl.get(k) for k in ("label_es", "label_en", "risk_es", "risk_en", "aspiration_es",
+                                                               "aspiration_en", "levers_es", "levers_en")} for pl in i.get("pillars", [])},
+            "conditions": {L: i.get(f"conditions_{L}") or [] for L in ("es", "en")},
+        }
+    return p
+
+
+def episode_meta(ed_dir: Path, ep: dict) -> None:
+    """Podcast-style episode title + short show notes (ES/EN) from the finished scripts; sets ep in place."""
+    text = {}
+    for L in ("es", "en"):
+        sc = load(ed_dir / ep["topic"] / L / "script.json", {}) or {}
+        t = " ".join(x["text"] for c in sc.get("chapters", [])[:4] for x in c["turns"])
+        text[L] = re.sub(r"\[[a-z-]+\]|</?soft>", "", t)[:5000]
+    if not text["es"]:
+        return
+    kind = KINDS.get(ep.get("kind"), ("", ""))
+    try:
+        r = http_json("https://api.x.ai/v1/chat/completions", {
+            "model": MODEL, "temperature": 0.5, "response_format": {"type": "json_object"},
+            "messages": [{"role": "system", "content":
+                "You title podcast episodes. From the transcript, write a specific, informative episode title (max 70 "
+                "characters, no clickbait, no colon-subtitle clichés, name the concrete subject/place) and show notes of "
+                "1-2 plain sentences (max 220 characters) saying what the listener will learn. Use ONLY facts in the "
+                "transcript; no numbers that are not in it. The episode type is '" + kind[1] + "'. Return JSON "
+                '{"title_es","title_en","desc_es","desc_en"} (Mexican Spanish / English).'},
+                {"role": "user", "content": json.dumps({"type_es": kind[0], "topic_es": ep.get("name_es"), "transcript_es": text["es"],
+                                                        "transcript_en": text["en"]}, ensure_ascii=False)}]})
+        txt = r["choices"][0]["message"]["content"]
+        m = json.loads(txt[txt.find("{"): txt.rfind("}") + 1])
+        for k in ("title_es", "title_en", "desc_es", "desc_en"):
+            if m.get(k):
+                ep[k] = clip(str(m[k]).strip(), 90 if k.startswith("title") else 260)
+    except Exception as e:  # noqa: BLE001  titles are a nicety; never fail the edition
+        print(f"  WARN: title for {ep['topic']} failed: {e}", file=sys.stderr)
+
+
+def number_episodes(today: str, episodes: list, hist: dict) -> None:
+    """Sequential podcast numbers across editions; a same-day rebuild reuses the day's numbers."""
+    base = hist.setdefault("ep_base", {})
+    if today not in base:
+        base[today] = hist.get("ep_total", 0) + 1
+    for k, ep in enumerate(episodes):
+        ep["number"] = base[today] + k
+    hist["ep_total"] = max(hist.get("ep_total", 0), base[today] + len(episodes) - 1)
+
+
+def kind_sources(pack: dict, ch: str, L: str) -> dict:
+    kind = pack["kind"]
+    tl = lambda x: {k[:-3]: v for k, v in x.items() if not k.endswith("_es" if L == "en" else "_en")}
+    if kind == "noticias":
+        now, older = [tl(x) for x in pack["now"]], [tl(x) for x in pack["older"]]
+        heads = [x["title"] for x in now]
+        return {"entrada": {"headlines": heads, "lead_story": now[:1]}, "titulares": {"latest_news": now[:3]},
+                "mas": {"more_news": now[3:] or older[:3], "already_told": heads[:3]},
+                "contexto": {"earlier_news": older, "expres_de_unic_video_titles": pack["expres_de_unic"]},
+                "lugares": {"news": now}, "claves": {"news": now}, "pendientes": {"news": now + older[:3]},
+                "cierre": {"headlines": heads}}[ch]
+    if kind == "datos":
+        d = pack["data"]
+        pf = d["portal_facts"]
+        return {"entrada": {"one_fact": pf[:2]}, "cifras": {"portal_facts": pf[:14]},
+                "territorio": {"places": pack["places"], "municipalities": pack["municipios"],
+                               "aquifers": pack.get("aquifers", []), "tourism_inventory": pack["tourism"]},
+                "documentos": {"library_documents": d["library"], "foresight_archive": [x[L] for x in pack["fs_archive"]]},
+                "sistema": {"ontology": d["ontology"], "knowledge_graph": [g[L] for g in pack["graph"]]},
+                "sabias": {"portal_facts": pf[14:30] if len(pf) > 20 else pf}, "lectura": {"portal_facts": pf, "aquifers": pack.get("aquifers", [])[:6]},
+                "cierre": {"topic": pack["label_" + L], "what_was_measured": sorted({x["metric"] for x in pf if x.get("metric")})[:15]}}[ch]
+    if kind == "tendencia":
+        t = pack["trend"]
+        cl = [{"text": c[L], "confidence": c["confidence"], "source": c["source"]} for c in t["claims"]]
+        return {"entrada": {"title": t["title"][L], "kicker": t["kicker"][L], "updated": t["updated"], "change": t["change"][L]},
+                "cambio": {"change": t["change"][L], "updated": t["updated"]},
+                "escenarios": {"scenarios": t["scenarios"][L], "narrative": t["narrative"][L]},
+                "senales": {"signals": t["signals"], "claims": cl[:7]}, "datos_base": {"claims": cl},
+                "vigilar": {"watchlist": [w[L] for w in t["watchlist"]], "change": t["change"][L]},
+                "incertidumbre": {"method": t["method"][L], "claims": cl, "scenarios": t["scenarios"][L]},
+                "cierre": {"title": t["title"][L], "kicker": t["kicker"][L],
+                           "scenarios": [{"scenario": x["scenario"], "what_it_means": x["what_it_means"]} for x in t["scenarios"][L]]}}[ch]
+    iv = pack["ideal"]
+    pil = lambda ids: [{k[:-3] if k.endswith(("_es", "_en")) else k: v for k, v in iv["pillars"].get(x, {}).items()
+                        if not k.endswith("_es" if L == "en" else "_en")} for x in ids]
+    if ch in PILLAR_GROUPS:
+        return {"pillars": pil(PILLAR_GROUPS[ch])}
+    return {"entrada": {"title": iv["title"][L], "kicker": iv["kicker"][L], "lead": iv["lead"][L]},
+            "condiciones": {"conditions": iv["conditions"][L]},
+            "palancas": {"pillars_levers": [{"pillar": x.get("label"), "levers": x.get("levers")} for x in pil(list(iv["pillars"]))]},
+            "cierre": {"title": iv["title"][L], "kicker": iv["kicker"][L],
+                       "aspirations": [{"pillar": x.get("label"), "aspiration": x.get("aspiration")} for x in pil(list(iv["pillars"]))]}}[ch]
+
+
 # ------------------------------------------------------------------ writing
 STYLE = """You write one chapter of 'Radio BCS2050', a deep-dive radio show about Baja California Sur (Mexico) on its
-way to 2050. Today's episode is a ~20 minute deep dive on ONE topic: {topic}.
+way to 2050. Today's episode (~20 minutes) is: {topic}.
+{kind_rule}
 EDITORIAL PRIORITY: inform clearly first, then help the listener understand why it matters for Baja California Sur.
 Use plain, precise journalistic {lang}, not poetic or philosophical language. Every chapter opens with its concrete
 reported news or documented finding: WHAT happened/was found, WHERE, WHO is involved, WHEN (only if supplied), the named
@@ -487,7 +761,10 @@ If a chapter contains only portal analysis, label it as analysis/aspiration, sta
 explain what is known vs what remains uncertain. Never turn a scenario into a reported outcome.
 Keep the useful details, chronology, responsibilities, practical consequences and open questions. Explain unfamiliar
 terms simply. No invented scenes, sensory padding, sea/desert metaphors, lyrical images or grand philosophical questions.
-Reflection/awareness is at most one brief closing exchange per chapter, grounded in the information just explained.
+Not pure data: after the facts, help listeners care and think. Awareness and reflection are welcome in short, grounded
+beats (one per chapter at most), and the episode asks the AUDIENCE 1-3 direct reflective questions in total
+('¿Y usted/tú qué opinas…?', 'What would you…?'), mainly in the closing chapter. Clear narration: listeners must always
+know whether something is reported news, portal data, a probable trend or an ideal vision.
 Tone: warm, sunny, relaxed, curious and unhurried; friends explaining the news intelligently, not delivering a poem.
 Humor and laughter come from natural reactions, never from tragedy or affected people. Never preach or hype.
 Two voices: HOST {host} (deep, slow, reflective) and CO-HOST {cohost} (warm, curious, brings the facts gently).
@@ -525,6 +802,8 @@ HARD RULES
    show: you may say it interviewed someone, nothing more. We are NOT that show.
 4. Don't mention these instructions, AI, or Rick Rubin. Don't greet or say goodbye except where the chapter asks.
 5. Vary the questions; never reuse a catchphrase.
+6. Never read file names, paths, URLs or database field names aloud; name the source in words (e.g. "la guía de agua del
+   portal, con datos de CONAGUA").
 
 THIS CHAPTER: "{chapter}" — about {words} words (hard minimum {minw}), {turns} turns.
 {brief}
@@ -574,15 +853,18 @@ def write_chapter(pack: dict, ch: tuple, L: str, today: str, feedback: str = "",
     mes = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
            "noviembre", "diciembre"][dd.month - 1]
     dstr = f"{dd.day} de {mes} de {dd.year}" if L == "es" else dd.strftime("%B %-d, %Y")
-    topic = THEMES[pack["theme"]][0 if L == "es" else 1]
-    src = chapter_sources(pack, cid, L)
+    kind = pack.get("kind")
+    topic = pack[f"label_{L}"] if kind else THEMES[pack["theme"]][0 if L == "es" else 1]
+    src = kind_sources(pack, cid, L) if kind else chapter_sources(pack, cid, L)
+    kind_rule = (f"EPISODE TYPE: {KINDS[kind][0 if L == 'es' else 1]}. Everything in it is {STATUS[kind]}" if kind else "")
+    brief = (KIND_BRIEF if kind else BRIEF)[cid]
     sysmsg = STYLE.format(topic=topic, host=NAMES["host"], cohost=NAMES["cohost"],
                           lang="Mexican Spanish" if L == "es" else "English",
                           attrib='"según Diario Humano…", "informa Meganoticias…"' if L == "es" else '"Gringo Gazette reports…"',
                           portal='"la Tendencia 2050 del portal", "la Visión del portal", "el Foresight del portal"' if L == "es"
                           else '"the portal\'s Trend 2050", "the portal\'s Vision", "the portal\'s Foresight"',
-                          chapter=t_es if L == "es" else t_en, words=int(w * 1.5), minw=w,
-                          turns=f"{max(6, w // 24)}-{max(8, w // 16)}", brief=BRIEF[cid].format(date=dstr, topic=topic))
+                          chapter=t_es if L == "es" else t_en, words=int(w * 1.5), minw=w, kind_rule=kind_rule,
+                          turns=f"{max(6, w // 24)}-{max(8, w // 16)}", brief=brief.format(date=dstr, topic=topic))
     user = "SOURCES:\n" + json.dumps({"date": dstr, "topic": topic, **src}, ensure_ascii=False)
     if draft:
         user += f"\n\nYOUR CURRENT DRAFT:\n{json.dumps(draft, ensure_ascii=False)}\n\nREVISE IT (return the whole JSON):\n{feedback}"
@@ -639,10 +921,21 @@ def conversation_lint(turns: list, cid: str) -> list[str]:
     return msgs
 
 
+WRONG_STATUS = {"tendencia": r"\bvisi[oó]n\b|\bvision\b|aspiraci|ideal", "noticias": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050", "datos": r"tendencia 2050|trend 2050|visi[oó]n 2050|vision 2050"}
+
+
+def status_lint(turns: list, kind: str | None) -> list[str]:
+    """An episode never mislabels its own status (a trend called a vision, etc.)."""
+    if kind not in WRONG_STATUS:
+        return []
+    return [f"turn {k+1} mislabels the content (this episode is {KINDS[kind][1]}, say so consistently): {t['text'][:90]}"
+            for k, t in enumerate(turns) if re.search(WRONG_STATUS[kind], t.get("text", ""), re.I)]
+
+
 def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
     out, src_text, w = write_chapter(pack, ch, L, today)
     turns = out.get("turns", [])
-    lint = conversation_lint(turns, ch[0])
+    lint = conversation_lint(turns, ch[0]) + status_lint(turns, pack.get("kind"))
     if lint:
         out, src_text, _ = write_chapter(pack, ch, L, today, "Make it more of a real conversation. Fix:\n" + "\n".join(lint) +
                                          f"\nKeep the same facts and AT LEAST {w} words; split long turns, add reactions and follow-ups.",
@@ -697,21 +990,22 @@ def extend_chapter(pack: dict, ch: tuple, L: str, today: str, turns: list, add: 
 def fit_length(theme: str, pack: dict, today: str, lang: str, chapters: list, durs: list, edir: Path) -> list:
     """Measure the rendered episode; while it is under MIN_EP, lengthen the chapters furthest below their word target
     and re-render only those. Returns the (possibly longer) chapters; durs is updated in place."""
-    sig = TOPIC[theme][1]
-    under, amb = OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(theme, 'city')}.mp3"
+    sig = TOPIC[music_theme(theme)][1]
+    under, amb = OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(music_theme(theme), 'city')}.mp3"
     for rnd in range(4):
         total = sum(durs)
         if total >= MIN_EP:
             break
         wps = max(1.5, sum(words(t) for t in chapters) / max(1.0, total))
         need = int((TARGET_EP - total) * wps)
-        order = sorted(range(len(chapters)), key=lambda k: words(chapters[k]) / CHAPTERS[k][3])
-        pick = [k for k in order if CHAPTERS[k][0] != "cierre"][:max(2, min(6, -(-need // 140)))]
-        share = {k: CHAPTERS[k][3] for k in pick}
+        CH = chapters_for(pack)
+        order = sorted(range(len(chapters)), key=lambda k: words(chapters[k]) / CH[k][3])
+        pick = [k for k in order if CH[k][0] != "cierre"][:max(2, min(6, -(-need // 140)))]
+        share = {k: CH[k][3] for k in pick}
         add = {k: max(60, int(need * 1.15 * share[k] / sum(share.values()))) for k in pick}
         print(f"  [{theme}/{lang}] {total/60:.1f} min < {MIN_EP/60:.1f}: +{need} words over chapters {[k+1 for k in pick]} (round {rnd+1})")
         with ThreadPoolExecutor(len(pick)) as ex:
-            new = dict(zip(pick, ex.map(lambda k: extend_chapter(pack, CHAPTERS[k], lang, today, chapters[k], add[k]), pick)))
+            new = dict(zip(pick, ex.map(lambda k: extend_chapter(pack, CH[k], lang, today, chapters[k], add[k]), pick)))
         for k, t in new.items():
             if t is not chapters[k]:
                 chapters[k] = t
@@ -784,30 +1078,31 @@ def render_chapter(turns: list, lang: str, dest: Path, opening: bool, under: Pat
 # ------------------------------------------------------------------ main
 def build_episode(theme: str, pack: dict, today: str, lang: str, music: dict, script_only: bool) -> dict:
     t0 = time.time()
-    with ThreadPoolExecutor(len(CHAPTERS)) as ex:
-        chapters = list(ex.map(lambda ch: make_chapter(pack, ch, lang, today), CHAPTERS))
+    CH = chapters_for(pack)
+    with ThreadPoolExecutor(len(CH)) as ex:
+        chapters = list(ex.map(lambda ch: make_chapter(pack, ch, lang, today), CH))
     edir = OUT / "editions" / today / ".staging" / theme / lang  # swapped into place only when every episode succeeded
     shutil.rmtree(edir, ignore_errors=True)
     edir.mkdir(parents=True, exist_ok=True)
-    sig, stings = TOPIC[theme][1], TOPIC[theme][2]
+    sig, stings = TOPIC[music_theme(theme)][1], TOPIC[music_theme(theme)][2]
     under = OUT / "music" / f"under_{sig}.mp3"
-    amb = OUT / "music" / f"amb_{AMBIENCE.get(theme, 'city')}.mp3"
+    amb = OUT / "music" / f"amb_{AMBIENCE.get(music_theme(theme), 'city')}.mp3"
     durs = [0.0 if script_only else render_chapter(t, lang, edir / f"{k:02d}.mp3", k == 1, under, amb)
             for k, t in enumerate(chapters, 1)]
     if not script_only:
         chapters = fit_length(theme, pack, today, lang, chapters, durs, edir)
     tracks, total = [], 0.0
-    for k, (ch, turns) in enumerate(zip(CHAPTERS, chapters), 1):
+    for k, (ch, turns) in enumerate(zip(CH, chapters), 1):
         dur = durs[k - 1]
         pick = (stings + [sig])[(k - 1) % (len(stings) + 1)]
         sting = None  # continuous conversation; the station puts an ID + music break between episodes
         total += dur + (duration(ROOT / "public" / sting.lstrip("/")) if sting else 0)
         tracks.append({"n": k, "id": ch[0], "title": ch[1] if lang == "es" else ch[2],
                        "src": f"/radio/editions/{today}/{theme}/{lang}/{k:02d}.mp3", "duration": dur, "sting": sting})
-    title = f"{THEMES[theme][0 if lang == 'es' else 1]} · Radio BCS2050"
+    title = f"{pack.get('label_' + lang) or THEMES[theme][0 if lang == 'es' else 1]} · Radio BCS2050"
     dump(edir / "script.json", {"topic": theme, "lang": lang, "title": title,
                                 "chapters": [{"id": c[0], "title": c[1] if lang == "es" else c[2], "turns": t}
-                                             for c, t in zip(CHAPTERS, chapters)]})
+                                             for c, t in zip(CH, chapters)]})
     print(f"  [{theme}/{lang}] {sum(words(t) for t in chapters)} words, {total/60:.1f} min ({time.time()-t0:.0f}s)")
     return {"title": title, "duration": round(total, 1), "tracks": tracks,
             "script": f"/radio/editions/{today}/{theme}/{lang}/script.json", "words": sum(words(t) for t in chapters)}
@@ -925,6 +1220,10 @@ def build_station(apply_now: bool = False) -> None:
                 if not lv or not all((ROOT / "public" / t["src"].lstrip("/")).exists() for t in lv["tracks"]):
                     continue
                 meta = {"date": d, "topic": ep["topic"], "name": ep["name_es" if lang == "es" else "name_en"]}
+                if ep.get(f"title_{lang}"):
+                    meta["title"] = ep[f"title_{lang}"]
+                if ep.get("number"):
+                    meta["num"] = ep["number"]
                 items.append({"src": ids[lang][n % len(ids[lang])], "d": dur(ids[lang][n % len(ids[lang])]), "kind": "id"})
                 for t in lv["tracks"]:
                     items.append({"src": t["src"], "d": t["duration"] or dur(t["src"]), "kind": "talk", "ch": t["title"], **meta})
@@ -957,10 +1256,10 @@ def rerender(ed_date: str, topic: str, lang: str) -> bool:
     sc = load(OUT / "editions" / ed_date / topic / lang / "script.json")
     if not sc or not os.environ.get("XAI_API_KEY"):
         return False
-    sig = TOPIC[topic][1]
+    sig = TOPIC[music_theme(topic)][1]
     for k, ch in enumerate(sc["chapters"], 1):
         render_chapter(ch["turns"], lang, OUT / "editions" / ed_date / topic / lang / f"{k:02d}.mp3", k == 1,
-                       OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(topic, 'city')}.mp3")
+                       OUT / "music" / f"under_{sig}.mp3", OUT / "music" / f"amb_{AMBIENCE.get(music_theme(topic), 'city')}.mp3")
     return True
 
 
@@ -1032,13 +1331,14 @@ def main() -> int:
     ap.add_argument("--date", default=date.today().isoformat())
     ap.add_argument("--lang", choices=["es", "en", "both"], default="both")
     ap.add_argument("--topics", type=int, default=DAILY_TOPICS, help=f"deep dives per edition (default {DAILY_TOPICS})")
-    ap.add_argument("--topic", action="append", choices=list(THEMES), help="force specific topic(s)")
+    ap.add_argument("--topic", action="append", help="force specific episode id(s): noticias-<theme>, datos-<theme>, tendencia, vision")
     ap.add_argument("--script-only", action="store_true")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--station-only", action="store_true", help="only rebuild the 24/7 loop files")
     ap.add_argument("--apply-now", action="store_true", help="put the new loop on air now instead of at the next 12:00 Madrid")
     ap.add_argument("--replace", action="store_true", help="with --topic: rebuild only those topics inside today's edition")
     ap.add_argument("--rerender", action="store_true", help="with --extend: re-mix every episode with current voice settings")
+    ap.add_argument("--meta", action="store_true", help="(re)write episode titles, show notes and numbers for --date")
     ap.add_argument("--extend", action="store_true", help="lengthen built episodes of --date that measure under ~19.5 min")
     ap.add_argument("--sync", action="store_true", help="restore/back up episode audio (run before astro build)")
     ap.add_argument("--check-dist", action="store_true", help="fail if any station file is missing from dist")
@@ -1048,6 +1348,20 @@ def main() -> int:
         return sync()
     if a.check_dist:
         return check_dist()
+    if a.meta:
+        ed_dir = OUT / "editions" / today
+        ed = load(ed_dir / "edition.json", {}) or {}
+        with ThreadPoolExecutor(4) as ex:
+            list(ex.map(lambda e: episode_meta(ed_dir, e), ed.get("episodes", [])))
+        hist = load(OUT / "history.json", {})
+        number_episodes(today, ed["episodes"], hist)
+        dump(OUT / "history.json", hist)
+        dump(ed_dir / "edition.json", ed)
+        if (load(OUT / "latest.json", {}) or {}).get("date") == today:
+            dump(OUT / "latest.json", ed)
+        write_archive()
+        build_station(a.apply_now)
+        return 0
     if a.extend:
         build_music()
         return extend_existing(today, a.topic, a.apply_now, a.rerender)
@@ -1074,11 +1388,12 @@ def main() -> int:
         hist["used"] = [u for u in hist.get("used", []) if u not in set(prev.get("source_ids", []))]
         hist["theme_last"] = {k: v for k, v in hist.get("theme_last", {}).items() if v != today}
     news, edu = all_news(), expres_de_unic()
-    topics = a.topic or pick_topics(today, hist, a.topics, news)
-    print(f"Radio BCS2050 {today}: deep dives {topics}")
+    topics = a.topic or plan_episodes(today, hist, news)
+    print(f"Radio BCS2050 {today}: episodes {topics}")
     packs = {}
-    for th in topics:  # sequential so two topics never tell the same fresh story
-        packs[th] = topic_pack(th, hist, news, edu)
+    for th in topics:  # sequential so two episodes never tell the same fresh story
+        kind, _, theme = th.partition("-")
+        packs[th] = kind_pack(kind, theme or None, hist, news, edu) if kind in KINDS else topic_pack(th, hist, news, edu)
         hist = {**hist, "used": list(set(hist.get("used", [])) | set(packs[th]["ids"]))}
     langs = ["es", "en"] if a.lang == "both" else [a.lang]
     jobs = [(th, L) for th in topics for L in langs]
@@ -1108,16 +1423,32 @@ def main() -> int:
     episodes = []
     for th in topics:
         p = packs[th]
-        srcs = [{"outlet": x["outlet"], "title": x["title_es"], "url": x["url"], "date": x["date"]} for x in p["now"] + p["older"]]
-        srcs += [{"outlet": f"{x.get('org','')} ({x.get('year','')})", "title": x["title"], "url": x.get("url", "")} for x in p["data"]["library"]]
-        srcs += [{"outlet": "Expres de Unic", "title": e["title"], "url": e["url"]} for e in p["expres_de_unic"]]
-        srcs += [{"outlet": "Portal BCS 2050", "title": "Tendencia 2050 · Visión · Foresight · Ontología", "url": "/foresights/"}]
-        episodes.append({"topic": th, "name_es": THEMES[th][0], "name_en": THEMES[th][1], "signature": music[TOPIC[th][1]],
+        kind = p.get("kind")
+        srcs = []
+        if kind in (None, "noticias"):
+            srcs += [{"outlet": x["outlet"], "title": x["title_es"], "url": x["url"], "date": x["date"]} for x in p["now"] + p["older"]]
+            srcs += [{"outlet": "Expres de Unic", "title": e["title"], "url": e["url"]} for e in p.get("expres_de_unic", [])]
+        if kind in (None, "datos"):
+            srcs += [{"outlet": f"{x.get('org','')} ({x.get('year','')})", "title": x["title"], "url": x.get("url", "")} for x in p["data"]["library"]]
+            srcs += [{"outlet": "Portal BCS 2050", "title": "Base de datos del portal (GIS, CONAGUA, INEGI, ontología)", "url": "/explorar/"}]
+        if kind == "tendencia":
+            srcs += [{"outlet": "Portal BCS 2050", "title": "Tendencia 2050", "url": "/foresights/"}]
+        if kind == "vision":
+            srcs += [{"outlet": "Portal BCS 2050", "title": "Visión 2050", "url": "/foresights/"}]
+        if kind is None:
+            srcs += [{"outlet": "Portal BCS 2050", "title": "Tendencia 2050 · Visión · Foresight · Ontología", "url": "/foresights/"}]
+        episodes.append({"topic": th, "kind": kind or "tema", "theme": p.get("theme"),
+                         "name_es": p.get("label_es") or THEMES[th][0], "name_en": p.get("label_en") or THEMES[th][1],
+                         "signature": music[TOPIC[music_theme(th)][1]],
                          "languages": {L: res[(th, L)] for L in langs}, "sources": srcs, "source_ids": p["ids"]})
     if keep_eps:
         order = {e["topic"]: k for k, e in enumerate(load(ed_dir / "edition.json", {}).get("episodes", []))}
         episodes = sorted(keep_eps + episodes, key=lambda e: order.get(e["topic"], 99))
-    edition = {"date": today, "format": "deep-dives", "engine": {"script": f"xAI {MODEL}", "voices": "xAI Grok TTS (rex, eve)"},
+    if not a.script_only:
+        with ThreadPoolExecutor(4) as ex:
+            list(ex.map(lambda e: e.get("title_es") or episode_meta(ed_dir, e), episodes))
+    number_episodes(today, episodes, hist)
+    edition = {"date": today, "format": "podcast-episodes", "engine": {"script": f"xAI {MODEL}", "voices": "xAI Grok TTS (rex, eve)"},
                "episodes": episodes, "source_ids": sorted(set(i for e in episodes for i in e.get("source_ids", []))),
                "credits": "/radio/credits.json"}
     dump(ed_dir / "edition.json", edition)
@@ -1128,7 +1459,8 @@ def main() -> int:
         dump(OUT / "latest.json", edition)
     hist["used"] = sorted(set(hist.get("used", [])))
     for th in topics:
-        hist.setdefault("theme_last", {})[th] = max(today, hist.get("theme_last", {}).get(th, ""))
+        for k in {th, th.partition("-")[2] if th.startswith("noticias-") else th}:
+            hist.setdefault("theme_last", {})[k] = max(today, hist.get("theme_last", {}).get(k, ""))
     hist["editions"] = sorted(set(hist.get("editions", [])) | {today})
     dump(OUT / "history.json", hist)
     eds = write_archive()
@@ -1150,7 +1482,8 @@ def write_archive() -> list:
     for d in reversed(eds):
         e = load(OUT / "editions" / d / "edition.json", {})
         arch.append({"date": d, "audio": d in eds[-KEEP_AUDIO:], "edition": f"/radio/editions/{d}/edition.json",
-                     "topics": [{"topic": x["topic"], "name_es": x["name_es"], "name_en": x["name_en"],
+                     "topics": [{"topic": x["topic"], "name_es": x["name_es"], "name_en": x["name_en"], "kind": x.get("kind"),
+                                 "number": x.get("number"), "title_es": x.get("title_es"), "title_en": x.get("title_en"),
                                  "duration": {L: v["duration"] for L, v in x["languages"].items()}}
                                 for x in e.get("episodes", [])]})
     dump(OUT / "archive.json", {"editions": arch})
@@ -1169,7 +1502,7 @@ def extend_existing(today: str, topics: list | None, apply_now: bool, rerender_a
             continue
         for L, lv in ep["languages"].items():
             sc = load(ed_dir / ep["topic"] / L / "script.json", {}) or {}
-            if [c["id"] for c in sc.get("chapters", [])] != [c[0] for c in CHAPTERS]:
+            if [c["id"] for c in sc.get("chapters", [])] != [c[0] for c in KIND_CHAPTERS.get(ep.get("kind"), CHAPTERS)]:
                 print(f"  {ep['topic']}/{L}: old chapter format, rebuild it with --topic {ep['topic']} --replace")
                 continue
             durs = [duration(ROOT / "public" / t["src"].lstrip("/")) for t in lv["tracks"]]
@@ -1180,15 +1513,18 @@ def extend_existing(today: str, topics: list | None, apply_now: bool, rerender_a
     def run(j):
         ep, L, lv, sc, durs = j
         own = set(ep.get("source_ids", []))
-        pack = topic_pack(ep["topic"], {**hist, "used": [u for u in hist.get("used", []) if u not in own]}, news, edu)
+        h = {**hist, "used": [u for u in hist.get("used", []) if u not in own]}
+        kind = ep.get("kind")
+        pack = (kind_pack(kind, ep.get("theme") if kind in ("noticias", "datos") else None, h, news, edu)
+                if kind in KINDS else topic_pack(ep["topic"], h, news, edu))
         src, stage = ed_dir / ep["topic"] / L, ed_dir / ".staging" / ep["topic"] / L
         shutil.rmtree(stage, ignore_errors=True)
         shutil.copytree(src, stage)
         if rerender_all:  # re-mix every chapter with the current voice settings (TTS cache: no new API calls)
-            sig = TOPIC[ep["topic"]][1]
+            sig = TOPIC[music_theme(ep["topic"])][1]
             for k, c in enumerate(sc["chapters"]):
                 durs[k] = render_chapter(c["turns"], L, stage / f"{k+1:02d}.mp3", k == 0, OUT / "music" / f"under_{sig}.mp3",
-                                         OUT / "music" / f"amb_{AMBIENCE.get(ep['topic'], 'city')}.mp3")
+                                         OUT / "music" / f"amb_{AMBIENCE.get(music_theme(ep['topic']), 'city')}.mp3")
             print(f"  [{ep['topic']}/{L}] re-mixed: {sum(durs)/60:.1f} min")
         chapters = fit_length(ep["topic"], pack, today, L, [c["turns"] for c in sc["chapters"]], durs, stage)
         for c, t in zip(sc["chapters"], chapters):

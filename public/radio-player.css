@@ -63,3 +63,10 @@
 .radio-golive { border: 0; background: transparent; color: #d0522d; font-size: .7rem; cursor: pointer; padding: .3rem 0 0; }
 .radio-up { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: #a59f92; margin: .7rem 0 0; }
 .radio-tracks li button span:last-child { color: #a59f92; }
+.radio-eps-h { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: #a59f92; margin: .8rem 0 0; }
+.radio-eps { list-style: none; margin: .4rem 0 0; padding: 0; max-height: 15rem; overflow: auto; }
+.radio-eps li button { width: 100%; text-align: left; border: 0; border-bottom: 1px solid rgba(0,0,0,.06); background: transparent;
+  cursor: pointer; padding: .45rem .1rem; display: flex; flex-direction: column; gap: .15rem; font: inherit; color: inherit; }
+.radio-eps li button b { font-size: .82rem; font-weight: 600; line-height: 1.25; }
+.radio-eps li button span { font-size: .7rem; color: #a59f92; }
+.radio-eps li button[aria-current="true"] b { color: #8a4b22; }

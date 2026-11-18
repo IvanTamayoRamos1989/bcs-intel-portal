@@ -1,0 +1,807 @@
+{
+  "topic": "noticias-conectividad",
+  "lang": "es",
+  "title": "Noticias · Conectividad · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según GlobeNewswire del Grupo Aeroportuario del Pacífico del 9 de noviembre, el aeropuerto de Los Cabos registró 520.9 mil pasajeros en octubre de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un número alto. ¿Y qué tanto bajó respecto al año pasado?"
+        },
+        {
+          "speaker": "host",
+          "text": "Bajó 4.6% en comparación con octubre de 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ya veo. [chuckle] Ahora, ¿cómo le fue a La Paz ese mismo mes?"
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz tuvo 108 mil pasajeros y bajó 2.1% en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Bajó, pero ¿qué pasa con todo el año?"
+        },
+        {
+          "speaker": "host",
+          "text": "Acumula 1.19 millones de pasajeros y crece 8.7% en lo que va del año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso cambia la foto. ¿Y qué pasó con los vuelos internacionales en Los Cabos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Los internacionales cayeron 5.9% según el mismo reporte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Y el total acumulado hasta octubre?"
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos suma 5.87 millones de pasajeros en el año y baja 5.5%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Interesante. ¿Y hay algo nuevo en las rutas?"
+        },
+        {
+          "speaker": "host",
+          "text": "United Airlines abrió la ruta Los Cabos–Washington Dulles, según el mismo reporte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces esto es Radio BCS2050, episodio Noticias · Conectividad."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Y la pregunta que vamos a responder hoy es qué significa esta variación en el tráfico aéreo para la conectividad real del estado."
+        }
+      ]
+    },
+    {
+      "id": "titulares",
+      "title": "Lo que pasó",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según GlobeNewswire del 9 de noviembre, Grupo Aeroportuario del Pacífico reportó que Los Cabos movió 520.9 mil pasajeros en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es una baja de 4.6% frente al año pasado."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y el tráfico internacional cayó 5.9%. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa caída afecta sobre todo los vuelos desde el extranjero."
+        },
+        {
+          "speaker": "host",
+          "text": "En cambio, La Paz registró 108 mil pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Allí la caída mensual fue de 2.1%."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero acumula 1.19 millones en el año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y crece 8.7% respecto al mismo periodo anterior."
+        },
+        {
+          "speaker": "host",
+          "text": "La diferencia entre los dos aeropuertos es clara."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz mantiene mejor ritmo anual."
+        },
+        {
+          "speaker": "host",
+          "text": "Además, Los Cabos acumula 5.87 millones de pasajeros de enero a octubre, con una baja de 5.5%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Por qué importa para BCS?"
+        },
+        {
+          "speaker": "host",
+          "text": "Porque la conectividad aérea mueve turismo y la economía local."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además el reporte menciona una ruta nueva Los Cabos–Washington Dulles de United."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa conexión puede traer visitantes directos desde la capital de Estados Unidos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora pasemos al mar. [breath]"
+        },
+        {
+          "speaker": "host",
+          "text": "Según Península Digital del 3 de noviembre, la SEMAR cerró cinco puertos a embarcaciones menores por el frente frío 4."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Cuáles puertos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y Adolfo López Mateos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Protección Civil de Loreto esperaba rachas de 30 a 50 km/h y olas de dos a tres metros."
+        },
+        {
+          "speaker": "host",
+          "text": "Para los pescadores y el transporte marítimo eso significa días sin poder salir."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La conectividad por mar queda interrumpida temporalmente."
+        },
+        {
+          "speaker": "host",
+          "text": "Cambiemos de tema. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Reforma del 28 de octubre, la tormenta tropical Vance inundó Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué daños reportaron?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Corrientes arrastraron decenas de vehículos y hubo rescates en cauces urbanos."
+        },
+        {
+          "speaker": "host",
+          "text": "También cerraron playas y puertos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y suspendieron clases."
+        },
+        {
+          "speaker": "host",
+          "text": "El acceso y la movilidad en la zona turística se vieron afectados de inmediato."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La tormenta golpeó justo cuando el aeropuerto ya mostraba números a la baja."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. Dos eventos que tocan la conectividad en el mismo mes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y usted qué opina de cómo se prepara BCS ante estos cierres repentinos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Buena pregunta. [pause] ¿Qué medidas tomaría usted la próxima vez que anuncien un frente frío o una tormenta?"
+        }
+      ]
+    },
+    {
+      "id": "mas",
+      "title": "Más noticias",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de El Financiero del 13 de noviembre de 2026, las conexiones aéreas de Los Cabos crecieron 61% en una década."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Rodrigo Esponda de Fiturca señaló que la afluencia de visitantes casi se duplicó en ese mismo periodo."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] Eso ya cambia bastante el panorama del aeropuerto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La estrategia busca compensar la caída de viajeros de Estados Unidos con más vuelos desde Canadá."
+        },
+        {
+          "speaker": "host",
+          "text": "También apuntan a Europa y Sudamérica para elevar la derrama y la estadía promedio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Van por nichos como naturaleza, gastronomía, wellness y reuniones, más residencias de marca."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso podría atraer visitantes que se queden más días y gasten en experiencias locales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, y las llegadas en temporada alta ya muestran ese impulso."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora pasemos al puerto de Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Diario El Independiente del 21 de octubre de 2026, el gobernador Víctor Castro respalda que la API estatal lo administre."
+        },
+        {
+          "speaker": "host",
+          "text": "Hoy lo opera Asipona Cabo San Lucas, sectorizada a la Secretaría de Marina."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tiene una concesión federal de 50 años desde febrero de 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Castro dijo que gestionará el cambio ante la Federación, aunque por ahora es solo una intención política."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La API de Baja California Sur ya opera Pichilingue, Loreto y San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Pasar la administración podría dar más control estatal sobre las operaciones del puerto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, aunque la concesión actual sigue vigente y cualquier transferencia requiere aprobación federal."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso permitiría coordinar mejor el movimiento de carga y pasajeros con los otros puertos estatales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en Puerto San Carlos, según Meganoticias del 14 de noviembre de 2026, el investigador Miguel Imaz de la UABCS advierte que El Niño elevó el nivel del mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Entre 15 y 30 centímetros, según sus mediciones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso contribuyó al colapso de barreras naturales y al ingreso de agua de mar en la zona de Comondú."
+        },
+        {
+          "speaker": "host",
+          "text": "Imaz prevé que el fenómeno se debilite en 2027, aunque con incertidumbre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También espera lluvias invernales más intensas."
+        },
+        {
+          "speaker": "host",
+          "text": "Pidió un análisis integral de alternativas de protección porque un muro de concreto sería solo temporal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los vecinos de Puerto San Carlos ya enfrentan estos cambios en su día a día."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] ¿Qué pasaría si el estado lograra administrar el puerto de Cabo San Lucas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "O si las mareas extraordinarias siguen afectando la operación en Puerto San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Y tú, ¿cómo ves el crecimiento de vuelos para diversificar el turismo?"
+        }
+      ]
+    },
+    {
+      "id": "contexto",
+      "title": "El contexto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según El Financiero del 13 de noviembre, las conexiones aéreas de Los Cabos crecieron 61% en diez años."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la afluencia de visitantes casi se duplicó, según Rodrigo Esponda de Fiturca."
+        },
+        {
+          "speaker": "host",
+          "text": "La idea es diversificar mercados porque Canadá compensa cuando bajan los viajeros de Estados Unidos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Y según Meganoticias del 5 de noviembre, Condor ya retomó los vuelos directos entre Fráncfort y Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Con 92% de ocupación esta temporada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es la única ruta directa de Europa a Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Alemania aporta más del 60% de esos pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La ocupación subió de 45.7 a 74.4% en la temporada anterior."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto, en la misma semana, Meganoticias del 14 de noviembre reporta que el nivel del mar en Puerto San Carlos subió entre 15 y 30 centímetros por El Niño."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Miguel Imaz de la UABCS lo explica y vincula con el colapso de barreras naturales."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso ya provocó entrada de agua de mar en la zona."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y no es nuevo. Según Tribuna de México del 28 de septiembre, el huracán Polo rompió el bordo de protección."
+        },
+        {
+          "speaker": "host",
+          "text": "Obligó a evacuar a 400 personas en Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luego vino Rachel. El 30 de septiembre SEMAR cerró los puertos de Cabo San Lucas y San José del Cabo para embarcaciones menores."
+        },
+        {
+          "speaker": "host",
+          "text": "El 3 de noviembre, Meganoticias informó que más de 300 viviendas seguían bajo el agua en Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y otras 300 familias en El Dátil, Mulegé, también resienten la subida."
+        },
+        {
+          "speaker": "host",
+          "text": "Los habitantes piden bordos de contención más fuertes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Imaz dice que un muro de concreto sería solo una solución temporal."
+        },
+        {
+          "speaker": "host",
+          "text": "Pide un análisis integral de alternativas de protección."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces, por un lado crecen los vuelos y por otro las mareas siguen afectando comunidades costeras. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "El Financiero menciona que la meta ahora es elevar la derrama con nichos como naturaleza y gastronomía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero el oleaje extraordinario se mantendrá mientras El Niño no se debilite del todo en 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "Y las lluvias invernales podrían ser más intensas, según la misma nota."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasa entonces con los pescadores y las familias que dependen de esos puertos cuando sube el agua?"
+        },
+        {
+          "speaker": "host",
+          "text": "Esa es la pregunta que queda abierta. ¿Cómo se conectan estas dos realidades en las próximas semanas?"
+        }
+      ]
+    },
+    {
+      "id": "lugares",
+      "title": "Dónde y a quién",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de GlobeNewswire del 9 de noviembre, Grupo Aeroportuario del Pacífico reporta que el aeropuerto de Los Cabos movió 520.9 mil pasajeros en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y eso representa una baja?"
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, una baja de 4.6% frente al año anterior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En La Paz la cosa fue distinta."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz registró 108 mil pasajeros ese mismo mes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Una caída menor, solo 2.1%."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero acumula ya un alza de 8.7% en lo que va del año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La misma nota menciona la nueva ruta de United entre Los Cabos y Washington Dulles."
+        },
+        {
+          "speaker": "host",
+          "text": "Pasando a los puertos, Península Digital informa que el 3 de noviembre la SEMAR cerró a embarcaciones menores en Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y Adolfo López Mateos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por el frente frío 4."
+        },
+        {
+          "speaker": "host",
+          "text": "Protección Civil de Loreto previó rachas de 30 a 50 kilómetros por hora."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y oleaje de dos a tres metros en la costa occidental."
+        },
+        {
+          "speaker": "host",
+          "text": "En Los Cabos, Reforma reporta que la tormenta tropical Vance del 28 de octubre provocó inundaciones que arrastraron decenas de vehículos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Obligaron a rescates en cauces urbanos y suspensión de clases."
+        },
+        {
+          "speaker": "host",
+          "text": "Además del cierre preventivo de puertos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora, Diario El Independiente del 21 de octubre cuenta que el gobernador Víctor Castro respalda que la API de Baja California Sur administre el puerto de Cabo San Lucas."
+        },
+        {
+          "speaker": "host",
+          "text": "Hoy lo opera Asipona Cabo San Lucas, sectorizada a la Secretaría de Marina."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Que tiene concesión federal de 50 años desde febrero de 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Castro dijo que gestionará el cambio; la API estatal ya opera Pichilingue, Loreto y San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Puerto San Carlos, Comondú, Meganoticias del 14 de noviembre señala que el investigador Miguel Imaz de la UABCS advierte que El Niño elevó el nivel del mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Entre 15 y 30 centímetros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso contribuyó al colapso de barreras naturales."
+        },
+        {
+          "speaker": "host",
+          "text": "El fenómeno se espera que se debilite en 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Finalmente, El Financiero del 13 de noviembre reporta que las conexiones aéreas de Los Cabos crecieron 61% en una década."
+        },
+        {
+          "speaker": "host",
+          "text": "Según Rodrigo Esponda de Fiturca, la estrategia busca diversificar mercados como Canadá, Europa y Sudamérica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas de que la API estatal busque operar también Cabo San Lucas?"
+        }
+      ]
+    },
+    {
+      "id": "claves",
+      "title": "Qué significa",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según la nota de GlobeNewswire del 9 de noviembre, Grupo Aeroportuario del Pacífico reportó que Los Cabos movió 520.9 mil pasajeros en octubre."
+        },
+        {
+          "speaker": "host",
+          "text": "Un 4.6% menos que el año anterior. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los vuelos internacionales bajaron 5.9%."
+        },
+        {
+          "speaker": "host",
+          "text": "En cambio, La Paz registró 108 mil pasajeros ese mes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Solo 2.1% abajo, pero ya suma 1.19 millones en el año."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso representa un aumento de 8.7% anual."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además anunciaron la nueva ruta Los Cabos-Washington Dulles con United."
+        },
+        {
+          "speaker": "host",
+          "text": "Según El Financiero del 13 de noviembre, las conexiones aéreas de Los Cabos crecieron 61% en diez años."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La afluencia casi se duplicó en ese periodo."
+        },
+        {
+          "speaker": "host",
+          "text": "Fiturca busca diversificar mercados para compensar la caída de viajeros de Estados Unidos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Canadá, Europa y Sudamérica entran en la estrategia."
+        },
+        {
+          "speaker": "host",
+          "text": "La idea es subir la derrama y la estadía media con nichos como naturaleza, gastronomía y reuniones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora, según Península Digital del 3 de noviembre, la SEMAR cerró cinco puertos a embarcaciones menores por el frente frío 4."
+        },
+        {
+          "speaker": "host",
+          "text": "Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y Adolfo López Mateos quedaron cerrados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Protección Civil de Loreto preveía rachas de hasta 50 km/h y oleaje de dos a tres metros."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso afecta directamente la pesca y el turismo náutico de pequeña escala. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Reforma del 28 de octubre, la tormenta Vance ya causó inundaciones en Los Cabos con autos arrastrados y rescates."
+        },
+        {
+          "speaker": "host",
+          "text": "Los puertos también se cerraron preventivamente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Meganoticias del 14 de noviembre, el investigador Miguel Imaz de la UABCS advierte que El Niño elevó el nivel del mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Entre 15 y 30 centímetros en Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso contribuyó al colapso de barreras naturales y a la entrada de agua de mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Prevé que el fenómeno se debilite en 2027, aunque las lluvias invernales podrían ser más intensas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Diario El Independiente del 21 de octubre, el gobernador Víctor Castro respalda que la API de Baja California Sur administre el puerto de Cabo San Lucas."
+        },
+        {
+          "speaker": "host",
+          "text": "Actualmente lo opera Asipona Cabo San Lucas con concesión federal de 50 años desde febrero de 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La API estatal ya maneja Pichilingue, Loreto y San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Es una intención política, no una transferencia autorizada todavía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué cambia para los usuarios si pasa a manos estatales?"
+        },
+        {
+          "speaker": "host",
+          "text": "Eso todavía está en gestión, así que hay que esperar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas de que la conectividad aérea crezca mientras los puertos enfrentan cierres por clima?"
+        },
+        {
+          "speaker": "host",
+          "text": "Es un contraste que vale la pena seguir de cerca."
+        }
+      ]
+    },
+    {
+      "id": "pendientes",
+      "title": "Lo que falta saber",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según Diario El Independiente del 21 de octubre, el gobernador Víctor Castro respalda que la API de Baja California Sur administre el puerto de Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La nota aclara que hoy lo opera Asipona, con concesión federal por 50 años desde febrero de 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Entonces queda la pregunta de si la Federación aceptará cambiar esa administración."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es lo que falta saber. No es una transferencia autorizada, solo una intención política."
+        },
+        {
+          "speaker": "host",
+          "text": "Según Meganoticias del 14 de noviembre, el investigador Miguel Imaz de la UABCS advierte que El Niño elevó el nivel del mar en Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, entre 15 y 30 centímetros."
+        },
+        {
+          "speaker": "host",
+          "text": "Y que contribuyó al colapso de barreras naturales con entrada de agua de mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Él pide un análisis integral de alternativas de protección."
+        },
+        {
+          "speaker": "host",
+          "text": "Dice que un muro de concreto sería solo temporal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces, ¿qué opciones se están evaluando realmente? Eso no queda claro en la nota."
+        },
+        {
+          "speaker": "host",
+          "text": "Según GlobeNewswire del 9 de noviembre, Los Cabos tuvo 520.9 mil pasajeros en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con una baja de 4.6%."
+        },
+        {
+          "speaker": "host",
+          "text": "Y La Paz creció 8.7% en el año acumulado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hay contraste entre los dos aeropuertos. GAP menciona la nueva ruta Los Cabos–Washington Dulles de United."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero no explica cómo compensará la caída general."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo que falta saber es si esa ruta y el regreso de Condor desde Fráncfort bastan para estabilizar los números. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Según El Financiero del 13 de noviembre, las conexiones aéreas crecieron 61% en una década."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La estrategia busca diversificar mercados, pero no hay fechas ni cifras concretas de resultados esperados."
+        },
+        {
+          "speaker": "host",
+          "text": "Y sobre el cierre de cinco puertos por el frente frío, según Península Digital del 3 de noviembre, la pregunta es cuánto tiempo durará el impacto en la pesca y el turismo local."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo mismo con las inundaciones de Vance reportadas por Reforma: ¿qué mejoras de drenaje se aplicarán ahora?"
+        },
+        {
+          "speaker": "host",
+          "text": "Todo apunta a decisiones pendientes. ¿Y tú qué opinas que deberían aclarar primero las autoridades?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para pensar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hoy cerramos con lo que más nos dejó pensando de la conectividad en Baja California Sur."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Eso apunta a diversificar el turismo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Al mismo tiempo, la tormenta Vance inundó zonas de Los Cabos y obligó a cerrar puertos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "—que afecta el día a día de quienes viven del mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Un investigador de la UABCS advirtió que El Niño sigue elevando el nivel del mar en Puerto San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto, Víctor Castro respalda que la API estatal administre el puerto de Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Eso podría dar más control local."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aunque La Paz crece en el año."
+        },
+        {
+          "speaker": "host",
+          "text": "Todo esto cambia cómo la gente viaja, pesca o recibe mercancía cuando el clima interrumpe."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué harías si un frente frío cierra los puertos justo cuando necesitas salir?"
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué opinas de que el estado administre el puerto de Cabo San Lucas?"
+        }
+      ]
+    }
+  ]
+}

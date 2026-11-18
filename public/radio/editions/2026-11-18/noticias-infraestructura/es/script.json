@@ -1,0 +1,823 @@
+{
+  "topic": "noticias-infraestructura",
+  "lang": "es",
+  "title": "Noticias · Infraestructura · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de Palabra BCS del 10 de noviembre, Sepuimm inicia la pavimentación de la calle Francisco King Rondero en La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿En serio? ¿Y con cuánto presupuesto van a hacer esa obra tan necesaria para la gente?"
+        },
+        {
+          "speaker": "host",
+          "text": "Con 48 millones de pesos. [pause] La obra va de Ignacio Altamirano a México y arranca el 11 de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ah, y trae concreto hidráulico más cambio de redes de agua y drenaje para mejorar el servicio."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. También entregarán todo al Oomsapas La Paz una vez terminada la parte de alcantarillado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esto beneficia a más de 13 mil personas en El Esterito y Ladrillera que pasarán por ahí todos los días."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y agrega muros contra corrientes, banquetas accesibles y alumbrado solar para mayor seguridad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Arregla servicios que la gente usa todos los días en esas colonias y reduce problemas de inundaciones."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050, episodio Noticias · Infraestructura. [pause] La pregunta que vamos a responder es qué obras de infraestructura reportadas están en marcha ahora mismo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y por qué importan para quien vive ahí y pasa por esas calles todos los días."
+        },
+        {
+          "speaker": "host",
+          "text": "Porque una calle pavimentada cambia el día a día de quien pasa por ahí. [chuckle] ¿Tú qué opinas de estas mejoras en servicios básicos?"
+        }
+      ]
+    },
+    {
+      "id": "titulares",
+      "title": "Lo que pasó",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de Palabra BCS del 10 de noviembre, en La Paz arranca la pavimentación de la calle Francisco King Rondero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La obra va entre Ignacio Altamirano y México, con concreto hidráulico."
+        },
+        {
+          "speaker": "host",
+          "text": "¿En serio? Eso cambia el paso diario para mucha gente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Invertirán 48 millones de pesos en total."
+        },
+        {
+          "speaker": "host",
+          "text": "48 mdp es una cifra que permite renovar varios servicios a la vez."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Incluye cambio de redes de agua potable y drenaje que entregarán al Oomsapas La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso quiere decir que no solo van a tapar baches, sino que van a mejorar lo que hay debajo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También construirán muros contra corrientes pluviales."
+        },
+        {
+          "speaker": "host",
+          "text": "Los muros van a proteger las casas cuando llueva fuerte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y banquetas accesibles con alumbrado solar."
+        },
+        {
+          "speaker": "host",
+          "text": "Banquetas accesibles significan que cualquiera puede pasar sin tropiezos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La obra beneficia a más de 13 mil personas de colonias como El Esterito y Ladrillera."
+        },
+        {
+          "speaker": "host",
+          "text": "13 mil vecinos van a notar menos polvo y mejor alumbrado por las noches."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Arranca el 11 de noviembre, así que los cambios llegarán pronto."
+        },
+        {
+          "speaker": "host",
+          "text": "Once de noviembre ya está cerca, por eso los vecinos deben estar pendientes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y por qué importa esto para la gente de La Paz?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mejora el paso diario y reduce problemas de agua y drenaje en esas colonias."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora veamos el otro proyecto de infraestructura."
+        },
+        {
+          "speaker": "host",
+          "text": "Según PVTIME del 9 de noviembre, la CFE licita el proyecto Oasis en Mulegé."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un paquete de 72 megawatts solares."
+        },
+        {
+          "speaker": "host",
+          "text": "72 megawatts es una cantidad importante de energía limpia."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con baterías de 80 megawatts hora."
+        },
+        {
+          "speaker": "host",
+          "text": "Las baterías guardan la energía para cuando el sol ya no está."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además un electrolizador de 20 megawatts."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese equipo convierte el excedente en hidrógeno verde."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo desarrolla la CFE junto con HDF Energy."
+        },
+        {
+          "speaker": "host",
+          "text": "Dos empresas trabajando juntas siempre llaman la atención."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Podría abastecer a unos 40 mil hogares."
+        },
+        {
+          "speaker": "host",
+          "text": "40 mil hogares es casi una ciudad entera."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y evitaría 94 mil toneladas de CO2 al año."
+        },
+        {
+          "speaker": "host",
+          "text": "94 mil toneladas menos de dióxido de carbono cada año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Interesante porque usa el sol extra para algo más que luz."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] Exacto, no se desperdicia lo que sobra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Convierte el excedente en hidrógeno en vez de perderlo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué significa esto para Baja California Sur?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Menos dependencia de combustibles y una red más estable en el norte del estado."
+        },
+        {
+          "speaker": "host",
+          "text": "Todavía está en licitación, así que hay que ver cómo avanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, es un paso hacia energía más limpia pero falta que se concrete."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto, en La Paz ya empiezan las obras de calle."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, una cosa ya está en marcha y la otra apenas sale a concurso."
+        },
+        {
+          "speaker": "host",
+          "text": "Dos caras de la misma infraestructura que se está moviendo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me pregunto cómo afectará el día a día de las familias en Mulegé cuando funcione."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en La Paz, los vecinos de El Esterito verán banquetas nuevas pronto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, detalles que suman."
+        }
+      ]
+    },
+    {
+      "id": "mas",
+      "title": "Más noticias",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según Meganoticias del 29 de octubre de 2026, en Los Cabos los servicios públicos tardarán una semana en regularizar la recolección de basura."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm, ¿solo una semana? Eso parece poco si las calles están tan dañadas."
+        },
+        {
+          "speaker": "host",
+          "text": "Las lluvias dañaron otra vez las calles de terracería y los caminos vecinales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y sin pavimento el agua se lleva todo, ¿no?"
+        },
+        {
+          "speaker": "host",
+          "text": "Es la octava o novena vez que rehabilitan esas vías, informa la misma nota."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Ya pierden la cuenta de cuántas veces han tenido que arreglar lo mismo."
+        },
+        {
+          "speaker": "host",
+          "text": "Las colonias más afectadas son Gastélum, Tierra y Libertad, Mesa Colorada, El Zacatal y Guaymitas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esas zonas quedan aisladas cuando llueve fuerte."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso complica el paso de los camiones recolectores en zonas sin pavimento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La gente se queda esperando el camión que no puede pasar."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la gente de esas colonias se queda con la basura acumulada por días."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso afecta la salud y el olor en las calles, imagínate."
+        },
+        {
+          "speaker": "host",
+          "text": "Pasemos a otra nota. Según Meganoticias del 17 de noviembre de 2026, el proyecto ejecutivo del puente sobre el arroyo San José Viejo ya está listo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por fin tienen el plano completo, ¿qué sigue ahora?"
+        },
+        {
+          "speaker": "host",
+          "text": "El Centro SICT en Baja California Sur dice que buscarán recursos federales el próximo año para empezar la obra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En 2027, entonces. [pause] Esperemos que sí consigan el dinero."
+        },
+        {
+          "speaker": "host",
+          "text": "Cada temporada de lluvias el arroyo corta la circulación entre colonias de San José del Cabo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La gente tiene que dar vuelta o quedarse varada."
+        },
+        {
+          "speaker": "host",
+          "text": "Y también afecta a quienes vienen del aeropuerto hacia la ciudad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un puente ayudaría a que el tráfico del aeropuerto fluya mejor."
+        },
+        {
+          "speaker": "host",
+          "text": "El gobernador pidió que se avance con ese puente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es una obra que lleva años en espera por falta de presupuesto."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora veamos el tema de la basura en el mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Meganoticias del 17 de noviembre de 2026, Zofemat retiró 18 toneladas de basura de la playa El Médano."
+        },
+        {
+          "speaker": "host",
+          "text": "Y más de 350 neumáticos también."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es mucho caucho que termina en el agua."
+        },
+        {
+          "speaker": "host",
+          "text": "En playas de San José del Cabo sacaron 12.5 toneladas de palizada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además retiraron 15 vehículos arrastrados por las lluvias del 30 de octubre."
+        },
+        {
+          "speaker": "host",
+          "text": "Los especialistas señalan que las modificaciones de los cauces naturales concentran los escurrimientos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Al cambiar los cauces, el agua va directo al mar con todo lo que arrastra."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la falta de drenaje pluvial empeora el arrastre de residuos hacia el mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Colegio de Ingenieros Civiles pide coordinación entre los tres órdenes de gobierno."
+        },
+        {
+          "speaker": "host",
+          "text": "Estas son las noticias de infraestructura que siguen afectando la vida diaria en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y muestran que los problemas de drenaje y pavimentación siguen sin resolverse del todo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué opinas tú de estos temas que se repiten cada temporada?"
+        }
+      ]
+    },
+    {
+      "id": "contexto",
+      "title": "El contexto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de Meganoticias del 17 de noviembre, el proyecto ejecutivo del puente sobre el arroyo San José Viejo ya está listo y la SICT busca recursos federales para 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en la misma semana Meganoticias reportó que las lluvias del 30 de octubre mandaron 18 toneladas de basura a la playa El Médano."
+        },
+        {
+          "speaker": "host",
+          "text": "Además retiraron más de 350 neumáticos en ese mismo lugar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Especialistas atribuyen el problema a cauces modificados que concentran el agua."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso explica por qué también dañaron la Transpeninsular, según otra nota del 16 de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "Y eso afecta la carpeta asfáltica entre San José y Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto en Mulegé, Tribuna de México informa que en cinco años se invirtieron 713 millones de pesos en obra pública."
+        },
+        {
+          "speaker": "host",
+          "text": "Con 215 millones solo en infraestructura hídrica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y ya arrancaron la primera etapa del acueducto Palo Verde–Santa Rosalía."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso contrasta con el recorte del 70% en recursos federales que reportaron."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aquí en La Paz, Tribuna de México dice que el 17 de noviembre inicia la reconstrucción con concreto hidráulico de la calle Agustín Arriola."
+        },
+        {
+          "speaker": "host",
+          "text": "En coordinación con el Fideicomiso FOIS para mejorar el comercio y el turismo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El cierre empieza a las seis de la mañana."
+        },
+        {
+          "speaker": "host",
+          "text": "Palabra BCS del 15 de noviembre explica que la pavimentación se define primero por aforo vehicular."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luego por zonas de inundación, hospitales y escuelas."
+        },
+        {
+          "speaker": "host",
+          "text": "En Loreto, alDíaBCS reporta que la calle Marlín en Miramar ya lleva 45% de avance."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con drenaje y agua potable casi listos."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en Cabo San Lucas, Quepoca del 9 de noviembre indica que la segunda desaladora ya está al 75%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sumará 250 litros por segundo al abasto."
+        },
+        {
+          "speaker": "host",
+          "text": "Con eso la capacidad total llegaría a 655 litros por segundo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Para más de 200 mil habitantes."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero Tribuna de México del mismo día menciona que SAPA La Paz solo tiene operando dos de cuatro equipos Vactor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Para atender fugas y drenajes."
+        },
+        {
+          "speaker": "host",
+          "text": "El director pidió usar el Call Center 612-386-0000."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y explicó que atienden primero hospitales, escuelas y zonas turísticas."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que une estas notas de la última semana es que las lluvias recientes sacaron a la luz fallas en drenaje y cauces que afectan carreteras y playas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Al mismo tiempo vemos obras de agua y pavimentación que avanzan en varios municipios, aunque con presupuestos ajustados."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué te parece que la prioridad de pavimentación sea el aforo vehicular antes que las zonas que más se inundan?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me hace pensar en cómo se decide el orden cuando los recursos son limitados. [chuckle] ¿Y tú qué opinas?"
+        }
+      ]
+    },
+    {
+      "id": "lugares",
+      "title": "Dónde y a quién",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de Palabra BCS del 10 de noviembre, la Sepuimm inicia el 11 de noviembre la pavimentación de la calle Francisco King Rondero en La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La obra va entre Ignacio Altamirano y México, con concreto hidráulico."
+        },
+        {
+          "speaker": "host",
+          "text": "Incluye nuevas redes de agua y drenaje que entregarán al Oomsapas La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Beneficia a más de 13 mil habitantes de El Esterito y Ladrillera."
+        },
+        {
+          "speaker": "host",
+          "text": "Suma muros contra corrientes, banquetas accesibles y alumbrado solar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Mulegé, según PVTIME del 9 de noviembre, la CFE y HDF Energy licitaron el proyecto Oasis."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese proyecto incluye 72 MW solares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wow, solo la parte solar ya es considerable. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "También tiene baterías de 80 MWh."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso ayuda a guardar el excedente."
+        },
+        {
+          "speaker": "host",
+          "text": "Y un electrolizador de 20 MW para hidrógeno verde."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Abastecería a unos 40 mil hogares."
+        },
+        {
+          "speaker": "host",
+          "text": "Y reduciría 94 mil toneladas de CO2 al año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos, Servicios Públicos reportó que las lluvias dañaron calles de terracería."
+        },
+        {
+          "speaker": "host",
+          "text": "Meganoticias del 29 de octubre dice que tardarán una semana en normalizar la recolección de basura por el azolve."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es la octava o novena vez que rehabilitan esos caminos."
+        },
+        {
+          "speaker": "host",
+          "text": "Las colonias más afectadas son Gastélum, Tierra y Libertad, Mesa Colorada, El Zacatal y Guaymitas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En San José del Cabo, el Centro SICT informó que el proyecto ejecutivo del puente sobre el arroyo San José Viejo ya está listo."
+        },
+        {
+          "speaker": "host",
+          "text": "Según Meganoticias del 17 de noviembre, en el próximo ejercicio fiscal buscarán recursos federales para construirlo en 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada temporada de lluvias el arroyo corta la circulación entre colonias y hacia el aeropuerto."
+        },
+        {
+          "speaker": "host",
+          "text": "También en Los Cabos, Zofemat retiró 18 toneladas de basura de la playa El Médano tras las lluvias del 30 de octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y más de 350 neumáticos."
+        },
+        {
+          "speaker": "host",
+          "text": "En San José del Cabo retiraron 12.5 toneladas de palizada y 15 vehículos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Especialistas señalan que la modificación de cauces naturales concentra los escurrimientos y lleva basura al mar."
+        },
+        {
+          "speaker": "host",
+          "text": "El Colegio de Ingenieros Civiles pide coordinación entre los tres órdenes de gobierno para resolverlo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas de que el mismo problema de drenaje aparezca en varias colonias de Los Cabos? [pause]"
+        }
+      ]
+    },
+    {
+      "id": "claves",
+      "title": "Qué significa",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de Palabra BCS del 10 de noviembre, el 11 de noviembre arrancó la pavimentación de la calle Francisco King Rondero en La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con 48 millones de pesos y concreto hidráulico."
+        },
+        {
+          "speaker": "host",
+          "text": "Además cambian las redes de agua potable y drenaje que se entregarán al Oomsapas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La obra va de Ignacio Altamirano a México y llega a más de 13 mil vecinos de El Esterito y Ladrillera."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué cambia para ellos? Ya no van a tener charcos ni agua que se contamina cada vez que llueve."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además ponen banquetas accesibles, muros contra corrientes y alumbrado solar [chuckle]."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso significa que el municipio invierte en algo que se usa todos los días, no solo en emergencias."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pasemos a Mulegé. Según PVTIME del 9 de noviembre, la CFE y HDF Energy licitaron el proyecto Oasis."
+        },
+        {
+          "speaker": "host",
+          "text": "Primero 72 megawatts de fotovoltaica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso ya es bastante sol capturado de golpe."
+        },
+        {
+          "speaker": "host",
+          "text": "Luego viene el almacenamiento de 20 megawatts con 80 megawatts-hora en baterías."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Así guardan lo que sobra durante el día."
+        },
+        {
+          "speaker": "host",
+          "text": "Y un electrolizador de 20 megawatts para convertir el excedente en hidrógeno verde."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El excedente de sol se guarda como hidrógeno y puede alimentar unos 40 mil hogares."
+        },
+        {
+          "speaker": "host",
+          "text": "Y evita 94 mil toneladas de CO2 al año. Eso es infraestructura que produce y almacena al mismo tiempo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos, Meganoticias reportó el 29 de octubre que las lluvias volvieron a dañar calles de terracería."
+        },
+        {
+          "speaker": "host",
+          "text": "Servicios Públicos dice que tardarán una semana en normalizar la recolección de basura."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es la octava o novena vez que rehabilitan los mismos caminos en colonias como Gastélum y El Zacatal."
+        },
+        {
+          "speaker": "host",
+          "text": "El problema es que sin pavimento el agua se lleva todo y los camiones ya no pueden pasar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otro reporte de Meganoticias del 17 de noviembre habla del puente sobre el arroyo San José Viejo."
+        },
+        {
+          "speaker": "host",
+          "text": "El proyecto ejecutivo ya está listo y la SICT busca recursos federales para 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada temporal el arroyo corta el paso entre colonias y obliga a dar vuelta larga a quien viene del aeropuerto."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué opinas tú? ¿Priorizas primero el pavimento diario o el puente que evita vueltas largas?"
+        }
+      ]
+    },
+    {
+      "id": "pendientes",
+      "title": "Lo que falta saber",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de Meganoticias del 17 de noviembre, el proyecto ejecutivo del puente sobre el arroyo San José Viejo ya está listo, pero todavía falta definir los recursos federales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, Tomás. La SICT dice que buscarán el dinero en el próximo ejercicio fiscal, pero no hay fecha concreta para iniciar la obra."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso deja en el aire cuándo se resolverá el problema de las inundaciones que cortan el paso entre colonias de San José del Cabo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según la misma nota, el gobernador pidió la obra, pero el siguiente paso depende de la Federación. ¿Y si no llegan los recursos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Otra pregunta abierta viene del proyecto Oasis en Mulegé. Según PVTIME del 9 de noviembre, CFE y HDF Energy lanzaron la licitación, pero no sabemos quién ganará ni cuándo empezará."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El plan incluye 72 MW solares y un electrolizador de 20 MW, pero el resultado de la licitación sigue sin anunciarse."
+        },
+        {
+          "speaker": "host",
+          "text": "En Mulegé también reportan que la obra federal cayó 70%, según Tribuna de México del 17 de noviembre. Queda por ver cómo afectará la siguiente etapa del acueducto Palo Verde–Santa Rosalía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La alcaldesa mencionó 713 millones de pesos invertidos en cinco años, pero el recorte federal genera dudas sobre los kilómetros que faltan por construir."
+        },
+        {
+          "speaker": "host",
+          "text": "En Los Cabos, Meganoticias del 17 de noviembre señala que Zofemat retiró 18 toneladas de basura en El Médano tras las lluvias, sin embargo, falta saber qué medidas concretas tomarán los tres órdenes de gobierno para evitar que se repita."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Colegio de Ingenieros Civiles pide revisar los cauces modificados, pero no hay respuesta oficial todavía."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo mismo pasa con la recolección de basura en colonias de terracería. Meganoticias del 29 de octubre dijo que tardarían una semana en normalizar, pero la causa sigue siendo la misma cada temporada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, ya van ocho o nueve veces que rehabilitan esos caminos. ¿Qué cambiará esta vez?"
+        },
+        {
+          "speaker": "host",
+          "text": "Por último, en La Paz la pavimentación de Francisco King Rondero empieza el 11 de noviembre con 48 millones de pesos, según Palabra BCS, pero no se menciona la fecha exacta de entrega."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Queda por confirmar cómo se coordinará la entrega de las nuevas redes al Oomsapas."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que falta saber es bastante. ¿Qué preguntas te surgen a ti después de revisar estas notas?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para pensar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Nos quedamos con dos temas de infraestructura que tocan la vida diaria en Baja California Sur: la pavimentación de la calle Francisco King Rondero en La Paz junto con las nuevas redes de agua y drenaje, y el posible puente sobre el arroyo San José Viejo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, Tomás. Esos cambios afectan cómo se mueve la gente y cómo llega el agua a las casas."
+        },
+        {
+          "speaker": "host",
+          "text": "Al mismo tiempo, en Los Cabos los cauces modificados y la falta de drenaje pluvial siguen llevando basura al mar después de las lluvias."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso golpea directo a las colonias costeras. [pause] ¿Tú qué harías primero si vivieras ahí?"
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que cambia para la gente es que unos barrios ganan calles firmes y mejor servicio de agua, mientras otros siguen lidiando con inundaciones y basura en la calle."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un contraste que se nota cada vez que llueve o cuando sales a caminar."
+        },
+        {
+          "speaker": "host",
+          "text": "También vimos que el proyecto ejecutivo del puente ya está listo, pero falta ver cuándo se construye."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y la pregunta queda en el aire: ¿qué prioridad le das tú a estos trabajos?"
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué opinas? ¿Qué obra te parece más urgente ahora mismo en tu colonia?"
+        }
+      ]
+    }
+  ]
+}

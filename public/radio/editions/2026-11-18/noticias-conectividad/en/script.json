@@ -1,0 +1,855 @@
+{
+  "topic": "noticias-conectividad",
+  "lang": "en",
+  "title": "News · Connectivity · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Cold open",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "According to GlobeNewswire's report from November 9, 2026, Grupo Aeroportuario del Pacífico recorded 520.9 thousand passengers at Los Cabos airport in October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is lower than the previous year."
+        },
+        {
+          "speaker": "host",
+          "text": "The figures show a 4.6 percent decrease compared to October last year. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "International traffic felt it more."
+        },
+        {
+          "speaker": "host",
+          "text": "It fell 5.9 percent for international flights."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz handled 108 thousand passengers that month."
+        },
+        {
+          "speaker": "host",
+          "text": "Yet the airport there is up 8.7 percent for the year so far."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos carried 5.87 million passengers from January through October, down 5.5 percent."
+        },
+        {
+          "speaker": "host",
+          "text": "GAP also added a new United route from Los Cabos to Washington Dulles. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "This is Radio BCS2050. Today's episode is News · Connectivity."
+        },
+        {
+          "speaker": "host",
+          "text": "The concrete question we answer is how October's traffic changes affect daily connectivity for residents and visitors."
+        },
+        {
+          "speaker": "cohost",
+          "text": "These shifts in passenger numbers can influence everything from hotel bookings to local transport services in the area."
+        },
+        {
+          "speaker": "host",
+          "text": "They also highlight how new routes like the one to Washington might help offset some of the losses over time."
+        },
+        {
+          "speaker": "cohost",
+          "text": "For residents it means thinking about which airlines still offer reliable connections to the mainland and beyond."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly, and that brings us to the heart of today's discussion on connectivity across Baja California Sur. [laugh]"
+        }
+      ]
+    },
+    {
+      "id": "titulares",
+      "title": "What happened",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "According to GlobeNewswire's report from November 9, 2026, Grupo Aeroportuario del Pacífico released its October passenger numbers for Baja California Sur airports."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Wait, how did the two main airports compare this time around?"
+        },
+        {
+          "speaker": "host",
+          "text": "The figures highlight how tourism flows shift month to month across the peninsula."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That context helps explain why the totals matter for local businesses."
+        },
+        {
+          "speaker": "host",
+          "text": "Los Cabos handled 520.9 thousand passengers that month."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That figure is down 4.6 percent from the same month in 2025. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "A drop like that ripples through taxi drivers and hotel staff."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly, fewer arrivals mean less immediate work for many families."
+        },
+        {
+          "speaker": "host",
+          "text": "International traffic fell 5.9 percent there."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The airport still moved 5.87 million passengers from January through October."
+        },
+        {
+          "speaker": "host",
+          "text": "Those cumulative numbers still support year-round operations."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That total sits 5.5 percent below the prior year."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz recorded 108 thousand passengers in October, a 2.1 percent drop year over year."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yet the year-to-date count reached 1.19 million, up 8.7 percent."
+        },
+        {
+          "speaker": "host",
+          "text": "The contrast shows one airport recovering while the other pauses."
+        },
+        {
+          "speaker": "cohost",
+          "text": "GAP also noted a new United Airlines route from Los Cabos to Washington Dulles."
+        },
+        {
+          "speaker": "host",
+          "text": "Direct flights like that can bring new visitors from the capital region."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm, that new nonstop could help offset some of the monthly dip for Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "These air links shape how visitors and goods reach the state."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Now turning to sea access, Península Digital reported on November 3 that the Navy closed five BCS ports to small craft."
+        },
+        {
+          "speaker": "host",
+          "text": "Small boats often carry fishers and local tour operators."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The closures hit Santa Rosalía, Loreto, San Carlos, Bahía Magdalena and Adolfo López Mateos."
+        },
+        {
+          "speaker": "host",
+          "text": "Those spots line both coasts and support daily coastal work."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Civil protection in Loreto warned of gusts reaching 30 to 50 km/h."
+        },
+        {
+          "speaker": "host",
+          "text": "Winds that strong make even short trips unsafe."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is strong enough to keep many boats at the dock."
+        },
+        {
+          "speaker": "host",
+          "text": "They also expected waves of 2 to 3 meters along the west coast on those days."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The restrictions followed cold front number 4."
+        },
+        {
+          "speaker": "host",
+          "text": "Reforma reported on October 28 that tropical storm Vance brought heavy rain to Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Dozens of vehicles were swept away in urban washes."
+        },
+        {
+          "speaker": "host",
+          "text": "Flash flooding caught drivers on familiar streets."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Rescue teams responded while schools closed and beaches were shut."
+        },
+        {
+          "speaker": "host",
+          "text": "A pause in classes lets families focus on safety."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A preventive ban also stopped all port navigation during the event."
+        },
+        {
+          "speaker": "host",
+          "text": "Both air and sea routes were tested by the same weather systems."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Fewer flights and closed harbors limit daily movement for residents and workers alike."
+        },
+        {
+          "speaker": "host",
+          "text": "The year-to-date gains at La Paz airport show one corridor holding steady despite the October dip. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "How do these changes affect your own travel plans in the coming months?"
+        }
+      ]
+    },
+    {
+      "id": "mas",
+      "title": "More news",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "According to Diario El Independiente's report from 2026-10-21, Governor Víctor Castro backs shifting Cabo San Lucas port management to the state port authority."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That would move control away from Asipona Cabo San Lucas under the Navy."
+        },
+        {
+          "speaker": "host",
+          "text": "Yes, and the state authority already runs Pichilingue, Loreto and San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Castro intends to ask the federal government for the change."
+        },
+        {
+          "speaker": "host",
+          "text": "Though it remains a political intention only, as Asipona holds its 50-year federal concession granted in February 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "50 years is a long commitment [chuckle]."
+        },
+        {
+          "speaker": "host",
+          "text": "Local coordination of cargo and passenger flows could become smoother across the state."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It might let the same team handle operations from one end of BCS to the other."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Now turning to air links."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Financiero reported on 2026-11-13 that Los Cabos air connectivity grew 61 percent."
+        },
+        {
+          "speaker": "host",
+          "text": "Over the past decade."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Arrivals nearly doubled in that same period."
+        },
+        {
+          "speaker": "host",
+          "text": "Fiturca director Rodrigo Esponda says the goal is to diversify markets beyond the United States."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Canada is already helping offset any drop in U.S. travellers."
+        },
+        {
+          "speaker": "host",
+          "text": "They also want to draw more visitors from Europe and South America."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Private-aviation arrivals tripled during the same stretch."
+        },
+        {
+          "speaker": "host",
+          "text": "That growth points to interest from a different kind of traveler."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The strategy focuses on niches like nature, food, wellness and meetings."
+        },
+        {
+          "speaker": "host",
+          "text": "Branded residences are part of the effort to raise average spending and length of stay."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Longer visits could spread benefits beyond peak weekends."
+        },
+        {
+          "speaker": "host",
+          "text": "Now for coastal impacts."
+        },
+        {
+          "speaker": "cohost",
+          "text": "According to Meganoticias on 2026-11-14, UABCS researcher Miguel Imaz warns El Niño has raised sea levels in Puerto San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Waves are 15 to 30 centimetres higher."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That has helped collapse natural barriers and let seawater flood parts of the town in Comondú."
+        },
+        {
+          "speaker": "host",
+          "text": "Residents have already seen the water come farther inland than before."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He expects the pattern to ease in 2027, though with some uncertainty [pause]."
+        },
+        {
+          "speaker": "host",
+          "text": "Stronger winter rains are also likely."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Imaz calls for a full study of protection options rather than rushing into a concrete wall."
+        },
+        {
+          "speaker": "host",
+          "text": "A wall would be temporary, costly and might not hold back the water anyway."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you ask the researchers first if they began that study?"
+        }
+      ]
+    },
+    {
+      "id": "contexto",
+      "title": "The context",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "According to El Financiero's report from November 13, Los Cabos air connections grew 61 percent over the past decade."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And arrivals nearly doubled in that same period."
+        },
+        {
+          "speaker": "host",
+          "text": "Rodrigo Esponda from Fiturca says the goal is to bring in more visitors from Canada, Europe and South America."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They want to offset any drop from the United States markets."
+        },
+        {
+          "speaker": "host",
+          "text": "Meganoticias reported on November 5 that Condor has started its third season of direct flights from Frankfurt."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The route runs Mondays and Fridays through March 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "It uses an A330-900neo aircraft."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The load factor is already at 92 percent."
+        },
+        {
+          "speaker": "host",
+          "text": "Germany accounts for more than 60 percent of those passengers."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It remains the only nonstop service between Europe and Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Meanwhile, Meganoticias on November 14 covered how El Niño has raised sea levels in Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "UABCS researcher Miguel Imaz said waves are 15 to 30 centimeters higher and natural barriers have collapsed."
+        },
+        {
+          "speaker": "host",
+          "text": "He expects the pattern to ease in 2027 but warned of stronger winter rains."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He also called for a full study of protection options."
+        },
+        {
+          "speaker": "host",
+          "text": "A concrete wall would be temporary and expensive, he noted."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Earlier, Meganoticias on November 3 reported over 300 homes still flooded in Puerto San Carlos after the berm failed."
+        },
+        {
+          "speaker": "host",
+          "text": "In nearby El Dátil, about 300 families face rising water and roughly 20 homes were damaged."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tribuna de México reported on September 28 that Hurricane Polo breached the protective berm and forced about 400 people into shelters."
+        },
+        {
+          "speaker": "host",
+          "text": "Mayor Roberto Pantoja said crews are ready to reinforce once conditions allow."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The same outlet noted on September 30 that the Navy closed ports in Cabo San Lucas and San José del Cabo to small craft during Hurricane Rachel."
+        },
+        {
+          "speaker": "host",
+          "text": "Sport fishing and glass-bottom boats were halted until seas calmed."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Gringo Gazette added on September 27 that beaches and ports across the state stayed closed amid eight to eleven foot swell."
+        },
+        {
+          "speaker": "host",
+          "text": "What stands out is how air links keep expanding while sea access for coastal towns keeps getting interrupted."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. One strengthens tourism options while the other affects daily life for fishing communities."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the researchers studying those berms next?"
+        }
+      ]
+    },
+    {
+      "id": "lugares",
+      "title": "Where and who",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "According to GlobeNewswire from November 9, Grupo Aeroportuario del Pacífico reports that Los Cabos airport handled 520.9 thousand passengers in October 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That figure sits 4.6 percent below the same month last year."
+        },
+        {
+          "speaker": "host",
+          "text": "International traffic there fell 5.9 percent."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz airport handled 108 thousand passengers that month."
+        },
+        {
+          "speaker": "host",
+          "text": "Its total dipped 2.1 percent, yet the year-to-date count reached 1.19 million."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That marks an 8.7 percent rise for La Paz so far."
+        },
+        {
+          "speaker": "host",
+          "text": "GAP also lists a new United route from Los Cabos to Washington Dulles."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Fiturca director Rodrigo Esponda told El Financiero on November 13 that air connections in Los Cabos grew 61 percent over the past decade."
+        },
+        {
+          "speaker": "host",
+          "text": "Private-aviation arrivals there have tripled during the same period."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The plan now focuses on markets like Canada, Europe and South America to offset fewer US travellers."
+        },
+        {
+          "speaker": "host",
+          "text": "They want to raise average spending and length of stay through niches such as nature, food and wellness."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Governor Víctor Castro said on October 21 he will ask the federal government to shift Cabo San Lucas port management to the state port authority."
+        },
+        {
+          "speaker": "host",
+          "text": "That state body already runs Pichilingue, Loreto and San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Asipona Cabo San Lucas holds a 50-year federal concession granted in February 2024, so the change stays a request for now."
+        },
+        {
+          "speaker": "host",
+          "text": "The Navy closed Santa Rosalía, Loreto, San Carlos, Bahía Magdalena and Adolfo López Mateos to small craft on November 3."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Península Digital reported the closures came because of cold front 4."
+        },
+        {
+          "speaker": "host",
+          "text": "Loreto civil protection warned of 30 to 50 km/h gusts and 2 to 3 metre waves on the west coast."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Reforma noted that tropical storm Vance flooded Los Cabos streets and swept vehicles in late October."
+        },
+        {
+          "speaker": "host",
+          "text": "Schools closed and beaches shut during the storm."
+        },
+        {
+          "speaker": "cohost",
+          "text": "UABCS researcher Miguel Imaz warned Meganoticias readers on November 14 that El Niño raised sea levels 15 to 30 centimeters around Puerto San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Natural barriers there collapsed, letting seawater reach streets more easily."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He expects stronger winter rains through the rest of 2026 even as the pattern weakens next year."
+        },
+        {
+          "speaker": "host",
+          "text": "A concrete wall would be only temporary and costly, he noted."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you ask the governor about handing the port concession to the state authority?"
+        },
+        {
+          "speaker": "host",
+          "text": "I keep wondering how daily operations for local fishers and boat operators might shift under new management. [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "claves",
+      "title": "What it means",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "According to GlobeNewswire from November 9, 2026, Grupo Aeroportuario del Pacífico reported Los Cabos handled 520.9 thousand passengers in October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is a notable monthly total."
+        },
+        {
+          "speaker": "host",
+          "text": "The same report shows it fell 4.6 percent from the same month in 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? International traffic dropped even more."
+        },
+        {
+          "speaker": "host",
+          "text": "Yes, international numbers were down 5.9 percent."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz tells a different story."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz handled 108 thousand passengers that month."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Down slightly for October, but the year-to-date picture improves."
+        },
+        {
+          "speaker": "host",
+          "text": "The year-to-date total reached 1.19 million, an 8.7 percent rise."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The report also notes a new United route from Los Cabos to Washington Dulles."
+        },
+        {
+          "speaker": "host",
+          "text": "El Financiero reports on November 13 that Los Cabos air connections grew 61 percent over the last decade."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Arrivals nearly doubled in that time."
+        },
+        {
+          "speaker": "host",
+          "text": "Private-aviation flights tripled during the same period."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Fiturca director Rodrigo Esponda says the goal is to offset fewer U.S. travellers with more visitors from Canada, Europe and South America."
+        },
+        {
+          "speaker": "host",
+          "text": "They also want to lift average spending and length of stay."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The strategy includes niches such as nature, food, wellness, meetings and branded residences."
+        },
+        {
+          "speaker": "host",
+          "text": "Diario El Independiente reported on October 21 that Governor Víctor Castro supports moving Cabo San Lucas port management to the state port authority."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The state already runs Pichilingue, Loreto and San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Asipona still holds the 50-year federal concession granted in February 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Castro plans to ask the federal government for the transfer."
+        },
+        {
+          "speaker": "host",
+          "text": "Península Digital noted on November 3 that the Navy closed five BCS ports to small craft because of cold front 4."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Reforma reported on October 28 that tropical storm Vance flooded Los Cabos streets and forced port closures."
+        },
+        {
+          "speaker": "host",
+          "text": "Meganoticias added on November 14 that El Niño has raised sea levels 15 to 30 centimetres in Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Researcher Miguel Imaz from UABCS warned this could bring more extraordinary tides through 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Imaz expects the pattern to weaken in 2027, though stronger winter rains may still arrive."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He called for a full study before any permanent protection like a concrete wall."
+        },
+        {
+          "speaker": "host",
+          "text": "What changes for residents if air links keep growing while port operations stay split between federal and state hands? [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "And how might the planned market diversification affect smaller communities that rely on those same airports and ports? [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "pendientes",
+      "title": "What we still don't know",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "According to Diario El Independiente on 21 October, Governor Víctor Castro supports shifting Cabo San Lucas port management from the Navy-run Asipona to the state port authority."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That authority already handles Pichilingue, Loreto and San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "The governor plans to request the change from the federal government."
+        },
+        {
+          "speaker": "cohost",
+          "text": "But the report makes clear this remains only a political intention."
+        },
+        {
+          "speaker": "host",
+          "text": "Asipona received its 50-year federal concession in February 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So the next step is whether the federal government agrees to transfer it."
+        },
+        {
+          "speaker": "host",
+          "text": "According to Meganoticias on 14 November, researcher Miguel Imaz at UABCS notes El Niño has already raised waves in Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "By how much?"
+        },
+        {
+          "speaker": "host",
+          "text": "15 to 30 centimetres."
+        },
+        {
+          "speaker": "cohost",
+          "text": "He expects the phenomenon to weaken in 2027, yet uncertainty remains."
+        },
+        {
+          "speaker": "host",
+          "text": "Imaz called for a full study of protection options before any permanent works."
+        },
+        {
+          "speaker": "cohost",
+          "text": "A concrete wall, he said, would be temporary, expensive and might not stop the water."
+        },
+        {
+          "speaker": "host",
+          "text": "According to El Financiero on 13 November, Fiturca director Rodrigo Esponda reports air connections in Los Cabos grew 61 percent over the past decade."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Arrivals nearly doubled in that time."
+        },
+        {
+          "speaker": "host",
+          "text": "According to GlobeNewswire the same day, Los Cabos saw 520.9 thousand passengers in October, down 4.6 percent."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz, by contrast, rose 8.7 percent year to date."
+        },
+        {
+          "speaker": "host",
+          "text": "One new United route to Washington Dulles is listed, and Condor resumed Frankfurt flights on 2 November at 92 percent load."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What remains unclear is how these routes and any port changes will affect day-to-day operations for residents and small businesses along the coast."
+        },
+        {
+          "speaker": "host",
+          "text": "Península Digital reported the Navy closed five ports including Santa Rosalía and Loreto to small craft on 3 November."
+        },
+        {
+          "speaker": "cohost",
+          "text": "We still do not know how long those closures lasted or what cargo delays followed."
+        },
+        {
+          "speaker": "host",
+          "text": "Reforma covered Tropical Storm Vance flooding Los Cabos streets and sweeping vehicles on 28 October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The open question is whether similar storms will hit again before the 2027 season."
+        },
+        {
+          "speaker": "host",
+          "text": "El Financiero also noted private-aviation arrivals tripled in Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yet we do not know how much extra revenue that brings local suppliers."
+        },
+        {
+          "speaker": "host",
+          "text": "Meganoticias added that Germany accounts for more than 60 percent of Condor passengers on the new Frankfurt route."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It will be worth watching whether other European carriers follow."
+        },
+        {
+          "speaker": "host",
+          "text": "The reports leave several dates open, including any federal reply on the port transfer and the timing of the UABCS protection study."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What do you think should be tracked first in the coming months?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Food for thought",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Today we looked at Los Cabos efforts to improve its air connections and bring in a wider range of visitors."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And the push for the state port authority to take over operations at Cabo San Lucas port, with support from Víctor Castro."
+        },
+        {
+          "speaker": "host",
+          "text": "Those two stories touch the daily rhythm for many people across Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Better connections could open steadier work for drivers, guides and hotel teams even outside the busiest months."
+        },
+        {
+          "speaker": "host",
+          "text": "A local port authority might speed up choices on repairs and safety after storms like the one we saw with Vance."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] I keep wondering how these changes land for someone who works at the airport or along the docks every day."
+        },
+        {
+          "speaker": "host",
+          "text": "It shifts the feel of the season when new visitors start showing up from places that rarely sent flights before."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And port decisions sitting closer to the state could change how quickly things get fixed after rough weather."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you do if new routes brought travelers to your town who had never come before?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Or if port choices moved from federal offices to state hands—would that feel closer or farther away to you?"
+        },
+        {
+          "speaker": "host",
+          "text": "Those are the questions that stay with us after the news we heard."
+        }
+      ]
+    }
+  ]
+}

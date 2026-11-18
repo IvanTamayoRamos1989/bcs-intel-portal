@@ -1,9 +1,9 @@
 {
   "schedules": [
     {
-      "start": "2026-11-18T14:11:57Z",
-      "total": 14002.46,
-      "episodes": 11,
+      "start": "2026-11-18T15:06:46Z",
+      "total": 8844.18,
+      "episodes": 7,
       "items": [
         {
           "src": "/radio/music/id_en_1.mp3",
@@ -11,76 +11,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/01.mp3",
-          "d": 79.54,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/01.mp3",
+          "d": 102.0,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/02.mp3",
-          "d": 209.14,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/02.mp3",
+          "d": 212.66,
           "kind": "talk",
-          "ch": "Act 1 · What's happening",
+          "ch": "What happened",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/03.mp3",
-          "d": 164.71,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/03.mp3",
+          "d": 168.6,
           "kind": "talk",
-          "ch": "People and places",
+          "ch": "More news",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/04.mp3",
-          "d": 205.18,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/04.mp3",
+          "d": 163.25,
           "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
+          "ch": "The context",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/05.mp3",
-          "d": 168.46,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/05.mp3",
+          "d": 177.55,
           "kind": "talk",
-          "ch": "Did you know?",
+          "ch": "Where and who",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/06.mp3",
-          "d": 166.13,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/06.mp3",
+          "d": 182.35,
           "kind": "talk",
-          "ch": "The hidden design",
+          "ch": "What it means",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/07.mp3",
-          "d": 168.46,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/07.mp3",
+          "d": 181.44,
           "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
+          "ch": "What we still don't know",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/en/08.mp3",
-          "d": 73.75,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/en/08.mp3",
+          "d": 74.18,
           "kind": "talk",
-          "ch": "The takeaway",
+          "ch": "Food for thought",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Connectivity"
+          "topic": "noticias-conectividad",
+          "name": "News · Connectivity",
+          "title": "October Passenger Figures at Los Cabos and La Paz Airports",
+          "num": 1
         },
         {
           "src": "/radio/music/break_romanza.mp3",
@@ -93,76 +109,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/01.mp3",
-          "d": 84.22,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/01.mp3",
+          "d": 101.35,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/02.mp3",
-          "d": 198.17,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/02.mp3",
+          "d": 166.85,
           "kind": "talk",
-          "ch": "Act 1 · What's happening",
+          "ch": "What happened",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/03.mp3",
-          "d": 204.98,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/03.mp3",
+          "d": 213.48,
           "kind": "talk",
-          "ch": "People and places",
+          "ch": "More news",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/04.mp3",
-          "d": 215.66,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/04.mp3",
+          "d": 160.94,
           "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
+          "ch": "The context",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/05.mp3",
-          "d": 132.72,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/05.mp3",
+          "d": 155.64,
           "kind": "talk",
-          "ch": "Did you know?",
+          "ch": "Where and who",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/06.mp3",
-          "d": 183.14,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/06.mp3",
+          "d": 167.42,
           "kind": "talk",
-          "ch": "The hidden design",
+          "ch": "What it means",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/07.mp3",
-          "d": 167.59,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/07.mp3",
+          "d": 156.05,
           "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
+          "ch": "What we still don't know",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/en/08.mp3",
-          "d": 74.45,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/08.mp3",
+          "d": 68.3,
           "kind": "talk",
-          "ch": "The takeaway",
+          "ch": "Food for thought",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Environment"
+          "topic": "noticias-infraestructura",
+          "name": "News · Infrastructure",
+          "title": "Paving in La Paz and Oasis Tender in Mulegé",
+          "num": 2
         },
         {
           "src": "/radio/music/break_romance.mp3",
@@ -175,76 +207,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/01.mp3",
-          "d": 85.32,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/01.mp3",
+          "d": 77.59,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/02.mp3",
-          "d": 206.38,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/02.mp3",
+          "d": 181.01,
           "kind": "talk",
-          "ch": "Act 1 · What's happening",
+          "ch": "What happened",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/03.mp3",
-          "d": 160.99,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/03.mp3",
+          "d": 161.9,
           "kind": "talk",
-          "ch": "People and places",
+          "ch": "More news",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/04.mp3",
-          "d": 219.5,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/04.mp3",
+          "d": 164.11,
           "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
+          "ch": "The context",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/05.mp3",
-          "d": 130.42,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/05.mp3",
+          "d": 192.0,
           "kind": "talk",
-          "ch": "Did you know?",
+          "ch": "Where and who",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/06.mp3",
-          "d": 143.54,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/06.mp3",
+          "d": 166.34,
           "kind": "talk",
-          "ch": "The hidden design",
+          "ch": "What it means",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/07.mp3",
-          "d": 194.9,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/07.mp3",
+          "d": 166.42,
           "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
+          "ch": "What we still don't know",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/en/08.mp3",
-          "d": 92.06,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/08.mp3",
+          "d": 79.34,
           "kind": "talk",
-          "ch": "The takeaway",
+          "ch": "Food for thought",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Water"
+          "topic": "noticias-medio_ambiente",
+          "name": "News · Environment",
+          "title": "Notice 638 forecasts surf on Baja California Sur coast",
+          "num": 3
         },
         {
           "src": "/radio/music/break_cielito.mp3",
@@ -257,76 +305,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/01.mp3",
-          "d": 85.78,
+          "src": "/radio/editions/2026-11-18/datos-economia/en/01.mp3",
+          "d": 86.66,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/02.mp3",
-          "d": 198.65,
+          "src": "/radio/editions/2026-11-18/datos-economia/en/02.mp3",
+          "d": 158.45,
           "kind": "talk",
-          "ch": "Act 1 · What's happening",
+          "ch": "The numbers",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/03.mp3",
-          "d": 180.6,
+          "src": "/radio/editions/2026-11-18/datos-economia/en/03.mp3",
+          "d": 200.26,
           "kind": "talk",
-          "ch": "People and places",
+          "ch": "The territory",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/04.mp3",
-          "d": 178.22,
+          "src": "/radio/editions/2026-11-18/datos-economia/en/04.mp3",
+          "d": 167.9,
           "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
+          "ch": "The documents",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/05.mp3",
-          "d": 138.74,
+          "src": "/radio/editions/2026-11-18/datos-economia/en/05.mp3",
+          "d": 170.95,
+          "kind": "talk",
+          "ch": "How it connects",
+          "date": "2026-11-18",
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
+        },
+        {
+          "src": "/radio/editions/2026-11-18/datos-economia/en/06.mp3",
+          "d": 138.67,
           "kind": "talk",
           "ch": "Did you know?",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/06.mp3",
-          "d": 137.06,
+          "src": "/radio/editions/2026-11-18/datos-economia/en/07.mp3",
+          "d": 203.06,
           "kind": "talk",
-          "ch": "The hidden design",
+          "ch": "How to read the data",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/07.mp3",
-          "d": 194.28,
+          "src": "/radio/editions/2026-11-18/datos-economia/en/08.mp3",
+          "d": 80.59,
           "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
+          "ch": "Food for thought",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/infraestructura/en/08.mp3",
-          "d": 80.57,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infrastructure"
+          "topic": "datos-economia",
+          "name": "Portal data · Economy",
+          "title": "Portal Economy Data Sources for Baja California Sur",
+          "num": 4
         },
         {
           "src": "/radio/music/break_horizon.mp3",
@@ -339,76 +403,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/en/01.mp3",
-          "d": 77.86,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/01.mp3",
+          "d": 77.9,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/en/02.mp3",
-          "d": 193.18,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/02.mp3",
+          "d": 216.24,
           "kind": "talk",
-          "ch": "Act 1 · What's happening",
+          "ch": "The numbers",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/en/03.mp3",
-          "d": 181.44,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/03.mp3",
+          "d": 177.86,
           "kind": "talk",
-          "ch": "People and places",
+          "ch": "The territory",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/en/04.mp3",
-          "d": 185.3,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/04.mp3",
+          "d": 154.54,
           "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
+          "ch": "The documents",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/en/05.mp3",
-          "d": 179.93,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/05.mp3",
+          "d": 167.9,
+          "kind": "talk",
+          "ch": "How it connects",
+          "date": "2026-11-18",
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
+        },
+        {
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/06.mp3",
+          "d": 183.62,
           "kind": "talk",
           "ch": "Did you know?",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/en/06.mp3",
-          "d": 190.46,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/07.mp3",
+          "d": 156.86,
           "kind": "talk",
-          "ch": "The hidden design",
+          "ch": "How to read the data",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/en/07.mp3",
-          "d": 219.84,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/en/08.mp3",
+          "d": 82.9,
           "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
+          "ch": "Food for thought",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/finanzas/en/08.mp3",
-          "d": 87.12,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finance"
+          "topic": "datos-conectividad",
+          "name": "Portal data · Connectivity",
+          "title": "Portal Connectivity Data for Los Cabos",
+          "num": 5
         },
         {
           "src": "/radio/music/break_bossa.mp3",
@@ -421,76 +501,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/01.mp3",
-          "d": 91.13,
+          "src": "/radio/editions/2026-11-18/tendencia/en/01.mp3",
+          "d": 95.21,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/02.mp3",
-          "d": 149.88,
+          "src": "/radio/editions/2026-11-18/tendencia/en/02.mp3",
+          "d": 182.14,
           "kind": "talk",
-          "ch": "Act 1 · What's happening",
+          "ch": "What changed this week",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/03.mp3",
-          "d": 220.8,
+          "src": "/radio/editions/2026-11-18/tendencia/en/03.mp3",
+          "d": 201.62,
           "kind": "talk",
-          "ch": "People and places",
+          "ch": "The scenarios",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/04.mp3",
-          "d": 174.36,
+          "src": "/radio/editions/2026-11-18/tendencia/en/04.mp3",
+          "d": 200.71,
           "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
+          "ch": "The signals",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/05.mp3",
-          "d": 157.92,
+          "src": "/radio/editions/2026-11-18/tendencia/en/05.mp3",
+          "d": 201.6,
           "kind": "talk",
-          "ch": "Did you know?",
+          "ch": "The data behind it",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/06.mp3",
-          "d": 160.58,
+          "src": "/radio/editions/2026-11-18/tendencia/en/06.mp3",
+          "d": 157.94,
           "kind": "talk",
-          "ch": "The hidden design",
+          "ch": "What to watch",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/07.mp3",
-          "d": 212.54,
+          "src": "/radio/editions/2026-11-18/tendencia/en/07.mp3",
+          "d": 158.45,
           "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
+          "ch": "What could change it",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/en/08.mp3",
-          "d": 61.97,
+          "src": "/radio/editions/2026-11-18/tendencia/en/08.mp3",
+          "d": 51.14,
           "kind": "talk",
-          "ch": "The takeaway",
+          "ch": "Food for thought",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Development"
+          "topic": "tendencia",
+          "name": "Trend 2050",
+          "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
+          "num": 6
         },
         {
           "src": "/radio/music/break_beachbum.mp3",
@@ -503,407 +599,95 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/01.mp3",
-          "d": 78.41,
+          "src": "/radio/editions/2026-11-18/vision/en/01.mp3",
+          "d": 95.06,
           "kind": "talk",
           "ch": "Cold open",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/02.mp3",
-          "d": 192.05,
+          "src": "/radio/editions/2026-11-18/vision/en/02.mp3",
+          "d": 185.35,
           "kind": "talk",
-          "ch": "Act 1 · What's happening",
+          "ch": "Water and coast",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/03.mp3",
-          "d": 174.62,
+          "src": "/radio/editions/2026-11-18/vision/en/03.mp3",
+          "d": 201.29,
           "kind": "talk",
-          "ch": "People and places",
+          "ch": "Tourism and economy",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/04.mp3",
-          "d": 185.06,
+          "src": "/radio/editions/2026-11-18/vision/en/04.mp3",
+          "d": 204.48,
           "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
+          "ch": "Energy and mobility",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/05.mp3",
-          "d": 160.78,
+          "src": "/radio/editions/2026-11-18/vision/en/05.mp3",
+          "d": 168.24,
           "kind": "talk",
-          "ch": "Did you know?",
+          "ch": "Housing and governance",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/06.mp3",
-          "d": 199.39,
+          "src": "/radio/editions/2026-11-18/vision/en/06.mp3",
+          "d": 161.02,
           "kind": "talk",
-          "ch": "The hidden design",
+          "ch": "The conditions",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/07.mp3",
-          "d": 196.85,
+          "src": "/radio/editions/2026-11-18/vision/en/07.mp3",
+          "d": 154.75,
           "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
+          "ch": "The levers",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/en/08.mp3",
-          "d": 67.61,
+          "src": "/radio/editions/2026-11-18/vision/en/08.mp3",
+          "d": 78.26,
           "kind": "talk",
-          "ch": "The takeaway",
+          "ch": "Food for thought",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Tourism"
+          "topic": "vision",
+          "name": "Vision 2050",
+          "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
+          "num": 7
         },
         {
           "src": "/radio/music/break_surf.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_en_2.mp3",
-          "d": 9.98,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/01.mp3",
-          "d": 91.1,
-          "kind": "talk",
-          "ch": "Cold open",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/02.mp3",
-          "d": 199.56,
-          "kind": "talk",
-          "ch": "Act 1 · What's happening",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/03.mp3",
-          "d": 186.17,
-          "kind": "talk",
-          "ch": "People and places",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/04.mp3",
-          "d": 168.67,
-          "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/05.mp3",
-          "d": 161.35,
-          "kind": "talk",
-          "ch": "Did you know?",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/06.mp3",
-          "d": 156.31,
-          "kind": "talk",
-          "ch": "The hidden design",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/07.mp3",
-          "d": 215.35,
-          "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/en/08.mp3",
-          "d": 64.22,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economy"
-        },
-        {
-          "src": "/radio/music/break_romanza.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_en_3.mp3",
-          "d": 9.29,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/01.mp3",
-          "d": 88.7,
-          "kind": "talk",
-          "ch": "Cold open",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/02.mp3",
-          "d": 176.54,
-          "kind": "talk",
-          "ch": "Act 1 · What's happening",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/03.mp3",
-          "d": 186.55,
-          "kind": "talk",
-          "ch": "People and places",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/04.mp3",
-          "d": 165.5,
-          "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/05.mp3",
-          "d": 149.64,
-          "kind": "talk",
-          "ch": "Did you know?",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/06.mp3",
-          "d": 176.26,
-          "kind": "talk",
-          "ch": "The hidden design",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/07.mp3",
-          "d": 204.79,
-          "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/en/08.mp3",
-          "d": 53.35,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanism"
-        },
-        {
-          "src": "/radio/music/break_romance.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_en_1.mp3",
-          "d": 10.99,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/01.mp3",
-          "d": 90.55,
-          "kind": "talk",
-          "ch": "Cold open",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/02.mp3",
-          "d": 159.19,
-          "kind": "talk",
-          "ch": "Act 1 · What's happening",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/03.mp3",
-          "d": 160.13,
-          "kind": "talk",
-          "ch": "People and places",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/04.mp3",
-          "d": 179.35,
-          "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/05.mp3",
-          "d": 153.05,
-          "kind": "talk",
-          "ch": "Did you know?",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/06.mp3",
-          "d": 190.56,
-          "kind": "talk",
-          "ch": "The hidden design",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/07.mp3",
-          "d": 185.35,
-          "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/en/08.mp3",
-          "d": 78.86,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Security"
-        },
-        {
-          "src": "/radio/music/break_cielito.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_en_2.mp3",
-          "d": 9.98,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/01.mp3",
-          "d": 100.82,
-          "kind": "talk",
-          "ch": "Cold open",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/02.mp3",
-          "d": 179.23,
-          "kind": "talk",
-          "ch": "Act 1 · What's happening",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/03.mp3",
-          "d": 167.74,
-          "kind": "talk",
-          "ch": "People and places",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/04.mp3",
-          "d": 192.6,
-          "kind": "talk",
-          "ch": "Act 2 · The hidden thread",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/05.mp3",
-          "d": 125.66,
-          "kind": "talk",
-          "ch": "Did you know?",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/06.mp3",
-          "d": 173.93,
-          "kind": "talk",
-          "ch": "The hidden design",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/07.mp3",
-          "d": 181.9,
-          "kind": "talk",
-          "ch": "Act 3 · Toward 2050",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/en/08.mp3",
-          "d": 74.9,
-          "kind": "talk",
-          "ch": "The takeaway",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transport"
-        },
-        {
-          "src": "/radio/music/break_horizon.mp3",
           "d": 30.04,
           "kind": "music"
         }

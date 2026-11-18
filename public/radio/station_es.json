@@ -1,9 +1,9 @@
 {
   "schedules": [
     {
-      "start": "2026-11-18T14:11:57Z",
-      "total": 14089.05,
-      "episodes": 11,
+      "start": "2026-11-18T15:06:46Z",
+      "total": 9023.84,
+      "episodes": 7,
       "items": [
         {
           "src": "/radio/music/id_es_1.mp3",
@@ -11,76 +11,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/01.mp3",
-          "d": 95.52,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/01.mp3",
+          "d": 99.36,
           "kind": "talk",
           "ch": "Entrada",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/02.mp3",
-          "d": 204.7,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/02.mp3",
+          "d": 175.2,
           "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
+          "ch": "Lo que pasó",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/03.mp3",
-          "d": 186.91,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/03.mp3",
+          "d": 179.35,
           "kind": "talk",
-          "ch": "Las personas y los lugares",
+          "ch": "Más noticias",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/04.mp3",
-          "d": 207.02,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/04.mp3",
+          "d": 168.6,
           "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
+          "ch": "El contexto",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/05.mp3",
-          "d": 135.86,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/05.mp3",
+          "d": 168.55,
           "kind": "talk",
-          "ch": "¿Sabías que…?",
+          "ch": "Dónde y a quién",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/06.mp3",
-          "d": 200.3,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/06.mp3",
+          "d": 198.62,
           "kind": "talk",
-          "ch": "El diseño invisible",
+          "ch": "Qué significa",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/07.mp3",
-          "d": 170.81,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/07.mp3",
+          "d": 147.29,
           "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
+          "ch": "Lo que falta saber",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
-          "src": "/radio/editions/2026-11-18/conectividad/es/08.mp3",
-          "d": 46.78,
+          "src": "/radio/editions/2026-11-18/noticias-conectividad/es/08.mp3",
+          "d": 60.19,
           "kind": "talk",
-          "ch": "Para llevar",
+          "ch": "Para pensar",
           "date": "2026-11-18",
-          "topic": "conectividad",
-          "name": "Conectividad"
+          "topic": "noticias-conectividad",
+          "name": "Noticias · Conectividad",
+          "title": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "num": 1
         },
         {
           "src": "/radio/music/break_romanza.mp3",
@@ -93,76 +109,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/01.mp3",
-          "d": 95.18,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/01.mp3",
+          "d": 89.3,
           "kind": "talk",
           "ch": "Entrada",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/02.mp3",
-          "d": 195.43,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/02.mp3",
+          "d": 217.7,
           "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
+          "ch": "Lo que pasó",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/03.mp3",
-          "d": 150.74,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/03.mp3",
+          "d": 199.13,
           "kind": "talk",
-          "ch": "Las personas y los lugares",
+          "ch": "Más noticias",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/04.mp3",
-          "d": 236.54,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/04.mp3",
+          "d": 192.94,
           "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
+          "ch": "El contexto",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/05.mp3",
-          "d": 137.3,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/05.mp3",
+          "d": 165.34,
           "kind": "talk",
-          "ch": "¿Sabías que…?",
+          "ch": "Dónde y a quién",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/06.mp3",
-          "d": 192.0,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/06.mp3",
+          "d": 154.27,
           "kind": "talk",
-          "ch": "El diseño invisible",
+          "ch": "Qué significa",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/07.mp3",
-          "d": 165.43,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/07.mp3",
+          "d": 156.46,
           "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
+          "ch": "Lo que falta saber",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
-          "src": "/radio/editions/2026-11-18/medio_ambiente/es/08.mp3",
-          "d": 49.97,
+          "src": "/radio/editions/2026-11-18/noticias-infraestructura/es/08.mp3",
+          "d": 73.39,
           "kind": "talk",
-          "ch": "Para llevar",
+          "ch": "Para pensar",
           "date": "2026-11-18",
-          "topic": "medio_ambiente",
-          "name": "Medio ambiente"
+          "topic": "noticias-infraestructura",
+          "name": "Noticias · Infraestructura",
+          "title": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "num": 2
         },
         {
           "src": "/radio/music/break_romance.mp3",
@@ -175,76 +207,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/01.mp3",
-          "d": 96.5,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/01.mp3",
+          "d": 81.31,
           "kind": "talk",
           "ch": "Entrada",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/02.mp3",
-          "d": 237.79,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/02.mp3",
+          "d": 194.54,
           "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
+          "ch": "Lo que pasó",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/03.mp3",
-          "d": 177.94,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/03.mp3",
+          "d": 172.9,
           "kind": "talk",
-          "ch": "Las personas y los lugares",
+          "ch": "Más noticias",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/04.mp3",
-          "d": 194.98,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/04.mp3",
+          "d": 213.1,
           "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
+          "ch": "El contexto",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/05.mp3",
-          "d": 139.68,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/05.mp3",
+          "d": 167.47,
           "kind": "talk",
-          "ch": "¿Sabías que…?",
+          "ch": "Dónde y a quién",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/06.mp3",
-          "d": 155.18,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/06.mp3",
+          "d": 171.05,
           "kind": "talk",
-          "ch": "El diseño invisible",
+          "ch": "Qué significa",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/07.mp3",
-          "d": 201.02,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/07.mp3",
+          "d": 158.78,
           "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
+          "ch": "Lo que falta saber",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
-          "src": "/radio/editions/2026-11-18/agua/es/08.mp3",
-          "d": 41.78,
+          "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/es/08.mp3",
+          "d": 70.22,
           "kind": "talk",
-          "ch": "Para llevar",
+          "ch": "Para pensar",
           "date": "2026-11-18",
-          "topic": "agua",
-          "name": "Agua"
+          "topic": "noticias-medio_ambiente",
+          "name": "Noticias · Medio ambiente",
+          "title": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "num": 3
         },
         {
           "src": "/radio/music/break_cielito.mp3",
@@ -257,76 +305,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/01.mp3",
+          "src": "/radio/editions/2026-11-18/datos-economia/es/01.mp3",
           "d": 98.35,
           "kind": "talk",
           "ch": "Entrada",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/02.mp3",
-          "d": 243.62,
+          "src": "/radio/editions/2026-11-18/datos-economia/es/02.mp3",
+          "d": 169.08,
           "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
+          "ch": "Las cifras",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/03.mp3",
-          "d": 174.29,
+          "src": "/radio/editions/2026-11-18/datos-economia/es/03.mp3",
+          "d": 197.98,
           "kind": "talk",
-          "ch": "Las personas y los lugares",
+          "ch": "El territorio",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/04.mp3",
-          "d": 207.86,
+          "src": "/radio/editions/2026-11-18/datos-economia/es/04.mp3",
+          "d": 161.06,
           "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
+          "ch": "Los documentos",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/05.mp3",
-          "d": 143.26,
+          "src": "/radio/editions/2026-11-18/datos-economia/es/05.mp3",
+          "d": 194.06,
+          "kind": "talk",
+          "ch": "Cómo se conecta",
+          "date": "2026-11-18",
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
+        },
+        {
+          "src": "/radio/editions/2026-11-18/datos-economia/es/06.mp3",
+          "d": 158.33,
           "kind": "talk",
           "ch": "¿Sabías que…?",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/06.mp3",
-          "d": 152.54,
+          "src": "/radio/editions/2026-11-18/datos-economia/es/07.mp3",
+          "d": 175.73,
           "kind": "talk",
-          "ch": "El diseño invisible",
+          "ch": "Cómo leer los datos",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
         },
         {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/07.mp3",
-          "d": 196.46,
+          "src": "/radio/editions/2026-11-18/datos-economia/es/08.mp3",
+          "d": 75.46,
           "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
+          "ch": "Para pensar",
           "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/infraestructura/es/08.mp3",
-          "d": 24.77,
-          "kind": "talk",
-          "ch": "Para llevar",
-          "date": "2026-11-18",
-          "topic": "infraestructura",
-          "name": "Infraestructura"
+          "topic": "datos-economia",
+          "name": "Datos del portal · Economía",
+          "title": "Fuentes de datos económicos del portal en Baja California Sur",
+          "num": 4
         },
         {
           "src": "/radio/music/break_horizon.mp3",
@@ -339,76 +403,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/es/01.mp3",
-          "d": 92.28,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/01.mp3",
+          "d": 92.93,
           "kind": "talk",
           "ch": "Entrada",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/es/02.mp3",
-          "d": 186.19,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/02.mp3",
+          "d": 211.56,
           "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
+          "ch": "Las cifras",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/es/03.mp3",
-          "d": 165.02,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/03.mp3",
+          "d": 159.58,
           "kind": "talk",
-          "ch": "Las personas y los lugares",
+          "ch": "El territorio",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/es/04.mp3",
-          "d": 195.48,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/04.mp3",
+          "d": 153.86,
           "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
+          "ch": "Los documentos",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/es/05.mp3",
-          "d": 176.18,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/05.mp3",
+          "d": 203.54,
+          "kind": "talk",
+          "ch": "Cómo se conecta",
+          "date": "2026-11-18",
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
+        },
+        {
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/06.mp3",
+          "d": 152.33,
           "kind": "talk",
           "ch": "¿Sabías que…?",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/es/06.mp3",
-          "d": 172.51,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/07.mp3",
+          "d": 175.82,
           "kind": "talk",
-          "ch": "El diseño invisible",
+          "ch": "Cómo leer los datos",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
         },
         {
-          "src": "/radio/editions/2026-11-18/finanzas/es/07.mp3",
-          "d": 178.94,
+          "src": "/radio/editions/2026-11-18/datos-conectividad/es/08.mp3",
+          "d": 86.38,
           "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
+          "ch": "Para pensar",
           "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/finanzas/es/08.mp3",
-          "d": 57.41,
-          "kind": "talk",
-          "ch": "Para llevar",
-          "date": "2026-11-18",
-          "topic": "finanzas",
-          "name": "Finanzas"
+          "topic": "datos-conectividad",
+          "name": "Datos del portal · Conectividad",
+          "title": "Datos del portal de conectividad en Los Cabos",
+          "num": 5
         },
         {
           "src": "/radio/music/break_bossa.mp3",
@@ -421,76 +501,92 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/01.mp3",
-          "d": 98.26,
+          "src": "/radio/editions/2026-11-18/tendencia/es/01.mp3",
+          "d": 105.72,
           "kind": "talk",
           "ch": "Entrada",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/02.mp3",
-          "d": 216.5,
+          "src": "/radio/editions/2026-11-18/tendencia/es/02.mp3",
+          "d": 185.23,
           "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
+          "ch": "Qué cambió esta semana",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/03.mp3",
-          "d": 217.2,
+          "src": "/radio/editions/2026-11-18/tendencia/es/03.mp3",
+          "d": 203.23,
           "kind": "talk",
-          "ch": "Las personas y los lugares",
+          "ch": "Los escenarios",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/04.mp3",
-          "d": 198.0,
+          "src": "/radio/editions/2026-11-18/tendencia/es/04.mp3",
+          "d": 212.93,
           "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
+          "ch": "Las señales",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/05.mp3",
-          "d": 134.93,
+          "src": "/radio/editions/2026-11-18/tendencia/es/05.mp3",
+          "d": 213.26,
           "kind": "talk",
-          "ch": "¿Sabías que…?",
+          "ch": "Los datos detrás",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/06.mp3",
+          "src": "/radio/editions/2026-11-18/tendencia/es/06.mp3",
+          "d": 196.08,
+          "kind": "talk",
+          "ch": "Qué vigilar",
+          "date": "2026-11-18",
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
+        },
+        {
+          "src": "/radio/editions/2026-11-18/tendencia/es/07.mp3",
           "d": 155.06,
           "kind": "talk",
-          "ch": "El diseño invisible",
+          "ch": "Lo que podría cambiar",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
         },
         {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/07.mp3",
-          "d": 190.46,
+          "src": "/radio/editions/2026-11-18/tendencia/es/08.mp3",
+          "d": 81.74,
           "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
+          "ch": "Para pensar",
           "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/desarrollo/es/08.mp3",
-          "d": 46.13,
-          "kind": "talk",
-          "ch": "Para llevar",
-          "date": "2026-11-18",
-          "topic": "desarrollo",
-          "name": "Desarrollo"
+          "topic": "tendencia",
+          "name": "Tendencia 2050",
+          "title": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "num": 6
         },
         {
           "src": "/radio/music/break_beachbum.mp3",
@@ -503,407 +599,95 @@
           "kind": "id"
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/01.mp3",
-          "d": 114.41,
+          "src": "/radio/editions/2026-11-18/vision/es/01.mp3",
+          "d": 90.62,
           "kind": "talk",
           "ch": "Entrada",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/02.mp3",
-          "d": 204.22,
+          "src": "/radio/editions/2026-11-18/vision/es/02.mp3",
+          "d": 179.52,
           "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
+          "ch": "Agua y costa",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/03.mp3",
-          "d": 189.1,
+          "src": "/radio/editions/2026-11-18/vision/es/03.mp3",
+          "d": 201.05,
           "kind": "talk",
-          "ch": "Las personas y los lugares",
+          "ch": "Turismo y economía",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/04.mp3",
-          "d": 204.29,
+          "src": "/radio/editions/2026-11-18/vision/es/04.mp3",
+          "d": 191.35,
           "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
+          "ch": "Energía y movilidad",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/05.mp3",
-          "d": 131.54,
+          "src": "/radio/editions/2026-11-18/vision/es/05.mp3",
+          "d": 173.42,
           "kind": "talk",
-          "ch": "¿Sabías que…?",
+          "ch": "Vivienda y gobierno",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/06.mp3",
-          "d": 170.04,
+          "src": "/radio/editions/2026-11-18/vision/es/06.mp3",
+          "d": 155.66,
           "kind": "talk",
-          "ch": "El diseño invisible",
+          "ch": "Las condiciones",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/07.mp3",
-          "d": 186.24,
+          "src": "/radio/editions/2026-11-18/vision/es/07.mp3",
+          "d": 174.6,
           "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
+          "ch": "Las palancas",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
-          "src": "/radio/editions/2026-11-18/turismo/es/08.mp3",
-          "d": 34.08,
+          "src": "/radio/editions/2026-11-18/vision/es/08.mp3",
+          "d": 80.81,
           "kind": "talk",
-          "ch": "Para llevar",
+          "ch": "Para pensar",
           "date": "2026-11-18",
-          "topic": "turismo",
-          "name": "Turismo"
+          "topic": "vision",
+          "name": "Visión 2050",
+          "title": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "num": 7
         },
         {
           "src": "/radio/music/break_surf.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_es_2.mp3",
-          "d": 9.62,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/01.mp3",
-          "d": 101.33,
-          "kind": "talk",
-          "ch": "Entrada",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/02.mp3",
-          "d": 201.74,
-          "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/03.mp3",
-          "d": 177.02,
-          "kind": "talk",
-          "ch": "Las personas y los lugares",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/04.mp3",
-          "d": 225.72,
-          "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/05.mp3",
-          "d": 196.9,
-          "kind": "talk",
-          "ch": "¿Sabías que…?",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/06.mp3",
-          "d": 167.33,
-          "kind": "talk",
-          "ch": "El diseño invisible",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/07.mp3",
-          "d": 200.66,
-          "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/economia/es/08.mp3",
-          "d": 48.29,
-          "kind": "talk",
-          "ch": "Para llevar",
-          "date": "2026-11-18",
-          "topic": "economia",
-          "name": "Economía"
-        },
-        {
-          "src": "/radio/music/break_romanza.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_es_3.mp3",
-          "d": 9.98,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/01.mp3",
-          "d": 112.58,
-          "kind": "talk",
-          "ch": "Entrada",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/02.mp3",
-          "d": 199.06,
-          "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/03.mp3",
-          "d": 195.29,
-          "kind": "talk",
-          "ch": "Las personas y los lugares",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/04.mp3",
-          "d": 171.41,
-          "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/05.mp3",
-          "d": 156.74,
-          "kind": "talk",
-          "ch": "¿Sabías que…?",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/06.mp3",
-          "d": 151.75,
-          "kind": "talk",
-          "ch": "El diseño invisible",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/07.mp3",
-          "d": 166.13,
-          "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/urbanismo/es/08.mp3",
-          "d": 66.65,
-          "kind": "talk",
-          "ch": "Para llevar",
-          "date": "2026-11-18",
-          "topic": "urbanismo",
-          "name": "Urbanismo"
-        },
-        {
-          "src": "/radio/music/break_romance.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_es_1.mp3",
-          "d": 10.99,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/01.mp3",
-          "d": 90.86,
-          "kind": "talk",
-          "ch": "Entrada",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/02.mp3",
-          "d": 190.51,
-          "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/03.mp3",
-          "d": 171.22,
-          "kind": "talk",
-          "ch": "Las personas y los lugares",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/04.mp3",
-          "d": 182.66,
-          "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/05.mp3",
-          "d": 146.06,
-          "kind": "talk",
-          "ch": "¿Sabías que…?",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/06.mp3",
-          "d": 171.41,
-          "kind": "talk",
-          "ch": "El diseño invisible",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/07.mp3",
-          "d": 231.55,
-          "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/crimen/es/08.mp3",
-          "d": 48.12,
-          "kind": "talk",
-          "ch": "Para llevar",
-          "date": "2026-11-18",
-          "topic": "crimen",
-          "name": "Seguridad"
-        },
-        {
-          "src": "/radio/music/break_cielito.mp3",
-          "d": 30.04,
-          "kind": "music"
-        },
-        {
-          "src": "/radio/music/id_es_2.mp3",
-          "d": 9.62,
-          "kind": "id"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/01.mp3",
-          "d": 81.98,
-          "kind": "talk",
-          "ch": "Entrada",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/02.mp3",
-          "d": 203.93,
-          "kind": "talk",
-          "ch": "Acto 1 · Lo que está pasando",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/03.mp3",
-          "d": 162.02,
-          "kind": "talk",
-          "ch": "Las personas y los lugares",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/04.mp3",
-          "d": 192.02,
-          "kind": "talk",
-          "ch": "Acto 2 · El hilo oculto",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/05.mp3",
-          "d": 134.18,
-          "kind": "talk",
-          "ch": "¿Sabías que…?",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/06.mp3",
-          "d": 184.34,
-          "kind": "talk",
-          "ch": "El diseño invisible",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/07.mp3",
-          "d": 169.3,
-          "kind": "talk",
-          "ch": "Acto 3 · Hacia 2050",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/editions/2026-11-18/transporte/es/08.mp3",
-          "d": 76.49,
-          "kind": "talk",
-          "ch": "Para llevar",
-          "date": "2026-11-18",
-          "topic": "transporte",
-          "name": "Transporte"
-        },
-        {
-          "src": "/radio/music/break_horizon.mp3",
           "d": 30.04,
           "kind": "music"
         }

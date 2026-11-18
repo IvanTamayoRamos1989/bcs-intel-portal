@@ -1,0 +1,839 @@
+{
+  "topic": "vision",
+  "lang": "en",
+  "title": "Vision 2050 · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Cold open",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The portal's Trend calculation gives the water-coastal stress scenario a 41 percent probability."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal updated its Trend series with this exact probability on November 18, 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "It focuses on Baja California Sur facing that water and coastal stress if nothing shifts."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That figure comes directly from the current series on the portal. It shows what is most likely if trends continue unchanged."
+        },
+        {
+          "speaker": "host",
+          "text": "This Vision 2050 does not contest that calculation. [pause] It takes the scenario as the risk to mitigate with deliberate action."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's Vision 2050 proposes a desirable and achievable future, not a prediction. It aims for proactive and regenerative outcomes on each driver the Trend identifies."
+        },
+        {
+          "speaker": "host",
+          "text": "This is Radio BCS2050. Today's episode is Vision 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Listeners might ask themselves what proactive steps could look like in their own communities. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "We will explore that without turning the vision into a forecast of any kind."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Targets stay labelled as aspirations only. No new 2050 numbers get invented where the series stays short."
+        },
+        {
+          "speaker": "host",
+          "text": "The concrete question we will answer is how each driver and ceiling can shift toward a proactive and regenerative path for Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would it take to move the needle on that water and coastal stress risk? [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "pilares1",
+      "title": "Water and coast",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "CONAGUA data from 2023 shows 22 of the 39 aquifers in Baja California Sur sit in deficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That shortfall totals 105.1 cubic hectometres per year."
+        },
+        {
+          "speaker": "host",
+          "text": "The constraint shapes every path forward."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's Vision 2050 proposes a state where new growth stops drawing from those same deficit aquifers."
+        },
+        {
+          "speaker": "host",
+          "text": "It is presented as a desirable and achievable future, not a prediction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Only three in ten residents currently have constant supply, according to ENCIG 2025 figures reported locally."
+        },
+        {
+          "speaker": "host",
+          "text": "The vision calls for continuous supply to become the rule rather than the exception."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Reuse would add real margin instead of remaining an afterthought."
+        },
+        {
+          "speaker": "host",
+          "text": "One lever already under construction is the second Cabo San Lucas desal plant."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It is slated to reach 250 litres per second."
+        },
+        {
+          "speaker": "host",
+          "text": "That would bring the combined output to 655 litres per second by 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The plant is described as a supply addition, not a reason to keep extracting from overdrawn aquifers. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "Another step is closing the 25 documented illegal taps in Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The estimated 300 litres per second they divert should reach users instead."
+        },
+        {
+          "speaker": "host",
+          "text": "Growth permits would tie directly to mean annual availability per aquifer under NOM-011."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Offsets that only exist on paper would no longer count."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal's demand-supply board prevents one municipality's deficit from being masked by headroom elsewhere."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That brings us to the coast. UABCS measurements during El Niño record wave-height increases of 15 to 30 centimetres at Puerto San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal notes that surge, erosion and flooding are already visible along developed shorelines."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Its Vision 2050 describes a habitable, regenerative coast where restoring barriers and beaches, and retreating from risk zones, come before any new occupation."
+        },
+        {
+          "speaker": "host",
+          "text": "No modelled 2050 shoreline position is offered, because comparable long-term data do not yet exist."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One concrete action is completing the environmental reviews already opened, such as the case of Hotel San Cristóbal at Punta Lobos."
+        },
+        {
+          "speaker": "host",
+          "text": "The goal is to avoid leaving debris and precedent that future surges could simply wash away."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Relocation and retreat would be placed at the front of decisions rather than treated as an after-the-fact remedy."
+        },
+        {
+          "speaker": "host",
+          "text": "Respect for ANP boundaries and coastal-planning limits would also precede any further hospitality scaling in East Cape, Loreto or the Pacific corridor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal frames these steps as necessary to keep the coast both livable and productive. [chuckle] What part of the water or coastal picture would you want to examine first if you were setting priorities?"
+        }
+      ]
+    },
+    {
+      "id": "pilares2",
+      "title": "Tourism and economy",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "The state economy grew 3.5 percent in constant prices in 2024, according to INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "That puts the total at 187,152 million pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Tourism numbers still cluster in one corridor though."
+        },
+        {
+          "speaker": "host",
+          "text": "SETUE data show Los Cabos at 70.0 percent occupancy for 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz sat at 64 percent the same year."
+        },
+        {
+          "speaker": "host",
+          "text": "The Hotel Association later recorded 78 percent occupancy in Los Cabos for the first half of November 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That jump stands out."
+        },
+        {
+          "speaker": "host",
+          "text": "FDI reached 1,353 million dollars in 2024, per CNIE figures."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It rose to 1,578 million the next year."
+        },
+        {
+          "speaker": "host",
+          "text": "Formal employment posted a 1.1 percent year-on-year drop in October."
+        },
+        {
+          "speaker": "cohost",
+          "text": "There were 224,460 IMSS posts counted in September."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal's Vision 2050 proposes a desirable, achievable future, not a prediction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It calls for tourism that stays inside measured water, energy and coastal limits."
+        },
+        {
+          "speaker": "host",
+          "text": "Instead of repeating the same coastal model everywhere. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Occupancy and visitor spending would serve as signals, not as volume targets for 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "The same vision sees a polycentric economy where investment spreads beyond one corridor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz would act as the services and infrastructure node."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú could focus on agriculture with more room, and the north on energy."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One lever would condition any new tourism or residential project on proven water and power margins."
+        },
+        {
+          "speaker": "host",
+          "text": "Without relying on uncredited supply. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Another treats beach closures or coastal quality drops as hard limits on the vocation itself."
+        },
+        {
+          "speaker": "host",
+          "text": "A third lever shifts relative weight toward La Paz, Loreto and the interior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Each with its own role rather than scaled-down copies of the same model."
+        },
+        {
+          "speaker": "host",
+          "text": "For the economy, the vision would weigh formal employment and inflation together with the same water and grid ceilings."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It would not treat outside forum goals, such as tripling FDI, as already accepted projections."
+        },
+        {
+          "speaker": "host",
+          "text": "That keeps the focus on what can actually be supported without overloading the existing systems."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The levers are presented as choices the state could still make, not as outcomes already in motion."
+        },
+        {
+          "speaker": "host",
+          "text": "Tourism news items reached eight in the period, with an EWMA of 7.70 and neutral direction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Economy items were three, at an EWMA of 5.79, also neutral."
+        },
+        {
+          "speaker": "host",
+          "text": "The vision would read those employment figures alongside the water and grid limits from the start."
+        },
+        {
+          "speaker": "cohost",
+          "text": "So any growth plan would first check actual supply margins instead of assuming they appear later."
+        },
+        {
+          "speaker": "host",
+          "text": "That approach avoids locking the state into one corridor when other regions still have headroom."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you watch first if these levers were tested in the next budget cycle?"
+        }
+      ]
+    },
+    {
+      "id": "pilares3",
+      "title": "Energy and mobility",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "BCS power data shows the island grid still caps at one ceiling. SIBCS hit 689 MW peak in 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Really? That single limit keeps shaping everything else."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal records 660 MW net for 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And 675 MW the same year. Tourism growth and desalination both draw from the same lines."
+        },
+        {
+          "speaker": "host",
+          "text": "Energy items stayed flat this week, EWMA at 1.66 with no clear direction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "On the mobility side, SJD traffic fell 4.6 percent in October."
+        },
+        {
+          "speaker": "host",
+          "text": "And 5.5 percent for the year to date."
+        },
+        {
+          "speaker": "cohost",
+          "text": "LAP rose 8.7 percent year-to-date, according to GAP 2026 figures."
+        },
+        {
+          "speaker": "host",
+          "text": "Three mobility items appeared this week, EWMA 2.67, still mixed."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's Vision 2050 proposes a system that leaves island-grid limits behind through clean generation and storage sized to the real SIBCS ceiling."
+        },
+        {
+          "speaker": "host",
+          "text": "It is a desirable and achievable future, not a prediction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "For mobility, the same vision sees connectivity serving a polycentric state instead of feeding only the SJD–Los Cabos corridor."
+        },
+        {
+          "speaker": "host",
+          "text": "LAP already functions as one measured counterweight."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One lever is finishing the remote-generation tenders already visible in the north, kept transparent and not turned into residential permits ahead of time."
+        },
+        {
+          "speaker": "host",
+          "text": "A second is planning desalination and pumping together with the grid instead of adding them later as extra megawatts."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Demand from new tourism or real estate in Cabos would only move forward once SIBCS margin is shown."
+        },
+        {
+          "speaker": "host",
+          "text": "For air and sea links, the vision keeps LAP traffic and Sea of Cortez ferries as working alternatives for freight and passengers where projects already exist."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Paving and traffic counts would serve communities first, not only new coastal projects."
+        },
+        {
+          "speaker": "host",
+          "text": "That keeps growth from concentrating where the grid and runways are already tight."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What remains uncertain is exactly how quickly storage can close the island gap."
+        },
+        {
+          "speaker": "host",
+          "text": "The levers stay practical because they start from numbers already published."
+        },
+        {
+          "speaker": "cohost",
+          "text": "If tenders finish on schedule, remote supply could ease the single ceiling without new local plants."
+        },
+        {
+          "speaker": "host",
+          "text": "And if LAP keeps its measured growth, it spreads pressure away from SJD."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's Vision 2050 therefore treats both pillars as design choices rather than fixed limits."
+        },
+        {
+          "speaker": "host",
+          "text": "November 18, 2026 marks the date these figures were reviewed for the vision."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. That date lines up with the latest GAP and SIBCS records."
+        },
+        {
+          "speaker": "host",
+          "text": "One more practical point: the vision treats the 2024 peak as the benchmark that future storage must respect."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. No added demand moves forward without that margin shown first."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] It keeps the plan grounded in what the grid can actually carry today."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you watch first, the next tender round or the LAP numbers?"
+        }
+      ]
+    },
+    {
+      "id": "pilares4",
+      "title": "Housing and governance",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The portal's Vision 2050 opens with a documented risk for housing."
+        },
+        {
+          "speaker": "cohost",
+          "text": "State population stood at 798,447 according to the INEGI Census 2020."
+        },
+        {
+          "speaker": "host",
+          "text": "Really? That number sets the scale for what comes next."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Housing grows exposed when it appears in places without services or in coastal and water-risk zones."
+        },
+        {
+          "speaker": "host",
+          "text": "Housing accounts for one item this week with an EWMA of 1.81."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That exposure is the starting point the vision wants to change [chuckle]."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal's Vision 2050 proposes housing with services, set off the first line of risk, and aligned with real water and energy margins."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It is a desirable and achievable future, not a prediction."
+        },
+        {
+          "speaker": "host",
+          "text": "No 2050 housing-unit target is published, so the vision stays within the evidence already held."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One lever is to prioritise relocating what is already exposed before opening a new residential front on the coast or on aquifers in deficit."
+        },
+        {
+          "speaker": "host",
+          "text": "That makes sense as a first step."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Another is to cross-check every development with the demand-supply board and with current planning instruments."
+        },
+        {
+          "speaker": "host",
+          "text": "Treat backlog and the lack of services as a ceiling, not as a gap the market will close on its own."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Now the governance pillar carries two items this week with an EWMA of 3.57 and a direction of plus 0.50."
+        },
+        {
+          "speaker": "host",
+          "text": "Without instruments that bind growth to measured ceilings, the current path wins by the inertia of permits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal's Vision 2050 proposes public decisions that make POEL, PDU, PMDU, consultations and ANP ceilings prior conditions, not paperwork after the fact."
+        },
+        {
+          "speaker": "host",
+          "text": "It remains achievable only if those instruments are used with the evidence the portal already holds."
+        },
+        {
+          "speaker": "cohost",
+          "text": "One lever is to close already marked gaps with evidence in Loreto and the northern DMA before larger public scenarios."
+        },
+        {
+          "speaker": "host",
+          "text": "Keep public consultation and the delivery of instruments to Congress as visible levers, not as closing paperwork."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Use the state's constrained board reading as a permit criterion, not only as an analysis text."
+        },
+        {
+          "speaker": "host",
+          "text": "That approach turns measured ceilings into actual permit rules."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That is the full set of levers the vision offers for both pillars."
+        },
+        {
+          "speaker": "host",
+          "text": "The approach stays grounded in what is already measured."
+        },
+        {
+          "speaker": "cohost",
+          "text": "And it treats the instruments as binding tools rather than optional steps [pause]."
+        },
+        {
+          "speaker": "host",
+          "text": "What would you ask the planning offices next?"
+        }
+      ]
+    },
+    {
+      "id": "condiciones",
+      "title": "The conditions",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "The portal's Vision 2050 proposes five conditions that must be true for the future it describes to become real in Baja California Sur."
+        },
+        {
+          "speaker": "host",
+          "text": "It is a desirable and achievable future, not a prediction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. That frame matters right away."
+        },
+        {
+          "speaker": "host",
+          "text": "For instance, tourism in Los Cabos would look different from production up north in every planning document."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Right, and that protects the unique character of places like Loreto and the East Cape coast."
+        },
+        {
+          "speaker": "host",
+          "text": "The first condition is that each vocation contributes a distinct role."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Not diluted into a single statewide version of Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "That keeps the character of different regions intact."
+        },
+        {
+          "speaker": "cohost",
+          "text": "I keep thinking about how that plays out on the ground."
+        },
+        {
+          "speaker": "host",
+          "text": "The second condition concerns new tourism and residential growth."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It can only happen where water and energy show clear margin or come from a non-DMA source such as desalination."
+        },
+        {
+          "speaker": "host",
+          "text": "Without pretending to use NOM-011 credit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That prevents overcommitment of resources that are not there. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "The evidence requirement for those gaps in the north could delay some projects by years according to the portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yet it avoids the shortages we have seen elsewhere. What would you ask the water authority about the DMA?"
+        },
+        {
+          "speaker": "host",
+          "text": "Third, East Cape and Loreto must respect ANP and POEL ceilings before any scaling of hospitality."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The limits stay in place even when demand rises."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly. You cannot assume the ceilings will stretch later."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Fourth, Comondú and the north can add production and energy."
+        },
+        {
+          "speaker": "host",
+          "text": "But only without emptying local services or protected natural areas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The fifth condition addresses marked gaps."
+        },
+        {
+          "speaker": "host",
+          "text": "Loreto and north DMA shortfalls, amenity rooms, the Cabos PDU, and pumping megawatts must be closed with evidence first."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Before any public scenario moves forward."
+        },
+        {
+          "speaker": "host",
+          "text": "These steps together keep the vision grounded in what the region can actually support."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Each one protects a different part of the system."
+        },
+        {
+          "speaker": "host",
+          "text": "What stands out is how they tie local data to any next step."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. The conditions force evidence before growth claims are accepted."
+        },
+        {
+          "speaker": "host",
+          "text": "These conditions seem practical once you map them to actual sites across the municipalities."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They do. I wonder how residents in Comondú see the balance with new energy projects."
+        }
+      ]
+    },
+    {
+      "id": "palancas",
+      "title": "The levers",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "The portal's Vision 2050 proposes a set of practical levers for Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Some already show movement on the ground, while others remain proposals that would need clear action from state agencies and municipalities."
+        },
+        {
+          "speaker": "host",
+          "text": "Take the second desal plant in Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It sits at 75 percent completion right now."
+        },
+        {
+          "speaker": "host",
+          "text": "That would add 250 liters per second once finished."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Combined that reaches 655 liters per second."
+        },
+        {
+          "speaker": "host",
+          "text": "The target date is 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "That counts as a supply lever already under construction."
+        },
+        {
+          "speaker": "host",
+          "text": "The vision stresses it cannot serve as a licence to keep drawing from aquifers already in deficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Other water levers focus on closing illegal taps."
+        },
+        {
+          "speaker": "host",
+          "text": "They also call for tying growth permits to mean annual availability under NOM-011."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The portal wants its demand-supply board used so one municipality's deficit is not offset on paper elsewhere."
+        },
+        {
+          "speaker": "host",
+          "text": "This remains a desirable and achievable future, not a prediction."
+        },
+        {
+          "speaker": "cohost",
+          "text": "For the coast, the vision points to finishing environmental reviews already opened."
+        },
+        {
+          "speaker": "host",
+          "text": "One example is the review for Hotel San Cristóbal in Punta Lobos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It places relocation and retreat at the front of decisions."
+        },
+        {
+          "speaker": "host",
+          "text": "That would require municipalities to act before any new permits move forward."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tourism levers would condition new growth on evidenced water and power margin."
+        },
+        {
+          "speaker": "host",
+          "text": "They also push to shift weight toward La Paz, Loreto and the interior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "In energy, the proposals call for completing remote-generation tenders visible in the north."
+        },
+        {
+          "speaker": "host",
+          "text": "Those tenders should not turn into residential permits."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mobility levers would hold up the La Paz airport node as a counterweight to Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "That uses published GAP figures."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Housing would prioritise relocating exposed structures before opening new coastal fronts."
+        },
+        {
+          "speaker": "host",
+          "text": "Governance levers would close documented gaps in places like Loreto and northern DMA first."
+        },
+        {
+          "speaker": "cohost",
+          "text": "The vision keeps public consultation visible rather than paperwork at the end."
+        },
+        {
+          "speaker": "host",
+          "text": "Exactly, so agencies can use the constrained board reading as an actual permit criterion."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you want to see measured first before any of these levers advance?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Food for thought",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Right, Luz. That vision focuses on steady progress in places like La Paz and Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exactly. It shows how careful planning today could give families here more stable jobs and cleaner water supplies later."
+        },
+        {
+          "speaker": "host",
+          "text": "Wait, Luz— that last point on water really stands out to me."
+        },
+        {
+          "speaker": "cohost",
+          "text": "It does, because the vision ties those supplies directly to daily routines."
+        },
+        {
+          "speaker": "host",
+          "text": "And that matters because people in BCS would feel the difference in daily life, from how they work to how they get around."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] It keeps things practical, the way we like it."
+        },
+        {
+          "speaker": "host",
+          "text": "The portal's vision proposes better connections between towns and stronger local institutions to handle growth."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yes, and that could mean fewer surprises when the next dry season hits or when tourism shifts."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. I keep thinking about how those institutions would actually work on the ground."
+        },
+        {
+          "speaker": "cohost",
+          "text": "They would let towns share resources instead of each one solving problems alone."
+        },
+        {
+          "speaker": "host",
+          "text": "So what changes for people is simply more room to plan ahead instead of reacting all the time."
+        },
+        {
+          "speaker": "cohost",
+          "text": "What would you change first in your own neighborhood to match that kind of future?"
+        },
+        {
+          "speaker": "host",
+          "text": "And how might your town look if the vision's ideas took hold step by step?"
+        }
+      ]
+    }
+  ]
+}

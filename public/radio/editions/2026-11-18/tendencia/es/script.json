@@ -1,0 +1,883 @@
+{
+  "topic": "tendencia",
+  "lang": "es",
+  "title": "Tendencia 2050 · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según los datos al 18 de noviembre de 2026, la Tendencia 2050 del portal apunta al escenario Estrés hídrico-costero con 41 % de probabilidad. Es lo más probable según lo que ya está medido hoy."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es una probabilidad, no un hecho. ¿Bajó algo desde la semana pasada? Me parece importante saber si la tendencia se mantiene estable."
+        },
+        {
+          "speaker": "host",
+          "text": "Bajó 2.5 puntos frente a la semana previa. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Y qué tema tiene más notas esta semana? Porque eso puede darnos una idea de dónde está la atención ahora."
+        },
+        {
+          "speaker": "host",
+          "text": "El mayor volumen está en Turismo, con 8 notas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ocho notas. ¿Y qué dice el EWMA? Eso suena técnico."
+        },
+        {
+          "speaker": "host",
+          "text": "El EWMA llega a 7.70 y mantiene la misma dirección. Es una medida suavizada de las notas recientes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto, ¿cómo van los demás temas?"
+        },
+        {
+          "speaker": "host",
+          "text": "Agua bajó a 4 notas. [pause] Esto sigue siendo solo la Tendencia 2050 del portal, basada en lo medido hoy."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y Costa-clima?"
+        },
+        {
+          "speaker": "host",
+          "text": "Costa y clima bajó a 2 notas. Economía pasó a 3."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todo eso importa para Baja California Sur porque el agua y la costa sostienen la vida diaria aquí. ¿Qué efecto crees que tenga en el día a día de la gente?"
+        },
+        {
+          "speaker": "host",
+          "text": "Bienvenidos a Radio BCS2050. En el episodio Tendencia 2050 vamos a ver qué significa esta probabilidad para el estado. La pregunta concreta es cómo afecta esto al turismo y la economía local."
+        }
+      ]
+    },
+    {
+      "id": "cambio",
+      "title": "Qué cambió esta semana",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Tendencia 2050 del portal apunta al escenario de Estrés hídrico-costero como el de mayor probabilidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es una probabilidad, no un hecho, ¿cierto?"
+        },
+        {
+          "speaker": "host",
+          "text": "Así es, Luz. Esa probabilidad se ubica en 41%."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm, 41%, y bajó respecto a la semana pasada."
+        },
+        {
+          "speaker": "host",
+          "text": "Bajó exactamente 2.5 puntos frente a la semana anterior."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sigue siendo el escenario principal, aunque con un margen menor."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos corresponden al 18 de noviembre de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada actualización del portal ajusta estas cifras según las notas recientes."
+        },
+        {
+          "speaker": "host",
+          "text": "La mayor intensidad de notas esta semana se concentra en Turismo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Turismo registró 8 notas."
+        },
+        {
+          "speaker": "host",
+          "text": "Su EWMA se mantiene en 7.70 con dirección sin cambio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso indica que el tema sigue estable en volumen."
+        },
+        {
+          "speaker": "host",
+          "text": "En cambio, Agua pasó de 10 a 4 notas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa baja supera el umbral de 5 notas que marca un cambio claro."
+        },
+        {
+          "speaker": "host",
+          "text": "Costa y clima también descendieron de 10 a 2 notas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Economía bajó de 15 a 3 notas."
+        },
+        {
+          "speaker": "host",
+          "text": "Son los únicos rubros con variaciones de intensidad mayores a 5 notas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal muestra que el foco se desplazó hacia Turismo."
+        },
+        {
+          "speaker": "host",
+          "text": "Todo sigue siendo un escenario probable, no un hecho confirmado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Cómo influye esto en las proyecciones de Baja California Sur hacia 2050?"
+        },
+        {
+          "speaker": "host",
+          "text": "Sugiere que el estrés hídrico-costero sigue liderando, pero el turismo podría moldear cómo se mide."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La intensidad de las notas cambia cada semana según lo que se publica."
+        },
+        {
+          "speaker": "host",
+          "text": "Es una forma de rastrear qué temas ganan peso en los reportes [chuckle]."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y queda claro que todo se actualiza como tendencia probable, no como certeza."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, los números se revisan con cada nuevo ciclo de datos del portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el cambio semanal en las notas de turismo podría alterar la medición del estrés hídrico en el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto, porque el portal usa esas intensidades para ajustar el peso de cada escenario probable."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Si el turismo mantiene sus 8 notas, la tendencia del portal apunta a que el estrés costero sigue en primer lugar."
+        },
+        {
+          "speaker": "host",
+          "text": "Es una probabilidad, no un hecho, y el portal lo actualiza cada semana con los datos nuevos [pause]."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasaría si las notas de agua vuelven a subir la próxima semana?"
+        },
+        {
+          "speaker": "host",
+          "text": "El escenario de estrés hídrico-costero podría recuperar puntos de probabilidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto el foco en turismo da una idea de qué temas dominan las publicaciones recientes."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y todo sigue siendo la tendencia probable del portal hacia 2050 [chuckle]."
+        }
+      ]
+    },
+    {
+      "id": "escenarios",
+      "title": "Los escenarios",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hoy la Tendencia 2050 del portal presenta tres escenarios para Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y cada uno sigue siendo una probabilidad, no un hecho."
+        },
+        {
+          "speaker": "host",
+          "text": "La primera es Trayectoria actual."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa apunta a que el motor turístico-residencial de Los Cabos y el corredor costero siguen creciendo."
+        },
+        {
+          "speaker": "host",
+          "text": "Con alivios incrementales de desalación y red."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La probabilidad es 30.6 %."
+        },
+        {
+          "speaker": "host",
+          "text": "Bajó 0.4 puntos esta semana. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Luego viene Estrés hídrico-costero."
+        },
+        {
+          "speaker": "host",
+          "text": "Es la más alta en este momento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con 41.1 %."
+        },
+        {
+          "speaker": "host",
+          "text": "Bajó 2.5 puntos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Significa que los techos de agua, costa y red se adelantan al crecimiento."
+        },
+        {
+          "speaker": "host",
+          "text": "Los déficits de acuíferos, oleaje y erosión condicionan permisos y vocaciones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal la marca como la más probable ahora."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la tercera es Diversificación policéntrica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con 28.3 %."
+        },
+        {
+          "speaker": "host",
+          "text": "Subió 2.9 puntos esta semana. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Quiere decir que La Paz, el interior y el norte ganan peso."
+        },
+        {
+          "speaker": "host",
+          "text": "Con foro regional, tráfico de LAP y energía remota."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El portal insiste en que el estado no se sostiene solo clonando Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "La lectura que se mantiene es un sistema policéntrico con roles distintos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por ejemplo Los Cabos como motor turístico bajo estrés hídrico."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape en tensión con las áreas protegidas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todos Santos y El Pescadero como espina de amenidad del Pacífico."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz como capital de servicios y nodo agua-energía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto como ancla de turismo y conservación."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú como hub agropecuario con más margen relativo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el norte de Mulegé como corredor con licitación de generación remota."
+        },
+        {
+          "speaker": "host",
+          "text": "De 39 acuíferos con datos de CONAGUA 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Y cuántos están en déficit?"
+        },
+        {
+          "speaker": "host",
+          "text": "22 están en déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esos balances suman menos 105.1 hectómetros cúbicos al año."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos datos están detrás de la tendencia hacia el escenario de estrés."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En 2026 se reportaron 25 tomas clandestinas clausuradas en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Con más de 300 litros por segundo sustraídos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la segunda desaladora de Cabo San Lucas va al 75 %."
+        },
+        {
+          "speaker": "host",
+          "text": "Para 250 litros por segundo adicionales en 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal dice que la desalación puede mover el margen de abasto."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero no convierte en superávit un acuífero ya en déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según la ENCIG 2025, solo tres de cada diez personas en el estado tienen suministro constante."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué opinas de cómo estos escenarios podrían afectar tu zona en los próximos años?"
+        }
+      ]
+    },
+    {
+      "id": "senales",
+      "title": "Las señales",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos medidos muestran 22 de 39 acuíferos en déficit según CONAGUA en 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un hecho registrado por la institución. La Tendencia 2050 del portal apunta a que este déficit seguirá marcando el ritmo del estado."
+        },
+        {
+          "speaker": "host",
+          "text": "La suma es de menos 105.1 hm³ al año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otro dato oficial. Es una probabilidad, no un hecho, pero la tendencia del portal apunta a que la presión sobre el agua crecerá."
+        },
+        {
+          "speaker": "host",
+          "text": "La población estatal era de 798,447 habitantes según el censo de INEGI en 2020."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cifra del censo. La Tendencia 2050 del portal apunta a que ese número crecerá y presionará aún más los recursos."
+        },
+        {
+          "speaker": "host",
+          "text": "El PIB constante llegó a 187,152 millones de pesos en 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es la medida oficial. La tendencia del portal apunta a que ese nivel económico podría sostenerse."
+        },
+        {
+          "speaker": "host",
+          "text": "El crecimiento fue de 3.5 % frente a 2023, informa INEGI."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Datos duros. Es una probabilidad, no un hecho, pero la Tendencia 2050 del portal apunta a que el aumento se mantendrá con altibajos."
+        },
+        {
+          "speaker": "host",
+          "text": "La IED alcanzó 1,353 millones de dólares en 2024 según la CNIE."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cifra de la comisión. La tendencia del portal apunta a que la inversión extranjera seguirá llegando."
+        },
+        {
+          "speaker": "host",
+          "text": "En 2025 llegó a 1,578 millones de dólares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otro registro medido. Es una probabilidad, no un hecho."
+        },
+        {
+          "speaker": "host",
+          "text": "En aeropuertos, San José del Cabo bajó 4.6 % en octubre según GAP 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Son cifras del operador. La Tendencia 2050 del portal apunta a que el turismo podría equilibrarse entre ambos destinos."
+        },
+        {
+          "speaker": "host",
+          "text": "La baja de enero a octubre fue de 5.5 %."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto La Paz subió 8.7 % en el año."
+        },
+        {
+          "speaker": "host",
+          "text": "La ocupación en 2025 fue de 70.0 % en Los Cabos según SETUE."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otro dato medido. La Tendencia 2050 del portal apunta a que estos niveles se sostendrán con ajustes."
+        },
+        {
+          "speaker": "host",
+          "text": "En La Paz la ocupación fue de 64 %."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La inflación en La Paz marcó 1.17 % mensual en octubre de 2026, informa INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "Y 3.16 % anual."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es el registro oficial. La Tendencia 2050 del portal apunta a que la inflación se mantendrá controlada."
+        },
+        {
+          "speaker": "host",
+          "text": "Todos estos son hechos medidos por las instituciones citadas. La interpretación de hacia dónde van es análisis del portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, hay que separar lo registrado de lo que la tendencia del portal apunta a que podría ocurrir. [chuckle] ¿Qué parte de estos datos te parece más relevante para la planeación?"
+        },
+        {
+          "speaker": "host",
+          "text": "El déficit de acuíferos, porque afecta todo lo demás."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Coincido. La Tendencia 2050 del portal apunta a que resolver ese punto será clave."
+        }
+      ]
+    },
+    {
+      "id": "datos_base",
+      "title": "Los datos detrás",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos que tenemos vienen de reportes oficiales y muestran el estado actual de Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según CONAGUA en 2023, 22 de los 39 acuíferos están en déficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso suma menos 105.1 hectómetros cúbicos al año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal apunta a que estos números son la base para proyectar disponibilidad de agua, pero es una probabilidad, no un hecho."
+        },
+        {
+          "speaker": "host",
+          "text": "La población estatal era de 798,447 habitantes según el censo de INEGI de 2020."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese número sirve como punto de partida para estimar demanda futura."
+        },
+        {
+          "speaker": "host",
+          "text": "El PIB constante llegó a 187,152 millones de pesos en 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso representa un aumento de 3.5 % frente a 2023, informa INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "La Tendencia 2050 del portal usa esa cifra como referencia, aunque sigue siendo una probabilidad, no un hecho."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La IED registró 1,353 millones de dólares en 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Y subió a 1,578 millones en 2025, según CNIE."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esos montos son los datos que alimentan las proyecciones de inversión."
+        },
+        {
+          "speaker": "host",
+          "text": "En aeropuertos, SJD cayó 4.6 % en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y 5.5 % de enero a octubre, mientras LAP subió 8.7 % en el año, reporta GAP en 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "La ocupación hotelera en 2025 fue de 70.0 % en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y 64 % en La Paz, según SETUE."
+        },
+        {
+          "speaker": "host",
+          "text": "Inflación en La Paz alcanzó 1.17 % mensual en octubre de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y 3.16 % anual, de acuerdo con INEGI."
+        },
+        {
+          "speaker": "host",
+          "text": "El pico de demanda en el sistema eléctrico SIBCS alcanzó 689 megawatts en 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal señala que estos datos de infraestructura son clave, pero todo sigue siendo una probabilidad, no un hecho."
+        },
+        {
+          "speaker": "host",
+          "text": "La segunda desaladora de Cabo San Lucas está al 75 % de avance."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entregará 250 litros por segundo, para un total de 655 litros por segundo al concluir en 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "Se detectaron 25 tomas clandestinas en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con más de 300 litros por segundo sustraídos, según Tribuna de México."
+        },
+        {
+          "speaker": "host",
+          "text": "El empleo formal del IMSS bajó 1.1 % anual en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con 224,460 puestos en septiembre."
+        },
+        {
+          "speaker": "host",
+          "text": "En Los Cabos la ocupación hotelera llegó a 78 % entre el 1 y el 15 de noviembre de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Reporta la Asociación de Hoteles."
+        },
+        {
+          "speaker": "host",
+          "text": "La meta de 3.5 % anual y triplicar la IED es una propuesta del Foro Mar de Cortés, no una proyección del portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El oleaje por El Niño se midió entre 15 y 30 centímetros en Puerto San Carlos, según UABCS."
+        }
+      ]
+    },
+    {
+      "id": "vigilar",
+      "title": "Qué vigilar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Tendencia 2050 del portal apunta al escenario de estrés hídrico-costero con 41 % de probabilidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es una probabilidad, no un hecho. Dos puntos cinco menos que la semana pasada."
+        },
+        {
+          "speaker": "host",
+          "text": "Para vigilarlo hay que seguir el Paquete Económico 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese paquete llega con 28 300 millones de pesos. Su aprobación se espera en diciembre."
+        },
+        {
+          "speaker": "host",
+          "text": "Incluye el quinto Informe que ya se entregó al Congreso el 12 de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ajá. El encuentro ciudadano será el 27 de noviembre en la Plaza de la Reforma en La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Si ahí se ve apoyo amplio al presupuesto de agua y costas, la tendencia podría subir."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Si hay críticas fuertes, en cambio, la probabilidad bajaría."
+        },
+        {
+          "speaker": "host",
+          "text": "Otra cosa que vigilar es la consulta pública del PPDU El Tezal por IMPLAN Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. También la actualización del PDU Los Cabos con límites de densidad en el camino costero de Cabo del Este."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos límites podrían reducir el estrés costero si se aplican pronto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Si se relajan, la probabilidad del escenario de estrés subiría."
+        },
+        {
+          "speaker": "host",
+          "text": "También hay que revisar las mareas extremas de LIGIR en Bahía Magdalena del 21 al 28 de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en el Pacífico Norte y Laguna San Ignacio del 22 al 27 de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso podría confirmar si el estrés costero aumenta por eventos naturales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal señala que el avance del Plan Parcial en East Cape y San José del Este será clave."
+        },
+        {
+          "speaker": "host",
+          "text": "Si los instrumentos de planeación avanzan con reglas claras de agua y residuos, la tendencia se debilita."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Si se retrasan, el escenario gana fuerza."
+        },
+        {
+          "speaker": "host",
+          "text": "Otro punto es la confiabilidad del SIBCS frente a las obras de CFE y los incidentes de OOMSAPAS en abasto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Si los reportes muestran menos fallas, la probabilidad del estrés hídrico baja."
+        },
+        {
+          "speaker": "host",
+          "text": "Si aumentan, el escenario gana fuerza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hay que seguir la consulta e implementación del POEL Los Cabos 2026, sobre todo las obligaciones de agua y residuos."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa implementación podría ser el factor que más mueva el porcentaje en las próximas semanas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además, la MIA de la desaladora de Comondú y la segunda etapa de la PTAR en Loreto indican vocaciones en la mitad de la península."
+        },
+        {
+          "speaker": "host",
+          "text": "Si avanzan rápido, ayudan a equilibrar el estrés hídrico en esa zona."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Si se detienen, el escenario se mantiene alto."
+        },
+        {
+          "speaker": "host",
+          "text": "La intensidad de notas esta semana está en Turismo con ocho notas y un EWMA de 7.70."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Agua bajó de diez a cuatro notas. ¿Y tú qué opinas que pasará con el presupuesto si el encuentro del 27 confirma el apoyo ciudadano?"
+        },
+        {
+          "speaker": "host",
+          "text": "Depende de cómo se presenten los datos de estrés hídrico en ese encuentro. Es solo la tendencia del portal, una probabilidad, no un hecho."
+        }
+      ]
+    },
+    {
+      "id": "incertidumbre",
+      "title": "Lo que podría cambiar",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia 2050 del portal es prospectiva interna, no un plan oficial ni una predicción puntual de llegada a 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto, Luz. Las cifras vienen del feed de noticias y de los datos ya publicados; donde la serie no alcanza, se declara insuficiente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según el método, la tendencia del portal apunta a tres escenarios posibles con sus probabilidades."
+        },
+        {
+          "speaker": "host",
+          "text": "La trayectoria actual tiene 30.6 % de probabilidad y bajó 0.4 puntos esta semana."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es una probabilidad, no un hecho. Todo depende de cómo evolucionen los datos que ya tenemos."
+        },
+        {
+          "speaker": "host",
+          "text": "El escenario de estrés hídrico-costero llega a 41.1 %."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Bajó 2.5 puntos, según el seguimiento semanal."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la diversificación policéntrica se ubica en 28.3 %."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con un aumento de 2.9 puntos esta semana. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Veamos qué datos de alta confianza siguen pesando más."
+        },
+        {
+          "speaker": "cohost",
+          "text": "22 de 39 acuíferos están en déficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso suma −105.1 hm³ al año, según CONAGUA 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La segunda desaladora de Cabo San Lucas va al 75 %."
+        },
+        {
+          "speaker": "host",
+          "text": "Entrega 250 litros por segundo, pero concluye hasta 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además hay 25 tomas clandestinas que restan más de 300 litros por segundo."
+        },
+        {
+          "speaker": "host",
+          "text": "El pico de energía llegó a 689 MW en 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Aunque su confianza es solo media, según CENACE."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en Los Cabos la ocupación alcanzó 78 % en los primeros quince días de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras el empleo formal cayó 1.1 % anual en octubre."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que podría cambiar la tendencia son los techos de agua y costa que se adelanten al crecimiento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "O que La Paz y el norte ganen peso real en la economía."
+        },
+        {
+          "speaker": "host",
+          "text": "La meta de triplicar la IED regional es propuesta del Foro, no proyección del portal, y tiene confianza baja."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También influye el oleaje de 15 a 30 centímetros registrado en Puerto San Carlos por el fenómeno de El Niño."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué opinas? ¿Qué factor cambiaría primero la probabilidad de estos escenarios?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para pensar",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Sí, Tomás. La tendencia del portal apunta a que estos caminos son probabilidades, no hechos."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto, es una probabilidad, no un hecho. Lo que cambia para la gente de Baja California Sur es cómo se vive el día a día, según crezca Los Cabos o se reparta el peso hacia La Paz, el interior y el norte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. En la Trayectoria actual el motor turístico-residencial sigue, pero con el Estrés hídrico-costero los techos de agua y la erosión llegan antes."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en la Diversificación policéntrica La Paz y el norte ganan peso gracias al foro regional y el tráfico de LAP. Eso abre opciones distintas para el trabajo y la inversión."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Claro. [chuckle] La gente en el corredor costero sentiría primero las limitaciones de agua, mientras que en el interior podría haber más movimiento."
+        },
+        {
+          "speaker": "host",
+          "text": "Es una probabilidad, no un hecho, pero afecta dónde se invierte y cómo se planea el crecimiento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "—y aquí está lo interesante— la diversificación podría evitar que todo dependa de clonar Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué harías si el estado crece más por el norte y el interior?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Buena pregunta. [pause] ¿Qué opinas tú sobre apostar por esa diversificación policéntrica?"
+        }
+      ]
+    }
+  ]
+}
