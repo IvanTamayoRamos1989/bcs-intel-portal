@@ -1,0 +1,819 @@
+{
+  "topic": "vision",
+  "lang": "es",
+  "title": "Visión 2050 · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la Tendencia del portal, el escenario más probable para Baja California Sur es el de Estrés hídrico-costero, con 41 %."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa cifra ya está registrada en los datos del portal, Tomás."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Esta Visión 2050 no discute ese cálculo. Lo toma como el riesgo principal que hay que mitigar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el episodio de hoy busca el futuro ideal y alcanzable, no una predicción."
+        },
+        {
+          "speaker": "host",
+          "text": "Así es. La visión del portal propone un 2050 proactivo y regenerativo para cada motor y cada techo que esa tendencia señala. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Las metas se presentan como aspiraciones, y no se inventan cifras nuevas para llegar a 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Bien dicho. Esto es Radio BCS2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el episodio de hoy se llama Visión 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "La pregunta concreta que vamos a explorar es cómo se vería ese camino ideal y alcanzable para reducir el estrés hídrico-costero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es. [breath] Empecemos."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero recuerda que esta es la visión del portal, un futuro deseable y posible, no una predicción del futuro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso nos ayuda a entender por qué importa actuar sobre el estrés hídrico-costero en nuestra región."
+        },
+        {
+          "speaker": "host",
+          "text": "Y con eso entramos de lleno al tema. [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "pilares1",
+      "title": "Agua y costa",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según datos de CONAGUA de 2023, 22 de los 39 acuíferos del estado están en déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Eso ya marca un límite claro para cualquier plan a futuro."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso suma un balance total de menos 105.1 hectómetros cúbicos al año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La ENCIG 2025 indica que solo tres de cada diez personas en Baja California Sur tienen suministro constante."
+        },
+        {
+          "speaker": "host",
+          "text": "Además se detectaron 25 tomas clandestinas en Los Cabos, con más de 300 litros por segundo de sustracción estimada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un volumen que se pierde antes de llegar a los hogares."
+        },
+        {
+          "speaker": "host",
+          "text": "La visión del portal propone un estado donde el crecimiento nuevo no se sostenga sobre acuíferos en déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un futuro deseable y posible, no una predicción."
+        },
+        {
+          "speaker": "host",
+          "text": "El abasto continuo dejaría de ser la excepción y el reúso entraría en la cuenta del margen hídrico."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la costa, la UABCS registró durante El Niño oleaje de 15 a 30 centímetros en Puerto San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso muestra que el techo costero ya es visible."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La visión del portal propone una costa habitable y regenerativa."
+        },
+        {
+          "speaker": "host",
+          "text": "Es otro futuro deseable y posible, no una predicción."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahí la restauración de barreras y playas y el retiro de lo construido en zona de riesgo irían primero."
+        },
+        {
+          "speaker": "host",
+          "text": "Una palanca ya en obra es la segunda desaladora de Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Va al 75 % y aportará 250 l/s. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "El conjunto llegaría a 655 litros por segundo y se espera para 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa obra sirve para reducir presión sobre los acuíferos, no para autorizar más extracciones."
+        },
+        {
+          "speaker": "host",
+          "text": "Otra palanca sería cerrar las tomas clandestinas y usar ese volumen como referencia de lo que se puede recuperar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También se trata de atar los permisos de crecimiento a la disponibilidad media anual por acuífero, según la NOM-011."
+        },
+        {
+          "speaker": "host",
+          "text": "Y de usar el tablero de oferta y demanda del portal para evitar compensar un déficit local solo en el papel."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la costa, una palanca es hacer valer las revisiones ambientales ya abiertas, como la del Hotel San Cristóbal en Punta Lobos."
+        },
+        {
+          "speaker": "host",
+          "text": "Para que los escombros y el precedente no queden sin consecuencia."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otra es colocar la relocalización y el retiro en primera línea de las decisiones."
+        },
+        {
+          "speaker": "host",
+          "text": "No como remedio después de la siguiente marejada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y respetar los techos de las áreas naturales protegidas antes de ampliar hospitalidad en East Cape, Loreto o el Pacífico."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué opinas de atar todo permiso nuevo a la disponibilidad real de cada acuífero?"
+        }
+      ]
+    },
+    {
+      "id": "pilares2",
+      "title": "Turismo y economía",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según SETUE, la ocupación en Los Cabos llegó a 70.0 % en 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En La Paz fue de 64 % ese mismo año."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la Asociación de Hoteles reporta 78 % en Los Cabos durante los primeros quince días de noviembre de 2026."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso muestra cómo el motor turístico sigue concentrado en el corredor costero."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa concentración pone presión sobre el agua y la red eléctrica del estado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por el lado de la economía, INEGI indica que el PIB constante alcanzó 187,152 millones de pesos en 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso representa un crecimiento de 3.5 % frente a 2023."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La IED subió a 1,578 millones de dólares en 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin embargo el empleo formal IMSS cayó 1.1 % anual en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El motor no genera empleos de forma pareja en todo el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "La visión del portal propone un futuro deseable y posible, no una predicción."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa visión busca un turismo que quepa dentro de los techos de agua, energía y costa."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin clonar el modelo de Cabos por todo el estado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, la ocupación y la derrama se leen como señales, no como metas de volumen a 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "En economía la aspiración es una estructura policéntrica y regenerativa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Donde la inversión no dependa solo del corredor costero."
+        },
+        {
+          "speaker": "host",
+          "text": "Y donde el empleo formal no quede expuesto a una sola vocación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Una de las palancas es condicionar cualquier nuevo crecimiento turístico o residencial a evidencia real de margen hídrico y eléctrico."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin usar un supuesto crédito NOM-011 que no exista."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otra palanca trata el cierre de playas y la calidad de la costa como un límite real de la vocación."
+        },
+        {
+          "speaker": "host",
+          "text": "Y hay que desplazar peso hacia La Paz, Loreto y el interior, cada uno con un papel distinto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En economía se propone dar peso a La Paz como capital de servicios y nodo de agua-energía."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú como zona de producción agropecuaria con más margen y el norte como fuente de energía remota."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También hay que leer el empleo formal junto con los techos de agua y red, no como un tablero separado."
+        },
+        {
+          "speaker": "host",
+          "text": "Y evitar usar metas de foro, como triplicar la IED, como si ya fueran proyecciones aceptadas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso significa que cualquier nuevo hotel o fraccionamiento tendría que demostrar primero que hay agua y luz suficiente."
+        },
+        {
+          "speaker": "host",
+          "text": "Si no hay margen, el proyecto simplemente no avanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En La Paz eso podría significar más empleos en servicios y logística en lugar de solo hoteles."
+        },
+        {
+          "speaker": "host",
+          "text": "En Comondú el margen agropecuario permite crecer sin tocar la costa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un futuro deseable y posible, pero depende de decisiones que se tomen hoy con datos claros."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué parte de estas palancas te parece más urgente para BCS?"
+        }
+      ]
+    },
+    {
+      "id": "pilares3",
+      "title": "Energía y movilidad",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según los datos del portal, Baja California Sur sigue como sistema aislado eléctrico."
+        },
+        {
+          "speaker": "host",
+          "text": "El pico del SIBCS llegó a 689 MW en 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En 2023 se reportaron 660 MW netos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y el otro dato de ese año?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "675 MW. El crecimiento turístico y la desalación compiten por el mismo techo."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso es el riesgo que marca la Visión 2050 del portal. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La visión del portal propone un futuro donde el estado deje atrás la condición de isla energética."
+        },
+        {
+          "speaker": "host",
+          "text": "Es un futuro deseable y posible, no una predicción."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Generación limpia, almacenamiento y demanda que quepa dentro del techo real del SIBCS."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos actuales no alcanzan para proyectar un pico nuevo a 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Tendencia ya lo marca como insuficiente."
+        },
+        {
+          "speaker": "host",
+          "text": "Una de las palancas es concluir y transparentar las licitaciones de generación remota que ya se ven en el norte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sin convertirlas en permiso residencial anticipado. [chuckle] Eso es clave."
+        },
+        {
+          "speaker": "host",
+          "text": "Otra es planear desalación y bombeo junto con la red."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No como megawatts que se suman después."
+        },
+        {
+          "speaker": "host",
+          "text": "Y no añadir demanda turística o inmobiliaria en Cabos sin evidencia clara de margen en el SIBCS."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora, en movilidad, el aeropuerto de San José del Cabo bajó 4.6 % en octubre."
+        },
+        {
+          "speaker": "host",
+          "text": "Y 5.5 % de enero a octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto La Paz subió 8.7 % en el año, según GAP en 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso muestra hacia dónde se concentra el crecimiento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Visión 2050 del portal aspira a una conectividad que sirva a un estado policéntrico."
+        },
+        {
+          "speaker": "host",
+          "text": "No solo al eje SJD–Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un futuro deseable y posible, no una predicción."
+        },
+        {
+          "speaker": "host",
+          "text": "El tráfico de LAP y las rutas marítimas ya se leen como palancas observables."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Una palanca es sostener el nodo de La Paz como contrapeso medido al aeropuerto de Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Con los datos de GAP ya publicados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otra es integrar ferries y cabotaje del Mar de Cortés cuando haya proyectos en curso."
+        },
+        {
+          "speaker": "host",
+          "text": "No como cifra inventada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y leer la pavimentación y el aforo como servicio a comunidades."
+        },
+        {
+          "speaker": "host",
+          "text": "No solo como acceso a nuevas amenidades costeras. [breath]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Si se aplican estas palancas, el sistema de energía y la red de movilidad podrían reforzarse mutuamente."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin inventar números nuevos, solo usando lo que ya se observa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. ¿Qué parte te parece más urgente de revisar primero?"
+        },
+        {
+          "speaker": "host",
+          "text": "La coordinación entre desalación y la red eléctrica."
+        }
+      ]
+    },
+    {
+      "id": "pilares4",
+      "title": "Vivienda y gobierno",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "El 18 de noviembre de 2026 el portal revisa dos pilares clave para Baja California Sur: vivienda y gobernanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Suena como un buen punto de partida para entender lo que viene."
+        },
+        {
+          "speaker": "host",
+          "text": "Según INEGI Censo 2020 la población estatal es 798,447 habitantes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Casi 798,447 personas que necesitan techo seguro."
+        },
+        {
+          "speaker": "host",
+          "text": "En vivienda se registró una nota esta semana con EWMA de 1.81 y dirección positiva."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso indica que las notas recientes apuntan más a alivios o avances."
+        },
+        {
+          "speaker": "host",
+          "text": "El riesgo es que la vivienda crezca sobre zonas sin servicios o en riesgo costero e hídrico."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Nadie quiere que una casa nueva se quede sin agua en dos años."
+        },
+        {
+          "speaker": "host",
+          "text": "La visión del portal propone un futuro deseable y posible, no una predicción."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aspiración es vivienda con servicios, fuera de la primera línea de riesgo y alineada con el margen real de agua y energía."
+        },
+        {
+          "speaker": "host",
+          "text": "No se publica una meta de viviendas a 2050, así que el portal no tiene serie comparable."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por eso hay que trabajar con lo que sí se puede medir hoy."
+        },
+        {
+          "speaker": "host",
+          "text": "Un primer paso sería priorizar la relocalización de lo ya expuesto antes de abrir frente residencial nuevo en costa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cruzar cada desarrollo con el tablero de demanda y oferta y con los instrumentos de ordenamiento vigentes también ayuda."
+        },
+        {
+          "speaker": "host",
+          "text": "Tratar el rezago y la falta de servicios como un techo, no como algo que el mercado resolverá solo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora pasemos a gobernanza."
+        },
+        {
+          "speaker": "host",
+          "text": "Gobernanza concentra dos notas esta semana con EWMA de 3.57 y dirección positiva."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El riesgo es que sin instrumentos que aten el crecimiento a los techos medidos, la trayectoria actual siga por inercia de permisos."
+        },
+        {
+          "speaker": "host",
+          "text": "La aspiración es que las decisiones públicas hagan valer POEL, PDU, PMDU, consultas y techos de ANP como condiciones previas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cerrar con evidencia los huecos ya marcados, como DMA de Loreto y el norte, antes de escenarios de mayor escala."
+        },
+        {
+          "speaker": "host",
+          "text": "Mantener la consulta pública y la entrega de instrumentos al Congreso como palancas visibles."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Usar la lectura restringida del tablero estatal como criterio de permiso, no solo como texto de análisis."
+        },
+        {
+          "speaker": "host",
+          "text": "Es un futuro deseable y posible, no una predicción, siempre que esos instrumentos se usen con la evidencia que el portal ya reúne."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas de cómo se cruzan hoy vivienda y gobernanza en tu municipio?"
+        }
+      ]
+    },
+    {
+      "id": "condiciones",
+      "title": "Las condiciones",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La visión del portal propone cinco condiciones básicas para que el futuro deseable de Baja California Sur sea alcanzable."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y esas condiciones vienen directamente de los análisis del portal, no de pronósticos oficiales?"
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Es un futuro deseable y posible, no una predicción. Empecemos por la primera: cada región mantiene su vocación propia."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es decir, no convertir todo el estado en una versión extendida de Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Así es. Cada zona aporta un rol distinto según sus recursos y límites actuales. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasaría si ignoramos esa diferencia regional?"
+        },
+        {
+          "speaker": "host",
+          "text": "Se perdería el equilibrio que permite que cada zona contribuya con lo suyo sin sobrecargar los servicios."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La segunda condición se refiere al crecimiento nuevo."
+        },
+        {
+          "speaker": "host",
+          "text": "Solo se permite desarrollo turístico o residencial donde haya evidencia clara de agua y energía suficiente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y eso incluye fuentes como desaladoras que no dependan de la DMA?"
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Sin fingir márgenes que no existen hoy, según la NOM-011."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso evita que se repitan problemas de abastecimiento en zonas ya saturadas."
+        },
+        {
+          "speaker": "host",
+          "text": "La tercera toca East Cape y Loreto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ambos deben respetar primero los techos de las ANP y los POEL antes de ampliar la hospitalidad."
+        },
+        {
+          "speaker": "host",
+          "text": "Es decir, no escalar antes de confirmar que la capacidad ambiental lo permite."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La cuarta condición involucra a Comondú y la zona norte."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahí sumarían producción y energía, pero sin dejar vacíos los servicios locales ni afectar las ANP."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. El equilibrio entre crecimiento y servicios básicos es clave para que funcione."
+        },
+        {
+          "speaker": "host",
+          "text": "La última condición habla de cerrar ciertos gaps antes de presentar escenarios públicos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Se refiere al DMA en Loreto y norte, los cuartos amenity, el PDU de Cabos y los megawatts de bombeo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Por qué es importante cerrar esos huecos primero?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Porque la visión del portal requiere que las bases estén verificadas antes de proyectar el 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué opinas de priorizar evidencia sobre velocidad?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me parece la única forma realista de que el futuro propuesto funcione."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces estas cinco condiciones marcan el piso para que la visión sea viable."
+        }
+      ]
+    },
+    {
+      "id": "palancas",
+      "title": "Las palancas",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hoy hablamos de las palancas que ya están en marcha y las que siguen como propuestas, según la Visión 2050 del portal. Es un futuro deseable y posible, no una predicción."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y empieza por el agua. La segunda desaladora de Cabo San Lucas ya va al 75 %."
+        },
+        {
+          "speaker": "host",
+          "text": "Ya está avanzada esa obra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entrega 250 litros por segundo."
+        },
+        {
+          "speaker": "host",
+          "text": "Y junto con la otra planta llegan a 655 litros por segundo en total."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Debe concluir en 2027. Esa es una palanca de abasto que ya está en obra."
+        },
+        {
+          "speaker": "host",
+          "text": "No es licencia para seguir sacando de acuíferos en déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El portal propone cerrar tomas clandestinas y atar permisos de crecimiento a la disponibilidad real por acuífero, según NOM-011."
+        },
+        {
+          "speaker": "host",
+          "text": "Y usar el tablero de demanda y oferta del portal para no compensar en el papel un déficit local con margen de otro municipio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En costa y clima, la visión propone hacer valer revisiones ambientales ya abiertas, como la del Hotel San Cristóbal en Punta Lobos."
+        },
+        {
+          "speaker": "host",
+          "text": "Para que escombros y precedentes no se diluyan."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La relocalización debe ir primero, no después de la siguiente marejada."
+        },
+        {
+          "speaker": "host",
+          "text": "En turismo, condicionar nuevo crecimiento a margen hídrico y eléctrico real."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Desplazar peso hacia La Paz, Loreto y el interior."
+        },
+        {
+          "speaker": "host",
+          "text": "En economía, dar peso a La Paz como nodo de servicios y a Comondú como producción agropecuaria."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Leer empleo formal junto con techos de agua."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] No usar metas de foro como proyecciones ya aceptadas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En energía, concluir licitaciones de generación remota en el norte sin convertirlas en permiso residencial anticipado."
+        },
+        {
+          "speaker": "host",
+          "text": "Planear desalación y bombeo junto con la red."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No añadir demanda en Cabos sin margen en el SIBCS."
+        },
+        {
+          "speaker": "host",
+          "text": "En movilidad, sostener el nodo de La Paz como contrapeso al aeropuerto de Los Cabos, con datos de GAP ya publicados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En vivienda, priorizar relocalización de lo expuesto antes de abrir frente nuevo en costa o acuíferos en déficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Y en gobernanza, cerrar huecos marcados como DMA de Loreto y el norte antes de escenarios de mayor escala."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mantener consulta pública y usar la lectura del tablero estatal como criterio de permiso."
+        },
+        {
+          "speaker": "host",
+          "text": "La desaladora ya avanza, pero la mayoría de estas palancas dependen de que gobierno estatal, municipios y Congreso las conviertan en norma."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas? ¿Qué palanca te parece más urgente para Baja California Sur?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para pensar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Así es. Se centra en decisiones de hoy sobre infraestructura y sostenibilidad que podrían mejorar la vida diaria."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. [pause] Eso cambia las cosas para las comunidades locales porque abre opciones concretas en agua, trabajo y movilidad."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. En lugar de esperar, la visión invita a elegir caminos que ya están al alcance de las instituciones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Y qué pasa si las personas se suman a esos caminos desde ya?"
+        },
+        {
+          "speaker": "host",
+          "text": "Buena pregunta. Cambiaría cómo se planea el día a día en los barrios y las rutinas de todos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yo sigo pensando en eso. [chuckle] Las decisiones locales podrían hacer la diferencia sin depender de pronósticos externos."
+        },
+        {
+          "speaker": "host",
+          "text": "Es verdad. Por ejemplo, elegir rutas de transporte que ya se están planeando podría reducir tiempos de traslado en las ciudades."
+        },
+        {
+          "speaker": "host",
+          "text": "Y al final, lo que queda es pensar en cómo cada persona participa en ese proceso."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y eso incluye pensar en cómo las familias en las zonas urbanas podrían beneficiarse de mejores opciones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué harías para que esa visión se acerque más a tu comunidad?"
+        },
+        {
+          "speaker": "host",
+          "text": "O ¿qué cambiarías primero en tu rutina o en tu barrio si tuvieras esa visión en mente?"
+        }
+      ]
+    }
+  ]
+}

@@ -11,11 +11,11 @@
   var audio = new Audio(); audio.preload = 'none';
   var T = {
     es: { play: 'Reproducir', pause: 'Pausa', prev: 'Anterior', next: 'Siguiente', notes: 'Notas y fuentes', music: 'Música',
-          sources: 'Fuentes de este programa', err: 'No se pudo cargar el audio.', tap: 'Toca ▶ para escuchar.', up: 'A continuación', golive: '● Volver al vivo',
+          sources: 'Fuentes de este programa', err: 'No se pudo cargar el audio.', tap: 'Toca ▶ para escuchar.', up: 'A continuación', eps: 'Episodios', ep: 'Ep.', golive: '● Volver al vivo',
           made: 'Radio continua 24/7. Guiones con fuentes del portal; voces sintéticas Grok TTS.', id: 'Radio BCS2050',
           mus: '♪ Música', none: 'La radio aún no tiene programas.' },
     en: { play: 'Play', pause: 'Pause', prev: 'Previous', next: 'Next', notes: 'Notes & sources', music: 'Music',
-          sources: 'Sources for this show', err: 'Could not load audio.', tap: 'Tap ▶ to listen.', up: 'Up next', golive: '● Back to live',
+          sources: 'Sources for this show', err: 'Could not load audio.', tap: 'Tap ▶ to listen.', up: 'Up next', eps: 'Episodes', ep: 'Ep.', golive: '● Back to live',
           made: 'Continuous 24/7 radio. Scripts from portal sources; synthetic voices by Grok TTS.', id: 'Radio BCS2050',
           mus: '♪ Music', none: 'No shows yet.' }
   };
@@ -64,8 +64,8 @@
     if (!s || !s.items.length) { $('.radio-title').textContent = t.none; return; }
     var x = s.items[i], prog = null;
     for (var k = i; k < s.items.length && !prog; k++) if (s.items[k].name) prog = s.items[k];
-    $('.radio-title').textContent = prog ? prog.name + ' · ' + day(prog.date) : 'Radio BCS2050';
-    $('.radio-seg').textContent = label(x);
+    $('.radio-title').textContent = prog ? (prog.title || prog.name + ' · ' + day(prog.date)) : 'Radio BCS2050';
+    $('.radio-seg').textContent = (prog && prog.title ? (prog.num ? t.ep + ' ' + prog.num + ' · ' : '') + prog.name + ' · ' : '') + label(x);
     $('.radio-live').hidden = !live || audio.paused;
     $('.radio-golive').hidden = live;
     // up next: the next programs in the loop with local start times
@@ -76,14 +76,35 @@
         var z = s.items[(i + n + 1) % s.items.length];
         if (z && z.name && z.date + z.topic !== seen) {
           seen = z.date + z.topic;
-          out.push('<li><button type="button" data-j="' + ((i + n) % s.items.length) + '"><span>' + esc(z.name) + ' · ' + esc(day(z.date)) +
+          out.push('<li><button type="button" data-j="' + ((i + n) % s.items.length) + '"><span>' + esc(z.title || z.name) + ' · ' + esc(day(z.date)) +
             '</span><span>' + new Date(now + acc * 1000).toLocaleTimeString(lang === 'es' ? 'es-MX' : 'en-US', { hour: '2-digit', minute: '2-digit' }) + '</span></button></li>');
         }
       }
       acc += y.d;
     }
     $('.radio-tracks').innerHTML = out.join('');
+    episodes(prog);
     state();
+  }
+  function episodes(prog) {  // podcast-style list of every episode in the loop; tap one to play it from the start
+    var s = S(), t = T[lang], list = [], cur = null;
+    $('.radio-eps-h').textContent = t.eps;
+    s.items.forEach(function (y, k) {
+      if (!y.name) return;
+      var key = y.date + y.topic;
+      if (!cur || cur.key !== key) {
+        var st0 = k > 0 && s.items[k - 1].kind === 'id' ? k - 1 : k;
+        cur = { key: key, j: st0, y: y, d: 0 }; list.push(cur);
+      }
+      if (y.kind === 'talk') cur.d += y.d;
+    });
+    var on = prog ? prog.date + prog.topic : '';
+    $('.radio-eps').innerHTML = list.map(function (e) {
+      var y = e.y;
+      return '<li><button type="button" data-j="' + e.j + '"' + (e.key === on ? ' aria-current="true"' : '') + '><b>' +
+        esc(y.title || y.name) + '</b><span>' + (y.num ? t.ep + ' ' + y.num + ' · ' : '') + esc(y.name) + ' · ' + esc(day(y.date)) +
+        ' · ' + Math.round(e.d / 60) + ' min</span></button></li>';
+    }).join('');
   }
   function notes() {
     var s = S(), x = s && s.items[i], t = T[lang];
@@ -101,7 +122,12 @@
     for (var k = i; s && k < s.items.length && !prog; k++) if (s.items[k].name) prog = s.items[k];
     if (!prog) return fill(null);
     var p = eds[prog.date] || (eds[prog.date] = get('/radio/editions/' + prog.date + '/edition.json'));
-    p.then(function (e) { var ep = (e.episodes || []).filter(function (z) { return z.topic === prog.topic; })[0]; fill(ep && ep.sources); }).catch(function () { fill(null); });
+    p.then(function (e) {
+      var ep = (e.episodes || []).filter(function (z) { return z.topic === prog.topic; })[0];
+      fill(ep && ep.sources);
+      var dsc = ep && ep['desc_' + lang];
+      if (dsc) $('.radio-notes').insertAdjacentHTML('afterbegin', '<p><strong>' + esc(ep['title_' + lang] || '') + '</strong><br>' + esc(dsc) + '</p>');
+    }).catch(function () { fill(null); });
   }
   function state() {
     var on = !audio.paused;
@@ -170,6 +196,7 @@
   $('.radio-next').addEventListener('click', function () { live = false; playItem(i + 1, 0); });
   $('.radio-golive').addEventListener('click', goLive);
   $('.radio-close').addEventListener('click', function () { panel.setAttribute('hidden', ''); btn.setAttribute('aria-expanded', 'false'); });
+  $('.radio-eps').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { live = false; playItem(+b.dataset.j, 0); } });
   $('.radio-tracks').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { live = false; playItem(+b.dataset.j, 0); } });
   $('.radio-notes-btn').addEventListener('click', function () { var n = $('.radio-notes'); if (n.hasAttribute('hidden')) { n.removeAttribute('hidden'); notes(); } else n.setAttribute('hidden', ''); });
   root.querySelectorAll('.radio-langs button').forEach(function (b) {

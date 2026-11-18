@@ -1,0 +1,803 @@
+{
+  "topic": "datos-conectividad",
+  "lang": "es",
+  "title": "Datos del portal · Conectividad · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que Los Cabos tiene 759 según la guía temática del portal en conectividad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[pause] ¿Y qué significa ese número exacto para el resto del estado?"
+        },
+        {
+          "speaker": "host",
+          "text": "Ese valor representa el 45% del estado según IE Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y eso qué implica para el resto de Baja California Sur?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Eso concentra casi la mitad de la conectividad registrada en un solo municipio."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050 y hoy en el episodio Datos del portal · Conectividad buscamos responder qué nos dicen las cifras oficiales sobre cómo estamos conectados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La misma guía añade que la pista del aeropuerto de San José del Cabo mide 3,004 metros de largo."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] Un detalle técnico que parece menor, pero que define mucho del movimiento diario."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Realmente define cómo operan los vuelos que llegan cada día a Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué pasa con el ancho de esa pista?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mide 45 metros según el mismo documento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso muestra la capacidad actual que tiene la pista para recibir aviones grandes."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[breath] Los datos del portal nos dejan claro qué infraestructura ya está registrada y qué falta por entender mejor."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Y en los siguientes minutos vamos a revisar cada capa con calma."
+        }
+      ]
+    },
+    {
+      "id": "cifras",
+      "title": "Las cifras",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que Los Cabos concentra 759 unidades de conectividad, lo que representa 45% del total estatal según la guía temática del portal con datos de IE Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Casi la mitad de esa infraestructura está ahí. ¿Qué pasa entonces con el resto del estado?"
+        },
+        {
+          "speaker": "host",
+          "text": "Según la misma guía, el aeropuerto de San José del Cabo tiene una pista de 3,004 metros de largo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa longitud permite recibir aviones grandes que vienen de lejos."
+        },
+        {
+          "speaker": "host",
+          "text": "La pista mide además 45 metros de ancho, también de la guía temática del portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un ancho que da margen para maniobras seguras en distintas condiciones."
+        },
+        {
+          "speaker": "host",
+          "text": "La terminal de ese aeropuerto mide 15,130 metros cuadrados según la misma fuente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un espacio amplio que ayuda a mover gente sin aglomeraciones grandes."
+        },
+        {
+          "speaker": "host",
+          "text": "En 2025, según SETUE en esa guía, San José del Cabo movió cerca de 3.8 millones de pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Una cifra que muestra cuánto depende el estado de ese aeropuerto principal."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos pasajeros representan 83.2% del total estatal, también de SETUE."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ocho de cada diez viajeros aéreos llegan por ahí. Es el punto de entrada más usado."
+        },
+        {
+          "speaker": "host",
+          "text": "El aeropuerto de La Paz tiene una pista de 2,500 metros de largo, reportado en la guía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Más corta que la de San José del Cabo, pero sigue sirviendo para aviones medianos."
+        },
+        {
+          "speaker": "host",
+          "text": "Su terminal mide 5,900 metros cuadrados según la misma fuente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mucho más pequeña, pensada para una demanda distinta."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos de SETUE indican que La Paz tuvo 668,800 pasajeros en 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un volumen menor, pero con un aumento de 10.9% respecto al año anterior."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese crecimiento muestra que más gente está usando esa ruta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Para Loreto el dato de pasajeros 2025 de SETUE aún no está consolidado."
+        },
+        {
+          "speaker": "host",
+          "text": "A veces los números tardan en cerrarse y eso deja una pregunta abierta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el puerto de Cabo San Lucas se registraron 285 arribos en 2025, según la guía."
+        },
+        {
+          "speaker": "host",
+          "text": "Y 1,057,758 pasajeros el mismo año, de la misma fuente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Más de un millón de pasajeros por mar en un solo punto. Es un volumen alto."
+        },
+        {
+          "speaker": "host",
+          "text": "Pichilingue reportó 50 arribos y 133,269 pasajeros el mismo año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mucho menor que Cabo San Lucas, pero sigue siendo un puerto activo."
+        },
+        {
+          "speaker": "host",
+          "text": "Loreto tuvo 20 arribos y 33,412 pasajeros en 2025, también en la guía del portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es el número más bajo de los tres puertos. Muestra diferencias claras en el uso de cada terminal."
+        },
+        {
+          "speaker": "host",
+          "text": "En total, estos datos del portal revelan cómo la conectividad aérea y marítima se distribuye de forma muy desigual en el estado. ¿Qué parte de estas cifras te parece más relevante para el día a día de la gente?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Yo sigo pensando en cómo estos números afectan los viajes de quienes viven fuera de Los Cabos. [chuckle] ¿Y tú qué opinas?"
+        }
+      ]
+    },
+    {
+      "id": "territorio",
+      "title": "El territorio",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que La Paz funciona como la capital de servicios, conocimiento, administración y logística del estado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y según la capa de vocaciones que integra el portal, esa definición viene con fortalezas concretas como su base de gobierno y universidad."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. También destaca su orientación hacia la bahía y el puerto, más su posición como bisagra entre el interior y el cabo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué más dice la ficha? Que tiene la pobreza municipal más baja y que se apoya en el PDUCP de 2018."
+        },
+        {
+          "speaker": "host",
+          "text": "Así es. Pero los mismos datos señalan restricciones, como el acoplamiento agua-energía en una capital que sigue creciendo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso pesa. La expansión urbana choca con la bahía y hay una carga de coordinación entre municipios."
+        },
+        {
+          "speaker": "host",
+          "text": "Además, los acuíferos 0324 y 0313 aparecen en déficit según la base que integra el portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora pasemos a Loreto. Los datos del portal lo definen como el nodo de turismo y conservación a mitad de la península."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, con identidad de bahía y áreas naturales protegidas. Su marca natural es fuerte y ofrece una alternativa más tranquila que Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Funciona como ancla del corredor intermedio y se basa en el POEL de 2014."
+        },
+        {
+          "speaker": "host",
+          "text": "Las fortalezas incluyen la segunda etapa de la PTAR y el acueducto Londó-Loreto, aunque estos aparecen solo como datos de infraestructura."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sin embargo, las restricciones también están ahí: agua y carga turística estacional, más techos de conservación."
+        },
+        {
+          "speaker": "host",
+          "text": "El mercado laboral y de servicios es más delgado, y el PMDU sigue en avance según el documento del portal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué te parece la diferencia entre ambos lugares? La Paz carga con la coordinación estatal mientras Loreto busca equilibrar turismo y conservación."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Los datos muestran que el territorio no es uniforme; cada municipio tiene su vocación y sus límites claros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y eso afecta cómo se conectan entre sí, sobre todo en temas de agua y servicios."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos del portal dejan claro que La Paz tiene la base institucional más sólida, pero Loreto depende más de su entorno natural."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas de cómo estos dos roles podrían influir en la conectividad del estado?"
+        },
+        {
+          "speaker": "host",
+          "text": "Me hace pensar que el territorio se entiende mejor cuando vemos estas fichas juntas, no por separado."
+        }
+      ]
+    },
+    {
+      "id": "documentos",
+      "title": "Los documentos",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La biblioteca del portal reúne tres documentos que hablan de conectividad en Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Cuáles son y de qué organizaciones vienen?"
+        },
+        {
+          "speaker": "host",
+          "text": "El primero es el Programa Maestro de Desarrollo Portuario de Cabo San Lucas, elaborado por la Administración Portuaria Integral de Cabo San Lucas en 2006."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese plan describe el desarrollo de la marina y la terminal de cruceros."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Los datos del portal muestran que ese documento detalla infraestructura portuaria que conecta al destino con el turismo marítimo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Por qué importa para Baja California Sur?"
+        },
+        {
+          "speaker": "host",
+          "text": "Porque define cómo el puerto recibe visitantes y mueve mercancías, algo que sigue influyendo en la operación actual."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me pregunto cómo se usa esa información hoy en día."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos del portal lo presentan como base para entender la conectividad marítima actual."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El segundo documento es más reciente."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, DATATUR, el Sistema de Información Estadística del Turismo de SECTUR, actualizado en 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese registra cifras de aeropuertos y hoteles en Los Cabos, La Paz y Loreto."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos del portal indican que ofrece estadísticas oficiales de llegadas y ocupación hotelera."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso mide la conectividad aérea y terrestre con el turismo."
+        },
+        {
+          "speaker": "host",
+          "text": "Así es. Muestra cuántos viajeros llegan por aire y cómo se distribuyen en los destinos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es útil para ver el flujo real de personas."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos del portal lo incluyen para comparar conectividad entre los tres puntos principales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El tercer documento viene de fuera."
+        },
+        {
+          "speaker": "host",
+          "text": "Es el plan Dubrovnik Respect the City, de la Ciudad de Dubrovnik y UNESCO, de 2019."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese propone límites a los cruceros y manejo de visitantes."
+        },
+        {
+          "speaker": "host",
+          "text": "Los datos del portal lo incluyen como referencia para gestionar el turismo de cruceros en Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es interesante ver un ejemplo de otra ciudad costera."
+        },
+        {
+          "speaker": "host",
+          "text": "Según la capa de documentos del portal, sirve para pensar en cómo controlar el volumen de llegadas por mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué queda claro y qué sigue abierto?"
+        },
+        {
+          "speaker": "host",
+          "text": "Queda claro cómo los puertos y el turismo se miden, pero no sabemos aún cómo se aplican estos planes hoy."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas de usar ese ejemplo de Dubrovnik aquí?"
+        },
+        {
+          "speaker": "host",
+          "text": "Me parece que ayuda a comparar, aunque cada lugar tiene su propia escala."
+        }
+      ]
+    },
+    {
+      "id": "sistema",
+      "title": "Cómo se conecta",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran el escenario ports_air_hubs en la Base de datos BCS 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese escenario ancla el crecimiento en los aeropuertos SJD, LAP y LTO, más los puertos de CSL, Pichilingue y Santa Rosalía."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Y lo liga directamente a la capacidad territorial disponible."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. No es un programa de expansión decretado, es solo cómo se conectan los anclas existentes. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Según la misma capa, el Aeropuerto Internacional de Los Cabos es la principal puerta de demanda turística."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Su concesión GAP llega hasta 2048 y funciona como brownfield que condiciona los picos estacionales."
+        },
+        {
+          "speaker": "host",
+          "text": "En cambio, el Aeropuerto de La Paz aparece como puerta secundaria estatal, también bajo concesión GAP."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y sirve sobre todo para la capital y la conectividad norte-sur."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora, el paquete East Cape del portal conecta esos accesos aéreos con el acuífero 0318 y el ANP Cabo Pulmo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También incluye la presión costera y el hecho de que no hay aeropuerto propio en el scorecard."
+        },
+        {
+          "speaker": "host",
+          "text": "Por eso todo el acceso aéreo para esa zona pasa por SJD."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y ahí aparece la brecha de instrumento local y de carga cuantitativa."
+        },
+        {
+          "speaker": "host",
+          "text": "En el lado de Loreto, la guía de planeación marca como GAP la gazette del PSDU 2007 y el PMD Loreto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Queda pendiente la consulta de actualización del PSDU 2024 y el PMDU en disco."
+        },
+        {
+          "speaker": "host",
+          "text": "La deferencia POER citada menciona el corredor Loreto–Nopoló–Notrí–Puerto Escondido–Ligüí–Ensenada Blanca."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese corredor forma parte de la misma red que el escenario ports_air_hubs intenta sostener."
+        },
+        {
+          "speaker": "host",
+          "text": "El paquete de oportunidades ya codificadas menciona los aeropuertos como acceso y el agro de Santo Domingo para Comondú."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todo eso depende de la misma capacidad territorial que menciona el escenario ports_air_hubs."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces la pregunta que queda es qué pasa cuando una de esas conexiones se acerca a su límite."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los datos del portal no resuelven esa parte todavía. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué opinas que debería priorizarse primero?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me quedo pensando en cómo afecta a quien vive cerca de esos anclas."
+        },
+        {
+          "speaker": "host",
+          "text": "Porque el paquete East Cape también une la presión costera con la falta de un instrumento local actualizado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y sin datos cuantitativos de carga es difícil ver dónde se tensa primero la red."
+        },
+        {
+          "speaker": "host",
+          "text": "El escenario ports_air_hubs solo muestra los anclas que ya existen, no cómo se van a reforzar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por eso el portal marca la brecha en el PSDU de Loreto como algo que sigue abierto."
+        },
+        {
+          "speaker": "host",
+          "text": "Y mientras tanto el corredor POER sigue siendo la referencia que conecta todo el tramo costero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los datos del portal dejan claro que sin esos instrumentos locales actualizados las oportunidades quedan solo parcialmente ligadas."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Mm, eso suena importante. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y eso incluye el aeropuerto de San José del Cabo con su pista de 3,004 m de largo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, y la terminal mide 15,130 m²."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos números explican por qué en 2025 ese aeropuerto movió casi 3.8 M de pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y representa el 83.2% de todo el tráfico de pasajeros en el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso explica por qué tanto se concentra en un solo punto."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora compara con Loreto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Su pista mide 2,500 m y la terminal apenas 5,900 m²."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos el indicador llega a 759 puntos."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso equivale al 45% del total estatal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto, en Cabo San Lucas se registraron 285 arribos marítimos."
+        },
+        {
+          "speaker": "host",
+          "text": "Con 1,057,758 pasajeros en 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pichilingue tuvo 50 arribos y 133,269 pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "Loreto marítimo registró 20 arribos y 33,412 pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y La Paz tuvo 31 arribos con solo 1,359 pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras el de La Paz sumó 668,800 pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "Con un crecimiento del 10.9%."
+        },
+        {
+          "speaker": "host",
+          "text": "Según la misma guía, La Paz aparece con 751 en otro indicador de conectividad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo interesante es ver cómo estos números de infraestructura y pasajeros se distribuyen tan desigualmente."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, porque el tamaño de una pista o una terminal marca la diferencia real en quién llega y quién no."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso hace que las oportunidades queden muy marcadas por zona."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué opinas de cómo afecta esto a los habitantes?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y todo sale de la guía temática del portal sobre conectividad, sin más."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos detalles de la guía muestran bien las diferencias prácticas entre los puertos y aeropuertos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, y por eso vale la pena revisar los datos completos con calma."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me parece que vale la pena ver el dato completo de cada lugar. [chuckle]"
+        }
+      ]
+    },
+    {
+      "id": "lectura",
+      "title": "Cómo leer los datos",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Los datos del portal muestran que la guía temática de conectividad reúne medidas de aeropuertos y puertos en Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué significa exactamente cada una de esas medidas?"
+        },
+        {
+          "speaker": "host",
+          "text": "La pista de San José del Cabo mide 3,004 metros por 45 metros, según la misma guía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso indica la longitud disponible para aterrizajes de aviones grandes."
+        },
+        {
+          "speaker": "host",
+          "text": "Su terminal tiene 15,130 metros cuadrados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero la cifra no dice cuántos vuelos operan al mismo tiempo."
+        },
+        {
+          "speaker": "host",
+          "text": "En 2025, SJD registró cerca de 3.8 millones de pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y representa el 83.2% del total estatal según la guía."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese porcentaje viene de la guía, aunque no explica si incluye solo llegadas o también salidas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La pista de Loreto mide 2,500 metros por 45 metros."
+        },
+        {
+          "speaker": "host",
+          "text": "Su terminal tiene 5,900 metros cuadrados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esos números describen la infraestructura física, mas no el estado de mantenimiento ni la frecuencia de uso."
+        },
+        {
+          "speaker": "host",
+          "text": "En LAP hubo 668,800 pasajeros en 2025."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con un aumento del 10.9% respecto al año anterior."
+        },
+        {
+          "speaker": "host",
+          "text": "El dato de LTO para 2025 aparece como no consolidado en la guía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por lo que aún no se puede comparar."
+        },
+        {
+          "speaker": "host",
+          "text": "Los puertos reportan arribos y pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cabo San Lucas tuvo 285 arribos y más de un millón de pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "Pichilingue registró 50 arribos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y 133,269 pasajeros, también según la guía de 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "Loreto tuvo 20 arribos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y 33,412 pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz tuvo 31 arribos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y solo 1,359 pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "Esas cifras muestran volumen de tráfico marítimo, pero no indican el tipo de embarcaciones ni la capacidad de los muelles."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos aparece con 759 en la guía."
+        },
+        {
+          "speaker": "host",
+          "text": "Y representa el 45% del estado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa medida probablemente se refiere a alguna unidad de conectividad."
+        },
+        {
+          "speaker": "host",
+          "text": "Aunque la guía no detalla la metodología exacta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz aparece con 751 en la misma fuente."
+        },
+        {
+          "speaker": "host",
+          "text": "No nos dicen cómo se distribuyen los recursos para mantener esas instalaciones ni qué pasa cuando hay temporadas bajas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y usted qué opina de cómo se miden estas cifras de conectividad en el estado?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para pensar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Después de revisar los datos del portal sobre conectividad, lo que más resalta es cómo esa información describe el acceso real en Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Eso cambia cómo la gente llega a servicios básicos o se mantiene en contacto con familia y trabajo."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, porque la conectividad no es solo cables o torres. Es la posibilidad de que un vecino en una comunidad remota pueda hacer un trámite sin viajar horas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Y al mismo tiempo deja ver dónde todavía falta más infraestructura, lo que afecta la vida diaria de mucha gente."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] Pero aquí está lo interesante: los datos muestran patrones claros que antes no veíamos con tanta precisión."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cierto. [chuckle] Y eso invita a pensar qué podemos hacer con esa información para mejorar las cosas."
+        },
+        {
+          "speaker": "host",
+          "text": "Por ejemplo, un pescador en una zona aislada podría coordinar mejor sus salidas o vender su producto sin intermediarios."
+        },
+        {
+          "speaker": "cohost",
+          "text": "O una familia podría acceder a consultas médicas en línea cuando el camino está cerrado."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso es lo que cambia para la gente de Baja California Sur: más opciones sin depender solo del transporte físico."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú, cómo usas la conectividad en tu comunidad para resolver cosas del día a día?"
+        },
+        {
+          "speaker": "host",
+          "text": "O si tuvieras que elegir una mejora concreta en conectividad para tu zona, ¿qué sería?"
+        }
+      ]
+    }
+  ]
+}

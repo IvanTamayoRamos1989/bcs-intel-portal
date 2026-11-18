@@ -1,0 +1,795 @@
+{
+  "topic": "noticias-medio_ambiente",
+  "lang": "es",
+  "title": "Noticias · Medio ambiente · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de POSTA México del 16 de noviembre, el Servicio Meteorológico Nacional emitió el aviso 638."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ese aviso detalla oleaje de 2 a 3 metros en la costa occidental de Baja California Sur."
+        },
+        {
+          "speaker": "host",
+          "text": "Los lugares mencionados son Guerrero Negro, Bahía Asunción y Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "También Puerto Adolfo López Mateos, Todos Santos y El Pescadero. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "Además reportan rachas de 30 a 50 kilómetros por hora en el Golfo de California."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El riesgo directo es para las pangas y lanchas pequeñas que salen a pescar."
+        },
+        {
+          "speaker": "host",
+          "text": "A inicios de noviembre, con el frente frío 4, la Marina ya cerró la navegación menor en Santa Rosalía, Loreto y San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esta es Radio BCS2050 y hoy hablamos de Noticias · Medio ambiente."
+        },
+        {
+          "speaker": "host",
+          "text": "La pregunta concreta es cómo se preparan las comunidades costeras ante estos avisos repetidos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Cada cierre afecta directamente a quienes viven del mar y al abasto local."
+        },
+        {
+          "speaker": "host",
+          "text": "Me pregunto qué tan rápido llegan estos avisos a los pescadores en el Pacífico. [chuckle] ¿Y tú qué opinas de cómo se comunican en tu comunidad?"
+        }
+      ]
+    },
+    {
+      "id": "titulares",
+      "title": "Lo que pasó",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de POSTA México del 16 de noviembre, el Servicio Meteorológico Nacional emitió el aviso 638."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué detalles trae ese aviso para la costa de Baja California Sur?"
+        },
+        {
+          "speaker": "host",
+          "text": "Prevén oleaje de 2 a 3 metros en la costa occidental."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Y eso qué significa para la gente que sale a pescar?"
+        },
+        {
+          "speaker": "host",
+          "text": "Los lugares mencionados son Guerrero Negro, Bahía Asunción, Puerto San Carlos, Puerto Adolfo López Mateos, Todos Santos y El Pescadero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso afecta directamente a varias comunidades pesqueras."
+        },
+        {
+          "speaker": "host",
+          "text": "Además hay rachas de viento entre 30 y 50 kilómetros por hora."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esas rachas también llegan al Golfo de California."
+        },
+        {
+          "speaker": "host",
+          "text": "Por eso el riesgo es mayor para las pangas y lanchas pequeñas. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Recordemos que a inicios de noviembre el frente frío 4 ya obligó a Marina a cerrar la navegación menor en varios puertos."
+        },
+        {
+          "speaker": "host",
+          "text": "Los puertos cerrados fueron Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y López Mateos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Parece que el patrón se repite con frecuencia este mes. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora veamos otra noticia del mismo día."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Diario Humano del 16 de noviembre, el Ayuntamiento de La Paz instaló su tercer compostero comunitario en El Palmar II."
+        },
+        {
+          "speaker": "host",
+          "text": "Es el tercero después de los instalados en Solidaridad y Los Mangos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Dónde van a poner los siguientes?"
+        },
+        {
+          "speaker": "host",
+          "text": "El programa cuenta con apoyo de Semarnat, el Fondo de Cooperación de la Alianza del Pacífico y GeoCiclos de Chile."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Convierte residuos orgánicos en composta para las áreas verdes."
+        },
+        {
+          "speaker": "host",
+          "text": "Ya entregaron 40 composteros a familias y planean más en El Centenario y La Cima."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esto reduce la basura que llega al relleno sanitario."
+        },
+        {
+          "speaker": "host",
+          "text": "Y mejora el suelo sin necesidad de fertilizantes químicos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un paso práctico que se nota en las colonias. [breath]"
+        },
+        {
+          "speaker": "host",
+          "text": "Pasemos al frente frío."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Palabra BCS del 16 de noviembre, el número 7 cruzará el noroeste con chubascos y descenso de temperatura."
+        },
+        {
+          "speaker": "host",
+          "text": "Se esperan lluvias de 5 a 25 milímetros en el Pacífico Norte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Especialmente en Bahía Tortugas, Guerrero Negro y El Vizcaíno."
+        },
+        {
+          "speaker": "host",
+          "text": "El frío llegará al centro y sur entre jueves y sábado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el valle de Santo Domingo y La Paz las mínimas podrían bajar a 16 o 17 grados."
+        },
+        {
+          "speaker": "host",
+          "text": "Por primera vez en la temporada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un cambio notable después de semanas más cálidas."
+        },
+        {
+          "speaker": "host",
+          "text": "Para los habitantes significa más abrigo por las noches y precaución en carreteras por viento."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y para los agricultores del valle, un alivio temporal del calor pero con posible humedad extra."
+        },
+        {
+          "speaker": "host",
+          "text": "Tres noticias del mismo día que muestran cómo el clima y las acciones locales se relacionan."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas? ¿Cómo te preparas cuando llega un frente frío así?"
+        }
+      ]
+    },
+    {
+      "id": "mas",
+      "title": "Más noticias",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según la nota de La Nigua del 15 de noviembre, la Profepa visitó el 11 de noviembre el Hotel San Cristóbal en Punta Lobos, Todos Santos."
+        },
+        {
+          "speaker": "host",
+          "text": "Revisaron el derrumbe de un muro y la demolición de partes dañadas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El aviso vino del proyecto Tres Santos, según la misma nota."
+        },
+        {
+          "speaker": "host",
+          "text": "No hallaron descargas de aguas residuales, químicos ni hidrocarburos al mar, ni fauna afectada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora revisarán la autorización de impacto ambiental y el manejo de residuos. [pause] Podrán hacer una inspección si hay incumplimientos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y eso qué implica para la zona costera de Todos Santos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Evitar que los escombros lleguen al mar protege las playas y la vida marina cercana."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y mantiene el equilibrio de la zona sin contaminación extra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cambiando de tema, según Meganoticias del 14 de noviembre, el investigador Miguel Imaz de la UABCS advierte sobre el nivel del mar en Puerto San Carlos."
+        },
+        {
+          "speaker": "host",
+          "text": "El Niño elevó el oleaje entre 15 y 30 centímetros y contribuyó al colapso de barreras naturales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "15 a 30 centímetros marca una diferencia clara en la costa."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y eso permitió el ingreso de agua de mar en la comunidad de Comondú."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Imaz espera que el fenómeno se debilite en 2027, aunque con incertidumbre."
+        },
+        {
+          "speaker": "host",
+          "text": "Mencionó que las lluvias invernales podrían ser más intensas este año."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pidió analizar alternativas de protección porque un muro de concreto sería solo temporal. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Un análisis integral ayudaría a elegir opciones más duraderas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora veamos algo más positivo."
+        },
+        {
+          "speaker": "host",
+          "text": "Según Meganoticias del 12 de noviembre, en el Foro Mar de Cortés presentaron avances del proyecto Shell Nurse en la Bahía de La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "FEDECOOP y el Gobierno de BCS impulsan arrecifes artificiales con tecnología japonesa."
+        },
+        {
+          "speaker": "host",
+          "text": "Es una respuesta pesquera al calentamiento del mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hay una investigación de la Secihti sobre el desempeño de las estructuras y un análisis de costo-beneficio del BID."
+        },
+        {
+          "speaker": "host",
+          "text": "Participan también IMIPAS y CISIMAR en ese estudio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los siguientes pasos incluyen proteger las zonas donde se instalen estos arrecifes."
+        },
+        {
+          "speaker": "host",
+          "text": "También se menciona el primer rancho marino en la bahía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un esfuerzo que combina pesca y restauración marina."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm, y ayuda a crear oportunidades para quienes dependen de la pesca local."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, porque el mar más caliente afecta las capturas."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué opinas tú de estas medidas para cuidar el litoral de Baja California Sur?"
+        }
+      ]
+    },
+    {
+      "id": "contexto",
+      "title": "El contexto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de Meganoticias del 14 de noviembre, Miguel Imaz de la UABCS explicó que El Niño elevó el oleaje en Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Cuánto subió exactamente el nivel?"
+        },
+        {
+          "speaker": "host",
+          "text": "Entre 15 y 30 centímetros, y eso provocó el colapso de barreras naturales con entrada de agua de mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Y Tribuna de México del 7 de noviembre menciona que el mismo laboratorio de la UABCS prevé mareas altas."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, de 2.12 a 2.55 metros en Bahía Magdalena."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Para qué fechas?"
+        },
+        {
+          "speaker": "host",
+          "text": "Entre el 21 y el 28 de noviembre, con posibles inundaciones en Comondú y Mulegé."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso conecta directo con lo que pasó en Punta Lobos."
+        },
+        {
+          "speaker": "host",
+          "text": "HOY BCS del 11 de noviembre reportó que el oleaje erosionó el terreno y obligó a demoler parte del Hotel San Cristóbal el 10 de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los pescadores ya lo habían advertido desde 2015."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, decían que las obras del desarrollo Tres Santos alteraban la playa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto, Meganoticias del 3 de noviembre informó que Zofemat retiró más de 350 llantas de El Médano tras las lluvias."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y cuánta basura además de las llantas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "18 toneladas, todo arrastrado por las crecidas del 30 de octubre."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa basura venía de cauces usados como tiraderos clandestinos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la Bahía de La Paz, Tribuna de México del 11 de noviembre señaló que la temporada de tiburón ballena sigue detenida."
+        },
+        {
+          "speaker": "host",
+          "text": "Porque aún no llegan los seis ejemplares mínimos que exige el plan de manejo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Prestadores lo atribuyen a la temperatura del agua alterada por El Niño."
+        },
+        {
+          "speaker": "host",
+          "text": "Como respuesta al calentamiento del mar, Meganoticias del 12 de noviembre cubrió el avance del proyecto Shell Nurse de arrecifes artificiales en la Bahía de La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Se presentó en el Foro Mar de Cortés y hay una investigación de la Secihti sobre cómo funcionan las estructuras."
+        },
+        {
+          "speaker": "host",
+          "text": "El mismo foro reunió en Los Cabos a sectores de varios estados para hablar de conservación marina."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Del 10 al 12 de noviembre?"
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto, según Tus Buenas Noticias del 9 de noviembre, bajo el lema «Tomando el Timón»."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por otro lado, Gringo Gazette del 2 de noviembre informó que Semarnat aprobó el desarrollo Camarón Beach al noroeste de La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, en 30.96 hectáreas, aunque reconocen impactos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La autorización exige rescatar tres reptiles protegidos."
+        },
+        {
+          "speaker": "host",
+          "text": "Y desmontar 10.54 hectáreas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "HCN del 29 de octubre reportó una iniciativa del diputado Erick Agúndez para que los ayuntamientos participen en reservas ecológicas."
+        },
+        {
+          "speaker": "host",
+          "text": "Busca reformar el artículo 106 de la Ley de Equilibrio Ecológico y ya fue turnada a la comisión de Ecología."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El hilo que une estas notas es la presión constante sobre la franja costera por El Niño y por decisiones de desarrollo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué medidas concretas crees que deberían priorizarse primero en las comunidades más expuestas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es lo que queda por definir con los dictámenes técnicos que aún faltan. [pause]"
+        }
+      ]
+    },
+    {
+      "id": "lugares",
+      "title": "Dónde y a quién",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según el aviso 638 del Servicio Meteorológico Nacional reportado por POSTA México el 16 de noviembre, se esperan olas de dos a tres metros en la costa occidental de Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso afecta directamente a Guerrero Negro, Bahía Asunción, Puerto San Carlos, Puerto Adolfo López Mateos, Todos Santos y El Pescadero."
+        },
+        {
+          "speaker": "host",
+          "text": "También menciona rachas de 30 a 50 kilómetros por hora en el Golfo de California, con riesgo para pangas y lanchas pequeñas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Marina ya cerró la navegación menor en Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y López Mateos cuando pasó el frente frío cuatro a inicios de noviembre."
+        },
+        {
+          "speaker": "host",
+          "text": "En La Paz, el Ayuntamiento instaló el tercer compostero comunitario en el Centro Impulso de la colonia El Palmar II, informa Diario Humano el 16 de noviembre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los dos anteriores están en Solidaridad y Los Mangos, y el programa sigue con apoyo de Semarnat, el Fondo de Cooperación de la Alianza del Pacífico y GeoCiclos de Chile."
+        },
+        {
+          "speaker": "host",
+          "text": "La idea es convertir residuos orgánicos en composta para áreas verdes, después de entregar 40 composteros a familias."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Palabra BCS reporta que el frente frío número siete llegará entre jueves y sábado, con mínimas de dieciséis a diecisiete grados en el valle de Santo Domingo y en La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Las lluvias de 5 a 25 milímetros se esperan en el Pacífico Norte, sobre todo en Bahía Tortugas, Guerrero Negro y El Vizcaíno."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Profepa revisó el once de noviembre los escombros del Hotel San Cristóbal en Punta Lobos, Todos Santos, según La Nigua."
+        },
+        {
+          "speaker": "host",
+          "text": "No encontraron descargas de aguas residuales ni químicos al mar, pero van a revisar la autorización de impacto ambiental y el manejo de residuos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Puerto San Carlos, Comondú, el investigador Miguel Imaz de la UABCS explica que El Niño elevó el nivel del mar entre 15 y 30 centímetros, reporta Meganoticias."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso contribuyó al colapso de barreras naturales y a la entrada de agua de mar; el fenómeno se espera que se debilite en 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En la Bahía de La Paz, FEDECOOP y el Gobierno de Baja California Sur presentaron avances de los arrecifes artificiales Shell Nurse con tecnología japonesa."
+        },
+        {
+          "speaker": "host",
+          "text": "Es parte de la respuesta a la pesca ante el calentamiento del mar, con investigación de Secihti y análisis de costo-beneficio del BID, IMIPAS y CISIMAR."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y tú qué opinas de cómo estos proyectos locales conectan con las alertas del mar y el clima en todo el estado?"
+        }
+      ]
+    },
+    {
+      "id": "claves",
+      "title": "Qué significa",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según la nota de POSTA México del 16 de noviembre, el Servicio Meteorológico Nacional emitió el aviso 638."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Y qué dice exactamente ese aviso?"
+        },
+        {
+          "speaker": "host",
+          "text": "Prevén oleaje de 2 a 3 metros en la costa occidental de Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso ya es alto para las pangas. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, y también rachas de 30 a 50 kilómetros por hora en el Golfo de California."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Con ese oleaje la navegación menor tiene que esperar."
+        },
+        {
+          "speaker": "host",
+          "text": "En noviembre anterior, con el frente frío 4, Marina cerró varios puertos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora pasemos a algo distinto. Diario Humano reportó que La Paz instaló su tercer compostero comunitario."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, en el Centro Impulso de la colonia El Palmar II."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso significa que los residuos orgánicos de la zona se convierten en composta para las áreas verdes."
+        },
+        {
+          "speaker": "host",
+          "text": "El programa ya entregó 40 composteros a familias y sigue con Semarnat."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué otros lugares siguen después de El Palmar II?"
+        },
+        {
+          "speaker": "host",
+          "text": "Seguirán el parque Fundadores en El Centenario y La Cima, con apoyo de GeoCiclos de Chile."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Palabra BCS informa que el frente frío 7 llegará entre jueves y sábado."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz podría bajar a 17 grados por primera vez en la temporada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso cambia la sensación térmica para quienes viven en el centro y sur."
+        },
+        {
+          "speaker": "host",
+          "text": "Según La Nigua del 15 de noviembre, Profepa revisó el Hotel San Cristóbal en Punta Lobos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No encontró descargas al mar ni fauna afectada."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero vigilará el manejo de escombros y la autorización de impacto ambiental."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso significa que la demolición queda bajo supervisión para evitar que llegue al mar."
+        },
+        {
+          "speaker": "host",
+          "text": "Otro reporte de Meganoticias menciona que El Niño elevó el nivel del mar en Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El investigador Miguel Imaz de la UABCS explica que eso contribuyó al colapso de barreras naturales."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que significa para la comunidad es que se necesita un análisis integral de protección."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Porque un muro de concreto sería solo temporal."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el mismo medio cubrió el proyecto Shell Nurse de arrecifes artificiales en la Bahía de La Paz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "FEDECOOP y el gobierno estatal lo presentan como respuesta al calentamiento del mar para la pesca."
+        },
+        {
+          "speaker": "host",
+          "text": "Hay una investigación financiada por la Secihti sobre el desempeño de las estructuras."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso ayuda a entender si los arrecifes artificiales realmente protegen las zonas de pesca."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y usted qué opina de cómo estas medidas locales responden a los cambios que vienen del mar?"
+        }
+      ]
+    },
+    {
+      "id": "pendientes",
+      "title": "Lo que falta saber",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Según la nota de La Nigua del 15 de noviembre, Profepa ya revisó el Hotel San Cristóbal en Punta Lobos."
+        },
+        {
+          "speaker": "host",
+          "text": "No encontró descargas al mar, pero aún falta definir si la demolición cumple con la autorización de impacto ambiental."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Lo que sigue es si harán una visita de inspección completa."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso queda abierto por ahora."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el caso de El Niño, según Meganoticias del 14 de noviembre, Miguel Imaz de la UABCS espera que el fenómeno se debilite en 2027."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo incierto es cuánto subirán las mareas este año en Puerto San Carlos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y qué alternativas de protección elegirán."
+        },
+        {
+          "speaker": "host",
+          "text": "Un muro de concreto sería solo temporal, dice el investigador."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sobre el tiburón ballena, Tribuna de México reporta el 11 de noviembre que los recorridos siguen detenidos."
+        },
+        {
+          "speaker": "host",
+          "text": "Aún no alcanzan los seis ejemplares mínimos que pide el plan de manejo de la Conanp."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los prestadores culpan a la temperatura del agua alterada por El Niño."
+        },
+        {
+          "speaker": "host",
+          "text": "Falta saber cuándo se reanudará la temporada legal que ya empezó en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Del compostero comunitario en El Palmar II, Diario Humano del 16 de noviembre señala que vendrán dos más."
+        },
+        {
+          "speaker": "host",
+          "text": "En el parque Fundadores y en La Cima."
+        },
+        {
+          "speaker": "cohost",
+          "text": "No se sabe la fecha exacta de instalación."
+        },
+        {
+          "speaker": "host",
+          "text": "Tampoco cuántas familias recibirán los próximos composteros individuales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el proyecto Shell Nurse, Meganoticias del 12 de noviembre informa que hay estudios del BID y del IMIPAS en marcha."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo pendiente es cómo proteger las zonas donde se colocarán los arrecifes artificiales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y cuál será el resultado del análisis costo-beneficio."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso todavía no se publica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los frentes fríos también dejan dudas."
+        },
+        {
+          "speaker": "host",
+          "text": "Palabra BCS del 16 de noviembre prevé que el número 7 baje la temperatura en La Paz entre jueves y sábado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Falta confirmar si llegan las lluvias de 5 a 25 mm en el Pacífico Norte."
+        },
+        {
+          "speaker": "host",
+          "text": "Y cómo afectará a las pangas, porque el Servicio Meteorológico ya alertó oleaje de 2 a 3 metros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces, de todo esto, lo que más me hace pensar es que varias decisiones quedan en manos de las autoridades las próximas semanas."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. ¿Y tú qué opinas que deberían priorizar primero los gobiernos municipales y estatales?"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para pensar",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "Exacto, Tomás. Y también se menciona el proyecto Shell Nurse con arrecifes artificiales en la Bahía de La Paz."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese compostero permite que los vecinos conviertan residuos orgánicos en abono cerca de casa. [breath] ¿Qué opinas de eso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me parece práctico. Y la vigilancia en el hotel protege la costa de materiales que podrían contaminar."
+        },
+        {
+          "speaker": "host",
+          "text": "El proyecto Shell Nurse usa tecnología japonesa para arrecifes artificiales y el primer rancho marino."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso ayuda a cuidar el fondo marino mientras se desarrolla la zona. [chuckle] Cambia la forma en que la gente ve el cuidado del entorno cercano."
+        },
+        {
+          "speaker": "host",
+          "text": "En resumen, estas acciones locales buscan reducir basura y proteger el agua que usamos todos los días."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo que cambia para la gente de Baja California Sur es que se facilita el manejo de residuos y se cuida mejor la costa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y tú qué harías si tu colonia tuviera un compostero como el de El Palmar II?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Te sumarías a vigilar que los escombros no terminen en el mar, como pasa con el Hotel San Cristóbal?"
+        }
+      ]
+    }
+  ]
+}

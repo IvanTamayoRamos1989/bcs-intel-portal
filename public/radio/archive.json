@@ -6,102 +6,94 @@
       "edition": "/radio/editions/2026-11-18/edition.json",
       "topics": [
         {
-          "topic": "conectividad",
-          "name_es": "Conectividad",
-          "name_en": "Connectivity",
+          "topic": "noticias-conectividad",
+          "name_es": "Noticias · Conectividad",
+          "name_en": "News · Connectivity",
+          "kind": "noticias",
+          "number": 1,
+          "title_es": "Pasajeros de octubre en aeropuertos de Los Cabos y La Paz",
+          "title_en": "October Passenger Figures at Los Cabos and La Paz Airports",
           "duration": {
-            "es": 1247.9,
-            "en": 1235.4
+            "es": 1197.2,
+            "en": 1262.0
           }
         },
         {
-          "topic": "medio_ambiente",
-          "name_es": "Medio ambiente",
-          "name_en": "Environment",
+          "topic": "noticias-infraestructura",
+          "name_es": "Noticias · Infraestructura",
+          "name_en": "News · Infrastructure",
+          "kind": "noticias",
+          "number": 2,
+          "title_es": "Pavimentación en La Paz y licitación Oasis en Mulegé",
+          "title_en": "Paving in La Paz and Oasis Tender in Mulegé",
           "duration": {
-            "es": 1222.6,
-            "en": 1260.9
+            "es": 1248.5,
+            "en": 1190.0
           }
         },
         {
-          "topic": "agua",
-          "name_es": "Agua",
-          "name_en": "Water",
+          "topic": "noticias-medio_ambiente",
+          "name_es": "Noticias · Medio ambiente",
+          "name_en": "News · Environment",
+          "kind": "noticias",
+          "number": 3,
+          "title_es": "Aviso 638 por oleaje en costa de Baja California Sur",
+          "title_en": "Notice 638 forecasts surf on Baja California Sur coast",
           "duration": {
-            "es": 1244.9,
-            "en": 1233.1
+            "es": 1229.4,
+            "en": 1188.7
           }
         },
         {
-          "topic": "infraestructura",
-          "name_es": "Infraestructura",
-          "name_en": "Infrastructure",
+          "topic": "datos-economia",
+          "name_es": "Datos del portal · Economía",
+          "name_en": "Portal data · Economy",
+          "kind": "datos",
+          "number": 4,
+          "title_es": "Fuentes de datos económicos del portal en Baja California Sur",
+          "title_en": "Portal Economy Data Sources for Baja California Sur",
           "duration": {
-            "es": 1241.1,
-            "en": 1193.9
+            "es": 1230.0,
+            "en": 1206.5
           }
         },
         {
-          "topic": "finanzas",
-          "name_es": "Finanzas",
-          "name_en": "Finance",
+          "topic": "datos-conectividad",
+          "name_es": "Datos del portal · Conectividad",
+          "name_en": "Portal data · Connectivity",
+          "kind": "datos",
+          "number": 5,
+          "title_es": "Datos del portal de conectividad en Los Cabos",
+          "title_en": "Portal Connectivity Data for Los Cabos",
           "duration": {
-            "es": 1224.0,
-            "en": 1315.1
+            "es": 1236.0,
+            "en": 1217.8
           }
         },
         {
-          "topic": "desarrollo",
-          "name_es": "Desarrollo",
-          "name_en": "Development",
+          "topic": "tendencia",
+          "name_es": "Tendencia 2050",
+          "name_en": "Trend 2050",
+          "kind": "tendencia",
+          "number": 6,
+          "title_es": "Estrés hídrico-costero lidera Tendencia 2050 en Baja California Sur",
+          "title_en": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
           "duration": {
-            "es": 1256.5,
-            "en": 1229.2
+            "es": 1353.2,
+            "en": 1248.8
           }
         },
         {
-          "topic": "turismo",
-          "name_es": "Turismo",
-          "name_en": "Tourism",
+          "topic": "vision",
+          "name_es": "Visión 2050",
+          "name_en": "Vision 2050",
+          "kind": "vision",
+          "number": 7,
+          "title_es": "Visión 2050 para mitigar estrés hídrico-costero en Baja California Sur",
+          "title_en": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
           "duration": {
-            "es": 1233.9,
-            "en": 1254.8
-          }
-        },
-        {
-          "topic": "economia",
-          "name_es": "Economía",
-          "name_en": "Economy",
-          "duration": {
-            "es": 1319.0,
-            "en": 1242.7
-          }
-        },
-        {
-          "topic": "urbanismo",
-          "name_es": "Urbanismo",
-          "name_en": "Urbanism",
-          "duration": {
-            "es": 1219.6,
-            "en": 1201.3
-          }
-        },
-        {
-          "topic": "crimen",
-          "name_es": "Seguridad",
-          "name_en": "Security",
-          "duration": {
-            "es": 1232.4,
-            "en": 1197.0
-          }
-        },
-        {
-          "topic": "transporte",
-          "name_es": "Transporte",
-          "name_en": "Transport",
-          "duration": {
-            "es": 1204.3,
-            "en": 1196.8
+            "es": 1247.0,
+            "en": 1248.5
           }
         }
       ]
@@ -115,6 +107,10 @@
           "topic": "infraestructura",
           "name_es": "Infraestructura",
           "name_en": "Infrastructure",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1263.1,
             "en": 1215.6
@@ -124,6 +120,10 @@
           "topic": "finanzas",
           "name_es": "Finanzas",
           "name_en": "Finance",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1185.8,
             "en": 1241.4
@@ -133,6 +133,10 @@
           "topic": "desarrollo",
           "name_es": "Desarrollo",
           "name_en": "Development",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1188.8,
             "en": 1197.8
@@ -142,6 +146,10 @@
           "topic": "turismo",
           "name_es": "Turismo",
           "name_en": "Tourism",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1191.0,
             "en": 1237.0
@@ -151,6 +159,10 @@
           "topic": "economia",
           "name_es": "Economía",
           "name_en": "Economy",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1252.5,
             "en": 1236.6
@@ -160,6 +172,10 @@
           "topic": "urbanismo",
           "name_es": "Urbanismo",
           "name_en": "Urbanism",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1247.3,
             "en": 1194.0
@@ -169,6 +185,10 @@
           "topic": "crimen",
           "name_es": "Seguridad",
           "name_en": "Security",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1226.3,
             "en": 1205.4
@@ -178,6 +198,10 @@
           "topic": "transporte",
           "name_es": "Transporte",
           "name_en": "Transport",
+          "kind": null,
+          "number": null,
+          "title_es": null,
+          "title_en": null,
           "duration": {
             "es": 1198.8,
             "en": 1215.3

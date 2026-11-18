@@ -318,7 +318,7 @@ def run_radio() -> None:
     """Today's Radio BCS2050 edition (ES + EN). Non-fatal: the news refresh never fails because of the radio."""
     print("→ bcs_radio.py")
     try:
-        r = subprocess.run([sys.executable, str(ROOT / "scripts" / "bcs_radio.py")], cwd=ROOT, timeout=3600)
+        r = subprocess.run([sys.executable, str(ROOT / "scripts" / "bcs_radio.py")], cwd=ROOT, timeout=5400)
         if r.returncode != 0:
             print(f"WARN: radio edition failed (exit {r.returncode}); feed is still written", file=sys.stderr)
     except Exception as e:  # noqa: BLE001
