@@ -8,48 +8,44 @@
       "title": "Entrada",
       "turns": [
         {
+          "speaker": "host",
+          "text": "El Servicio Meteorológico Nacional emitió el aviso 638 que prevé oleaje de 2 a 3 metros en la costa occidental de Baja California Sur, informa POSTA México del 16 de noviembre de 2026."
+        },
+        {
           "speaker": "cohost",
-          "text": "Escucha cómo rompen esas olas de dos a tres metros contra las pangas en Puerto San Carlos, el mar subiendo más de lo normal por El Niño."
+          "text": "¿Y eso qué significa para las comunidades de la costa?"
         },
         {
           "speaker": "host",
-          "text": "Mm. Los pescadores ya lo sentían venir."
+          "text": "Afecta directamente a pangas y lanchas en lugares como Guerrero Negro, Bahía Asunción, Puerto San Carlos y Todos Santos."
         },
         {
           "speaker": "cohost",
-          "text": "Según POSTA México, el Servicio Meteorológico Nacional lo advirtió hace días."
+          "text": "Mm, y las rachas de viento también entran en el aviso."
         },
         {
           "speaker": "host",
-          "text": "¿Y las rachas?"
+          "text": "Sí, trae rachas de 30 a 50 kilómetros por hora en el Golfo de California. [pause] Ya vimos algo parecido con el frente frío 4, cuando Marina cerró la navegación menor en Santa Rosalía, Loreto y Bahía Magdalena."
         },
         {
           "speaker": "cohost",
-          "text": "30 a 50 kilómetros por hora también en el Golfo de California."
+          "text": "En paralelo, el Ayuntamiento de La Paz instaló su tercer compostero comunitario en El Palmar II, según Diario Humano."
         },
         {
           "speaker": "host",
-          "text": "¿Y mientras tanto, en La Paz, qué hacen con todo lo que el mar deja atrás?"
+          "text": "Ese es el tercero después de los de Solidaridad y Los Mangos. El programa, con Semarnat y GeoCiclos, convierte residuos orgánicos en composta para áreas verdes."
         },
         {
           "speaker": "cohost",
-          "text": "Diario Humano cuenta que instalaron el tercer compostero comunitario en El Palmar II."
+          "text": "¿Qué pregunta concreta vamos a responder hoy en Radio BCS2050 sobre el medio ambiente?"
         },
         {
           "speaker": "host",
-          "text": "El tercero ya. [pause] Como si la ciudad estuviera aprendiendo a devolver lo que recibe."
+          "text": "Cómo estos avisos meteorológicos y los programas de compostaje municipal se conectan con la gestión de riesgos costeros y residuos en Baja California Sur hacia 2050. [chuckle]"
         },
         {
           "speaker": "cohost",
-          "text": "Y los escombros del viejo hotel en Punta Lobos siguen vigilados para que no lleguen al agua. [chuckle] Los pescadores lo habían dicho antes de que llegara la erosión."
-        },
-        {
-          "speaker": "host",
-          "text": "Ahora viene el frente frío siete y La Paz podría bajar a diecisiete grados por la noche."
-        },
-        {
-          "speaker": "cohost",
-          "text": "Bienvenidos a Radio BCS2050. Hoy hablamos de medio ambiente. La pregunta que nos vamos a hacer es: ¿qué le pide el mar a esta costa para que sigamos aquí en 2050?"
+          "text": "Eso nos da un panorama claro de lo que ya está pasando y lo que se está preparando. [breath]"
         }
       ]
     },
@@ -58,116 +54,136 @@
       "title": "Acto 1 · Lo que está pasando",
       "turns": [
         {
-          "speaker": "cohost",
-          "text": "Según POSTA México, el Servicio Meteorológico Nacional emite el aviso 638 con oleaje de 2 a 3 metros en la costa occidental de Baja California Sur."
-        },
-        {
           "speaker": "host",
-          "text": "Eso afecta directamente a los pescadores. ¿Cómo se preparan cuando el mar se pone así?"
+          "text": "Según POSTA México, el Servicio Meteorológico Nacional emitió el aviso 638 para Baja California Sur."
         },
         {
           "speaker": "cohost",
-          "text": "Menciona riesgo para pangas y lanchas en lugares como Guerrero Negro y Puerto San Carlos."
+          "text": "¿Qué alerta principal incluye ese aviso y cómo afecta a la gente del mar?"
         },
         {
           "speaker": "host",
-          "text": "Mm. [pause] El Pacífico no avisa dos veces."
+          "text": "Prevén oleaje de 2 a 3 metros en la costa occidental del estado, con riesgo directo para pangas y lanchas."
         },
         {
           "speaker": "cohost",
-          "text": "También trae rachas de 30 a 50 kilómetros por hora en el Golfo de California."
+          "text": "Eso impacta directamente a los pescadores que salen cada día."
         },
         {
           "speaker": "host",
-          "text": "Imagino las lanchas amarradas temprano. ¿Qué hacen las familias cuando el oleaje llega así?"
+          "text": "Sí, en puntos como Guerrero Negro, Bahía Asunción y Puerto San Carlos."
         },
         {
           "speaker": "cohost",
-          "text": "Y al inicio de noviembre ya cerraron la navegación menor en Santa Rosalía y Loreto por otro frente."
+          "text": "¿Y qué otros sitios de la costa occidental también están en el aviso?"
         },
         {
           "speaker": "host",
-          "text": "Ahora viene el frente frío número 7, informa Palabra BCS."
+          "text": "También en Puerto Adolfo López Mateos, Todos Santos y El Pescadero."
         },
         {
           "speaker": "cohost",
-          "text": "¿Qué temperaturas esperan en el sur?"
+          "text": "Además mencionan rachas de viento que complican todo."
         },
         {
           "speaker": "host",
-          "text": "En La Paz podría bajar a 17 grados por primera vez en la temporada, entre jueves y sábado."
+          "text": "Anuncian rachas de 30 a 50 kilómetros por hora en el Golfo de California. [chuckle]"
         },
         {
           "speaker": "cohost",
-          "text": "Ese frío llega con chubascos y rachas fuertes. ¿Cómo se adaptan las familias cuando llega así de pronto?"
+          "text": "Eso complica salir con pangas pequeñas, ¿no?"
         },
         {
           "speaker": "host",
-          "text": "Y lluvias de 5 a 25 milímetros en el Pacífico Norte, como Bahía Tortugas."
+          "text": "Exacto, representa riesgo directo para la navegación menor."
         },
         {
           "speaker": "cohost",
-          "text": "El valle de Santo Domingo también sentirá el frío. Me pregunto qué hacen los agricultores con ese descenso."
+          "text": "Ya pasó algo similar a inicios de noviembre con otro frente."
         },
         {
           "speaker": "host",
-          "text": "Mientras tanto Diario Humano cuenta que La Paz instaló su tercer compostero comunitario en El Palmar II."
+          "text": "Con el frente frío 4, Marina cerró Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y López Mateos."
         },
         {
           "speaker": "cohost",
-          "text": "Es el tercero después de Solidaridad y Los Mangos. [chuckle] ¿No es curioso que mientras llega el frío sigamos pensando en la tierra?"
+          "text": "Ahora Diario Humano informa sobre un nuevo compostero en La Paz."
         },
         {
           "speaker": "host",
-          "text": "¿Quiénes participan en el programa?"
+          "text": "El Ayuntamiento instaló su tercer compostero comunitario en El Palmar II, con apoyo de Semarnat."
         },
         {
           "speaker": "cohost",
-          "text": "El Ayuntamiento, Semarnat, el Fondo de Cooperación de la Alianza del Pacífico y GeoCiclos de Chile."
+          "text": "¿Qué otros ya existían y qué viene después?"
         },
         {
           "speaker": "host",
-          "text": "Ya entregaron 40 composteros a familias y planean más en el parque Fundadores."
+          "text": "Ya tenían los de Solidaridad y Los Mangos; ahora siguen el parque Fundadores en El Centenario y La Cima."
         },
         {
           "speaker": "cohost",
-          "text": "Me gusta que sigan en El Centenario y La Cima. ¿Crees que la composta ayuda a que las áreas verdes resistan el calor que viene después?"
+          "text": "¿Con qué apoyo se realiza el programa y para qué sirve la composta?"
         },
         {
           "speaker": "host",
-          "text": "La Nigua reporta que Profepa vigiló los escombros del Hotel San Cristóbal en Punta Lobos."
+          "text": "Con el Fondo de Cooperación de la Alianza del Pacífico y GeoCiclos de Chile, convierte residuos orgánicos en composta para áreas verdes."
         },
         {
           "speaker": "cohost",
-          "text": "¿Para evitar que lleguen al mar?"
+          "text": "Antes entregaron 40 composteros a familias; eso ayuda a reducir basura."
         },
         {
           "speaker": "host",
-          "text": "Exacto. Revisaron el 11 de noviembre y no encontraron descargas ni fauna afectada."
+          "text": "Palabra BCS reporta la llegada del frente frío número 7 asociado a una vaguada."
         },
         {
           "speaker": "cohost",
-          "text": "El proyecto Tres Santos avisó del derrumbe. ¿Qué pasaría si un muro cae y nadie lo vigila?"
+          "text": "¿Qué mínimas se esperan en La Paz y cuándo llega el frío?"
         },
         {
           "speaker": "host",
-          "text": "Pero van a checar la autorización de impacto ambiental."
+          "text": "Podrían bajar a 17 grados por la noche por primera vez en la temporada, entre jueves y sábado."
         },
         {
           "speaker": "cohost",
-          "text": "Sí. [pause] El mar siempre termina recibiendo lo que no cuidamos."
+          "text": "¿Y qué lluvias se esperan en el Pacífico Norte?"
         },
         {
           "speaker": "host",
-          "text": "El desierto y el mar no perdonan descuidos. [breath] Espero que la vigilancia sea constante."
+          "text": "Prevén lluvias de 5 a 25 milímetros en Bahía Tortugas, Guerrero Negro y El Vizcaíno."
         },
         {
           "speaker": "cohost",
-          "text": "Después de la inspección Profepa podría regresar si hay incumplimientos."
+          "text": "La Nigua cubrió la visita de Profepa al Hotel San Cristóbal tras aviso del proyecto Tres Santos."
         },
         {
           "speaker": "host",
-          "text": "Eso mantiene la atención en Punta Lobos. ¿Crees que los vecinos cerca del mar respiran más tranquilos ahora?"
+          "text": "El 11 de noviembre revisaron un muro derrumbado en Punta Lobos, Todos Santos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Detectaron alguna descarga al mar o fauna afectada?"
+        },
+        {
+          "speaker": "host",
+          "text": "No encontraron aguas residuales, químicos ni hidrocarburos; tampoco reportaron fauna afectada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué sigue ahora para Profepa y el manejo de escombros?"
+        },
+        {
+          "speaker": "host",
+          "text": "Revisarán la autorización de impacto ambiental, si la demolición está contemplada y el manejo de residuos. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y qué ocurre si encuentran incumplimientos?"
+        },
+        {
+          "speaker": "host",
+          "text": "Podrán ordenar una visita de inspección formal. Los escombros quedan bajo vigilancia para que no lleguen al mar."
         }
       ]
     },
@@ -177,119 +193,79 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Pienso en los pescadores de Puerto San Carlos y Bahía Asunción cuando llega el viento."
+          "text": "Según Diario Humano, el Ayuntamiento de La Paz instaló el 16 de noviembre el tercer compostero comunitario en el Centro Impulso de la colonia El Palmar II."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, y según POSTA México el aviso del Servicio Meteorológico Nacional habla de oleaje de 2 a 3 metros en toda esa costa occidental."
+          "text": "Es el tercero después de los de Solidaridad y Los Mangos. El programa trabaja con Semarnat y el Fondo de Cooperación de la Alianza del Pacífico."
         },
         {
           "speaker": "host",
-          "text": "¿Qué hacen ellos cuando las pangas no pueden salir? [pause] ¿Quedan en tierra esperando?"
+          "text": "Convierten residuos orgánicos en composta para áreas verdes. Ya entregaron también 40 composteros a familias."
         },
         {
           "speaker": "cohost",
-          "text": "Es probable. El mismo aviso menciona rachas de 30 a 50 km/h también en el Golfo de California."
+          "text": "Siguen el parque Fundadores en El Centenario y La Cima. [chuckle] Parece que el modelo se va copiando rápido."
         },
         {
           "speaker": "host",
-          "text": "En Comondú el desierto ya les enseña paciencia con el agua y ahora también con el mar."
+          "text": "Ahora, del mismo día, POSTA México reporta el aviso 638 del Servicio Meteorológico Nacional."
         },
         {
           "speaker": "cohost",
-          "text": "Mm. Y más al norte, en Santa Rosalía y Guerrero Negro, la misma alerta los alcanza."
+          "text": "Prevén oleaje de 2 a 3 metros en la costa occidental de BCS."
         },
         {
           "speaker": "host",
-          "text": "Me pregunto qué preguntaría un visitante a esos pescadores sobre el mar que ya no se puede leer igual."
+          "text": "En Guerrero Negro, Bahía Asunción, Puerto San Carlos, Puerto Adolfo López Mateos, Todos Santos y El Pescadero."
         },
         {
           "speaker": "cohost",
-          "text": "Quizá cómo cambian las rutas cuando el oleaje sube."
+          "text": "También rachas de 30 a 50 km/h en el Golfo de California. Riesgo directo para pangas y lanchas."
         },
         {
           "speaker": "host",
-          "text": "En La Paz, mientras tanto, hay otra forma de leer el lugar."
+          "text": "A inicios de noviembre el frente frío 4 ya obligó a Marina a cerrar navegación menor en Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y López Mateos."
         },
         {
           "speaker": "cohost",
-          "text": "Informa Diario Humano que instalaron el tercer compostero comunitario en El Palmar II."
+          "text": "Esos son los mismos puntos que aparecen en las alertas de oleaje de ahora."
         },
         {
           "speaker": "host",
-          "text": "Tercero ya. Antes los de Solidaridad y Los Mangos."
+          "text": "Guerrero Negro y Bahía Asunción quedan en Mulegé norte, y Puerto San Carlos está en Comondú."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. El programa con Semarnat y GeoCiclos convierte residuos orgánicos en composta para áreas verdes."
+          "text": "Dos municipios que el portal menciona por su base agrícola y sus pilotos de desalación."
         },
         {
           "speaker": "host",
-          "text": "¿Cómo huele una colonia cuando la composta empieza a nutrir los parques? [chuckle]"
+          "text": "El estrés de riego y acuíferos ya es una limitante documentada en Comondú."
         },
         {
           "speaker": "cohost",
-          "text": "Y van por más: el parque Fundadores en El Centenario y La Cima."
+          "text": "Y en Mulegé norte la distancia a mercados y la escasez de servicios siguen siendo restricciones fuertes."
         },
         {
           "speaker": "host",
-          "text": "En Mulegé la gente vive entre energía remota y este mismo mar que se mueve fuerte."
+          "text": "El compostero de La Paz reduce residuos que van a relleno, pero el oleaje afecta directamente la pesca y la logística costera."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, el aislamiento les da espacio para probar cosas, pero el viento y el agua siguen marcando el paso."
+          "text": "En ambos casos el impacto llega a las colonias y a los puertos que dependen del mar o del agua subterránea."
         },
         {
           "speaker": "host",
-          "text": "Qué le preguntaría a quien vive entre el compostero y la panga que no sale."
+          "text": "La pregunta práctica es cómo se coordina el manejo de residuos orgánicos con la protección de la navegación menor en estos municipios."
         },
         {
           "speaker": "cohost",
-          "text": "Tal vez qué significa cuidar el suelo cuando el mar no te deja trabajar."
+          "text": "Sí, porque el mismo aviso que protege las pangas también limita el traslado de composta o de equipo entre La Paz y Comondú."
         },
         {
           "speaker": "host",
-          "text": "Ambos lugares, el norte disperso y la costa de Comondú, comparten la misma costa y el mismo aviso."
-        },
-        {
-          "speaker": "cohost",
-          "text": "Y La Paz suma su composta como otra manera de entender el mismo entorno."
-        },
-        {
-          "speaker": "host",
-          "text": "El desierto y el mar siguen enseñando, cada uno a su ritmo."
-        },
-        {
-          "speaker": "cohost",
-          "text": "Recuerdo que al inicio de noviembre el frente frío 4 ya había cerrado la navegación menor en varios puertos."
-        },
-        {
-          "speaker": "host",
-          "text": "Mm. Imagina las pangas amarradas y la gente mirando el oleaje desde la arena."
-        },
-        {
-          "speaker": "cohost",
-          "text": "En La Paz entregaron también 40 composteros a familias antes de instalar los comunitarios."
-        },
-        {
-          "speaker": "host",
-          "text": "40 familias ya probando en casa. [pause] Eso cambia cómo se siente el barrio."
-        },
-        {
-          "speaker": "cohost",
-          "text": "Sí, y el Fondo de Cooperación de la Alianza del Pacífico apoya el programa con Chile."
-        },
-        {
-          "speaker": "host",
-          "text": "¿Qué le preguntarías tú a una familia que ahora tiene composta en su patio?"
-        },
-        {
-          "speaker": "cohost",
-          "text": "Tal vez cómo ven el futuro del agua y el suelo cuando el mar se pone bravo."
-        },
-        {
-          "speaker": "host",
-          "text": "El viento une todo: el compostero, la panga y el desierto que espera."
+          "text": "Queda claro que el clima y la infraestructura local se conectan en la vida diaria de esos lugares. [pause]"
         }
       ]
     },
@@ -299,103 +275,147 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Luz, estos días todo apunta a la costa, desde Puerto San Carlos hasta Punta Lobos."
+          "text": "Según Meganoticias del 14 de noviembre, Miguel Imaz de la UABCS advirtió que El Niño elevó el oleaje en Puerto San Carlos."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, y el hilo que une las notas es la misma línea de defensa que se está rompiendo."
+          "text": "¿Cuánto subió exactamente?"
         },
         {
           "speaker": "host",
-          "text": "Miguel Imaz de la UABCS dijo que El Niño subió el oleaje entre 15 y 30 cm, según Meganoticias."
+          "text": "Entre 15 y 30 centímetros, y eso provocó el colapso de barreras naturales."
         },
         {
           "speaker": "cohost",
-          "text": "Y eso ya rompió barreras naturales en Comondú. [pause] Imagina el agua entrando donde antes había dunas firmes."
+          "text": "Y el mismo día, Tribuna de México reportó que en Punta Lobos demolieron parte del Hotel San Cristóbal."
         },
         {
           "speaker": "host",
-          "text": "En Punta Lobos demolieron parte del Hotel San Cristóbal porque el oleaje dejó la cimentación al aire."
+          "text": "El oleaje erosionó la cimentación y los pescadores llevan desde 2015 advirtiendo sobre las obras de Tres Santos."
         },
         {
           "speaker": "cohost",
-          "text": "Los pescadores llevan advirtiendo desde 2015 que las obras de Tres Santos cambiaron la playa."
+          "text": "Pero aún no hay dictamen técnico federal, ¿verdad?"
         },
         {
           "speaker": "host",
-          "text": "Mientras tanto, en la Bahía de La Paz presentan arrecifes artificiales Shell Nurse."
+          "text": "Exacto, y el Foresight del portal de octubre ya mencionaba que la resiliencia costera entró al techo 2050 tras Polo y Rachel."
         },
         {
           "speaker": "cohost",
-          "text": "Es la respuesta pesquera al agua más caliente, con tecnología japonesa y apoyo de FEDECOOP."
+          "text": "Ahora El Niño suma mareas extraordinarias."
         },
         {
           "speaker": "host",
-          "text": "Y al mismo tiempo aprueban el proyecto Camarón Beach a 47 km de La Paz."
+          "text": "LIGIR-UABCS pronostica hasta 2.55 metros en Bahía Magdalena."
         },
         {
           "speaker": "cohost",
-          "text": "30.96 hectáreas, 27 lotes, pese a que una oficina de Semarnat dijo que las medidas de mitigación no bastan."
+          "text": "¿En qué fechas?"
         },
         {
           "speaker": "host",
-          "text": "Ahí está el hilo: se construye muro de concreto por un lado y se planta arrecife por otro."
+          "text": "Entre el 21 y el 28 de noviembre, según Tribuna de México."
         },
         {
           "speaker": "cohost",
-          "text": "Pero falta la pieza que junte todo. [breath] ¿Qué pasa cuando cada quien actúa por su cuenta?"
+          "text": "Eso explica el retraso de la temporada de tiburón ballena en La Paz."
         },
         {
           "speaker": "host",
-          "text": "Justo lo que propone el diputado Erick Agúndez, dar más facultades a los ayuntamientos para reservas y parques municipales."
+          "text": "Los monitoreos de Conanp no alcanzan los seis ejemplares mínimos, y los prestadores culpan a la temperatura del agua."
         },
         {
           "speaker": "cohost",
-          "text": "Porque ahora mismo la planeación llega desde arriba y las advertencias locales se quedan en el aire."
+          "text": "En paralelo, el proyecto Shell Nurse avanza con arrecifes artificiales en la Bahía de La Paz."
         },
         {
           "speaker": "host",
-          "text": "En San Carlos ya piden análisis integral porque un muro de concreto solo es temporal."
+          "text": "FEDECOOP y el gobierno de BCS lo presentaron en el Foro Mar de Cortés, con estudios del BID e IMIPAS."
         },
         {
           "speaker": "cohost",
-          "text": "Y en Mulegé y Comondú esperan mareas de 2.12 a 2.55 metros este noviembre."
+          "text": "Aquí viene la sorpresa: el mismo foro discutió límites del desarrollo y gobernanza del Golfo."
         },
         {
           "speaker": "host",
-          "text": "El Foresight del portal ya metió la erosión costera dentro del techo 2050."
+          "text": "La Tendencia 2050 ya apuntaba que Los Cabos perseguía el huachicol de agua mientras el Mar de Cortés pedía duplicar su economía."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, después de Polo y Rachel la resiliencia ya no es solo de la red eléctrica."
+          "text": "El hilo oculto parece ser cómo los instrumentos de las ANP quedan expuestos sin facultades municipales."
         },
         {
           "speaker": "host",
-          "text": "Pero aquí viene lo extraño."
+          "text": "El diputado Erick Agúndez propuso reformar el artículo 106 para que los ayuntamientos administren reservas y parques."
         },
         {
           "speaker": "cohost",
-          "text": "Dime."
+          "text": "Se turnó a la comisión de Ecología, pero todavía no hay dictamen."
         },
         {
           "speaker": "host",
-          "text": "Mientras se retrasa la temporada de tiburón ballena por falta de seis ejemplares mínimos, en Los Cabos el Foro Mar de Cortés habla de duplicar la economía del Mar de Cortés."
+          "text": "Mientras tanto, Semarnat autorizó Camarón Beach a 47 kilómetros de La Paz."
         },
         {
           "speaker": "cohost",
-          "text": "Esa es la tensión que nadie está midiendo todavía. [chuckle] Como si el mar nos diera una señal y nosotros siguiéramos contando lotes."
+          "text": "El proyecto ocupa 30.96 hectáreas."
         },
         {
           "speaker": "host",
-          "text": "Mm. [pause] Y mientras tanto Zofemat sacó más de 350 llantas de El Médano tras las lluvias."
+          "text": "Y exige desmontar 10.54 hectáreas con rescate de reptiles en NOM-059."
         },
         {
           "speaker": "cohost",
-          "text": "Residuos que venían de cauces usados como tiraderos clandestinos. El mar los devuelve cuando se abre la bocana."
+          "text": "El conocimiento del portal sobre Bahía de Loreto y El Vizcaíno muestra que los corredores de Mulegé y Loreto ya están condicionados."
         },
         {
           "speaker": "host",
-          "text": "Quizá el hilo oculto sea que la costa nos recuerda dónde empezamos a construir sin escucharla."
+          "text": "Lo que queda incierto es si estas autorizaciones se suman antes del próximo periodo de mareas altas en diciembre. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasaría si los municipios tuvieran realmente voz en las reservas territoriales antes de cada proyecto?"
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Eso cambiaría bastante el panorama."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Zofemat retiró más de 350 llantas de El Médano tras las crecidas del 30 de octubre."
+        },
+        {
+          "speaker": "host",
+          "text": "Además sacó 18 toneladas de basura que venían de tiraderos clandestinos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La temporada legal de tiburón ballena corre del 1 de octubre al 30 de abril."
+        },
+        {
+          "speaker": "host",
+          "text": "Miguel Imaz prevé que El Niño se debilite en 2027 aunque las lluvias invernales serán más intensas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Camarón Beach se recibieron 14 objeciones durante la consulta pública."
+        },
+        {
+          "speaker": "host",
+          "text": "El desarrollo contempla 27 lotes residenciales y zonas de conservación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un muro de concreto sería solo una medida temporal según el investigador de la UABCS."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué preguntarías tú a los pescadores de Punta Lobos sobre estas autorizaciones?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Les preguntaría cómo ven el futuro de la playa sin un dictamen técnico que los incluya."
         }
       ]
     },
@@ -404,64 +424,68 @@
       "title": "¿Sabías que…?",
       "turns": [
         {
+          "speaker": "host",
+          "text": "¿Sabías que el Área Natural Protegida El Vizcaíno cubre 2,546,790.25 hectáreas en Baja California Sur?"
+        },
+        {
           "speaker": "cohost",
-          "text": "Tomás, ¿sabías que una sola reserva federal en Baja California Sur cubre más de 2,546,790.25 hectáreas?"
+          "text": "Sí, y según los datos del portal, casi el 77% de esa superficie está dentro del municipio de Mulegé."
         },
         {
           "speaker": "host",
-          "text": "2,546,790.25 hectáreas, según los datos del portal. [pause] Eso es casi todo el municipio de Mulegé."
+          "text": "Exacto. Eso la convierte en una de las reservas más grandes del país, con el decreto del 30 de noviembre de 1988."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. La Reserva de la Biosfera El Vizcaíno, decretada en 1988. [breath] Tiene dieciséis zonas núcleo que suman 363 mil hectáreas."
+          "text": "Y tiene 16 zonas núcleo que suman alrededor de 363 mil hectáreas, ¿no?"
         },
         {
           "speaker": "host",
-          "text": "Mm. Imagina que cada zona núcleo fuera una ciudad protegida donde solo se puede entrar con cuidado. [chuckle] ¿Qué protege realmente?"
+          "text": "Así es. Esas zonas núcleo están pensadas para proteger los sitios más sensibles, sobre todo las lagunas donde llegan las ballenas."
         },
         {
           "speaker": "cohost",
-          "text": "Las lagunas donde llegan las ballenas y también las pinturas rupestres de la Sierra de San Francisco. Es patrimonio de la UNESCO desde 1993."
-        },
-        {
-          "speaker": "cohost",
-          "text": "Sí. Y la reserva incluye áreas que recargan los acuíferos del sur del estado. No es solo paisaje bonito.</soft>"
+          "text": "Además, desde 1993 forma parte del Patrimonio de la Humanidad de la UNESCO por el refugio de ballenas y las pinturas rupestres de la Sierra de San Francisco."
         },
         {
           "speaker": "host",
-          "text": "¿Qué pasaría si perdemos una de esas zonas núcleo?"
+          "text": "Ahora, ¿qué significa esto en la práctica para alguien que vive en Mulegé o que visita el lugar?"
         },
         {
           "speaker": "cohost",
-          "text": "El agua que llega a las comunidades del sur se vería afectada. [laugh] Es como quitarle el filtro a la llave de la casa."
+          "text": "Significa que cualquier proyecto de desarrollo tiene que pasar por reglas más estrictas de protección."
         },
         {
           "speaker": "host",
-          "text": "Ha. Por eso la erosión costera y los eventos de El Niño suenan más graves cuando piensas en esa escala."
+          "text": "Por ejemplo, no se puede construir en las zonas núcleo, y las actividades turísticas están reguladas para no dañar el hábitat."
         },
         {
           "speaker": "cohost",
-          "text": "Claro. La reserva no es solo un número grande en un mapa. Es la infraestructura natural que sostiene todo lo demás."
+          "text": "También influye en el manejo del agua, porque algunas de esas zonas ayudan a la recarga de acuíferos en el sur del estado."
         },
         {
           "speaker": "host",
-          "text": "¿Y la gente que vive cerca, cómo convive con eso?"
+          "text": "Aunque el portal señala que la información viene de shapefiles y planes de manejo, no de un conteo reciente de hectáreas en el terreno."
         },
         {
           "speaker": "cohost",
-          "text": "Con reglas estrictas en las zonas núcleo. Fuera de ellas se puede trabajar, pero siempre pensando en no romper el sistema."
+          "text": "Entonces queda la pregunta de cómo se actualizan esos límites cuando hay cambios por erosión o por proyectos cercanos."
         },
         {
           "speaker": "host",
-          "text": "Mm. El desierto y el mar enseñan lo mismo: todo está conectado. [pause] Una gota de menos y el resto se nota."
+          "text": "Esa es la parte que sigue abierta. [chuckle]"
         },
         {
           "speaker": "cohost",
-          "text": "Por eso cuando vemos el oleaje de 15 a 30 centímetros en Puerto San Carlos, vale la pena preguntarse qué pasa tierra adentro."
+          "text": "Sí, porque la protección existe en el papel desde hace años, pero su aplicación depende de cómo se coordinen los municipios y la federación."
         },
         {
           "speaker": "host",
-          "text": "Exacto. [breath] Una reserva tan grande no solo guarda ballenas. Guarda el futuro del agua."
+          "text": "Por eso el dato de las 2,546,790.25 hectáreas sigue siendo relevante: marca hasta dónde llega la responsabilidad compartida."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y explica por qué el riesgo hidrometeorológico no es solo un tema de Los Cabos, sino de todo el estado."
         }
       ]
     },
@@ -471,99 +495,119 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "A veces camino por una calle del centro y pienso en todo lo que no se ve."
+          "text": "Hoy revisamos el diseño invisible que marca el medio ambiente en Baja California Sur, según los documentos de planeación que ya están vigentes."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. Detrás de cada banqueta hay un documento que decide si puede crecer o no."
+          "text": "El POERBCS define 56 UGAs con tres políticas principales."
         },
         {
           "speaker": "host",
-          "text": "¿Qué documento en particular?"
+          "text": "Aprovechamiento Sustentable, Preservación y Protección. Eso viene del informe de la propuesta del propio ordenamiento."
         },
         {
           "speaker": "cohost",
-          "text": "El POERBCS, con sus 56 UGAs y tres políticas principales: Aprovechamiento Sustentable, Preservación y Protección."
+          "text": "Y determina qué se puede hacer en cada zona."
         },
         {
           "speaker": "host",
-          "text": "Mm. ¿Y cómo encaja el libro de Peter Calthorpe?"
+          "text": "Para cualquier proyecto hay que consultar primero el paquete de viabilidad que incluye agua, energía e instrumentos como el PDU."
         },
         {
           "speaker": "cohost",
-          "text": "De 1993, sobre regionalismo compacto para corredores como el nuestro."
+          "text": "Mm. El libro de Peter Calthorpe de 1993 ya planteaba principios de regionalismo compacto que aplican al corredor de BCS."
         },
         {
           "speaker": "host",
-          "text": "Es como si la calle llevara un manual invisible que nadie menciona al pasar."
+          "text": "Sí, y el meta-análisis de Ewing y Cervero de 2010 midió cómo la densidad reduce la demanda de viajes."
         },
         {
           "speaker": "cohost",
-          "text": "Y cuando un proyecto quiere cambiar el uso de suelo, ese manual es el que responde primero."
+          "text": "Una calle bien diseñada, según el trabajo de Dover y Massengale de 2013, puede bajar el calor en los centros urbanos."
         },
         {
           "speaker": "host",
-          "text": "Un hotel nuevo o una desaladora, por ejemplo, ¿qué pregunta se hace antes?"
+          "text": "El paquete de riesgos menciona la capacidad de los acuíferos como candado principal."
         },
         {
           "speaker": "cohost",
-          "text": "Si es viable con los factores acoplados: agua, energía, ANP, tenencia y presión costera."
+          "text": "También la red SIBCS aislada."
         },
         {
           "speaker": "host",
-          "text": "Mm. Y en Cabo Pulmo esa lista incluye el acuífero 0318 y el ANP mismo."
+          "text": "Hay que revisar las ANP. El Parque Nacional Cabo Pulmo tiene decreto del 6 de junio de 1995."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, y también la brecha de carga cuantitativa que sigue sin resolver."
+          "text": "Y el aviso del 13 de noviembre de 2009."
         },
         {
           "speaker": "host",
-          "text": "¿Qué pasa entonces con la calle que queremos ensanchar?"
+          "text": "En Loreto el polo norte-centro está ligado al Parque Nacional Bahía de Loreto."
         },
         {
           "speaker": "cohost",
-          "text": "El libro de Victor Dover dice que en climas calurosos la calle misma es la que puede enfriar o calentar todo el barrio."
+          "text": "Con aviso del 11 de noviembre de 2002. [chuckle]"
         },
         {
           "speaker": "host",
-          "text": "[chuckle] Claro, y el meta-análisis de Ewing y Cervero lo mide en viajes que se evitan o se generan."
+          "text": "Mulegé es el municipio más grande y la Reserva El Vizcaíno condiciona los corredores."
         },
         {
           "speaker": "cohost",
-          "text": "De 2010, sí. Entonces el diseño invisible decide si esa calle ayuda o empeora la presión sobre el agua."
+          "text": "Con aviso del 1 de septiembre de 2000."
         },
         {
           "speaker": "host",
-          "text": "El desierto nos enseña que cada sombra cuenta."
+          "text": "El paquete de cambio de uso de suelo pide consultar las deferencias urbanas BCS40AS y BCS41AS que aparecen en la guía."
         },
         {
           "speaker": "cohost",
-          "text": "Y en Loreto aparece la Bahía de Loreto como ANP y el POEL 2014 como guía, pero falta el PSDU local."
+          "text": "Sin esos documentos no se puede evaluar si un hotel o una desaladora cabe en el territorio."
         },
         {
           "speaker": "host",
-          "text": "El riesgo siempre vuelve al mismo punto."
+          "text": "La pregunta central de la ontología es si el proyecto es viable con todos esos factores acoplados."
         },
         {
           "speaker": "cohost",
-          "text": "Sí: la viabilidad de cualquier cosa pasa primero por ese paquete que casi nadie ve."
+          "text": "Lo que queda incierto es cómo se resolverán las restricciones de tenencia y presión costera."
         },
         {
           "speaker": "host",
-          "text": "Por eso la calle parece simple, pero en realidad está contestando preguntas de 1993 y 2010 todavía."
+          "text": "El ciclo político y la evidencia del atlas estatal también entran en la cuenta. [pause]"
         },
         {
           "speaker": "cohost",
-          "text": "En Mulegé el ANP El Vizcaíno y la Transpeninsular marcan límites que el paquete de riesgos revisa primero."
+          "text": "Me hace pensar en cuántas decisiones ya están tomadas sin que las veamos en el día a día."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasaría si un proyecto en Loreto choca con el paquete de riesgos de acuíferos?"
         },
         {
           "speaker": "host",
-          "text": "[pause] ¿Y cómo se siente eso al caminar por ahí?"
+          "text": "Habría que revisar primero el POERBCS y la guía de planeación antes de avanzar."
         },
         {
           "speaker": "cohost",
-          "text": "Como si el desierto mismo te recordara que cada decisión sobre la calle ya trae su propio equilibrio."
+          "text": "La base de datos BCS 2050 tiene 1000 imágenes que muestran las UGAs en detalle."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso ayuda a ver las rutas de los corredores sin necesidad de mapas nuevos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué le preguntarías a quien revisa el decreto de la Reserva El Vizcaíno?"
+        },
+        {
+          "speaker": "host",
+          "text": "Le preguntaría cómo se actualiza la viabilidad cuando cambia el ciclo político."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Al final todo depende de esos documentos que ya existen pero pocas veces vemos."
         }
       ]
     },
@@ -573,95 +617,95 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "El pilar de visión para esta costa y clima hacia 2050 parte de un techo ya visible."
+          "text": "En el pilar de Costa y clima la Tendencia 2050 del portal señala que el techo costero ya es visible por oleaje, erosión e inundaciones."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, oleaje, erosión e inundaciones marcan el límite. Según el portal, El Niño ya trae oleaje de 15 a 30 cm en Puerto San Carlos."
+          "text": "Según el mismo documento, El Niño genera oleaje de 15 a 30 cm en Puerto San Carlos, reportado por la UABCS."
         },
         {
           "speaker": "host",
-          "text": "Mm. Imagínate el sonido de esas olas golpeando la arena por la mañana. [pause] ¿Y las notas de esta semana?"
+          "text": "El portal no proyecta una línea de costa a 2050 porque falta una serie comparable con el tramo mínimo exigido."
         },
         {
           "speaker": "cohost",
-          "text": "Dos notas nada más, con EWMA en 5.55 y dirección neutra. Las lecturas están mixtas."
+          "text": "Esa celda queda insuficiente y las dos notas de la semana dan una EWMA de 5.55 con dirección neutra."
         },
         {
           "speaker": "host",
-          "text": "Y sin una proyección de línea de costa comparable para 2050, esa celda queda insuficiente."
+          "text": "La aspiración se plantea como una costa habitable y regenerativa donde la restauración de barreras y playas venga primero."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. La aspiración es una costa habitable y regenerativa donde la restauración de barreras y playas venga primero."
+          "text": "La meta se enuncia así porque no existe la línea modelada, no como un metro concreto de retroceso."
         },
         {
           "speaker": "host",
-          "text": "Antes de cualquier ocupación nueva. [pause] ¿Qué palancas tenemos para eso?"
+          "text": "Una de las palancas es hacer valer las revisiones ambientales ya abiertas, como la del Hotel San Cristóbal en Punta Lobos."
         },
         {
           "speaker": "cohost",
-          "text": "Hacer valer las revisiones ambientales ya abiertas, como la del Hotel San Cristóbal en Punta Lobos, para que los escombros no se diluyan."
+          "text": "Para que los escombros y el precedente no se diluyan con el tiempo."
         },
         {
           "speaker": "host",
-          "text": "Y situar la relocalización y el retiro en el centro de las decisiones."
+          "text": "Otra palanca es situar la relocalización y el retiro en primera línea de las decisiones."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, no como remedio después de la siguiente marejada. Respetar los techos de ANP y del ordenamiento costero antes de escalar hospitalidad."
+          "text": "No como remedio después de la siguiente marejada."
         },
         {
           "speaker": "host",
-          "text": "En East Cape, Loreto y el Pacífico. [chuckle] Me pregunto cómo se ve eso desde la carretera larga."
+          "text": "También se pide respetar los techos de ANP y de ordenamiento costero antes de escalar hospitalidad en East Cape, Loreto y el Pacífico."
         },
         {
           "speaker": "cohost",
-          "text": "La tendencia 2050 del portal ve Baja California Sur como un sistema policéntrico, no una sola fórmula costera repetida."
+          "text": "Eso forma parte de la Tendencia 2050 que describe un sistema policéntrico en lugar de una sola fórmula costera repetida."
         },
         {
           "speaker": "host",
-          "text": "Los Cabos como motor turístico bajo estrés hídrico y eléctrico. El East Cape en tensión con las áreas protegidas."
+          "text": "Los Cabos sigue como motor turístico bajo estrés hídrico y eléctrico."
         },
         {
           "speaker": "cohost",
-          "text": "Todos Santos y El Pescadero como espina de amenidad del Pacífico. La Paz como capital de servicios y nodo agua-energía."
+          "text": "El East Cape queda en tensión con las áreas protegidas y Todos Santos y El Pescadero como espina de amenidad del Pacífico."
         },
         {
           "speaker": "host",
-          "text": "Loreto como ancla de turismo y conservación. Comondú como hub agropecuario con más margen."
+          "text": "La Paz aparece como capital de servicios y nodo agua-energía."
         },
         {
           "speaker": "cohost",
-          "text": "Y el norte de Mulegé como corredor poco documentado, ahora con una licitación de generación remota."
+          "text": "Loreto como ancla de turismo y conservación, Comondú como hub agropecuario con más margen."
         },
         {
           "speaker": "host",
-          "text": "Esa suma de roles distintos es lo que sostiene el estado. [breath] ¿Qué se necesita para que funcione?"
+          "text": "El norte de Mulegé figura como corredor poco documentado con una licitación de generación remota."
         },
         {
           "speaker": "cohost",
-          "text": "Cada vocación aporta algo único, no un Cabos diluido."
+          "text": "Cada vocación debe aportar un rol distinto, no un Cabos diluido en todo el estado."
         },
         {
           "speaker": "host",
-          "text": "El crecimiento nuevo solo donde haya evidencia real de agua y energía, sin fingir crédito NOM-011."
+          "text": "En la lista de vigilancia queda Punta Lobos y el Hotel San Cristóbal, con el dictamen técnico de causas y la revisión de Profepa."
         },
         {
           "speaker": "cohost",
-          "text": "East Cape y Loreto deben respetar los techos ANP y POEL antes de escalar."
+          "text": "Incluye la autorización de impacto ambiental y el manejo de escombros."
         },
         {
           "speaker": "host",
-          "text": "Comondú y el norte suman producción y energía sin vaciar servicios ni ANPs."
+          "text": "Lo que se sabe es que sin esa línea de costa modelada las metas siguen siendo cualitativas."
         },
         {
           "speaker": "cohost",
-          "text": "En la lista de vigilancia está Punta Lobos y el Hotel San Cristóbal: el dictamen técnico de causas y la revisión de Profepa sobre la autorización de impacto y manejo de escombros."
+          "text": "Lo que queda incierto es cómo se medirá el avance real hacia 2050."
         },
         {
           "speaker": "host",
-          "text": "Mm. Esa revisión marca si el precedente se mantiene o se diluye. [pause] ¿Y si la costa nos enseña a ceder un poco?"
+          "text": "Sí, [pause] eso cambia cómo medimos el riesgo."
         }
       ]
     },
@@ -670,56 +714,36 @@
       "title": "Para llevar",
       "turns": [
         {
+          "speaker": "cohost",
+          "text": "Los pescadores locales ya habían advertido sobre los riesgos en esa zona, según los reportes."
+        },
+        {
           "speaker": "host",
-          "text": "Luz, sigo pensando en cómo el mar va marcando límites en la costa, obligándonos a elegir."
+          "text": "Ahora vigilan los escombros para que no lleguen al mar."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, es como si nos recordara que algunos lugares ya no pueden sostener lo que construimos."
+          "text": "Eso es clave, porque el SMN prevé oleaje fuerte en la costa del Pacífico de BCS."
         },
         {
           "speaker": "host",
-          "text": "¿Y si empezáramos por retirar lo que ya está en riesgo antes de pensar en algo nuevo?"
+          "text": "Luz, ¿qué pasa con el resto de la estructura? [pause]"
         },
         {
           "speaker": "cohost",
-          "text": "Eso cambiaría todo. [pause] La playa misma nos indicaría dónde podemos estar."
+          "text": "Queda bajo vigilancia constante, pero no hay detalles sobre planes de retiro completo."
         },
         {
           "speaker": "host",
-          "text": "Mm. Y al mismo tiempo hay gestos pequeños que van en la dirección opuesta, como ese tercer compostero comunitario que instalaron en El Palmar II."
+          "text": "Aquí entra la aspiración del portal sobre restaurar barreras y playas antes de nuevas ocupaciones en zona de riesgo."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que cambia para BCS es que se prioriza la protección de la costa habitable y regenerativa."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. Cosas que cuidan el suelo y el agua, en vez de ocuparlos más."
-        },
-        {
-          "speaker": "host",
-          "text": "Y también vigilan los escombros del hotel para que no lleguen al mar, después de la demolición por la erosión."
-        },
-        {
-          "speaker": "cohost",
-          "text": "Esos detalles muestran que la costa ya está hablando."
-        },
-        {
-          "speaker": "host",
-          "text": "¿Qué nos dice eso de cómo queremos que viva la costa más adelante?"
-        },
-        {
-          "speaker": "cohost",
-          "text": "Que la restauración de barreras y playas venga primero que cualquier otra cosa."
-        },
-        {
-          "speaker": "host",
-          "text": "Sí, que lo que ya no encaja se retire para dejar espacio a lo que el lugar necesita."
-        },
-        {
-          "speaker": "cohost",
-          "text": "[chuckle] Una costa que se cuida sola, ¿no?"
-        },
-        {
-          "speaker": "host",
-          "text": "Eso es lo que me quedo pensando. [laugh] Imagina el oleaje llegando y decidiendo por nosotros."
+          "text": "Sigue sin saberse quién asumirá los costos de esa retirada a futuro."
         }
       ]
     }

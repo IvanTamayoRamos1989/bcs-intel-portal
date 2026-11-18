@@ -47,6 +47,7 @@ MUSIC_SRC = ROOT / "scripts" / "_cache" / "radio_music_src"
 KEEP_AUDIO = 14  # editions (days) whose MP3s stay on the site = the 24/7 rotation; scripts are kept forever
 MODEL = os.environ.get("BCS_RADIO_MODEL", "grok-4.3")
 VOICES = {"host": "rex", "cohost": "eve"}
+TEMPO = {"rex": 1.09}  # Tomás ~9% quicker (pitch-preserving atempo on the TTS clip); Luz unchanged
 NAMES = {"host": "Tomás", "cohost": "Luz"}
 UA = "BCS2050Radio/1.0 (bajacaliforniasur2050.com)"
 
@@ -751,7 +752,8 @@ def render_chapter(turns: list, lang: str, dest: Path, opening: bool, under: Pat
         ffmpeg("-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", "0.8", str(sil))
         for k, c in enumerate(clips):
             w = td / f"t{k}.wav"
-            ffmpeg("-i", str(c), "-ar", "24000", "-ac", "1", str(w))
+            tempo = TEMPO.get(VOICES[turns[k]["speaker"]])
+            ffmpeg("-i", str(c), *(["-af", f"atempo={tempo}"] if tempo else []), "-ar", "24000", "-ac", "1", str(w))
             parts += [w, sil]
         lst = td / "list.txt"
         lst.write_text("".join(f"file '{p}'\n" for p in parts))
@@ -1010,6 +1012,7 @@ def main() -> int:
     ap.add_argument("--station-only", action="store_true", help="only rebuild the 24/7 loop files")
     ap.add_argument("--apply-now", action="store_true", help="put the new loop on air now instead of at the next 12:00 Madrid")
     ap.add_argument("--replace", action="store_true", help="with --topic: rebuild only those topics inside today's edition")
+    ap.add_argument("--rerender", action="store_true", help="with --extend: re-mix every episode with current voice settings")
     ap.add_argument("--extend", action="store_true", help="lengthen built episodes of --date that measure under ~19.5 min")
     ap.add_argument("--sync", action="store_true", help="restore/back up episode audio (run before astro build)")
     ap.add_argument("--check-dist", action="store_true", help="fail if any station file is missing from dist")
@@ -1021,7 +1024,7 @@ def main() -> int:
         return check_dist()
     if a.extend:
         build_music()
-        return extend_existing(today, a.topic, a.apply_now)
+        return extend_existing(today, a.topic, a.apply_now, a.rerender)
     if a.station_only:
         build_music()
         build_station(a.apply_now)
@@ -1115,7 +1118,7 @@ def write_archive() -> list:
     return eds
 
 
-def extend_existing(today: str, topics: list | None, apply_now: bool) -> int:
+def extend_existing(today: str, topics: list | None, apply_now: bool, rerender_all: bool = False) -> int:
     """Lengthen already-built 8-chapter episodes that measure under MIN_EP, keeping every existing turn."""
     ed_dir = OUT / "editions" / today
     ed = load(ed_dir / "edition.json", {}) or {}
@@ -1132,7 +1135,7 @@ def extend_existing(today: str, topics: list | None, apply_now: bool) -> int:
                 continue
             durs = [duration(ROOT / "public" / t["src"].lstrip("/")) for t in lv["tracks"]]
             print(f"  {ep['topic']}/{L}: {sum(durs)/60:.1f} min")
-            if sum(durs) < MIN_EP:
+            if sum(durs) < MIN_EP or rerender_all:
                 jobs.append((ep, L, lv, sc, durs))
 
     def run(j):
@@ -1142,6 +1145,12 @@ def extend_existing(today: str, topics: list | None, apply_now: bool) -> int:
         src, stage = ed_dir / ep["topic"] / L, ed_dir / ".staging" / ep["topic"] / L
         shutil.rmtree(stage, ignore_errors=True)
         shutil.copytree(src, stage)
+        if rerender_all:  # re-mix every chapter with the current voice settings (TTS cache: no new API calls)
+            sig = TOPIC[ep["topic"]][1]
+            for k, c in enumerate(sc["chapters"]):
+                durs[k] = render_chapter(c["turns"], L, stage / f"{k+1:02d}.mp3", k == 0, OUT / "music" / f"under_{sig}.mp3",
+                                         OUT / "music" / f"amb_{AMBIENCE.get(ep['topic'], 'city')}.mp3")
+            print(f"  [{ep['topic']}/{L}] re-mixed: {sum(durs)/60:.1f} min")
         chapters = fit_length(ep["topic"], pack, today, L, [c["turns"] for c in sc["chapters"]], durs, stage)
         for c, t in zip(sc["chapters"], chapters):
             c["turns"] = t

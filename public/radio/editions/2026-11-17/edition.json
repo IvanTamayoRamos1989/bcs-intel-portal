@@ -14,14 +14,14 @@
       "languages": {
         "es": {
           "title": "Infraestructura · Radio BCS2050",
-          "duration": 1217.3,
+          "duration": 1263.1,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/infraestructura/es/01.mp3",
-              "duration": 92.78,
+              "duration": 90.38,
               "sting": null
             },
             {
@@ -29,7 +29,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/infraestructura/es/02.mp3",
-              "duration": 224.59,
+              "duration": 215.81,
               "sting": null
             },
             {
@@ -37,7 +37,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/infraestructura/es/03.mp3",
-              "duration": 149.9,
+              "duration": 144.67,
               "sting": null
             },
             {
@@ -45,7 +45,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/infraestructura/es/04.mp3",
-              "duration": 189.7,
+              "duration": 182.3,
               "sting": null
             },
             {
@@ -53,7 +53,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/infraestructura/es/05.mp3",
-              "duration": 140.59,
+              "duration": 184.63,
               "sting": null
             },
             {
@@ -61,7 +61,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/infraestructura/es/06.mp3",
-              "duration": 142.2,
+              "duration": 177.26,
               "sting": null
             },
             {
@@ -69,7 +69,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/infraestructura/es/07.mp3",
-              "duration": 216.72,
+              "duration": 208.78,
               "sting": null
             },
             {
@@ -77,23 +77,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/infraestructura/es/08.mp3",
-              "duration": 60.79,
+              "duration": 59.23,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/infraestructura/es/script.json",
-          "words": 2524
+          "words": 2705
         },
         "en": {
           "title": "Infrastructure · Radio BCS2050",
-          "duration": 1211.1,
+          "duration": 1215.6,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/infraestructura/en/01.mp3",
-              "duration": 88.68,
+              "duration": 86.04,
               "sting": null
             },
             {
@@ -101,7 +101,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/infraestructura/en/02.mp3",
-              "duration": 183.86,
+              "duration": 177.43,
               "sting": null
             },
             {
@@ -109,7 +109,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/infraestructura/en/03.mp3",
-              "duration": 165.94,
+              "duration": 159.67,
               "sting": null
             },
             {
@@ -117,7 +117,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/infraestructura/en/04.mp3",
-              "duration": 185.33,
+              "duration": 178.99,
               "sting": null
             },
             {
@@ -125,7 +125,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/infraestructura/en/05.mp3",
-              "duration": 133.46,
+              "duration": 174.96,
               "sting": null
             },
             {
@@ -133,7 +133,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/infraestructura/en/06.mp3",
-              "duration": 168.24,
+              "duration": 161.57,
               "sting": null
             },
             {
@@ -141,7 +141,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/infraestructura/en/07.mp3",
-              "duration": 220.39,
+              "duration": 213.77,
               "sting": null
             },
             {
@@ -149,12 +149,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/infraestructura/en/08.mp3",
-              "duration": 65.18,
+              "duration": 63.17,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/infraestructura/en/script.json",
-          "words": 2757
+          "words": 2857
         }
       },
       "sources": [
@@ -279,14 +279,14 @@
       "languages": {
         "es": {
           "title": "Finanzas · Radio BCS2050",
-          "duration": 1229.3,
+          "duration": 1185.8,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/finanzas/es/01.mp3",
-              "duration": 98.62,
+              "duration": 95.9,
               "sting": null
             },
             {
@@ -294,7 +294,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/finanzas/es/02.mp3",
-              "duration": 197.83,
+              "duration": 190.66,
               "sting": null
             },
             {
@@ -302,7 +302,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/finanzas/es/03.mp3",
-              "duration": 169.1,
+              "duration": 162.12,
               "sting": null
             },
             {
@@ -310,7 +310,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/finanzas/es/04.mp3",
-              "duration": 170.52,
+              "duration": 164.26,
               "sting": null
             },
             {
@@ -318,7 +318,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/finanzas/es/05.mp3",
-              "duration": 186.86,
+              "duration": 180.94,
               "sting": null
             },
             {
@@ -326,7 +326,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/finanzas/es/06.mp3",
-              "duration": 150.74,
+              "duration": 145.08,
               "sting": null
             },
             {
@@ -334,7 +334,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/finanzas/es/07.mp3",
-              "duration": 180.48,
+              "duration": 174.38,
               "sting": null
             },
             {
@@ -342,7 +342,7 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/finanzas/es/08.mp3",
-              "duration": 75.17,
+              "duration": 72.5,
               "sting": null
             }
           ],
@@ -351,14 +351,14 @@
         },
         "en": {
           "title": "Finance · Radio BCS2050",
-          "duration": 1223.5,
+          "duration": 1241.4,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/finanzas/en/01.mp3",
-              "duration": 81.96,
+              "duration": 110.14,
               "sting": null
             },
             {
@@ -366,7 +366,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/finanzas/en/02.mp3",
-              "duration": 174.82,
+              "duration": 199.46,
               "sting": null
             },
             {
@@ -374,7 +374,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/finanzas/en/03.mp3",
-              "duration": 191.66,
+              "duration": 185.3,
               "sting": null
             },
             {
@@ -382,7 +382,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/finanzas/en/04.mp3",
-              "duration": 168.0,
+              "duration": 161.47,
               "sting": null
             },
             {
@@ -390,7 +390,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/finanzas/en/05.mp3",
-              "duration": 139.58,
+              "duration": 135.31,
               "sting": null
             },
             {
@@ -398,7 +398,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/finanzas/en/06.mp3",
-              "duration": 184.1,
+              "duration": 176.88,
               "sting": null
             },
             {
@@ -406,7 +406,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/finanzas/en/07.mp3",
-              "duration": 203.59,
+              "duration": 196.13,
               "sting": null
             },
             {
@@ -414,12 +414,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/finanzas/en/08.mp3",
-              "duration": 79.8,
+              "duration": 76.68,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/finanzas/en/script.json",
-          "words": 2475
+          "words": 2615
         }
       },
       "sources": [
@@ -514,14 +514,14 @@
       "languages": {
         "es": {
           "title": "Desarrollo · Radio BCS2050",
-          "duration": 1230.0,
+          "duration": 1188.8,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/desarrollo/es/01.mp3",
-              "duration": 103.42,
+              "duration": 99.98,
               "sting": null
             },
             {
@@ -529,7 +529,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/desarrollo/es/02.mp3",
-              "duration": 190.13,
+              "duration": 184.58,
               "sting": null
             },
             {
@@ -537,7 +537,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/desarrollo/es/03.mp3",
-              "duration": 167.11,
+              "duration": 160.73,
               "sting": null
             },
             {
@@ -545,7 +545,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/desarrollo/es/04.mp3",
-              "duration": 192.58,
+              "duration": 186.65,
               "sting": null
             },
             {
@@ -553,7 +553,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/desarrollo/es/05.mp3",
-              "duration": 163.2,
+              "duration": 157.7,
               "sting": null
             },
             {
@@ -561,7 +561,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/desarrollo/es/06.mp3",
-              "duration": 152.86,
+              "duration": 148.01,
               "sting": null
             },
             {
@@ -569,7 +569,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/desarrollo/es/07.mp3",
-              "duration": 184.18,
+              "duration": 177.07,
               "sting": null
             },
             {
@@ -577,7 +577,7 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/desarrollo/es/08.mp3",
-              "duration": 76.56,
+              "duration": 74.06,
               "sting": null
             }
           ],
@@ -586,14 +586,14 @@
         },
         "en": {
           "title": "Development · Radio BCS2050",
-          "duration": 1241.1,
+          "duration": 1197.8,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/desarrollo/en/01.mp3",
-              "duration": 81.38,
+              "duration": 78.67,
               "sting": null
             },
             {
@@ -601,7 +601,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/desarrollo/en/02.mp3",
-              "duration": 206.78,
+              "duration": 201.02,
               "sting": null
             },
             {
@@ -609,7 +609,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/desarrollo/en/03.mp3",
-              "duration": 189.62,
+              "duration": 182.42,
               "sting": null
             },
             {
@@ -617,7 +617,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/desarrollo/en/04.mp3",
-              "duration": 165.86,
+              "duration": 159.86,
               "sting": null
             },
             {
@@ -625,7 +625,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/desarrollo/en/05.mp3",
-              "duration": 179.74,
+              "duration": 173.57,
               "sting": null
             },
             {
@@ -633,7 +633,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/desarrollo/en/06.mp3",
-              "duration": 152.9,
+              "duration": 146.66,
               "sting": null
             },
             {
@@ -641,7 +641,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/desarrollo/en/07.mp3",
-              "duration": 200.26,
+              "duration": 193.99,
               "sting": null
             },
             {
@@ -649,7 +649,7 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/desarrollo/en/08.mp3",
-              "duration": 64.54,
+              "duration": 61.66,
               "sting": null
             }
           ],
@@ -730,14 +730,14 @@
       "languages": {
         "es": {
           "title": "Turismo · Radio BCS2050",
-          "duration": 1236.7,
+          "duration": 1191.0,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/turismo/es/01.mp3",
-              "duration": 119.23,
+              "duration": 115.7,
               "sting": null
             },
             {
@@ -745,7 +745,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/turismo/es/02.mp3",
-              "duration": 228.02,
+              "duration": 219.53,
               "sting": null
             },
             {
@@ -753,7 +753,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/turismo/es/03.mp3",
-              "duration": 178.85,
+              "duration": 172.18,
               "sting": null
             },
             {
@@ -761,7 +761,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/turismo/es/04.mp3",
-              "duration": 179.74,
+              "duration": 172.46,
               "sting": null
             },
             {
@@ -769,7 +769,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/turismo/es/05.mp3",
-              "duration": 139.68,
+              "duration": 133.94,
               "sting": null
             },
             {
@@ -777,7 +777,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/turismo/es/06.mp3",
-              "duration": 158.71,
+              "duration": 153.14,
               "sting": null
             },
             {
@@ -785,7 +785,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/turismo/es/07.mp3",
-              "duration": 175.73,
+              "duration": 169.46,
               "sting": null
             },
             {
@@ -793,7 +793,7 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/turismo/es/08.mp3",
-              "duration": 56.71,
+              "duration": 54.55,
               "sting": null
             }
           ],
@@ -802,14 +802,14 @@
         },
         "en": {
           "title": "Tourism · Radio BCS2050",
-          "duration": 1226.7,
+          "duration": 1237.0,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/turismo/en/01.mp3",
-              "duration": 113.3,
+              "duration": 108.7,
               "sting": null
             },
             {
@@ -817,7 +817,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/turismo/en/02.mp3",
-              "duration": 197.66,
+              "duration": 189.7,
               "sting": null
             },
             {
@@ -825,7 +825,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/turismo/en/03.mp3",
-              "duration": 148.58,
+              "duration": 177.94,
               "sting": null
             },
             {
@@ -833,7 +833,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/turismo/en/04.mp3",
-              "duration": 193.1,
+              "duration": 185.18,
               "sting": null
             },
             {
@@ -841,7 +841,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/turismo/en/05.mp3",
-              "duration": 164.5,
+              "duration": 158.86,
               "sting": null
             },
             {
@@ -849,7 +849,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/turismo/en/06.mp3",
-              "duration": 170.04,
+              "duration": 163.99,
               "sting": null
             },
             {
@@ -857,7 +857,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/turismo/en/07.mp3",
-              "duration": 175.13,
+              "duration": 190.37,
               "sting": null
             },
             {
@@ -865,12 +865,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/turismo/en/08.mp3",
-              "duration": 64.39,
+              "duration": 62.28,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/turismo/en/script.json",
-          "words": 2713
+          "words": 2835
         }
       },
       "sources": [
@@ -1001,14 +1001,14 @@
       "languages": {
         "es": {
           "title": "Economía · Radio BCS2050",
-          "duration": 1197.7,
+          "duration": 1252.5,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/economia/es/01.mp3",
-              "duration": 95.95,
+              "duration": 93.26,
               "sting": null
             },
             {
@@ -1016,7 +1016,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/economia/es/02.mp3",
-              "duration": 185.66,
+              "duration": 217.46,
               "sting": null
             },
             {
@@ -1024,7 +1024,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/economia/es/03.mp3",
-              "duration": 170.64,
+              "duration": 164.95,
               "sting": null
             },
             {
@@ -1032,7 +1032,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/economia/es/04.mp3",
-              "duration": 195.74,
+              "duration": 187.85,
               "sting": null
             },
             {
@@ -1040,7 +1040,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/economia/es/05.mp3",
-              "duration": 148.49,
+              "duration": 143.52,
               "sting": null
             },
             {
@@ -1048,7 +1048,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/economia/es/06.mp3",
-              "duration": 144.6,
+              "duration": 169.46,
               "sting": null
             },
             {
@@ -1056,7 +1056,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/economia/es/07.mp3",
-              "duration": 190.85,
+              "duration": 212.42,
               "sting": null
             },
             {
@@ -1064,23 +1064,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/economia/es/08.mp3",
-              "duration": 65.78,
+              "duration": 63.6,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/economia/es/script.json",
-          "words": 2477
+          "words": 2701
         },
         "en": {
           "title": "Economy · Radio BCS2050",
-          "duration": 1228.2,
+          "duration": 1236.6,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/economia/en/01.mp3",
-              "duration": 82.39,
+              "duration": 94.8,
               "sting": null
             },
             {
@@ -1088,7 +1088,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/economia/en/02.mp3",
-              "duration": 192.12,
+              "duration": 185.66,
               "sting": null
             },
             {
@@ -1096,7 +1096,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/economia/en/03.mp3",
-              "duration": 158.71,
+              "duration": 152.35,
               "sting": null
             },
             {
@@ -1104,7 +1104,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/economia/en/04.mp3",
-              "duration": 210.86,
+              "duration": 203.78,
               "sting": null
             },
             {
@@ -1112,7 +1112,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/economia/en/05.mp3",
-              "duration": 153.74,
+              "duration": 148.8,
               "sting": null
             },
             {
@@ -1120,7 +1120,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/economia/en/06.mp3",
-              "duration": 167.26,
+              "duration": 160.8,
               "sting": null
             },
             {
@@ -1128,7 +1128,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/economia/en/07.mp3",
-              "duration": 187.8,
+              "duration": 218.42,
               "sting": null
             },
             {
@@ -1136,12 +1136,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/economia/en/08.mp3",
-              "duration": 75.29,
+              "duration": 72.0,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/economia/en/script.json",
-          "words": 2614
+          "words": 2731
         }
       },
       "sources": [
@@ -1241,14 +1241,14 @@
       "languages": {
         "es": {
           "title": "Urbanismo · Radio BCS2050",
-          "duration": 1229.3,
+          "duration": 1247.3,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/urbanismo/es/01.mp3",
-              "duration": 90.86,
+              "duration": 87.84,
               "sting": null
             },
             {
@@ -1256,7 +1256,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/urbanismo/es/02.mp3",
-              "duration": 182.66,
+              "duration": 210.67,
               "sting": null
             },
             {
@@ -1264,7 +1264,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/urbanismo/es/03.mp3",
-              "duration": 173.18,
+              "duration": 167.16,
               "sting": null
             },
             {
@@ -1272,7 +1272,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/urbanismo/es/04.mp3",
-              "duration": 228.55,
+              "duration": 218.83,
               "sting": null
             },
             {
@@ -1280,7 +1280,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/urbanismo/es/05.mp3",
-              "duration": 141.29,
+              "duration": 164.69,
               "sting": null
             },
             {
@@ -1288,7 +1288,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/urbanismo/es/06.mp3",
-              "duration": 159.34,
+              "duration": 153.98,
               "sting": null
             },
             {
@@ -1296,7 +1296,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/urbanismo/es/07.mp3",
-              "duration": 180.22,
+              "duration": 173.3,
               "sting": null
             },
             {
@@ -1304,23 +1304,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/urbanismo/es/08.mp3",
-              "duration": 73.22,
+              "duration": 70.85,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/urbanismo/es/script.json",
-          "words": 2584
+          "words": 2709
         },
         "en": {
           "title": "Urbanism · Radio BCS2050",
-          "duration": 1238.5,
+          "duration": 1194.0,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/urbanismo/en/01.mp3",
-              "duration": 82.46,
+              "duration": 79.25,
               "sting": null
             },
             {
@@ -1328,7 +1328,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/urbanismo/en/02.mp3",
-              "duration": 222.82,
+              "duration": 214.7,
               "sting": null
             },
             {
@@ -1336,7 +1336,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/urbanismo/en/03.mp3",
-              "duration": 157.18,
+              "duration": 151.8,
               "sting": null
             },
             {
@@ -1344,7 +1344,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/urbanismo/en/04.mp3",
-              "duration": 177.5,
+              "duration": 172.03,
               "sting": null
             },
             {
@@ -1352,7 +1352,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/urbanismo/en/05.mp3",
-              "duration": 167.64,
+              "duration": 160.68,
               "sting": null
             },
             {
@@ -1360,7 +1360,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/urbanismo/en/06.mp3",
-              "duration": 164.33,
+              "duration": 158.06,
               "sting": null
             },
             {
@@ -1368,7 +1368,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/urbanismo/en/07.mp3",
-              "duration": 203.76,
+              "duration": 197.66,
               "sting": null
             },
             {
@@ -1376,7 +1376,7 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/urbanismo/en/08.mp3",
-              "duration": 62.81,
+              "duration": 59.78,
               "sting": null
             }
           ],
@@ -1512,14 +1512,14 @@
       "languages": {
         "es": {
           "title": "Seguridad · Radio BCS2050",
-          "duration": 1200.8,
+          "duration": 1226.3,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/crimen/es/01.mp3",
-              "duration": 91.94,
+              "duration": 88.08,
               "sting": null
             },
             {
@@ -1527,7 +1527,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/crimen/es/02.mp3",
-              "duration": 193.2,
+              "duration": 187.13,
               "sting": null
             },
             {
@@ -1535,7 +1535,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/crimen/es/03.mp3",
-              "duration": 135.79,
+              "duration": 159.77,
               "sting": null
             },
             {
@@ -1543,7 +1543,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/crimen/es/04.mp3",
-              "duration": 158.88,
+              "duration": 192.02,
               "sting": null
             },
             {
@@ -1551,7 +1551,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/crimen/es/05.mp3",
-              "duration": 149.18,
+              "duration": 144.02,
               "sting": null
             },
             {
@@ -1559,7 +1559,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/crimen/es/06.mp3",
-              "duration": 175.99,
+              "duration": 170.16,
               "sting": null
             },
             {
@@ -1567,7 +1567,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/crimen/es/07.mp3",
-              "duration": 195.26,
+              "duration": 188.26,
               "sting": null
             },
             {
@@ -1575,23 +1575,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/crimen/es/08.mp3",
-              "duration": 100.58,
+              "duration": 96.86,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/crimen/es/script.json",
-          "words": 2503
+          "words": 2651
         },
         "en": {
           "title": "Security · Radio BCS2050",
-          "duration": 1189.9,
+          "duration": 1205.4,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/crimen/en/01.mp3",
-              "duration": 78.53,
+              "duration": 106.15,
               "sting": null
             },
             {
@@ -1599,7 +1599,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/crimen/en/02.mp3",
-              "duration": 218.26,
+              "duration": 210.38,
               "sting": null
             },
             {
@@ -1607,7 +1607,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/crimen/en/03.mp3",
-              "duration": 136.97,
+              "duration": 132.22,
               "sting": null
             },
             {
@@ -1615,7 +1615,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/crimen/en/04.mp3",
-              "duration": 159.58,
+              "duration": 179.76,
               "sting": null
             },
             {
@@ -1623,7 +1623,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/crimen/en/05.mp3",
-              "duration": 133.97,
+              "duration": 129.34,
               "sting": null
             },
             {
@@ -1631,7 +1631,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/crimen/en/06.mp3",
-              "duration": 178.15,
+              "duration": 172.92,
               "sting": null
             },
             {
@@ -1639,7 +1639,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/crimen/en/07.mp3",
-              "duration": 207.62,
+              "duration": 200.71,
               "sting": null
             },
             {
@@ -1647,12 +1647,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/crimen/en/08.mp3",
-              "duration": 76.8,
+              "duration": 73.92,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/crimen/en/script.json",
-          "words": 2622
+          "words": 2740
         }
       },
       "sources": [
@@ -1709,14 +1709,14 @@
       "languages": {
         "es": {
           "title": "Transporte · Radio BCS2050",
-          "duration": 1187.2,
+          "duration": 1198.8,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/transporte/es/01.mp3",
-              "duration": 74.47,
+              "duration": 102.14,
               "sting": null
             },
             {
@@ -1724,7 +1724,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/transporte/es/02.mp3",
-              "duration": 186.58,
+              "duration": 202.63,
               "sting": null
             },
             {
@@ -1732,7 +1732,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/transporte/es/03.mp3",
-              "duration": 141.94,
+              "duration": 136.7,
               "sting": null
             },
             {
@@ -1740,7 +1740,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/transporte/es/04.mp3",
-              "duration": 196.1,
+              "duration": 189.36,
               "sting": null
             },
             {
@@ -1748,7 +1748,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/transporte/es/05.mp3",
-              "duration": 160.25,
+              "duration": 154.54,
               "sting": null
             },
             {
@@ -1756,7 +1756,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/transporte/es/06.mp3",
-              "duration": 164.71,
+              "duration": 158.98,
               "sting": null
             },
             {
@@ -1764,7 +1764,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-17/transporte/es/07.mp3",
-              "duration": 196.1,
+              "duration": 188.88,
               "sting": null
             },
             {
@@ -1772,23 +1772,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-17/transporte/es/08.mp3",
-              "duration": 67.1,
+              "duration": 65.54,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/transporte/es/script.json",
-          "words": 2602
+          "words": 2716
         },
         "en": {
           "title": "Transport · Radio BCS2050",
-          "duration": 1259.1,
+          "duration": 1215.3,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/transporte/en/01.mp3",
-              "duration": 103.9,
+              "duration": 100.1,
               "sting": null
             },
             {
@@ -1796,7 +1796,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/transporte/en/02.mp3",
-              "duration": 212.57,
+              "duration": 205.82,
               "sting": null
             },
             {
@@ -1804,7 +1804,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/transporte/en/03.mp3",
-              "duration": 182.42,
+              "duration": 175.82,
               "sting": null
             },
             {
@@ -1812,7 +1812,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/transporte/en/04.mp3",
-              "duration": 174.22,
+              "duration": 168.26,
               "sting": null
             },
             {
@@ -1820,7 +1820,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/transporte/en/05.mp3",
-              "duration": 128.66,
+              "duration": 124.3,
               "sting": null
             },
             {
@@ -1828,7 +1828,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/transporte/en/06.mp3",
-              "duration": 206.3,
+              "duration": 198.94,
               "sting": null
             },
             {
@@ -1836,7 +1836,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/transporte/en/07.mp3",
-              "duration": 180.77,
+              "duration": 174.62,
               "sting": null
             },
             {
@@ -1844,7 +1844,7 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-17/transporte/en/08.mp3",
-              "duration": 70.22,
+              "duration": 67.46,
               "sting": null
             }
           ],

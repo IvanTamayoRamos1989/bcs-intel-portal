@@ -14,14 +14,14 @@
       "languages": {
         "es": {
           "title": "Conectividad · Radio BCS2050",
-          "duration": 1193.8,
+          "duration": 1247.9,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-18/conectividad/es/01.mp3",
-              "duration": 90.53,
+              "duration": 95.52,
               "sting": null
             },
             {
@@ -29,7 +29,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-18/conectividad/es/02.mp3",
-              "duration": 184.03,
+              "duration": 204.7,
               "sting": null
             },
             {
@@ -37,7 +37,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-18/conectividad/es/03.mp3",
-              "duration": 161.57,
+              "duration": 186.91,
               "sting": null
             },
             {
@@ -45,7 +45,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-18/conectividad/es/04.mp3",
-              "duration": 170.18,
+              "duration": 207.02,
               "sting": null
             },
             {
@@ -53,7 +53,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-18/conectividad/es/05.mp3",
-              "duration": 188.18,
+              "duration": 135.86,
               "sting": null
             },
             {
@@ -61,7 +61,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-18/conectividad/es/06.mp3",
-              "duration": 140.47,
+              "duration": 200.3,
               "sting": null
             },
             {
@@ -69,7 +69,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-18/conectividad/es/07.mp3",
-              "duration": 191.66,
+              "duration": 170.81,
               "sting": null
             },
             {
@@ -77,23 +77,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-18/conectividad/es/08.mp3",
-              "duration": 67.18,
+              "duration": 46.78,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-18/conectividad/es/script.json",
-          "words": 2547
+          "words": 2566
         },
         "en": {
           "title": "Connectivity · Radio BCS2050",
-          "duration": 1186.7,
+          "duration": 1235.4,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-18/conectividad/en/01.mp3",
-              "duration": 105.55,
+              "duration": 79.54,
               "sting": null
             },
             {
@@ -101,7 +101,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-18/conectividad/en/02.mp3",
-              "duration": 211.37,
+              "duration": 209.14,
               "sting": null
             },
             {
@@ -109,7 +109,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-18/conectividad/en/03.mp3",
-              "duration": 160.03,
+              "duration": 164.71,
               "sting": null
             },
             {
@@ -117,7 +117,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-18/conectividad/en/04.mp3",
-              "duration": 192.79,
+              "duration": 205.18,
               "sting": null
             },
             {
@@ -125,7 +125,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-18/conectividad/en/05.mp3",
-              "duration": 131.18,
+              "duration": 168.46,
               "sting": null
             },
             {
@@ -133,7 +133,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-18/conectividad/en/06.mp3",
-              "duration": 138.26,
+              "duration": 166.13,
               "sting": null
             },
             {
@@ -141,7 +141,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-18/conectividad/en/07.mp3",
-              "duration": 169.82,
+              "duration": 168.46,
               "sting": null
             },
             {
@@ -149,12 +149,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-18/conectividad/en/08.mp3",
-              "duration": 77.69,
+              "duration": 73.75,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-18/conectividad/en/script.json",
-          "words": 2547
+          "words": 2598
         }
       },
       "sources": [
@@ -253,10 +253,10 @@
         "IN011",
         "IN023",
         "IN024",
+        "ev_cruceros_datatur",
+        "ev_aereo_setue",
         "ev_sig_asipona",
-        "ev_dossiers_movilidad",
-        "rc_aeropuerto_sjd",
-        "rc_aeropuerto_lap"
+        "ev_dossiers_movilidad"
       ]
     },
     {
@@ -267,14 +267,14 @@
       "languages": {
         "es": {
           "title": "Medio ambiente · Radio BCS2050",
-          "duration": 1220.2,
+          "duration": 1222.6,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/01.mp3",
-              "duration": 81.29,
+              "duration": 95.18,
               "sting": null
             },
             {
@@ -282,7 +282,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/02.mp3",
-              "duration": 189.0,
+              "duration": 195.43,
               "sting": null
             },
             {
@@ -290,7 +290,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/03.mp3",
-              "duration": 189.94,
+              "duration": 150.74,
               "sting": null
             },
             {
@@ -298,7 +298,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/04.mp3",
-              "duration": 182.86,
+              "duration": 236.54,
               "sting": null
             },
             {
@@ -306,7 +306,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/05.mp3",
-              "duration": 137.54,
+              "duration": 137.3,
               "sting": null
             },
             {
@@ -314,7 +314,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/06.mp3",
-              "duration": 161.57,
+              "duration": 192.0,
               "sting": null
             },
             {
@@ -322,7 +322,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/07.mp3",
-              "duration": 194.42,
+              "duration": 165.43,
               "sting": null
             },
             {
@@ -330,23 +330,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-18/medio_ambiente/es/08.mp3",
-              "duration": 83.54,
+              "duration": 49.97,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-18/medio_ambiente/es/script.json",
-          "words": 2658
+          "words": 2727
         },
         "en": {
           "title": "Environment · Radio BCS2050",
-          "duration": 1207.4,
+          "duration": 1260.9,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/01.mp3",
-              "duration": 100.94,
+              "duration": 84.22,
               "sting": null
             },
             {
@@ -354,7 +354,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/02.mp3",
-              "duration": 207.74,
+              "duration": 198.17,
               "sting": null
             },
             {
@@ -362,7 +362,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/03.mp3",
-              "duration": 169.13,
+              "duration": 204.98,
               "sting": null
             },
             {
@@ -370,7 +370,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/04.mp3",
-              "duration": 170.78,
+              "duration": 215.66,
               "sting": null
             },
             {
@@ -378,7 +378,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/05.mp3",
-              "duration": 166.46,
+              "duration": 132.72,
               "sting": null
             },
             {
@@ -386,7 +386,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/06.mp3",
-              "duration": 150.12,
+              "duration": 183.14,
               "sting": null
             },
             {
@@ -394,7 +394,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/07.mp3",
-              "duration": 166.08,
+              "duration": 167.59,
               "sting": null
             },
             {
@@ -402,12 +402,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-18/medio_ambiente/en/08.mp3",
-              "duration": 76.18,
+              "duration": 74.45,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-18/medio_ambiente/en/script.json",
-          "words": 2747
+          "words": 2752
         }
       },
       "sources": [
@@ -518,10 +518,10 @@
         "UP013",
         "UP017",
         "TD006",
-        "dq_pack_east_cape",
-        "gap_east_cape_carga",
-        "dq_pack_loreto",
-        "dq_pack_mulege"
+        "ev_orientacion_aerea",
+        "ev_anp_avisos",
+        "terr_loreto",
+        "terr_mulege"
       ]
     },
     {
@@ -532,14 +532,14 @@
       "languages": {
         "es": {
           "title": "Agua · Radio BCS2050",
-          "duration": 1278.4,
+          "duration": 1244.9,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-18/agua/es/01.mp3",
-              "duration": 95.76,
+              "duration": 96.5,
               "sting": null
             },
             {
@@ -547,7 +547,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-18/agua/es/02.mp3",
-              "duration": 209.9,
+              "duration": 237.79,
               "sting": null
             },
             {
@@ -555,7 +555,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-18/agua/es/03.mp3",
-              "duration": 180.5,
+              "duration": 177.94,
               "sting": null
             },
             {
@@ -563,7 +563,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-18/agua/es/04.mp3",
-              "duration": 207.91,
+              "duration": 194.98,
               "sting": null
             },
             {
@@ -571,7 +571,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-18/agua/es/05.mp3",
-              "duration": 177.12,
+              "duration": 139.68,
               "sting": null
             },
             {
@@ -579,7 +579,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-18/agua/es/06.mp3",
-              "duration": 170.18,
+              "duration": 155.18,
               "sting": null
             },
             {
@@ -587,7 +587,7 @@
               "id": "acto3",
               "title": "Acto 3 · Hacia 2050",
               "src": "/radio/editions/2026-11-18/agua/es/07.mp3",
-              "duration": 167.64,
+              "duration": 201.02,
               "sting": null
             },
             {
@@ -595,23 +595,23 @@
               "id": "cierre",
               "title": "Para llevar",
               "src": "/radio/editions/2026-11-18/agua/es/08.mp3",
-              "duration": 69.36,
+              "duration": 41.78,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-18/agua/es/script.json",
-          "words": 2636
+          "words": 2517
         },
         "en": {
           "title": "Water · Radio BCS2050",
-          "duration": 1211.1,
+          "duration": 1233.1,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-18/agua/en/01.mp3",
-              "duration": 98.47,
+              "duration": 85.32,
               "sting": null
             },
             {
@@ -619,7 +619,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-18/agua/en/02.mp3",
-              "duration": 229.27,
+              "duration": 206.38,
               "sting": null
             },
             {
@@ -627,7 +627,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-18/agua/en/03.mp3",
-              "duration": 128.18,
+              "duration": 160.99,
               "sting": null
             },
             {
@@ -635,7 +635,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-18/agua/en/04.mp3",
-              "duration": 198.24,
+              "duration": 219.5,
               "sting": null
             },
             {
@@ -643,7 +643,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-18/agua/en/05.mp3",
-              "duration": 116.78,
+              "duration": 130.42,
               "sting": null
             },
             {
@@ -651,7 +651,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-18/agua/en/06.mp3",
-              "duration": 167.02,
+              "duration": 143.54,
               "sting": null
             },
             {
@@ -659,7 +659,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-18/agua/en/07.mp3",
-              "duration": 194.3,
+              "duration": 194.9,
               "sting": null
             },
             {
@@ -667,12 +667,12 @@
               "id": "cierre",
               "title": "The takeaway",
               "src": "/radio/editions/2026-11-18/agua/en/08.mp3",
-              "duration": 78.84,
+              "duration": 92.06,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-18/agua/en/script.json",
-          "words": 2689
+          "words": 2629
         }
       },
       "sources": [
@@ -812,23 +812,23 @@
     "const_escasez_agua",
     "dd_turismo_cabos",
     "dd_turismo_lapaz",
-    "dq_pack_east_cape",
-    "dq_pack_loreto",
-    "dq_pack_mulege",
     "edu-LL0dJZ2-Vhw",
+    "ev_aereo_setue",
+    "ev_anp_avisos",
+    "ev_cruceros_datatur",
     "ev_dossiers_movilidad",
+    "ev_orientacion_aerea",
     "ev_sig_asipona",
     "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
     "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
-    "gap_east_cape_carga",
     "los-cabos-302-mdp-agua-d1-d2-gringogazette-2026-11-17",
     "mulege-informe-713-mdp-acueducto-palo-verde-tribuna-2026-11-17",
     "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
     "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
-    "rc_aeropuerto_lap",
-    "rc_aeropuerto_sjd",
     "rc_vivienda_cabos",
     "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
+    "terr_loreto",
+    "terr_mulege",
     "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
     "vance-inunda-los-cabos-reforma-2026-10-28"
   ],
