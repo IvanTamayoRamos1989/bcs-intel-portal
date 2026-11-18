@@ -6,6 +6,7 @@
   if (!root) return;
   var $ = function (s) { return root.querySelector(s); };
   var btn = $('.radio-btn'), panel = $('.radio-panel'), playB = $('.radio-play');
+  var SIL = 'data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYxLjcuMTAzAAAAAAAAAAAAAAD/4zjAAAAAAAAAAAAASW5mbwAAAA8AAAAEAAAB+ACSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpK2tra2tra2tra2tra2tra2tra2tra2tra229vb29vb29vb29vb29vb29vb29vb29vb2/////////////////////////////////8AAAAATGF2YzYxLjE5AAAAAAAAAAAAAAAAJAOgAAAAAAAAAfhBGl4cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/4xjEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEOwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEdgAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEsQAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=', unlocked = false;
   var st = {}, credits = null, eds = {}, lang = null, i = 0, live = true, pending = 0, tries = 0;
   var audio = new Audio(); audio.preload = 'none';
   var T = {
@@ -22,17 +23,18 @@
   function S() { return st[lang]; }
   function esc(s) { return String(s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function get(u) { return fetch(u, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw r.status; return r.json(); }); }
-  function load() {
-    if (st[lang] && Date.now() - st[lang].got > 3600e3) st[lang] = null;
-    var jobs = [st[lang] ? null : get('/radio/station_' + lang + '.json').then(function (j) {
+  function load(L) {
+    L = L || lang;
+    if (st[L] && Date.now() - st[L].got > 3600e3) st[L] = null;
+    var jobs = [st[L] ? null : get('/radio/station_' + L + '.json').then(function (j) {
       // a station file holds the running loop and, after a daily build, the next one with its on-air time
       var sc = (j.schedules || [{ start: j.epoch, items: j.items }]).map(function (x) {
         var c = 0; x.items.forEach(function (y) { y.t0 = c; c += y.d; }); x.total = c; x.at = Date.parse(x.start); return x;
       });
-      st[lang] = { list: sc, got: Date.now() };
+      st[L] = { list: sc, got: Date.now() };
     })];
     if (!credits) jobs.push(get('/radio/credits.json').then(function (c) { credits = c; }).catch(function () { credits = {}; }));
-    return Promise.all(jobs).then(pick);
+    return Promise.all(jobs).then(function () { if (L === lang) return pick(); });
   }
   function pick() {  // the schedule on air now (latest whose start has passed)
     var s = st[lang]; if (!s) return;
@@ -131,10 +133,11 @@
     if (pending > 0.5 && pending < (audio.duration || 0) - 0.5) audio.currentTime = pending;
     pending = 0;
   });
-  audio.addEventListener('ended', function () { if (live && pick()) goLive(); else playItem(i + 1, 0); });
+  audio.addEventListener('ended', function () { if (audio.src.indexOf('data:') === 0) return; if (live && pick()) goLive(); else playItem(i + 1, 0); });
+  audio.addEventListener('playing', function () { if (audio.src.indexOf('data:') !== 0) unlocked = true; });
   audio.addEventListener('play', state); audio.addEventListener('pause', state);
   audio.addEventListener('error', function () {
-    if (!audio.getAttribute('src')) return;
+    if (!audio.getAttribute('src') || audio.src.indexOf('data:') === 0) return;
     // a transient CDN/edge error: retry the same file once at the same point, then move on
     if (tries++ < 1) { var at = audio.currentTime || pending || 0; setTimeout(function () { playItem(i, at, true); }, 800); return; }
     $('.radio-msg').textContent = T[lang].err; setTimeout(function () { playItem(i + 1, 0); }, 1500);
@@ -147,6 +150,8 @@
     var now = function () { pick(); live = true; var p = livePos(); playItem(p[0], p[1]); };
     var s = st[lang];
     if (s && Date.now() - s.got < 3600e3 && credits) return now();  // keeps play() inside the user's tap (iOS)
+    // not loaded yet: unlock the audio element inside this tap with a silent clip, then start once the file arrives
+    if (!unlocked) { audio.src = SIL; audio.play().catch(function () {}); }
     load().then(now);
   }
   function toggle() {
@@ -155,6 +160,7 @@
     else audio.pause();
   }
   btn.addEventListener('click', function () {
+    if (audio.paused) lang = pageLang();
     var closed = panel.hasAttribute('hidden');
     if (closed) { panel.removeAttribute('hidden'); btn.setAttribute('aria-expanded', 'true'); }
     if (!audio.getAttribute('src') || (closed && audio.paused)) goLive(); else if (!closed) toggle();
@@ -176,5 +182,5 @@
   document.addEventListener('bcs:lang', function (e) { if (audio.paused) { lang = e.detail.lang === 'en' ? 'en' : 'es'; if (S()) render(); } });
   setInterval(function () { if (!panel.hidden && S()) render(); }, 30000);
   lang = pageLang();
-  load().catch(function () {});  // prefetch the small station file so the first tap can start audio at once
+  load('es').catch(function () {}); load('en').catch(function () {});  // prefetch both (~26 KB each) the small station file so the first tap can start audio at once
 })();

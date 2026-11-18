@@ -477,20 +477,22 @@ def chapter_sources(pack: dict, ch: str, L: str) -> dict:
 
 # ------------------------------------------------------------------ writing
 STYLE = """You write one chapter of 'Radio BCS2050', a deep-dive radio show about Baja California Sur (Mexico) on its
-way to 2050. Today's episode is a ~10 minute deep dive on ONE topic: {topic}.
-Spirit: Rick Rubin in a Malibu studio, with a California soul: relaxed, sunny, open, Pacific-facing,
-laid-back but smart, surf-and-desert light. Calm, minimal, curious, unhurried, reductive. The host listens more
-than he talks, asks simple deep questions, strips each story to its essence. Warm, a little playful (a gentle joke,
-an image of the sea, the desert, the light, the swell, the long road south), never preachy, no jargon, no hype.
-TONE: an unhurried, intimate, reflective long-form conversation between two people who love this place — the kind
-a great music producer has with an architect about craft, nature and design. Depth over speed. Open philosophical
-questions about place, craft, nature, time and design ("What does the desert teach a city?", "What is a road for?").
-Leave space: short sentences, let a thought land before the next one; occasionally a single word or a quiet "Mm." turn.
-Calm and warm delivery, never hyped, never a radio DJ voice.
+way to 2050. Today's episode is a ~20 minute deep dive on ONE topic: {topic}.
+EDITORIAL PRIORITY: inform clearly first, then help the listener understand why it matters for Baja California Sur.
+Use plain, precise journalistic {lang}, not poetic or philosophical language. Every chapter opens with its concrete
+reported news or documented finding: WHAT happened/was found, WHERE, WHO is involved, WHEN (only if supplied), the named
+SOURCE, then WHY IT MATTERS for BCS. Spread those details across natural turns; do not cram them into a list.
+If a chapter contains only portal analysis, label it as analysis/aspiration, state the documented finding first and
+explain what is known vs what remains uncertain. Never turn a scenario into a reported outcome.
+Keep the useful details, chronology, responsibilities, practical consequences and open questions. Explain unfamiliar
+terms simply. No invented scenes, sensory padding, sea/desert metaphors, lyrical images or grand philosophical questions.
+Reflection/awareness is at most one brief closing exchange per chapter, grounded in the information just explained.
+Tone: warm, sunny, relaxed, curious and unhurried; friends explaining the news intelligently, not delivering a poem.
+Humor and laughter come from natural reactions, never from tragedy or affected people. Never preach or hype.
 Two voices: HOST {host} (deep, slow, reflective) and CO-HOST {cohost} (warm, curious, brings the facts gently).
 MOOD: bright, warm, sunny and optimistic — two friends who are genuinely happy to be talking about this place.
 They laugh easily, get excited by a good detail, tease each other kindly, and find hope even in hard news,
-while keeping the calm, reflective depth. Use these delivery tags naturally, 2-4 per chapter (at least one [laugh] or [chuckle]):
+while keeping the reporting accurate and useful. Use these delivery tags naturally, 2-4 per chapter (at least one [laugh] or [chuckle]):
 [laugh], [chuckle], [pause], [breath], [sigh], and <soft>…</soft> around a quiet phrase. No other tags.
 THIS IS A REAL TWO-PERSON CONVERSATION, not a reading:
 - Natural turns: mostly full spoken sentences of 10-35 words, with an occasional longer reflective turn (up to 50)
@@ -506,7 +508,7 @@ Short sentences. Natural spoken {lang} only — never mix languages inside a sen
 CRAFT (learned from the best American public-radio storytelling; never name or imitate any show on air):
 - Story in acts with a character or a human angle (a neighbour, a fisher, a worker, an official — only if in SOURCES),
   tension, and one surprise turn ("but here's the thing…").
-- Curiosity-driven, playful back-and-forth; describe sounds and places so the listener can see them.
+- Curiosity-driven, warm back-and-forth; name real places, institutions and actions from SOURCES.
 - Reveal the hidden design and infrastructure behind everyday things (the pipe, the road, the budget line).
 - Explain economics with one concrete object or example, in plain words, with a smile.
 - Intimate, smart questions; let answers breathe.
@@ -514,7 +516,7 @@ CRAFT (learned from the best American public-radio storytelling; never name or i
 
 HARD RULES
 1. Use ONLY facts in SOURCES. Never invent numbers, names, dates, places, quotes or outcomes. Opinions, questions
-   and images are fine; new facts are not.
+   are fine; new facts are not. Hypothetical examples must be explicitly labelled as hypothetical.
 2. Every number, year and date with digits exactly as in SOURCES (9.09%, 6,746 mdp, 2027, 17 de noviembre).
    Never spell numbers above 10 in words.
 3. Attribute every news fact to its outlet by name in the sentence ({attrib}). Portal analysis is
@@ -528,20 +530,20 @@ THIS CHAPTER: "{chapter}" — about {words} words (hard minimum {minw}), {turns}
 Return JSON only: {{"turns": [{{"speaker": "host"|"cohost", "text": str}}]}}"""
 
 BRIEF = {
-    "entrada": "COLD OPEN: no greeting. Open on ONE vivid moment from hook_material (a sound, a place, an object, a "
-               "person) or one striking fact from one_portal_fact, as if the listener walked in mid-conversation. "
-               "4-6 quick turns of curiosity that pull the listener in. Only then: this is Radio BCS2050, today's deep "
-               "dive on {topic}, and the one simple question the episode will chase.",
+    "entrada": "COLD OPEN: no greeting. Lead with the most consequential reported fact in hook_material or "
+               "one_portal_fact: what happened, where, who, when if supplied, named source and why it matters for BCS. "
+               "Use several natural turns, one figure at a time. Then identify Radio BCS2050, the topic {topic}, and "
+               "the concrete question the reporting will answer. No imagined scene or metaphor.",
     "acto1": "ACT 1. Tell each latest news item clearly (who, what, where, key numbers, outlet), with the human angle, "
              "reactions and a follow-up question each. Build tension. No greeting.",
     "acto2": "ACT 2. Zoom out: the hidden thread through earlier news, the portal's past Foresight editions and the "
              "knowledge graph. Show the hidden design/infrastructure underneath. Include one surprise turn. No greeting.",
     "personas": "PEOPLE AND PLACES: who lives this topic — the towns, municipalities and people (only as given in "
-                "SOURCES). Paint the places with the senses, wonder about daily life there, ask each other what you would "
-                "ask them. No greeting.",
+                "SOURCES). Start with the documented local facts and named source, then explain practical consequences "
+                "for daily life without inventing residents or anecdotes. No greeting.",
     "diseno": "THE HIDDEN DESIGN: the invisible systems behind this topic — rules, documents, institutions, networks "
               "(library documents: name the organisation; ontology; knowledge graph). Make one everyday object reveal the "
-              "system behind it. Curious, playful. No greeting.",
+              "system behind it, without metaphor. State the documented rule or finding and source first. No greeting.",
     "sabias": "DID YOU KNOW: pick ONE memorable fact from the portal data and build the chapter around it; explain it with "
               "one concrete object or everyday example, plain words and humor. Then 1-2 supporting facts (cite the "
               "source/organisation, place or municipality). No greeting.",
@@ -557,10 +559,10 @@ BRIEF = {
              "portal facts, library documents (name the organisation) and the ontology. Make the numbers feel human.",
     "horizonte": "Toward 2050: the portal's Visión pillar for this topic (risk, aspiration, levers), the Tendencia 2050, "
                  "the conditions and the watchlist. Where is it heading vs. where could it go? What would it take?",
-    "cierre": "THE TAKEAWAY: a quiet exchange, NOT a recap. No numbers, no news, no list. The two of them land on one "
-              "idea listeners can carry (a question, an image, a feeling about the place), in 4-7 short turns that "
-              "respond to each other. Then a calm handover to the music: stay with us, more Radio BCS2050 after the "
-              "music (in the show's language).",
+    "cierre": "THE TAKEAWAY: briefly restate the established finding and named source in plain language, without figures. "
+              "Explain what it changes for BCS, who is responsible and what remains unknown (only as in SOURCES). "
+              "No new claims, no metaphor, no list. Reflection at most one short closing exchange, then a warm handover "
+              "to the music: stay with us, more Radio BCS2050 after the music (in the show's language).",
 }
 
 
@@ -649,7 +651,7 @@ def make_chapter(pack: dict, ch: tuple, L: str, today: str) -> list:
         if words(turns) >= w * 0.9:
             break
         out, src_text, _ = write_chapter(pack, ch, L, today, f"Only {words(turns)} words; reach at least {w}. Keep every turn "
-                                         "and ADD natural conversational turns: reactions, follow-ups, laughter, images, and SOURCES facts not yet told "
+                                         "and ADD natural conversational turns: reactions, follow-ups, laughter, practical explanations, and SOURCES facts not yet told "
                                          "(one number per turn at most).",
                                          {"turns": turns})
         turns = out.get("turns", turns)
@@ -681,7 +683,7 @@ MIN_EP, TARGET_EP = 19.75 * 60, 20.75 * 60  # every episode must run a full ~20 
 def extend_chapter(pack: dict, ch: tuple, L: str, today: str, turns: list, add: int) -> list:
     out, src_text, _ = write_chapter(pack, ch, L, today,
         f"The episode runs short. Keep EVERY existing turn word for word and in the same order, and ADD about {add} words "
-        "of NEW turns where they fit naturally: reactions, follow-ups, laughter, a concrete image or place, a question to the "
+        "of NEW turns where they fit naturally: reactions, follow-ups, laughter, a concrete implication or place, a follow-up question to the "
         "other host, and SOURCES facts not yet told (exact digits, one number per turn). Turns of 10-35 words; never three "
         "turns in a row by one speaker." + (" No numbers at all in this chapter." if ch[0] == "cierre" else ""), {"turns": turns})
     new = out.get("turns", [])
