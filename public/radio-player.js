@@ -7,15 +7,16 @@
   var $ = function (s) { return root.querySelector(s); };
   var btn = $('.radio-btn'), panel = $('.radio-panel'), playB = $('.radio-play');
   var SIL = 'data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYxLjcuMTAzAAAAAAAAAAAAAAD/4zjAAAAAAAAAAAAASW5mbwAAAA8AAAAEAAAB+ACSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpK2tra2tra2tra2tra2tra2tra2tra2tra229vb29vb29vb29vb29vb29vb29vb29vb2/////////////////////////////////8AAAAATGF2YzYxLjE5AAAAAAAAAAAAAAAAJAOgAAAAAAAAAfhBGl4cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/4xjEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEOwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEdgAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEsQAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=', unlocked = false;
+  var filt = '', ORDER = ['noticias', 'datos', 'tendencia', 'vision'];
   var st = {}, credits = null, eds = {}, lang = null, i = 0, live = true, pending = 0, tries = 0;
   var audio = new Audio(); audio.preload = 'none';
   var T = {
     es: { play: 'Reproducir', pause: 'Pausa', prev: 'Anterior', next: 'Siguiente', notes: 'Notas y fuentes', music: 'Música',
-          sources: 'Fuentes de este programa', err: 'No se pudo cargar el audio.', tap: 'Toca ▶ para escuchar.', up: 'A continuación', eps: 'Episodios', ep: 'Ep.', golive: '● Volver al vivo',
+          sources: 'Fuentes de este programa', err: 'No se pudo cargar el audio.', tap: 'Toca ▶ para escuchar.', up: 'A continuación', eps: 'Catálogo de episodios', ep: 'Ep.', with: 'con', and: 'y', all: 'Todos', kinds: { noticias: 'Noticias', datos: 'Datos del portal', tendencia: 'Tendencia 2050', vision: 'Visión 2050' }, golive: '● Volver al vivo',
           made: 'Radio continua 24/7. Guiones con fuentes del portal; voces sintéticas Grok TTS.', id: 'Radio BCS2050',
           mus: '♪ Música', none: 'La radio aún no tiene programas.' },
     en: { play: 'Play', pause: 'Pause', prev: 'Previous', next: 'Next', notes: 'Notes & sources', music: 'Music',
-          sources: 'Sources for this show', err: 'Could not load audio.', tap: 'Tap ▶ to listen.', up: 'Up next', eps: 'Episodes', ep: 'Ep.', golive: '● Back to live',
+          sources: 'Sources for this show', err: 'Could not load audio.', tap: 'Tap ▶ to listen.', up: 'Up next', eps: 'Episode catalog', ep: 'Ep.', with: 'with', and: 'and', all: 'All', kinds: { noticias: 'News', datos: 'Portal data', tendencia: 'Trend 2050', vision: 'Vision 2050' }, golive: '● Back to live',
           made: 'Continuous 24/7 radio. Scripts from portal sources; synthetic voices by Grok TTS.', id: 'Radio BCS2050',
           mus: '♪ Music', none: 'No shows yet.' }
   };
@@ -99,11 +100,23 @@
       if (y.kind === 'talk') cur.d += y.d;
     });
     var on = prog ? prog.date + prog.topic : '';
+    var present = ORDER.filter(function (k) { return list.some(function (e) { return e.y.type === k; }); });
+    $('.radio-filter').innerHTML = present.length > 1 ? [''].concat(present).map(function (k) {
+      return '<button type="button" data-k="' + k + '" aria-pressed="' + (filt === k) + '">' + esc(k ? t.kinds[k] : t.all) + '</button>';
+    }).join('') : '';
+    // grouped by type (news, portal data, trend, vision), newest first inside each group
+    list = list.filter(function (e) { return !filt || e.y.type === filt; }).sort(function (a, b) {
+      var ka = ORDER.indexOf(a.y.type), kb = ORDER.indexOf(b.y.type);
+      return (ka < 0 ? 9 : ka) - (kb < 0 ? 9 : kb) || (b.y.date > a.y.date ? 1 : b.y.date < a.y.date ? -1 : (a.y.num || 0) - (b.y.num || 0));
+    });
+    var lastK = null;
     $('.radio-eps').innerHTML = list.map(function (e) {
-      var y = e.y;
-      return '<li><button type="button" data-j="' + e.j + '"' + (e.key === on ? ' aria-current="true"' : '') + '><b>' +
+      var y = e.y, head = '';
+      if (!filt && y.type && y.type !== lastK) { lastK = y.type; head = '<li class="radio-eps-g">' + esc(t.kinds[y.type] || '') + '</li>'; }
+      return head + '<li><button type="button" data-j="' + e.j + '"' + (e.key === on ? ' aria-current="true"' : '') + '><b>' +
         esc(y.title || y.name) + '</b><span>' + (y.num ? t.ep + ' ' + y.num + ' · ' : '') + esc(y.name) + ' · ' + esc(day(y.date)) +
-        ' · ' + Math.round(e.d / 60) + ' min</span></button></li>';
+        ' · ' + Math.round(e.d / 60) + ' min' +
+        (y.hosts && y.hosts.length === 2 ? ' · ' + t.with + ' ' + esc(y.hosts[0]) + ' ' + t.and + ' ' + esc(y.hosts[1]) : '') + '</span></button></li>';
     }).join('');
   }
   function notes() {
@@ -196,6 +209,7 @@
   $('.radio-next').addEventListener('click', function () { live = false; playItem(i + 1, 0); });
   $('.radio-golive').addEventListener('click', goLive);
   $('.radio-close').addEventListener('click', function () { panel.setAttribute('hidden', ''); btn.setAttribute('aria-expanded', 'false'); });
+  $('.radio-filter').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { filt = b.dataset.k; render(); } });
   $('.radio-eps').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { live = false; playItem(+b.dataset.j, 0); } });
   $('.radio-tracks').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { live = false; playItem(+b.dataset.j, 0); } });
   $('.radio-notes-btn').addEventListener('click', function () { var n = $('.radio-notes'); if (n.hasAttribute('hidden')) { n.removeAttribute('hidden'); notes(); } else n.setAttribute('hidden', ''); });

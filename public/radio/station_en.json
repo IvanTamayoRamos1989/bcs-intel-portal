@@ -1,7 +1,7 @@
 {
   "schedules": [
     {
-      "start": "2026-11-18T15:06:46Z",
+      "start": "2026-11-18T16:05:17Z",
       "total": 8844.18,
       "episodes": 7,
       "items": [
@@ -19,7 +19,12 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-conectividad/en/02.mp3",
@@ -30,7 +35,12 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-conectividad/en/03.mp3",
@@ -41,7 +51,12 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-conectividad/en/04.mp3",
@@ -52,7 +67,12 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-conectividad/en/05.mp3",
@@ -63,7 +83,12 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-conectividad/en/06.mp3",
@@ -74,7 +99,12 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-conectividad/en/07.mp3",
@@ -85,7 +115,12 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-conectividad/en/08.mp3",
@@ -96,10 +131,15 @@
           "topic": "noticias-conectividad",
           "name": "News · Connectivity",
           "title": "October Passenger Figures at Los Cabos and La Paz Airports",
-          "num": 1
+          "num": 1,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
-          "src": "/radio/music/break_romanza.mp3",
+          "src": "/radio/music/break_bossa.mp3",
           "d": 30.04,
           "kind": "music"
         },
@@ -117,7 +157,12 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/02.mp3",
@@ -128,7 +173,12 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/03.mp3",
@@ -139,7 +189,12 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/04.mp3",
@@ -150,7 +205,12 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/05.mp3",
@@ -161,7 +221,12 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/06.mp3",
@@ -172,7 +237,12 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/07.mp3",
@@ -183,7 +253,12 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-infraestructura/en/08.mp3",
@@ -194,10 +269,15 @@
           "topic": "noticias-infraestructura",
           "name": "News · Infrastructure",
           "title": "Paving in La Paz and Oasis Tender in Mulegé",
-          "num": 2
+          "num": 2,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
-          "src": "/radio/music/break_romance.mp3",
+          "src": "/radio/music/break_lewisanddekalb.mp3",
           "d": 30.04,
           "kind": "music"
         },
@@ -215,7 +295,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/02.mp3",
@@ -226,7 +311,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/03.mp3",
@@ -237,7 +327,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/04.mp3",
@@ -248,7 +343,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/05.mp3",
@@ -259,7 +359,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/06.mp3",
@@ -270,7 +375,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/07.mp3",
@@ -281,7 +391,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/noticias-medio_ambiente/en/08.mp3",
@@ -292,7 +407,12 @@
           "topic": "noticias-medio_ambiente",
           "name": "News · Environment",
           "title": "Notice 638 forecasts surf on Baja California Sur coast",
-          "num": 3
+          "num": 3,
+          "type": "noticias",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/music/break_cielito.mp3",
@@ -313,7 +433,12 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-economia/en/02.mp3",
@@ -324,7 +449,12 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-economia/en/03.mp3",
@@ -335,7 +465,12 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-economia/en/04.mp3",
@@ -346,7 +481,12 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-economia/en/05.mp3",
@@ -357,7 +497,12 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-economia/en/06.mp3",
@@ -368,7 +513,12 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-economia/en/07.mp3",
@@ -379,7 +529,12 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-economia/en/08.mp3",
@@ -390,10 +545,15 @@
           "topic": "datos-economia",
           "name": "Portal data · Economy",
           "title": "Portal Economy Data Sources for Baja California Sur",
-          "num": 4
+          "num": 4,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
-          "src": "/radio/music/break_horizon.mp3",
+          "src": "/radio/music/break_romanza.mp3",
           "d": 30.04,
           "kind": "music"
         },
@@ -411,7 +571,12 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-conectividad/en/02.mp3",
@@ -422,7 +587,12 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-conectividad/en/03.mp3",
@@ -433,7 +603,12 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-conectividad/en/04.mp3",
@@ -444,7 +619,12 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-conectividad/en/05.mp3",
@@ -455,7 +635,12 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-conectividad/en/06.mp3",
@@ -466,7 +651,12 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-conectividad/en/07.mp3",
@@ -477,7 +667,12 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/datos-conectividad/en/08.mp3",
@@ -488,10 +683,15 @@
           "topic": "datos-conectividad",
           "name": "Portal data · Connectivity",
           "title": "Portal Connectivity Data for Los Cabos",
-          "num": 5
+          "num": 5,
+          "type": "datos",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
-          "src": "/radio/music/break_bossa.mp3",
+          "src": "/radio/music/break_somewheresunny.mp3",
           "d": 30.04,
           "kind": "music"
         },
@@ -509,7 +709,12 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/tendencia/en/02.mp3",
@@ -520,7 +725,12 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/tendencia/en/03.mp3",
@@ -531,7 +741,12 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/tendencia/en/04.mp3",
@@ -542,7 +757,12 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/tendencia/en/05.mp3",
@@ -553,7 +773,12 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/tendencia/en/06.mp3",
@@ -564,7 +789,12 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/tendencia/en/07.mp3",
@@ -575,7 +805,12 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/tendencia/en/08.mp3",
@@ -586,10 +821,15 @@
           "topic": "tendencia",
           "name": "Trend 2050",
           "title": "Water-Coastal Stress Leads Trend 2050 in Baja California Sur",
-          "num": 6
+          "num": 6,
+          "type": "tendencia",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
-          "src": "/radio/music/break_beachbum.mp3",
+          "src": "/radio/music/break_jazzbrunch.mp3",
           "d": 30.04,
           "kind": "music"
         },
@@ -607,7 +847,12 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/vision/en/02.mp3",
@@ -618,7 +863,12 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/vision/en/03.mp3",
@@ -629,7 +879,12 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/vision/en/04.mp3",
@@ -640,7 +895,12 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/vision/en/05.mp3",
@@ -651,7 +911,12 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/vision/en/06.mp3",
@@ -662,7 +927,12 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/vision/en/07.mp3",
@@ -673,7 +943,12 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
           "src": "/radio/editions/2026-11-18/vision/en/08.mp3",
@@ -684,10 +959,15 @@
           "topic": "vision",
           "name": "Vision 2050",
           "title": "Vision 2050 to mitigate water-coastal stress in Baja California Sur",
-          "num": 7
+          "num": 7,
+          "type": "vision",
+          "hosts": [
+            "Tomás",
+            "Luz"
+          ]
         },
         {
-          "src": "/radio/music/break_surf.mp3",
+          "src": "/radio/music/break_clearair.mp3",
           "d": 30.04,
           "kind": "music"
         }
