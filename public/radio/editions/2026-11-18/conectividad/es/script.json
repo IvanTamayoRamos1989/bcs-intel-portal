@@ -1,0 +1,771 @@
+{
+  "topic": "conectividad",
+  "lang": "es",
+  "title": "Conectividad · Radio BCS2050",
+  "chapters": [
+    {
+      "id": "entrada",
+      "title": "Entrada",
+      "turns": [
+        {
+          "speaker": "cohost",
+          "text": "La pista del aeropuerto de Los Cabos mide 3,004 metros de largo. Suficiente para que un avión pesado baje despacio y se detenga sin prisa."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El asfalto parece una línea recta que toca el desierto y el mar al mismo tiempo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y tiene 45 metros de ancho. Espacio de sobra para que las alas giren con calma."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] Uno se pregunta cuántos viajes caben ahí cuando el viento sopla fuerte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según GlobeNewswire, en octubre pasaron 520.9 mil pasajeros por Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y eso qué significa para el año que termina?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Bajó 4.6% respecto al año anterior, aunque La Paz subió 8.7% en su acumulado. Dos aeropuertos, dos historias distintas en la misma península."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] Mientras el cielo se abre o se cierra, el mar también tiene la última palabra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Península Digital informa que Marina cerró cinco puertos a las lanchas pequeñas por el frente frío. Santa Rosalía, Loreto y San Carlos entre ellos."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy hablamos de Conectividad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué significa que un lugar siga conectado cuando el mar y el cielo deciden cerrar las puertas? [breath]"
+        }
+      ]
+    },
+    {
+      "id": "acto1",
+      "title": "Acto 1 · Lo que está pasando",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Según GlobeNewswire, el aeropuerto de Los Cabos movió 520.9 mil pasajeros en octubre."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Una baja del 4.6% frente al año pasado."
+        },
+        {
+          "speaker": "host",
+          "text": "Los vuelos internacionales bajaron un 5.9%."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Cómo afecta eso a la gente que vive de recibir visitantes?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y La Paz registró 108 mil pasajeros, también con una caída mensual, pero sube 8.7% en lo que va del año. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz acumula 1.19 millones de pasajeros en el año."
+        },
+        {
+          "speaker": "host",
+          "text": "Interesante el contraste entre los dos aeropuertos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además informan de una nueva ruta directa a Washington Dulles desde Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué te parece esa conexión nueva?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto, Península Digital cuenta que la Marina cerró cinco puertos a embarcaciones menores por el frente frío."
+        },
+        {
+          "speaker": "host",
+          "text": "Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y Adolfo López Mateos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, con rachas de viento y olas de dos a tres metros."
+        },
+        {
+          "speaker": "host",
+          "text": "Imagínate al pescador que sale temprano y de pronto no puede trabajar. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. ¿Cómo se planea la vida cuando el mar decide cerrar?"
+        },
+        {
+          "speaker": "host",
+          "text": "Y Reforma reporta que la tormenta Vance inundó Los Cabos, arrastrando autos y obligando a rescatar gente."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Vance arrastró decenas de vehículos por las calles de Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cerraron playas y puertos, suspendieron clases."
+        },
+        {
+          "speaker": "host",
+          "text": "El agua entrando por las calles… ¿qué deja eso en la memoria de la gente?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es la misma infraestructura que usamos todos los días."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora, Diario El Independiente dice que el gobernador respalda que la API estatal administre el puerto de Cabo San Lucas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hoy lo opera Asipona con una concesión federal de 50 años."
+        },
+        {
+          "speaker": "host",
+          "text": "Castro quiere que pase a la API de Baja California Sur, que ya maneja otros puertos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Asipona tiene la concesión desde febrero de 2024."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué cambiaría para los que usan ese muelle todos los días?"
+        },
+        {
+          "speaker": "host",
+          "text": "Es una intención política, no una transferencia ya autorizada."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. ¿Qué preguntas le harías al gobernador sobre esto?"
+        },
+        {
+          "speaker": "host",
+          "text": "Y mientras tanto los puertos siguen cerrando por el clima."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La conectividad parece siempre a merced de algo más grande."
+        },
+        {
+          "speaker": "host",
+          "text": "Me quedo pensando en los trabajadores del puerto que dependen de cada decisión federal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y en cómo un frente frío de unos días puede parar todo el flujo de la costa."
+        },
+        {
+          "speaker": "host",
+          "text": "El mar y el viento tienen la última palabra, ¿no?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la gente sigue ahí, esperando que se abra de nuevo."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "Las personas y los lugares",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Paz y Loreto viven la conectividad de forma muy distinta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz es la capital de servicios y logística, con la universidad cerca del puerto."
+        },
+        {
+          "speaker": "host",
+          "text": "Y Loreto queda en medio de la península, anclado en su bahía y las áreas naturales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Imagina un día normal en Loreto: el mar, el viento, y la gente que espera el próximo vuelo o el ferry."
+        },
+        {
+          "speaker": "host",
+          "text": "En octubre de 2026 el aeropuerto de La Paz movió 108 mil pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Bajó solo 2.1% ese mes. [pause]"
+        },
+        {
+          "speaker": "host",
+          "text": "Pero creció 8.7% en el año entero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pregunta le harías a alguien que llega por primera vez a ese aeropuerto?"
+        },
+        {
+          "speaker": "host",
+          "text": "Le preguntaría cómo siente la diferencia entre llegar a Los Cabos y llegar aquí."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos bajó 4.6% en el mismo mes, según GlobeNewswire."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz parece más estable, como bisagra entre el interior y el sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras tanto, la Marina cerró cinco puertos a embarcaciones menores."
+        },
+        {
+          "speaker": "host",
+          "text": "Santa Rosalía, Loreto, San Carlos, Bahía Magdalena y Adolfo López Mateos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por el frente frío número 4."
+        },
+        {
+          "speaker": "host",
+          "text": "Con rachas de 30 a 50 kilómetros por hora."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un pescador de Loreto debe estar viendo el oleaje de dos a tres metros y pensando en el acueducto Londó."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese acueducto y la segunda etapa de la PTAR son noticias recientes para la gente de allá."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Además United abrió la ruta directa Los Cabos–Washington Dulles."
+        },
+        {
+          "speaker": "host",
+          "text": "Ese detalle cambia cómo se siente la llegada desde lejos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué le preguntarías a quien trabaja en el puerto cerrado?"
+        },
+        {
+          "speaker": "host",
+          "text": "Le preguntaría qué siente cuando el mar le dice que hoy no se sale."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en La Paz, con sus acuíferos en déficit, la gente sabe que cada conexión cuesta agua y energía."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El desierto y la bahía siguen enseñando lo mismo: nada llega sin costo. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "A veces me pregunto cómo sería un día sin que el viento cierre nada."
+        },
+        {
+          "speaker": "host",
+          "text": "O sin que el aeropuerto marque la diferencia entre un año que crece y otro que se detiene."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz sigue más quieta, como si la bahía la protegiera un poco más."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras Loreto espera el siguiente vuelo o el siguiente barco que sí pueda salir."
+        }
+      ]
+    },
+    {
+      "id": "acto2",
+      "title": "Acto 2 · El hilo oculto",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, sigo pensando en cómo todo se conecta por aire y por mar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y el crecimiento aéreo es el que más se nota."
+        },
+        {
+          "speaker": "host",
+          "text": "Según El Financiero las conexiones en Los Cabos subieron 61% en diez años."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la afluencia casi se duplicó. [pause] Quieren traer más Europa y Sudamérica para equilibrar."
+        },
+        {
+          "speaker": "host",
+          "text": "La ruta de Condor desde Fráncfort ya va con 92% de ocupación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Inició el dos de noviembre y Alemania manda más del 60% de esos pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "Me pregunto cómo se siente llegar en ese avión y ver el mar tan cerca."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el 2025 llegaron 3.8 millones de pasajeros solo al aeropuerto de Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto los puertos sufren otro tipo de presión."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Meganoticias contó que en Puerto San Carlos el bordo colapsó y más de 300 viviendas quedaron bajo el agua."
+        },
+        {
+          "speaker": "host",
+          "text": "El Niño elevó el oleaje entre 15 y 30 centímetros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en El Dátil también unas 300 familias sintieron la subida."
+        },
+        {
+          "speaker": "host",
+          "text": "Y los huracanes Polo y Rachel cerraron varios puertos a la navegación menor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "SEMAR lo ordenó el 30 de septiembre en Cabo San Lucas y San José del Cabo."
+        },
+        {
+          "speaker": "host",
+          "text": "La red parece sólida por arriba, pero por abajo queda más frágil de lo que parece. [breath]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Cabo San Lucas llegaron 285 cruceros con más de un millón de pasajeros el año pasado."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahí está el hilo oculto: las concesiones de largo plazo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "ASIPONA tiene el puerto de Cabo San Lucas por 50 años desde febrero de 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Y los aeropuertos de Los Cabos y La Paz siguen bajo concesión de GAP hasta 2048."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces la infraestructura que usamos hoy ya está decidida para las próximas décadas."
+        },
+        {
+          "speaker": "host",
+          "text": "La Tendencia 2050 del portal ya hablaba de resiliencia costera y de red después de Polo y Rachel."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y ahora vemos cómo el mar sigue subiendo mientras el aire sigue creciendo. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Pero aquí viene lo que nadie esperaba: el mismo sistema que trae turistas puede quedar aislado si un solo bordo falla."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Entonces la conectividad real no es solo cuántos vuelos llegan, sino qué tan resistente es todo el hilo."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si el mar sigue subiendo y las concesiones siguen igual de largo?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa es la pregunta que queda flotando."
+        }
+      ]
+    },
+    {
+      "id": "sabias",
+      "title": "¿Sabías que…?",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "¿Sabías que el aeropuerto de Los Cabos movió cerca de 3.8 millones de pasajeros el año pasado?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es mucho. ¿Qué parte del estado representa?"
+        },
+        {
+          "speaker": "host",
+          "text": "El 83.2% del total estatal. [pause] Es como si casi todo el movimiento aéreo pasara por un solo punto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el resto queda muy pequeño."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. La Paz apenas llegó a 668,800 pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y subió 10.9% respecto al año anterior."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. [chuckle] Aun así sigue siendo una fracción pequeña comparada con Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué significa eso para la conectividad real del estado?"
+        },
+        {
+          "speaker": "host",
+          "text": "Que la mayor parte de la gente llega y sale por un solo aeropuerto. [breath] El resto del territorio queda más aislado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La pista de Los Cabos mide 3,004 metros."
+        },
+        {
+          "speaker": "host",
+          "text": "Y la de La Paz tiene 2,500 metros. [pause] Esa diferencia marca qué aviones pueden llegar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y los puertos? ¿Cómo entran ahí?"
+        },
+        {
+          "speaker": "host",
+          "text": "En Cabo San Lucas arribaron 285 cruceros con más de un millón de pasajeros."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y Pichilingue solo 50 arribos con 133,269 pasajeros."
+        },
+        {
+          "speaker": "host",
+          "text": "Es la misma historia. [laugh] Todo se concentra en muy pocos puntos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasa entonces con las comunidades más alejadas?"
+        },
+        {
+          "speaker": "host",
+          "text": "Quedan conectadas de forma muy limitada. [pause] El estado crece, pero no de manera pareja."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La terminal de Los Cabos tiene 15,130 metros cuadrados."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras que la de La Paz tiene solo 5,900. [sigh] Se nota la diferencia al caminar por ahí."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y Loreto tuvo apenas 20 arribos de cruceros."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. [chuckle] Imagina el silencio en esos muelles comparado con el bullicio en el sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Crees que eso cambie para 2050?"
+        },
+        {
+          "speaker": "host",
+          "text": "Depende de cómo se repartan las rutas. [pause] Una pista más larga permite más, pero el desierto sigue pidiendo caminos que lleguen a todos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En el Summit del Foro Mar de Cortés hablaron de invertir más en carreteras y aeropuertos para todo el golfo."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Eso podría ayudar a que el movimiento no se quede solo en un punto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Agustín Coppel propuso crecer 3.5% anual durante 20 años."
+        },
+        {
+          "speaker": "host",
+          "text": "Y triplicar la inversión extranjera directa de la región."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Hoy está cerca de 4,100 millones de dólares. [pause] Con más puertos y pistas en otros lugares, tal vez el resto del estado se sienta más cerca."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto enseña que todo está conectado por distancia. [breath] Si las rutas llegan a más gente, el estado se siente más entero."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "El diseño invisible",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Luz, me quedo pensando en el aeropuerto de Los Cabos. El sol cae sobre la pista y uno no ve lo que sostiene todo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué te hace detenerte?"
+        },
+        {
+          "speaker": "host",
+          "text": "Ese edificio parece solo puertas y ventanillas, pero detrás hay un manual de la ICAO de 2013 que guía toda la economía del lugar. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El Airport Economics Manual."
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Decide cómo se cobra, cómo se planea el crecimiento hasta 2048. Un detalle que cambia todo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la concesión de GAP llega justo hasta ese año."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces un boleto de avión ya trae dentro esa regla invisible. El desierto entero viaja con él."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. [pause] Hay otra guía de la ICAO, también de 2016, sobre manejo total de aeropuertos."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, esa da el marco para que todo funcione sin que el viajero lo note. Como si el viento mismo llevara la lógica."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y el puerto de Cabo San Lucas?"
+        },
+        {
+          "speaker": "host",
+          "text": "ASIPONA lo opera con una concesión federal de 50 años desde febrero de 2024. La mar se vuelve parte del cálculo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y las tarifas nuevas salieron en el DOF el primero de octubre."
+        },
+        {
+          "speaker": "host",
+          "text": "Un crucero que llega carga toda esa historia en el precio del muelle. Nadie la ve, pero todos la pagan."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los reportes de la UNWTO de 2016 ya hablaban de cómo se diseña ese tipo de terminales."
+        },
+        {
+          "speaker": "host",
+          "text": "El diseño invisible otra vez. [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. [chuckle] ¿Qué pasaría si quitáramos el manual y la concesión?"
+        },
+        {
+          "speaker": "host",
+          "text": "El aeropuerto seguiría ahí, pero sin la lógica que lo hace funcionar con las estaciones turísticas. Solo el calor y el silencio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y East Cape sigue sin aeropuerto propio."
+        },
+        {
+          "speaker": "host",
+          "text": "Solo el corredor Los Cabos–La Paz. La luz del atardecer lo recorre entero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La Paz tiene su propio aeropuerto, también bajo GAP, pero es la puerta secundaria."
+        },
+        {
+          "speaker": "host",
+          "text": "Dos sistemas que se complementan sin que uno los vea. [breath] A veces basta mirar el boleto para entender el desierto entero."
+        }
+      ]
+    },
+    {
+      "id": "acto3",
+      "title": "Acto 3 · Hacia 2050",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hacia 2050 la conectividad no puede seguir siendo solo el eje de Los Cabos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. El riesgo que marca la Visión es que SJD bajó 4.6 % en octubre. [pause] Esa caída ya pinta dónde empieza a ceder el crecimi"
+        },
+        {
+          "speaker": "host",
+          "text": "Y 5.5 % en lo que va del año. ¿Qué te dice eso del sur?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mientras LAP subió 8.7 %. [pause] Esa diferencia ya dice algo sobre cómo se reparte el peso."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Tres notas esta semana y la dirección se mantiene neutra."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El EWMA queda en 2.67, sin empujar fuerte en ninguna dirección. Las notas del periodo son mixtas."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. La Paz está creciendo como contrapeso medido."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La aspiración es clara: una conectividad que sirva a todo el estado policéntrico, no solo al sur turístico. ¿Qué pasaría si solo repetimos el mismo modelo?"
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces LAP deja de ser el hermano menor. [chuckle] Empieza a equilibrar la balanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y las rutas marítimas, los ferries, pueden ser palanca real de carga y personas cuando haya proyectos en curso."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si la pavimentación se mide por el servicio a las comunidades y no solo por llegar a la costa?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa es una de las palancas que menciona el tablero. Leer el aforo como servicio, no solo como acceso a amenidades."
+        },
+        {
+          "speaker": "host",
+          "text": "La tendencia 2050 pinta varios centros con roles distintos. Baja California Sur no se sostiene como una sola fórmula costera repetida."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos como motor bajo estrés de agua y luz."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape en tensión con las áreas protegidas. ¿Cómo se equilibra eso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Todos Santos y El Pescadero como espina del Pacífico. [breath] El oleaje y el desierto marcan el ritmo."
+        },
+        {
+          "speaker": "host",
+          "text": "La Paz como capital de servicios y nodo de agua-energía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto como ancla de turismo y conservación. Cada vocación aporta un rol distinto."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú como hub agropecuario con más margen relativo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el norte de Mulegé como corredor de generación remota. Esa suma de roles es lo que mantiene el sistema."
+        },
+        {
+          "speaker": "host",
+          "text": "Para que funcione, cada zona debe mantener su vocación propia. Nuevo crecimiento solo donde haya evidencia de agua y energía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape y Loreto respetando los techos de ANP y POEL antes de escalar."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú y el norte suman producción y energía sin vaciar servicios ni áreas protegidas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y en la lista de vigilancia aparece SJD con 56 destinos sin escalas."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa cifra nos recuerda que el sur sigue siendo el que más conecta, por ahora. [chuckle] Pero la lectura del tablero apunta a un sistema más repartido."
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "title": "Para llevar",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "A veces pienso que la conectividad no es solo mover gente de un punto a otro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Es como si el mar y el cielo nos recordaran que el estado tiene muchos centros."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. Que no todo pasa por el mismo eje. [pause] Me pregunto cómo se siente cuando un vuelo directo llega desde lejos."
+        },
+        {
+          "speaker": "host",
+          "text": "—which is the strange part. Que las rutas marítimas y el tráfico de La Paz se lean como palancas que ya existen."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me gusta esa idea. ¿Qué pasaría si las rutas sirvieran para que cada lugar respire por sí mismo?"
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. Que el puerto de un lado hable con el pueblo del otro sin tener que pasar siempre por el mismo lugar. Como si la conectividad fuera una forma de escuchar el territorio entero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[chuckle] Me gusta cómo lo dices. No como un mapa que trazamos, sino como algo que ya está ahí."
+        },
+        {
+          "speaker": "host",
+          "text": "Y que tal vez solo necesitamos dejarlo fluir. Me pregunto qué sentiría alguien en un pueblo alejado al ver que las rutas llegan directo."
+        }
+      ]
+    }
+  ]
+}

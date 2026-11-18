@@ -14,135 +14,155 @@
       "languages": {
         "es": {
           "title": "Infraestructura · Radio BCS2050",
-          "duration": 631.1,
+          "duration": 1217.3,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/infraestructura/es/01.mp3",
-              "duration": 73.63,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 92.78,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/infraestructura/es/02.mp3",
-              "duration": 123.22,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 224.59,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/infraestructura/es/03.mp3",
-              "duration": 97.68,
-              "sting": "/radio/music/break_romanza.mp3"
+              "duration": 149.9,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/infraestructura/es/04.mp3",
-              "duration": 87.82,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 189.7,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/infraestructura/es/05.mp3",
-              "duration": 138.53,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 140.59,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/infraestructura/es/06.mp3",
+              "duration": 142.2,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/infraestructura/es/07.mp3",
+              "duration": 216.72,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/infraestructura/es/06.mp3",
-              "duration": 52.06,
+              "src": "/radio/editions/2026-11-17/infraestructura/es/08.mp3",
+              "duration": 60.79,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/infraestructura/es/script.json",
-          "words": 1236
+          "words": 2524
         },
         "en": {
           "title": "Infrastructure · Radio BCS2050",
-          "duration": 615.1,
+          "duration": 1211.1,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/infraestructura/en/01.mp3",
-              "duration": 78.02,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 88.68,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/infraestructura/en/02.mp3",
-              "duration": 108.38,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 183.86,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/infraestructura/en/03.mp3",
-              "duration": 108.19,
-              "sting": "/radio/music/break_romanza.mp3"
+              "duration": 165.94,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/infraestructura/en/04.mp3",
-              "duration": 64.63,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 185.33,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/infraestructura/en/05.mp3",
-              "duration": 145.66,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 133.46,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/infraestructura/en/06.mp3",
+              "duration": 168.24,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/infraestructura/en/07.mp3",
+              "duration": 220.39,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/infraestructura/en/06.mp3",
-              "duration": 52.08,
+              "src": "/radio/editions/2026-11-17/infraestructura/en/08.mp3",
+              "duration": 65.18,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/infraestructura/en/script.json",
-          "words": 1172
+          "words": 2757
         }
       },
       "sources": [
         {
-          "outlet": "Gringo Gazette",
-          "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
-          "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Diario Humano",
-          "title": "Vecinos convocan colecta de firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040",
-          "url": "https://diariohumano.com.mx/2026/11/16/cabo-del-este-convocan-a-firmar-por-el-camino-costero/",
-          "date": "2026-11-16"
-        },
-        {
           "outlet": "Meganoticias",
-          "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
-          "date": "2026-11-16"
+          "title": "El puente del arroyo San José Viejo podría construirse en 2027: el proyecto ejecutivo ya está listo, dice la SICT",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/en-pie-construcci%C3%B3n-de-puente-en-arroyo-san-jose-viejo/789578",
+          "date": "2026-11-17"
         },
         {
           "outlet": "Tribuna de México",
@@ -151,10 +171,10 @@
           "date": "2026-11-16"
         },
         {
-          "outlet": "Tribuna de México",
-          "title": "Senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua; Los Cabos suma 25 tomas clandestinas en 2026",
-          "url": "https://tribunademexico.com/propone-10-anos-carcel-huachicol-agua/",
-          "date": "2026-11-13"
+          "outlet": "Palabra BCS",
+          "title": "La pavimentación de calles se define principalmente por aforo vehicular, precisa Sepuimm",
+          "url": "https://www.palabrabcs.com/municipios/la-paz/la-pavimentacion-de-calles-se-define-principalmente-por-aforo-vehicular-precisa-sepuimm/",
+          "date": "2026-11-15"
         },
         {
           "outlet": "alDíaBCS",
@@ -163,28 +183,22 @@
           "date": "2026-11-13"
         },
         {
-          "outlet": "NTCD",
-          "title": "Entregan al Congreso de BCS el Quinto Informe de Gobierno; el gobernador presentará resultados el 27 de noviembre",
-          "url": "https://ntcd.mx/noticias-entregan-congreso-baja-california-sur-quinto-informe-gobierno",
-          "date": "2026-11-12"
+          "outlet": "Meganoticias",
+          "title": "Cauces modificados y falta de drenaje pluvial llevan toneladas de basura al mar en Los Cabos",
+          "url": "https://www.meganoticias.mx/la-paz/noticia/modificaciones-urbanas-llevan-toneladas-de-basura-al-mar-en-los-cabos/789460",
+          "date": "2026-11-17"
         },
         {
           "outlet": "Tribuna de México",
-          "title": "PGA Tour y Baja 1000 elevan la ocupación hotelera de Los Cabos al 78%, cuatro puntos sobre 2025",
-          "url": "https://tribunademexico.com/ocupacion-hotelera-los-cabos-2/",
-          "date": "2026-11-12"
+          "title": "Mulegé reporta 713 mdp en obra en cinco años e inicia el nuevo acueducto Palo Verde–Santa Rosalía; la obra federal cayó 70%",
+          "url": "https://tribunademexico.com/mulege-reporta-713-mdp-invertidos/",
+          "date": "2026-11-17"
         },
         {
-          "outlet": "HOY BCS",
-          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
-          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Foro Mar de Cortés",
-          "title": "Proponen en el Summit de Los Cabos un «tratado regional» de los cinco estados para atraer inversión y proteger el Mar de Cortés",
-          "url": "https://foromdc.org/summit/proponen-tratado-regional-para-atraer-inversion-y-proteger-el-patrimonio-natural-del-mar-de-cortes/",
-          "date": "2026-11-11"
+          "outlet": "Meganoticias",
+          "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
+          "date": "2026-11-16"
         },
         {
           "outlet": "Palabra BCS",
@@ -193,37 +207,68 @@
           "date": "2026-11-10"
         },
         {
-          "outlet": "Revista Espejo",
-          "title": "IMCO en el Foro Mar de Cortés: BCS sube del lugar 8 al 5 en competitividad estatal entre 2021 y 2026",
-          "url": "https://revistaespejo.com/2026/11/10/cambiar-la-forma-de-decidir-clave-para-mejorar-la-competitividad-regional-valeria-moy/",
-          "date": "2026-11-10"
+          "outlet": "Quepoca",
+          "title": "La segunda desaladora de Cabo San Lucas alcanza 75% de avance y aportará 250 litros por segundo",
+          "url": "https://www.quepoca.com/articulo/actualidad/avanza-75-segunda-desaladora-cabo-san-lucas/20261109165636004259.html",
+          "date": "2026-11-09"
         },
         {
-          "outlet": "Foro Mar de Cortés",
-          "title": "Agustín Coppel propone en el Summit del Foro Mar de Cortés en Los Cabos duplicar la economía regional y triplicar la inversión extranjera en 20 años",
-          "url": "https://foromdc.org/summit/agustin-coppel-hace-un-llamado-a-duplicar-la-economia-de-la-region-del-mar-de-cortes-y-triplicar-las-inversiones-en-20-anos/",
-          "date": "2026-11-10"
+          "outlet": "Tribuna de México",
+          "title": "SAPA La Paz reconoce que solo opera dos de sus cuatro equipos Vactor y gestiona dos nuevos con Conagua",
+          "url": "https://tribunademexico.com/sapa-la-paz-reportes-importancia/",
+          "date": "2026-11-09"
         },
         {
-          "outlet": "UN-Habitat (2015)",
-          "title": "Global Public Space Toolkit: From Global Principles to Local Policies and Practice",
-          "url": "https://unhabitat.org/global-public-space-toolkit"
+          "outlet": "PVTIME",
+          "title": "CFE licita el proyecto Oasis en Mulegé: 72 MW solares, baterías de 80 MWh e hidrógeno verde",
+          "url": "https://www.pvtime.org/mexico-tenders-solar-hydrogen-oasis-microgrid-project/",
+          "date": "2026-11-09"
         },
         {
-          "outlet": "Douglas Farr (2008)",
-          "title": "Sustainable Urbanism: Urban Design with Nature",
-          "url": "https://www.wiley.com/en-us/Sustainable+Urbanism%3A+Urban+Design+with+Nature-p-9780471777519"
+          "outlet": "Tribuna de México",
+          "title": "Precios en La Paz suben 1.17% en octubre, casi el doble que el 0.65% nacional (INEGI)",
+          "url": "https://tribunademexico.com/precios-suben-mas-en-bcs/",
+          "date": "2026-11-09"
         },
         {
-          "outlet": "ITDP (2018)",
-          "title": "Streets for Walking and Cycling: Designing for Safety Accessibility and Comfort",
-          "url": "https://www.itdp.org/publication/streets-for-walking-cycling/"
+          "outlet": "Meganoticias",
+          "title": "Los Cabos tardará una semana en normalizar la recolección de basura por calles de terracería dañadas",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/tardaran-una-semana-en-regularizarse-los-servicios-p%C3%BAblicos-en-los-cabos/783878",
+          "date": "2026-10-29"
+        },
+        {
+          "outlet": "UN-Habitat (2013)",
+          "title": "Streets as Public Spaces and Drivers of Urban Prosperity",
+          "url": "https://unhabitat.org/streets-as-public-spaces-and-drivers-of-urban-prosperity"
+        },
+        {
+          "outlet": "UN-Habitat (2014)",
+          "title": "A New Strategy of Sustainable Neighbourhood Planning: Five Principles",
+          "url": "https://unhabitat.org/a-new-strategy-of-sustainable-neighbourhood-planning-five-principles"
+        },
+        {
+          "outlet": "Jane Jacobs (1961)",
+          "title": "The Death and Life of Great American Cities",
+          "url": "https://www.penguinrandomhouse.com/books/159854/the-death-and-life-of-great-american-cities-by-jane-jacobs/"
         },
         {
           "outlet": "Portal BCS 2050",
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "puente-arroyo-san-jose-viejo-2027-meganoticias-2026-11-17",
+        "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
+        "sepuimm-pavimentacion-criterios-aforo-palabrabcs-2026-11-15",
+        "loreto-calle-marlin-pavimentacion-45-aldiabcs-2026-11-13",
+        "UP003",
+        "UP005",
+        "UP008",
+        "proj_fed_car_003",
+        "proj_fed_car_004",
+        "proj_fed_int_002",
+        "proj_fed_seg_001"
       ]
     },
     {
@@ -234,135 +279,155 @@
       "languages": {
         "es": {
           "title": "Finanzas · Radio BCS2050",
-          "duration": 599.9,
+          "duration": 1229.3,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/finanzas/es/01.mp3",
-              "duration": 58.2,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 98.62,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/finanzas/es/02.mp3",
-              "duration": 108.46,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 197.83,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/finanzas/es/03.mp3",
-              "duration": 129.55,
-              "sting": "/radio/music/break_cielito.mp3"
+              "duration": 169.1,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/finanzas/es/04.mp3",
-              "duration": 80.54,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 170.52,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/finanzas/es/05.mp3",
-              "duration": 111.41,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 186.86,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/finanzas/es/06.mp3",
+              "duration": 150.74,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/finanzas/es/07.mp3",
+              "duration": 180.48,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/finanzas/es/06.mp3",
-              "duration": 53.57,
+              "src": "/radio/editions/2026-11-17/finanzas/es/08.mp3",
+              "duration": 75.17,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/finanzas/es/script.json",
-          "words": 1119
+          "words": 2504
         },
         "en": {
           "title": "Finance · Radio BCS2050",
-          "duration": 606.7,
+          "duration": 1223.5,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/finanzas/en/01.mp3",
-              "duration": 51.02,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 81.96,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/finanzas/en/02.mp3",
-              "duration": 138.65,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 174.82,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/finanzas/en/03.mp3",
-              "duration": 109.37,
-              "sting": "/radio/music/break_cielito.mp3"
+              "duration": 191.66,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/finanzas/en/04.mp3",
-              "duration": 78.41,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 168.0,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/finanzas/en/05.mp3",
-              "duration": 110.28,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 139.58,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/finanzas/en/06.mp3",
+              "duration": 184.1,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/finanzas/en/07.mp3",
+              "duration": 203.59,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/finanzas/en/06.mp3",
-              "duration": 60.82,
+              "src": "/radio/editions/2026-11-17/finanzas/en/08.mp3",
+              "duration": 79.8,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/finanzas/en/script.json",
-          "words": 1090
+          "words": 2475
         }
       },
       "sources": [
         {
-          "outlet": "Meganoticias",
-          "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
-          "date": "2026-11-12"
-        },
-        {
-          "outlet": "Palabra BCS",
-          "title": "El Ayuntamiento de La Paz no recurrirá a crédito para pagar compromisos de diciembre; adelanta aguinaldo de 71.5 mdp",
-          "url": "https://www.palabrabcs.com/municipios/la-paz/definitivamente-el-ayuntamiento-de-la-paz-no-recurrira-a-credito-para-compromisos-de-diciembre/",
-          "date": "2026-11-10"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "CEA: más de 400 mdp en obras hídricas; destacan PTAR Loreto, desaladoras y estudios de la Presa El Novillo",
-          "url": "https://tribunademexico.com/cea-inversion-obras-hidricas-bcs/",
-          "date": "2026-11-05"
+          "outlet": "Gringo Gazette",
+          "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
+          "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
+          "date": "2026-11-16"
         },
         {
           "outlet": "HOY BCS",
@@ -371,34 +436,22 @@
           "date": "2026-11-02"
         },
         {
-          "outlet": "Gringo Gazette",
-          "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
-          "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
-          "date": "2026-11-16"
-        },
-        {
           "outlet": "Tribuna de México",
           "title": "BCS dobla las brigadas contra el dengue, con Comondú como foco, y anuncia apoyo financiero a Comondú y Mulegé",
           "url": "https://tribunademexico.com/refuerza-bcs-combate-al-dengue-con-fumigaciones-brigadas-y-campana-masiva-de-limpieza/",
           "date": "2026-10-29"
         },
         {
-          "outlet": "El Economista",
-          "title": "BCS, el estado donde más se alejan los precios de vivienda de los ingresos según BBVA",
-          "url": "https://www.eleconomista.com.mx/econohabitat/estados-alejan-precios-vivienda-ingresos-20261024-840284.html",
-          "date": "2026-10-24"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "La senadora Susana Zatarain alerta de menos turistas, menores ventas y cierres de restaurantes en Los Cabos",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/pide-zatarain-reinvertir-recursos-tur%C3%ADsticos-para-proteger-empleos-en-baja-california-sur/780974",
-          "date": "2026-10-21"
-        },
-        {
           "outlet": "Peninsular Digital",
           "title": "Milena Quiroga descarta que La Paz se endeude para pagar las prestaciones de fin de año",
           "url": "https://peninsulardigital.com/2026/10/19/no-se-endeudara-la-paz-para-fin-de-ano-promete-milena-quiroga/",
           "date": "2026-10-19"
+        },
+        {
+          "outlet": "El Economista",
+          "title": "BCS, el estado donde más se alejan los precios de vivienda de los ingresos según BBVA",
+          "url": "https://www.eleconomista.com.mx/econohabitat/estados-alejan-precios-vivienda-ingresos-20261024-840284.html",
+          "date": "2026-10-24"
         },
         {
           "outlet": "Tribuna de México",
@@ -438,6 +491,19 @@
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+        "paquete-economico-2027-bcs-hoybcs-2026-11-02",
+        "dengue-comondu-brigadas-tribuna-2026-10-29",
+        "milena-quiroga-la-paz-sin-deuda-fin-de-ano-2026-10-19",
+        "RP001",
+        "UP016",
+        "TD002",
+        "dq_vision_hold",
+        "proj_fed_viv_001",
+        "proj_fed_edu_002",
+        "gap_pmdu_lapaz_texto"
       ]
     },
     {
@@ -448,166 +514,150 @@
       "languages": {
         "es": {
           "title": "Desarrollo · Radio BCS2050",
-          "duration": 652.3,
+          "duration": 1230.0,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/desarrollo/es/01.mp3",
-              "duration": 58.27,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 103.42,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/desarrollo/es/02.mp3",
-              "duration": 125.04,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 190.13,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/desarrollo/es/03.mp3",
-              "duration": 129.48,
-              "sting": "/radio/music/break_romance.mp3"
+              "duration": 167.11,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/desarrollo/es/04.mp3",
-              "duration": 87.38,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 192.58,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/desarrollo/es/05.mp3",
-              "duration": 131.62,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 163.2,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/desarrollo/es/06.mp3",
+              "duration": 152.86,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/desarrollo/es/07.mp3",
+              "duration": 184.18,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/desarrollo/es/06.mp3",
-              "duration": 62.4,
+              "src": "/radio/editions/2026-11-17/desarrollo/es/08.mp3",
+              "duration": 76.56,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/desarrollo/es/script.json",
-          "words": 1295
+          "words": 2551
         },
         "en": {
           "title": "Development · Radio BCS2050",
-          "duration": 579.8,
+          "duration": 1241.1,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/desarrollo/en/01.mp3",
-              "duration": 54.5,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 81.38,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/desarrollo/en/02.mp3",
-              "duration": 103.9,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 206.78,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/desarrollo/en/03.mp3",
-              "duration": 111.77,
-              "sting": "/radio/music/break_romance.mp3"
+              "duration": 189.62,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/desarrollo/en/04.mp3",
-              "duration": 64.1,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 165.86,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/desarrollo/en/05.mp3",
-              "duration": 126.14,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 179.74,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/desarrollo/en/06.mp3",
+              "duration": 152.9,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/desarrollo/en/07.mp3",
+              "duration": 200.26,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/desarrollo/en/06.mp3",
-              "duration": 61.27,
+              "src": "/radio/editions/2026-11-17/desarrollo/en/08.mp3",
+              "duration": 64.54,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/desarrollo/en/script.json",
-          "words": 1176
+          "words": 2748
         }
       },
       "sources": [
-        {
-          "outlet": "La Nigua",
-          "title": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
-          "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
-          "date": "2026-11-15"
-        },
-        {
-          "outlet": "NTCD",
-          "title": "Entregan al Congreso de BCS el Quinto Informe de Gobierno; el gobernador presentará resultados el 27 de noviembre",
-          "url": "https://ntcd.mx/noticias-entregan-congreso-baja-california-sur-quinto-informe-gobierno",
-          "date": "2026-11-12"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Vivienda para el Bienestar: 704 casas en Sierra Vista para reubicar a familias de zonas de riesgo en Los Cabos",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/avanza-reubicaci%C3%B3n-de-familias-en-zonas-de-riesgo-en-los-cabos/787724",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Gringo Gazette",
-          "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
-          "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Diario Humano",
-          "title": "Vecinos convocan colecta de firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040",
-          "url": "https://diariohumano.com.mx/2026/11/16/cabo-del-este-convocan-a-firmar-por-el-camino-costero/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
-          "date": "2026-11-12"
-        },
-        {
-          "outlet": "HOY BCS",
-          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
-          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
-          "date": "2026-11-11"
-        },
         {
           "outlet": "Foro Mar de Cortés",
           "title": "Proponen en el Summit de Los Cabos un «tratado regional» de los cinco estados para atraer inversión y proteger el Mar de Cortés",
@@ -627,37 +677,49 @@
           "date": "2026-11-09"
         },
         {
-          "outlet": "PVTIME",
-          "title": "CFE licita el proyecto Oasis en Mulegé: 72 MW solares, baterías de 80 MWh e hidrógeno verde",
-          "url": "https://www.pvtime.org/mexico-tenders-solar-hydrogen-oasis-microgrid-project/",
-          "date": "2026-11-09"
+          "outlet": "Meganoticias",
+          "title": "Los Cabos, el municipio con menor inversión de la CEA en obras de agua: 2.02 mdp entre 2021 y 2026",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/los-cabos-municipio-con-menor-inversi%C3%B3n-para-obras-de-agua-en-sudcalifornia/786368",
+          "date": "2026-11-06"
         },
         {
-          "outlet": "Noticabo",
-          "title": "Avanza la reubicación de la planta de tratamiento de Fonatur para recuperar el Estero Josefino en San José del Cabo",
-          "url": "https://noticabo.com/noticias/avanza-reubicacion-de-planta-de-fonatur-proyecto-busca-recuperar-el-estero-josefino-en-san-jose-del-cabo/",
-          "date": "2026-11-07"
+          "outlet": "El Mundo Digital",
+          "title": "Desarrolladores turísticos advierten que la infraestructura de Los Cabos no crece al ritmo del destino",
+          "url": "https://elmundodigital.com.mx/los-cabos-crece-pero-su-infraestructura-no-avanza-al-mismo-ritmo-advierten-desarrolladores-turisticos/",
+          "date": "2026-10-16"
         },
         {
-          "outlet": "OECD (2016)",
-          "title": "OECD Regional Outlook 2016: Productive Regions for Inclusive Societies",
-          "url": "https://www.oecd.org/en/publications/2016/10/oecd-regional-outlook-2016_g1g6bdae.html"
+          "outlet": "Todd Litman (VTPI) (2020)",
+          "title": "Evaluating Public Transit Benefits and Costs",
+          "url": "https://www.vtpi.org/tranben.pdf"
         },
         {
-          "outlet": "ECLAC (CEPAL) (2019)",
-          "title": "Planning for Sustainable Territorial Development in Latin America and the Caribbean",
-          "url": "https://repositorio.cepal.org/handle/11362/44732"
+          "outlet": "G20/OECD (2019)",
+          "title": "Reference Guide on Output Specifications for Quality Infrastructure",
+          "url": "https://www.oecd.org/g20/topics/infrastructure/"
         },
         {
-          "outlet": "Simin Davoudi (2003)",
-          "title": "Polycentricity in European spatial planning: from an analytical tool to a normative agenda",
-          "url": "https://doi.org/10.1080/09654310303621"
+          "outlet": "Global Infrastructure Hub (2017/2023)",
+          "title": "Global Infrastructure Outlook (GI Hub / Oxford Economics)",
+          "url": "https://outlook.gihub.org/"
         },
         {
           "outlet": "Portal BCS 2050",
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "tratado-regional-mar-de-cortes-herrmann-foromdc-2026-11-11",
+        "coppel-fmc-duplicar-economia-triplicar-ied-foromdc-2026-11-10",
+        "summit-foro-mar-de-cortes-los-cabos-tusbuenasnoticias-2026-11-09",
+        "TD019",
+        "IN002",
+        "IN003",
+        "ev_sig_sibcs",
+        "ev_inmob_jll_2025",
+        "ev_sig_poel_cabos",
+        "ev_jll_zonas_2025"
       ]
     },
     {
@@ -668,14 +730,14 @@
       "languages": {
         "es": {
           "title": "Turismo · Radio BCS2050",
-          "duration": 991.8,
+          "duration": 1236.7,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/turismo/es/01.mp3",
-              "duration": 61.03,
+              "duration": 119.23,
               "sting": null
             },
             {
@@ -683,7 +745,7 @@
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/turismo/es/02.mp3",
-              "duration": 170.4,
+              "duration": 228.02,
               "sting": null
             },
             {
@@ -691,7 +753,7 @@
               "id": "personas",
               "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/turismo/es/03.mp3",
-              "duration": 149.9,
+              "duration": 178.85,
               "sting": null
             },
             {
@@ -699,7 +761,7 @@
               "id": "acto2",
               "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/turismo/es/04.mp3",
-              "duration": 153.6,
+              "duration": 179.74,
               "sting": null
             },
             {
@@ -707,7 +769,7 @@
               "id": "sabias",
               "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/turismo/es/05.mp3",
-              "duration": 86.47,
+              "duration": 139.68,
               "sting": null
             },
             {
@@ -715,7 +777,7 @@
               "id": "diseno",
               "title": "El diseño invisible",
               "src": "/radio/editions/2026-11-17/turismo/es/06.mp3",
-              "duration": 138.0,
+              "duration": 158.71,
               "sting": null
             },
             {
@@ -736,18 +798,18 @@
             }
           ],
           "script": "/radio/editions/2026-11-17/turismo/es/script.json",
-          "words": 2160
+          "words": 2696
         },
         "en": {
           "title": "Tourism · Radio BCS2050",
-          "duration": 948.8,
+          "duration": 1226.7,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/turismo/en/01.mp3",
-              "duration": 77.83,
+              "duration": 113.3,
               "sting": null
             },
             {
@@ -755,7 +817,7 @@
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/turismo/en/02.mp3",
-              "duration": 146.59,
+              "duration": 197.66,
               "sting": null
             },
             {
@@ -763,7 +825,7 @@
               "id": "personas",
               "title": "People and places",
               "src": "/radio/editions/2026-11-17/turismo/en/03.mp3",
-              "duration": 118.18,
+              "duration": 148.58,
               "sting": null
             },
             {
@@ -771,7 +833,7 @@
               "id": "acto2",
               "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/turismo/en/04.mp3",
-              "duration": 149.57,
+              "duration": 193.1,
               "sting": null
             },
             {
@@ -779,7 +841,7 @@
               "id": "sabias",
               "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/turismo/en/05.mp3",
-              "duration": 123.58,
+              "duration": 164.5,
               "sting": null
             },
             {
@@ -787,7 +849,7 @@
               "id": "diseno",
               "title": "The hidden design",
               "src": "/radio/editions/2026-11-17/turismo/en/06.mp3",
-              "duration": 119.18,
+              "duration": 170.04,
               "sting": null
             },
             {
@@ -795,7 +857,7 @@
               "id": "acto3",
               "title": "Act 3 · Toward 2050",
               "src": "/radio/editions/2026-11-17/turismo/en/07.mp3",
-              "duration": 149.52,
+              "duration": 175.13,
               "sting": null
             },
             {
@@ -808,7 +870,7 @@
             }
           ],
           "script": "/radio/editions/2026-11-17/turismo/en/script.json",
-          "words": 2074
+          "words": 2713
         }
       },
       "sources": [
@@ -939,123 +1001,155 @@
       "languages": {
         "es": {
           "title": "Economía · Radio BCS2050",
-          "duration": 631.5,
+          "duration": 1197.7,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/economia/es/01.mp3",
-              "duration": 82.1,
-              "sting": "/radio/music/short_cielito.mp3"
+              "duration": 95.95,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/economia/es/02.mp3",
-              "duration": 104.59,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 185.66,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/economia/es/03.mp3",
-              "duration": 122.74,
-              "sting": "/radio/music/break_romance.mp3"
+              "duration": 170.64,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/economia/es/04.mp3",
-              "duration": 87.24,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 195.74,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/economia/es/05.mp3",
-              "duration": 105.38,
-              "sting": "/radio/music/short_cielito.mp3"
+              "duration": 148.49,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/economia/es/06.mp3",
+              "duration": 144.6,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/economia/es/07.mp3",
+              "duration": 190.85,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/economia/es/06.mp3",
-              "duration": 71.26,
+              "src": "/radio/editions/2026-11-17/economia/es/08.mp3",
+              "duration": 65.78,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/economia/es/script.json",
-          "words": 1185
+          "words": 2477
         },
         "en": {
           "title": "Economy · Radio BCS2050",
-          "duration": 587.4,
+          "duration": 1228.2,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/economia/en/01.mp3",
-              "duration": 70.92,
-              "sting": "/radio/music/short_cielito.mp3"
+              "duration": 82.39,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/economia/en/02.mp3",
-              "duration": 133.39,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 192.12,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/economia/en/03.mp3",
-              "duration": 107.16,
-              "sting": "/radio/music/break_romance.mp3"
+              "duration": 158.71,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/economia/en/04.mp3",
-              "duration": 66.67,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 210.86,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/economia/en/05.mp3",
-              "duration": 107.38,
-              "sting": "/radio/music/short_cielito.mp3"
+              "duration": 153.74,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/economia/en/06.mp3",
+              "duration": 167.26,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/economia/en/07.mp3",
+              "duration": 187.8,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/economia/en/06.mp3",
-              "duration": 43.68,
+              "src": "/radio/editions/2026-11-17/economia/en/08.mp3",
+              "duration": 75.29,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/economia/en/script.json",
-          "words": 1069
+          "words": 2614
         }
       },
       "sources": [
         {
-          "outlet": "Tribuna de México",
-          "title": "Baja 1000 dejará derrama de 800 mdp y ocupación hotelera de 80% en BCS",
-          "url": "https://tribunademexico.com/baja-1000-derrama/",
-          "date": "2026-11-13"
+          "outlet": "Meganoticias",
+          "title": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
+          "date": "2026-11-11"
         },
         {
           "outlet": "Tribuna de México",
@@ -1064,16 +1158,10 @@
           "date": "2026-11-11"
         },
         {
-          "outlet": "HOY BCS",
-          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
-          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Foro Mar de Cortés",
-          "title": "Foro Mar de Cortés y la Red de Observadores Ciudadanos firman convenio para un observatorio y un «semáforo» del Golfo de California",
-          "url": "https://foromdc.org/summit/foro-mar-de-cortes-y-roc-firman-convenio-para-ampliar-la-vigilancia-ciudadana-en-el-golfo-de-california/",
-          "date": "2026-11-11"
+          "outlet": "NTCD",
+          "title": "El Servicio Nacional de Empleo entrega 48 mil pesos en equipo a ocho microempresarios de Loreto y Mulegé",
+          "url": "https://ntcd.mx/noticias-sne-entrega-48-mil-pesos-equipos-ocho-microempresarios-loreto-mulege",
+          "date": "2026-11-09"
         },
         {
           "outlet": "Gringo Gazette",
@@ -1082,52 +1170,34 @@
           "date": "2026-11-16"
         },
         {
-          "outlet": "POSTA México",
-          "title": "SMN prevé oleaje de 2 a 3 metros en la costa del Pacífico de BCS y rachas de 30 a 50 km/h",
-          "url": "https://www.posta.com.mx/bcs/habra-lluvias-en-bcs-este-lunes-16-de-noviembre-alertan-por-oleaje-de-hasta-3-metros/vl2279534",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Inicia la renovación con concreto hidráulico de la calle Agustín Arriola en el Centro Histórico de La Paz",
-          "url": "https://tribunademexico.com/renovacion-calle-agustin-arriola-centro-lpz/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "NTCD",
-          "title": "Entregan al Congreso de BCS el Quinto Informe de Gobierno; el gobernador presentará resultados el 27 de noviembre",
-          "url": "https://ntcd.mx/noticias-entregan-congreso-baja-california-sur-quinto-informe-gobierno",
-          "date": "2026-11-12"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
+          "outlet": "HOY BCS",
+          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
+          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
           "date": "2026-11-11"
         },
         {
-          "outlet": "El Economista",
-          "title": "BCS prevé derrama de más de 332 mdp y 80% de ocupación hotelera por el fin de semana largo y la Baja 1000",
-          "url": "https://www.eleconomista.com.mx/estados/baja-california-sur-preve-derrama-332-millones-pesos-semana-20261110-843285.html",
-          "date": "2026-11-10"
+          "outlet": "Palabra BCS",
+          "title": "Víctor Castro recorre ranchos de La Paz y pacta caminos, agua, empleo temporal y energía solar",
+          "url": "https://www.palabrabcs.com/municipios/la-paz/atiende-gobernador-victor-castro-necesidades-de-comunidades-rurales-del-municipio-de-la-paz/",
+          "date": "2026-10-25"
         },
         {
-          "outlet": "HOY BCS",
-          "title": "Víctor Castro exige a la Baja 1000 reparar caminos rurales y advierte que el Estado no volverá a subsidiar la carrera",
-          "url": "https://hoybcs.com/victor-castro-exige-a-organizadores-de-la-baja-1000-reparar-caminos-rurales-advierte-que-no-volvera-a-subsidiar-la-carrera/",
-          "date": "2026-11-10"
+          "outlet": "Tribuna de México",
+          "title": "Una fuga en la planta de Infra en Pueblo Nuevo obliga a evacuar escuelas en La Paz; analizan reubicar la empresa",
+          "url": "https://tribunademexico.com/evacuan-planteles-escolares-en-la-paz-por-alerta-de-fuga-de-gas-analizan-reubicacion-de-empresa/",
+          "date": "2026-10-20"
         },
         {
-          "outlet": "Foro Mar de Cortés",
-          "title": "Agustín Coppel propone en el Summit del Foro Mar de Cortés en Los Cabos duplicar la economía regional y triplicar la inversión extranjera en 20 años",
-          "url": "https://foromdc.org/summit/agustin-coppel-hace-un-llamado-a-duplicar-la-economia-de-la-region-del-mar-de-cortes-y-triplicar-las-inversiones-en-20-anos/",
-          "date": "2026-11-10"
+          "outlet": "Peninsular Digital",
+          "title": "Pescadores y prestadores turísticos de Los Cabos preparan un amparo contra las nuevas tarifas portuarias",
+          "url": "https://peninsulardigital.com/2026/10/18/preparan-pescadores-y-prestadores-turisticos-de-los-cabos-amparo-contra-nuevas-tarifas-portuarias/",
+          "date": "2026-10-18"
         },
         {
-          "outlet": "Tus Buenas Noticias",
-          "title": "Los Cabos recibe del 10 al 12 de noviembre el Summit 2026 del Foro Mar de Cortés sobre inversión, ciudades y clima",
-          "url": "https://www.tusbuenasnoticias.com/noticias/economia/2026/11/09/66795-summit-2026-foro-mar-de-cortes-en-los-cabos",
-          "date": "2026-11-09"
+          "outlet": "Tribuna de México",
+          "title": "Activan 7 albergues y suspenden comercios en Loreto por la llegada del huracán Polo",
+          "url": "https://tribunademexico.com/activan-7-albergues-y-suspenden-comercios-en-loreto-por-la-llegada-del-huracan-polo-paz-del-alma-ochoa-amador/",
+          "date": "2026-09-28"
         },
         {
           "outlet": "Michael Storper (2013)",
@@ -1149,6 +1219,18 @@
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "camina-cabo-centro-csl-pausa-meganoticias-2026-11-11",
+        "empleo-imss-octubre-bcs-cae-tribuna-2026-11-11",
+        "sne-microempresarios-loreto-mulege-ntcd-2026-11-09",
+        "RP015",
+        "RP018",
+        "UE001",
+        "rc_bess_gap",
+        "proj_fed_ene_009",
+        "proj_fed_min_001",
+        "proj_fed_min_002"
       ]
     },
     {
@@ -1159,147 +1241,155 @@
       "languages": {
         "es": {
           "title": "Urbanismo · Radio BCS2050",
-          "duration": 681.6,
+          "duration": 1229.3,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/urbanismo/es/01.mp3",
-              "duration": 64.18,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 90.86,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/urbanismo/es/02.mp3",
-              "duration": 160.61,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 182.66,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/urbanismo/es/03.mp3",
-              "duration": 135.17,
-              "sting": "/radio/music/break_romance.mp3"
+              "duration": 173.18,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/urbanismo/es/04.mp3",
-              "duration": 78.91,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 228.55,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/urbanismo/es/05.mp3",
-              "duration": 128.3,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 141.29,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/urbanismo/es/06.mp3",
+              "duration": 159.34,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/urbanismo/es/07.mp3",
+              "duration": 180.22,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/urbanismo/es/06.mp3",
-              "duration": 56.3,
+              "src": "/radio/editions/2026-11-17/urbanismo/es/08.mp3",
+              "duration": 73.22,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/urbanismo/es/script.json",
-          "words": 1303
+          "words": 2584
         },
         "en": {
           "title": "Urbanism · Radio BCS2050",
-          "duration": 615.7,
+          "duration": 1238.5,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/urbanismo/en/01.mp3",
-              "duration": 56.35,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 82.46,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/urbanismo/en/02.mp3",
-              "duration": 112.32,
-              "sting": "/radio/music/short_bossa.mp3"
+              "duration": 222.82,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/urbanismo/en/03.mp3",
-              "duration": 127.18,
-              "sting": "/radio/music/break_romance.mp3"
+              "duration": 157.18,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/urbanismo/en/04.mp3",
-              "duration": 61.06,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 177.5,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/urbanismo/en/05.mp3",
-              "duration": 132.48,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 167.64,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/urbanismo/en/06.mp3",
+              "duration": 164.33,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/urbanismo/en/07.mp3",
+              "duration": 203.76,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/urbanismo/en/06.mp3",
-              "duration": 68.11,
+              "src": "/radio/editions/2026-11-17/urbanismo/en/08.mp3",
+              "duration": 62.81,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/urbanismo/en/script.json",
-          "words": 1203
+          "words": 2675
         }
       },
       "sources": [
         {
-          "outlet": "HOY BCS",
-          "title": "Cabildo de La Paz autoriza dos camiones para llevar el Tiburón Urbano a El Centenario y Chametla",
-          "url": "https://hoybcs.com/llegara-el-tiburon-urbano-a-el-centenario-y-chametla-cabildo-autoriza-compra-de-dos-camiones/",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Diario El Independiente",
-          "title": "Secretaria de Salud comparece ante el Congreso: 628 casos de dengue en 2026, concentrados en Los Cabos (275) y Comondú (216)",
-          "url": "https://www.diarioelindependiente.mx/2026/11/comparece-secretaria-de-salud-ante-congreso-para-informar-acciones-contra-dengue",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Tus Buenas Noticias",
-          "title": "Los Cabos recibe del 10 al 12 de noviembre el Summit 2026 del Foro Mar de Cortés sobre inversión, ciudades y clima",
-          "url": "https://www.tusbuenasnoticias.com/noticias/economia/2026/11/09/66795-summit-2026-foro-mar-de-cortes-en-los-cabos",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "NTCD",
-          "title": "BCS suma 628 casos de dengue; retiran unas 30 toneladas de cacharros en El Centenario",
-          "url": "https://ntcd.mx/noticias-baja-california-sur-suma-628-casos-dengue-retiran-30-toneladas",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Gringo Gazette",
-          "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
-          "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
-          "date": "2026-11-16"
+          "outlet": "HCN",
+          "title": "El gobernador entrega 59 acciones de vivienda en Mulegé, entre ellas 50 títulos de propiedad en Los Frailes, Santa Rosalía",
+          "url": "https://hcn.mx/2026/11/17/entrega-victor-castro-59-acciones-de-vivienda-para-fortalecer-el-patrimonio-familiar-en-mulege/",
+          "date": "2026-11-17"
         },
         {
           "outlet": "Diario Humano",
@@ -1309,38 +1399,8 @@
         },
         {
           "outlet": "Meganoticias",
-          "title": "Hotel San Cristóbal en Punta Lobos suspende operaciones por daños del oleaje",
-          "url": "https://www.meganoticias.mx/la-paz/noticia/hotel-san-crist%C3%B3bal-suspende-operaciones-por-da%C3%B1os-causados-por-el-oleaje/789103",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "La Nigua",
-          "title": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
-          "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
-          "date": "2026-11-15"
-        },
-        {
-          "outlet": "NTCD",
-          "title": "Entregan al Congreso de BCS el Quinto Informe de Gobierno; el gobernador presentará resultados el 27 de noviembre",
-          "url": "https://ntcd.mx/noticias-entregan-congreso-baja-california-sur-quinto-informe-gobierno",
-          "date": "2026-11-12"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Meganoticias",
           "title": "Vivienda para el Bienestar: 704 casas en Sierra Vista para reubicar a familias de zonas de riesgo en Los Cabos",
           "url": "https://www.meganoticias.mx/los-cabos/noticia/avanza-reubicaci%C3%B3n-de-familias-en-zonas-de-riesgo-en-los-cabos/787724",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "HOY BCS",
-          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
-          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
           "date": "2026-11-11"
         },
         {
@@ -1348,6 +1408,60 @@
           "title": "Foro Mar de Cortés y la Red de Observadores Ciudadanos firman convenio para un observatorio y un «semáforo» del Golfo de California",
           "url": "https://foromdc.org/summit/foro-mar-de-cortes-y-roc-firman-convenio-para-ampliar-la-vigilancia-ciudadana-en-el-golfo-de-california/",
           "date": "2026-11-11"
+        },
+        {
+          "outlet": "HOY BCS",
+          "title": "Cabildo de La Paz autoriza dos camiones para llevar el Tiburón Urbano a El Centenario y Chametla",
+          "url": "https://hoybcs.com/llegara-el-tiburon-urbano-a-el-centenario-y-chametla-cabildo-autoriza-compra-de-dos-camiones/",
+          "date": "2026-11-11"
+        },
+        {
+          "outlet": "Palabra BCS",
+          "title": "El Ayuntamiento de La Paz no recurrirá a crédito para pagar compromisos de diciembre; adelanta aguinaldo de 71.5 mdp",
+          "url": "https://www.palabrabcs.com/municipios/la-paz/definitivamente-el-ayuntamiento-de-la-paz-no-recurrira-a-credito-para-compromisos-de-diciembre/",
+          "date": "2026-11-10"
+        },
+        {
+          "outlet": "Tus Buenas Noticias",
+          "title": "Los Cabos recibe del 10 al 12 de noviembre el Summit 2026 del Foro Mar de Cortés sobre inversión, ciudades y clima",
+          "url": "https://www.tusbuenasnoticias.com/noticias/economia/2026/11/09/66795-summit-2026-foro-mar-de-cortes-en-los-cabos",
+          "date": "2026-11-09"
+        },
+        {
+          "outlet": "Quepoca",
+          "title": "Fuerza por México BCS celebra asamblea para definir una posible alianza con el PAN rumbo a 2027",
+          "url": "https://www.quepoca.com/articulo/actualidad/fuerza-mexico-definira-ruta-rumbo-2027/20261108081152004244.html",
+          "date": "2026-11-08"
+        },
+        {
+          "outlet": "HCN",
+          "title": "Cabildo de Los Cabos aprueba someter a consulta pública el Programa Parcial de Desarrollo Urbano de El Tezal",
+          "url": "https://hcn.mx/2026/11/06/aprueba-cabildo-consulta-publica-para-el-programa-parcial-de-desarrollo-urbano-de-el-tezal/",
+          "date": "2026-11-06"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Mareas altas inundan Puerto San Carlos y el estero El Dátil: más de 300 viviendas bajo el agua",
+          "url": "https://www.meganoticias.mx/la-paz/noticia/bajo-el-agua-permanecen-comunidades-pesqueras-por-pleamar/785073",
+          "date": "2026-11-03"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "El sector privado pide un PDU de Los Cabos con límites de densidad y respeto al camino costero de Cabo del Este",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/sector-privado-pide-una-planeaci%C3%B3n-urbana-ordenada-para-los-cabos/783836",
+          "date": "2026-10-29"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Castro reconoce que el cambio climático ya alcanza viviendas y costas de BCS",
+          "url": "https://www.meganoticias.mx/la-paz/noticia/el-cambio-clim%C3%A1tico-ya-alcanz%C3%B3-a-bcs-reconoce-gobernador/783472",
+          "date": "2026-10-28"
+        },
+        {
+          "outlet": "Diario Humano",
+          "title": "Inicia rehabilitación del bulevar 5 de Febrero en La Paz",
+          "url": "https://diariohumano.com.mx/2026/10/27/inician-obras-en-el-bulevar-5-de-febrero-de-la-paz-habra-cambios-en-la-circulacion/",
+          "date": "2026-10-27"
         },
         {
           "outlet": "UN-Habitat (2015)",
@@ -1365,10 +1479,29 @@
           "url": "https://doi.org/10.1787/9789264228733-en"
         },
         {
+          "outlet": "Expres de Unic",
+          "title": "Video interview with Víctor Montaño, Municipal PR Director for the XV City Council of Los Cabos",
+          "url": "https://www.youtube.com/watch?v=HaOFWHVrvKU"
+        },
+        {
           "outlet": "Portal BCS 2050",
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "vivienda-mulege-59-acciones-hcn-2026-11-17",
+        "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+        "vivienda-bienestar-704-sierra-vista-reubicacion-meganoticias-2026-11-11",
+        "foromdc-roc-observatorio-ciudadano-semaforo-2026-11-11",
+        "RP002",
+        "RP003",
+        "RP005",
+        "edu-HaOFWHVrvKU",
+        "ev_gds_cinco_polos",
+        "ev_dossiers_lugar",
+        "ev_fiscal_anexo_2025",
+        "ev_mesa_energia"
       ]
     },
     {
@@ -1379,115 +1512,147 @@
       "languages": {
         "es": {
           "title": "Seguridad · Radio BCS2050",
-          "duration": 653.0,
+          "duration": 1200.8,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/crimen/es/01.mp3",
-              "duration": 52.03,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 91.94,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/crimen/es/02.mp3",
-              "duration": 153.17,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 193.2,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/crimen/es/03.mp3",
-              "duration": 134.76,
-              "sting": "/radio/music/break_bossa.mp3"
+              "duration": 135.79,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/crimen/es/04.mp3",
-              "duration": 87.05,
-              "sting": "/radio/music/short_romance.mp3"
+              "duration": 158.88,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/crimen/es/05.mp3",
-              "duration": 107.3,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 149.18,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/crimen/es/06.mp3",
+              "duration": 175.99,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/crimen/es/07.mp3",
+              "duration": 195.26,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/crimen/es/06.mp3",
-              "duration": 60.58,
+              "src": "/radio/editions/2026-11-17/crimen/es/08.mp3",
+              "duration": 100.58,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/crimen/es/script.json",
-          "words": 1214
+          "words": 2503
         },
         "en": {
           "title": "Security · Radio BCS2050",
-          "duration": 582.1,
+          "duration": 1189.9,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/crimen/en/01.mp3",
-              "duration": 50.78,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 78.53,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/crimen/en/02.mp3",
-              "duration": 123.89,
-              "sting": "/radio/music/short_romanza.mp3"
+              "duration": 218.26,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/crimen/en/03.mp3",
-              "duration": 95.64,
-              "sting": "/radio/music/break_bossa.mp3"
+              "duration": 136.97,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/crimen/en/04.mp3",
-              "duration": 57.98,
-              "sting": "/radio/music/short_romance.mp3"
+              "duration": 159.58,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/crimen/en/05.mp3",
-              "duration": 144.89,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 133.97,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/crimen/en/06.mp3",
+              "duration": 178.15,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/crimen/en/07.mp3",
+              "duration": 207.62,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/crimen/en/06.mp3",
-              "duration": 50.78,
+              "src": "/radio/editions/2026-11-17/crimen/en/08.mp3",
+              "duration": 76.8,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/crimen/en/script.json",
-          "words": 1113
+          "words": 2622
         }
       },
       "sources": [
@@ -1498,76 +1663,15 @@
           "date": "2026-11-13"
         },
         {
-          "outlet": "Foro Mar de Cortés",
-          "title": "Agustín Coppel propone en el Summit del Foro Mar de Cortés en Los Cabos duplicar la economía regional y triplicar la inversión extranjera en 20 años",
-          "url": "https://foromdc.org/summit/agustin-coppel-hace-un-llamado-a-duplicar-la-economia-de-la-region-del-mar-de-cortes-y-triplicar-las-inversiones-en-20-anos/",
-          "date": "2026-11-10"
-        },
-        {
-          "outlet": "Bitácora BCS",
-          "title": "El Congreso de BCS pide explorar el traspaso de ASIPONA al Gobierno del Estado ante el rechazo a las nuevas tarifas",
-          "url": "https://bitacorabcs.mx/en-medio-de-rechazo-a-tarifas-congreso-plantea-traspaso-de-asipona-al-gobierno/",
-          "date": "2026-10-29"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "La senadora Susana Zatarain alerta de menos turistas, menores ventas y cierres de restaurantes en Los Cabos",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/pide-zatarain-reinvertir-recursos-tur%C3%ADsticos-para-proteger-empleos-en-baja-california-sur/780974",
-          "date": "2026-10-21"
-        },
-        {
-          "outlet": "Gringo Gazette",
-          "title": "Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento del mercado inmobiliario",
-          "url": "https://gringogazette.com/los-cabos-projects-9-drop-in-2027-revenue/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "HOY BCS",
-          "title": "Cabildo de La Paz autoriza dos camiones para llevar el Tiburón Urbano a El Centenario y Chametla",
-          "url": "https://hoybcs.com/llegara-el-tiburon-urbano-a-el-centenario-y-chametla-cabildo-autoriza-compra-de-dos-camiones/",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "HOY BCS",
-          "title": "El Gobierno de BCS propone un presupuesto de 28 mil 300 millones de pesos para 2027",
-          "url": "https://hoybcs.com/propone-gobierno-de-bcs-presupuesto-de-28-mil-300-millones-de-pesos-para-2027/",
-          "date": "2026-11-02"
-        },
-        {
           "outlet": "Palabra BCS",
           "title": "El Gobierno de BCS cede en comodato por 30 años un predio en Comondú a la Guardia Nacional y dona inmuebles de salud",
           "url": "https://www.palabrabcs.com/municipios/la-paz/acuerda-gobierno-de-bcs-comodato-por-30-anos-de-predio-a-la-guardia-nacional-y-donacion-de-inmuebles-para-salud/",
           "date": "2026-10-21"
         },
         {
-          "outlet": "El Informador de BCS",
-          "title": "El Congreso autoriza donar cuatro predios estatales para vivienda social en Ciudad Constitución y Santa Rosalía",
-          "url": "https://informadorbcs.com/autoriza-congreso-donacion-de-predios-estatales-para-vivienda-en-comondu-y-mulege/",
-          "date": "2026-10-20"
-        },
-        {
-          "outlet": "El Momento BCS",
-          "title": "El Cabildo de La Paz aprueba la tarifa de 16 pesos en transporte urbano y hasta 18 pesos en rutas suburbanas",
-          "url": "https://elmomentobcs.mx/2026/10/20/tarifas-del-transporte-publico-en-la-paz-ya-aumento-hasta-18-pesos/",
-          "date": "2026-10-20"
-        },
-        {
-          "outlet": "Imagen Radio",
-          "title": "Hoteleros de Los Cabos reportan una caída del 14% en turistas de Estados Unidos entre enero y agosto",
-          "url": "https://www.imagenradio.com.mx/programas/negocios-en-imagen/hoteleros-cabos-advierten-caida-turismo-norteamericano",
-          "date": "2026-10-19"
-        },
-        {
-          "outlet": "Peninsular Digital",
-          "title": "Pescadores y prestadores turísticos de Los Cabos preparan un amparo contra las nuevas tarifas portuarias",
-          "url": "https://peninsulardigital.com/2026/10/18/preparan-pescadores-y-prestadores-turisticos-de-los-cabos-amparo-contra-nuevas-tarifas-portuarias/",
-          "date": "2026-10-18"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "El Congreso de BCS pide a ASIPONA transparentar tarifas y recursos de la Marina de Cabo San Lucas",
-          "url": "https://tribunademexico.com/congreso-bcs-marina-csl/",
-          "date": "2026-10-15"
+          "outlet": "OECD (2016)",
+          "title": "OECD Regional Outlook 2016: Productive Regions for Inclusive Societies",
+          "url": "https://www.oecd.org/en/publications/2016/10/oecd-regional-outlook-2016_g1g6bdae.html"
         },
         {
           "outlet": "OECD (2015)",
@@ -1575,20 +1679,26 @@
           "url": "https://doi.org/10.1787/9789264226500-en"
         },
         {
-          "outlet": "EU Ministers responsible for spatial planning (2020)",
-          "title": "EU Territorial Agenda 2030: A Future for All Places",
-          "url": "https://territorialagenda.eu/territorial-agenda-2030/"
-        },
-        {
-          "outlet": "UN-Habitat (2019)",
-          "title": "Synopsis: Rural-urban linkages: a global scan (UN-Habitat publication)",
-          "url": "https://unhabitat.org/rural-urban-linkages"
+          "outlet": "ECLAC (CEPAL) (2019)",
+          "title": "Planning for Sustainable Territorial Development in Latin America and the Caribbean",
+          "url": "https://repositorio.cepal.org/handle/11362/44732"
         },
         {
           "outlet": "Portal BCS 2050",
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+        "comodato-guardia-nacional-donacion-inmuebles-salud-2026-10-21",
+        "RP004",
+        "RP006",
+        "RP007",
+        "inst_poer_politicas",
+        "gap_politica_uga_leyenda",
+        "inst_pa_preservacion",
+        "inst_pa_restauracion"
       ]
     },
     {
@@ -1599,154 +1709,150 @@
       "languages": {
         "es": {
           "title": "Transporte · Radio BCS2050",
-          "duration": 674.7,
+          "duration": 1187.2,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Entrada",
               "src": "/radio/editions/2026-11-17/transporte/es/01.mp3",
-              "duration": 50.23,
-              "sting": "/radio/music/short_beachbum.mp3"
+              "duration": 74.47,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Acto 1 · Lo que está pasando",
               "src": "/radio/editions/2026-11-17/transporte/es/02.mp3",
-              "duration": 117.07,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 186.58,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Acto 2 · El hilo oculto",
+              "id": "personas",
+              "title": "Las personas y los lugares",
               "src": "/radio/editions/2026-11-17/transporte/es/03.mp3",
-              "duration": 156.55,
-              "sting": "/radio/music/break_romanza.mp3"
+              "duration": 141.94,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "¿Sabías que…?",
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
               "src": "/radio/editions/2026-11-17/transporte/es/04.mp3",
-              "duration": 83.02,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 196.1,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Acto 3 · Hacia 2050",
+              "id": "sabias",
+              "title": "¿Sabías que…?",
               "src": "/radio/editions/2026-11-17/transporte/es/05.mp3",
-              "duration": 137.95,
-              "sting": "/radio/music/short_beachbum.mp3"
+              "duration": 160.25,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-17/transporte/es/06.mp3",
+              "duration": 164.71,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-17/transporte/es/07.mp3",
+              "duration": 196.1,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "Para llevar",
-              "src": "/radio/editions/2026-11-17/transporte/es/06.mp3",
-              "duration": 71.69,
+              "src": "/radio/editions/2026-11-17/transporte/es/08.mp3",
+              "duration": 67.1,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/transporte/es/script.json",
-          "words": 1363
+          "words": 2602
         },
         "en": {
           "title": "Transport · Radio BCS2050",
-          "duration": 581.8,
+          "duration": 1259.1,
           "tracks": [
             {
               "n": 1,
               "id": "entrada",
               "title": "Cold open",
               "src": "/radio/editions/2026-11-17/transporte/en/01.mp3",
-              "duration": 58.39,
-              "sting": "/radio/music/short_beachbum.mp3"
+              "duration": 103.9,
+              "sting": null
             },
             {
               "n": 2,
               "id": "acto1",
               "title": "Act 1 · What's happening",
               "src": "/radio/editions/2026-11-17/transporte/en/02.mp3",
-              "duration": 138.36,
-              "sting": "/radio/music/short_horizon.mp3"
+              "duration": 212.57,
+              "sting": null
             },
             {
               "n": 3,
-              "id": "acto2",
-              "title": "Act 2 · The hidden thread",
+              "id": "personas",
+              "title": "People and places",
               "src": "/radio/editions/2026-11-17/transporte/en/03.mp3",
-              "duration": 101.18,
-              "sting": "/radio/music/break_romanza.mp3"
+              "duration": 182.42,
+              "sting": null
             },
             {
               "n": 4,
-              "id": "sabias",
-              "title": "Did you know?",
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
               "src": "/radio/editions/2026-11-17/transporte/en/04.mp3",
-              "duration": 81.46,
-              "sting": "/radio/music/short_surf.mp3"
+              "duration": 174.22,
+              "sting": null
             },
             {
               "n": 5,
-              "id": "acto3",
-              "title": "Act 3 · Toward 2050",
+              "id": "sabias",
+              "title": "Did you know?",
               "src": "/radio/editions/2026-11-17/transporte/en/05.mp3",
-              "duration": 89.16,
-              "sting": "/radio/music/short_beachbum.mp3"
+              "duration": 128.66,
+              "sting": null
             },
             {
               "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-17/transporte/en/06.mp3",
+              "duration": 206.3,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-17/transporte/en/07.mp3",
+              "duration": 180.77,
+              "sting": null
+            },
+            {
+              "n": 8,
               "id": "cierre",
               "title": "The takeaway",
-              "src": "/radio/editions/2026-11-17/transporte/en/06.mp3",
-              "duration": 55.13,
+              "src": "/radio/editions/2026-11-17/transporte/en/08.mp3",
+              "duration": 70.22,
               "sting": null
             }
           ],
           "script": "/radio/editions/2026-11-17/transporte/en/script.json",
-          "words": 1165
+          "words": 2858
         }
       },
       "sources": [
-        {
-          "outlet": "Palabra BCS",
-          "title": "La pavimentación de calles se define principalmente por aforo vehicular, precisa Sepuimm",
-          "url": "https://www.palabrabcs.com/municipios/la-paz/la-pavimentacion-de-calles-se-define-principalmente-por-aforo-vehicular-precisa-sepuimm/",
-          "date": "2026-11-15"
-        },
-        {
-          "outlet": "HOY BCS",
-          "title": "Víctor Castro exige a la Baja 1000 reparar caminos rurales y advierte que el Estado no volverá a subsidiar la carrera",
-          "url": "https://hoybcs.com/victor-castro-exige-a-organizadores-de-la-baja-1000-reparar-caminos-rurales-advierte-que-no-volvera-a-subsidiar-la-carrera/",
-          "date": "2026-11-10"
-        },
-        {
-          "outlet": "PVTIME",
-          "title": "CFE licita el proyecto Oasis en Mulegé: 72 MW solares, baterías de 80 MWh e hidrógeno verde",
-          "url": "https://www.pvtime.org/mexico-tenders-solar-hydrogen-oasis-microgrid-project/",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Tribuna de México",
-          "title": "Precios en La Paz suben 1.17% en octubre, casi el doble que el 0.65% nacional (INEGI)",
-          "url": "https://tribunademexico.com/precios-suben-mas-en-bcs/",
-          "date": "2026-11-09"
-        },
-        {
-          "outlet": "Diario Humano",
-          "title": "Vecinos convocan colecta de firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040",
-          "url": "https://diariohumano.com.mx/2026/11/16/cabo-del-este-convocan-a-firmar-por-el-camino-costero/",
-          "date": "2026-11-16"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
-          "date": "2026-11-16"
-        },
         {
           "outlet": "El Economista",
           "title": "Baja Ferries busca transformar movilización maritima por el Mar de Cortes en experiencia vacacional",
@@ -1757,18 +1863,6 @@
           "outlet": "HOY BCS",
           "title": "Cabildo de La Paz autoriza dos camiones para llevar el Tiburón Urbano a El Centenario y Chametla",
           "url": "https://hoybcs.com/llegara-el-tiburon-urbano-a-el-centenario-y-chametla-cabildo-autoriza-compra-de-dos-camiones/",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Meganoticias",
-          "title": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
-          "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
-          "date": "2026-11-11"
-        },
-        {
-          "outlet": "Foro Mar de Cortés",
-          "title": "Foro Mar de Cortés y la Red de Observadores Ciudadanos firman convenio para un observatorio y un «semáforo» del Golfo de California",
-          "url": "https://foromdc.org/summit/foro-mar-de-cortes-y-roc-firman-convenio-para-ampliar-la-vigilancia-ciudadana-en-el-golfo-de-california/",
           "date": "2026-11-11"
         },
         {
@@ -1784,10 +1878,58 @@
           "date": "2026-11-05"
         },
         {
+          "outlet": "Diario Humano",
+          "title": "Vecinos convocan colecta de firmas para que el Camino Costero de Cabo del Este siga en el PDU 2040",
+          "url": "https://diariohumano.com.mx/2026/11/16/cabo-del-este-convocan-a-firmar-por-el-camino-costero/",
+          "date": "2026-11-16"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
+          "date": "2026-11-16"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Empresarios de Los Cabos denuncian que el Estado mantiene en pausa Camina Cabo y la remodelación del centro de Cabo San Lucas",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/gobierno-estatal-mantiene-en-pausa-proyectos-para-centro-de-cabo-san-lucas/787809",
+          "date": "2026-11-11"
+        },
+        {
+          "outlet": "Foro Mar de Cortés",
+          "title": "Foro Mar de Cortés y la Red de Observadores Ciudadanos firman convenio para un observatorio y un «semáforo» del Golfo de California",
+          "url": "https://foromdc.org/summit/foro-mar-de-cortes-y-roc-firman-convenio-para-ampliar-la-vigilancia-ciudadana-en-el-golfo-de-california/",
+          "date": "2026-11-11"
+        },
+        {
           "outlet": "Meganoticias",
           "title": "IEEBCS proyecta 76.8 mdp para partidos en 2027; tope de gubernatura en 27 mdp",
           "url": "https://www.meganoticias.mx/la-paz/noticia/partidos-pol%C3%ADticos-recibir%C3%A1n-768-millones-para-elecciones-de-2027-en-bcs/786013",
           "date": "2026-11-05"
+        },
+        {
+          "outlet": "Palabra BCS",
+          "title": "Cabo San Lucas supervisa afectaciones viales y desazolve en siete zonas tras las lluvias",
+          "url": "https://www.palabrabcs.com/municipios/los-cabos/supervisan-afectaciones-viales-por-lluvias-recientes-en-csl/",
+          "date": "2026-10-28"
+        },
+        {
+          "outlet": "Diario El Independiente",
+          "title": "El gobernador reconoce socavación en la Transpeninsular entre Cabo San Lucas y San José tras las lluvias",
+          "url": "https://www.diarioelindependiente.mx/2026/10/gobernador-defiende-asistencia-a-evento-durante-inundaciones-y-reconoce-danos-en-carretera",
+          "date": "2026-10-28"
+        },
+        {
+          "outlet": "SOS Rotativo",
+          "title": "Cierres intermitentes en la Cuesta de Las Vírgenes de la Transpeninsular por mantenimiento, en Mulegé",
+          "url": "https://sosrotativo.mx/cierres-intermitentes-en-la-cuesta-de-las-virgenes-afectaran-circulacion-en-carretera-transpeninsular/",
+          "date": "2026-10-24"
+        },
+        {
+          "outlet": "El Momento BCS",
+          "title": "El Cabildo de La Paz aprueba la tarifa de 16 pesos en transporte urbano y hasta 18 pesos en rutas suburbanas",
+          "url": "https://elmomentobcs.mx/2026/10/20/tarifas-del-transporte-publico-en-la-paz-ya-aumento-hasta-18-pesos/",
+          "date": "2026-10-20"
         },
         {
           "outlet": "UN-Habitat (2013)",
@@ -1809,22 +1951,109 @@
           "title": "Tendencia 2050 · Visión · Foresight · Ontología",
           "url": "/foresights/"
         }
+      ],
+      "source_ids": [
+        "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15",
+        "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11",
+        "baja-1000-rehabilitacion-caminos-los-cabos-tribuna-2026-11-08",
+        "concesiones-transporte-840-los-cabos-ntcd-2026-11-05",
+        "UP022",
+        "TD001",
+        "TD003",
+        "proj_fed_car_002",
+        "proj_fed_otr_001",
+        "dq_viabilidad_proyecto",
+        "ev_mesas_trabajo"
       ]
     }
   ],
   "source_ids": [
+    "IN002",
+    "IN003",
+    "RP001",
+    "RP002",
+    "RP003",
+    "RP004",
+    "RP005",
+    "RP006",
+    "RP007",
+    "RP015",
+    "RP018",
+    "TD001",
+    "TD002",
+    "TD003",
     "TD010",
     "TD018",
+    "TD019",
+    "UE001",
+    "UP003",
+    "UP005",
     "UP006",
+    "UP008",
+    "UP016",
+    "UP022",
     "actor_setues",
     "baja-1000-derrama-800-mdp-ocupacion-80-tribuna-2026-11-13",
+    "baja-1000-rehabilitacion-caminos-los-cabos-tribuna-2026-11-08",
+    "baja-ferries-mazatlan-la-paz-experiencia-eleconomista-2026-11-15",
+    "camina-cabo-centro-csl-pausa-meganoticias-2026-11-11",
+    "camino-costero-cabo-del-este-firmas-pdu-2040-diariohumano-2026-11-16",
+    "comodato-guardia-nacional-donacion-inmuebles-salud-2026-10-21",
+    "concesiones-transporte-840-los-cabos-ntcd-2026-11-05",
     "const_red_aislada",
+    "coppel-fmc-duplicar-economia-triplicar-ied-foromdc-2026-11-10",
+    "dengue-comondu-brigadas-tribuna-2026-10-29",
+    "dq_viabilidad_proyecto",
+    "dq_vision_hold",
+    "edu-HaOFWHVrvKU",
     "edu-ox23YEevIy4",
+    "empleo-imss-octubre-bcs-cae-tribuna-2026-11-11",
+    "ev_dossiers_lugar",
+    "ev_fiscal_anexo_2025",
+    "ev_gds_cinco_polos",
+    "ev_inmob_jll_2025",
+    "ev_jll_zonas_2025",
+    "ev_mesa_energia",
+    "ev_mesas_trabajo",
     "ev_setue_ie",
+    "ev_sig_poel_cabos",
+    "ev_sig_sibcs",
+    "foromdc-roc-observatorio-ciudadano-semaforo-2026-11-11",
+    "gap_pmdu_lapaz_texto",
+    "gap_politica_uga_leyenda",
     "hotel-san-cristobal-suspende-operaciones-oleaje-meganoticias-2026-11-16",
+    "huachicol-agua-zatarain-iniciativa-tribuna-2026-11-13",
+    "inst_pa_preservacion",
+    "inst_pa_restauracion",
+    "inst_poer_politicas",
+    "loreto-calle-marlin-pavimentacion-45-aldiabcs-2026-11-13",
     "los-cabos-conexion-aerea-61-diversificar-elfinanciero-2026-11-13",
+    "los-cabos-ley-ingresos-2027-menos-9-gringogazette-2026-11-16",
+    "milena-quiroga-la-paz-sin-deuda-fin-de-ano-2026-10-19",
     "ocupacion-hotelera-los-cabos-78-pga-baja1000-tribuna-2026-11-12",
-    "rc_acuifero_0320"
+    "paquete-economico-2027-bcs-hoybcs-2026-11-02",
+    "proj_fed_car_002",
+    "proj_fed_car_003",
+    "proj_fed_car_004",
+    "proj_fed_edu_002",
+    "proj_fed_ene_009",
+    "proj_fed_int_002",
+    "proj_fed_min_001",
+    "proj_fed_min_002",
+    "proj_fed_otr_001",
+    "proj_fed_seg_001",
+    "proj_fed_viv_001",
+    "puente-arroyo-san-jose-viejo-2027-meganoticias-2026-11-17",
+    "rc_acuifero_0320",
+    "rc_bess_gap",
+    "renovacion-calle-agustin-arriola-centro-la-paz-tribuna-2026-11-16",
+    "sepuimm-pavimentacion-criterios-aforo-palabrabcs-2026-11-15",
+    "sne-microempresarios-loreto-mulege-ntcd-2026-11-09",
+    "summit-foro-mar-de-cortes-los-cabos-tusbuenasnoticias-2026-11-09",
+    "tiburon-urbano-centenario-chametla-hoybcs-2026-11-11",
+    "tratado-regional-mar-de-cortes-herrmann-foromdc-2026-11-11",
+    "vivienda-bienestar-704-sierra-vista-reubicacion-meganoticias-2026-11-11",
+    "vivienda-mulege-59-acciones-hcn-2026-11-17"
   ],
   "credits": "/radio/credits.json"
 }

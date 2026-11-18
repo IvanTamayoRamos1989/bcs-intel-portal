@@ -1,0 +1,836 @@
+{
+  "date": "2026-11-18",
+  "format": "deep-dives",
+  "engine": {
+    "script": "xAI grok-4.3",
+    "voices": "xAI Grok TTS (rex, eve)"
+  },
+  "episodes": [
+    {
+      "topic": "conectividad",
+      "name_es": "Conectividad",
+      "name_en": "Connectivity",
+      "signature": "/radio/music/surf.mp3",
+      "languages": {
+        "es": {
+          "title": "Conectividad · Radio BCS2050",
+          "duration": 1193.8,
+          "tracks": [
+            {
+              "n": 1,
+              "id": "entrada",
+              "title": "Entrada",
+              "src": "/radio/editions/2026-11-18/conectividad/es/01.mp3",
+              "duration": 90.53,
+              "sting": null
+            },
+            {
+              "n": 2,
+              "id": "acto1",
+              "title": "Acto 1 · Lo que está pasando",
+              "src": "/radio/editions/2026-11-18/conectividad/es/02.mp3",
+              "duration": 184.03,
+              "sting": null
+            },
+            {
+              "n": 3,
+              "id": "personas",
+              "title": "Las personas y los lugares",
+              "src": "/radio/editions/2026-11-18/conectividad/es/03.mp3",
+              "duration": 161.57,
+              "sting": null
+            },
+            {
+              "n": 4,
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
+              "src": "/radio/editions/2026-11-18/conectividad/es/04.mp3",
+              "duration": 170.18,
+              "sting": null
+            },
+            {
+              "n": 5,
+              "id": "sabias",
+              "title": "¿Sabías que…?",
+              "src": "/radio/editions/2026-11-18/conectividad/es/05.mp3",
+              "duration": 188.18,
+              "sting": null
+            },
+            {
+              "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-18/conectividad/es/06.mp3",
+              "duration": 140.47,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-18/conectividad/es/07.mp3",
+              "duration": 191.66,
+              "sting": null
+            },
+            {
+              "n": 8,
+              "id": "cierre",
+              "title": "Para llevar",
+              "src": "/radio/editions/2026-11-18/conectividad/es/08.mp3",
+              "duration": 67.18,
+              "sting": null
+            }
+          ],
+          "script": "/radio/editions/2026-11-18/conectividad/es/script.json",
+          "words": 2547
+        },
+        "en": {
+          "title": "Connectivity · Radio BCS2050",
+          "duration": 1186.7,
+          "tracks": [
+            {
+              "n": 1,
+              "id": "entrada",
+              "title": "Cold open",
+              "src": "/radio/editions/2026-11-18/conectividad/en/01.mp3",
+              "duration": 105.55,
+              "sting": null
+            },
+            {
+              "n": 2,
+              "id": "acto1",
+              "title": "Act 1 · What's happening",
+              "src": "/radio/editions/2026-11-18/conectividad/en/02.mp3",
+              "duration": 211.37,
+              "sting": null
+            },
+            {
+              "n": 3,
+              "id": "personas",
+              "title": "People and places",
+              "src": "/radio/editions/2026-11-18/conectividad/en/03.mp3",
+              "duration": 160.03,
+              "sting": null
+            },
+            {
+              "n": 4,
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
+              "src": "/radio/editions/2026-11-18/conectividad/en/04.mp3",
+              "duration": 192.79,
+              "sting": null
+            },
+            {
+              "n": 5,
+              "id": "sabias",
+              "title": "Did you know?",
+              "src": "/radio/editions/2026-11-18/conectividad/en/05.mp3",
+              "duration": 131.18,
+              "sting": null
+            },
+            {
+              "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-18/conectividad/en/06.mp3",
+              "duration": 138.26,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-18/conectividad/en/07.mp3",
+              "duration": 169.82,
+              "sting": null
+            },
+            {
+              "n": 8,
+              "id": "cierre",
+              "title": "The takeaway",
+              "src": "/radio/editions/2026-11-18/conectividad/en/08.mp3",
+              "duration": 77.69,
+              "sting": null
+            }
+          ],
+          "script": "/radio/editions/2026-11-18/conectividad/en/script.json",
+          "words": 2547
+        }
+      },
+      "sources": [
+        {
+          "outlet": "GlobeNewswire (Grupo Aeroportuario del Pacífico)",
+          "title": "GAP: el aeropuerto de Los Cabos cae 4.6% en pasajeros en octubre; La Paz baja 2.1% pero crece 8.7% en el año",
+          "url": "https://www.globenewswire.com/news-release/2026/11/09/3399085/0/en/grupo-aeroportuario-del-pacifico-reports-a-passenger-traffic-decrease-in-october-2026-of-7-0-compared-to-2025.html",
+          "date": "2026-11-09"
+        },
+        {
+          "outlet": "Península Digital",
+          "title": "Marina cierra cinco puertos de BCS a embarcaciones menores por el frente frío 4",
+          "url": "https://peninsulardigital.com/2026/11/03/cierran-a-la-navegacion-cinco-puertos-de-bcs/",
+          "date": "2026-11-03"
+        },
+        {
+          "outlet": "Reforma",
+          "title": "Tormenta tropical Vance inunda Los Cabos: arrastre de vehículos, rescates y cierre de puertos",
+          "url": "https://www.reforma.com/azota-vance-los-cabos-agua-arrastra-autos-y-activan-ayuda/ar3303853",
+          "date": "2026-10-28"
+        },
+        {
+          "outlet": "Diario El Independiente",
+          "title": "Víctor Castro respalda que la API estatal administre el puerto de Cabo San Lucas",
+          "url": "https://www.diarioelindependiente.mx/2026/10/victor-castro-respalda-que-api-baja-california-sur-administre-puerto-de-cabo-san-lucas",
+          "date": "2026-10-21"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+          "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+          "date": "2026-11-14"
+        },
+        {
+          "outlet": "El Financiero",
+          "title": "Crece 60 por ciento la conexión aérea en Los Cabos; van por diversificar turismo",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/11/13/crece-60-por-ciento-la-conexion-aerea-en-los-cabos-van-por-diversificar-turismo/",
+          "date": "2026-11-13"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Condor retoma vuelos directos Fráncfort–Los Cabos con 92% de ocupación y +37.5% en reservaciones",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/condor-retoma-vuelos-directos-entre-fr%C3%A1ncfort-y-los-cabos-ocupaci%C3%B3n-al-92/785839",
+          "date": "2026-11-05"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Mareas altas inundan Puerto San Carlos y el estero El Dátil: más de 300 viviendas bajo el agua",
+          "url": "https://www.meganoticias.mx/la-paz/noticia/bajo-el-agua-permanecen-comunidades-pesqueras-por-pleamar/785073",
+          "date": "2026-11-03"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "Cierran puertos de Cabo San Lucas y San José del Cabo a navegación menor por Rachel",
+          "url": "https://tribunademexico.com/rachel-puertos/",
+          "date": "2026-09-30"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "Huracán Polo rompe bordo de protección en Puerto San Carlos; evacúan a 400 personas",
+          "url": "https://tribunademexico.com/huracan-polo-rompe-bordo-de-proteccion-en-puerto/",
+          "date": "2026-09-28"
+        },
+        {
+          "outlet": "Gringo Gazette",
+          "title": "Polo se debilita a categoría 3; playas y puertos de BCS siguen cerrados",
+          "url": "https://gringogazette.com/polo-weakens-to-cat-3-beaches-ports-stay-closed/",
+          "date": "2026-09-27"
+        },
+        {
+          "outlet": "ICAO (2013)",
+          "title": "Airport Economics Manual (Doc 9562)",
+          "url": "https://www.icao.int/publications/pages/publication.aspx?docnum=9562"
+        },
+        {
+          "outlet": "UNWTO (2016)",
+          "title": "Cruise Tourism and port development studies (UNWTO cruise reports)",
+          "url": "https://www.unwto.org/"
+        },
+        {
+          "outlet": "ICAO (2016)",
+          "title": "Total Airport Management (TAM) and airport master planning guidance",
+          "url": "https://www.icao.int/"
+        },
+        {
+          "outlet": "Portal BCS 2050",
+          "title": "Tendencia 2050 · Visión · Foresight · Ontología",
+          "url": "/foresights/"
+        }
+      ],
+      "source_ids": [
+        "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
+        "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
+        "vance-inunda-los-cabos-reforma-2026-10-28",
+        "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
+        "IN011",
+        "IN023",
+        "IN024",
+        "ev_sig_asipona",
+        "ev_dossiers_movilidad",
+        "rc_aeropuerto_sjd",
+        "rc_aeropuerto_lap"
+      ]
+    },
+    {
+      "topic": "medio_ambiente",
+      "name_es": "Medio ambiente",
+      "name_en": "Environment",
+      "signature": "/radio/music/romance.mp3",
+      "languages": {
+        "es": {
+          "title": "Medio ambiente · Radio BCS2050",
+          "duration": 1220.2,
+          "tracks": [
+            {
+              "n": 1,
+              "id": "entrada",
+              "title": "Entrada",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/01.mp3",
+              "duration": 81.29,
+              "sting": null
+            },
+            {
+              "n": 2,
+              "id": "acto1",
+              "title": "Acto 1 · Lo que está pasando",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/02.mp3",
+              "duration": 189.0,
+              "sting": null
+            },
+            {
+              "n": 3,
+              "id": "personas",
+              "title": "Las personas y los lugares",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/03.mp3",
+              "duration": 189.94,
+              "sting": null
+            },
+            {
+              "n": 4,
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/04.mp3",
+              "duration": 182.86,
+              "sting": null
+            },
+            {
+              "n": 5,
+              "id": "sabias",
+              "title": "¿Sabías que…?",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/05.mp3",
+              "duration": 137.54,
+              "sting": null
+            },
+            {
+              "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/06.mp3",
+              "duration": 161.57,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/07.mp3",
+              "duration": 194.42,
+              "sting": null
+            },
+            {
+              "n": 8,
+              "id": "cierre",
+              "title": "Para llevar",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/es/08.mp3",
+              "duration": 83.54,
+              "sting": null
+            }
+          ],
+          "script": "/radio/editions/2026-11-18/medio_ambiente/es/script.json",
+          "words": 2658
+        },
+        "en": {
+          "title": "Environment · Radio BCS2050",
+          "duration": 1207.4,
+          "tracks": [
+            {
+              "n": 1,
+              "id": "entrada",
+              "title": "Cold open",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/01.mp3",
+              "duration": 100.94,
+              "sting": null
+            },
+            {
+              "n": 2,
+              "id": "acto1",
+              "title": "Act 1 · What's happening",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/02.mp3",
+              "duration": 207.74,
+              "sting": null
+            },
+            {
+              "n": 3,
+              "id": "personas",
+              "title": "People and places",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/03.mp3",
+              "duration": 169.13,
+              "sting": null
+            },
+            {
+              "n": 4,
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/04.mp3",
+              "duration": 170.78,
+              "sting": null
+            },
+            {
+              "n": 5,
+              "id": "sabias",
+              "title": "Did you know?",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/05.mp3",
+              "duration": 166.46,
+              "sting": null
+            },
+            {
+              "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/06.mp3",
+              "duration": 150.12,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/07.mp3",
+              "duration": 166.08,
+              "sting": null
+            },
+            {
+              "n": 8,
+              "id": "cierre",
+              "title": "The takeaway",
+              "src": "/radio/editions/2026-11-18/medio_ambiente/en/08.mp3",
+              "duration": 76.18,
+              "sting": null
+            }
+          ],
+          "script": "/radio/editions/2026-11-18/medio_ambiente/en/script.json",
+          "words": 2747
+        }
+      },
+      "sources": [
+        {
+          "outlet": "POSTA México",
+          "title": "SMN prevé oleaje de 2 a 3 metros en la costa del Pacífico de BCS y rachas de 30 a 50 km/h",
+          "url": "https://www.posta.com.mx/bcs/habra-lluvias-en-bcs-este-lunes-16-de-noviembre-alertan-por-oleaje-de-hasta-3-metros/vl2279534",
+          "date": "2026-11-16"
+        },
+        {
+          "outlet": "Diario Humano",
+          "title": "La Paz instala su tercer compostero comunitario, en El Palmar II",
+          "url": "https://diariohumano.com.mx/2026/11/16/instalan-tercer-compostero-comunitario-en-la-paz-bcs/",
+          "date": "2026-11-16"
+        },
+        {
+          "outlet": "Palabra BCS",
+          "title": "El frente frío 7 llega a BCS esta semana: La Paz bajaría a 17 °C de noche por primera vez en la temporada",
+          "url": "https://www.palabrabcs.com/municipios/la-paz/se-acerca-frente-frio-a-bcs-la-paz-llegaria-a-17o-por-primera-ocasion-en-la-temporada/",
+          "date": "2026-11-16"
+        },
+        {
+          "outlet": "La Nigua",
+          "title": "Escombros del Hotel San Cristóbal quedan bajo vigilancia para que no lleguen al mar",
+          "url": "https://lanigua.com.mx/escombros-del-hotel-san-cristobal-quedan-bajo-vigilancia-para-que-no-lleguen-al-mar/",
+          "date": "2026-11-15"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "El Niño eleva el nivel del mar en Puerto San Carlos y seguirá generando mareas extraordinarias en 2026, advierte investigador de la UABCS",
+          "url": "https://www.meganoticias.mx/la-paz/noticia/el-ni%C3%B1o-eleva-nivel-del-mar-en-san-carlos-advierte-experto/788445",
+          "date": "2026-11-14"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Shell Nurse: arrecifes artificiales con tecnología japonesa y primer rancho marino en la Bahía de La Paz",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/shell-nurse-impulsan-restauraci%C3%B3n-marina-y-oportunidades-para-pesca-en-la-paz/788058",
+          "date": "2026-11-12"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "Se retrasa la temporada de tiburón ballena en la Bahía de La Paz: aún no hay los seis ejemplares mínimos",
+          "url": "https://tribunademexico.com/tiburon-ballena-retraso/",
+          "date": "2026-11-11"
+        },
+        {
+          "outlet": "HOY BCS",
+          "title": "Demuelen parte del Hotel San Cristóbal en Punta Lobos (Todos Santos) tras la erosión del oleaje; pescadores habían advertido riesgos",
+          "url": "https://hoybcs.com/demuelen-parte-de-hotel-en-punta-lobos-tras-danos-del-oleaje-pescadores-habian-advertido-riesgos/",
+          "date": "2026-11-11"
+        },
+        {
+          "outlet": "Tus Buenas Noticias",
+          "title": "Los Cabos recibe del 10 al 12 de noviembre el Summit 2026 del Foro Mar de Cortés sobre inversión, ciudades y clima",
+          "url": "https://www.tusbuenasnoticias.com/noticias/economia/2026/11/09/66795-summit-2026-foro-mar-de-cortes-en-los-cabos",
+          "date": "2026-11-09"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "LIGIR-UABCS advierte nuevas mareas extraordinarias en noviembre y diciembre; posibles inundaciones en Comondú y Mulegé",
+          "url": "https://tribunademexico.com/ligir-advierte-nuevos-periodos-de-mareas-altas-en-comunidades-costeras-de-bcs/",
+          "date": "2026-11-07"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Zofemat retira más de 350 llantas y 18 toneladas de basura de El Médano tras las lluvias",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/retiran-tras-las-lluvias-m%C3%A1s-de-trecientos-neum%C3%A1ticos-del-medano/785194",
+          "date": "2026-11-03"
+        },
+        {
+          "outlet": "Gringo Gazette",
+          "title": "Semarnat aprueba con condiciones el desarrollo Camarón Beach al noroeste de La Paz pese a impactos reconocidos",
+          "url": "https://gringogazette.com/la-paz-resort-cleared-despite-known-eco-risks/",
+          "date": "2026-11-02"
+        },
+        {
+          "outlet": "HCN",
+          "title": "Iniciativa para dar a los ayuntamientos de BCS más facultades en reservas ecológicas y zonas de conservación",
+          "url": "https://hcn.mx/2026/10/29/proponen-fortalecer-las-facultades-municipales-para-la-conservacion-ambiental-en-bcs/",
+          "date": "2026-10-29"
+        },
+        {
+          "outlet": "Peter Calthorpe (1993)",
+          "title": "The Next American Metropolis: Ecology Community and the American Dream",
+          "url": "https://press.princeton.edu/books/paperback/9780691008752/the-next-american-metropolis"
+        },
+        {
+          "outlet": "Victor Dover / John Massengale (2013)",
+          "title": "Street Design: The Secret to Great Cities and Towns",
+          "url": "https://www.wiley.com/en-us/Street+Design%3A+The+Secret+to+Great+Cities+and+Towns-p-9781118066706"
+        },
+        {
+          "outlet": "Ewing / Cervero (2010)",
+          "title": "Travel and the Built Environment: A Meta-Analysis",
+          "url": "https://doi.org/10.1080/01944361003766766"
+        },
+        {
+          "outlet": "Portal BCS 2050",
+          "title": "Tendencia 2050 · Visión · Foresight · Ontología",
+          "url": "/foresights/"
+        }
+      ],
+      "source_ids": [
+        "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+        "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+        "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
+        "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+        "UP013",
+        "UP017",
+        "TD006",
+        "dq_pack_east_cape",
+        "gap_east_cape_carga",
+        "dq_pack_loreto",
+        "dq_pack_mulege"
+      ]
+    },
+    {
+      "topic": "agua",
+      "name_es": "Agua",
+      "name_en": "Water",
+      "signature": "/radio/music/romanza.mp3",
+      "languages": {
+        "es": {
+          "title": "Agua · Radio BCS2050",
+          "duration": 1278.4,
+          "tracks": [
+            {
+              "n": 1,
+              "id": "entrada",
+              "title": "Entrada",
+              "src": "/radio/editions/2026-11-18/agua/es/01.mp3",
+              "duration": 95.76,
+              "sting": null
+            },
+            {
+              "n": 2,
+              "id": "acto1",
+              "title": "Acto 1 · Lo que está pasando",
+              "src": "/radio/editions/2026-11-18/agua/es/02.mp3",
+              "duration": 209.9,
+              "sting": null
+            },
+            {
+              "n": 3,
+              "id": "personas",
+              "title": "Las personas y los lugares",
+              "src": "/radio/editions/2026-11-18/agua/es/03.mp3",
+              "duration": 180.5,
+              "sting": null
+            },
+            {
+              "n": 4,
+              "id": "acto2",
+              "title": "Acto 2 · El hilo oculto",
+              "src": "/radio/editions/2026-11-18/agua/es/04.mp3",
+              "duration": 207.91,
+              "sting": null
+            },
+            {
+              "n": 5,
+              "id": "sabias",
+              "title": "¿Sabías que…?",
+              "src": "/radio/editions/2026-11-18/agua/es/05.mp3",
+              "duration": 177.12,
+              "sting": null
+            },
+            {
+              "n": 6,
+              "id": "diseno",
+              "title": "El diseño invisible",
+              "src": "/radio/editions/2026-11-18/agua/es/06.mp3",
+              "duration": 170.18,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Acto 3 · Hacia 2050",
+              "src": "/radio/editions/2026-11-18/agua/es/07.mp3",
+              "duration": 167.64,
+              "sting": null
+            },
+            {
+              "n": 8,
+              "id": "cierre",
+              "title": "Para llevar",
+              "src": "/radio/editions/2026-11-18/agua/es/08.mp3",
+              "duration": 69.36,
+              "sting": null
+            }
+          ],
+          "script": "/radio/editions/2026-11-18/agua/es/script.json",
+          "words": 2636
+        },
+        "en": {
+          "title": "Water · Radio BCS2050",
+          "duration": 1211.1,
+          "tracks": [
+            {
+              "n": 1,
+              "id": "entrada",
+              "title": "Cold open",
+              "src": "/radio/editions/2026-11-18/agua/en/01.mp3",
+              "duration": 98.47,
+              "sting": null
+            },
+            {
+              "n": 2,
+              "id": "acto1",
+              "title": "Act 1 · What's happening",
+              "src": "/radio/editions/2026-11-18/agua/en/02.mp3",
+              "duration": 229.27,
+              "sting": null
+            },
+            {
+              "n": 3,
+              "id": "personas",
+              "title": "People and places",
+              "src": "/radio/editions/2026-11-18/agua/en/03.mp3",
+              "duration": 128.18,
+              "sting": null
+            },
+            {
+              "n": 4,
+              "id": "acto2",
+              "title": "Act 2 · The hidden thread",
+              "src": "/radio/editions/2026-11-18/agua/en/04.mp3",
+              "duration": 198.24,
+              "sting": null
+            },
+            {
+              "n": 5,
+              "id": "sabias",
+              "title": "Did you know?",
+              "src": "/radio/editions/2026-11-18/agua/en/05.mp3",
+              "duration": 116.78,
+              "sting": null
+            },
+            {
+              "n": 6,
+              "id": "diseno",
+              "title": "The hidden design",
+              "src": "/radio/editions/2026-11-18/agua/en/06.mp3",
+              "duration": 167.02,
+              "sting": null
+            },
+            {
+              "n": 7,
+              "id": "acto3",
+              "title": "Act 3 · Toward 2050",
+              "src": "/radio/editions/2026-11-18/agua/en/07.mp3",
+              "duration": 194.3,
+              "sting": null
+            },
+            {
+              "n": 8,
+              "id": "cierre",
+              "title": "The takeaway",
+              "src": "/radio/editions/2026-11-18/agua/en/08.mp3",
+              "duration": 78.84,
+              "sting": null
+            }
+          ],
+          "script": "/radio/editions/2026-11-18/agua/en/script.json",
+          "words": 2689
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Gringo Gazette",
+          "title": "Los Cabos reporta 302.9 mdp en agua y saneamiento; la desaladora D1 pasa de 70 a 130 l/s y la D2 va al 76.58%",
+          "url": "https://gringogazette.com/los-cabos-mayors-report-to-spotlight-302m-pesos-in-water-work/",
+          "date": "2026-11-17"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Cauces modificados y falta de drenaje pluvial llevan toneladas de basura al mar en Los Cabos",
+          "url": "https://www.meganoticias.mx/la-paz/noticia/modificaciones-urbanas-llevan-toneladas-de-basura-al-mar-en-los-cabos/789460",
+          "date": "2026-11-17"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "Mulegé reporta 713 mdp en obra en cinco años e inicia el nuevo acueducto Palo Verde–Santa Rosalía; la obra federal cayó 70%",
+          "url": "https://tribunademexico.com/mulege-reporta-713-mdp-invertidos/",
+          "date": "2026-11-17"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Lluvias y derrames de aguas negras deterioran la carretera Transpeninsular en Los Cabos",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/lluvias-y-drenaje-terminan-afectando-base-de-rodamiento-de-la-transpeninsular/789241",
+          "date": "2026-11-16"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "Senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua; Los Cabos suma 25 tomas clandestinas en 2026",
+          "url": "https://tribunademexico.com/propone-10-anos-carcel-huachicol-agua/",
+          "date": "2026-11-13"
+        },
+        {
+          "outlet": "alDíaBCS",
+          "title": "Avanza al 45% la pavimentación de la calle Marlín en la colonia Miramar de Loreto",
+          "url": "https://aldiabcs.com/loreto/avanza-pavimentacion-de-calle-marlin/",
+          "date": "2026-11-13"
+        },
+        {
+          "outlet": "Palabra BCS",
+          "title": "Sepuimm inicia pavimentación de la calle Francisco King Rondero en La Paz con 48 mdp y nuevas redes de agua y drenaje",
+          "url": "https://www.palabrabcs.com/municipios/la-paz/iniciara-pavimentacion-de-la-calle-francisco-king-rondero-invertiran-48-mdp-sepuimm/",
+          "date": "2026-11-10"
+        },
+        {
+          "outlet": "Quepoca",
+          "title": "La segunda desaladora de Cabo San Lucas alcanza 75% de avance y aportará 250 litros por segundo",
+          "url": "https://www.quepoca.com/articulo/actualidad/avanza-75-segunda-desaladora-cabo-san-lucas/20261109165636004259.html",
+          "date": "2026-11-09"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "SAPA La Paz reconoce que solo opera dos de sus cuatro equipos Vactor y gestiona dos nuevos con Conagua",
+          "url": "https://tribunademexico.com/sapa-la-paz-reportes-importancia/",
+          "date": "2026-11-09"
+        },
+        {
+          "outlet": "Noticabo",
+          "title": "Avanza la reubicación de la planta de tratamiento de Fonatur para recuperar el Estero Josefino en San José del Cabo",
+          "url": "https://noticabo.com/noticias/avanza-reubicacion-de-planta-de-fonatur-proyecto-busca-recuperar-el-estero-josefino-en-san-jose-del-cabo/",
+          "date": "2026-11-07"
+        },
+        {
+          "outlet": "Meganoticias",
+          "title": "Los Cabos, el municipio con menor inversión de la CEA en obras de agua: 2.02 mdp entre 2021 y 2026",
+          "url": "https://www.meganoticias.mx/los-cabos/noticia/los-cabos-municipio-con-menor-inversi%C3%B3n-para-obras-de-agua-en-sudcalifornia/786368",
+          "date": "2026-11-06"
+        },
+        {
+          "outlet": "Tribuna de México",
+          "title": "CEA: más de 400 mdp en obras hídricas; destacan PTAR Loreto, desaladoras y estudios de la Presa El Novillo",
+          "url": "https://tribunademexico.com/cea-inversion-obras-hidricas-bcs/",
+          "date": "2026-11-05"
+        },
+        {
+          "outlet": "Península Digital",
+          "title": "Castro Cosío califica de «delicadísimo» el desabasto de agua en Los Cabos y pide acelerar la obra a CONAGUA",
+          "url": "https://peninsulardigital.com/2026/11/04/delicadisimo-el-problema-del-agua-en-los-cabos/",
+          "date": "2026-11-04"
+        },
+        {
+          "outlet": "IRENA (2024)",
+          "title": "IRENA Renewable Power Generation Costs 2023",
+          "url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+        },
+        {
+          "outlet": "Institute of Asset Management (2014)",
+          "title": "Lifecycle Infrastructure Management / PAS 55 & ISO 55000 guidance",
+          "url": "https://theiam.org/knowledge/Knowledge-Subjects/"
+        },
+        {
+          "outlet": "IPCC (2019)",
+          "title": "Special Report on the Ocean and Cryosphere in a Changing Climate (SROCC)",
+          "url": "https://www.ipcc.ch/srocc/"
+        },
+        {
+          "outlet": "Expres de Unic",
+          "title": "Entrevista en video con Carlos Garriga Director de la Fundación We Are Water",
+          "url": "https://www.youtube.com/watch?v=LL0dJZ2-Vhw"
+        },
+        {
+          "outlet": "Portal BCS 2050",
+          "title": "Tendencia 2050 · Visión · Foresight · Ontología",
+          "url": "/foresights/"
+        }
+      ],
+      "source_ids": [
+        "los-cabos-302-mdp-agua-d1-d2-gringogazette-2026-11-17",
+        "cauces-modificados-basura-al-mar-los-cabos-meganoticias-2026-11-17",
+        "mulege-informe-713-mdp-acueducto-palo-verde-tribuna-2026-11-17",
+        "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+        "IN006",
+        "IN009",
+        "CD003",
+        "edu-LL0dJZ2-Vhw",
+        "rc_vivienda_cabos",
+        "dd_turismo_cabos",
+        "dd_turismo_lapaz",
+        "const_escasez_agua"
+      ]
+    }
+  ],
+  "source_ids": [
+    "CD003",
+    "IN006",
+    "IN009",
+    "IN011",
+    "IN023",
+    "IN024",
+    "TD006",
+    "UP013",
+    "UP017",
+    "castro-api-bcs-puerto-cabo-san-lucas-2026-10-21",
+    "cauces-modificados-basura-al-mar-los-cabos-meganoticias-2026-11-17",
+    "compostero-comunitario-el-palmar-la-paz-diariohumano-2026-11-16",
+    "const_escasez_agua",
+    "dd_turismo_cabos",
+    "dd_turismo_lapaz",
+    "dq_pack_east_cape",
+    "dq_pack_loreto",
+    "dq_pack_mulege",
+    "edu-LL0dJZ2-Vhw",
+    "ev_dossiers_movilidad",
+    "ev_sig_asipona",
+    "frente-frio-7-bcs-la-paz-17-grados-palabrabcs-2026-11-16",
+    "gap-pasajeros-octubre-los-cabos-la-paz-globenewswire-2026-11-09",
+    "gap_east_cape_carga",
+    "los-cabos-302-mdp-agua-d1-d2-gringogazette-2026-11-17",
+    "mulege-informe-713-mdp-acueducto-palo-verde-tribuna-2026-11-17",
+    "oleaje-3-metros-costa-occidental-bcs-frente-frio-posta-2026-11-16",
+    "profepa-escombros-hotel-san-cristobal-punta-lobos-lanigua-2026-11-15",
+    "rc_aeropuerto_lap",
+    "rc_aeropuerto_sjd",
+    "rc_vivienda_cabos",
+    "semar-cierra-cinco-puertos-frente-frio-4-peninsular-2026-11-03",
+    "transpeninsular-lluvias-aguas-negras-los-cabos-meganoticias-2026-11-16",
+    "vance-inunda-los-cabos-reforma-2026-10-28"
+  ],
+  "credits": "/radio/credits.json"
+}

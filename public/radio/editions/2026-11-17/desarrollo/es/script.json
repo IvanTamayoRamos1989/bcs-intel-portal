@@ -8,28 +8,48 @@
       "title": "Entrada",
       "turns": [
         {
-          "speaker": "host",
-          "text": "Las olas se llevaron parte del Hotel San Cristóbal en Punta Lobos."
-        },
-        {
           "speaker": "cohost",
-          "text": "Profepa recorrió el once de noviembre el hotel después de que el proyecto Tres Santos avisara del derrumbe de un muro y la demolición de partes dañadas."
+          "text": "En Los Cabos, durante el Summit del Foro Mar de Cortés, Hans Herrmann plantea un tratado regional entre cinco estados para atraer inversión y proteger el Mar de Cortés."
         },
         {
           "speaker": "host",
-          "text": "Revisaron si algo llegaba al mar."
+          "text": "Un tratado entre Baja California, BCS, Nayarit, Sinaloa y Sonora. [pause] ¿Con participación de las comunidades?"
         },
         {
           "speaker": "cohost",
-          "text": "No detectaron descargas de aguas residuales, químicos ni hidrocarburos, ni fauna afectada, pero los pescadores ya habían advertido el riesgo y ahora vigilan los escombros."
+          "text": "Exacto, articulado por el Foro, para orientar decisiones de desarrollo y conservación."
         },
         {
           "speaker": "host",
-          "text": "Y en paralelo entregaron el Quinto Informe de Gobierno al Congreso."
+          "text": "Al mismo tiempo, Agustín Coppel propone duplicar la economía regional en 20 años."
         },
         {
           "speaker": "cohost",
-          "text": "El gobernador presentará los resultados el 27 de noviembre en la Plaza de la Reforma en La Paz. Esto es Radio BCS2050. Hoy profundizamos en Desarrollo y la pregunta es: ¿qué decide el mar sobre lo que construimos?"
+          "text": "Crecer 3.5% anual. [chuckle] Imagina las carreteras y los puertos que eso requeriría."
+        },
+        {
+          "speaker": "host",
+          "text": "BCS creció 2.1% en la última década. ¿Y la inversión en agua?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos recibió solo 2.02 mdp de la CEA entre 2021 y 2026."
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy profundizamos en Desarrollo. La pregunta que perseguimos: ¿puede la región crecer sin perder su mar?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa tensión entre infraestructura y ritmo del destino parece clave. Los desarrolladores ya advierten que todo va más lento de lo que el turismo exige."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué nos falta realmente para que funcione? Coppel también habla de triplicar la inversión extranjera, que hoy anda cerca de 4,100 millones de dólares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y pide más gasto público en educación y seguridad. [pause] El mar sigue siendo el corazón de todo."
         }
       ]
     },
@@ -39,59 +59,225 @@
       "turns": [
         {
           "speaker": "cohost",
-          "text": "Según La Nigua, la Profepa ya revisó el Hotel San Cristóbal en Punta Lobos. Tras el derrumbe de un muro, vigilan que los escombros no lleguen al mar."
+          "text": "Tomás, en Los Cabos acaban de cerrar el Summit del Foro Mar de Cortés con propuestas muy concretas para los cinco estados."
         },
         {
           "speaker": "host",
-          "text": "¿Y no encontraron descargas ni fauna afectada?"
+          "text": "Cuéntame qué salió de ahí."
         },
         {
           "speaker": "cohost",
-          "text": "Nada de eso. El recorrido fue el once de noviembre tras el aviso del proyecto Tres Santos sobre la demolición de partes dañadas. Ahora revisarán la autorización de impacto ambiental y el manejo de residuos."
+          "text": "Agustín Coppel abrió el encuentro pidiendo duplicar la economía regional y triplicar la inversión extranjera en 20 años."
         },
         {
           "speaker": "host",
-          "text": "¿Qué pasa si hay incumplimientos?"
+          "text": "20 años es mucho tiempo. ¿Cómo se mide eso?"
+        },
+        {
+          "speaker": "host",
+          "text": "Eso es casi la mitad del ritmo que necesitamos para que la gente sienta el cambio en su vida diaria."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. [pause] Y mientras tanto, ¿qué más se discutió sobre el mar mismo?"
         },
         {
           "speaker": "cohost",
-          "text": "Podrían ordenar una inspección más a fondo. Imagina los escombros quietos bajo el sol, con el mar tan cerca."
+          "text": "Hans Herrmann, de Mare Nostrum, propuso un tratado regional entre Baja California, Baja California Sur, Nayarit, Sinaloa y Sonora."
         },
         {
           "speaker": "host",
-          "text": "Mm. Mientras tanto, el Quinto Informe de Gobierno ya está en el Congreso, informa NTCD."
+          "text": "¿Un tratado para qué exactamente?"
         },
         {
           "speaker": "cohost",
-          "text": "Los resultados del primer año del plan estatal, con anexos de obras y acciones organizados por los cinco ejes del Plan Estatal de Desarrollo. Lo presentarán el 27 de noviembre en la Plaza de la Reforma, en La Paz."
+          "text": "Para atraer inversión pero también para proteger el patrimonio natural del Mar de Cortés, con participación de las comunidades."
         },
         {
           "speaker": "host",
-          "text": "¿Qué contiene ese informe en concreto?"
+          "text": "Que las comunidades estén dentro desde el principio cambia todo."
         },
         {
           "speaker": "cohost",
-          "text": "El documento socioeconómico y el anexo gráfico-estadístico del periodo del primero de septiembre de 2025 al 31 de agosto de 2026."
+          "text": "Sí. Dijo que la región ya tiene talento e infraestructura, solo le faltan instrumentos de planeación compartida."
         },
         {
           "speaker": "host",
-          "text": "Y en Los Cabos, ¿qué dicen los empresarios?"
+          "text": "¿Y cómo se articularía ese tratado?"
         },
         {
           "speaker": "cohost",
-          "text": "Meganoticias reporta que Camina Cabo y la remodelación del centro siguen en pausa. Señalan que los negocios cierran y se van a El Tezal. Buscarán reactivar la revisión con Desarrollo Urbano."
+          "text": "Lo coordinaría el propio Foro Mar de Cortés, según informó el portal del evento."
         },
         {
           "speaker": "host",
-          "text": "¿Y las familias en zonas de riesgo?"
+          "text": "Interesante. [breath] ¿Qué pidió Coppel en materia de infraestructura?"
         },
         {
           "speaker": "cohost",
-          "text": "También según Meganoticias, las primeras setecientas cuatro casas en Sierra Vista ya superan el 90% de avance. El alcalde dice que el suelo y el agua son el reto principal. El municipio tiene más de 17 mil viviendas asignadas, pero sin fecha de entrega aún. Se firmó otro desarrollo con Infonavit en San José del Cabo."
+          "text": "Más inversión pública en carreteras, puertos, aeropuertos, educación y seguridad."
         },
         {
           "speaker": "host",
-          "text": "¿Cómo afecta eso a quienes esperan reubicación?"
+          "text": "Porque sin eso el crecimiento se queda en el papel."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Claro. El foro también puso a Baja California Sur a la cabeza de la región en capital natural."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso es lo que no se puede fabricar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tus Buenas Noticias cubrió que el encuentro reunió a sectores empresarial, académico, social y público de los cinco estados."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué te llama más la atención de todo esto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Que por primera vez hablan de duplicar la economía y proteger el mar en la misma frase."
+        },
+        {
+          "speaker": "host",
+          "text": "Sí. [chuckle] Eso cambia el timbre de la conversación."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Tú qué les preguntarías a los que estuvieron ahí?"
+        },
+        {
+          "speaker": "host",
+          "text": "Les preguntaría qué están dispuestos a ceder para que ese tratado no sea solo una firma."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El summit se celebró del 10 al 12 de noviembre bajo el lema Tomando el Timón."
+        },
+        {
+          "speaker": "host",
+          "text": "El nombre ya sugiere que alguien toma decisiones con cuidado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La agenda incluyó competitividad regional según IMCO, atracción de inversión, futuro de las ciudades, límites del desarrollo, conservación marina y cambio climático."
+        },
+        {
+          "speaker": "host",
+          "text": "Los límites del desarrollo suenan a una conversación que el desierto nos obliga a tener."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Imagina las carreteras largas que cruzan la península y cómo el mar las mira desde un lado."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. [pause] ¿Crees que las comunidades van a sentir que esta vez sí participan de verdad?"
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "Las personas y los lugares",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "La Paz sigue siendo el corazón administrativo del estado, con su bahía y ese puerto que conecta todo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto, y su población llega a 292241 habitantes, la mayoría en la cabecera."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Imagina el bullicio diario en las calles que rodean el muelle, con gente que llega de todos lados."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y me pregunto cómo cambia la vida cuando el sol baja sobre la bahía."
+        },
+        {
+          "speaker": "host",
+          "text": "Me pregunto cómo se siente vivir ahí con ese crecimiento constante y los acuíferos en déficit."
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos la cifra sube a 351111, impulsada por el turismo y los hoteles grandes."
+        },
+        {
+          "speaker": "host",
+          "text": "Esos resorts como Grand Velas o Pueblo Bonito marcan el paisaje del corredor."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, pero el estrés hídrico es el mismo problema en todo el corredor."
+        },
+        {
+          "speaker": "host",
+          "text": "El agua siempre vuelve a la conversación, ¿no? [chuckle]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Todos Santos y El Pescadero la vocación es distinta, más de cultura y turismo residencial."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa identidad pacífica atrae gente que busca otra cosa que el bullicio de Cabo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Caminar por el pueblo al atardecer debe sentirse como otro ritmo, más lento."
+        },
+        {
+          "speaker": "host",
+          "text": "La baja pobreza municipal de La Paz, 20.6% en 2020, dice mucho de su base de servicios."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según el Foro Mar de Cortés, Hans Herrmann propuso un tratado regional para atraer inversión y cuidar el Mar de Cortés."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso incluye a cinco estados, con participación de las comunidades."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Agustín Coppel habló de crecer 3.5% anual durante 20 años."
+        },
+        {
+          "speaker": "host",
+          "text": "Y de triplicar la inversión extranjera directa, que hoy ronda los 4,100 millones de dólares."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me pregunto qué respondería un pescador de Santa Rosalía a esa meta."
+        },
+        {
+          "speaker": "host",
+          "text": "O una familia en Comondú, donde el polo agropecuario del Valle Santo Domingo marca el ritmo diario."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El desierto enseña paciencia, pero ¿qué pasa cuando el agua no alcanza para todos los planes?"
+        },
+        {
+          "speaker": "host",
+          "text": "En Loreto el POEL de 2014 sigue vigente y protege la bahía, [pause] aunque la actualización está en consulta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué le preguntarías tú a alguien que vive entre Nopoló y Puerto Escondido?"
+        },
+        {
+          "speaker": "host",
+          "text": "Le preguntaría cómo se vive el contraste entre la reserva natural y el crecimiento que llega por carretera."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tal vez ellos ya saben lo que el desarrollo necesita aprender del lugar."
         }
       ]
     },
@@ -100,80 +286,132 @@
       "title": "Acto 2 · El hilo oculto",
       "turns": [
         {
+          "speaker": "cohost",
+          "text": "Tomás, el dato que más llama la atención es que Los Cabos recibió solo 2.02 millones de pesos de la CEA para obras de agua."
+        },
+        {
           "speaker": "host",
-          "text": "Luz, esta semana todo parece separado."
+          "text": "Mm. Entre 2021 y 2026."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, pero hay algo que une los números de Los Cabos con el Camino Costero y la planta de Fonatur."
+          "text": "Exacto. Mientras el total invertido en los cinco municipios llegó a 401.27 millones."
         },
         {
           "speaker": "host",
-          "text": "¿El presupuesto que baja 9.09%?"
+          "text": "¿Y qué recibieron los otros?"
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. Los Cabos aprueba 6,746 millones para 2027 porque el predial y el saneamiento caen casi 20%, según Gringo Gazette."
+          "text": "La Paz tuvo 121.38 millones, según el mismo reporte."
         },
         {
           "speaker": "host",
-          "text": "¿Y cómo se ve eso en la calle?"
+          "text": "Casi 60 veces más."
         },
         {
           "speaker": "cohost",
-          "text": "Los vecinos recogen firmas del 19 al 22 de noviembre para que el camino costero siga en el PDU 2040, informa Diario Humano."
+          "text": "Y Mulegé llegó a 126.99. Informa Meganoticias que el OOMSAPAS sumó otros 70 millones vía PROAGUA, pero aun así no alcanza."
         },
         {
           "speaker": "host",
-          "text": "Y en Punta Lobos derriban parte del hotel porque el oleaje se llevó la arena. Pescadores avisaron desde 2015."
+          "text": "En Cabo San Lucas hay vecinos que esperan hasta 40 días el agua de red."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, según HOY BCS el muro de contención falló y quedó expuesta la cimentación."
+          "text": "Sí. Y gastan hasta 2 mil pesos cada quince días en pipas."
         },
         {
           "speaker": "host",
-          "text": "¿Qué hilo los atraviesa a todos?"
+          "text": "Me pregunto cómo se siente abrir la llave y que no salga nada por más de un mes."
         },
         {
           "speaker": "cohost",
-          "text": "El agua. O la falta de ella. El Foresight del portal ya lo decía: la IED turística choca con el límite hídrico."
+          "text": "Es el día a día para muchos en esas colonias."
         },
         {
           "speaker": "host",
-          "text": "Pero aquí viene lo que no se ve."
+          "text": "¿Qué pasa cuando el crecimiento turístico sigue y la tubería no?"
         },
         {
           "speaker": "cohost",
-          "text": "La reubicación de la planta de Fonatur en San José del Cabo. Van a mover 350 litros por segundo para que el Estero Josefino respire, según Noticabo."
+          "text": "Los desarrolladores lo advirtieron en octubre. La infraestructura hidráulica ya no va al mismo ritmo."
         },
         {
           "speaker": "host",
-          "text": "¿Y eso qué cambia?"
+          "text": "Informa El Mundo Digital que también mencionaron la vialidad y la capacidad eléctrica."
         },
         {
           "speaker": "cohost",
-          "text": "Cambia el suelo que se puede vender o no. Cambia el ritmo del mercado inmobiliario que ahora da menos dinero."
+          "text": "Pidieron actualizar el Plan de Desarrollo Urbano y el POEL."
         },
         {
           "speaker": "host",
-          "text": "Mm. El hilo no es el dinero. Es la tubería."
+          "text": "El hilo que veo es el agua como límite invisible. [pause]"
         },
         {
           "speaker": "cohost",
-          "text": "Y también la red eléctrica. En Mulegé la CFE licita el proyecto Oasis con 72 megawatts solares y baterías, según PVTIME."
+          "text": "Justo. En la Tendencia 2050 del portal repetían que el freno político en Cabos era por falta de agua."
         },
         {
           "speaker": "host",
-          "text": "¿Cómo se conecta eso con el desarrollo de los cinco estados?"
+          "text": "Mientras el resto de BCS avanza con la isla energética SIBCS."
         },
         {
           "speaker": "cohost",
-          "text": "En el Summit del Foro Mar de Cortés propusieron un tratado regional para planear inversión y conservar el Mar de Cortés."
+          "text": "Sí. La Señal del conocimiento dice que la confiabilidad de la red aislada sigue siendo el techo."
         },
         {
           "speaker": "host",
-          "text": "Entonces el hilo oculto es la infraestructura que decide qué crece y qué se detiene."
+          "text": "Entonces Cabos queda atado a otra cosa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El POEL Los Cabos obliga a los desarrolladores a poner desalación, tratamiento y manejo de residuos."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso cambia el mapa. [chuckle] ¿O ya estaba en la consulta anterior?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Estaba en la versión 2026 que sigue en consulta. Punta Nayu es parte de ese proceso."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el desarrollador ya no solo compra terreno."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ahora carga también con la infraestructura que la CEA no puso."
+        },
+        {
+          "speaker": "host",
+          "text": "Y sin embargo el volumen residencial de Los Cabos sigue siendo el 81% del estado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según el JLL 2025, 1,264 millones de dólares."
+        },
+        {
+          "speaker": "host",
+          "text": "El hilo oculto es que el agua ya no es problema del municipio."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Se volvió obligación del que construye."
+        },
+        {
+          "speaker": "host",
+          "text": "Y eso redefine todo el crecimiento hacia 2050."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Como si la tubería invisible ya no fuera del gobierno."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Ahora viaja con cada nuevo permiso."
         }
       ]
     },
@@ -182,44 +420,210 @@
       "title": "¿Sabías que…?",
       "turns": [
         {
-          "speaker": "host",
-          "text": "¿Sabías que Baja California Sur pasó del lugar 8 al 5 en competitividad estatal entre 2021 y 2026?"
-        },
-        {
           "speaker": "cohost",
-          "text": "Lo reportó el IMCO. Un salto que refleja cómo se va ordenando el desarrollo en el estado."
+          "text": "Sabías que 22 de los 39 acuíferos de Baja California Sur están en déficit."
         },
         {
           "speaker": "host",
-          "text": "Mm. Imagina una carretera que antes se llenaba de baches. Cuando la arreglan, llega más gente, llegan más camiones y el pueblo entero se mueve distinto."
+          "text": "Mm. ¿Cómo se siente eso en la vida diaria?"
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. El Foro Mar de Cortés propuso crecer 3.5% anual durante 20 años y triplicar la inversión extranjera directa en los cinco estados del Mar de Cortés."
+          "text": "Eso significa que el desarrollo debe adaptarse al desierto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según CONAGUA la suma es menos 105.1 hectómetros cúbicos al año."
         },
         {
           "speaker": "host",
-          "text": "Esa meta la lanzó Agustín Coppel en noviembre de 2026. No es una proyección del portal, es una propuesta del Foro."
+          "text": "Eso es mucha agua que falta. [pause] Y el desarrollo sigue."
         },
         {
           "speaker": "cohost",
-          "text": "Y mientras tanto BCS venía creciendo solo 2.1% anual en la década anterior."
+          "text": "El Foro Mar de Cortés busca triplicar la inversión extranjera en la región."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. En Los Cabos el POEL obliga a los desarrolladores a poner desaladoras y plantas de tratamiento."
         },
         {
           "speaker": "host",
-          "text": "¿Qué pasa cuando la competitividad sube pero el agua y la luz siguen justas? ¿La carretera sigue sirviendo o se queda corta?"
-        },
-        {
-          "speaker": "cohost",
-          "text": "Esa es la tensión que queda en el aire."
+          "text": "Y en Los Cabos la inversión en energía es de 240 megawatts para 2028."
         },
         {
           "speaker": "host",
-          "text": "En Los Cabos la consulta del POEL obliga a los desarrolladores a llevar su propia desaladora y plantas de tratamiento. El desierto no perdona atajos."
+          "text": "Así internalizan el costo del agua. ¿Y qué pasa con la gente que ya vive ahí?"
         },
         {
           "speaker": "cohost",
-          "text": "Y vecinos del lugar ya preguntan cómo se va a sostener todo cuando el turismo sigue siendo el motor principal."
+          "text": "Los vecinos de Cabo San Lucas ya ven restaurantes cerrados y ventas turísticas bajas."
+        },
+        {
+          "speaker": "host",
+          "text": "Ha. [chuckle] El mar sigue ahí, pero el agua dulce no."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los programas sociales invierten 6766000000 pesos en la entidad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por eso la senadora Zatarain pidió reinvertir los ingresos turísticos en infraestructura."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si cada nuevo hotel tuviera que traer su propia agua?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso es lo que el POEL busca. Que el desarrollador pague el costo real."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Crees que el camino costero pueda protegerse sin más inversión?"
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto enseña despacio. [pause] Y la población ya llega a 798,447."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, según el censo del INEGI. El sector privado pide actualizar el plan de desarrollo urbano con límites de densidad."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Y si no hay agua nueva, qué pasa con el crecimiento que proponen?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "La competitividad subió, pero el agua marca el verdadero ritmo del crecimiento."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero el agua marca el límite. [breath] El PIB llegó a 187,152 millones de pesos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El plan de carreteras recibe 350 millones para modernizar puentes y señalamiento."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. [pause] El camino costero de Cabo del Este sigue en consulta."
+        },
+        {
+          "speaker": "cohost",
+          "text": "IMCO señaló que BCS pasó del lugar ocho al cinco en competitividad estatal."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. [breath] El desierto marca el ritmo, no el número."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "El diseño invisible",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "El diseño invisible. ¿Qué hay detrás de la llave de agua que abre un desarrollador en Los Cabos?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Detrás está el POEL que obliga a cada proyecto a incluir desalación, tratamiento y manejo de residuos."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Una llave que lleva reglas de tres instituciones distintas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. CEA, CONAGUA y el propio IMPLAN revisan cada plano."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] ¿Y cómo se coordina todo eso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Las mesas de trabajo del programa BCS 2050 reúnen a todos en una sola sala."
+        },
+        {
+          "speaker": "host",
+          "text": "Mesas de hospitalidad, de inversión extranjera y de desarrollo orientado al transporte."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. Y también la de infraestructura y energía con SEPUIMM."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces la llave no es solo metal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Es un documento que sigue los principios de calidad del G20 y la OCDE de 2019."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] El grifo se vuelve un manual de inversión."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y cuando falta agua, la señal es clara: la IED turística choca con ese límite."
+        },
+        {
+          "speaker": "host",
+          "text": "Wait— ¿qué pasa entonces con los nuevos proyectos que ya están en marcha?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "En Los Cabos el volumen llegó a 1,264 millones de dólares este año."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. 81% de todo Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí. Y el precio medio ronda los 853 mil dólares por unidad."
+        },
+        {
+          "speaker": "host",
+          "text": "El sistema aislado de SIBCS también marca el techo de lo que la red puede dar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "CFE invierte pensando en confiabilidad de esa isla energética."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el diseño invisible decide dónde crece la ciudad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el Reference Guide de la OCDE dice que las especificaciones de calidad deben estar desde el primer plano."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] Una llave que enseña a toda la península cómo planear."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Incluso el marco de Todd Litman del VTPI ayuda a medir los beneficios reales del transporte en cada caso."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Y qué ve el Global Infrastructure Hub en todo esto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ve la brecha de inversión que queda cuando las reglas de agua y energía no se alinean desde el inicio."
+        },
+        {
+          "speaker": "host",
+          "text": "[breath] El mar sigue ahí, recordando que todo fluye según el plano que nadie ve."
         }
       ]
     },
@@ -229,55 +633,95 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "En el pilar Vivienda de la Visión del portal, el riesgo está claro."
+          "text": "En la visión de vivienda para 2050, el riesgo queda claro cuando el crecimiento toca zonas sin servicios o en la línea costera."
         },
         {
           "speaker": "cohost",
-          "text": "La vivienda queda expuesta cuando crece sobre zonas sin servicios o en riesgo costero e hídrico. La población estatal es 798,447 según el INEGI Censo 2020. Esta semana no hay notas nuevas, solo un EWMA estable."
+          "text": "Sí. La población estatal es 798,447 según el censo de 2020. Esa cifra ya marca dónde se concentra la presión."
         },
         {
           "speaker": "host",
-          "text": "¿Y la aspiración?"
+          "text": "[pause] Y solo una nota esta semana, con EWMA en 1.81 y dirección positiva."
         },
         {
           "speaker": "cohost",
-          "text": "Vivienda con servicios, fuera de la primera línea de riesgo, y alineada con el margen real de agua y energía. No se publica una meta de viviendas a 2050."
+          "text": "La aspiración es simple: vivienda con servicios reales, alejada del primer riesgo hídrico y eléctrico."
         },
         {
           "speaker": "host",
-          "text": "Los levers del portal apuntan a tres caminos."
+          "text": "Exacto. El portal no publica una meta de viviendas a 2050 porque no hay serie comparable que permita proyectarla."
         },
         {
           "speaker": "cohost",
-          "text": "Priorizar relocalización de lo ya expuesto antes de abrir frente residencial nuevo. Cruzar cada desarrollo con el tablero de demanda y oferta. Tratar el rezago como un techo, no como algo que el mercado resolverá solo."
+          "text": "Entonces los tres palancas son clave. Primero, reubicar lo ya expuesto antes de abrir nuevo frente en la costa."
         },
         {
           "speaker": "host",
-          "text": "¿Y hacia dónde va la Tendencia 2050 del portal?"
+          "text": "[breath] Segundo, cruzar cada desarrollo con el tablero de oferta y demanda y con los instrumentos de ordenamiento que ya existen."
         },
         {
           "speaker": "cohost",
-          "text": "Baja California Sur no se sostiene como una sola fórmula costera. Un sistema policéntrico: Los Cabos como motor turístico bajo estrés hídrico y eléctrico, el East Cape en tensión con áreas protegidas, Todos Santos y El Pescadero como espina de amenidad del Pacífico, La Paz como capital de servicios y nodo agua-energía, Loreto como ancla de turismo y conservación, Comondú como hub agropecuario con más margen relativo, y el norte de Mulegé como corredor con licitación de generación remota."
+          "text": "Y tercero, tratar el rezago de servicios como un techo, no como algo que el mercado va a resolver solo."
         },
         {
           "speaker": "host",
-          "text": "¿Qué se ve en el horizonte si todo sigue así?"
+          "text": "Baja California Sur no se sostiene hacia 2050 repitiendo una sola fórmula costera de sur a norte."
         },
         {
           "speaker": "cohost",
-          "text": "La suma de roles distintos. Cada vocación aporta algo que no es un Cabos diluido."
+          "text": "La lectura que queda es un sistema policéntrico. Cada lugar con su rol distinto."
         },
         {
           "speaker": "host",
-          "text": "¿Qué condiciones harían falta para que funcione?"
+          "text": "Los Cabos como motor turístico bajo estrés hídrico y eléctrico. El East Cape en tensión con las áreas protegidas."
         },
         {
           "speaker": "cohost",
-          "text": "Cada vocación aporta un rol distinto. Nuevo crecimiento solo donde agua y energía tienen margen real. East Cape y Loreto respetan techos ANP. Comondú y el norte suman producción sin vaciar servicios."
+          "text": "Todos Santos y El Pescadero como espina de amenidad del Pacífico. La Paz como capital de servicios y nodo de agua-energía."
         },
         {
           "speaker": "host",
-          "text": "Mm. El desierto marca el límite."
+          "text": "Loreto como ancla de turismo y conservación. Comondú como hub agropecuario con más margen relativo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el norte de Mulegé como corredor todavía poco documentado, ahora con una licitación de generación remota."
+        },
+        {
+          "speaker": "host",
+          "text": "[chuckle] Esa suma de roles diferentes es lo que evita que todo se vuelva un solo Cabos estirado."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada vocación aporta algo propio. No se trata de diluir Los Cabos en todo el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "El crecimiento nuevo solo donde el agua y la energía tengan margen probado o fuente distinta a la actual."
+        },
+        {
+          "speaker": "cohost",
+          "text": "East Cape y Loreto deben respetar primero los techos de las áreas protegidas antes de escalar."
+        },
+        {
+          "speaker": "host",
+          "text": "Comondú y el norte pueden sumar producción y energía sin vaciar servicios ni áreas naturales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "La lista de vigilancia está vacía por ahora. Eso deja espacio para seguir observando."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Qué pasaría si una de esas condiciones se rompiera primero?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces el tablero de demanda y oferta del portal se volvería el primer termómetro."
+        },
+        {
+          "speaker": "host",
+          "text": "[pause] Imagina el desierto enseñando que el agua marca el verdadero límite."
         }
       ]
     },
@@ -286,36 +730,52 @@
       "title": "Para llevar",
       "turns": [
         {
-          "speaker": "host",
-          "text": "En Punta Lobos demuelen parte del Hotel San Cristóbal por la erosión del oleaje."
-        },
-        {
           "speaker": "cohost",
-          "text": "Los escombros quedan bajo vigilancia para que no lleguen al mar. Pescadores ya lo habían advertido."
+          "text": "El Summit del Foro Mar de Cortés reunió a varios actores en Los Cabos estos días recientes."
         },
         {
           "speaker": "host",
-          "text": "Al mismo tiempo entregan 704 casas en Sierra Vista para sacar familias de zonas de riesgo en Los Cabos."
+          "text": "¿Y cuál fue la propuesta que más resonó entre ellos?"
         },
         {
           "speaker": "cohost",
-          "text": "Sin embargo Los Cabos proyecta 9.09% menos ingresos en 2027 por el enfriamiento inmobiliario. Empresarios denuncian que el Estado mantiene en pausa Camina Cabo y vecinos piden firmas para que el Camino Costero siga en el PDU 2040."
+          "text": "Surgió la idea de un tratado regional entre los cinco estados para atraer inversión y al mismo tiempo proteger el Mar de Cortés."
         },
         {
           "speaker": "host",
-          "text": "¿Y el Quinto Informe que entregan al Congreso?"
+          "text": "Eso cambia un poco la forma de ver el crecimiento de toda la zona."
         },
         {
           "speaker": "cohost",
-          "text": "El gobernador lo presenta el 27 de noviembre."
+          "text": "Agustín Coppel planteó duplicar la economía regional y triplicar la inversión extranjera."
         },
         {
           "speaker": "host",
-          "text": "Vivienda con servicios, fuera de la primera línea de riesgo y ajustada al agua y la energía real."
+          "text": "Mm. Pero los desarrolladores turísticos señalaron que la infraestructura actual no avanza al ritmo del destino."
         },
         {
           "speaker": "cohost",
-          "text": "Quédense con nosotros, más Radio BCS2050 después de la música."
+          "text": "Y Los Cabos ha recibido muy poca inversión de la CEA en obras de agua en los últimos años."
+        },
+        {
+          "speaker": "host",
+          "text": "A veces el mar nos recuerda que todo tiene un límite natural."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Me quedo pensando en el tipo de vivienda que realmente podría encajar aquí."
+        },
+        {
+          "speaker": "host",
+          "text": "Una que cuente con servicios básicos y que quede lejos de la primera línea de riesgo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, algo que respete el margen real que tiene el agua y la energía en la zona."
+        },
+        {
+          "speaker": "host",
+          "text": "Un desarrollo que se sienta parte del lugar y no algo que se imponga sobre él."
         }
       ]
     }

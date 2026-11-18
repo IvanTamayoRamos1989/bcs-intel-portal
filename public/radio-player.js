@@ -1,20 +1,20 @@
 /* Radio BCS2050 — a 24/7 station from static files. /radio/station_{es,en}.json is one deterministic loop
-   (station IDs, ~10 min deep dives in chapters, short transitions, ~30 s music breaks). Pressing play joins
+   (station IDs, ~20 min conversations in chapters under a music bed, music breaks between programs). Pressing play joins
    at the live position: (now - epoch) mod loop length. No streaming server. */
 (function () {
   var root = document.getElementById('radio-bcs');
   if (!root) return;
   var $ = function (s) { return root.querySelector(s); };
   var btn = $('.radio-btn'), panel = $('.radio-panel'), playB = $('.radio-play');
-  var st = {}, credits = null, eds = {}, lang = null, i = 0, live = true, pending = 0;
+  var st = {}, credits = null, eds = {}, lang = null, i = 0, live = true, pending = 0, tries = 0;
   var audio = new Audio(); audio.preload = 'none';
   var T = {
     es: { play: 'Reproducir', pause: 'Pausa', prev: 'Anterior', next: 'Siguiente', notes: 'Notas y fuentes', music: 'Música',
-          sources: 'Fuentes de este programa', err: 'No se pudo cargar el audio.', up: 'A continuación', golive: '● Volver al vivo',
+          sources: 'Fuentes de este programa', err: 'No se pudo cargar el audio.', tap: 'Toca ▶ para escuchar.', up: 'A continuación', golive: '● Volver al vivo',
           made: 'Radio continua 24/7. Guiones con fuentes del portal; voces sintéticas Grok TTS.', id: 'Radio BCS2050',
           mus: '♪ Música', none: 'La radio aún no tiene programas.' },
     en: { play: 'Play', pause: 'Pause', prev: 'Previous', next: 'Next', notes: 'Notes & sources', music: 'Music',
-          sources: 'Sources for this show', err: 'Could not load audio.', up: 'Up next', golive: '● Back to live',
+          sources: 'Sources for this show', err: 'Could not load audio.', tap: 'Tap ▶ to listen.', up: 'Up next', golive: '● Back to live',
           made: 'Continuous 24/7 radio. Scripts from portal sources; synthetic voices by Grok TTS.', id: 'Radio BCS2050',
           mus: '♪ Music', none: 'No shows yet.' }
   };
@@ -23,14 +23,15 @@
   function esc(s) { return String(s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function get(u) { return fetch(u, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw r.status; return r.json(); }); }
   function load() {
+    if (st[lang] && Date.now() - st[lang].got > 3600e3) st[lang] = null;
     var jobs = [st[lang] ? null : get('/radio/station_' + lang + '.json').then(function (j) {
       // a station file holds the running loop and, after a daily build, the next one with its on-air time
       var sc = (j.schedules || [{ start: j.epoch, items: j.items }]).map(function (x) {
         var c = 0; x.items.forEach(function (y) { y.t0 = c; c += y.d; }); x.total = c; x.at = Date.parse(x.start); return x;
       });
-      st[lang] = { list: sc };
+      st[lang] = { list: sc, got: Date.now() };
     })];
-    if (!credits) jobs.push(get('/radio/credits.json').then(function (c) { credits = c; }).catch(function () {}));
+    if (!credits) jobs.push(get('/radio/credits.json').then(function (c) { credits = c; }).catch(function () { credits = {}; }));
     return Promise.all(jobs).then(pick);
   }
   function pick() {  // the schedule on air now (latest whose start has passed)
@@ -108,13 +109,21 @@
     $('.radio-dot').textContent = on ? '❚❚' : '▶';
     $('.radio-live').hidden = !live || !on;
   }
-  function playItem(j, offset) {
+  function playItem(j, offset, retry) {
     var s = S(); if (!s || !s.items.length) return;
     i = ((j % s.items.length) + s.items.length) % s.items.length;
     pending = offset || 0;
+    if (!retry) tries = 0;
     audio.src = s.items[i].src;
     $('.radio-msg').textContent = '';
-    audio.play().catch(function () { $('.radio-msg').textContent = T[lang].err; });
+    // mobile browsers reject play() outside a tap (NotAllowedError) and when the source changes mid-load
+    // (AbortError); neither means the file is missing
+    audio.play().catch(function (e) {
+      var n = e && e.name;
+      if (n === 'AbortError') return;
+      $('.radio-msg').textContent = n === 'NotAllowedError' ? T[lang].tap : T[lang].err;
+      state();
+    });
     render();
     if (!$('.radio-notes').hidden) notes();
   }
@@ -124,12 +133,22 @@
   });
   audio.addEventListener('ended', function () { if (live && pick()) goLive(); else playItem(i + 1, 0); });
   audio.addEventListener('play', state); audio.addEventListener('pause', state);
-  audio.addEventListener('error', function () { if (audio.getAttribute('src')) { $('.radio-msg').textContent = T[lang].err; setTimeout(function () { playItem(i + 1, 0); }, 1500); } });
+  audio.addEventListener('error', function () {
+    if (!audio.getAttribute('src')) return;
+    // a transient CDN/edge error: retry the same file once at the same point, then move on
+    if (tries++ < 1) { var at = audio.currentTime || pending || 0; setTimeout(function () { playItem(i, at, true); }, 800); return; }
+    $('.radio-msg').textContent = T[lang].err; setTimeout(function () { playItem(i + 1, 0); }, 1500);
+  });
   audio.addEventListener('timeupdate', function () {
     var x = S() && S().items[i]; if (!x) return;
     $('.radio-bar i').style.width = Math.min(100, 100 * audio.currentTime / (x.d || audio.duration || 1)) + '%';
   });
-  function goLive() { load().then(function () { live = true; var p = livePos(); playItem(p[0], p[1]); }); }
+  function goLive() {
+    var now = function () { pick(); live = true; var p = livePos(); playItem(p[0], p[1]); };
+    var s = st[lang];
+    if (s && Date.now() - s.got < 3600e3 && credits) return now();  // keeps play() inside the user's tap (iOS)
+    load().then(now);
+  }
   function toggle() {
     if (!audio.getAttribute('src')) return goLive();
     if (audio.paused) { if (live) goLive(); else audio.play(); }  // a live station resumes at the live point
@@ -157,4 +176,5 @@
   document.addEventListener('bcs:lang', function (e) { if (audio.paused) { lang = e.detail.lang === 'en' ? 'en' : 'es'; if (S()) render(); } });
   setInterval(function () { if (!panel.hidden && S()) render(); }, 30000);
   lang = pageLang();
+  load().catch(function () {});  // prefetch the small station file so the first tap can start audio at once
 })();

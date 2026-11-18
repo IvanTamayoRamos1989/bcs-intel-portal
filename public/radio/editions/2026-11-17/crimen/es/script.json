@@ -9,31 +9,55 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Piensa en el agua que corre de noche por una toma que nadie autorizó."
+          "text": "300 litros por segundo. Eso es lo que se estima desaparece sin permiso en Los Cabos."
         },
         {
           "speaker": "cohost",
-          "text": "Según Tribuna de México, en Los Cabos ya cerraron 25 de esas tomas este año."
+          "text": "Y Conagua ya clausuró dos aprovechamientos que daban para 120 pipas diarias."
         },
         {
           "speaker": "host",
-          "text": "300 litros por segundo que se van."
+          "text": "[pause] Mm. Imagínate el sonido del agua escapando por la arena, sin que nadie la vea."
         },
         {
           "speaker": "cohost",
-          "text": "Y solo tres de cada diez personas en Baja California Sur tienen suministro constante, según la encuesta del INEGI."
+          "text": "25 tomas clandestinas solo en este 2026, informa Tribuna de México."
         },
         {
           "speaker": "host",
-          "text": "En Cabo San Lucas cerraron dos pozos que llenaban 120 pipas al día."
+          "text": "La senadora Zatarain propone hasta diez años de cárcel por huachicol de agua."
         },
         {
           "speaker": "cohost",
-          "text": "La senadora Zatarain propone hasta diez años de cárcel por extraerla sin permiso."
+          "text": "[chuckle] Diez años parece mucho, pero el desierto no perdona la sed."
         },
         {
           "speaker": "host",
-          "text": "Esto es Radio BCS2050, hoy profundizamos en Seguridad, y la pregunta que perseguimos es: ¿cómo se protege el agua cuando nadie la ve?"
+          "text": "Al mismo tiempo el gobierno cede un predio en Comondú por 30 años a la Guardia Nacional, según Palabra BCS."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y también donan inmuebles de salud en La Paz y El Centenario."
+        },
+        {
+          "speaker": "host",
+          "text": "Solo tres de cada diez personas en BCS tienen suministro constante."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Pero aquí está lo que cambia todo: el comodato de ese predio en el norte para operaciones de la Guardia."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Entonces la infraestructura de seguridad se instala mientras el agua sigue escapando."
+        },
+        {
+          "speaker": "cohost",
+          "text": "[pause] ¿Y qué pasa con las pipas que ya no llegan a quien las necesita?"
+        },
+        {
+          "speaker": "host",
+          "text": "Esto es Radio BCS2050. Hoy en Seguridad la pregunta que perseguimos es: ¿cómo se cuida el agua cuando la infraestructura misma cambia de manos?"
         }
       ]
     },
@@ -42,76 +66,258 @@
       "title": "Acto 1 · Lo que está pasando",
       "turns": [
         {
-          "speaker": "cohost",
-          "text": "Tomás, según Tribuna de México, la senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua."
-        },
-        {
           "speaker": "host",
-          "text": "Diez años. ¿Y en Los Cabos qué pasa?"
+          "text": "Luz, la senadora Susana Zatarain propone hasta diez años de cárcel por el huachicol de agua."
         },
         {
           "speaker": "cohost",
-          "text": "Han clausurado 25 tomas clandestinas en 2026. Se llevan más de 300 litros por segundo. Conagua cerró dos pozos que daban 120 pipas diarias."
+          "text": "Sí, según Tribuna de México la iniciativa busca castigar la extracción sin permiso y los pozos clandestinos."
         },
         {
           "speaker": "host",
-          "text": "Mm. ¿Cómo afecta eso a la gente?"
+          "text": "En Los Cabos ya suman 25 tomas clausuradas este año."
         },
         {
           "speaker": "cohost",
-          "text": "Según la ENCIG 2025 del INEGI, solo tres de cada diez personas en BCS tienen agua todo el tiempo. La iniciativa de Zatarain suma un artículo al Código Penal Federal y reforma la Ley de Aguas Nacionales para castigar pozos clandestinos y venta ilegal."
+          "text": "Exacto, y se estima que se llevaban más de 300 litros por segundo."
         },
         {
           "speaker": "host",
-          "text": "¿Y qué se siente cuando el agua se va?"
+          "text": "Eso afecta directo a la gente que sí paga."
         },
         {
           "speaker": "cohost",
-          "text": "En el desierto, cada gota cuenta. La gente espera pipas, los cultivos se secan y los hogares se quedan sin luz para la bomba."
+          "text": "Y en Cabo San Lucas cerraron dos sitios que daban agua a 120 pipas diarias."
         },
         {
           "speaker": "host",
-          "text": "Mm."
+          "text": "¿Quiénes se quedan sin el servicio constante?"
         },
         {
           "speaker": "cohost",
-          "text": "Pasemos al Foro Mar de Cortés. Agustín Coppel pide triplicar la inversión extranjera en 20 años y más gasto en seguridad."
+          "text": "Según la ENCIG del INEGI, solo tres de cada diez personas en Baja California Sur tienen agua todo el tiempo."
         },
         {
           "speaker": "host",
-          "text": "¿Por qué menciona seguridad ahora?"
+          "text": "Mm. Imagínate vivir así en el desierto."
         },
         {
           "speaker": "cohost",
-          "text": "Dice que BCS creció solo 2.1% anual en la última década. Propone 3.5% cada año. Hoy la IED regional anda cerca de 4,100 millones de dólares. Pide más dinero en carreteras, puertos y educación."
+          "text": "Sí, y la propuesta busca frenar esa sustracción ilegal que ya es un problema de seguridad."
         },
         {
           "speaker": "host",
-          "text": "¿Y la gente del mar lo ve posible?"
+          "text": "La iniciativa adiciona un artículo al Código Penal Federal y reforma la Ley de Aguas Nacionales."
         },
         {
           "speaker": "cohost",
-          "text": "Según Bitácora BCS, el Congreso pide estudiar el traspaso de ASIPONA al gobierno del estado por el rechazo a las tarifas nuevas en Cabo San Lucas."
+          "text": "Eso cubre la venta ilegal también, y la manipulación de infraestructura."
         },
         {
           "speaker": "host",
-          "text": "¿Qué tienen que ver las tarifas con la seguridad?"
+          "text": "Ahora, otro dato de seguridad viene de Palabra BCS."
         },
         {
           "speaker": "cohost",
-          "text": "Los prestadores náuticos protestan desde el 1 de octubre. El exhorto no cambia nada de inmediato, depende de la Federación."
+          "text": "El gobierno estatal dio en comodato por 30 años un predio en Comondú a la Guardia Nacional. [pause]"
         },
         {
           "speaker": "host",
-          "text": "Mm. El puerto también necesita confianza."
+          "text": "¿Para qué operaciones?"
         },
         {
           "speaker": "cohost",
-          "text": "Según Meganoticias, la senadora Zatarain alerta que las ventas en Los Cabos bajaron entre 25% y 35%. Ya cerraron 27 restaurantes por la percepción de inseguridad. Para 2027 el Derecho de No Residente sube a 1,158 pesos, un 17.8% más."
+          "text": "Para que operen en el norte del estado, según el acuerdo del Comité de Patrimonio."
         },
         {
           "speaker": "host",
-          "text": "¿Qué se necesita para que vuelva la confianza?"
+          "text": "Y también donaron inmuebles de salud."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, uno para hemodiálisis y salud mental en La Paz, y el hospital psiquiátrico en El Centenario."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso parece un movimiento grande."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Lo es, y viene justo cuando el agua empieza a sentirse como un tema de orden público."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo ves que se conecten estas dos cosas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Quizá la presencia de la Guardia ayude a vigilar mejor las tomas clandestinas."
+        },
+        {
+          "speaker": "host",
+          "text": "Ojalá, porque el desierto no perdona."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "Me pregunto cómo se sentirá un vecino en Los Cabos cuando llega la pipa."
+        },
+        {
+          "speaker": "cohost",
+          "text": "O cuando no llega. La luz cambia en el desierto cuando el agua falta."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué le preguntarías a la senadora sobre esto?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cómo van a vigilar los pozos nuevos que puedan aparecer en la sierra."
+        },
+        {
+          "speaker": "host",
+          "text": "El camino largo hacia el norte siempre guarda sorpresas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y ahora con la Guardia instalada por 30 años, quizá algo cambie."
+        },
+        {
+          "speaker": "host",
+          "text": "A veces pienso en cómo el mar al sur nos recuerda que todo fluye, ¿no?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, pero aquí el agua robada corta ese flujo para todos."
+        },
+        {
+          "speaker": "host",
+          "text": "Un vecino que espera la pipa ve el sol alto y el tanque vacío."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y pregunta por qué el gobierno tarda tanto en responder."
+        },
+        {
+          "speaker": "host",
+          "text": "Tal vez la Guardia en Comondú ayude a que las pipas lleguen más seguras."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ojalá, porque cada litro que se pierde duele en el calor del desierto."
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "title": "Las personas y los lugares",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "En Los Cabos la gente habla de agua que desaparece."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según Tribuna de México, en 2026 ya cerraron 25 tomas clandestinas."
+        },
+        {
+          "speaker": "host",
+          "text": "300 litros por segundo que ya no llegan a las casas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y la senadora Susana Zatarain quiere hasta diez años de cárcel por ese huachicol."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué se siente vivir en San José del Cabo sabiendo eso?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Solo tres de cada diez personas tienen agua todo el día, dice la ENCIG 2025."
+        },
+        {
+          "speaker": "host",
+          "text": "En Cabo San Lucas cerraron dos pozos que llenaban 120 pipas diarias."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Imagina el camión que no llega a tu colonia. [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "La iniciativa suma un artículo al Código Penal Federal."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y reforma la Ley de Aguas Nacionales para castigar pozos clandestinos."
+        },
+        {
+          "speaker": "host",
+          "text": "Ahora subamos al norte, a Mulegé y Santa Rosalía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Allá la Guardia Nacional va a ocupar un predio por 30 años."
+        },
+        {
+          "speaker": "host",
+          "text": "Palabra BCS cuenta que el comodato es en Comondú."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un lugar donde el agua también escasea y la gente vive muy dispersa."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué preguntarle a alguien que vive cerca de ese predio?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tal vez solo si ahora se siente más seguro o más vigilado."
+        },
+        {
+          "speaker": "host",
+          "text": "El camino largo hasta allá pasa por el desierto abierto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Uno se pregunta cómo cambia la vida diaria con esa presencia."
+        },
+        {
+          "speaker": "host",
+          "text": "Mientras tanto en La Paz donan edificios de salud."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Un hospital psiquiátrico y unidades de hemodiálisis pasan a manos del estado."
+        },
+        {
+          "speaker": "host",
+          "text": "Son las mismas personas que ya cargan con la falta de agua constante."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El desierto enseña paciencia, pero también deja ver lo que falta."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. [pause] ¿Qué harías tú con esos 30 años de comodato?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Preguntaría primero a los vecinos de Comondú qué necesitan más que un cuartel."
+        },
+        {
+          "speaker": "host",
+          "text": "Quizá un centro de salud que funcione sin interrupciones."
+        },
+        {
+          "speaker": "cohost",
+          "text": "<soft>El mar al fondo siempre recuerda lo que compartimos.</soft>"
         }
       ]
     },
@@ -120,64 +326,120 @@
       "title": "Acto 2 · El hilo oculto",
       "turns": [
         {
+          "speaker": "host",
+          "text": "Luz, el tema de seguridad hoy se conecta con algo que vimos ayer en el foresight."
+        },
+        {
           "speaker": "cohost",
-          "text": "Luz: En los últimos meses vemos donaciones de predios y reasignaciones de recursos que parecen aisladas."
+          "text": "Sí, el huachicol de agua en Los Cabos."
         },
         {
           "speaker": "host",
-          "text": "Tomás: ¿Qué las une?"
+          "text": "Exacto. Persiguen el robo de agua, pero el hilo va más profundo."
         },
         {
           "speaker": "cohost",
-          "text": "Luz: El comodato por 30 años de un predio en Comondú a la Guardia Nacional, según Palabra BCS, y la prioridad de seguridad en el paquete de 28 mil 300 millones que HOY BCS reporta para 2027."
+          "text": "Según el archivo, el Mar de Cortés quiere duplicar su economía."
         },
         {
           "speaker": "host",
-          "text": "Tomás: Mm. ¿Y el presupuesto de Los Cabos?"
+          "text": "¿Y cómo se protege eso sin agua segura? [pause]"
         },
         {
           "speaker": "cohost",
-          "text": "Luz: Gringo Gazette informa que el Cabildo aprobó 6,746 mdp para 2027, 675 mdp menos que este año, por la caída inmobiliaria."
+          "text": "Piensa en el Golfo como un solo cuerpo, con el Foro Mar de Cortés buscando ese crecimiento regional frente a los límites del agua y la gobernanza."
         },
         {
           "speaker": "host",
-          "text": "Tomás: ¿Cómo afecta eso a la seguridad?"
+          "text": "Mm. Esa ambición suena tranquila desde lejos, pero el desierto ya marca el ritmo."
         },
         {
           "speaker": "cohost",
-          "text": "Luz: Menos ingresos propios significan menos margen para mantener rutas como el Tiburón Urbano o las tarifas nuevas de 16 y 18 pesos que El Momento BCS menciona."
+          "text": "Ahí entra el POERBCS."
         },
         {
           "speaker": "host",
-          "text": "Tomás: El mar y el desierto parecen lejanos de estas cifras."
+          "text": "Las políticas de preservación y protección."
         },
         {
           "speaker": "cohost",
-          "text": "Luz: Sin embargo, Tribuna de México cuenta que el Congreso pide a ASIPONA transparentar las tarifas de la Marina de Cabo San Lucas y gestionar que el puerto pase al estado para reinvertir en la comunidad."
+          "text": "El informe menciona Aprovechamiento Sustentable y Preservación."
         },
         {
           "speaker": "host",
-          "text": "Tomás: ¿Y eso toca la seguridad?"
+          "text": "Es la infraestructura invisible que sostiene la seguridad del recurso."
         },
         {
           "speaker": "cohost",
-          "text": "Luz: Peninsular Digital añade que pescadores y prestadores preparan un amparo contra las nuevas tarifas portuarias porque encarecen la pesca y el turismo náutico."
+          "text": "Mientras El Niño erosiona de Punta Lobos a San Carlos."
         },
         {
           "speaker": "host",
-          "text": "Tomás: Pero aquí viene el giro inesperado."
+          "text": "La erosión costera ya está en el techo 2050."
         },
         {
           "speaker": "cohost",
-          "text": "Luz: Imagen Radio cuenta que los hoteleros de Los Cabos atribuyen la baja de 14% en turistas estadounidenses a la percepción de inseguridad, aunque el estado invierte en Guardia Nacional y vivienda social."
+          "text": "Y las mareas extremas siguen empujando la línea de la costa hacia adentro, como si el mar mismo recordara los límites."
         },
         {
           "speaker": "host",
-          "text": "Tomás: Entonces la seguridad no es solo la patrulla."
+          "text": "Y las políticas de restauración aparecen en los lineamientos."
         },
         {
           "speaker": "cohost",
-          "text": "Luz: Es también el hilo que une el puerto, el predio y el presupuesto que llega o no llega, y cómo eso moldea la luz que vemos cada atardecer en el Pacífico."
+          "text": "Pero la capa de datos no asigna la sigla RT."
+        },
+        {
+          "speaker": "host",
+          "text": "Esa brecha es el verdadero riesgo de seguridad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sin glosario claro, ¿cómo se aplica la protección? [chuckle]"
+        },
+        {
+          "speaker": "host",
+          "text": "El diseño oculto es ese mapa de 69 polígonos."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. Y la ficha técnica MOE56 usa clave UGA."
+        },
+        {
+          "speaker": "host",
+          "text": "Pero no explica los códigos 2, 3 y 4."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces la seguridad del agua depende de una capa incompleta."
+        },
+        {
+          "speaker": "host",
+          "text": "El hilo es que sin esa gobernanza clara, duplicar la economía del Golfo queda en el aire."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y aquí viene lo extraño: sin nombres para esos códigos, ¿quién decide dónde restaurar?"
+        },
+        {
+          "speaker": "host",
+          "text": "Exacto. La protección queda flotando."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Piensa en la luz del atardecer sobre el desierto, ¿cómo se siente que el plan del 2025 aún no tenga los nombres?"
+        },
+        {
+          "speaker": "host",
+          "text": "Es como una carretera sin señales. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El informe de SEPUIMM deja la pregunta abierta."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el Golfo sigue esperando que la capa se complete."
         }
       ]
     },
@@ -187,55 +449,201 @@
       "turns": [
         {
           "speaker": "cohost",
-          "text": "¿Sabías que 22 de 39 acuíferos en Baja California Sur están en déficit y suman menos 105.1 hectómetros cúbicos al año?"
+          "text": "¿Sabías que hay 25 tomas clandestinas en Los Cabos?"
         },
         {
           "speaker": "host",
-          "text": "Mm. Según CONAGUA, datos de 2023."
+          "text": "25. Eso suena a una fuga grande, pero ¿qué significa en litros?"
         },
         {
           "speaker": "cohost",
-          "text": "Sí. Piensa en el agua que llega a una casa en Los Cabos. Cada día menos de lo que se usa."
+          "text": "Más de 300 litros por segundo se van, informa Tribuna de México."
         },
         {
           "speaker": "host",
-          "text": "¿Y eso qué cambia para quien vive ahí?"
+          "text": "300 litros cada segundo. Eso es como llenar una alberca de hotel cada pocos minutos. [pause]"
         },
         {
           "speaker": "cohost",
-          "text": "La población es de 798,447 personas según el INEGI de 2020. Más gente, misma agua."
+          "text": "Exacto. Imagina el agua que no llega a las casas ni a los hoteles que ya operan."
         },
         {
           "speaker": "host",
-          "text": "Mm. El desierto no perdona."
+          "text": "Y todo eso robado por tomas escondidas."
         },
         {
           "speaker": "cohost",
-          "text": "Exacto. Y el PIB subió 3.5 % en 2024, pero el agua sigue bajando."
+          "text": "Sí. Mientras tanto el POEL obliga a los nuevos desarrollos a traer su propia agua y tratar sus residuos."
         },
         {
           "speaker": "host",
-          "text": "¿Qué pasa cuando el motor crece y el pozo no?"
+          "text": "¿Y eso cómo ayuda si el agua ya se escapa antes?"
         },
         {
           "speaker": "cohost",
-          "text": "En Los Cabos la Asociación de Hoteles reportó menos visitantes de Estados Unidos y restaurantes cerrados. Buscan Canadá y Europa."
+          "text": "Esa es la tensión. El plan dice una cosa, la realidad otra."
         },
         {
           "speaker": "host",
-          "text": "Mm. El camino costero de Cabo del Este queda en pausa."
+          "text": "Mm. ¿Qué pasa cuando la gente nota que el grifo está seco?"
         },
         {
           "speaker": "cohost",
-          "text": "Sí. Y el Congreso donó predios en Ciudad Constitución y Santa Rosalía para vivienda social del programa federal."
+          "text": "Los hoteles buscan más visitantes de Canadá y Europa para compensar la caída de Estados Unidos."
         },
         {
           "speaker": "host",
-          "text": "¿Reubicar de zonas de riesgo ayuda al equilibrio?"
+          "text": "Pero sin agua extra, ¿cómo creces?"
+        },
+        {
+          "speaker": "host",
+          "text": "Y 27 restaurantes ya cerraron o están en pausa. [chuckle] El desierto no perdona."
         },
         {
           "speaker": "cohost",
-          "text": "Tal vez. Priorizar el agua antes de más crecimiento, como dicen los planes municipales."
+          "text": "Por eso la Guardia Nacional anuncia más presencia, aunque los cuarteles de Baja California Sur aún no aparecen en la lista oficial."
+        },
+        {
+          "speaker": "host",
+          "text": "Tal vez protegen las tuberías en vez de las playas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Ojalá. Porque sin agua el motor turístico se apaga solo."
+        },
+        {
+          "speaker": "host",
+          "text": "El mar está ahí, brillante, pero el agua dulce decide todo."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y los vecinos de Cabo San Lucas ya sienten esa presión cada día."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El desierto siempre cobra sus cuentas al final."
+        },
+        {
+          "speaker": "cohost",
+          "text": "FITURCA espera unos 300 000 visitantes canadienses este año, casi el doble que en 2024."
+        },
+        {
+          "speaker": "host",
+          "text": "Doble de gente volando hacia aquí, pero el agua sigue escapándose por esas tomas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. GAP reporta más de pasajeros en una sola semana reciente."
+        },
+        {
+          "speaker": "host",
+          "text": "Todos esos asientos llegando, y la pregunta sigue siendo la misma."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Qué pasará cuando el plan de desarrollo exija que cada nuevo hotel traiga su agua desalada?"
+        },
+        {
+          "speaker": "host",
+          "text": "Tal vez entonces las tuberías empiecen a tener más vigilancia real."
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "title": "El diseño invisible",
+      "turns": [
+        {
+          "speaker": "host",
+          "text": "Hoy hablamos del diseño invisible que sostiene la seguridad en Baja California Sur."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Exacto. No se ve a simple vista, pero está en documentos y planes que deciden cómo crece todo."
+        },
+        {
+          "speaker": "host",
+          "text": "Piensa en una llave de agua en una casa nueva. ¿Qué hay detrás de que salga o no salga el agua?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Según el escenario agua primero de la base de datos, primero se revisa si el acuífero ya está en déficit."
+        },
+        {
+          "speaker": "host",
+          "text": "Los acuíferos 0313, 0317 y otros ya están complicados. Antes de más casas, hay que asegurar el agua."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, y eso viene del POERBCS, las políticas ambientales de SEPUIMM que hablan de preservación y restauración."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Cómo se traduce eso en una calle de Comondú o Mulegé?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "El 20 de octubre el Congreso aprobó donar predios para vivienda social federal con INFONAVIT y CONAVI."
+        },
+        {
+          "speaker": "host",
+          "text": "Un predio en Brisas del Valle y otro en Santa Rosalía. Eso parece simple, pero sigue reglas de gobernanza."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El informe OECD Governing the City dice que las ciudades necesitan coordinación entre varios municipios."
+        },
+        {
+          "speaker": "host",
+          "text": "Sin esa coordinación, una casa nueva puede dejar sin agua a la de al lado. [pause]"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y el documento de CEPAL sobre planificación territorial en América Latina marca el mismo camino."
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué objeto cotidiano muestra mejor este sistema?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Tal vez el plano de una colonia. Detrás hay la sigla PR para preservación y las fichas técnicas MOE56."
+        },
+        {
+          "speaker": "host",
+          "text": "Esas siglas deciden dónde se puede construir y dónde no. El glosario no siempre aparece claro."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Por eso el diseño invisible importa. Cambia la seguridad real de la gente sin que se note."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. ¿Y si el plan prioriza agua antes que más viviendas?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Entonces la llave de esa casa nueva tiene más chance de seguir funcionando en 2050."
+        },
+        {
+          "speaker": "host",
+          "text": "Eso es el verdadero diseño de la seguridad."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El predio mide 27335 m² en Brisas del Valle. [chuckle] Detrás hay el OECD Regional Outlook 2016 que marca cómo incluir a todos."
+        },
+        {
+          "speaker": "host",
+          "text": "Un diputado habló de 35000 viviendas previstas. ¿Qué pasaría si el agua no alcanza?"
+        },
+        {
+          "speaker": "cohost",
+          "text": "Otro predio de 15550 m² en Los Frayles sigue la misma lógica de preservación."
+        },
+        {
+          "speaker": "host",
+          "text": "El desierto nos recuerda que primero viene el equilibrio. [breath]"
         }
       ]
     },
@@ -244,48 +652,124 @@
       "title": "Acto 3 · Hacia 2050",
       "turns": [
         {
-          "speaker": "host",
-          "text": "¿Qué marca la Visión del portal para este tema hacia 2050?"
-        },
-        {
           "speaker": "cohost",
-          "text": "El riesgo es que sin instrumentos que aten el crecimiento a los techos medidos, la trayectoria actual siga por inercia de permisos."
+          "text": "La gobernanza concentra dos notas esta semana. La tendencia apunta a alivios."
         },
         {
           "speaker": "host",
-          "text": "Mm."
+          "text": "Mm. Y el riesgo sigue siendo el mismo."
         },
         {
           "speaker": "cohost",
-          "text": "La aspiración es que las decisiones públicas hagan valer POEL, PDU, PMDU, consultas y techos de ANP como condiciones previas, no como trámites posteriores."
+          "text": "Sin instrumentos que aten el crecimiento a los techos medidos, la inercia de los permisos sigue su curso."
         },
         {
           "speaker": "host",
-          "text": "¿Y qué palancas se ven?"
+          "text": "Exacto. ¿Qué pasaría si esos techos se usaran antes, no después?"
         },
         {
           "speaker": "cohost",
-          "text": "Cerrar con evidencia los huecos ya marcados antes de escenarios de mayor escala. Mantener la consulta pública como palanca visible. Usar la lectura restringida del tablero estatal como criterio de permiso."
+          "text": "Esa es la aspiración. Decisiones que hagan valer POEL, PDU y consultas como condición previa."
         },
         {
           "speaker": "host",
-          "text": "¿Cómo se ve Baja California Sur entonces?"
+          "text": "Y no como trámite que llega tarde. [pause] ¿Cómo se logra eso?"
         },
         {
           "speaker": "cohost",
-          "text": "No como una sola fórmula costera. Un sistema policéntrico: Los Cabos bajo estrés hídrico, East Cape en tensión con áreas protegidas, La Paz como nodo agua-energía, Loreto como ancla de conservación, Comondú como hub agropecuario y el norte con su corredor de generación."
+          "text": "Cerrando primero los huecos ya marcados. DMA de Loreto y el norte, cuartos de amenidad, PDU de Cabos."
         },
         {
           "speaker": "host",
-          "text": "¿Qué condiciones harían falta?"
+          "text": "Antes de abrir escenarios más grandes."
         },
         {
           "speaker": "cohost",
-          "text": "Cada vocación aporta un rol distinto. Nuevo crecimiento solo donde haya margen real de agua y energía. East Cape y Loreto respetan techos ANP antes de escalar. Comondú y el norte suman producción sin vaciar servicios."
+          "text": "Y mantener la consulta pública como palanca visible, no como cierre rápido."
+        },
+        {
+          "speaker": "host",
+          "text": "La lectura restringida del tablero estatal como criterio real de permiso. [breath] Eso cambia el rumbo."
         },
         {
           "speaker": "cohost",
-          "text": "En la lista de vigilancia aparece el huachicol de agua, con iniciativa federal y clausuras en Los Cabos, más la segunda desaladora de CSL que llegaría a 250 litros por segundo en 2027."
+          "text": "La EWMA marca 3.57, con dirección positiva."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. Pequeños alivios que aún deben sostenerse."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Baja California Sur no se sostiene hacia 2050 como una sola fórmula costera repetida."
+        },
+        {
+          "speaker": "host",
+          "text": "Un sistema policéntrico. Cada lugar con su rol distinto."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Los Cabos bajo estrés hídrico y eléctrico. El East Cape en tensión con las áreas protegidas."
+        },
+        {
+          "speaker": "host",
+          "text": "Todos Santos y El Pescadero como espina del Pacífico. La Paz como nodo de agua y energía."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Loreto como ancla de turismo y conservación. Comondú como hub agropecuario."
+        },
+        {
+          "speaker": "host",
+          "text": "Y el norte de Mulegé como corredor con licitación de generación remota. [chuckle] Cada uno aporta algo que los otros no."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Nuevo crecimiento solo donde haya evidencia de margen de agua y energía, sin fingir crédito."
+        },
+        {
+          "speaker": "host",
+          "text": "East Cape y Loreto respetando techos ANP y POEL antes de escalar."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Comondú y el norte sumando producción sin vaciar servicios ni áreas protegidas."
+        },
+        {
+          "speaker": "host",
+          "text": "En la lista de vigilancia está el huachicol de agua. Iniciativa federal con hasta diez años de cárcel."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Y clausuras de tomas clandestinas en Los Cabos."
+        },
+        {
+          "speaker": "host",
+          "text": "La segunda desaladora de Cabo San Lucas va al 75%. 250 l/s, conclusión en 2027."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Eso marca la diferencia si se usa bien."
+        },
+        {
+          "speaker": "host",
+          "text": "La visión se alcanza solo con la evidencia que el portal ya reúne."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Cada vocación aporta un rol distinto. No un Cabos diluido en todo el estado."
+        },
+        {
+          "speaker": "host",
+          "text": "Mm. El desierto y el mar siguen marcando dónde puede crecer la luz."
+        },
+        {
+          "speaker": "cohost",
+          "text": "El camino largo hacia el norte nos recuerda que cada región carga su propio peso. [laugh]"
+        },
+        {
+          "speaker": "host",
+          "text": "¿Qué pasaría si el tablero guiara cada permiso real?"
         }
       ]
     },
@@ -295,27 +779,67 @@
       "turns": [
         {
           "speaker": "host",
-          "text": "Luz, en seguridad el agua llama la atención en Los Cabos."
+          "text": "La senadora propone penas más fuertes contra el huachicol de agua y Los Cabos sigue registrando tomas clandestinas."
         },
         {
           "speaker": "cohost",
-          "text": "Sí, ya suman 25 tomas clandestinas este 2026 y la senadora Susana Zatarain propone hasta 10 años de cárcel por huachicol de agua."
+          "text": "25 tomas clandestinas este año en Los Cabos, según los reportes."
         },
         {
           "speaker": "host",
-          "text": "¿Y qué más cuenta ella sobre el impacto en la vida diaria?"
+          "text": "25. [pause] Eso ya parece un patrón que nadie esperaba tan rápido."
         },
         {
           "speaker": "cohost",
-          "text": "Alerta de menos turistas, menores ventas y cierres de restaurantes, justo cuando Los Cabos proyecta 9.09% menos ingresos en 2027."
+          "text": "Y la propuesta habla de hasta diez años de cárcel por cada caso de huachicol de agua."
         },
         {
           "speaker": "host",
-          "text": "Además el gobierno cede un predio en Comondú a la Guardia Nacional por 30 años, y propone un presupuesto de 28 mil 300 millones de pesos para 2027."
+          "text": "Diez años. Una cifra que hace que uno se detenga a pensar en el peso real de esa agua robada."
         },
         {
           "speaker": "cohost",
-          "text": "Lo que llevamos es que las decisiones públicas deben hacer valer los POEL, PDU y consultas como condiciones previas, no como trámites posteriores al hecho. Quédense con nosotros, más Radio BCS2050 después de la música."
+          "text": "Al mismo tiempo el gobierno entrega un predio en Comondú a la Guardia Nacional y dona edificios de salud."
+        },
+        {
+          "speaker": "host",
+          "text": "30 años de comodato para ese terreno en Comondú."
+        },
+        {
+          "speaker": "cohost",
+          "text": "30 años. [chuckle] El desierto no mide el tiempo igual que nosotros."
+        },
+        {
+          "speaker": "host",
+          "text": "Lo que llama la atención es el orden en que se deciden estas cosas."
+        },
+        {
+          "speaker": "cohost",
+          "text": "¿Y si los instrumentos de planeación se aplicaran antes de firmar cualquier acuerdo?"
+        },
+        {
+          "speaker": "host",
+          "text": "Sí, como si el desierto nos obligara a mirar primero el horizonte entero."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Mm. El mar tampoco se llena de un día para otro."
+        },
+        {
+          "speaker": "host",
+          "text": "Entonces el lugar mismo nos recuerda que hay que consultar primero y respetar los techos de las áreas naturales."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Esa idea de dejar los planes como condición previa, no como trámite posterior."
+        },
+        {
+          "speaker": "host",
+          "text": "Quédate con esa sensación de mirar el terreno antes de construir."
+        },
+        {
+          "speaker": "cohost",
+          "text": "Sí, como si el propio paisaje nos enseñara a decidir con más paciencia."
         }
       ]
     }
